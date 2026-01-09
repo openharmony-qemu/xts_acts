@@ -18,13 +18,23 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { common } from '@kit.AbilityKit';
 import { appManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 let context = getContext(this) as common.UIAbilityContext;
 
 export default function abilityWMSTest() {
   describe('abilityWMSTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       context = globalThis.context;
     })
     beforeEach(() => {
@@ -34,13 +44,13 @@ export default function abilityWMSTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
-     * @tc.desc   : Stage model applications query their own application processes.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800
+     * @tc.desc   Stage model applications query their own application processes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800', Level.LEVEL3, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0800`;
@@ -55,13 +65,13 @@ export default function abilityWMSTest() {
       });
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
-     * @tc.name   : SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
-     * @tc.desc   : Stage model applications terminate their own application processes.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
+     * @tc.number SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900
+     * @tc.desc   Stage model applications terminate their own application processes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900', Level.LEVEL3, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_AMS_AbilityWMS_0900`;

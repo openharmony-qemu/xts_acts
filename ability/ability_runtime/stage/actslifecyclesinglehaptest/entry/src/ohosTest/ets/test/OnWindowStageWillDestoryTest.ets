@@ -35,12 +35,12 @@ export default function OnWindowStageWillDestroyTest() {
     });
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0100
-     * @tc.name: check if the lifecycle is executed
-     * @tc.desc: check if the lifecycle is executed
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0100
+     * @tc.desc   check if the lifecycle is executed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0100", Level.LEVEL0, async function (done) {
       TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0100'
@@ -76,12 +76,12 @@ export default function OnWindowStageWillDestroyTest() {
     });
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0200
-     * @tc.name: check if the lifecycle is executed
-     * @tc.desc: check if the lifecycle is executed
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0200
+     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0200
+     * @tc.desc   check if the lifecycle is executed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0200", Level.LEVEL0, async function (done) {
       TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0200'
@@ -139,12 +139,12 @@ export default function OnWindowStageWillDestroyTest() {
     });
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0300
-     * @tc.name: check if the lifecycle is executed
-     * @tc.desc: check if the lifecycle is executed
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0300
+     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0300
+     * @tc.desc   check if the lifecycle is executed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0300", Level.LEVEL0, async function (done) {
       TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0300'
@@ -187,12 +187,12 @@ export default function OnWindowStageWillDestroyTest() {
     });
 
     /**
-     * @tc.number: SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0400
-     * @tc.name: check if the lifecycle is executed
-     * @tc.desc: check if the lifecycle is executed
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0400
+     * @tc.number SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0400
+     * @tc.desc   check if the lifecycle is executed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0400", Level.LEVEL0, async function (done) {
       TAG = 'SUB_Ability_AbilityRuntime_OnWindowStageWillDestroy_0400'

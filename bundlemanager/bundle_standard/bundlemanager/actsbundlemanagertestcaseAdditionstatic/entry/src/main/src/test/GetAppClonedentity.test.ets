@@ -24,9 +24,12 @@ export default function getAppCloneIdentity() {
   describe('ActsBmsgetAppCloneIdentityTest', (): void => {
 
     /**
-     * @tc.number GetAppCloneIdentity_0100
      * @tc.name   getAppCloneIdentity_0100
+     * @tc.number GetAppCloneIdentity_0100
      * @tc.desc   Test GetAppCloneIdentity interfaces with other hap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAppCloneIdentity_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -44,7 +47,7 @@ export default function getAppCloneIdentity() {
               expect().assertFail();
               done();
             }
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             let message = (err as BusinessError).message;
             console.info(TAG + 'getAppCloneIdentity_0100 getBundleInfo catch failed: ' + message);
             expect(err).assertFail();

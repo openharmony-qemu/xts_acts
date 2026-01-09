@@ -20,9 +20,12 @@ export default function setOverlayEnabled() {
   describe('setOverlayEnabled',  () =>{
 
     /**
-     * @tc.number: Sub_Bms_Framework_Status_OverlayEnable_static_0100
-     * @tc.name: Sub_Bms_Framework_Status_OverlayEnable_static_0100
-     * @tc.desc: Failed to set when the incoming moduleName is empty
+     * @tc.name   Sub_Bms_Framework_Status_OverlayEnable_static_0100
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_static_0100
+     * @tc.desc   Failed to set when the incoming moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Status_OverlayEnable_static_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -54,7 +57,7 @@ export default function setOverlayEnabled() {
               hilog.info(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise success');
               expect().assertFail();
               done();
-            }, (err: BusinessError<void>): void => {
+            }, (err: Error): void => {
               hilog.error(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise then failed: %{public}s',
                 JSON.stringify(err));
               expect(err.code).assertEqual(401);
@@ -69,10 +72,13 @@ export default function setOverlayEnabled() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Status_OverlayEnable_static_0500
-     * @tc.name: Sub_Bms_Framework_Status_OverlayEnable_static_0500
-     * @tc.desc: Failed to set when the incoming moduleName is not installed
+    /**
+     * @tc.name   Sub_Bms_Framework_Status_OverlayEnable_static_0500
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_static_0500
+     * @tc.desc   Failed to set when the incoming moduleName is not installed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Status_OverlayEnable_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -81,7 +87,7 @@ export default function setOverlayEnabled() {
             hilog.info(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise success');
             expect().assertFail();
             done();
-          }, (err: BusinessError<void>): void => {
+          }, (err: Error): void => {
             hilog.error(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise then failed: %{public}s', JSON.stringify(err));
             expect(err.code).assertEqual(17700002);
             done();
@@ -100,10 +106,13 @@ export default function setOverlayEnabled() {
         });
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Status_OverlayEnable_static_0600
-     * @tc.name: Sub_Bms_Framework_Status_OverlayEnable_static_0600
-     * @tc.desc: Failed to set when the incoming moduleName is not overlay
+    /**
+     * @tc.name   Sub_Bms_Framework_Status_OverlayEnable_static_0600
+     * @tc.number Sub_Bms_Framework_Status_OverlayEnable_static_0600
+     * @tc.desc   Failed to set when the incoming moduleName is not overlay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Status_OverlayEnable_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -124,7 +133,7 @@ export default function setOverlayEnabled() {
             hilog.info(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise success');
             expect().assertFail();
             done();
-          }, (err: BusinessError<void>): void => {
+          }, (err: Error): void => {
             hilog.error(0x0000, 'testParamTag', 'o2 setOverlayEnabled Promise then failed: %{public}s', JSON.stringify(err));
             expect(err.code).assertEqual(17700033);
             done();

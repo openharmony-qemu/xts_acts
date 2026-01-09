@@ -42,13 +42,13 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
     afterEach(() => {})
     afterAll(() => {})
     
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100
-     * @tc.desc   : To verify that the main thread use StartSelfUIAbilityWithPidResult will return errorCode 16000134
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100
+     * @tc.number SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100
+     * @tc.desc   To verify that the main thread use StartSelfUIAbilityWithPidResult will return errorCode 16000134
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0100', Level.LEVEL3, (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithStartOptions_0100';
@@ -64,13 +64,13 @@ export default function NdkStartSelfUIAbilityWithPidResultTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200
-     * @tc.desc   : To verify that the child thread use StartSelfUIAbilityWithPidResult will return errorCode 0
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200
+     * @tc.number SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200
+     * @tc.desc   To verify that the child thread use StartSelfUIAbilityWithPidResult will return errorCode 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200', Level.LEVEL3, async (done: Function) => {
       const TEST_SUITE_NAME = 'SUB_Ability_AbilityRuntime_StartSelfUIAbilityWithPidResult_0200';

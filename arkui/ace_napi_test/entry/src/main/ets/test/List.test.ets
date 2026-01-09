@@ -21,8 +21,10 @@ import napiTaskApiTest from './NapiTask.test';
 import napiSendableTaskTest from './NapiSendableTask.test';
 import napiWorkerTest from './NapiWorker.test';
 import napiWorkerGCTest from './NapiWorkerGC.test';
+import napiRefTest from './NapiRef.test';
 
 export default function testsuite() {
+  napiRefTest();
   napiStringTest();
   napiBufferTest();
   napiSendableTest();

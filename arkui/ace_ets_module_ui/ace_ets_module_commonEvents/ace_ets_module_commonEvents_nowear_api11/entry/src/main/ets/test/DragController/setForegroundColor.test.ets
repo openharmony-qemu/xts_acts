@@ -42,12 +42,12 @@ export default function setForegroundColor() {
     });
 
     /**
-     * @tc.number    SUB_ACE_setForegroundColor_0100
-     * @tc.name      setForegroundColor_0100
-     * @tc.desc      setForegroundColor api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setForegroundColor_0100
+     * @tc.number SUB_ACE_setForegroundColor_0100
+     * @tc.desc   setForegroundColor api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setForegroundColor_0100', Level.LEVEL0, async (done: Function) => {
       console.info('setForegroundColor_0100 START');
@@ -66,12 +66,12 @@ export default function setForegroundColor() {
     });
 
     /**
-     * @tc.number    SUB_ACE_setForegroundColor_0200
-     * @tc.name      setForegroundColor_0200
-     * @tc.desc     getDragPreview api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   setForegroundColor_0200
+     * @tc.number SUB_ACE_setForegroundColor_0200
+     * @tc.desc   getDragPreview api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setForegroundColor_0200', Level.LEVEL0, async (done: Function) => {
       console.info('setForegroundColor_0200 START');

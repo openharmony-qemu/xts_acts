@@ -28,13 +28,13 @@ export default function KeyEventSetConsumedTest() {
       await Utils.pushPage(`keyEvent/${PAGE_TAG}`, done);
     });
 
-      /*
-      * @tc.number     : SUB_ARKUI_CAPI_KeyEvent_SetConsumed_0100
-      * @tc.name       : KeyEventSetConsumedTest_001
-      * @tc.desc       : testing KeyEvent GetType
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
+     /**
+      * @tc.name   KeyEventSetConsumedTest_001
+      * @tc.number SUB_ARKUI_CAPI_KeyEvent_SetConsumed_0100
+      * @tc.desc   testing KeyEvent GetType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
       */
      it('KeyEventSetConsumedTest_001', Level.LEVEL1, async (done: Function) => {
        console.info('KeyEventSetConsumedTest_001 START');

@@ -13,27 +13,39 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function moveAbilityToBackgroundTestStatic() {
   describe('ActsMoveAbilityToBackgroundTestStatic', () => {
-
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+    
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100`;
@@ -52,7 +64,7 @@ export default function moveAbilityToBackgroundTestStatic() {
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(JSON.stringify(err?.code) == '16000061'){
             done();
@@ -69,12 +81,12 @@ export default function moveAbilityToBackgroundTestStatic() {
     })
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground twice, expecting to return 16000065 on the second attempt.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground twice, expecting to return 16000065 on the second attempt.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_MoveAbilityToBackground_Static_0200`;
@@ -91,15 +103,21 @@ export default function moveAbilityToBackgroundTestStatic() {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+          if(JSON.stringify(err?.code) == '16000061'){
+            done();
+          }else{
+            expect().assertFail()
+            done();
+          }
         });
         await Utils.msSleep(2000);
         context.moveAbilityToBackground().then(() => {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000065);
           done();

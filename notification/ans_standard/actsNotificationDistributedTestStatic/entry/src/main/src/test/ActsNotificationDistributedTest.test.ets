@@ -22,10 +22,13 @@ export default function ActsNotificationDistributedTest() {
     console.info(TAG + 'SUB_NOTIFICATION_ANS_IS_DISTRIBUTED_ENABLED_TEST START')
 
     /**
-    * @tc.number  Sub_Notification_Ans_Enable_SetEnable_Static_5000
-    * @tc.name    Sub_Notification_Ans_Enable_SetEnable_Static_5000
-    * @tc.desc    Obtains whether the device supports distributed notification
-    */
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_Static_5000
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_5000
+     * @tc.desc   Obtains whether the device supports distributed notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>  {
       let TAG:string = "Sub_Notification_Ans_Enable_SetEnable_Static_5000"
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_5000 START`)
@@ -45,10 +48,13 @@ export default function ActsNotificationDistributedTest() {
 
 
     /**
-    * @tc.number  Sub_Notification_Ans_Enable_SetEnable_Static_5100
-    * @tc.name    Sub_Notification_Ans_Enable_SetEnable_Static_5100
-    * @tc.desc    Obtains whether the device supports distributed notification
-    */
+     * @tc.name   Sub_Notification_Ans_Enable_SetEnable_Static_5100
+     * @tc.number Sub_Notification_Ans_Enable_SetEnable_Static_5100
+     * @tc.desc   Obtains whether the device supports distributed notification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('Sub_Notification_Ans_Enable_SetEnable_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let TAG:string = "Sub_Notification_Ans_Enable_SetEnable_Static_5100"
       console.info(`${TAG} Sub_Notification_Ans_Enable_SetEnable_5100 START`)
@@ -58,7 +64,7 @@ export default function ActsNotificationDistributedTest() {
         let data1: boolean = data as boolean
         expect(data1).assertFalse()
         done()
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         console.info(`${TAG} isDistributedEnabled Promise err: ${err}`)
         expect(false).assertTrue()
         done()

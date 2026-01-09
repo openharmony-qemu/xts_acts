@@ -45,17 +45,18 @@ export default function HashSetTest1() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0001
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let hashSet = new HashSet<number>();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The HashSet's constructor cannot be directly invoked");
@@ -63,12 +64,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0200
-     * @tc.name       : testHashSet0002
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0200
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -78,12 +79,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0003
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<string>();
@@ -97,28 +98,28 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0004
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number[]>();
-      let c = [1, 2, 3];
+      let c: number[] = [1, 2, 3];
       hashSet.add(c);
       let res = hashSet.has(c);
       expect(String(res)).assertEqual('true');
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0005
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<InfoC>();
@@ -129,12 +130,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0006
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -148,12 +149,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0007
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -169,12 +170,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0008
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -188,12 +189,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0009
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -215,12 +216,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0100
-     * @tc.name       : testHashSet0010
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0100
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -237,12 +238,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0110
-     * @tc.name       : testHashSet0011
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0110
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<string>();
@@ -259,12 +260,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0120
-     * @tc.name       : testHashSet0012
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0120
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -284,12 +285,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0130
-     * @tc.name       : testHashSet0013
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashSet0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0130
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashSet0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashSet = new HashSet<number>();
@@ -309,12 +310,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0140
-     * @tc.name       : testHashSet0014
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0140
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<string>();
@@ -334,12 +335,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0150
-     * @tc.name       : testHashSet0015
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0150
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -357,12 +358,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0160
-     * @tc.name       : testHashSet0016
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0160
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<string>();
@@ -372,12 +373,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0170
-     * @tc.name       : testHashSet0017
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0170
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<string>();
@@ -387,12 +388,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0180
-     * @tc.name       : testHashSet0018
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0180
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -402,12 +403,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0190
-     * @tc.name       : testHashSet0019
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0190
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -417,12 +418,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0200
-     * @tc.name       : testHashSet0020
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0200
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<Object>();
@@ -433,12 +434,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0210
-     * @tc.name       : testHashSet0021
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0210
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -452,12 +453,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0220
-     * @tc.name       : testHashSet0022
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0220
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -469,12 +470,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0230
-     * @tc.name       : testHashSet0023
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0230
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -486,12 +487,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0240
-     * @tc.name       : testHashSet0024
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0240
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -506,12 +507,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0250
-     * @tc.name       : testHashSet0025
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0250
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -520,12 +521,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0260
-     * @tc.name       : testHashSet0026
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0260
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -534,12 +535,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0270
-     * @tc.name       : testHashSet0027
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0270
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -549,12 +550,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0280
-     * @tc.name       : testHashSet0028
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0280
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -563,12 +564,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0290
-     * @tc.name       : testHashSet0029
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0290
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -587,12 +588,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0300
-     * @tc.name       : testHashSet0030
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0300
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -611,12 +612,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0310
-     * @tc.name       : testHashSet0031
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0310
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -629,12 +630,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0320
-     * @tc.name       : testHashSet0032
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0320
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();
@@ -644,12 +645,12 @@ export default function HashSetTest1() {
       hashSet.add(4);
       hashSet.add(5);
       let res = hashSet.entries();
-      let temp: [Double, Double] | undefined = undefined;
+      let temp: [Double, Double] | undefined = res.next().value;
       let arr = new Array<number>();
-      do {
-        temp = res.next().value!;
+      while (temp !== undefined) {
         arr.push(temp[1]);
-      } while (temp !== undefined);
+        temp = res.next().value;
+      }
       arr.sort((a, b) => {
         return (a as number) - (b as number);
       });
@@ -660,12 +661,12 @@ export default function HashSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0330
-     * @tc.name       : testHashSet0033
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0330
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testHashSet0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let hashSet = new HashSet<number>();
@@ -685,12 +686,12 @@ export default function HashSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0340
-     * @tc.name       : testHashSet0034
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0340
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testHashSet0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let hashSet = new HashSet<string>();
@@ -705,12 +706,12 @@ export default function HashSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0350
-     * @tc.name       : testHashSet0035
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0350
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testHashSet0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let  hashSet = new HashSet();
@@ -725,12 +726,12 @@ export default function HashSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0360
-     * @tc.name       : testHashSet0036
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0360
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testHashSet0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let  hashSet = new HashSet<string>();
@@ -745,12 +746,12 @@ export default function HashSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0370
-     * @tc.name       : testHashSet0037
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0370
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testHashSet0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let  hashSet = new HashSet<number>();
@@ -765,12 +766,12 @@ export default function HashSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHSET_0380
-     * @tc.name       : testHashSet0038
-     * @tc.desc       : Test the function By HashSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashSet0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0380
+     * @tc.desc   Test the function By HashSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashSet0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashSet = new HashSet<number>();

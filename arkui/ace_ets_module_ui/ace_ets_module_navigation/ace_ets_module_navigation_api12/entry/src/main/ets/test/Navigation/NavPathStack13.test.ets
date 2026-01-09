@@ -45,9 +45,12 @@ export default function NavPathStack13() {
     });
 
     /**
+     * @tc.name   NavPathStack13_0100
      * @tc.number NavPathStack13_0100
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   NavPathStack13_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathStack13_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('NavPathStack13_0100 START');
@@ -70,9 +73,12 @@ export default function NavPathStack13() {
     });
 
     /**
+     * @tc.name   NavPathStack13_0200
      * @tc.number NavPathStack13_0200
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   NavPathStack13_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathStack13_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('NavPathStack13_0200 START');
@@ -99,9 +105,12 @@ export default function NavPathStack13() {
     });
 
     /**
+     * @tc.name   NavPathStack13_0300
      * @tc.number NavPathStack13_0300
-     * @tc.name testNavigation
-     * @tc.desc
+     * @tc.desc   NavPathStack13_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('NavPathStack13_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('NavPathStack13_0300 START');

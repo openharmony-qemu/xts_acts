@@ -110,7 +110,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0100
          * @tc.number SUB_Communication_NFC_nfctage_js_0100
          * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
@@ -131,7 +130,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0200
          * @tc.number SUB_Communication_NFC_nfctage_js_0200
          * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
@@ -152,7 +150,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0300
          * @tc.number SUB_Communication_NFC_nfctage_js_0300
          * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
@@ -173,7 +170,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0400
          * @tc.number SUB_Communication_NFC_nfctage_js_0400
          * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
@@ -194,7 +190,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0500
          * @tc.number SUB_Communication_NFC_nfctage_js_0500
          * @tc.desc   Obtains the DsfId value of the taginfo. The error code is 401
@@ -215,7 +210,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0600
          * @tc.number SUB_Communication_NFC_nfctage_js_0600
          * @tc.desc   This interface getBarcodetag The error code is 401
@@ -253,7 +247,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0700
          * @tc.number SUB_Communication_NFC_nfctage_js_0700
          * @tc.desc   This interface registerForegroundDispatch The error code is 401
@@ -273,7 +266,6 @@ export default function nfcTagABFVErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfctage_js_0800
          * @tc.number SUB_Communication_NFC_nfctage_js_0800
          * @tc.desc   This interface unregisterForegroundDispatch The error code is 401
@@ -287,8 +279,16 @@ export default function nfcTagABFVErrorTest() {
                 console.info('[NFC_test]08 nfc unregisterForegroundDispatch pass')
                 expect().assertFail();
             } catch (error) {
-                console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code)
-                expect(401).assertEqual(error.code);
+                if (error.code == 201) {
+                    console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code);
+                    expect(201).assertEqual(error.code);
+                } else if (error.code == 401) {
+                    console.info('[NFC_test]08 nfc unregisterForegroundDispatch error' + error + "/" + error.code);
+                    expect(401).assertEqual(error.code);
+                } else {
+                    console.info('[NFC_test]08 nfc unregisterForegroundDispatch failed');
+                    expect().assertFail();
+                }
             }
         })
 

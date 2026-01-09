@@ -157,7 +157,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0100
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -189,7 +188,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0200
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -216,7 +214,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0300
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -245,7 +242,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0400
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -275,7 +271,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0500
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0500
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -303,7 +298,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0600
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -331,7 +325,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0700
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -358,7 +351,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0800
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -386,7 +378,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_0900
          * @tc.desc   TEST 2900003 - Bluetooth switch is off.
@@ -413,7 +404,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1000
          * @tc.desc   TEST 2900003 - Bluetooth switch is off.
@@ -441,7 +431,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1100
          * @tc.desc   TEST 2900003 - Bluetooth switch is off.
@@ -468,7 +457,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1200
          * @tc.desc   TEST 2900003 - Bluetooth switch is off.
@@ -495,7 +483,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1600
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -524,7 +511,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1700
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -553,7 +539,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1800
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -582,7 +567,6 @@ export default function btManagerError003Test() {
 
     
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_1900
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -610,7 +594,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2000
          * @tc.desc   Test  2900003 - Bluetooth switch is off.
@@ -640,7 +623,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2100
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -669,7 +651,6 @@ export default function btManagerError003Test() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2200
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -698,7 +679,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2800
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -736,7 +716,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_2900
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -763,7 +742,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3000
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -826,7 +804,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3100
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3100
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -883,7 +860,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SwitchOff_3200
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3200
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -928,7 +904,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3300
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3300
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -955,7 +930,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3400
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -982,7 +956,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3600
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3600
          * @tc.desc   Test 2900003 - Bluetooth switch is off.
@@ -1014,7 +987,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3700
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3700
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -1040,7 +1012,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3800
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -1065,7 +1036,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3900
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_3900
          * @tc.desc   Test 2900003 - Bluetooth switch is off
@@ -1090,7 +1060,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_BLESCAN_0800
          * @tc.number SUB_COMMUNICATION_BTMANAGER_BLESCAN_0800
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -1145,7 +1114,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_4000
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCHOFF_4000
          * @tc.desc   Test ClassicStartBLEScan api.
@@ -1185,7 +1153,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BTMANAGER_SWITCH_0400
          * @tc.number SUB_COMMUNICATION_BTMANAGER_SWITCH_0400
          * @tc.desc   Test EnableBluetooth api by promise.
@@ -1213,7 +1180,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_A2DP_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_A2DP_0100
          * @tc.desc   test disable bt use api
@@ -1238,7 +1204,6 @@ export default function btManagerError003Test() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0100
          * @tc.desc   test disable bt use api
@@ -1264,7 +1229,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0200
          * @tc.desc   test disable bt use api
@@ -1290,7 +1254,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0300
          * @tc.desc   test disable bt use api
@@ -1315,7 +1278,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_ACCESS_0400
          * @tc.desc   test disable bt use api
@@ -1340,7 +1302,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BASEPROFILE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BASEPROFILE_0100
          * @tc.desc   test disable bt use api
@@ -1366,7 +1327,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BASEPROFILE_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BASEPROFILE_0200
          * @tc.desc   test disable bt use api
@@ -1392,7 +1352,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_SOCKET_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_SOCKET_0100
          * @tc.desc   test disable bt use api
@@ -1426,7 +1385,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_SOCKET_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_SOCKET_0200
          * @tc.desc   test disable bt use api
@@ -1459,7 +1417,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_SOCKET_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_SOCKET_0300
          * @tc.desc   test disable bt use api
@@ -1491,7 +1448,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0100
          * @tc.desc   test disable bt use api
@@ -1516,7 +1472,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0200
          * @tc.desc   test disable bt use api
@@ -1558,7 +1513,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0300
          * @tc.desc   test disable bt use api
@@ -1584,7 +1538,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0400
          * @tc.desc   test disable bt use api
@@ -1608,7 +1561,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0500
          * @tc.desc   test disable bt use api
@@ -1632,7 +1584,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0600
          * @tc.desc   test disable bt use api
@@ -1656,7 +1607,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0700
          * @tc.desc   test disable bt use api
@@ -1680,7 +1630,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0800
          * @tc.desc   test disable bt use api
@@ -1703,7 +1652,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0900
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_0900
          * @tc.desc   test disable bt use api
@@ -1727,7 +1675,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1000
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1000
          * @tc.desc   test disable bt use api
@@ -1769,7 +1716,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1100
          * @tc.desc   test disable bt use api
@@ -1795,7 +1741,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1200
          * @tc.desc   test disable bt use api
@@ -1819,7 +1764,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1300
          * @tc.desc   test disable bt use api
@@ -1842,7 +1786,6 @@ export default function btManagerError003Test() {
               done();
             })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1400
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1400
          * @tc.desc   test disable bt use api
@@ -1865,7 +1808,6 @@ export default function btManagerError003Test() {
               done();
             })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1500
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1500
          * @tc.desc   test disable bt use api
@@ -1888,7 +1830,6 @@ export default function btManagerError003Test() {
               done();
             })
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1600
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1600
          * @tc.desc   test disable bt use api
@@ -1912,7 +1853,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1700
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1700
          * @tc.desc   test disable bt use api
@@ -1954,7 +1894,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1800
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1800
          * @tc.desc   test disable bt use api
@@ -1980,7 +1919,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1900
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_1900
          * @tc.desc   test disable bt use api
@@ -2022,7 +1960,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2000
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2000
          * @tc.desc   test disable bt use api
@@ -2048,7 +1985,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2100
          * @tc.desc   test disable bt use api
@@ -2074,7 +2010,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2200
          * @tc.desc   test disable bt use api
@@ -2100,7 +2035,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_CONNECTION_2300
          * @tc.desc   test disable bt use api
@@ -2126,7 +2060,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0100
          * @tc.desc   test disable bt use api
@@ -2149,7 +2082,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0200
          * @tc.desc   test disable bt use api
@@ -2173,7 +2105,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0300
          * @tc.desc   test disable bt use api
@@ -2197,7 +2128,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0400
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0400
          * @tc.desc   test disable bt use api
@@ -2262,7 +2192,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0500
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0500
          * @tc.desc   test disable bt use api
@@ -2286,7 +2215,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0600
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0600
          * @tc.desc   test disable bt use api
@@ -2312,7 +2240,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0700
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0700
          * @tc.desc   test disable bt use api
@@ -2349,7 +2276,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0800
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0800
          * @tc.desc   test disable bt use api
@@ -2390,7 +2316,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0900
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_0900
          * @tc.desc   test disable bt use api
@@ -2416,7 +2341,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1400
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1400
          * @tc.desc   test getConnectedBLEDevices profile bt use api21
@@ -2441,7 +2365,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1000
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1000
          * @tc.desc   test disable bt use api
@@ -2496,7 +2419,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1100
          * @tc.desc   test disable bt use api
@@ -2535,7 +2457,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1200
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1200
          * @tc.desc   test disable bt use api
@@ -2575,7 +2496,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1300
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_DISABLED_BLE_1300
          * @tc.desc   test disable bt use api
@@ -2601,7 +2521,6 @@ export default function btManagerError003Test() {
             })
 
         /**
-         * @generated.time 2025-11-09 20:49:45
          * @tc.name   SUB_COMMUNICATION_BLUETOOTH_CONNECTION_GETREMOTEDEVICETRANSPORT_0100
          * @tc.number SUB_COMMUNICATION_BLUETOOTH_CONNECTION_GETREMOTEDEVICETRANSPORT_0100
          * @tc.desc   Test getRemoteDeviceTransport
@@ -2624,5 +2543,150 @@ export default function btManagerError003Test() {
             }
               done();
             })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_OFF_0100
+         * @tc.desc   Test updateConnectionParam Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_UPDATECONNECTIONPARAM_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    await gattClient.updateConnectionParam(ble.ConnectionParam.LOW_POWER);
+					console.info('[bt_arkts]get device updateConnectionParam is' + JSON.stringify(device))
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `updateConnectionParam get error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })        
+		
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100
+         * @tc.desc   Test getService Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let serviceUuid = '00001888-0000-1000-8000-00805f9b34fb';
+					let return_gattservice = gattServer.getService(serviceUuid);
+					console.info('[bt_arkts]gattServer getService get return_values is ' + JSON.stringify(return_gattservice));
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `getService error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_OFF_0100
+         * @tc.desc   Test getServices Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETSERVICES_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let return_list = gattServer.getServices();
+					console.info('[bt_arkts] return_list is' + JSON.stringify(return_list));
+					console.info('[bt_arkts] return_list length is ' + return_list.length);
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `getServices error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_OFF_0100
+         * @tc.desc   Test GattServer getConnectedState Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTSERVER_GETCONNECTEDSTATE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let return_status = gattServer.getConnectedState('01:02:00:02:03:01');
+					console.info('[bt_arkts]get status is' + JSON.stringify(return_status))
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `GattServer getConnectedState error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+	
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100
+         * @tc.desc   Test GattClientDevice getConnectedState Bluetooth is turned off.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHBLE_GATTCLIENTDEVICE_GETCONNECTEDSTATE_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    let return_status=gattClient.getConnectedState();
+					console.info('[bt_arkts]client ProfileConnectionState 0200 is' + JSON.stringify(return_status))
+                    expect(true).assertFalse();
+                } catch (e) {
+                    console.error( `GattClientDevice getConnectedState error, error code is: ${e.code}, error message is: ${e.message}`);
+                    expect(Number(e.code)).assertEqual(2900003);
+                }
+            } else {
+                expect(true).assertTrue();
+            }
+            done();
+        })
+        /**
+         * @tc.name   SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_OFF_0100
+         * @tc.number SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_OFF_0100
+         * @tc.desc   Test setLocalName api10
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('SUB_COMMUNICATION_BLUETOOTHCONNECTION_LOCALNAME_OFF_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
+            if (!closeUnsupport) {
+                try {
+                    connection.setLocalName('1111111111111111111111');
+                    await sleep(1000);
+                    let getNewName = bluetooth.getLocalName();
+                    console.info('[bluetooth_js] LocalName_0100 NewName = '+ JSON.stringify(getNewName));
+                    expect(true).assertEqual(Btname.LETTERS_TEST == getNewName);
+                } catch (err) {
+                    console.error("errCode:" + err.code + ",errMessage:" + err.message);
+                    expect(Number(err.code)).assertEqual(2900003);
+                }
+            }
+            done();
+        })
 })
 }

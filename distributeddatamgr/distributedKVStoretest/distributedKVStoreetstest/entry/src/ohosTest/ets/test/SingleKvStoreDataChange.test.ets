@@ -125,7 +125,6 @@ export default function SingleKvStoreDataChange(){
 
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0100
      * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, 对象1触发数据变更
@@ -233,7 +232,6 @@ export default function SingleKvStoreDataChange(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0200
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0200
      * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, 对象1取消订阅5个回调
@@ -344,7 +342,6 @@ export default function SingleKvStoreDataChange(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0300
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0300
      * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, closeKVStore 1次
@@ -455,7 +452,6 @@ export default function SingleKvStoreDataChange(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_DDM_DKV_SINGLEKVSTORE_DATACHANGE_0400
      * @tc.number SUB_DistributedData_KVStore_SDK_SingleKvDataChangeEtsApiTest_0400
      * @tc.desc   对象1订阅5个不同回调, 对象2订阅3个不同回调, closeKVStore 2次

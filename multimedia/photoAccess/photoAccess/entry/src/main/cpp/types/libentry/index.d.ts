@@ -42,11 +42,15 @@ export const testChangeRequestSaveCameraPhoto: (a: number) => ESObject;
 
 export const testChangeRequestSaveCameraVideo: (a: number) => ESObject;
 
+export const testChangeRequestSaveCameraImageHeif: (a: number) => ESObject;
+
 export const testChangeRequestDiscardCameraPhoto: (a: number) => ESObject;
 
 export const testChangeRequestRelease: (a: number) => ESObject;
 
 export const testManagerRequestImage: (a: number) => ESObject;
+
+export const testManagerQuickRequestImage: (a: number) => ESObject;
 
 export const testMediaAccessHelperApplyChanges: (a: number) => ESObject;
 

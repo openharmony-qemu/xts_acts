@@ -24,7 +24,7 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100);
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -40,12 +40,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0100
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0100
-     * @tc.name builtinsNumberIsSafeIntegerTest0100
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0100';
@@ -58,12 +58,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0200
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0200
-     * @tc.name builtinsNumberIsSafeIntegerTest0200
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0200';
@@ -76,12 +76,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0300
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0300
-     * @tc.name builtinsNumberIsSafeIntegerTest0300
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0300';
@@ -94,12 +94,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0400
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0400
-     * @tc.name builtinsNumberIsSafeIntegerTest0400
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0400';
@@ -113,12 +113,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
 
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0500
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0500
-     * @tc.name builtinsNumberIsSafeIntegerTest0500
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0500';
@@ -132,12 +132,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
 
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0600
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0600
-     * @tc.name builtinsNumberIsSafeIntegerTest0600
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0600';
@@ -151,12 +151,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
 
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0700
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0700
-     * @tc.name builtinsNumberIsSafeIntegerTest0700
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0700';
@@ -170,12 +170,12 @@ export default function BuiltinsNumberIsSafeIntegerTest() {
 
 
     /**
+     * @tc.name   builtinsNumberIsSafeIntegerTest0800
      * @tc.number SUB_BUILTINS_NUMBER_ISSAFEINTEGER_TEST_0800
-     * @tc.name builtinsNumberIsSafeIntegerTest0800
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberIsSafeIntegerTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberIsSafeIntegerTest0800';

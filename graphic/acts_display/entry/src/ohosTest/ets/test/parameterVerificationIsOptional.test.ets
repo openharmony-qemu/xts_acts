@@ -23,6 +23,7 @@ import { BusinessError, Callback } from '@ohos.base';
 import { UIContext } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
+import {Driver} from '@ohos.UiTest'
 
 function unexpectedError(error: BusinessError, caseName: string, apiName: string, TRUE_FLAG: boolean, done: Function) {
   let msgStr: string = 'jsUnittest ' + caseName + ' ' + apiName + ' failed, err: ';
@@ -51,23 +52,32 @@ export default function windowInterfaceOptionalParameterTest() {
     // let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
     const TRUE_FLAG: boolean = true;
     let currentDeviceIsPC = false;
-    beforeAll(() => {
+    beforeAll(async () => {
        context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
        windowStage = AppStorage.get('windowStage') as ohosWindow.WindowStage;
       // let deviceTypeInfo = deviceInfo.deviceType
       // currentDeviceIsPC = deviceTypeInfo === '2in1' ? true : false;
       // console.info('the value of the deviceType is :' + deviceInfo.deviceType);
-
+      try {
+        let driver = Driver.create();
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        console.log('findComponent allowed: ' + JSON.stringify(allowed));
+        if(allowed){
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent allowed failed: ' + JSON.stringify(err));
+      }
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0360
-     * @tc.name      : testDisplay_off_change_Deregister_All_Listeners
-     * @tc.desc      : Enable monitoring of screen status changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testDisplay_off_change_Deregister_All_Listeners
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0360
+     * @tc.desc   Enable monitoring of screen status changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testDisplay_off_change_Deregister_All_Listeners', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testDisplay_off_change_Deregister_All_Listeners';
@@ -148,12 +158,12 @@ export default function windowInterfaceOptionalParameterTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0370
-     * @tc.name      : testDisplay_off_change_Deregister_FirstCall_Listeners
-     * @tc.desc      : Enable monitoring of screen status changes.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+     * @tc.name   testDisplay_off_change_Deregister_FirstCall_Listeners
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0370
+     * @tc.desc   Enable monitoring of screen status changes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
      */
     it('testDisplay_off_change_Deregister_FirstCall_Listeners', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: Function) => {
       let caseName: string = 'testDisplay_off_change_Deregister_FirstCall_Listeners';

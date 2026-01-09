@@ -26,6 +26,8 @@
 #include "drawing_rect.h"
 #include "drawing_region.h"
 #include "drawing_round_rect.h"
+#include "drawing_canvas.h"
+#include "drawing_brush.h"
 #include "gtest/gtest.h"
 
 using namespace testing;
@@ -52,13 +54,13 @@ class DrawingNativePathPart3Test : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3700
- * @tc.name: testPathIsClosedNormal
- * @tc.desc: Test for checking if a path is closed using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathIsClosedNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3700
+ * @tc.desc   Test for checking if a path is closed using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsClosedNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -84,13 +86,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsClosedNormal, Function | SmallTes
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3701
- * @tc.name: testPathIsClosedNormal2
- * @tc.desc: Test for checking if a path is closed without closing it.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathIsClosedNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3701
+ * @tc.desc   Test for checking if a path is closed without closing it.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsClosedNormal2, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -110,13 +112,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsClosedNormal2, Function | SmallTe
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3702
- * @tc.name: testPathIsClosedNull
- * @tc.desc: Test for checking if a path is closed with NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathIsClosedNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3702
+ * @tc.desc   Test for checking if a path is closed with NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsClosedNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -131,13 +133,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsClosedNull, Function | SmallTest 
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3800
- * @tc.name: testPathGetPositionTangentNormal
- * @tc.desc: Test for getting position and tangent of a path using normal parameters with tangent flag set to true.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetPositionTangentNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3800
+ * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to true.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -161,13 +163,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentNormal, Function 
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3801
- * @tc.name: testPathGetPositionTangentNormal2
- * @tc.desc: Test for getting position and tangent of a path using normal parameters with tangent flag set to false.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetPositionTangentNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3801
+ * @tc.desc   Test for getting position and tangent of a path using normal parameters with tangent flag set to false.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentNormal2, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -191,13 +193,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentNormal2, Function
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3802
- * @tc.name: testPathGetPositionTangentNull
- * @tc.desc: Test for getting position and tangent of a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetPositionTangentNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3802
+ * @tc.desc   Test for getting position and tangent of a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -228,13 +230,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentNull, Function | 
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3803
- * @tc.name: testPathGetPositionTangentAbnormal
- * @tc.desc: Test for getting position and tangent of a path with abnormal parameters (non-float values).
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetPositionTangentAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3803
+ * @tc.desc   Test for getting position and tangent of a path with abnormal parameters (non-float values).
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -279,13 +281,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentAbnormal, Functio
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3804
- * @tc.name: testPathGetPositionTangentMaximal
- * @tc.desc: Test for getting position and tangent of a path with maximal values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetPositionTangentMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3804
+ * @tc.desc   Test for getting position and tangent of a path with maximal values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -331,13 +333,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetPositionTangentMaximal, Function
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3900
- * @tc.name: testPathOpNormal
- * @tc.desc: Test for performing path operations using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathOpNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3900
+ * @tc.desc   Test for performing path operations using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathOpNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -388,13 +390,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathOpNormal, Function | SmallTest | Le
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3901
- * @tc.name: testPathOpNull
- * @tc.desc: Test for performing path operations with NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathOpNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3901
+ * @tc.desc   Test for performing path operations with NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathOpNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -406,26 +408,28 @@ HWTEST_F(DrawingNativePathPart3Test, testPathOpNull, Function | SmallTest | Leve
     // add assert
     EXPECT_NE(src, nullptr);
     // 3. Call OH_Drawing_PathOp with the first parameter as nullptr, expect OH_DRAWING_ERROR_INVALID_PARAMETER
-    OH_Drawing_PathOp(nullptr, src, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
+    bool pathOp = OH_Drawing_PathOp(nullptr, src, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(pathOp, false);
     OH_Drawing_ErrorCodeReset();
     // 4. Call OH_Drawing_PathOp with the second parameter as nullptr, expect OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE
-    OH_Drawing_PathOp(path, nullptr, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
+    pathOp = OH_Drawing_PathOp(path, nullptr, OH_Drawing_PathOpMode::PATH_OP_MODE_INTERSECT);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(pathOp, false);
     // 5. Free the memory
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4000
- * @tc.name: testPathGetMatrixNormal
- * @tc.desc: Test for getting transformation matrix of a path using normal parameters with matrix flag set to true.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetMatrixNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4000
+ * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to true.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -461,13 +465,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixNormal, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4001
- * @tc.name: testPathGetMatrixNormal2
- * @tc.desc: Test for getting transformation matrix of a path using normal parameters with matrix flag set to false.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetMatrixNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4001
+ * @tc.desc   Test for getting transformation matrix of a path using normal parameters with matrix flag set to false.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixNormal2, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -503,13 +507,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixNormal2, Function | SmallT
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4002
- * @tc.name: testPathGetMatrixNull
- * @tc.desc: Test for getting transformation matrix of a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetMatrixNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4002
+ * @tc.desc   Test for getting transformation matrix of a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -537,13 +541,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixNull, Function | SmallTest
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4003
- * @tc.name: testPathGetMatrixAbnormal
- * @tc.desc: Test for getting transformation matrix of a path with abnormal parameters (non-float values).
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetMatrixAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4003
+ * @tc.desc   Test for getting transformation matrix of a path with abnormal parameters (non-float values).
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -569,13 +573,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixAbnormal, Function | Small
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4004
- * @tc.name: testPathGetMatrixMaximal
- * @tc.desc: Test for getting transformation matrix of a path with maximal values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetMatrixMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4004
+ * @tc.desc   Test for getting transformation matrix of a path with maximal values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -601,14 +605,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetMatrixMaximal, Function | SmallT
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4100
- * @tc.name: testPathGetSegmentNormal
- * @tc.desc: Testing the enumeration traversal of the interface for extracting path segments and appending them to the
- * target path
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetSegmentNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4100
+ * @tc.desc   Testing the enumeration traversal of the interface for extracting path segments and appending them to the
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -642,14 +645,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentNormal, Function | SmallT
     OH_Drawing_PathDestroy(dstPath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4101
- * @tc.name: testPathGetSegmentNull
- * @tc.desc: Tests when an interface that intercepts a path fragment and appends it to the target path passes a null
- * pointer or invalid parameter
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetSegmentNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4101
+ * @tc.desc   Tests when an interface that intercepts a path fragment and appends it to the target path passes a null
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -690,14 +692,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentNull, Function | SmallTes
     OH_Drawing_PathDestroy(dstPath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4102
- * @tc.name: testPathGetSegmentAbnormal
- * @tc.desc: Test cases where the function intercepts a path fragment and appends it to the destination path with an
- * passed exception parameter
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetSegmentAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4102
+ * @tc.desc   Test cases where the function intercepts a path fragment and appends it to the destination path with an
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -734,13 +735,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentAbnormal, Function | Smal
     OH_Drawing_PathDestroy(dstPath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4103
- * @tc.name: testPathGetSegmentMultiplies
- * @tc.desc: The test function intercepts the path fragment and appends it to the target path loop several times
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetSegmentMultiplies
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4103
+ * @tc.desc   The test function intercepts the path fragment and appends it to the target path loop several times
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentMultiplies, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate
@@ -767,13 +768,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetSegmentMultiplies, Function | Sm
     OH_Drawing_PathDestroy(dstPath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4200
- * @tc.name: testPathSetPathNormal
- * @tc.desc: test for testPathSetPathNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathSetPathNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4200
+ * @tc.desc   test for testPathSetPathNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathSetPathNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -796,13 +797,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathSetPathNormal, Function | SmallTest
     OH_Drawing_PathDestroy(other);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4201
- * @tc.name: testPathSetPathNull
- * @tc.desc: test for testPathSetPathNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathSetPathNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4201
+ * @tc.desc   test for testPathSetPathNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathSetPathNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -828,13 +829,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathSetPathNull, Function | SmallTest |
     OH_Drawing_PathDestroy(other);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4202
- * @tc.name: testPathSetPathMulptiCalls
- * @tc.desc: test for testPathSetPathMulptiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathSetPathMulptiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4202
+ * @tc.desc   test for testPathSetPathMulptiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathSetPathMulptiCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -860,13 +861,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathSetPathMulptiCalls, Function | Smal
     OH_Drawing_PathDestroy(other);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4300
- * @tc.name: testPathIsEmptyNormal
- * @tc.desc: test for testPathIsEmptyNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathIsEmptyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4300
+ * @tc.desc   test for testPathIsEmptyNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsEmptyNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -887,13 +888,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsEmptyNormal, Function | SmallTest
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4301
- * @tc.name: testPathIsEmptyNull
- * @tc.desc: test for testPathIsEmptyNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathIsEmptyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4301
+ * @tc.desc   test for testPathIsEmptyNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsEmptyNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -918,13 +919,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsEmptyNull, Function | SmallTest |
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4302
- * @tc.name: testPathIsEmptyMultipleCalls
- * @tc.desc: test for testPathIsEmptyMultipleCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathIsEmptyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4302
+ * @tc.desc   test for testPathIsEmptyMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsEmptyMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -948,13 +949,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsEmptyMultipleCalls, Function | Sm
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4400
- * @tc.name: testPathIsRectNormal
- * @tc.desc: test for testPathIsRectNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathIsRectNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4400
+ * @tc.desc   test for testPathIsRectNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsRectNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -988,13 +989,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsRectNormal, Function | SmallTest 
     OH_Drawing_PathDestroy(path2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4401
- * @tc.name: testPathIsRectNull
- * @tc.desc: test for testPathIsRectNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathIsRectNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4401
+ * @tc.desc   test for testPathIsRectNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsRectNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1026,13 +1027,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsRectNull, Function | SmallTest | 
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4402
- * @tc.name: testPathIsRectMultipleCalls
- * @tc.desc: test for testPathIsRectMultipleCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathIsRectMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4402
+ * @tc.desc   test for testPathIsRectMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsRectMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1059,13 +1060,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsRectMultipleCalls, Function | Sma
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4500
- * @tc.name: testPathGetFillTypeNormal
- * @tc.desc: test for testPathGetFillTypeNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetFillTypeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4500
+ * @tc.desc   test for testPathGetFillTypeNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetFillTypeNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1104,13 +1105,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetFillTypeNormal, Function | Small
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4501
- * @tc.name: testPathGetFillTypeNull
- * @tc.desc: test for testPathGetFillTypeNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetFillTypeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4501
+ * @tc.desc   test for testPathGetFillTypeNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetFillTypeNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1135,13 +1136,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetFillTypeNull, Function | SmallTe
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4502
- * @tc.name: testPathGetFillTypeMultipleCalls
- * @tc.desc: test for testPathGetFillTypeMultipleCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetFillTypeMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4502
+ * @tc.desc   test for testPathGetFillTypeMultipleCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathGetFillTypeMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1164,13 +1165,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathGetFillTypeMultipleCalls, Function 
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4600
- * @tc.name: testPathApproximateNormal
- * @tc.desc: test for testPathApproximateNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathApproximateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4600
+ * @tc.desc   test for testPathApproximateNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathApproximateNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1198,13 +1199,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathApproximateNormal, Function | Small
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4601
- * @tc.name: testPathApproximateNull
- * @tc.desc: test for testPathApproximateNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathApproximateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4601
+ * @tc.desc   test for testPathApproximateNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathApproximateNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1236,13 +1237,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathApproximateNull, Function | SmallTe
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4602
- * @tc.name: testPathApproximateAbnormal
- * @tc.desc: test for testPathApproximateAbnormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathApproximateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4602
+ * @tc.desc   test for testPathApproximateAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathApproximateAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1271,13 +1272,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathApproximateAbnormal, Function | Sma
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4603
- * @tc.name: testPathApproximateMultiCalls
- * @tc.desc: test for testPathApproximateMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathApproximateMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4603
+ * @tc.desc   test for testPathApproximateMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathApproximateMultiCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1300,13 +1301,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathApproximateMultiCalls, Function | S
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4700
- * @tc.name: testPathInterpolateNormal
- * @tc.desc: test for testPathInterpolateNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathInterpolateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4700
+ * @tc.desc   test for testPathInterpolateNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1333,11 +1334,11 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateNormal, Function | Small
     EXPECT_NE(interpolatePath, nullptr);
     bool result = false;
     // 10. Call the interface OH_Drawing_PathInterpolate to verify the straight line and the straight line.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other1, 0.5, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other1, 1.0, &result, interpolatePath);
     EXPECT_EQ(result, true);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 11. Call the interface OH_Drawing_PathInterpolate to verify straight line and arc.
-    errorCode = OH_Drawing_PathInterpolate(path, other2, 0.5, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, other2, 1.0, &result, interpolatePath);
     EXPECT_EQ(result, false);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 9. Free the memory.
@@ -1347,13 +1348,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateNormal, Function | Small
     OH_Drawing_PathDestroy(interpolatePath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4701
- * @tc.name: testPathInterpolateNull
- * @tc.desc: test for testPathInterpolateNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathInterpolateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4701
+ * @tc.desc   test for testPathInterpolateNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1398,13 +1399,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateNull, Function | SmallTe
     OH_Drawing_PathDestroy(interpolatePath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4702
- * @tc.name: testPathInterpolateAbnormal
- * @tc.desc: test for testPathInterpolateAbnormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathInterpolateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4702
+ * @tc.desc   test for testPathInterpolateAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1426,10 +1427,10 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateAbnormal, Function | Sma
     EXPECT_NE(interpolatePath, nullptr);
     // 8. The third parameter of the verification interface is passed as a negative number.
     bool result = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, -0.5, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, -1.0, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 9. The third parameter of the verification interface is passed as a number greater than 1.
-    errorCode = OH_Drawing_PathInterpolate(path, other, 1.5, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, other, 2.0, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 10. Free the memory.
     OH_Drawing_PathDestroy(path);
@@ -1437,13 +1438,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateAbnormal, Function | Sma
     OH_Drawing_PathDestroy(interpolatePath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4703
- * @tc.name: testPathInterpolateMultiCalls
- * @tc.desc: test for testPathInterpolateMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathInterpolateMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4703
+ * @tc.desc   test for testPathInterpolateMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateMultiCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1476,13 +1477,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateMultiCalls, Function | S
     OH_Drawing_PathDestroy(interpolatePath);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4800
- * @tc.name: testPathIsInterpolateNormal
- * @tc.desc: test for testPathIsInterpolateNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathIsInterpolateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4800
+ * @tc.desc   test for testPathIsInterpolateNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsInterpolateNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1519,13 +1520,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsInterpolateNormal, Function | Sma
     OH_Drawing_PathDestroy(other2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4801
- * @tc.name: testPathIsInterpolateNull
- * @tc.desc: test for testPathIsInterpolateNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathIsInterpolateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4801
+ * @tc.desc   test for testPathIsInterpolateNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsInterpolateNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1560,13 +1561,13 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsInterpolateNull, Function | Small
     OH_Drawing_PathDestroy(other);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4802
- * @tc.name: testPathIsInterpolateMultiCalls
- * @tc.desc: test for testPathIsInterpolateMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathIsInterpolateMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4802
+ * @tc.desc   test for testPathIsInterpolateMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart3Test, testPathIsInterpolateMultiCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1594,6 +1595,286 @@ HWTEST_F(DrawingNativePathPart3Test, testPathIsInterpolateMultiCalls, Function |
     // 8. Free the memory.
     OH_Drawing_PathDestroy(path);
     OH_Drawing_PathDestroy(other);
+}
+
+/**
+ * @tc.name   testPathIsInverseFillTypeNormalOne
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4900
+ * @tc.desc   test for testPathIsInverseFillTypeNormalOne
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIsInverseFillTypeNormalOne, Function | SmallTest | Level0) {
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    bool isInverseFillType = false;
+    // 设置路径初始填充类型为「正向缠绕填充」（PATH_FILL_TYPE_WINDING）
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_WINDING);
+    OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xffff0000);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 切换路径的反向填充状态：调用ToggleInverseFillType接口
+    OH_Drawing_ErrorCode code1 = OH_Drawing_PathToggleInverseFillType(path);
+    code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, true);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xff00ff00);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 销毁路径对象，释放内存资源
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_BrushDestroy(brush);
+}
+
+/**
+ * @tc.name   testPathIsInverseFillTypeNormalTwo
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4901
+ * @tc.desc   test for testPathIsInverseFillTypeNormalTwo
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIsInverseFillTypeNormalTwo, Function | SmallTest | Level0) {
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    bool isInverseFillType = false;
+    // 设置路径初始填充类型为（PATH_FILL_TYPE_EVEN_ODD）
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_EVEN_ODD);
+    OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xffff0000);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 切换路径的反向填充状态：调用ToggleInverseFillType接口
+    OH_Drawing_ErrorCode code1 = OH_Drawing_PathToggleInverseFillType(path);
+    code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, true);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xff00ff00);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 销毁路径对象，释放内存资源
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_BrushDestroy(brush);
+}
+
+/**
+ * @tc.name   testPathIsInverseFillTypeNormalThree
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4902
+ * @tc.desc   test for testPathIsInverseFillTypeNormalThree
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIsInverseFillTypeNormalThree, Function | SmallTest | Level0) {
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    bool isInverseFillType = false;
+    // 设置路径初始填充类型为（PATH_FILL_TYPE_INVERSE_WINDING）
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_INVERSE_WINDING);
+    OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, true);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xffff0000);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 切换路径的反向填充状态：调用ToggleInverseFillType接口
+    OH_Drawing_ErrorCode code1 = OH_Drawing_PathToggleInverseFillType(path);
+    code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xff00ff00);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 销毁路径对象，释放内存资源
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_BrushDestroy(brush);
+}
+
+/**
+ * @tc.name   testPathIsInverseFillTypeNormalFour
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4903
+ * @tc.desc   test for testPathIsInverseFillTypeNormalFour
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIsInverseFillTypeNormalFour, Function | SmallTest | Level0) {
+    OH_Drawing_Brush *brush = OH_Drawing_BrushCreate();
+    OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    bool isInverseFillType = false;
+    // 设置路径初始填充类型为（PATH_FILL_TYPE_INVERSE_EVEN_ODD）
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_INVERSE_EVEN_ODD);
+    OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, true);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 200.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 300.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xffff0000);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 切换路径的反向填充状态：调用ToggleInverseFillType接口
+    OH_Drawing_ErrorCode code1 = OH_Drawing_PathToggleInverseFillType(path);
+    code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
+    OH_Drawing_PathAddCircle(path, 600.0, 200.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_PathAddCircle(path, 700.0, 300.0, 100.0, PATH_DIRECTION_CW);
+    OH_Drawing_BrushSetColor(brush, 0xff00ff00);
+    OH_Drawing_CanvasAttachBrush(canvas, brush);
+    OH_Drawing_CanvasDrawPath(canvas, path);
+    OH_Drawing_CanvasDetachBrush(canvas);
+    // 销毁路径对象，释放内存资源
+    OH_Drawing_PathDestroy(path);
+    OH_Drawing_BrushDestroy(brush);
+}
+
+/**
+ * @tc.name   testPathIsInverseFillTypeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4904
+ * @tc.desc   test for testPathIsInverseFillTypeNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIsInverseFillTypeNull, Function | SmallTest | Level3) {
+    // 1. 创建有效的路径对象，作为后续测试的基础资源
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    // 2. 初始化反向填充状态标记，默认值设为false，用于后续结果校验
+    bool isInverseFillType = false;
+    // 3. 预设路径填充类型为正向缠绕填充（PATH_FILL_TYPE_WINDING），确保路径本身状态正常
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_WINDING);
+    // 4. 测试场景1：传入nullptr作为路径对象入参，调用获取反向填充状态接口
+    // 预期：接口返回无效参数错误码，且输出参数isInverseFillType保持初始值false
+    OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(nullptr, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);  // 验证输出参数未被修改
+    EXPECT_EQ(code, OH_DRAWING_ERROR_INCORRECT_PARAMETER);  // 验证接口返回正确的错误码
+    // 5. 测试场景2：传入有效的路径对象，但反向填充状态输出参数为nullptr
+    // 预期：接口返回无效参数错误码，且初始状态值isInverseFillType仍为false
+    OH_Drawing_ErrorCode code1 = OH_Drawing_PathIsInverseFillType(path, nullptr);
+    EXPECT_EQ(isInverseFillType, false);  // 验证初始状态值未被修改
+    EXPECT_EQ(code1, OH_DRAWING_ERROR_INCORRECT_PARAMETER);  // 验证接口返回正确的错误码
+    // 6. 销毁路径对象，释放内存资源，避免内存泄漏
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathToggleInverseFillTypeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4905
+ * @tc.desc   test for testPathToggleInverseFillTypeNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathToggleInverseFillTypeNull, Function | SmallTest | Level3) {
+    // 1. 创建路径对象（基础资源初始化）
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    // 2. 初始化反向填充状态标记，默认值为false
+    bool isInverseFillType = false;
+    // 3. 设置路径填充类型为「非反向缠绕填充」（WINDING为默认正向填充规则）
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_WINDING);
+    // 4. 获取路径当前反向填充状态，验证返回值和错误码
+    OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);  // 验证状态：非反向填充
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);  // 验证接口调用成功
+    // 5. 测试空指针入参的异常场景：调用切换反向填充接口，传入nullptr
+    OH_Drawing_ErrorCode code1 = OH_Drawing_PathToggleInverseFillType(nullptr);
+    EXPECT_EQ(isInverseFillType, false);  // 状态未被修改，仍为false
+    EXPECT_EQ(code1, OH_DRAWING_ERROR_INCORRECT_PARAMETER);  // 验证返回无效参数错误码
+    // 6. 销毁路径对象，释放内存资源（防止内存泄漏）
+    code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);  // 验证状态：非反向填充
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);  // 验证接口调用成功
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathIsInverseFillTypeCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4906
+ * @tc.desc   test for testPathIsInverseFillTypeCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathIsInverseFillTypeCalls, Function | SmallTest | Level3) {
+    // 1. 创建路径对象：基础资源初始化，用于循环校验接口稳定性
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    // 2. 初始化反向填充状态标记，默认值为false，用于循环校验
+    bool isInverseFillType = false;
+    // 3. 设置路径填充类型为「正向缠绕填充」（PATH_FILL_TYPE_WINDING）
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_WINDING);
+    // 4. 循环10次调用获取反向填充状态接口，验证接口返回结果的稳定性
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+        EXPECT_EQ(isInverseFillType, false);
+        EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    }
+    // 5. 销毁路径对象，释放内存资源，避免内存泄漏
+    OH_Drawing_PathDestroy(path);
+}
+
+/**
+ * @tc.name   testPathToggleInverseFillTypeCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_4907
+ * @tc.desc   test for testPathToggleInverseFillTypeCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativePathPart3Test, testPathToggleInverseFillTypeCalls, Function | SmallTest | Level3) {
+    // 1. 创建路径对象：基础资源初始化，用于循环切换填充状态测试
+    OH_Drawing_Path* path = OH_Drawing_PathCreate();
+    // 2. 初始化反向填充状态标记，默认值为false
+    bool isInverseFillType = false;
+    // 3. 设置路径初始填充类型为「正向缠绕填充」（PATH_FILL_TYPE_WINDING）
+    OH_Drawing_PathSetFillType(path, OH_Drawing_PathFillType::PATH_FILL_TYPE_WINDING);
+    // 4. 校验初始反向填充状态：确认未切换前为非反向填充
+    OH_Drawing_ErrorCode code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+    EXPECT_EQ(isInverseFillType, false);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+    // 5. 循环10次调用切换反向填充状态接口，验证状态交替切换的稳定性
+    for (int i = 0; i < 10; i++) {
+        OH_Drawing_ErrorCode code1 = OH_Drawing_PathToggleInverseFillType(path);
+        code = OH_Drawing_PathIsInverseFillType(path, &isInverseFillType);
+        EXPECT_EQ(code1, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(code, OH_DRAWING_SUCCESS);
+        // 验证状态按预期交替：第偶数次循环（0/2/4...）切换后为true，奇数次（1/3/5...）切回false
+        EXPECT_EQ(isInverseFillType, (i % 2 == 0));
+    }
+    // 6. 销毁路径对象，释放内存资源，避免内存泄漏
+    OH_Drawing_PathDestroy(path);
 }
 } // namespace Drawing
 } // namespace Rosen

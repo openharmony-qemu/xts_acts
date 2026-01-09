@@ -49,10 +49,12 @@ export default function MultiEntryUndefined() {
 
 
     /**
-     * @tc.number    MultiEntryUndefined_0100
-     * @tc.name      MultiEntryUndefined_0100
-     * @tc.desc      Test and MultiNavPathStack.pop return undefined
-     * @tc.level     Level 0
+     * @tc.name   MultiEntryUndefined_0100
+     * @tc.number MultiEntryUndefined_0100
+     * @tc.desc   Test and MultiNavPathStack.pop return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntryUndefined_0100', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntryUndefined_0100 START');
@@ -75,10 +77,12 @@ export default function MultiEntryUndefined() {
 
     
     /**
-     * @tc.number    MultiEntryUndefined_0200
-     * @tc.name      MultiEntryUndefined_0200
-     * @tc.desc      Test and MultiNavPathStack.pop with param return undefined
-     * @tc.level     Level 0
+     * @tc.name   MultiEntryUndefined_0200
+     * @tc.number MultiEntryUndefined_0200
+     * @tc.desc   Test and MultiNavPathStack.pop with param return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntryUndefined_0200', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntryUndefined_0200 START');
@@ -102,10 +106,12 @@ export default function MultiEntryUndefined() {
 
     
     /**
-     * @tc.number    MultiEntryUndefined_0300
-     * @tc.name      MultiEntryUndefined_0300
-     * @tc.desc      Test MultiNavPathStack getAllPathName return [] 
-     * @tc.level     Level 0
+     * @tc.name   MultiEntryUndefined_0300
+     * @tc.number MultiEntryUndefined_0300
+     * @tc.desc   Test MultiNavPathStack getAllPathName return []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntryUndefined_0300', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntryUndefined_0300 START');
@@ -128,10 +134,12 @@ export default function MultiEntryUndefined() {
     });
 
     /**
-     * @tc.number    MultiEntryUndefined_0400
-     * @tc.name      MultiEntryUndefined_0400
-     * @tc.desc      Test MultiNavPathStack getParamByIndex return Undefined
-     * @tc.level     Level 0
+     * @tc.name   MultiEntryUndefined_0400
+     * @tc.number MultiEntryUndefined_0400
+     * @tc.desc   Test MultiNavPathStack getParamByIndex return Undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntryUndefined_0400', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntryUndefined_0400 START');
@@ -154,10 +162,12 @@ export default function MultiEntryUndefined() {
     });
 
     /**
-     * @tc.number    MultiEntryUndefined_0500
-     * @tc.name      MultiEntryUndefined_0500
-     * @tc.desc      Test MultiNavPathStack getParamByName return []
-     * @tc.level     Level 0
+     * @tc.name   MultiEntryUndefined_0500
+     * @tc.number MultiEntryUndefined_0500
+     * @tc.desc   Test MultiNavPathStack getParamByName return []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntryUndefined_0500', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntryUndefined_0500 START');
@@ -180,10 +190,12 @@ export default function MultiEntryUndefined() {
     });
 
     /**
-     * @tc.number    MultiEntryUndefined_0600
-     * @tc.name      MultiEntryUndefined_0600
-     * @tc.desc      Test MultiNavPathStack getIndexByName return []
-     * @tc.level     Level 0
+     * @tc.name   MultiEntryUndefined_0600
+     * @tc.number MultiEntryUndefined_0600
+     * @tc.desc   Test MultiNavPathStack getIndexByName return []
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntryUndefined_0600', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntryUndefined_0600 START');
@@ -206,10 +218,12 @@ export default function MultiEntryUndefined() {
     });
 
     /**
-     * @tc.number    MultiEntryUndefined_0700
-     * @tc.name      MultiEntryUndefined_0700
-     * @tc.desc      Test MultiNavPathStack switchFullScreenState return false
-     * @tc.level     Level 0
+     * @tc.name   MultiEntryUndefined_0700
+     * @tc.number MultiEntryUndefined_0700
+     * @tc.desc   Test MultiNavPathStack switchFullScreenState return false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntryUndefined_0700', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntryUndefined_0700 START');
@@ -231,5 +245,30 @@ export default function MultiEntryUndefined() {
       done();
     });
 
+    /**
+     * @tc.number    MultiEntryUndefined_0800
+     * @tc.name      MultiEntryUndefined_0800
+     * @tc.desc      Test MultiNavPathStack getParamByIndex -1
+     * @tc.level     Level 0
+     */
+    it('MultiEntryUndefined_0800', Level.LEVEL0, async (done: Function) => {
+      console.info('MultiEntryUndefined_0800 START');
+      await CommonFunc.sleep(500);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(200);
+
+      let btn1 = await driver.findComponent(ON.text('getParamByIndex-1'));
+      await btn1.click()
+      console.info('[MultiEntryUndefined_0800] btn1 click');
+      await CommonFunc.sleep(1000);
+
+      let index: NavPathInfo | undefined = AppStorage.get('index')
+      expect(index).assertEqual(undefined);
+      AppStorage.delete('index');
+
+      console.info('MultiEntryUndefined_0800 END');
+      done();
+    });
   })
 }

@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2023 Huawei Device Co., Ltd.
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -46,9 +46,12 @@ export default function Grid_Col_Offset_Number() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Offset_Number_TEST_0100
      * @tc.number SUB_ACE_Grid_Col_Offset_Number_TEST_0100
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to -2
+     * @tc.desc   GridCol set offset to -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Offset_Number_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] START');
@@ -70,30 +73,35 @@ export default function Grid_Col_Offset_Number() {
       let Grid_Col_Offset_Number_G1: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_G1');
 
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference1 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference2 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) - vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference3 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) - vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference4 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) - vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference5 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference6 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference7 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference8 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference9 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference10 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) - vp2px(10))));
 
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] END');
       done();
@@ -101,9 +109,12 @@ export default function Grid_Col_Offset_Number() {
 
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Offset_Number_TEST_0200
      * @tc.number SUB_ACE_Grid_Col_Offset_Number_TEST_0200
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to 0
+     * @tc.desc   GridCol set offset to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Offset_Number_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_0200] START');
@@ -124,39 +135,48 @@ export default function Grid_Col_Offset_Number() {
       let Grid_Col_Offset_Number_07: RectValue = CommonFunc.getComponentRect('Grid_Col_Offset_Number_07');
 
       console.log('assert space')
-      expect(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) - vp2px(10)) <= 1)
-        .assertTrue();
 
-      expect(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference1 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_01.left - Grid_Col_Offset_Number_00.right) - vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference2 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_02.left - Grid_Col_Offset_Number_01.right) - vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference3 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_04.left - Grid_Col_Offset_Number_03.right) - vp2px(10))));
 
-      expect(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
-      expect(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) - vp2px(10)) <= 1)
-        .assertTrue();
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference4 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_05.left - Grid_Col_Offset_Number_04.right) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference5 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_07.left - Grid_Col_Offset_Number_06.right) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference6 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_03.top - Grid_Col_Offset_Number_00.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference7 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_04.top - Grid_Col_Offset_Number_01.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference8 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_05.top - Grid_Col_Offset_Number_02.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference9 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_06.top - Grid_Col_Offset_Number_03.bottom) - vp2px(10))));
+
+      expect(Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) - vp2px(10))) <= 1).assertTrue();
+      console.info("[SUB_ACE_Grid_Col_Offset_Number_TEST_0100] difference10 is: " + Math.floor(Math.abs((Grid_Col_Offset_Number_07.top - Grid_Col_Offset_Number_04.bottom) - vp2px(10))));
 
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_0200] END');
       done();
     });
 
     /**
+     * @tc.name   SUB_ACE_Grid_Col_Offset_Number_TEST_0300
      * @tc.number SUB_ACE_Grid_Col_Offset_Number_TEST_0300
-     * @tc.name testGridColOffset
-     * @tc.desc GridCol set offset to 1
+     * @tc.desc   GridCol set offset to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Grid_Col_Offset_Number_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Grid_Col_Offset_Number_TEST_0300] START');

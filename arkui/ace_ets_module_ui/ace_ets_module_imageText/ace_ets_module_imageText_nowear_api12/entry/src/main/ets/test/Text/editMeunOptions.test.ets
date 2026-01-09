@@ -29,11 +29,11 @@ export default function editMeunOptionsTest() {
         router.clear();
         let pages = router.getState();
         console.info("get editMeunOptionsTest state pages:" + JSON.stringify(pages));
+        let result = await router.replaceUrl(options);
+        await CommonFunc.sleep(2000);
+        console.info("push editMeunOptionsTest page result:" + JSON.stringify(result));
         if (!("editMeunOptions" == pages.name)) {
           console.info("get editMeunOptionsTest pages.name:" + JSON.stringify(pages.name));
-          let result = await router.pushUrl(options);
-          await CommonFunc.sleep(2000);
-          console.info("push editMeunOptionsTest page result:" + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push editMeunOptionsTest page error:" + err);
@@ -43,12 +43,12 @@ export default function editMeunOptionsTest() {
     });
 
     /**
-     * @tc.number    editMeunOptionsTest_0100
-     * @tc.name      editMeunOptionsTest_0100
-     * @tc.desc      Text: editMeunOptions
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMeunOptionsTest_0100
+     * @tc.number editMeunOptionsTest_0100
+     * @tc.desc   Text: editMeunOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('editMeunOptionsTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('editMeunOptionsTest_0100 START');
@@ -63,12 +63,12 @@ export default function editMeunOptionsTest() {
     });
 
     /**
-     * @tc.number    editMeunOptionsTest_0300
-     * @tc.name      editMeunOptionsTest_0300
-     * @tc.desc      TextInput: editMeunOptions
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMeunOptionsTest_0300
+     * @tc.number editMeunOptionsTest_0300
+     * @tc.desc   TextInput: editMeunOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('editMeunOptionsTest_0300', Level.LEVEL2, async (done: Function) => {
       console.info('editMeunOptionsTest_0300 START');
@@ -83,12 +83,12 @@ export default function editMeunOptionsTest() {
     });
 
     /**
-     * @tc.number    editMeunOptionsTest_0200
-     * @tc.name      editMeunOptionsTest_0200
-     * @tc.desc      TextArea: editMeunOptions
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   editMeunOptionsTest_0200
+     * @tc.number editMeunOptionsTest_0200
+     * @tc.desc   TextArea: editMeunOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('editMeunOptionsTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('editMeunOptionsTest_0200 START');

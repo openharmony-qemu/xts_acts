@@ -24,12 +24,12 @@ export default function graphicSendableImageInterfaceTest() {
     beforeAll(async ()=> {
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_001
-     * @tc.name      : testConvertFromPixelMap
-     * @tc.desc      : To test the interface of sendableImage. Create a PixelMap under senableImage using PixelMap under image, and return the PixelMap result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testConvertFromPixelMap
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_001
+     * @tc.desc   To test the interface of sendableImage. Create a PixelMap under senableImage using PixelMap under image, and return the PixelMap result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertFromPixelMap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " ====testConvertFromPixelMap==== "
@@ -61,12 +61,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_002
-     * @tc.name      : testConvertToPixelmap
-     * @tc.desc      : To test the interface of sendableImage. Create a PixelMap under the image using the PixelMap under the senableImage, and return the PixelMap result synchronously
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testConvertToPixelmap
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_002
+     * @tc.desc   To test the interface of sendableImage. Create a PixelMap under the image using the PixelMap under the senableImage, and return the PixelMap result synchronously
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvertToPixelmap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testConvertToPixelmap= "
@@ -91,12 +91,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_003
-     * @tc.name      : testReadPixelsSync
-     * @tc.desc      : To test the interface of sendableImage. Reads the image data in the area and returns the result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testReadPixelsSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_003
+     * @tc.desc   To test the interface of sendableImage. Reads the image data in the area and returns the result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testReadPixelsSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testReadPixelsSync= "
@@ -132,12 +132,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_004
-     * @tc.name      : testWriteBufferToPixels
-     * @tc.desc      : To test the interface of sendableImage. Reads the image data in the buffer, and the result is written to PixelMap, returned as a Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWriteBufferToPixels
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_004
+     * @tc.desc   To test the interface of sendableImage. Reads the image data in the buffer, and the result is written to PixelMap, returned as a Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWriteBufferToPixels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testWriteBufferToPixels= "
@@ -169,12 +169,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_005
-     * @tc.name      : testOpacitySync
-     * @tc.desc      : To test the interface of sendableImage. Sets the transparency ratio of the PixelMap and initializes the PixelMap.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOpacitySync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_005
+     * @tc.desc   To test the interface of sendableImage. Sets the transparency ratio of the PixelMap and initializes the PixelMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOpacitySync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testOpacitySync= "
@@ -199,12 +199,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_006
-     * @tc.name      : testCreateAlphaPixelmapSync
-     * @tc.desc      : To test the interface of sendableImage. Generates a PixelMap containing only alpha channel information based on the alpha channel information, which can be used for shadow effects and returned as a Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateAlphaPixelmapSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_006
+     * @tc.desc   To test the interface of sendableImage. Generates a PixelMap containing only alpha channel information based on the alpha channel information, which can be used for shadow effects and returned as a Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateAlphaPixelmapSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testCreateAlphaPixelmapSync= "
@@ -228,12 +228,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_007
-     * @tc.name      : tesTtranslateSync
-     * @tc.desc      : To test the interface of sendableImage. The image is transformed according to the input coordinates and the result is returned synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   tesTtranslateSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_007
+     * @tc.desc   To test the interface of sendableImage. The image is transformed according to the input coordinates and the result is returned synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('tesTtranslateSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =tesTtranslateSync= "
@@ -259,12 +259,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_008
-     * @tc.name      : testRotateSync
-     * @tc.desc      : To test the interface of sendableImage. Rotates the picture according to the angle entered and returns the result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRotateSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_008
+     * @tc.desc   To test the interface of sendableImage. Rotates the picture according to the angle entered and returns the result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRotateSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testRotateSync= "
@@ -289,12 +289,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_009
-     * @tc.name      : testFlipSync
-     * @tc.desc      : To test the interface of sendableImage. Flips the image based on the conditions entered and returns the result synchronously.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFlipSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_009
+     * @tc.desc   To test the interface of sendableImage. Flips the image based on the conditions entered and returns the result synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlipSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testFlipSync= "
@@ -320,12 +320,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_010
-     * @tc.name      : testCropSync
-     * @tc.desc      : To test the interface of sendableImage. Crops the picture to the size you enter.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCropSync
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_010
+     * @tc.desc   To test the interface of sendableImage. Crops the picture to the size you enter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCropSync', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testCropSync= "
@@ -354,12 +354,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_011
-     * @tc.name      : testScale
-     * @tc.desc      : To test the interface of sendableImage. Scales the image according to the width and height entered, and returns it as a Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testScale
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_011
+     * @tc.desc   To test the interface of sendableImage. Scales the image according to the width and height entered, and returns it as a Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScale', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testScale= "
@@ -389,12 +389,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_012
-     * @tc.name      : testTranslate
-     * @tc.desc      : To test the interface of sendableImage. Change the position of the image based on the coordinates entered and return it as a Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testTranslate
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_012
+     * @tc.desc   To test the interface of sendableImage. Change the position of the image based on the coordinates entered and return it as a Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTranslate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testTranslate= "
@@ -424,12 +424,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_013
-     * @tc.name      : testRotate
-     * @tc.desc      : To test the interface of sendableImage. Rotates the image according to the angle entered, and returns as a Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRotate
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_013
+     * @tc.desc   To test the interface of sendableImage. Rotates the image according to the angle entered, and returns as a Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRotate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testRotate= "
@@ -458,12 +458,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_014
-     * @tc.name      : testFlip
-     * @tc.desc      : To test the interface of sendableImage. Flips the image based on the conditions entered, and returns it as a Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testFlip
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_014
+     * @tc.desc   To test the interface of sendableImage. Flips the image based on the conditions entered, and returns it as a Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlip', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testFlip= "
@@ -493,12 +493,12 @@ export default function graphicSendableImageInterfaceTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_015
-     * @tc.name      : testCrop
-     * @tc.desc      : To test the interface of sendableImage. Crops the image according to the size entered, and returns it as a Promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCrop
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICIMAGE_JS_API_015
+     * @tc.desc   To test the interface of sendableImage. Crops the image according to the size entered, and returns it as a Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCrop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let msg = " =testCrop= "
@@ -532,12 +532,12 @@ export default function graphicSendableImageInterfaceTest() {
     })
 
     /**
-     * @tc.number    ImagePixelMapTest
-     * @tc.name      sendableImagePixelMapErrorCode_0100
-     * @tc.desc      image pixelMap error code
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   sendablePixelMapError_0100
+     * @tc.number ImagePixelMapTest
+     * @tc.desc   image pixelMap error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("sendablePixelMapError_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };
@@ -553,12 +553,12 @@ export default function graphicSendableImageInterfaceTest() {
     });
 
     /**
-     * @tc.number    ImagePixelMapTest
-     * @tc.name      sendableImagePixelMapErrorCode_0200
-     * @tc.desc      image pixelMap error code
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   ImagePixelMapErrorCode_0200
+     * @tc.number ImagePixelMapTest
+     * @tc.desc   image pixelMap error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ImagePixelMapErrorCode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let region: image.Region = { x: 0, y: 0, size: { height: 100, width: 100 } };

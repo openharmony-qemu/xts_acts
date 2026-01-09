@@ -85,13 +85,12 @@ export default function AVImageGeneratorTest() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0100
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0100
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 008.testAvImageGenerator fetchFrameByTime RGB_888
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0100
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let tmpParam: media.PixelMapParams = {
@@ -117,13 +116,12 @@ export default function AVImageGeneratorTest() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0200
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0200
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 001.testAvImageGenerator fdSrc
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0200
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FDSRC_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             media.createAVImageGenerator((err: BusinessError|null, generator: undefined|media.AVImageGenerator) => {
@@ -145,13 +143,12 @@ export default function AVImageGeneratorTest() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_RELEASE_static_0100
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_RELEASE_static_0100
-          * @tc.desc    AvImageGenerator RELEASE test
-          *               : 001.testAvImageGenerator RELEASE
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_RELEASE_static_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_RELEASE_static_0100
+         * @tc.desc   AvImageGenerator RELEASE test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_RELEASE_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             media.createAVImageGenerator((err: BusinessError|null, generator: undefined|media.AVImageGenerator) => {
@@ -175,13 +172,12 @@ export default function AVImageGeneratorTest() {
         })
 
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0100
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0100
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 001.testAvImageGenerator fetchFrameByTime
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0100
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             media.createAVImageGenerator((err: BusinessError|null, generator: undefined|media.AVImageGenerator) => {
@@ -206,13 +202,12 @@ export default function AVImageGeneratorTest() {
             });
         })
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0200
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0200
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 002.testAvImageGenerator fetchFrameByTime
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0200
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             media.createAVImageGenerator((err: BusinessError|null, generator: undefined|media.AVImageGenerator) => {
@@ -235,13 +230,12 @@ export default function AVImageGeneratorTest() {
             });
         })
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0300
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0300
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 003.testAvImageGenerator fetchFrameByTime AV_IMAGE_QUERY_PREVIOUS_SYNC
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0300
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             media.createAVImageGenerator((err: BusinessError|null, generator: undefined|media.AVImageGenerator) => {
@@ -265,13 +259,12 @@ export default function AVImageGeneratorTest() {
             });
         })
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0400
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0400
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 004.testAvImageGenerator fetchFrameByTime AV_IMAGE_QUERY_CLOSEST_SYNC
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0400
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             media.createAVImageGenerator((err: BusinessError|null, generator: undefined|media.AVImageGenerator) => {
@@ -295,13 +288,12 @@ export default function AVImageGeneratorTest() {
             });
         })
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0500
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0500
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 005.testAvImageGenerator fetchFrameByTime AV_IMAGE_QUERY_CLOSEST
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0500
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             media.createAVImageGenerator((err: BusinessError|null, generator: undefined|media.AVImageGenerator) => {
@@ -325,13 +317,12 @@ export default function AVImageGeneratorTest() {
             });
         })
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0600
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0600
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 006.testAvImageGenerator fetchFrameByTime RGB_565
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0600
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let tmpParam: media.PixelMapParams = {
@@ -361,13 +352,12 @@ export default function AVImageGeneratorTest() {
             });
         })
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0700
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0700
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 007.testAvImageGenerator fetchFrameByTime RGBA_8888
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0700
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let tmpParam: media.PixelMapParams = {
@@ -397,13 +387,12 @@ export default function AVImageGeneratorTest() {
             });
         })
         /**
-          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0800
-          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0800
-          * @tc.desc    AvImageGenerator fetchFrameByTime test
-          *               : 008.testAvImageGenerator fetchFrameByTime RGB_888
-          * @tc.size    MediumTest
-          * @tc.type    Function test
-          * @tc.level   Level1
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0800
+         * @tc.desc   AvImageGenerator fetchFrameByTime test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHFRAMEBYTIMME_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
             let tmpParam: media.PixelMapParams = {
@@ -432,6 +421,42 @@ export default function AVImageGeneratorTest() {
                     console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
                     expect().assertFail()
                 };
+            });
+        })
+         /**
+          * @tc.number  SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0100
+          * @tc.name    SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0100
+          * @tc.desc    AvImageGenerator fetchScaledFrameByTime test
+          *               : 001.testAvImageGenerator fetchScaledFrameByTime RGB_888
+          * @tc.size    MediumTest
+          * @tc.type    Function test
+          * @tc.level   Level1
+         */
+        it('SUB_MULTIMEDIA_MEDIA_AVIMAGEGENERATOR_FETCHSCALEDFRAMEBYTIMME_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+            media.createAVImageGenerator((err: BusinessError | null,
+                generator: undefined | media.AVImageGenerator) => {
+                if (generator != null) {
+                    let avImageGenerator = generator;
+                    console.info(`createAVImageGenerator success`);
+                    let param: media.OutputSize = {
+                        width : 300,
+                        height : 300,
+                    }
+                    avImageGenerator.fdSrc = fileDescriptor;
+                    avImageGenerator.fetchScaledFrameByTime(timeUs, media.AVImageQueryOptions.AV_IMAGE_QUERY_CLOSEST, param)
+                        .then((pixelMap: image.PixelMap | undefined) => {
+                            let pixel_map = pixelMap;
+                            console.info(`pixel_map == undefined?-->${pixelMap == undefined}`);
+                            expect(pixel_map).not().assertNull();
+                            done();
+                        }).catch((error: Error) => {
+                            console.error(`fetchScaledFrameByTime catchCallback, error message:${error.message}`);
+                            expect().assertFail();
+                        });
+                } else {
+                    console.error(`createAVImageGenerator fail, error message:${err!!.message}`);
+                    expect().assertFail()
+                }
             });
         })
     });

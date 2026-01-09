@@ -153,7 +153,6 @@ export default function relationalStoreAssetResultSetTest() {
         }
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAsset0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0100
          * @tc.desc   resultSet getAsset normal test
@@ -198,7 +197,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAsset0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0200
          * @tc.desc   resultSet getAsset insert test
@@ -234,7 +232,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAsset0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0300
          * @tc.desc   resultSet getAsset normal test
@@ -267,7 +264,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAsset0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0400
          * @tc.desc   resultSet getAsset delete test
@@ -304,7 +300,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
         
          /**
-          * @generated.time 2025-11-09 20:49:51
           * @tc.name   testGetAsset0005
           * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0500
           * @tc.desc   resultSet getAsset ABNORMAL test
@@ -341,7 +336,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
                 
          /**
-          * @generated.time 2025-11-09 20:49:51
           * @tc.name   testGetAsset0006
           * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0600
           * @tc.desc   resultSet getAsset DOWNLOADING test
@@ -378,7 +372,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testAssetNoStatus0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0700
          * @tc.desc   resultSet getAsset normal test
@@ -414,7 +407,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testAssetStatusUndefined0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0800
          * @tc.desc   resultSet getAsset normal test
@@ -463,7 +455,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testAssetStatusNull0010
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_0900
          * @tc.desc   resultSet getAsset normal test
@@ -512,7 +503,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAssetUndefined
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_1000
          * @tc.desc   resultSet getAsset normal test
@@ -546,7 +536,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAssetNull
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_1100
          * @tc.desc   resultSet getAsset normal test
@@ -580,7 +569,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAssets0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_1200
          * @tc.desc   resultSet getAssets normal test
@@ -618,7 +606,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAssets0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_1300
          * @tc.desc   resultSet getAssets normal test
@@ -673,7 +660,6 @@ export default function relationalStoreAssetResultSetTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   testGetAssets0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_GetAssertEtsAPITest_1400
          * @tc.desc   resultSet getAssets normal test

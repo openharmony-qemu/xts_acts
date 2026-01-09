@@ -99,7 +99,6 @@ export default function signNormalNotAccessBiometricExecute() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_static_0042
      * @tc.number Security_IAM_UserAuthInstance_Func_static_0042
      * @tc.desc   userAuthInstance interface not null
@@ -123,7 +122,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_static_0050
      * @tc.number Security_IAM_UserAuthInstance_Func_static_0050
      * @tc.desc   Nopermisson on
@@ -149,7 +147,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_UserAuthInstance_Func_static_0090
      * @tc.number Security_IAM_UserAuthInstance_Func_static_0090
      * @tc.desc   call cancel interface return GENERAL_ERROR
@@ -172,7 +169,6 @@ export default function signNormalNotAccessBiometricExecute() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   SUB_Security_IAM_authWidget_API_static_0200
      * @tc.number SUB_Security_IAM_authWidget_API_static_0200
      * @tc.desc   call ReuseMode interface parameter check

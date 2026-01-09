@@ -43,10 +43,13 @@ export default function uitestOnTest() {
       hilog.info(domain, tag, "uitestOnTest loadup over!!!!!")
     })
 
-    /*
-     * @tc.number: uitestOnTest_0001
-     * @tc.name: testType_static
-     * @tc.desc: find UiComponent by type attribute and get it's type attribute.
+    /**
+     * @tc.name   testType_static
+     * @tc.number uitestOnTest_0001
+     * @tc.desc   find UiComponent by type attribute and get it's type attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testType_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testType_static Start!!!!!`);
@@ -106,10 +109,13 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestOnTest_0002
-     * @tc.name: testId_static
-     * @tc.desc: find UiComponent by id attribute and get it's id attribute.
+    /**
+     * @tc.name   testId_static
+     * @tc.number uitestOnTest_0002
+     * @tc.desc   find UiComponent by id attribute and get it's id attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testId_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testId_static Start!!!!!`);
@@ -169,10 +175,13 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestOnTest_0003
-     * @tc.name: testGetHint_static
-     * @tc.desc: find button component by Regular Expression, and get Hint of the component.
+    /**
+     * @tc.name   testGetHint_static
+     * @tc.number uitestOnTest_0003
+     * @tc.desc   find button component by Regular Expression, and get Hint of the component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetHint_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testGetHint Start!!!!!`);
@@ -290,10 +299,13 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestOnTest_0004
-     * @tc.name: testDescription_static
-     * @tc.desc: find UiComponent by description attribute and get it's description attribute.
+    /**
+     * @tc.name   testDescription_static
+     * @tc.number uitestOnTest_0004
+     * @tc.desc   find UiComponent by description attribute and get it's description attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDescription_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testDescription_static Start!!!!!`);
@@ -325,10 +337,13 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-     * @tc.number: uitestOnTest_0005
-     * @tc.name: testWithIn_static
-     * @tc.desc: find UiComponent inside of the given UiComponent.
+    /**
+     * @tc.name   testWithIn_static
+     * @tc.number uitestOnTest_0005
+     * @tc.desc   find UiComponent inside of the given UiComponent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWithIn_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testWithIn_static Start!!!!!`);
@@ -352,11 +367,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0006
-    * @tc.name: testScrollable_static
-    * @tc.desc: find UiComponent by scrollable attribute and get it's scrollable attribute.
-    */
+    /**
+     * @tc.name   testScrollable_static
+     * @tc.number uitestOnTest_0006
+     * @tc.desc   find UiComponent by scrollable attribute and get it's scrollable attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testScrollable_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testScrollable_static Start!!!!!`);
       try {
@@ -390,11 +408,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0007
-    * @tc.name: testCheckable_static
-    * @tc.desc: find UiComponent by checkable attribute and get it's checkable attribute.
-    */
+    /**
+     * @tc.name   testCheckable_static
+     * @tc.number uitestOnTest_0007
+     * @tc.desc   find UiComponent by checkable attribute and get it's checkable attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testCheckable_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       hilog.info(domain, tag, `testCheckable_static Start!!!!!`);
       try {
@@ -440,11 +461,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0008
-    * @tc.name: testMatchPattern_static
-    * @tc.desc: specifies the string value match pattern.
-    */
+    /**
+     * @tc.name   testMatchPattern_static
+     * @tc.number uitestOnTest_0008
+     * @tc.desc   specifies the string value match pattern.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testMatchPattern_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, `testMatchPattern_static Start!!!!!`);
       try {
@@ -491,11 +515,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0009
-    * @tc.name: testSelected_static
-    * @tc.desc: find UiComponent by selected attribute and get it's selected attribute.
-    */
+    /**
+     * @tc.name   testSelected_static
+     * @tc.number uitestOnTest_0009
+     * @tc.desc   find UiComponent by selected attribute and get it's selected attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testSelected_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       let driver = Driver.create();
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
@@ -524,11 +551,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0010
-    * @tc.name: testisBefore_static
-    * @tc.desc: find uiComponent which is before another UiComponent that specified by given.
-    */
+    /**
+     * @tc.name   testisBefore_static
+     * @tc.number uitestOnTest_0010
+     * @tc.desc   find uiComponent which is before another UiComponent that specified by given.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testisBefore_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, `testisBefore_static Start!!!!!`);
       try {
@@ -551,11 +581,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-    * @tc.number: uitestOnTest_0011
-    * @tc.name: testisAfter_static
-    * @tc.desc: find uiComponent which is after another UiComponent that specified by given.
-    */
+    /**
+     * @tc.name   testisAfter_static
+     * @tc.number uitestOnTest_0011
+     * @tc.desc   find uiComponent which is after another UiComponent that specified by given.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testisAfter_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, `testisAfter_static Start!!!!!`);
       let driver = Driver.create();
@@ -573,11 +606,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-    * @tc.number: uitestOnTest_0012
-    * @tc.name: testInWindow_static
-    * @tc.desc: scroll the mouse wheel at the specified location to specify the cell.
-    */
+    /**
+     * @tc.name   testInWindow_static
+     * @tc.number uitestOnTest_0012
+     * @tc.desc   scroll the mouse wheel at the specified location to specify the cell.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,  async ():Promise<void> => {
       hilog.info(domain, tag, "testInWindow_static Start!!!!!")
       let driver = Driver.create()
@@ -590,11 +626,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts')
     })
 
-    /*
-    * @tc.number: uitestOnTest_0013
-    * @tc.name: testFocused_static
-    * @tc.desc: find UiComponent by focused attribute and get it's focused attribute.
-    */
+    /**
+     * @tc.name   testFocused_static
+     * @tc.number uitestOnTest_0013
+     * @tc.desc   find UiComponent by focused attribute and get it's focused attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testFocused_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, "testFocused_static Start!!!!!");
       let driver = Driver.create()
@@ -619,11 +658,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0014
-    * @tc.name: testEnabled_static
-    * @tc.desc: find UiComponent by enabled attribute and get it's enabled attribute.
-    */
+    /**
+     * @tc.name   testEnabled_static
+     * @tc.number uitestOnTest_0014
+     * @tc.desc   find UiComponent by enabled attribute and get it's enabled attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testEnabled_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, "testEnabled_static Start!!!!!")
       let driver = Driver.create();
@@ -652,11 +694,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0015
-    * @tc.name: testClickable_static
-    * @tc.desc: find UiComponent by clickable attribute and get it's clickable attribute.
-    */
+    /**
+     * @tc.name   testClickable_static
+     * @tc.number uitestOnTest_0015
+     * @tc.desc   find UiComponent by clickable attribute and get it's clickable attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testClickable_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, "testClickable_static Start!!!!!");
       let driver = Driver.create();
@@ -682,11 +727,14 @@ export default function uitestOnTest() {
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0016
-    * @tc.name: testChecked_static
-    * @tc.desc: find UiComponent by checked attribute and get it's checked attribute.
-    */
+    /**
+     * @tc.name   testChecked_static
+     * @tc.number uitestOnTest_0016
+     * @tc.desc   find UiComponent by checked attribute and get it's checked attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testChecked_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, "testChecked_static Start!!!!!");
       let driver = Driver.create();
@@ -702,19 +750,32 @@ export default function uitestOnTest() {
       }
       let button1 = await driver.findComponent(ON.type('Checkbox').checked(true));
       hilog.info(domain, tag, `testChecked_static button1, ${ JSON.stringify(button1) }`);
-      expect(button1 == null).assertTrue();
+      expect(button1 != null).assertTrue();
+      if (button1 != null) {
+        let checked1 = await button1.isChecked();
+        hilog.info(domain, tag, `testChecked_static checked1, ${ JSON.stringify(checked1) }`);
+        expect(checked1).assertTrue();
+      }
       let button2 = await driver.findComponent(ON.type('Checkbox').checked());
       hilog.info(domain, tag, `testChecked_static button2, ${ JSON.stringify(button2) }`);
-      expect(button2 == null).assertTrue();
+      expect(button2 != null).assertTrue();
+      if (button2 != null) {
+        let checked2 = await button2.isChecked();
+        hilog.info(domain, tag, `testChecked_static checked2, ${ JSON.stringify(checked2) }`);
+        expect(checked2).assertTrue();
+      }
       hilog.info(domain, tag, "testChecked_static over!!!!!!!!!");
       await stopApplication('com.uitestScene.acts');
     })
 
-    /*
-    * @tc.number: uitestOnTest_0017
-    * @tc.name: testLongClickable_static
-    * @tc.desc: find UiComponent by longClickable attribute and get it's longClickable attribute.
-    */
+    /**
+     * @tc.name   testLongClickable_static
+     * @tc.number uitestOnTest_0017
+     * @tc.desc   find UiComponent by longClickable attribute and get it's longClickable attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testLongClickable_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async ():Promise<void> => {
       hilog.info(domain, tag, "testLongClickable_static Start!!!!!");
       let driver = Driver.create()

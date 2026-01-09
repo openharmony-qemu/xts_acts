@@ -43,12 +43,12 @@ export default function typeNodeTextSelectableMode3Test() {
     });
 
     /**
-     * @tc.number    TextSelectableMode3Test_0100
-     * @tc.name      TextSelectableMode3Test_0100
-     * @tc.desc      TypedFrameNode:TextSelectableMode3
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextSelectableMode3Test_0100
+     * @tc.number TextSelectableMode3Test_0100
+     * @tc.desc   TypedFrameNode:TextSelectableMode3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextSelectableMode3Test_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('TextSelectableMode3Test_0100 START');

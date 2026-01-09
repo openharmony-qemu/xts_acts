@@ -14,10 +14,10 @@
  */
 import { huks } from '@kit.UniversalKeystoreKit';
 import { beforeAll, beforeEach, describe, expect, it, Level, Size, TestType } from '@ohos/hypium';
-import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils';
-import { Logger } from './utils/common/Logger';
-import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils';
-import { CheckSoftware, CheckWearable, GenParam, SetParam } from './utils/huks/HuksOptionsUtils';
+import { GetDataBySize, StringToUint8Array } from './utils/common/CommonUtils.ets';
+import { Logger } from './utils/common/Logger.ets';
+import { Get3DesGenerateOptions } from './utils/huks/GenerateKeyUtils.ets';
+import { CheckSoftware, CheckWearable, GenParam, SetParam } from './utils/huks/HuksOptionsUtils.ets';
 
 export default function SecurityHuksCmacTest() {
   let useSoftware: boolean = true;
@@ -47,12 +47,12 @@ export default function SecurityHuksCmacTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_CMAC_API12_Func_0010
      * @tc.number SUB_Security_HUKS_CMAC_API12_Func_0010
-     * @tc.name use CMAC key generation, returns specified error code
-     * @tc.desc abnormal test
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_CMAC_API12_Func_0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = 'SUB_Security_HUKS_CMAC_API12_Func_0010';
@@ -68,12 +68,12 @@ export default function SecurityHuksCmacTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_HUKS_CMAC_API12_Func_0020
      * @tc.number SUB_Security_HUKS_CMAC_API12_Func_0020
-     * @tc.name use CMAC, returns specified error code
-     * @tc.desc abnormal test
-     * @tc.size Small
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   abnormal test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Security_HUKS_CMAC_API12_Func_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       let testNumber: string = 'SUB_Security_HUKS_CMAC_API12_Func_0020';

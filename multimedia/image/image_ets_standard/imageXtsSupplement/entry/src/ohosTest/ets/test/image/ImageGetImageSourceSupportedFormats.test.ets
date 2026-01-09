@@ -59,12 +59,12 @@ export default function GetImageSourceSupportedFormats() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_001
-     * @tc.name      SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_001
-     * @tc.desc      image.getImageSourceSupportedFormats
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_001
+     * @tc.number SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_001
+     * @tc.desc   image.getImageSourceSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_001', Level.LEVEL1, async (done:Function)=> {
       const testName = 'SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_001';
@@ -79,12 +79,12 @@ export default function GetImageSourceSupportedFormats() {
       done();
     })
     /**
-     * @tc.number    SUB_MEDIA_IMAGE_GET_IMAGE_PACKER_SUPPORTED_FORMATS_002
-     * @tc.name      SUB_MEDIA_IMAGE_GET_IMAGE_PACKER_SUPPORTED_FORMATS_002
-     * @tc.desc      image.getImagePackerSupportedFormats
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 1
+     * @tc.name   SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_002
+     * @tc.number SUB_MEDIA_IMAGE_GET_IMAGE_PACKER_SUPPORTED_FORMATS_002
+     * @tc.desc   image.getImagePackerSupportedFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_002', Level.LEVEL1, async (done:Function)=> {
       const testName = 'SUB_MEDIA_IMAGE_GET_IMAGE_SOURCE_SUPPORTED_FORMATS_002';

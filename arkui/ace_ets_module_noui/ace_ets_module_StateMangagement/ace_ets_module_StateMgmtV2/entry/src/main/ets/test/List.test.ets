@@ -14,6 +14,7 @@
  */
 
 import ArrayLikeStringTest from './ArrayLikeTest/ArrayLikeStringTest.test';
+import Env001 from './envTest/Env001.test';
 import PerGlobalConnectTest from './PersistenceV2Test/PerGlobalConnectTest.test';
 import ReuseV2Test0030 from './ReuseV2Test/ReuseV2Test0030.test';
 import Monitor1Test from './MonitorTest/Monitor1.test';
@@ -61,13 +62,17 @@ import Provider0300Test from './ProviderTest/Provider0300Test.test';
 import ProviderTest0270 from './ProviderTest/ProviderTest0270.test';
 import appStorageV2 from './StorageTest/appStorageV2.test';
 import ASV20010Test from './appstoragev2/ASV20010Test.test';
-
 import persistenceV2 from './StorageTest/persistenceV2.test';
 import EventTest from './EventTest/Event.test';
 import LocalTest0140 from './local/LocalTest0140.test';
-
+import Consumer0130Test from './consumerTest/Consumer0130Test.test';
+import Consumer0140Test from './consumerTest/Consumer0140Test.test';
+import Consumer0170Test from './consumerTest/Consumer0170Test.test';
+import SyncMonitor0010Test from './SyncMonitorTest/SyncMonitor0010Test.test';
+import SyncMonitor0020Test from './SyncMonitorTest/SyncMonitor0020Test.test';
 export default function testsuite() {
 	ArrayLikeStringTest();
+    Env001();
     PerGlobalConnectTest();
     ReuseV2Test0030();
     Monitor1Test();
@@ -118,6 +123,9 @@ export default function testsuite() {
     persistenceV2();
     EventTest();
     LocalTest0140();
-
-
+    Consumer0130Test();
+    Consumer0140Test();
+    Consumer0170Test();
+    SyncMonitor0010Test();
+    SyncMonitor0020Test();
 }

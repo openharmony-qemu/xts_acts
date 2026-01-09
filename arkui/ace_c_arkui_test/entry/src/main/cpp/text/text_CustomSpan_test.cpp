@@ -14,6 +14,7 @@
  */
 
 #include "common/common.h"
+static ArkUI_NodeCustomEvent* g_customevent;
 
 namespace ArkUICapiTest {
 
@@ -40,6 +41,7 @@ static napi_value textCustomSpanTest003(napi_env env, napi_callback_info info)
 {
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     ArkUI_CustomSpanMeasureInfo *measureInfo = OH_ArkUI_CustomSpanMeasureInfo_Create();
+    ASSERT_OBJ_NE(measureInfo, nullptr);
     float fontSize = OH_ArkUI_CustomSpanMeasureInfo_GetFontSize(measureInfo);
     OH_ArkUI_CustomSpanMeasureInfo_Dispose(measureInfo);
     ASSERT_EQ(fontSize, 0.0f);
@@ -50,6 +52,7 @@ static napi_value textCustomSpanTest004(napi_env env, napi_callback_info info)
 {
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     ArkUI_CustomSpanMetrics *customSpanMetrics = OH_ArkUI_CustomSpanMetrics_Create();
+    ASSERT_OBJ_NE(customSpanMetrics, nullptr);
     auto ret = OH_ArkUI_CustomSpanMetrics_SetWidth(customSpanMetrics, 60.0f);
     ASSERT_EQ(ret, SUCCESS);
     NAPI_END;
@@ -79,6 +82,8 @@ static napi_value textCustomSpanTest007(napi_env env, napi_callback_info info)
 {
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);  
     ArkUI_CustomSpanDrawInfo *customSpanDrawInfo = OH_ArkUI_CustomSpanDrawInfo_Create();
+    ASSERT_OBJ_NE(customSpanDrawInfo, nullptr);
+
     auto LineTop = OH_ArkUI_CustomSpanDrawInfo_GetLineTop(customSpanDrawInfo);
     ASSERT_EQ(LineTop, 0.0f);
     NAPI_END;

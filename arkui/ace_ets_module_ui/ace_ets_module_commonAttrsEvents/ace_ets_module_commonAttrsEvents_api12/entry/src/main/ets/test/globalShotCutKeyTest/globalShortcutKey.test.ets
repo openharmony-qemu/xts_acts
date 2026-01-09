@@ -129,12 +129,12 @@ export default function globalShortcutKeyTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0230
-     * @tc.desc      simulate the keyboard single key test press "F1,F2"
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0230
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0230
+     * @tc.desc   simulate the keyboard single key test press "F1,F2"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0230', Level.LEVEL0, async (done: Function) => {
       let keyStrings: (string | FunctionKey)[] = ["C", "A", "Z", "Y", "V",FunctionKey.ESC, FunctionKey.F1, FunctionKey.F2,
@@ -155,12 +155,12 @@ export default function globalShortcutKeyTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0280
-     * @tc.desc      simulate the keyboard operate “CTRL + SHIFT + Z”
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0280
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0280
+     * @tc.desc   simulate the keyboard operate “CTRL + SHIFT + Z”
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0280', Level.LEVEL0, async (done: Function) => {
       let keyStrings: (string | FunctionKey)[] = [FunctionKey.TAB, 'Z'];
@@ -172,12 +172,12 @@ export default function globalShortcutKeyTest() {
       done();
     });
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0340
-     * @tc.desc      'CTRAL + M' is enable when button is unfocuesed
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0340
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0340
+     * @tc.desc   'CTRAL + M' is enable when button is unfocuesed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0340', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
@@ -193,12 +193,12 @@ export default function globalShortcutKeyTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0380
-     * @tc.desc      'CTRAL + SHIFT + ←' is unenable
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0380
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0380
+     * @tc.desc   'CTRAL + SHIFT + ←' is unenable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0380', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
@@ -214,12 +214,12 @@ export default function globalShortcutKeyTest() {
     });
 
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0370
-     * @tc.desc      'CTRAL + I' is reponse when button is hidden
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0370
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0370
+     * @tc.desc   'CTRAL + I' is reponse when button is hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0370', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();
@@ -236,12 +236,12 @@ export default function globalShortcutKeyTest() {
 
 
     /**
-     * @tc.number
-     * @tc.name      SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0330
-     * @tc.desc      'SHIFT + + ->' is reponse when button is hidden
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0330
+     * @tc.number SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0330
+     * @tc.desc   'SHIFT + + ->' is reponse when button is hidden
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_SUPPORT_GLOBAL_SHORTCUT_KEY_REGISTRATION_0330', Level.LEVEL0, async (done: Function) => {
       let driver = Driver.create();

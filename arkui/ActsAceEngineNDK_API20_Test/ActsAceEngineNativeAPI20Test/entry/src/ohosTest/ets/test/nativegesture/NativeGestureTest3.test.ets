@@ -33,13 +33,12 @@ export default function NativeGestureTest3() {
     });
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLBEGIN_0100
-     * @tc.name    : testGestureEventTargetInfo_IsScrollBegin0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGestureEventTargetInfo_IsScrollBegin0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLBEGIN_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureEventTargetInfo_IsScrollBegin0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -57,13 +56,12 @@ export default function NativeGestureTest3() {
         }
       })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLEND_0100
-     * @tc.name    : testGestureEventTargetInfo_IsScrollEnd0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGestureEventTargetInfo_IsScrollEnd0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_GESTUREEVENTTARGETINFO_ISSCROLLEND_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGestureEventTargetInfo_IsScrollEnd0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

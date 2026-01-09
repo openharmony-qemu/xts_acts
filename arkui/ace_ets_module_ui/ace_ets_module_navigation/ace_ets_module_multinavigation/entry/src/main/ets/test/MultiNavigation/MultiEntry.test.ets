@@ -49,10 +49,12 @@ export default function MultiEntry() {
 
 
     /**
-     * @tc.number    MultiEntry_0100
-     * @tc.name      MultiEntry_0100
-     * @tc.desc      Test onHomeShowOnTop and MultiNavPathStack.popToName
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0100
+     * @tc.number MultiEntry_0100
+     * @tc.desc   Test onHomeShowOnTop and MultiNavPathStack.popToName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0100', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0100 START');
@@ -82,10 +84,12 @@ export default function MultiEntry() {
 
     
     /**
-     * @tc.number    MultiEntry_0200
-     * @tc.name      MultiEntry_0200
-     * @tc.desc      Test MultiNavPathStack.replacePathByName
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0200
+     * @tc.number MultiEntry_0200
+     * @tc.desc   Test MultiNavPathStack.replacePathByName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0200', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0200 START');
@@ -111,10 +115,12 @@ export default function MultiEntry() {
 
     
     /**
-     * @tc.number    MultiEntry_0300
-     * @tc.name      MultiEntry_0300
-     * @tc.desc      Test MultiNavPathStack.moveToTopId
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0300
+     * @tc.number MultiEntry_0300
+     * @tc.desc   Test MultiNavPathStack.moveToTopId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0300', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0300 START');
@@ -145,10 +151,12 @@ export default function MultiEntry() {
     });
 
     /**
-     * @tc.number    MultiEntry_0400
-     * @tc.name      MultiEntry_0400
-     * @tc.desc      Test MultiNavPathStack.getAllPathName
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0400
+     * @tc.number MultiEntry_0400
+     * @tc.desc   Test MultiNavPathStack.getAllPathName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0400', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0400 START');
@@ -176,10 +184,12 @@ export default function MultiEntry() {
     });
 
     /**
-     * @tc.number    MultiEntry_0500
-     * @tc.name      MultiEntry_0500
-     * @tc.desc      Test MultiNavPathStack.getParamByIndex
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0500
+     * @tc.number MultiEntry_0500
+     * @tc.desc   Test MultiNavPathStack.getParamByIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0500', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0500 START');
@@ -207,10 +217,12 @@ export default function MultiEntry() {
     });
 
     /**
-     * @tc.number    MultiEntry_0600
-     * @tc.name      MultiEntry_0600
-     * @tc.desc      Test MultiNavPathStack.getParamByIndex
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0600
+     * @tc.number MultiEntry_0600
+     * @tc.desc   Test MultiNavPathStack.getParamByIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0600', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0600 START');
@@ -238,10 +250,12 @@ export default function MultiEntry() {
     });
 
     /**
-     * @tc.number    MultiEntry_0700
-     * @tc.name      MultiEntry_0700
-     * @tc.desc      Test MultiNavPathStack.size
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0700
+     * @tc.number MultiEntry_0700
+     * @tc.desc   Test MultiNavPathStack.size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0700', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0700 START');
@@ -269,10 +283,12 @@ export default function MultiEntry() {
     });
 
     /**
-     * @tc.number    MultiEntry_0800
-     * @tc.name      MultiEntry_0800
-     * @tc.desc      Test MultiNavPathStack getIndexByName not empty array
-     * @tc.level     Level 0
+     * @tc.name   MultiEntry_0800
+     * @tc.number MultiEntry_0800
+     * @tc.desc   Test MultiNavPathStack getIndexByName not empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiEntry_0800', Level.LEVEL0, async (done: Function) => {
       console.info('MultiEntry_0800 START');
@@ -296,6 +312,37 @@ export default function MultiEntry() {
       AppStorage.delete('indexLength');
 
       console.info('MultiEntry_0800 END');
+      done();
+    });
+
+    /**
+     * @tc.number    MultiEntry_0900
+     * @tc.name      MultiEntry_0900
+     * @tc.desc      Test MultiNavPathStack moveIndexToTop -1
+     * @tc.level     Level 0
+     */
+    it('MultiEntry_0900', Level.LEVEL0, async (done: Function) => {
+      console.info('MultiEntry_0900 START');
+      await CommonFunc.sleep(500);
+
+      let driver = Driver.create();
+      await CommonFunc.sleep(200);
+
+      let btn2 = await driver.findComponent(ON.id('pushPathByNameId'));
+      await btn2.click()
+      console.info('[MultiEntry_0900] btn2 click');
+      await CommonFunc.sleep(1000);
+
+      let btn1 = await driver.findComponent(ON.text('moveIndexToTop-1'));
+      await btn1.click()
+      console.info('[MultiEntry_0900] btn1 click');
+      await CommonFunc.sleep(1000);
+      let strJson: string = getInspectorByKey('detailTextId');
+      let obj: Record<string, ESObject> = JSON.parse(strJson);
+      console.info('[MultiEntry_0900] component obj is: ' + JSON.stringify(obj));
+      console.info('[MultiEntry_0900] content obj is: ' + JSON.stringify(obj.$attrs.content));
+      expect(obj.$attrs.content).assertEqual('PageDetail');
+      console.info('MultiEntry_0900 END');
       done();
     });
   })

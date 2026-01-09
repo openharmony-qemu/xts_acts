@@ -62,70 +62,70 @@ export default function webAttributeTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_BLOCKNETWORK_0100
-    * @tc.name        : testBlockNetWork001
-    * @tc.desc        : test blockNetWork true
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   testBlockNetWork001
+     * @tc.number SUB_WEB_BLOCKNETWORK_0100
+     * @tc.desc   test blockNetWork true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testBlockNetWork001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitBlockNetWork001", 134350)
       Utils.registerEvent("emitBlockNetWork001", CommonConstants.EXAMPLE_URL, 134360, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_BLOCKNETWORK_0200
-    * @tc.name        : testBlockNetWork002
-    * @tc.desc        : test blockNetWork false
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testBlockNetWork002
+     * @tc.number SUB_WEB_BLOCKNETWORK_0200
+     * @tc.desc   test blockNetWork false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBlockNetWork002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitBlockNetWork002", 134350)
       Utils.registerEvent("emitBlockNetWork002", '', 134370, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_BLOCKNETWORK_0300
-    * @tc.name        : testBlockNetWork003
-    * @tc.desc        : test blockNetWork true when load raw file
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testBlockNetWork003
+     * @tc.number SUB_WEB_BLOCKNETWORK_0300
+     * @tc.desc   test blockNetWork true when load raw file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBlockNetWork003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitBlockNetWork003", 134350)
       Utils.registerEvent("emitBlockNetWork003", '', 134380, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_BLOCKNETWORK_0400
-    * @tc.name        : testBlockNetWork004
-    * @tc.desc        : test blockNetWork true when load resources
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testBlockNetWork004
+     * @tc.number SUB_WEB_BLOCKNETWORK_0400
+     * @tc.desc   test blockNetWork true when load resources
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBlockNetWork004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitBlockNetWork004", 134350)
       Utils.registerEvent("emitBlockNetWork004", '', 134390, done);
       sendEventByKey('WebAttributeTestButton', 10, '');
     })
 
-    /*
-    * @tc.number      : SUB_WEB_BLOCKNETWORK_0500
-    * @tc.name        : testBlockNetWork005
-    * @tc.desc        : test blockNetWork true when local file
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 1
-    */
+    /**
+     * @tc.name   testBlockNetWork005
+     * @tc.number SUB_WEB_BLOCKNETWORK_0500
+     * @tc.desc   test blockNetWork true when local file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testBlockNetWork005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitBlockNetWork005", 134350)
       Utils.registerEvent("emitBlockNetWork005", '', 134400, done);

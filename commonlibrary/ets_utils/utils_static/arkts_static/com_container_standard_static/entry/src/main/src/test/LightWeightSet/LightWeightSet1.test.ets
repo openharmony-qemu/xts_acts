@@ -44,31 +44,33 @@ export default function LightWeightSetTest1() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0100
-     * @tc.name       : testLightWeightSet0001
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0100
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let lightWeightSet = new LightWeightSet<number>();
         expect(String(lightWeightSet != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The LightWeightSet's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The LightWeightSet's constructor cannot be directly invoked");
+        }
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0200
-     * @tc.name       : testLightWeightSet0002
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0200
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -78,12 +80,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0300
-     * @tc.name       : testLightWeightSet0003
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0300
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<string>();
@@ -93,12 +95,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0400
-     * @tc.name       : testLightWeightSet0004
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0400
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<Array<number>>();
@@ -109,12 +111,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0500
-     * @tc.name       : testLightWeightSet0005
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0500
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<InfoC>();
@@ -125,12 +127,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0600
-     * @tc.name       : testLightWeightSet0006
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0600
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<boolean>();
@@ -141,12 +143,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0700
-     * @tc.name       : testLightWeightSet0007
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0700
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -160,12 +162,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0800
-     * @tc.name       : testLightWeightSet0008
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0800
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -191,12 +193,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0900
-     * @tc.name       : testLightWeightSet0009
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0900
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<string>();
@@ -213,12 +215,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0100
-     * @tc.name       : testLightWeightSet0010
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0100
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<string>();
@@ -234,12 +236,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0110
-     * @tc.name       : testLightWeightSet0011
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0110
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<string>();
@@ -255,12 +257,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0120
-     * @tc.name       : testLightWeightSet0012
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0120
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -278,12 +280,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0130
-     * @tc.name       : testLightWeightSet013
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0130
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -297,12 +299,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0140
-     * @tc.name       : testLightWeightSet0014
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0140
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -316,12 +318,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0150
-     * @tc.name       : testLightWeightSet0015
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0150
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -343,12 +345,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0160
-     * @tc.name       : testLightWeightSet0016
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0160
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -370,12 +372,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0170
-     * @tc.name       : testLightWeightSet0017
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0170
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -390,12 +392,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0180
-     * @tc.name       : testLightWeightSet0018
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0180
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testLightWeightSet0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -415,12 +417,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0190
-     * @tc.name       : testLightWeightSet0019
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0190
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -432,12 +434,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0200
-     * @tc.name       : testLightWeightSet0020
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0200
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -454,12 +456,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0210
-     * @tc.name       : testLightWeightSet0021
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0210
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -473,12 +475,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0220
-     * @tc.name       : testLightWeightSet0022
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0220
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -498,12 +500,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0230
-     * @tc.name       : testLightWeightSet0023
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0230
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -521,12 +523,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0240
-     * @tc.name       : testLightWeightSet0024
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0240
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<null>();
@@ -536,12 +538,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0250
-     * @tc.name       : testLightWeightSet0025
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0250
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -551,12 +553,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0260
-     * @tc.name       : testLightWeightSet0026
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0260
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number | string>();
@@ -573,12 +575,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0270
-     * @tc.name       : testLightWeightSet0027
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0270
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number | string>();
@@ -595,12 +597,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0280
-     * @tc.name       : testLightWeightSet0028
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0280
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -609,12 +611,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0290
-     * @tc.name       : testLightWeightSet0029
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0290
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -623,12 +625,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0300
-     * @tc.name       : testLightWeightSet0030
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0300
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -640,7 +642,8 @@ export default function LightWeightSetTest1() {
       try {
         lightWeightSet.increaseCapacityTo(3);
         expect(true).assertEqual(false);
-      } catch (err: Error) {
+      } catch (err) {
+        err = err as Error;
         // expect(err.name).assertEqual("BusinessError");
         // expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -649,12 +652,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0310
-     * @tc.name       : testLightWeightSet0031
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0310
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightSet0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightSet = new LightWeightSet<number>();
@@ -674,32 +677,34 @@ export default function LightWeightSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0320
-     * @tc.name       : testLightWeightSet0032
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0320
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightSet0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightSet = new LightWeightSet<string>();
     //   try {
     //     let res = lightWeightSet.removeAt("a");
     //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       expect(err.name).assertEqual("BusinessError");
+    //       expect(err.code).assertEqual(401);
+    //       expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
+    //     }
     //   }
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0330
-     * @tc.name       : testLightWeightSet0033
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0330
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightSet0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightSet = new LightWeightSet<number>();
@@ -714,12 +719,12 @@ export default function LightWeightSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0340
-     * @tc.name       : testLightWeightSet0034
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0340
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightSet0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightSet = new LightWeightSet<number>();
@@ -739,12 +744,12 @@ export default function LightWeightSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0350
-     * @tc.name       : testLightWeightSet0035
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0350
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -759,12 +764,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0360
-     * @tc.name       : testLightWeightSet0036
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0360
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -778,12 +783,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0370
-     * @tc.name       : testLightWeightSet0037
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0370
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<string>();
@@ -793,12 +798,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0380
-     * @tc.name       : testLightWeightSet0038
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0380
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<string>();
@@ -808,12 +813,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0390
-     * @tc.name       : testLightWeightSet0039
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0390
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -830,12 +835,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0400
-     * @tc.name       : testLightWeightSet0040
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0400
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number | string>();
@@ -850,12 +855,12 @@ export default function LightWeightSetTest1() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0410
-     * @tc.name       : testLightWeightSet0041
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0410
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();
@@ -864,13 +869,13 @@ export default function LightWeightSetTest1() {
       lightWeightSet.add(3);
       lightWeightSet.add(4);
       lightWeightSet.add(5);
-      let arr = new Array<[Double, Double]>();
-      let res = lightWeightSet.entries();
-      let temp: [Double, Double] | undefined = undefined;
-      do {
+      let arr = new Array<Double>();
+      let res = lightWeightSet.values();
+      let temp: Double | undefined = res.next().value;
+      while (temp != undefined) {
+        arr.push(temp);
         temp = res.next().value;
-        arr.push(temp!);
-      } while (temp != undefined);
+      }
       let arr1 = [1, 2, 3, 4, 5];
       for (let i = 0; i < arr1.length; i++) {
         expect(arr[i]).assertEqual(arr1[i]);
@@ -878,12 +883,12 @@ export default function LightWeightSetTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0420
-     * @tc.name       : testLightWeightSet0042
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0420
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightSet0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightSet = new LightWeightSet<number>();
@@ -896,12 +901,12 @@ export default function LightWeightSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0430
-     * @tc.name       : testLightWeightSet0043
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0430
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     //   it("testLightWeightSet0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //     let lightWeightSet = new LightWeightSet();
@@ -914,12 +919,12 @@ export default function LightWeightSetTest1() {
     //   });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0440
-     * @tc.name       : testLightWeightSet0044
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0440
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightSet0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightSet = new LightWeightSet<number>();
@@ -929,20 +934,22 @@ export default function LightWeightSetTest1() {
     //   try {
     //     lightWeightSet.addAll([1, 2, 3]);
     //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "set" must be LightWeightSet. Received value is: 1,2,3`);
+    //   } catch (err) {
+    //     if (err instanceof BusinessError) {
+    //       expect(err.name).assertEqual("BusinessError");
+    //       expect(err.code).assertEqual(401);
+    //       expect(err.message).assertEqual(`The type of "set" must be LightWeightSet. Received value is: 1,2,3`);
+    //     }
     //   }
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0450
-     * @tc.name       : testLightWeightSet0046
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0450
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testLightWeightSet0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let lightWeightSet = new LightWeightSet();
@@ -960,12 +967,12 @@ export default function LightWeightSetTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0460
-     * @tc.name       : testLightWeightSet0046
-     * @tc.desc       : Test the function By LightWeightSet.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLightWeightSet0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_LIGHTWEIGHTSET_0460
+     * @tc.desc   Test the function By LightWeightSet.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLightWeightSet0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let lightWeightSet = new LightWeightSet<number>();

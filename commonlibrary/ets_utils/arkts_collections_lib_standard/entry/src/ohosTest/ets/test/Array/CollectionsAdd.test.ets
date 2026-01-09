@@ -35,12 +35,12 @@ export default function collectionsAddTest() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_CONCAtARRRY_0100
-     * @tc.name      : CollectionsTestAdd0100
-     * @tc.desc      : ConcatArray join 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd0100
+     * @tc.number SUB_COLLECTION_ADD_CONCAtARRRY_0100
+     * @tc.desc   ConcatArray join 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -63,12 +63,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_CONCAtARRRY_0101
-     * @tc.name      : CollectionsTestAdd0101
-     * @tc.desc      : ConcatArray slice 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd0101
+     * @tc.number SUB_COLLECTION_ADD_CONCAtARRRY_0101
+     * @tc.desc   ConcatArray slice 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -91,12 +91,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_ARRRY_0100
-     * @tc.name      : CollectionsTestAdd1100
-     * @tc.desc      : Array create 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd1100
+     * @tc.number SUB_COLLECTION_ADD_ARRRY_0100
+     * @tc.desc   Array create 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -113,12 +113,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_ARRAY_0200
-     * @tc.name      : CollectionsTestAdd1200
-     * @tc.desc      : Array 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd1200
+     * @tc.number SUB_COLLECTION_ADD_ARRAY_0200
+     * @tc.desc   Array 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -140,12 +140,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_ARRAY_0300
-     * @tc.name      : CollectionsTestAdd1300
-     * @tc.desc      : Array forEach 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd1300
+     * @tc.number SUB_COLLECTION_ADD_ARRAY_0300
+     * @tc.desc   Array forEach 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -171,12 +171,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_TEST_0100
-     * @tc.name      : CollectionsTestAdd2100
-     * @tc.desc      : Array from 401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd2100
+     * @tc.number SUB_COLLECTION_ADD_TEST_0100
+     * @tc.desc   Array from 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -200,12 +200,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_TEST_0200
-     * @tc.name      : CollectionsTestAdd2200
-     * @tc.desc      : Map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd2200
+     * @tc.number SUB_COLLECTION_ADD_TEST_0200
+     * @tc.desc   Map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -229,12 +229,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_TEST_0300
-     * @tc.name      : CollectionsTestAdd2300
-     * @tc.desc      : Map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd2300
+     * @tc.number SUB_COLLECTION_ADD_TEST_0300
+     * @tc.desc   Map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -258,12 +258,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_TEST_TEST_0400
-     * @tc.name      : CollectionsTestAdd2400
-     * @tc.desc      : Map 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd2400
+     * @tc.number SUB_COLLECTION_ADD_TEST_TEST_0400
+     * @tc.desc   Map 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -287,12 +287,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_MAP_TEST_0400
-     * @tc.name      : CollectionsTestAdd3400
-     * @tc.desc      : Map 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd3400
+     * @tc.number SUB_COLLECTION_ADD_MAP_TEST_0400
+     * @tc.desc   Map 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -315,12 +315,12 @@ export default function collectionsAddTest() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_CONCATARRAYMAP_TEST_0600
-     * @tc.name      : CollectionsTestAdd3600
-     * @tc.desc      : Map 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd3600
+     * @tc.number SUB_COLLECTION_ADD_CONCATARRAYMAP_TEST_0600
+     * @tc.desc   Map 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -344,12 +344,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_CONCATARRAYMAP_TEST_0700
-     * @tc.name      : CollectionsTestAdd3700
-     * @tc.desc      : Map 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd3700
+     * @tc.number SUB_COLLECTION_ADD_CONCATARRAYMAP_TEST_0700
+     * @tc.desc   Map 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -374,12 +374,12 @@ export default function collectionsAddTest() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_SET_TEST_0100
-     * @tc.name      : CollectionsTestAdd4100
-     * @tc.desc      : Set 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd4100
+     * @tc.number SUB_COLLECTION_ADD_SET_TEST_0100
+     * @tc.desc   Set 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -403,12 +403,12 @@ export default function collectionsAddTest() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_ADD_SET_TEST_0200
-     * @tc.name      : CollectionsTestAdd4200
-     * @tc.desc      : Set 10200011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsTestAdd4200
+     * @tc.number SUB_COLLECTION_ADD_SET_TEST_0200
+     * @tc.desc   Set 10200011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsTestAdd4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

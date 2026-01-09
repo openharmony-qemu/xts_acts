@@ -41,12 +41,12 @@ export default function typefaceTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0100
-     * @tc.name      : testTypeFaceGetFamilyNameNormal
-     * @tc.desc      : Test for testTypeFaceGetFamilyNameNormal.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTypeFaceGetFamilyNameNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0100
+     * @tc.desc   Test for testTypeFaceGetFamilyNameNormal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypeFaceGetFamilyNameNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testTypeFaceGetFamilyNameNormal';
@@ -62,12 +62,12 @@ export default function typefaceTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0102
-     * @tc.name      : testTypeFaceGetFamilyNameMultipleCalls
-     * @tc.desc      : Test for testTypeFaceGetFamilyNameMultipleCalls.
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceGetFamilyNameMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0102
+     * @tc.desc   Test for testTypeFaceGetFamilyNameMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceGetFamilyNameMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceGetFamilyNameMultipleCalls';
@@ -87,12 +87,12 @@ export default function typefaceTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0200
-     * @tc.name      : testTypeFaceMakeFromFileNormal
-     * @tc.desc      : testTypeFaceMakeFromFileNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTypeFaceMakeFromFileNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0200
+     * @tc.desc   testTypeFaceMakeFromFileNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTypeFaceMakeFromFileNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testTypeFaceMakeFromFileNormal';
@@ -112,12 +112,12 @@ export default function typefaceTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0202
-     * @tc.name      : testTypeFaceMakeFromFileMultipleCalls
-     * @tc.desc      : testTypeFaceMakeFromFileMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromFileMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0202
+     * @tc.desc   testTypeFaceMakeFromFileMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromFileMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromFileMultipleCalls';
@@ -138,12 +138,12 @@ export default function typefaceTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0203
-     * @tc.name      : testTypeFaceMakeFromFileAbnormal
-     * @tc.desc      : testTypeFaceMakeFromFileAbnormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromFileAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0203
+     * @tc.desc   testTypeFaceMakeFromFileAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromFileAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromFileAbnormal';
@@ -165,12 +165,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0302
-     * @tc.name      : testTypeFaceMakeFromRawFileAbnormal
-     * @tc.desc      : testTypeFaceMakeFromRawFileAbnormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromRawFileAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0302
+     * @tc.desc   testTypeFaceMakeFromRawFileAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromRawFileAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromRawFileAbnormal';
@@ -184,12 +184,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0301
-     * @tc.name      : testTypeFaceMakeFromRawFileMultipleCalls
-     * @tc.desc      : testTypeFaceMakeFromRawFileMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromRawFileMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0301
+     * @tc.desc   testTypeFaceMakeFromRawFileMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromRawFileMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromRawFileMultipleCalls';
@@ -205,12 +205,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0300
-     * @tc.name      : testTypeFaceMakeFromRawFileNormal
-     * @tc.desc      : testTypeFaceMakeFromRawFileNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromRawFileNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0300
+     * @tc.desc   testTypeFaceMakeFromRawFileNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromRawFileNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromRawFileNormal';
@@ -232,12 +232,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0303
-     * @tc.name      : testTypeFaceMakeFromRawFileNull
-     * @tc.desc      : testTypeFaceMakeFromRawFileNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromRawFileNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0303
+     * @tc.desc   testTypeFaceMakeFromRawFileNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromRawFileNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromRawFileNull';
@@ -259,12 +259,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0400
-     * @tc.name      : testTypeFaceMakeFromFileWithArgumentsNormal
-     * @tc.desc      : testTypeFaceMakeFromFileWithArgumentsNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTypeFaceMakeFromFileWithArgumentsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0400
+     * @tc.desc   testTypeFaceMakeFromFileWithArgumentsNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypeFaceMakeFromFileWithArgumentsNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testTypeFaceMakeFromFileWithArgumentsNormal';
@@ -280,12 +280,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0401
-     * @tc.name      : testTypeFaceMakeFromFileWithArgumentsMultipleCalls
-     * @tc.desc      : testTypeFaceMakeFromFileWithArgumentsMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromFileWithArgumentsMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0401
+     * @tc.desc   testTypeFaceMakeFromFileWithArgumentsMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromFileWithArgumentsMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromFileWithArgumentsMultipleCalls';
@@ -303,12 +303,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0402
-     * @tc.name      : testTypeFaceMakeFromFileWithArgumentsNull
-     * @tc.desc      : testTypeFaceMakeFromFileWithArgumentsNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromFileWithArgumentsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0402
+     * @tc.desc   testTypeFaceMakeFromFileWithArgumentsNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromFileWithArgumentsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromFileWithArgumentsNull';
@@ -360,12 +360,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0403
-     * @tc.name      : testTypeFaceMakeFromFileWithArgumentsAbnormal
-     * @tc.desc      : testTypeFaceMakeFromFileWithArgumentsAbnormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromFileWithArgumentsAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0403
+     * @tc.desc   testTypeFaceMakeFromFileWithArgumentsAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromFileWithArgumentsAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromFileWithArgumentsAbnormal';
@@ -388,12 +388,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0500
-     * @tc.name      : testTypeFaceMakeFromCurrentNormal
-     * @tc.desc      : testTypeFaceMakeFromCurrentNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTypeFaceMakeFromCurrentNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0500
+     * @tc.desc   testTypeFaceMakeFromCurrentNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypeFaceMakeFromCurrentNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testTypeFaceMakeFromCurrentNormal';
@@ -418,12 +418,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0501
-     * @tc.name      : testTypeFaceMakeFromCurrentMultipleCalls
-     * @tc.desc      : testTypeFaceMakeFromCurrentMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromCurrentMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0501
+     * @tc.desc   testTypeFaceMakeFromCurrentMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromCurrentMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromCurrentMultipleCalls';
@@ -441,12 +441,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0502
-     * @tc.name      : testTypeFaceMakeFromCurrentNull
-     * @tc.desc      : testTypeFaceMakeFromCurrentNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromCurrentNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0502
+     * @tc.desc   testTypeFaceMakeFromCurrentNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromCurrentNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromCurrentNull';
@@ -470,12 +470,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0600
-     * @tc.name      : testTypeFaceMakeFromRawFileWithArgumentsNormal
-     * @tc.desc      : testTypeFaceMakeFromRawFileWithArgumentsNormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testTypeFaceMakeFromRawFileWithArgumentsNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0600
+     * @tc.desc   testTypeFaceMakeFromRawFileWithArgumentsNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTypeFaceMakeFromRawFileWithArgumentsNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, () => {
       const msg = 'testTypeFaceMakeFromRawFileWithArgumentsNormal';
@@ -498,12 +498,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0601
-     * @tc.name      : testTypeFaceMakeFromRawFileWithArgumentsMultipleCalls
-     * @tc.desc      : testTypeFaceMakeFromRawFileWithArgumentsMultipleCalls
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromRawFileWithArgumentsMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0601
+     * @tc.desc   testTypeFaceMakeFromRawFileWithArgumentsMultipleCalls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromRawFileWithArgumentsMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromRawFileWithArgumentsMultipleCalls';
@@ -520,12 +520,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0602
-     * @tc.name      : testTypeFaceMakeFromRawFileWithArgumentsNull
-     * @tc.desc      : testTypeFaceMakeFromRawFileWithArgumentsNull
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromRawFileWithArgumentsNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0602
+     * @tc.desc   testTypeFaceMakeFromRawFileWithArgumentsNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromRawFileWithArgumentsNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromRawFileWithArgumentsNull';
@@ -564,12 +564,12 @@ export default function typefaceTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0603
-     * @tc.name      : testTypeFaceMakeFromRawFileWithArgumentsAbnormal
-     * @tc.desc      : testTypeFaceMakeFromRawFileWithArgumentsAbnormal
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testTypeFaceMakeFromRawFileWithArgumentsAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0603
+     * @tc.desc   testTypeFaceMakeFromRawFileWithArgumentsAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testTypeFaceMakeFromRawFileWithArgumentsAbnormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testTypeFaceMakeFromRawFileWithArgumentsAbnormal';
@@ -589,6 +589,144 @@ export default function typefaceTest() {
       } catch (e) {
         console.info(msg + ` makeFromFileWithArguments mytypeface2 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
         expect(e.code).assertEqual(401)
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsBoldNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0700
+     * @tc.desc   testTypeFaceIsBoldNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTypeFaceIsBoldNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const msg = 'testTypeFaceIsBoldNormal';
+      const font = new drawing.Font();
+      try {
+        let typeface = font.getTypeface() as drawing.Typeface;
+        let result = typeface.isBold() ;
+        console.info(msg + ' isBold 1 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 1 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/NotoSansBengaliUI-Bold.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isBold();
+        console.info(msg + ' isBold 2 success ' + JSON.stringify(result));
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 2 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isBold();
+        console.info(msg + ' isBold 3 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isBold 3 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsBoldMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0701
+     * @tc.desc   Test for testTypeFaceIsBoldMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTypeFaceIsBoldMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceIsBoldMultipleCalls';
+      const font = new drawing.Font();
+      let str = "/system/fonts/NotoSansBengaliUI-Bold.ttf";
+      let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+      for (let i = 0; i < 20; i++) {
+        try {
+          let result = typeface.isBold();
+          console.info(msg + ' isBold successed step is: ' + i + "result is: " + result);
+          expect(result).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` isBold errorCode is:  ${e.code} + errormsg is: ${e.message} step is: ${i}`);
+          expect().assertFail();
+        }
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsItalicNormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0800
+     * @tc.desc   testTypeFaceIsItalicNormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testTypeFaceIsItalicNormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const msg = 'testTypeFaceIsItalicNormal';
+      const font = new drawing.Font();
+      try {
+        let typeface = font.getTypeface() as drawing.Typeface;
+        let result = typeface.isItalic() ;
+        console.info(msg + ' isItalic 1 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 1 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isItalic();
+        console.info(msg + ' isItalic 2 success ' + JSON.stringify(result));
+        expect(result).assertEqual(true);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 2 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        let str = "/system/fonts/HarmonyOS_Sans_SC.ttf";
+        let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+        let result = typeface.isItalic();
+        console.info(msg + ' isItalic 3 success ' + JSON.stringify(result));
+        expect(result).assertEqual(false);
+      } catch (e) {
+        e = e as BusinessError;
+        console.info(msg + `isItalic 3 errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   testTypeFaceIsItalicMultipleCalls
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_TYPEFACE_0801
+     * @tc.desc   Test for testTypeFaceIsItalicMultipleCalls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testTypeFaceIsItalicMultipleCalls', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
+      const msg = 'testTypeFaceIsItalicMultipleCalls';
+      const font = new drawing.Font();
+      let str = "/system/fonts/HarmonyOS_Sans_Italic.ttf";
+      let typeface = drawing.Typeface.makeFromFile(str) as drawing.Typeface;
+      for (let i = 0; i < 20; i++) {
+        try {
+          let result = typeface.isItalic();
+          console.info(msg + ' isItalic successed step is: ' + i + "result is: " + result);
+          expect(result).assertEqual(true);
+        } catch (e) {
+          e = e as BusinessError;
+          console.info(msg + ` isItalic errorCode is:  ${e.code} + errormsg is: ${e.message} step is: ${i}`);
+          expect().assertFail();
+        }
       }
     });
   })

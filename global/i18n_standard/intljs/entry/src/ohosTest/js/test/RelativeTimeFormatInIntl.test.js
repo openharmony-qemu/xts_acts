@@ -59,7 +59,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0100
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0100
      * @tc.desc   check the relativetime
@@ -76,7 +75,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0200
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0200
      * @tc.desc   check the relativetime
@@ -93,7 +91,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0220
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0220
      * @tc.desc   check the relativetime
@@ -110,7 +107,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0240
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0240
      * @tc.desc   check the relativetime
@@ -127,7 +123,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0300
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0300
      * @tc.desc   check the relativetime
@@ -140,11 +135,10 @@ describe('RelativeTimeFormatInIntlTest', function () {
         let relativetimefmt = new Intl.RelativeTimeFormat('en', { style: 'narrow' });
         let value = relativetimefmt.format(100,'second');
         console.log('i18n_test_relativetimeformat_0300 ' + value);
-        expect(value).assertEqual('in 100 sec.');
+        expect(value).assertEqual('in 100s');
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0400
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0400
      * @tc.desc   check the formatToParts value
@@ -161,7 +155,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0500
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0500
      * @tc.desc   check the relativetime
@@ -178,7 +171,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0600
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0600
      * @tc.desc   check the relativetime
@@ -195,7 +187,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0700
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0700
      * @tc.desc   check the relativetime
@@ -212,7 +203,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0800
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0800
      * @tc.desc   check the relativetime
@@ -229,7 +219,6 @@ describe('RelativeTimeFormatInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   i18n_test_relativetimeformat_0900
      * @tc.number SUB_GLOBAL_I18N_JS_RELATIVETIMEFORMAT_0900
      * @tc.desc   check the relativetime

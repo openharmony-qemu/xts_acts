@@ -97,65 +97,68 @@ export struct DisplayDevice {
   }
 
   build() {
-    Column() {
-      Row() {
-        Rect({ width: '40%', height: '23%' })
-          .margin({ top: '56px', left: '1%', right: '2%' })
-          .id('bigRect')
-          .fill('#007dff')
-          .onClick(async () => {
-            await this.getDefaultScreen()
-            Logger.info(TAG, `defaultOrAllScreen = ${this.defaultOrAllScreen}`)
-            this.dialogController.open()
-          })
+    Flex({ alignItems: ItemAlign.Center, justifyContent: FlexAlign.Start, direction: FlexDirection.Column }){
+      Scroll(){
+        Column() {
+          Row() {
+            Rect({ width: '40%', height: '23%' })
+              .margin({ top: '56px', left: '1%', right: '2%' })
+              .id('bigRect')
+              .fill('#007dff')
+              .onClick(async () => {
+                await this.getDefaultScreen()
+                Logger.info(TAG, `defaultOrAllScreen = ${this.defaultOrAllScreen}`)
+                this.dialogController.open()
+              })
 
 
-        ForEach(this.devices, (index: number) => {
-          Rect({ width: '40%', height: '23%' })
-            .margin({ top: '56px', left: '5%', right: '1%' })
-            .fill(Color.Green)
-            .id('smallRect' + (index + 1))
-            .onClick(async () => {
-              await this.getAllScreen()
-              Logger.info(TAG, `defaultOrAllScreen = ${this.defaultOrAllScreen}`)
-              this.dialogController.open()
+            ForEach(this.devices, (index: number) => {
+              Rect({ width: '40%', height: '23%' })
+                .margin({ top: '56px', left: '5%', right: '1%' })
+                .fill(Color.Green)
+                .id('smallRect' + (index + 1))
+                .onClick(async () => {
+                  await this.getAllScreen()
+                  Logger.info(TAG, `defaultOrAllScreen = ${this.defaultOrAllScreen}`)
+                  this.dialogController.open()
+                })
             })
-        })
-      }
+          }.margin({ top: '70vp' })
 
-      Row() {
-        Button('添加虚拟屏')
-          .width('40%')
-          .height('10%')
-          .id('addScreen')
-          .fontSize(22)
-          .backgroundColor('#007dff')
-          .type(ButtonType.Capsule)
-          .onClick(async () => {
-            let result: ESObject = await this.displayModel.createVirtualScreen(this.screenIds.length)
-            Logger.info(TAG, `this createVirtualScreen screen id = ${JSON.stringify(this.screenIds)}`)
-            this.screenIds.push(result.id)
-          })
+          Row() {
+            Button('添加虚拟屏')
+              .width('35%')
+              .height('15%')
+              .id('addScreen')
+              .fontSize(13)
+              .backgroundColor('#007dff')
+              .type(ButtonType.Capsule)
+              .onClick(async () => {
+                let result: ESObject = await this.displayModel.createVirtualScreen(this.screenIds.length)
+                Logger.info(TAG, `this createVirtualScreen screen id = ${JSON.stringify(this.screenIds)}`)
+                this.screenIds.push(result.id)
+              })
 
-        Button('移除虚拟屏')
-          .width('40%')
-          .height('10%')
-          .id('removeScreen')
-          .fontSize(22)
-          .backgroundColor('#007dff')
-          .type(ButtonType.Capsule)
-          .onClick(async () => {
-            await this.displayModel.destroyVirtualScreen(this.screenIds[this.screenIds.length - 1])
-            Logger.info(TAG, `this after destroyVirtualScreen screen id = ${JSON.stringify(this.screenIds)}`)
-            this.isPass = true
-          })
-      }
-      .justifyContent(FlexAlign.SpaceEvenly)
-      .width('100%')
-      .margin({ top: 70 })
-      .margin({ bottom: '20vp' })
-    }
-    .width('100%')
+            Button('移除虚拟屏')
+              .width('35%')
+              .height('15%')
+              .id('removeScreen')
+              .fontSize(13)
+              .backgroundColor('#007dff')
+              .type(ButtonType.Capsule)
+              .onClick(async () => {
+                await this.displayModel.destroyVirtualScreen(this.screenIds[this.screenIds.length - 1])
+                Logger.info(TAG, `this after destroyVirtualScreen screen id = ${JSON.stringify(this.screenIds)}`)
+                this.isPass = true
+              })
+          }
+          .justifyContent(FlexAlign.SpaceEvenly)
+          .width('100%')
+          .margin({ top: 70 })
+          .margin({ bottom: '20vp' })
+        }
+      }.scrollBarWidth(10).scrollBarColor(Color.Orange)
+    }.width('100%')
     .height('50%')
   }
 }

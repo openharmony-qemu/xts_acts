@@ -41,12 +41,12 @@ export default function backgroundBrightnessTest() {
       done();
     });
     /**
-     * @tc.number    backgroundBrightness
-     * @tc.name      backgroundBrightnessTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   backgroundBrightnessTest_0100
+     * @tc.number backgroundBrightness
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('backgroundBrightnessTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('backgroundBrightnessTest_0100 START');

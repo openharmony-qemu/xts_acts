@@ -37,14 +37,14 @@ export default function webViewSrollableJsunit() {
       console.info("web beforeEach start");
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_001
-    * @tc.name       : bindSelectionMenuTypeStatic01
-    * @tc.desc       : test bindSelectionMenuType01 interface when choose callback mode.
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   bindSelectionMenuTypeStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_001
+     * @tc.desc   test bindSelectionMenuType01 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('bindSelectionMenuTypeStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
       await Utils.msSleep(1000)
       Utils.emitEvent("bindSelectionMenuType01", 10)
@@ -60,28 +60,37 @@ export default function webViewSrollableJsunit() {
       buttonOne?.click()
       await Utils.msSleep(2000);
       inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(2000);
+      done();
+    })
+
+    /**
+     * @tc.name   bindSelectionMenuTypeStatic02
+     * @tc.number SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_002
+     * @tc.desc   test bindSelectionMenuType02 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('bindSelectionMenuTypeStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
+      await Utils.msSleep(1000)
+      Utils.emitEvent("bindSelectionMenuType02", 10)
+      await Utils.msSleep(2000)
+      Utils.registerEvent("bindSelectionMenuType02",1,8302,done);
+      await Utils.msSleep(2000)
+      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
+      await Utils.msSleep(5000)
       done();
     })
 
     /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_002
-    * @tc.name       : bindSelectionMenuTypeStatic02
-    * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
-    it('bindSelectionMenuTypeStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
-      await Utils.msSleep(1000)
-      Utils.emitEvent("bindSelectionMenuType02", 10)
-      await Utils.msSleep(1000)
-      Utils.registerEvent("bindSelectionMenuType02",1,8302,done);
-      await Utils.msSleep(1000)
-      inspector.sendEventByKey('webcomponentSelectionMenu',10,'');
-      await Utils.msSleep(1000)
-      done();
-    })
-
+  * @tc.number     : SUB_ACE_BASIC_ETS_BINDSELECTIONMENUTYPE_API_003
+  * @tc.name       : bindSelectionMenuTypeStatic03
+  * @tc.desc       : test bindSelectionMenuType02 interface when choose callback mode.
+  * @tc.size       : MediumTest
+  * @tc.type       : Function
+  * @tc.level      : Level 3
+  */
     it('SwitchNextPageStatic', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);

@@ -208,5 +208,13 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
         }                                                                                                              \
     } while (0)
 
+#define ASSERT_NOTNULL(result)                                                                                         \
+    do {                                                                                                               \
+        if ((result) == nullptr) {                                                                                     \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_COMMON_TEST_H

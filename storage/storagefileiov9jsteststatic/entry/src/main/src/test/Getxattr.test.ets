@@ -29,14 +29,12 @@ export default function fileIOGetxattr() {
   describe('fileIO_test_getxattr', (): void => {
 
     /**
+     * @tc.name   test_FileIO_Getxattr_Sync_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_Sync_0100
-     * @tc.name test_FileIO_Getxattr_Sync_Static_001
-     * @tc.desc Test getxattr() interface.
-     * This interface shall work properly in normal case.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getxattr() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FileIO_Getxattr_Sync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Getxattr_Sync_Static_001');
@@ -56,14 +54,12 @@ export default function fileIOGetxattr() {
     });
 
     /**
+     * @tc.name   test_FileIO_Getxattr_ASync_Static_001
      * @tc.number SUB_BASIC_FM_FileAPI_FileIo_GETXATTR_ASync_0100
-     * @tc.name test_FileIO_Getxattr_ASync_Static_001
-     * @tc.desc Test getxattr() interface.
-     * This interface shall work properly in normal case.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test getxattr() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_FileIO_Getxattr_ASync_Static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('test_FileIO_Getxattr_ASync_Static_001');
@@ -77,7 +73,7 @@ export default function fileIOGetxattr() {
           hilog.info(domain, tag, '%{public}s', "test_FileIO_Getxattr_ASync_Static_001 value is: " + attrValue);
           expect(attrValue).assertEqual('Test file.');
           done();
-        }).catch((err: ()=>void): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_ASync_Static_001 has error' + JSON.stringify(err));
         });
       } catch (e: BusinessError) {

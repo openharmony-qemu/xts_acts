@@ -19,6 +19,7 @@ import { BusinessError, commonEventManager, systemParameterEnhance } from '@kit.
 import { common } from '@kit.AbilityKit';
 import App from '@system.app';
 import { Driver, ON, Component, MatchPattern } from '@kit.TestKit';
+
 let buttonClicked:boolean = false;
 let driver = Driver.create();
 const DOMAIN = 0x0000;
@@ -51,7 +52,16 @@ function sleep(ms: number) {
 
 export default function SetFontSizeTest() {
   describe('SetFontSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       uiAbilityContext = AppStorage.get<Context>('uiAbilityContext') as common.UIAbilityContext;
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');
@@ -71,11 +81,13 @@ export default function SetFontSizeTest() {
 
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600
-     * @tc.name    SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600
-     * @tc.desc    Verify multi-module application properly follows system behavior when setFontSizeScale(1.3) is applied across all components
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600
+     * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600
+     * @tc.desc   Verify multi-module application properly follows system behavior when setFontSizeScale(1.3) is applied across all components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_1600';
@@ -155,11 +167,13 @@ export default function SetFontSizeTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700
-     * @tc.name    SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700
-     * @tc.desc    Verify the follow system with multiple modules: after app closure and restart, the obtained config's font size is 1
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700
+     * @tc.number SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700
+     * @tc.desc   Verify the follow system with multiple modules: after app closure and restart, the obtained config's font size is 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_setFontSizeAtApp_1700';

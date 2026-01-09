@@ -1061,6 +1061,165 @@ static napi_value SUB_IMF_NDK_CursorInfo_Create_0100(napi_env env, napi_callback
     return result;
 }
 
+static napi_value SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100(napi_env env, napi_callback_info info)
+{
+    InputMethod_ErrorCode returnValue = OH_TextEditorProxy_SetCallbackInMainThread(NULL, true);
+    if (returnValue == InputMethod_ErrorCode::IME_ERR_NULL_POINTER) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0100 successful.");
+        return result;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0100 fail.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200(napi_env env, napi_callback_info info)
+{
+    g_txtEditProxy = OH_TextEditorProxy_Create();
+    InputMethod_ErrorCode returnValue = OH_TextEditorProxy_SetCallbackInMainThread(g_txtEditProxy, true);
+    OH_TextEditorProxy_Destroy(g_txtEditProxy);
+    if (returnValue == InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0200 successful.");
+        return result;
+    }
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SetCallbackInMainThread_0200 fail.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_InputMethod_ErrorCode_0100(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_int32(env, (InputMethod_ErrorCode::IME_ERR_UNDEFINED == 1 &&
+    InputMethod_ErrorCode::IME_ERR_PACKAGEMANAGER  == 12800001 &&
+    InputMethod_ErrorCode::IME_ERR_IMENGINE == 12800002 &&
+    InputMethod_ErrorCode::IME_ERR_IMCLIENT == 12800003 &&
+    InputMethod_ErrorCode::IME_ERR_CONFIG_PERSIST == 12800005 &&
+    InputMethod_ErrorCode::IME_ERR_CONTROLLER == 12800006 &&
+    InputMethod_ErrorCode::IME_ERR_SETTINGS == 12800007 &&
+    InputMethod_ErrorCode::IME_ERR_IMMS == 12800008 &&
+    InputMethod_Direction::IME_DIRECTION_NONE == 0) ? 1 : 0, &result);
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextConfig_SetPlaceholder_0100(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *expPlaceholder = u"abcdef";
+    size_t expPlaceholderLength = 0;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_SetPlaceholder(config, expPlaceholder, expPlaceholderLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetPlaceholder1 fail.");
+        return result;
+    }
+    const char16_t *expAbilityName = u"abcdef";
+    size_t expAbilityNameLength = 0;
+    returnValue = OH_TextConfig_SetAbilityName(config, expAbilityName, expAbilityNameLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetAbilityName1 fail.");
+        return result;
+    }
+    OH_TextConfig_Destroy(config);
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_SetPlaceholder_0100 successful.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextConfig_SetPlaceholder_0200(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *expPlaceholder = u"abcdef";
+    size_t expPlaceholderLength = -1;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_SetPlaceholder(config, expPlaceholder, expPlaceholderLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetPlaceholder2 fail.");
+        return result;
+    }
+    const char16_t *expAbilityName = u"abcdef";
+    size_t expAbilityNameLength = -1;
+    returnValue = OH_TextConfig_SetAbilityName(config, expAbilityName, expAbilityNameLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetAbilityName2 fail.");
+        return result;
+    }
+    OH_TextConfig_Destroy(config);
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_SetPlaceholder_0200 successful.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextConfig_SetPlaceholder_0300(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *expPlaceholder = u"abcdef";
+    size_t expPlaceholderLength = 256;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_SetPlaceholder(config, expPlaceholder, expPlaceholderLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetPlaceholder3 fail.");
+        return result;
+    }
+    const char16_t *expAbilityName = u"abcdef";
+    size_t expAbilityNameLength = 256;
+    returnValue = OH_TextConfig_SetAbilityName(config, expAbilityName, expAbilityNameLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetAbilityName3 fail.");
+        return result;
+    }
+    OH_TextConfig_Destroy(config);
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_SetPlaceholder_0300 successful.");
+    return result;
+}
+
+static napi_value SUB_IMF_NDK_TextConfig_SetPlaceholder_0400(napi_env env, napi_callback_info info)
+{
+    InputMethod_TextConfig *config = OH_TextConfig_Create();
+    const char16_t *expPlaceholder = u"abcdef";
+    size_t expPlaceholderLength = 257;
+    InputMethod_ErrorCode returnValue = OH_TextConfig_SetPlaceholder(config, expPlaceholder, expPlaceholderLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetPlaceholder4 fail.");
+        return result;
+    }
+    const char16_t *expAbilityName = u"abcdef";
+    size_t expAbilityNameLength = 257;
+    returnValue = OH_TextConfig_SetAbilityName(config, expAbilityName, expAbilityNameLength);
+    if (returnValue != InputMethod_ErrorCode::IME_ERR_OK) {
+        napi_value result = nullptr;
+        NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>OH_TextConfig_SetAbilityName4 fail.");
+        return result;
+    }
+    OH_TextConfig_Destroy(config);
+    napi_value result = nullptr;
+    NAPI_CALL(env, napi_create_string_utf8(env, "OK", NAPI_AUTO_LENGTH, &result));
+    OH_LOG_Print(LOG_APP, LOG_INFO, 0, "", "NDKTest====>SUB_IMF_NDK_TextConfig_SetPlaceholder_0400 successful.");
+    return result;
+}
+
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -1119,7 +1278,21 @@ static napi_value Init(napi_env env, napi_value exports)
         {"SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH", nullptr,
          SUB_IMF_NDK_InputMethodProxy_ShowTextInput_TOUCH, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER", nullptr,
-         SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER, nullptr, nullptr, nullptr, napi_default, nullptr}};
+         SUB_IMF_NDK_InputMethodProxy_ShowTextInput_OTHER, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100", nullptr,
+         SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200", nullptr,
+         SUB_IMF_NDK_TextEditorProxy_SetCallbackInMainThread_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_SetPlaceholder_0100", nullptr,
+         SUB_IMF_NDK_TextConfig_SetPlaceholder_0100, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_SetPlaceholder_0200", nullptr,
+         SUB_IMF_NDK_TextConfig_SetPlaceholder_0200, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_SetPlaceholder_0300", nullptr,
+         SUB_IMF_NDK_TextConfig_SetPlaceholder_0300, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_TextConfig_SetPlaceholder_0400", nullptr,
+         SUB_IMF_NDK_TextConfig_SetPlaceholder_0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"SUB_IMF_NDK_InputMethod_ErrorCode_0100", nullptr,
+         SUB_IMF_NDK_InputMethod_ErrorCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr}};
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }

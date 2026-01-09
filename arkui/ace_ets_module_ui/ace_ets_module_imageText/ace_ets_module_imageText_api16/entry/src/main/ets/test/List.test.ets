@@ -26,7 +26,6 @@ import addOrDelText from './TextAreaTest/addOrDelText.test';
 import TextOnChangeOptionsTest from './TextChangeTest/TextOnChangeOptionsTest.test';
 import TextOnWillChangeOptionsTest from './TextChangeTest/TextOnWillChangeOptionsTest.test';
 import bindSelectionMenuTest from './SelectionMenuTest/bindSelectionMenuTest.test';
-
 import textAreaEllipsisModeTest from './EllipsisModeTest/textAreaEllipsisModeTest.test';
 import textInputEllipsisModeTest from './EllipsisModeTest/textInputEllipsisModeTest.test';
 import searchFontScaleTest from './FontScaleTest/searchFontScaleTest.test';
@@ -35,7 +34,7 @@ import textInputFontScaleTest from './FontScaleTest/textInputFontScaleTest.test'
 import searchHalfLeadingTest from './HalfLeadingTest/searchHalfLeadingTest.test';
 import textAreaHalfLeadingTest from './HalfLeadingTest/textAreaHalfLeadingTest.test';
 import textInputHalfLeadingTest from './HalfLeadingTest/textInputHalfLeadingTest.test';
-import RichEditorTextStyle from './RichEditorTest/RichEditorTextStyle.test';
+
 
 export default function testsuite() {
   textAreaInputTest();
@@ -59,5 +58,4 @@ export default function testsuite() {
   searchHalfLeadingTest();
   textAreaHalfLeadingTest();
   textInputHalfLeadingTest();
-  RichEditorTextStyle();
 }

@@ -30,14 +30,12 @@ export default function fileIOTruncate() {
   describe("fileIO_fs_truncate", (): void => {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_truncate start');
     /**
+     * @tc.name   fileIO_truncate_async_static_000
      * @tc.number SUB_DF_fileIO_truncate_async_static_0000
-     * @tc.name fileIO_truncate_async_static_000
-     * @tc.desc Test the truncate() interface. Promise.
-     * Truncate the file with path and truncateLen = 5.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_000 start');
@@ -63,14 +61,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_001
      * @tc.number SUB_DF_fileIO_truncate_async_static_0100
-     * @tc.name fileIO_truncate_async_static_001
-     * @tc.desc Test the truncate() interface. Callback.
-     * Truncate the file with fd and truncateLen = 5.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_001 start');
@@ -97,14 +93,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_002
      * @tc.number SUB_DF_fileIO_truncate_async_static_0200
-     * @tc.name fileIO_truncate_async_static_002
-     * @tc.desc Test the truncate() interface. Promise.then().catch
-     * Truncate the file with path and truncateLen = 2.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Promise.then().catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_002 start');
@@ -123,7 +117,7 @@ export default function fileIOTruncate() {
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: ()=>void): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           console.log('fileIO_truncate_async_static_002 error package: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -134,14 +128,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_003
      * @tc.number SUB_DF_fileIO_truncate_async_static_0300
-     * @tc.name fileIO_truncate_async_static_003
-     * @tc.desc Test the truncate() interface. Promise.then().catch
-     * Truncate the file with fd and truncateLen = 2.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Promise.then().catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_003 start');
@@ -157,7 +149,7 @@ export default function fileIOTruncate() {
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: ()=>void): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           console.log('fileIO_truncate_async_static_003 error package: ' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -168,14 +160,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_004
      * @tc.number SUB_DF_fileIO_truncate_async_static_0400
-     * @tc.name fileIO_truncate_async_static_004
-     * @tc.desc Test the truncate() interface. Callback.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_004 start');
@@ -197,14 +187,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_005
      * @tc.number SUB_DF_fileIO_truncate_async_static_0500
-     * @tc.name fileIO_truncate_async_static_005
-     * @tc.desc Test the truncate() interface. Promise.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_005 start');
@@ -223,14 +211,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_006
      * @tc.number SUB_DF_fileIO_truncate_async_static_0600
-     * @tc.name fileIO_truncate_async_static_006
-     * @tc.desc Test the truncate() interface. Callback.
-     * Truncate the file with fd and truncateLen = 0.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_006 start');
@@ -257,14 +243,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_007
      * @tc.number SUB_DF_fileIO_truncate_async_static_0700
-     * @tc.name fileIO_truncate_async_static_007
-     * @tc.desc Test the truncate() interface. Callback.
-     * Truncate the file with fpath and truncateLen = 0.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_007 start');
@@ -291,14 +275,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_008
      * @tc.number SUB_DF_fileIO_truncate_async_static_0800
-     * @tc.name fileIO_truncate_async_static_008
-     * @tc.desc Test the truncate() interface. Promise.
-     * Use default truncateLen = 0.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_008 start');
@@ -324,14 +306,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_011
      * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1100
-     * @tc.name fileIO_truncate_async_static_011
-     * @tc.desc Test the truncate() interface. Callback.
-     * Bad file descriptor.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_011 start');
@@ -360,14 +340,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_012
      * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1200
-     * @tc.name fileIO_truncate_async_static_012
-     * @tc.desc Test the truncate() interface. Promise.
-     * Is a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_truncate_async_static_012 start');
@@ -387,14 +365,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_truncate_async_static_013
      * @tc.number SUB_DF_FILEIO_TRUNCATE_ASYNC_1300
-     * @tc.name fileIO_truncate_async_static_013
-     * @tc.desc Test the truncate() interface. Promise.
-     * Is a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test the truncate() interface. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_truncate_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_truncate_async_static_013');
@@ -412,14 +388,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_test_truncate_sync_static_000
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0000
-     * @tc.name fileIO_test_truncate_sync_static_000
-     * @tc.desc Test the truncateSync() interface.
-     * Truncate the file with path.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncateSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_truncate_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_000 start');
@@ -437,14 +411,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_test_truncate_sync_static_001
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0100
-     * @tc.name fileIO_test_truncate_sync_static_001
-     * @tc.desc Test the truncateSync() interface.
-     * Truncate the file with fd and truncateLen = 5.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncateSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_truncate_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_001 start');
@@ -469,14 +441,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_test_truncate_sync_static_002
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0200
-     * @tc.name fileIO_test_truncate_sync_static_002
-     * @tc.desc Test the truncateSync() interface.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncateSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_truncate_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_002 start');
@@ -492,13 +462,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_test_truncate_sync_static_003
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0300
-     * @tc.name fileIO_test_truncate_sync_static_003
-     * @tc.desc Test the truncateSync() interface. Invalid parameter.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncateSync() interface. Invalid parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_truncate_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_003 start');
@@ -513,14 +482,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_test_truncate_sync_static_005
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0500
-     * @tc.name fileIO_test_truncate_sync_static_005
-     * @tc.desc Test truncateSync() interfaces.
-     * Use default truncateLen = 0.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test truncateSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_truncate_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_005 start');
@@ -544,14 +511,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_test_truncate_sync_static_006
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0600
-     * @tc.name fileIO_test_truncate_sync_static_006
-     * @tc.desc Test the truncateSync() interface.
-     * Bad file descriptor.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncateSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_truncate_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_006 start');
@@ -574,13 +539,12 @@ export default function fileIOTruncate() {
     });
 
     /**
+     * @tc.name   fileIO_test_truncate_sync_static_007
      * @tc.number SUB_DF_fileIO_truncate_sync_static_0700
-     * @tc.name fileIO_test_truncate_sync_static_007
-     * @tc.desc Test the truncateSync() interface.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test the truncateSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_truncate_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_truncate_sync_static_007 start');

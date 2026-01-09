@@ -48,12 +48,12 @@ export default function TapGestureHandlerTest() {
     });
 
     /**
-     * @tc.number    TapGestureHandler_0010
-     * @tc.name      TapGestureHandlerOptions
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TapGestureHandler_0010
+     * @tc.number TapGestureHandler_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TapGestureHandler_0010', Level.LEVEL0, async (done: Function) => {
       console.info('TapGestureHandler_0010 START');

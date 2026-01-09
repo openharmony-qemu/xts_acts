@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include "hidebug/hidebug.h"
 #include "hidebug/hidebug_type.h"
+#include "hicollie/hicollie.h"
 #include <string>
 #include "hilog/log.h"
 #include <cstdint>
@@ -27,56 +28,29 @@ std::vector<uint32_t> tids;
 
 namespace {
 constexpr auto LOG_PRINT_DOMAIN = 0xFF00;
+std::atomic_bool s {true} ;
+std::mutex mutex;
 }
 
-uint64_t GetTimeMilliSeconds(void)
-{
-    struct timespec ts;
-    (void)clock_gettime(CLOCK_REALTIME, &ts);
-    return (static_cast<uint64_t>(ts.tv_sec) * 1000) + // 1000 : second to millisecond convert ratio
-        ((static_cast<uint64_t>(ts.tv_sec)) / 1000000); // 1000000 : nanosecond to millisecond convert ratio
-}
-
-
-__attribute__((noinline)) void TestMyFunc(int i) {
-    if (i == 0 ){
-        tids.emplace_back(gettid());
-        
+void ThreadBlock(){
+    while (s.load()){
         std::this_thread::sleep_for(std::chrono::milliseconds(1));
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "OH_HiDebug_GetSystemCpuUsage");
-        auto start = GetTimeMilliSeconds();
-        const int WAIT_TIME = 1000;
-        while (GetTimeMilliSeconds() - start < WAIT_TIME * 10000 );// 10000 : wait time 10s
+    };
+}
+
+__attribute__((noinline)) void StackDepth(int i) {
+    if (i == 0 ){
+        ThreadBlock();
+        return;
     }
-    i--;
-    return TestMyFunc(i);
+    return StackDepth(i-1);
 }
 
 
-static napi_value Add(napi_env env, napi_callback_info info)
-{
-    size_t argc = 2;
-    napi_value args[2] = {nullptr};
-
-    napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
-
-    napi_valuetype valuetype0;
-    napi_typeof(env, args[0], &valuetype0);
-
-    napi_valuetype valuetype1;
-    napi_typeof(env, args[1], &valuetype1);
-
-    double value0;
-    napi_get_value_double(env, args[0], &value0);
-
-    double value1;
-    napi_get_value_double(env, args[1], &value1);
-
-    napi_value sum;
-    napi_create_double(env, value0 + value1, &sum);
-
-    return sum;
-
+static napi_value ClearThreads(napi_env env, napi_callback_info info){
+    s.store(false);
+    tids.clear();
+    return nullptr;
 }
 
 static napi_value GetNativeMemInfoTrue(napi_env env, napi_callback_info info)
@@ -204,7 +178,7 @@ static napi_value StartErrStack(napi_env env, napi_callback_info info) {
             .reserved = 0,
         };
         int code = OH_HiDebug_RequestThreadLiteSampling(&config, nullptr);
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}d",code );
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}d",code );
         resultPromise.set_value(code);
     }).detach();
     int code = resultFuture.get();
@@ -219,7 +193,7 @@ static napi_value StartErrConfig(napi_env env, napi_callback_info info) {
     std::thread([resultPromise = std::move(resultPromise)]() mutable {
         int code = OH_HiDebug_RequestThreadLiteSampling(nullptr, [](const char *stack) {
             std::string stacks(stack);
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}lu",
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}lu",
                              stacks.size());
             if (stacks.empty()) {
                 return;
@@ -227,18 +201,18 @@ static napi_value StartErrConfig(napi_env env, napi_callback_info info) {
             size_t start = 0;
             size_t end = 0;
             while ((end = stacks.find('\n', start)) != std::string::npos) {
-                 OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
                              stacks.substr(start, end - start).data());
                 start = end + 1;
             }
             // 打印最后一部分
             if (start < stacks.size()) {
-                 OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
                              stacks.substr(start, end - start).data());
             }
 
         });
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks 11 %{public}d", code );
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks 11 %{public}d", code );
         resultPromise.set_value(code);
     }).detach();
     int code = resultFuture.get();
@@ -263,7 +237,7 @@ static napi_value StartErrConfigtid(napi_env env, napi_callback_info info) {
         };
         int code = OH_HiDebug_RequestThreadLiteSampling(&config, [](const char *stack) {
             std::string stacks(stack);
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}lu",
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}lu",
                              stacks.size());
             if (stacks.empty()) {
                 return;
@@ -271,18 +245,18 @@ static napi_value StartErrConfigtid(napi_env env, napi_callback_info info) {
             size_t start = 0;
             size_t end = 0;
             while ((end = stacks.find('\n', start)) != std::string::npos) {
-                 OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
                              stacks.substr(start, end - start).data());
                 start = end + 1;
             }
             // 打印最后一部分
             if (start < stacks.size()) {
-                 OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
                              stacks.substr(start, end - start).data());
             }
 
         });
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}d",code );
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}d",code );
         resultPromise.set_value(code);
     }).detach();
     int code = resultFuture.get();
@@ -317,10 +291,10 @@ static napi_value Start(napi_env env, napi_callback_info info) {
             .duration = static_cast<uint32_t>(value1),
             .reserved = 0,
         };
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}d  %{public}d", value0,value1 );
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get params  %{public}d  %{public}d", value0,value1 );
         auto code = OH_HiDebug_RequestThreadLiteSampling(&config, [](const char *stack) {
             std::string stacks(stack);
-            OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}lu",
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks start %{public}lu",
                              stacks.size());
             if (stacks.empty()) {
                 return;
@@ -328,40 +302,276 @@ static napi_value Start(napi_env env, napi_callback_info info) {
             size_t start = 0;
             size_t end = 0;
             while ((end = stacks.find('\n', start)) != std::string::npos) {
-                 OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks in %{public}s",
                              stacks.substr(start, end - start).data());
                 start = end + 1;
             }
             if (start < stacks.size()) {
-                 OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}s",
+                 OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get stacks end %{public}s",
                              stacks.substr(start, end - start).data());
             }
         });
-        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "TestTag", "Get stacks %{public}d", code );
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "Get Errcode done %{public}d", code );
     napi_create_double(env, code, &sum);
     return sum;
     return nullptr;
 }
 
 static  napi_value AddThread(napi_env env, napi_callback_info info) {
-    size_t argc = 2;
-    napi_value args[2] = {nullptr};
+    s.store(true);
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     napi_valuetype valuetype0;
     napi_typeof(env, args[0], &valuetype0);
-    napi_valuetype valuetype1;
-    napi_typeof(env, args[1], &valuetype1);
     int32_t value0;
     napi_get_value_int32(env, args[0], &value0);
-    napi_value sum;
     std::thread ([value0]{
-        TestMyFunc(value0);
+        auto tid = gettid();
+        {
+            std::lock_guard<std::mutex> guard(mutex);
+            tids.emplace_back(tid);
+        }
+        StackDepth(value0);
+        {
+            std::lock_guard<std::mutex> guard(mutex);
+            tids.clear();
+            OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "TestTag", "clear tid done" );
+        }
     }).detach();
-    const int BACK_STACK = 100;
-    napi_create_double(env, BACK_STACK, &sum);
-    return sum;
+    return nullptr;
 }
 
+static napi_value Add(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+
+    napi_get_cb_info(env, info, &argc, args , nullptr, nullptr);
+
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+
+    napi_valuetype valuetype1;
+    napi_typeof(env, args[1], &valuetype1);
+
+    double value0;
+    napi_get_value_double(env, args[0], &value0);
+
+    double value1;
+    napi_get_value_double(env, args[1], &value1);
+
+    napi_value sum;
+    napi_create_double(env, value0 + value1, &sum);
+
+    return sum;
+
+}
+
+static napi_value CHECK_HIDEBUG_NO_PERMISSION(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_NO_PERMISSION == 11400103;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_TRACE_ABNORMAL(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_TRACE_ABNORMAL == 11400104;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS == 11400200;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_NOT_SUPPORTED(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_NOT_SUPPORTED == 11400300;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_UNDER_SAMPLING(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_UNDER_SAMPLING == 11400301;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HIDEBUG_RESOURCE_UNAVAILABLE(napi_env env, napi_callback_info info){
+    bool res =  HiDebug_ErrorCode::HIDEBUG_RESOURCE_UNAVAILABLE == 11400302;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+static napi_value CHECK_HICOLLIE_REMOTE_FAILED(napi_env env, napi_callback_info info){
+    bool res =  HiCollie_ErrorCode::HICOLLIE_REMOTE_FAILED == 29800002;
+    napi_value ret = nullptr;
+    napi_get_boolean(env, res, &ret);
+    return ret;
+}
+
+
+static napi_value CHECK_ThreadCpuUsage(napi_env env, napi_callback_info info){
+    napi_value result;
+    HiDebug_ThreadCpuUsagePtr threadCpuUsage = OH_HiDebug_GetAppThreadCpuUsage() ;
+    if(threadCpuUsage == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+static napi_value CHECK_OH_HiDebug_GetDefaultMallocDispatchTable(napi_env env, napi_callback_info info){
+
+    napi_value result;
+    HiDebug_MallocDispatch* original = (HiDebug_MallocDispatch*)OH_HiDebug_GetDefaultMallocDispatchTable();
+    if(original == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+static napi_value CHECK_OH_HiDebug_CreateBacktraceObject(napi_env env, napi_callback_info info){
+
+    napi_value result;
+    HiDebug_Backtrace_Object backtraceObject = OH_HiDebug_CreateBacktraceObject();
+    if(backtraceObject == nullptr){
+      napi_create_int32(env, 0, &result);
+      return result;
+    }else{
+      napi_create_int32(env, 1, &result);
+      return result;
+    }
+}
+
+static napi_value TestSetCrashObjType(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    int32_t objType;
+    napi_get_value_int32(env, args[0], &objType);
+    uint64_t crashObj;
+    char data[] = "test set crashObject"; //长度64
+    if (objType == HIDEBUG_CRASHOBJ_STRING) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING, data);
+        OH_HiDebug_ResetCrashObj(crashObj);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_64B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_64B, data);
+        OH_HiDebug_ResetCrashObj(crashObj);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_256B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_256B, data);
+        OH_HiDebug_ResetCrashObj(crashObj);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_1024B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_1024B, data);
+        OH_HiDebug_ResetCrashObj(crashObj);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_2048B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_2048B, data);
+        OH_HiDebug_ResetCrashObj(crashObj);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_4096B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_4096B, data);
+        OH_HiDebug_ResetCrashObj(crashObj);
+    } else {
+        napi_value input;
+        napi_create_int32(env, -1, &input);
+        napi_throw_error(env, std::to_string(objType).c_str(), "hidebug SetCrashObj error, input is error");
+        return input;
+    }
+    if (std::to_string(crashObj).c_str() == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        napi_throw_error(env, std::to_string(crashObj).c_str(), "hidebug SetCrashObj error, result is error");
+        return result;
+    }
+    napi_value ret;
+    napi_create_bigint_uint64(env, crashObj, &ret);
+    return ret;
+}
+
+static napi_value TestSetCrashObjAddr(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    int32_t objType;
+    napi_get_value_int32(env, args[0], &objType);
+    uint64_t crashObj;
+    if (objType == HIDEBUG_CRASHOBJ_STRING) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING, nullptr);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_64B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_64B, nullptr);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_256B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_256B, nullptr);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_1024B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_1024B, nullptr);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_2048B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_2048B, nullptr);
+    } else if (objType == HIDEBUG_CRASHOBJ_MEMORY_4096B) {
+        crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_MEMORY_4096B, nullptr);
+    } else {
+        napi_value input;
+        napi_create_int32(env, -1, &input);
+        napi_throw_error(env, std::to_string(objType).c_str(), "hidebug SetCrashObj error, input is error");
+        return input;
+    }
+    if (std::to_string(crashObj).c_str() == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        napi_throw_error(env, std::to_string(crashObj).c_str(), "hidebug SetCrashObj error, result is error");
+        return result;
+    }
+    napi_value ret;
+    napi_create_bigint_uint64(env, crashObj, &ret);
+    return ret;
+}
+
+static napi_value CheckSetCrashObj(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    char data[] = "test set crashObject";
+    uint64_t crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING, data);
+    if (std::to_string(crashObj).c_str() == nullptr) {
+        napi_create_int32(env, 0, &result);
+        return result;
+    } else {
+        napi_create_int32(env, 1, &result);
+        return result;
+    }
+}
+
+static napi_value TestSetCrashObjAddrLen(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    napi_valuetype valuetype0;
+    napi_typeof(env, args[0], &valuetype0);
+    int32_t addrLen;
+    napi_get_value_int32(env, args[0], &addrLen);
+    uint64_t crashObj;
+    std::string str = "test set crashObject addr length";
+    const int KB = 1024;
+    str.resize(addrLen * KB, '0');
+    crashObj = OH_HiDebug_SetCrashObj(HiDebug_CrashObjType::HIDEBUG_CRASHOBJ_STRING, (void*)str.c_str());
+    OH_HiDebug_ResetCrashObj(crashObj);
+    if (std::to_string(crashObj).c_str() == nullptr) {
+        napi_value result;
+        napi_create_int32(env, -1, &result);
+        napi_throw_error(env, std::to_string(crashObj).c_str(), "hidebug SetCrashObj error, result is error");
+        return result;
+    }
+    napi_value ret;
+    napi_create_bigint_uint64(env, crashObj, &ret);
+    return ret;
+}
 
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
@@ -372,10 +582,26 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getNativeMemInfoFalse", nullptr, GetNativeMemInfoFalse, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getGraphicMemSummaryC", nullptr, GetGraphicMemSummaryC, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"addthread", nullptr, AddThread, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"clearthreads", nullptr, ClearThreads, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"start", nullptr, Start, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrstack", nullptr, StartErrStack, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrconfig", nullptr, StartErrConfig, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"starterrconfigtid", nullptr, StartErrConfigtid, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_TRACE_ABNORMAL", nullptr, CHECK_HIDEBUG_TRACE_ABNORMAL, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_NO_PERMISSION", nullptr, CHECK_HIDEBUG_NO_PERMISSION, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS", nullptr, CHECK_HIDEBUG_INVALID_SYMBOLIC_PC_ADDRESS, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_NOT_SUPPORTED", nullptr, CHECK_HIDEBUG_NOT_SUPPORTED, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_UNDER_SAMPLING", nullptr, CHECK_HIDEBUG_UNDER_SAMPLING, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HIDEBUG_RESOURCE_UNAVAILABLE", nullptr, CHECK_HIDEBUG_RESOURCE_UNAVAILABLE, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_HICOLLIE_REMOTE_FAILED", nullptr, CHECK_HICOLLIE_REMOTE_FAILED, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_ThreadCpuUsage", nullptr, CHECK_ThreadCpuUsage, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_OH_HiDebug_GetDefaultMallocDispatchTable", nullptr, CHECK_OH_HiDebug_GetDefaultMallocDispatchTable, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CHECK_OH_HiDebug_CreateBacktraceObject", nullptr, CHECK_OH_HiDebug_CreateBacktraceObject, nullptr, nullptr, nullptr, napi_default, nullptr},
+        { "testSetCrashObjType", nullptr, TestSetCrashObjType, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetCrashObjAddr", nullptr, TestSetCrashObjAddr, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "checkSetCrashObj", nullptr, CheckSetCrashObj, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "testSetCrashObjAddrLen", nullptr, TestSetCrashObjAddrLen, nullptr, nullptr, nullptr, napi_default, nullptr },
+        
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

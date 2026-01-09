@@ -320,12 +320,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_0100
-     * @tc.name      : Create photo session
-     * @tc.desc      : Create photo session
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_0100
+     * @tc.desc   Create photo session
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_0100--------------");
@@ -344,12 +344,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_0100
-     * @tc.name      : Photo session preconfig
-     * @tc.desc      : Photo session preconfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_0100
+     * @tc.desc   Photo session preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHOTO_SESSION_PRECONFIG_0100--------------");
@@ -368,6 +368,7 @@ export default function cameraPreconfigTest() {
         camera.PreconfigType.PRECONFIG_1080P,
         camera.PreconfigType.PRECONFIG_4K,
         camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+        camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
       ];
       for (let type of types) {
         if (mCameraSession.canPreconfig(type)) {
@@ -390,12 +391,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_0100
-     * @tc.name      : Video session preconfig
-     * @tc.desc      : Video session preconfig
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_0100
+     * @tc.desc   Video session preconfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_VIDEO_SESSION_PRECONFIG_0100--------------");
@@ -414,6 +415,7 @@ export default function cameraPreconfigTest() {
         camera.PreconfigType.PRECONFIG_1080P,
         camera.PreconfigType.PRECONFIG_4K,
         camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+        camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
       ];
       for (let type of types) {
         if (mCameraSession.canPreconfig(type)) {
@@ -436,12 +438,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0100
-     * @tc.name      : test Photo session canpreconfig api with error code 7400101
-     * @tc.desc      : test Photo session canpreconfig api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0100
+     * @tc.desc   test Photo session canpreconfig api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_CANPRECONFIG_ERROR_CODE_0100--------------");
@@ -460,12 +462,12 @@ export default function cameraPreconfigTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0100
-     * @tc.name      : test Photo session preconfig api with error code 7400101
-     * @tc.desc      : test Photo session preconfig api with error code 7400101
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0100
+     * @tc.number SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0100
+     * @tc.desc   test Photo session preconfig api with error code 7400101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CREATE_PHTOT_SESSION_PRECONFIG_ERROR_CODE_0100--------------");

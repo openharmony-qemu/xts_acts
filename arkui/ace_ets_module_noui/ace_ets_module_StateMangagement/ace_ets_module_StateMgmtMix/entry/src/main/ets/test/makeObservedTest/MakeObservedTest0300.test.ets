@@ -46,14 +46,14 @@ export default function MakeObservedTest0300() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_MAKEOBSERVED_0300
-     * @tc.name      MakeObservedTest0300_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.name   MakeObservedTest0300_001
+     * @tc.number SUB_ACE_STATUSMANAGER_MAKEOBSERVED_0300
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('MakeObservedTest0300_001', Level.LEVEL0, async (done: Function) => {
+    it('MakeObservedTest0300_001', Level.LEVEL1, async (done: Function) => {
       console.info('[MakeObservedTest0300_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

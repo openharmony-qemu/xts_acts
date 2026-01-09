@@ -26,52 +26,52 @@ export default function DragSetDragEventStrictReportTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0100
-     * @tc.name       : SetDragEventStrictReportTest001
-     * @tc.desc       : testing SetDragEventStrictReport event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetDragEventStrictReportTest001
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0100
+     * @tc.desc   testing SetDragEventStrictReport event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetDragEventStrictReportTest001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_setDragEventStrictReportWidthNode_001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0200
-     * @tc.name       : SetDragEventStrictReportTest002
-     * @tc.desc       : testing SetDragEventStrictReport event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetDragEventStrictReportTest002
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0200
+     * @tc.desc   testing SetDragEventStrictReport event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetDragEventStrictReportTest002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_setDragEventStrictReportWidthNode_002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0300
-     * @tc.name       : SetDragEventStrictReportTest003
-     * @tc.desc       : testing SetDragEventStrictReport event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetDragEventStrictReportTest003
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0300
+     * @tc.desc   testing SetDragEventStrictReport event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetDragEventStrictReportTest003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_setDragEventStrictReportWidthContext_003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0400
-     * @tc.name       : SetDragEventStrictReportTest004
-     * @tc.desc       : testing SetDragEventStrictReport event callback
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   DragSetDragEventStrictReportTest004
+     * @tc.number SUB_ARKUI_CAPI_Drag_SetDragEventStrictReport_0400
+     * @tc.desc   testing SetDragEventStrictReport event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('DragSetDragEventStrictReportTest004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.drag_setDragEventStrictReportWidthContext_004()).assertEqual(0)

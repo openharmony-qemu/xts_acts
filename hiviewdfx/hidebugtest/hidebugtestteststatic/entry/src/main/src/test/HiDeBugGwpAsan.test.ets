@@ -10,12 +10,12 @@ export default function HidebuggwpasanTest() {
     describe("HidebuggwpasanTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
+         * @tc.name   testHidebuggwpasan_0100
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0100
-         * @tc.name testHidebuggwpasan_0100
-         * @tc.desc 传入3个参数 alwaysEnabled: true 时间改为 10天
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL0
+         * @tc.desc   传入3个参数 alwaysEnabled: true 时间改为 10天
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testHidebuggwpasan_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_0100 start");
@@ -44,12 +44,12 @@ export default function HidebuggwpasanTest() {
         })
 
         /**
+         * @tc.name   testHidebuggwpasan_0200
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0200
-         * @tc.name testHidebuggwpasan_0200
-         * @tc.desc 传入3个参数,alwaysEnabled: false,时间改为 10天
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   传入3个参数,alwaysEnabled: false,时间改为 10天
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHidebuggwpasan_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_0200 start");
@@ -78,12 +78,41 @@ export default function HidebuggwpasanTest() {
         })
 
         /**
+         * @tc.name   testHidebuggwpasan_0400
+         * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0400
+         * @tc.desc   全部为默认值参数,alwaysEnabled为空值
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
+        */
+        it('testHidebuggwpasan_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            console.info("testHidebuggwpasan_0400 start");
+            try {
+                console.info("testHidebuggwpasan_0400 start 01");
+                hidebug.enableGwpAsanGrayscale();
+                console.info("testHidebuggwpasan_0400 start 02");
+                let state = hidebug.getGwpAsanGrayscaleState();
+                console.log('testHidebuggwpasan_0400: ' + state);
+                expect(state == 7).assertTrue();
+                console.info("testHidebuggwpasan_0400 start 03");
+                hidebug.disableGwpAsanGrayscale();
+                console.info("testHidebuggwpasan_0400 start 04");
+                done();
+            } catch (err: BusinessError) {
+                console.info(`testHidebuggwpasan_0400 > error code: ${err.code}, error msg: ${err.message}`);
+                expect().assertFail();
+                done();
+            }
+            console.info("testHidebuggwpasan_0400 end");
+        })
+
+        /**
+         * @tc.name   testHidebuggwpasan_0500
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0500
-         * @tc.name testHidebuggwpasan_0500
-         * @tc.desc 默认值为undefined,抛出错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   默认值为undefined,抛出错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHidebuggwpasan_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_0500 start");
@@ -105,12 +134,12 @@ export default function HidebuggwpasanTest() {
         })
 
         /**
+         * @tc.name   testHidebuggwpasan_0600
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0600
-         * @tc.name testHidebuggwpasan_0600
-         * @tc.desc 全部为默认值参数,options传入一个参数
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   全部为默认值参数,options传入一个参数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHidebuggwpasan_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_0600 start");
@@ -133,12 +162,12 @@ export default function HidebuggwpasanTest() {
 
 
         /**
+         * @tc.name   testHidebuggwpasan_0700
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0700
-         * @tc.name testHidebuggwpasan_0700
-         * @tc.desc 全部为默认值参数,options传入两个参数
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   全部为默认值参数,options传入两个参数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHidebuggwpasan_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_0700 start");
@@ -162,12 +191,12 @@ export default function HidebuggwpasanTest() {
 
 
         /**
+         * @tc.name   testHidebuggwpasan_0800
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0800
-         * @tc.name testHidebuggwpasan_0800
-         * @tc.desc 全部为默认值参数,options传入参数sampleRate为0,抛出错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   全部为默认值参数,options传入参数sampleRate为0,抛出错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHidebuggwpasan_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_0800 start");
@@ -190,12 +219,12 @@ export default function HidebuggwpasanTest() {
 
 
         /**
+         * @tc.name   testHidebuggwpasan_0900
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_0900
-         * @tc.name testHidebuggwpasan_0900
-         * @tc.desc 全部为默认值参数,options传入参数maxSimutaneousAllocations为0,抛出错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   全部为默认值参数,options传入参数maxSimutaneousAllocations为0,抛出错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHidebuggwpasan_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_0900 start");
@@ -218,12 +247,12 @@ export default function HidebuggwpasanTest() {
         })
 
         /**
+         * @tc.name   testHidebuggwpasan_1000
          * @tc.number SUB_DFX_DFR_Third_Asan_Interface_1000
-         * @tc.name testHidebuggwpasan_1000
-         * @tc.desc 全部为默认值参数,传入参数天数为0,抛出错误码401
-         * @tc.size MediumTest
-         * @tc.type Function
-         * @tc.level LEVEL2
+         * @tc.desc   全部为默认值参数,传入参数天数为0,抛出错误码401
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('testHidebuggwpasan_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
             console.info("testHidebuggwpasan_1000 start");

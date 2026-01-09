@@ -74,7 +74,7 @@ struct WebComponent {
               try {
                 console.log('开始下载')
                 this.controller.startDownload('https:' +
-                  '//www.example.com');
+                  '//www.baidu.com');
               } catch (error) {
                 console.error(`ErrorCode: ${(error as BusinessError).code},  Message: ${(error as BusinessError).message}`);
               }

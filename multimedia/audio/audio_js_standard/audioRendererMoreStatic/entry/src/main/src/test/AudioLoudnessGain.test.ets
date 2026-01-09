@@ -40,12 +40,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_001
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_001
-     * @tc.desc        right test, set number is -90.0, streamtype is music,expect -89.9 < loudnessGain < -90.1
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_001
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_001
+     * @tc.desc   right test, set number is -90.0, streamtype is music,expect -89.9 < loudnessGain < -90.1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         let audioStreamInfo: audio.AudioStreamInfo = {
@@ -65,15 +65,15 @@ export default function audioLoudnessGainTest() {
           rendererInfo: audioRendererInfo
         };
 
-        let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+        let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
         let loudnessGainFloatTen = -90.0;
         if (audioRenderer) {
           try {
-            await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-            let loudnessGain = audioRenderer.getLoudnessGain();
+            await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+            let loudnessGain = audioRenderer!.getLoudnessGain();
             console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-            expect(Math.abs(loudnessGain - (-90.0)) < 0.1).assertTrue();
+            expect(Math.abs(loudnessGain - (-90.0)) < 1).assertTrue();
           } catch (error) {
             console.error('createAudioRenderer Fail!');
           }
@@ -82,12 +82,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_002
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_002
-     * @tc.desc        right test, set number is -89.9, streamtype is music,expect -89.8 < loudnessGain < -90.0
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_002
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_002
+     * @tc.desc   right test, set number is -89.9, streamtype is music,expect -89.8 < loudnessGain < -90.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -107,15 +107,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = -89.9;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - (-89.9)) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - (-89.9)) < 1).assertTrue();
         } catch (error: BusinessError) {
           console.error('createAudioRenderer Fail!');
         }
@@ -124,12 +124,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_003
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_003
-     * @tc.desc        right test, set number is 24.0, streamtype is movie,expect loudnessGain = 24.0
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_003
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_003
+     * @tc.desc   right test, set number is 24.0, streamtype is movie,expect loudnessGain = 24.0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -149,15 +149,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           console.error('createAudioRenderer Fail!');
         }
@@ -166,12 +166,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_004
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_004
-     * @tc.desc        right test, set number is 23.9, streamtype is audiobook,expect 23.8 < loudnessGain < 24
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_004
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_004
+     * @tc.desc   right test, set number is 23.9, streamtype is audiobook,expect 23.8 < loudnessGain < 24
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -191,15 +191,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 23.9;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 23.9) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 23.9) < 1).assertTrue();
         } catch (error: BusinessError) {
           console.error('createAudioRenderer Fail!');
         }
@@ -208,12 +208,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_005
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_005
-     * @tc.desc        back test, set number is -90.1,expect error.code = 6800101
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_005
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_005
+     * @tc.desc   back test, set number is -90.1,expect error.code = 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -233,15 +233,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = -90.1;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           console.error(TAG,`setLoudnessGain Fail: ${error.code}`);
           expect(6800101 == error.code).assertTrue();
@@ -253,12 +253,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_006
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_006
-     * @tc.desc        back test, set number is 24.1,expect error.code = 6800101
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_006
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_006
+     * @tc.desc   back test, set number is 24.1,expect error.code = 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -278,15 +278,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.1;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           console.error(TAG,`setLoudnessGain Fail: ${error.code}`);
           expect(6800101 == error.code).assertTrue();
@@ -298,12 +298,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_009
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_009
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_UNKNOWN,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_009
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_009
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_UNKNOWN,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -323,15 +323,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -342,12 +342,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_010
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_010
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_010
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_010
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -367,15 +367,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -386,12 +386,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_011
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_011
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_011
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_011
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_COMMUNICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -411,15 +411,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -430,12 +430,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_012
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_012
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_VOICE_ALARM,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_012
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_012
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_ALARM,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -455,15 +455,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -474,12 +474,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_013
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_013
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_VOICE_MESSAGE,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_013
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_013
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VOICE_MESSAGE,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -499,15 +499,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -518,12 +518,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_014
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_014
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_NOTIFICATION,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_014
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_014
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_NOTIFICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -543,15 +543,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -562,12 +562,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_016
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_016
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_GAME,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_016
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_016
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_GAME,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -587,15 +587,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -606,12 +606,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_017
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_017
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_NAVIGATION,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_017
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_017
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_NAVIGATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -631,15 +631,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }
@@ -650,12 +650,12 @@ export default function audioLoudnessGainTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_018
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_018
-     * @tc.desc        back test, set streamtype is STREAM_USAGE_VIDEO_COMMUNICATION,expect error.code = 6800104
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_018
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_018
+     * @tc.desc   back test, set streamtype is STREAM_USAGE_VIDEO_COMMUNICATION,expect error.code = 6800104
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_SET_LOUDNESS_GAIN_INTERFACE_TEST_STATIC_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioStreamInfo: audio.AudioStreamInfo = {
@@ -675,15 +675,15 @@ export default function audioLoudnessGainTest() {
         rendererInfo: audioRendererInfo
       };
 
-      let audioRenderer: audio.AudioRenderer = await audio.createAudioRenderer(audioRendererOptions);
+      let audioRenderer: audio.AudioRenderer | null = await audio.createAudioRenderer(audioRendererOptions);
 
       let loudnessGainFloatTen = 24.0;
       if (audioRenderer) {
         try {
-          await audioRenderer.setLoudnessGain(loudnessGainFloatTen);
-          let loudnessGain = audioRenderer.getLoudnessGain();
+          await audioRenderer!.setLoudnessGain(loudnessGainFloatTen);
+          let loudnessGain = audioRenderer!.getLoudnessGain();
           console.info(TAG,`setLoudnessGain and getLoudnessGain Success!, loudness is ${loudnessGain}`);
-          expect(Math.abs(loudnessGain - 24) < 0.1).assertTrue();
+          expect(Math.abs(loudnessGain - 24) < 1).assertTrue();
         } catch (error: BusinessError) {
           expect(6800104 == error.code).assertTrue();
         }

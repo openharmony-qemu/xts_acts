@@ -47,7 +47,6 @@ export default function timeNdkTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5700
      * @tc.number SUB_Time_TimeManagement_Obtaining_5700.
      * @tc.desc   get zone result.
@@ -64,7 +63,6 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5500
      * @tc.number SUB_Time_TimeManagement_Obtaining_5500.
      * @tc.desc   get zone result.
@@ -81,7 +79,6 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5800
      * @tc.number SUB_Time_TimeManagement_Obtaining_5800.
      * @tc.desc   get zone result.
@@ -98,7 +95,6 @@ export default function timeNdkTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:57:55
      * @tc.name   SUB_Time_TimeManagement_Obtaining_5600
      * @tc.number SUB_Time_TimeManagement_Obtaining_5600.
      * @tc.desc   get zone result.
@@ -113,6 +109,27 @@ export default function timeNdkTest() {
       expect(result).assertEqual(timeZone);
       done();
     });
+
+    /**
+     * @tc.name   SUB_Time_TimeService_ErrCode_0100
+     * @tc.number SUB_Time_TimeService_ErrCode_0100
+     * @tc.desc   SUB_Time_TimeService_ErrCode_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Time_TimeService_ErrCode_0100', Level.LEVEL2, (done: Function) => {
+      try {
+        let result = testNapi.getTimezone_0500();
+        console.info(`====>SUB_Time_TimeService_ErrCode_0100 result: ${result}`);
+        expect(result == 1).assertTrue()
+        done();
+      } catch (err) {
+        console.info(`====>SUB_Time_TimeService_ErrCode_0100 fail, error is ${JSON.stringify(err)}`);
+        expect().assertFail()
+        done();
+      }
+    })
 
   })
 }

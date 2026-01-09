@@ -49,10 +49,12 @@ export default function flex_AlignContent_SpaceAround_TextVisibilityTest() {
       console.info("Flex_AlignContent_SpaceAround_TextVisibilityTest after each called");
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundTextVisibilityHidden
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_1300
-     * @tc.name testFlexAlignContentSpaceAroundTextVisibilityHidden
-     * @tc.desc The size of the parent component in the cross direction meets the layout
-     *               of the subcomponents when the visibility of first subcomponent set to Hidden
+     * @tc.desc   The size of the parent component in the cross direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundTextVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundTextVisibilityHidden] START');
@@ -105,10 +107,12 @@ export default function flex_AlignContent_SpaceAround_TextVisibilityTest() {
 
     });
     /**
+     * @tc.name   testFlexAlignContentSpaceAroundTextVisibilityNone
      * @tc.number SUB_ACE_FLEXALIGNCONTENT_SPACEAROUND_1400
-     * @tc.name testFlexAlignContentSpaceAroundTextVisibilityNone
-     * @tc.desc The size of the parent component in the cross direction meets the layout
-     *               of the subcomponents when the visibility of first subcomponent set to None
+     * @tc.desc   The size of the parent component in the cross direction meets the layout
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignContentSpaceAroundTextVisibilityNone',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignContentSpaceAroundTextVisibilityNone] START');

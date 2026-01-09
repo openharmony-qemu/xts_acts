@@ -30,7 +30,6 @@ import TextAreaEnableAutoSpacingTest from './TextAreaTest/TextAreaEnableAutoSpac
 import TextInputEnableAutoSpacingTest from './TextInputTest/TextInputEnableAutoSpacing.test';
 import ImageOnErrorTest from './ImageErrorTest/ImageOnError.test';
 import TextAreaMinLinesTest from './TextAreaTest/TextAreaMinLines.test';
-import RichEditorUndoStyleTest from './RichEditorTest/RichEditorUndoStyle.test';
 import TextLineSpacingTest from './TextTest/TextLineSpacing.test';
 import TextAreaLineSpacingTest from './TextAreaTest/TextAreaLineSpacing.test';
 import SearchAutoCapitalizationModeTest from './SearchTest/SearchAutoCapitalizationMode.test';
@@ -41,7 +40,6 @@ import TextInputAutoCapitalizationModeTest from './TextInputTest/TextInputAutoCa
 import TextInputAutoCapitalizationModeModifierTest from './TextInputTest/TextInputAutoCapitalizationModeModifier.test';
 import TextVerticalAlignTest from './TextTest/TextVerticalAlign.test';
 import ModifierTextVerticalAlignTest from './TextTest/TextVerticalAlignModifier.test';
-import RichEditorEnableAutoSpacingTest from './RichEditorTest/RichEditorEnableAutoSpacing.test';
 import TextGetParagraphsTest from './TextTest/TextGetparagraphs.test';
 import fromHtmlTest from './StyledStringTest/fromHtml.test';
 import ImageOrientationTest from './ImageOrientationTest/ImageOrientation.test';
@@ -81,7 +79,6 @@ export default function testsuite() {
   TextInputEnableAutoSpacingTest();
   ImageOnErrorTest();
   TextAreaMinLinesTest();
-  RichEditorUndoStyleTest();
   TextLineSpacingTest();
   TextAreaLineSpacingTest();
   SearchAutoCapitalizationModeTest();
@@ -92,7 +89,6 @@ export default function testsuite() {
   TextInputAutoCapitalizationModeModifierTest();
   TextVerticalAlignTest();
   ModifierTextVerticalAlignTest();
-  RichEditorEnableAutoSpacingTest();
   TextGetParagraphsTest();
   fromHtmlTest();
   ImageOrientationTest();

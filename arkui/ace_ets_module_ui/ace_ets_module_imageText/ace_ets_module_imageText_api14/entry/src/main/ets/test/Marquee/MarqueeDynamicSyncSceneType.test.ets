@@ -43,12 +43,12 @@ export default function MarqueeDynamicSyncSceneTest() {
     });
 
     /**
-     * @tc.number    SUB_ACE_MarqueeDynamicSyncSceneTest_0010
-     * @tc.name      MarqueeDynamicSyncSceneTest_0010
-     * @tc.desc      test MarqueeDynamicSyncSceneType: ANIMATION
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   MarqueeDynamicSyncSceneTest_0010
+     * @tc.number SUB_ACE_MarqueeDynamicSyncSceneTest_0010
+     * @tc.desc   test MarqueeDynamicSyncSceneType: ANIMATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MarqueeDynamicSyncSceneTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('MarqueeDynamicSyncSceneTest_0010 START');

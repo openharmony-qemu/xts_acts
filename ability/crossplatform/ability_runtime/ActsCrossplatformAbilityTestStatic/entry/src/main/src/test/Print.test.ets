@@ -14,20 +14,31 @@
  */
 import { describe, it, expect, TestType, Size, Level, afterEach, beforeAll, afterEach, beforeEach } from "../../../hypium/index";
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
-
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 
 export default function PrintTest() {
   describe("PrintTest", () => {
-
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+    
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0001
      * @tc.number ACTS_PRINT_SYNC_0001
-     * @tc.name ACTS_PRINT_SYNC_0001
-     * @tc.desc Test the api "abilityDelegator.printSync", return the result.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.printSync", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_PRINT_SYNC_0001", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0001 :start");
@@ -41,13 +52,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0003
      * @tc.number ACTS_PRINT_SYNC_0003
-     * @tc.name ACTS_PRINT_SYNC_0003
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               The printSync information includes escape character.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_PRINT_SYNC_0003", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0003 :start");
@@ -59,13 +69,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0004
      * @tc.number ACTS_PRINT_SYNC_0004
-     * @tc.name ACTS_PRINT_SYNC_0004
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               The printSync information includes special characters, etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_PRINT_SYNC_0004", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0004 :start");
@@ -77,13 +86,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0005
      * @tc.number ACTS_PRINT_SYNC_0005
-     * @tc.name ACTS_PRINT_SYNC_0005
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               The printSync information includes Chinese etc.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_PRINT_SYNC_0005", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0005 :start");
@@ -95,13 +103,12 @@ export default function PrintTest() {
     });
 
     /**
+     * @tc.name   ACTS_PRINT_SYNC_0006
      * @tc.number ACTS_PRINT_SYNC_0006
-     * @tc.name ACTS_PRINT_SYNC_0006
-     * @tc.desc Test the api "abilityDelegator.print", return the result.
-     *               the length of the printSync message is greater than 1000 characters.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api "abilityDelegator.print", return the result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_PRINT_SYNC_0006", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_PRINT_SYNC_0006 :start");

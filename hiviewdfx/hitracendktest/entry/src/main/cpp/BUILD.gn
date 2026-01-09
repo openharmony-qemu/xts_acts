@@ -12,7 +12,7 @@
 # limitations under the License.
 
 import("//build/config/ohos/config.gni")
-import("//build/ohos.gni")
+import("//test/xts/tools/build/suite.gni")
 import("//foundation/arkui/napi/napi.gni")
 import("//foundation/barrierfree/accessibility/accessibility_aafwk.gni")
 
@@ -31,7 +31,7 @@ config("config") {
 config("public_config") {
 }
 
-ohos_shared_library("hitracendk") {
+ohos_xts_shared_library("hitracendk") {
   testonly = true
   subsystem_name = "hiviewdfx"
   part_name = "hitrace"

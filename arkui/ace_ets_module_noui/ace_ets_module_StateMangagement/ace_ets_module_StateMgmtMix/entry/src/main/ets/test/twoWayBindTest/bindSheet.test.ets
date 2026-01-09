@@ -41,14 +41,14 @@ export default function bindSheetTest() {
       done();
     });
     /**
-     * @tc.number    bindSheetTest_0100
-     * @tc.name      bindSheetTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   bindSheetTest_0100
+     * @tc.number bindSheetTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('bindSheetTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('bindSheetTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -66,14 +66,14 @@ export default function bindSheetTest() {
       done();
     });
     /**
-     * @tc.number    bindSheetTest_0200
-     * @tc.name      bindSheetTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   bindSheetTest_0200
+     * @tc.number bindSheetTest_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('bindSheetTest_0200', Level.LEVEL0, async (done: Function) => {
+    it('bindSheetTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('bindSheetTest_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

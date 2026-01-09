@@ -42,13 +42,15 @@ export default function SymbolGlyphApi() {
       console.info("SymbolGlyphApi after each called");
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SymbolGlyph_001
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.level     Level 3
-     * @tc.type
-     */
 
+    /**
+     * @tc.name   SymbolGlyphApi_001
+     * @tc.number SymbolGlyphApi_001
+     * @tc.desc   SymbolGlyphApi_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SymbolGlyphApi_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[SymbolGlyphApi_001] START');
 
@@ -65,15 +67,15 @@ export default function SymbolGlyphApi() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SymbolGlyph_002
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.desc       : affinity Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SymbolGlyphApi_002
+     * @tc.number SymbolGlyphApi_002
+     * @tc.desc   SymbolGlyphApi_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SymbolGlyphApi_002',  Level.LEVEL0, async (done: Function) => {
       console.info('[SymbolGlyphApi_002] START');
 
@@ -90,15 +92,15 @@ export default function SymbolGlyphApi() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SymbolGlyph_003
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.desc       : affinity Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SymbolGlyphApi_003
+     * @tc.number SymbolGlyphApi_003
+     * @tc.desc   SymbolGlyphApi_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SymbolGlyphApi_003',  Level.LEVEL0, async (done: Function) => {
       console.info('[SymbolGlyphApi_003] START');
 
@@ -115,15 +117,15 @@ export default function SymbolGlyphApi() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SymbolGlyph_004
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.desc       : affinity Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SymbolGlyphApi_004
+     * @tc.number SymbolGlyphApi_004
+     * @tc.desc   SymbolGlyphApi_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SymbolGlyphApi_004',  Level.LEVEL0, async (done: Function) => {
       console.info('[SymbolGlyphApi_004] START');
 
@@ -140,15 +142,15 @@ export default function SymbolGlyphApi() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SymbolGlyph_005
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.desc       : affinity Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SymbolGlyphApi_005
+     * @tc.number SymbolGlyphApi_005
+     * @tc.desc   SymbolGlyphApi_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SymbolGlyphApi_005',  Level.LEVEL0, async (done: Function) => {
       console.info('[SymbolGlyphApi_005] START');
 
@@ -165,15 +167,15 @@ export default function SymbolGlyphApi() {
 
     });
 
-    /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_SymbolGlyph_006
-     * @tc.desc      symbolEffect test of SymbolGlyph
-     * @tc.desc       : affinity Test
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
-     */
 
+    /**
+     * @tc.name   SymbolGlyphApi_006
+     * @tc.number SymbolGlyphApi_006
+     * @tc.desc   SymbolGlyphApi_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SymbolGlyphApi_006',  Level.LEVEL0, async (done: Function) => {
       console.info('[SymbolGlyphApi_006] START');
 

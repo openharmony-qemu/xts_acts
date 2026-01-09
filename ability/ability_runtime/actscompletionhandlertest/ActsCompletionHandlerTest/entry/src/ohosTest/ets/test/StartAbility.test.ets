@@ -42,6 +42,7 @@ let openDialog = async (dialogKey: string, text: string) => {
   if (allowed) {
     if (dialogKey.indexOf('选择打开方式') >= 0) {
       let moreButtons = await driver.findComponents(ON.text('更多打开方式', MatchPattern.CONTAINS));
+      hilog.info(DOMAIN, LOG_TAG, 'moreButtons : %{public}s', JSON.stringify(moreButtons));
       if (moreButtons && moreButtons.length > 0) {
         hilog.info(DOMAIN, LOG_TAG, 'clicking 更多打开方式');
         await moreButtons[moreButtons.length -1].click();
@@ -50,6 +51,7 @@ let openDialog = async (dialogKey: string, text: string) => {
       await sleep(500);
     }
     let buttons = await driver.findComponents(ON.text(text, MatchPattern.CONTAINS));
+    hilog.info(DOMAIN, LOG_TAG, 'buttons text: %{public}s', JSON.stringify(buttons));
     if (buttons && buttons.length > 0) {
       hilog.info(DOMAIN, LOG_TAG, 'buttons.length: %{public}d', buttons.length);
       hilog.info(DOMAIN, LOG_TAG, 'clicking %{public}s', text);
@@ -160,13 +162,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100
-     * @tc.desc   : explicitly start another app and allow
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100
+     * @tc.desc   explicitly start another app and allow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -225,13 +227,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0100 end');
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200
-     * @tc.desc   : explicitly start another app but disallow
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200
+     * @tc.desc   explicitly start another app but disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -292,13 +294,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0200 end');
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300
-     * @tc.desc   : implicitly start another app and open
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300
+     * @tc.desc   implicitly start another app and open
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -365,13 +367,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0300 end');
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400
-     * @tc.desc   : implicitly start another app and close dialog
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400
+     * @tc.desc   implicitly start another app and close dialog
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -439,13 +441,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0400 end');
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500
-     * @tc.desc   : implicitly start non-existent app
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500
+     * @tc.desc   implicitly start non-existent app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -499,13 +501,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0500 end');
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600
-     * @tc.desc   : implicitly start app via unique entity and allow open
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600
+     * @tc.desc   implicitly start app via unique entity and allow open
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -570,13 +572,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0600 end');
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700
-     * @tc.desc   : implicitly start app via unique entity but disallow
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700
+     * @tc.desc   implicitly start app via unique entity but disallow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -644,13 +646,13 @@ export default function AbilityRuntimeCompletionHandlerStartAbilityTest() {
       hilog.info(DOMAIN, LOG_TAG, '%{public}s', 'SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0700 end');
     })
 
-    /*
-     * @tc.number : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800
-     * @tc.name : SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800
-     * @tc.desc   : open a different ability within app
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800
+     * @tc.number SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800
+     * @tc.desc   open a different ability within app
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AbilityRuntime_CompletionHandlerTest_StartAbility_0800', Level.LEVEL3, async(done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

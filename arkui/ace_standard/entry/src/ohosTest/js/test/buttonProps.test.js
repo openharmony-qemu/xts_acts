@@ -81,9 +81,12 @@ export default function buttonPropsJsTest() {
         // 通用属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonIdProp
-         * @tc.desc      ACE
+         * @tc.name   testButtonIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonIdProp', Level.LEVEL0, async function(done) {
             console.info('testButtonIdProp START');
@@ -99,9 +102,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonClassProp
-         * @tc.desc      ACE
+         * @tc.name   testButtonClassProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonClassProp', Level.LEVEL0, async function(done) {
             console.info('testButtonClassProp START');
@@ -117,9 +123,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonClassPropNone START');
@@ -137,9 +146,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonRefProp
-         * @tc.desc      ACE
+         * @tc.name   testButtonRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonRefProp', Level.LEVEL0, async function(done) {
             console.info('testButtonRefProp START');
@@ -156,9 +168,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonRefPropNone START');
@@ -176,9 +191,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testButtonDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testButtonDisabledPropTrue START');
@@ -195,9 +213,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testButtonDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testButtonDisabledPropFalse START');
@@ -214,9 +235,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonDisabledPropNone START');
@@ -233,9 +257,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testButtonFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testButtonFocusablePropTrue START');
@@ -252,9 +279,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testButtonFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testButtonFocusablePropFalse START');
@@ -271,9 +301,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonFocusablePropNone START');
@@ -290,9 +323,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDataProp
-         * @tc.desc      ACE
+         * @tc.name   testButtonDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDataProp', Level.LEVEL0, async function(done) {
             console.info('testButtonDataProp START');
@@ -310,9 +346,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonDataPropNone START');
@@ -330,9 +369,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testButtonClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testButtonClickEffectPropSmall START');
@@ -349,9 +391,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testButtonClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testButtonClickEffectPropMedium START');
@@ -368,9 +413,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testButtonClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testButtonClickEffectPropLarge START');
@@ -387,9 +435,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonClickEffectPropNone START');
@@ -407,9 +458,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testButtonDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testButtonDirPropRtl START');
@@ -426,9 +480,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testButtonDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testButtonDirPropLtr START');
@@ -445,9 +502,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testButtonDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testButtonDirPropAuto START');
@@ -464,9 +524,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonDirPropNone START');
@@ -483,9 +546,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testButtonForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonForPropNull', Level.LEVEL0, async function(done) {
             console.info('testButtonForPropNull START');
@@ -503,9 +569,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testButtonForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonForPropOne', Level.LEVEL0, async function(done) {
             console.info('testButtonForPropOne START');
@@ -523,9 +592,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testButtonForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonForPropThree', Level.LEVEL0, async function(done) {
             console.info('testButtonForPropThree START');
@@ -543,9 +615,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testButtonIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testButtonIfPropTrue START');
@@ -563,9 +638,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testButtonShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testButtonShowPropTrue START');
@@ -583,9 +661,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testButtonShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testButtonShowPropFalse START');
@@ -603,9 +684,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testButtonShowPropNone START');
@@ -625,9 +709,12 @@ export default function buttonPropsJsTest() {
         // 特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonTypeArc
-         * @tc.desc      ACE
+         * @tc.name   testButtonTypeArc
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonTypeArc', Level.LEVEL0, async function(done) {
             console.info('testButtonTypeArc START');
@@ -645,9 +732,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonTypeCapsule
-         * @tc.desc      ACE
+         * @tc.name   testButtonTypeCapsule
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonTypeCapsule', Level.LEVEL0, async function(done) {
             console.info('testButtonTypeCapsule START');
@@ -665,9 +755,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonTypeCircle
-         * @tc.desc      ACE
+         * @tc.name   testButtonTypeCircle
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonTypeCircle', Level.LEVEL0, async function(done) {
             console.info('testButtonTypeCircle START');
@@ -685,9 +778,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonTypeText
-         * @tc.desc      ACE
+         * @tc.name   testButtonTypeText
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonTypeText', Level.LEVEL0, async function(done) {
             console.info('testButtonTypeText START');
@@ -705,9 +801,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonTypeDownload
-         * @tc.desc      ACE
+         * @tc.name   testButtonTypeDownload
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonTypeDownload', Level.LEVEL0, async function(done) {
             console.info('testButtonTypeDownload START');
@@ -725,9 +824,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonTypeNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonTypeNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonTypeNone', Level.LEVEL0, async function(done) {
             console.info('testButtonTypeNone START');
@@ -745,9 +847,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonValue
-         * @tc.desc      ACE
+         * @tc.name   testButtonValue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonValue', Level.LEVEL0, async function(done) {
             console.info('testButtonValue START');
@@ -765,9 +870,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonValueNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonValueNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonValueNone', Level.LEVEL0, async function(done) {
             console.info('testButtonValueNone START');
@@ -785,9 +893,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonIcon
-         * @tc.desc      ACE
+         * @tc.name   testButtonIcon
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonIcon', Level.LEVEL0, async function(done) {
             console.info('testButtonIcon START');
@@ -805,9 +916,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonIconNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonIconNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonIconNone', Level.LEVEL0, async function(done) {
             console.info('testButtonIconNone START');
@@ -825,9 +939,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonPlacementStart
-         * @tc.desc      ACE
+         * @tc.name   testButtonPlacementStart
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonPlacementStart', Level.LEVEL0, async function(done) {
             console.info('testButtonPlacementStart START');
@@ -845,9 +962,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonPlacementEnd
-         * @tc.desc      ACE
+         * @tc.name   testButtonPlacementEnd
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonPlacementEnd', Level.LEVEL0, async function(done) {
             console.info('testButtonPlacementEnd START');
@@ -865,9 +985,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonPlacementTop
-         * @tc.desc      ACE
+         * @tc.name   testButtonPlacementTop
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonPlacementTop', Level.LEVEL0, async function(done) {
             console.info('testButtonPlacementTop START');
@@ -885,9 +1008,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonPlacementBottom
-         * @tc.desc      ACE
+         * @tc.name   testButtonPlacementBottom
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonPlacementBottom', Level.LEVEL0, async function(done) {
             console.info('testButtonPlacementBottom START');
@@ -905,9 +1031,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonPlacementNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonPlacementNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonPlacementNone', Level.LEVEL0, async function(done) {
             console.info('testButtonPlacementNone START');
@@ -925,9 +1054,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonWaitingTrue
-         * @tc.desc      ACE
+         * @tc.name   testButtonWaitingTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonWaitingTrue', Level.LEVEL0, async function(done) {
             console.info('testButtonWaitingTrue START');
@@ -945,9 +1077,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonWaitingFalse
-         * @tc.desc      ACE
+         * @tc.name   testButtonWaitingFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonWaitingFalse', Level.LEVEL0, async function(done) {
             console.info('testButtonWaitingFalse START');
@@ -965,9 +1100,12 @@ export default function buttonPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonWaitingNone
-         * @tc.desc      ACE
+         * @tc.name   testButtonWaitingNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonWaitingNone', Level.LEVEL0, async function(done) {
             console.info('testButtonWaitingNone START');

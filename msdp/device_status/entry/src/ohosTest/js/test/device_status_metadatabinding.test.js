@@ -38,7 +38,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0100
      * @tc.desc   metadataBinding callback interface test
@@ -51,16 +50,16 @@ export default function DeviceStatusMetadataBindingTest() {
       try {
         metadataBinding.submitMetadata('123')
         console.log('metadataBinding.submitMetadata is success')
+        expect().assertFail()
       } catch (error) {
         console.log('metadataBinding.submitMetadata is failed' + JSON.stringify(error))
-        expect().assertFail()
+        expect(error.code == 32100001).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0100 is end---------------")
       done();
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0200
      * @tc.desc   metadataBinding callback interface test
@@ -83,7 +82,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0300
      * @tc.desc   metadataBinding callback interface test
@@ -99,14 +97,13 @@ export default function DeviceStatusMetadataBindingTest() {
         })
       } catch (error) {
         console.log('metadataBinding.on is failed catch' + JSON.stringify(error))
-        expect().assertFail()
+        expect(error.code == 32100004).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0300 is end---------------")
       done();
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0400
      * @tc.desc   metadataBinding callback interface test
@@ -129,7 +126,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0500
      * @tc.desc   metadataBinding callback interface test
@@ -153,7 +149,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0600
      * @tc.desc   metadataBinding callback interface test
@@ -177,7 +172,6 @@ export default function DeviceStatusMetadataBindingTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:27
      * @tc.name   SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
      * @tc.number SUB_MSDP_DeviceStatus_API_MetadataBinding_0700
      * @tc.desc   metadataBinding callback interface test

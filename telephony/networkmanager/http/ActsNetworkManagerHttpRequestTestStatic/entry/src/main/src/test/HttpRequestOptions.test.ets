@@ -47,12 +47,12 @@ export default function httpRequestOptionsTest() {
     describe("HttpRequestOptionsTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0100
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0100
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0100
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0100
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0100';
@@ -100,12 +100,12 @@ export default function httpRequestOptionsTest() {
 
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0200
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0200
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0200
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0200
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0200';
@@ -148,12 +148,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0300
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0300
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0300
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0300
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0300';
@@ -195,12 +195,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0400
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0400
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0400
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0400
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0400';
@@ -244,12 +244,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0500
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0500
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0500
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0500
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0500';
@@ -290,12 +290,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0600
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0600
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0600
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0600
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0600';
@@ -336,12 +336,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0700
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0700
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0700
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0700
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0700';
@@ -381,12 +381,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_0800
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_0800
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_0800
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_0800
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_0800';
@@ -447,12 +447,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_1000
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_1000
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_1000
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_1000
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_1000';
@@ -509,12 +509,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_1200
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_1200
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_1200
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_1200
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_1200';
@@ -555,12 +555,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_1300
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_1300
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_1300
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_1300
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_1300';
@@ -601,12 +601,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_1400
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_1400
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_1400
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_1400
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_1400';
@@ -649,12 +649,12 @@ export default function httpRequestOptionsTest() {
 
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_1600
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_1600
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_1600
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_1600
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_1600';
@@ -693,12 +693,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_1700
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_1700
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_1700
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_1700
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_1700';
@@ -737,12 +737,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_1800
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_1800
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_1800
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_1800
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_1800';
@@ -781,12 +781,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_2300
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_2300
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_2300
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_2300
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_2300';
@@ -827,12 +827,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_2400
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_2400
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_2400
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_2400
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_2400';
@@ -873,12 +873,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_2500
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_2500
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_2500
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_2500
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_2500';
@@ -917,12 +917,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_2600
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_2600
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_2600
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_2600
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_2600';
@@ -961,12 +961,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3500
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_3500
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_3500
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3500
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_3500';
@@ -1007,12 +1007,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3600
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_3600
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_3600
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3600
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_3600';
@@ -1054,12 +1054,12 @@ export default function httpRequestOptionsTest() {
 
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3700
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_3700
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_3700
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3700
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_3700';
@@ -1100,12 +1100,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3800
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_3800
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_3800
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3800
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_3800';
@@ -1144,12 +1144,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_3900
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_3900
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_3900
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_3900
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_3900';
@@ -1188,12 +1188,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_4000
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_4000
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_4000
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4000
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_4000';
@@ -1232,12 +1232,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_4100
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_4100
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_4100
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4100
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_4100';
@@ -1279,12 +1279,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_4200
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_4200
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_4200
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4200
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_4200';
@@ -1326,12 +1326,12 @@ export default function httpRequestOptionsTest() {
 
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_4300
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_4300
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_4300
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4300
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_4300';
@@ -1369,12 +1369,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_4400
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_4400
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_4400
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4400
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_4400';
@@ -1413,12 +1413,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_4500
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_4500
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_4500
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4500
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_4500';
@@ -1460,12 +1460,12 @@ export default function httpRequestOptionsTest() {
         });
 
         /**
-         * @tc.number : SUB_NetworkMgr_Http_HttpRequestOptionsTest_4600
-         * @tc.name   : testNetworkMgrHttpHttpRequestOptionsTest_static_4600
-         * @tc.desc   : Test HttpRequestOptions property.
-         * @tc.level  : Level 3
-         * @tc.type   : Function
-         * @tc.size   : MediumTest
+         * @tc.name   testNetworkMgrHttpHttpRequestOptionsTest_static_4600
+         * @tc.number SUB_NetworkMgr_Http_HttpRequestOptionsTest_4600
+         * @tc.desc   Test HttpRequestOptions property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it('testNetworkMgrHttpHttpRequestOptionsTest_static_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             const caseName: string = 'testNetworkMgrHttpHttpRequestOptionsTest_static_4600';

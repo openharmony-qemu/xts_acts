@@ -22,6 +22,7 @@ import WebViewEnumAndFontLibrary from './WebViewEnumAndFontLibrary.test';
 import WebViewEnumAndSetWebController from './WebViewEnumAndSetWebController.test';
 import WebViewOverviewModeAccess from './WebViewOverviewModeAccess.test';
 import WebViewRotateRenderEffect from  './WebViewRotateRenderEffect.test'
+import WebZoomControlAccess from './WebZoomControlAccess.test'
 
 
 
@@ -36,4 +37,5 @@ export default function testsuite() {
   WebViewEnumAndSetWebController();
   WebViewOverviewModeAccess();
   WebViewRotateRenderEffect()
+  WebZoomControlAccess()
 }

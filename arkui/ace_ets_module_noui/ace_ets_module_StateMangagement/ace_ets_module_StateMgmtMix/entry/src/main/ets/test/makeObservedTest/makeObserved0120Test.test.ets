@@ -56,14 +56,14 @@ export default function makeObserved0120Test() {
     });
 
     /**
+     * @tc.name   makeObserved0120Test_01
      * @tc.number makeObserved0120Test_01
-     * @tc.name makeObserved0120Test_01
-     * @tc.desc api
-     * @tc.level: Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('makeObserved0120Test_01', Level.LEVEL0, async (done: Function) => {
+    it('makeObserved0120Test_01', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000)
 
       console.info('makeObserved0120Test_01 START');

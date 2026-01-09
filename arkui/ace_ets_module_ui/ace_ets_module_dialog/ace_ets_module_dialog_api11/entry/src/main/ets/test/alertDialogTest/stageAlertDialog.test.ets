@@ -56,15 +56,15 @@ export default function stageAlertDialog() {
       // This API supports only one parameter: clear action function.
     })
 
-    /**
-     * @tc.number    stageAlertDialog001
-     * @tc.name      stageAlertDialog001
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
-     */
      
+    /**
+     * @tc.name   stageAlertDialog001
+     * @tc.number stageAlertDialog001
+     * @tc.desc   stageAlertDialog001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('stageAlertDialog001', Level.LEVEL2, async (done: Function) => {
       console.info('stageAlertDialog001 START');
       setTimeout(() => {
@@ -94,12 +94,12 @@ export default function stageAlertDialog() {
     });
 
     /**
-     * @tc.number    stageAlertDialog002
-     * @tc.name      stageAlertDialog002
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   stageAlertDialog002
+     * @tc.number stageAlertDialog002
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('stageAlertDialog002', Level.LEVEL2, async (done: Function) => {
       console.info('stageAlertDialog002 START');
@@ -130,12 +130,12 @@ export default function stageAlertDialog() {
     });
 
     /**
-     * @tc.number    stageAlertDialog003
-     * @tc.name      stageAlertDialog003
-     * @tc.desc      set api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   stageAlertDialog003
+     * @tc.number stageAlertDialog003
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('stageAlertDialog003', Level.LEVEL2, async (done: Function) => {
       console.info('stageAlertDialog003 START');

@@ -2936,6 +2936,241 @@ static napi_value NAPI_Global_setLoudnessGain(napi_env env, napi_callback_info i
     napi_create_int32(env, backParam, &result);
     return result;
 }
+
+static void GetIntValue(struct OH_AVFormat *format, napi_env env, napi_value &JsObject, const char* &key)
+{
+    const char* out = nullptr;
+    bool ret = false;
+    int32_t value = 0;
+    ret = OH_AVFormat_GetIntValue(format, key, &value);
+    LOG("GetIntValue key:%{public}s value:%{public}d", key, ret);
+    std::string result = std::string(key) + " : %{public}d";
+    LOG(result.c_str(), value);
+    if (ret) {
+        out = std::to_string(value).c_str();
+        napi_value valueNapi = nullptr;
+        napi_create_int32(env, value, &valueNapi);
+        napi_set_named_property(env, JsObject, key, valueNapi);
+    }
+}
+
+static void GetUintValue(struct OH_AVFormat *format, napi_env env, napi_value &JsObject, const char* &key)
+{
+    const char* out = nullptr;
+    bool ret = false;
+    uint32_t value = 0;
+    ret = OH_AVFormat_GetUintValue(format, key, &value);
+    LOG("GetUintValue key:%{public}s value:%{public}d", key, ret);
+    std::string result = std::string(key) + " : %{public}d";
+    LOG(result.c_str(), value);
+    if (ret) {
+        out = std::to_string(value).c_str();
+        napi_value valueNapi = nullptr;
+        napi_create_uint32(env, value, &valueNapi);
+        napi_set_named_property(env, JsObject, key, valueNapi);
+    }
+}
+
+static void GetLongValue(struct OH_AVFormat *format, napi_env env, napi_value &JsObject, const char* &key)
+{
+    const char* out = nullptr;
+    bool ret = false;
+    int64_t value = 0;
+    ret = OH_AVFormat_GetLongValue(format, key, &value);
+    LOG("GetLongValue key:%{public}s value:%{public}d", key, ret);
+    std::string result = std::string(key) + " : %{public}lld";
+    LOG(result.c_str(), value);
+    if (ret) {
+        out = std::to_string(value).c_str();
+        napi_value valueNapi = nullptr;
+        napi_create_int64(env, value, &valueNapi);
+        napi_set_named_property(env, JsObject, key, valueNapi);
+    }
+}
+
+static napi_value NAPI_Global_GetPlaybackStatisticMetrics(napi_env env, napi_callback_info info)
+{
+    size_t argc = 3;
+    napi_value args[3] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int pType;
+    napi_get_value_int32(env, args[PARAM_0], &pType);
+    LOG("fd type %{public}d", pType);
+    int pOffset;
+    napi_get_value_int32(env, args[PARAM_1], &pOffset);
+    LOG("pOffset size %{public}d", pOffset);
+    int fileSize;
+    napi_get_value_int32(env, args[PARAM_2], &fileSize);
+
+    napi_value result;
+    napi_create_object(env, &result);
+    NdkAVPlayerUser *ndkAVPlayerUser = new NdkAVPlayerUser();
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    ndkAVPlayerUser->player = OH_AVPlayer_Create();
+    OH_AVErrCode errCode = OH_AVPlayer_SetOnInfoCallback(player, AVPlayerOnInfoCallbackImpl, ndkAVPlayerUser);
+    OH_AVPlayer_SetFDSource(player, pType, pOffset, fileSize);
+    AVPlayerState currentStage;
+    OH_AVErrCode avErrorCode = OH_AVPlayer_GetState(player, &currentStage);
+    while (AV_PREPARED != currentStage) {
+        OH_AVPlayer_GetState(player, &currentStage);
+    }
+    OH_AVFormat *metrics = nullptr;
+    metrics = OH_AVPlayer_GetPlaybackStatisticMetrics(player);
+    if (metrics == nullptr) {
+        LOG("GetPlaybackStatisticMetrics failed");
+        OH_AVPlayer_ReleaseSync(player);
+        delete ndkAVPlayerUser;
+        return result;
+    }
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_PREPARE_DURATION);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_RESOURCE_CONNECTION_DURATION);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_FIRST_FRAME_DECAPSULATION_DURATION);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_TOTAL_PLAYING_TIME);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_REQUEST_COUNT);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_TIME);
+    GetLongValue(metrics, env, result, OH_MEDIA_EVENT_INFO_DOWNLOAD_TOTAL_SIZE);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_STALLING_COUNT);
+    GetUintValue(metrics, env, result, OH_MEDIA_EVENT_INFO_TOTAL_STALLING_TIME);
+    OH_AVFormat_Destroy(metrics);
+    OH_AVPlayer_ReleaseSync(player);
+    delete ndkAVPlayerUser;
+    return result;
+}
+
+static napi_value NAPI_Global_GetPlaybackStatisticMetricsAbnormal(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVFormat *metrics = nullptr;
+    metrics = OH_AVPlayer_GetPlaybackStatisticMetrics(nullptr);
+    napi_create_int32(env, (metrics == nullptr) ? SUCCESS : FAIL, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_GetMediaDescription(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t hasSubtitle = false;
+    int32_t hasVideo = false;
+    int32_t hasAudio = false;
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError};
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+    OH_AVPlayer_Prepare(player);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    OH_AVFormat* format = OH_AVPlayer_GetMediaDescription(player);
+    if (format != nullptr) {
+        backParam = SUCCESS;
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_HAS_SUBTITLE, &hasSubtitle);
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_HAS_VIDEO, &hasVideo);
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_HAS_AUDIO, &hasAudio);
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_GetMediaDescriptionOne(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    OH_AVFormat* format = OH_AVPlayer_GetMediaDescription(nullptr);
+    if (format == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+    } else {
+        napi_create_int32(env, PARAM_0, &result);
+    }
+    return result;
+}
+
+static napi_value NAPI_Global_GetTrackDescription(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    int32_t trackCount = -1;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError};
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+    OH_AVPlayer_Prepare(player);
+    OH_AVPlayer_SetAudioRendererInfo(player, AUDIOSTREAM_USAGE_MUSIC);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    int index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_AVFormat* format = OH_AVPlayer_GetTrackDescription(player, index);
+    if (format != nullptr) {
+        backParam = SUCCESS;
+        OH_AVFormat_GetIntValue(format, OH_PLAYER_MD_KEY_TRACK_INDEX, &trackCount);
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_GetTrackDescriptionOne(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int index;
+    napi_get_value_int32(env, args[0], &index);
+    OH_AVFormat* format = OH_AVPlayer_GetTrackDescription(nullptr, index);
+    if (format == nullptr) {
+        napi_create_int32(env, FAIL, &result);
+    } else {
+        napi_create_int32(env, PARAM_0, &result);
+    }
+    return result;
+}
+
+static napi_value NAPI_Global_setLoudnessGain1(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int backParam = FAIL;
+    double loudnessGain;
+    napi_get_value_double(env, args[0], &loudnessGain);
+    OH_AVErrCode errCode = OH_AVPlayer_SetLoudnessGain(nullptr, loudnessGain);
+    if (errCode == AV_ERR_INVALID_VAL) {
+        backParam = SUCCESS;
+    }
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
+
+static napi_value NAPI_Global_setLoudnessGain2(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    int backParam = FAIL;
+    OH_AVPlayer *player = OH_AVPlayer_Create();
+    AVPlayerCallback cb = { &AVPlayerOnInfo, &AVPlayerOnError};
+    OH_AVPlayer_SetPlayerCallback(player, cb);
+    waitAvPlayerStateChange(player, AV_IDLE);
+    GetFDSourceInfo(player, WAV_PATH);
+    OH_AVPlayer_Prepare(player);
+    OH_AVPlayer_SetAudioRendererInfo(player, AUDIOSTREAM_USAGE_UNKNOWN);
+    waitAvPlayerStateChange(player, AV_PREPARED);
+    double loudnessGain;
+    napi_get_value_double(env, args[0], &loudnessGain);
+    OH_AVErrCode errCode = OH_AVPlayer_SetLoudnessGain(player, loudnessGain);
+    if (errCode == AV_ERR_INVALID_STATE) {
+        backParam = SUCCESS;
+    }
+    OH_AVPlayer_ReleaseSync(player);
+    napi_create_int32(env, backParam, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3094,6 +3329,20 @@ static napi_value Init(napi_env env, napi_value exports)
         {"setup", nullptr, NAPI_Global_Setup, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"release", nullptr, NAPI_Global_Release, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setLoudnessGain", nullptr, NAPI_Global_setLoudnessGain, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setLoudnessGain1", nullptr, NAPI_Global_setLoudnessGain1, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"setLoudnessGain2", nullptr, NAPI_Global_setLoudnessGain2, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"getMediaDescription", nullptr, NAPI_Global_GetMediaDescription, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"getMediaDescriptionOne", nullptr, NAPI_Global_GetMediaDescriptionOne, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"getTrackDescription", nullptr, NAPI_Global_GetTrackDescription, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"getTrackDescriptionOne", nullptr, NAPI_Global_GetTrackDescriptionOne, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"getPlaybackStatisticMetrics", nullptr, NAPI_Global_GetPlaybackStatisticMetrics, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+        {"getPlaybackStatisticMetricsAbnormal", nullptr, NAPI_Global_GetPlaybackStatisticMetricsAbnormal,
+            nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

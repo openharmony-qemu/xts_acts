@@ -37,12 +37,12 @@ export default function showDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDialogBlurStyleOptions_0100
-     * @tc.name      showDialogBlurStyleOptions_0100
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogBlurStyleOptions_0100
+     * @tc.number showDialogBlurStyleOptions_0100
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function showDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDialogBlurStyleOptions_0200
-     * @tc.name      showDialogBlurStyleOptions_0200
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogBlurStyleOptions_0200
+     * @tc.number showDialogBlurStyleOptions_0200
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function showDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showDialogBlurStyleOptions_0300
-     * @tc.name      showDialogBlurStyleOptions_0300
-     * @tc.desc      createShowDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showDialogBlurStyleOptions_0300
+     * @tc.number showDialogBlurStyleOptions_0300
+     * @tc.desc   createShowDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showDialogBlurStyleOptions_0300';

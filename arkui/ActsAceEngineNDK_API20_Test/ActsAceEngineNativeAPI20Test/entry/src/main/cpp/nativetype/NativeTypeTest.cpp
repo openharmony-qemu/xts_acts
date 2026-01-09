@@ -233,6 +233,9 @@ napi_value CreateGestureNode2(napi_env env, napi_callback_info info)
     ArkUI_NativeGestureAPI_1 *gestureApi = nullptr;
     gestureApi = reinterpret_cast<ArkUI_NativeGestureAPI_1 *>(
         OH_ArkUI_QueryModuleInterfaceByName(ARKUI_NATIVE_GESTURE, "ArkUI_NativeGestureAPI_1"));
+    if (gestureApi == nullptr) {
+    return nullptr;
+    }
     g_SwipeGesture = gestureApi->createSwipeGesture(1, GESTURE_DIRECTION_LEFT, PARAM_100);
     auto onInterruptCallback = [](ArkUI_GestureInterruptInfo *info) -> ArkUI_GestureInterruptResult {
         g_recognizer = OH_ArkUI_GestureInterruptInfo_GetRecognizer(info);
@@ -1054,4 +1057,147 @@ napi_value ErrorCodePostCloned(napi_env env, napi_callback_info info)
     napi_value result = nullptr;
     napi_create_int32(env, errcode, &result);
     return result;
+}
+
+napi_value GetRouterStateOnShow(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterPageStateOnShow",
+     "ARKUI_ROUTER_PAGE_STATE_ON_SHOW");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state router onshow is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_ROUTER_PAGE_STATE_ON_SHOW);
+    return nullptr;
+}
+
+napi_value GetRouterStateOnHide(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterStateOnHide",
+     "ARKUI_ROUTER_PAGE_STATE_ON_HIDE");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "gget state router onhide is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_ROUTER_PAGE_STATE_ON_HIDE);
+    return nullptr;
+}
+
+napi_value GetRouterStateOnBackPressed(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterStateOnBackPressed",
+     "ARKUI_ROUTER_PAGE_STATE_ON_BACK_PRESS");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state router onBackPress is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_ROUTER_PAGE_STATE_ON_BACK_PRESS);
+    return nullptr;
+}
+
+napi_value GetRouterStatAboutToAppear(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterStatAboutToAppear",
+        "ARKUI_ROUTER_PAGE_STATE_ABOUT_TO_APPEAR");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state routerAboutToAppear is ", "%{public}d", state);
+    ASSERT_EQ(ARKUI_ROUTER_PAGE_STATE_ABOUT_TO_APPEAR, PARAM_0);
+    return nullptr;
+}
+
+napi_value GetRouterStateAboutToDisApper(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetRouterStateAboutToDisApper",
+        "ARKUI_ROUTER_PAGE_STATE_ABOUT_TO_DISAPPEAR");
+    ArkUI_RouterPageState state;
+    OH_ArkUI_GetRouterPageState(g_pageNode, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state router AboutToDisApper is ", "%{public}d", state);
+    ASSERT_EQ(ARKUI_ROUTER_PAGE_STATE_ABOUT_TO_DISAPPEAR, PARAM_1);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnShow(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnShow",
+        "ARKUI_NAV_DESTINATION_STATE_ON_SHOW");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnShow is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_SHOW);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnHidden(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnHidden",
+        "ARKUI_NAV_DESTINATION_STATE_ON_HIDE");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnHdide is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_HIDE);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnAppear(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "test GetNavDestinationStateOnAppear",
+        "ARKUI_NAV_DESTINATION_STATE_ON_APPEAR");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnAppear is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_APPEAR);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnDisAppear(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnDisAppear",
+        "ARKUI_NAV_DESTINATION_STATE_ON_DISAPPEAR");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnDisAppear is ", "%{public}d", state);
+    ASSERT_EQ(ARKUI_NAV_DESTINATION_STATE_ON_DISAPPEAR, PARAM_3);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnWillAppear(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnWillAppear",
+        "ARKUI_NAV_DESTINATION_STATE_ON_WILL_APPEAR");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnWillAppear is ", "%{public}d", state);
+    ASSERT_EQ(ARKUI_NAV_DESTINATION_STATE_ON_WILL_APPEAR, PARAM_6);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnWillShow(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnWillShow",
+        "ARKUI_NAV_DESTINATION_STATE_ON_WILL_SHOW");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnWillShow is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_WILL_SHOW);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnWillHide(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnWillHide",
+        "ARKUI_NAV_DESTINATION_STATE_ON_WILL_HIDE");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnWillHide is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_WILL_HIDE);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnWillDisappear(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnWillDisappear",
+        "ARKUI_NAV_DESTINATION_STATE_ON_WILL_DISAPPEAR");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnWillDisappear is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_WILL_DISAPPEAR);
+    return nullptr;
+}
+
+napi_value GetNavDestinationStateOnBackPressed(napi_env env, napi_callback_info info) {
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "GetNavDestinationStateOnBackPressed",
+        "ARKUI_NAV_DESTINATION_STATE_ON_BACK_PRESS");
+    ArkUI_NavDestinationState state;
+    OH_ArkUI_GetNavDestinationState(g_navigation, &state);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "get state OnBackPressed is ", "%{public}d", state);
+    ASSERT_EQ(state, ARKUI_NAV_DESTINATION_STATE_ON_BACK_PRESS);
+    return nullptr;
 }

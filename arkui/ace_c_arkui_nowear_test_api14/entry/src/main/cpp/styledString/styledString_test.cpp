@@ -71,11 +71,16 @@ napi_value StyledStringTest::testStyledString001(napi_env env, napi_callback_inf
 
     size_t arraySize = length / sizeof(uint8_t);
     auto *styledStringDescriber = OH_ArkUI_StyledString_Descriptor_Create(); // ArkUI_StyledString_Descriptor {(C++) 属性字符串，html}
+    ASSERT_EQ(styledStringDescriber == nullptr, false);
     // 反序列化接口，把data_byte信息写到styledStringDescriber。
     auto status = OH_ArkUI_UnmarshallStyledStringDescriptor(data_bytes, arraySize, styledStringDescriber);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "testStyledString001", 
       "UnmarshallingStyledStringDescriber status is %{public}d",status);
-    ASSERT_EQ(status, 0);
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_NO_ERROR);
+    auto status1Error = OH_ArkUI_UnmarshallStyledStringDescriptor(data_bytes, arraySize, nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "testStyledString001", 
+      "UnmarshallingStyledStringDescriber status1Error is %{public}d",status1Error);
+    ASSERT_EQ(status1Error, ARKUI_ERROR_CODE_PARAM_INVALID);
     // (c++)属性字符串 -> html
     auto html = OH_ArkUI_ConvertToHtml(styledStringDescriber);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "testStyledString001", "html is: %{public}s", html);
@@ -85,6 +90,15 @@ napi_value StyledStringTest::testStyledString001(napi_env env, napi_callback_inf
     size_t size = SIZE;
     uint8_t *buffer = (uint8_t *)malloc(size * sizeof(uint8_t));
     napi_value result = nullptr;
+    auto status2Err = OH_ArkUI_MarshallStyledStringDescriptor(buffer, size, styledStringDescriber, &resultSize);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "testStyledString001", 
+          "OH_ArkUI_MarshallStyledStringDescriptor status2Err is :[%{public}d]", status2Err);
+    ASSERT_EQ(status2Err, ARKUI_ERROR_CODE_PARAM_INVALID);
+    auto *styledStringDescriber2 = OH_ArkUI_StyledString_Descriptor_Create();
+    auto status2Err2 = OH_ArkUI_MarshallStyledStringDescriptor(buffer, size, styledStringDescriber2, &resultSize);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "testStyledString001", 
+          "OH_ArkUI_MarshallStyledStringDescriptor status2Err2 is :[%{public}d]", status2Err2);
+    ASSERT_EQ(status2Err2, ARKUI_ERROR_CODE_INVALID_STYLED_STRING);
     if (OH_ArkUI_MarshallStyledStringDescriptor(buffer, size, styledStringDescriber, &resultSize) != 0) {
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "testStyledString001", 
           "resultSize is :[%{public}zu]", resultSize);
@@ -93,8 +107,10 @@ napi_value StyledStringTest::testStyledString001(napi_env env, napi_callback_inf
         }
         uint8_t *buffer2 = (uint8_t *)malloc(resultSize * sizeof(uint8_t));
         size_t resultSize2;
-        OH_ArkUI_MarshallStyledStringDescriptor(buffer2, resultSize, styledStringDescriber, &resultSize2);
-
+        auto status2 = OH_ArkUI_MarshallStyledStringDescriptor(buffer2, resultSize, styledStringDescriber, &resultSize2);
+        OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "testStyledString001", 
+          "OH_ArkUI_MarshallStyledStringDescriptor2 is :[%{public}d]", status2);
+        ASSERT_EQ(status2, ARKUI_ERROR_CODE_NO_ERROR);
         auto *styledStringDescriber1 = OH_ArkUI_StyledString_Descriptor_Create();
         // 反序列化接口，把buffer2信息写到styledStringDescriber1。
         auto status1 = OH_ArkUI_UnmarshallStyledStringDescriptor(buffer2, resultSize2, styledStringDescriber1);

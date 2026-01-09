@@ -61,140 +61,140 @@ export default function WebviewRegisterJavaScriptProxyErrorCode() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_OBJECT_ERRORCODE_API_0001
-    * @tc.name       : testWebviewRegisterJavaScriptProxyObjectNull
-    * @tc.desc       : test registerJavaScriptProxy object null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyObjectNull
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_OBJECT_ERRORCODE_API_0001
+     * @tc.desc   test registerJavaScriptProxy object null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyObjectNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyObjectNull', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyObjectNull', '401', 173220, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_OBEJCT_ERRORCODE_API_0002
-    * @tc.name       : testWebviewRegisterJavaScriptProxyObjectUndefined
-    * @tc.desc       : test registerJavaScriptProxy object undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyObjectUndefined
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_OBEJCT_ERRORCODE_API_0002
+     * @tc.desc   test registerJavaScriptProxy object undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyObjectUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyObjectUndefined', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyObjectUndefined', '401', 173230, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_NAME_ERRORCODE_API_0001
-    * @tc.name       : testWebviewRegisterJavaScriptProxyNameNull
-    * @tc.desc       : test registerJavaScriptProxy name null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyNameNull
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_NAME_ERRORCODE_API_0001
+     * @tc.desc   test registerJavaScriptProxy name null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyNameNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyNameNull', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyNameNull', '401', 173240, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_NAME_ERRORCODE_API_0002
-    * @tc.name       : testWebviewRegisterJavaScriptProxyNameUndefined
-    * @tc.desc       : test registerJavaScriptProxy name undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyNameUndefined
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_NAME_ERRORCODE_API_0002
+     * @tc.desc   test registerJavaScriptProxy name undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyNameUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyNameUndefined', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyNameUndefined', '401', 173250, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_METHODLIST_ERRORCODE_API_0001
-    * @tc.name       : testWebviewRegisterJavaScriptProxyMethodListNull
-    * @tc.desc       : test registerJavaScriptProxy methodList null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyMethodListNull
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_METHODLIST_ERRORCODE_API_0001
+     * @tc.desc   test registerJavaScriptProxy methodList null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyMethodListNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyMethodListNull', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyMethodListNull', '401', 173260, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_METHOD_ERRORCODE_API_0002
-    * @tc.name       : testWebviewRegisterJavaScriptProxyMethodListUndefined
-    * @tc.desc       : test registerJavaScriptProxy methodList undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyMethodListUndefined
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_METHOD_ERRORCODE_API_0002
+     * @tc.desc   test registerJavaScriptProxy methodList undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyMethodListUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyMethodListUndefined', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyMethodListUndefined', '401', 173270, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_ASYNCMETHODLIST_ERRORCODE_API_0001
-    * @tc.name       : testWebviewRegisterJavaScriptProxyAsyncMethodListNull
-    * @tc.desc       : test registerJavaScriptProxy asyncMethodList null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyAsyncMethodListNull
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_ASYNCMETHODLIST_ERRORCODE_API_0001
+     * @tc.desc   test registerJavaScriptProxy asyncMethodList null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyAsyncMethodListNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyAsyncMethodListNull', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyAsyncMethodListNull', '401', 173280, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_ASYNCMETHODLIST_ERRORCODE_API_0002
-    * @tc.name       : testWebviewRegisterJavaScriptProxyAsyncMethodListUndefined
-    * @tc.desc       : test registerJavaScriptProxy asyncMethodList undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyAsyncMethodListUndefined
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_ASYNCMETHODLIST_ERRORCODE_API_0002
+     * @tc.desc   test registerJavaScriptProxy asyncMethodList undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyAsyncMethodListUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyAsyncMethodListUndefined', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyAsyncMethodListUndefined', '401', 173290, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_PERMISSION_ERRORCODE_API_0001
-    * @tc.name       : testWebviewRegisterJavaScriptProxyPermissionNull
-    * @tc.desc       : test registerJavaScriptProxy permission null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyPermissionNull
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_PERMISSION_ERRORCODE_API_0001
+     * @tc.desc   test registerJavaScriptProxy permission null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyPermissionNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyPermissionNull', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyPermissionNull', '401', 173300, done);
       sendEventByKey('WebviewRegisterJavaScriptProxyErrorCodeButton', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_PERMISSION_ERRORCODE_API_0002
-    * @tc.name       : testWebviewRegisterJavaScriptProxyPermissionUndefined
-    * @tc.desc       : test registerJavaScriptProxy permission undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testWebviewRegisterJavaScriptProxyPermissionUndefined
+     * @tc.number SUB_ACE_WEB_REGISTERJAVASCRIPTPROXY_PERMISSION_ERRORCODE_API_0002
+     * @tc.desc   test registerJavaScriptProxy permission undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewRegisterJavaScriptProxyPermissionUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent('emitWebviewRegisterJavaScriptProxyPermissionUndefined', 173210);
       Utils.registerEvent('testWebviewRegisterJavaScriptProxyPermissionUndefined', '401', 173310, done);

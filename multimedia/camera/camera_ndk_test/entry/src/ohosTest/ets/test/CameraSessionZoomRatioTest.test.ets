@@ -266,12 +266,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_RATIO_RANGE_PROMISE_0100
-     * @tc.name      : Check capture session get zoom ratio range with promise
-     * @tc.desc      : Check capture session get zoom ratio range with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_RATIO_RANGE_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_RATIO_RANGE_PROMISE_0100
+     * @tc.desc   Check capture session get zoom ratio range with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_RATIO_RANGE_PROMISE_0100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_RATIO_RANGE_PROMISE_0100--------------");
@@ -292,12 +292,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_GET_ZOOM_RATIO_RANGE_PROMISE_0100 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0100
-     * @tc.name      : Check capture session set zoom ratio with promise
-     * @tc.desc      : Check capture session set zoom ratio with promise
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0100
+     * @tc.desc   Check capture session set zoom ratio with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0100', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0100--------------");
@@ -316,12 +316,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0100 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0101
-     * @tc.name      : Check capture session set zoom ratio with promise(invalid value, max + 1)
-     * @tc.desc      : Check capture session set zoom ratio with promise(invalid value, max + 1)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0101
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, max + 1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0101', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0101--------------");
@@ -340,12 +340,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0101 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0102
-     * @tc.name      : Check capture session set zoom ratio with promise(invalid value, max + 0.1)
-     * @tc.desc      : Check capture session set zoom ratio with promise(invalid value, max + 0.1)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0102
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0102
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, max + 0.1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0102', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0102--------------");
@@ -364,12 +364,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0102 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0103
-     * @tc.name      : Check capture session set zoom ratio with promise(invalid value, min - 1)
-     * @tc.desc      : Check capture session set zoom ratio with promise(invalid value, min - 1)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0103
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0103
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, min - 1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0103', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0103--------------");
@@ -388,12 +388,12 @@ export default function cameraSessionZoomRatioTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0103 ends here");
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0104
-     * @tc.name      : Check capture session set zoom ratio with promise(invalid value, min - 0.1)
-     * @tc.desc      : Check capture session set zoom ratio with promise(invalid value, min - 0.1)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0104
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0104
+     * @tc.desc   Check capture session set zoom ratio with promise(invalid value, min - 0.1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0104', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_SESSION_SET_GET_ZOOM_RATIO_PROMISE_0104--------------");

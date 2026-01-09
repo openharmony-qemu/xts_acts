@@ -40,12 +40,12 @@ export default function BuilderNodeApiRecycleTest() {
       done();
     });
     /**
-     * @tc.number    BuilderNodeApiRecycleTest_0100
-     * @tc.name      BuilderNodeApiRecycleTest_0100
-     * @tc.desc      frameNode: BuilderNodeApiRecycle
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BuilderNodeApiRecycleTest_0100
+     * @tc.number BuilderNodeApiRecycleTest_0100
+     * @tc.desc   frameNode: BuilderNodeApiRecycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuilderNodeApiRecycleTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('BuilderNodeApiRecycleTest_0100 START');

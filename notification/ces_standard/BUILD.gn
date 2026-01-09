@@ -29,7 +29,7 @@ group("ces_standard") {
       "actsCommonEventSystemAPITestStatic:ActsCommonEventSystemAPIStaticTest",
       "actsNotificationCommonEventCAPITest:ActsNotificationCommonEventCAPITest",
       "subscribeandpublish:SubscribeAndPublish",
-      "subScribeAndPublishTestStatic:SubScribeAndPublishTestStatic",
+      "subScribeAndPublishTestStatic:SubScribeAndPublishStaticTest",
     ]
   }
 }

@@ -46,31 +46,33 @@ export default function TreeMapTest1() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0100
-     * @tc.name       : testTreeMap001
-     * @tc.desc       : Test the function By TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0100
+     * @tc.desc   Test the function By TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let treeMap = new TreeMap<number, number>();
         expect(String(treeMap != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+        }
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0200
-     * @tc.name       : testTreeMap002
-     * @tc.desc       : Test the function By TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0200
+     * @tc.desc   Test the function By TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
@@ -87,20 +89,22 @@ export default function TreeMapTest1() {
         expect(treeMap.remove("b")).assertEqual(2);
         expect(treeMap.remove("c")).assertEqual(3);
         expect(treeMap.remove("d")).assertEqual(4);
-      } catch (err: BusinessError) {
-        expect(err.name).assertEqual("BusinessError");
-        expect(err.code).assertEqual(10200012);
-        expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          expect(err.name).assertEqual("BusinessError");
+          expect(err.code).assertEqual(10200012);
+          expect(err.message).assertEqual("The TreeMap's constructor cannot be directly invoked");
+        }
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0300
-     * @tc.name       : testTreeMap003
-     * @tc.desc       : Test the function By TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0300
+     * @tc.desc   Test the function By TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -110,12 +114,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0400
-     * @tc.name       : testTreeMap004
-     * @tc.desc       : Test the function By TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0400
+     * @tc.desc   Test the function By TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, number>();
@@ -125,12 +129,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0500
-     * @tc.name       : testTreeMap005
-     * @tc.desc       : Test the function By TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0500
+     * @tc.desc   Test the function By TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, Array<number>>();
@@ -141,12 +145,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0600
-     * @tc.name       : testTreeMap006
-     * @tc.desc       : Test the function By TreeMap. Add a pair of key value pairs to the TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0600
+     * @tc.desc   Test the function By TreeMap. Add a pair of key value pairs to the TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, InfoC>();
@@ -157,12 +161,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0700
-     * @tc.name       : testTreeMap007
-     * @tc.desc       : Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSet006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0700
+     * @tc.desc   Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testSet006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -172,12 +176,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0800
-     * @tc.name       : testTreeMap008
-     * @tc.desc       : Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0800
+     * @tc.desc   Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, number>();
@@ -187,12 +191,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_0900
-     * @tc.name       : testTreeMap009
-     * @tc.desc       : Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_0900
+     * @tc.desc   Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, boolean>();
@@ -202,12 +206,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1000
-     * @tc.name       : testTreeMap010
-     * @tc.desc       : Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1000
+     * @tc.desc   Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -217,12 +221,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1100
-     * @tc.name       : testTreeMap011
-     * @tc.desc       : Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1100
+     * @tc.desc   Test the function By TreeMap. Add a pair of key value pairs to the TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<string, string>();
@@ -232,12 +236,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1200
-     * @tc.name       : testTreeMap012
-     * @tc.desc       : Test the function By TreeMap. Add a pair of key value pairs to the TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1200
+     * @tc.desc   Test the function By TreeMap. Add a pair of key value pairs to the TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, number>();
@@ -250,12 +254,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1300
-     * @tc.name       : testTreeMap013
-     * @tc.desc       : Test the function By TreeMap. Determine whether the TreeMap contains the specified key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1300
+     * @tc.desc   Test the function By TreeMap. Determine whether the TreeMap contains the specified key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testTreeMap013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -268,12 +272,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1400
-     * @tc.name       : testTreeMap014
-     * @tc.desc       : Test the function By TreeMap. Determine whether the TreeMap contains the specified Value. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1400
+     * @tc.desc   Test the function By TreeMap. Determine whether the TreeMap contains the specified Value. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -287,12 +291,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1500
-     * @tc.name       : testTreeMap015
-     * @tc.desc       : Test the function By TreeMap. Get the corresponding value through the key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1500
+     * @tc.desc   Test the function By TreeMap. Get the corresponding value through the key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -304,12 +308,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1600
-     * @tc.name       : testTreeMap016
-     * @tc.desc       : Test the function By TreeMap. Get the corresponding value through the key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1600
+     * @tc.desc   Test the function By TreeMap. Get the corresponding value through the key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -318,12 +322,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1700
-     * @tc.name       : testTreeMap017
-     * @tc.desc       : Test the function By TreeMap. Get the corresponding value through the key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1700
+     * @tc.desc   Test the function By TreeMap. Get the corresponding value through the key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -335,12 +339,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1800
-     * @tc.name       : testTreeMap018
-     * @tc.desc       : Test the function By TreeMap. Get the key that ranks first in the TreeMap instance. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1800
+     * @tc.desc   Test the function By TreeMap. Get the key that ranks first in the TreeMap instance. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -352,26 +356,31 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_1900
-     * @tc.name       : testTreeMap019
-     * @tc.desc       : Test the function By TreeMap. Get the key that ranks first in the TreeMap instance. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_1900
+     * @tc.desc   Test the function By TreeMap. Get the key that ranks first in the TreeMap instance. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getFirstKey();
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getFirstKey();
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2000
-     * @tc.name       : testTreeMap020
-     * @tc.desc       : Test the function By TreeMap. Get the last sorted key in the TreeMap instance. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2000
+     * @tc.desc   Test the function By TreeMap. Get the last sorted key in the TreeMap instance. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -383,26 +392,31 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2100
-     * @tc.name       : testTreeMap021
-     * @tc.desc       : Test the function By TreeMap. Get the last sorted key in the TreeMap instance. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2100
+     * @tc.desc   Test the function By TreeMap. Get the last sorted key in the TreeMap instance. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getLastKey();
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getLastKey();
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2200
-     * @tc.name       : testTreeMap022
-     * @tc.desc       : Test the function By TreeMap. Copy key value pairs from one HashMap to another. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2200
+     * @tc.desc   Test the function By TreeMap. Copy key value pairs from one HashMap to another. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -422,29 +436,29 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2300
-     * @tc.name       : testTreeMap023
-     * @tc.desc       : Test the function By TreeMap. Delete key value pairs according to key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2300
+     * @tc.desc   Test the function By TreeMap. Delete key value pairs according to key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    // it("testTreeMap023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let treeMap = new TreeMap<number, string>();
-    //   treeMap.set(0, "a");
-    //   treeMap.set(1, "b");
-    //   treeMap.set(2, "c");
-    //   let res = treeMap.remove(1);
-    //   expect(res).assertEqual("b");
-    // });
+    it("testTreeMap023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let treeMap = new TreeMap<number, string>();
+      treeMap.set(0, "a");
+      treeMap.set(1, "b");
+      treeMap.set(2, "c");
+      let res = treeMap.remove(1);
+      expect(res).assertEqual("b");
+    });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2400
-     * @tc.name       : testTreeMap024
-     * @tc.desc       : Test the function By TreeMap. Delete key value pairs according to key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2400
+     * @tc.desc   Test the function By TreeMap. Delete key value pairs according to key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -454,12 +468,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2500
-     * @tc.name       : testTreeMap025
-     * @tc.desc       : Test the function By TreeMap. Clear all key value pairs in TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2500
+     * @tc.desc   Test the function By TreeMap. Clear all key value pairs in TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -472,12 +486,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2600
-     * @tc.name       : testTreeMap026
-     * @tc.desc       : Test the function By TreeMap. Clear all key value pairs in TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2600
+     * @tc.desc   Test the function By TreeMap. Clear all key value pairs in TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -493,12 +507,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2700
-     * @tc.name       : testTreeMap027
-     * @tc.desc       : Test the function By TreeMap. Get a key that is a little lower than the specified key sort.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2700
+     * @tc.desc   Test the function By TreeMap. Get a key that is a little lower than the specified key sort.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -512,26 +526,31 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2800
-     * @tc.name       : testTreeMap028
-     * @tc.desc       : Test the function By TreeMap. Get a key that is a little lower than the specified key sort. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2800
+     * @tc.desc   Test the function By TreeMap. Get a key that is a little lower than the specified key sort. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getLowerKey(2);
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getLowerKey(2);
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_2900
-     * @tc.name       : testTreeMap029
-     * @tc.desc       : Test the function By TreeMap. Get a key that is a little higher than the specified key sort. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_2900
+     * @tc.desc   Test the function By TreeMap. Get a key that is a little higher than the specified key sort. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -545,26 +564,31 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3000
-     * @tc.name       : testTreeMap030
-     * @tc.desc       : Test the function By TreeMap. Get a key that is a little higher than the specified key sort. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3000
+     * @tc.desc   Test the function By TreeMap. Get a key that is a little higher than the specified key sort. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
-      let res = treeMap.getHigherKey(2);
-      expect(String(res)).assertEqual('undefined');
+      try {
+        let res = treeMap.getHigherKey(2);
+        expect(false).assertFail();
+      } catch (err) {
+        err = err as BusinessError;
+        expect(err.message).assertEqual("Container is empty");
+      }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3100
-     * @tc.name       : testTreeMap031
-     * @tc.desc       : Test the function By TreeMap. Get a collection of all the keys in the TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3100
+     * @tc.desc   Test the function By TreeMap. Get a collection of all the keys in the TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -582,12 +606,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3200
-     * @tc.name       : testTreeMap032
-     * @tc.desc       : Test the function By TreeMap. Get a collection of all the values in the TreeMap. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3200
+     * @tc.desc   Test the function By TreeMap. Get a collection of all the values in the TreeMap. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -605,12 +629,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3300
-     * @tc.name       : testTreeMap033
-     * @tc.desc       : Test the function By TreeMap. Modify the corresponding value according to the specified key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3300
+     * @tc.desc   Test the function By TreeMap. Modify the corresponding value according to the specified key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -625,12 +649,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3400
-     * @tc.name       : testTreeMap034
-     * @tc.desc       : Test the function By TreeMap. Modify the corresponding value according to the specified key. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3400
+     * @tc.desc   Test the function By TreeMap. Modify the corresponding value according to the specified key. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -642,12 +666,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3500
-     * @tc.name       : testTreeMap035
-     * @tc.desc       : Test the function By TreeMap. Get the number of key value pairs in the TreeMap instance. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testTreeMap035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3500
+     * @tc.desc   Test the function By TreeMap. Get the number of key value pairs in the TreeMap instance. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testTreeMap035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -661,12 +685,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3600
-     * @tc.name       : testLength036
-     * @tc.desc       : Test the function By TreeMap. Get the number of key value pairs in the TreeMap instance. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testLength036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3600
+     * @tc.desc   Test the function By TreeMap. Get the number of key value pairs in the TreeMap instance. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testLength036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -675,12 +699,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3700
-     * @tc.name       : testForEach037
-     * @tc.desc       : Test the function By TreeMap. Traverse all key value pairs in the TreeMap instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testForEach037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3700
+     * @tc.desc   Test the function By TreeMap. Traverse all key value pairs in the TreeMap instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testForEach037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -708,12 +732,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3800
-     * @tc.name       : testEntries038
-     * @tc.desc       : Test the function By TreeMap. Get all key value pairs collection in TreeMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testEntries038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3800
+     * @tc.desc   Test the function By TreeMap. Get all key value pairs collection in TreeMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testEntries038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -736,12 +760,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_3900
-     * @tc.name       : testIterator039
-     * @tc.desc       : Test the function By TreeMap. Traverse all key value pairs in the TreeMap instance.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testIterator039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_3900
+     * @tc.desc   Test the function By TreeMap. Traverse all key value pairs in the TreeMap instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testIterator039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -761,12 +785,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_4000
-     * @tc.name       : testIterator040
-     * @tc.desc       : Test the function By TreeMap. Traverse all key value pairs in the TreeMap instance. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testIterator040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_4000
+     * @tc.desc   Test the function By TreeMap. Traverse all key value pairs in the TreeMap instance. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testIterator040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -789,12 +813,12 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_4100
-     * @tc.name       : testIsEmpty041
-     * @tc.desc       : Test the function By TreeMap. Determine whether the TreeMap instance is empty. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testIsEmpty041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_4100
+     * @tc.desc   Test the function By TreeMap. Determine whether the TreeMap instance is empty. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testIsEmpty041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let treeMap = new TreeMap<number, string>();
@@ -811,25 +835,29 @@ export default function TreeMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREEMAP_4200
-     * @tc.name       : testSetAll042
-     * @tc.desc       : Test the function By TreeMap. Copy key value pairs from one HashMap to another. For example
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testIsEmpty043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_TREEMAP_4200
+     * @tc.desc   Test the function By TreeMap. Copy key value pairs from one HashMap to another. For example
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    // it("testSetAll042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let treeMap = new TreeMap<number, string>();
-    //   treeMap.set(0, "a");
-    //   treeMap.set(1, "b");
-    //   try {
-    //     treeMap.setAll([1, 2, 3]);
-    //     expect(true).assertEqual(false);
-    //   } catch (err: Error) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "map" must be TreeMap. Received value is: 1,2,3`);
-    //   }
-    // });
+    it("testIsEmpty043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let treeMap = new TreeMap<number, string>();
+      treeMap.set(0, "a");
+      treeMap.set(1, "b");
+      treeMap.set(2, "c");
+      treeMap.set(3, "d");
+      treeMap.set(4, "g");
+      let iter = treeMap.$_iterator();
+      let temp = iter.next();
+      let flag = 0;
+      while (!temp.done) {
+        expect(treeMap.length).assertEqual(5);
+        flag++;
+        temp = iter.next();
+      }
+      expect(flag).assertEqual(5)
+    });
   });
 }

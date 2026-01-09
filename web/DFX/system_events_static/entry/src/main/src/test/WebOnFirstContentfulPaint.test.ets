@@ -56,14 +56,14 @@ export default function webOnFirstContentfulPaint() {
 
 
 
-    /*
-    * @tc.number      : SUB_WEB_ONFIRSTCONTENTFULPAINT_0100
-    * @tc.name        : testOnFirstContentfulPaintStatic001
-    * @tc.desc        : test onFirstContentfulPaint with Visibility.None
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnFirstContentfulPaintStatic001
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0100
+     * @tc.desc   test onFirstContentfulPaint with Visibility.None
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnFirstContentfulPaintStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void):Promise<void> => {
       Utils.emitEvent('emitOnFirstContentfulPaint001', 10)
       await Utils.msSleep(2000);
@@ -78,14 +78,14 @@ export default function webOnFirstContentfulPaint() {
       done()
     })
 
-    /*
-    * @tc.number      : SUB_WEB_ONFIRSTCONTENTFULPAINT_0200
-    * @tc.name        : testOnFirstContentfulPaintStatic002
-    * @tc.desc        : test onFirstContentfulPaint with Visibility.Visible
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testOnFirstContentfulPaintStatic002
+     * @tc.number SUB_WEB_ONFIRSTCONTENTFULPAINT_0200
+     * @tc.desc   test onFirstContentfulPaint with Visibility.Visible
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testOnFirstContentfulPaintStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: ()=>void):Promise<void> => {
       Utils.emitEvent('emitOnFirstContentfulPaint002', 10)
       await Utils.msSleep(2000);

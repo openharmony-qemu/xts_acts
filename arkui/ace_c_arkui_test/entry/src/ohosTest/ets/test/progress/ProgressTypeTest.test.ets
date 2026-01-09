@@ -26,117 +26,117 @@ export default function progressTypeTest() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0100
-     * @tc.name       : testProgressType001
-     * @tc.desc       : testing type for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType001
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0100
+     * @tc.desc   testing type for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType001()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0200
-     * @tc.name       : testProgressType002
-     * @tc.desc       : testing type for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType002
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0200
+     * @tc.desc   testing type for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType002()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0300
-     * @tc.name       : testProgressType003
-     * @tc.desc       : testing type for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType003
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0300
+     * @tc.desc   testing type for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType003()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0400
-     * @tc.name       : testProgressType004
-     * @tc.desc       : testing type for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType004
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0400
+     * @tc.desc   testing type for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType004()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0500
-     * @tc.name       : testProgressType005
-     * @tc.desc       : testing type for Progress with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType005
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0500
+     * @tc.desc   testing type for Progress with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType005()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0600
-     * @tc.name       : testProgressType006
-     * @tc.desc       : testing type for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType006
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0600
+     * @tc.desc   testing type for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType006()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0700
-     * @tc.name       : testProgressType007
-     * @tc.desc       : testing type for Progress with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType007
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0700
+     * @tc.desc   testing type for Progress with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType007()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0800
-     * @tc.name       : testProgressType008
-     * @tc.desc       : testing type for Progress with NULL
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType008
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0800
+     * @tc.desc   testing type for Progress with NULL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType008', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType008()).assertEqual(0)
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_PROGRESS_TYPE_0900
-     * @tc.name       : testProgressType009
-     * @tc.desc       : testing type for Progress with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testProgressType009
+     * @tc.number SUB_ARKUI_CAPI_PROGRESS_TYPE_0900
+     * @tc.desc   testing type for Progress with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testProgressType009', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testProgressType009()).assertEqual(0)

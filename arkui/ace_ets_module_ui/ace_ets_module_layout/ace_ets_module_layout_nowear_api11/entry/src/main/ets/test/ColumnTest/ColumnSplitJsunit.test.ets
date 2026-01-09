@@ -56,9 +56,12 @@ export default function columnSplitJsunit() {
     });
 
     /**
+     * @tc.name   testColumnSplit010
      * @tc.number SUB_ACE_BASIC_ETS_API_0700
-     * @tc.name testColumnSplit010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSplit010',  Level.LEVEL0, async (done: Function) => {
       console.info('new columnSplit0 START');
@@ -74,9 +77,12 @@ export default function columnSplitJsunit() {
     })
 
     /**
+     * @tc.name   testColumnSplit020
      * @tc.number SUB_ACE_BASIC_ETS_API_0710
-     * @tc.name testColumnSplit020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColumnSplit020',  Level.LEVEL0, async (done: Function) => {
       console.info('new columnSplit1 START');

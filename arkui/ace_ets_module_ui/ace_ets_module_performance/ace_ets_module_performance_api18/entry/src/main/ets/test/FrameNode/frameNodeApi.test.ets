@@ -43,10 +43,12 @@ export default function frameNodeApi() {
     });
 
     /**
-     * @tc.number    SUB_ACE_UI_COMPONENT_Performance_001
-     * @tc.desc      background test of reuse and recycle
-     * @tc.level     Level 3
-     * @tc.type
+     * @tc.name   frameNodeApi_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_Performance_001
+     * @tc.desc   background test of reuse and recycle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('frameNodeApi_0100', Level.LEVEL3, async (done: Function) => {
       console.info('frameNodeApi_0100 START');

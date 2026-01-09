@@ -49,9 +49,12 @@ export default function flexWrapReverse_fixedParentChildPosition() {
     });
 
     /**
+     * @tc.name   testWrapReverseParentfixedPosition
      * @tc.number SUB_ACE_FLEX_WRAPREVERSE_PARENTFIXED_TEST_1500
-     * @tc.name testWrapReverseParentfixedPosition
-     * @tc.desc The layout space of the parent component is fixed, and the position is set for the child component
+     * @tc.desc   The layout space of the parent component is fixed, and the position is set for the child component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWrapReverseParentfixedPosition',  Level.LEVEL0, async () => {
       console.info('new testWrapReverseParentfixedPosition START');

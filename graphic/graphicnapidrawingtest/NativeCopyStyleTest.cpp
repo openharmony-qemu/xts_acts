@@ -78,13 +78,13 @@ void NativeCopyStyleTest::TearDown()
     }
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_001
- * @tc.name  : OHDrawingCopyTextStyle001
- * @tc.desc  : test for copy text style：base
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTextStyle001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_001
+ * @tc.desc   test for copy text style：base
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle001, Function | MediumTest | Level0)
 {
@@ -129,13 +129,13 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle001, Function | MediumTest |
     OH_Drawing_TextStyleDestroyFontFamilies(fontFamiliesList, fontFamiliesNumAfter);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_002
- * @tc.name  : OHDrawingCopyTextStyle002
- * @tc.desc  : test for copy text style: FontStyleStruct、AddFontFeature
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTextStyle002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_002
+ * @tc.desc   test for copy text style: FontStyleStruct、AddFontFeature
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle002, Function | MediumTest | Level0)
 {
@@ -161,13 +161,13 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle002, Function | MediumTest |
     EXPECT_EQ(OH_Drawing_TextStyleGetFontFeatureSize(txtStyleCopy_), 2); // Set 2 font features
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_003
- * @tc.name  : OHDrawingCopyTextStyle003
- * @tc.desc  : test for copy text style: brush
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTextStyle003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_003
+ * @tc.desc   test for copy text style: brush
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle003, Function | MediumTest | Level0)
 {
@@ -205,13 +205,13 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle003, Function | MediumTest |
     OH_Drawing_BrushDestroy(foregroundBrushCopy);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_004
- * @tc.name  : OHDrawingCopyTextStyle004
- * @tc.desc  : test for copy text style: pen
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTextStyle004
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTextStyle_004
+ * @tc.desc   test for copy text style: pen
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle004, Function | MediumTest | Level0)
 {
@@ -250,13 +250,13 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextStyle004, Function | MediumTest |
     OH_Drawing_PenDestroy(foregroundPenCopy);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTextShadow_001
- * @tc.name  : OHDrawingCopyTextShadow001
- * @tc.desc  : test for copy text shadow and copy textstyle with shadow
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTextShadow001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTextShadow_001
+ * @tc.desc   test for copy text shadow and copy textstyle with shadow
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextShadow001, Function | MediumTest | Level0)
 {
@@ -283,23 +283,21 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTextShadow001, Function | MediumTest 
     OH_Drawing_DestroyTextShadows(shadowsCopy);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_001
- * @tc.name  : OHDrawingCopyTypographyStyle001
- * @tc.desc  : test for copy typography style
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTypographyStyle001
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_001
+ * @tc.desc   test for copy typography style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | MediumTest | Level0)
 {
     typoStyle_ = OH_Drawing_CreateTypographyStyle();
     ASSERT_NE(typoStyle_, nullptr);
-
     OH_Drawing_SetTypographyTextFontHeight(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextUseLineStyle(typoStyle_, true);
     OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, FONT_WEIGHT_600);
-    OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, FONT_STYLE_ITALIC);
     const char* fontFamilies[] = { "Text1", "Text2" };
     int fontFamiliesNumBefore = 2;
     OH_Drawing_SetTypographyTextLineStyleFontFamilies(typoStyle_, fontFamiliesNumBefore, fontFamilies);
@@ -308,19 +306,15 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
     OH_Drawing_SetTypographyTextLineStyleHalfLeading(typoStyle_, true);
     OH_Drawing_SetTypographyTextLineStyleSpacingScale(typoStyle_, DOUBLE_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextLineStyleOnly(typoStyle_, true);
-    OH_Drawing_SetTypographyTextAlign(typoStyle_, TEXT_ALIGN_CENTER);
     OH_Drawing_SetTypographyTextDirection(typoStyle_, TEXT_DIRECTION_RTL);
     OH_Drawing_SetTypographyTextMaxLines(typoStyle_, INT_TEST_SIZE_NOT_DEFAULT);
     OH_Drawing_SetTypographyTextEllipsis(typoStyle_, "...");
     OH_Drawing_TypographyTextSetHeightBehavior(typoStyle_, TEXT_HEIGHT_DISABLE_LAST_ASCENT);
     OH_Drawing_TypographyStyleSetHintsEnabled(typoStyle_, true);
-
     typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
     ASSERT_NE(typoStyleCopy_, nullptr);
-
     EXPECT_TRUE(OH_Drawing_TypographyTextGetLineStyle(typoStyleCopy_));
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), FONT_WEIGHT_600);
-    EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), FONT_STYLE_ITALIC);
     size_t num;
     char** fontFamiliesList = OH_Drawing_TypographyTextlineStyleGetFontFamilies(typoStyleCopy_, &num);
     EXPECT_EQ(num, fontFamiliesNumBefore);
@@ -331,7 +325,6 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
     EXPECT_TRUE(OH_Drawing_TypographyTextlineStyleGetHalfLeading(typoStyleCopy_));
     EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetSpacingScale(typoStyleCopy_), DOUBLE_TEST_SIZE_NOT_DEFAULT);
     EXPECT_TRUE(OH_Drawing_TypographyTextlineGetStyleOnly(typoStyleCopy_));
-    EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), TEXT_ALIGN_CENTER);
     EXPECT_EQ(OH_Drawing_TypographyGetTextDirection(typoStyleCopy_), TEXT_DIRECTION_RTL);
     EXPECT_EQ(OH_Drawing_TypographyGetTextMaxLines(typoStyleCopy_), INT_TEST_SIZE_NOT_DEFAULT);
     EXPECT_EQ(std::strcmp(OH_Drawing_TypographyGetTextEllipsis(typoStyleCopy_), "..."), 0);
@@ -340,13 +333,13 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle001, Function | Medium
     OH_Drawing_TextStyleDestroyFontFamilies(fontFamiliesList, num);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_002
- * @tc.name  : OHDrawingCopyTypographyStyle002
- * @tc.desc  : test for copy typography style：FontWeight、FontStyle、FontFamily、FontSize、FontHeight
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTypographyStyle002
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_002
+ * @tc.desc   test for copy typography style：FontWeight、FontStyle、FontFamily、FontSize、FontHeight
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle002, Function | MediumTest | Level0)
 {
@@ -375,13 +368,13 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle002, Function | Medium
     OH_Drawing_TextStyleDestroyFontFamilies(fontFamiliesList, fontFamiliesNumAfter);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_003
- * @tc.name  : OHDrawingCopyTypographyStyle003
- * @tc.desc  : test for copy typography style: FontStyleStruct
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTypographyStyle003
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_003
+ * @tc.desc   test for copy typography style: FontStyleStruct
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle003, Function | MediumTest | Level0)
 {
@@ -400,13 +393,13 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle003, Function | Medium
     EXPECT_EQ(OH_Drawing_TypographyStyleGetFontStyleStruct(typoStyleCopy_).width, FONT_WIDTH_EXTRA_EXPANDED);
 }
 
-/*
- * @tc.number: SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_004
- * @tc.name  : OHDrawingCopyTypographyStyle004
- * @tc.desc  : test for copy text shadow: typographystyle->textstyle->shadow
- * @tc.size  : MediumTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   OHDrawingCopyTypographyStyle004
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_004
+ * @tc.desc   test for copy text shadow: typographystyle->textstyle->shadow
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle004, Function | MediumTest | Level0)
 {
@@ -442,5 +435,53 @@ HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle004, Function | Medium
     OH_Drawing_DestroyTextShadow(shadow);
     OH_Drawing_DestroyTextShadow(shadowCopy);
     OH_Drawing_DestroyTextShadows(shadowsCopy);
+}
+
+/**
+ * @tc.name   OHDrawingCopyTypographyStyle005
+ * @tc.number SUB_GRAPHIC_GRAPHIC_2D_CopyTypographyStyle_005
+ * @tc.desc   test for copy typography style
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
+ */
+HWTEST_F(NativeCopyStyleTest, OHDrawingCopyTypographyStyle005, Function | MediumTest | Level0)
+{
+    typoStyle_ = OH_Drawing_CreateTypographyStyle();
+    ASSERT_NE(typoStyle_, nullptr);
+
+    std::vector<OH_Drawing_FontStyle> fontStyle = {
+        FONT_STYLE_NORMAL, FONT_STYLE_ITALIC, FONT_STYLE_OBLIQUE
+    };
+    for (int i = 0; i < fontStyle.size(); i++) {
+        OH_Drawing_SetTypographyTextLineStyleFontStyle(typoStyle_, fontStyle[i]);
+        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        ASSERT_NE(typoStyleCopy_, nullptr);
+        if (i % 2 == 0) {
+            EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[0]);
+        } else {
+            EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontStyle(typoStyleCopy_), fontStyle[i]);
+        }
+    }
+    std::vector<OH_Drawing_TextAlign> textAlign = {
+        TEXT_ALIGN_LEFT, TEXT_ALIGN_RIGHT, TEXT_ALIGN_CENTER, TEXT_ALIGN_JUSTIFY, TEXT_ALIGN_START, TEXT_ALIGN_END
+    };
+    for (int i = 0; i < textAlign.size(); i++) {
+        OH_Drawing_SetTypographyTextAlign(typoStyle_, textAlign[i]);
+        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        ASSERT_NE(typoStyleCopy_, nullptr);
+        EXPECT_EQ(OH_Drawing_TypographyGetTextAlign(typoStyleCopy_), textAlign[i]);
+    }
+    std::vector<OH_Drawing_FontWeight> fontWeight = {
+        FONT_WEIGHT_100, FONT_WEIGHT_200, FONT_WEIGHT_300,
+        FONT_WEIGHT_400, FONT_WEIGHT_500, FONT_WEIGHT_600,
+        FONT_WEIGHT_700, FONT_WEIGHT_800, FONT_WEIGHT_900
+    };
+    for (int i = 0; i < fontWeight.size(); i++) {
+        OH_Drawing_SetTypographyTextLineStyleFontWeight(typoStyle_, fontWeight[i]);
+        typoStyleCopy_ = OH_Drawing_CopyTypographyStyle(typoStyle_);
+        ASSERT_NE(typoStyleCopy_, nullptr);
+        EXPECT_EQ(OH_Drawing_TypographyTextlineStyleGetFontWeight(typoStyleCopy_), fontWeight[i]);
+    }
 }
 } // namespace OHOS

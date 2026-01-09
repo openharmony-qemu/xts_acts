@@ -48,9 +48,12 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0100
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0100
-     * @tc.name testGrid
-     * @tc.desc GridItem set columnStart to 0
+     * @tc.desc   GridItem set columnStart to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_001] START');
@@ -86,9 +89,12 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0200
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0200
-     * @tc.name testGrid
-     * @tc.desc GridItem sets columnStart to be greater than the total number of columns
+     * @tc.desc   GridItem sets columnStart to be greater than the total number of columns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0200] START');
@@ -118,6 +124,14 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     //  * @tc.name      testGrid
     //  * @tc.desc      GridItem set columnStart to -2
     //  */
+    /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0300
+     * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0300
+     * @tc.desc   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     // it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0300',  Level.LEVEL0, async  (done:Function) => {
     //   console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0300] START');
     //   globalThis.value.message.notify({name:'columnStart1', value:-1})
@@ -138,9 +152,12 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     // });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0400
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0400
-     * @tc.name testGrid
-     * @tc.desc GridItem set columnStart to 5
+     * @tc.desc   GridItem set columnStart to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0400] START');
@@ -174,9 +191,12 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0500
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0500
-     * @tc.name testGrid
-     * @tc.desc GridItem set rowStart to 0
+     * @tc.desc   GridItem set rowStart to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0500] START');
@@ -210,9 +230,12 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0600
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0600
-     * @tc.name testGrid
-     * @tc.desc GridItem sets rowStart to be greater than the total number of columns
+     * @tc.desc   GridItem sets rowStart to be greater than the total number of columns
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0600] START');
@@ -244,9 +267,12 @@ export default function ColumnsTemplateAndRowsTemplate1() {
     });
 
     /**
+     * @tc.name   SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0700
      * @tc.number SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0700
-     * @tc.name testGrid
-     * @tc.desc GridItem set rowStart to 5
+     * @tc.desc   GridItem set rowStart to 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0700',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_GRID_ColumnsTemplateAndRowsTemplate1_0700] START');

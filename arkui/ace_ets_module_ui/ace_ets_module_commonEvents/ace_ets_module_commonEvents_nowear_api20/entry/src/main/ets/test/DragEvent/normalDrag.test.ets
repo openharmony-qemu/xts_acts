@@ -48,12 +48,12 @@ export default function normalDragTest() {
     });
 
     /**
-     * @tc.number    normalDragExample_0010
-     * @tc.name      normalDragExample_0010
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   normalDragExample_0010
+     * @tc.number normalDragExample_0010
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('normalDragExample_0010', Level.LEVEL0, async (done: Function) => {
       console.info('EventLocationInfo_on_beforePanStart_0010 START');

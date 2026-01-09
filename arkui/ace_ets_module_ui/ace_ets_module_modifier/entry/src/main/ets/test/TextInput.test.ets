@@ -41,12 +41,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0100
      * @tc.number textInputJsunit_0100
-     * @tc.name Test the properties of components
-     * @tc.desc Set maxLines values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set maxLines values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0100', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0100 START');
@@ -59,12 +59,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0101
      * @tc.number textInputJsunit_0101
-     * @tc.name Test the properties of components
-     * @tc.desc Set showUnderline values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set showUnderline values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0101', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0101 START');
@@ -77,12 +77,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0102
      * @tc.number textInputJsunit_0102
-     * @tc.name Test the properties of components
-     * @tc.desc Set showError values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set showError values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0102', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0102 START');
@@ -95,12 +95,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0103
      * @tc.number textInputJsunit_0103
-     * @tc.name Test the properties of components
-     * @tc.desc Set passwordIcon values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set passwordIcon values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0103', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0103 START');
@@ -113,12 +113,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0104
      * @tc.number textInputJsunit_0104
-     * @tc.name Test the properties of components
-     * @tc.desc Set style values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set style values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0104', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0104 START');
@@ -131,12 +131,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0105
      * @tc.number textInputJsunit_0105
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectionMenuHidden values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectionMenuHidden values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0105', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0105 START');
@@ -149,12 +149,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0106
      * @tc.number textInputJsunit_0106
-     * @tc.name Test the properties of components
-     * @tc.desc Set barState values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set barState values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0106', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0106 START');
@@ -167,12 +167,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0107
      * @tc.number textInputJsunit_0107
-     * @tc.name Test the properties of components
-     * @tc.desc Set enableKeyboardOnFocus values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enableKeyboardOnFocus values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0107', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0107 START');
@@ -185,12 +185,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0109
      * @tc.number textInputJsunit_0109
-     * @tc.name Test the properties of components
-     * @tc.desc Set caretStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set caretStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0109', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0109 START');
@@ -204,12 +204,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0110
      * @tc.number textInputJsunit_0110
-     * @tc.name Test the properties of components
-     * @tc.desc Set selectedBackgroundColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set selectedBackgroundColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0110', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0110 START');
@@ -222,12 +222,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0111
      * @tc.number textInputJsunit_0111
-     * @tc.name Test the properties of components
-     * @tc.desc Set caretPosition values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level textInputJsunit_0111
+     * @tc.desc   Set caretPosition values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0111', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0111 START');
@@ -240,12 +240,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0112
      * @tc.number textInputJsunit_0112
-     * @tc.name Test the properties of components
-     * @tc.desc Set caretColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set caretColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0112', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0112 START');
@@ -258,12 +258,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0113
      * @tc.number textInputJsunit_0113
-     * @tc.name Test the properties of components
-     * @tc.desc Set placeholderFont values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set placeholderFont values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0113', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0113 START');
@@ -278,12 +278,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0114
      * @tc.number textInputJsunit_0114
-     * @tc.name Test the properties of components
-     * @tc.desc Set placeholderColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set placeholderColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0114', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0114 START');
@@ -296,12 +296,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0115
      * @tc.number textInputJsunit_0115
-     * @tc.name Test the properties of components
-     * @tc.desc Set type values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set type values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0115', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0115 START');
@@ -314,12 +314,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0116
      * @tc.number textInputJsunit_0116
-     * @tc.name Test the properties of components
-     * @tc.desc Set enterKeyType values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set enterKeyType values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0116', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0116 START');
@@ -332,12 +332,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0117
      * @tc.number textInputJsunit_0117
-     * @tc.name Test the properties of components
-     * @tc.desc Set maxLength values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set maxLength values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0117', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0117 START');
@@ -350,12 +350,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0118
      * @tc.number textInputJsunit_0118
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontColor values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontColor values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0118', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0118 START');
@@ -369,12 +369,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0119
      * @tc.number textInputJsunit_0119
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0119', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0119 START');
@@ -387,12 +387,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0120
      * @tc.number textInputJsunit_0120
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontStyle values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontStyle values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0120', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0120 START');
@@ -405,12 +405,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0121
      * @tc.number textInputJsunit_0121
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontWeight values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontWeight values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0121', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0121 START');
@@ -423,12 +423,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0122
      * @tc.number textInputJsunit_0122
-     * @tc.name Test the properties of components
-     * @tc.desc Set fontFamily values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set fontFamily values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0122', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0122 START');
@@ -441,12 +441,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0123
      * @tc.number textInputJsunit_0123
-     * @tc.name Test the properties of components
-     * @tc.desc Set copyOption values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set copyOption values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0123', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0123 START');
@@ -459,12 +459,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0124
      * @tc.number textInputJsunit_0124
-     * @tc.name Test the properties of components
-     * @tc.desc Set showPasswordIcon values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set showPasswordIcon values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0124', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0124 START');
@@ -477,12 +477,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0125
      * @tc.number textInputJsunit_0125
-     * @tc.name Test the properties of components
-     * @tc.desc Set textAlign values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Set textAlign values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0125', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0125 START');
@@ -495,12 +495,12 @@ export default function textInput() {
     });
 
     /**
+     * @tc.name   textInputJsunit_0127
      * @tc.number textInputJsunit_0127
-     * @tc.name Test the properties of components
-     * @tc.desc Change fontSize values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Change fontSize values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('textInputJsunit_0127', Level.LEVEL0, async (done: Function) => {
       console.info('textInputJsunit_0127 START');

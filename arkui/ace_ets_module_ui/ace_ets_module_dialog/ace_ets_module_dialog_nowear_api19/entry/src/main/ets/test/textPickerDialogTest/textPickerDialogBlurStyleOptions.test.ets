@@ -37,12 +37,12 @@ export default function textPickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    textPickerDialogBlurStyleOptions_0100
-     * @tc.name      textPickerDialogBlurStyleOptions_0100
-     * @tc.desc      createTextPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textPickerDialogBlurStyleOptions_0100
+     * @tc.number textPickerDialogBlurStyleOptions_0100
+     * @tc.desc   createTextPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textPickerDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'textPickerDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function textPickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    textPickerDialogBlurStyleOptions_0200
-     * @tc.name      textPickerDialogBlurStyleOptions_0200
-     * @tc.desc      createTextPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textPickerDialogBlurStyleOptions_0200
+     * @tc.number textPickerDialogBlurStyleOptions_0200
+     * @tc.desc   createTextPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textPickerDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'textPickerDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function textPickerDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    textPickerDialogBlurStyleOptions_0300
-     * @tc.name      textPickerDialogBlurStyleOptions_0300
-     * @tc.desc      createTextPickerDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   textPickerDialogBlurStyleOptions_0300
+     * @tc.number textPickerDialogBlurStyleOptions_0300
+     * @tc.desc   createTextPickerDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('textPickerDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'textPickerDialogBlurStyleOptions_0300';

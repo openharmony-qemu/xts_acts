@@ -80,7 +80,6 @@ export default function abilityTest() {
     console.info(TAG + "*************JS Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   ReadonlyErrCode001
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0100
      * @tc.desc   1. set isReadOnly as true
@@ -189,7 +188,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   ReadonlyErrCode002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0200
      * @tc.desc   1. set isReadOnly as true
@@ -288,7 +286,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   ReadonlyErrCode003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0300
      * @tc.desc   1. set isReadOnly as true
@@ -477,7 +474,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   ReadonlyErrCode004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0400
      * @tc.desc   1. set isReadOnly as true
@@ -607,7 +603,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   ReadonlyErrCode005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0500
      * @tc.desc   1. set isReadOnly as true
@@ -724,7 +719,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   ReadonlyErrCode006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0600
      * @tc.desc   1. set isReadOnly as true
@@ -815,7 +809,6 @@ export default function abilityTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   ReadonlyErrCode007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_ReadOnlyAPITest_0700
      * @tc.desc   1. set isReadOnly as true

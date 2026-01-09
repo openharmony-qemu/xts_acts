@@ -49,12 +49,12 @@ export default function subHeaderTextArrow() {
     })
 
     /**
+     * @tc.name   subHeaderTextArrow_0100
      * @tc.number subHeaderTextArrow
-     * @tc.name   subHeaderTextArrow
      * @tc.desc   Test subHeaderTextArrow
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('subHeaderTextArrow_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[subHeaderTextArrow_0100] START');

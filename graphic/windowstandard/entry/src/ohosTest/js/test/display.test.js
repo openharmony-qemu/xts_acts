@@ -31,9 +31,12 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0260
-     * @tc.name			testGetDefaultDisplay_Function_Promise
-     * @tc.desc			To test the function of obtaining the default screen
+     * @tc.name   testGetDefaultDisplay_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0260
+     * @tc.desc   To test the function of obtaining the default screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetDefaultDisplay_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.log('displayTest testGetDefaultDisplay_Function_Promise begin');
@@ -64,9 +67,12 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0250
-     * @tc.name      testGetDefaultDisplay_Function_Callback
-     * @tc.desc      To test the function if obtaining the default screen.
+     * @tc.name   testGetDefaultDisplay_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0250
+     * @tc.desc   To test the function if obtaining the default screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetDefaultDisplay_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.log('displayTest testGetDefaultDisplay_Function_Callback begin');
@@ -96,9 +102,12 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0130
-     * @tc.name			testGetAllDisplay_Promise
-     * @tc.desc			To verify the function of obtaining all screens.
+     * @tc.name   testGetAllDisplay_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0130
+     * @tc.desc   To verify the function of obtaining all screens.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAllDisplay_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.log('displayTest getAllDisplayTest1 begin');
@@ -126,9 +135,12 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0120
-     * @tc.name      testGetAllDisplay_Callback
-     * @tc.desc      To test the function if obtaining the default screen
+     * @tc.name   testGetAllDisplay_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0120
+     * @tc.desc   To test the function if obtaining the default screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetAllDisplay_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
         console.log('displayTest getAllDisplayTest2 begin');
@@ -157,9 +169,12 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0240
-     * @tc.name			testGetDefaultDisplaySync_SyncFunction
-     * @tc.desc			To test the sync function of obtaining the default display
+     * @tc.name   testGetDefaultDisplaySync_SyncFunction
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0240
+     * @tc.desc   To test the sync function of obtaining the default display
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetDefaultDisplaySync_SyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('displayTest getDefaultDisplaySyncTest1 begin');
@@ -188,9 +203,12 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0240
-     * @tc.name			testGetDisplayByIdSync_SyncFunction
-     * @tc.desc			To test the sync function of obtaining the target display by id
+     * @tc.name   testGetDisplayByIdSync_SyncFunction
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0240
+     * @tc.desc   To test the sync function of obtaining the target display by id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetDisplayByIdSync_SyncFunction', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('displayTestGetDisplayByIdSyncTest1 begin');
@@ -220,10 +238,13 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0070
-     * @tc.name	    testDisplayState_Enum_Value
-     * @tc.desc		To test the enum value of WindowDisplayState.
-    */
+     * @tc.name   testDisplayState_Enum_Value
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0070
+     * @tc.desc   To test the enum value of WindowDisplayState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDisplayState_Enum_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async function (done) {
         console.info('test the enum value of Window DisplayState begin');
         try {
@@ -243,10 +264,13 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1060
-     * @tc.name	    testWaterfallDisplayAreaRects_Value
-     * @tc.desc		To test value of waterfallDisplayAreaRects.
-    */
+     * @tc.name   testWaterfallDisplayAreaRects_Value
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1060
+     * @tc.desc   To test value of waterfallDisplayAreaRects.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWaterfallDisplayAreaRects_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('test the  value of waterfallDisplayAreaRects begin');
         try {
@@ -290,10 +314,13 @@ describe('display_test', function () {
     })
 
     /**
-    * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0060
-    * @tc.name	    testDisplayAreaRects_Value
-    * @tc.desc		To test value of RECT.
-    */
+     * @tc.name   testDisplayAreaRects_Value
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0060
+     * @tc.desc   To test value of RECT.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testDisplayAreaRects_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('test the value of aRect begin');
         try {
@@ -316,10 +343,13 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number	SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0030
-     * @tc.name	    testCutoutInfo_WaterFailDisplayAreaRects_Value
-     * @tc.desc		To test value of CutoutInfo.
-    */
+     * @tc.name   testCutoutInfo_WaterFailDisplayAreaRects_Value
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0030
+     * @tc.desc   To test value of CutoutInfo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testCutoutInfo_WaterFailDisplayAreaRects_Value', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('test the CutoutInfo of aRect begin');
         try {
@@ -371,9 +401,12 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0230
-     * @tc.name			testGetCutoutInfo_Function_Promise
-     * @tc.desc			To test the function of getCutoutInfo
+     * @tc.name   testGetCutoutInfo_Function_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0230
+     * @tc.desc   To test the function of getCutoutInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGetCutoutInfo_Function_Promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('getCutoutInfo begin');
@@ -400,10 +433,13 @@ describe('display_test', function () {
     })
 
     /**
-     * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0220
-     * @tc.name			testGetCutoutInfo_Function_Callback
-     * @tc.desc			To test the function of getCutoutInfo
-    */
+     * @tc.name   testGetCutoutInfo_Function_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_0220
+     * @tc.desc   To test the function of getCutoutInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testGetCutoutInfo_Function_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done) {
         console.info('getCutoutInfo begin');
         display.getDefaultDisplay().then(dsp => {
@@ -426,10 +462,13 @@ describe('display_test', function () {
     })
 
     /**
-        * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_ORIENTATION_JS_API_0290
-        * @tc.name			testOrientation_attr
-        * @tc.desc			To test the attributes of Orientation
-    */
+     * @tc.name   testOrientation_attr
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_ORIENTATION_JS_API_0290
+     * @tc.desc   To test the attributes of Orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testOrientation_attr',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async function (done){
         let msg = "testOrientation_attr"
         try {
@@ -444,13 +483,13 @@ describe('display_test', function () {
         }
     })
 
-   /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1190
-     * @tc.name      : testHdrFormats_attr
-     * @tc.desc      : test the enum value of hdrFormats
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level4
+    /**
+     * @tc.name   testHdrFormats_attr
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STANDARD_JS_API_1190
+     * @tc.desc   test the enum value of hdrFormats
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testHdrFormats_attr',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async function (done){
         let msg = "testHdrFormats_attr"

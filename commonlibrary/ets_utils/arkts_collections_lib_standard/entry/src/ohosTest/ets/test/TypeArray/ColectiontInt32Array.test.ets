@@ -75,12 +75,12 @@ export default function ColectiontInt32Array() {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0100
-     * @tc.name      : CollectionsInt32ArrayTest0100
-     * @tc.desc      : TypeArray join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0100
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0100
+     * @tc.desc   TypeArray join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -111,12 +111,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0200
-     * @tc.name      : CollectionsInt32ArrayTest0200
-     * @tc.desc      : TypeArray every 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0200
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0200
+     * @tc.desc   TypeArray every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -147,12 +147,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0300
-     * @tc.name      : CollectionsInt32ArrayTest0300
-     * @tc.desc      : TypeArray filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0300
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0300
+     * @tc.desc   TypeArray filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -183,12 +183,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0400
-     * @tc.name      : CollectionsInt32ArrayTest0400
-     * @tc.desc      : TypeArray filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0400
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0400
+     * @tc.desc   TypeArray filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -219,12 +219,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0500
-     * @tc.name      : CollectionsInt32ArrayTest0500
-     * @tc.desc      : TypeArray findIndex 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0500
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0500
+     * @tc.desc   TypeArray findIndex 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -255,12 +255,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0600
-     * @tc.name      : CollectionsInt32ArrayTest0600
-     * @tc.desc      : TypeArray indexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0600
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0600
+     * @tc.desc   TypeArray indexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -291,12 +291,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0700
-     * @tc.name      : CollectionsInt32ArrayTest0700
-     * @tc.desc      : TypeArray join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0700
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0700
+     * @tc.desc   TypeArray join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -328,12 +328,12 @@ export default function ColectiontInt32Array() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0800
-     * @tc.name      : CollectionsInt32ArrayTest0800
-     * @tc.desc      : TypeArray map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0800
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0800
+     * @tc.desc   TypeArray map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -364,12 +364,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0900
-     * @tc.name      : CollectionsInt32ArrayTest0900
-     * @tc.desc      : TypeArray reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0900
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0900
+     * @tc.desc   TypeArray reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -401,12 +401,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_0901
-     * @tc.name      : CollectionsInt32ArrayTest0901
-     * @tc.desc      : TypeArray reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest0901
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_0901
+     * @tc.desc   TypeArray reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -437,12 +437,12 @@ export default function ColectiontInt32Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_09011
-     * @tc.name      : CollectionsInt32ArrayTest09011
-     * @tc.desc      : TypeArray reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest09011
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_09011
+     * @tc.desc   TypeArray reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest09011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -474,12 +474,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1000
-     * @tc.name      : CollectionsInt32ArrayTest1000
-     * @tc.desc      : TypeArray reverse 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1000
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1000
+     * @tc.desc   TypeArray reverse 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -510,12 +510,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1100
-     * @tc.name      : CollectionsInt32ArrayTest1100
-     * @tc.desc      : TypeArray set 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1100
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1100
+     * @tc.desc   TypeArray set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -546,12 +546,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1200
-     * @tc.name      : CollectionsInt32ArrayTest1200
-     * @tc.desc      : TypeArray slice 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1200
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1200
+     * @tc.desc   TypeArray slice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -582,12 +582,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1201
-     * @tc.name      : CollectionsInt32ArrayTest1201
-     * @tc.desc      : TypeArray some 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1201
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1201
+     * @tc.desc   TypeArray some 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -618,12 +618,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1300
-     * @tc.name      : CollectionsInt32ArrayTest1300
-     * @tc.desc      : TypeArray sort 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1300
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1300
+     * @tc.desc   TypeArray sort 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -654,12 +654,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1400
-     * @tc.name      : CollectionsInt32ArrayTest1400
-     * @tc.desc      : TypeArray subarray 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1400
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1400
+     * @tc.desc   TypeArray subarray 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -690,12 +690,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1500
-     * @tc.name      : CollectionsInt32ArrayTest1500
-     * @tc.desc      : TypeArray at 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1500
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1500
+     * @tc.desc   TypeArray at 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -726,12 +726,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1600
-     * @tc.name      : CollectionsInt32ArrayTest1600
-     * @tc.desc      : TypeArray entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1600
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1600
+     * @tc.desc   TypeArray entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -762,12 +762,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1700
-     * @tc.name      : CollectionsInt32ArrayTest1700
-     * @tc.desc      : TypeArray keys 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1700
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1700
+     * @tc.desc   TypeArray keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -798,12 +798,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1800
-     * @tc.name      : CollectionsInt32ArrayTest1800
-     * @tc.desc      : TypeArray values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1800
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1800
+     * @tc.desc   TypeArray values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -834,12 +834,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_1900
-     * @tc.name      : CollectionsInt32ArrayTest1900
-     * @tc.desc      : TypeArray includes 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest1900
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_1900
+     * @tc.desc   TypeArray includes 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -870,12 +870,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_2000
-     * @tc.name      : CollectionsInt32ArrayTest2000
-     * @tc.desc      : TypeArray reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest2000
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_2000
+     * @tc.desc   TypeArray reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -906,12 +906,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_2100
-     * @tc.name      : CollectionsInt32ArrayTest2100
-     * @tc.desc      : TypeArray reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest2100
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_2100
+     * @tc.desc   TypeArray reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -942,12 +942,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_2200
-     * @tc.name      : CollectionsInt32ArrayTest2200
-     * @tc.desc      : TypeArray toString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest2200
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_2200
+     * @tc.desc   TypeArray toString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -978,12 +978,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_2300
-     * @tc.name      : CollectionsInt32ArrayTest2300
-     * @tc.desc      : TypeArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest2300
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_2300
+     * @tc.desc   TypeArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1014,12 +1014,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_INT32ARRAY_TEST_2400
-     * @tc.name      : CollectionsInt32ArrayTest2400
-     * @tc.desc      : TypeArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsInt32ArrayTest2400
+     * @tc.number SUB_COLLECTION_INT32ARRAY_TEST_2400
+     * @tc.desc   TypeArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsInt32ArrayTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1050,12 +1050,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0100
-     * @tc.name      : CollectionsUint16ArrayTest0100
-     * @tc.desc      : TypeArray join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0100
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0100
+     * @tc.desc   TypeArray join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1086,12 +1086,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0200
-     * @tc.name      : CollectionsUint16ArrayTest0200
-     * @tc.desc      : TypeArray every 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0200
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0200
+     * @tc.desc   TypeArray every 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1122,12 +1122,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0300
-     * @tc.name      : CollectionsUint16ArrayTest0300
-     * @tc.desc      : TypeArray filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0300
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0300
+     * @tc.desc   TypeArray filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1158,12 +1158,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0400
-     * @tc.name      : CollectionsUint16ArrayTest0400
-     * @tc.desc      : TypeArray filter 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0400
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0400
+     * @tc.desc   TypeArray filter 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1194,12 +1194,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0500
-     * @tc.name      : CollectionsUint16ArrayTest0500
-     * @tc.desc      : TypeArray findIndex 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0500
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0500
+     * @tc.desc   TypeArray findIndex 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1230,12 +1230,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0600
-     * @tc.name      : CollectionsUint16ArrayTest0600
-     * @tc.desc      : TypeArray indexOf 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0600
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0600
+     * @tc.desc   TypeArray indexOf 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1266,12 +1266,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0700
-     * @tc.name      : CollectionsUint16ArrayTest0700
-     * @tc.desc      : TypeArray join 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0700
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0700
+     * @tc.desc   TypeArray join 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1303,12 +1303,12 @@ export default function ColectiontInt32Array() {
 
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0800
-     * @tc.name      : CollectionsUint16ArrayTest0800
-     * @tc.desc      : TypeArray map 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0800
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0800
+     * @tc.desc   TypeArray map 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1339,12 +1339,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0900
-     * @tc.name      : CollectionsUint16ArrayTest0900
-     * @tc.desc      : TypeArray reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0900
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0900
+     * @tc.desc   TypeArray reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1376,12 +1376,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_0901
-     * @tc.name      : CollectionsUint16ArrayTest0901
-     * @tc.desc      : TypeArray reduce 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest0901
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_0901
+     * @tc.desc   TypeArray reduce 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest0901', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1413,12 +1413,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1000
-     * @tc.name      : CollectionsUint16ArrayTest1000
-     * @tc.desc      : TypeArray reverse 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1000
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1000
+     * @tc.desc   TypeArray reverse 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1449,12 +1449,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1100
-     * @tc.name      : CollectionsUint16ArrayTest1100
-     * @tc.desc      : TypeArray set 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1100
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1100
+     * @tc.desc   TypeArray set 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1485,12 +1485,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1200
-     * @tc.name      : CollectionsUint16ArrayTest1200
-     * @tc.desc      : TypeArray slice 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1200
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1200
+     * @tc.desc   TypeArray slice 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1521,12 +1521,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1201
-     * @tc.name      : CollectionsUint16ArrayTest1201
-     * @tc.desc      : TypeArray some 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1201
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1201
+     * @tc.desc   TypeArray some 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1557,12 +1557,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1300
-     * @tc.name      : CollectionsUint16ArrayTest1300
-     * @tc.desc      : TypeArray sort 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1300
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1300
+     * @tc.desc   TypeArray sort 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1593,12 +1593,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1400
-     * @tc.name      : CollectionsUint16ArrayTest1400
-     * @tc.desc      : TypeArray subarray 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1400
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1400
+     * @tc.desc   TypeArray subarray 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1629,12 +1629,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1500
-     * @tc.name      : CollectionsUint16ArrayTest1500
-     * @tc.desc      : TypeArray at 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1500
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1500
+     * @tc.desc   TypeArray at 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1665,12 +1665,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1600
-     * @tc.name      : CollectionsUint16ArrayTest1600
-     * @tc.desc      : TypeArray entries 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1600
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1600
+     * @tc.desc   TypeArray entries 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1701,12 +1701,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1700
-     * @tc.name      : CollectionsUint16ArrayTest1700
-     * @tc.desc      : TypeArray keys 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1700
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1700
+     * @tc.desc   TypeArray keys 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1737,12 +1737,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1800
-     * @tc.name      : CollectionsUint16ArrayTest1800
-     * @tc.desc      : TypeArray values 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1800
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1800
+     * @tc.desc   TypeArray values 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1773,12 +1773,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_1900
-     * @tc.name      : CollectionsUint16ArrayTest1900
-     * @tc.desc      : TypeArray includes 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest1900
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_1900
+     * @tc.desc   TypeArray includes 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1809,12 +1809,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2000
-     * @tc.name      : CollectionsUint16ArrayTest2000
-     * @tc.desc      : TypeArray reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2000
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2000
+     * @tc.desc   TypeArray reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1845,12 +1845,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2100
-     * @tc.name      : CollectionsUint16ArrayTest2100
-     * @tc.desc      : TypeArray reduceRight 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2100
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2100
+     * @tc.desc   TypeArray reduceRight 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1881,12 +1881,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2200
-     * @tc.name      : CollectionsUint16ArrayTest2200
-     * @tc.desc      : TypeArray toString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2200
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2200
+     * @tc.desc   TypeArray toString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1917,12 +1917,12 @@ export default function ColectiontInt32Array() {
       })
 
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2300
-     * @tc.name      : CollectionsUint16ArrayTest2300
-     * @tc.desc      : TypeArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2300
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2300
+     * @tc.desc   TypeArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1952,12 +1952,12 @@ export default function ColectiontInt32Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2400
-     * @tc.name      : CollectionsUint16ArrayTest2400
-     * @tc.desc      : TypeArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2400
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2400
+     * @tc.desc   TypeArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1989,12 +1989,12 @@ export default function ColectiontInt32Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2500
-     * @tc.name      : CollectionsUint16ArrayTest2500
-     * @tc.desc      : TypeArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2500
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2500
+     * @tc.desc   TypeArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2025,12 +2025,12 @@ export default function ColectiontInt32Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2600
-     * @tc.name      : CollectionsUint16ArrayTest2600
-     * @tc.desc      : TypeArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2600
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2600
+     * @tc.desc   TypeArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -2060,12 +2060,12 @@ export default function ColectiontInt32Array() {
         done()
       })
     /**
-     * @tc.number    : SUB_COLLECTION_UINT16ARRAY_TEST_2700
-     * @tc.name      : CollectionsUint16ArrayTest2700
-     * @tc.desc      : TypeArray toLocaleString 10200201
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   CollectionsUint16ArrayTest2700
+     * @tc.number SUB_COLLECTION_UINT16ARRAY_TEST_2700
+     * @tc.desc   TypeArray toLocaleString 10200201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CollectionsUint16ArrayTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

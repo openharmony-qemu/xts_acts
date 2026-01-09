@@ -41,12 +41,12 @@ export default function builtinsReadonlyArrayMapTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayMapTest1001
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_MAP_TEST_0100
-     * @tc.name buildinsReadonlyArrayMapTest1001
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('buildinsReadonlyArrayMapTest1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (Done: Function) => {
@@ -63,12 +63,12 @@ export default function builtinsReadonlyArrayMapTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayMapTest1002
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_MAP_TEST_0200
-     * @tc.name buildinsReadonlyArrayMapTest1002
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayMapTest1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -85,12 +85,12 @@ export default function builtinsReadonlyArrayMapTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayMapTest1003
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_MAP_TEST_0300
-     * @tc.name buildinsReadonlyArrayMapTest1003
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayMapTest1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -107,12 +107,12 @@ export default function builtinsReadonlyArrayMapTest() {
 
 
     /**
+     * @tc.name   buildinsReadonlyArrayMapTest1004
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_MAP_TEST_0400
-     * @tc.name buildinsReadonlyArrayMapTest1004
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayMapTest1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -126,12 +126,12 @@ export default function builtinsReadonlyArrayMapTest() {
       })
 
     /**
+     * @tc.name   buildinsReadonlyArrayMapTest1005
      * @tc.number SUB_BUILDINS_READONLY_ARRAY_MAP_TEST_0500
-     * @tc.name buildinsReadonlyArrayMapTest1005
-     * @tc.desc test Array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('buildinsReadonlyArrayMapTest1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

@@ -60,12 +60,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0013
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0013
-     * @tc.name testWebView_registerJavaScriptProxy_0013
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0013', 172460)
@@ -77,12 +77,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0014
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0014
-     * @tc.name testWebView_registerJavaScriptProxy_0014
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0014', 172460)
@@ -94,12 +94,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0015
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0015
-     * @tc.name testWebView_registerJavaScriptProxy_0015
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0015', 172460)
@@ -111,12 +111,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0016
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0016
-     * @tc.name testWebView_registerJavaScriptProxy_0016
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0016', 172460)
@@ -128,12 +128,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0017
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0017
-     * @tc.name testWebView_registerJavaScriptProxy_0017
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0017', 172460)
@@ -145,12 +145,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0018
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0018
-     * @tc.name testWebView_registerJavaScriptProxy_0018
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0018', 172460)
@@ -162,12 +162,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0019
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0019
-     * @tc.name testWebView_registerJavaScriptProxy_0019
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0019', 172460)
@@ -179,12 +179,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0020
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0020
-     * @tc.name testWebView_registerJavaScriptProxy_0020
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0020', 172460)
@@ -197,12 +197,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
 
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0021
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0021
-     * @tc.name testWebView_registerJavaScriptProxy_0021
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0021', 172460)
@@ -214,12 +214,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0022
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0022
-     * @tc.name testWebView_registerJavaScriptProxy_0022
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0022', 172460)
@@ -231,12 +231,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0023
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0023
-     * @tc.name testWebView_registerJavaScriptProxy_0023
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0023', 172460)
@@ -248,12 +248,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0024
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0024
-     * @tc.name testWebView_registerJavaScriptProxy_0024
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0024', 172460)
@@ -265,12 +265,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0025
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0025
-     * @tc.name testWebView_registerJavaScriptProxy_0025
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0025', 172460)
@@ -282,12 +282,12 @@ export default function ActsAceRegisterJavaScriptProxy() {
     });
 
     /**
+     * @tc.name   testWebView_registerJavaScriptProxy_0026
      * @tc.number SUB_ACE_WEB_registerJavaScriptProxy_SDK_0026
-     * @tc.name testWebView_registerJavaScriptProxy_0026
-     * @tc.desc test Arguments
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   test Arguments
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebView_registerJavaScriptProxy_0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       Utils.emitEvent('0026', 172460)

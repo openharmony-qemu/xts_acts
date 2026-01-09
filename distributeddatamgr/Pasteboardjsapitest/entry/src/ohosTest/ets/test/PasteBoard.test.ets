@@ -86,7 +86,6 @@ export default function pasteBoardTest() {
       error = undefined;
     })
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TEST_1100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0900
      * @tc.desc   Test pasteBoard SetProperty API functionality.
@@ -109,7 +108,6 @@ export default function pasteBoardTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TEST_1200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_1000
      * @tc.desc   Test pasteBoard SetProperty API functionality.
@@ -132,7 +130,6 @@ export default function pasteBoardTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TEST_1300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0700
      * @tc.desc   Test pasteBoard SetProperty API functionality.
@@ -155,7 +152,6 @@ export default function pasteBoardTest() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TEST_1400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0800
      * @tc.desc   Test pasteBoard SetProperty API functionality.
@@ -178,7 +174,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0100
      * @tc.desc   Test pasteBoard setProperty error,type of parameter "property" is string
@@ -203,7 +198,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0400
      * @tc.desc   Test pasteBoard setProperty error,parameter "property" is null;
@@ -227,7 +221,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_SETPROPERTY_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryProperty_0600
      * @tc.desc   Test pasteBoard setProperty error without parameters
@@ -252,7 +245,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0300
      * @tc.desc   Successfully cast string record to text
@@ -270,7 +262,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0200
      * @tc.desc   Successfully cast pixelMap record to text
@@ -291,7 +282,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0500
      * @tc.desc   Successfully cast want record to text
@@ -309,7 +299,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_TOPLAINTEXT_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataConvert_0100
      * @tc.desc   Successfully cast arrayBuffer record to text
@@ -327,7 +316,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0700
      * @tc.desc   Get specified record success
@@ -344,7 +332,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0100
      * @tc.desc   Get specified record failed,type of parameter "index" is string.
@@ -369,7 +356,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_GETRECORDAT_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0200
      * @tc.desc   Get specified record failed,index out of range
@@ -393,7 +379,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0400
      * @tc.desc   Check whether the pasteData contains the specified data type success
@@ -411,7 +396,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0300
      * @tc.desc   Check whether the pasteData contains the specified data type success
@@ -429,7 +413,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0600
      * @tc.desc   Check whether the pasteData contains the specified data type failed,type of parameter "mimeType" is number
@@ -454,7 +437,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_HASTYPE_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataSetQueryType_0500
      * @tc.desc   Check whether the pasteData contains the specified data type failed without parameters
@@ -479,7 +461,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1300
      * @tc.desc   Remove specified record from pasteData successful
@@ -498,7 +479,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0300
      * @tc.desc   Remove specified record from pasteData failed,index out of range
@@ -522,7 +502,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0500
      * @tc.desc   Remove specified record from pasteData failed,type of parameter "index" is string
@@ -546,7 +525,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REMOVERECORD_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0100
      * @tc.desc   Remove specified record from pasteData failed without parameters
@@ -570,7 +548,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0100
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_2000
      * @tc.desc   Remove specified record from pasteData failed without parameters
@@ -590,7 +567,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0200
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0400
      * @tc.desc   Remove specified record from pasteData failed,index out of range;
@@ -615,7 +591,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0300
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0600
      * @tc.desc   Remove specified record from pasteData failed,type of parameter "index" is string
@@ -640,7 +615,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0400
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_1900
      * @tc.desc   Remove specified record from pasteData failed,type of parameter "record" is string
@@ -665,7 +639,6 @@ export default function pasteBoardTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:48
      * @tc.name   SUB_PASTEBOARD_FUNCTION_ETS_REPLACERECORD_0500
      * @tc.number SUB_Pasteboard_Local_SDK_PasteDataRemoveOrReplace_0200
      * @tc.desc   Remove specified record from pasteData failed without parameters

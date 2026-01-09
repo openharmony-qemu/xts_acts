@@ -48,10 +48,12 @@ export default function VideoTest2() {
     });
 
     /**
+     * @tc.name   VideoTest2_0100
      * @tc.number VideoTest2_0100
-     * @tc.name VideoTest2_0100
-     * @tc.desc Test video onStart
-     * @tc.level Level 2
+     * @tc.desc   Test video onStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('VideoTest2_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[VideoTest2_0100] START');

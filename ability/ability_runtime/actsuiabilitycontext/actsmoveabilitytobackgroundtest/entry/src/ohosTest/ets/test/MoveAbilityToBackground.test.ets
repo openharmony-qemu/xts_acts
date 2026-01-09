@@ -49,13 +49,13 @@ export default function moveAbilityToBackgroundTest() {
     afterAll(() => {
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100
-     * @tc.name   : Call UIAbilityContext moveAbilityToBackground
-     * @tc.desc   : expect current ability moved to background and onBackground() called.
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100
+     * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100
+     * @tc.desc   expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_MoveAbilityToBackground_0100`;

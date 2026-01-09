@@ -45,12 +45,12 @@ export default function AbilityRuntime2_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3100
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3100
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3100
-     * @tc.desc Enable EmbeddedUIExtension for multiple instances of bundles in UIAbility of different bundles
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Enable EmbeddedUIExtension for multiple instances of bundles in UIAbility of different bundles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3100', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_3100'
@@ -99,12 +99,12 @@ export default function AbilityRuntime2_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3300
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3300
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3300
-     * @tc.desc Launch an EmbeddedUIExtension instance for multiple instances in UIAbility of different bundles
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Launch an EmbeddedUIExtension instance for multiple instances in UIAbility of different bundles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3300', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_3300'
@@ -153,12 +153,12 @@ export default function AbilityRuntime2_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0500
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0500
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0500
-     * @tc.desc Verify that EmbeddedUIExtension failed to pull up EmbeddedUIExtension
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that EmbeddedUIExtension failed to pull up EmbeddedUIExtension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0500', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_0500'
@@ -207,12 +207,12 @@ export default function AbilityRuntime2_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0300
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0300
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0300
-     * @tc.desc Verify the lifecycle callback after terminateSelfWithResult is called after EmbeddedUIExtension is started
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify the lifecycle callback after terminateSelfWithResult is called after EmbeddedUIExtension is started
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0300', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_0300'
@@ -271,12 +271,12 @@ export default function AbilityRuntime2_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0200
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0200
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0200
-     * @tc.desc Verify that the Lifecycle callback that calls terminateSelf after EmbeddedUIExtension starts
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Verify that the Lifecycle callback that calls terminateSelf after EmbeddedUIExtension starts
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_0200', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_0200'
@@ -341,12 +341,12 @@ export default function AbilityRuntime2_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2100
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2100
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2100
-     * @tc.desc Enum Validation for ExtensionType: EMBEDDED_UI
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Enum Validation for ExtensionType: EMBEDDED_UI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_2100', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_2100'
@@ -374,12 +374,12 @@ export default function AbilityRuntime2_Test() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3400
      * @tc.number SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3400
-     * @tc.name SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3400
-     * @tc.desc Nesting of Embedded UI Extensions is not allowed.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Nesting of Embedded UI Extensions is not allowed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_UIEXtension_EmbeddedUIExtension_3400', Level.LEVEL0, async (done: Function) => {
       const TEST_SUITE_NAME = 'UIEXtension_EmbeddedUIExtension_3400'

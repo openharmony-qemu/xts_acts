@@ -47,12 +47,12 @@ export default function BuilderNodeIsDisposedTest() {
     });
 
     /**
-     * @tc.number    BuilderNodeIsDisposedTest_0100
-     * @tc.name      BuilderNodeIsDisposedTest_0100
-     * @tc.desc      frameNode: BuilderNode isDisposed Test
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BuilderNodeIsDisposedTest_0100
+     * @tc.number BuilderNodeIsDisposedTest_0100
+     * @tc.desc   frameNode: BuilderNode isDisposed Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('BuilderNodeIsDisposedTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('BuilderNodeIsDisposedTest_0100 START');
@@ -64,10 +64,23 @@ export default function BuilderNodeIsDisposedTest() {
       let button2 = await driver.findComponent(ON.id('btn_BuilderNode_dispose'));
       await button2.click();
       await CommonFunc.sleep(1000);
+      let button3 = await driver.findComponent(ON.id('btn_BuilderNode_isDisposed_build_again'));
+      await button3.click();
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('builderNodeIsDisposedBeforeBuild')).assertEqual(false);
+      expect(AppStorage.get('builderNodeIsDisposedAfterBuild')).assertEqual(false);
       expect(AppStorage.get('builderNodeIsDisposed1')).assertEqual(false);
       expect(AppStorage.get('builderNodeIsDisposed2')).assertEqual(true);
-      AppStorage.delete('builderNodeIsDisposed1')
-      AppStorage.delete('builderNodeIsDisposed2')
+      await button1.click();
+      await CommonFunc.sleep(1000);
+      await button2.click();
+      await CommonFunc.sleep(1000);
+      expect(AppStorage.get('builderNodeIsDisposed1')).assertEqual(false);
+      expect(AppStorage.get('builderNodeIsDisposed2')).assertEqual(true);
+      AppStorage.delete('builderNodeIsDisposedBeforeBuild');
+      AppStorage.delete('builderNodeIsDisposedAfterBuild');
+      AppStorage.delete('builderNodeIsDisposed1');
+      AppStorage.delete('builderNodeIsDisposed2');
       console.info('[BuilderNodeIsDisposedTest_0100] END');
       done();
     });

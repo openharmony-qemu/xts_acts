@@ -46,6 +46,14 @@ export default function RowWrapContentTest() {
     });
 
     
+    /**
+     * @tc.name   RowWrapContentTest_0100
+     * @tc.number RowWrapContentTest_0100
+     * @tc.desc   RowWrapContentTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RowWrapContentTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[RowWrapContentTest_0100] START');
       let driver = await Driver.create()

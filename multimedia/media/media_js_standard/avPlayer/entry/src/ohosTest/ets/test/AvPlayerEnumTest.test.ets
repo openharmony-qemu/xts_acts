@@ -30,27 +30,27 @@ export default function AvPlayerEnumTest() {
     afterAll(() => {
       console.info('afterAll case');
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0100
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0100
-        * @tc.desc      : AVPlayer Enumeration test - StateChangeReason
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0100
+     * @tc.desc   AVPlayer Enumeration test - StateChangeReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0100', Level.LEVEL0, async (done: Function) => {
       expect(media.StateChangeReason.USER).assertEqual(1);
       expect(media.StateChangeReason.BACKGROUND).assertEqual(2);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0200
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0200
-        * @tc.desc      : AVPlayer Enumeration test - AVErrorCode
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0200
+     * @tc.desc   AVPlayer Enumeration test - AVErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0200', Level.LEVEL0, async (done: Function) => {
       expect(media.AVErrorCode.AVERR_OK).assertEqual(0);
       expect(media.AVErrorCode.AVERR_NO_PERMISSION).assertEqual(201);
@@ -77,16 +77,17 @@ export default function AvPlayerEnumTest() {
       expect(media.AVErrorCode.AVERR_SEEK_CONTINUOUS_UNSUPPORTED).assertEqual(5410002);
       expect(media.AVErrorCode.AVERR_SUPER_RESOLUTION_UNSUPPORTED).assertEqual(5410003);
       expect(media.AVErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED).assertEqual(5410004);
+      expect(media.AVErrorCode.AVERR_IO_CLEARTEXT_NOT_PERMITTED).assertEqual(5411012);
       done();
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0300
-    * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0300
-    * @tc.desc      : AVPlayer Enumeration test - CodecMimeType
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0300
+     * @tc.desc   AVPlayer Enumeration test - CodecMimeType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0300', Level.LEVEL0, async (done: Function) => {
       expect(media.CodecMimeType.VIDEO_H263).assertEqual('video/h263');
       expect(media.CodecMimeType.VIDEO_AVC).assertEqual('video/avc');
@@ -103,14 +104,14 @@ export default function AvPlayerEnumTest() {
       expect(media.CodecMimeType.AUDIO_AMR_WB).assertEqual('audio/amr-wb');
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0400
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0400
-        * @tc.desc      : AVPlayer Enumeration test - AudioSourceType
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0400
+     * @tc.desc   AVPlayer Enumeration test - AudioSourceType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0400', Level.LEVEL0, async (done: Function) => {
       expect(media.AudioSourceType.AUDIO_SOURCE_TYPE_DEFAULT).assertEqual(0);
       expect(media.AudioSourceType.AUDIO_SOURCE_TYPE_MIC).assertEqual(1);
@@ -120,14 +121,14 @@ export default function AvPlayerEnumTest() {
       expect(media.AudioSourceType.AUDIO_SOURCE_TYPE_CAMCORDER).assertEqual(13);
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0500
-        * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0500
-        * @tc.desc      : AVPlayer Enumeration test - MediaDescriptionKey
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0500
+     * @tc.desc   AVPlayer Enumeration test - MediaDescriptionKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0500', Level.LEVEL0, async (done: Function) => {
       expect(media.MediaDescriptionKey.MD_KEY_TRACK_INDEX).assertEqual("track_index");
       expect(media.MediaDescriptionKey.MD_KEY_TRACK_TYPE).assertEqual("track_type");
@@ -145,28 +146,30 @@ export default function AvPlayerEnumTest() {
       expect(media.MediaDescriptionKey.MD_KEY_HDR_TYPE).assertEqual("hdr_type");
       expect(media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH).assertEqual("original_width");
       expect(media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT).assertEqual("original_height");
+      expect(media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS).assertEqual("ref_track_ids");
+      expect(media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE).assertEqual("track_ref_type");
       done();
     });
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0600
-       * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0600
-       * @tc.desc      : AVPlayer Enumeration test - HdrType
-       * @tc.size      : MediumTest
-       * @tc.type      : Function test
-       * @tc.level     : Level0
-   */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0600
+     * @tc.desc   AVPlayer Enumeration test - HdrType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0600', Level.LEVEL0, async (done: Function) => {
       expect(media.HdrType.AV_HDR_TYPE_NONE).assertEqual(0);
       expect(media.HdrType.AV_HDR_TYPE_VIVID).assertEqual(1);
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0700
-     * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0700
-     * @tc.desc      : AVPlayer Enumeration test - PlaybackSpeed
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0700
+     * @tc.desc   AVPlayer Enumeration test - PlaybackSpeed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0700', Level.LEVEL0, async (done: Function) => {
       expect(media.PlaybackSpeed.SPEED_FORWARD_0_75_X).assertEqual(0);
@@ -182,12 +185,12 @@ export default function AvPlayerEnumTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0800
-     * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0800
-     * @tc.desc      : AVPlayer Enumeration test - PlaybackInfoKey
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0800
+     * @tc.desc   AVPlayer Enumeration test - PlaybackInfoKey
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0800', Level.LEVEL0, async (done: Function) => {
       expect(media.PlaybackInfoKey.SERVER_IP_ADDRESS).assertEqual('server_ip_address');
@@ -199,12 +202,12 @@ export default function AvPlayerEnumTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0900
-     * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0900
-     * @tc.desc      : AVPlayer Enumeration test - SeekMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0900
+     * @tc.desc   AVPlayer Enumeration test - SeekMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_0900', Level.LEVEL0, async (done: Function) => {
       expect(media.SeekMode.SEEK_NEXT_SYNC).assertEqual(0);
@@ -215,12 +218,12 @@ export default function AvPlayerEnumTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1000
-     * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1000
-     * @tc.desc      : AVPlayer Enumeration test - MediaType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1000
+     * @tc.desc   AVPlayer Enumeration test - MediaType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1000', Level.LEVEL0, async (done: Function) => {
       expect(media.MediaType.MEDIA_TYPE_UNSUPPORTED).assertEqual(-1);
@@ -235,12 +238,12 @@ export default function AvPlayerEnumTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1100
-     * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1100
-     * @tc.desc      : AVPlayer Enumeration test - BufferingInfoType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1100
+     * @tc.desc   AVPlayer Enumeration test - BufferingInfoType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1100', Level.LEVEL0, async (done: Function) => {
       expect(media.BufferingInfoType.BUFFERING_START).assertEqual(1);
@@ -251,12 +254,12 @@ export default function AvPlayerEnumTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1200
-     * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1200
-     * @tc.desc      : AVPlayer Enumeration test - SwitchMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1200
+     * @tc.desc   AVPlayer Enumeration test - SwitchMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1200', Level.LEVEL0, async (done: Function) => {
       expect(media.SwitchMode.SMOOTH).assertEqual(0);
@@ -266,12 +269,12 @@ export default function AvPlayerEnumTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1300
-     * @tc.name      : SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1300
-     * @tc.desc      : AVPlayer Enumeration test - VideoScaleType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1300
+     * @tc.desc   AVPlayer Enumeration test - VideoScaleType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_ENUM_1300', Level.LEVEL0, async (done: Function) => {
       expect(media.VideoScaleType.VIDEO_SCALE_TYPE_FIT).assertEqual(0);

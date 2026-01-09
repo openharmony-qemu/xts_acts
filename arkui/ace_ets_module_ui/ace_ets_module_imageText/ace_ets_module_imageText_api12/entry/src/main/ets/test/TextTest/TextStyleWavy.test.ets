@@ -43,12 +43,12 @@ export default function TextStyleWavy() {
     });
 
     /**
-     * @tc.number     TextDecorationStyleTest
-     * @tc.name      TextStyleWavy_001
-     * @tc.desc      TextDecorationStyle.WAVY test
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   TextStyleWavy_001
+     * @tc.number TextDecorationStyleTest
+     * @tc.desc   TextDecorationStyle.WAVY test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TextStyleWavy_001',  Level.LEVEL0, async (done: Function) => {
       console.info('[TextStyleWavy_001] START');

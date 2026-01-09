@@ -27,10 +27,12 @@ let subscriberInfo_MainAbility_ability:commonEventManager.CommonEventSubscribeIn
 export default function abilityTest() {
     describe('ActsStaticInfoMationQueryTest', () => {
         /**
-         * @tc.number: ACTS_getAbilityInfo_0100
-         * @tc.name: Application query abilityInfo Static information.
-         * @tc.desc: Verify that the application query abilityInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getAbilityInfo_0100
+         * @tc.number ACTS_getAbilityInfo_0100
+         * @tc.desc   Verify that the application query abilityInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getAbilityInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getAbilityInfo_0100 --- start ability=====>'+ globalThis.abilityContext.abilityInfo")
@@ -39,10 +41,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_getApplicationInfo_0100
-         * @tc.name: Application query applicationInfo Static information.
-         * @tc.desc: Verify that the application query applicationInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getApplicationInfo_0100
+         * @tc.number ACTS_getApplicationInfo_0100
+         * @tc.desc   Verify that the application query applicationInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getApplicationInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getApplicationInfo_0100 --- start ability=====>'+ globalThis.abilityContext.applicationInfo")
@@ -51,10 +55,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_getHapModuleInfo_0100
-         * @tc.name: Application query currentHapModuleInfo Static information.
-         * @tc.desc: Verify that the application query currentHapModuleInfo static
-         *           information is the same as that in the configuration file.
+         * @tc.name   ACTS_getHapModuleInfo_0100
+         * @tc.number ACTS_getHapModuleInfo_0100
+         * @tc.desc   Verify that the application query currentHapModuleInfo static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getHapModuleInfo_0100', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getHapModuleInfo_0100 --- start ability=====>'+ globalThis.abilityContext.currentHapModuleInfo")
@@ -63,13 +69,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number: ACTS_getAbilityInfo_0200
-         * @tc.name: Start different abilities of the application to obtain the static information of the
-         * abilityInfo、applicationInfo、currentHapModuleInfo.
-         * @tc.desc: Verify that the static information of the abilityInfo、applicationInfo、currentHapModuleInfo can be
-         * queried by different abilities to start the application, which is the same as the information of the
-         * abilityInfo、applicationInfo、currentHapModuleInfo in the configuration file,
-         * and the information obtained by starting different abilities is different
+         * @tc.name   ACTS_getAbilityInfo_0200
+         * @tc.number ACTS_getAbilityInfo_0200
+         * @tc.desc   Verify that the static information of the abilityInfo、applicationInfo、currentHapModuleInfo can be
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('ACTS_getAbilityInfo_0200', Level.LEVEL0, async (done:Function) => {
             console.log("ACTS_getAbilityInfo_0200 --- start")
@@ -168,16 +173,16 @@ export default function abilityTest() {
             expect(typeof (data.moduleName)).assertEqual("string");
             expect(typeof (data.name)).assertEqual("string");
             expect(typeof (data.label)).assertEqual("string");
-            expect(typeof (data.labelId)).assertEqual("number");
+            expect(typeof (data.labelId)).assertEqual("long");
             expect(typeof (data.description)).assertEqual("string");
-            expect(typeof (data.descriptionId)).assertEqual("number");
+            expect(typeof (data.descriptionId)).assertEqual("long");
             expect(typeof (data.icon)).assertEqual("string");
-            expect(typeof (data.iconId)).assertEqual("number");
+            expect(typeof (data.iconId)).assertEqual("long");
             expect(typeof (data.process)).assertEqual("string");
             expect(typeof (data.exported)).assertEqual("boolean");
-            expect(typeof (data.type)).assertEqual("number");
-            expect(typeof (data.orientation)).assertEqual("number");
-            expect(typeof (data.launchType)).assertEqual("number");
+            expect(typeof (data.type)).assertEqual("int");
+            expect(typeof (data.orientation)).assertEqual("int");
+            expect(typeof (data.launchType)).assertEqual("int");
             expect(Array.isArray(data.permissions)).assertEqual(true);
             expect(typeof (data.readPermission)).assertEqual("string");
             expect(typeof (data.writePermission)).assertEqual("string");
@@ -280,25 +285,25 @@ export default function abilityTest() {
             expect(typeof (data)).assertEqual("object");
             expect(typeof (data.name)).assertEqual("string");
             expect(typeof (data.description)).assertEqual("string");
-            expect(typeof (data.descriptionId)).assertEqual("number");
+            expect(typeof (data.descriptionId)).assertEqual("long");
             expect(typeof (data.enabled)).assertEqual("boolean");
             expect(typeof (data.label)).assertEqual("string");
-            expect(typeof (data.labelId)).assertEqual("number");
+            expect(typeof (data.labelId)).assertEqual("long");
             expect(typeof (data.icon)).assertEqual("string");
-            expect(typeof (data.iconId)).assertEqual("number");
+            expect(typeof (data.iconId)).assertEqual("long");
             expect(typeof (data.process)).assertEqual("string");
             expect(Array.isArray(data.permissions)).assertEqual(true);
             expect(typeof (data.codePath)).assertEqual("string");
             expect(typeof (data.removable)).assertEqual("boolean");
-            expect(typeof (data.accessTokenId)).assertEqual("number");
-            expect(typeof (data.uid)).assertEqual("number");
+            expect(typeof (data.accessTokenId)).assertEqual("long");
+            expect(typeof (data.uid)).assertEqual("int");
             expect(typeof (data.iconResource)).assertEqual("object");
             expect(typeof (data.labelResource)).assertEqual("object");
             expect(typeof (data.descriptionResource)).assertEqual("object");
             expect(typeof (data.appDistributionType)).assertEqual("string");
             expect(typeof (data.appProvisionType)).assertEqual("string");
             expect(typeof (data.systemApp)).assertEqual("boolean");
-            expect(typeof (data.bundleType)).assertEqual("number");
+            expect(typeof (data.bundleType)).assertEqual("int");
             expect(typeof (data.debug)).assertEqual("boolean");
             console.log("checkApplicationInfo_expect_typeof_end")
 
@@ -365,11 +370,11 @@ export default function abilityTest() {
             expect(typeof (data)).assertEqual("object");
             expect(typeof (data.name)).assertEqual("string");
             expect(typeof (data.icon)).assertEqual("string");
-            expect(typeof (data.iconId)).assertEqual("number");
+            expect(typeof (data.iconId)).assertEqual("long");
             expect(typeof (data.label)).assertEqual("string");
-            expect(typeof (data.labelId)).assertEqual("number");
+            expect(typeof (data.labelId)).assertEqual("long");
             expect(typeof (data.description)).assertEqual("string");
-            expect(typeof (data.descriptionId)).assertEqual("number");
+            expect(typeof (data.descriptionId)).assertEqual("long");
             expect(typeof (data.mainElementName)).assertEqual("string");
             expect(Array.isArray(data.abilitiesInfo)).assertEqual(true);
             expect(Array.isArray(data.extensionAbilitiesInfo)).assertEqual(true);
@@ -377,7 +382,7 @@ export default function abilityTest() {
             expect(Array.isArray(data.deviceTypes)).assertEqual(true);
             expect(typeof (data.installationFree)).assertEqual("boolean");
             expect(typeof (data.hashValue)).assertEqual("string");
-            expect(typeof (data.type)).assertEqual("number");
+            expect(typeof (data.type)).assertEqual("int");
             expect(Array.isArray(data.dependencies)).assertEqual(true);
             expect(Array.isArray(data.preloads)).assertEqual(true);
             console.log("checkHapModuleInfo_expect_typeof_end")

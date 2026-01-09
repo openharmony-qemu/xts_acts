@@ -59,7 +59,6 @@ export default function relationalStoreInsertTest() {
         console.info(TAG + "*************Unit Test Begin*************");
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreInsert0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0100
          * @tc.desc   RelationalStore insert test
@@ -129,7 +128,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreInsert0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0200
          * @tc.desc   RelationalStore insert test
@@ -161,7 +159,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreInsert0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0300
          * @tc.desc   RelationalStore insert test
@@ -199,7 +196,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStoreInsert0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0400
          * @tc.desc   RelationalStore insert test
@@ -229,7 +225,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertPromise0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0500
          * @tc.desc   RelationalStore insert test
@@ -299,7 +294,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertPromise0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0600
          * @tc.desc   RelationalStore insert test
@@ -368,7 +362,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertPromise0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0700
          * @tc.desc   RelationalStore insert test
@@ -479,7 +472,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertPromise0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0800
          * @tc.desc   RelationalStore insert test
@@ -536,7 +528,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertPromise0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_0900
          * @tc.desc   RelationalStore insert test
@@ -600,7 +591,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertPromise0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1000
          * @tc.desc   RelationalStore insert test
@@ -644,7 +634,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertPromise0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1100
          * @tc.desc   RelationalStore insert test
@@ -669,7 +658,6 @@ export default function relationalStoreInsertTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertCallback0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1200
          * @tc.desc   RelationalStore insert test
@@ -762,7 +750,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertCallback0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1300
          * @tc.desc   RelationalStore insert test
@@ -836,7 +823,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertCallback0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1400
          * @tc.desc   RelationalStore insert test
@@ -946,7 +932,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertCallback0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1500
          * @tc.desc   RelationalStore insert test
@@ -1003,7 +988,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertCallback0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1600
          * @tc.desc   RelationalStore insert test
@@ -1071,7 +1055,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertCallback0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1700
          * @tc.desc   RelationalStore insert test
@@ -1124,7 +1107,6 @@ export default function relationalStoreInsertTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   testRdbStorebatchInsertCallback0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1800
          * @tc.desc   RelationalStore insert test
@@ -1157,7 +1139,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   InsertWithConflictResolution0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_1900
          * @tc.desc   rdb insertWithConflictResolution test
@@ -1208,7 +1189,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   InsertWithConflictResolution0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2000
          * @tc.desc   rdb insertWithConflictResolution test
@@ -1259,7 +1239,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   InsertWithConflictResolution0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2100
          * @tc.desc   rdb insertWithConflictResolution test
@@ -1312,7 +1291,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   InsertWithConflictResolution0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2200
          * @tc.desc   rdb insertWithConflictResolution test
@@ -1385,7 +1363,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   InsertWithConflictResolution0005
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2300
          * @tc.desc   rdb insertWithConflictResolution test
@@ -1418,7 +1395,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   InsertWithConflictResolution0006
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2400
          * @tc.desc   rdb insertWithConflictResolution test
@@ -1470,7 +1446,6 @@ export default function relationalStoreInsertTest() {
 
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   InsertWithConflictResolution0007
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2500
          * @tc.desc   rdb insertWithConflictResolution test
@@ -1518,7 +1493,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   SUB_DDM_AppDataFWK_JSRDB_Insert_0100
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2600
          * @tc.desc   rdb insert test
@@ -1585,7 +1559,6 @@ export default function relationalStoreInsertTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:50
          * @tc.name   SUB_DDM_AppDataFWK_JSRDB_Insert_0200
          * @tc.number SUB_DistributedData_RelationalStore_SDK_InsertJsAPITest_2700
          * @tc.desc   rdb insert test

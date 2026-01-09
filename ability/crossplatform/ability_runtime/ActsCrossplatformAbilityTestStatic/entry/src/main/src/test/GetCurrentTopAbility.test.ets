@@ -18,24 +18,34 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import UIAbility from '@ohos.app.ability.UIAbility';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
 
 export default function GetCurrentTopAbilityTest() {
   describe("GetCurrentTopAbilityTest", () => {
-    beforeAll(async() => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.delegatortest.static");
       await Utils.msSleep(2000);
     });
 
     /**
-     * @tc.number: ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
-     * @tc.name  : ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
-     * @tc.desc  : Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.number ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001 :start");
@@ -72,12 +82,12 @@ export default function GetCurrentTopAbilityTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
-     * @tc.name  : ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
-     * @tc.desc  : Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
+     * @tc.number ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
+     * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002", Level.LEVEL2, async (done: () => void): Promise<void> =>{
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002 :start");
@@ -112,7 +122,7 @@ export default function GetCurrentTopAbilityTest() {
               done();
             }
           })
-          .catch((error: BusinessError):void => {
+          .catch((error: Error):void => {
             abilityDelegator.printSync(
               "ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002 catch error: " + error
             );

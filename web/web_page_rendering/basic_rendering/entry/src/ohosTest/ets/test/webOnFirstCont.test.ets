@@ -52,10 +52,13 @@ export default function webOnFirstCont() {
       console.info("webOnFirstCont beforeEach start");
       done();
     })
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBPATR5_API_0100
-     *tc.name testOnfirstcontentfulpaintWebc
-     *tc.desc onfirstcontentfulpaint with web src null
+    /**
+     * @tc.name   testOnfirstcontentfulpaintWebc
+     * @tc.number SUB_ACE_BASIC_ETS_WEBPATR5_API_0100
+     * @tc.desc   onfirstcontentfulpaint with web src null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnfirstcontentfulpaintWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitOnfirstcontentfulpaintWebc', 151590);

@@ -50,12 +50,12 @@ export default function selectDialogTest() {
     })
 
     /**
+     * @tc.name   selectDialogTest_0100
      * @tc.number selectDialogTest
-     * @tc.name   selectDialogTest
      * @tc.desc   Test selectDialog
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('selectDialogTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[selectDialogTest_0100] START');
@@ -68,7 +68,7 @@ export default function selectDialogTest() {
       // 点击打开SelectDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('文本标题'));
       let content = await driver.findComponent(ON.text('内容内容'));
-      let radioContent = await driver.findComponent(ON.text('文本文本文本文本文本'));
+      let radioContent = await driver.findComponent(ON.text('文本1'));
       let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
       expect(primaryTitle !== null).assertTrue();
       expect(content !== null).assertTrue();

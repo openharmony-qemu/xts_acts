@@ -47,9 +47,12 @@ export default function flexAlignSelf_CenterJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignCenterSetAlignSelf
      * @tc.number SUB_ACE_FLEXALIGNITEMS_CENTER_1300
-     * @tc.name testFlexItemAlignCenterSetAlignSelf
-     * @tc.desc The first subcomponent set ItemAlign.End attribute.
+     * @tc.desc   The first subcomponent set ItemAlign.End attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignCenterSetAlignSelf',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignCenterSetAlignSelf START');

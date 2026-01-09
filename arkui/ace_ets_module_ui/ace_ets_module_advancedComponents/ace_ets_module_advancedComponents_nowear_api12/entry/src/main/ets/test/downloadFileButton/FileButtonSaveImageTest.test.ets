@@ -29,12 +29,12 @@ export default function FileButtonSaveImageTest() {
     })
 
     /**
+     * @tc.name   FileButtonSaveImageTest_0100
      * @tc.number FileButtonSaveImageTest
-     * @tc.name FileButtonSaveImageTest_0100
-     * @tc.desc Test FileButtonSaveImageTest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test FileButtonSaveImageTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('FileButtonSaveImageTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[FileButtonSaveImageTest] START');

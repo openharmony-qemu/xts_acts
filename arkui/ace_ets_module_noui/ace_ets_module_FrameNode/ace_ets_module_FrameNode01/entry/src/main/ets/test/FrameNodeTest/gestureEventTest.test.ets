@@ -44,10 +44,12 @@ export default function gestureEventTest() {
       console.info("gestureEventTest after each called");
     });
     /**
-     * @tc.number    gestureEventTest_0100
-     * @tc.name      gestureEventTest_0100
-     * @tc.desc      Test setOnMouse
-     * @tc.level     Level 2
+     * @tc.name   gestureEventTest_0100
+     * @tc.number gestureEventTest_0100
+     * @tc.desc   Test setOnMouse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('gestureEventTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('gestureEventTest_0100 START');

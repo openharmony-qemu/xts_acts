@@ -52,7 +52,6 @@ export default function relationalStoreExecuteSqlTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   ExcuteSqlTest0001
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1210
          * @tc.desc   resultSet ExcuteSql normal test
@@ -133,7 +132,6 @@ export default function relationalStoreExecuteSqlTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   ExcuteSqlTest0002
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1220
          * @tc.desc   resultSet ExcuteSql normal test
@@ -212,7 +210,6 @@ export default function relationalStoreExecuteSqlTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   ExcuteSqlTest0003
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1230
          * @tc.desc   resultSet ExcuteSql normal test
@@ -312,7 +309,6 @@ export default function relationalStoreExecuteSqlTest() {
         })
     
         /**
-         * @generated.time 2025-11-09 20:49:51
          * @tc.name   ExcuteSqlTest0004
          * @tc.number SUB_DistributedData_RelationalStore_SDK_PredicatesEtsAPITest_1240
          * @tc.desc   resultSet ExcuteSql normal test

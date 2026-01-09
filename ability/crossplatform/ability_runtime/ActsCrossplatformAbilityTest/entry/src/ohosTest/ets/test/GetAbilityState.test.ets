@@ -17,6 +17,7 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
@@ -24,7 +25,16 @@ const START_ABILITY_TIMEOUT_TWO_THOUSAND = 1000;
 
 export default function GetAbilityStateTest() {
   describe("GetAbilityStateTest", () => {
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       abilityDelegator.startAbility({
         abilityName: "MainAbility",
         bundleName: "com.example.delegatortest",
@@ -33,12 +43,12 @@ export default function GetAbilityStateTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_ABILITY_STATE_0001
-     * @tc.name  : actsGetAbilityState0001
-     * @tc.desc  : Test the api "abilityDelegator.getAbilityState", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_ABILITY_STATE_0001
+     * @tc.number ACTS_GET_ABILITY_STATE_0001
+     * @tc.desc   Test the api "abilityDelegator.getAbilityState", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_ABILITY_STATE_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_ABILITY_STATE_0001 :start");
@@ -74,12 +84,12 @@ export default function GetAbilityStateTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_ABILITY_STATE_0002
-     * @tc.name  : actsGetAbilityState0002
-     * @tc.desc  : Test the api "abilityDelegator.getAbilityState", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_ABILITY_STATE_0002
+     * @tc.number ACTS_GET_ABILITY_STATE_0002
+     * @tc.desc   Test the api "abilityDelegator.getAbilityState", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_ABILITY_STATE_0002", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_ABILITY_STATE_0002 :start");
@@ -126,12 +136,12 @@ export default function GetAbilityStateTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_ABILITY_STATE_0003
-     * @tc.name  : actsGetAbilityState0003
-     * @tc.desc  : Test the api "abilityDelegator.getAbilityState", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_ABILITY_STATE_0003
+     * @tc.number ACTS_GET_ABILITY_STATE_0003
+     * @tc.desc   Test the api "abilityDelegator.getAbilityState", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_ABILITY_STATE_0003", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_ABILITY_STATE_0003 :start");

@@ -26,61 +26,61 @@ export default function unitPaddingPercentTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0001
-     * @tc.name: testUnitPaddingPercent001
-     * @tc.desc: testing text for unitPaddingPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitPaddingPercent001
+     * @tc.number SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0001
+     * @tc.desc   testing text for unitPaddingPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitPaddingPercent001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitPaddingPercent001()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0002
-     * @tc.name: testUnitPaddingPercent002
-     * @tc.desc: testing text for unitPaddingPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitPaddingPercent002
+     * @tc.number SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0002
+     * @tc.desc   testing text for unitPaddingPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitPaddingPercent002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitPaddingPercent002()).assertEqual(0)
       done();
     }); 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0003
-     * @tc.name: testUnitPaddingPercent003
-     * @tc.desc: testing text for unitPaddingPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitPaddingPercent003
+     * @tc.number SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0003
+     * @tc.desc   testing text for unitPaddingPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitPaddingPercent003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitPaddingPercent003()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0004
-     * @tc.name: testUnitPaddingPercent004
-     * @tc.desc: testing text for unitPaddingPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitPaddingPercent004
+     * @tc.number SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0004
+     * @tc.desc   testing text for unitPaddingPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitPaddingPercent004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitPaddingPercent004()).assertEqual(0)
       done();
     });
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0005
-     * @tc.name: testUnitPaddingPercent005
-     * @tc.desc: testing text for unitPaddingPercent with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testUnitPaddingPercent005
+     * @tc.number SUB_ARKUI_CAPI_UNIT_PADDING_PERCENT_0005
+     * @tc.desc   testing text for unitPaddingPercent with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnitPaddingPercent005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testUnitPaddingPercent005()).assertEqual(0)

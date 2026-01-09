@@ -50,12 +50,12 @@ export default function DecimalTest022() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST22_001
-     * @tc.name      : Decimal_tan_Func_001
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_001
+     * @tc.number DECIMAL_TEST22_001
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -75,12 +75,12 @@ export default function DecimalTest022() {
       test_tan_001('0.8', 7, 6, '1.029639');
     });
     /**
-     * @tc.number    : DECIMAL_TEST22_002
-     * @tc.name      : Decimal_tan_Func_002
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_002
+     * @tc.number DECIMAL_TEST22_002
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('539998661123466984649191689138494900416386817996524', 7, 6, '32.04695');
@@ -98,12 +98,12 @@ export default function DecimalTest022() {
       test_tan_001('1', 8, 1, '1.5574077');
     });
     /**
-     * @tc.number    : DECIMAL_TEST22_003
-     * @tc.name      : Decimal_tan_Func_003
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_003
+     * @tc.number DECIMAL_TEST22_003
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('1683930704126586032365374681825182443446390958574678366195884605194996193', 6, 1, '-0.540063');
@@ -121,12 +121,12 @@ export default function DecimalTest022() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST22_004
-     * @tc.name      : Decimal_tan_Func_004
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_004
+     * @tc.number DECIMAL_TEST22_004
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('60970535.5', 3, 1, '0.804');
@@ -144,12 +144,12 @@ export default function DecimalTest022() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST22_005
-     * @tc.name      : Decimal_tan_Func_005
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_005
+     * @tc.number DECIMAL_TEST22_005
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('72.3640503', 7, 2, '0.1078344');
@@ -169,12 +169,12 @@ export default function DecimalTest022() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST22_006
-     * @tc.name      : Decimal_tan_Func_006
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_006
+     * @tc.number DECIMAL_TEST22_006
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('32400', 3, 2, '0.941');
@@ -193,12 +193,12 @@ export default function DecimalTest022() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST22_007
-     * @tc.name      : Decimal_tan_Func_007
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_007
+     * @tc.number DECIMAL_TEST22_007
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('57777777777.88888888887777777428970596211366', 13, 1, '4.620958871418');
@@ -219,12 +219,12 @@ export default function DecimalTest022() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST22_008
-     * @tc.name      : Decimal_tan_Func_008
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_008
+     * @tc.number DECIMAL_TEST22_008
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('49999999999999999999999999999999999999999999999999999.99999999999999999999999999999', 38, 6, '-0.41507238166911582158673379470559517419');
@@ -237,12 +237,12 @@ export default function DecimalTest022() {
       });
 
     /**
-     * @tc.number    : DECIMAL_TEST22_009
-     * @tc.name      : Decimal_tan_Func_009
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_009
+     * @tc.number DECIMAL_TEST22_009
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_tan_001('0.5592', 74, 1, '0.625835640923790139625307834841776614566589496394316390500913130105766275');
@@ -256,12 +256,12 @@ export default function DecimalTest022() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST22_010
-     * @tc.name      : Decimal_tan_Func_010
-     * @tc.desc      : Test tan
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_tan_Func_010
+     * @tc.number DECIMAL_TEST22_010
+     * @tc.desc   Test tan
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_tan_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -275,7 +275,8 @@ export default function DecimalTest022() {
       try {
         test_tan_001('e', 40, 4, 'NaN');
         expect(true).assertEqual(false);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

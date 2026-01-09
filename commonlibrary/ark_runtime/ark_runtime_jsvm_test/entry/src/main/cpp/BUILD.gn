@@ -12,7 +12,7 @@
 # limitations under the License.
 
 import("//build/config/ohos/config.gni")
-import("//build/ohos.gni")
+import("//test/xts/tools/build/suite.gni")
 import("//foundation/arkui/napi/napi.gni")
 
 config("config") {
@@ -38,7 +38,7 @@ config("config") {
 config("public_config") {
 }
 
-ohos_shared_library("jsvmtest") {
+ohos_xts_shared_library("jsvmtest") {
   sources = [
     "./jsvmtest/jsvm_utils.cpp",
     "./jsvmtest/jsvmtest.cpp",

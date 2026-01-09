@@ -27,13 +27,13 @@ export default function CapiEventCloneTest() {
       await Utils.sleep(100);
       done();
     });
-    /*
-     * @tc.number     : SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0070
-     * @tc.name       : ScrollCrossAttributeTest001
-     * @tc.desc       : C侧创建Scroll并设置滚动条宽度为20，开启跨语言，TS侧改变滚动条宽度测试
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   CapiEventCloneTest001
+     * @tc.number SUB_ACE_UI_COMPONENT_SCROLL_TS&C_0070
+     * @tc.desc   C侧创建Scroll并设置滚动条宽度为20，开启跨语言，TS侧改变滚动条宽度测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('CapiEventCloneTest001', Level.LEVEL0, async (done: Function) => {
       await Utils.pushPage(`${PAGE_TAG}`, done);

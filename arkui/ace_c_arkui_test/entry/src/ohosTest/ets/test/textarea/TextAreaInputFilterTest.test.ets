@@ -27,13 +27,13 @@ export default function textAreaInputFilterTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_TEXTAREA_INPUT_FILTER_0001
-     * @tc.name: testTextAreaInputFilter001
-     * @tc.desc: testing text for textArea with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testTextAreaInputFilter001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_INPUT_FILTER_0001
+     * @tc.desc   testing text for textArea with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextAreaInputFilter001', Level.LEVEL1, async (done: Function) => {
       let driver:Driver = Driver.create();

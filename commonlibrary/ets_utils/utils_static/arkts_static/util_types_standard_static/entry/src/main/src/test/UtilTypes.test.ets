@@ -13,18 +13,18 @@
  * limitations under the License.
  */
 
-import { describe, expect, it, Level, Size, TestType } from '../../../hypium/index';
-import util from '@ohos.util';
+import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "../../../hypium/index";
+import util from '@ohos.util'
 
 export default function UtilTypesTest() {
   describe('UtilTypesTest', (): void => {
     /**
+     * @tc.name   testIsPromise001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_001
-     * @tc.name testIsPromise001
-     * @tc.desc Check whether the entered value is of promise type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -33,12 +33,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsPromise002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_002
-     * @tc.name testIsPromise002
-     * @tc.desc Check whether the entered value is of promise type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -47,12 +47,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsPromise003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_003
-     * @tc.name testIsPromise003
-     * @tc.desc Check whether the entered value is of promise type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -61,12 +61,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsPromise004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_004
-     * @tc.name testIsPromise004
-     * @tc.desc Check whether the entered value is of promise type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -76,12 +76,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsPromise005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_PROMISE_005
-     * @tc.name testIsPromise005
-     * @tc.desc Check whether the entered value is of promise type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of promise type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsPromise005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -91,12 +91,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsRegExp001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_001
-     * @tc.name testIsRegExp001
-     * @tc.desc Check whether the entered value is of type regexp.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -105,12 +105,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsRegExp002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_002
-     * @tc.name testIsRegExp002
-     * @tc.desc Check whether the entered value is of type regexp.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -119,12 +119,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsRegExp003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_003
-     * @tc.name testIsRegExp003
-     * @tc.desc Check whether the entered value is of type regexp.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -133,12 +133,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsRegExp004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_004
-     * @tc.name testIsRegExp004
-     * @tc.desc Check whether the entered value is of type regexp.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -147,12 +147,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsRegExp005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_REGEXP_005
-     * @tc.name testIsRegExp005
-     * @tc.desc Check whether the entered value is of type regexp.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type regexp.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsRegExp005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -161,12 +161,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsSet001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_001
-     * @tc.name testIsSet001
-     * @tc.desc Check whether the entered value is of type set.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -175,12 +175,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsSet002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_002
-     * @tc.name testIsSet002
-     * @tc.desc Check whether the entered value is of type set.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -189,12 +189,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsSet003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_003
-     * @tc.name testIsSet003
-     * @tc.desc Check whether the entered value is of type set.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -203,12 +203,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsSet004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_004
-     * @tc.name testIsSet004
-     * @tc.desc Check whether the entered value is of type set.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -217,12 +217,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsSet005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_SET_005
-     * @tc.name testIsSet005
-     * @tc.desc Check whether the entered value is of type set.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type set.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -231,12 +231,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsTypedArray001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_001
-     * @tc.name testIsTypedArray001
-     * @tc.desc Check whether the entered value is a type contained in typedarray.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -245,12 +245,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsTypedArray002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_002
-     * @tc.name testIsTypedArray002
-     * @tc.desc Check whether the entered value is a type contained in typedarray.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -259,12 +259,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsTypedArray003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_003
-     * @tc.name testIsTypedArray003
-     * @tc.desc Check whether the entered value is a type contained in typedarray.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -273,12 +273,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsTypedArray004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_004
-     * @tc.name testIsTypedArray004
-     * @tc.desc Check whether the entered value is a type contained in typedarray.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -287,12 +287,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsTypedArray005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_TYPED_ARRAY_005
-     * @tc.name testIsTypedArray005
-     * @tc.desc Check whether the entered value is a type contained in typedarray.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is a type contained in typedarray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsTypedArray005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -301,12 +301,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8Array001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_001
-     * @tc.name testIsUint8Array001
-     * @tc.desc Check whether the entered value is the uint8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -315,12 +315,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8Array002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_002
-     * @tc.name testIsUint8Array002
-     * @tc.desc Check whether the entered value is the uint8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -329,12 +329,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8Array003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_003
-     * @tc.name testIsUint8Array003
-     * @tc.desc Check whether the entered value is the uint8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -343,12 +343,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8Array004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_004
-     * @tc.name testIsUint8Array004
-     * @tc.desc Check whether the entered value is the uint8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -357,12 +357,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8Array005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_ARRAY_005
-     * @tc.name testIsUint8Array005
-     * @tc.desc Check whether the entered value is the uint8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -371,12 +371,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8ClampedArray001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_001
-     * @tc.name testIsUint8ClampedArray001
-     * @tc.desc Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -385,12 +385,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8ClampedArray002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_002
-     * @tc.name testIsUint8ClampedArray002
-     * @tc.desc Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -399,12 +399,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8ClampedArray003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_003
-     * @tc.name testIsUint8ClampedArray003
-     * @tc.desc Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -413,12 +413,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8ClampedArray004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_004
-     * @tc.name testIsUint8ClampedArray004
-     * @tc.desc Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -427,12 +427,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint8ClampedArray005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT8_CLAMPED_ARRAY_005
-     * @tc.name testIsUint8ClampedArray005
-     * @tc.desc Check whether the entered value is the uint8clapedarray array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint8clapedarray array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint8ClampedArray005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -441,12 +441,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint16Array001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_001
-     * @tc.name testIsUint16Array001
-     * @tc.desc Check whether the entered value is the uint16array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -455,12 +455,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint16Array002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_002
-     * @tc.name testIsUint16Array002
-     * @tc.desc Check whether the entered value is the uint16array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -469,12 +469,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint16Array003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_003
-     * @tc.name testIsUint16Array003
-     * @tc.desc Check whether the entered value is the uint16array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -483,12 +483,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint16Array004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_004
-     * @tc.name testIsUint16Array004
-     * @tc.desc Check whether the entered value is the uint16array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -497,12 +497,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint16Array005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT16_ARRAY_005
-     * @tc.name testIsUint16Array005
-     * @tc.desc Check whether the entered value is the uint16array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint16array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint16Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -511,12 +511,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint32Array001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_001
-     * @tc.name testIsUint32Array001
-     * @tc.desc Check whether the entered value is the uint32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -525,12 +525,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint32Array002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_002
-     * @tc.name testIsUint32Array002
-     * @tc.desc Check whether the entered value is the uint32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -539,12 +539,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint32Array003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_003
-     * @tc.name testIsUint32Array003
-     * @tc.desc Check whether the entered value is the uint32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -553,12 +553,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint32Array004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_004
-     * @tc.name testIsUint32Array004
-     * @tc.desc Check whether the entered value is the uint32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -567,12 +567,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsUint32Array005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_UINT32_ARRAY_005
-     * @tc.name testIsUint32Array005
-     * @tc.desc Check whether the entered value is the uint32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is the uint32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsUint32Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -581,12 +581,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakMap001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_001
-     * @tc.name testIsWeakMap001
-     * @tc.desc Check whether the entered value is of type weakmap.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -595,12 +595,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakMap002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_002
-     * @tc.name testIsWeakMap002
-     * @tc.desc Check whether the entered value is of type weakmap.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -609,12 +609,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakMap003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_003
-     * @tc.name testIsWeakMap003
-     * @tc.desc Check whether the entered value is of type weakmap.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -623,12 +623,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakMap004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_004
-     * @tc.name testIsWeakMap004
-     * @tc.desc Check whether the entered value is of type weakmap.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -637,12 +637,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakMap005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_MAP_005
-     * @tc.name testIsWeakMap005
-     * @tc.desc Check whether the entered value is of type weakmap.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakmap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakMap005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -651,12 +651,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakSet001
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_001
-     * @tc.name testIsWeakSet001
-     * @tc.desc Check whether the entered value is of type weakset.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -665,12 +665,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakSet002
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_002
-     * @tc.name testIsWeakSet002
-     * @tc.desc Check whether the entered value is of type weakset.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -679,12 +679,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakSet003
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_003
-     * @tc.name testIsWeakSet003
-     * @tc.desc Check whether the entered value is of type weakset.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -693,12 +693,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakSet004
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_004
-     * @tc.name testIsWeakSet004
-     * @tc.desc Check whether the entered value is of type weakset.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -707,12 +707,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsWeakSet005
      * @tc.number SUB_COMMONLIBRARY_UTIL_IS_WEAK_SET_005
-     * @tc.name testIsWeakSet005
-     * @tc.desc Check whether the entered value is of type weakset.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Check whether the entered value is of type weakset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsWeakSet005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let proc = new util.types();
@@ -721,12 +721,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsAnyArrayBuffer001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0001
-     * @tc.name testIsAnyArrayBuffer001
-     * @tc.desc Check whether the entered value is of arraybuffer or sharedarraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer or sharedarraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsAnyArrayBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -735,12 +735,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsAnyArrayBuffer002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0002
-     * @tc.name testIsAnyArrayBuffer002
-     * @tc.desc Check whether the entered value is of arraybuffer or sharedarraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer or sharedarraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsAnyArrayBuffer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -749,12 +749,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsAnyArrayBuffer003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0003
-     * @tc.name testIsAnyArrayBuffer003
-     * @tc.desc Check whether the entered value is of arraybuffer or sharedarraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer or sharedarraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsAnyArrayBuffer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -763,12 +763,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsAnyArrayBuffer004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0004
-     * @tc.name testIsAnyArrayBuffer004
-     * @tc.desc Check whether the entered value is of arraybuffer or sharedarraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer or sharedarraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsAnyArrayBuffer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -778,12 +778,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsAnyArrayBuffer005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0005
-     * @tc.name testIsAnyArrayBuffer005
-     * @tc.desc Check whether the entered value is of arraybuffer or sharedarraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer or sharedarraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsAnyArrayBuffer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -792,14 +792,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBufferView001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0006
-     * @tc.name testIsArrayBufferView001
-     * @tc.desc Check whether the entered value is napi_ int8_ array or napi_ uint8_ array
-     or naPi_ uint8_ clamped_ array or naPi_ int16_ array or naPi_ uint16_ array or napi_ int32_ array or napi_
-     uint32_ array or napi_ float32_ array or napi_ float64_ array array or DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is napi_ int8_ array or napi_ uint8_ array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBufferView001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -808,14 +806,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBufferView002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0007
-     * @tc.name testIsArrayBufferView002
-     * @tc.desc Check whether the entered value is napi_ int8_ array or napi_ uint8_ array
-     or naPi_ uint8_ clamped_ array or naPi_ int16_ array or naPi_ uint16_ array or napi_
-     int32_ array or napi_ uint32_ array or napi_ float32_ array or napi_ float64_ array array or DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is napi_ int8_ array or napi_ uint8_ array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBufferView002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -824,14 +820,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBufferView003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0008
-     * @tc.name testIsArrayBufferView003
-     * @tc.desc Check whether the entered value is napi_ int8_ array or napi_ uint8_
-     array or naPi_ uint8_ clamped_ array or naPi_ int16_ array or naPi_ uint16_ array or napi_ int32_ array or
-     napi_ uint32_ array or napi_ float32_ array or napi_ float64_ array array or DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is napi_ int8_ array or napi_ uint8_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBufferView003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -840,14 +834,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBufferView004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0009
-     * @tc.name testIsArrayBufferView004
-     * @tc.desc Check whether the entered value is napi_ int8_ array or napi_ uint8_ array or naPi_ uint8_
-     clamped_ array or naPi_ int16_ array or naPi_ uint16_ array or napi_ int32_ array or napi_ uint32_ array or
-     napi_ float32_ array or napi_ float64_ array array or DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is napi_ int8_ array or napi_ uint8_ array or naPi_ uint8_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBufferView004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -856,14 +848,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBufferView005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0010
-     * @tc.name testIsArrayBufferView005
-     * @tc.desc Check whether the entered value is napi_ int8_ array or napi_ uint8_ array or naPi_ uint8_
-     clamped_ array or naPi_ int16_ array or naPi_ uint16_ array or napi_ int32_ array or napi_ uint32_ array or
-     napi_ float32_ array or napi_ float64_ array array or DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is napi_ int8_ array or napi_ uint8_ array or naPi_ uint8_
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBufferView005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -872,12 +862,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBuffer001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0016
-     * @tc.name testIsArrayBuffer001
-     * @tc.desc Check whether the entered value is of arraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBuffer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -886,12 +876,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBuffer002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0017
-     * @tc.name testIsArrayBuffer002
-     * @tc.desc Check whether the entered value is of arraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBuffer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -900,12 +890,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBuffer003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0018
-     * @tc.name testIsArrayBuffer003
-     * @tc.desc Check whether the entered value is of arraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBuffer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -914,12 +904,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBuffer004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0019
-     * @tc.name testIsArrayBuffer004
-     * @tc.desc Check whether the entered value is of arraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBuffer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -928,12 +918,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsArrayBuffer005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0020
-     * @tc.name testIsArrayBuffer005
-     * @tc.desc Check whether the entered value is of arraybuffer type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of arraybuffer type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsArrayBuffer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -942,12 +932,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigInt64Array001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0025
-     * @tc.name testIsBigInt64Array001
-     * @tc.desc Check whether the entered value is of bigint64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of bigint64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigInt64Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -956,12 +946,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigInt64Array002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0026
-     * @tc.name testIsBigInt64Array002
-     * @tc.desc Check whether the entered value is of bigint64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of bigint64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigInt64Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -970,12 +960,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigInt64Array003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0027
-     * @tc.name testIsBigInt64Array003
-     * @tc.desc Check whether the entered value is of bigint64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of bigint64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigInt64Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -984,12 +974,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigInt64Array004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0028
-     * @tc.name testIsBigInt64Array004
-     * @tc.desc Check whether the entered value is of bigint64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of bigint64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigInt64Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -998,12 +988,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigInt64Array005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0029
-     * @tc.name testIsBigInt64Array005
-     * @tc.desc Check whether the entered value is of bigint64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of bigint64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigInt64Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1012,12 +1002,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigUint64Array001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0030
-     * @tc.name testIsBigUint64Array001
-     * @tc.desc Check whether the entered value is of biguint64array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of biguint64array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigUint64Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1026,12 +1016,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigUint64Array002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0031
-     * @tc.name testIsBigUint64Array002
-     * @tc.desc Check whether the entered value is of biguint64array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of biguint64array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigUint64Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1040,12 +1030,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigUint64Array003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0032
-     * @tc.name testIsBigUint64Array003
-     * @tc.desc Check whether the entered value is of biguint64array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of biguint64array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigUint64Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1054,12 +1044,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigUint64Array004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0033
-     * @tc.name testIsBigUint64Array004
-     * @tc.desc Check whether the entered value is of biguint64array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of biguint64array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigUint64Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1068,12 +1058,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigUint64Array005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0034
-     * @tc.name testIsBigUint64Array005
-     * @tc.desc Check whether the entered value is of biguint64array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of biguint64array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigUint64Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1082,12 +1072,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsBigUint64Array006
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0035
-     * @tc.name testIsBigUint64Array006
-     * @tc.desc Check whether the entered value is of biguint64array array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of biguint64array array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsBigUint64Array006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1096,12 +1086,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDataView001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0046
-     * @tc.name testIsDataView001
-     * @tc.desc Check whether the entered value is of DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of DataView type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDataView001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1111,12 +1101,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDataView002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0047
-     * @tc.name testIsDataView002
-     * @tc.desc Check whether the entered value is of DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of DataView type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDataView002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1125,12 +1115,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDataView003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0048
-     * @tc.name testIsDataView003
-     * @tc.desc Check whether the entered value is of DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of DataView type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDataView003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1139,12 +1129,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDataView004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0049
-     * @tc.name testIsDataView004
-     * @tc.desc Check whether the entered value is of DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of DataView type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDataView004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1153,12 +1143,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDataView005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0050
-     * @tc.name testIsDataView005
-     * @tc.desc Check whether the entered value is of DataView type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of DataView type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDataView005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1167,12 +1157,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDate001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0051
-     * @tc.name testIsDate001
-     * @tc.desc Check whether the entered value is of type date.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of type date.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1181,12 +1171,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDate002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0052
-     * @tc.name testIsDate002
-     * @tc.desc Check whether the entered value is of type date.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of type date.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1195,12 +1185,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDate003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0053
-     * @tc.name testIsDate003
-     * @tc.desc Check whether the entered value is of type date.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of type date.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1209,12 +1199,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDate004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0054
-     * @tc.name testIsDate004
-     * @tc.desc Check whether the entered value is of type date.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of type date.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1223,12 +1213,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsDate005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0055
-     * @tc.name testIsDate005
-     * @tc.desc Check whether the entered value is of type date.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of type date.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsDate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1237,12 +1227,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat32Array001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0061
-     * @tc.name testIsFloat32Array001
-     * @tc.desc Check whether the entered value is of float32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat32Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1251,12 +1241,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat32Array002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0062
-     * @tc.name testIsFloat32Array002
-     * @tc.desc Check whether the entered value is of float32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat32Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1265,12 +1255,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat32Array003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0063
-     * @tc.name testIsFloat32Array003
-     * @tc.desc Check whether the entered value is of float32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat32Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1279,12 +1269,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat32Array004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0064
-     * @tc.name testIsFloat32Array004
-     * @tc.desc Check whether the entered value is of float32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat32Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1293,12 +1283,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat32Array005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0065
-     * @tc.name testIsFloat32Array005
-     * @tc.desc Check whether the entered value is of float32array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float32array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat32Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1307,12 +1297,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat64Array001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0066
-     * @tc.name testIsFloat64Array001
-     * @tc.desc Check whether the entered value is of float64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat64Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1321,12 +1311,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat64Array002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0067
-     * @tc.name testIsFloat64Array002
-     * @tc.desc Check whether the entered value is of float64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat64Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1335,12 +1325,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat64Array003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0068
-     * @tc.name testIsFloat64Array003
-     * @tc.desc Check whether the entered value is of float64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat64Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1349,12 +1339,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat64Array004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0069
-     * @tc.name testIsFloat64Array004
-     * @tc.desc Check whether the entered value is of float64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat64Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1363,12 +1353,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsFloat64Array005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0070
-     * @tc.name testIsFloat64Array005
-     * @tc.desc Check whether the entered value is of float64array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of float64array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsFloat64Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1377,12 +1367,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt8Array001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0079
-     * @tc.name testIsInt8Array001
-     * @tc.desc Check whether the entered value is of int8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of int8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt8Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1391,12 +1381,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt8Array002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0080
-     * @tc.name testIsInt8Array002
-     * @tc.desc Check whether the entered value is of int8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of int8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt8Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1405,12 +1395,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt8Array003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0081
-     * @tc.name testIsInt8Array003
-     * @tc.desc Check whether the entered value is of int8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of int8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt8Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1419,12 +1409,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt8Array004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0082
-     * @tc.name testIsInt8Array004
-     * @tc.desc Check whether the entered value is of int8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of int8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt8Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1433,12 +1423,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt8Array005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0083
-     * @tc.name testIsInt8Array005
-     * @tc.desc Check whether the entered value is of int8array array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of int8array array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt8Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1447,12 +1437,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt16Array001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0084
-     * @tc.name testIsInt16Array001
-     * @tc.desc Check whether the entered value is the int16array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int16array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt16Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1461,12 +1451,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt16Array002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0085
-     * @tc.name testIsInt16Array002
-     * @tc.desc Check whether the entered value is the int16array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int16array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt16Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1475,12 +1465,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt16Array003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0086
-     * @tc.name testIsInt16Array003
-     * @tc.desc Check whether the entered value is the int16array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int16array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt16Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1489,12 +1479,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt16Array004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0087
-     * @tc.name testIsInt16Array004
-     * @tc.desc Check whether the entered value is the int16array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int16array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt16Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1503,12 +1493,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt16Array005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0088
-     * @tc.name testIsInt16Array005
-     * @tc.desc Check whether the entered value is the int16array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int16array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt16Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1517,12 +1507,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt32Array001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0089
-     * @tc.name testIsInt32Array001
-     * @tc.desc Check whether the entered value is the int32array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int32array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt32Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1531,12 +1521,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt32Array002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0090
-     * @tc.name testIsInt32Array002
-     * @tc.desc Check whether the entered value is the int32array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int32array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt32Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1545,12 +1535,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt32Array003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0091
-     * @tc.name testIsInt32Array003
-     * @tc.desc Check whether the entered value is the int32array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int32array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt32Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1559,12 +1549,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt32Array004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0092
-     * @tc.name testIsInt32Array004
-     * @tc.desc Check whether the entered value is the int32array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int32array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt32Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1573,12 +1563,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsInt32Array005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0093
-     * @tc.name testIsInt32Array005
-     * @tc.desc Check whether the entered value is the int32array type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the int32array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsInt32Array005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1587,12 +1577,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMap001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0094
-     * @tc.name testIsMap001
-     * @tc.desc Check whether the entered value is of map type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of map type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMap001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1601,12 +1591,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMap002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0095
-     * @tc.name testIsMap002
-     * @tc.desc Check whether the entered value is of map type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of map type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMap002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1615,12 +1605,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMap003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0096
-     * @tc.name testIsMap003
-     * @tc.desc Check whether the entered value is of map type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of map type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMap003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1629,12 +1619,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMap004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0097
-     * @tc.name testIsMap004
-     * @tc.desc Check whether the entered value is of map type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of map type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMap004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1643,12 +1633,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMap005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0098
-     * @tc.name testIsMap005
-     * @tc.desc Check whether the entered value is of map type.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is of map type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMap005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1657,12 +1647,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMapIterator001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0099
-     * @tc.name testIsMapIterator001
-     * @tc.desc Check whether the entered value is the iterator type of map.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the iterator type of map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMapIterator001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1672,12 +1662,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMapIterator002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0100
-     * @tc.name testIsMapIterator002
-     * @tc.desc Check whether the entered value is the iterator type of map.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the iterator type of map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMapIterator002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1687,12 +1677,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMapIterator003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0101
-     * @tc.name testIsMapIterator003
-     * @tc.desc Check whether the entered value is the iterator type of map.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the iterator type of map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMapIterator003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1702,12 +1692,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMapIterator004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0102
-     * @tc.name testIsMapIterator004
-     * @tc.desc Check whether the entered value is the iterator type of map.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the iterator type of map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMapIterator004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1717,12 +1707,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsMapIterator005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0103
-     * @tc.name testIsMapIterator005
-     * @tc.desc Check whether the entered value is the iterator type of map.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the entered value is the iterator type of map.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsMapIterator005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1732,12 +1722,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsNativeError001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0108
-     * @tc.name testIsNativeError001
-     * @tc.desc Check whether the value entered is of type error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the value entered is of type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsNativeError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1746,12 +1736,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsNativeError002
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0109
-     * @tc.name testIsNativeError002
-     * @tc.desc Check whether the value entered is of type error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the value entered is of type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsNativeError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1760,12 +1750,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsNativeError003
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0110
-     * @tc.name testIsNativeError003
-     * @tc.desc Check whether the value entered is of type error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the value entered is of type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsNativeError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1774,12 +1764,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsNativeError004
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0111
-     * @tc.name testIsNativeError004
-     * @tc.desc Check whether the value entered is of type error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the value entered is of type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsNativeError004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();
@@ -1788,12 +1778,12 @@ export default function UtilTypesTest() {
     })
 
     /**
+     * @tc.name   testIsNativeError005
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_TYPES_0112
-     * @tc.name testIsNativeError005
-     * @tc.desc Check whether the value entered is of type error.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check whether the value entered is of type error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testIsNativeError005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let proc = new util.types();

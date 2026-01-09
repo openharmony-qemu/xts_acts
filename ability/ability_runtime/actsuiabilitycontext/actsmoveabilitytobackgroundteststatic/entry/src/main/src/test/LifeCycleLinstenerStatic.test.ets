@@ -23,9 +23,12 @@ import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import InteropAbilityLifecycleCallback from '@ohos.app.ability.InteropAbilityLifecycleCallback';
+import { Driver, ON } from '@ohos.UiTest';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const domain: int = 0x0000;
 const tag = 'testTag'
+let deviceSupport  = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 
 type AbilityCallbackFn = (ability: Any) => void;
 type WindowStageCallbackFn = (ability: Any, windowStage: window.WindowStage) => void;
@@ -89,6 +92,15 @@ export default function LifeCycleLinstenerStaticTest() {
     const BUNDLE_NAME: string = 'com.acts.moveabilitytobgtest.static';
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -100,12 +112,12 @@ export default function LifeCycleLinstenerStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground,expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       let tag = `SUB_Ability_AbilityRuntime_getCurrentAppCloneIndex_Static_0100`;
@@ -120,156 +132,170 @@ export default function LifeCycleLinstenerStaticTest() {
     });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
-     * @tc.name    SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0100`;
         hilog.info(domain, tag, `${itName} start`);
-        try {
-          hilog.info(domain, tag, `${itName} on applicationStateChange`);
-          const cb = new CustomApplicationStateChangeCallback();
-          applicationContext.onApplicationStateChange(cb);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            hilog.info(domain, tag, `${itName} on applicationStateChange`);
+            const cb = new CustomApplicationStateChangeCallback();
+            applicationContext.onApplicationStateChange(cb);
 
-          hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
-          await uiAbilityContext.moveAbilityToBackground()
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
-          expect(cb.isBackground).assertTrue();
+            hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
+            await uiAbilityContext.moveAbilityToBackground()
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
+            expect(cb.isBackground).assertTrue();
 
-          hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-          await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
-          expect(cb.isForeground).assertTrue();
+            hilog.info(domain, tag, `${itName} start EntryAbility ability`);
+            await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
+            expect(cb.isForeground).assertTrue();
 
-          hilog.info(domain, tag, `${itName} off applicationStateChange`);
-          applicationContext.offApplicationStateChange(cb);
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
-          expect().assertFail();
+            hilog.info(domain, tag, `${itName} off applicationStateChange`);
+            applicationContext.offApplicationStateChange(cb);
+          } catch (err: BusinessError) {
+            hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+            expect().assertFail();
+          }
+          hilog.info(domain, tag, `${itName} end`);
+          done();
         }
-        hilog.info(domain, tag, `${itName} end`);
-        done();
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const itName = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0200`;
-        try {
-          hilog.info(domain, tag, `${itName} on applicationStateChange`);
-          const cb = new CustomApplicationStateChangeCallback();
-          applicationContext.onApplicationStateChange(cb);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            hilog.info(domain, tag, `${itName} on applicationStateChange`);
+            const cb = new CustomApplicationStateChangeCallback();
+            applicationContext.onApplicationStateChange(cb);
 
-          hilog.info(domain, tag, `${itName} off applicationStateChange`);
-          applicationContext.offApplicationStateChange(cb);
+            hilog.info(domain, tag, `${itName} off applicationStateChange`);
+            applicationContext.offApplicationStateChange(cb);
 
-          hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
-          const want: Want = {
-            bundleName: `${BUNDLE_NAME}`,
-            abilityName: 'EntryAbility1'
+            hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
+            const want: Want = {
+              bundleName: `${BUNDLE_NAME}`,
+              abilityName: 'EntryAbility1'
+            }
+            await uiAbilityContext.startAbility(want);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
+            const uiAbilityContext1 =
+              AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext;
+            await uiAbilityContext1.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
+            await uiAbilityContext.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
+            expect(cb.isBackground).assertFalse();
+
+            hilog.info(domain, tag, `${itName} start EntryAbility ability`);
+            await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
+            expect(cb.isForeground).assertFalse();
+          } catch (err: BusinessError) {
+            expect().assertFail();
+            hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           }
-          await uiAbilityContext.startAbility(want);
-          await Utils.msSleep(2000);
-
-          hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
-          const uiAbilityContext1 = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext;
-          await uiAbilityContext1.moveAbilityToBackground();
-          await Utils.msSleep(2000);
-
-          hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
-          await uiAbilityContext.moveAbilityToBackground();
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
-          expect(cb.isBackground).assertFalse();
-
-          hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-          await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
-          expect(cb.isForeground).assertFalse();
-        } catch (err: BusinessError) {
-          expect().assertFail();
-          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+          done();
+          hilog.info(domain, tag, `${itName} end`);
         }
-        done();
-        hilog.info(domain, tag, `${itName} end`);
       });
 
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
-     * @tc.name    SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
-     * @tc.desc    Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
-   */
+     * @tc.name   SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300
+     * @tc.desc   Call UIAbilityContext moveAbilityToBackground expect current ability moved to background and onBackground() called.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const itName = `SUB_Ability_AbilityRuntime_OnApplicationStateChange_Static_0300`;
-        try {
-          hilog.info(domain, tag, `${itName} on applicationStateChange`);
-          const cb = new CustomApplicationStateChangeCallback();
-          applicationContext.onApplicationStateChange(cb);
+        if (deviceSupport === 'false') {
+          done();
+        } else {
+          try {
+            hilog.info(domain, tag, `${itName} on applicationStateChange`);
+            const cb = new CustomApplicationStateChangeCallback();
+            applicationContext.onApplicationStateChange(cb);
 
-          hilog.info(domain, tag, `${itName} off applicationStateChange`);
-          applicationContext.offApplicationStateChange();
+            hilog.info(domain, tag, `${itName} off applicationStateChange`);
+            applicationContext.offApplicationStateChange();
 
-          hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
-          const want: Want = {
-            bundleName: `${BUNDLE_NAME}`,
-            abilityName: 'EntryAbility1'
+            hilog.info(domain, tag, `${itName} start EntryAbility1 ability`);
+            const want: Want = {
+              bundleName: `${BUNDLE_NAME}`,
+              abilityName: 'EntryAbility1'
+            }
+            await uiAbilityContext.startAbility(want);
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
+            const uiAbilityContext1 =
+              AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext;
+            await uiAbilityContext1.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+
+            hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
+            await uiAbilityContext.moveAbilityToBackground();
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
+            expect(cb.isBackground).assertFalse();
+
+            hilog.info(domain, tag, `${itName} start EntryAbility ability`);
+            await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
+            await Utils.msSleep(2000);
+            hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
+            expect(cb.isForeground).assertFalse();
+          } catch (err: BusinessError) {
+            expect().assertFail();
+            hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           }
-          await uiAbilityContext.startAbility(want);
-          await Utils.msSleep(2000);
-
-          hilog.info(domain, tag, `${itName} EntryAbility1 moveAbilityToBackground`);
-          const uiAbilityContext1 = AppStorage.get<common.UIAbilityContext>("UIAbilityContext1") as common.UIAbilityContext;
-          await uiAbilityContext1.moveAbilityToBackground();
-          await Utils.msSleep(2000);
-
-          hilog.info(domain, tag, `${itName} EntryAbility moveAbilityToBackground`);
-          await uiAbilityContext.moveAbilityToBackground();
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isBackground: ${cb.isBackground}`);
-          expect(cb.isBackground).assertFalse();
-
-          hilog.info(domain, tag, `${itName} start EntryAbility ability`);
-          await abilityDelegator.executeShellCommand(`aa start -a EntryAbility -b ${BUNDLE_NAME}`);
-          await Utils.msSleep(2000);
-          hilog.info(domain, tag, `${itName} ApplicationStateChangeCallback isForeground: ${cb.isForeground}`);
-          expect(cb.isForeground).assertFalse();
-        } catch (err: BusinessError) {
-          expect().assertFail();
-          hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
+          done();
+          hilog.info(domain, tag, `${itName} end`);
         }
-        done();
-        hilog.info(domain, tag, `${itName} end`);
       });
 
     /**
-    * @tc.number  SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
-    * @tc.name    SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
-    * @tc.desc    onInteropAbilityLifecycle（）
-    * @tc.type    Function
-    * @tc.size    MediumTest
-    * @tc.level   0
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100
+     * @tc.desc   onInteropAbilityLifecycle（）
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const itName = `SUB_Ability_AbilityRuntime_onInteropAbilityLifecycle_Static_0100`;
@@ -290,12 +316,12 @@ export default function LifeCycleLinstenerStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
-     * @tc.name    SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
-     * @tc.desc    offInteropAbilityLifecycle（） no param
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200
+     * @tc.desc   offInteropAbilityLifecycle（） no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_offInteropAbilityLifecycle_Static_0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {

@@ -49,9 +49,12 @@ export default function AlignStart_AddLayoutWeight() {
     });
 
     /**
+     * @tc.name   testFlexAlignStartTextLayoutWeight01
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1200
-     * @tc.name testFlexAlignStartTextLayoutWeight01
-     * @tc.desc The interface displays all subcomponents that set different layoutWeight properties
+     * @tc.desc   The interface displays all subcomponents that set different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextLayoutWeight01',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextLayoutWeight01] START');
@@ -91,9 +94,12 @@ export default function AlignStart_AddLayoutWeight() {
 
     });
     /**
+     * @tc.name   testFlexAlignStartTextLayoutWeight02
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_START_TEST_1600
-     * @tc.name testFlexAlignStartTextLayoutWeight02
-     * @tc.desc Some subcomponents are displayed with different layoutWeight properties
+     * @tc.desc   Some subcomponents are displayed with different layoutWeight properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignStartTextLayoutWeight02',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignStartTextLayoutWeight02] START');

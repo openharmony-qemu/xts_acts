@@ -25,12 +25,12 @@ export default function malloc1NdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MALLOC_MALLOC_0200
-     * @tc.name       : testMuslMallocMalloc002
-     * @tc.desc       : test malloc
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMallocMalloc002
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_MALLOC_0200
+     * @tc.desc   test malloc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMallocMalloc002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = malloc.malloc();
@@ -39,12 +39,12 @@ export default function malloc1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MALLOC_MEMALIGN_0200
-     * @tc.name       : testMuslMallocMemalign002
-     * @tc.desc       : test memalign
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMallocMemalign002
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_MEMALIGN_0200
+     * @tc.desc   test memalign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMallocMemalign002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = malloc.memalign();
@@ -53,12 +53,12 @@ export default function malloc1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MALLOC_MALLOCUSABLESIZE_0200
-     * @tc.name       : testMuslMallocMallocUsableSize002
-     * @tc.desc       : test malloc_usable_size
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testMuslMallocMallocUsableSize002
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_MALLOCUSABLESIZE_0200
+     * @tc.desc   test malloc_usable_size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMallocMallocUsableSize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = malloc.mallocUsableSize();
@@ -67,12 +67,12 @@ export default function malloc1NdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_THIRDPARTY_MUSL_MALLOC_MALLOPT_0200
-     * @tc.name       : testMuslMallocMallopt002
-     * @tc.desc       : test mallopt
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testMuslMallocMallopt002
+     * @tc.number SUB_THIRDPARTY_MUSL_MALLOC_MALLOPT_0200
+     * @tc.desc   test mallopt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testMuslMallocMallopt002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let a: number = malloc.mallopt();

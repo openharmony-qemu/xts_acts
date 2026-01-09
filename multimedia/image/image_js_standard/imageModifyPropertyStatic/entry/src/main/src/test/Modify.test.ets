@@ -95,11 +95,11 @@ export default function imageModifyProperty() {
       testNum: string,
       fileName: string,
       type: string,
-      props: Record<image.PropertyKey, string | null>,
+      props: Record<string, string | null>,
       checkKey: Array<image.PropertyKey>
     ) => {
       let logger = new Logger(testNum);
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       if (type == "buffer") {
         let buffer = getBuffer(fileName);
         imageSourceApi = image.createImageSource(buffer);
@@ -118,11 +118,11 @@ export default function imageModifyProperty() {
           try {
             let data = await imageSourceApi.getImageProperties(checkKey);
             for (let i = 0; i < checkKey.length; i++) {
-              logger.log("getImageProperties data: " + data[checkKey[i]]);
-              logger.log("getImageProperties props: " + props[checkKey[i]]);
+              logger.log("getImageProperties data: " + data[checkKey[i] as string]);
+              logger.log("getImageProperties props: " + props[checkKey[i] as string]);
             }
             checkKey.forEach((item: image.PropertyKey) => {
-              expect(data[item] == props[item]).assertTrue();
+              expect(data[item as string] == props[item as string]).assertTrue();
             })
             done();
           } catch (error: BusinessError) {
@@ -136,7 +136,7 @@ export default function imageModifyProperty() {
           try {
             let data = await imageSourceApi.getImageProperties(checkKey);
             for (let i = 0; i < checkKey.length; i++) {
-              logger.log("getImageProperties data: " + data[checkKey[i]]);
+              logger.log("getImageProperties data: " + data[checkKey[i] as string]);
             }
             done();
           } catch (error: BusinessError) {
@@ -248,7 +248,7 @@ export default function imageModifyProperty() {
       isBatch: boolean,
       done: () => void
     ) => {
-      let imageSourceApi: image.ImageSource;
+      let imageSourceApi: image.ImageSource | undefined;
       try {
         if (type == "gif") {
           getFd("moving_test_loop1.gif");
@@ -268,9 +268,9 @@ export default function imageModifyProperty() {
       } else {
         globalimageSource = imageSourceApi;
         if (isBatch) {
-          let props: Record<image.PropertyKey, string | null> = {};
-          props[IMAGE_WIDTH] = "1024";
-          props[GIF_LOOP_COUNT] = "3";
+          let props: Record<string, string | null> = {};
+          props[IMAGE_WIDTH as string] = "1024";
+          props[GIF_LOOP_COUNT as string] = "3";
           try {
             await imageSourceApi.modifyImageProperties(props);
             console.log(`${testNum} modify GIF_LOOP_COUNT success.`);
@@ -299,15 +299,12 @@ export default function imageModifyProperty() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0100
-      * @tc.desc    modifyImageProperty(Orientation)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0100
+     * @tc.desc   modifyImageProperty(Orientation)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testModifyImageBufferProperty(
@@ -320,15 +317,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0200
-      * @tc.desc    modifyImageProperty(GPSLatitude)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0200
+     * @tc.desc   modifyImageProperty(GPSLatitude)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testModifyImageBufferProperty(
@@ -341,15 +335,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0300
-      * @tc.desc    modifyImageProperty(GPSLongitude)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0300
+     * @tc.desc   modifyImageProperty(GPSLongitude)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testModifyImageBufferProperty(
@@ -362,15 +353,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0400
-      * @tc.desc    modifyImageProperty(GPSLatitudeRef)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0400
+     * @tc.desc   modifyImageProperty(GPSLatitudeRef)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testModifyImageBufferProperty(
@@ -383,15 +371,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0500
-      * @tc.desc    modifyImageProperty(GPSLongitudeRef)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0500
+     * @tc.desc   modifyImageProperty(GPSLongitudeRef)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       await testModifyImageBufferProperty(
@@ -404,15 +389,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0600
-      * @tc.desc    modifyImageProperty(Orientation)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0600
+     * @tc.desc   modifyImageProperty(Orientation)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -430,15 +412,12 @@ export default function imageModifyProperty() {
     });
     
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0700
-      * @tc.desc    modifyImageProperty(GPSLatitude)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0700
+     * @tc.desc   modifyImageProperty(GPSLatitude)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -456,15 +435,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0800
-      * @tc.desc    modifyImageProperty(GPSLongitude)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0800
+     * @tc.desc   modifyImageProperty(GPSLongitude)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -482,15 +458,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0900
-      * @tc.desc    modifyImageProperty(GPSLatitudeRef)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0900
+     * @tc.desc   modifyImageProperty(GPSLatitudeRef)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -508,15 +481,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1000
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1000
-      * @tc.desc    modifyImageProperty(GPSLongitudeRef)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1000
+     * @tc.desc   modifyImageProperty(GPSLongitudeRef)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1000", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -534,15 +504,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1100
-      * @tc.desc    modifyImageProperty(BitsPerSample)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1100
+     * @tc.desc   modifyImageProperty(BitsPerSample)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -560,15 +527,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1200
-      * @tc.desc    modifyImageProperty(ImageLength)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1200
+     * @tc.desc   modifyImageProperty(ImageLength)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -586,15 +550,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1300
-      * @tc.desc    modifyImageProperty(ImageWidth)-promise
-      *                 1.create imagesource
-      *                 2.call modifyImageProperty(key,value)
-      *                 3.return undefined
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1300
+     * @tc.desc   modifyImageProperty(ImageWidth)-promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTY_PROMISE_STATIC_1300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkProps = (result: string) => {
@@ -612,20 +573,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0100
-      * @tc.desc    test modifyImageProperties for jpg with multy keys
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0100
+     * @tc.desc   test modifyImageProperties for jpg with multy keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {};
-      props[IMAGE_WIDTH] = "1024";
-      props[IMAGE_LENGTH] = "2048";
+      let props: Record<string, string | null> = {};
+      props[IMAGE_WIDTH as string] = "1024";
+      props[IMAGE_LENGTH as string] = "2048";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -642,19 +600,16 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0200
-      * @tc.desc    test modifyImageProperties for jpg with single key
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0200
+     * @tc.desc   test modifyImageProperties for jpg with single key
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {};
-      props[IMAGE_LENGTH] = "2048";
+      let props: Record<string, string | null> = {};
+      props[IMAGE_LENGTH as string] = "2048";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_LENGTH
@@ -670,20 +625,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0300
-      * @tc.desc    test modifyImageProperties for all the key with null value of jpg icon
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0300
+     * @tc.desc   test modifyImageProperties for all the key with null value of jpg icon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[GPS_DATE_STAMP] = "2023:04:13";
-      props[IMAGE_DESCRIPTION] = "A gray picture";
+      let props: Record<string, string | null> = {}
+      props[GPS_DATE_STAMP as string] = "2023:04:13";
+      props[IMAGE_DESCRIPTION as string] = "A gray picture";
 
       let checkKey: Array<image.PropertyKey> = [
         GPS_DATE_STAMP,
@@ -700,20 +652,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0400
-      * @tc.desc    test modifyImageProperties for partially the key with null value of jpg icon
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0400
+     * @tc.desc   test modifyImageProperties for partially the key with null value of jpg icon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[GPS_DATE_STAMP] = "2023:04:13";
-      props[IMAGE_WIDTH] = "1024";
+      let props: Record<string, string | null> = {}
+      props[GPS_DATE_STAMP as string] = "2023:04:13";
+      props[IMAGE_WIDTH as string] = "1024";
 
       let checkKey: Array<image.PropertyKey> = [
         GPS_DATE_STAMP,
@@ -730,16 +679,12 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0500
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0500
-      * @tc.desc    test modify image properties using the value obtained from getImageProperties
-      *                 1.create buffer imagesource1
-      *                 2.call imagesource1.getImageProperties(checkKey)
-      *                 3.create jpg imagesource2
-      *                 4.call imagesource2.modifyImageProperties(props)
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0500
+     * @tc.desc   test modify image properties using the value obtained from getImageProperties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_STATIC_0500", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let checkKey: Array<image.PropertyKey> = [
@@ -748,6 +693,11 @@ export default function imageModifyProperty() {
       ];
       let buffer = getBuffer("test_exif.jpg");
       let imageSource = image.createImageSource(buffer);
+      if (imageSource == undefined) {
+        console.info(`create image source failed`);
+        expect().assertFail();
+        return undefined;
+      }
       let props = await imageSource.getImageProperties(checkKey);
       await imageSource.release();
       await testModifyImageProperties(
@@ -761,20 +711,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0100
-      * @tc.desc    test modifyImageProperties for jpg with invalid value
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0100
+     * @tc.desc   test modifyImageProperties for jpg with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[IMAGE_WIDTH] = "-1";
-      props[IMAGE_LENGTH] = "2344";
+      let props: Record<string, string | null> = {}
+      props[IMAGE_WIDTH as string] = "-1";
+      props[IMAGE_LENGTH as string] = "2344";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -791,20 +738,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0200
-      * @tc.desc    test modifyImageProperties for jpg with out-of-bounds value
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0200
+     * @tc.desc   test modifyImageProperties for jpg with out-of-bounds value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[IMAGE_WIDTH] = "100000000000000";
-      props[IMAGE_LENGTH] = "2344";
+      let props: Record<string, string | null> = {}
+      props[IMAGE_WIDTH as string] = "100000000000000";
+      props[IMAGE_LENGTH as string] = "2344";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -821,20 +765,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0600
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0600
-      * @tc.desc    test modifyImageProperties for jpg with partially null value
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0600
+     * @tc.desc   test modifyImageProperties for jpg with partially null value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0600", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[IMAGE_LENGTH] = "2048";
-      props[IMAGE_WIDTH] = "";
+      let props: Record<string, string | null> = {}
+      props[IMAGE_LENGTH as string] = "2048";
+      props[IMAGE_WIDTH as string] = "";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_LENGTH,
@@ -851,20 +792,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0700
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0700
-      * @tc.desc    test modifyImageProperties for jpg with incorrect type
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0700
+     * @tc.desc   test modifyImageProperties for jpg with incorrect type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0700", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[IMAGE_LENGTH] = "2048";
-      props[IMAGE_WIDTH] = "abc";
+      let props: Record<string, string | null> = {}
+      props[IMAGE_LENGTH as string] = "2048";
+      props[IMAGE_WIDTH as string] = "abc";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_LENGTH,
@@ -881,20 +819,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0800
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0800
-      * @tc.desc    test modifyImageProperties for private filed of jpg
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0800
+     * @tc.desc   test modifyImageProperties for private filed of jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0800", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[SCENE_BLUE_SKY_CONF] = "71";
-      props[SCENE_GREEN_PLANT_CONF] = "98";
+      let props: Record<string, string | null> = {}
+      props[SCENE_BLUE_SKY_CONF as string] = "71";
+      props[SCENE_GREEN_PLANT_CONF as string] = "98";
 
       let checkKey: Array<image.PropertyKey> = [
         SCENE_BLUE_SKY_CONF,
@@ -911,22 +846,19 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0900
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0900
-      * @tc.desc    test modifyImageProperties for private and public filed of jpg
-      *                 1.create jpg imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0900
+     * @tc.desc   test modifyImageProperties for private and public filed of jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_0900", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[IMAGE_WIDTH] = "1024";
-      props[IMAGE_LENGTH] = "2048";
-      props[SCENE_BLUE_SKY_CONF] = "71";
-      props[SCENE_GREEN_PLANT_CONF] = "98";
+      let props: Record<string, string | null> = {}
+      props[IMAGE_WIDTH as string] = "1024";
+      props[IMAGE_LENGTH as string] = "2048";
+      props[SCENE_BLUE_SKY_CONF as string] = "71";
+      props[SCENE_GREEN_PLANT_CONF as string] = "98";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -945,20 +877,17 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_1100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_1100
-      * @tc.desc    test modifyImageProperties for tiff with multy keys
-      *                 1.create tiff imagesource
-      *                 2.call modifyImageProperty(keys)
-      *                 3.return undefined
-      * @tc.size    MediumTest
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_1100
+     * @tc.desc   test modifyImageProperties for tiff with multy keys
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFYPROPERTIES_PROMISE_ERROR_STATIC_1100", Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let props: Record<image.PropertyKey, string | null> = {}
-      props[IMAGE_WIDTH] = "1024";
-      props[IMAGE_LENGTH] = "2048";
+      let props: Record<string, string | null> = {}
+      props[IMAGE_WIDTH as string] = "1024";
+      props[IMAGE_LENGTH as string] = "2048";
 
       let checkKey: Array<image.PropertyKey> = [
         IMAGE_WIDTH,
@@ -975,56 +904,48 @@ export default function imageModifyProperty() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0100
-      * @tc.desc    test modifyImageProperty GIFLoopCount for gif
-      *                 1.getFd()
-      *                 2.modifyImageProperty()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0100
+     * @tc.desc   test modifyImageProperty GIFLoopCount for gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0100 start");
       await testModifyLoopCountErr("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0100", "gif", false, done);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0200
-      * @tc.desc    test modifyImageProperties GIFLoopCount for gif
-      *                 1.getFd()
-      *                 2.modifyImageProperties()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0200
+     * @tc.desc   test modifyImageProperties GIFLoopCount for gif
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0200 start");
       await testModifyLoopCountErr("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0200", "gif", true, done);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0300
-      * @tc.desc    test modifyImageProperty GIFLoopCount for jpg
-      *                 1.getFd()
-      *                 2.modifyImageProperty()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0300
+     * @tc.desc   test modifyImageProperty GIFLoopCount for jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0300 start");
       await testModifyLoopCountErr("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0300", "jpg", false, done);
     });
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0400
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0400
-      * @tc.desc    test modifyImageProperties GIFLoopCount for jpg
-      *                 1.getFd()
-      *                 2.modifyImageProperties()
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0400
+     * @tc.desc   test modifyImageProperties GIFLoopCount for jpg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0400", Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("SUB_MULTIMEDIA_IMAGE_MODIFY_LOOPCOUNT_ERROR_STATIC_0400 start");

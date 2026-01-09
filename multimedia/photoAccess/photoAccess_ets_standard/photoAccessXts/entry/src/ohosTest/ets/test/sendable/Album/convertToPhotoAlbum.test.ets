@@ -69,12 +69,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_001
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_001
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_001
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_001
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_001';
@@ -85,12 +85,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_002
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_002
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_002
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_002
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_002';
@@ -102,12 +102,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_003
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_003
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_003
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_003
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_003';
@@ -119,12 +119,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_004
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_004
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_004
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_004
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_004';
@@ -135,12 +135,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_005
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_005
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_005
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_005
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_005';
@@ -152,12 +152,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_006
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_006
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_006
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_006
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_006';
@@ -169,12 +169,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_007
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_007
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_007
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_007
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_007';
@@ -185,12 +185,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_008
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_008
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_008
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_008
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_008';
@@ -202,12 +202,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_009
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_009
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_009
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_009
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_009';
@@ -219,12 +219,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_010
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_010
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_010
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_010
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_010';
@@ -235,12 +235,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_011
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_011
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_011
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_011
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_011';
@@ -252,12 +252,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_0012
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_012
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_012
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_0012
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_012';
@@ -269,12 +269,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_013
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_013
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_013
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_013
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_013';
@@ -285,12 +285,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_014
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_014
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_014
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_014
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_014';
@@ -302,12 +302,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_015
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_015
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_015
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_015
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_015';
@@ -319,12 +319,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_016
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_016
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_016
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_016
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_016';
@@ -335,12 +335,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_017
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_017
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_017
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_017
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_017';
@@ -352,12 +352,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_018
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_018
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_018
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_018
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_018';
@@ -369,12 +369,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_019
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_019
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_019
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_019
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_019';
@@ -385,12 +385,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_020
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_020
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_020
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_020
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_020';
@@ -402,12 +402,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_021
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_021
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_021
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_021
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_021';
@@ -419,12 +419,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_022
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_022
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_022
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_022
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_022';
@@ -435,12 +435,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_023
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_023
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_023
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_023
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_023';
@@ -452,12 +452,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_024
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_024
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_024
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_024
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_024', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_024';
@@ -469,12 +469,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_025
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_025
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_025
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_025
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_025';
@@ -485,12 +485,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_026
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_026
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_026
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_026
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_026';
@@ -502,12 +502,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_027
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_027
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_027
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_027
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_027';
@@ -519,12 +519,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_028
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_028
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_028
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_028
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_028';
@@ -535,12 +535,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_029
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_029
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_029
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_029
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_029';
@@ -552,12 +552,12 @@ export default function sendableConvertToPhotoAlbumTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_030
-     * @tc.name      : convertToPhotoAlbum_sendable_promise_030
-     * @tc.desc      : convertToPhotoAlbum
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   convertToPhotoAlbum_sendable_promise_030
+     * @tc.number SENDABLE_ALBUM_CONVERT_TO_PHOTO_ALBUM_030
+     * @tc.desc   convertToPhotoAlbum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('convertToPhotoAlbum_sendable_promise_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'convertToPhotoAlbum_sendable_promise_030';

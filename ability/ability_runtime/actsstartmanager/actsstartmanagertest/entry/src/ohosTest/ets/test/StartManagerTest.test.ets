@@ -70,11 +70,13 @@ export default function StartManagerTest() {
 
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700
-     * @tc.name    SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700
-     * @tc.desc    Non-system apps are not allowed to set/cancel the auto-start (callback) of other app components
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700
+     * @tc.desc   Non-system apps are not allowed to set/cancel the auto-start (callback) of other app components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_0700';
@@ -137,11 +139,13 @@ export default function StartManagerTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800
-     * @tc.name    SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800
-     * @tc.desc    Non-system apps are not allowed to set/cancel the auto-start (promise) of other app components
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800
+     * @tc.desc   Non-system apps are not allowed to set/cancel the auto-start (promise) of other app components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_0800';
@@ -204,11 +208,13 @@ export default function StartManagerTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900
-     * @tc.name    SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900
-     * @tc.desc    Non-system apps are not permitted to query the auto-start status (callback) of other apps
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900
+     * @tc.desc   Non-system apps are not permitted to query the auto-start status (callback) of other apps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_0900';
@@ -268,11 +274,13 @@ export default function StartManagerTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000
-     * @tc.name    SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000
-     * @tc.desc    Non-system apps are not permitted to query the auto-start status (promise) of other apps
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000
+     * @tc.desc   Non-system apps are not permitted to query the auto-start status (promise) of other apps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_1000';
@@ -332,11 +340,13 @@ export default function StartManagerTest() {
         })
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100
-     * @tc.name    SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100
-     * @tc.desc    Non-system apps are not allowed to register/unregister listeners for app auto-start status changes
-     * @tc.level   0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100
+     * @tc.number SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100
+     * @tc.desc   Non-system apps are not allowed to register/unregister listeners for app auto-start status changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_Ability_AbilityRuntime_LaunchRule_startManage_1100';

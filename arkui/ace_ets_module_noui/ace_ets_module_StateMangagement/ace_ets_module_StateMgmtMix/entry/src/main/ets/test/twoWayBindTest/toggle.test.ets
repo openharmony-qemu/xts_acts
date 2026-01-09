@@ -41,14 +41,14 @@ export default function toggleTest() {
       done();
     });
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_$$CAPABILITY_0190
-     * @tc.name      toggleTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   toggleTest_0100
+     * @tc.number SUB_ACE_STATUSMANAGER_$$CAPABILITY_0190
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('toggleTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('toggleTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('toggleTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

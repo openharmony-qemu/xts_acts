@@ -62,9 +62,12 @@ export default function tabs_IndexTest() {
       console.info("Tabs_IndexTest after each called")
     });
     /**
+     * @tc.name   testTabsIndexLessThanMin
      * @tc.number SUB_ACE_TABS_INDEX_TEST_0100
-     * @tc.name testTabsIndexLessThanMin
-     * @tc.desc set index of tabs to -1
+     * @tc.desc   set index of tabs to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsIndexLessThanMin', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsIndexLessThanMin] START');
@@ -174,9 +177,12 @@ export default function tabs_IndexTest() {
       done();
     });
     /**
+     * @tc.name   testTabsIndexNormal
      * @tc.number SUB_ACE_TABS_INDEX_TEST_0200
-     * @tc.name testTabsIndexNormal
-     * @tc.desc set index of tabs to 1
+     * @tc.desc   set index of tabs to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsIndexNormal', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsIndexNormal] START');
@@ -280,9 +286,12 @@ export default function tabs_IndexTest() {
       done();
     });
     /**
+     * @tc.name   testTabsIndexMoreThanMax
      * @tc.number SUB_ACE_TABS_INDEX_TEST_0300
-     * @tc.name testTabsIndexMoreThanMax
-     * @tc.desc set index of tabs to 3
+     * @tc.desc   set index of tabs to 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTabsIndexMoreThanMax', Level.LEVEL1, async (done: Function) => {
       console.info('[testTabsIndexMoreThanMax] START');

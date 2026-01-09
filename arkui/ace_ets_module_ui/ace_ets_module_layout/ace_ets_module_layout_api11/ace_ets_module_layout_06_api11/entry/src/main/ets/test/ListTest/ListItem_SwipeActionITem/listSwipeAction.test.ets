@@ -53,10 +53,13 @@ export default function listSwipeActionJsunit() {
 
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0010
-     * @tc.name   : when swipe,then return the init position
-     * @tc.desc   : test the onStateChange function parameter state
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0010
+     * @tc.number SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0010
+     * @tc.desc   test the onStateChange function parameter state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0010 START');
@@ -90,11 +93,14 @@ export default function listSwipeActionJsunit() {
       done();
     });
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020
-     * @tc.name   : when swipe,then return the init position
-     * @tc.desc   : test the onStateChange function parameter state
-    */
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020
+     * @tc.number SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020
+     * @tc.desc   test the onStateChange function parameter state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0020 START');
       await CommonFunc.sleep(1000);
@@ -127,11 +133,14 @@ export default function listSwipeActionJsunit() {
     });
 
 
-    /*
-     * @tc.number : SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030
-    * @tc.name   : when swipe,then return the init position
-    * @tc.desc   : test the onStateChange function parameter state
-    */
+    /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030
+     * @tc.number SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030
+     * @tc.desc   test the onStateChange function parameter state
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0030 START');
       await CommonFunc.sleep(1000);

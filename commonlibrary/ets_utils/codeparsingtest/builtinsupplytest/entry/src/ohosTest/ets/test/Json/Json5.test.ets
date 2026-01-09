@@ -1106,7 +1106,7 @@ export default function Json5Test() {
       // This API supports only one parameter: preset action function.
     })
     afterEach(async () => {
-      await sleep(30);
+
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
@@ -1117,12 +1117,12 @@ export default function Json5Test() {
     })
 
     /**
+     * @tc.name   Json5Test001
      * @tc.number SUB_BUILTINS_Json5_TEST_0100
-     * @tc.name Json5Test001
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       {
@@ -1147,12 +1147,12 @@ export default function Json5Test() {
       }
     });
     /**
+     * @tc.name   Json5Test002
      * @tc.number SUB_BUILTINS_Json5_TEST_0200
-     * @tc.name Json5Test002
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: MultiLangArrObj = {
@@ -1171,12 +1171,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test003
      * @tc.number SUB_BUILTINS_Json5_TEST_0300
-     * @tc.name Json5Test003
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = ["$100", "€50", "¥1000", "£20"];
@@ -1188,12 +1188,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test004
      * @tc.number SUB_BUILTINS_Json5_TEST_0400
-     * @tc.name Json5Test004
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: Map<string, number>[] = [
@@ -1216,12 +1216,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test005
      * @tc.number SUB_BUILTINS_Json5_TEST_0500
-     * @tc.name Json5Test005
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test5_Obj2 = {
@@ -1252,12 +1252,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test006
      * @tc.number SUB_BUILTINS_Json5_TEST_0600
-     * @tc.name Json5Test006
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: EmojiNestedObj = {
@@ -1274,12 +1274,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test007
      * @tc.number SUB_BUILTINS_Json5_TEST_0700
-     * @tc.name Json5Test007
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test7_Obj3 = {
@@ -1303,12 +1303,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test008
      * @tc.number SUB_BUILTINS_Json5_TEST_0800
-     * @tc.name Json5Test008
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: AgeDiffCompare = {
@@ -1331,12 +1331,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test009
      * @tc.number SUB_BUILTINS_Json5_TEST_0900
-     * @tc.name Json5Test009
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: MathFormulaArrObj = {
@@ -1353,12 +1353,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test010
      * @tc.number SUB_BUILTINS_Json5_TEST_1000
-     * @tc.name Json5Test010
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: ZeroWidthCharObj = {
@@ -1375,12 +1375,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test011
      * @tc.number SUB_BUILTINS_Json5_TEST_1100
-     * @tc.name Json5Test011
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: CaseConvertArr = {
@@ -1398,12 +1398,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test012
      * @tc.number SUB_BUILTINS_Json5_TEST_1200
-     * @tc.name Json5Test012
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: SpecialCharConfigObj = {
@@ -1421,12 +1421,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test013
      * @tc.number SUB_BUILTINS_Json5_TEST_1300
-     * @tc.name Json5Test013
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalSet: Set<string> = new Set(["b", "a", "c"]);
@@ -1439,12 +1439,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test014
      * @tc.number SUB_BUILTINS_Json5_TEST_1400
-     * @tc.name Json5Test014
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: UnitValueObj = {
@@ -1462,12 +1462,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test015
      * @tc.number SUB_BUILTINS_Json5_TEST_1500
-     * @tc.name Json5Test015
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: ElementFrequencyObj = {
@@ -1495,12 +1495,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test016
      * @tc.number SUB_BUILTINS_Json5_TEST_1600
-     * @tc.name Json5Test016
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test16_Obj3 = {
@@ -1524,12 +1524,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test017
      * @tc.number SUB_BUILTINS_Json5_TEST_1700
-     * @tc.name Json5Test017
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: EmojiArrObj = {
@@ -1547,12 +1547,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test018
      * @tc.number SUB_BUILTINS_Json5_TEST_1800
-     * @tc.name Json5Test018
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SumCountCompare = { numbers: [1, 2, 3], sum: 0, count: 0 };
@@ -1570,12 +1570,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test019
      * @tc.number SUB_BUILTINS_Json5_TEST_1900
-     * @tc.name Json5Test019
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test19_Obj3 = {
@@ -1594,12 +1594,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test020
      * @tc.number SUB_BUILTINS_Json5_TEST_2000
-     * @tc.name Json5Test020
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = [
@@ -1615,12 +1615,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test021
      * @tc.number SUB_BUILTINS_Json5_TEST_2100
-     * @tc.name Json5Test021
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sets: Set<string>[] = [
@@ -1650,12 +1650,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test022
      * @tc.number SUB_BUILTINS_Json5_TEST_2200
-     * @tc.name Json5Test022
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: MultiPunctuationObj = {
@@ -1673,12 +1673,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test023
      * @tc.number SUB_BUILTINS_Json5_TEST_2300
-     * @tc.name Json5Test023
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = [
@@ -1693,12 +1693,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test024
      * @tc.number SUB_BUILTINS_Json5_TEST_2400
-     * @tc.name Json5Test024
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: ScientificNotationObj = {
@@ -1715,12 +1715,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test025
      * @tc.number SUB_BUILTINS_Json5_TEST_2500
-     * @tc.name Json5Test025
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: ZeroWidthNonJoinerObj = {
@@ -1736,12 +1736,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test026
      * @tc.number SUB_BUILTINS_Json5_TEST_2600
-     * @tc.name Json5Test026
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: ValueRangeCheckObj = {
@@ -1759,12 +1759,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test027
      * @tc.number SUB_BUILTINS_Json5_TEST_2700
-     * @tc.name Json5Test027
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: RegexPatternObj = {
@@ -1783,12 +1783,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test028
      * @tc.number SUB_BUILTINS_Json5_TEST_2800
-     * @tc.name Json5Test028
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: AnimalEmojiObj = {
@@ -1806,12 +1806,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test029
      * @tc.number SUB_BUILTINS_Json5_TEST_2900
-     * @tc.name Json5Test029
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = [
@@ -1827,12 +1827,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test030
      * @tc.number SUB_BUILTINS_Json5_TEST_3000
-     * @tc.name Json5Test030
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const setA: Set<string> = new Set(["a", "b", "c"]);
@@ -1855,12 +1855,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test031
      * @tc.number SUB_BUILTINS_Json5_TEST_3100
-     * @tc.name Json5Test031
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: GreetingObj = {
@@ -1878,12 +1878,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test032
      * @tc.number SUB_BUILTINS_Json5_TEST_3200
-     * @tc.name Json5Test032
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: SqlQueryObj = {
@@ -1900,12 +1900,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test033
      * @tc.number SUB_BUILTINS_Json5_TEST_3300
-     * @tc.name Json5Test033
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = [
@@ -1921,12 +1921,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test034
      * @tc.number SUB_BUILTINS_Json5_TEST_3400
-     * @tc.name Json5Test034
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: WeatherEmojiObj = {
@@ -1944,12 +1944,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test035
      * @tc.number SUB_BUILTINS_Json5_TEST_3500
-     * @tc.name Json5Test035
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: MultiLangNumberObj = {
@@ -1967,12 +1967,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test036
      * @tc.number SUB_BUILTINS_Json5_TEST_3600
-     * @tc.name Json5Test036
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: XmlTagObj = {
@@ -1989,12 +1989,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test037
      * @tc.number SUB_BUILTINS_Json5_TEST_3700
-     * @tc.name Json5Test037
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: YamlContentObj = {
@@ -2011,12 +2011,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test038
      * @tc.number SUB_BUILTINS_Json5_TEST_3800
-     * @tc.name Json5Test038
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: GraphqlQueryObj = {
@@ -2035,12 +2035,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test039
      * @tc.number SUB_BUILTINS_Json5_TEST_3900
-     * @tc.name Json5Test039
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: TransportEmojiObj = {
@@ -2060,12 +2060,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test040
      * @tc.number SUB_BUILTINS_Json5_TEST_4000
-     * @tc.name Json5Test040
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalArr: string[] = [
@@ -2083,12 +2083,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test041
      * @tc.number SUB_BUILTINS_Json5_TEST_4100
-     * @tc.name Json5Test041
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: MultiLangPunctObj = {
@@ -2108,12 +2108,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test042
      * @tc.number SUB_BUILTINS_Json5_TEST_4200
-     * @tc.name Json5Test042
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: DockerCommandObj = {
@@ -2132,12 +2132,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test043
      * @tc.number SUB_BUILTINS_Json5_TEST_4300
-     * @tc.name Json5Test043
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: JavaAnnotationObj = {
@@ -2156,12 +2156,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test044
      * @tc.number SUB_BUILTINS_Json5_TEST_4400
-     * @tc.name Json5Test044
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test44_Obj2 = {
@@ -2184,12 +2184,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test045
      * @tc.number SUB_BUILTINS_Json5_TEST_4500
-     * @tc.name Json5Test045
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: TransportEmojiObj1 = {
@@ -2210,12 +2210,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test046
      * @tc.number SUB_BUILTINS_Json5_TEST_4600
-     * @tc.name Json5Test046
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalObj: Test45_Obj3 = {
@@ -2244,12 +2244,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test047
      * @tc.number SUB_BUILTINS_Json5_TEST_4700
-     * @tc.name Json5Test047
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: PositiveSumObj = { numbers: [1, -2, 3], sum: 0 };
@@ -2270,12 +2270,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test048
      * @tc.number SUB_BUILTINS_Json5_TEST_4800
-     * @tc.name Json5Test048
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: UpperCaseArr = { words: ["a", "b"], upper: [] };
@@ -2292,12 +2292,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test049
      * @tc.number SUB_BUILTINS_Json5_TEST_4900
-     * @tc.name Json5Test049
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: EvenNumbers = { data: [1, 2, 3], evens: [] };
@@ -2318,12 +2318,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test050
      * @tc.number SUB_BUILTINS_Json5_TEST_5000
-     * @tc.name Json5Test050
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: AverageObj = { values: [2, 4, 6], avg: 0 };
@@ -2340,12 +2340,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test051
      * @tc.number SUB_BUILTINS_Json5_TEST_5100
-     * @tc.name Json5Test051
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: StringLengths = { texts: ["a", "bb"], lengths: [] };
@@ -2362,12 +2362,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test052
      * @tc.number SUB_BUILTINS_Json5_TEST_5200
-     * @tc.name Json5Test052
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: HourExtract = { times: ["12:30", "15:45"], hours: [] };
@@ -2384,12 +2384,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test053
      * @tc.number SUB_BUILTINS_Json5_TEST_5300
-     * @tc.name Json5Test053
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: LongStrings = { strings: ["a", "abc"], long: [] };
@@ -2410,12 +2410,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test054
      * @tc.number SUB_BUILTINS_Json5_TEST_5400
-     * @tc.name Json5Test054
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: RoundedNumbers = { nums: [1.2, 2.8], rounded: [] };
@@ -2432,12 +2432,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test055
      * @tc.number SUB_BUILTINS_Json5_TEST_5500
-     * @tc.name Json5Test055
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: PositiveCount = { numbers: [-1, 2, 3], count: 0 };
@@ -2458,12 +2458,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test056
      * @tc.number SUB_BUILTINS_Json5_TEST_5600
-     * @tc.name Json5Test056
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
 
@@ -2481,12 +2481,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test057
      * @tc.number SUB_BUILTINS_Json5_TEST_5700
-     * @tc.name Json5Test057
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ReversedArr = { data: ["a", "b"], reversed: [] };
@@ -2505,12 +2505,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test058
      * @tc.number SUB_BUILTINS_Json5_TEST_5800
-     * @tc.name Json5Test058
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SquaredNumbers = { numbers: [2, 3], squares: [] };
@@ -2527,12 +2527,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test059
      * @tc.number SUB_BUILTINS_Json5_TEST_5900
-     * @tc.name Json5Test059
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SubstringFilter = { strings: ["abc", "def"], filtered: [] };
@@ -2553,12 +2553,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test060
      * @tc.number SUB_BUILTINS_Json5_TEST_6000
-     * @tc.name Json5Test060
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: YearExtract = { dates: ["2020-01-01", "2021-02-02"], years: [] };
@@ -2574,12 +2574,12 @@ export default function Json5Test() {
       expect(JSON.stringify(parsed.years)).assertEqual(JSON.stringify([2020, 2021]));
     });
     /**
+     * @tc.name   Json5Test061
      * @tc.number SUB_BUILTINS_Json5_TEST_6100
-     * @tc.name Json5Test061
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SumSkipZero = { values: [1, 0, 2], sum: 0 };
@@ -2600,12 +2600,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test062
      * @tc.number SUB_BUILTINS_Json5_TEST_6200
-     * @tc.name Json5Test062
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: StringConcat = { parts: ["a", "b"], combined: "" };
@@ -2622,12 +2622,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test063
      * @tc.number SUB_BUILTINS_Json5_TEST_6300
-     * @tc.name Json5Test063
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ThresholdFilter = { numbers: [5, 10, 15], above: [] };
@@ -2648,12 +2648,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test064
      * @tc.number SUB_BUILTINS_Json5_TEST_6400
-     * @tc.name Json5Test064
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: LowerCaseArr = { words: ["A", "B"], lower: [] };
@@ -2670,12 +2670,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test065
      * @tc.number SUB_BUILTINS_Json5_TEST_6500
-     * @tc.name Json5Test065
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ProductObj = { factors: [2, 3], product: 1 };
@@ -2692,12 +2692,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test066
      * @tc.number SUB_BUILTINS_Json5_TEST_6600
-     * @tc.name Json5Test066
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: LastElement = { items: ["a", "b"], last: "" };
@@ -2713,12 +2713,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test067
      * @tc.number SUB_BUILTINS_Json5_TEST_6700
-     * @tc.name Json5Test067
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CharCount = { text: "abac", count: 0 };
@@ -2739,12 +2739,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test068
      * @tc.number SUB_BUILTINS_Json5_TEST_6800
-     * @tc.name Json5Test068
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: BinaryNumbers = { numbers: [2, 3], binary: [] };
@@ -2761,12 +2761,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test069
      * @tc.number SUB_BUILTINS_Json5_TEST_6900
-     * @tc.name Json5Test069
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FilterObjects = { items: [{ id: 1 }, { id: 2 }], filtered: [] };
@@ -2787,12 +2787,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test070
      * @tc.number SUB_BUILTINS_Json5_TEST_7000
-     * @tc.name Json5Test070
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ArrayLength = { data: [1, 2, 3], length: 0 };
@@ -2807,12 +2807,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test071
      * @tc.number SUB_BUILTINS_Json5_TEST_7100
-     * @tc.name Json5Test071
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: StringReplace = { text: "abc", replaced: "" };
@@ -2828,12 +2828,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test072
      * @tc.number SUB_BUILTINS_Json5_TEST_7200
-     * @tc.name Json5Test072
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: RangeCheck = { numbers: [5, 15, 25], inRange: [] };
@@ -2854,12 +2854,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test073
      * @tc.number SUB_BUILTINS_Json5_TEST_7300
-     * @tc.name Json5Test073
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ExtractProps = { items: [{ name: "a" }, { name: "b" }], names: [] };
@@ -2876,12 +2876,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test074
      * @tc.number SUB_BUILTINS_Json5_TEST_7400
-     * @tc.name Json5Test074
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: TrimStrings = { texts: [" a ", "b "], trimmed: [] };
@@ -2898,12 +2898,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test075
      * @tc.number SUB_BUILTINS_Json5_TEST_7500
-     * @tc.name Json5Test075
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: MaxValue = { numbers: [3, 1, 4], max: 0 };
@@ -2924,12 +2924,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test076
      * @tc.number SUB_BUILTINS_Json5_TEST_7600
-     * @tc.name Json5Test076
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: UniqueElements = { data: [1, 2, 2], unique: [] };
@@ -2950,12 +2950,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test077
      * @tc.number SUB_BUILTINS_Json5_TEST_7700
-     * @tc.name Json5Test077
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: NumToStringArr = { numbers: [10, 20], strings: [] };
@@ -2972,12 +2972,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test078
      * @tc.number SUB_BUILTINS_Json5_TEST_7800
-     * @tc.name Json5Test078
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FilterActiveUsers = {
@@ -3001,12 +3001,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test079
      * @tc.number SUB_BUILTINS_Json5_TEST_7900
-     * @tc.name Json5Test079
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: TotalStringLength = { words: ["a", "bc"], total: 0 };
@@ -3023,12 +3023,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test080
      * @tc.number SUB_BUILTINS_Json5_TEST_8000
-     * @tc.name Json5Test080
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ToPercentage = { values: [0.1, 0.5], percentages: [] };
@@ -3045,12 +3045,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test081
      * @tc.number SUB_BUILTINS_Json5_TEST_8100
-     * @tc.name Json5Test081
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: EvenLengthStrings = { strings: ["a", "bb", "ccc"], even: [] };
@@ -3071,12 +3071,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test082
      * @tc.number SUB_BUILTINS_Json5_TEST_8200
-     * @tc.name Json5Test082
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ExtractMonths = { dates: ["2024-03-01", "2024-09-15"], months: [] };
@@ -3093,12 +3093,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test083
      * @tc.number SUB_BUILTINS_Json5_TEST_8300
-     * @tc.name Json5Test083
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CubedNumbers = { numbers: [2, 3], cubes: [] };
@@ -3115,12 +3115,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test084
      * @tc.number SUB_BUILTINS_Json5_TEST_8400
-     * @tc.name Json5Test084
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CapitalizedWords = { words: ["apple", "banana"], capitalized: [] };
@@ -3139,12 +3139,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test085
      * @tc.number SUB_BUILTINS_Json5_TEST_8500
-     * @tc.name Json5Test085
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: RoundedAverage = { values: [1, 2, 3, 4], avg: 0 };
@@ -3162,12 +3162,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test086
      * @tc.number SUB_BUILTINS_Json5_TEST_8600
-     * @tc.name Json5Test086
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: NegativeCount = { numbers: [-1, 2, -3], count: 0 };
@@ -3188,12 +3188,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test087
      * @tc.number SUB_BUILTINS_Json5_TEST_8700
-     * @tc.name Json5Test087
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: JoinedWithSeparator = { words: ["a", "b", "c"], joined: "" };
@@ -3215,12 +3215,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test088
      * @tc.number SUB_BUILTINS_Json5_TEST_8800
-     * @tc.name Json5Test088
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SumOfSquares = { numbers: [1, 2, 3], sum: 0 };
@@ -3237,12 +3237,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test089
      * @tc.number SUB_BUILTINS_Json5_TEST_8900
-     * @tc.name Json5Test089
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SumByProperty = {
@@ -3262,12 +3262,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test090
      * @tc.number SUB_BUILTINS_Json5_TEST_9000
-     * @tc.name Json5Test090
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ConditionalSum = {
@@ -3290,12 +3290,12 @@ export default function Json5Test() {
       expect(parsed.income).assertEqual(100);
     });
     /**
+     * @tc.name   Json5Test091
      * @tc.number SUB_BUILTINS_Json5_TEST_9100
-     * @tc.name Json5Test091
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: MinValue = { numbers: [3, 1, 4], min: 0 };
@@ -3316,12 +3316,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test092
      * @tc.number SUB_BUILTINS_Json5_TEST_9200
-     * @tc.name Json5Test092
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: LowercaseCompare = { words: ["Apple", "BANANA"], lowercase: [] };
@@ -3338,12 +3338,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test093
      * @tc.number SUB_BUILTINS_Json5_TEST_9300
-     * @tc.name Json5Test093
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: EvenCompare = { numbers: [1, 2, 3, 4], evens: [] };
@@ -3364,12 +3364,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test094
      * @tc.number SUB_BUILTINS_Json5_TEST_9400
-     * @tc.name Json5Test094
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ExtractIdCompare = {
@@ -3389,12 +3389,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test095
      * @tc.number SUB_BUILTINS_Json5_TEST_9500
-     * @tc.name Json5Test095
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SquareCompare = { numbers: [2, 3, 4], squares: [] };
@@ -3411,12 +3411,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test096
      * @tc.number SUB_BUILTINS_Json5_TEST_9600
-     * @tc.name Json5Test096
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ConcatCompare = { parts: ["a", "b", "c"], combined: [] };
@@ -3433,12 +3433,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test097
      * @tc.number SUB_BUILTINS_Json5_TEST_9700
-     * @tc.name Json5Test097
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ExtractDayCompare = { dates: ["2024-03-05", "2024-09-12"], days: [] };
@@ -3455,12 +3455,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test098
      * @tc.number SUB_BUILTINS_Json5_TEST_9800
-     * @tc.name Json5Test098
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: GreaterThanTenCompare = { numbers: [5, 12, 8, 15], result: [] };
@@ -3481,12 +3481,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test099
      * @tc.number SUB_BUILTINS_Json5_TEST_9900
-     * @tc.name Json5Test099
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CapitalCompare = { words: ["apple", "banana"], capitalized: [] };
@@ -3505,12 +3505,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test100
      * @tc.number SUB_BUILTINS_Json5_TEST_10000
-     * @tc.name Json5Test100
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ActiveUserCompare = {
@@ -3534,12 +3534,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test101
      * @tc.number SUB_BUILTINS_Json5_TEST_10100
-     * @tc.name Json5Test101
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SumToArrayCompare = { numbers: [1, 2, 3], sum: [] };
@@ -3556,12 +3556,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test102
      * @tc.number SUB_BUILTINS_Json5_TEST_10200
-     * @tc.name Json5Test102
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ReverseElementsCompare = { strings: ["abc", "de"], reversed: [] };
@@ -3584,12 +3584,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test103
      * @tc.number SUB_BUILTINS_Json5_TEST_10300
-     * @tc.name Json5Test103
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: DivisibleByFiveCompare = { numbers: [5, 12, 15, 7], result: [] };
@@ -3610,12 +3610,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test104
      * @tc.number SUB_BUILTINS_Json5_TEST_10400
-     * @tc.name Json5Test104
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: AddPropCompare = { items: [{ id: 1 }, { id: 2 }], withProp: [] };
@@ -3633,12 +3633,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test105
      * @tc.number SUB_BUILTINS_Json5_TEST_10500
-     * @tc.name Json5Test105
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: LengthStatsCompare = { strings: ["a", "bb", "ccc"], lengths: [] };
@@ -3655,12 +3655,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test106
      * @tc.number SUB_BUILTINS_Json5_TEST_10600
-     * @tc.name Json5Test106
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: WithUnitCompare = { values: [10, 20], withUnit: [] };
@@ -3677,12 +3677,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test107
      * @tc.number SUB_BUILTINS_Json5_TEST_10700
-     * @tc.name Json5Test107
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: LongStringsCompare = { strings: ["a", "bc", "def"], long: [] };
@@ -3703,12 +3703,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test108
      * @tc.number SUB_BUILTINS_Json5_TEST_10800
-     * @tc.name Json5Test108
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SortedCompare = {
@@ -3740,12 +3740,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test109
      * @tc.number SUB_BUILTINS_Json5_TEST_10900
-     * @tc.name Json5Test109
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: AbsoluteCompare = { numbers: [-1, 2, -3], absolute: [] };
@@ -3762,12 +3762,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test110
      * @tc.number SUB_BUILTINS_Json5_TEST_11000
-     * @tc.name Json5Test110
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ReplaceCharCompare = { strings: ["a-b", "c-d"], replaced: [] };
@@ -3784,12 +3784,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test111
      * @tc.number SUB_BUILTINS_Json5_TEST_11100
-     * @tc.name Json5Test111
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SumPropCompare = {
@@ -3809,12 +3809,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test112
      * @tc.number SUB_BUILTINS_Json5_TEST_11200
-     * @tc.name Json5Test112
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: UniqueCompare = { numbers: [1, 2, 2, 3], unique: [] };
@@ -3835,12 +3835,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test113
      * @tc.number SUB_BUILTINS_Json5_TEST_11300
-     * @tc.name Json5Test113
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FirstCharCompare = { words: ["apple", "banana", "cat"], firstChars: [] };
@@ -3857,12 +3857,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test114
      * @tc.number SUB_BUILTINS_Json5_TEST_11400
-     * @tc.name Json5Test114
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: BinaryStrCompare = { numbers: [3, 5], binary: [] };
@@ -3887,12 +3887,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test115
      * @tc.number SUB_BUILTINS_Json5_TEST_11500
-     * @tc.name Json5Test115
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: PriceFilterCompare = {
@@ -3916,12 +3916,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test116
      * @tc.number SUB_BUILTINS_Json5_TEST_11600
-     * @tc.name Json5Test116
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CubeCompare = { numbers: [2, 3], cubes: [] };
@@ -3938,12 +3938,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test117
      * @tc.number SUB_BUILTINS_Json5_TEST_11700
-     * @tc.name Json5Test117
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: JoinWithSepCompare = { words: ["a", "b", "c"], joined: [] };
@@ -3965,12 +3965,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test118
      * @tc.number SUB_BUILTINS_Json5_TEST_11800
-     * @tc.name Json5Test118
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FixedTwoCompare = { numbers: [1.234, 5.678], fixed: [] };
@@ -3987,12 +3987,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test119
      * @tc.number SUB_BUILTINS_Json5_TEST_11900
-     * @tc.name Json5Test119
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SubstrFilterCompare = { strings: ["apple", "banana", "grape"], filtered: [] };
@@ -4013,12 +4013,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test120
      * @tc.number SUB_BUILTINS_Json5_TEST_12000
-     * @tc.name Json5Test120
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: UpdatePriceCompare = {
@@ -4037,12 +4037,12 @@ export default function Json5Test() {
       expect(JSON.stringify(parsed.updated)).assertEqual(JSON.stringify([{ id: 1, price: 90 }, { id: 2, price: 180 }]));
     });
     /**
+     * @tc.name   Json5Test121
      * @tc.number SUB_BUILTINS_Json5_TEST_12100
-     * @tc.name Json5Test121
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: MinToArrayCompare = { numbers: [5, 2, 8, 1], min: [] };
@@ -4063,12 +4063,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test122
      * @tc.number SUB_BUILTINS_Json5_TEST_12200
-     * @tc.name Json5Test122
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: TrimmedCompare = { strings: ["  a ", "b  ", "  c  "], trimmed: [] };
@@ -4099,12 +4099,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test123
      * @tc.number SUB_BUILTINS_Json5_TEST_12300
-     * @tc.name Json5Test123
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: OddNumbersCompare = { numbers: [1, 2, 3, 4, 5], odds: [] };
@@ -4125,12 +4125,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test124
      * @tc.number SUB_BUILTINS_Json5_TEST_12400
-     * @tc.name Json5Test124
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ExtractNamesCompare = {
@@ -4150,12 +4150,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test125
      * @tc.number SUB_BUILTINS_Json5_TEST_12500
-     * @tc.name Json5Test125
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: SquareRootCompare = { numbers: [4, 9, 16], roots: [] };
@@ -4172,12 +4172,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test126
      * @tc.number SUB_BUILTINS_Json5_TEST_12600
-     * @tc.name Json5Test126
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CapitalFirstCompare = { words: ["hello", "world"], capitalized: [] };
@@ -4198,12 +4198,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test127
      * @tc.number SUB_BUILTINS_Json5_TEST_12700
-     * @tc.name Json5Test127
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: MonthNameCompare = { dates: ["2024-01-05", "2024-03-12"], months: [] };
@@ -4224,12 +4224,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test128
      * @tc.number SUB_BUILTINS_Json5_TEST_12800
-     * @tc.name Json5Test128
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: NegativeNumbersCompare = { numbers: [-1, 2, -3, 4], negatives: [] };
@@ -4250,12 +4250,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test129
      * @tc.number SUB_BUILTINS_Json5_TEST_12900
-     * @tc.name Json5Test129
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: UppercaseCompare = { words: ["apple", "Banana"], uppercase: [] };
@@ -4272,12 +4272,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test130
      * @tc.number SUB_BUILTINS_Json5_TEST_13000
-     * @tc.name Json5Test130
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: AgeFilterCompare = {
@@ -4301,12 +4301,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test131
      * @tc.number SUB_BUILTINS_Json5_TEST_13100
-     * @tc.name Json5Test131
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test131', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: DoubleSumCompare = { numbers: [1, 2, 3], doubledSum: [] };
@@ -4323,12 +4323,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test132
      * @tc.number SUB_BUILTINS_Json5_TEST_13200
-     * @tc.name Json5Test132
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test132', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ReverseArrayCompare = { strings: ["a", "b", "c"], reversed: [] };
@@ -4347,12 +4347,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test133
      * @tc.number SUB_BUILTINS_Json5_TEST_13300
-     * @tc.name Json5Test133
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test133', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: DivisibleBySevenCompare = { numbers: [7, 14, 20, 21], result: [] };
@@ -4373,12 +4373,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test134
      * @tc.number SUB_BUILTINS_Json5_TEST_13400
-     * @tc.name Json5Test134
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test134', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: AddIndexCompare = { items: [{ name: "A" }, { name: "B" }], indexed: [] };
@@ -4398,12 +4398,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test135
      * @tc.number SUB_BUILTINS_Json5_TEST_13500
-     * @tc.name Json5Test135
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test135', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CharIncludeCountCompare = { strings: ["apple", "banana", "grape"], counts: [] };
@@ -4428,12 +4428,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test136
      * @tc.number SUB_BUILTINS_Json5_TEST_13600
-     * @tc.name Json5Test136
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test136', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ScientificCompare = { numbers: [1000, 0.001], scientific: [] };
@@ -4450,12 +4450,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test137
      * @tc.number SUB_BUILTINS_Json5_TEST_13700
-     * @tc.name Json5Test137
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test137', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: OddLengthCompare = { strings: ["a", "bb", "ccc", "dddd"], oddLength: [] };
@@ -4476,12 +4476,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test138
      * @tc.number SUB_BUILTINS_Json5_TEST_13800
-     * @tc.name Json5Test138
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test138', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: DivisibleBy15Compare = { numbers: [10, 15, 30, 25], result: [] };
@@ -4504,12 +4504,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test139
      * @tc.number SUB_BUILTINS_Json5_TEST_13900
-     * @tc.name Json5Test139
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test139', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ReciprocalCompare = { numbers: [2, 3, 4], reciprocals: [] };
@@ -4526,12 +4526,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test140
      * @tc.number SUB_BUILTINS_Json5_TEST_14000
-     * @tc.name Json5Test140
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ReplaceSubstrCompare = { strings: ["cat", "catch", "category"], replaced: [] };
@@ -4548,12 +4548,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test141
      * @tc.number SUB_BUILTINS_Json5_TEST_14100
-     * @tc.name Json5Test141
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test141', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: UniqueSortedCompare = { numbers: [3, 1, 2, 2, 3], result: [] };
@@ -4583,12 +4583,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test142
      * @tc.number SUB_BUILTINS_Json5_TEST_14200
-     * @tc.name Json5Test142
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test142', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: LastCharCompare = { words: ["apple", "banana", "cat"], lastChars: [] };
@@ -4605,12 +4605,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test143
      * @tc.number SUB_BUILTINS_Json5_TEST_14300
-     * @tc.name Json5Test143
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: CelsiusCompare = { temps: [20, 30], formatted: [] };
@@ -4628,12 +4628,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test144
      * @tc.number SUB_BUILTINS_Json5_TEST_14400
-     * @tc.name Json5Test144
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test144', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: ExtractDomainCompare = {
@@ -4659,12 +4659,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test145
      * @tc.number SUB_BUILTINS_Json5_TEST_14500
-     * @tc.name Json5Test145
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test145', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FourthPowerCompare = { numbers: [2, 3], powers: [] };
@@ -4681,12 +4681,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test146
      * @tc.number SUB_BUILTINS_Json5_TEST_14600
-     * @tc.name Json5Test146
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test146', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: MaskMiddleCompare = { strings: ["apple", "banana", "cat"], masked: [] };
@@ -4714,12 +4714,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test147
      * @tc.number SUB_BUILTINS_Json5_TEST_14700
-     * @tc.name Json5Test147
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test147', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: FixedOneCompare = { numbers: [1.23, 4.567], fixed: [] };
@@ -4736,12 +4736,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test148
      * @tc.number SUB_BUILTINS_Json5_TEST_14800
-     * @tc.name Json5Test148
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test148', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: NoNumbersCompare = { strings: ["abc", "d1e", "fgh"], filtered: [] };
@@ -4769,12 +4769,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test149
      * @tc.number SUB_BUILTINS_Json5_TEST_14900
-     * @tc.name Json5Test149
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test149', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: UpdateStatusCompare = {
@@ -4795,12 +4795,12 @@ export default function Json5Test() {
     });
 
     /**
+     * @tc.name   Json5Test150
      * @tc.number SUB_BUILTINS_Json5_TEST_15000
-     * @tc.name Json5Test150
-     * @tc.desc test Json
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test Json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('Json5Test150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const obj: TripleMaxCompare = { numbers: [5, 8, 3, 10], result: [] };

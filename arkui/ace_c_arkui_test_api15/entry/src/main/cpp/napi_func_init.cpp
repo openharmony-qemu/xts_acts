@@ -15,6 +15,7 @@
 #include "common/common.h"
 #include "visual/visual_backDropBlur_test.cpp"
 #include "listItemGroup/list_item_group_test.h"
+#include "progress/ProgressLinearStyleOptionTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -28,6 +29,16 @@ static napi_value Init(napi_env env, napi_value exports)
     napi_property_descriptor desc[] = {
         {"columnBackDropBlurTest001", nullptr, columnBackDropBlurTest001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"ProgressLinearStyleOptionTest_001", nullptr, ProgressLinearStyleOptionTest_001, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"ProgressLinearStyleOptionTest_002", nullptr, ProgressLinearStyleOptionTest_002, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"ProgressLinearStyleOptionTest_003", nullptr, ProgressLinearStyleOptionTest_003, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"ProgressLinearStyleOptionTest_004", nullptr, ProgressLinearStyleOptionTest_004, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"ProgressLinearStyleOptionTest_005", nullptr, ProgressLinearStyleOptionTest_005, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
         {"testListItemGroupNodeAdapter001", nullptr, ListItemGroupTest::TestListItemGroupNodeAdapter001, nullptr,
          nullptr, nullptr, napi_default, nullptr},
         {"testListItemGroupNodeAdapter002", nullptr, ListItemGroupTest::TestListItemGroupNodeAdapter002, nullptr,

@@ -151,66 +151,67 @@ struct videoNew {
 
   build() {
     Column() {
-      Row() {
-        Button() {
-          Image($r('app.media.ic_public_back')).width('20vp').height('18vp')
-        }.backgroundColor(Color.Black).size({ width: '40vp', height: '30vp' })
-        .onClick(() => {
-          router.back({
-            url: 'pages/Player/Player_index',
-            params: { result: 'None', }
-          })
-        })
-
-        Row() {
-          Text('Player Video')
-            .fontColor(Color.White)
-            .fontSize('22fp')
-        }.justifyContent(FlexAlign.SpaceAround).backgroundColor(Color.Black)
-
-        Row() {
+      Scroll(){
+        Row({space:20}) {
           Button() {
-            Image($r('app.media.ic_public_delete'))
-              .width('30vp')
-              .height('30vp')
-          }.backgroundColor(Color.Black)
+            Image($r('app.media.ic_public_back')).width('20vp').height('18vp')
+          }.backgroundColor(Color.Black).size({ width: '40vp', height: '30vp' })
           .onClick(() => {
-            AlertDialog.show(
-              {
-                message: "是否删除所有记录",
-                primaryButton: {
-                  value: 'Yes',
-                  action: () => {
-                    this.ClearAll = true;
-                    this.ColorObject.forEach((value, index) => {
-                      this.ColorObject[index] = '#ff808080';
-                    });
-                    this.ClearText();
-                    promptAction.showToast({
-                      message: '结果已删除', duration: 1000
-                    });
-                  }
-                },
-                secondaryButton: {
-                  value: 'No',
-                  action: () => {
-
-                  }
-                },
-                cancel: () => {
-
-                }
-              }
-            )
+            router.back({
+              url: 'pages/Player/Player_index',
+              params: { result: 'None', }
+            })
           })
 
+          Row() {
+            Text('Player Video')
+              .fontColor(Color.White)
+              .fontSize('18fp')
+          }.justifyContent(FlexAlign.SpaceAround).backgroundColor(Color.Black)
+
+          Row() {
+            Button() {
+              Image($r('app.media.ic_public_delete'))
+                .width('30vp')
+                .height('30vp')
+            }.backgroundColor(Color.Black)
+            .onClick(() => {
+              AlertDialog.show(
+                {
+                  message: "是否删除所有记录",
+                  primaryButton: {
+                    value: 'Yes',
+                    action: () => {
+                      this.ClearAll = true;
+                      this.ColorObject.forEach((value, index) => {
+                        this.ColorObject[index] = '#ff808080';
+                      });
+                      this.ClearText();
+                      promptAction.showToast({
+                        message: '结果已删除', duration: 1000
+                      });
+                    }
+                  },
+                  secondaryButton: {
+                    value: 'No',
+                    action: () => {
+
+                    }
+                  },
+                  cancel: () => {
+
+                  }
+                }
+              )
+            })
+
+          }
         }
-      }
-      .width('100%')
-      .justifyContent(FlexAlign.SpaceAround)
-      .margin({ top: '15vp' })
-      .height('6%')
-      .backgroundColor(Color.Black)
+        .height('20%')
+        .width('160%')
+        .justifyContent(FlexAlign.Center)
+        .backgroundColor(Color.Black)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
 
       List({ space: 5 }) {
         ForEach(this.TestCaseList, (item: TestCase, index) => {
@@ -236,48 +237,51 @@ struct videoNew {
             })
           }
         }, (item: TestCase) => item.displayName)
-      }.width('100%').height('80%')
+      }.width('100%').height('60%')
 
-      Row() {
-        Blank()
-        Button({ stateEffect: this.Vue }) {
-          Image($r('app.media.ic_public_pass')).width('20vp').height('20vp')
-        }
-        .margin({ bottom: '30vp' })
-        .width('40%')
-        .height('30vp')
-        .backgroundColor(Color.Grey)
-        .enabled(this.Vue)
-        .opacity(this.Vue ? 1 : 0.4)
-        .onClick(() => {
-          router.back({
-            url: this.Url,
-            params: { result: 'true ', title: this.name,
-            }
+      Scroll(){
+        Row() {
+          Blank()
+          Button({ stateEffect: this.Vue }) {
+            Image($r('app.media.ic_public_pass')).width('20vp').height('20vp')
+          }
+          .margin({ bottom: '10vp' })
+          .width('25%')
+          .height('30vp')
+          .backgroundColor(Color.Grey)
+          .enabled(this.Vue)
+          .opacity(this.Vue ? 1 : 0.4)
+          .onClick(() => {
+            router.back({
+              url: this.Url,
+              params: { result: 'true ', title: this.name,
+              }
+            })
+            promptAction.showToast({
+              message: '通过', duration: 1000
+            });
           })
-          promptAction.showToast({
-            message: '通过', duration: 1000
-          });
-        })
 
-        Blank().width(40)
-        Button() {
-          Image($r('app.media.ic_public_fail')).width('20vp').height('20vp')
-        }.margin({ bottom: '30vp' }).width('40%').height('30vp').backgroundColor(Color.Grey)
-        .onClick(() => {
-          router.back({
-            url: this.Url,
-            params: { result: 'false', title: this.name,
-            }
+          Blank().width(40)
+          Button() {
+            Image($r('app.media.ic_public_fail')).width('20vp').height('20vp')
+          }.margin({ bottom: '10vp' }).width('25%').height('30vp').backgroundColor(Color.Grey)
+          .onClick(() => {
+            router.back({
+              url: this.Url,
+              params: { result: 'false', title: this.name,
+              }
+            })
+            console.log('wwwwwwwwww' + this.Url)
+            promptAction.showToast({
+              message: '失败', duration: 1000
+            });
           })
-          console.log('wwwwwwwwww' + this.Url)
-          promptAction.showToast({
-            message: '失败', duration: 1000
-          });
-        })
 
-        Blank()
-      }.width('100%').height('14%').backgroundColor(Color.Black).justifyContent(FlexAlign.Center)
+          Blank()
+        }.width('120%').height('18%').backgroundColor(Color.Black).justifyContent(FlexAlign.Center)
+      }.scrollable(ScrollDirection.Horizontal).scrollBarColor(Color.Orange)
+
     }.width('100%').height('100%').backgroundColor(Color.Black)
   }
 

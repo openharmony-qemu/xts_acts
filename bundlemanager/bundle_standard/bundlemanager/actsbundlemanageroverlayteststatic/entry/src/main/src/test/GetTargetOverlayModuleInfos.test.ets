@@ -20,9 +20,12 @@ export default function getTargetOverlayModuleInfos() {
   describe('getTargetOverlayModuleInfos',  () =>{
 
     /**
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0600
-     * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0600
-     * @tc.desc: The query fails when the incoming moduleName is empty
+     * @tc.name   Sub_Bms_Framework_Overlay_Query_static_0600
+     * @tc.number Sub_Bms_Framework_Overlay_Query_static_0600
+     * @tc.desc   The query fails when the incoming moduleName is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Overlay_Query_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -56,7 +59,7 @@ export default function getTargetOverlayModuleInfos() {
               'o8 getTargetOverlayModuleInfos Promise success, Array<OverlayModuleInfo> length: ' + result.length);
             expect().assertFail();
             done();
-          }, (err: BusinessError<void>): void => {
+          }, (err: Error): void => {
             hilog.error(0x0000, 'testParamTag', 'o8 getTargetOverlayModuleInfos Promise then failed: %{public}s',
               JSON.stringify(err));
             expect(err.code).assertEqual(401);
@@ -71,10 +74,13 @@ export default function getTargetOverlayModuleInfos() {
         }
       })
 
-    /*
-     * @tc.number: Sub_Bms_Framework_Overlay_Query_static_0800
-     * @tc.name: Sub_Bms_Framework_Overlay_Query_static_0800
-     * @tc.desc: The query fails when the incoming moduleName is not installed
+    /**
+     * @tc.name   Sub_Bms_Framework_Overlay_Query_static_0800
+     * @tc.number Sub_Bms_Framework_Overlay_Query_static_0800
+     * @tc.desc   The query fails when the incoming moduleName is not installed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_Overlay_Query_static_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -96,7 +102,7 @@ export default function getTargetOverlayModuleInfos() {
           hilog.info(0x0000, 'testParamTag', 'o8 getTargetOverlayModuleInfos Promise success, Array<OverlayModuleInfo> length: ' + result.length);
           expect().assertFail();
           done();
-        }, (err: BusinessError<void>): void => {
+        }, (err: Error): void => {
           hilog.error(0x0000, 'testParamTag', 'o8 getTargetOverlayModuleInfos Promise then failed: %{public}s', JSON.stringify(err));
           expect(err.code).assertEqual(17700002);
           done();

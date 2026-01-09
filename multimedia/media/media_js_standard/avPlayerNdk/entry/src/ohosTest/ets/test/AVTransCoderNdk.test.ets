@@ -189,12 +189,12 @@ export default function AVTransCoderNdkTest() {
     })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0001
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0001
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input video is HDR10.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0001
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input video is HDR10.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isSupportHdr) {
@@ -211,12 +211,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0002
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0002
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input video is HLG.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0002
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input video is HLG.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isSupportHdr) {
@@ -233,12 +233,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0003
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0003
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input video is VP9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0003
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input video is VP9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_VP9);
@@ -250,12 +250,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0004
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0004
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input video is MPEG.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0004
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input video is MPEG.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_SOURCE_MPEG);
@@ -272,12 +272,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0005
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0005
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input video is WEBM.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0005
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input video is WEBM.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_WEBM);
@@ -291,12 +291,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0006
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0006
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input video has large resolution.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0006
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0006
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input video has large resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_LARAGE_RESOLUTION);
@@ -304,23 +304,26 @@ export default function AVTransCoderNdkTest() {
       console.log('case testOhAvTransCoderNdkPrepareError0006 ret ' + JSON.stringify(ret));
       await closeFileFd(avFd.fd);
       let isSupport: number = await myavcapability.AVCapabilityIsVideoSizeSupported(7680, 4320);
-      if (isSupport == -1) {
-        console.info(`AVCapabilityIsVideoSizeSupported Failed`);
+      console.info('isSupport:', isSupport)
+      let isSupportEncoder: number = await myavcapability.AVCapabilityIsVideoSizeSupportedEncoder(7680, 4320);
+      console.info('isSupportEncoder:', isSupportEncoder)
+      if ((isSupport == -1) || (isSupportEncoder == -1)) {
+        console.info(`AVCapabilityIsVideoSizeSupported or AVCapabilityIsVideoSizeSupportedEncoder Failed`);
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_IO);
       } else {
-        console.info(`AVCapabilityIsVideoSizeSupported Success`);
+        console.info(`AVCapabilityIsVideoSizeSupported and AVCapabilityIsVideoSizeSupportedEncoder Success`);
         expect(ret).assertEqual(OH_AVErrCode.AV_ERR_OK);
       }
       done();
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0007
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0007
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input video has small resolution.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0007
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0007
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input video has small resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_SMALL_RESOLUTION);
@@ -332,12 +335,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0008
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0008
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with error case, input is an audio file.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0008
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0008
+     * @tc.desc   Test OH_AVTranscoder_Prepare with error case, input is an audio file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(AUDIO_SOURCE_MP3);
@@ -349,12 +352,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0009
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0009
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with high bitrate video.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0009
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0009
+     * @tc.desc   Test OH_AVTranscoder_Prepare with high bitrate video.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_HIGH_BITRATE);
@@ -366,12 +369,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0010
-     * @tc.name       : testOhAvTransCoderNdkPrepareError0010
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with low bitrate video.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkPrepareError0010
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_0010
+     * @tc.desc   Test OH_AVTranscoder_Prepare with low bitrate video.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkPrepareError0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_LOW_BITRATE);
@@ -383,12 +386,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0001
-     * @tc.name       : testOhAvTransCoderNdkSetResolutionError0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, resolution exceeds origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkSetResolutionError0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, resolution exceeds origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -402,12 +405,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0002
-     * @tc.name       : testOhAvTransCoderNdkSetResolutionError0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, set width to odd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkSetResolutionError0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, set width to odd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isExistVpeLib) {
@@ -426,12 +429,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0003
-     * @tc.name       : testOhAvTransCoderNdkSetResolutionError0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, set height to odd.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkSetResolutionError0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, set height to odd.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isExistVpeLib) {
@@ -450,12 +453,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0004
-     * @tc.name       : testOhAvTransCoderNdkSetResolutionError0004
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, resolution exceeds 4k.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkSetResolutionError0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0004
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, resolution exceeds 4k.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -469,12 +472,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0005
-     * @tc.name       : testOhAvTransCoderNdkSetResolutionError0005
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, resolution less 240P.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkSetResolutionError0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_RESOLUTION_0005
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with error case, resolution less 240P.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkSetResolutionError0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -488,12 +491,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_PARAM_ERROR_0001
-     * @tc.name       : testOhAvTransCoderPrepareParamError0001
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with invalid parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPrepareParamError0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_PARAM_ERROR_0001
+     * @tc.desc   Test OH_AVTranscoder_Prepare with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPrepareParamError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderPrepareParamError1();
@@ -503,12 +506,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_PARAM_ERROR_0002
-     * @tc.name       : testOhAvTransCoderPrepareParamError0002
-     * @tc.desc       : Test OH_AVTranscoder_Prepare with invalid parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPrepareParamError0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PREPARE_PARAM_ERROR_0002
+     * @tc.desc   Test OH_AVTranscoder_Prepare with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPrepareParamError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -520,12 +523,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0001
-     * @tc.name       : testOhAvTransCoderParamError0001
-     * @tc.desc       : Test OH_AVTranscoder with invalid parameters for Start operation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderParamError0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0001
+     * @tc.desc   Test OH_AVTranscoder with invalid parameters for Start operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderParamError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderParamError("Start");
@@ -535,12 +538,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0002
-     * @tc.name       : testOhAvTransCoderParamError0002
-     * @tc.desc       : Test OH_AVTranscoder with invalid parameters for Pause operation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderParamError0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0002
+     * @tc.desc   Test OH_AVTranscoder with invalid parameters for Pause operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderParamError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderParamError("Pause");
@@ -550,12 +553,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0003
-     * @tc.name       : testOhAvTransCoderParamError0003
-     * @tc.desc       : Test OH_AVTranscoder with invalid parameters for Resume operation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderParamError0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0003
+     * @tc.desc   Test OH_AVTranscoder with invalid parameters for Resume operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderParamError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderParamError("Resume");
@@ -565,12 +568,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0004
-     * @tc.name       : testOhAvTransCoderParamError0004
-     * @tc.desc       : Test OH_AVTranscoder with invalid parameters for Cancel operation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderParamError0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0004
+     * @tc.desc   Test OH_AVTranscoder with invalid parameters for Cancel operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderParamError0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderParamError("Cancel");
@@ -580,12 +583,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0005
-     * @tc.name       : testOhAvTransCoderParamError0005
-     * @tc.desc       : Test OH_AVTranscoder with invalid parameters for Release operation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderParamError0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PARAM_ERROR_0005
+     * @tc.desc   Test OH_AVTranscoder with invalid parameters for Release operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderParamError0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderParamError("Release");
@@ -595,12 +598,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0001
-     * @tc.name       : testOhAvTransCoderOperateError0001
-     * @tc.desc       : Test OH_AVTranscoder with operation not permitted for Start.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderOperateError0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0001
+     * @tc.desc   Test OH_AVTranscoder with operation not permitted for Start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderOperateError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderOperateError("Start");
@@ -610,12 +613,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0002
-     * @tc.name       : testOhAvTransCoderOperateError0002
-     * @tc.desc       : Test OH_AVTranscoder with operation not permitted for Pause.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderOperateError0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0002
+     * @tc.desc   Test OH_AVTranscoder with operation not permitted for Pause.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderOperateError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderOperateError("Pause");
@@ -625,12 +628,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0003
-     * @tc.name       : testOhAvTransCoderOperateError0003
-     * @tc.desc       : Test OH_AVTranscoder with operation not permitted for Resume.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderOperateError0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0003
+     * @tc.desc   Test OH_AVTranscoder with operation not permitted for Resume.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderOperateError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderOperateError("Resume");
@@ -640,12 +643,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0004
-     * @tc.name       : testOhAvTransCoderOperateError0004
-     * @tc.desc       : Test OH_AVTranscoder with operation not permitted for Cancel.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderOperateError0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0004
+     * @tc.desc   Test OH_AVTranscoder with operation not permitted for Cancel.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderOperateError0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderOperateError("Cancel");
@@ -655,12 +658,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0005
-     * @tc.name       : testOhAvTransCoderOperateError0005
-     * @tc.desc       : Test OH_AVTranscoder with operation not permitted for Prepare.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderOperateError0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_OPERATE_ERROR_0005
+     * @tc.desc   Test OH_AVTranscoder with operation not permitted for Prepare.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderOperateError0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -674,12 +677,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CANCELLED_0001
-     * @tc.name       : testOhAvTransCoderNdkCancelled
-     * @tc.desc       : Test OH_AVTranscoder_Cancel operation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkCancelled
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CANCELLED_0001
+     * @tc.desc   Test OH_AVTranscoder_Cancel operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkCancelled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -693,12 +696,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_COMPLETE_0001
-     * @tc.name       : testOhAvTransCoderNdkComplete
-     * @tc.desc       : Test OH_AVTranscoder state Complete.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkComplete
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_COMPLETE_0001
+     * @tc.desc   Test OH_AVTranscoder state Complete.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkComplete', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_AVC_AUDIO_AAC);
@@ -719,12 +722,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_STATE_CB_0001
-     * @tc.name       : testOhAvTransCoderSetStateCbError
-     * @tc.desc       : Test OH_AVTranscoder_SetStateCallback with invalid parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderSetStateCbError
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_STATE_CB_0001
+     * @tc.desc   Test OH_AVTranscoder_SetStateCallback with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderSetStateCbError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderSetStateCbError();
@@ -734,12 +737,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_ERROR_CB_0001
-     * @tc.name       : testOhAvTransCoderSetErrorCbError
-     * @tc.desc       : Test OH_AVTranscoder_SetErrorCallback with invalid parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderSetErrorCbError
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_ERROR_CB_0001
+     * @tc.desc   Test OH_AVTranscoder_SetErrorCallback with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderSetErrorCbError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderSetErrorCbError();
@@ -749,12 +752,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_SET_PROGRESS_UPDATE_CB_0001
-     * @tc.name       : testOhAvTransCoderSetProgressUpdateCbError
-     * @tc.desc       : Test OH_AVTranscoder_SetProgressUpdateCallback with invalid parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderSetProgressUpdateCbError
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_SET_PROGRESS_UPDATE_CB_0001
+     * @tc.desc   Test OH_AVTranscoder_SetProgressUpdateCallback with invalid parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderSetProgressUpdateCbError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderSetProgressUpdateCbError();
@@ -764,12 +767,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PROGRESS_UPDATE_CB_0001
-     * @tc.name       : testOhAvTransCoderNdkProgressUpdateCb
-     * @tc.desc       : Test OH_AVTranscoder_SetProgressUpdateCallback operation.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderNdkProgressUpdateCb
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PROGRESS_UPDATE_CB_0001
+     * @tc.desc   Test OH_AVTranscoder_SetProgressUpdateCallback operation.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderNdkProgressUpdateCb', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -783,12 +786,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0001
-     * @tc.name       : testOhAvTransCoderConfigSetSrcFDError0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetSrcFD with invalid file descriptor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigSetSrcFDError0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetSrcFD with invalid file descriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigSetSrcFDError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -800,12 +803,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0002
-     * @tc.name       : testOhAvTransCoderConfigSetSrcFDError0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetSrcFD with invalid offset.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigSetSrcFDError0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetSrcFD with invalid offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigSetSrcFDError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -817,12 +820,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0003
-     * @tc.name       : testOhAvTransCoderConfigSetSrcFDError0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetSrcFD with invalid length.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigSetSrcFDError0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetSrcFD with invalid length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigSetSrcFDError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -834,12 +837,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0004
-     * @tc.name       : testOhAvTransCoderConfigSetSrcFDError0004
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetSrcFD with length exceeding origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigSetSrcFDError0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0004
+     * @tc.desc   Test OH_AVTranscoderConfig_SetSrcFD with length exceeding origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigSetSrcFDError0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -851,12 +854,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0005
-     * @tc.name       : testOhAvTransCoderConfigSetSrcFDError0005
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetSrcFD with length below origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigSetSrcFDError0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0005
+     * @tc.desc   Test OH_AVTranscoderConfig_SetSrcFD with length below origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigSetSrcFDError0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -868,12 +871,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0006
-     * @tc.name       : testOhAvTransCoderConfigSetSrcFDError0006
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetSrcFD.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigSetSrcFDError0006
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_SRC_FD_ERROR_0006
+     * @tc.desc   Test OH_AVTranscoderConfig_SetSrcFD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigSetSrcFDError0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getFileFd(VIDEO_SOURCE_MP4_H263);
@@ -890,12 +893,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FD_ERROR_0001
-     * @tc.name       : testOhAvTransCoderConfigSetDstFDError
-     * @tc.desc       : Test OH_AVTranscoder_ConfigSetDstFD with invalid file descriptor.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigSetDstFDError
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FD_ERROR_0001
+     * @tc.desc   Test OH_AVTranscoder_ConfigSetDstFD with invalid file descriptor.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigSetDstFDError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigSetDstFDError(-1);
@@ -905,12 +908,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0001
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoType0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoType with valid video type AVC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoType0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoType with valid video type AVC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -924,12 +927,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0002
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoType0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoType with valid video type HEVC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoType0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoType with valid video type HEVC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isSupportHEVC) {
@@ -953,12 +956,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0003
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoType0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoType with empty video type.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoType0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoType with empty video type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoType0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -972,12 +975,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0004
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoType0004
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoType with invalid video type.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoType0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_TYPE_0004
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoType with invalid video type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoType0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -991,12 +994,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_TYPE_0001
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioType0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioType with valid audio type AAC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioType0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_TYPE_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioType with valid audio type AAC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1010,12 +1013,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_TYPE_0002
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioType0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioType with empty audio type.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioType0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_TYPE_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioType with empty audio type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1029,12 +1032,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_TYPE_0003
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioType0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioType with invalid audio type.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioType0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_TYPE_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioType with invalid audio type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioType0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1048,12 +1051,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0001
-     * @tc.name       : testOhAvTransCodeConfigSetDstFileType0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstFileType with default file type.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstFileType0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstFileType with default file type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstFileType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1067,12 +1070,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0002
-     * @tc.name       : testOhAvTransCodeConfigSetDstFileType0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstFileType with valid file type MPEG-4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstFileType0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstFileType with valid file type MPEG-4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstFileType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1086,12 +1089,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0003
-     * @tc.name       : testOhAvTransCodeConfigSetDstFileType0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstFileType with unsupported file type M4A.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstFileType0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstFileType with unsupported file type M4A.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstFileType0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1110,12 +1113,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0004
-     * @tc.name       : testOhAvTransCodeConfigSetDstFileType0004
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstFileType with invalid file type AMR.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstFileType0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0004
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstFileType with invalid file type AMR.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstFileType0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1129,12 +1132,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0005
-     * @tc.name       : testOhAvTransCodeConfigSetDstFileType0005
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstFileType with invalid file type MP3.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstFileType0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0005
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstFileType with invalid file type MP3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstFileType0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1148,12 +1151,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0006
-     * @tc.name       : testOhAvTransCodeConfigSetDstFileType0006
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstFileType with invalid file type WAV.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstFileType0006
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0006
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstFileType with invalid file type WAV.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstFileType0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1167,12 +1170,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0007
-     * @tc.name       : testOhAvTransCodeConfigSetDstFileType0007
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstFileType with invalid file type AAC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstFileType0007
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_FILE_TYPE_0007
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstFileType with invalid file type AAC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstFileType0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1186,12 +1189,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0001
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioBitrate0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioBitrate with bitrate exceeding origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioBitrate0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioBitrate with bitrate exceeding origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioBitrate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1213,12 +1216,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0002
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioBitrate0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioBitrate with bitrate below origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioBitrate0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioBitrate with bitrate below origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioBitrate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1240,12 +1243,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0003
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioBitrate0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioBitrate with invalid bitrate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioBitrate0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioBitrate with invalid bitrate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioBitrate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1259,12 +1262,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0004
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioBitrate0004
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioBitrate with zero bitrate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioBitrate0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0004
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioBitrate with zero bitrate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioBitrate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1278,12 +1281,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0005
-     * @tc.name       : testOhAvTransCodeConfigSetDstAudioBitrate0005
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstAudioBitrate with bitrate exceeding maxint32mum.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstAudioBitrate0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_AUDIO_BITRATE_0005
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstAudioBitrate with bitrate exceeding maxint32mum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstAudioBitrate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1297,12 +1300,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0001
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoBitrate0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoBitrate with bitrate exceeding origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoBitrate0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoBitrate with bitrate exceeding origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoBitrate0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1317,12 +1320,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0002
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoBitrate0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoBitrate with bitrate below origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoBitrate0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoBitrate with bitrate below origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoBitrate0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1337,12 +1340,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0003
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoBitrate0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoBitrate with invalid bitrate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoBitrate0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoBitrate with invalid bitrate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoBitrate0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1356,12 +1359,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0004
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoBitrate0004
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoBitrate with zero bitrate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoBitrate0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0004
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoBitrate with zero bitrate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoBitrate0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1375,12 +1378,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0005
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoBitrate0005
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoBitrate with bitrate exceeding maxint32mum.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoBitrate0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_BITRATE_0005
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoBitrate with bitrate exceeding maxint32mum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoBitrate0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1394,12 +1397,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0001
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoResolution0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with resolution below origin.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoResolution0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with resolution below origin.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoResolution0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isExistVpeLib) {
@@ -1420,12 +1423,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0002
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoResolution0002
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with invalid resolution.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoResolution0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0002
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with invalid resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoResolution0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1439,12 +1442,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0003
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoResolution0003
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with zero resolution.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoResolution0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0003
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with zero resolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoResolution0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1458,12 +1461,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0004
-     * @tc.name       : testOhAvTransCodeConfigSetDstVideoResolution0004
-     * @tc.desc       : Test OH_AVTranscoderConfig_SetDstVideoResolution with resolution exceeding maxint32num.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCodeConfigSetDstVideoResolution0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_SET_DST_VIDEO_RESOLUTION_0004
+     * @tc.desc   Test OH_AVTranscoderConfig_SetDstVideoResolution with resolution exceeding maxint32num.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCodeConfigSetDstVideoResolution0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);
@@ -1478,12 +1481,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0001
-     * @tc.name       : testOhAvTransCoderConfigParamError0001
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetSrcFD.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0001
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetSrcFD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetSrcFD", 0);
@@ -1493,12 +1496,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0002
-     * @tc.name       : testOhAvTransCoderConfigParamError0002
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstFD.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0002
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstFD.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstFD", 0);
@@ -1508,12 +1511,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0003
-     * @tc.name       : testOhAvTransCoderConfigParamError0003
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoType.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0003
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstVideoType", 1);
@@ -1523,12 +1526,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0004
-     * @tc.name       : testOhAvTransCoderConfigParamError0004
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoType.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0004
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstVideoType", 0);
@@ -1538,12 +1541,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0005
-     * @tc.name       : testOhAvTransCoderConfigParamError0005
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstAudioType.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0005
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstAudioType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstAudioType", 1);
@@ -1553,12 +1556,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0006
-     * @tc.name       : testOhAvTransCoderConfigParamError0006
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstAudioType.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0006
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0006
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstAudioType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstAudioType", 0);
@@ -1568,12 +1571,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0007
-     * @tc.name       : testOhAvTransCoderConfigParamError0007
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstFileType.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0007
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0007
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstFileType.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstFileType", 0);
@@ -1583,12 +1586,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0008
-     * @tc.name       : testOhAvTransCoderConfigParamError0008
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstAudioBitrate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0008
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0008
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstAudioBitrate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstAudioBitrate", 0);
@@ -1598,12 +1601,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0009
-     * @tc.name       : testOhAvTransCoderConfigParamError0009
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoBitrate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0009
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0009
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoBitrate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstVideoBitrate", 0);
@@ -1613,12 +1616,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0010
-     * @tc.name       : testOhAvTransCoderConfigParamError0010
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoResolution.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0010
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0010
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for SetDstVideoResolution.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("SetDstVideoResolution", 0);
@@ -1628,12 +1631,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0011
-     * @tc.name       : testOhAvTransCoderConfigParamError0011
-     * @tc.desc       : Test OH_AVTranscoder_Config with invalid parameters for Release.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderConfigParamError0011
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_PARAM_ERROR_0011
+     * @tc.desc   Test OH_AVTranscoder_Config with invalid parameters for Release.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderConfigParamError0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret: number = avTransCoderNdk.AvTransCoderConfigParamError("Release", 0);
@@ -1643,12 +1646,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0001
-     * @tc.name       : testOhAvTransCoderPlayer0001
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type AVC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0001
+     * @tc.desc   Test OH_AVTranscoder_Player with video type AVC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0001', VIDEO_AVC_AUDIO_AAC);
@@ -1657,12 +1660,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0002
-     * @tc.name       : testOhAvTransCoderPlayer0002
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type MPEG-2.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0002
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0002
+     * @tc.desc   Test OH_AVTranscoder_Player with video type MPEG-2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0002', VIDEO_SOURCE_MP4_MPEG2);
@@ -1676,12 +1679,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0003
-     * @tc.name       : testOhAvTransCoderPlayer0003
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type MPEG-4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0003
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0003
+     * @tc.desc   Test OH_AVTranscoder_Player with video type MPEG-4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0003', VIDEO_SOURCE_MP4_MPEG4);
@@ -1695,12 +1698,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0004
-     * @tc.name       : testOhAvTransCoderPlayer0004
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type H263.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0004
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0004
+     * @tc.desc   Test OH_AVTranscoder_Player with video type H263.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0004', VIDEO_SOURCE_MP4_H263);
@@ -1714,12 +1717,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0005
-     * @tc.name       : testOhAvTransCoderPlayer0005
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type HEVC.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0005
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0005
+     * @tc.desc   Test OH_AVTranscoder_Player with video type HEVC.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       if (isSupportHEVC) {
@@ -1738,12 +1741,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0006
-     * @tc.name       : testOhAvTransCoderPlayer0006
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type MKV.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0006
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0006
+     * @tc.desc   Test OH_AVTranscoder_Player with video type MKV.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0006', VIDEO_SOURCE_MKV);
@@ -1757,12 +1760,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0007
-     * @tc.name       : testOhAvTransCoderPlayer0007
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type TS.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0007
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0007
+     * @tc.desc   Test OH_AVTranscoder_Player with video type TS.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0007', VIDEO_SOURCE_TS);
@@ -1776,12 +1779,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0008
-     * @tc.name       : testOhAvTransCoderPlayer0008
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type FLV.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0008
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0008
+     * @tc.desc   Test OH_AVTranscoder_Player with video type FLV.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0008', VIDEO_SOURCE_FLV);
@@ -1790,12 +1793,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0009
-     * @tc.name       : testOhAvTransCoderPlayer0009
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type MPEG.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0009
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0009
+     * @tc.desc   Test OH_AVTranscoder_Player with video type MPEG.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0009', VIDEO_SOURCE_MPG);
@@ -1809,12 +1812,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0010
-     * @tc.name       : testOhAvTransCoderPlayer0010
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type AVI.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0010
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0010
+     * @tc.desc   Test OH_AVTranscoder_Player with video type AVI.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0010', VIDEO_SOURCE_AVI);
@@ -1823,12 +1826,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0011
-     * @tc.name       : testOhAvTransCoderPlayer0011
-     * @tc.desc       : Test OH_AVTranscoder_Player with video type FMP4.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderPlayer0011
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_PLAYER_0011
+     * @tc.desc   Test OH_AVTranscoder_Player with video type FMP4.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderPlayer0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let ret = await testOhAvTransCoderAndPlayVideo('testOhAvTransCoderPlayer0011', VIDEO_SOURCE_FMP4);
@@ -1837,12 +1840,12 @@ export default function AVTransCoderNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_ENABLE_B_FRAME_0001
-     * @tc.name       : testOhAvTransCoderEnableBFrame0001
-     * @tc.desc       : Test OH_AVTranscoderConfig_EnableBFrame with enableBFrame.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testOhAvTransCoderEnableBFrame0001
+     * @tc.number SUB_MULTIMEIDA_AVTRANSCODER_CONFIG_ENABLE_B_FRAME_0001
+     * @tc.desc   Test OH_AVTranscoderConfig_EnableBFrame with enableBFrame.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOhAvTransCoderEnableBFrame0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let avFd = await getRawFd(VIDEO_AVC_AUDIO_AAC);

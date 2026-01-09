@@ -125,14 +125,14 @@ export default function abilityTest() {
         });
         console.info("--------------------assertContain-------Stage-----------------------");
 
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_0100
-        * @tc.name      : test mediaKeySystemInfos
-        * @tc.desc      : create AVPlayer to getMediaKeySystemInfos
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_0100
+         * @tc.desc   create AVPlayer to getMediaKeySystemInfos
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_0100', Level.LEVEL0, async (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -158,14 +158,14 @@ export default function abilityTest() {
             drmMediaKeySystem!.destroy();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_AVPLAYER_0200
-        * @tc.name      : test mediaKeySystemInfos
-        * @tc.desc      : create AVPlayer to getMediaKeySystemInfos
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_AVPLAYER_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_AVPLAYER_0200
+         * @tc.desc   create AVPlayer to getMediaKeySystemInfos
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_AVPLAYER_0200', Level.LEVEL0, async (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem;
             try {
@@ -186,14 +186,14 @@ export default function abilityTest() {
             drmMediaKeySystem!.destroy();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0100
-        * @tc.name      : testCreateMediaKeySystem
-        * @tc.desc      : Reliability Test
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0100
+         * @tc.desc   Reliability Test
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0100', Level.LEVEL0, async (done:Function) => {
             let errCode = 0;
             let drmMediaKeySystem:drm.MediaKeySystem;
@@ -215,14 +215,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(drm.DrmErrorCode.SERVICE_FATAL_ERROR);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0200
-        * @tc.name      : testCreateMediaKeySystem
-        * @tc.desc      : Abnormal systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0200
+         * @tc.desc   Abnormal systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0200', Level.LEVEL1, async (done:Function) => {
             let errCode = 0;
             try {
@@ -234,14 +234,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(drm.DrmErrorCode.SERVICE_FATAL_ERROR);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0300
-        * @tc.name      : testCreateMediaKeySystem
-        * @tc.desc      : null systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0300
+         * @tc.desc   null systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0300', Level.LEVEL1, async (done:Function) => {
             let errCode = 0;
             try {
@@ -253,27 +253,27 @@ export default function abilityTest() {
             expect(errCode).assertEqual(drm.DrmErrorCode.SERVICE_FATAL_ERROR);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0400
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : one params error systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0400
+         * @tc.desc   one params error systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0400', Level.LEVEL1, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported("405E6D359B9A41E8B843DD3C6E72C42C");
             expect(isSysSupport).assertFalse();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0500
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : one params null systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0500
+         * @tc.desc   one params null systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0500', Level.LEVEL1, async (done:Function) => {
             let errCode = 0;
             try {
@@ -285,40 +285,40 @@ export default function abilityTest() {
             expect(errCode).assertEqual(401);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0600
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : two params
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0600
+         * @tc.desc   two params
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0600', Level.LEVEL0, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4");
             expect(isSysSupport).assertTrue();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0700
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : two params error systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0700
+         * @tc.desc   two params error systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0700', Level.LEVEL1, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported("405E6D359B9A41E8B843DD3C6E72C42C", "video/mp4");
             expect(isSysSupport).assertFalse();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0800
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : two params null systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0800
+         * @tc.desc   two params null systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0800', Level.LEVEL1, async (done:Function) => {
             let errCode = 0;
             try {
@@ -330,14 +330,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(401);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0900
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : two params error mimetype
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0900
+         * @tc.desc   two params error mimetype
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_0900', Level.LEVEL1, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported(systemName, "1111/2222");
             if (isClearPlay) {
@@ -347,14 +347,14 @@ export default function abilityTest() {
             }
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1000
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : two params null mimetype
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1000
+         * @tc.desc   two params null mimetype
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1000', Level.LEVEL1, (done:Function) => {
             let errCode = 0;
             try {
@@ -366,68 +366,68 @@ export default function abilityTest() {
             expect(errCode).assertEqual(drm.DrmErrorCode.ERROR_UNKNOWN);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1100
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1100
+         * @tc.desc   three params
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1100', Level.LEVEL0, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
             expect(isSysSupport).assertTrue();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1200
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1200
+         * @tc.desc   three params
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1200', Level.LEVEL0, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_HW_CRYPTO);
             console.log("XX DRM_FRAMEWORK_API_1200 isSysSupport is", isSysSupport);
             expect(isSysSupport).not().assertUndefined();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1300
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1300
+         * @tc.desc   three params
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1300', Level.LEVEL0, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported(systemName, "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_ENHANCED_HW);
             console.log("XX DRM_FRAMEWORK_API_1300 isSysSupport is", isSysSupport);
             expect(isSysSupport).not().assertUndefined();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1400
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params,error systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1400
+         * @tc.desc   three params,error systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1400', Level.LEVEL1, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported("405E6D359B9A41E8B843DD3C6E72C42C", "video/mp4", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
             expect(isSysSupport).assertFalse();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1500
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params,error mimetype
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1500
+         * @tc.desc   three params,error mimetype
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1500', Level.LEVEL1, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported(systemName, "1111/22222", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
             if (isClearPlay) {
@@ -437,14 +437,14 @@ export default function abilityTest() {
             }
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1600
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params,error securityLevel
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1600
+         * @tc.desc   three params,error securityLevel
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1600', Level.LEVEL1, async (done:Function) => {
             let errCode = 0;
             try {
@@ -456,14 +456,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(401);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1700
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params,null systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1700
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1700
+         * @tc.desc   three params,null systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1700', Level.LEVEL1, async (done:Function) => {
             let errCode = 0;
             try {
@@ -476,27 +476,27 @@ export default function abilityTest() {
             expect(errCode).assertEqual(401);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1800
-        * @tc.name      : testMediaKeySystemSupported
-        * @tc.desc      : three params,null mimetype
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1800
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1800
+         * @tc.desc   three params,null mimetype
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1800', Level.LEVEL1, (done:Function) => {
             let isSysSupport = drm.isMediaKeySystemSupported(systemName, "", drm.ContentProtectionLevel.CONTENT_PROTECTION_LEVEL_SW_CRYPTO);
             expect(isSysSupport).assertFalse();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1900
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 错误的安全等级，创建session异常用例
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1900
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1900
+         * @tc.desc   错误的安全等级，创建session异常用例
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_1900', Level.LEVEL0, async (done:Function) => {
             let errCode = 0;
             let drmMediaKeySystem:drm.MediaKeySystem;
@@ -520,14 +520,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(401);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2000
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 判断是否支持安全解码video/mp4
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2000
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2000
+         * @tc.desc   判断是否支持安全解码video/mp4
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2000', Level.LEVEL0, (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -563,14 +563,14 @@ export default function abilityTest() {
             }
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2100
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 判断是否支持安全解码video/mp4
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2100
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2100
+         * @tc.desc   判断是否支持安全解码video/mp4
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2100', Level.LEVEL0, (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -625,14 +625,14 @@ export default function abilityTest() {
                 done();
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2200
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 判断是否支持安全解码hls/ts
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2200
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2200
+         * @tc.desc   判断是否支持安全解码hls/ts
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2200', Level.LEVEL0, (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -689,14 +689,14 @@ export default function abilityTest() {
                 done();
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2500
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 会话安全等级unknown默认为HW
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2500
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2500
+         * @tc.desc   会话安全等级unknown默认为HW
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2500', Level.LEVEL0, (done:Function) => {
             let errCode = 0;
             let drmMediaKeySystem:drm.MediaKeySystem;
@@ -721,14 +721,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(401);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2600
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 判断是否支持安全解码video/mp4
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2600
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2600
+         * @tc.desc   判断是否支持安全解码video/mp4
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2600', Level.LEVEL0, (done:Function) => {
             let errCode = 0;
             let drmMediaKeySystem:drm.MediaKeySystem;
@@ -754,14 +754,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(401);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0100
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取设备证书，正常参数
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0100
+         * @tc.desc   获取设备证书，正常参数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0100', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let cstatus:drm.CertificateStatus;
@@ -815,14 +815,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0200
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取许可证,正常参数
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0200
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0200
+         * @tc.desc   获取许可证,正常参数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0200', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let cstatus:drm.CertificateStatus;
@@ -891,14 +891,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0300
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取许可证,请求minetype异常
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0300
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0300
+         * @tc.desc   获取许可证,请求minetype异常
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0300', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -971,14 +971,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-              * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0400
-              * @tc.name      : testGetTrackDescription
-              * @tc.desc      : 获取许可证,请求minetype为空
-              * @tc.size      : MediumTest
-              * @tc.type      : Function test
-              * @tc.level     : Level0
-              */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0400
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0400
+         * @tc.desc   获取许可证,请求minetype为空
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0400', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1048,14 +1048,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0500
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取许可证,请求初始数据异常
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0500
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0500
+         * @tc.desc   获取许可证,请求初始数据异常
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0500', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1106,14 +1106,14 @@ export default function abilityTest() {
                 done();
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0600
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取许可证,请求初始数据为空
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0600
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0600
+         * @tc.desc   获取许可证,请求初始数据为空
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0600', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1161,14 +1161,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0700
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取许可证,请求的licensetype异常
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0700
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0700
+         * @tc.desc   获取许可证,请求的licensetype异常
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0700', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1220,14 +1220,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0800
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取许可证,响应报文异常
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0800
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0800
+         * @tc.desc   获取许可证,响应报文异常
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0800', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1290,14 +1290,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_0900
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取许可证,正常删除许可证信息，正常检查许可证状态
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_0900
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_0900
+         * @tc.desc   获取许可证,正常删除许可证信息，正常检查许可证状态
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_0900', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1417,14 +1417,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1000
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证管理，获取离线licenseid，检查licenseid状态
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1000
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1000
+         * @tc.desc   离线许可证管理，获取离线licenseid，检查licenseid状态
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1000', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1502,14 +1502,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1100
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证管理，删除离线licenseid，检查licenseid状态
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1100
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1100
+         * @tc.desc   离线许可证管理，删除离线licenseid，检查licenseid状态
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1100', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1587,14 +1587,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1200
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证管理，无效离线licenseid，检查licenseid状态
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1200
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1200
+         * @tc.desc   离线许可证管理，无效离线licenseid，检查licenseid状态
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1200', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             try {
@@ -1617,14 +1617,14 @@ export default function abilityTest() {
                 done();
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1300
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证管理，删除离线许可证，错误参数
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1300
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1300
+         * @tc.desc   离线许可证管理，删除离线许可证，错误参数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1300', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             try {
@@ -1646,14 +1646,14 @@ export default function abilityTest() {
                 done();
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1400
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证管理，删除离线许可证，参数为空
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1400
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1400
+         * @tc.desc   离线许可证管理，删除离线许可证，参数为空
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1400', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             try {
@@ -1675,14 +1675,14 @@ export default function abilityTest() {
                 done();
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1500
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证释放，正常传参
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1500
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1500
+         * @tc.desc   离线许可证释放，正常传参
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1500', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1775,14 +1775,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1600
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证释放，请求参数异常
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1600
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1600
+         * @tc.desc   离线许可证释放，请求参数异常
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1600', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1865,14 +1865,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1700
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证释放，请求参数为空
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1700
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1700
+         * @tc.desc   离线许可证释放，请求参数为空
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1700', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -1950,14 +1950,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1800
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证释放，响应参数异常licenseid
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1800
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1800
+         * @tc.desc   离线许可证释放，响应参数异常licenseid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1800', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -2042,14 +2042,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_1900
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证释放，响应参数异常响应报文
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_1900
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_1900
+         * @tc.desc   离线许可证释放，响应参数异常响应报文
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_1900', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -2143,14 +2143,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_2000
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证释放，响应参数异常响应报文为空
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2000
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2000
+         * @tc.desc   离线许可证释放，响应参数异常响应报文为空
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_2000', Level.LEVEL0, async (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -2234,14 +2234,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_2100
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证restore,传错误的licenseid
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2100
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2100
+         * @tc.desc   离线许可证restore,传错误的licenseid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_2100', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -2279,14 +2279,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_2200
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 离线许可证restore,licenseid为空
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2200
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2200
+         * @tc.desc   离线许可证restore,licenseid为空
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_2200', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             let session:drm.MediaKeySession;
@@ -2325,14 +2325,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_2300
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 设备证书状态查询
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2300
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2300
+         * @tc.desc   设备证书状态查询
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_2300', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             try {
@@ -2355,14 +2355,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_2600
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取插件name以及systemName
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2600
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2600
+         * @tc.desc   获取插件name以及systemName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_2600', Level.LEVEL0, (done:Function) => {
             let MediaKeySystemDescription = drm.getMediaKeySystems();
             for (let i = 0; i < MediaKeySystemDescription.length; i++) {
@@ -2373,14 +2373,14 @@ export default function abilityTest() {
             }
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_2700
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取插件最大安全等级
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2700
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2700
+         * @tc.desc   获取插件最大安全等级
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_2700', Level.LEVEL0, (done:Function) => {
             let drmsys:drm.MediaKeySystem;
             try {
@@ -2404,28 +2404,28 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_AVPLAYER_2800
-        * @tc.name      : testGetTrackDescription
-        * @tc.desc      : 获取插件name以及uuid
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_AVPLAYER_2800
+         * @tc.number SUB_MULTIMEDIA_DRM_AVPLAYER_2800
+         * @tc.desc   获取插件name以及uuid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_DRM_AVPLAYER_2800', Level.LEVEL0, (done:Function) => {
             let drmUuid = drm.getMediaKeySystemUuid(systemName);
             console.log("XX DRM_AVPLAYER_2800 uuid is ", drmUuid);
             expect(drmUuid).not().assertUndefined();
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0100
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给vendor赋值然后获取属性值
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0100
+         * @tc.desc   给vendor赋值然后获取属性值
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0100', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2453,14 +2453,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0200
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给vendor赋值，输入错误的propertyName
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0200
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0200
+         * @tc.desc   给vendor赋值，输入错误的propertyName
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0200', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2485,14 +2485,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0300
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给vendor赋两次值，看最终结果是否覆盖
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0300
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0300
+         * @tc.desc   给vendor赋两次值，看最终结果是否覆盖
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0300', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2521,14 +2521,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0400
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : set config drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION and get
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0400
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0400
+         * @tc.desc   set config drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION and get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0400', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2557,14 +2557,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0500
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : set config drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION and get
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0500
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0500
+         * @tc.desc   set config drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION and get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0500', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2593,14 +2593,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0600
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : set config drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS and get
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0600
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0600
+         * @tc.desc   set config drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS and get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0600', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2629,14 +2629,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0700
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : get systemid
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0700
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0700
+         * @tc.desc   get systemid
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0700', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2662,14 +2662,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0800
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : get deviceUniqueId
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0800
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0800
+         * @tc.desc   get deviceUniqueId
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0800', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2697,14 +2697,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0900
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 查询最大会话数
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0900
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0900
+         * @tc.desc   查询最大会话数
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_0900', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2730,14 +2730,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1100
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给vendor赋值然后获取属性值(Uint8array)
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1100
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1100
+         * @tc.desc   给vendor赋值然后获取属性值(Uint8array)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1100', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2766,14 +2766,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1200
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给vendor赋值，输入错误的propertyName(Uint8Array)
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1200
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1200
+         * @tc.desc   给vendor赋值，输入错误的propertyName(Uint8Array)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1200', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2802,14 +2802,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1300
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给vendor赋两次值，看最终结果是否覆盖(Uint8Array)
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1300
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1300
+         * @tc.desc   给vendor赋两次值，看最终结果是否覆盖(Uint8Array)
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1300', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2844,14 +2844,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1400
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : set config drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION and get
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1400
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1400
+         * @tc.desc   set config drm.PreDefinedConfigName.CONFIG_DEVICE_VERSION and get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1400', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2880,14 +2880,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1500
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : set config drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION and get
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1500
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1500
+         * @tc.desc   set config drm.PreDefinedConfigName.CONFIG_DEVICE_DESCRIPTION and get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1500', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2916,14 +2916,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1600
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : set config drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS and get
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1600
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1600
+         * @tc.desc   set config drm.PreDefinedConfigName.CONFIG_DEVICE_ALGORITHMS and get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1600', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2952,14 +2952,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1700
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : set config drm.PreDefinedConfigName.CONFIG_DEVICE_UNIQUE_ID and get
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1700
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1700
+         * @tc.desc   set config drm.PreDefinedConfigName.CONFIG_DEVICE_UNIQUE_ID and get
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1700', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -2988,14 +2988,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1800
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 设置最大会话数为0
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1800
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1800
+         * @tc.desc   设置最大会话数为0
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1800', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -3024,14 +3024,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1900
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给maxSessionNum赋值，超过默认最大数64
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1900
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1900
+         * @tc.desc   给maxSessionNum赋值，超过默认最大数64
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1900', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -3060,14 +3060,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2000
-        * @tc.name      : testSet_get_config
-        * @tc.desc      : 给maxSessionNum赋值1，创建两个会话
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2000
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2000
+         * @tc.desc   给maxSessionNum赋值1，创建两个会话
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_2000', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -3096,14 +3096,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         })
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0100
-        * @tc.name      : test_on_off_interface_0100
-        * @tc.desc      : keyNeeded on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0100
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0100
+         * @tc.desc   keyNeeded on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0100', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3182,14 +3182,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0200
-        * @tc.name      : test_on_off_interface_0200
-        * @tc.desc      : keyNeeded on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0200
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0200
+         * @tc.desc   keyNeeded on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0200', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3268,14 +3268,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0300
-        * @tc.name      : test_on_off_interface_0300
-        * @tc.desc      : keyExpired on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0300
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0300
+         * @tc.desc   keyExpired on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0300', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3360,14 +3360,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0400
-        * @tc.name      : test_on_off_interface_0400
-        * @tc.desc      : keyExpired on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0400
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0400
+         * @tc.desc   keyExpired on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0400', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3453,14 +3453,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0500
-        * @tc.name      : test_on_off_interface_0500
-        * @tc.desc      : expirationUpdate on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0500
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0500
+         * @tc.desc   expirationUpdate on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0500', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3599,14 +3599,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0600
-        * @tc.name      : test_on_off_interface_0600
-        * @tc.desc      : expirationUpdate on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0600
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0600
+         * @tc.desc   expirationUpdate on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0600', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3752,14 +3752,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0700
-        * @tc.name      : test_on_off_interface_0700
-        * @tc.desc      : keyChanged on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0700
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0700
+         * @tc.desc   keyChanged on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0700', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3857,14 +3857,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0800
-        * @tc.name      : test_on_off_interface_0800
-        * @tc.desc      : keyChanged on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0800
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0800
+         * @tc.desc   keyChanged on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0800', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             let keySession:drm.MediaKeySession;
@@ -3963,14 +3963,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0900
-        * @tc.name      : test_on_off_interface_0900
-        * @tc.desc      : provisionRequired on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0900
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0900
+         * @tc.desc   provisionRequired on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_0900', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -4024,14 +4024,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_1000
-        * @tc.name      : test_on_off_interface_1000
-        * @tc.desc      : provisionRequired on/off interface
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_1000
+         * @tc.number SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_1000
+         * @tc.desc   provisionRequired on/off interface
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_KEY_SESSION_ON_OFF_1000', Level.LEVEL1, async (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {
@@ -4085,14 +4085,14 @@ export default function abilityTest() {
                 expect(false).assertEqual(true);
             }
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2300
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 创建最大64个system
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2300
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2300
+         * @tc.desc   创建最大64个system
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2300', Level.LEVEL0, async (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem[] = [];
             let errCode = 0;
@@ -4112,14 +4112,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(drm.DrmErrorCode.MAX_SYSTEM_NUM_REACHED);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2400
-        * @tc.name      : testCreateMediaKeySession
-        * @tc.desc      : 创建最大64个session
-        * @tc.size      : MediumTest
-        * @tc.type      : Reliability
-        * @tc.level     : Level0
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2400
+         * @tc.number SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2400
+         * @tc.desc   创建最大64个session
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_MEDIA_DRM_FRAMEWORK_API_2400', Level.LEVEL0, async (done:Function) => {
             let drmMediaKeySystem:drm.MediaKeySystem;
             try {
@@ -4148,14 +4148,14 @@ export default function abilityTest() {
             expect(errCode).assertEqual(drm.DrmErrorCode.MAX_SESSION_NUM_REACHED);
             done();
         });
-        /* *
-        * @tc.number    : SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1000
-        * @tc.name      : testGetMetric
-        * @tc.desc      : get metric information
-        * @tc.size      : MediumTest
-        * @tc.type      : Function test
-        * @tc.level     : Level1
-        */
+        /**
+         * @tc.name   SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1000
+         * @tc.number SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1000
+         * @tc.desc   get metric information
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('SUB_MULTIMEDIA_DRM_SET_GET_CONFIG_1000', Level.LEVEL1, (done:Function) => {
             let mediaKeySystem:drm.MediaKeySystem;
             try {

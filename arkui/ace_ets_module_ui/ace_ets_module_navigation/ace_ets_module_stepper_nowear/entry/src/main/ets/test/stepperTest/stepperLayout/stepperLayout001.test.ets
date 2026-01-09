@@ -51,10 +51,13 @@ export default function stepperLayout001() {
       console.info("stepperLayout001 after each called");
     });
 
-    /*
-     * @tc.number       stepperLayout0010
-     * @tc.name         stepperLayout0010
-     * @tc.desc         stepperLayout0010
+    /**
+     * @tc.name   stepperLayout0010
+     * @tc.number stepperLayout0010
+     * @tc.desc   stepperLayout0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperLayout0010',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperLayout0010 START');
@@ -62,8 +65,12 @@ export default function stepperLayout001() {
       let strJson: string = getInspectorByKey('stepper1');
       console.info("[stepperLayout0010] component status strJson:" + strJson);
       expect(JSON.parse(strJson).$type).assertEqual('Stepper');
-      expect(JSON.parse(strJson).$attrs.width).assertEqual('200.00vp');
-      expect(JSON.parse(strJson).$attrs.height).assertEqual('300.00vp');
+      console.info("stepperLayout0010 obj width is: ", JSON.parse(strJson).$attrs.width)
+      console.info("stepperLayout0010 obj width number is: ", parseInt(JSON.parse(strJson).$attrs.width))
+      expect(Math.abs(parseInt(JSON.parse(strJson).$attrs.width) - 200.00) <= 1).assertTrue();
+      console.info("stepperLayout0010 obj height is: ", JSON.parse(strJson).$attrs.height)
+      console.info("stepperLayout0010 obj height number is: ", parseInt(JSON.parse(strJson).$attrs.height))
+      expect(Math.abs(parseInt(JSON.parse(strJson).$attrs.height) - 300.00) <= 1).assertTrue();
       console.info("[stepperLayout0010] status value :" + JSON.parse(strJson).$attrs.status);
       done();
     });

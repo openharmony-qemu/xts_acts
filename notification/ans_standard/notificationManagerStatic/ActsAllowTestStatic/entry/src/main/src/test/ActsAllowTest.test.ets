@@ -78,9 +78,12 @@ export default function ActsAllowTest() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
-     * @tc.name       Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
-     * @tc.desc       requestEnableNotification allow button is clicked
+     * @tc.name   Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
+     * @tc.number Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100
+     * @tc.desc   requestEnableNotification allow button is clicked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
@@ -88,7 +91,7 @@ export default function ActsAllowTest() {
         let TAG: string = 'Sub_Notification_Ans_NotificationManager_RequestEnableNotification_Allow_Test_Static_0100'
         notificationManager.requestEnableNotification(testAbilityContext).then(() => {
           console.info(`${TAG} requestEnableNotification succeeded`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} requestEnableNotification err: JSON.stringify(err)`);
           expect(false).assertTrue()
         });
@@ -109,13 +112,13 @@ export default function ActsAllowTest() {
 
 
     /**
-    * @tc.number     Sub_Notification_Ans_Publish_updateOnly_Static_0003
-    * @tc.name       Sub_Notification_Ans_Publish_updateOnly_Static_0003
-    * @tc.desc       updateOnly is true
-    * @tc.size       Large-scaleTest
-    * @tc.type       Function test
-    * @tc.level      Level 0
-    */
+     * @tc.name   Sub_Notification_Ans_Publish_updateOnly_Static_0003
+     * @tc.number Sub_Notification_Ans_Publish_updateOnly_Static_0003
+     * @tc.desc   updateOnly is true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Sub_Notification_Ans_Publish_updateOnly_Static_0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let TAG: string ='Sub_Notification_Ans_Publish_updateOnly_Static_0003'
@@ -147,7 +150,7 @@ export default function ActsAllowTest() {
           console.info(TAG + "publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(notificationRequest.creatorBundleName + " publish success1")
           console.info(notificationRequest.creatorUid + " publish success1")
           console.info(notificationRequest.creatorPid + " publish success1")
@@ -166,12 +169,12 @@ export default function ActsAllowTest() {
 
 
     /**
-     * @tc.number     Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
-     * @tc.name       Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
-     * @tc.desc       调用 createSubscriber 接口，创建订阅者，调用 subscribe 接口，getSubscribeInfo获取订阅者信息，subscribeInfo.publisherBundleName为订阅者包名
-     * @tc.size       Large-scaleTest
-     * @tc.type       Function test
-     * @tc.level      Level 2
+     * @tc.name   Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
+     * @tc.number Sub_Notification_Ces_Subscriber_Subscribe_Static_08086
+     * @tc.desc   调用 createSubscriber 接口，创建订阅者，调用 subscribe 接口，getSubscribeInfo获取订阅者信息，subscribeInfo.publisherBundleName为订阅者包名
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Subscriber_Subscribe_Static_08086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -179,11 +182,11 @@ export default function ActsAllowTest() {
         // 创建订阅者
         try {
           commonEventManager.createSubscriber(subscribeInfo,
-            (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+            (err: BusinessError | null, commonEventSubscriber) => {
               if (!err) {
                 console.info(`Succeeded in creating subscriber.`);
 
-                if(commonEventSubscriber !== undefined){
+                if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                   subscriber = commonEventSubscriber
                 }else{
                   expect(false).assertTrue()
@@ -213,11 +216,17 @@ export default function ActsAllowTest() {
         }
         await Utils.msSleep(1500)
 
-        subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEventSubscribeInfo) => {
+        subscriber.getSubscribeInfo().then((subscribeInfo: commonEventManager.CommonEventSubscribeInfo | null) => {
           console.info(`${TAG} Succeeded in getting subscribe info, subscribe info is ` + JSON.stringify(subscribeInfo));
-          expect(subscribeInfo.publisherBundleName).assertEqual('com.example.myapplication')
-          done();
-        }).catch((err: BusinessError):void => {
+          if (subscribeInfo !== null) {
+            let info = subscribeInfo as commonEventManager.CommonEventSubscribeInfo;
+            expect(info.publisherBundleName).assertEqual('com.example.myapplication')
+            done();
+          } else {
+            expect(false).assertTrue()
+            done();
+          }
+        }).catch((err: Error):void => {
           console.error(`${TAG} Failed to get subscribe info. Code is ${err.code}, message is ${err.message}`);
           expect(false).assertTrue()
           done();
@@ -225,8 +234,3 @@ export default function ActsAllowTest() {
       })
   })
 }
-
-
-
-
-

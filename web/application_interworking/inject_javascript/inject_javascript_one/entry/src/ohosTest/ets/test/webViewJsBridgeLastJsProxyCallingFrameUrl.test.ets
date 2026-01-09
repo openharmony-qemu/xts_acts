@@ -59,14 +59,14 @@ export default function webViewJsBridgeLastJsProxyCallingFrameUrl() {
         done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_0200
-    * @tc.name       : testJsBridgeGetLastJavascriptProxyCallingFrameUrl
-    * @tc.desc       : test GetLastJavascriptProxyCallingFrameUrl
-    * @tc.size_t     : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testJsBridgeGetLastJavascriptProxyCallingFrameUrl
+     * @tc.number SUB_ACE_WEB_getLastJavascriptProxyCallingFrameUrl_API_0200
+     * @tc.desc   test GetLastJavascriptProxyCallingFrameUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testJsBridgeGetLastJavascriptProxyCallingFrameUrl', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let emitKey = "emitJsBridgeGetLastJavascriptProxyCallingFrameUrl";
       Utils.emitEvent(emitKey, 172370)

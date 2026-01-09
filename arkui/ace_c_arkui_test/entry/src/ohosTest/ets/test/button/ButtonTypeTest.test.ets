@@ -26,65 +26,65 @@ export default function ButtonTypeTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_TYPE_0100
-     * @tc.name: testButtonType001
-     * @tc.desc: testing Type for button with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonType001
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TYPE_0100
+     * @tc.desc   testing Type for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonType001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonType001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_TYPE_0200
-     * @tc.name: testButtonType002
-     * @tc.desc: testing Type for button with capsule value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonType002
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TYPE_0200
+     * @tc.desc   testing Type for button with capsule value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonType002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonType002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_TYPE_0300
-     * @tc.name: testButtonType003
-     * @tc.desc: testing Type for button with circle value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonType003
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TYPE_0300
+     * @tc.desc   testing Type for button with circle value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonType003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonType003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_TYPE_0400
-     * @tc.name: testButtonType004
-     * @tc.desc: testing Type for button with invalid value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonType004
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TYPE_0400
+     * @tc.desc   testing Type for button with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonType004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonType004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_BUTTON_TYPE_0500
-     * @tc.name: testButtonType005
-     * @tc.desc: testing Type for button with invalid value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testButtonType005
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_TYPE_0500
+     * @tc.desc   testing Type for button with invalid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testButtonType005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testButtonType005()).assertEqual(0)

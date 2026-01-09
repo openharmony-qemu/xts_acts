@@ -43,12 +43,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0100
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0100
-     * @tc.name testStartNativeChildProcess001
-     * @tc.desc To verify the function of creating a subprocess by StartNativeChildProcess
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   To verify the function of creating a subprocess by StartNativeChildProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0100', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0100`;
@@ -87,12 +87,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0200
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0200
-     * @tc.name testStartNativeChildProcess002
-     * @tc.desc An error is returned when the libname of a subprocess to be created is an empty string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the libname of a subprocess to be created is an empty string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0200', Level.LEVEL0, () => {
       let tag = `ACTS_NativeStartChildProcess_0200`;
@@ -106,12 +106,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0300
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0300
-     * @tc.name testStartNativeChildProcess003
-     * @tc.desc An error is returned when the vaule of libname is a relative path during the creation of a subprocess
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the vaule of libname is a relative path during the creation of a subprocess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0300', Level.LEVEL0, () => {
       let tag = `ACTS_NativeStartChildProcess_0300`;
@@ -125,12 +125,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0400
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0400
-     * @tc.name testStartNativeChildProcess004
-     * @tc.desc An error is returned when a subprocess whose libname does not exist is created 
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when a subprocess whose libname does not exist is created
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0400', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0400`;
@@ -152,12 +152,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0500
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0500
-     * @tc.name testStartNativeChildProcess005
-     * @tc.desc An error is returned when the callback of a subprocess to be created is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the callback of a subprocess to be created is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0500', Level.LEVEL0, () => {
       let tag = `ACTS_NativeStartChildProcess_0500`;
@@ -171,12 +171,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0600
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0600
-     * @tc.name testStartNativeChildProcess006
-     * @tc.desc An error is returned when api called in child process
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when api called in child process
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0600', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0600`;
@@ -200,12 +200,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0700
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0700
-     * @tc.name testStartNativeChildProcess007
-     * @tc.desc An error is returned when the lib return invalid ipc stub object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the lib return invalid ipc stub object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0700', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0700`;
@@ -227,12 +227,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0800
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0800
-     * @tc.name testStartNativeChildProcess008
-     * @tc.desc An error is returned when max native child process reached
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when max native child process reached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0800', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0800`;
@@ -260,12 +260,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_0900
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_0900
-     * @tc.name testStartNativeChildProcess009
-     * @tc.desc An error is returned when a subprocess whose libname use sandbox path
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when a subprocess whose libname use sandbox path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_0900', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_0900`;
@@ -288,12 +288,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_1000
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_1000
-     * @tc.name testStartNativeChildProcess010
-     * @tc.desc An error is returned when call the API twice at the same time
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when call the API twice at the same time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_1000', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_1000`;
@@ -317,12 +317,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_1100
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_1100
-     * @tc.name testStartNativeChildProcess011
-     * @tc.desc An error is returned when the libname of a subprocess to be created is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the libname of a subprocess to be created is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_1100', Level.LEVEL0, () => {
       let tag = `ACTS_NativeStartChildProcess_1100`;
@@ -336,12 +336,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_1200
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_1200
-     * @tc.name testStartNativeChildProcess012
-     * @tc.desc An error is returned when the callback and libname of a subprocess to be created is null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when the callback and libname of a subprocess to be created is null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_1200', Level.LEVEL0, () => {
       let tag = `ACTS_NativeStartChildProcess_1200`;
@@ -355,12 +355,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_1300
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_1300
-     * @tc.name testStartNativeChildProcess013
-     * @tc.desc To verify the function of creating a subprocess by startNativeChildProcess
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   To verify the function of creating a subprocess by startNativeChildProcess
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_1300', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_1300`;
@@ -384,12 +384,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_1400
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_1400
-     * @tc.name testStartNativeChildProcess014
-     * @tc.desc The number of child process can reach 50
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   The number of child process can reach 50
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_1400', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_1400`;
@@ -417,12 +417,12 @@ export default function nativeChildProcessTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_NativeStartChildProcess_1500
      * @tc.number SUB_Ability_AbilityRuntime_NativeStartChildProcess_1500
-     * @tc.name testStartNativeChildProcess015
-     * @tc.desc An error is returned when max native child process reached
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   An error is returned when max native child process reached
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_NativeStartChildProcess_1500', Level.LEVEL0, async (done: Function) => {
       let tag = `ACTS_NativeStartChildProcess_1500`;

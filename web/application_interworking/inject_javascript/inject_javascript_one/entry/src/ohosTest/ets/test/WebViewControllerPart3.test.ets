@@ -56,42 +56,42 @@ export default function webViewControllerPart3Test() {
       console.info('WebViewControllerPart3 beforeEach start');
       done();
     })
-   /*
-    * @tc.number     : SUB_WEB_JAVASCRIPTPROXY_0100
-    * @tc.name       : testJavaScriptProxy001
-    * @tc.desc       : test javaScriptProxy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testJavaScriptProxy001
+     * @tc.number SUB_WEB_JAVASCRIPTPROXY_0100
+     * @tc.desc   test javaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("javaScriptProxy", 172310)
       Utils.registerEvent("testJavaScriptProxy001", true, 172320, done);
       await Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_REGISTERJAVASCRIPTPROXY_0100
-    * @tc.name       : testRegisterJavaScriptProxy001
-    * @tc.desc       : test registerJavaScriptProxy
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRegisterJavaScriptProxy001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_REGISTERJAVASCRIPTPROXY_0100
+     * @tc.desc   test registerJavaScriptProxy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRegisterJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testRegisterJavaScriptProxy001", 172310)
       Utils.registerEvent("testRegisterJavaScriptProxy001", "backToEts", 172330, done);
       await Utils.waitAndClickComponent(driver, 'WebViewControllerTestButton');
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_DELETEJAVASCRIPTREGISTER_0100
-    * @tc.name       : testDeleteJavaScriptRegister001
-    * @tc.desc       : test deleteJavaScriptRegister
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testDeleteJavaScriptRegister001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_DELETEJAVASCRIPTREGISTER_0100
+     * @tc.desc   test deleteJavaScriptRegister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testDeleteJavaScriptRegister001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testDeleteJavaScriptRegister001", 172310)
       Utils.registerEvent("testDeleteJavaScriptRegister001", true, 172340, done);

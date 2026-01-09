@@ -44,12 +44,12 @@ export default function QueueTest() {
     }
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0100
-     * @tc.name       : testQueueAdd0001
-     * @tc.desc       : Testing Queue add by number index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testQueueAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0100
+     * @tc.desc   Testing Queue add by number index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testQueueAdd0001";
@@ -64,12 +64,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0200
-     * @tc.name       : testQueueAdd0002
-     * @tc.desc       : Testing Queue add by string index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testQueueAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0200
+     * @tc.desc   Testing Queue add by string index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testQueueAdd0002";
@@ -84,12 +84,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0300
-     * @tc.name       : testQueueAdd0003
-     * @tc.desc       : Testing Queue add by object index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testQueueAdd0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0300
+     * @tc.desc   Testing Queue add by object index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testQueueAdd0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = "testQueueAdd0003";
@@ -107,12 +107,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0400
-     * @tc.name       : testQueueAdd0004
-     * @tc.desc       : Testing Queue add by object or number or stirng  index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueueAdd0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0400
+     * @tc.desc   Testing Queue add by object or number or stirng  index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueueAdd0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueAdd0004";
@@ -136,12 +136,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0500
-     * @tc.name       : testQueueAdd0005
-     * @tc.desc       : Testing Queue add by undefined or null or stirng index.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueueAdd0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0500
+     * @tc.desc   Testing Queue add by undefined or null or stirng index.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueueAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueAdd0005";
@@ -156,12 +156,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_POP_0600
-     * @tc.name       : testQueuePop0006
-     * @tc.desc       : Testing Queue pop by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueuePop0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_POP_0600
+     * @tc.desc   Testing Queue pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueuePop0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueuePop0006";
@@ -184,12 +184,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_POP_0700
-     * @tc.name       : testQueuePop0007
-     * @tc.desc       : Testing Queue pop by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueuePop0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_POP_0700
+     * @tc.desc   Testing Queue pop by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueuePop0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueuePop0007";
@@ -204,12 +204,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_GETFIRST_0800
-     * @tc.name       : testQueueGetfirst0008
-     * @tc.desc       : Testing Queue getFirst by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueueGetfirst0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_GETFIRST_0800
+     * @tc.desc   Testing Queue getFirst by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueueGetfirst0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueGetfirst0008";
@@ -233,12 +233,12 @@ export default function QueueTest() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_GETFIRST_0900
-     * @tc.name       : testQueueGetfirst0009
-     * @tc.desc       : Testing Queue getFirst by without.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueueGetfirst0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_GETFIRST_0900
+     * @tc.desc   Testing Queue getFirst by without.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueueGetfirst0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueGetfirst0009";
@@ -252,15 +252,15 @@ export default function QueueTest() {
       }
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1000
-     * @tc.name       : testQueueForeach0010
-     * @tc.desc       : Testing Queue forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testQueueForeach0010
+     * @tc.number testQueueForeach0010
+     * @tc.desc   testQueueForeach0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testQueueForeach0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueForeach0010";
       try {
@@ -286,12 +286,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_[SYMBOL.ITERATOR]_1100
-     * @tc.name       : testQueue[Symbol.iterator]0011
-     * @tc.desc       : Testing Queue [Symbol.iterator] by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueue[Symbol.iterator]0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_[SYMBOL.ITERATOR]_1100
+     * @tc.desc   Testing Queue [Symbol.iterator] by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueue[Symbol.iterator]0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueue[Symbol.iterator]0011";
@@ -318,12 +318,12 @@ export default function QueueTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_[SYMBOL.ITERATOR]_1200
-     * @tc.name       : testQueue[Symbol.iterator]0012
-     * @tc.desc       : Testing Queue [Symbol.iterator] by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testQueueSymbol.iterator0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_[SYMBOL.ITERATOR]_1200
+     * @tc.desc   Testing Queue [Symbol.iterator] by array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testQueueSymbol.iterator0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueSymbol.iterator0012";
@@ -347,15 +347,15 @@ export default function QueueTest() {
       }
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1300
-     * @tc.name       : testQueueForeach0013
-     * @tc.desc       : Testing Queue forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testQueueForeach0013
+     * @tc.number testQueueForeach0013
+     * @tc.desc   testQueueForeach0013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testQueueForeach0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueForeach0013";
       try {
@@ -377,15 +377,15 @@ export default function QueueTest() {
       }
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1400
-     * @tc.name       : testQueueForeach0014
-     * @tc.desc       : Testing Queue forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testQueueForeach0014
+     * @tc.number testQueueForeach0014
+     * @tc.desc   testQueueForeach0014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testQueueForeach0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueForeach0014";
       try {
@@ -403,15 +403,15 @@ export default function QueueTest() {
       }
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1500
-     * @tc.name       : testQueueForeach0015
-     * @tc.desc       : Testing Queue forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testQueueForeach0015
+     * @tc.number testQueueForeach0015
+     * @tc.desc   testQueueForeach0015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testQueueForeach0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueForeach0015";
       try {
@@ -429,15 +429,15 @@ export default function QueueTest() {
       }
     });
 
-    /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_1600
-     * @tc.name       : testQueueForeach0016
-     * @tc.desc       : Testing Queue forEach by array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
 
+    /**
+     * @tc.name   testQueueForeach0016
+     * @tc.number testQueueForeach0016
+     * @tc.desc   testQueueForeach0016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testQueueForeach0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = "testQueueForeach0016";
       try {

@@ -108,7 +108,6 @@ export default function UsbTransferTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbSubmitTransfer001
      * @tc.number SUB_USB_Host_JS_UsbSubmitTransfer_Func_0100
      * @tc.desc   interrupt transfer Submit successfully.
@@ -158,7 +157,6 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer001
      * @tc.number SUB_USB_Host_JS_usbCancelTransfer_Func_0100
      * @tc.desc   interrupt transfer cancel successfully.
@@ -199,7 +197,6 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   testUsbCancelTransfer002
      * @tc.number SUB_USB_Host_JS_usbCancelTransfer_ErrCode_0100
      * @tc.desc   interrupt transfer cancel failed.
@@ -241,7 +238,6 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   test_usbControlTransfer001
      * @tc.number SUB_USB_Host_JS_usbControlTransfer_ErrCode_0100
      * @tc.desc   interrupt transfer cancel failed.
@@ -293,7 +289,6 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   test_bulkTransfer02
      * @tc.number SUB_USB_Host_JS_bulkTransfer_0100
      * @tc.desc   bulkTransfer transfer.
@@ -367,7 +362,6 @@ export default function UsbTransferTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   test_usbControlTransfer002
      * @tc.number SUB_USB_Host_JS_usbControlTransfer_Func_0200
      * @tc.desc   usbControlTransfer data is 0.

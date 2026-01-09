@@ -23,13 +23,12 @@ export default function AccessibilityNdkTest5() {
   describe('AccessibilityNdkTest5', () => {
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETSTARTITEMINDEX_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetStartItemIndex0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetStartItemIndex0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETSTARTITEMINDEX_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetStartItemIndex0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -47,13 +46,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETSTARTITEMINDEX_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetStartItemIndex0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetStartItemIndex0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETSTARTITEMINDEX_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetStartItemIndex0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -71,13 +69,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETENDITEMINDEX_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetEndItemIndex0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetEndItemIndex0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETENDITEMINDEX_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetEndItemIndex0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -95,13 +92,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETENDITEMINDEX_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetEndItemIndex0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetEndItemIndex0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETENDITEMINDEX_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetEndItemIndex0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -119,13 +115,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETITEMCOUNT_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetItemCount0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetItemCount0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETITEMCOUNT_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetItemCount0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -143,13 +138,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETITEMCOUNT_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetItemCount0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetItemCount0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETITEMCOUNT_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetItemCount0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -167,13 +161,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOFFSET_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityOffset0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityOffset0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOFFSET_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityOffset0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -191,13 +184,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOFFSET_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityOffset0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityOffset0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOFFSET_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityOffset0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -215,13 +207,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYGROUP_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityGroup0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityGroup0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYGROUP_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityGroup0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -239,13 +230,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYGROUP_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityGroup0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityGroup0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYGROUP_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityGroup0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -263,13 +253,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYLEVEL_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYLEVEL_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -287,13 +276,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYLEVEL_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYLEVEL_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -311,13 +299,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYLEVEL_0300
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYLEVEL_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityLevel0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -335,13 +322,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETZINDEX_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetZIndex0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetZIndex0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETZINDEX_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetZIndex0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -359,13 +345,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETZINDEX_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetZIndex0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetZIndex0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETZINDEX_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetZIndex0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -383,13 +368,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOPACITY_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOPACITY_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -407,13 +391,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOPACITY_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOPACITY_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -431,13 +414,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOPACITY_0300
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETACCESSIBILITYOPACITY_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetAccessibilityOpacity0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -456,13 +438,12 @@ export default function AccessibilityNdkTest5() {
 
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDCOLOR_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetBackgroundColor0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetBackgroundColor0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDCOLOR_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetBackgroundColor0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -480,13 +461,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDCOLOR_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetBackgroundColor0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetBackgroundColor0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDCOLOR_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetBackgroundColor0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -504,13 +484,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDCOLOR_0300
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetBackgroundColor0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetBackgroundColor0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDCOLOR_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetBackgroundColor0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -528,13 +507,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDIMAGE_0100
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetBackgroundImage0100
-     * @tc.desc    : Verify whether it can register successfully and return the success code when valid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetBackgroundImage0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDIMAGE_0100
+     * @tc.desc   Verify whether it can register successfully and return the success code when valid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetBackgroundImage0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -552,13 +530,12 @@ export default function AccessibilityNdkTest5() {
       })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDIMAGE_0200
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetBackgroundImage0200
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetBackgroundImage0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDIMAGE_0200
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetBackgroundImage0200',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -575,14 +552,13 @@ export default function AccessibilityNdkTest5() {
         }
       })
 
-   /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDIMAGE_0300
-     * @tc.name    : testOHArkUIAccessibilityElementInfoSetBackgroundImage0300
-     * @tc.desc    : Verify whether it can return the correct parameter error code when invalid parameters
-     *               are passed in.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+    /**
+     * @tc.name   testOHArkUIAccessibilityElementInfoSetBackgroundImage0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ArkUI_ACCESSIBILITYELEMENTINFOSETBACKGROUNDIMAGE_0300
+     * @tc.desc   Verify whether it can return the correct parameter error code when invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOHArkUIAccessibilityElementInfoSetBackgroundImage0300',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

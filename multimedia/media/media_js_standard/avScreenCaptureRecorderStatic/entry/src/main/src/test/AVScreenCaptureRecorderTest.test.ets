@@ -55,13 +55,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
-      * @tc.desc    AvScreenCaptureRecorder
-      *               : 01.AvScreenCaptureRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0100 start')
@@ -102,13 +101,12 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
-      * @tc.desc    AvScreenCaptureRecorder
-      *               : 01.AvScreenCaptureRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0101 start')
@@ -154,13 +152,122 @@ export default function AVScreenCaptureRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
-      * @tc.desc    AvScreenCaptureRecorder
-      *               : 03.AvScreenCaptureRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 1
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0102
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0102
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0102 start')
+
+      let mySteps = new Array<string>(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        //setMicEnable
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        //release recorder
+        //close fd
+        mediaTestBase.RELEASECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        displayId: 0,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          enableDeviceLevelCapture: true,
+          keepCaptureDuringCall: true,
+          enableBFrame: true,
+          privacyMaskMode: 1,
+        }
+      }
+      expect(avConfig.fd).not().assertNull();
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0102 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0103
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0103
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0103 start')
+
+      let mySteps = new Array<string>(
+        // create
+        mediaTestBase.CREATE_EVENT,
+        // init
+        mediaTestBase.INIT_EVENT,
+        mediaTestBase.SETONCALLBACK_EVENT,
+        //setMicEnable
+        mediaTestBase.SET_MIC_ENABLE_EVENT,
+        // start recorder
+        mediaTestBase.STARTRECORDER_EVENT,
+        // skip PrivacyMode
+        mediaTestBase.SKIPPRIVACYMODE_EVENT,
+        // stop recorder
+        mediaTestBase.STOPRECORDER_EVENT,
+        //release recorder
+        //close fd
+        mediaTestBase.RELEASECORDER_EVENT,
+        mediaTestBase.END_EVENT);
+
+      mediaTestBase.outputName = mediaTestBase.resourceName();
+      mediaTestBase.outputFdObject = mediaTestBase.getFd(mediaTestBase.outputName);
+      let avConfig: media.AVScreenCaptureRecordConfig = {
+        fd: mediaTestBase.outputFdObject.fd,
+        frameWidth: 640,
+        frameHeight: 480,
+        videoBitrate: 10000000,
+        audioSampleRate: 48000,
+        audioChannelCount: 1,
+        audioBitrate: 96000,
+        displayId: 0,
+        preset: media.AVScreenCaptureRecordPreset.SCREEN_RECORD_PRESET_H264_AAC_MP4,
+        strategy: {
+          enableDeviceLevelCapture: false,
+          keepCaptureDuringCall: false,
+          enableBFrame: false,
+          privacyMaskMode: 0,
+        }
+      }
+      expect(avConfig.fd).not().assertNull();
+      await mediaTestBase.toNextStep(mediaTestBase.avScreenCaptureRecorder, avConfig, 3000, mySteps, done)
+
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0103 end')
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300
+     * @tc.desc   AvScreenCaptureRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0300 start')
@@ -171,6 +278,30 @@ export default function AVScreenCaptureRecorderTest() {
         expect().assertFail()
       }
       console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0200 end')
+      done();
+    })
+
+     /**
+      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0301
+      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0301
+      * @tc.desc    AvScreenCaptureRecorder
+      *               : 04.AvScreenCaptureRecorder
+      * @tc.size    MediumTest
+      * @tc.type    Performance test
+      * @tc.level   Level 1
+     */
+    it('SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_static_0301', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0301 start')
+      try {
+        let id: int = 0;
+        let resultStr: string = await media.getAVScreenCaptureConfigurableParameters(id)
+        expect(resultStr).assertEqual("");
+      } catch (error: BusinessError) {
+        console.error(`getAVScreenCaptureConfigurableParameters error, error code: ${error.code}`);
+        console.error(`getAVScreenCaptureConfigurableParameters error, error message: ${error.message}`);
+        expect(error.code).assertEqual(202);
+      }
+      console.info(mediaTestBase.TAG + 'SUB_MULTIMEDIA_MEDIA_AVSCREENCAPTURERECORDER_0201 end')
       done();
     })
   })

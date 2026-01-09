@@ -59,28 +59,28 @@ export default function WebViewGetAcceptType() {
     })
 
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETACCEPTTYPE_0100
-    * @tc.name       : testWebViewGetAcceptType01
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetAcceptType01
+     * @tc.number SUB_WEB_WEBVIEWGETACCEPTTYPE_0100
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetAcceptType01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetAcceptType01", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetAcceptType01", true, 20251118, done);
       await Utils.waitAndClickComponent(driver, "WebViewGetAcceptTypeButton","testWebViewGetAcceptType01");
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWGETACCEPTTYPE_0200
-    * @tc.name       : testWebViewGetAcceptType02
-    * @tc.desc       : test onShowFileSelector
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testWebViewGetAcceptType02
+     * @tc.number SUB_WEB_WEBVIEWGETACCEPTTYPE_0200
+     * @tc.desc   test onShowFileSelector
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testWebViewGetAcceptType02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitWebViewGetAcceptType02", EVENT_ID_SET_SUITE_KEY);
       Utils.registerEvent("testWebViewGetAcceptType02", true, 20251119, done);

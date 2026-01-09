@@ -1293,6 +1293,17 @@ static napi_value GetAxisEventWindowId(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value AddKeyEventHook2(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    Input_Result retResult = OH_Input_AddKeyEventHook(nullptr);
+    napi_create_int32(env,
+        (retResult == INPUT_PARAMETER_ERROR || retResult == INPUT_SERVICE_EXCEPTION ||
+        retResult == INPUT_DEVICE_NOT_SUPPORTED) ? 1 : 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1407,6 +1418,7 @@ static napi_value Init(napi_env env, napi_value exports)
         {"SetAxisEventWindowId2", nullptr, SetAxisEventWindowId2, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"SetAxisEventWindowId3", nullptr, SetAxisEventWindowId3, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetAxisEventWindowId", nullptr, GetAxisEventWindowId, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"AddKeyEventHook2", nullptr, AddKeyEventHook2, nullptr, nullptr, nullptr, napi_default, nullptr},
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

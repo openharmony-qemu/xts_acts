@@ -19,12 +19,12 @@ import nnrt from 'libnnrtndk.so'
 export default function nnrtNdkTest() {
   describe('AiNnrtTest', () => {
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_CONSTRUCT_0100
-     * @tc.name       : testAiNnrtOhNnModelConstruct001
-     * @tc.desc       : test OH_NNModel_Construct
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelConstruct001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_CONSTRUCT_0100
+     * @tc.desc   test OH_NNModel_Construct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelConstruct001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelConstructOne();
@@ -32,12 +32,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_CONSTRUCT_0200
-     * @tc.name       : testAiNnrtOhNnModelConstruct002
-     * @tc.desc       : test OH_NNModel_Construct
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelConstruct002
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_CONSTRUCT_0200
+     * @tc.desc   test OH_NNModel_Construct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelConstruct002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelConstructTwo();
@@ -45,12 +45,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_ADDTENSOR_0100
-     * @tc.name       : testAiNnrtOhNnModelAddTensor001
-     * @tc.desc       : test OH_NNModel_AddTensor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelAddTensor001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_ADDTENSOR_0100
+     * @tc.desc   test OH_NNModel_AddTensor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelAddTensor001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelAddTensorOne();
@@ -58,12 +58,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_ADDTENSOR_0200
-     * @tc.name       : testAiNnrtOhNnModelAddTensor002
-     * @tc.desc       : test OH_NNModel_AddTensor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelAddTensor002
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_ADDTENSOR_0200
+     * @tc.desc   test OH_NNModel_AddTensor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelAddTensor002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelAddTensorTwo();
@@ -71,12 +71,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_SETTENSORDATA_0100
-     * @tc.name       : testAiNnrtOhNnModelSetTensorData001
-     * @tc.desc       : test OH_NNModel_SetTensorData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelSetTensorData001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_SETTENSORDATA_0100
+     * @tc.desc   test OH_NNModel_SetTensorData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelSetTensorData001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelSetTensorDataOne();
@@ -84,12 +84,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_SETTENSORDATA_0200
-     * @tc.name       : testAiNnrtOhNnModelSetTensorData002
-     * @tc.desc       : test OH_NNModel_SetTensorData
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelSetTensorData002
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_SETTENSORDATA_0200
+     * @tc.desc   test OH_NNModel_SetTensorData
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelSetTensorData002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelSetTensorDataTwo();
@@ -97,12 +97,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_ADDOPERATION_0100
-     * @tc.name       : testAiNnrtOhNnModelAddOperation001
-     * @tc.desc       : test OH_NNModel_AddOperation
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelAddOperation001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_ADDOPERATION_0100
+     * @tc.desc   test OH_NNModel_AddOperation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelAddOperation001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelAddOperationOne();
@@ -110,12 +110,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_ADDOPERATION_0200
-     * @tc.name       : testAiNnrtOhNnModelAddOperation002
-     * @tc.desc       : test OH_NNModel_AddOperation
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelAddOperation002
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_ADDOPERATION_0200
+     * @tc.desc   test OH_NNModel_AddOperation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelAddOperation002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelAddOperationTwo();
@@ -123,12 +123,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_SPECIFYINPUTSANDOUTPUTS_0100
-     * @tc.name       : testAiNnrtOhNnModelSpecifyInputsAndOutputs001
-     * @tc.desc       : test OH_NNModel_SpecifyInputsAndOutputs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelSpecifyInputsAndOutputs001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_SPECIFYINPUTSANDOUTPUTS_0100
+     * @tc.desc   test OH_NNModel_SpecifyInputsAndOutputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelSpecifyInputsAndOutputs001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelSpecifyInputsAndOutputsOne();
@@ -136,12 +136,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_SPECIFYINPUTSANDOUTPUTS_0200
-     * @tc.name       : testAiNnrtOhNnModelSpecifyInputsAndOutputs002
-     * @tc.desc       : test OH_NNModel_SpecifyInputsAndOutputs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelSpecifyInputsAndOutputs002
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_SPECIFYINPUTSANDOUTPUTS_0200
+     * @tc.desc   test OH_NNModel_SpecifyInputsAndOutputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelSpecifyInputsAndOutputs002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelSpecifyInputsAndOutputsTwo();
@@ -149,12 +149,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_FINISH_0100
-     * @tc.name       : testAiNnrtOhNnModelFinish001
-     * @tc.desc       : test OH_NNModel_Finish
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelFinish001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_FINISH_0100
+     * @tc.desc   test OH_NNModel_Finish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAiNnrtOhNnModelFinish001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let result = nnrt.oHNNModelFinishOne();
@@ -162,12 +162,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_FINISH_0200
-     * @tc.name       : testAiNnrtOhNnModelFinish002
-     * @tc.desc       : test OH_NNModel_Finish
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelFinish002
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_FINISH_0200
+     * @tc.desc   test OH_NNModel_Finish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnModelFinish002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNModelFinishTwo();
@@ -175,12 +175,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_DESTROY_0100
-     * @tc.name       : testAiNnrtOhNnModelDestroy001
-     * @tc.desc       : test OH_NNModel_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelDestroy001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_DESTROY_0100
+     * @tc.desc   test OH_NNModel_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnModelDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNModelDestroy();
@@ -188,12 +188,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_GETAVAILABLEOPERATIONS_0100
-     * @tc.name       : testAiNnrtOhNnModelGetAvailableOpertions001
-     * @tc.desc       : test OH_NNModel_GetAvailableOperations
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelGetAvailableOpertions001
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_GETAVAILABLEOPERATIONS_0100
+     * @tc.desc   test OH_NNModel_GetAvailableOperations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnModelGetAvailableOpertions001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNModelGetAvailableoperationsOne();
@@ -201,12 +201,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNMODEL_GETAVAILABLEOPERATIONS_0200
-     * @tc.name       : testAiNnrtOhNnModelGetAvailableOpertions002
-     * @tc.desc       : test OH_NNModel_GetAvailableOperations
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnModelGetAvailableOpertions002
+     * @tc.number SUB_AI_NNRT_OH_NNMODEL_GETAVAILABLEOPERATIONS_0200
+     * @tc.desc   test OH_NNModel_GetAvailableOperations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnModelGetAvailableOpertions002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNModelGetAvailableoperationsTwo();
@@ -214,12 +214,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_CONSTRUCT_0100
-     * @tc.name       : testAiNnrtOhNnCompilationConstruct001
-     * @tc.desc       : test OH_NNCompilation_Construct
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationConstruct001
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_CONSTRUCT_0100
+     * @tc.desc   test OH_NNCompilation_Construct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationConstruct001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationConstructOne();
@@ -227,12 +227,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_CONSTRUCT_0200
-     * @tc.name       : testAiNnrtOhNnCompilationConstruct002
-     * @tc.desc       : test OH_NNCompilation_Construct
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationConstruct002
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_CONSTRUCT_0200
+     * @tc.desc   test OH_NNCompilation_Construct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationConstruct002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationConstructTwo();
@@ -240,12 +240,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETDEVICE_0100
-     * @tc.name       : testAiNnrtOhNnCompilationSetDevice001
-     * @tc.desc       : test OH_NNCompilation_SetDevice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetDevice001
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETDEVICE_0100
+     * @tc.desc   test OH_NNCompilation_SetDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetDevice001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetDeviceOne();
@@ -253,12 +253,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETDEVICE_0200
-     * @tc.name       : testAiNnrtOhNnCompilationSetDevice002
-     * @tc.desc       : test OH_NNCompilation_SetDevice
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetDevice002
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETDEVICE_0200
+     * @tc.desc   test OH_NNCompilation_SetDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetDevice002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetDeviceTwo();
@@ -266,12 +266,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETCACHE_0100
-     * @tc.name       : testAiNnrtOhNnCompilationSetCache001
-     * @tc.desc       : test OH_NNCompilation_SetCache
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetCache001
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETCACHE_0100
+     * @tc.desc   test OH_NNCompilation_SetCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetCache001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetCacheOne();
@@ -279,12 +279,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETCACHE_0200
-     * @tc.name       : testAiNnrtOhNnCompilationSetCache002
-     * @tc.desc       : test OH_NNCompilation_SetCache
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetCache002
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETCACHE_0200
+     * @tc.desc   test OH_NNCompilation_SetCache
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetCache002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetCacheTwo();
@@ -292,12 +292,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0100
-     * @tc.name       : testAiNnrtOhNnCompilationSetPerformanceMode001
-     * @tc.desc       : test OH_NNCompilation_SetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetPerformanceMode001
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0100
+     * @tc.desc   test OH_NNCompilation_SetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetPerformanceMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetPerformanceModeOne();
@@ -305,12 +305,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0200
-     * @tc.name       : testAiNnrtOhNnCompilationSetPerformanceMode002
-     * @tc.desc       : test OH_NNCompilation_SetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetPerformanceMode002
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0200
+     * @tc.desc   test OH_NNCompilation_SetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetPerformanceMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetPerformanceModeTwo();
@@ -318,12 +318,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0300
-     * @tc.name       : testAiNnrtOhNnCompilationSetPerformanceMode003
-     * @tc.desc       : test OH_NNCompilation_SetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetPerformanceMode003
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0300
+     * @tc.desc   test OH_NNCompilation_SetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetPerformanceMode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetPerformanceModeThree();
@@ -331,12 +331,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0400
-     * @tc.name       : testAiNnrtOhNnCompilationSetPerformanceMode004
-     * @tc.desc       : test OH_NNCompilation_SetPerformanceMode
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetPerformanceMode004
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETPERFORMANCEMODE_0400
+     * @tc.desc   test OH_NNCompilation_SetPerformanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetPerformanceMode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetPerformanceModeFour();
@@ -344,12 +344,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETPRIORITY_0100
-     * @tc.name       : testAiNnrtOhNnCompilationSetPriority001
-     * @tc.desc       : test OH_NNCompilation_SetPriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetPriority001
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETPRIORITY_0100
+     * @tc.desc   test OH_NNCompilation_SetPriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetPriority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetPriorityOne();
@@ -357,12 +357,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_SETPRIORITY_0200
-     * @tc.name       : testAiNnrtOhNnCompilationSetPriority002
-     * @tc.desc       : test OH_NNCompilation_SetPriority
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationSetPriority002
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_SETPRIORITY_0200
+     * @tc.desc   test OH_NNCompilation_SetPriority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationSetPriority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationSetPriorityTwo();
@@ -370,12 +370,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_ENABLEFLOAT16_0100
-     * @tc.name       : testAiNnrtOhNnCompilationEnableFloat16001
-     * @tc.desc       : test OH_NNCompilation_EnableFloat16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationEnableFloat16001
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_ENABLEFLOAT16_0100
+     * @tc.desc   test OH_NNCompilation_EnableFloat16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationEnableFloat16001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationEnableFloat16One();
@@ -383,12 +383,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_ENABLEFLOAT16_0200
-     * @tc.name       : testAiNnrtOhNnCompilationEnableFloat16002
-     * @tc.desc       : test OH_NNCompilation_EnableFloat16
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationEnableFloat16002
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_ENABLEFLOAT16_0200
+     * @tc.desc   test OH_NNCompilation_EnableFloat16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationEnableFloat16002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationEnableFloat16Two();
@@ -397,12 +397,12 @@ export default function nnrtNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_BUILD_0200
-     * @tc.name       : testAiNnrtOhNnCompilationBuild002
-     * @tc.desc       : test OH_NNCompilation_Build
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationBuild002
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_BUILD_0200
+     * @tc.desc   test OH_NNCompilation_Build
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationBuild002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationBuildTwo();
@@ -410,12 +410,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNCOMPILATION_DESTROY_0100
-     * @tc.name       : testAiNnrtOhNnCompilationDestroy001
-     * @tc.desc       : test OH_NNCompilation_Destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnCompilationDestroy001
+     * @tc.number SUB_AI_NNRT_OH_NNCOMPILATION_DESTROY_0100
+     * @tc.desc   test OH_NNCompilation_Destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnCompilationDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNCompilationDestroy();
@@ -423,12 +423,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_CONSTRUCT_0200
-     * @tc.name       : testAiNnrtOhNnExecutorConstruct002
-     * @tc.desc       : test OH_NNExecutor_Construct
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorConstruct002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_CONSTRUCT_0200
+     * @tc.desc   test OH_NNExecutor_Construct
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorConstruct002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorConstructTwo();
@@ -436,12 +436,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_SETINPUT_0200
-     * @tc.name       : testAiNnrtOhNnExecutorSetInput002
-     * @tc.desc       : test OH_NNExecutor_SetInput
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorSetInput002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_SETINPUT_0200
+     * @tc.desc   test OH_NNExecutor_SetInput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorSetInput002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorSetInputTwo();
@@ -450,12 +450,12 @@ export default function nnrtNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_SETOUTPUT_0200
-     * @tc.name       : testAiNnrtOhNnExecutorSetOutput002
-     * @tc.desc       : test OH_NNExecutor_SetOutput
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorSetOutput002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_SETOUTPUT_0200
+     * @tc.desc   test OH_NNExecutor_SetOutput
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorSetOutput002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorSetOutputTwo();
@@ -464,12 +464,12 @@ export default function nnrtNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_GETOUTPUTSHAPE_0200
-     * @tc.name       : testAiNnrtOhNnExecutorGetOutputShape002
-     * @tc.desc       : test OH_NNExecutor_GetOutputShape
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorGetOutput002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_GETOUTPUTSHAPE_0200
+     * @tc.desc   test OH_NNExecutor_GetOutputShape
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorGetOutput002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorGetOutputShapeTwo();
@@ -478,12 +478,12 @@ export default function nnrtNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_RUN_0200
-     * @tc.name       : testAiNnrtOhNnExecutorRun002
-     * @tc.desc       : test OH_NNExecutor_Run
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorRun002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_RUN_0200
+     * @tc.desc   test OH_NNExecutor_Run
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorRun002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorRunTwo();
@@ -492,12 +492,12 @@ export default function nnrtNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_ALLOCATEINPUTMEMORY_0200
-     * @tc.name       : testAiNnrtOhNnExecutorAllocateInputMemory002
-     * @tc.desc       : test OH_NNExecutor_AllocateInputMemory
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorAllocateInputMemory002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_ALLOCATEINPUTMEMORY_0200
+     * @tc.desc   test OH_NNExecutor_AllocateInputMemory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorAllocateInputMemory002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorAllocateInputMemoryTwo();
@@ -506,12 +506,12 @@ export default function nnrtNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_SETINPUTWITHMEMORY_0200
-     * @tc.name       : testAiNnrtOhNnExecutorSetInputWithMemory002
-     * @tc.desc       : test OH_NNExecutor_SetInputWithMemory
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorSetInputWithMemory002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_SETINPUTWITHMEMORY_0200
+     * @tc.desc   test OH_NNExecutor_SetInputWithMemory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorSetInputWithMemory002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorSetInputWithMemoryTwo();
@@ -520,12 +520,12 @@ export default function nnrtNdkTest() {
     });
 
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNEXECUTOR_SETOUTPUTWITHMEMORY_0200
-     * @tc.name       : testAiNnrtOhNnExecutorSetOutputWithMemory002
-     * @tc.desc       : test OH_NNExecutor_SetOutputWithMemory
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnExecutorSetOutputWithMemory002
+     * @tc.number SUB_AI_NNRT_OH_NNEXECUTOR_SETOUTPUTWITHMEMORY_0200
+     * @tc.desc   test OH_NNExecutor_SetOutputWithMemory
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnExecutorSetOutputWithMemory002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNExecutorSetOutputWithMemoryTwo();
@@ -533,12 +533,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNDEVICE_GETALLDEVICESID_0100
-     * @tc.name       : testAiNnrtOhNnDeviceGetAllDevicesID001
-     * @tc.desc       : test OH_NNDevice_GetAllDevicesID
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnDeviceGetAllDevicesID001
+     * @tc.number SUB_AI_NNRT_OH_NNDEVICE_GETALLDEVICESID_0100
+     * @tc.desc   test OH_NNDevice_GetAllDevicesID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnDeviceGetAllDevicesID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNDeviceGetAllDevicesIDOne();
@@ -546,12 +546,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNDEVICE_GETALLDEVICESID_0200
-     * @tc.name       : testAiNnrtOhNnDeviceGetAllDevicesID002
-     * @tc.desc       : test OH_NNDevice_GetAllDevicesID
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnDeviceGetAllDevicesID002
+     * @tc.number SUB_AI_NNRT_OH_NNDEVICE_GETALLDEVICESID_0200
+     * @tc.desc   test OH_NNDevice_GetAllDevicesID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnDeviceGetAllDevicesID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNDeviceGetAllDevicesIDTwo();
@@ -559,12 +559,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNDEVICE_GETNAME_0100
-     * @tc.name       : testAiNnrtOhNnDeviceGetName001
-     * @tc.desc       : test OH_NNDevice_GetName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnDeviceGetName001
+     * @tc.number SUB_AI_NNRT_OH_NNDEVICE_GETNAME_0100
+     * @tc.desc   test OH_NNDevice_GetName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnDeviceGetName001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNDeviceGetNameOne();
@@ -572,12 +572,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNDEVICE_GETNAME_0200
-     * @tc.name       : testAiNnrtOhNnDeviceGetName002
-     * @tc.desc       : test OH_NNDevice_GetName
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnDeviceGetName002
+     * @tc.number SUB_AI_NNRT_OH_NNDEVICE_GETNAME_0200
+     * @tc.desc   test OH_NNDevice_GetName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnDeviceGetName002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNDeviceGetNameTwo();
@@ -585,12 +585,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNDEVICE_GETTYPE_0100
-     * @tc.name       : testAiNnrtOhNnDeviceGetType001
-     * @tc.desc       : test OH_NNDevice_GetType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnDeviceGetType001
+     * @tc.number SUB_AI_NNRT_OH_NNDEVICE_GETTYPE_0100
+     * @tc.desc   test OH_NNDevice_GetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnDeviceGetType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNDeviceGetTypeOne();
@@ -598,12 +598,12 @@ export default function nnrtNdkTest() {
       done()
     });
     /**
-     * @tc.number     : SUB_AI_NNRT_OH_NNDEVICE_GETTYPE_0200
-     * @tc.name       : testAiNnrtOhNnDeviceGetType002
-     * @tc.desc       : test OH_NNDevice_GetType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testAiNnrtOhNnDeviceGetType002
+     * @tc.number SUB_AI_NNRT_OH_NNDEVICE_GETTYPE_0200
+     * @tc.desc   test OH_NNDevice_GetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAiNnrtOhNnDeviceGetType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let result = nnrt.oHNNDeviceGetTypeTwo();

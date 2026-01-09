@@ -332,14 +332,12 @@ export default function ImageReceiver() {
         }
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_0100
-         * @tc.name      : createImageReceiver
-         * @tc.desc      : 1.set size,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_0100
+         * @tc.desc   1.set size,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_WITH_SIZE_0100", Level.LEVEL0, async function (done) {
             let size = {
@@ -353,14 +351,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0100
-         * @tc.name      : createImageReceiver
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0100
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -381,14 +377,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0200
-         * @tc.name      : createImageReceiver
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0200
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0200", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -402,14 +396,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0100
-         * @tc.name      : createImageReceiver-wrong format
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0100
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0100", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -423,14 +415,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0200
-         * @tc.name      : createImageReceiver-wrong height
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0200
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0200", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -444,14 +434,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0300
-         * @tc.name      : createImageReceiver-wrong width
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0300
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0300", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -465,14 +453,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0400
-         * @tc.name      : createImageReceiver-wrong capacity
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0400
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0400", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -486,14 +472,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0500
-         * @tc.name      : createImageReceiver-wrong width
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0500
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0500", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -507,14 +491,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0600
-         * @tc.name      : createImageReceiver- wrong width
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0600
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0600", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -528,14 +510,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0300
-         * @tc.name      : createImageReceiver
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0300
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0300", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -549,14 +529,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0700
-         * @tc.name      : createImageReceiver- wrong format
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0700
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_ERROR_0700", Level.LEVEL0, async function (done) {
             createRecriver(
@@ -570,14 +548,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0400
-         * @tc.name      : createImageReceiver
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageReceiver
-         *                 3.return ImageReceiver not empty
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0400
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_CREATEIMAGERECEIVER_0400", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -598,14 +574,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_0100
-         * @tc.name      : getReceivingSurfaceId-promise
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call getReceivingSurfaceId
-         *                 3.return SurfaceId
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_PROMISE_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -637,14 +611,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_0100
-         * @tc.name      : getReceivingSurfaceId-callback
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call getReceivingSurfaceId
-         *                 3.return SurfaceId
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETRECEIVINGSURFACEID_CALLBACK_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -669,13 +641,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0100
-         * @tc.name      : release-promise
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -702,13 +673,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0100
-         * @tc.name      : release-callback
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call release
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -735,14 +705,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_0100
-         * @tc.name      : readLatestImage-promise
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call readLatestImage
-         *                 3.return image
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_PROMISE_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -779,14 +747,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_0100
-         * @tc.name      : readLatestImage-callback
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call readLatestImage
-         *                 3.return image
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READLATESTIMAGE_CALLBACK_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -817,14 +783,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_0100
-         * @tc.name      : readNextImage-promise
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call readNextImage
-         *                 3.return image
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_PROMISE_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -862,14 +826,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_0100
-         * @tc.name      : readNextImage-callback
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call readNextImage
-         *                 3.return image
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_READNEXTIMAGE_CALLBACK_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -906,15 +868,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_PROMISE_JPEG_0100
-         * @tc.name      : getComponent-jpeg
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_PROMISE_JPEG_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_PROMISE_JPEG_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_PROMISE_JPEG_0100", Level.LEVEL0, async function (done) {
             function checkFormat(imgformat) {
@@ -935,15 +894,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_CALLBACK_JPEG_0100
-         * @tc.name      : getComponent-jpeg
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_CALLBACK_JPEG_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_CALLBACK_JPEG_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_CALLBACK_JPEG_0100", Level.LEVEL0, async function (done) {
             function checkFormat(imgformat) {
@@ -964,13 +920,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_RECEIVERON_0100
-         * @tc.name      : on
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_RECEIVERON_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_RECEIVERON_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_RECEIVERON_0100", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -1008,16 +963,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0200
-         * @tc.name      : release-promise
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call release
-         *                 5.return the operation result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0200
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_PROMISE_0200", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -1078,16 +1029,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0200
-         * @tc.name      : release-callback
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call release
-         *                 5.return the operation result
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0200
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_RELEASE_CALLBACK_0200", Level.LEVEL0, async function (done) {
             var receiver = image.createImageReceiver(WIDTH, HEIGHT, FORMATJPEG, CAPACITY);
@@ -1136,187 +1083,156 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0100
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0100", Level.LEVEL0, async function (done) {
             getComponentCbErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0100", FORMATJPEG, null);
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0200
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0200
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0200", Level.LEVEL0, async function (done) {
             getComponentCbErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0200", FORMATJPEG, "ab");
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0300
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0300
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0300", Level.LEVEL0, async function (done) {
             getComponentCbErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0300", FORMATJPEG, 0.1);
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0400
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0400
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0400", Level.LEVEL0, async function (done) {
             getComponentCbErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0400", FORMATJPEG, { a: 1 });
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0500
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0500
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0500", Level.LEVEL0, async function (done) {
             getComponentProErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0500", FORMATJPEG, null);
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0600
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0600
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0600", Level.LEVEL0, async function (done) {
             getComponentProErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0600", FORMATJPEG, "ab");
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0700
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0700
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0700", Level.LEVEL0, async function (done) {
             getComponentProErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0700", FORMATJPEG, 0.1);
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0800
-         * @tc.name      : getComponent-wrong format
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         *                 3.readLatestImage
-         *                 4.call getComponent
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0800
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0800", Level.LEVEL0, async function (done) {
             getComponentProErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_GETCOMPONENT_ERROR_0800", FORMATJPEG, { a: 1 });
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0100
-         * @tc.name      : on-1
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0100
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0100", Level.LEVEL0, async function (done) {
             onErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0100", 1);
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0200
-         * @tc.name      : on-null
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0200
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0200", Level.LEVEL0, async function (done) {
             onErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0200", null);
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0300
-         * @tc.name      : on-{a : 1}
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0300
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0300", Level.LEVEL0, async function (done) {
             onErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0300", { a: 1 });
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0400
-         * @tc.name      : on-'a'
-         * @tc.desc      : 1.create ImageReceiver
-         *                 2.call on
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0400
+         * @tc.desc   1.create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0400", Level.LEVEL0, async function (done) {
             onErr(done, "SUB_MULTIMEDIA_IMAGE_RECEIVER_IMAGERECEIVER_ON_ERROR_0400", "a");
         });
 
-                /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_SUCCESS_0100
-         * @tc.name      : imageReceiver-off-'imageArrival'
-         * @tc.desc      : 1.Create ImageReceiver
-         *                 2.Close callback subscription (call receiver.off (a))
-         *                 3.Pass in the correct parameter for a in off (a)
-         *                 4.View the subscription effect of Image Receiver callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_SUCCESS_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_SUCCESS_0100
+         * @tc.desc   1.Create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_SUCCESS_0100", Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_SUCCESS_0100 start');
@@ -1350,15 +1266,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_ERROR_0200
-         * @tc.name      : imageReceiver-off-'a'
-         * @tc.desc      : 1.Create ImageReceiver
-         *                 2.Close callback subscription (call receiver.off (a))
-         *                 3.Wrong parameter passed in for a in off (a)
-         *                 4.View the subscription effect of Image Receiver callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_ERROR_0200
+         * @tc.desc   1.Create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_ERROR_0200", Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_ERROR_0200 start');
@@ -1391,16 +1304,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_AND_OFF_0300
-         * @tc.name      : imageReceiver-on-off
-         * @tc.desc      : 1.Create ImageReceiver
-         *                 2.Image Receiver enables callback subscription
-         *                  (calling receiver.on ("imageArrival")): (Print image information in callback)
-         *                 3.Image Receiver closes callback subscription (calls receiver.off ("imageArrival"))
-         *                 4.View the subscription effect of Image Receiver callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_AND_OFF_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_AND_OFF_0300
+         * @tc.desc   1.Create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_AND_OFF_0300", Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_RECEIVER_ON_AND_OFF_0300 start');
@@ -1452,16 +1361,12 @@ export default function ImageReceiver() {
         });
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_AND_ON_0400
-         * @tc.name      : imageReceiver-off-on
-         * @tc.desc      : 1.Create ImageReceiver
-         *                 2.Image Receiver closes callback subscription (calls receiver.off ("imageArrival"))
-         *                 3.Image Receiver enables callback subscription
-         *                  (calling receiver.on ("imageArrival")): (Print image information in callback)
-         *                 4.View the subscription effect of Image Receiver callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_AND_ON_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_AND_ON_0400
+         * @tc.desc   1.Create ImageReceiver
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it("SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_AND_ON_0400", Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_RECEIVER_OFF_AND_ON_0400 start');

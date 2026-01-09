@@ -56,10 +56,13 @@ void ResConfigTest::TearDown()
 {
 }
 
-/*
- * @tc.name: ResConfigFuncTest001
- * @tc.desc: Test Config function, non file case.
- * @tc.type: FUNC
+/**
+ * @tc.name   ResConfigFuncTest001
+ * @tc.number ResConfigFuncTest001
+ * @tc.desc   Test Config function, non file case.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(ResConfigTest, ResConfigFuncTest001, TestSize.Level1)
 {

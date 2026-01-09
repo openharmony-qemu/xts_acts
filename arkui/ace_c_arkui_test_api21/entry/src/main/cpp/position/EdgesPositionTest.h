@@ -49,6 +49,17 @@ public:
     static napi_value getPositionEdges(napi_env env, napi_callback_info info);
     static napi_value reSetPositionEdges(napi_env env, napi_callback_info info);
     static napi_value copyPositionEdges(napi_env env, napi_callback_info info);
+
+    static napi_value TestPositionEdgesGetTopErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesGetTopErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesGetLeftErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesGetLeftErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesGetBottomErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesGetBottomErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesGetRightErrorCode_001(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesGetRightErrorCode_002(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesCopyReturnNullptr(napi_env env, napi_callback_info info);
+    static napi_value TestPositionEdgesCreateReturnNoNullptr(napi_env env, napi_callback_info info);
 };
 } // namespace ArkUICapiTest
 #endif // ARKUI_CAPI_XTS_EDGES_POSITION_TEST_H

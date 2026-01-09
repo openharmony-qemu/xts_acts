@@ -35,6 +35,7 @@ add_library(nativerender SHARED
     RelativeContainer/RelativeContainerCrossLanguageTest.cpp
     node/NodeCreatorTest.cpp
     card/CardCreatorTest.cpp
+    scroll/ScrollZoomSampleTest.cpp
 )
 
 add_library(nativefunc SHARED

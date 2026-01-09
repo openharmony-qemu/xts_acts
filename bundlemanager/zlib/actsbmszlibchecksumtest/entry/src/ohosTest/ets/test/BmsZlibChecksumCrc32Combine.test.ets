@@ -63,12 +63,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_3400
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_3400
-     * @tc.desc: test Crc32Combine(crc1,crc2,123)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_3400
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_3400
+     * @tc.desc   test Crc32Combine(crc1,crc2,123)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Zlib_Checksum_Check_3400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -86,12 +86,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_3500
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_3500
-     * @tc.desc: test Crc32Combine(-1,crc2,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_3500
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_3500
+     * @tc.desc   test Crc32Combine(-1,crc2,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Sub_Bms_Zlib_Checksum_Check_3500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -109,12 +109,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_3600
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_3600
-     * @tc.desc: test Crc32Combine(9223372036854775808,crc2,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_3600
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_3600
+     * @tc.desc   test Crc32Combine(9223372036854775808,crc2,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Zlib_Checksum_Check_3600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -132,12 +132,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_3700
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_3700
-     * @tc.desc: test Crc32Combine(crc1,-1,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_3700
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_3700
+     * @tc.desc   test Crc32Combine(crc1,-1,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Zlib_Checksum_Check_3700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -155,12 +155,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_3800
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_3800
-     * @tc.desc: test Crc32Combine(crc1,9223372036854775808,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_3800
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_3800
+     * @tc.desc   test Crc32Combine(crc1,9223372036854775808,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_3800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -178,12 +178,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_3900
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_3900
-     * @tc.desc: test Crc32Combine(crc1,crc2,-1)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_3900
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_3900
+     * @tc.desc   test Crc32Combine(crc1,crc2,-1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_3900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -201,12 +201,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_4200
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_4200
-     * @tc.desc: test Crc32Combine(undefined,crc2,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_4200
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_4200
+     * @tc.desc   test Crc32Combine(undefined,crc2,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_4200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -223,12 +223,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_4300
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_4300
-     * @tc.desc: test Crc32Combine(crc1,null,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_4300
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_4300
+     * @tc.desc   test Crc32Combine(crc1,null,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_4300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -245,12 +245,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_4400
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_4400
-     * @tc.desc: test Crc32Combine(crc1,undefined,len2)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_4400
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_4400
+     * @tc.desc   test Crc32Combine(crc1,undefined,len2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_4400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -267,12 +267,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_4500
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_4500
-     * @tc.desc: test Crc32Combine(crc1,crc2,null)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_4500
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_4500
+     * @tc.desc   test Crc32Combine(crc1,crc2,null)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_4500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
@@ -289,12 +289,12 @@ export default function bmsZlibChecksumCrc32CombineTest() {
         done();
       });
     /**
-     * @tc.number: Sub_Bms_Zlib_Checksum_Check_4600
-     * @tc.name: Sub_Bms_Zlib_Checksum_Check_4600
-     * @tc.desc: test Crc32Combine(crc1,crc2,undefined)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level2
+     * @tc.name   Sub_Bms_Zlib_Checksum_Check_4600
+     * @tc.number Sub_Bms_Zlib_Checksum_Check_4600
+     * @tc.desc   test Crc32Combine(crc1,crc2,undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Sub_Bms_Zlib_Checksum_Check_4600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {

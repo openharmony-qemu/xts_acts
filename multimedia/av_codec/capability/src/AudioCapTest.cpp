@@ -59,9 +59,12 @@ namespace {
 } // namespace
 
 /**
- * @tc.number    : AUDIO_CAPABILITY_TEST_001
- * @tc.name      : AUDIO_CAPABILITY_TEST_001
- * @tc.desc      : function test
+ * @tc.name   AUDIO_CAPABILITY_TEST_001
+ * @tc.number AUDIO_CAPABILITY_TEST_001
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_001, TestSize.Level2)
 {
@@ -80,16 +83,19 @@ HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_001, TestSize.Level2)
 
 
 /**
- * @tc.number    : AUDIO_CAPABILITY_TEST_002
- * @tc.name      : AUDIO_CAPABILITY_TEST_002
- * @tc.desc      : function test
+ * @tc.name   AUDIO_CAPABILITY_TEST_002
+ * @tc.number AUDIO_CAPABILITY_TEST_002
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_002, TestSize.Level2)
 {
     OH_AVCapability* capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AAC, false);
     ASSERT_NE(capability, nullptr);
     int32_t sampleRateList[] = { 7350, 8000, 11025, 12000, 16000, 22050, 24000, 32000, 44100,
-								 48000, 64000, 88200, 96000 };
+                                 48000, 64000, 88200, 96000 };
     uint32_t sampleRateNum = 13;
     OH_AVRange* sampleRateRanges = nullptr;
     uint32_t rangesNum = -1;
@@ -101,9 +107,12 @@ HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_002, TestSize.Level2)
 
 
 /**
- * @tc.number    : AUDIO_CAPABILITY_TEST_003
- * @tc.name      : AUDIO_CAPABILITY_TEST_003
- * @tc.desc      : function test
+ * @tc.name   AUDIO_CAPABILITY_TEST_003
+ * @tc.number AUDIO_CAPABILITY_TEST_003
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_003, TestSize.Level2)
 {
@@ -121,9 +130,12 @@ HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_003, TestSize.Level2)
 
 
 /**
- * @tc.number    : AUDIO_CAPABILITY_TEST_004
- * @tc.name      : AUDIO_CAPABILITY_TEST_004
- * @tc.desc      : function test
+ * @tc.name   AUDIO_CAPABILITY_TEST_004
+ * @tc.number AUDIO_CAPABILITY_TEST_004
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_004, TestSize.Level2)
 {
@@ -141,9 +153,12 @@ HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_004, TestSize.Level2)
 
 
 /**
- * @tc.number    : AUDIO_CAPABILITY_TEST_005
- * @tc.name      : AUDIO_CAPABILITY_TEST_005
- * @tc.desc      : function test
+ * @tc.name   AUDIO_CAPABILITY_TEST_005
+ * @tc.number AUDIO_CAPABILITY_TEST_005
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_005, TestSize.Level2)
 {
@@ -161,9 +176,12 @@ HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_005, TestSize.Level2)
 
 
 /**
- * @tc.number    : AUDIO_CAPABILITY_TEST_006
- * @tc.name      : AUDIO_CAPABILITY_TEST_006
- * @tc.desc      : function test
+ * @tc.name   AUDIO_CAPABILITY_TEST_006
+ * @tc.number AUDIO_CAPABILITY_TEST_006
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_006, TestSize.Level2)
 {
@@ -181,9 +199,12 @@ HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_006, TestSize.Level2)
 
 
 /**
- * @tc.number    : AUDIO_CAPABILITY_TEST_007
- * @tc.name      : AUDIO_CAPABILITY_TEST_007
- * @tc.desc      : function test
+ * @tc.name   AUDIO_CAPABILITY_TEST_007
+ * @tc.number AUDIO_CAPABILITY_TEST_007
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_007, TestSize.Level2)
 {
@@ -197,4 +218,30 @@ HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_007, TestSize.Level2)
     ASSERT_EQ(ret, AV_ERR_OK);
     bool result = CheckSampleRate(sampleRateList, sampleRateNum, sampleRateRanges, rangesNum);
     ASSERT_EQ(result, true);
+}
+
+
+/**
+ * @tc.name   AUDIO_CAPABILITY_TEST_008
+ * @tc.number AUDIO_CAPABILITY_TEST_008
+ * @tc.desc   check nullptr
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(AudioCapabilityTest, AUDIO_CAPABILITY_TEST_008, TestSize.Level2)
+{
+    OH_AVCapability* capability = OH_AVCodec_GetCapability(OH_AVCODEC_MIMETYPE_AUDIO_AAC, false);
+    ASSERT_NE(capability, nullptr);
+    
+    OH_AVRange* sampleRateRanges = nullptr;
+    uint32_t rangesNum = -1;
+    OH_AVErrCode ret = OH_AVCapability_GetAudioSupportedSampleRateRanges(nullptr, &sampleRateRanges, &rangesNum);
+    ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
+    
+    ret = OH_AVCapability_GetAudioSupportedSampleRateRanges(capability, nullptr, &rangesNum);
+    ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
+    
+    ret = OH_AVCapability_GetAudioSupportedSampleRateRanges(capability, &sampleRateRanges, nullptr);
+    ASSERT_EQ(ret, AV_ERR_INVALID_VAL);
 }

@@ -56,28 +56,28 @@ export default function webViewControllerPart2() {
       done();
     })
 
-   /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_NATIVEEMBEDSTATUS_0100
-    * @tc.name       : testNativeEmbedStatus001
-    * @tc.desc       : test NativeEmbedStatus
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNativeEmbedStatus001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_NATIVEEMBEDSTATUS_0100
+     * @tc.desc   test NativeEmbedStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNativeEmbedStatus001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testNativeEmbedStatus001", 153610)
       Utils.registerEvent("testNativeEmbedStatus001", 3, 153620, done);
       waitAndClickComponent("WebViewControllerPart2Button",driver);
     })
 
-   /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_NATIVEEMBEDSTATUS_0200
-    * @tc.name       : testNativeEmbedStatus002
-    * @tc.desc       : test NativeEmbedStatus
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testNativeEmbedStatus002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_NATIVEEMBEDSTATUS_0200
+     * @tc.desc   test NativeEmbedStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testNativeEmbedStatus002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testNativeEmbedStatus002", 153610)
       Utils.registerEvent("testNativeEmbedStatus002", 4, 153630, done);

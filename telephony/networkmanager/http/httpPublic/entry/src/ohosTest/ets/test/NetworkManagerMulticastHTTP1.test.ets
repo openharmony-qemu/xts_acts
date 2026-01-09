@@ -72,12 +72,12 @@ export default function NetworkManagerMulticast1HTTP2Test() {
     });
     describe("NetworkManagerMulticast1HTTP2Test", ()=> {
         /**
-         * @tc.number: SUB_NetworkMgr_Http_QUIC_Xts_Async_0100
-         * @tc.name: testNetworkMgrHttpQUICXtsAsync0100
-         * @tc.desc: Test request property.
-         * @tc.level: level1
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   testNetworkMgrHttpQUICXtsAsync0100
+         * @tc.number SUB_NetworkMgr_Http_QUIC_Xts_Async_0100
+         * @tc.desc   Test request property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpQUICXtsAsync0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=>{
             let caseName:string = "testNetworkMgrHttpQUICXtsAsync0100";
@@ -104,12 +104,12 @@ export default function NetworkManagerMulticast1HTTP2Test() {
             }
         })
         /**
-         * @tc.number: SUB_NetworkMgr_Http_QUIC_Xts_Async_0200
-         * @tc.name: testNetworkMgrHttpQUICXtsAsync0200
-         * @tc.desc: Test request property
-         * @tc.level: level1
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   testNetworkMgrHttpQUICXtsAsync0200
+         * @tc.number SUB_NetworkMgr_Http_QUIC_Xts_Async_0200
+         * @tc.desc   Test request property
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpQUICXtsAsync0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=>{
             let caseName:string = "testNetworkMgrHttpQUICXtsAsync0200";
@@ -136,12 +136,12 @@ export default function NetworkManagerMulticast1HTTP2Test() {
             }
         })
         /**
-         * @tc.number: SUB_NetworkMgr_Http_QUIC_Xts_Async_0300
-         * @tc.name: testNetworkMgrHttpQUICXtsAsync0300
-         * @tc.desc: Test request property.
-         * @tc.level: level1
-         * @tc.type: Function
-         * @tc.size: MediumTest
+         * @tc.name   testNetworkMgrHttpQUICXtsAsync0300
+         * @tc.number SUB_NetworkMgr_Http_QUIC_Xts_Async_0300
+         * @tc.desc   Test request property.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrHttpQUICXtsAsync0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function)=>{
             let caseName:string = "testNetworkMgrHttpQUICXtsAsync0300";

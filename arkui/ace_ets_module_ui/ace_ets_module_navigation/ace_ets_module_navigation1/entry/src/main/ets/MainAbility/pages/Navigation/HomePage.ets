@@ -14,7 +14,7 @@
  */
 
 @Component
-struct PageOne {
+struct PageOne99 {
   private stack: NavPathStack | undefined = undefined;
 
   build() {
@@ -43,7 +43,7 @@ struct HomePage {
 
   @Builder
   PageOneBuilder() {
-    PageOne()
+    PageOne99()
   }
 
   build() {

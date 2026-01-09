@@ -22,19 +22,18 @@ export default function builtinsRegExpSymbolMatchTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
     })
     afterEach(() => {
     })
     afterAll(() => {
     })
     /**
+     * @tc.name   builtinsRegExpSymbolMatchTest0200
      * @tc.number SUB_BUILTINS_REGEXP_SYMBOL_MATCH_TEST_0200
-     * @tc.name builtinsRegExpSymbolMatchTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpSymbolMatchTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpSymbolMatchTest0200';

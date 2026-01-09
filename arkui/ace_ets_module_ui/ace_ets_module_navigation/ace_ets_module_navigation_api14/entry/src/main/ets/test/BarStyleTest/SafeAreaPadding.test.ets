@@ -49,10 +49,12 @@ export default function SafeAreaPadding() {
 
 
     /**
-     * @tc.number    SafeAreaPadding_0100
-     * @tc.name      SafeAreaPadding_0100
-     * @tc.desc      Test SafeAreaPadding
-     * @tc.level     Level 2
+     * @tc.name   SafeAreaPadding_0100
+     * @tc.number SafeAreaPadding_0100
+     * @tc.desc   Test SafeAreaPadding
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SafeAreaPadding_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('SafeAreaPadding_0100 START');

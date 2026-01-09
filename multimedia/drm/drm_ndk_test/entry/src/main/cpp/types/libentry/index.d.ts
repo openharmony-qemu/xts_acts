@@ -50,3 +50,4 @@ export const Test_MediaKeySystem_SetConfigurationString_multi: () => number;
 export const Test_MediaKeySystem_SetCallback: (system:string, callback:string) => number;
 export const Test_MediaKeySession_SetCallback: (session:string, callback:string) => number;
 export const Test_MediaKeySystem_GetMediaKeySystems: (des:string, count:string) => number;
+export const Test_MediaKeySystem_Drmerrcode: () => number;

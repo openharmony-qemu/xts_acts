@@ -87,12 +87,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
-         * @tc.desc        Testing getExtrasWithEvent
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200
+         * @tc.desc   Testing getExtrasWithEvent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -113,19 +113,19 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
-         * @tc.desc        Testing getExtrasWithEvent
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300
+         * @tc.desc   Testing getExtrasWithEvent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
             const COMMON_COMMAND_STRING = "AUDIO_GET_VOLUME";
             let extras: avSession.ExtraInfo = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
-            console.info(`${TAG}: aduio get volume with ` + extras.toString());
-            if (extras.toString() == '' ||
+            console.info(`${TAG}: aduio get volume with ${JSON.stringify(extras)}`);
+            if (JSON.stringify(extras) == '{}' ||
                 (0 <= (extras[COMMON_COMMAND_STRING] as number) &&
                     (extras[COMMON_COMMAND_STRING] as number) <= 15)){
                 console.info(`${TAG}: aduio get volume with ${extras[COMMON_COMMAND_STRING]}`);
@@ -137,12 +137,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
-         * @tc.desc        Testing getExtrasWithEvent
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400
+         * @tc.desc   Testing getExtrasWithEvent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {
@@ -160,12 +160,12 @@ export default function abilityTest() {
         })
 
         /**
-         * @tc.number      SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
-         * @tc.name        SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
-         * @tc.desc        Testing getExtrasWithEvent
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level2
+         * @tc.name   SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
+         * @tc.number SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500
+         * @tc.desc   Testing getExtrasWithEvent
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL2
          */
         it('SUB_MULTIMEDIA_AVSESSION_GETEXTRASWITHEVENT__STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
             async (done: () => void): Promise<void> => {

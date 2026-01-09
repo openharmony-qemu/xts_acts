@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -81,12 +81,12 @@ export default function requestCacheDownloadUnitTest() {
 
     console.info('====>requestCacheDownloadJSTest Test start');
     /**
+     * @tc.name   SUB_Request_cacheDownload_0100
      * @tc.number SUB_Request_cacheDownload_0100
-     * @tc.name SUB_Request_cacheDownload_0100
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0100 is starting-----------------------");
@@ -115,12 +115,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0200
      * @tc.number SUB_Request_cacheDownload_0200
-     * @tc.name SUB_Request_cacheDownload_0200
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Request_cacheDownload_0200', Level.LEVEL0, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0200 is starting-----------------------");
@@ -143,12 +143,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0300
      * @tc.number SUB_Request_cacheDownload_0300
-     * @tc.name SUB_Request_cacheDownload_0300
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0300 is starting-----------------------");
@@ -171,12 +171,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0400
      * @tc.number SUB_Request_cacheDownload_0400
-     * @tc.name SUB_Request_cacheDownload_0400
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0400 is starting-----------------------");
@@ -195,12 +195,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0500
      * @tc.number SUB_Request_cacheDownload_0500
-     * @tc.name SUB_Request_cacheDownload_0500
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0500', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0500 is starting-----------------------");
@@ -219,12 +219,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0600
      * @tc.number SUB_Request_cacheDownload_0600
-     * @tc.name SUB_Request_cacheDownload_0600
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0600', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0600 is starting-----------------------");
@@ -242,12 +242,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0700
      * @tc.number SUB_Request_cacheDownload_0700
-     * @tc.name SUB_Request_cacheDownload_0700
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0700', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0700 is starting-----------------------");
@@ -265,12 +265,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0800
      * @tc.number SUB_Request_cacheDownload_0800
-     * @tc.name SUB_Request_cacheDownload_0800
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0800', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0800 is starting-----------------------");
@@ -288,12 +288,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
+     * @tc.name   SUB_Request_cacheDownload_0900
      * @tc.number SUB_Request_cacheDownload_0100
-     * @tc.name SUB_Request_cacheDownload_0100
-     * @tc.desc Starts a upload session.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.desc   Starts a upload session.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_0900', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_0700 is starting-----------------------");
@@ -311,12 +311,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_0200
      * @tc.name   SUB_Request_cacheDownload_maintenance_0200
+     * @tc.number SUB_Request_cacheDownload_maintenance_0200
      * @tc.desc   setDownloadInfoListSize param error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_0200', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0200 is starting-----------------------");
@@ -333,12 +333,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_0300
      * @tc.name   SUB_Request_cacheDownload_maintenance_0300
+     * @tc.number SUB_Request_cacheDownload_maintenance_0300
      * @tc.desc   setDownloadInfoListSize param error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_0300', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0300 is starting-----------------------");
@@ -355,12 +355,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_0400
      * @tc.name   SUB_Request_cacheDownload_maintenance_0400
+     * @tc.number SUB_Request_cacheDownload_maintenance_0400
      * @tc.desc   setDownloadInfoListSize param is default number error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_0400', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0400 is starting-----------------------");
@@ -380,12 +380,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_0600
      * @tc.name   SUB_Request_cacheDownload_maintenance_0600
+     * @tc.number SUB_Request_cacheDownload_maintenance_0600
      * @tc.desc   setDownloadInfoListSize param is default number error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_0600', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0600 is starting-----------------------");
@@ -446,12 +446,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_0700
      * @tc.name   SUB_Request_cacheDownload_maintenance_0700
+     * @tc.number SUB_Request_cacheDownload_maintenance_0700
      * @tc.desc   setDownloadInfoListSize param is default number error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_0700', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0700 is starting-----------------------");
@@ -498,12 +498,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_0800
      * @tc.name   SUB_Request_cacheDownload_maintenance_0800
+     * @tc.number SUB_Request_cacheDownload_maintenance_0800
      * @tc.desc   setDownloadInfoListSize param is default number error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_0800', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0800 is starting-----------------------");
@@ -576,12 +576,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_0900
      * @tc.name   SUB_Request_cacheDownload_maintenance_0900
+     * @tc.number SUB_Request_cacheDownload_maintenance_0900
      * @tc.desc   setDownloadInfoListSize param is default number error.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_0900', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_0900 is starting-----------------------");
@@ -634,12 +634,12 @@ export default function requestCacheDownloadUnitTest() {
     });
 
     /**
-     * @tc.number SUB_Request_cacheDownload_maintenance_1100
      * @tc.name   SUB_Request_cacheDownload_maintenance_1100
+     * @tc.number SUB_Request_cacheDownload_maintenance_1100
      * @tc.desc   can get error url downloadInfo.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_Request_cacheDownload_maintenance_1100', Level.LEVEL2, async (done: Function) => {
       console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1100 is starting-----------------------");
@@ -674,6 +674,138 @@ export default function requestCacheDownloadUnitTest() {
         expect().assertFail();
         done();
       }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_maintenance_1700
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1700
+     * @tc.desc   url of downloadInfo is 0.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1700', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1700 is starting-----------------------");
+      try {
+        let downloadInfo: cacheDownload.DownloadInfo | undefined = cacheDownload.getDownloadInfo('');
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1700 getDownloadInfo success ${downloadInfo}`);
+        expect(downloadInfo === undefined).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_maintenance_1700 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_maintenance_1800
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1800
+     * @tc.desc   url of downloadInfo is 8192.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1800', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1800 is starting-----------------------");
+      try {
+        let text: string = ''.padEnd(8175, 'cacheDownload');
+        let url: string = 'https://gitee' + text + '.com';
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1800 getDownloadInfo url length: ${url.length}`);
+        let downloadInfo: cacheDownload.DownloadInfo | undefined = cacheDownload.getDownloadInfo(url);
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1800 getDownloadInfo success ${downloadInfo}`);
+        expect(downloadInfo === undefined).assertTrue();
+        expect(url.length === 8192).assertTrue();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_maintenance_1800 catch err: " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_Request_cacheDownload_maintenance_1900
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1900
+     * @tc.desc   url of downloadInfo is 8193.
+     * @tc.size      : MediumTest
+     * @tc.type      : Function
+     * @tc.level     : Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1900', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1900 is starting-----------------------");
+      try {
+        let text: string = ''.padEnd(8176, 'cacheDownload');
+        let url: string = 'https://gitee' + text + '.com';
+        console.info(`====>SUB_Request_cacheDownload_maintenance_1900 getDownloadInfo url length: ${url.length}`);
+        cacheDownload.getDownloadInfo(url);
+        expect().assertFail();
+        done();
+      } catch (err) {
+        console.info("====>SUB_Request_cacheDownload_maintenance_1900 catch err: " + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1200
+     * @tc.number SUB_Request_cacheDownload_maintenance_1200
+     * @tc.desc   get ip in downloadInfo.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1200 is starting-----------------------");
+      cacheDownload.setDownloadInfoListSize(1);
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/test_picture_1.jpg';
+      let downloadInfo1: cacheDownload.DownloadInfo | undefined;
+      let onSuccessCallback = () => {
+        try {
+          cacheDownload.offDownloadSuccess(url, onSuccessCallback);
+          downloadInfo1 = cacheDownload.getDownloadInfo(url);
+          console.info(`====>SUB_Request_cacheDownload_maintenance_1200 onSuccessCallback ${JSON.stringify(downloadInfo1)}`);
+          expect(typeof downloadInfo1?.network.ip === 'string').assertTrue();
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_cacheDownload_maintenance_1200 catch err: " + JSON.stringify(err));
+          done();
+        }
+      }
+      cacheDownload.download(url, {});
+      console.info(`====>SUB_Request_cacheDownload_maintenance_1200 download success`);
+      cacheDownload.onDownloadSuccess(url, onSuccessCallback);
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1300
+     * @tc.number SUB_Request_cacheDownload_maintenance_1300
+     * @tc.desc   error url get ip in downloadInfo.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1300 is starting-----------------------");
+      cacheDownload.setDownloadInfoListSize(1);
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/testxxx001.jpg';
+      let downloadInfo1: cacheDownload.DownloadInfo | undefined;
+      let onErrorCallback = (err: cacheDownload.DownloadError) => {
+        try {
+          cacheDownload.offDownloadError(url, onErrorCallback);
+          downloadInfo1 = cacheDownload.getDownloadInfo(url);
+          console.info(`====>SUB_Request_cacheDownload_maintenance_1300 onErrorCallback ${JSON.stringify(downloadInfo1)}`);
+          expect(typeof downloadInfo1?.network.ip === 'string').assertTrue();
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_cacheDownload_maintenance_1300 catch err: " + JSON.stringify(err));
+          done();
+        }
+      }
+      cacheDownload.download(url, {});
+      console.info(`====>SUB_Request_cacheDownload_maintenance_1300 download success`);
+      cacheDownload.onDownloadError(url, onErrorCallback);
     });
 
   });

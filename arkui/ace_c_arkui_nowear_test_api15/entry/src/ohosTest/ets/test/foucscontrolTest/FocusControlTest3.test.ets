@@ -47,13 +47,13 @@ export default function FocusControlTest3(){
       console.info("FocusControlTest3 after each called");
     });
 
-     /*
-     * @tc.number     : SUB_ARKUI_CAPI_FocusControlTest_TEST003
-     * @tc.name       : SUB_ARKUI_CAPI_FocusControlTest_TEST003
-     * @tc.desc       : testing button focus when call OH_ArkUI_FocusActivate  interface
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_FocusControlTest_TEST003
+     * @tc.number SUB_ARKUI_CAPI_FocusControlTest_TEST003
+     * @tc.desc   testing button focus when call OH_ArkUI_FocusActivate  interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ARKUI_CAPI_FocusControlTest_TEST003',  Level.LEVEL1, async (done: Function) => {
 

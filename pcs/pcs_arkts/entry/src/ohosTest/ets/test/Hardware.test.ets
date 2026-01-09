@@ -68,7 +68,6 @@ export default function hardwareTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testNetworkSupportAtLeastOneType0100
      * @tc.number STD-HARDWARE-0100
      * @tc.desc   【STD-HARDWARE-0100】设备必须提供至少一种数据网络形式的支持，比如 WiFi/蜂窝/以太网/蓝牙
@@ -82,7 +81,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testNetworkCompleteImplementation0100
      * @tc.number STD-HARDWARE-0101
      * @tc.desc   【STD-HARDWARE-0101】如果设备支持多种数据网络，必须提供网络管理能力的完整实现
@@ -114,7 +112,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testWlanSupport2.4G0100
      * @tc.number G-HARDWARE-0202
      * @tc.desc   【G-HARDWARE-0202】必须支持 IEEE 802.11b/g/n
@@ -130,7 +127,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testWlanSupport5G0100
      * @tc.number STD-HARDWARE-0203
      * @tc.desc   【STD-HARDWARE-0203】必须支持 IEEE 802.11ac
@@ -146,7 +142,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testWlanSupportSTAAndAP0100
      * @tc.number G-HARDWARE-0203
      * @tc.desc   【G-HARDWARE-0203】必须支持 STA 和 AP 模式
@@ -164,7 +159,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testWlanSupportP2P0100
      * @tc.number STD-HARDWARE-0203
      * @tc.desc   【STD-HARDWARE-0203】必须支持 P2P 模式
@@ -181,7 +175,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testCameraSupportAutoExposure0100
      * @tc.number C-ALL-HARDWARE-0904
      * @tc.desc   【C-ALL-HARDWARE-0904】必须支持 3A（Auto Exposure/Auto Focus/Auto White Balance）调节
@@ -223,7 +216,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testCameraSupportAutoFocus0100
      * @tc.number C-ALL-HARDWARE-0904
      * @tc.desc   【C-ALL-HARDWARE-0904】必须支持 3A（Auto Exposure/Auto Focus/Auto White Balance）调节
@@ -268,7 +260,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testCameraInformationQuery0100
      * @tc.number C-S|STD-SOFTWARE-0900
      * @tc.desc   【C-S|STD-SOFTWARE-0900】必须提供摄像头设备能力查询功能，包含摄像头个数，方向，类型，宽高比和分辨率信息
@@ -316,7 +307,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testCameraDataStreamCollect0100
      * @tc.number C-S|STD-SOFTWARE-0901
      * @tc.desc   【C-S|STD-SOFTWARE-0901】必须提供摄像头数据流采集功能，包含预览流、录像流和拍照流。
@@ -363,7 +353,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioSupportCapturer0100
      * @tc.number C-ALL-HARDWARE-0801
      * @tc.desc   【C-ALL-HARDWARE-0801】必须支持单或双 MIC 输入或 Line-In 输入的一种或多种方式
@@ -407,7 +396,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioCapturerSupport16bit0100
      * @tc.number C-ALL-HARDWARE-0802
      * @tc.desc   【C-ALL-HARDWARE-0802】必须支持 16bit 音频输入
@@ -450,7 +438,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioRendererSupportSamplingRates0100
      * @tc.number C-S|STD-SOFTWARE-0800
      * @tc.desc   【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
@@ -494,7 +481,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioRendererSupportSamplingRates0200
      * @tc.number C-S|STD-SOFTWARE-0800
      * @tc.desc   【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
@@ -538,7 +524,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioRendererSupportSamplingRates0300
      * @tc.number C-S|STD-SOFTWARE-0800
      * @tc.desc   【C-S|STD-SOFTWARE-0800】音频播放必须支持 16K，44.1K，48K 采样率音频
@@ -582,7 +567,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioRendererSupportChannels0100
      * @tc.number C-S|STD-SOFTWARE-0801
      * @tc.desc   【C-S|STD-SOFTWARE-0801】音频播放必须支持单声道和双声道音频
@@ -626,7 +610,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioRendererSupportChannels0200
      * @tc.number C-S|STD-SOFTWARE-0801
      * @tc.desc   【C-S|STD-SOFTWARE-0801】音频播放必须支持单声道和双声道音频
@@ -670,7 +653,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioRendererSupportEncodings0100
      * @tc.number C-S|STD-SOFTWARE-0802
      * @tc.desc   【C-S|STD-SOFTWARE-0802】音频播放必须支持 16 位 PCM 编码格式音频
@@ -713,7 +695,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioCapturerSupportRule0100
      * @tc.number C-S|STD-SOFTWARE-0803
      * @tc.desc   【C-S|STD-SOFTWARE-0803】音频采集必须支持单声道、编码格式为 16 位 PCM、采样率为 16K，48K 的音频
@@ -755,7 +736,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testAudioCapturerSupportRule0200
      * @tc.number C-S|STD-SOFTWARE-0803
      * @tc.desc   【C-S|STD-SOFTWARE-0803】音频采集必须支持单声道、编码格式为 16 位 PCM、采样率为 16K，48K 的音频
@@ -797,7 +777,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testUsbSupportConnect0100
      * @tc.number C-ALL-HARDWARE-0500
      * @tc.desc   【C-ALL-HARDWARE-0500】端口必须可连接到具有标准 A 型或 C 型的主机模式的USB 端口
@@ -815,7 +794,6 @@ export default function hardwareTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testUsbSupportHost0100
      * @tc.number C-ALL-HARDWARE-0502
      * @tc.desc   【C-ALL-HARDWARE-0502】必须支持连接标准 USB 外围设备

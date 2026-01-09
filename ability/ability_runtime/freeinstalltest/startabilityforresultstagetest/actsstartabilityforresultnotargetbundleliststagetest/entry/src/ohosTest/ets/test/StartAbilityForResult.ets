@@ -18,6 +18,7 @@ import wantConstant from '@ohos.ability.wantConstant'
 import ability from '@ohos.ability.ability';
 import base from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
+import { Driver, ON } from '@ohos.UiTest';
 
 function sleep(time:number):Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
@@ -28,6 +29,15 @@ export default function StartAbilityForResult() {
 
   describe('StartAbilityForResult', ()=> {
     beforeAll(async (done:Function) => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       console.info("StartAbilityForResult before all called");
       let cmd = "bm install -p data/test/MockService.hap";
       console.info("cmd : "+cmd)
@@ -66,11 +76,13 @@ export default function StartAbilityForResult() {
       done();
     });
 
-    /*
-     * @tc.number: FreeInstall_Stage_StartAbilityForResult_2500
-     * @tc.name: startAbilityForResult: don't add targetBundleList, app already installed, start hap successfully.
-     * @tc.desc: Function test
-     * @tc.level   0
+    /**
+     * @tc.name   FreeInstall_Stage_StartAbilityForResult_2500
+     * @tc.number FreeInstall_Stage_StartAbilityForResult_2500
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("FreeInstall_Stage_StartAbilityForResult_2500", Level.LEVEL0, async (done:Function) => {
       console.log("------------start FreeInstall_Stage_StartAbilityForResult_2500-------------");

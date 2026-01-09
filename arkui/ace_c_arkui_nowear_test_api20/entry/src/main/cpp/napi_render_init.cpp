@@ -20,6 +20,8 @@
 #include "drag/GetDisplayIdTest.h"
 #include "drag/GetDragSourceTest.h"
 #include "drag/GetTouchPointGlobalDisplayTest.h"
+#include "drag/DragEventFuncTest.h"
+#include "InteractiveFramework/DragGetPreDragStatusTest.h"
 #include "dropBadge/EnableDropDisallowedBadgeTest.h"
 #include "dialog/DialogGetStateTest.h"
 #include "image/ImageDraggableEventTest.h"
@@ -51,10 +53,30 @@ namespace ArkUICapiTest
             nullptr, napi_default, nullptr},
             {"dragEventGetGlobalDisplay", nullptr, GetDragSourceTest::CreateNativeNode, nullptr, nullptr,
             nullptr, napi_default, nullptr},
+            {"dragEventFuncTest", nullptr, DragEventFuncTest::CreateNativeNode, nullptr, nullptr,
+            nullptr, napi_default, nullptr},
+            {"dragEventFuncTest036", nullptr, DragEventFuncTest::dragEventFuncTest036, nullptr, nullptr, nullptr, 
+                napi_default, nullptr},
+            {"GetPanGesture036Ret", nullptr, DragEventFuncTest::GetPanGesture036Ret, nullptr, nullptr, nullptr, 
+                napi_default, nullptr},
+            {"dragEventFuncTest037", nullptr, DragEventFuncTest::dragEventFuncTest037, nullptr, nullptr, nullptr, 
+                napi_default, nullptr},
+            {"dragEventFuncTest039", nullptr, DragEventFuncTest::dragEventFuncTest039, nullptr, nullptr, nullptr, 
+                napi_default, nullptr},
+            {"dragEventFuncTest041", nullptr, DragEventFuncTest::dragEventFuncTest041, nullptr, nullptr, nullptr, 
+                napi_default, nullptr},
+            {"getPreDragStatusTest", nullptr, GetPreDragStatusTest::CreateNativeNode, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+            {"Enum_ARKUI_DRAG_STATUS_STARTED", nullptr, GetPreDragStatusTest::Enum_ARKUI_DRAG_STATUS_STARTED, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
             {"enableDropDisallowedBadge", nullptr, EnableDropDisallowedBadgeTest::CreateNativeNode, nullptr, nullptr,
             nullptr, napi_default, nullptr},
             {"dialogGetStateTest", nullptr, DialogGetStateTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
+            {"dialogGetStateErrorCode_001", nullptr, DialogGetStateTest::GetStateErrorCode_001, nullptr, nullptr,
+                nullptr, napi_default, nullptr},
+            {"dialogGetStateErrorCode_002", nullptr, DialogGetStateTest::GetStateErrorCode_002, nullptr, nullptr,
+                nullptr, napi_default, nullptr},
             {"imageDraggableEventTest", nullptr, ImageDraggableEventTest::CreateNativeNode, nullptr, nullptr, nullptr,
                 napi_default, nullptr},
         };

@@ -21,37 +21,37 @@ export default function listItemGroupSetFooterTest() {
 
   describe('ListItemGroupSetFooterTest', () => {
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_FOOTER_0001
-     * @tc.name       : testListItemGroupSetFooter001
-     * @tc.desc       : testing item group set footer for list with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetFooter001
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_FOOTER_0001
+     * @tc.desc   testing item group set footer for list with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetFooter001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetFooter001()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_FOOTER_0002
-     * @tc.name       : testListItemGroupSetFooter002
-     * @tc.desc       : testing item group set footer for list with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetFooter002
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_FOOTER_0002
+     * @tc.desc   testing item group set footer for list with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetFooter002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetFooter002()).assertEqual(0)
       done()
     })
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_FOOTER_0003
-     * @tc.name       : testListItemGroupSetFooter003
-     * @tc.desc       : testing item group set footer for list with resetAttribute
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testListItemGroupSetFooter003
+     * @tc.number SUB_ARKUI_CAPI_LIST_ITEM_GROUP_SET_FOOTER_0003
+     * @tc.desc   testing item group set footer for list with resetAttribute
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testListItemGroupSetFooter003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testListItemGroupSetFooter003()).assertEqual(0)

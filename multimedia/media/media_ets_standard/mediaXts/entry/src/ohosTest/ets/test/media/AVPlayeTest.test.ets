@@ -1404,6 +1404,194 @@ export function setAVPlayerSeiMessageCb(avPlayer: media.AVPlayer | null, payload
   });
 }
 
+function setPlaybackStatisticMetricsCb(avPlayer: media.AVPlayer | null, playBackMetricsKey: Array<string>, done: Function, testName: string) {
+  let arrayPlaybackMetrics: media.PlaybackMetrics | undefined = undefined;
+  let surfaceID: string = globalThis.value;
+  let playCount = 0;
+  avPlayer?.on('stateChange', async (state, reason) => {
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(TAG, testName + ` avPlayer is null`);
+          break;
+        }
+        console.info(TAG, testName + ` case INITIALIZED`);
+        avPlayer.surfaceId = surfaceID;
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer?.prepare((err) => {
+          console.info(TAG, testName + ' case prepare called ' + err);
+          if (err != null) {
+            console.error(TAG, testName + ` case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info(TAG, testName + ' case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case PLAYING:
+        if (playCount == 0) {
+          playCount++;
+          avPlayer?.pause();
+        }
+        break;
+      case PAUSED:
+        await avPlayer?.getPlaybackStatisticMetrics().then(res => {
+          console.info(TAG, testName + ' case getPlaybackStatisticMetrics called!!');
+          if (typeof (res) != 'undefined') {
+            arrayPlaybackMetrics = res;
+          } else {
+            console.info(TAG, testName + ' case getPlaybackStatisticMetrics is failed');
+            expect().assertFail();
+          }
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        if (arrayPlaybackMetrics) {
+          mediaTestBase.checkPlaybackStatisticMetrics(arrayPlaybackMetrics, playBackMetricsKey);
+        }
+        avPlayer?.play();
+        break;
+      case COMPLETED:
+        await avPlayer?.getPlaybackStatisticMetrics().then(res => {
+          console.info(TAG, testName + ' case getPlaybackStatisticMetrics called!!');
+          if (typeof (res) != 'undefined') {
+            arrayPlaybackMetrics = res;
+          } else {
+            console.info(TAG, testName + ' case getPlaybackStatisticMetrics is failed');
+            expect().assertFail();
+          }
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        if (arrayPlaybackMetrics) {
+          mediaTestBase.checkPlaybackStatisticMetrics(arrayPlaybackMetrics, playBackMetricsKey);
+        }
+        avPlayer?.release();
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() => {
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testCheckPlaybackStatisticMetrics(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
+  playBackMetricsKey: Array<string>, done: Function, testName: string) {
+  console.info(TAG, testName + ` case media source: ${src}`)
+  media.createAVPlayer((err, video) => {
+    if (err != null) {
+      console.error(TAG, testName + ` case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    } else {
+      console.info(TAG, testName + ` case media err: ${err}`);
+      if (typeof (video) != 'undefined') {
+        console.info(TAG, testName + ' case createAVPlayer success');
+        avPlayer = video;
+        setPlaybackStatisticMetricsCb(avPlayer, playBackMetricsKey, done, testName);
+        setSource(avPlayer, src, testName);
+      } else {
+        console.error(TAG, testName + ` case createAVPlayer failed`);
+        expect().assertFail();
+        done();
+      }
+    }
+  });
+}
+
+async function metricsON(avPlayer: media.AVPlayer, done: Function) {
+  avPlayer.onMetricsEvent((eventArray: Array<media.AVMetricsEvent>) => {
+    if (eventArray) {
+      for (let i = 0; i < eventArray.length; i++) {
+        console.info('onMetricsEvent info: AVMetricsEvent=' + JSON.stringify(eventArray[i]));
+        expect(eventArray[i].event).assertLargerOrEqual(0);
+        expect(eventArray[i].timeStamp).assertLargerOrEqual(0);
+        expect(eventArray[i].playbackPosition).assertLargerOrEqual(0);
+        expect(eventArray[i].details['mediaType']).assertLargerOrEqual(0);
+        expect(eventArray[i].details['duration']).assertLargerOrEqual(0);
+      }
+      avPlayer.offMetricsEvent();
+    } else {
+      console.info('subtitleUpdate info is null');
+      expect(false).assertTrue();
+      done();
+    }
+  })
+}
+
+function metricsOFF(avPlayer: media.AVPlayer | null, done: Function) {
+  avPlayer?.on('stateChange', async (state, reason) =>{
+    switch (state) {
+      case INITIALIZED:
+        if (!avPlayer) {
+          console.info(`avPlayer is null`);
+          break;
+        }
+        console.info(`case INITIALIZED`);
+        expect(avPlayer.state).assertEqual(INITIALIZED);
+        avPlayer.prepare((err) =>{
+          console.info('case prepare called' + err);
+          if (err != null) {
+            console.error(`case prepare error, errMessage is ${err.message}`);
+            expect().assertFail();
+            done();
+          } else if (avPlayer) {
+            console.info('case avPlayer.duration: ' + avPlayer.duration);
+          }
+        });
+        break;
+      case PREPARED:
+        avPlayer?.play();
+        break;
+      case COMPLETED:
+        avPlayer?.offMetricsEvent();
+        avPlayer?.release()
+        break;
+      case RELEASED:
+        avPlayer = null;
+        done();
+        break;
+      case ERROR:
+        expect().assertFail();
+        avPlayer?.release().then(() =>{
+        }, mediaTestBase.failureCallback).catch(mediaTestBase.catchCallback);
+        avPlayer = null;
+        break;
+      default:
+        break;
+    }
+  })
+}
+
+async function testMetricsListening(src: string | media.AVFileDescriptor, testName: string,
+  avPlayer: media.AVPlayer | null, metricsListening:Function, done: Function) {
+  console.info(`case media source: ${src}`)
+  media.createAVPlayer((err, video) => {
+    console.info(`case media err: ${err}`)
+    if (typeof (video) !== 'undefined') {
+      console.info('case createAVPlayer success');
+      avPlayer = video;
+      metricsOFF(avPlayer, done);
+      metricsListening(avPlayer,done);
+      setSource(avPlayer, src, testName);
+    }
+    if (err != null) {
+      console.error(`case createAVPlayer error, errMessage is ${err.message}`);
+      expect().assertFail();
+      done();
+    }
+  });
+}
+
 export default function AVPlayerTest() {
   describe('AVPlayerLocalTest', () => {
     beforeAll(async () => {
@@ -1469,12 +1657,12 @@ export default function AVPlayerTest() {
     });
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_001
-     * @tc.name      : createAVPlayer_callback_001
-     * @tc.desc      : Creat aVPlayer callback test.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   createAVPlayer_callback_001
+     * @tc.number AVPLAYER_LOCAL_TEST_001
+     * @tc.desc   Creat aVPlayer callback test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVPlayer_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVPlayer_callback_001';
@@ -1492,12 +1680,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_002
-     * @tc.name      : createAVPlayer_promise_001
-     * @tc.desc      : Creat aVPlayer promise test.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVPlayer_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_002
+     * @tc.desc   Creat aVPlayer promise test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVPlayer_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVPlayer_promise_001';
@@ -1518,12 +1706,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_003
-     * @tc.name      : on_off_stateChange_001
-     * @tc.desc      : Test on and off stateChange.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_stateChange_001
+     * @tc.number AVPLAYER_LOCAL_TEST_003
+     * @tc.desc   Test on and off stateChange.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_stateChange_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_stateChange_001';
@@ -1536,12 +1724,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_004
-     * @tc.name      : getTrackDescription_callback_001
-     * @tc.desc      : Test getTrackDescription callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getTrackDescription_callback_001
+     * @tc.number AVPLAYER_LOCAL_TEST_004
+     * @tc.desc   Test getTrackDescription callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTrackDescription_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getTrackDescription_callback_001';
@@ -1559,12 +1747,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_005
-     * @tc.name      : getTrackDescription_callback_002
-     * @tc.desc      : Test getTrackDescription callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getTrackDescription_callback_002
+     * @tc.number AVPLAYER_LOCAL_TEST_005
+     * @tc.desc   Test getTrackDescription callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTrackDescription_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getTrackDescription_callback_002';
@@ -1578,12 +1766,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_006
-     * @tc.name      : getTrackDescription_callback_003
-     * @tc.desc      : Test getTrackDescription callback.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getTrackDescription_callback_003
+     * @tc.number AVPLAYER_LOCAL_TEST_006
+     * @tc.desc   Test getTrackDescription callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTrackDescription_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getTrackDescription_callback_003';
@@ -1598,12 +1786,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_007
-     * @tc.name      : getTrackDescription_promise_001
-     * @tc.desc      : Test getTrackDescription promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getTrackDescription_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_007
+     * @tc.desc   Test getTrackDescription promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTrackDescription_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getTrackDescription_promise_001';
@@ -1621,12 +1809,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_008
-     * @tc.name      : getTrackDescription_promise_002
-     * @tc.desc      : Test getTrackDescription promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getTrackDescription_promise_002
+     * @tc.number AVPLAYER_LOCAL_TEST_008
+     * @tc.desc   Test getTrackDescription promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTrackDescription_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getTrackDescription_promise_002';
@@ -1640,12 +1828,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_009
-     * @tc.name      : getTrackDescription_promise_003
-     * @tc.desc      : Test getTrackDescription promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getTrackDescription_promise_003
+     * @tc.number AVPLAYER_LOCAL_TEST_009
+     * @tc.desc   Test getTrackDescription promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getTrackDescription_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getTrackDescription_promise_003';
@@ -1660,12 +1848,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_010
-     * @tc.name      : getPlaybackInfo_promise_001
-     * @tc.desc      : Test getPlaybackInfo promise.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getPlaybackInfo_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_010
+     * @tc.desc   Test getPlaybackInfo promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPlaybackInfo_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getPlaybackInfo_promise_001';
@@ -1678,12 +1866,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_012
-     * @tc.name      : getPlaybackPosition_001
-     * @tc.desc      : Test get the current playback position.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   getPlaybackPosition_001
+     * @tc.number AVPLAYER_LOCAL_TEST_012
+     * @tc.desc   Test get the current playback position.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getPlaybackPosition_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getPlaybackPosition_001';
@@ -1693,12 +1881,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_014
-     * @tc.name      : seek_time_and_mode_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   seek_time_and_mode_001
+     * @tc.number AVPLAYER_LOCAL_TEST_014
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('seek_time_and_mode_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'seek_time_and_mode_001';
@@ -1708,12 +1896,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_015
-     * @tc.name      : seek_time_and_mode_002
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   seek_time_and_mode_002
+     * @tc.number AVPLAYER_LOCAL_TEST_015
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('seek_time_and_mode_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'seek_time_and_mode_002';
@@ -1723,12 +1911,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_016
-     * @tc.name      : seek_time_and_mode_003
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   seek_time_and_mode_003
+     * @tc.number AVPLAYER_LOCAL_TEST_016
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('seek_time_and_mode_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'seek_time_and_mode_003';
@@ -1738,12 +1926,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_017
-     * @tc.name      : seek_time_and_mode_004
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   seek_time_and_mode_004
+     * @tc.number AVPLAYER_LOCAL_TEST_017
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('seek_time_and_mode_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'seek_time_and_mode_004';
@@ -1753,12 +1941,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_018
-     * @tc.name      : seek_time_and_mode_005
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   seek_time_and_mode_005
+     * @tc.number AVPLAYER_LOCAL_TEST_018
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('seek_time_and_mode_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'seek_time_and_mode_005';
@@ -1768,12 +1956,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_020
-     * @tc.name      : selectTrack_promise_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   selectTrack_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_020
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('selectTrack_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'selectTrack_promise_001';
@@ -1788,12 +1976,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_021
-     * @tc.name      : deselectTrack_promise_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   deselectTrack_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_021
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deselectTrack_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'deselectTrack_promise_001';
@@ -1811,12 +1999,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_023
-     * @tc.name      : setMediaMuted_promise_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMediaMuted_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_023
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMediaMuted_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMediaMuted_promise_001';
@@ -1826,12 +2014,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_024
-     * @tc.name      : setMediaMuted_promise_002
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMediaMuted_promise_002
+     * @tc.number AVPLAYER_LOCAL_TEST_024
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMediaMuted_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMediaMuted_promise_002';
@@ -1841,12 +2029,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_025
-     * @tc.name      : setMediaMuted_promise_003
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMediaMuted_promise_003
+     * @tc.number AVPLAYER_LOCAL_TEST_025
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMediaMuted_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMediaMuted_promise_003';
@@ -1856,12 +2044,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_026
-     * @tc.name      : setMediaMuted_promise_abnormal_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMediaMuted_promise_abnormal_001
+     * @tc.number AVPLAYER_LOCAL_TEST_026
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMediaMuted_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMediaMuted_promise_abnormal_001';
@@ -1872,12 +2060,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_027
-     * @tc.name      : setMediaMuted_promise_normal_002
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setMediaMuted_promise_normal_002
+     * @tc.number AVPLAYER_LOCAL_TEST_027
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setMediaMuted_promise_normal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setMediaMuted_promise_normal_002';
@@ -1888,12 +2076,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_028
-     * @tc.name      : isSeekContinuousSupported_normal_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   isSeekContinuousSupported_normal_001
+     * @tc.number AVPLAYER_LOCAL_TEST_028
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('isSeekContinuousSupported_normal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'isSeekContinuousSupported_normal_001';
@@ -1903,12 +2091,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_029
-     * @tc.name      : setPlaybackStrategy_promise_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPlaybackStrategy_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_029
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPlaybackStrategy_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setPlaybackStrategy_promise_001';
@@ -1919,12 +2107,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_030
-     * @tc.name      : setPlaybackStrategy_promise_002
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPlaybackStrategy_promise_002
+     * @tc.number AVPLAYER_LOCAL_TEST_030
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPlaybackStrategy_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setPlaybackStrategy_promise_002';
@@ -1939,12 +2127,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_031
-     * @tc.name      : setPlaybackStrategy_promise_003
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPlaybackStrategy_promise_003
+     * @tc.number AVPLAYER_LOCAL_TEST_031
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPlaybackStrategy_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setPlaybackStrategy_promise_003';
@@ -1959,12 +2147,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_032
-     * @tc.name      : setPlaybackStrategy_promise_004
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPlaybackStrategy_promise_004
+     * @tc.number AVPLAYER_LOCAL_TEST_032
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPlaybackStrategy_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'setPlaybackStrategy_promise_004';
@@ -1984,12 +2172,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_033
-     * @tc.name      : setPlaybackRange_promise_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPlaybackRange_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_033
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPlaybackRange_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setPlaybackRange_promise_001';
@@ -2003,12 +2191,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_034
-     * @tc.name      : setPlaybackRange_promise_002
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setPlaybackRange_promise_002
+     * @tc.number AVPLAYER_LOCAL_TEST_034
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setPlaybackRange_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setPlaybackRange_promise_002';
@@ -2022,12 +2210,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_035
-     * @tc.name      : setSuperResolution_promise_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setSuperResolution_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_035
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setSuperResolution_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setSuperResolution_promise_001';
@@ -2038,12 +2226,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_035
-     * @tc.name      : setSuperResolution_promise_002
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setSuperResolution_promise_002
+     * @tc.number AVPLAYER_LOCAL_TEST_035
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setSuperResolution_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setSuperResolution_promise_002';
@@ -2054,12 +2242,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_036
-     * @tc.name      : setSuperResolution_promise_abnormal_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setSuperResolution_promise_abnormal_001
+     * @tc.number AVPLAYER_LOCAL_TEST_036
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setSuperResolution_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setSuperResolution_promise_abnormal_001';
@@ -2069,12 +2257,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_037
-     * @tc.name      : setVideoWindowSize_promise_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVideoWindowSize_promise_001
+     * @tc.number AVPLAYER_LOCAL_TEST_037
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVideoWindowSize_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setVideoWindowSize_promise_001';
@@ -2084,12 +2272,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_038
-     * @tc.name      : setVideoWindowSize_promise_002
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVideoWindowSize_promise_002
+     * @tc.number AVPLAYER_LOCAL_TEST_038
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVideoWindowSize_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'setVideoWindowSize_promise_002';
@@ -2099,12 +2287,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_039
-     * @tc.name      : setVideoWindowSize_promise_003
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVideoWindowSize_promise_003
+     * @tc.number AVPLAYER_LOCAL_TEST_039
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVideoWindowSize_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'setVideoWindowSize_promise_003';
@@ -2114,12 +2302,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_040
-     * @tc.name      : setVideoWindowSize_promise_abnormal_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   setVideoWindowSize_promise_abnormal_001
+     * @tc.number AVPLAYER_LOCAL_TEST_040
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('setVideoWindowSize_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'setVideoWindowSize_promise_abnormal_001';
@@ -2129,12 +2317,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_041
-     * @tc.name      : on_off_superResolutionChanged_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_superResolutionChanged_001
+     * @tc.number AVPLAYER_LOCAL_TEST_041
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_superResolutionChanged_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_superResolutionChanged_001';
@@ -2144,12 +2332,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_044
-     * @tc.name      : on_off_trackChange_trackInfoUpdate_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_trackChange_trackInfoUpdate_001
+     * @tc.number AVPLAYER_LOCAL_TEST_044
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_trackChange_trackInfoUpdate_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_trackChange_trackInfoUpdate_001';
@@ -2193,12 +2381,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_045
-     * @tc.name      : on_off_amplitudeUpdate_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_amplitudeUpdate_001
+     * @tc.number AVPLAYER_LOCAL_TEST_045
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_amplitudeUpdate_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_amplitudeUpdate_001';
@@ -2208,12 +2396,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_046
-     * @tc.name      : on_off_audioOutputDeviceChangeWithInfo_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_audioOutputDeviceChangeWithInfo_001
+     * @tc.number AVPLAYER_LOCAL_TEST_046
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_audioOutputDeviceChangeWithInfo_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_audioOutputDeviceChangeWithInfo_001';
@@ -2223,12 +2411,12 @@ export default function AVPlayerTest() {
     })
 
     /**
-     * @tc.number    : AVPLAYER_LOCAL_TEST_047
-     * @tc.name      : on_off_seiMessageReceived_001
-     * @tc.desc      : Test jump to the specified playback location.
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   on_off_seiMessageReceived_001
+     * @tc.number AVPLAYER_LOCAL_TEST_047
+     * @tc.desc   Test jump to the specified playback location.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('on_off_seiMessageReceived_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'on_off_seiMessageReceived_001';
@@ -2241,5 +2429,40 @@ export default function AVPlayerTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   getPlaybackStatisticMetrics_001
+     * @tc.number AVPLAYER_LOCAL_TEST_048
+     * @tc.desc   Test getPlaybackStatisticMetrics promise.
+     * @tc.size   MediumTest
+     * @tc.type   Function test
+     * @tc.level  Level0
+     */
+    it('getPlaybackStatisticMetrics_001', Level.LEVEL0, async (done: Function) => {
+      const testName = 'getPlaybackStatisticMetrics_001';
+      let playBackMetricsKey =
+        new Array('prepare_duration', 'resource_connection_duration', 'first_frame_decapsulation_duration', 
+          'total_playback_time', 'loading_count', 'total_loading_time', 'total_loading_Bytes', 
+          'stalling_count', 'total_stalling_time');
+      expect(fileDescriptor.fd).assertLarger(0);
+      if (fileDescriptor) {
+        testCheckPlaybackStatisticMetrics(fileDescriptor, avPlayer, playBackMetricsKey, done, testName);
+      }
+    })
+
+    /**
+     * @tc.name   metricsControl_001
+     * @tc.number AVPLAYER_LOCAL_TEST_049
+     * @tc.desc   Local Video metrics control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('metricsControl_001', Level.LEVEL0,async (done: Function) => {
+      expect(fileDescriptor.fd).assertLarger(0);     
+      if (fileDescriptor && subtitleFdSrc) {
+        testMetricsListening(fileDescriptor, "SUB_MULTIMEDIA_MEDIA_VIDEO_METRICS_ON_0100", avPlayer, metricsON, done);
+      }
+    });
   })
 }

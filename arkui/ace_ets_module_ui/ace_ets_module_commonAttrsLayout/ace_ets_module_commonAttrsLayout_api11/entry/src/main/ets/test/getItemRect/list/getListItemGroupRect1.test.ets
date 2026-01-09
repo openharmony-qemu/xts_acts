@@ -65,12 +65,14 @@ export default function getListItemGroupRect1() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0100
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set indexInGroup to 0
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0100
+     * @tc.desc   set index to 0,set indexInGroup to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0100] START');
@@ -129,12 +131,14 @@ export default function getListItemGroupRect1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0200
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set indexInGroup to 1
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0200
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0200
+     * @tc.desc   set index to 0,set indexInGroup to 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0200] START');
@@ -193,12 +197,14 @@ export default function getListItemGroupRect1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0300
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set indexInGroup to -1
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0300
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0300
+     * @tc.desc   set index to 0,set indexInGroup to -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0300] START');
@@ -251,12 +257,14 @@ export default function getListItemGroupRect1() {
 
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0400
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set indexInGroup to 0,The first sub component slides out of the screen
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0400
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0400
+     * @tc.desc   set index to 0,set indexInGroup to 0,The first sub component slides out of the screen
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0400', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0300] START');
@@ -315,12 +323,14 @@ export default function getListItemGroupRect1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0500
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 0,set indexInGroup to 100
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0500
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0500
+     * @tc.desc   set index to 0,set indexInGroup to 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0500', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0500] START');
@@ -374,12 +384,14 @@ export default function getListItemGroupRect1() {
       done();
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0600
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 1,set indexInGroup to 0
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0600
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0600
+     * @tc.desc   set index to 1,set indexInGroup to 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0600', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0600] START');
@@ -434,12 +446,14 @@ export default function getListItemGroupRect1() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0700
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 1,set indexInGroup to 0,the space of lisItemGroup set to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0700
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0700
+     * @tc.desc   set index to 1,set indexInGroup to 0,the space of lisItemGroup set to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0700', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0700] START');
@@ -502,12 +516,14 @@ export default function getListItemGroupRect1() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0800
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 1,set indexInGroup to 0,the padding of lisItemGroup set to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0800
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0800
+     * @tc.desc   set index to 1,set indexInGroup to 0,the padding of lisItemGroup set to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0800', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0800] START');
@@ -571,12 +587,14 @@ export default function getListItemGroupRect1() {
     });
 
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0900
-    * @tc.name  : testGetItemRectInGroup
-    * @tc.desc  : set index to 1,set indexInGroup to 0,the margin of lisItem set to 20
-    * @tc.level : Level 2
-    */
+    /**
+     * @tc.name   getListItemGroupRect1_0900
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemGroupRect1_0900
+     * @tc.desc   set index to 1,set indexInGroup to 0,the margin of lisItem set to 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemGroupRect1_0900', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemGroupRect1_0900] START');

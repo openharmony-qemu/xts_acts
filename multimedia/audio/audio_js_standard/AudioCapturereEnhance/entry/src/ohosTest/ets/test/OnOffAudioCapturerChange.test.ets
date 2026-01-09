@@ -64,8 +64,8 @@ export default function onOffAudioCapturerChangeTest() {
     let driveFn = async () => {
       let dr = Driver.create();
       await sleep(1000);
-      let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 500);
-      await sleep(1000);
+      let power = await dr?.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 1000);
+      await sleep(2000);
       await power?.click();
     }
 
@@ -219,12 +219,12 @@ export default function onOffAudioCapturerChangeTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0300
-     * @tc.name      : AudioCapturer - on-ERROR-INPUT_NUMDER_PARAMETER
-     * @tc.desc      : AudioCapturer - on-ERROR-INPUT_NUMDER_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0300
+     * @tc.desc   AudioCapturer - on-ERROR-INPUT_NUMDER_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -267,12 +267,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0400
-     * @tc.name      : AudioCapturer - on-ERROR-INPUT_STRING_PARAMETER
-     * @tc.desc      : AudioCapturer - on-ERROR-INPUT_STRING_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0400
+     * @tc.desc   AudioCapturer - on-ERROR-INPUT_STRING_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -315,12 +315,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0500
-     * @tc.name      : AudioCapturer - on-ERROR-INPUT_NO_PARAMETER
-     * @tc.desc      : AudioCapturer - on-ERROR-INPUT_NO_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0500
+     * @tc.desc   AudioCapturer - on-ERROR-INPUT_NO_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -362,12 +362,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0100
-     * @tc.name      : AudioCapturer - off-ERROR_INPUT_NUMBER_PARAMETER
-     * @tc.desc      : AudioCapturer - off-ERROR_INPUT_NUMBER_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0100
+     * @tc.desc   AudioCapturer - off-ERROR_INPUT_NUMBER_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -410,12 +410,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0200
-     * @tc.name      : AudioCapturer - off-ERROR-INPUT_STRING_PARAMETER
-     * @tc.desc      : AudioCapturer - off-ERROR-INPUT_STRING_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0200
+     * @tc.desc   AudioCapturer - off-ERROR-INPUT_STRING_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -458,12 +458,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0300
-     * @tc.name      : AudioCapturer - off-ERROR-INPUT_NO_PARAMETER
-     * @tc.desc      : AudioCapturer - off-ERROR-INPUT_NO_PARAMETER
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0300
+     * @tc.desc   AudioCapturer - off-ERROR-INPUT_NO_PARAMETER
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_OFF_AUDIOCAPTURERCHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -506,12 +506,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0600
-     * @tc.name      : AudioCapturer - on-MULTI_ON
-     * @tc.desc      : AudioCapturer - on-MULTI_ON
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0600
+     * @tc.desc   AudioCapturer - on-MULTI_ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -562,12 +562,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0700
-     * @tc.name      : AudioCapturer - off-MULTI_ON_AND_OFF_ONE
-     * @tc.desc      : AudioCapturer - off-MULTI_ON_AND_OFF_ONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0700
+     * @tc.desc   AudioCapturer - off-MULTI_ON_AND_OFF_ONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -621,12 +621,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0800
-     * @tc.name      : AudioCapturer - off-MULTI_ON_AND_OFF_ALL
-     * @tc.desc      : AudioCapturer - off-MULTI_ON_AND_OFF_ALL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0800
+     * @tc.desc   AudioCapturer - off-MULTI_ON_AND_OFF_ALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ON_AUDIOCAPTURERCHANGE_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {
@@ -680,12 +680,12 @@ export default function onOffAudioCapturerChangeTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_CAPTURER_ONOFF_AUDIOCAPTURERCHANGE_0100
-     * @tc.name      : AudioCapturer - on-off-MIC-muted
-     * @tc.desc      : AudioCapturer - on-off-MIC-muted
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_CAPTURER_ONOFF_AUDIOCAPTURERCHANGE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_CAPTURER_ONOFF_AUDIOCAPTURERCHANGE_0100
+     * @tc.desc   AudioCapturer - on-off-MIC-muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_CAPTURER_ONOFF_AUDIOCAPTURERCHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let AudioStreamInfo: AudioStreamInfo = {

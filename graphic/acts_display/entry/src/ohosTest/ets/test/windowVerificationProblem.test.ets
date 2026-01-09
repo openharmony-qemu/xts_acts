@@ -34,12 +34,12 @@ export default function windowVerificationProblemTest() {
     console.log('describe window_verification_problem_test start!!!');
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4170
-     * @tc.name      : testDisplayOffAdd_RepeatOff
-     * @tc.desc      : Turn off the monitor that shows device changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffAdd_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4170
+     * @tc.desc   Turn off the monitor that shows device changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffAdd_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffAdd_RepeatOff';
@@ -73,12 +73,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4180
-     * @tc.name      : testDisplayOffAdd_UnregisteredOff
-     * @tc.desc      : Turn off the monitor that shows device changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testDisplayOffAdd_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4180
+     * @tc.desc   Turn off the monitor that shows device changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testDisplayOffAdd_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'testDisplayOffAdd_UnregisteredOff';
@@ -94,12 +94,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4190
-     * @tc.name      : testDisplayOffRemove_RepeatOff
-     * @tc.desc      : Turn off the monitor that shows device changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffRemove_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4190
+     * @tc.desc   Turn off the monitor that shows device changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffRemove_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffRemove_RepeatOff';
@@ -132,12 +132,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4200
-     * @tc.name      : testDisplayOffRemove_UnregisteredOff
-     * @tc.desc      : Turn off the monitor that shows device changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffRemove_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4200
+     * @tc.desc   Turn off the monitor that shows device changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffRemove_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffRemove_UnregisteredOff';
@@ -153,12 +153,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4210
-     * @tc.name      : testDisplayOffChange_RepeatOff
-     * @tc.desc      : Turn off the monitor that shows device changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4210
+     * @tc.desc   Turn off the monitor that shows device changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffChange_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffChange_RepeatOff';
@@ -192,12 +192,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4220
-     * @tc.name      : testDisplayOffChange_UnregisteredOff
-     * @tc.desc      : Turn off the monitor that shows device changes
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4220
+     * @tc.desc   Turn off the monitor that shows device changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffChange_UnregisteredOff';
@@ -213,12 +213,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4230
-     * @tc.name      : testDisplayOffFoldStatusChange_RepeatOff
-     * @tc.desc      : Enable the monitoring of the folding status change of the folding device
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffFoldStatusChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4230
+     * @tc.desc   Enable the monitoring of the folding status change of the folding device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffFoldStatusChange_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffFoldStatusChange_RepeatOff';
@@ -251,12 +251,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4240
-     * @tc.name      : testDisplayOffFoldStatusChange_UnregisteredOff
-     * @tc.desc      : Enable the monitoring of the folding status change of the folding device
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffFoldStatusChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4240
+     * @tc.desc   Enable the monitoring of the folding status change of the folding device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffFoldStatusChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffFoldStatusChange_UnregisteredOff';
@@ -272,12 +272,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4250
-     * @tc.name      : testDisplayOffFoldDisplayModeChange_RepeatOff
-     * @tc.desc      : Turn off monitoring for screen display mode changes on folding devices
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffFoldDisplayModeChange_RepeatOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4250
+     * @tc.desc   Turn off monitoring for screen display mode changes on folding devices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffFoldDisplayModeChange_RepeatOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffFoldDisplayModeChange_RepeatOff';
@@ -310,12 +310,12 @@ export default function windowVerificationProblemTest() {
       }
     });
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4260
-     * @tc.name      : testDisplayOffFoldDisplayModeChange_UnregisteredOff
-     * @tc.desc      : Turn off monitoring for screen display mode changes on folding devices
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   testDisplayOffFoldDisplayModeChange_UnregisteredOff
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_4260
+     * @tc.desc   Turn off monitoring for screen display mode changes on folding devices
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testDisplayOffFoldDisplayModeChange_UnregisteredOff', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'testDisplayOffFoldDisplayModeChange_UnregisteredOff';

@@ -15,14 +15,13 @@
 import webview from '@ohos.web.webview';
 import { FullScreenExitHandler,$rawfile,OnRenderExitedEvent, OnPageBeginEvent, RenderProcessNotRespondingReason, RenderProcessNotRespondingData, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement'
-import { BusinessError } from '@ohos.base';
-import { setTimeout } from '@internal.full.global';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
+import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
 import image from '@ohos.multimedia.image';
 import web_webview from '@ohos.web.webview';
-import  { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 class StringFields {
   str: string = '';
 }
@@ -42,26 +41,20 @@ struct webViewOnMetaViewportFalse {
 
 
   aboutToAppear() {
-    console.info('Entry aboutToAppear');
-    let valueChangeEvent: emitter.InnerEvent = {
+    let valueChangeEvent: events_emitter.InnerEvent = {
       eventId: 10,
-      priority: emitter.EventPriority.LOW
+      priority: events_emitter.EventPriority.LOW
     }
-    emitter.on(valueChangeEvent, this.valueChangeCallBack)
-    console.info('Finish aboutToAppear ' + this.valueChangeCallBack);
+    events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
-    console.info('web page valueChangeCallBack');
+  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
-      if (data && data['ACTION'] != null) {
-        console.info('Received ACTION vaclue: ' + data['ACTION']);
+      const data = eventData.data as Record<string, RecordData>;
+      if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
-        console.info('strValue has been updated to: ' + strValue);
         this.stringObj.str = strValue;
-        console.info('this.str has been updated to: ' + this.stringObj.str);
       }
     }
   }
@@ -83,11 +76,12 @@ struct webViewOnMetaViewportFalse {
                       Utils.emitEvent( result , 10002)
                     }
                   })
-                } catch (error:BusinessError) {
+                } catch (error) {
                   console.error('ErrorCode: ${error.code}, Message: ${error.message}');
                 }
                 break;
               }
+
             }
           })
       }

@@ -42,12 +42,12 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_0100
      * @tc.number Security_DataSecurity_Asset_Update_Func_0100
-     * @tc.name 更新过长、过短、空的短敏感数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -62,12 +62,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_0200
      * @tc.number Security_DataSecurity_Asset_Update_Func_0200
-     * @tc.name 更新正常格式的短敏感数据与重复更新
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -82,12 +82,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_0300
      * @tc.number Security_DataSecurity_Asset_Update_Func_0300
-     * @tc.name 更新不存在的数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -99,12 +99,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_0600
      * @tc.number Security_DataSecurity_Asset_Update_Func_0600
-     * @tc.name 更新自定义label，资产更新成功
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -131,12 +131,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_0700
      * @tc.number Security_DataSecurity_Asset_Update_Func_0700
-     * @tc.name 更新固定label，资产更新失败
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -163,12 +163,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_0900
      * @tc.number Security_DataSecurity_Asset_Update_Func_0900
-     * @tc.name 更新关键资产的同时，更新固定label，资产更新失败
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -196,12 +196,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_1000
      * @tc.number Security_DataSecurity_Asset_Update_Func_1000
-     * @tc.name 更新接口的query字段传入异常数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -254,12 +254,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   Security_DataSecurity_Asset_Update_Func_1100
      * @tc.number Security_DataSecurity_Asset_Update_Func_1100
-     * @tc.name 更新接口的attributesToUpdate字段传入异常数据
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Security_DataSecurity_Asset_Update_Func_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -303,12 +303,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_Password_Func_0500
      * @tc.number SUB_Security_DataSecurity_Asset_Password_Func_0500
-     * @tc.name 通过更新接口修改设置密码时有效的参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_Password_Func_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();
@@ -333,12 +333,12 @@ export default function abilityTest() {
     })
 
     /**
+     * @tc.name   SUB_Security_DataSecurity_Asset_LevelCtrl_Func_2500
      * @tc.number SUB_Security_DataSecurity_Asset_LevelCtrl_Func_2500
-     * @tc.name 通过更新接口修改数据分级参数
-     * @tc.desc test error cases
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   test error cases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Security_DataSecurity_Asset_LevelCtrl_Func_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       let attr: asset.AssetMap = new Map();

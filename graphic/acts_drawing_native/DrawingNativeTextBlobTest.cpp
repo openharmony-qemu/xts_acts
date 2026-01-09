@@ -61,13 +61,13 @@ class DrawingNativeTextBlobTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0100
- * @tc.name: testTextBlobBuilderCreateDestroyNormal
- * @tc.desc: test for testTextBlobBuilderCreateDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobBuilderCreateDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0100
+ * @tc.desc   test for testTextBlobBuilderCreateDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -88,13 +88,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyNormal, Func
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0101
- * @tc.name: testTextBlobBuilderCreateDestroyNull
- * @tc.desc: test for testTextBlobBuilderCreateDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobBuilderCreateDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0101
+ * @tc.desc   test for testTextBlobBuilderCreateDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TextBlobBuilderDestroy with nullptr parameter
@@ -103,13 +103,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyNull, Functi
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0102
- * @tc.name: testTextBlobBuilderCreateDestroyMultipleCalls
- * @tc.desc: test for testTextBlobBuilderCreateDestroyMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobBuilderCreateDestroyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0102
+ * @tc.desc   test for testTextBlobBuilderCreateDestroyMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_TextBlobBuilder *builders[10];
@@ -136,13 +136,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderCreateDestroyMultipleCall
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0200
- * @tc.name: testTextBlobCreateFromTextNormal
- * @tc.desc: test for testTextBlobCreateFromTextNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobCreateFromTextNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0200
+ * @tc.desc   test for testTextBlobCreateFromTextNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextNormal, Function | SmallTest | Level0) {
     OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
@@ -190,13 +190,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextNormal, Function |
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0201
- * @tc.name: testTextBlobCreateFromTextNull
- * @tc.desc: test for testTextBlobCreateFromTextNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromTextNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0201
+ * @tc.desc   test for testTextBlobCreateFromTextNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextNull, Function | SmallTest | Level3) {
     const char *str = "123456";
@@ -229,13 +229,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextNull, Function | S
     OH_Drawing_TextBlobDestroy(textBlob4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0203
- * @tc.name: testTextBlobCreateFromTextMultipleCalls
- * @tc.desc: test for testTextBlobCreateFromTextMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromTextMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0203
+ * @tc.desc   test for testTextBlobCreateFromTextMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextMultipleCalls, Function | SmallTest | Level3) {
     const char *strs[] = {
@@ -266,13 +266,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextMultipleCalls, Fun
     OH_Drawing_CanvasDestroy(canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0204
- * @tc.name: testTextBlobCreateFromTextAbnormal
- * @tc.desc: test for testTextBlobCreateFromTextAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromTextAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0204
+ * @tc.desc   test for testTextBlobCreateFromTextAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextAbnormal, Function | SmallTest | Level3) {
     const char *str = "123456";
@@ -293,13 +293,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromTextAbnormal, Function
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0300
- * @tc.name: testTextBlobCreateFromPosTextNormal
- * @tc.desc: test for testTextBlobCreateFromPosTextNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobCreateFromPosTextNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0300
+ * @tc.desc   test for testTextBlobCreateFromPosTextNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextNormal, Function | SmallTest | Level0) {
     const char *str = "123456";
@@ -312,21 +312,23 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextNormal, Functio
     size_t byteLength = strlen(str);
     int count = OH_Drawing_FontCountText(font, str, byteLength, TEXT_ENCODING_UTF8);
     OH_Drawing_Point2D pts[count];
-    OH_Drawing_TextBlobCreateFromPosText(str, count, &pts[0], font, TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlob* textblob = OH_Drawing_TextBlobCreateFromPosText(str, count, &pts[0], font, TEXT_ENCODING_UTF8);
     // add assert
+    EXPECT_NE(textblob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
+    OH_Drawing_TextBlobDestroy(textblob);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0301
- * @tc.name: testTextBlobCreateFromPosTextNull
- * @tc.desc: test for testTextBlobCreateFromPosTextNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromPosTextNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0301
+ * @tc.desc   test for testTextBlobCreateFromPosTextNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextNull, Function | SmallTest | Level3) {
     const char *str = "123456";
@@ -340,37 +342,39 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextNull, Function 
     OH_Drawing_Point2D pts[count];
     // 1. OH_Drawing_TextBlobCreateFromPosText with the first parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(nullptr, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
+    OH_Drawing_TextBlob* textblob =
+        OH_Drawing_TextBlobCreateFromPosText(nullptr, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 2. OH_Drawing_TextBlobCreateFromPosText with the second parameter being empty, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, 0, &pts[0], font, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText(str, 0, &pts[0], font, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 3. OH_Drawing_TextBlobCreateFromPosText with the third parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), nullptr, font, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), nullptr, font, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     OH_Drawing_ErrorCodeReset();
     // 4. OH_Drawing_TextBlobCreateFromPosText with the first parameter being a string
-    OH_Drawing_TextBlobCreateFromPosText("123456", 6, &pts[0], font, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText("123456", 6, &pts[0], font, TEXT_ENCODING_UTF8);
     // 5. OH_Drawing_TextBlobCreateFromPosText with the fourth parameter being nullptr, check the error code with
     // OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], nullptr, TEXT_ENCODING_UTF8);
+    textblob = OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], nullptr, TEXT_ENCODING_UTF8);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 6. Free memory
     OH_Drawing_FontDestroy(font);
+    OH_Drawing_TextBlobDestroy(textblob);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0302
- * @tc.name: testTextBlobCreateFromPosTextMultipleCalls
- * @tc.desc: test for testTextBlobCreateFromPosTextMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromPosTextMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0302
+ * @tc.desc   test for testTextBlobCreateFromPosTextMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextMultipleCalls, Function | SmallTest | Level3) {
     const char *strs[] = {
@@ -389,22 +393,25 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextMultipleCalls, 
         const char *str = strs[i % 6];
         int count = OH_Drawing_FontCountText(font, str, strlen(str), TEXT_ENCODING_UTF8);
         OH_Drawing_Point2D pts[count];
-        OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
+        OH_Drawing_TextBlob* textblob =
+            OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, TEXT_ENCODING_UTF8);
         // add assert
+        EXPECT_NE(textblob, nullptr);
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
+        OH_Drawing_TextBlobDestroy(textblob);
     }
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0303
- * @tc.name: testTextBlobCreateFromPosTextAbnormal
- * @tc.desc: test for testTextBlobCreateFromPosTextAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromPosTextAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0303
+ * @tc.desc   test for testTextBlobCreateFromPosTextAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextAbnormal, Function | SmallTest | Level3) {
     const char *str = "123456";
@@ -418,20 +425,23 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromPosTextAbnormal, Funct
     OH_Drawing_Point2D pts[count];
     // 1. Call OH_Drawing_TextBlobCreateFromPosText interface with OH_Drawing_TextEncoding out of range, check the error
     // code with OH_Drawing_ErrorCodeGet
-    OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, static_cast<OH_Drawing_TextEncoding>(-1));
+    OH_Drawing_TextBlob* textblob =
+        OH_Drawing_TextBlobCreateFromPosText(str, strlen(str), &pts[0], font, static_cast<OH_Drawing_TextEncoding>(-1));
+    EXPECT_EQ(textblob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
+    OH_Drawing_TextBlobDestroy(textblob);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0400
- * @tc.name: testTextBlobCreateFromStringNormal
- * @tc.desc: test for testTextBlobCreateFromStringNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobCreateFromStringNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0400
+ * @tc.desc   test for testTextBlobCreateFromStringNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringNormal, Function | SmallTest | Level0) {
     const char *str = "123456";
@@ -465,13 +475,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringNormal, Function
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0401
- * @tc.name: testTextBlobCreateFromStringNull
- * @tc.desc: test for testTextBlobCreateFromStringNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromStringNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0401
+ * @tc.desc   test for testTextBlobCreateFromStringNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringNull, Function | SmallTest | Level3) {
     const char *str = "123456";
@@ -492,6 +502,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringNull, Function |
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
     // 3. OH_Drawing_TextBlobCreateFromPosText with the first parameter being a string
     OH_Drawing_TextBlob *textBlob3 = OH_Drawing_TextBlobCreateFromString("123456", font, TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob3, nullptr);
     // 4. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TextBlobDestroy(textBlob1);
@@ -500,13 +511,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringNull, Function |
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0402
- * @tc.name: testTextBlobCreateFromStringMultipleCalls
- * @tc.desc: test for testTextBlobCreateFromStringMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromStringMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0402
+ * @tc.desc   test for testTextBlobCreateFromStringMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringMultipleCalls, Function | SmallTest | Level3) {
     const char *strs[] = {
@@ -524,25 +535,27 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringMultipleCalls, F
     for (int i = 0; i < 10; i++) {
         const char *str = strs[i % 6];
         OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobCreateFromString(str, font, TEXT_ENCODING_UTF8);
+        EXPECT_NE(textBlob, nullptr);
         OH_Drawing_Canvas *canvas = OH_Drawing_CanvasCreate();
         EXPECT_NE(nullptr, canvas);
         OH_Drawing_CanvasDrawTextBlob(canvas, textBlob, 0, 0);
         // add assert
         EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
         OH_Drawing_CanvasDestroy(canvas);
+        OH_Drawing_TextBlobDestroy(textBlob);
     }
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0403
- * @tc.name: testTextBlobCreateFromStringAbnormal
- * @tc.desc: test for testTextBlobCreateFromStringAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobCreateFromStringAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0403
+ * @tc.desc   test for testTextBlobCreateFromStringAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringAbnormal, Function | SmallTest | Level3) {
     const char *str = "123456";
@@ -556,6 +569,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringAbnormal, Functi
     // code with OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, static_cast<OH_Drawing_TextEncoding>(-1));
+    EXPECT_EQ(textBlob, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 2. Free memory
     OH_Drawing_FontDestroy(font);
@@ -563,13 +577,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobCreateFromStringAbnormal, Functi
     OH_Drawing_TypefaceDestroy(typeSurface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0500
- * @tc.name: testTextBlobGetBoundsNormal
- * @tc.desc: test for testTextBlobGetBoundsNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobGetBoundsNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0500
+ * @tc.desc   test for testTextBlobGetBoundsNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNormal, Function | SmallTest | Level0) {
     // 1、创建OH_Drawing_TextBlob、OH_Drawing_Rect
@@ -580,6 +594,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNormal, Function | Smal
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Call OH_Drawing_TextBlobGetBounds
     OH_Drawing_TextBlobGetBounds(textBlob, rect);
     float left = OH_Drawing_RectGetLeft(rect);
@@ -591,13 +606,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNormal, Function | Smal
     OH_Drawing_TextBlobDestroy(textBlob);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0501
- * @tc.name: testTextBlobGetBoundsNull
- * @tc.desc: test for testTextBlobGetBoundsNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobGetBoundsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0501
+ * @tc.desc   test for testTextBlobGetBoundsNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNull, Function | SmallTest | Level3) {
     // 1. Create OH_Drawing_TextBlob and OH_Drawing_Rect
@@ -608,6 +623,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNull, Function | SmallT
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Pass nullptr as the first parameter to OH_Drawing_TextBlobGetBounds and check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlobGetBounds(nullptr, rect);
@@ -623,13 +639,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsNull, Function | SmallT
     OH_Drawing_TextBlobDestroy(textBlob);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0502
- * @tc.name: testTextBlobGetBoundsMultipleCalls
- * @tc.desc: test for testTextBlobGetBoundsMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobGetBoundsMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0502
+ * @tc.desc   test for testTextBlobGetBoundsMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create OH_Drawing_TextBlob and OH_Drawing_Rect
@@ -646,6 +662,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsMultipleCalls, Function
         const char *str = strs[i % 6];
         OH_Drawing_TextBlob *textBlob =
             OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+        EXPECT_NE(textBlob, nullptr);
         OH_Drawing_TextBlobGetBounds(textBlob, rect);
         float left = OH_Drawing_RectGetLeft(rect);
         float right = OH_Drawing_RectGetRight(rect);
@@ -657,13 +674,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsMultipleCalls, Function
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0503
- * @tc.name: testTextBlobGetBoundsAbnormal
- * @tc.desc: test for testTextBlobGetBoundsAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobGetBoundsAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0503
+ * @tc.desc   test for testTextBlobGetBoundsAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsAbnormal, Function | SmallTest | Level3) {
     // 1. Create OH_Drawing_TextBlob and OH_Drawing_Rect
@@ -674,6 +691,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsAbnormal, Function | Sm
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Call OH_Drawing_TextBlobGetBounds with rect initialized with negative values
     OH_Drawing_TextBlobGetBounds(textBlob, rect);
     float left = OH_Drawing_RectGetLeft(rect);
@@ -685,13 +703,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobGetBoundsAbnormal, Function | Sm
     OH_Drawing_TextBlobDestroy(textBlob);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0600
- * @tc.name: testTextBlobUniqueIDNormal
- * @tc.desc: test for testTextBlobUniqueIDNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobUniqueIDNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0600
+ * @tc.desc   test for testTextBlobUniqueIDNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNormal, Function | SmallTest | Level0) {
     // 1. Create OH_Drawing_TextBlob
@@ -700,6 +718,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNormal, Function | Small
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Call OH_Drawing_TextBlobUniqueID
     uint32_t ret = OH_Drawing_TextBlobUniqueID(textBlob);
     EXPECT_EQ(ret > 0, true);
@@ -710,13 +729,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNormal, Function | Small
     OH_Drawing_TextBlobDestroy(textBlob);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0601
- * @tc.name: testTextBlobUniqueIDNull
- * @tc.desc: test for testTextBlobUniqueIDNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobUniqueIDNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0601
+ * @tc.desc   test for testTextBlobUniqueIDNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNull, Function | SmallTest | Level3) {
     // 1. Create OH_Drawing_TextBlob
@@ -725,6 +744,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNull, Function | SmallTe
     const char *str = "123456";
     OH_Drawing_TextBlob *textBlob =
         OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+    EXPECT_NE(textBlob, nullptr);
     // 2. Pass nullptr as the parameter to OH_Drawing_TextBlobUniqueID and check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlobUniqueID(nullptr);
@@ -734,13 +754,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDNull, Function | SmallTe
     OH_Drawing_TextBlobDestroy(textBlob);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0602
- * @tc.name: testTextBlobUniqueIDMultipleCalls
- * @tc.desc: test for testTextBlobUniqueIDMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobUniqueIDMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0602
+ * @tc.desc   test for testTextBlobUniqueIDMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create OH_Drawing_TextBlob
@@ -755,6 +775,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDMultipleCalls, Function 
         const char *str = strs[i % 6];
         OH_Drawing_TextBlob *textBlob =
             OH_Drawing_TextBlobCreateFromString(str, font, OH_Drawing_TextEncoding::TEXT_ENCODING_UTF8);
+        EXPECT_NE(textBlob, nullptr);
         uint32_t ret = OH_Drawing_TextBlobUniqueID(textBlob);
         EXPECT_EQ(ret > 0, true);
         // add assert
@@ -765,13 +786,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobUniqueIDMultipleCalls, Function 
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0700
- * @tc.name: testTextBlobBuilderAllocRunPosNormal
- * @tc.desc: test for testTextBlobBuilderAllocRunPosNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobBuilderAllocRunPosNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0700
+ * @tc.desc   test for testTextBlobBuilderAllocRunPosNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNormal, Function | SmallTest | Level0) {
     // 1. Create OH_Drawing_TextBlobBuilder, OH_Drawing_Font, OH_Drawing_Rect
@@ -780,6 +801,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNormal, Functi
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
+    EXPECT_NE(builder, nullptr);
     // 2. OH_Drawing_TextBlobBuilderAllocRunPos
     const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, 9, rect);
     // add assert
@@ -794,13 +816,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNormal, Functi
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0701
- * @tc.name: testTextBlobBuilderAllocRunPosNull
- * @tc.desc: test for testTextBlobBuilderAllocRunPosNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobBuilderAllocRunPosNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0701
+ * @tc.desc   test for testTextBlobBuilderAllocRunPosNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNull, Function | SmallTest | Level3) {
     // 1. Create OH_Drawing_TextBlobBuilder, OH_Drawing_Font, OH_Drawing_Rect
@@ -809,6 +831,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNull, Function
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
+    EXPECT_NE(builder, nullptr);
     // 2. Call OH_Drawing_TextBlobBuilderAllocRunPos with the first parameter as nullptr and check the error code with
     // OH_Drawing_ErrorCodeGet
     OH_Drawing_TextBlobBuilderAllocRunPos(nullptr, font, 9, rect);
@@ -837,13 +860,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosNull, Function
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0702
- * @tc.name: testTextBlobBuilderAllocRunPosMultipleCalls
- * @tc.desc: test for testTextBlobBuilderAllocRunPosMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobBuilderAllocRunPosMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0702
+ * @tc.desc   test for testTextBlobBuilderAllocRunPosMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosMultipleCalls, Function | SmallTest | Level3) {
     OH_Drawing_Rect *rect = OH_Drawing_RectCreate(0, 0, 0, 0);
@@ -851,6 +874,7 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosMultipleCalls,
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     EXPECT_NE(font, nullptr);
     OH_Drawing_TextBlobBuilder *builder = OH_Drawing_TextBlobBuilderCreate();
+    EXPECT_NE(builder, nullptr);
     // 1. Call OH_Drawing_TextBlobBuilderAllocRunPos 10 times
     for (int i = 0; i < 10; i++) {
         const OH_Drawing_RunBuffer *runBuffer = OH_Drawing_TextBlobBuilderAllocRunPos(builder, font, 9, rect);
@@ -869,13 +893,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderAllocRunPosMultipleCalls,
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0800
- * @tc.name: testTextBlobBuilderMakeNormal
- * @tc.desc: test for testTextBlobBuilderMakeNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobBuilderMakeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0800
+ * @tc.desc   test for testTextBlobBuilderMakeNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeNormal, Function | SmallTest | Level0) {
     // 1. Create OH_Drawing_TextBlobBuilder
@@ -884,10 +908,9 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeNormal, Function | Sm
     EXPECT_NE(builder, nullptr);
     // 2. Call OH_Drawing_TextBlobBuilderMake
     OH_Drawing_TextBlob *textBlob = OH_Drawing_TextBlobBuilderMake(builder);
+    EXPECT_EQ(textBlob, nullptr);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_SUCCESS);
-    // add assert
-    EXPECT_EQ(textBlob, nullptr);
     // 3. Free memory
     OH_Drawing_TextBlobDestroy(textBlob);
     if (0) {
@@ -896,13 +919,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeNormal, Function | Sm
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0801
- * @tc.name: testTextBlobBuilderMakeNull
- * @tc.desc: test for testTextBlobBuilderMakeNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobBuilderMakeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0801
+ * @tc.desc   test for testTextBlobBuilderMakeNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeNull, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_TextBlobBuilderMake with nullptr as the parameter and check the error code with
@@ -912,13 +935,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeNull, Function | Smal
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_DRAWING_ERROR_INVALID_PARAMETER);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0802
- * @tc.name: testTextBlobBuilderMakeMultipleCalls
- * @tc.desc: test for testTextBlobBuilderMakeMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobBuilderMakeMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0802
+ * @tc.desc   test for testTextBlobBuilderMakeMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create OH_Drawing_TextBlobBuilder
@@ -939,13 +962,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobBuilderMakeMultipleCalls, Functi
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0800
- * @tc.name: testTextBlobDestroyNormal
- * @tc.desc: test for testTextBlobDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testTextBlobDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0800
+ * @tc.desc   test for testTextBlobDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobDestroyNormal, Function | SmallTest | Level0) {
     const char *str = "123456";
@@ -963,13 +986,13 @@ HWTEST_F(DrawingNativeTextBlobTest, testTextBlobDestroyNormal, Function | SmallT
     OH_Drawing_TextBlobDestroy(textBlob);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0801
- * @tc.name: testTextBlobDestroyNull
- * @tc.desc: test for testTextBlobDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testTextBlobDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_TEXTBLOB_0801
+ * @tc.desc   test for testTextBlobDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeTextBlobTest, testTextBlobDestroyNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_TextBlobDestroy with null parameter

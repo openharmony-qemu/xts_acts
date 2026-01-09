@@ -24,6 +24,11 @@ group("ActsAceEtsModuleXNodeTest") {
       "ace_ets_module_XNode_api21:ActsAceEtsModuleXNodeApi21Test",
       "ace_ets_module_XNode_api22:ActsAceEtsModuleXNodeApi22Test",
       "ace_ets_module_XNode01:ActsAceEtsModuleXNode01Test",
+      "ace_ets_module_XNode_api12_static:ActsAceEtsModuleXNodeApi12StaticTest",
+      "ace_ets_module_XNode_api14_static:ActsAceEtsModuleXNodeApi14StaticTest",
+      "ace_ets_module_XNode_api15_static:ActsAceEtsModuleXNodeApi15StaticTest",
+      "ace_ets_module_XNode_api16_static:ActsAceEtsModuleXNodeApi16StaticTest",
+      "ace_ets_module_XNode_api20_static:ActsAceEtsModuleXNodeApi20StaticTest",
     ]
   } else {
     deps = [
@@ -37,6 +42,14 @@ group("ActsAceEtsModuleXNodeTest") {
       "ace_ets_module_XNode_api21:ActsAceEtsModuleXNodeApi21Test",
       "ace_ets_module_XNode_api22:ActsAceEtsModuleXNodeApi22Test",
       "ace_ets_module_XNode01:ActsAceEtsModuleXNode01Test",
+      "ace_ets_module_XNodeNoWear:ActsAceEtsModuleXNodeNoWearTest",
+      "ace_ets_module_XNode_api12_static:ActsAceEtsModuleXNodeApi12StaticTest",
+      "ace_ets_module_XNode_api14_static:ActsAceEtsModuleXNodeApi14StaticTest",
+      "ace_ets_module_XNode_api15_static:ActsAceEtsModuleXNodeApi15StaticTest",
+      "ace_ets_module_XNode_api16_static:ActsAceEtsModuleXNodeApi16StaticTest",
+      "ace_ets_module_XNode_api18_static:ActsAceEtsModuleXNodeApi18StaticTest",
+      "ace_ets_module_XNode_api20_static:ActsAceEtsModuleXNodeApi20StaticTest",
+      "ace_ets_module_XNodeNoWear_api12_static:ActsAceEtsModuleXNodeNoWearApi12StaticTest",
     ]
   }
 }

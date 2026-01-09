@@ -24,7 +24,7 @@ async function createAuxiliaryPictureAbnormalTest(done: Function, testName: stri
   auxType: image.AuxiliaryPictureType, callback: (errorCode: string) => void) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(299700600);
+    let array = new ArrayBuffer(3000);
     let pathUri = 'file://' + testContext.filesDir + "/" + path;
     const fd = await fs.open(pathUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, array);
@@ -66,12 +66,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_001
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_001
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_001
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_001
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_001';
@@ -84,12 +84,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
       });
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_002
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_002
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_002
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_002
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_002';
@@ -103,12 +103,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
       });
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_003
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_003
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_003
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_003
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_003';
@@ -121,12 +121,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_004
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_004
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_004
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_004
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_004';
@@ -138,12 +138,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
       });
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_005
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_005
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_005
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_005
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_005';
@@ -156,12 +156,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_006
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_006
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_006
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_006
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_006';
@@ -177,12 +177,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
 
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_007
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_007
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_007
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_007
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_007';
@@ -195,12 +195,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_008
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_008
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_008
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_008
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_008';
@@ -213,12 +213,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_009
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_009
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_009
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_009
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_009';
@@ -231,12 +231,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_0010
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_0010
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_010
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_0010
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_010';
@@ -249,12 +249,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_011
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_011
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_011
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_011
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_011';
@@ -267,12 +267,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_012
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_012
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_012
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_012
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_012';
@@ -285,12 +285,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_013
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_013
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_013
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_013
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_013';
@@ -303,12 +303,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_014
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_014
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_014
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_014
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_014';
@@ -321,12 +321,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_015
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_015
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_015
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_015
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_015';
@@ -339,12 +339,12 @@ export default function ImageCreateAuxiliaryPictureTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_016
-     * @tc.name       SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_016
-     * @tc.desc       Test createAuxiliaryPicture with Size
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_016
+     * @tc.number SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_016
+     * @tc.desc   Test createAuxiliaryPicture with Size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_CREATE_AUXILIARY_PICTURE_ABNORMAL_ERROR_016';

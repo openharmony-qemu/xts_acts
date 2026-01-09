@@ -50,12 +50,12 @@ export default function DecimalTest009() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST9_001
-     * @tc.name      : Decimal_isFinite_Func_001
-     * @tc.desc      : Test isFinite
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_001
+     * @tc.number DECIMAL_TEST9_001
+     * @tc.desc   Test isFinite
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_001",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -82,12 +82,12 @@ export default function DecimalTest009() {
       test_isFinite_001(n.equals('1.000000'));
     });
     /**
-     * @tc.number    : DECIMAL_TEST9_002
-     * @tc.name      : Decimal_isFinite_Func_002
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_002
+     * @tc.number DECIMAL_TEST9_002
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_002",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -125,6 +125,14 @@ export default function DecimalTest009() {
      * @tc.type      : Function
      * @tc.level     : Level 1
      */
+    /**
+     * @tc.name   Decimal_isFinite_Func_003
+     * @tc.number Decimal_isFinite_Func_003
+     * @tc.desc   Decimal_isFinite_Func_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("Decimal_isFinite_Func_003",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
         precision: 20,
@@ -153,12 +161,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_004
-     * @tc.name      : Decimal_isFinite_Func_004
-     * @tc.desc      : Test tanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_004
+     * @tc.number DECIMAL_TEST9_004
+     * @tc.desc   Test tanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_004",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -193,12 +201,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_005
-     * @tc.name      : Decimal_isFinite_Func_005
-     * @tc.desc      : Test asinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_005
+     * @tc.number DECIMAL_TEST9_005
+     * @tc.desc   Test asinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_005",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -215,7 +223,7 @@ export default function DecimalTest009() {
       test_isFinite_001(n.lessThan(0.0001));
       test_isFinite_001(n.lessThanOrEqualTo(-0));
       test_isFinite_001(n.toString() === n.valueOf());
-      n = new Decimal(-0);
+      n = new Decimal(-0.0);
       test_isFinite_001(n.isFinite());
       test_isFinite_001(!n.isNaN());
       test_isFinite_001(n.isNegative());
@@ -228,12 +236,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_006
-     * @tc.name      : Decimal_isFinite_Func_006
-     * @tc.desc      : Test acosh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_006
+     * @tc.number DECIMAL_TEST9_006
+     * @tc.desc   Test acosh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_006",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -244,7 +252,7 @@ export default function DecimalTest009() {
         minE: -9e15,
         maxE: 9e15
       });
-      n = new Decimal(-0);
+      n = new Decimal(-0.0);
       test_isFinite_001(n.lessThan(0.1));
       test_isFinite_001(n.lessThanOrEqualTo(0));
       test_isFinite_001(n.valueOf() === '-0' && n.toString() === '0');
@@ -264,12 +272,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_007
-     * @tc.name      : Decimal_isFinite_Func_007
-     * @tc.desc      : Test atanh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_007
+     * @tc.number DECIMAL_TEST9_007
+     * @tc.desc   Test atanh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_007",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -296,12 +304,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_008
-     * @tc.name      : Decimal_isFinite_Func_008
-     * @tc.desc      : Test exp
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_008
+     * @tc.number DECIMAL_TEST9_008
+     * @tc.desc   Test exp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_008",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -331,12 +339,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_009
-     * @tc.name      : Decimal_isFinite_Func_009
-     * @tc.desc      : Test expm1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_009
+     * @tc.number DECIMAL_TEST9_009
+     * @tc.desc   Test expm1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_009",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -366,12 +374,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_010
-     * @tc.name      : Decimal_isFinite_Func_010
-     * @tc.desc      : Test log
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_010
+     * @tc.number DECIMAL_TEST9_010
+     * @tc.desc   Test log
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_010",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -402,12 +410,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_011
-     * @tc.name      : Decimal_isFinite_Func_011
-     * @tc.desc      : Test log1p
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_011
+     * @tc.number DECIMAL_TEST9_011
+     * @tc.desc   Test log1p
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_011",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -439,12 +447,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_012
-     * @tc.name      : Decimal_isFinite_Func_012
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_012
+     * @tc.number DECIMAL_TEST9_012
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_012",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -476,12 +484,12 @@ export default function DecimalTest009() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST9_013
-     * @tc.name      : Decimal_isFinite_Func_013
-     * @tc.desc      : Test log2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_isFinite_Func_013
+     * @tc.number DECIMAL_TEST9_013
+     * @tc.desc   Test log2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_isFinite_Func_013",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({

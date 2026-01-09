@@ -34,6 +34,8 @@ group("concurrent_test") {
       "taskpoolsequencerunnertest:ActsTaskPoolSequenceRunnerTest",
       "taskpoolsupplementtest:ActsTaskPoolSupplementTest",
       "taskpooltaskgrouptest:ActsTaskPoolTaskGroupTest",
+      "asonutilstest:ActsAsonUtilsTest",
+      "collections_all_test:ActsCollections_All_Test",
     ]
   }
 }

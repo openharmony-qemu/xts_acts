@@ -53,12 +53,12 @@ export default function HasCard2PublicNeedCardTest() {
   describe('TelephonyCallHasCard2PublicNeedCardTest', (): void => {
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_HasCallSync_0200
-     * @tc.name   : testTelephonyCallManagerHasCallSync0200
-     * @tc.desc   : Determine whether there is a phone call api10+.
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerHasCallSync0200
+     * @tc.number SUB_Telephony_CallManager_HasCallSync_0200
+     * @tc.desc   Determine whether there is a phone call api10+.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerHasCallSync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyCallManagerHasCallSync0200';
@@ -83,12 +83,12 @@ export default function HasCard2PublicNeedCardTest() {
     });
 
     /**
-     * @tc.number : SUB_Telephony_CallManager_GetCallStateSync_0200
-     * @tc.name   : testTelephonyCallManagerGetCallStateSync0200
-     * @tc.desc   : Get the current call status
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testTelephonyCallManagerGetCallStateSync0200
+     * @tc.number SUB_Telephony_CallManager_GetCallStateSync_0200
+     * @tc.desc   Get the current call status
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTelephonyCallManagerGetCallStateSync0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let caseName: string = 'testTelephonyCallManagerGetCallStateSync0200';

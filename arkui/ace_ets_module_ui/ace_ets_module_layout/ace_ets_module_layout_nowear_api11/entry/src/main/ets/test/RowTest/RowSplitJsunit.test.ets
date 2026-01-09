@@ -57,9 +57,12 @@ export default function rowSplitJsunit() {
     });
 
     /**
+     * @tc.name   testRowSplitGetInspectorByKey010
      * @tc.number SUB_ACE_BASIC_ETS_API_1010
-     * @tc.name testRowSplitGetInspectorByKey010
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowSplitGetInspectorByKey010',  Level.LEVEL0, async (done: Function) => {
       console.info('testGetInspectorByKey START');
@@ -75,9 +78,12 @@ export default function rowSplitJsunit() {
     });
 
     /**
+     * @tc.name   testRowSplitGetInspectorByKey020
      * @tc.number SUB_ACE_BASIC_ETS_API_1020
-     * @tc.name testRowSplitGetInspectorByKey020
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRowSplitGetInspectorByKey020',  Level.LEVEL0, async (done: Function) => {
       let strJson = getInspectorByKey('rowSplit1');

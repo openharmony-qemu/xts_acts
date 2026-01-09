@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,19 +19,34 @@ import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function AbilityIsTerminatingTest() {
 
   describe('AbilityIsTerminatingTest', () => {
 
     let TAG = "";
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
     afterEach(async (done: Function) => {
       done();
     })
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_IsTerminating_0100
-     * @tc.name    : Verify the isTerminating interface
-     * @tc.desc    : Terminate ability through terminateSelf.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_IsTerminating_0100
+     * @tc.number SUB_AA_OpenHarmony_IsTerminating_0100
+     * @tc.desc   Terminate ability through terminateSelf.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_IsTerminating_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_IsTerminating_0100 == ';
@@ -90,10 +105,13 @@ export default function AbilityIsTerminatingTest() {
       })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_IsTerminating_0200
-     * @tc.name    : Verify the isTerminating interface
-     * @tc.desc    : Terminate ability through terminateSelfWithResult.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_IsTerminating_0200
+     * @tc.number SUB_AA_OpenHarmony_IsTerminating_0200
+     * @tc.desc   Terminate ability through terminateSelfWithResult.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_IsTerminating_0200', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_IsTerminating_0200 == ';
@@ -154,10 +172,13 @@ export default function AbilityIsTerminatingTest() {
       })
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_IsTerminating_0500
-     * @tc.name    : Verify the isTerminating interface
-     * @tc.desc    : Terminate ability with the back key.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_IsTerminating_0500
+     * @tc.number SUB_AA_OpenHarmony_IsTerminating_0500
+     * @tc.desc   Terminate ability with the back key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_IsTerminating_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_IsTerminating_0500 == ';

@@ -58,13 +58,15 @@ export default function GestureRecognizerIsValid() {
       console.info("GestureRecognizerIsValid after each called");
     });
 
-    /**
-     * @tc.number GestureRecognizerIsValid_001
-     * @tc.name   GestureRecognizerIsValid_001
-     * @tc.desc Test api isValid of GestureRecognizer
-     * @tc.level Level 2
-     */
 
+    /**
+     * @tc.name   GestureRecognizerIsValid_001
+     * @tc.number GestureRecognizerIsValid_001
+     * @tc.desc   GestureRecognizerIsValid_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('GestureRecognizerIsValid_001', Level.LEVEL0, async (done: Function) => {
       console.info('[GestureRecognizerIsValid_001] START');
       await CommonFunc.sleep(1000);

@@ -397,12 +397,12 @@ export default function AudioEffectTest() {
     }
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0100
-     * @tc.name      : GET_AUDIOEFFECTINFOARRYSYNC - MEDIA - Sync
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRYSYNC - MEDIA - Sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0100
+     * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - MEDIA - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -420,12 +420,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0200
-     * @tc.name      : GET_AUDIOEFFECTINFOARRYSYNC - Null_Parameter - 401 - Sync
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRYSYNC - Null_Parameter - 401 - Sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0200
+     * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - Null_Parameter - 401 - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -443,12 +443,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0300
-     * @tc.name      : GET_AUDIOEFFECTINFOARRYSYNC - Invalid_Number_Parameter - 6800101 - Sync
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRYSYNC - Invalid_Number_Parameter - 6800101 - Sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0300
+     * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - Invalid_Number_Parameter - 6800101 - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0300', 2, async function (done) {
       try {
@@ -465,12 +465,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0400
-     * @tc.name      : GET_AUDIOEFFECTINFOARRYSYNC - String_Parameter - 401 - Sync
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRYSYNC - String_Parameter - 401 - Sync
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0400
+     * @tc.desc   GET_AUDIOEFFECTINFOARRYSYNC - String_Parameter - 401 - Sync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRYSYNC_0400', 2, async function (done) {
       try {
@@ -488,12 +488,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0100
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - UNKNOWN - Promise
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0100
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -514,12 +514,12 @@ export default function AudioEffectTest() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0200
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - MEDIA - Promise
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0200
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0200', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       try {
@@ -541,12 +541,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0300
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - VOICE_CALL - Promise
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - VOICE_CALL
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0300
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - VOICE_CALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0300', 2, async function (done) {
       try {
@@ -568,12 +568,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0400
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - RING - Promise
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - RING
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0400
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - RING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0400', 2, async function (done) {
       try {
@@ -595,12 +595,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0500
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - MOVIE - Promise
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - MOVIE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0500
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0500', 2, async function (done) {
       try {
@@ -622,12 +622,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0600
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - MUSIC - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - MUSIC
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0600
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0600', 2, async function (done) {
       try {
@@ -653,12 +653,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0700
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - ALARM - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0700
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0700', 2, async function (done) {
       try {
@@ -684,12 +684,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0800
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - VOICE_ASSISTANT - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - VOICE_ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0800
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0800', 2, async function (done) {
       try {
@@ -715,12 +715,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0900
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - ACCESSIBILITY - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0900
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_0900', 2, async function (done) {
       try {
@@ -746,12 +746,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1000
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - VOICE_MESSAGE - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - VOICE_MESSAGE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1000
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1000', 2, async function (done) {
       try {
@@ -777,12 +777,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1100
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - RINGTONE - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1100
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1100', 2, async function (done) {
       try {
@@ -809,12 +809,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1200
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - NOTIFICATION - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - NOTIFICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1200
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1200', 2, async function (done) {
       try {
@@ -840,12 +840,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1300
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - GAME - Callback
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - GAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1300
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1300', 2, async function (done) {
       try {
@@ -872,12 +872,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1400
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - AUDIOBOOK - Promise
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - AUDIOBOOK
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1400
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - AUDIOBOOK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1400', 2, async function (done) {
       try {
@@ -899,12 +899,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1500
-     * @tc.name      : GET_AUDIOEFFECTINFOARRY - NAVIGATION - Promise
-     * @tc.desc      : GET_AUDIOEFFECTINFOARRY - NAVIGATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1500
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1500', 2, async function (done) {
       try {
@@ -926,13 +926,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1700
-         * @tc.name      : GET_AUDIOEFFECTINFOARRY - Null_Parameter - 401 - Promise
-         * @tc.desc      : GET_AUDIOEFFECTINFOARRY - Null_Parameter - 401 - Promise
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1700
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - Null_Parameter - 401 - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1700', 2, async function (done) {
       try {
         // @ts-ignore
@@ -953,13 +953,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1800
-         * @tc.name      : GET_AUDIOEFFECTINFOARRY -Invaild_Number_Parameter - 6800101 - Promise
-         * @tc.desc      : GET_AUDIOEFFECTINFOARRY -Invaild_Number_Parameter - 6800101 - Promise
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1800
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY -Invaild_Number_Parameter - 6800101 - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1800', 2, async function (done) {
       try {
         // @ts-ignore
@@ -980,13 +980,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1900
-         * @tc.name      : GET_AUDIOEFFECTINFOARRY - String_Parameter - 401 - Promise
-         * @tc.desc      : GET_AUDIOEFFECTINFOARRY - String_Parameter - 401 - Promise
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1900
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - String_Parameter - 401 - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_1900', 2, async function (done) {
       try {
         // @ts-ignore
@@ -1008,13 +1008,13 @@ export default function AudioEffectTest() {
     })
 
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2000
-         * @tc.name      : GET_AUDIOEFFECTINFOARRY - Null_Parameter - 401 - Callback
-         * @tc.desc      : GET_AUDIOEFFECTINFOARRY - Null_Parameter - 401 - Callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2000
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - Null_Parameter - 401 - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2000', 2, async function (done) {
       try {
         // @ts-ignore
@@ -1040,13 +1040,13 @@ export default function AudioEffectTest() {
     })
 
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2100
-         * @tc.name      : GET_AUDIOEFFECTINFOARRY - Invaild_Number_Parameter - 6800101 - Callback
-         * @tc.desc      : GET_AUDIOEFFECTINFOARRY - Invaild_Number_Parameter - 6800101 - Callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2100
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - Invaild_Number_Parameter - 6800101 - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2100', 2, async function (done) {
       try {
         // @ts-ignore
@@ -1071,13 +1071,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2200
-         * @tc.name      : GET_AUDIOEFFECTINFOARRY - String_Parameter - 401 - Callback
-         * @tc.desc      : GET_AUDIOEFFECTINFOARRY - String_Parameter - 401 - Callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2200
+     * @tc.desc   GET_AUDIOEFFECTINFOARRY - String_Parameter - 401 - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_GET_AUDIOEFFECTINFOARRY_2200', 2, async function (done) {
       try {
         // @ts-ignore
@@ -1102,13 +1102,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0100
-         * @tc.name      : setAudioEffectMode - Null_Parameter - 401 - Promise
-         * @tc.desc      : setAudioEffectMode - Null_Parameter - 401 - Promise
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 0
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0100
+     * @tc.desc   setAudioEffectMode - Null_Parameter - 401 - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -1149,13 +1149,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0200
-         * @tc.name      : setAudioEffectMode -Invaild_Number_Parameter - 6800101 - Promise
-         * @tc.desc      : setAudioEffectMode -Invaild_Number_Parameter - 6800101 - Promise
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0200
+     * @tc.desc   setAudioEffectMode -Invaild_Number_Parameter - 6800101 - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0200', 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -1196,13 +1196,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0300
-         * @tc.name      : setAudioEffectMode - String_Parameter - 401 - Promise
-         * @tc.desc      : setAudioEffectMode - String_Parameter - 401 - Promise
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0300
+     * @tc.desc   setAudioEffectMode - String_Parameter - 401 - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0300', 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -1244,13 +1244,13 @@ export default function AudioEffectTest() {
     })
 
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0400
-         * @tc.name      : setAudioEffectMode - Null_Parameter - 401 - Callback
-         * @tc.desc      : setAudioEffectMode - Null_Parameter - 401 - Callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0400
+     * @tc.desc   setAudioEffectMode - Null_Parameter - 401 - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0400', 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -1296,13 +1296,13 @@ export default function AudioEffectTest() {
     })
 
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0500
-         * @tc.name      : setAudioEffectMode - Invaild_Number_Parameter - 6800101 - Callback
-         * @tc.desc      : setAudioEffectMode - Invaild_Number_Parameter - 6800101 - Callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0500
+     * @tc.desc   setAudioEffectMode - Invaild_Number_Parameter - 6800101 - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0500', 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -1347,13 +1347,13 @@ export default function AudioEffectTest() {
 
     })
     /**
-         * @tc.number    : SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0600
-         * @tc.name      : setAudioEffectMode - String_Parameter - 401 - Callback
-         * @tc.desc      : setAudioEffectMode - String_Parameter - 401 - Callback
-         * @tc.size      : MEDIUM
-         * @tc.type      : Function
-         * @tc.level     : Level 2
-         */
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0600
+     * @tc.desc   setAudioEffectMode - String_Parameter - 401 - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
+     */
     it('SUB_MULTIMEDIA_AUDIO_SET_AUDIOEFFECTIMODE_0600', 2, async function (done) {
       let audioStreamInfo = {
         samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_44100,
@@ -1398,12 +1398,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0100
-     * @tc.name      : GET_SET_AudioEffectMode-UNKNOWN & UNKNOWN - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-UNKNOWN & UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0100
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0100 come in')
@@ -1463,12 +1463,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0200
-     * @tc.name      : GET_SET_AudioEffectMode-UNKNOWN & MEDIA - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-UNKNOWN & MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0200
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0200', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0200 come in')
@@ -1528,12 +1528,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0300
-     * @tc.name      : GET_SET_AudioEffectMode-UNKNOWN & COMMUNICATION - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-UNKNOWN & COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0300
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0300', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0300 come in')
@@ -1599,12 +1599,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0400
-     * @tc.name      : GET_SET_AudioEffectMode-UNKNOWN & ASSISTANT - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-UNKNOWN & ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0400
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0400', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0400 come in')
@@ -1672,12 +1672,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0500
-     * @tc.name      : GET_SET_AudioEffectMode-UNKNOWN & ALARM - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-UNKNOWN & ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0500
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0500', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0500 come in')
@@ -1744,12 +1744,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0600
-     * @tc.name      : GET_SET_AudioEffectMode-UNKNOWN & RINGTONE - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-UNKNOWN & RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0600
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0600', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0600 come in')
@@ -1815,12 +1815,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0700
-     * @tc.name      : GET_SET_AudioEffectMode-UNKNOWN & ACCESSIBILITY - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-UNKNOWN & ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0700
+     * @tc.desc   GET_SET_AudioEffectMode-UNKNOWN & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0700', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0700 come in')
@@ -1887,12 +1887,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0800
-     * @tc.name      : GET_SET_AudioEffectMode-SPEECH & UNKNOWN - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SPEECH & UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0800
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0800', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0800 come in')
@@ -1959,12 +1959,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0900
-     * @tc.name      : GET_SET_AudioEffectMode-SPEECH & MEDIA - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SPEECH & MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0900
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0900', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_0900 come in')
@@ -2030,12 +2030,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1000
-     * @tc.name      : GET_SET_AudioEffectMode-SPEECH & COMMUNICATION - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SPEECH & COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1000
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1000', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1000 come in')
@@ -2101,12 +2101,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1100
-     * @tc.name      : GET_SET_AudioEffectMode-SPEECH & ASSISTANT - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SPEECH & ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1100
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1100', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1100 come in')
@@ -2173,12 +2173,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1200
-     * @tc.name      : GET_SET_AudioEffectMode-SPEECH & ALARM - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-SPEECH & ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1200
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1200', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1200 come in')
@@ -2245,12 +2245,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1300
-     * @tc.name      : GET_SET_AudioEffectMode-SPEECH & RINGTONE - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-SPEECH & RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1300
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1300', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1300 come in')
@@ -2316,12 +2316,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1400
-     * @tc.name      : GET_SET_AudioEffectMode-SPEECH & ACCESSIBILITY - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-SPEECH & ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1400
+     * @tc.desc   GET_SET_AudioEffectMode-SPEECH & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1400', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1400 come in')
@@ -2388,12 +2388,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1500
-     * @tc.name      : GET_SET_AudioEffectMode-MUSIC & UNKNOWN - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MUSIC & UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1500
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1500', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1500 come in')
@@ -2460,12 +2460,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1600
-     * @tc.name      : GET_SET_AudioEffectMode-MUSIC & MEDIA - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MUSIC & MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1600
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1600', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1600 come in')
@@ -2531,12 +2531,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1700
-     * @tc.name      : GET_SET_AudioEffectMode-MUSIC & COMMUNICATION - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MUSIC & COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1700
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1700', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1700 come in')
@@ -2602,12 +2602,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1800
-     * @tc.name      : GET_SET_AudioEffectMode-MUSIC & ASSISTANT - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MUSIC & ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1800
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1800', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1800 come in')
@@ -2674,12 +2674,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1900
-     * @tc.name      : GET_SET_AudioEffectMode-MUSIC & ALARM - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-MUSIC & ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1900
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1900', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_1900 come in')
@@ -2746,12 +2746,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2000
-     * @tc.name      : GET_SET_AudioEffectMode-MUSIC & RINGTONE - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-MUSIC & RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2000
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2000', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2000 come in')
@@ -2817,12 +2817,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2100
-     * @tc.name      : GET_SET_AudioEffectMode-MUSIC & ACCESSIBILITY - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-MUSIC & ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2100
+     * @tc.desc   GET_SET_AudioEffectMode-MUSIC & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2100', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2100 come in')
@@ -2889,12 +2889,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2200
-     * @tc.name      : GET_SET_AudioEffectMode-MOVIE & UNKNOWN - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MOVIE & UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2200
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2200', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2200 come in')
@@ -2961,12 +2961,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2300
-     * @tc.name      : GET_SET_AudioEffectMode-MOVIE & MEDIA - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MOVIE & MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2300
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2300', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2300 come in')
@@ -3032,12 +3032,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2400
-     * @tc.name      : GET_SET_AudioEffectMode-MOVIE & COMMUNICATION - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MOVIE & COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2400
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2400', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2400 come in')
@@ -3103,12 +3103,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2500
-     * @tc.name      : GET_SET_AudioEffectMode-MOVIE & ASSISTANT - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-MOVIE & ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2500
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2500', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2500 come in')
@@ -3175,12 +3175,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2600
-     * @tc.name      : GET_SET_AudioEffectMode-MOVIE & ALARM - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-MOVIE & ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2600
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2600', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2600 come in')
@@ -3247,12 +3247,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2700
-     * @tc.name      : GET_SET_AudioEffectMode-MOVIE & RINGTONE - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-MOVIE & RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2700
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2700', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2700 come in')
@@ -3318,12 +3318,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2800
-     * @tc.name      : GET_SET_AudioEffectMode-MOVIE & ACCESSIBILITY - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-MOVIE & ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2800
+     * @tc.desc   GET_SET_AudioEffectMode-MOVIE & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2800', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2800 come in')
@@ -3391,12 +3391,12 @@ export default function AudioEffectTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2900
-     * @tc.name      : GET_SET_AudioEffectMode-SONIFICATION & UNKNOWN - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SONIFICATION & UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2900
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2900', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_2900 come in')
@@ -3463,12 +3463,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3000
-     * @tc.name      : GET_SET_AudioEffectMode-SONIFICATION & MEDIA - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SONIFICATION & MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3000
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3000', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3000 come in')
@@ -3534,12 +3534,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3100
-     * @tc.name      : GET_SET_AudioEffectMode-SONIFICATION & COMMUNICATION - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SONIFICATION & COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3100
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3100', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3100 come in')
@@ -3605,12 +3605,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3200
-     * @tc.name      : GET_SET_AudioEffectMode-SONIFICATION & ASSISTANT - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-SONIFICATION & ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3200
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3200', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3200 come in')
@@ -3677,12 +3677,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3300
-     * @tc.name      : GET_SET_AudioEffectMode-SONIFICATION & ALARM - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-SONIFICATION & ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3300
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3300', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3300 come in')
@@ -3750,12 +3750,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3400
-     * @tc.name      : GET_SET_AudioEffectMode-SONIFICATION & RINGTONE - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-SONIFICATION & RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3400
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3400', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3400 come in')
@@ -3822,12 +3822,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3500
-     * @tc.name      : GET_SET_AudioEffectMode-SONIFICATION & ACCESSIBILITY - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-SONIFICATION & ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3500
+     * @tc.desc   GET_SET_AudioEffectMode-SONIFICATION & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3500', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3500 come in')
@@ -3894,12 +3894,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3600
-     * @tc.name      : GET_SET_AudioEffectMode-RINGTONE & UNKNOWN - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-RINGTONE & UNKNOWN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3600
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3600', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3600 come in')
@@ -3966,12 +3966,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3700
-     * @tc.name      : GET_SET_AudioEffectMode-RINGTONE & MEDIA - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-RINGTONE & MEDIA
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3700
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3700', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3700 come in')
@@ -4036,12 +4036,12 @@ export default function AudioEffectTest() {
       })
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3800
-     * @tc.name      : GET_SET_AudioEffectMode-RINGTONE & COMMUNICATION - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-RINGTONE & COMMUNICATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3800
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3800', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3800 come in')
@@ -4107,12 +4107,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3900
-     * @tc.name      : GET_SET_AudioEffectMode-RINGTONE & ASSISTANT - Promise
-     * @tc.desc      : GET_SET_AudioEffectMode-RINGTONE & ASSISTANT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3900
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3900', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_3900 come in')
@@ -4179,12 +4179,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4000
-     * @tc.name      : GET_SET_AudioEffectMode-RINGTONE & ALARM - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-RINGTONE & ALARM
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4000
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4000', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4000 come in')
@@ -4251,12 +4251,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4100
-     * @tc.name      : GET_SET_AudioEffectMode-RINGTONE & RINGTONE - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-RINGTONE & RINGTONE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4100
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4100', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4100 come in')
@@ -4322,12 +4322,12 @@ export default function AudioEffectTest() {
 
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4200
-     * @tc.name      : GET_SET_AudioEffectMode-RINGTONE & ACCESSIBILITY - Callback
-     * @tc.desc      : GET_SET_AudioEffectMode-RINGTONE & ACCESSIBILITY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4200
+     * @tc.desc   GET_SET_AudioEffectMode-RINGTONE & ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4200', 2, async function (done) {
       console.info(TAG + 'SUB_MULTIMEDIA_AUDIO_GET_SET_AUDIOEFFECTMODE_4200 come in')
@@ -4394,11 +4394,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0100
-     * @tc.name      : AudioEffect_Play_MUSIC_UNKNOWN
-     * @tc.desc      : AudioEffect_Play_MUSIC
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0100
+     * @tc.desc   AudioEffect_Play_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0100', TestType.Function | Size.MEDIUMTEST | Level.LEVEL0, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0100]'
@@ -4440,11 +4441,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0200
-     * @tc.name      : AudioEffect_Play_MUSIC
-     * @tc.desc      : AudioEffect_Play_MUSIC
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0200
+     * @tc.desc   AudioEffect_Play_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0200', 2, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0200]'
@@ -4485,13 +4487,14 @@ export default function AudioEffectTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300
-     * @tc.name      : AudioEffect_Play_VOICE_CALL
-     * @tc.desc      : AudioEffect_Play_VOICE_CALL
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300
+     * @tc.desc   AudioEffect_Play_VOICE_CALL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
-    it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300', 1, async function (done) {
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300', Level.LEVEL0, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0300]'
       console.info(TAG + testCaseName + 'start')
       streamNum = 1
@@ -4533,11 +4536,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0400
-     * @tc.name      : AudioEffect_Play_RING
-     * @tc.desc      : AudioEffect_Play_RING
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0400
+     * @tc.desc   AudioEffect_Play_RING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0400', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0400]'
@@ -4578,11 +4582,12 @@ export default function AudioEffectTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0500
-     * @tc.name      : AudioEffect_Play_MOVIE
-     * @tc.desc      : AudioEffect_Play_MOVIE
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0500
+     * @tc.desc   AudioEffect_Play_MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0500', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0500]'
@@ -4624,11 +4629,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0600
-     * @tc.name      : AudioEffect_Play_SPEECH
-     * @tc.desc      : AudioEffect_Play_SPEECH
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0600
+     * @tc.desc   AudioEffect_Play_SPEECH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0600', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0600]'
@@ -4669,11 +4675,12 @@ export default function AudioEffectTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0700
-     * @tc.name      : AudioEffect_Play_ALARM
-     * @tc.desc      : AudioEffect_Play_ALARM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0700
+     * @tc.desc   AudioEffect_Play_ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0700', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0700]'
@@ -4715,11 +4722,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0800
-     * @tc.name      : AudioEffect_Play_VOICE_ASSISTANT
-     * @tc.desc      : AudioEffect_Play_VOICE_ASSISTANT
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0800
+     * @tc.desc   AudioEffect_Play_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0800', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0800]'
@@ -4760,11 +4768,12 @@ export default function AudioEffectTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0900
-     * @tc.name      : AudioEffect_Play_ACCESSIBILITY
-     * @tc.desc      : AudioEffect_Play_ACCESSIBILITY
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0900
+     * @tc.desc   AudioEffect_Play_ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0900', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_0900]'
@@ -4808,11 +4817,12 @@ export default function AudioEffectTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1000
-     * @tc.name      : AudioEffect_Play_SameStreams_DiffAudioEffectMode
-     * @tc.desc      : AudioEffect_Play_SameStreams_DiffAudioEffectMode
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1000
+     * @tc.desc   AudioEffect_Play_SameStreams_DiffAudioEffectMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1000', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1000]'
@@ -4868,11 +4878,12 @@ export default function AudioEffectTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1100
-     * @tc.name      : AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_NONE
-     * @tc.desc      : AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_NONE
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1100
+     * @tc.desc   AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1100', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1100]'
@@ -4929,11 +4940,12 @@ export default function AudioEffectTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1200
-     * @tc.name      : AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_DEFAULT
-     * @tc.desc      : AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_DEFAULT
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1200
+     * @tc.desc   AudioEffect_Play_SameStreams_SameAudioEffectMode_EFFECT_DEFAULT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1200', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1200]'
@@ -4990,11 +5002,12 @@ export default function AudioEffectTest() {
       done()
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1300
-     * @tc.name      : AudioEffect_Play_DiffStreams_DiffAudioEffectMode
-     * @tc.desc      : AudioEffect_Play_DiffStreams_DiffAudioEffectMode
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1300
+     * @tc.desc   AudioEffect_Play_DiffStreams_DiffAudioEffectMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1300', 1, async function (done) {
       testCaseName = '[SUB_MULTIMEDIA_AUDIO_AUDIOEFFECT_PLAY_1300]'

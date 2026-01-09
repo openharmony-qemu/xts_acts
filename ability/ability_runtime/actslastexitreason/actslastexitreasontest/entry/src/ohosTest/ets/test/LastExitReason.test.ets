@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -31,8 +31,17 @@ export default function lastExitReasonTest() {
   let event3 = "Acts_OnCreate_LaunchParam_3_Event";
 
   describe('ActsLastExitReasonTest', () => {
-    beforeAll(() => {
-    });
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
     beforeEach(async () => {
       await abilityDelegator.executeShellCommand("aa force-stop com.acts.lastexitreasonrely1");
       await sleep(1500);
@@ -44,13 +53,13 @@ export default function lastExitReasonTest() {
       await sleep(500);
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_7700
-     * @tc.name   : Make js crash and restart app, check ability LaunchParam last exit reason and message
-     * @tc.desc   : Expect: lastExitReason=JS_ERROR, lastExitMessage not empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_7700
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_7700
+     * @tc.desc   Expect: lastExitReason=JS_ERROR, lastExitMessage not empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_7700', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_FaultManagement_7700`;
@@ -95,13 +104,13 @@ export default function lastExitReasonTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_7800
-     * @tc.name   : App call terminateSelf and restart app, check ability LaunchParam last exit reason and message
-     * @tc.desc   : Expect: lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_7800
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_7800
+     * @tc.desc   Expect: lastExitReason=NORMAL, lastExitMessage empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_7800', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_FaultManagement_7800`;
@@ -144,13 +153,13 @@ export default function lastExitReasonTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_7900
-     * @tc.name   : Kill process by shell and restart app, check ability LaunchParam last exit reason and message
-     * @tc.desc   : Expect: lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_7900
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_7900
+     * @tc.desc   Expect: lastExitReason=NORMAL, lastExitMessage empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_7900', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_FaultManagement_7900`;
@@ -192,15 +201,13 @@ export default function lastExitReasonTest() {
       }
     });
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_8000
-     * @tc.name   : Start two ability, make js crash and restart app, check ability LaunchParam last exit reason
-     *              and message
-     * @tc.desc   : Expect: ability which started lastExitReason=JS_ERROR, lastExitMessage not empty, others
-     *              lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_8000
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_8000
+     * @tc.desc   Expect: ability which started lastExitReason=JS_ERROR, lastExitMessage not empty, others
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_8000', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_FaultManagement_8000`;
@@ -271,13 +278,13 @@ export default function lastExitReasonTest() {
     });
 
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_7901
-     * @tc.name   : Kill process by shell and restart app, check ability LaunchParam last exit reason and message
-     * @tc.desc   : Expect: lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_7901
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_7901
+     * @tc.desc   Expect: lastExitReason=NORMAL, lastExitMessage empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_7901', Level.LEVEL0, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_FaultManagement_7901`;

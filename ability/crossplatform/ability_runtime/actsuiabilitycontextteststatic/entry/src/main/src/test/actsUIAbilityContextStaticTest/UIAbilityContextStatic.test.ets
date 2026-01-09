@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeAll, afterAll } from "../../../../hypium/index";
 import common from '@ohos.app.ability.common';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog'
@@ -25,6 +25,8 @@ import { BusinessError, RecordData } from '@ohos.base';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import Want from '@ohos.app.ability.Want';
 import wantConstant from '@ohos.app.ability.wantConstant';
+import wifiManager from '@ohos.wifiManager';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -33,23 +35,43 @@ let context: common.UIAbilityContext
 export default function UIAbilityContextStatic() {
   describe("UIAbilityContextStatic", () => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.uiabilitycontexttest.static")
       await Utils.msSleep(2000);
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
+      hilog.info(domain, tag, 'wifiManager start');
+      wifiManager.disableWifi();
+      hilog.info(domain, tag, 'wifiManager end');
+      hilog.info(domain, tag, 'close usb start');
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      hilog.info(domain, tag, 'close usb end');
       hilog.info(domain, tag, 'beforeAll end');
     })
 
+    afterAll(() => {
+      hilog.info(domain, tag, 'afterAll start');
+      wifiManager.enableWifi();
+      hilog.info(domain, tag, 'afterAll end');
+    })
+
     /**
-     * @tc.number     ABILITY_TEST_ABILITYINFO_0100
-     * @tc.name       testAbilityInfoStatic001
-     * @tc.desc       test AbilityInfo
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testAbilityInfoStatic001
+     * @tc.number ABILITY_TEST_ABILITYINFO_0100
+     * @tc.desc   test AbilityInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testAbilityInfoStatic001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'testAbilityInfoStatic001 start');
@@ -69,15 +91,15 @@ export default function UIAbilityContextStatic() {
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.label: ` + abilityInfo.label);
           expect(abilityInfo.label == "$string:EntryAbility_label").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.labelId: ` + abilityInfo.labelId);
-          expect(typeof (abilityInfo.labelId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.labelId) == 'long').assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.description: ` + abilityInfo.description);
           expect(abilityInfo.description == "$string:EntryAbility_desc").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.descriptionId: ` + abilityInfo.descriptionId);
-          expect(typeof (abilityInfo.descriptionId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.descriptionId) == 'long').assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.icon: ` + abilityInfo.icon);
           expect(abilityInfo.icon == "$media:layered_image").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.iconId: ` + abilityInfo.iconId);
-          expect(typeof (abilityInfo.iconId) == 'number').assertTrue();
+          expect(typeof (abilityInfo.iconId) == 'long').assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.applicationInfo: ` + abilityInfo.applicationInfo!.name);
           expect(abilityInfo.applicationInfo!.name == "com.example.uiabilitycontexttest.static").assertTrue();
           hilog.info(domain, tag, `testAbilityInfoStatic001 abilityInfo.metadata: ` + abilityInfo.metadata.length);
@@ -93,12 +115,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_UIABILITYCONTEXT_CURRENTHAPMODULEINFO_0100
-     * @tc.name       testUIAbilityContextCurrentHapModuleInfoStatic001
-     * @tc.desc       test filed of currentHapModuleInfo
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testUIAbilityContextCurrentHapModuleInfoStatic001
+     * @tc.number ABILITY_TEST_UIABILITYCONTEXT_CURRENTHAPMODULEINFO_0100
+     * @tc.desc   test filed of currentHapModuleInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIAbilityContextCurrentHapModuleInfoStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "testUIAbilityContextCurrentHapModuleInfoStatic001 begin");
@@ -111,15 +133,15 @@ export default function UIAbilityContextStatic() {
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.icon: ' + hapModuleInfo.icon);
           expect(hapModuleInfo.icon == "$media:layered_image").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.iconId: ' + hapModuleInfo.iconId);
-          expect(typeof (hapModuleInfo.iconId) == 'number').assertTrue();
+          expect(typeof (hapModuleInfo.iconId) == 'long').assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.label: ' + hapModuleInfo.label);
           expect(hapModuleInfo.label == "$string:EntryAbility_label").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.labelId: ' + hapModuleInfo.labelId);
-          expect(typeof (hapModuleInfo.labelId) == 'number').assertTrue();
+          expect(typeof (hapModuleInfo.labelId) == 'long').assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.description: ' + hapModuleInfo.description);
           expect(hapModuleInfo.description == "$string:module_desc").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.descriptionId: ' + hapModuleInfo.descriptionId);
-          expect(typeof (hapModuleInfo.descriptionId) == 'number').assertTrue();
+          expect(typeof (hapModuleInfo.descriptionId) == 'long').assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.mainElementName: ' + hapModuleInfo.mainElementName);
           expect(hapModuleInfo.mainElementName == "EntryAbility").assertTrue();
           hilog.info(domain, tag, 'testUIAbilityContextCurrentHapModuleInfoStatic001 hapModuleInfo.metadata: ' + hapModuleInfo.metadata.length);
@@ -139,12 +161,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_RESOURCEMANAGER_0100
-     * @tc.name       testResourceManagerStatic001
-     * @tc.desc       test filed of resourceManager
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testResourceManagerStatic001
+     * @tc.number ABILITY_TEST_RESOURCEMANAGER_0100
+     * @tc.desc   test filed of resourceManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testResourceManagerStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -166,12 +188,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_CREATEAREAMODECONTEXT_0100
-     * @tc.name       testCreateAreaModeContextStatic001
-     * @tc.desc       test createAreaModeContext
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testCreateAreaModeContextStatic001
+     * @tc.number ABILITY_TEST_CREATEAREAMODECONTEXT_0100
+     * @tc.desc   test createAreaModeContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateAreaModeContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -193,12 +215,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_CREATEDISPLAYCONTEXT_0100
-     * @tc.name       testCreateDisplayContextStatic001
-     * @tc.desc       test createDisplayContext
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testCreateDisplayContextStatic001
+     * @tc.number ABILITY_TEST_CREATEDISPLAYCONTEXT_0100
+     * @tc.desc   test createDisplayContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateDisplayContextStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -220,14 +242,15 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_OPENATOMICSERVICE_0100
-     * @tc.name       testOpenAtomicServiceStatic001
-     * @tc.desc       test Method of OpenAtomicService
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testOpenAtomicServiceStatic001
+     * @tc.number ABILITY_TEST_OPENATOMICSERVICE_0100
+     * @tc.desc   test Method of OpenAtomicService
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         let options: AtomicServiceOptions = {
           flags: wantConstant.Flags.FLAG_INSTALL_ON_DEMAND,
@@ -241,7 +264,7 @@ export default function UIAbilityContextStatic() {
             expect().assertFail();
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(16000050);
             done();
@@ -254,14 +277,15 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_OPENATOMICSERVICE_0200
-     * @tc.name       testOpenAtomicServiceStatic002
-     * @tc.desc       test Method of OpenAtomicService
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testOpenAtomicServiceStatic002
+     * @tc.number ABILITY_TEST_OPENATOMICSERVICE_0200
+     * @tc.desc   test Method of OpenAtomicService
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testOpenAtomicServiceStatic002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
+      await Utils.msSleep(2000);
       try {
         context.openAtomicService('')
           .then((result: common.AbilityResult) => {
@@ -269,7 +293,7 @@ export default function UIAbilityContextStatic() {
             expect().assertFail();
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`openAtomicService failed, code is ${err.code}, message is ${err.message}`);
             expect(err.code).assertEqual(16000050);
             done();
@@ -282,12 +306,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_REPORTDRAWNCOMPLETED_0100
-     * @tc.name       testReportDrawnCompletedStatic001
-     * @tc.desc       test Method of reportDrawnCompleted
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testReportDrawnCompletedStatic001
+     * @tc.number ABILITY_TEST_REPORTDRAWNCOMPLETED_0100
+     * @tc.desc   test Method of reportDrawnCompleted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testReportDrawnCompletedStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       let temp = false;
@@ -311,12 +335,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_SETCOLORMODE_0100
-     * @tc.name       testsetColorModeStatic001
-     * @tc.desc       test Method of setColorMode
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testsetColorModeStatic001
+     * @tc.number ABILITY_TEST_SETCOLORMODE_0100
+     * @tc.desc   test Method of setColorMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testsetColorModeStatic001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -331,12 +355,12 @@ export default function UIAbilityContextStatic() {
     })
 
     /**
-     * @tc.number     ABILITY_TEST_TERMINATESELF_CALLBACK_0100
-     * @tc.name       ABILITY_TEST_TERMINATESELF_CALLBACK_0100
-     * @tc.desc       test terminateSelf(Callback)
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   ABILITY_TEST_TERMINATESELF_CALLBACK_0100
+     * @tc.number ABILITY_TEST_TERMINATESELF_CALLBACK_0100
+     * @tc.desc   test terminateSelf(Callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ABILITY_TEST_TERMINATESELF_CALLBACK_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       let TAG = "ABILITY_TEST_TERMINATESELF_CALLBACK_0100";
@@ -348,7 +372,7 @@ export default function UIAbilityContextStatic() {
         }
         context.startAbility(want).then(() => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start successful. ');
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(0x0000, tag, '%{public}s', 'testTerminateSelfCallback001 start failed. Cause: ' + JSON.stringify(error));
         })
         await Utils.msSleep(1000);

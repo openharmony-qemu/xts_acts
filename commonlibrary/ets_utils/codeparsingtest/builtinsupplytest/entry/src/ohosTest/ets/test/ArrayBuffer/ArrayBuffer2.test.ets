@@ -28,7 +28,7 @@ export default function ArrayBuffer2Test() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(30);
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -44,36 +44,36 @@ export default function ArrayBuffer2Test() {
     })
 
     /**
+     * @tc.name   arraybuffer2Test001
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0100
-     * @tc.name arraybuffer2Test001
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const uint8Array = new Uint8Array(new ArrayBuffer(4));
       expect(ArrayBuffer.isView(uint8Array)).assertEqual(true);
     });
     /**
+     * @tc.name   arraybuffer2Test002
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0200
-     * @tc.name arraybuffer2Test002
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const uint16Array = new Uint16Array(new ArrayBuffer(4));
       expect(ArrayBuffer.isView(uint16Array)).assertEqual(true);
     });
     /**
+     * @tc.name   arraybuffer2Test003
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0300
-     * @tc.name arraybuffer2Test003
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const uint32Array = new Uint32Array(new ArrayBuffer(4));
@@ -81,12 +81,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test004
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0400
-     * @tc.name arraybuffer2Test004
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const uint8ClampedArray = new Uint8ClampedArray(new ArrayBuffer(4));
@@ -94,12 +94,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test005
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0500
-     * @tc.name arraybuffer2Test005
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int8Array = new Int8Array(new ArrayBuffer(4));
@@ -107,12 +107,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test006
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0600
-     * @tc.name arraybuffer2Test006
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int16Array = new Int16Array(new ArrayBuffer(4));
@@ -120,12 +120,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test007
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0700
-     * @tc.name arraybuffer2Test007
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const int32Array = new Int32Array(new ArrayBuffer(4));
@@ -133,12 +133,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test008
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0800
-     * @tc.name arraybuffer2Test008
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const float32Array = new Float32Array(new ArrayBuffer(4));
@@ -146,12 +146,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test009
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_0900
-     * @tc.name arraybuffer2Test009
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const float64Array = new Float64Array(new ArrayBuffer(8));
@@ -159,12 +159,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test010
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1000
-     * @tc.name arraybuffer2Test010
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUint64Array = new BigUint64Array(new ArrayBuffer(8));
@@ -172,12 +172,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test011
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1100
-     * @tc.name arraybuffer2Test011
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigInt64Array = new BigInt64Array(new ArrayBuffer(8));
@@ -185,12 +185,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test012
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1200
-     * @tc.name arraybuffer2Test012
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const dataView = new DataView(new ArrayBuffer(8));
@@ -198,12 +198,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test013
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1300
-     * @tc.name arraybuffer2Test013
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyUint8Array = new Uint8Array(0);
@@ -211,12 +211,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test014
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1400
-     * @tc.name arraybuffer2Test014
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyDataView = new DataView(new ArrayBuffer(0));
@@ -225,12 +225,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test015
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1500
-     * @tc.name arraybuffer2Test015
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalUint16Array = new Uint16Array(new ArrayBuffer(8));
@@ -239,12 +239,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test016
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1600
-     * @tc.name arraybuffer2Test016
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
@@ -252,12 +252,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test017
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1700
-     * @tc.name arraybuffer2Test017
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const normalArray = [1, 2, 3, 4];
@@ -265,12 +265,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test018
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1800
-     * @tc.name arraybuffer2Test018
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface NormalObj {
@@ -284,12 +284,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test019
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_1900
-     * @tc.name arraybuffer2Test019
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const str = "ArrayBuffer View";
@@ -297,24 +297,24 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test020
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2000
-     * @tc.name arraybuffer2Test020
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const num = 12345;
       expect(ArrayBuffer.isView(num)).assertEqual(false);
     });
     /**
+     * @tc.name   arraybuffer2Test021
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2100
-     * @tc.name arraybuffer2Test021
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const boolTrue = true;
@@ -322,12 +322,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test022
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2200
-     * @tc.name arraybuffer2Test022
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const boolFalse = false;
@@ -335,36 +335,36 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test023
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2300
-     * @tc.name arraybuffer2Test023
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ArrayBuffer.isView(null)).assertEqual(false);
     });
 
     /**
+     * @tc.name   arraybuffer2Test024
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2400
-     * @tc.name arraybuffer2Test024
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       expect(ArrayBuffer.isView(undefined)).assertEqual(false);
     });
 
     /**
+     * @tc.name   arraybuffer2Test025
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2500
-     * @tc.name arraybuffer2Test025
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigInt = 12345n;
@@ -373,12 +373,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test026
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2600
-     * @tc.name arraybuffer2Test026
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ReduxAction {
@@ -391,12 +391,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test027
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2700
-     * @tc.name arraybuffer2Test027
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const func = () => console.log("test");
@@ -404,12 +404,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test028
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2800
-     * @tc.name arraybuffer2Test028
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const date = new Date();
@@ -417,12 +417,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test029
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_2900
-     * @tc.name arraybuffer2Test029
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const regExp = /view/gi;
@@ -430,12 +430,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test030
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3000
-     * @tc.name arraybuffer2Test030
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const map = new Map([[1, "a"], [2, "b"]]);
@@ -443,12 +443,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test031
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3100
-     * @tc.name arraybuffer2Test031
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const set = new Set([1, 2, 3]);
@@ -456,12 +456,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test032
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3200
-     * @tc.name arraybuffer2Test032
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const includesArr = [1, 2, new Uint32Array(new ArrayBuffer(4))];
@@ -469,12 +469,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test033
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3300
-     * @tc.name arraybuffer2Test033
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const indexOfArr = [new DataView(new ArrayBuffer(4)), 3, 4];
@@ -483,12 +483,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test034
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3400
-     * @tc.name arraybuffer2Test034
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const promise = Promise.resolve("resolved");
@@ -496,12 +496,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test035
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3500
-     * @tc.name arraybuffer2Test035
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class CustomUint32Array extends Uint32Array {
@@ -512,12 +512,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test036
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3600
-     * @tc.name arraybuffer2Test036
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class CustomDataView extends DataView {
@@ -528,12 +528,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test037
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3700
-     * @tc.name arraybuffer2Test037
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface FakeView {
@@ -547,12 +547,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test038
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3800
-     * @tc.name arraybuffer2Test038
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const indexOfArr = [new DataView(new ArrayBuffer(4)), 3, 4];
@@ -561,12 +561,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test039
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_3900
-     * @tc.name arraybuffer2Test039
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewStrRepr = new DataView(new ArrayBuffer(4)).toString();
@@ -574,24 +574,24 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test040
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4000
-     * @tc.name arraybuffer2Test040
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const bigUint8Array = new Uint8Array(new ArrayBuffer(1024 * 1024));
       expect(ArrayBuffer.isView(bigUint8Array)).assertEqual(true);
     });
     /**
+     * @tc.name   arraybuffer2Test041
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4100
-     * @tc.name arraybuffer2Test041
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const resizableBuffer = new ArrayBuffer(8);
@@ -600,12 +600,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test042
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4200
-     * @tc.name arraybuffer2Test042
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalUint8 = new Uint8Array(new ArrayBuffer(4));
@@ -614,12 +614,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test043
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4300
-     * @tc.name arraybuffer2Test043
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalInt8Array = new Int8Array(new ArrayBuffer(8));
@@ -628,12 +628,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test044
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4400
-     * @tc.name arraybuffer2Test044
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const singleElemUint8Array = new Uint8Array(new ArrayBuffer(1));
@@ -641,12 +641,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test045
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4500
-     * @tc.name arraybuffer2Test045
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const singleElemDataView = new DataView(new ArrayBuffer(1));
@@ -654,12 +654,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test046
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4600
-     * @tc.name arraybuffer2Test046
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nestedArrayWithView = [1, new Uint16Array(new ArrayBuffer(4)), 3];
@@ -667,12 +667,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test047
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4700
-     * @tc.name arraybuffer2Test047
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjWithDataView {
@@ -684,12 +684,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test048
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4800
-     * @tc.name arraybuffer2Test048
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class ViewHolder {
@@ -705,12 +705,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test049
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_4900
-     * @tc.name arraybuffer2Test049
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class ViewGenerator {
@@ -724,12 +724,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test050
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5000
-     * @tc.name arraybuffer2Test050
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const getUint32Array = () => new Uint32Array(new ArrayBuffer(4));
@@ -737,12 +737,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test052
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5200
-     * @tc.name arraybuffer2Test052
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fromUint8Array = Uint8Array.from([1, 2, 3]);
@@ -750,12 +750,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test053
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5300
-     * @tc.name arraybuffer2Test053
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const ofInt32Array = Int32Array.of(10, 20, 30);
@@ -763,12 +763,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test054
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5400
-     * @tc.name arraybuffer2Test054
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalBigInt64Array = new BigInt64Array(new ArrayBuffer(16));
@@ -777,12 +777,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test055
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5500
-     * @tc.name arraybuffer2Test055
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalBigUint64Array = new BigUint64Array(new ArrayBuffer(16));
@@ -791,12 +791,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test056
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5600
-     * @tc.name arraybuffer2Test056
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjWithBuffer {
@@ -808,12 +808,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test057
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5700
-     * @tc.name arraybuffer2Test057
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const flatMapArr = [1, 2].flatMap(() => [new Int32Array(new ArrayBuffer(4))]);
@@ -821,12 +821,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test058
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5800
-     * @tc.name arraybuffer2Test058
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewLocaleStr = new Uint32Array(new ArrayBuffer(4)).toLocaleString();
@@ -834,12 +834,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test059
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_5900
-     * @tc.name arraybuffer2Test059
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewValueOf = new Uint8Array(new ArrayBuffer(4)).valueOf();
@@ -847,12 +847,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test060
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6000
-     * @tc.name arraybuffer2Test060
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const copyView = new Uint16Array([1, 2, 3, 4]);
@@ -861,12 +861,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test061
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6100
-     * @tc.name arraybuffer2Test061
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const fillView = new Int8Array(4);
@@ -875,12 +875,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test062
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6200
-     * @tc.name arraybuffer2Test062
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const doubleViewBuffer = new ArrayBuffer(8);
@@ -889,12 +889,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test063
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6300
-     * @tc.name arraybuffer2Test063
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface Empty {}
@@ -904,12 +904,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test064
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6400
-     * @tc.name arraybuffer2Test064
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjWithByteLength {
@@ -921,12 +921,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test065
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6500
-     * @tc.name arraybuffer2Test065
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjWithByteOffset {
@@ -939,12 +939,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test066
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6600
-     * @tc.name arraybuffer2Test066
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const protoBuffer = new ArrayBuffer(10);
@@ -954,12 +954,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test067
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6700
-     * @tc.name arraybuffer2Test067
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const idbView = new Uint16Array(new ArrayBuffer(8));
@@ -967,12 +967,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test068
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6800
-     * @tc.name arraybuffer2Test068
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ObjView {
@@ -985,12 +985,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test069
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_6900
-     * @tc.name arraybuffer2Test069
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const someArr = [1, new Uint8Array(new ArrayBuffer(4)), 3];
@@ -999,12 +999,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test070
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7000
-     * @tc.name arraybuffer2Test070
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const everyArr = [new DataView(new ArrayBuffer(4)), 2];
@@ -1013,12 +1013,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test071
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7100
-     * @tc.name arraybuffer2Test071
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const sliceBuffer = new ArrayBuffer(8).slice(2, 6);
@@ -1027,12 +1027,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test072
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7200
-     * @tc.name arraybuffer2Test072
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalBuffer = new ArrayBuffer(16);
@@ -1042,12 +1042,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test073
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7300
-     * @tc.name arraybuffer2Test073
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyBigInt64Array = new BigInt64Array(0);
@@ -1055,12 +1055,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test074
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7400
-     * @tc.name arraybuffer2Test074
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyBigUint64Array = new BigUint64Array(0);
@@ -1068,12 +1068,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test075
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7500
-     * @tc.name arraybuffer2Test075
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const mapKeyView = new Uint16Array(new ArrayBuffer(4));
@@ -1082,12 +1082,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test076
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7600
-     * @tc.name arraybuffer2Test076
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const setElemView = new DataView(new ArrayBuffer(4));
@@ -1096,12 +1096,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test077
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7700
-     * @tc.name arraybuffer2Test077
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface level {
@@ -1117,12 +1117,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test078
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7800
-     * @tc.name arraybuffer2Test078
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nestedArrWithView = [[new DataView(new ArrayBuffer(4))]];
@@ -1130,12 +1130,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test079
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_7900
-     * @tc.name arraybuffer2Test079
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ViewObj {
@@ -1148,12 +1148,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test080
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8000
-     * @tc.name arraybuffer2Test080
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buffer = new ArrayBuffer(8);
@@ -1174,12 +1174,12 @@ export default function ArrayBuffer2Test() {
       expect(ArrayBuffer.isView(Object.entries(viewObj)[1][1])).assertEqual(true);
     });
     /**
+     * @tc.name   arraybuffer2Test081
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8100
-     * @tc.name arraybuffer2Test081
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       interface ViewObj {
@@ -1192,12 +1192,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test082
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8200
-     * @tc.name arraybuffer2Test082
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const copiedUint32Array = new Uint32Array(new Uint32Array(new ArrayBuffer(4)));
@@ -1205,12 +1205,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test083
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8300
-     * @tc.name arraybuffer2Test083
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const writtenDataView = new DataView(new ArrayBuffer(4));
@@ -1219,12 +1219,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test084
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8400
-     * @tc.name arraybuffer2Test084
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const modifiedUint16Array = new Uint16Array(new ArrayBuffer(4));
@@ -1233,12 +1233,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test085
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8500
-     * @tc.name arraybuffer2Test085
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const cacheView = new Uint32Array(new ArrayBuffer(4));
@@ -1246,12 +1246,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test086
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8600
-     * @tc.name arraybuffer2Test086
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const originalView = new Int16Array(new ArrayBuffer(8));
@@ -1260,12 +1260,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test087
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8700
-     * @tc.name arraybuffer2Test087
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const isViewResult = ArrayBuffer.isView(new Uint8Array(4));
@@ -1274,12 +1274,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test088
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8800
-     * @tc.name arraybuffer2Test088
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const imageData = new ImageData(10, 10);
@@ -1287,12 +1287,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test089
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_8900
-     * @tc.name arraybuffer2Test089
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const offscreenCanvas = new OffscreenCanvas(100, 100);
@@ -1300,12 +1300,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test090
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9000
-     * @tc.name arraybuffer2Test090
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewStr = new DataView(new ArrayBuffer(4)).toString();
@@ -1313,12 +1313,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test091
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9100
-     * @tc.name arraybuffer2Test091
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       class StaticViewClass {
@@ -1330,12 +1330,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test092
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9200
-     * @tc.name arraybuffer2Test092
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const viewIterator = new Uint8Array(new ArrayBuffer(4))[Symbol.iterator]();
@@ -1343,12 +1343,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test093
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9300
-     * @tc.name arraybuffer2Test093
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyBufferView = new Uint8Array(new ArrayBuffer(0));
@@ -1356,12 +1356,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test094
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9400
-     * @tc.name arraybuffer2Test094
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const emptyBufferDataView = new DataView(new ArrayBuffer(0));
@@ -1369,12 +1369,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test095
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9500
-     * @tc.name arraybuffer2Test095
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const mapViewArr = [new Uint32Array(new ArrayBuffer(4))].map(view => ArrayBuffer.isView(view));
@@ -1382,12 +1382,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test096
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9600
-     * @tc.name arraybuffer2Test096
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const filterViewArr = [1, new DataView(new ArrayBuffer(4))].filter(item => ArrayBuffer.isView(item));
@@ -1395,12 +1395,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test097
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9700
-     * @tc.name arraybuffer2Test097
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const reduceViewResult =
@@ -1409,12 +1409,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test098
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9800
-     * @tc.name arraybuffer2Test098
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const conditionView = true ? new Uint16Array(new ArrayBuffer(4)) : new ArrayBuffer(4);
@@ -1422,12 +1422,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test099
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_9900
-     * @tc.name arraybuffer2Test099
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const nullishView = undefined ?? new Int8Array(new ArrayBuffer(4));
@@ -1435,12 +1435,12 @@ export default function ArrayBuffer2Test() {
     });
 
     /**
+     * @tc.name   arraybuffer2Test100
      * @tc.number SUB_BUILTINS_arraybuffer2_TEST_10000
-     * @tc.name arraybuffer2Test100
-     * @tc.desc test arraybuffer isView()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test arraybuffer isView()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('arraybuffer2Test100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const andView = new DataView(new ArrayBuffer(4)) && new Uint32Array(new ArrayBuffer(4));

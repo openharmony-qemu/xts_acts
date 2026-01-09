@@ -94,14 +94,13 @@ export default function onreleaseTest(){
 describe('onRelease_js_test',async () => {
 
    /**
-   * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0100
-   * @tc.name test_Backup_onRelease_001
-   * @tc.desc Test onRelease() interfaces
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 1
-   * @tc.require
-   */
+    * @tc.name   test_Backup_onRelease_001
+    * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0100
+    * @tc.desc   Test onRelease() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it("test_Backup_onRelease_001", Level.LEVEL1, () => {
       try {
          let backupext = new MyBackupExtAbility();
@@ -115,14 +114,13 @@ describe('onRelease_js_test',async () => {
    });
 
    /**
-   * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0200
-   * @tc.name test_Backup_onRelease_002
-   * @tc.desc Test onRelease() interfaces
-   * @tc.size MEDIUM
-   * @tc.type Function
-   * @tc.level Level 1
-   * @tc.require
-   */
+    * @tc.name   test_Backup_onRelease_002
+    * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0200
+    * @tc.desc   Test onRelease() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
    it("test_Backup_onRelease_002", Level.LEVEL1, () => {
       try {
          let backupext = new MyBackupExtAbility();
@@ -131,6 +129,26 @@ describe('onRelease_js_test',async () => {
          expect(true).assertTrue();
       } catch (error) {
          console.info(`test_Backup_onRelease_002 error: ${JSON.stringify(error)}`);
+         expect(false).assertTrue();
+      }
+   });
+
+   /**
+    * @tc.name   test_Backup_onRelease_003
+    * @tc.number SUB_BASIC_FM_FileAPI_onRelease_0300
+    * @tc.desc   Test onRelease() interfaces
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
+    */
+   it("test_Backup_onRelease_003", Level.LEVEL1, () => {
+      try {
+         let backupext = new MyBackupExtAbility();
+         let ret = backupext.onRelease(20);
+         console.log('test_Backup_onRelease_003 restore-onRelease run ok');
+         expect(ret !== null).assertTrue();
+      } catch (error) {
+         console.info(`test_Backup_onRelease_003 error: ${JSON.stringify(error)}`);
          expect(false).assertTrue();
       }
    });

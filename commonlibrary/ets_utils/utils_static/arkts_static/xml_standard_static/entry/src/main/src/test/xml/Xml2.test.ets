@@ -40,12 +40,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0100
-     * @tc.name: testXmlMethod001
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0100
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -65,12 +65,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0200
-     * @tc.name: testXmlMethod002
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0200
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -90,12 +90,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0300
-     * @tc.name: testXmlMethod003
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0300
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -115,12 +115,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0400
-     * @tc.name: testXmlMethod004
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -140,12 +140,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0500
-     * @tc.name: testXmlMethod005
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -165,12 +165,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0600
-     * @tc.name: testXmlMethod006
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0600
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
@@ -187,19 +187,20 @@ export default function xmlTest2() {
         let options: xml.ParseOptions = { supportDoctype: true, ignoreNameSpace: true, tagValueCallbackFunction: func6 }
         that.parseXml(options);
         expect().assertFail();
-      } catch (e : BusinessError | Error) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: The node name contains invalid characters: <");
         expect(e.code).assertEqual(401);
       }
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0700
-     * @tc.name: testXmlMethod007
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0700
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -219,12 +220,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0800
-     * @tc.name: testXmlMethod008
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0800
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -244,12 +245,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0900
-     * @tc.name: testXmlMethod009
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_0900
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -269,12 +270,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01000
-     * @tc.name: testXmlMethod010
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01000
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -294,12 +295,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01100
-     * @tc.name: testXmlMethod011
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01100
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 1024;
@@ -319,12 +320,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01200
-     * @tc.name: testXmlMethod012
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01200
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -343,12 +344,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01300
-     * @tc.name: testXmlMethod013
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01300
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -367,12 +368,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01400
-     * @tc.name: testXmlMethod014
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01400
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -391,12 +392,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01500
-     * @tc.name: testXmlMethod015
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01500
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -415,12 +416,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01600
-     * @tc.name: testXmlMethod016
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01600
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const myMAX = 2048;
@@ -439,12 +440,12 @@ export default function xmlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01700
-     * @tc.name: testXmlMethod017
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01700
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -461,18 +462,19 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the ']]>' in xml string.");
         expect(e.code).assertEqual(401);
       }
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01800
-     * @tc.name: testXmlMethod018
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01800
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -487,18 +489,19 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the ']]>' in xml string.");
         expect(e.code).assertEqual(401);
       }
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01900
-     * @tc.name: testXmlMethod019
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_01900
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -515,18 +518,19 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the '?>' in xml string.");
         expect(e.code).assertEqual(401);
       }
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_02000
-     * @tc.name: testXmlMethod020
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_02000
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -542,18 +546,19 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the '?>' in xml string.");
         expect(e.code).assertEqual(401);
       }
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_02100
-     * @tc.name: testXmlMethod021
-     * @tc.desc: Writes the text.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testXmlMethod021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_XMLMETHOD_02100
+     * @tc.desc   Writes the text.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlMethod021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let strXml =
@@ -570,7 +575,8 @@ export default function xmlTest2() {
       try {
         pullParse.parseXml(options);
         expect().assertFail();
-      } catch (e: BusinessError) {
+      } catch (e) {
+        e = e as BusinessError;
         expect(e.toString()).assertEqual("BusinessError: Cannot find the '--' in xml string.");
         expect(e.code).assertEqual(401);
       }

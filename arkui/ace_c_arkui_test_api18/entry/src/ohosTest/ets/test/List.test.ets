@@ -24,6 +24,7 @@ import gestureInterrupterTest from './gestureRecognizer/GestureInterrupterTest.t
 import swiperDigitIndicatorTest from "./swiper/SwiperDigitIndicatorTest.test"
 import swiperArrowStyleTest from "./swiper/SwiperArrowStyleTest.test"
 import buttonFontScaleTest from  "./button/buttonFontScale.test"
+import ExpectedFrameRateRangeNullTest from "./ExpectedFrameRateRange/ExpectedFrameRateRangeNull.test"
 
 export default function testsuite() {
   datePickerTest();
@@ -37,4 +38,5 @@ export default function testsuite() {
   swiperDigitIndicatorTest();
   swiperArrowStyleTest();
   buttonFontScaleTest();
+  ExpectedFrameRateRangeNullTest();
 }

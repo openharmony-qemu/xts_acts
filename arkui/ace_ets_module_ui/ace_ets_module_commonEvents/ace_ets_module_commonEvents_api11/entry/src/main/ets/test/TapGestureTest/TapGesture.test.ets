@@ -56,6 +56,14 @@ config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
       console.info("tapGesture after each called");
     });
 
+    /**
+     * @tc.name   testTapGesture01
+     * @tc.number testTapGesture01
+     * @tc.desc   testTapGesture01
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testTapGesture01', Level.LEVEL0, async (done: Function) => {
       await CommonFunc.sleep(1000)
       let rect = CommonFunc.getComponentRect('tapGesture')

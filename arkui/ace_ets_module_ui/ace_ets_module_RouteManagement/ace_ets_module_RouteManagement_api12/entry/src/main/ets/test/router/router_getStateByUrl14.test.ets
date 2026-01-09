@@ -59,12 +59,12 @@ export default function router_getStateByUrl14() {
     });
 
     /**
+     * @tc.name   router_getStateByUrl14_0100
      * @tc.number SUB_ACE_UI_ABILITY_ROUTER_0420
-     * @tc.name testGetStateByUrl
-     * @tc.desc Retrieve the status information of the current page through the URL
-     * @tc.level Level 3
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Retrieve the status information of the current page through the URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('router_getStateByUrl14_0100', Level.LEVEL3, async (done: Function) => {
       console.info('[router_getStateByUrl14_0100] START');

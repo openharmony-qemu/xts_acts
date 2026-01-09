@@ -17,6 +17,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Leve
 import testNapi from 'libentry.so';
 import { display, window } from '@kit.ArkUI';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 interface Capability{
   foldStatus:string;
@@ -37,7 +38,8 @@ export default function DisplayNdkTest() {
     let orientation:string[];
     let code:number;
     let displayFoldStatus:number;
-    beforeAll(() => {
+    let DISPLAY_MANAGER_OK = 0;
+    beforeAll(async () => {
       try{
         displayFoldStatus = display.getFoldStatus();
         console.log('jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
@@ -64,6 +66,16 @@ export default function DisplayNdkTest() {
           console.log('jsUnittest getDisplayCapability failed');
         }
       }
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -80,12 +92,12 @@ export default function DisplayNdkTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0100
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayId
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayId
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayId
+     * @tc.number SUB_BASIC_DMS_NDK_0100
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayId', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayId';
@@ -101,12 +113,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0200
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayWidth
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayWidth
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayWidth
+     * @tc.number SUB_BASIC_DMS_NDK_0200
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayWidth
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayWidth', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayWidth';
@@ -122,12 +134,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0300
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayHeight
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayHeight
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayHeight
+     * @tc.number SUB_BASIC_DMS_NDK_0300
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayHeight
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayHeight', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayHeight';
@@ -143,12 +155,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0400
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayRotation
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayRotation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayRotation
+     * @tc.number SUB_BASIC_DMS_NDK_0400
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayRotation';
@@ -166,12 +178,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0500
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayOrientation
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayOrientation
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayOrientation
+     * @tc.number SUB_BASIC_DMS_NDK_0500
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayOrientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayOrientation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayOrientation';
@@ -197,12 +209,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0600
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio
+     * @tc.number SUB_BASIC_DMS_NDK_0600
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayVirtualPixelRatio';
@@ -219,12 +231,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0700
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayRefreshRate
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayRefreshRate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayRefreshRate
+     * @tc.number SUB_BASIC_DMS_NDK_0700
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayRefreshRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayRefreshRate', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayRefreshRate';
@@ -240,12 +252,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0800
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityDpi
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityDpi
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayDensityDpi
+     * @tc.number SUB_BASIC_DMS_NDK_0800
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayDensityDpi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayDensityDpi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayDensityDpi';
@@ -261,12 +273,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_0900
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityPixels
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayDensityPixels
+     * @tc.number SUB_BASIC_DMS_NDK_0900
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayDensityPixels
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayDensityPixels', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayDensityPixels';
@@ -282,12 +294,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1000
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayScaledDensity
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayScaledDensity
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayScaledDensity
+     * @tc.number SUB_BASIC_DMS_NDK_1000
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayScaledDensity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayScaledDensity', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayScaledDensity';
@@ -303,12 +315,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1100
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi
+     * @tc.number SUB_BASIC_DMS_NDK_1100
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayDensityXdpi';
@@ -324,12 +336,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1200
-     * @tc.name      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi
+     * @tc.number SUB_BASIC_DMS_NDK_1200
+     * @tc.desc   test_OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDefaultDisplayDensityYdpi';
@@ -345,12 +357,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1300
-     * @tc.name      : test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo
-     * @tc.desc      : test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo
+     * @tc.number SUB_BASIC_DMS_NDK_1300
+     * @tc.desc   test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo';
@@ -366,12 +378,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1400
-     * @tc.name      : test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo
-     * @tc.desc      : test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_Create_DestroyDefaultDisplayCutoutInfo
+     * @tc.number SUB_BASIC_DMS_NDK_1400
+     * @tc.desc   test_OH_NativeDisplayManager_CreateDefaultDisplayCutoutInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_Create_DestroyDefaultDisplayCutoutInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_Create_DestroyDefaultDisplayCutoutInfo';
@@ -387,12 +399,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1500
-     * @tc.name      : test_OH_NativeDisplayManager_IsFoldable
-     * @tc.desc      : test_OH_NativeDisplayManager_IsFoldable
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_IsFoldable
+     * @tc.number SUB_BASIC_DMS_NDK_1500
+     * @tc.desc   test_OH_NativeDisplayManager_IsFoldable
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_IsFoldable', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_IsFoldable';
@@ -415,12 +427,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1600
-     * @tc.name      : test_OH_NativeDisplayManager_GetFoldDisplayMode
-     * @tc.desc      : test_OH_NativeDisplayManager_GetFoldDisplayMode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_GetFoldDisplayMode
+     * @tc.number SUB_BASIC_DMS_NDK_1600
+     * @tc.desc   test_OH_NativeDisplayManager_GetFoldDisplayMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_GetFoldDisplayMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetFoldDisplayMode';
@@ -443,12 +455,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1700
-     * @tc.name      : test_OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener
-     * @tc.desc      : test_OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener
+     * @tc.number SUB_BASIC_DMS_NDK_1700
+     * @tc.desc   test_OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_RegisterFoldDisplayModeChangeListener';
@@ -462,6 +474,9 @@ export default function DisplayNdkTest() {
         console.log(caseName + ' displayMode1:'+ displayMode1 );
         if(displayIsFoldable == true){
           if(displayMode1 == 1 || displayMode1 == 2){
+            let result = testNapi.unregisterFoldDisplayModeChange(displayMode1);
+            console.log(caseName + ' result:'+ result );
+            expect(result).assertEqual(DISPLAY_MANAGER_OK);
             done();
           }
           
@@ -476,12 +491,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1800
-     * @tc.name      : test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener
-     * @tc.desc      : test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener
+     * @tc.number SUB_BASIC_DMS_NDK_1800
+     * @tc.desc   test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_UnregisterFoldDisplayModeChangeListener';
@@ -505,12 +520,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_1900
-     * @tc.name      : test_OH_NativeDisplayManager_UnRegisterDisplayChangeListener
-     * @tc.desc      : test_OH_NativeDisplayManager_UnRegisterDisplayChangeListener
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_UnRegisterDisplayChangeListener
+     * @tc.number SUB_BASIC_DMS_NDK_1900
+     * @tc.desc   test_OH_NativeDisplayManager_UnRegisterDisplayChangeListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_UnRegisterDisplayChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_UnRegisterDisplayChangeListener';
@@ -526,12 +541,12 @@ export default function DisplayNdkTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2000
-     * @tc.name      : test_OH_NativeDisplayManager_registerDisplayChangeListener
-     * @tc.desc      : test_OH_NativeDisplayManager_registerDisplayChangeListener
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_registerDisplayChangeListener
+     * @tc.number SUB_BASIC_DMS_NDK_2000
+     * @tc.desc   test_OH_NativeDisplayManager_registerDisplayChangeListener
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_registerDisplayChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_registerDisplayChangeListener';
@@ -550,12 +565,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_CreateAvailableArea
-     * @tc.name      : test_OH_NativeDisplayManager_CreateAvailableArea
-     * @tc.desc      : test_OH_NativeDisplayManager_CreateAvailableArea
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea
+     * @tc.number OH_NativeDisplayManager_CreateAvailableArea
+     * @tc.desc   test_OH_NativeDisplayManager_CreateAvailableArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_CreateAvailableArea', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_CreateAvailableArea';
@@ -583,12 +598,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_CreateAvailableAreaErrCode_140004
-     * @tc.name      : test_OH_NativeDisplayManager_CreateAvailableArea_ErrCode140004
-     * @tc.desc      : test_OH_NativeDisplayManager_CreateAvailableArea_ErrCode140004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_OH_NativeDisplayManager_CreateAvailableArea_ErrCode140004
+     * @tc.number OH_NativeDisplayManager_CreateAvailableAreaErrCode_140004
+     * @tc.desc   test_OH_NativeDisplayManager_CreateAvailableArea_ErrCode140004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OH_NativeDisplayManager_CreateAvailableArea_ErrCode140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_CreateAvailableArea_ErrCode140004';
@@ -605,12 +620,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_DestroyAvailableArea
-     * @tc.name      : test_OH_NativeDisplayManager_DestroyAvailableArea
-     * @tc.desc      : test_OH_NativeDisplayManager_DestroyAvailableArea
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_DestroyAvailableArea
+     * @tc.number OH_NativeDisplayManager_DestroyAvailableArea
+     * @tc.desc   test_OH_NativeDisplayManager_DestroyAvailableArea
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_DestroyAvailableArea', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_DestroyAvailableArea';
@@ -627,12 +642,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : test_OH_NativeDisplayManager_GetDisplaySourceMode_1
-     * @tc.name      : test_OH_NativeDisplayManager_GetDisplaySourceMode_1
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDisplaySourceMode_1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_GetDisplaySourceMode_1
+     * @tc.number test_OH_NativeDisplayManager_GetDisplaySourceMode_1
+     * @tc.desc   test_OH_NativeDisplayManager_GetDisplaySourceMode_1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_GetDisplaySourceMode_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDisplaySourceMode_1';
@@ -649,12 +664,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : test_OH_NativeDisplayManager_GetDisplaySourceMode_2
-     * @tc.name      : test_OH_NativeDisplayManager_GetDisplaySourceMode_2
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDisplaySourceMode_2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_GetDisplaySourceMode_2
+     * @tc.number test_OH_NativeDisplayManager_GetDisplaySourceMode_2
+     * @tc.desc   test_OH_NativeDisplayManager_GetDisplaySourceMode_2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_GetDisplaySourceMode_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDisplaySourceMode_2';
@@ -690,12 +705,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : test_OH_NativeDisplayManager_GetDisplaySourceMode_4
-     * @tc.name      : test_OH_NativeDisplayManager_GetDisplaySourceMode_4
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDisplaySourceMode_4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_GetDisplaySourceMode_4
+     * @tc.number test_OH_NativeDisplayManager_GetDisplaySourceMode_4
+     * @tc.desc   test_OH_NativeDisplayManager_GetDisplaySourceMode_4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_GetDisplaySourceMode_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDisplaySourceMode_4';
@@ -738,12 +753,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004
-     * @tc.name      : test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004
+     * @tc.number test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004
+     * @tc.desc   test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDisplaySourceMode_ErrCode1400004';
@@ -760,12 +775,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : test_OH_NativeDisplayManager_GetDisplayPosition
-     * @tc.name      : test_OH_NativeDisplayManager_GetDisplayPosition
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDisplayPosition
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_GetDisplayPosition
+     * @tc.number test_OH_NativeDisplayManager_GetDisplayPosition
+     * @tc.desc   test_OH_NativeDisplayManager_GetDisplayPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_GetDisplayPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDisplayPosition';
@@ -782,12 +797,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_GetDisplayPosition
-     * @tc.name      : test_OH_NativeDisplayManager_GetDisplayPosition_ErrCode140004
-     * @tc.desc      : test_OH_NativeDisplayManager_GetDisplayPosition_ErrCode140004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_OH_NativeDisplayManager_GetDisplayPosition_ErrCode140004
+     * @tc.number OH_NativeDisplayManager_GetDisplayPosition
+     * @tc.desc   test_OH_NativeDisplayManager_GetDisplayPosition_ErrCode140004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OH_NativeDisplayManager_GetDisplayPosition_ErrCode140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_GetDisplayPosition_ErrCode140004';
@@ -804,12 +819,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
-     * @tc.name      : test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
-     * @tc.desc      : OH_NativeDisplayManager_RegisterAvailableAreaChangeListener中注册可用区域变化监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
+     * @tc.number OH_NativeDisplayManager_RegisterAvailableAreaChangeListener
+     * @tc.desc   OH_NativeDisplayManager_RegisterAvailableAreaChangeListener中注册可用区域变化监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_RegisterAvailableAreaChangeListener';
@@ -826,12 +841,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener
-     * @tc.name      : test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener
-     * @tc.desc      : OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener中取消可用区域变化监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener
+     * @tc.number OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener
+     * @tc.desc   OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener中取消可用区域变化监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener';
@@ -848,12 +863,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_ErrCode140004
-     * @tc.name      : test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_ErrCode140004
-     * @tc.desc      : OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener中直接取消可用区域变化监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_ErrCode140004
+     * @tc.number OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_ErrCode140004
+     * @tc.desc   OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener中直接取消可用区域变化监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_ErrCode140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_UnregisterAvailableAreaChangeListener_ErrCode140004';
@@ -871,12 +886,12 @@ export default function DisplayNdkTest() {
 
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_RegisterDisplayAddListener
-     * @tc.name      : test_OH_NativeDisplayManager_RegisterDisplayAddListener
-     * @tc.desc      : OH_NativeDisplayManager_RegisterDisplayAddListener中注册屏幕增加监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_RegisterDisplayAddListener
+     * @tc.number OH_NativeDisplayManager_RegisterDisplayAddListener
+     * @tc.desc   OH_NativeDisplayManager_RegisterDisplayAddListener中注册屏幕增加监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_RegisterDisplayAddListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_RegisterDisplayAddListener';
@@ -893,12 +908,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_UnregisterDisplayAddListener
-     * @tc.name      : test_OH_NativeDisplayManager_UnregisterDisplayAddListener
-     * @tc.desc      : OH_NativeDisplayManager_UnregisterDisplayAddListener中取消屏幕增加监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayAddListener
+     * @tc.number OH_NativeDisplayManager_UnregisterDisplayAddListener
+     * @tc.desc   OH_NativeDisplayManager_UnregisterDisplayAddListener中取消屏幕增加监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_UnregisterDisplayAddListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_UnregisterDisplayAddListener';
@@ -915,12 +930,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_UnregisterDisplayAddListener_ErrCode140004
-     * @tc.name      : test_OH_NativeDisplayManager_UnregisterDisplayAddListener_ErrCode140004
-     * @tc.desc      : OH_NativeDisplayManager_UnregisterDisplayAddListener中直接取消屏幕增加监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayAddListener_ErrCode140004
+     * @tc.number OH_NativeDisplayManager_UnregisterDisplayAddListener_ErrCode140004
+     * @tc.desc   OH_NativeDisplayManager_UnregisterDisplayAddListener中直接取消屏幕增加监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_UnregisterDisplayAddListener_ErrCode140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_UnregisterDisplayAddListener_ErrCode140004';
@@ -937,12 +952,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_RegisterDisplayRemoveListener
-     * @tc.name      : test_OH_NativeDisplayManager_RegisterDisplayRemoveListener
-     * @tc.desc      : OH_NativeDisplayManager_RegisterDisplayRemoveListener中注册屏幕移除监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_RegisterDisplayRemoveListener
+     * @tc.number OH_NativeDisplayManager_RegisterDisplayRemoveListener
+     * @tc.desc   OH_NativeDisplayManager_RegisterDisplayRemoveListener中注册屏幕移除监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_RegisterDisplayRemoveListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_RegisterDisplayRemoveListener';
@@ -959,12 +974,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_UnregisterDisplayRemoveListener
-     * @tc.name      : test_OH_NativeDisplayManager_UnregisterDisplayRemoveListener
-     * @tc.desc      : OH_NativeDisplayManager_UnregisterDisplayRemoveListener中取消屏幕移除监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_UnregisterDisplayRemoveListener
+     * @tc.number OH_NativeDisplayManager_UnregisterDisplayRemoveListener
+     * @tc.desc   OH_NativeDisplayManager_UnregisterDisplayRemoveListener中取消屏幕移除监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_UnregisterDisplayRemoveListener', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_UnregisterDisplayRemoveListener';
@@ -981,12 +996,12 @@ export default function DisplayNdkTest() {
     })
 
     /**
-     * @tc.number    : OH_NativeDisplayManager_RegisterDisplayRemoveListener_ErrCode140004
-     * @tc.name      : test_OH_NativeDisplayManager_RegisterDisplayRemoveListener_ErrCode140004
-     * @tc.desc      : OH_NativeDisplayManager_RegisterDisplayRemoveListener中注册屏幕移除监听
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_RegisterDisplayRemoveListener_ErrCode140004
+     * @tc.number OH_NativeDisplayManager_RegisterDisplayRemoveListener_ErrCode140004
+     * @tc.desc   OH_NativeDisplayManager_RegisterDisplayRemoveListener中注册屏幕移除监听
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_RegisterDisplayRemoveListener_ErrCode140004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_RegisterDisplayRemoveListener_ErrCode140004';
@@ -1002,6 +1017,77 @@ export default function DisplayNdkTest() {
       }
     })
 
+    /**
+     * @tc.name   testNativeDisplayManager_ErrorCode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_ERRORCODE_0100
+     * @tc.desc   testNativeDisplayManager_ErrorCode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_ErrorCode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_ErrorCode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_ErrorCode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.number SUB_DISPLAY_MANAGER_FOLD_DISPLAY_MODE_0100
+     * @tc.desc   testNativeDisplayManager_FoldDisplayMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_FoldDisplayMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_FoldDisplayMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_FoldDisplayMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   testNativeDisplayManager_SourceMode_enum
+     * @tc.number SUB_DISPLAY_SOURCE_MODE_0100
+     * @tc.desc   testNativeDisplayManager_SourceMode_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNativeDisplayManager_SourceMode_enum', TestType.FUNCTION |
+    Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName = 'testNativeDisplayManager_SourceMode_enum ';
+      try {
+        console.info(`${caseName} start`);
+        let Result: number = testNapi.testNativeDisplayManager_SourceMode_enum();
+        console.info(`${caseName} Result: ${Result}`);
+        expect(Result).assertEqual(0);
+        done()
+      } catch (err) {
+        console.error(`${caseName} catch err: ` + JSON.stringify(err));
+        expect(false).assertEqual(err);
+        done()
+      }
+    })
 
   })
 }

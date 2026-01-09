@@ -59,7 +59,6 @@ export default function userAuthTestExecute() {
 
 
     /**
-     * @generated.time 2025-11-09 20:57:57
      * @tc.name   Security_IAM_Nopermission_API9_Func_static_0104
      * @tc.number Security_IAM_Nopermission_API9_Func_static_0104
      * @tc.desc   Unapplied permission call GetEnrolledState

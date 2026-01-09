@@ -74,6 +74,9 @@ export default function formProviderTest() {
     it('SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let TAG:string = 'SUB_ABILITY_FORM_FWK_TEST_FORM_PROVIDER_0100';
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} start`);
+      if (formInfo.FormParam.EDIT_FORM_KEY) {
+        expect("ohos.extra.param.key.edit_form_id").assertEqual(formInfo.FormParam.EDIT_FORM_KEY);
+      }
       formProvider.getPublishedFormInfos().then((data: formInfo.FormInfo[]) => {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', 
         `${TAG} formProvider getPublishedFormInfos success, data: ${JSON.stringify(data)}`);
@@ -174,19 +177,22 @@ export default function formProviderTest() {
         hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} formProvider openFormManager success`);
         done();
       } catch (error) {
-        if (error.code === ERROR_CODE) {
-          expect(error.code).assertEqual(ERROR_CODE);
-        } else if (error.code === ERROR_CODE2) {
-          expect(error.code).assertEqual(ERROR_CODE2);
-        } else if (error.code === ERROR_CODE3) {
-          expect(error.code).assertEqual(ERROR_CODE3);
-        } else if (error.code === ERROR_CODE5) {
-          expect(error.code).assertEqual(ERROR_CODE5);
+        let businessError: BusinessError = error as BusinessError;
+        hilog.error(DOMAIN, COMMON_TAG, '%{public}s',
+          `${TAG} formProvider openFormManager, catch error, 
+          code: ${businessError.code}, message: ${businessError.message})`);
+        if (businessError.code === ERROR_CODE) {
+          expect(businessError.code).assertEqual(ERROR_CODE);
+        } else if (businessError.code === ERROR_CODE2) {
+          expect(businessError.code).assertEqual(ERROR_CODE2);
+        } else if (businessError.code === ERROR_CODE3) {
+          expect(businessError.code).assertEqual(ERROR_CODE3);
+        } else if (businessError.code === ERROR_CODE5) {
+          expect(businessError.code).assertEqual(ERROR_CODE5);
         } else {
-          hilog.info(DOMAIN, COMMON_TAG, '%{public}s',
-          `${TAG} formProvider openFormManager, error: ${JSON.stringify(error)}`);
           expect().assertFail();
         }
+        done();
       }
       hilog.info(DOMAIN, COMMON_TAG, '%{public}s', `${TAG} end`);
     })

@@ -45,7 +45,6 @@ export default function btSocketNopUiJsunit() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testSppListenNop
      * @tc.number testSppListenNop
      * @tc.desc   test sppListen without permission
@@ -79,7 +78,6 @@ export default function btSocketNopUiJsunit() {
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:46
      * @tc.name   testSppSppConnectNop
      * @tc.number testSppSppConnectNop
      * @tc.desc   test sppConnect without permission

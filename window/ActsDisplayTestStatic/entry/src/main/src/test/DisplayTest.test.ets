@@ -19,6 +19,17 @@ import display from '@ohos.display';
 import { BusinessError } from '@ohos.base';
 import window from '@ohos.window'
 import { AppStorage,LocalStorage } from '@ohos.arkui.stateManagement';
+import common from '@ohos.app.ability.common';
+import screenshot from '@ohos.screenshot';
+import { image } from '@kit.ImageKit';
+import { Driver } from '@ohos.UiTest';
+import { ON } from '@ohos.UiTest';
+import { MatchPattern } from '@ohos.UiTest';
+import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
+import { PermissionRequestResult } from '@ohos.abilityAccessCtrl';
+import { Permissions }  from 'permissions';
+import abilityContext from '@ohos.app.ability.common';
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import type { AsyncCallback, Callback} from '@ohos.base'
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
@@ -28,36 +39,99 @@ function isPositiveInteger(value:int) {
   //判断是否为正整数
   return Number.isInteger(value) && value > 0;
 }
+async function getPermision(): Promise<void> {
+    let atManager:abilityAccessCtrl.AtManager = abilityAccessCtrl.createAtManager();
+    let context : common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+    let permissions: Array<Permissions> =
+        ["ohos.permission.CUSTOM_SCREEN_CAPTURE"];
+    try {
+        atManager.requestPermissionsFromUser(context, permissions,(err: BusinessError<void> | null, data: PermissionRequestResult | undefined) => {
+            hilog.info(0x0000, 'testTag', ' requestPermissionsFromUser end');
+            hilog.info(domain, tag, "request success permissions" + JSON.stringify(data));
+            hilog.info(domain, tag, "getPermissionRequestResult err" + JSON.stringify(err));
+            hilog.info(domain, tag, 'requestPermission StdProcess.tid():' + StdProcess.tid());
+        });
+    } catch (err: BusinessError) {
+        console.error('capture requestPermissionsFromUser failed: ' + JSON.stringify(err));
+    }
+}
+
+async function clickButtonDriver(){
+    console.error(`come in permissionClick`);
+    let driver: Driver = Driver.create();
+    console.error(`come in Driver create`);
+    let buttonOne = await driver.waitForComponent(ON.text('允许', MatchPattern.EQUALS), 10000);
+    console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
+    if(buttonOne!=null){
+        buttonOne.click();
+    }
+
+}
 export default function DisplayTest() {
 
     describe("DisplayTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
+        hilog.info(domain, tag, 'DisplayTest start');
+        let abilityDelegator : abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         // let session:UIExtensionContentSession;
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
-        beforeAll(() => {
-            //context = AppStorage.get('context') as common.UIAbilityContext;
-            //console.log('windowTest context: ' + JSON.stringify(context))
-            try {
-                windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
-                win = AppStorage.get<window.Window>('mainWindow') as window.Window;
-                // let win = windowStage.getMainWindowSync();
-            } catch (e) {
-                hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
+        let displayClass = display.getDefaultDisplaySync();
+        let foldStatus:string= '';
+        let foldDisplayMode:string= '';
+        let rotation:string[];
+        let orientation:string[];
+        let code:number = 0;
+        let displayFoldStatus:display.FoldStatus;
+        let context: common.UIAbilityContext;
+        beforeAll(async (): Promise<void> => {
+            hilog.info(domain, tag, 'beforeAll start');
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+            await Utils.msSleep(2000);
+            displayFoldStatus = display.getFoldStatus();
+            hilog.info(domain, tag, 'jsUnittest beforeAll getFoldStatus =' + displayFoldStatus);
+            windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+            hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
+            win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+            hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
+            context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+            hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
+            try{
+                let data:string = displayClass.getDisplayCapability();
+                // let capabilityData = JSON.parse(data);
+                // hilog.info(domain, tag, 'jsUnittest beforeAll deviceMessage =' + JSON.stringify(capabilityData));
+                // for(const capability of capabilityData!.capability){
+                //     if(Number(capability.foldStatus) == displayFoldStatus){
+                //         foldStatus = capability.foldStatus;
+                //         foldDisplayMode = capability.foldDisplayMode;
+                //         rotation = capability.rotation;
+                //         orientation = capability.orientation;
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll foldStatus =' + capability.foldStatus);
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll foldDisplayMode =' + capability.foldDisplayMode);
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll rotation =' + capability.rotation);
+                //         hilog.info(domain, tag, 'jsUnittest beforeAll orientation =' + capability.orientation);
+                //     }
+                // }
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag, 'jsUnittest beforeAll getDisplayCapability failed ' + err.code);
+                hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
+                if(err.code == 801){
+                    code = 801;
+                    hilog.info(domain, tag, 'jsUnittest beforeAll code =' + code);
+                }else {
+                    hilog.info(domain, tag, 'jsUnittest getDisplayCapability failed');
+                }
             }
+            await getPermision();
+            hilog.info(domain, tag, 'jsUnittest clickButtonDriver before');
+            await Utils.msSleep(500);
+            await clickButtonDriver();
+            hilog.info(domain, tag, 'jsUnittest clickButtonDriver after');
 
-            hilog.info(domain, tag, '%{public}s', 'getANI windowStage = ' + JSON.stringify(windowStage));
-            hilog.info(domain, tag, '%{public}s', 'getANI win = ' + JSON.stringify(win));
-
-            //isAutoWindow = settings.getValueSync(context, 'window_pcmode_switch_status', '',settings.domainName.DEVICE_SHARED);
-            //console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
-            //isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
-            //isPCStatus == '' 非PC设备
-            //isPCStatus == '1' PC设备状态栏dock未融合
-            //isPCStatus == '0' PC设备状态栏dock融合
-            //console.info(`beforeAll isPCStatus: `+ isPCStatus);
         })
         /**
          * @tc.number      SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_0450
@@ -72,7 +146,21 @@ export default function DisplayTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
              display.getAllDisplays().then((data:Array<display.Display>) => {
-                 hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data: ' + JSON.stringify(data));
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in obtaining all the display objects. Data.length: ' + data.length);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].id: ' + data[0].id);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].refreshRate: ' + data[0].refreshRate);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].width: ' + data[0].width);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].height: ' + data[0].height);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].rotation: ' + data[0].rotation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].orientation: ' + data[0].orientation);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityDPI: ' + data[0].densityDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].name: ' + data[0].name);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].alive: ' + data[0].alive);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].state: ' + data[0].state);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].densityPixels: ' + data[0].densityPixels);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].scaledDensity: ' + data[0].scaledDensity);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].xDPI: ' + data[0].xDPI);
+                hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded data[0].yDPI: ' + data[0].yDPI);
                 expect(data[0].id != null).assertTrue();
                 expect(data[0].refreshRate != null).assertTrue();
                 expect(data[0].width != null).assertTrue();
@@ -88,7 +176,7 @@ export default function DisplayTest() {
                 expect(data[0].xDPI != null).assertTrue();
                 expect(data[0].yDPI != null).assertTrue();
                 done();
-            }).catch((err:BusinessError) :PromiseLike<void>|undefined => {
+            }).catch((err:Error) :PromiseLike<void>|undefined => {
                  hilog.error(0x0000, '[ANI]',msgStr + 'Failed to obtain all the display objects. Code: ' + JSON.stringify(err));
                 expect().assertFail();
                 done();
@@ -155,21 +243,21 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on('foldStatusChange', callback);
+                display.onFoldStatusChange(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldStatusChange");
+                display.offFoldStatusChange();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldStatusChange");
+                display.offFoldStatusChange();
                 done();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -190,7 +278,7 @@ export default function DisplayTest() {
             let msgStr:string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                display.off("foldStatusChange");
+                display.offFoldStatusChange();
                 done();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -214,21 +302,21 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on('foldDisplayModeChange', callback);
+                display.onFoldDisplayModeChange(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldDisplayModeChange");
+                display.offFoldDisplayModeChange();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("foldDisplayModeChange");
+                display.offFoldDisplayModeChange();
                 done();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -452,7 +540,7 @@ export default function DisplayTest() {
                     expect(resolutionObject.physicalHeight).assertLarger(0);
                     done();
                 }
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 if (err.code == 801) {
                     hilog.error(0x0000, '[ANI]',`${caseName}: The current device type does not support to setWindowSystemBarEnable`);
                     expect(true).assertTrue();
@@ -481,7 +569,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("add", callback);
+                display.onAdd(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
@@ -489,14 +577,14 @@ export default function DisplayTest() {
 
             }
             try {
-                display.off("add");
+                display.offAdd();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("add");
+                display.offAdd();
                 done();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -520,21 +608,21 @@ export default function DisplayTest() {
                 console.info(msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("change", callback);
+                display.onChange(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("change");
+                display.offChange();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("change");
+                display.offChange();
                 done();
 
             } catch (exception:Error) {
@@ -559,21 +647,21 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
             };
             try {
-                display.on("remove", callback);
+                display.onRemove(callback);
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("remove");
+                display.offRemove();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
                 expect().assertFail();
                 done();
             }
             try {
-                display.off("remove");
+                display.offRemove();
                 done();
             } catch (exception:Error) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -646,7 +734,7 @@ export default function DisplayTest() {
                 }
             };
             try {
-                display.on('foldAngleChange', callback);
+                display.onFoldAngleChange(callback);
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
@@ -654,7 +742,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -683,7 +771,7 @@ export default function DisplayTest() {
                 }
             };
             try {
-                display.on('foldAngleChange', callback);
+                display.onFoldAngleChange(callback);
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
@@ -691,7 +779,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -699,7 +787,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -721,7 +809,7 @@ export default function DisplayTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                display.off("foldAngleChange");
+                display.offFoldAngleChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -747,7 +835,7 @@ export default function DisplayTest() {
                 done();
             };
             try {
-                display.on('captureStatusChange', callback);
+                display.onCaptureStatusChange(callback);
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
@@ -755,7 +843,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("captureStatusChange");
+                display.offCaptureStatusChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -780,7 +868,7 @@ export default function DisplayTest() {
                 hilog.info(0x0000, '[ANI]',msgStr + 'capture status: ' + status);
             };
             try {
-                display.on('captureStatusChange', callback);
+                display.onCaptureStatusChange(callback);
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to register callback. Code: ' + JSON.stringify(exception));
@@ -788,7 +876,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("captureStatusChange");
+                display.offCaptureStatusChange();
             }
             catch (exception: BusinessError) {
                 hilog.error(0x0000, '[ANI]',msgStr + 'Failed to unregister callback. Code: ' + JSON.stringify(exception));
@@ -796,7 +884,7 @@ export default function DisplayTest() {
                 done();
             }
             try {
-                display.off("captureStatusChange");
+                display.offCaptureStatusChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -818,7 +906,7 @@ export default function DisplayTest() {
             let msgStr : string = 'jsunittest ' + caseName + ' ';
             hilog.info(0x0000, '[ANI]',msgStr + 'begin');
             try {
-                display.off("captureStatusChange");
+                display.offCaptureStatusChange();
                 done();
             }
             catch (exception: BusinessError) {
@@ -874,9 +962,12 @@ export default function DisplayTest() {
             }
         })
         /**
-         * @tc.number		SUB_BASIC_WMS_SPCIAL_XTS_ORIENTATION_JS_API_0290
-         * @tc.name			testOrientation_attr_static_0100
-         * @tc.desc			To test the attributes of Orientation
+         * @tc.number    SUB_BASIC_WMS_SPCIAL_XTS_ORIENTATION_JS_API_0290
+         * @tc.name      testOrientation_attr_static_0100
+         * @tc.desc      To test the attributes of Orientation
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 0
          */
         it('testOrientation_attr_static_0100',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> =>{
             let msg:string = "testOrientation_attr_static_0100"
@@ -923,7 +1014,7 @@ export default function DisplayTest() {
                         expect(data.height).assertEqual(displayClass?.availableHeight);
                     }
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -986,7 +1077,7 @@ export default function DisplayTest() {
                                 }
                                 subWindow.destroyWindow();
                                 done();
-                            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                            }).catch((err: Error):PromiseLike<void>|undefined => {
                                 hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                                 if (err.code == 801) {
                                     hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1006,13 +1097,13 @@ export default function DisplayTest() {
                             expect().assertFail();
                             done();
                         }
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to load the content. Cause code: ${err.code}, message: ${err.message}`);
                         subWindow.destroyWindow();
                         expect(false).assertTrue();
                         done();
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'windowStage.createSubWindow failed error: ' + JSON.stringify(err));
                     expect(false).assertTrue();
                     done();
@@ -1056,7 +1147,7 @@ export default function DisplayTest() {
                         await mainWindowClass.setWindowSystemBarEnable(['status', 'navigation']);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowSystemBarEnable success');
                         done();
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                         if (err.code == 801) {
                             hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1067,7 +1158,7 @@ export default function DisplayTest() {
                             done();
                         }
                     });
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1125,7 +1216,7 @@ export default function DisplayTest() {
                                 expect(false).assertTrue();
                                 done();
                             }
-                        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                        }).catch((err: Error):PromiseLike<void>|undefined => {
                             hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                             if (err.code == 801) {
                                 hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1136,13 +1227,13 @@ export default function DisplayTest() {
                                 done();
                             }
                         });
-                    }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
                         hilog.error(0x0000, '[ANI]',msgStr + `Failed to set setWindowLayoutFullScreen. Code: ${err.code}, message: ${err.message}`);
                         expect().assertFail();
                         done();
                     })
 
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1175,11 +1266,11 @@ export default function DisplayTest() {
             let displayClass: display.Display;
             displayClass = display.getDefaultDisplaySync();
             try {
-                displayClass.on('availableAreaChange', (data: display.Rect) => {
+                displayClass.onAvailableAreaChange((data: display.Rect) => {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
                     done();
                 });
-                displayClass.off('availableAreaChange');
+                displayClass.offAvailableAreaChange();
                 done();
             }
             catch (err: BusinessError) {
@@ -1219,11 +1310,11 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', (data: display.Rect) => {
+                        displayClass.onAvailableAreaChange((data: display.Rect) => {
                             hilog.info(0x0000, '[ANI]',msgStr + 'Listening enabled. Data: ' + JSON.stringify(data));
                             Utils.msSleep(500);
                             expect(data.height).assertLarger(AvailableArea.height);
-                            displayClass.off('availableAreaChange');
+                            displayClass.offAvailableAreaChange();
                             mainWindowClass.recover();
                             done();
                         });
@@ -1235,7 +1326,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1286,13 +1377,13 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', callback1);
-                        displayClass.on('availableAreaChange', callback2);
+                        displayClass.onAvailableAreaChange(callback1);
+                        displayClass.onAvailableAreaChange(callback2);
                         await mainWindowClass.setWindowLayoutFullScreen(true);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
                         await Utils.msSleep(1000);
                         expect(num).assertEqual(4);
-                        displayClass.off('availableAreaChange');
+                        displayClass.offAvailableAreaChange();
                         mainWindowClass.recover();
                         done();
                     }
@@ -1300,7 +1391,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1351,14 +1442,14 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', callback1);
-                        displayClass.on('availableAreaChange', callback2);
-                        displayClass.off('availableAreaChange', callback2);
+                        displayClass.onAvailableAreaChange(callback1);
+                        displayClass.onAvailableAreaChange(callback2);
+                        displayClass.offAvailableAreaChange(callback2);
                         await mainWindowClass.setWindowLayoutFullScreen(true);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
                         await Utils.msSleep(1000);
                         expect(num).assertEqual(2);
-                        displayClass.off('availableAreaChange');
+                        displayClass.offAvailableAreaChange();
                         mainWindowClass.recover();
                         done();
                     }
@@ -1366,7 +1457,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1417,9 +1508,9 @@ export default function DisplayTest() {
                         done();
                     }
                     else if (AvailableArea.top != 0) {
-                        displayClass.on('availableAreaChange', callback1);
-                        displayClass.on('availableAreaChange', callback2);
-                        displayClass.off('availableAreaChange');
+                        displayClass.onAvailableAreaChange(callback1);
+                        displayClass.onAvailableAreaChange(callback2);
+                        displayClass.offAvailableAreaChange();
                         await mainWindowClass.setWindowLayoutFullScreen(true);
                         hilog.info(0x0000, '[ANI]',msgStr + ' setWindowLayoutFullScreen success');
                         await Utils.msSleep(1000);
@@ -1431,7 +1522,7 @@ export default function DisplayTest() {
                         expect(false).assertTrue();
                         done();
                     }
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + `Failed to get the available area in this display. Code: ${err.code}, message: ${err.message}`);
                     if (err.code == 801) {
                         hilog.info(0x0000, '[ANI]',msgStr + 'The device not support getAvailableArea');
@@ -1464,7 +1555,7 @@ export default function DisplayTest() {
             let displayClass: display.Display;
             try {
                 displayClass = display.getDefaultDisplaySync();
-                displayClass.off('availableAreaChange');
+                displayClass.offAvailableAreaChange();
                 expect(true).assertTrue();
                 done();
             }
@@ -1581,6 +1672,593 @@ export default function DisplayTest() {
         expect(displayClass!.screenShape !=null ).assertTrue();
         done();
       });
+      /**
+         * @tc.number    SUB_BASIC_DMS_JS_0200
+         * @tc.name      test_getPrimaryDisplaySync_static_0100
+         * @tc.desc      test_getPrimaryDisplaySync_static_0100
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_getPrimaryDisplaySync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'test_getPrimaryDisplaySync_static_0100';
+            try{
+                let displayInfo:display.Display = display.getPrimaryDisplaySync();
+                hilog.info(domain, tag,caseName + ' displayInfo:'+ displayInfo);
+                hilog.info(domain, tag,caseName + ' displayInfo.id:'+ displayInfo.id);
+                expect(displayInfo.id).assertEqual(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.name:'+ displayInfo.name);
+                expect(displayInfo.name != null).assertTrue();
+                hilog.info(domain, tag,caseName + ' displayInfo.alive:'+ displayInfo.alive);
+                expect(displayInfo.alive).assertEqual(true);
+                hilog.info(domain, tag,caseName + ' displayInfo.width:'+ displayInfo.width);
+                expect(displayInfo.width).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.height:'+ displayInfo.height);
+                expect(displayInfo.height).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.refreshRate:'+ displayInfo.refreshRate);
+                expect(displayInfo.refreshRate).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.densityDPI:'+ displayInfo.densityDPI);
+                expect(displayInfo.densityDPI).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.densityPixels:'+ displayInfo.densityPixels);
+                expect(displayInfo.densityPixels).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.scaledDensity:'+ displayInfo.scaledDensity);
+                expect(displayInfo.scaledDensity).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.xDPI:'+ displayInfo.xDPI);
+                expect(displayInfo.xDPI).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.yDPI:'+ displayInfo.yDPI);
+                expect(displayInfo.yDPI).assertLarger(0);
+                hilog.info(domain, tag,caseName + ' displayInfo.state:'+ displayInfo.state);
+                expect(displayInfo.state).assertEqual(2);
+                hilog.info(domain, tag,caseName + ' displayInfo.hdrFormats:'+ displayInfo.hdrFormats);
+                expect(displayInfo.hdrFormats != null).assertTrue();
+                hilog.info(domain, tag,caseName + ' displayInfo.colorSpaces:'+ displayInfo.colorSpaces);
+                expect(displayInfo.colorSpaces != null).assertTrue();
+                hilog.info(domain, tag,caseName + ' displayInfo.rotation:'+ displayInfo.rotation);
+                hilog.info(domain, tag,caseName + ' displayInfo.orientation:'+ displayInfo.orientation);
+                if(code == 801){
+                    expect(displayInfo.rotation).assertEqual(0);
+                    expect(displayInfo.orientation).assertEqual(0);
+                    done();
+                }else {
+                    let rotation:Int = displayInfo.rotation;
+                    // expect(displayInfo.orientation).assertEqual(int(orientation[rotation]));
+                    done();
+                }
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_ERRORCODE_0100
+         * @tc.name      test_CreateVirtualScreen_ErrorCode1400001_static
+         * @tc.desc      test_CreateVirtualScreen_ErrorCode1400001 when got invalid size
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_CreateVirtualScreen_ErrorCode1400001_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_CreateVirtualScreen_ErrorCode1400001_static ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: -1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                display.createVirtualScreen(option).then((screenId: Long) => {
+                    hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
+                    hilog.info(domain, tag,caseName + 'failed to create the virtual screen, err : ' + JSON.stringify(err));
+                    expect(err.code == 1400001).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+                if (err.code != 801) {
+                    expect(false).assertTrue();
+                }
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_CREATE_VIRTUALSCREEN_0100
+         * @tc.name      test_CreateVirtualScreen01_static
+         * @tc.desc      test_CreateVirtualScreen01 
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_CreateVirtualScreen01_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_CreateVirtualScreen01_static ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 100,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                 display.createVirtualScreen(option).then(async (screenId: Long) => {
+                    hilog.info(domain, tag,caseName + 'succeeded in create virtual screen, data : ' + JSON.stringify(screenId));
+                     display.destroyVirtualScreen(screenId).then(() => {
+                        hilog.info(domain, tag,caseName + 'succeeded in destroyVirtualScreen');
+                        done();
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                        expect(false).assertTrue();
+                        done();
+                    })
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in createVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0100
+         * @tc.name      test_DestroyVirtualScreenErrorcode401_static
+         * @tc.desc      test_DestroyVirtualScreenErrorcode_401 when got invalid screendId like -1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_DestroyVirtualScreenErrorcode401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_DestroyVirtualScreenErrorcode401 ';
+            try {
+                 display.destroyVirtualScreen(-1).then(() => {
+                    hilog.info(domain, tag,caseName + 'succeeded in destroy virtual screen, data : ');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,caseName + 'failed to destroyVirtualScreen, err : ' + JSON.stringify(err));
+                     expect(err.code).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801 || err.code == 401).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_DESTROY_VIRTUALSCREEN_ERRORCODE_0200
+         * @tc.name      test_DestroyVirtualScreenErrorcode401_02_static
+         * @tc.desc      test_DestroyVirtualScreenErrorcode_401 when destroy a screen that has already been destroyed
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_DestroyVirtualScreenErrorcode401_02_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_DestroyVirtualScreenErrorcode401_02_static ';
+            let option:display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                 display.createVirtualScreen(option).then(async (screenId: Long) => {
+                    hilog.info(domain, tag,caseName + 'Succeeded in creating ther virtual screen. Data: ' + JSON.stringify(screenId));
+                     display.destroyVirtualScreen(screenId).then(() => {
+                        hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen1');
+                        display.destroyVirtualScreen(screenId).then(() => {
+                        hilog.info(domain, tag,caseName + 'Succeeded in destroyVirtualScreen2');
+                        expect(false).assertTrue();
+                        done();
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen2');
+                        expect(err.code == 401);
+                        done();
+                    })
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName + 'Failed in destroyVirtualScreen1');
+                        expect(false).assertTrue();
+                        done();
+                    })
+                    
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,caseName + 'failed to createVirtualScreen, err : ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801);
+                done();
+            }
+        });
+
+        /**
+         * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_static_0100
+         * @tc.name      test_setVirtualScreenSurface_ErrorCode401_static
+         * @tc.desc      test_setVirtualScreenSurface_ErrorCode401 when got a invalid screenId like -1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_setVirtualScreenSurface_ErrorCode401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401_static ';
+            try {
+                 display.setVirtualScreenSurface(-1, '').then(() => {
+                    hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                     expect(false).assertTrue();
+                     done();
+                 })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                expect(err.code == 401 || err.code == 801).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_SET_VIRTUALSCREEN_SURFACE_ERRORCODE_static_0200
+         * @tc.name      test_setVirtualScreenSurface_ErrorCode401_static_02
+         * @tc.desc      test_setVirtualScreenSurface_ErrorCode401 when got non existent surfaceId like ''
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 2
+         */
+        it('test_setVirtualScreenSurface_ErrorCode401_static_02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_setVirtualScreenSurface_ErrorCode401_static_02 ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            };
+            try {
+                let screenId: Long = await display.createVirtualScreen(option);
+                hilog.info(domain, tag,caseName + 'success in createVirtualScreen ' + screenId);
+                 display.setVirtualScreenSurface(screenId, '').then(() => {
+                    hilog.info(domain, tag,caseName + 'success in setVirtualScreenSurface');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                     hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                     expect(false).assertTrue();
+                     done();
+                 })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
+                expect(err.code == 401 || err.code == 801).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_static_0100
+         * @tc.name      test_MakeUniqueErrorcode_401_static
+         * @tc.desc      test_MakeUniqueErrorcode_401 when got invalid screenId like -1
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_MakeUniqueErrorcode_401_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_MakeUniqueErrorcode_401_static ';
+            try {
+                 display.makeUnique(-1).then(()=>{
+                    hilog.info(domain, tag,caseName + 'Succeeded in makeUnique');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error) :PromiseLike<void>|undefined => {
+                    hilog.info(domain, tag,caseName + 'Error in makeUnique, err: ' + JSON.stringify(err));
+                    expect(false).assertTrue();
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 401 || err.code == 801).assertTrue()
+                done();
+            }
+        });
+        /**
+         * @tc.number    SUB_BASIC_WMS_MAKEUNIQUE_ERRORCODE_static_0200
+         * @tc.name      test_MakeUniqueErrorcode_1400001_static
+         * @tc.desc      test_MakeUniqueErrorcode_1400001 when makeUnique a virtual screen that has already been destroyed
+         * @tc.size      MediumTest
+         * @tc.type      Function
+         * @tc.level     Level 3
+         */
+        it('test_MakeUniqueErrorcode_1400001_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_MakeUniqueErrorcode_1400001_static ';
+            let option: display.VirtualScreenConfig = {
+                name: 'screen01',
+                width: 1,
+                height: 2340,
+                density: 2,
+                surfaceId: ''
+            }
+            try {
+                let vid = await display.createVirtualScreen(option);
+                hilog.info(domain, tag,caseName + 'Success in createVirtualScreen, screendId : ' + vid);
+                await display.destroyVirtualScreen(vid);
+                hilog.info(domain, tag,caseName + 'Success in destroyVirtualScreen');
+
+                display.makeUnique(vid).then(() => {
+                    hilog.info(domain, tag,caseName + 'Success in make unique screen');
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
+                    hilog.info(domain, tag,caseName + 'Failed to makeUnique, err: ' + JSON.stringify(err));
+
+                    done();
+                })
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + 'error in destroyVirtualScreen, err : ' + JSON.stringify(err));
+                expect(err.code == 801);
+                done();
+            }
+        });
+
+
+        /**
+         * @tc.number     SUB_BASIC_DMS_JS_static_0500
+         * @tc.name       test_js_capture_privateWindow_static
+         * @tc.desc       test_js_capture_privateWindow_static
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 3
+         */
+        it('test_js_capture_privateWindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = 'test_js_capture_privateWindow_static';
+            try{
+                let windowClass:window.Window = windowStage.getMainWindowSync();
+                windowClass.setWindowPrivacyMode(true, (err: BusinessError<void> | null) :void => {
+                    const errCode: number = err!.code;
+                    if (errCode) {
+                        hilog.error(domain, tag,`caseName + Failed to set the window to privacy mode. Cause code: ${err!.code}, message: ${err!.message}`);
+                        return;
+                    }
+                    hilog.info(domain, tag,caseName + 'Succeeded in setting the window to privacy mode.');
+                    let captureOption: screenshot.CaptureOption = {
+                        "displayId": 0
+                    };
+                    let promise = screenshot.capture(captureOption);
+                    promise.then((PixelMap: image.PixelMap) => {
+                        hilog.info(domain, tag,caseName + 'Succeeded in saving screenshot. Pixel bytes number: ' + PixelMap.getPixelBytesNumber());
+                        PixelMap.getImageInfo().then((imageInfo:image.ImageInfo)=>{
+                            let PixelMapWidth = imageInfo.size.width;
+                            let PixelMapHeight = imageInfo.size.height;
+                            hilog.info(domain, tag,caseName + ' PixelMapWidth:'+ PixelMapWidth + ' ,PixelMapHeight:'+ PixelMapHeight);
+                            expect(PixelMapWidth).assertLarger(0);
+                            expect(PixelMapHeight).assertLarger(0);
+                            PixelMap.release(); // PixelMap使用完后及时释放内存
+                            done();
+                        })
+                    }).catch((err: Error):PromiseLike<void>|undefined => {
+                        hilog.info(domain, tag,caseName +'Failed to save screenshot. Code: ' + JSON.stringify(err));
+                        if(err.code == 801){
+                            windowClass.setWindowPrivacyMode(false);
+                            done();
+                        }else if(err.code == 1400003){
+                            hilog.info(domain, tag,caseName + 'privateWindow not support capture');
+                            done();
+                        }else{
+                            expect(false).assertTrue();
+                            done();
+                        }
+                    });
+
+                });
+
+            } catch (err) {
+                err = err as BusinessError;
+                hilog.info(domain, tag,caseName + ': fail:'+ err + ' '+err.code);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+
+      /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0500
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口position超出int32报1400004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithPositionOutofRange_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let displayClass:display.Display = display.getDefaultDisplaySync();
+                hilog.info(domain, tag,`${caseName} displayClass.id: ${displayClass.id}`);
+                const exceedMax = 2147483648;
+                let position: display.Position = {
+                    x: exceedMax,
+                    y: exceedMax
+                };
+                display.convertGlobalToRelativeCoordinate(position, displayClass.id);
+                expect(false).assertTrue();
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                expect(e.code).assertEqual(1400004);
+                expect(e.message!=null).assertTrue();
+                done()
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0600
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口传入displayId<0报1400004
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithInvalidDisplayid_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let position: display.Position = {
+                    x: 50,
+                    y: 50
+                };
+                display.convertGlobalToRelativeCoordinate(position, -1);
+                expect(false).assertTrue();
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed. err: ${JSON.stringify(e)}`);
+                expect(e.code).assertEqual(1400004)
+                expect(e.message!=null).assertTrue();
+                done()
+            }
+        })
+
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0800
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口，传入displayId，在除RK外的设备正常调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
+         */
+        it('testConvertGlobalToRelativeCoordinatewithDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithDisplayid_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let result:display.Display = display.getDisplayByIdSync(0);
+                hilog.info(domain, tag,`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
+                let width = result.width / 2;
+                let height = result.height / 2;
+                hilog.info(domain, tag,`${caseName} width: ${width}`);
+                hilog.info(domain, tag,`${caseName} height: ${height}`);
+
+                let position: display.Position = {
+                    x: width,
+                    y: height
+                };
+                let relativePosition = display.convertGlobalToRelativeCoordinate(position, 0);
+                hilog.info(domain, tag,`${caseName} relativePosition: ${JSON.stringify(relativePosition)}`);
+                expect(Math.abs(relativePosition.position.x - width)).assertLargerOrEqual(0)
+                expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
+                expect(relativePosition.displayId).assertEqual(0)
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                if (e.code === 801) {
+                    expect(e.message!=null).assertTrue();
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done()
+                }
+            }
+        })
+
+        /**
+         * @tc.number      SUB_BASIC_WMS_CONVERTCOORDINATE_Static_0900
+         * @tc.name        testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static
+         * @tc.desc        验证convertGlobalToRelativeCoordinate接口，不传入displayId，在除RK外的设备正常调用
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
+         */
+        it('testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = "testConvertGlobalToRelativeCoordinatewithoutDisplayid_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let result:display.Display = display.getDisplayByIdSync(0);
+                hilog.info(domain, tag,`${caseName} display.getDisplayByIdSync(0): ${JSON.stringify(result)}`);
+                let width = result.width / 2;
+                let height = result.height / 2;
+                hilog.info(domain, tag,`${caseName} width: ${width}`);
+                hilog.info(domain, tag,`${caseName} height: ${height}`);
+
+                let position: display.Position = {
+                    x: width,
+                    y: height
+                };
+                let relativePosition = display.convertGlobalToRelativeCoordinate(position);
+                hilog.info(domain, tag,`${caseName} relativePosition: ${JSON.stringify(relativePosition)}`);
+                expect(Math.abs(relativePosition.position.x - width)).assertLargerOrEqual(0)
+                expect(Math.abs(relativePosition.position.y - height)).assertLargerOrEqual(0)
+                expect(relativePosition.displayId).assertEqual(0)
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                if (e.code === 801) {
+                    expect(e.message!=null).assertTrue();
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done()
+                }
+            }
+        })
+        /**
+         * @tc.number      SUB_BASIC_WMS_GET_LIVE_CREASE_REGION_Static_0100
+         * @tc.name        testGetLiveCreaseRegion_Static
+         * @tc.desc        验证折叠设备可查询到折痕区域，非折叠设备折痕区域返回空
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 0
+         */
+        it('testGetLiveCreaseRegion_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = "testGetLiveCreaseRegion_Static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            hilog.info(domain, tag,msgStr + 'begin.');
+            try {
+                let result:boolean = display.isFoldable();
+                hilog.info(domain, tag,`${caseName} isFoldable: ${result}`);
+                let defaultDisplay:display.Display = display.getDefaultDisplaySync();
+                hilog.info(domain, tag,`${caseName} defaultDisplay: ${JSON.stringify(defaultDisplay)}`);
+                let region:display.FoldCreaseRegion = defaultDisplay.getLiveCreaseRegion();
+                hilog.info(domain, tag,`${caseName} region: ${JSON.stringify(region)}`);
+                expect(region.displayId).assertEqual(0)
+                if (result) {
+                    if (region.creaseRects.length == 0) {
+                        expect(true).assertTrue();
+                    } else {
+                        for (let i = 0; i < region.creaseRects.length; i++) {
+                            expect(region.creaseRects[i].left).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].top).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].width).assertLargerOrEqual(0);
+                            expect(region.creaseRects[i].height).assertLargerOrEqual(0);
+                        }
+                    }
+                } else {
+                    expect(region.creaseRects.length).assertEqual(0)
+                }
+                done();
+            } catch (e:BusinessError) {
+                hilog.error(domain, tag,`${caseName} Failed2. err: ${JSON.stringify(e)}`);
+                if (e.code === 801) {
+                    expect(e.message!=null).assertTrue();
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done()
+                }
+            }
+        })
 
 
 

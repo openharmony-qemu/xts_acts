@@ -34,14 +34,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       done();
     })
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0100
-    * @tc.name      : test createAccount callback form
-    * @tc.desc      : createAccount in callback form without optional information
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0100
+     * @tc.number ActsAccountOptionalParameter_0100
+     * @tc.desc   createAccount in callback form without optional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -58,14 +58,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0200
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : createAccount in promise form without optional information
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0200
+     * @tc.number ActsAccountOptionalParameter_0200
+     * @tc.desc   createAccount in promise form without optional information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -85,14 +85,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0300
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : undefined callback
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0300
+     * @tc.number ActsAccountOptionalParameter_0300
+     * @tc.desc   undefined callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0300 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -109,14 +109,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0400
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : undefined Promise
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0400
+     * @tc.number ActsAccountOptionalParameter_0400
+     * @tc.desc   undefined Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -136,14 +136,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0500
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : null callback
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0500
+     * @tc.number ActsAccountOptionalParameter_0500
+     * @tc.desc   null callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -160,14 +160,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0600
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : null Promise
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0600
+     * @tc.number ActsAccountOptionalParameter_0600
+     * @tc.desc   null Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -187,14 +187,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0700
-    * @tc.name      : test createAccount callback form
-    * @tc.desc      : no customData callback
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0700
+     * @tc.number ActsAccountOptionalParameter_0700
+     * @tc.desc   no customData callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0700 start====");
       let createAccountOptions: account.CreateAccountOptions = {}
@@ -212,14 +212,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0800
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : no customData promise
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0800
+     * @tc.number ActsAccountOptionalParameter_0800
+     * @tc.desc   no customData promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_0800 start====");
       let createAccountOptions: account.CreateAccountOptions = {}
@@ -240,14 +240,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_0900
-    * @tc.name      : test createAccount callback form
-    * @tc.desc      : customData is undefined callback
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_0900
+     * @tc.number ActsAccountOptionalParameter_0900
+     * @tc.desc   customData is undefined callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountCreateAccount_0300 start====");
       let createAccountOptions: account.CreateAccountOptions = {
@@ -267,14 +267,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1000
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : customData is undefined promise
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1000
+     * @tc.number ActsAccountOptionalParameter_1000
+     * @tc.desc   customData is undefined promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountCreateAccount_0400 start====");
       let createAccountOptions: account.CreateAccountOptions = {
@@ -297,14 +297,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1100
-    * @tc.name      : test createAccount callback form
-    * @tc.desc      : customData is null callback
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1100
+     * @tc.number ActsAccountOptionalParameter_1100
+     * @tc.desc   customData is null callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1100 start====");
       let createAccountOptions: account.CreateAccountOptions = {
@@ -324,14 +324,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1200
-    * @tc.name      : test createAccount promise form
-    * @tc.desc      : customData is null promise
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1200
+     * @tc.number ActsAccountOptionalParameter_1200
+     * @tc.desc   customData is null promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1200 start====");
       let createAccountOptions: account.CreateAccountOptions = {
@@ -357,14 +357,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       done();
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1300
-    * @tc.name      : test createAccountImplicitly no options
-    * @tc.desc      : no option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1300
+     * @tc.number ActsAccountOptionalParameter_1300
+     * @tc.desc   no option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1300 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -393,14 +393,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1400
-    * @tc.name      : test createAccountImplicitly with options
-    * @tc.desc      : with option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1400
+     * @tc.number ActsAccountOptionalParameter_1400
+     * @tc.desc   with option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -436,17 +436,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1500
-    * @tc.name      : test createAccountImplicitly undefined options
-    * @tc.desc      : undefined option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1500
+     * @tc.number ActsAccountOptionalParameter_1500
+     * @tc.desc   undefined option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -475,14 +472,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1600
-    * @tc.name      : test createAccountImplicitly null options
-    * @tc.desc      : null option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1600
+     * @tc.number ActsAccountOptionalParameter_1600
+     * @tc.desc   null option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -511,14 +508,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1700
-    * @tc.name      : test createAccountImplicitly with empty options
-    * @tc.desc      : empty option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1700
+     * @tc.number ActsAccountOptionalParameter_1700
+     * @tc.desc   empty option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1700 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -550,14 +547,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1800
-    * @tc.name      : test createAccountImplicitly with undefined options
-    * @tc.desc      : undefined options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1800
+     * @tc.number ActsAccountOptionalParameter_1800
+     * @tc.desc   undefined options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -591,14 +588,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_1900
-    * @tc.name      : test createAccountImplicitly with null options
-    * @tc.desc      : null options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_1900
+     * @tc.number ActsAccountOptionalParameter_1900
+     * @tc.desc   null options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_1900 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -632,14 +629,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2000
-    * @tc.name      : test createAccountImplicitly with authType options
-    * @tc.desc      : authType options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2000
+     * @tc.number ActsAccountOptionalParameter_2000
+     * @tc.desc   authType options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -673,14 +670,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2100
-    * @tc.name      : test createAccountImplicitly with authType options
-    * @tc.desc      : authType options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2100
+     * @tc.number ActsAccountOptionalParameter_2100
+     * @tc.desc   authType options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -714,14 +711,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2200
-    * @tc.name      : test createAccountImplicitly with authType options
-    * @tc.desc      : authType options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2200
+     * @tc.number ActsAccountOptionalParameter_2200
+     * @tc.desc   authType options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -755,14 +752,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2300
-    * @tc.name      : test createAccountImplicitly with requiredLabels options
-    * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2300
+     * @tc.number ActsAccountOptionalParameter_2300
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2300 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -796,14 +793,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2400
-    * @tc.name      : test createAccountImplicitly with requiredLabels options
-    * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2400
+     * @tc.number ActsAccountOptionalParameter_2400
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -837,14 +834,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2500
-    * @tc.name      : test createAccountImplicitly with requiredLabels options
-    * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2500
+     * @tc.number ActsAccountOptionalParameter_2500
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -878,14 +875,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2600
-    * @tc.name      : test createAccountImplicitly with parameters options
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2600
+     * @tc.number ActsAccountOptionalParameter_2600
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -921,14 +918,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2700
-    * @tc.name      : test createAccountImplicitly with parameters options
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2700
+     * @tc.number ActsAccountOptionalParameter_2700
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2700 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -964,14 +961,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2800
-    * @tc.name      : test createAccountImplicitly with parameters options
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2800
+     * @tc.number ActsAccountOptionalParameter_2800
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1014,14 +1011,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_2900
-    * @tc.name      : test createAccountImplicitly with authType&requiredLabels options
-    * @tc.desc      : authType&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_2900
+     * @tc.number ActsAccountOptionalParameter_2900
+     * @tc.desc   authType&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_2900 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1062,14 +1059,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3000
-    * @tc.name      : test createAccountImplicitly with authType&requiredLabels options
-    * @tc.desc      : authType&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3000
+     * @tc.number ActsAccountOptionalParameter_3000
+     * @tc.desc   authType&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1110,14 +1107,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3100
-    * @tc.name      : test createAccountImplicitly with authType&requiredLabels options
-    * @tc.desc      : authType&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3100
+     * @tc.number ActsAccountOptionalParameter_3100
+     * @tc.desc   authType&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1158,14 +1155,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3200
-    * @tc.name      : test createAccountImplicitly with authType&parameters options
-    * @tc.desc      : authType&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3200
+     * @tc.number ActsAccountOptionalParameter_3200
+     * @tc.desc   authType&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1208,14 +1205,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3300
-    * @tc.name      : test createAccountImplicitly with authType&parameters options
-    * @tc.desc      : authType&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3300
+     * @tc.number ActsAccountOptionalParameter_3300
+     * @tc.desc   authType&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3300 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1258,14 +1255,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3400
-    * @tc.name      : test createAccountImplicitly with authType&parameters options
-    * @tc.desc      : authType&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3400
+     * @tc.number ActsAccountOptionalParameter_3400
+     * @tc.desc   authType&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1308,14 +1305,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3500
-    * @tc.name      : test createAccountImplicitly with requiredLabels&parameters options
-    * @tc.desc      : requiredLabels&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3500
+     * @tc.number ActsAccountOptionalParameter_3500
+     * @tc.desc   requiredLabels&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1351,14 +1348,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3600
-    * @tc.name      : test createAccountImplicitly with requiredLabels&parameters options
-    * @tc.desc      : requiredLabels&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3600
+     * @tc.number ActsAccountOptionalParameter_3600
+     * @tc.desc   requiredLabels&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1394,14 +1391,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3700
-    * @tc.name      : test createAccountImplicitly with requiredLabels&parameters options
-    * @tc.desc      : requiredLabels&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3700
+     * @tc.number ActsAccountOptionalParameter_3700
+     * @tc.desc   requiredLabels&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3700 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1437,14 +1434,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3800
-    * @tc.name      : test auth
-    * @tc.desc      : no option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3800
+     * @tc.number ActsAccountOptionalParameter_3800
+     * @tc.desc   no option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1472,14 +1469,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_3900
-    * @tc.name      : test auth
-    * @tc.desc      : empty option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_3900
+     * @tc.number ActsAccountOptionalParameter_3900
+     * @tc.desc   empty option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_3900 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1512,14 +1509,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4000
-    * @tc.name      : test auth
-    * @tc.desc      : undefined option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4000
+     * @tc.number ActsAccountOptionalParameter_4000
+     * @tc.desc   undefined option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1548,14 +1545,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4100
-    * @tc.name      : test auth
-    * @tc.desc      : null option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4100
+     * @tc.number ActsAccountOptionalParameter_4100
+     * @tc.desc   null option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1584,14 +1581,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4200
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : no option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4200
+     * @tc.number ActsAccountOptionalParameter_4200
+     * @tc.desc   no option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1625,14 +1622,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       }
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4300
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : with full option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4300
+     * @tc.number ActsAccountOptionalParameter_4300
+     * @tc.desc   with full option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4300 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1675,14 +1672,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4400
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : undefined option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4400
+     * @tc.number ActsAccountOptionalParameter_4400
+     * @tc.desc   undefined option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1722,14 +1719,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4500
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : null option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4500
+     * @tc.number ActsAccountOptionalParameter_4500
+     * @tc.desc   null option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1769,14 +1766,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4600
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : empty option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4600
+     * @tc.number ActsAccountOptionalParameter_4600
+     * @tc.desc   empty option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1811,14 +1808,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4700
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : undefined options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4700
+     * @tc.number ActsAccountOptionalParameter_4700
+     * @tc.desc   undefined options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4700 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1855,14 +1852,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4800
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : null options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4800
+     * @tc.number ActsAccountOptionalParameter_4800
+     * @tc.desc   null options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1899,14 +1896,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_4900
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_4900
+     * @tc.number ActsAccountOptionalParameter_4900
+     * @tc.desc   credentialType options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_4900 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1943,14 +1940,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5000
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5000
+     * @tc.number ActsAccountOptionalParameter_5000
+     * @tc.desc   credentialType options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -1987,14 +1984,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5100
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5100
+     * @tc.number ActsAccountOptionalParameter_5100
+     * @tc.desc   credentialType options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2031,14 +2028,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5200
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credential options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5200
+     * @tc.number ActsAccountOptionalParameter_5200
+     * @tc.desc   credential options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2075,14 +2072,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5300
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credential options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5300
+     * @tc.number ActsAccountOptionalParameter_5300
+     * @tc.desc   credential options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5300 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2119,14 +2116,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5400
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credential options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5400
+     * @tc.number ActsAccountOptionalParameter_5400
+     * @tc.desc   credential options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2163,14 +2160,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5500
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5500
+     * @tc.number ActsAccountOptionalParameter_5500
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2209,14 +2206,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5600
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5600
+     * @tc.number ActsAccountOptionalParameter_5600
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2255,14 +2252,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5700
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5700
+     * @tc.number ActsAccountOptionalParameter_5700
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5700 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2301,14 +2298,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5800
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType&credential options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5800
+     * @tc.number ActsAccountOptionalParameter_5800
+     * @tc.desc   credentialType&credential options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2345,14 +2342,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_5900
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType&credential options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_5900
+     * @tc.number ActsAccountOptionalParameter_5900
+     * @tc.desc   credentialType&credential options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_5900 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2389,14 +2386,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6000
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType&credential options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6000
+     * @tc.number ActsAccountOptionalParameter_6000
+     * @tc.desc   credentialType&credential options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2433,14 +2430,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6100
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6100
+     * @tc.number ActsAccountOptionalParameter_6100
+     * @tc.desc   credentialType&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2479,14 +2476,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6200
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6200
+     * @tc.number ActsAccountOptionalParameter_6200
+     * @tc.desc   credentialType&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2525,14 +2522,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6300
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6300
+     * @tc.number ActsAccountOptionalParameter_6300
+     * @tc.desc   credentialType&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6300 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2571,14 +2568,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6400
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credential&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6400
+     * @tc.number ActsAccountOptionalParameter_6400
+     * @tc.desc   credential&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2617,14 +2614,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6500
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credential&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6500
+     * @tc.number ActsAccountOptionalParameter_6500
+     * @tc.desc   credential&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2663,14 +2660,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6600
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credential&parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6600
+     * @tc.number ActsAccountOptionalParameter_6600
+     * @tc.desc   credential&parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2709,14 +2706,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6700
-    * @tc.name      : test verifyCredential
-    * @tc.desc      : credentialType&credential options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6700
+     * @tc.number ActsAccountOptionalParameter_6700
+     * @tc.desc   credentialType&credential options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6700 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2755,14 +2752,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6800
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : no option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6800
+     * @tc.number ActsAccountOptionalParameter_6800
+     * @tc.desc   no option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2796,14 +2793,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_6900
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : with option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_6900
+     * @tc.number ActsAccountOptionalParameter_6900
+     * @tc.desc   with option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_6900 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2848,14 +2845,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_7000
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : undefined option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7000
+     * @tc.number ActsAccountOptionalParameter_7000
+     * @tc.desc   undefined option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2897,14 +2894,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_7100
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : null option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7100
+     * @tc.number ActsAccountOptionalParameter_7100
+     * @tc.desc   null option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2946,14 +2943,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_7200
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : empty option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7200
+     * @tc.number ActsAccountOptionalParameter_7200
+     * @tc.desc   empty option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -2992,14 +2989,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-            * @tc.number    : ActsAccountOptionalParameter_7500
-            * @tc.name      : test setAuthenticatorProperties
-            * @tc.desc      : properties options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-            */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7500
+     * @tc.number ActsAccountOptionalParameter_7500
+     * @tc.desc   properties options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7500 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3042,14 +3039,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_7600
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : properties options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7600
+     * @tc.number ActsAccountOptionalParameter_7600
+     * @tc.desc   properties options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3092,14 +3089,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_7700
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : properties options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7700
+     * @tc.number ActsAccountOptionalParameter_7700
+     * @tc.desc   properties options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7700 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3142,14 +3139,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_7800
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7800
+     * @tc.number ActsAccountOptionalParameter_7800
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3192,14 +3189,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_7900
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_7900
+     * @tc.number ActsAccountOptionalParameter_7900
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_7900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_7900 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3242,14 +3239,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_8000
-    * @tc.name      : test setAuthenticatorProperties
-    * @tc.desc      : parameters options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8000
+     * @tc.number ActsAccountOptionalParameter_8000
+     * @tc.desc   parameters options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_8000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3292,13 +3289,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_8100
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : empty option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8100
+     * @tc.number ActsAccountOptionalParameter_8100
+     * @tc.desc   empty option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_8100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8100 start====");
@@ -3325,13 +3322,13 @@ export default function ActsAppAccountOptionalParameterTest() {
     });
 
     /**
-    * @tc.number    ActsAccountOptionalParameter_8200
-    * @tc.name      ActsAccountOptionalParameter_8200
-    * @tc.desc      test selectAccountsByOptions promise empty option
-    * @tc.level     Level3
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    */
+     * @tc.name   ActsAccountOptionalParameter_8200
+     * @tc.number ActsAccountOptionalParameter_8200
+     * @tc.desc   test selectAccountsByOptions promise empty option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_8200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3355,13 +3352,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_8300
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : with option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8300
+     * @tc.number ActsAccountOptionalParameter_8300
+     * @tc.desc   with option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_8300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8300 start====");
@@ -3392,13 +3389,13 @@ export default function ActsAppAccountOptionalParameterTest() {
     });
 
     /**
-    * @tc.number    ActsAccountOptionalParameter_8400
-    * @tc.name      ActsAccountOptionalParameter_8400
-    * @tc.desc      test selectAccountsByOptions promise with option
-    * @tc.level     Level3
-    * @tc.size      MediumTest
-    * @tc.type      Function
-    */
+     * @tc.name   ActsAccountOptionalParameter_8400
+     * @tc.number ActsAccountOptionalParameter_8400
+     * @tc.desc   test selectAccountsByOptions promise with option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_8400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3426,13 +3423,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_8500
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : undefined options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8500
+     * @tc.number ActsAccountOptionalParameter_8500
+     * @tc.desc   undefined options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_8500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8500 start====");
@@ -3461,14 +3458,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_8600
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : undefined option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8600
+     * @tc.number ActsAccountOptionalParameter_8600
+     * @tc.desc   undefined option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3500,13 +3497,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_8700
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : null option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8700
+     * @tc.number ActsAccountOptionalParameter_8700
+     * @tc.desc   null option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8700 start====");
@@ -3535,14 +3532,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_8800
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : null option
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8800
+     * @tc.number ActsAccountOptionalParameter_8800
+     * @tc.desc   null option
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3574,13 +3571,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_8900
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_8900
+     * @tc.number ActsAccountOptionalParameter_8900
+     * @tc.desc   allowedAccounts options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_8900 start====");
@@ -3611,14 +3608,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_9000
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9000
+     * @tc.number ActsAccountOptionalParameter_9000
+     * @tc.desc   allowedAccounts options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3652,14 +3649,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_9100
-    * @tc.name      : test selectAccountsByOptions callback
-    * @tc.desc      : allowedAccounts options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9100
+     * @tc.number ActsAccountOptionalParameter_9100
+     * @tc.desc   allowedAccounts options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9100 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3688,14 +3685,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_9200
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9200
+     * @tc.number ActsAccountOptionalParameter_9200
+     * @tc.desc   allowedAccounts options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3729,13 +3726,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_9300
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9300
+     * @tc.number ActsAccountOptionalParameter_9300
+     * @tc.desc   allowedAccounts options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9300 start====");
@@ -3765,14 +3762,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_9400
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9400
+     * @tc.number ActsAccountOptionalParameter_9400
+     * @tc.desc   allowedAccounts options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3806,13 +3803,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_9500
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9500
+     * @tc.number ActsAccountOptionalParameter_9500
+     * @tc.desc   allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9500 start====");
@@ -3841,14 +3838,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_9600
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9600
+     * @tc.number ActsAccountOptionalParameter_9600
+     * @tc.desc   allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3880,13 +3877,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_9700
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9700
+     * @tc.number ActsAccountOptionalParameter_9700
+     * @tc.desc   allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9700 start====");
@@ -3914,14 +3911,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_9800
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9800
+     * @tc.number ActsAccountOptionalParameter_9800
+     * @tc.desc   allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -3953,13 +3950,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_9900
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_9900
+     * @tc.number ActsAccountOptionalParameter_9900
+     * @tc.desc   allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_9900 start====");
@@ -3987,14 +3984,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_10000
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10000
+     * @tc.number ActsAccountOptionalParameter_10000
+     * @tc.desc   allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4026,13 +4023,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_10100
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10100
+     * @tc.number ActsAccountOptionalParameter_10100
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_10100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10100 start====");
@@ -4061,14 +4058,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_10200
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10200
+     * @tc.number ActsAccountOptionalParameter_10200
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_10200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4100,13 +4097,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_10300
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10300
+     * @tc.number ActsAccountOptionalParameter_10300
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_10300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10300 start====");
@@ -4135,14 +4132,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_10400
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10400
+     * @tc.number ActsAccountOptionalParameter_10400
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_10400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4174,13 +4171,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_10500
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10500
+     * @tc.number ActsAccountOptionalParameter_10500
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_10500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10500 start====");
@@ -4208,14 +4205,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_10600
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10600
+     * @tc.number ActsAccountOptionalParameter_10600
+     * @tc.desc   requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_10600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4247,13 +4244,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_10700
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts&allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10700
+     * @tc.number ActsAccountOptionalParameter_10700
+     * @tc.desc   allowedAccounts&allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_10700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10700 start====");
@@ -4284,14 +4281,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_10800
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts&allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10800
+     * @tc.number ActsAccountOptionalParameter_10800
+     * @tc.desc   allowedAccounts&allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_10800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4325,13 +4322,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_10900
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts&allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_10900
+     * @tc.number ActsAccountOptionalParameter_10900
+     * @tc.desc   allowedAccounts&allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_10900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_10900 start====");
@@ -4362,14 +4359,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_11000
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts&allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11000
+     * @tc.number ActsAccountOptionalParameter_11000
+     * @tc.desc   allowedAccounts&allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_11000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4403,13 +4400,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_11100
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts&allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11100
+     * @tc.number ActsAccountOptionalParameter_11100
+     * @tc.desc   allowedAccounts&allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_11100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11100 start====");
@@ -4440,14 +4437,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_11200
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts&allowedOwners options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11200
+     * @tc.number ActsAccountOptionalParameter_11200
+     * @tc.desc   allowedAccounts&allowedOwners options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_11200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4481,13 +4478,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_11300
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11300
+     * @tc.number ActsAccountOptionalParameter_11300
+     * @tc.desc   allowedAccounts&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_11300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11300 start====");
@@ -4518,14 +4515,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_11400
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11400
+     * @tc.number ActsAccountOptionalParameter_11400
+     * @tc.desc   allowedAccounts&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_11400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11400 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4559,13 +4556,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_11500
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11500
+     * @tc.number ActsAccountOptionalParameter_11500
+     * @tc.desc   allowedAccounts&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_11500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11500 start====");
@@ -4596,14 +4593,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_11600
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11600
+     * @tc.number ActsAccountOptionalParameter_11600
+     * @tc.desc   allowedAccounts&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_11600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11600 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4637,13 +4634,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_11700
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedAccounts&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11700
+     * @tc.number ActsAccountOptionalParameter_11700
+     * @tc.desc   allowedAccounts&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_11700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11700 start====");
@@ -4674,14 +4671,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_11800
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedAccounts&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11800
+     * @tc.number ActsAccountOptionalParameter_11800
+     * @tc.desc   allowedAccounts&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_11800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11800 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4715,13 +4712,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_11900
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedOwners&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_11900
+     * @tc.number ActsAccountOptionalParameter_11900
+     * @tc.desc   allowedOwners&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_11900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_11900 start====");
@@ -4750,14 +4747,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_12000
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedOwners&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_12000
+     * @tc.number ActsAccountOptionalParameter_12000
+     * @tc.desc   allowedOwners&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_12000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_12000 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4789,13 +4786,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_12100
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedOwners&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_12100
+     * @tc.number ActsAccountOptionalParameter_12100
+     * @tc.desc   allowedOwners&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_12100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_12100 start====");
@@ -4824,14 +4821,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_12200
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedOwners&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_12200
+     * @tc.number ActsAccountOptionalParameter_12200
+     * @tc.desc   allowedOwners&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_12200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_12200 start====");
       let appAccountManager = account.createAppAccountManager();
@@ -4863,13 +4860,13 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-     * @tc.number    : ActsAccountOptionalParameter_12300
-     * @tc.name      : test selectAccountsByOptions callback
-     * @tc.desc      : allowedOwners&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
+    /**
+     * @tc.name   ActsAccountOptionalParameter_12300
+     * @tc.number ActsAccountOptionalParameter_12300
+     * @tc.desc   allowedOwners&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsAccountOptionalParameter_12300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_12300 start====");
@@ -4898,14 +4895,14 @@ export default function ActsAppAccountOptionalParameterTest() {
       });
     });
 
-    /*
-    * @tc.number    : ActsAccountOptionalParameter_12400
-    * @tc.name      : test selectAccountsByOptions promise
-    * @tc.desc      : allowedOwners&requiredLabels options
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   ActsAccountOptionalParameter_12400
+     * @tc.number ActsAccountOptionalParameter_12400
+     * @tc.desc   allowedOwners&requiredLabels options
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('ActsAccountOptionalParameter_12400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====>ActsAccountOptionalParameter_12400 start====");
       let appAccountManager = account.createAppAccountManager();

@@ -16,13 +16,25 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import { Driver, ON, Component} from '@kit.TestKit';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
+let driver = Driver.create();
 
 export default function GetCurrentTopAbilityTest() {
   describe("GetCurrentTopAbilityTest", () => {
-    beforeAll(() => {
+    beforeAll(async () => {
+      let allowed: Component | undefined;
+      try {
+        allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+      if (allowed) {
+        await allowed.click();
+      }
+
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({
         abilityName: "MainAbility",
@@ -32,12 +44,12 @@ export default function GetCurrentTopAbilityTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
-     * @tc.name  : actsGetCurrentTopAbilityCallback0001
-     * @tc.desc  : Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.number ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001
+     * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_CALL_BACK_0001 :start");
@@ -74,12 +86,12 @@ export default function GetCurrentTopAbilityTest() {
     });
 
     /**
-     * @tc.number: ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
-     * @tc.name  : actsGetCurrentTopAbilityCallback0002
-     * @tc.desc  : Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
+     * @tc.number ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002
+     * @tc.desc   Test the api "abilityDelegator.getCurrentTopAbility", return the uiAbility state result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_CURRENT_TOP_ABILITY_PROMISE_0002 :start");

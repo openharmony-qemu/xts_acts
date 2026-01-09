@@ -1529,11 +1529,8 @@ static napi_value OH_Utd_BelongsTo_001(napi_env env, napi_callback_info info)
 {
     int errcode = 0;
     auto result = OH_Utd_BelongsTo("general.plain-text", "general.text");
-    if (result == true) {
-        errcode = 1;
-    }
     napi_value returnCode;
-    napi_create_int32(env, errcode, &returnCode);
+    napi_create_int32(env, result == true, &returnCode);
     return returnCode;
 }
 
@@ -1573,11 +1570,8 @@ static napi_value OH_Utd_IsLower_001(napi_env env, napi_callback_info info)
 {
     int errcode = 0;
     bool result = OH_Utd_IsLower(UDMF_META_PLAIN_TEXT, UDMF_META_TEXT);
-    if (result) {
-        errcode = 1;
-    }
     napi_value returnCode;
-    napi_create_int32(env, errcode, &returnCode);
+    napi_create_int32(env, result == true, &returnCode);
     return returnCode;
 }
 
@@ -1672,11 +1666,8 @@ static napi_value OH_Utd_IsHigher_001(napi_env env, napi_callback_info info)
 {
     int errcode = 0;
     bool result = OH_Utd_IsHigher(UDMF_META_TEXT, UDMF_META_PLAIN_TEXT);
-    if (result == true) {
-        errcode = 1;
-    }
     napi_value returnCode;
-    napi_create_int32(env, errcode, &returnCode);
+    napi_create_int32(env, result == true, &returnCode);
     return returnCode;
 }
 

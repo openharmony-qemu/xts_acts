@@ -82,7 +82,6 @@ export default function dataSharePredicatesTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   testAnd0001
      * @tc.number SUB_DistributedData_DataShare_SDK_DataSharePredicatesAPITest_0030
      * @tc.desc   predicates and normal test
@@ -116,6 +115,7 @@ export default function dataSharePredicatesTest() {
       try {
         let numbersArr = new Array<ValueType>(255.0, 11.6, 13.0);
         let predicates = new data_dataSharePredicates.DataSharePredicates();
+        // Replace static in with inValues interface.
         predicates.inValues("age", numbersArr);
         expect(predicates != null && predicates != undefined).assertTrue()
       } catch (e: BusinessError) {

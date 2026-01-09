@@ -39,12 +39,14 @@ export default function NavigationStack14Jsunit() {
       }
       done();
     });
-    /* *
-    * @tc.number: SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_HIDENAVBAR_0120
-    * @tc.name  : NavigationStack14Jsunit_0100
-    * @tc.desc  : NavigationMode is set to stack mode, and NavigationMode is dynamically changed to split mode.
-    * @tc.level : Level 3
-    */
+    /**
+     * @tc.name   NavigationStack14Jsunit_0100
+     * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_HIDENAVBAR_0120
+     * @tc.desc   NavigationMode is set to stack mode, and NavigationMode is dynamically changed to split mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('NavigationStack14Jsunit_0100',  Level.LEVEL0, async  (done:Function) =>{
       await CommonFunc.sleep(1000);
       let driver = await Driver.create();

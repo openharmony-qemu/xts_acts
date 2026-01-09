@@ -35,10 +35,13 @@ export default function webJsunit() {
       done();
     })
 
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_087                                                                                                                                                               
-     *tc.name saveHttpAuthCredentials                                                                                                                                                                                                              
-     *tc.desic save credentials
+    /**
+     * @tc.name   saveHttpAuthCredentials
+     * @tc.number SUB_ACE_BASIC_ETS_API_087
+     * @tc.desc   saveHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('saveHttpAuthCredentials', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSaveHttpAuthCredentials", EVENT_ID_SET_EMIT_KEY);
@@ -49,10 +52,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_088                                                                                                                                                                
-     *tc.name getHttpAuthCredentials                                                                                                                                                                                                              
-     *tc.desic delete credentials
+    /**
+     * @tc.name   getHttpAuthCredentials
+     * @tc.number SUB_ACE_BASIC_ETS_API_088
+     * @tc.desc   getHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getHttpAuthCredentials', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitGetHttpAuthCredentials", EVENT_ID_SET_EMIT_KEY);
@@ -63,10 +69,13 @@ export default function webJsunit() {
         done();
       }
     })
-    /* 
-     *tc.number SUB_ACE_BASIC_ETS_API_089                                                                                                                                                                
-     *tc.name deleteHttpAuthCredentials                                                                                                                                                                                                              
-     *tc.desic delete credentials
+    /**
+     * @tc.name   deleteHttpAuthCredentials
+     * @tc.number SUB_ACE_BASIC_ETS_API_089
+     * @tc.desc   deleteHttpAuthCredentials
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('deleteHttpAuthCredentials', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitDeleteHttpAuthCredentials", EVENT_ID_SET_EMIT_KEY);

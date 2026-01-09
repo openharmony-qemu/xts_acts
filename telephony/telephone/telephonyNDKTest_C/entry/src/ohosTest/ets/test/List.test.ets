@@ -14,7 +14,13 @@
  */
  
 import ActsTelephonyNdk20Test from './ActsTelephonyNdk20Test.test.ets'
+import EmptyTest from './Empty.test';
+import sim from '@ohos.telephony.sim';
 
 export default function testsuite() {
-  ActsTelephonyNdk20Test()
+  if (sim.getMaxSimCount()!=0){
+    ActsTelephonyNdk20Test()
+  }else{
+    EmptyTest()
+  }
 }

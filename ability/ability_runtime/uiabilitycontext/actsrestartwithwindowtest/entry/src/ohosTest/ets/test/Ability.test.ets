@@ -18,6 +18,7 @@ import { common } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import { commonEventManager } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 let testContext: common.UIAbilityContext;
 let supportRestartWithWindow = false;
@@ -29,6 +30,15 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done: Function) => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       try {
         const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility()
         testContext = ability.context;
@@ -50,13 +60,13 @@ export default function abilityTest() {
     afterEach(() => {})
     afterAll(() => {})
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_RestartApp_0100
-     * @tc.name   : restart app same ability success
-     * @tc.desc   : Expect: restart success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_RestartApp_0100
+     * @tc.number SUB_Ability_AbilityRuntime_RestartApp_0100
+     * @tc.desc   Expect: restart success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_RestartApp_0100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_RestartApp_0100';

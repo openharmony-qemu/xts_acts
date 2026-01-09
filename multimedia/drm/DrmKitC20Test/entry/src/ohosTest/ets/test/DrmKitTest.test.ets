@@ -43,12 +43,12 @@ export default function DrmKitTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number    SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
-     * @tc.name      SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
-     * @tc.desc      test OH_MediaKeySession_GenerateMediaKeyRequest Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
+     * @tc.number SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue
+     * @tc.desc   test OH_MediaKeySession_GenerateMediaKeyRequest Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_GenerateMediaKeyRequestInvalue', Level.LEVEL1, () => {
       try {
@@ -61,12 +61,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
-     * @tc.name      SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
-     * @tc.desc      test OH_MediaKeySession_ProcessMediaKeyResponse Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
+     * @tc.number SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue
+     * @tc.desc   test OH_MediaKeySession_ProcessMediaKeyResponse Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_ProcessMediaKeyResponseInvalue', Level.LEVEL1, () => {
       try {
@@ -79,12 +79,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_ClearMediaKeysInvalue
-     * @tc.name      SUB_OH_MediaKeySession_ClearMediaKeysInvalue
-     * @tc.desc      test OH_MediaKeySession_ClearMediaKeys Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_ClearMediaKeysInvalue
+     * @tc.number SUB_OH_MediaKeySession_ClearMediaKeysInvalue
+     * @tc.desc   test OH_MediaKeySession_ClearMediaKeys Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_ClearMediaKeysInvalue', Level.LEVEL1, () => {
       try {
@@ -97,12 +97,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue
-     * @tc.name      SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue
-     * @tc.desc      test OH_MediaKeySession_GenerateOfflineReleaseRequest Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue
+     * @tc.number SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue
+     * @tc.desc   test OH_MediaKeySession_GenerateOfflineReleaseRequest Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalue', Level.LEVEL1, () => {
       try {
@@ -115,12 +115,30 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
-     * @tc.name      SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
-     * @tc.desc      test OH_MediaKeySession_ProcessOfflineReleaseResponse Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne
+     * @tc.number SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne
+     * @tc.desc   test OH_MediaKeySession_GenerateOfflineReleaseRequestOne Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne', Level.LEVEL1, () => {
+      try {
+        let c: number = testNapi.mediaKeySession_GenerateOfflineReleaseRequestInvalueOne();
+        expect(c).assertEqual(1);
+      } catch (err) {
+        console.error("====>SUB_OH_MediaKeySession_GenerateOfflineReleaseRequestInvalueOne catch err: " + err);
+        expect(false).assertEqual(0);
+      }
+    });
+
+    /**
+     * @tc.name   SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
+     * @tc.number SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue
+     * @tc.desc   test OH_MediaKeySession_ProcessOfflineReleaseResponse Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_ProcessOfflineReleaseResponseInvalue', Level.LEVEL1, () => {
       try {
@@ -133,12 +151,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue
-     * @tc.name      SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue
-     * @tc.desc      test OH_MediaKeySession_RestoreOfflineMediaKeys Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue
+     * @tc.number SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue
+     * @tc.desc   test OH_MediaKeySession_RestoreOfflineMediaKeys Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_RestoreOfflineMediaKeysInvalue', Level.LEVEL1, () => {
       try {
@@ -152,12 +170,12 @@ export default function DrmKitTest() {
 
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue
-     * @tc.name      SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue
-     * @tc.desc      test OH_MediaKeySession_GetContentProtectionLevel Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue
+     * @tc.number SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue
+     * @tc.desc   test OH_MediaKeySession_GetContentProtectionLevel Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_GetContentProtectionLevelInvalue', Level.LEVEL1, () => {
       try {
@@ -170,12 +188,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue
-     * @tc.name      SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue
-     * @tc.desc      test OH_MediaKeySession_RequireSecureDecoderModule Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue
+     * @tc.number SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue
+     * @tc.desc   test OH_MediaKeySession_RequireSecureDecoderModule Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_RequireSecureDecoderModuleInvalue', Level.LEVEL1, () => {
       try {
@@ -188,12 +206,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_DestroyInvalue
-     * @tc.name      SUB_OH_MediaKeySession_DestroyInvalue
-     * @tc.desc      test OH_MediaKeySession_Destroy Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_DestroyInvalue
+     * @tc.number SUB_OH_MediaKeySession_DestroyInvalue
+     * @tc.desc   test OH_MediaKeySession_Destroy Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_DestroyInvalue', Level.LEVEL1, () => {
       try {
@@ -206,12 +224,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetMediaKeySystems Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetMediaKeySystems Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GetMediaKeySystemsInvalue', Level.LEVEL1, () => {
       try {
@@ -224,12 +242,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_CreateInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_CreateInvalue
-     * @tc.desc      test OH_MediaKeySystem_Create Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_CreateInvalue
+     * @tc.number SUB_OH_MediaKeySystem_CreateInvalue
+     * @tc.desc   test OH_MediaKeySystem_Create Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MediaKeySystem_CreateInvalue', Level.LEVEL0, () => {
       try {
@@ -242,12 +260,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_SetConfigurationStringInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_SetConfigurationStringInvalue
-     * @tc.desc      test OH_MediaKeySystem_SetConfigurationString Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_SetConfigurationStringInvalue
+     * @tc.number SUB_OH_MediaKeySystem_SetConfigurationStringInvalue
+     * @tc.desc   test OH_MediaKeySystem_SetConfigurationString Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_SetConfigurationStringInvalue', Level.LEVEL1, () => {
       try {
@@ -260,12 +278,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetConfigurationStringInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetConfigurationStringInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetConfigurationString Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetConfigurationStringInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetConfigurationStringInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetConfigurationString Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GetConfigurationStringInvalue', Level.LEVEL1, () => {
       try {
@@ -278,12 +296,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue
-     * @tc.desc      test OH_MediaKeySystem_SetConfigurationByteArray Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue
+     * @tc.number SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue
+     * @tc.desc   test OH_MediaKeySystem_SetConfigurationByteArray Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_SetConfigurationByteArrayInvalue', Level.LEVEL1, () => {
       try {
@@ -296,12 +314,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetConfigurationByteArray Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetConfigurationByteArray Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GetConfigurationByteArrayInvalue', Level.LEVEL1, () => {
       try {
@@ -314,12 +332,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetStatisticsInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetStatisticsInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetStatistics Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetStatisticsInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetStatisticsInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetStatistics Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_OH_MediaKeySystem_GetStatisticsInvalue', Level.LEVEL0, () => {
       try {
@@ -332,12 +350,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue
-     * @tc.desc      test OH_MediaKeySystem_CreateMediaKeySession Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue
+     * @tc.number SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue
+     * @tc.desc   test OH_MediaKeySystem_CreateMediaKeySession Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_CreateMediaKeySessionInvalue', Level.LEVEL1, () => {
       try {
@@ -350,12 +368,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue
-     * @tc.desc      test OH_MediaKeySystem_GenerateKeySystemRequest Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue
+     * @tc.desc   test OH_MediaKeySystem_GenerateKeySystemRequest Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GenerateKeySystemRequestInvalue', Level.LEVEL1, () => {
       try {
@@ -368,12 +386,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
-     * @tc.desc      test OH_MediaKeySystem_ProcessKeySystemResponse Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
+     * @tc.number SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue
+     * @tc.desc   test OH_MediaKeySystem_ProcessKeySystemResponse Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_ProcessKeySystemResponseInvalue', Level.LEVEL1, () => {
       try {
@@ -386,12 +404,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetOfflineMediaKeyIds Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetOfflineMediaKeyIds Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GetOfflineMediaKeyIdsInvalue', Level.LEVEL1, () => {
       try {
@@ -404,12 +422,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetOfflineMediaKeyStatus Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetOfflineMediaKeyStatus Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GetOfflineMediaKeyStatusInvalue', Level.LEVEL1, () => {
       try {
@@ -422,12 +440,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
-     * @tc.desc      test OH_MediaKeySystem_ClearOfflineMediaKeys Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
+     * @tc.number SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue
+     * @tc.desc   test OH_MediaKeySystem_ClearOfflineMediaKeys Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_ClearOfflineMediaKeysInvalue', Level.LEVEL1, () => {
       try {
@@ -440,12 +458,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetCertificateStatus Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetCertificateStatusInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetCertificateStatus Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GetCertificateStatusInvalue', Level.LEVEL1, () => {
       try {
@@ -458,12 +476,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_DestroyInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_DestroyInvalue
-     * @tc.desc      test OH_MediaKeySystem_Destroy Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_DestroyInvalue
+     * @tc.number SUB_OH_MediaKeySystem_DestroyInvalue
+     * @tc.desc   test OH_MediaKeySystem_Destroy Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_DestroyInvalue', Level.LEVEL1, () => {
       try {
@@ -476,12 +494,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
-     * @tc.name      SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
-     * @tc.desc      test OH_MediaKeySession_CheckMediaKeyStatus Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
+     * @tc.number SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue
+     * @tc.desc   test OH_MediaKeySession_CheckMediaKeyStatus Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySession_CheckMediaKeyStatusInvalue', Level.LEVEL1, () => {
       try {
@@ -494,12 +512,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
-     * @tc.name      SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
-     * @tc.desc      test OH_MediaKeySystem_GetMaxContentProtectionLevel Null Pointer
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
+     * @tc.number SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue
+     * @tc.desc   test OH_MediaKeySystem_GetMaxContentProtectionLevel Null Pointer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OH_MediaKeySystem_GetMaxContentProtectionLevelInvalue', Level.LEVEL1, () => {
       try {
@@ -512,12 +530,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRM_MediaKeyRequestType
-     * @tc.name      SUB_DRM_MediaKeyRequestType
-     * @tc.desc      test DRM_MediaKeyRequestType
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRM_MediaKeyRequestType
+     * @tc.number SUB_DRM_MediaKeyRequestType
+     * @tc.desc   test DRM_MediaKeyRequestType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRM_MediaKeyRequestType', Level.LEVEL1, () => {
       try {
@@ -530,12 +548,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRM_MediaKeyRequestDefaultUrl
-     * @tc.name      SUB_DRM_MediaKeyRequestDefaultUrl
-     * @tc.desc      test DRM_MediaKeyRequestDefaultUrl
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRM_MediaKeyRequestDefaultUrl
+     * @tc.number SUB_DRM_MediaKeyRequestDefaultUrl
+     * @tc.desc   test DRM_MediaKeyRequestDefaultUrl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRM_MediaKeyRequestDefaultUrl', Level.LEVEL1, () => {
       try {
@@ -548,12 +566,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRM_CertificateStatusTest1
-     * @tc.name      SUB_DRM_CertificateStatusTest1
-     * @tc.desc      test DRM_CertificateStatus
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRM_CertificateStatusTest1
+     * @tc.number SUB_DRM_CertificateStatusTest1
+     * @tc.desc   test DRM_CertificateStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRM_CertificateStatusTest1', Level.LEVEL1, () => {
       try {
@@ -566,12 +584,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRM_CertificateStatusTest2
-     * @tc.name      SUB_DRM_CertificateStatusTest2
-     * @tc.desc      test DRM_CertificateStatus
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRM_CertificateStatusTest2
+     * @tc.number SUB_DRM_CertificateStatusTest2
+     * @tc.desc   test DRM_CertificateStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_DRM_CertificateStatusTest2', Level.LEVEL0, () => {
       try {
@@ -584,12 +602,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRM_CertificateStatusTest3
-     * @tc.name      SUB_DRM_CertificateStatusTest3
-     * @tc.desc      test DRM_CertificateStatus
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRM_CertificateStatusTest3
+     * @tc.number SUB_DRM_CertificateStatusTest3
+     * @tc.desc   test DRM_CertificateStatus
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRM_CertificateStatusTest3', Level.LEVEL1, () => {
       try {
@@ -602,12 +620,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
-     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
-     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_UNKNOWN
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
+     * @tc.number SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN
+     * @tc.desc   test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UNKNOWN', Level.LEVEL1, () => {
       try {
@@ -620,12 +638,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
-     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
-     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_INITIAL
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
+     * @tc.number SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL
+     * @tc.desc   test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_INITIAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_INITIAL', Level.LEVEL1, () => {
       try {
@@ -638,12 +656,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
-     * @tc.name      SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
-     * @tc.desc      test DRM_MediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_RENEWAL
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
+     * @tc.number SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL
+     * @tc.desc   test DRM_MediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_RENEWAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRM_MediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RENEWAL', Level.LEVEL1, () => {
       try {
@@ -656,12 +674,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
-     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
-     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_RELEASE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
+     * @tc.number SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE
+     * @tc.desc   test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_RELEASE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_RELEASE', Level.LEVEL1, () => {
       try {
@@ -674,12 +692,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
-     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
-     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_NONE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
+     * @tc.number SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE
+     * @tc.desc   test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_NONE', Level.LEVEL1, () => {
       try {
@@ -692,12 +710,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
-     * @tc.name      SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
-     * @tc.desc      test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_UPDATE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
+     * @tc.number SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE
+     * @tc.desc   test DRMMediaKeyRequestType MEDIA_KEY_REQUEST_TYPE_UPDATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMMediaKeyRequestTypeMEDIA_KEY_REQUEST_TYPE_UPDATE', Level.LEVEL1, () => {
       try {
@@ -710,12 +728,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
-     * @tc.name      SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
-     * @tc.desc      test DRMOfflineMediaKeyStatus OFFLINE_MEDIA_KEY_STATUS_INACTIVE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
+     * @tc.number SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE
+     * @tc.desc   test DRMOfflineMediaKeyStatus OFFLINE_MEDIA_KEY_STATUS_INACTIVE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMOfflineMediaKeyStatusOFFLINE_MEDIA_KEY_STATUS_INACTIVE', Level.LEVEL1, () => {
       try {
@@ -728,12 +746,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMKeysInfo_EvenType
-     * @tc.name      SUB_DRMKeysInfo_EvenType
-     * @tc.desc      test DRMKeysInfo_EvenType
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMKeysInfo_EvenType
+     * @tc.number SUB_DRMKeysInfo_EvenType
+     * @tc.desc   test DRMKeysInfo_EvenType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMKeysInfo_EvenType', Level.LEVEL1, () => {
       try {
@@ -746,12 +764,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_EvenType_EVENT_DRM_BASE
-     * @tc.name      SUB_EvenType_EVENT_DRM_BASE
-     * @tc.desc      test EvenType EVENT_DRM_BASE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_EvenType_EVENT_DRM_BASE
+     * @tc.number SUB_EvenType_EVENT_DRM_BASE
+     * @tc.desc   test EvenType EVENT_DRM_BASE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_EvenType_EVENT_DRM_BASE', Level.LEVEL1, () => {
       try {
@@ -764,12 +782,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_evenType_EVENT_PROVISION_REQUIRED
-     * @tc.name      SUB_evenType_EVENT_PROVISION_REQUIRED
-     * @tc.desc      test EvenType EVENT_PROVISION_REQUIRED EVENT_DRM_BASE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_evenType_EVENT_PROVISION_REQUIRED
+     * @tc.number SUB_evenType_EVENT_PROVISION_REQUIRED
+     * @tc.desc   test EvenType EVENT_PROVISION_REQUIRED EVENT_DRM_BASE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_evenType_EVENT_PROVISION_REQUIRED', Level.LEVEL1, () => {
       try {
@@ -782,12 +800,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_EvenType_EVENT_VENDOR_DEFINED
-     * @tc.name      SUB_EvenType_EVENT_VENDOR_DEFINED
-     * @tc.desc      test EvenType EVENT_VENDOR_DEFINED
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_EvenType_EVENT_VENDOR_DEFINED
+     * @tc.number SUB_EvenType_EVENT_VENDOR_DEFINED
+     * @tc.desc   test EvenType EVENT_VENDOR_DEFINED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_EvenType_EVENT_VENDOR_DEFINED', Level.LEVEL1, () => {
       try {
@@ -800,12 +818,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_EvenType_EVENT_EXPIRATION_UPDATE
-     * @tc.name      SUB_EvenType_EVENT_EXPIRATION_UPDATE
-     * @tc.desc      test EvenType EVENT_EXPIRATION_UPDATE
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_EvenType_EVENT_EXPIRATION_UPDATE
+     * @tc.number SUB_EvenType_EVENT_EXPIRATION_UPDATE
+     * @tc.desc   test EvenType EVENT_EXPIRATION_UPDATE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_EvenType_EVENT_EXPIRATION_UPDATE', Level.LEVEL1, () => {
       try {
@@ -818,12 +836,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMKeysInfo_keyId
-     * @tc.name      SUB_DRMKeysInfo_keyId
-     * @tc.desc      test DRMKeysInfo keyId
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMKeysInfo_keyId
+     * @tc.number SUB_DRMKeysInfo_keyId
+     * @tc.desc   test DRMKeysInfo keyId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMKeysInfo_keyId', Level.LEVEL1, () => {
       try {
@@ -836,12 +854,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMKeysInfo_keysInfoCount
-     * @tc.name      SUB_DRMKeysInfo_keysInfoCount
-     * @tc.desc      test DRMKeysInfo_keysInfo Count
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMKeysInfo_keysInfoCount
+     * @tc.number SUB_DRMKeysInfo_keysInfoCount
+     * @tc.desc   test DRMKeysInfo_keysInfo Count
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMKeysInfo_keysInfoCount', Level.LEVEL1, () => {
       try {
@@ -854,12 +872,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_DRMKeysInfo_statusValue
-     * @tc.name      SUB_DRMKeysInfo_statusValue
-     * @tc.desc      test DRMKeysInfo statusValue
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_DRMKeysInfo_statusValue
+     * @tc.number SUB_DRMKeysInfo_statusValue
+     * @tc.desc   test DRMKeysInfo statusValue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_DRMKeysInfo_statusValue', Level.LEVEL1, () => {
       try {
@@ -872,12 +890,12 @@ export default function DrmKitTest() {
     });
 
     /**
-     * @tc.number    SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
-     * @tc.name      SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
-     * @tc.desc      test OHMediaKeySystem_Destroy DRM_ERR_UNKNOWN
-     * @tc.level     Level1
-     * @tc.size      MediumTest
-     * @tc.type      Function
+     * @tc.name   SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
+     * @tc.number SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN
+     * @tc.desc   test OHMediaKeySystem_Destroy DRM_ERR_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_OHMediaKeySystem_Destroy_DRM_ERR_UNKNOWN', Level.LEVEL1, () => {
       try {

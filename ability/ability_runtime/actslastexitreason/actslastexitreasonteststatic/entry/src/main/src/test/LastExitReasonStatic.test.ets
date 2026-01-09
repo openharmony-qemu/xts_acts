@@ -19,6 +19,7 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Utils from './Util.test';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -26,20 +27,29 @@ let tag: string = 'testTag';
 export default function lastExitReasonStaticTest() {
   describe('ActsLastExitReasonStaticTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.lastexitreasontest.static")
       await Utils.msSleep(2000)
       hilog.info(domain, tag, 'SUB_Ability_AbilityRuntime_FaultManagement_Static_7900 start EntryAbility');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
-     * @tc.name   : SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
-     * @tc.desc   : Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_Static_7900
+     * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7900', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7900`;
@@ -70,13 +80,13 @@ export default function lastExitReasonStaticTest() {
       }
     })
     
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
-     * @tc.name   : SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
-     * @tc.desc   : Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
+     * @tc.number SUB_Ability_AbilityRuntime_FaultManagement_Static_7901
+     * @tc.desc   Kill process by shell and restart app, check ability LaunchParam last exit reason and message,Expect: lastExitReason=NORMAL, lastExitMessage empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_FaultManagement_Static_7901', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       tag = `SUB_Ability_AbilityRuntime_FaultManagement_Static_7901`;

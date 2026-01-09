@@ -159,12 +159,12 @@ export default function abilityTest() {
     });
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0100
-     * @tc.name      : Register listening in Ability
-     * @tc.desc      : Register listening in AbilityA and pull yourself (single example)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0100
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0100
+     * @tc.desc   Register listening in AbilityA and pull yourself (single example)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0100', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0100';
@@ -189,13 +189,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0500
-     * @tc.name      : In the same application, ability registers for listening
-     * @tc.desc      : AbilityA registers for listening, AbilityB registers for listening,
-     *                 AbilityB unregisters, and AbilityC registers for listening
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0500
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0500
+     * @tc.desc   AbilityA registers for listening, AbilityB registers for listening,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0500', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0500';
@@ -229,12 +228,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0600
-     * @tc.name      : In the same application, ability registers for listening starts stops
-     * @tc.desc      : In the same application, AbilityA registers for listening, starts AbilityB, starts AbilityC, stops AbilityB, and stops AbilityC
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0600
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0600
+     * @tc.desc   In the same application, AbilityA registers for listening, starts AbilityB, starts AbilityC, stops AbilityB, and stops AbilityC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0600', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0600';
@@ -281,12 +280,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0700
-     * @tc.name      : In the same application, start ability, register listening in Ability
-     * @tc.desc      : start AbilityA, register listening in AbilityA, start and stop AbilityB, unregister, and then unregister again
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0700
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0700
+     * @tc.desc   start AbilityA, register listening in AbilityA, start and stop AbilityB, unregister, and then unregister again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0700', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0700';
@@ -341,12 +340,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0800
-     * @tc.name      : In the same application, start ability,register start and stop
-     * @tc.desc      : In the same application, start AbilityA, register listening in AbilityA, start and stop AbilityB, destroy AbilityA, and then unregister
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0800
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0800
+     * @tc.desc   In the same application, start AbilityA, register listening in AbilityA, start and stop AbilityB, destroy AbilityA, and then unregister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0800', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0800';
@@ -396,12 +395,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0900
-     * @tc.name      : In the same application, start Ability,register and unregister
-     * @tc.desc      : In the same application, start AbilityA, register listening in AbilityA, start and stop AbilityB, and unregister
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0900
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0900
+     * @tc.desc   In the same application, start AbilityA, register listening in AbilityA, start and stop AbilityB, and unregister
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0900', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_0900';
@@ -455,12 +454,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1000
-     * @tc.name      : In the same application, register for listening, starting, and stopping AbilityA in the AbilityStage
-     * @tc.desc      : older under the application folder
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1000
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1000
+     * @tc.desc   older under the application folder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1000', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1000';
@@ -491,12 +490,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1100
-     * @tc.name      : In the same application, repeatedly switch the ability to the front and back ends
-     * @tc.desc      : switch the ability to the front and back ends
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1100
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1100
+     * @tc.desc   switch the ability to the front and back ends
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1100', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1100';
@@ -528,12 +527,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1200
-     * @tc.name      : In the same application, repeat start stop capability
-     * @tc.desc      : repeat start stop capability
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1200
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1200
+     * @tc.desc   repeat start stop capability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1200', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1200';
@@ -575,12 +574,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1300
-     * @tc.name      : In the same application, repeatedly starting Ability
-     * @tc.desc      : In the same application, repeatedly starting Ability (single instance)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1300
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1300
+     * @tc.desc   In the same application, repeatedly starting Ability (single instance)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1300', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1300';
@@ -605,12 +604,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1400
-     * @tc.name      : Repeatedly starting Ability in the same application
-     * @tc.desc      : Repeatedly starting Ability in the same application (multiple examples)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1400
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1400
+     * @tc.desc   Repeatedly starting Ability in the same application (multiple examples)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1400', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1400';
@@ -638,12 +637,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1500
-     * @tc.name      : Register listening in activityA, start and stop activityB
-     * @tc.desc      : destroy activityA, and then pull up activityA to register again
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1500
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1500
+     * @tc.desc   destroy activityA, and then pull up activityA to register again
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1500', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1500';
@@ -685,12 +684,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1600
-     * @tc.name      : Register listening in AbilityA, start and stop AbilityB
-     * @tc.desc      : and register listening repeatedly (multiple examples)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1600
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1600
+     * @tc.desc   and register listening repeatedly (multiple examples)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1600', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1600';
@@ -741,13 +740,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1700
-     * @tc.name      : Register listening in activityA, start activityB
-     * @tc.desc      : Register listening in activityA, start activityB, register listening in activityB, start and stop activityC,
-     *                 destroy activityB and activityA, and then pull up activityA and activityB to register again
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1700
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1700
+     * @tc.desc   Register listening in activityA, start activityB, register listening in activityB, start and stop activityC,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1700', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1700';
@@ -828,12 +826,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1800
-     * @tc.name      : Multiple registrations/deregistrations
-     * @tc.desc      : Multiple registrations/deregistrations
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1800
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1800
+     * @tc.desc   Multiple registrations/deregistrations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1800', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1800';
@@ -898,12 +896,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1900
-     * @tc.name      : Unregister interface unregisterAbilityLifecycleCallback exception
-     * @tc.desc      : The callback ID for the input parameter is a non-existent ID
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1900
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1900
+     * @tc.desc   The callback ID for the input parameter is a non-existent ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1900', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_1900';
@@ -921,12 +919,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2000
-     * @tc.name      : Unregister interface unregisterAbilityLifecycleCallback exception
-     * @tc.desc      : The input parameter callbackid is empty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2000
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2000
+     * @tc.desc   The input parameter callbackid is empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2000', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2000';
@@ -944,12 +942,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2100
-     * @tc.name      : Unregister interface unregisterAbilityLifecycleCallback exception.
-     * @tc.desc      : The callback id for the input parameter is negative
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2100
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2100
+     * @tc.desc   The callback id for the input parameter is negative
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2100', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2100';
@@ -967,12 +965,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2200
-     * @tc.name      : Unregister interface unregisterAbilityLifecycleCallback exception.
-     * @tc.desc      : Callbackid is of incorrect type (such as string type)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2200
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2200
+     * @tc.desc   Callbackid is of incorrect type (such as string type)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2200', Level.LEVEL3, async (done: Function) => {
       TEST_CASE_NAME = 'SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2200';
@@ -990,12 +988,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2300
-     * @tc.name      : willLifecycleCallbackTest.
-     * @tc.desc      : will LifecycleCallback Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2300
+     * @tc.number SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2300
+     * @tc.desc   will LifecycleCallback Test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_LifeCycle_LifeCycleTest_2300', Level.LEVEL3, async (done: Function) => {
       let templeStr:string[] = globalThis.willAbilityStageListKey.join(',');

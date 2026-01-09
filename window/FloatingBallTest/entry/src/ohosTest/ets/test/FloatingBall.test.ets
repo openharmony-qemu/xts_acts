@@ -44,7 +44,7 @@ async function clickButtonDriver(){
   console.error(`come in Driver create`);
   let buttonOne = await driver.findComponent(ON.text('允许'));
   console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  if(buttonOne){
+  if(buttonOne!=null){
     await buttonOne.click();
   }
 
@@ -90,6 +90,16 @@ export default function abilityTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
       await getPermision();
       await sleep(300);
       await clickButtonDriver();
@@ -108,12 +118,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0100
-     * @tc.name      : test_FloatingBallTemplate_Enum
-     * @tc.desc      : test_FloatingBallTemplate_Enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_FloatingBallTemplate_Enum
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0100
+     * @tc.desc   test_FloatingBallTemplate_Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FloatingBallTemplate_Enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let CaseName:string = 'test_FloatingBallTemplate_Enum';
@@ -128,12 +138,12 @@ export default function abilityTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0200
-     * @tc.name      : test_FloatingBallState_Enum
-     * @tc.desc      : test_FloatingBallState_Enum
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_FloatingBallState_Enum
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0200
+     * @tc.desc   test_FloatingBallState_Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_FloatingBallState_Enum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let CaseName:string = 'test_FloatingBallState_Enum';
@@ -144,12 +154,12 @@ export default function abilityTest() {
       done();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0300
-     * @tc.name      : test_Create_1300019
-     * @tc.desc      : test Wrong parameters
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_Create_1300019
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0300
+     * @tc.desc   test Wrong parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_Create_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_Create_1300019';
@@ -177,12 +187,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0400
-     * @tc.name      : test_Create_oneFloatingBall
-     * @tc.desc      : test_Create_oneFloatingBall
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_Create_oneFloatingBall
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0400
+     * @tc.desc   test_Create_oneFloatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_Create_oneFloatingBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_Create_oneFloatingBall';
@@ -238,12 +248,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0500
-     * @tc.name      : test_Create_MultFloatingBall
-     * @tc.desc      : test_Create_MultFloatingBall
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_Create_MultFloatingBall
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0500
+     * @tc.desc   test_Create_MultFloatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_Create_MultFloatingBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_Create_MultFloatingBall';
@@ -271,12 +281,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0600
-     * @tc.name      : test_startFloatingBall_1300019
-     * @tc.desc      : test_startFloatingBall_1300019
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_1300019
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0600
+     * @tc.desc   test_startFloatingBall_1300019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_1300019';
@@ -325,12 +335,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0700
-     * @tc.name      : test_startFloatingBall_1300021
-     * @tc.desc      : test_startFloatingBall_1300021
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_1300021
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0700
+     * @tc.desc   test_startFloatingBall_1300021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_1300021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_1300021';
@@ -378,12 +388,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_0800
-     * @tc.name      : test_startFloatingBall_1300022
-     * @tc.desc      : test_startFloatingBall_1300022
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_1300022
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_0800
+     * @tc.desc   test_startFloatingBall_1300022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_1300022';
@@ -432,12 +442,12 @@ export default function abilityTest() {
     
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1000
-     * @tc.name      : test_startFloatingBall_template_not_exist
-     * @tc.desc      : test_startFloatingBall_template_not_exist
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_template_not_exist
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1000
+     * @tc.desc   test_startFloatingBall_template_not_exist
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_template_not_exist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_template_not_exist';
@@ -477,12 +487,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1100
-     * @tc.name      : test_startFloatingBall_title_null
-     * @tc.desc      : test_startFloatingBall_title_null
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_title_null
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1100
+     * @tc.desc   test_startFloatingBall_title_null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_title_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_title_null';
@@ -523,12 +533,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1200
-     * @tc.name      : test_startFloatingBall_title_more_than_64
-     * @tc.desc      : title超过64字节
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_title_more_than_64
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1200
+     * @tc.desc   title超过64字节
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_title_more_than_64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_title_more_than_64';
@@ -569,12 +579,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1300
-     * @tc.name      : test_startFloatingBall_content_more_than_64
-     * @tc.desc      : test_startFloatingBall_content_more_than_64
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_content_more_than_64
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1300
+     * @tc.desc   test_startFloatingBall_content_more_than_64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_content_more_than_64', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_content_more_than_64';
@@ -616,12 +626,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1400
-     * @tc.name      : test_startFloatingBall_content_null
-     * @tc.desc      : content 传入 ''
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_content_null
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1400
+     * @tc.desc   content 传入 ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_content_null', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_content_null';
@@ -660,12 +670,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1500
-     * @tc.name      : test_startFloatingBall_backgroundColor_FF0000FF
-     * @tc.desc      : backgroundColor带透明度
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_backgroundColor_FF0000FF
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1500
+     * @tc.desc   backgroundColor带透明度
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_backgroundColor_FF0000FF', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_backgroundColor_FF0000FF';
@@ -706,12 +716,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1600
-     * @tc.name      : test_startFloatingBall_backgroundColor_invalid_string
-     * @tc.desc      : backgroundColor传入无效字符串
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_backgroundColor_invalid_string
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1600
+     * @tc.desc   backgroundColor传入无效字符串
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_backgroundColor_invalid_string', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_backgroundColor_invalid_string';
@@ -752,12 +762,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1700
-     * @tc.name      : test_startFloatingBall_STATIC_5_Params
-     * @tc.desc      : test_startFloatingBall_STATIC_5_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_startFloatingBall_STATIC_5_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1700
+     * @tc.desc   test_startFloatingBall_STATIC_5_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_startFloatingBall_STATIC_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_STATIC_5_Params';
@@ -799,12 +809,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1800
-     * @tc.name      : test_startFloatingBall_STATIC_4_Params
-     * @tc.desc      : test_startFloatingBall_STATIC_4_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_STATIC_4_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1800
+     * @tc.desc   test_startFloatingBall_STATIC_4_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_STATIC_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_STATIC_4_Params';
@@ -844,12 +854,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_1900
-     * @tc.name      : test_startFloatingBall_STATIC_3_Params
-     * @tc.desc      : test_startFloatingBall_STATIC_3_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_STATIC_3_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1900
+     * @tc.desc   test_startFloatingBall_STATIC_3_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_STATIC_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_STATIC_3_Params';
@@ -888,12 +898,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2000
-     * @tc.name      : test_startFloatingBall_STATIC_No_icon
-     * @tc.desc      : test_startFloatingBall_STATIC_No_icon
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_STATIC_No_icon
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2000
+     * @tc.desc   test_startFloatingBall_STATIC_No_icon
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_STATIC_No_icon', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_STATIC_No_icon';
@@ -932,12 +942,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2100
-     * @tc.name      : test_startFloatingBall_NORMAL_5_Params
-     * @tc.desc      : test_startFloatingBall_NORMAL_5_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_NORMAL_5_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2100
+     * @tc.desc   test_startFloatingBall_NORMAL_5_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_NORMAL_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_5_Params';
@@ -979,12 +989,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2200
-     * @tc.name      : test_startFloatingBall_NORMAL_4_Params
-     * @tc.desc      : test_startFloatingBall_NORMAL_4_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_NORMAL_4_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2200
+     * @tc.desc   test_startFloatingBall_NORMAL_4_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_NORMAL_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_4_Params';
@@ -1024,12 +1034,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2300
-     * @tc.name      : test_startFloatingBall_NORMAL_3_Params
-     * @tc.desc      : test_startFloatingBall_NORMAL_3_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_NORMAL_3_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2300
+     * @tc.desc   test_startFloatingBall_NORMAL_3_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_NORMAL_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_3_Params';
@@ -1068,12 +1078,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2400
-     * @tc.name      : test_startFloatingBall_NORMAL_2_Params
-     * @tc.desc      : test_startFloatingBall_NORMAL_2_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_startFloatingBall_NORMAL_2_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2400
+     * @tc.desc   test_startFloatingBall_NORMAL_2_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_startFloatingBall_NORMAL_2_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_NORMAL_2_Params';
@@ -1111,12 +1121,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2500
-     * @tc.name      : test_startFloatingBall_EMPHATIC_5_Params
-     * @tc.desc      : test_startFloatingBall_EMPHATIC_5_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_EMPHATIC_5_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2500
+     * @tc.desc   test_startFloatingBall_EMPHATIC_5_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_EMPHATIC_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_5_Params';
@@ -1158,12 +1168,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2600
-     * @tc.name      : test_startFloatingBall_EMPHATIC_4_Params
-     * @tc.desc      : test_startFloatingBall_EMPHATIC_4_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_EMPHATIC_4_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2600
+     * @tc.desc   test_startFloatingBall_EMPHATIC_4_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_EMPHATIC_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_4_Params';
@@ -1203,12 +1213,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2700
-     * @tc.name      : test_startFloatingBall_EMPHATIC_3_Params
-     * @tc.desc      : test_startFloatingBall_EMPHATIC_3_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_startFloatingBall_EMPHATIC_3_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2700
+     * @tc.desc   test_startFloatingBall_EMPHATIC_3_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_startFloatingBall_EMPHATIC_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_3_Params';
@@ -1247,12 +1257,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2800
-     * @tc.name      : test_startFloatingBall_EMPHATIC_2_Params
-     * @tc.desc      : test_startFloatingBall_EMPHATIC_2_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_startFloatingBall_EMPHATIC_2_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2800
+     * @tc.desc   test_startFloatingBall_EMPHATIC_2_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_startFloatingBall_EMPHATIC_2_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_EMPHATIC_2_Params';
@@ -1290,12 +1300,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_2900
-     * @tc.name      : test_startFloatingBall_SIMPLE_5_Params
-     * @tc.desc      : test_startFloatingBall_SIMPLE_5_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_SIMPLE_5_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_2900
+     * @tc.desc   test_startFloatingBall_SIMPLE_5_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_SIMPLE_5_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_5_Params';
@@ -1337,12 +1347,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3000
-     * @tc.name      : test_startFloatingBall_SIMPLE_4_Params
-     * @tc.desc      : test_startFloatingBall_SIMPLE_4_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_startFloatingBall_SIMPLE_4_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3000
+     * @tc.desc   test_startFloatingBall_SIMPLE_4_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_startFloatingBall_SIMPLE_4_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_4_Params';
@@ -1382,12 +1392,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3100
-     * @tc.name      : test_startFloatingBall_SIMPLE_3_Params
-     * @tc.desc      : test_startFloatingBall_SIMPLE_3_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_SIMPLE_3_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3100
+     * @tc.desc   test_startFloatingBall_SIMPLE_3_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_SIMPLE_3_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_3_Params';
@@ -1426,12 +1436,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3200
-     * @tc.name      : test_startFloatingBall_SIMPLE_2_Params
-     * @tc.desc      : test_startFloatingBall_SIMPLE_2_Params
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_startFloatingBall_SIMPLE_2_Params
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3200
+     * @tc.desc   test_startFloatingBall_SIMPLE_2_Params
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_startFloatingBall_SIMPLE_2_Params', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_SIMPLE_2_Params';
@@ -1469,12 +1479,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3300
-     * @tc.name      : test_updateFloatingBall_1300019
-     * @tc.desc      : title is ''
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_updateFloatingBall_1300019
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3300
+     * @tc.desc   title is ''
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_1300019';
@@ -1523,12 +1533,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3400
-     * @tc.name      : test_updateFloatingBall_1300025
-     * @tc.desc      : not start
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_updateFloatingBall_1300025
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3400
+     * @tc.desc   not start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_1300025';
@@ -1570,12 +1580,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number : SUB_BASIC_WMS_FLOATING_BALL_3500
-     * @tc.name : test_updateFloatingBall_STATIC_NORMAL
-     * @tc.desc : test_updateFloatingBall_STATIC_NORMAL
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level3
+     * @tc.name   test_updateFloatingBall_STATIC_NORMAL
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3500
+     * @tc.desc   test_updateFloatingBall_STATIC_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_STATIC_NORMAL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_STATIC_NORMAL';
@@ -1626,12 +1636,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3600
-     * @tc.name      : test_updateFloatingBall_NORMAL_EMPHATIC
-     * @tc.desc      : test_updateFloatingBall_NORMAL_EMPHATIC
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_updateFloatingBall_NORMAL_EMPHATIC
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3600
+     * @tc.desc   test_updateFloatingBall_NORMAL_EMPHATIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_NORMAL_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_NORMAL_EMPHATIC';
@@ -1680,12 +1690,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3700
-     * @tc.name      : test_updateFloatingBall_STATIC
-     * @tc.desc      : test_updateFloatingBall_STATIC
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_updateFloatingBall_STATIC
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3700
+     * @tc.desc   test_updateFloatingBall_STATIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_STATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_STATIC';
@@ -1738,12 +1748,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3800
-     * @tc.name      : test_updateFloatingBall_NORMAL
-     * @tc.desc      : test_updateFloatingBall_NORMAL
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_updateFloatingBall_NORMAL
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3800
+     * @tc.desc   test_updateFloatingBall_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_NORMAL', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_NORMAL';
@@ -1797,12 +1807,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_3900
-     * @tc.name      : test_updateFloatingBall_EMPHATIC
-     * @tc.desc      : test_updateFloatingBall_EMPHATIC
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_updateFloatingBall_EMPHATIC
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_3900
+     * @tc.desc   test_updateFloatingBall_EMPHATIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_EMPHATIC', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_EMPHATIC';
@@ -1857,12 +1867,12 @@ export default function abilityTest() {
 
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4000
-     * @tc.name      : test_updateFloatingBall_SIMPLE
-     * @tc.desc      : test_updateFloatingBall_SIMPLE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_updateFloatingBall_SIMPLE
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4000
+     * @tc.desc   test_updateFloatingBall_SIMPLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_updateFloatingBall_SIMPLE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_updateFloatingBall_SIMPLE';
@@ -1917,12 +1927,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4100
-     * @tc.name      : test_stopFloatingBall_1300022
-     * @tc.desc      : Repeated stopFloatingBall
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_stopFloatingBall_1300022
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4100
+     * @tc.desc   Repeated stopFloatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_stopFloatingBall_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_stopFloatingBall_1300022';
@@ -1971,12 +1981,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4200
-     * @tc.name      : test_stopFloatingBall_1300024
-     * @tc.desc      : not start FloatingBall
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_stopFloatingBall_1300024
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4200
+     * @tc.desc   not start FloatingBall
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_stopFloatingBall_1300024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_stopFloatingBall_1300024';
@@ -2005,12 +2015,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4300
-     * @tc.name      : test_startFloatingBall_after_stop
-     * @tc.desc      : test_startFloatingBall_after_stop
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_startFloatingBall_after_stop
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4300
+     * @tc.desc   test_startFloatingBall_after_stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_startFloatingBall_after_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_startFloatingBall_after_stop';
@@ -2071,12 +2081,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4400
-     * @tc.name      : test_on_stateChange_1300022
-     * @tc.desc      : Repeated on_stateChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_stateChange_1300022
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4400
+     * @tc.desc   Repeated on_stateChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_stateChange_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_stateChange_1300022';
@@ -2118,12 +2128,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4500
-     * @tc.name      : test_on_stateChange_start_stop
-     * @tc.desc      : test_on_stateChange_start_stop
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_stateChange_start_stop
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4500
+     * @tc.desc   test_on_stateChange_start_stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_stateChange_start_stop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_stateChange_start_stop';
@@ -2162,12 +2172,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4600
-     * @tc.name      : test_on_stateChange_two_callback
-     * @tc.desc      : 注册两个监听，收到两次回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_stateChange_two_callback
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4600
+     * @tc.desc   注册两个监听，收到两次回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_stateChange_two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_stateChange_two_callback';
@@ -2215,12 +2225,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4700
-     * @tc.name      : test_on_stateChange_off_callback1
-     * @tc.desc      : 取消callback1,收到callback2回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_stateChange_off_callback1
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4700
+     * @tc.desc   取消callback1,收到callback2回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_stateChange_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_stateChange_off_callback1';
@@ -2269,12 +2279,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4800
-     * @tc.name      : test_on_click_1300022
-     * @tc.desc      : Repeated on_click
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_click_1300022
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4800
+     * @tc.desc   Repeated on_click
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_click_1300022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_click_1300022';
@@ -2316,12 +2326,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_4900
-     * @tc.name      : test_on_click_two_callback
-     * @tc.desc      : 注册两个监听，收到两次回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_click_two_callback
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_4900
+     * @tc.desc   注册两个监听，收到两次回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_click_two_callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_click_two_callback';
@@ -2381,12 +2391,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5000
-     * @tc.name      : test_on_click_off_callback1
-     * @tc.desc      : 取消callback1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_on_click_off_callback1
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5000
+     * @tc.desc   取消callback1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_on_click_off_callback1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_on_click_off_callback1';
@@ -2447,12 +2457,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5100
-     * @tc.name      : test_getFloatingBallWindowInfo_1300025
-     * @tc.desc      : test_getFloatingBallWindowInfo_1300025
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_getFloatingBallWindowInfo_1300025
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5100
+     * @tc.desc   test_getFloatingBallWindowInfo_1300025
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getFloatingBallWindowInfo_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_getFloatingBallWindowInfo_1300025';
@@ -2487,12 +2497,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5200
-     * @tc.name      : test_getFloatingBallWindowInfo
-     * @tc.desc      : test_getFloatingBallWindowInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   test_getFloatingBallWindowInfo
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5200
+     * @tc.desc   test_getFloatingBallWindowInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_getFloatingBallWindowInfo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let CaseName:string = 'test_getFloatingBallWindowInfo';
@@ -2542,12 +2552,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5300
-     * @tc.name      : test_restoreMainWindow_1300019
-     * @tc.desc      : test_restoreMainWindow_1300019
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_restoreMainWindow_1300019
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5300
+     * @tc.desc   test_restoreMainWindow_1300019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_restoreMainWindow_1300019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_restoreMainWindow_1300019';
@@ -2594,12 +2604,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5400
-     * @tc.name      : test_restoreMainWindow_1300025
-     * @tc.desc      : test_restoreMainWindow_1300025
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_restoreMainWindow_1300025
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5400
+     * @tc.desc   test_restoreMainWindow_1300025
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_restoreMainWindow_1300025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_restoreMainWindow_1300025';
@@ -2639,12 +2649,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5500
-     * @tc.name      : test_restoreMainWindow_load_not_exist_ability
-     * @tc.desc      : test_restoreMainWindow_load_not_exist_ability
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_restoreMainWindow_load_not_exist_ability
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5500
+     * @tc.desc   test_restoreMainWindow_load_not_exist_ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_restoreMainWindow_load_not_exist_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_restoreMainWindow_load_not_exist_ability';
@@ -2696,12 +2706,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5600
-     * @tc.name      : test_restoreMainWindow_not_click
-     * @tc.desc      : test_restoreMainWindow_not_click
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_restoreMainWindow_not_click
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5600
+     * @tc.desc   test_restoreMainWindow_not_click
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_restoreMainWindow_not_click', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_restoreMainWindow_not_click';
@@ -2744,12 +2754,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number : SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0100
-     * @tc.name   : testCaptureWithBlacklistFloatBall
-     * @tc.desc   : 截屏过滤窗口为闪控球
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 0
+     * @tc.name   testCaptureWithBlacklistFloatBall
+     * @tc.number SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0100
+     * @tc.desc   截屏过滤窗口为闪控球
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCaptureWithBlacklistFloatBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testCaptureWithBlacklistFloatBall';
@@ -2821,12 +2831,12 @@ export default function abilityTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FLOATING_BALL_5700
-     * @tc.name      : test_restoreMainWindow_ability
-     * @tc.desc      : test_restoreMainWindow_ability
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_restoreMainWindow_ability
+     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_5700
+     * @tc.desc   test_restoreMainWindow_ability
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_restoreMainWindow_ability', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let CaseName:string = 'test_restoreMainWindow_ability';

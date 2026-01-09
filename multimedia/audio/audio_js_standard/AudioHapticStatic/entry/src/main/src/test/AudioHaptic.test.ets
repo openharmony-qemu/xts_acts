@@ -136,12 +136,12 @@ export default function AudioHapticTest() {
       console.log(`afterAll come in`);
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100
-     * @tc.desc        registerSource_Ringtone_URI
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100
+     * @tc.desc   registerSource_Ringtone_URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -151,7 +151,7 @@ export default function AudioHapticTest() {
           console.log(`${tag} registerSource success: sourceId: ${JSON.stringify(data)}`);
           expect(true).assertTrue();
           done()
-        } catch(err: BusinessError) {
+        } catch(err) {
           console.log(`${tag} registerSource fail: Ringtone_Audio_Uri: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
@@ -164,12 +164,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200
-     * @tc.desc        registerSource_notification_URI
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200
+     * @tc.desc   registerSource_notification_URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_REGISTERSOURCE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -179,7 +179,7 @@ export default function AudioHapticTest() {
           console.log(`${tag} registerSource success: sourceId: ${JSON.stringify(data)}`);
           expect(true).assertTrue();
           done()
-        } catch(err: BusinessError) {
+        } catch(err) {
           console.log(`${tag} registerSource fail: Notification_Audio_Uri: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
@@ -193,12 +193,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0100
-     * @tc.desc        unregisterSource_Notification_Uri
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0100
+     * @tc.desc   unregisterSource_Notification_Uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -212,12 +212,12 @@ export default function AudioHapticTest() {
             console.log(`${tag} unregisterSource success: sourceId: ${JSON.stringify(sourceId)}`);
             expect(true).assertTrue();
             done()
-          } catch(err: BusinessError) {
+          } catch(err) {
             console.log(`${tag} unregisterSource fail: sourceId: ${JSON.stringify(sourceId)}, ${err.code}`);
             expect(false).assertTrue();
             done()
           }
-        } catch(err: BusinessError) {
+        } catch(err) {
           console.log(`${tag} registerSource fail: Notification_Audio_Uri: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
@@ -231,12 +231,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0200
-     * @tc.desc        unregisterSource_Ringtone_Uri
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0200
+     * @tc.desc   unregisterSource_Ringtone_Uri
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_UNREGISTERSOURCE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -250,12 +250,12 @@ export default function AudioHapticTest() {
             console.log(`${tag} unregisterSource success: sourceId: ${JSON.stringify(sourceId)}`);
             expect(true).assertTrue();
             done()
-          } catch(err: BusinessError) {
+          } catch(err) {
             console.log(`${tag} unregisterSource fail: sourceId: ${JSON.stringify(sourceId)}, ${err.code}`);
             expect(false).assertTrue();
             done()
           }
-        } catch(err: BusinessError) {
+        } catch(err) {
           console.log(`${tag} registerSource fail: Ringtone_Uri: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
@@ -269,12 +269,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0100
-     * @tc.desc        Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0100
+     * @tc.desc   Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -283,19 +283,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0200
-     * @tc.desc        Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0200
+     * @tc.desc   Notification_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -304,7 +304,7 @@ export default function AudioHapticTest() {
         console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
@@ -312,12 +312,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0300
-     * @tc.desc        Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0300
+     * @tc.desc   Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -326,19 +326,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setAudioLatencyMode success: sourceId: ${JSON.stringify(AudioLatencyMode)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0400
-     * @tc.desc        Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0400
+     * @tc.desc   Ringtone_setAudioLatencyMode_AUDIO_LATENCY_MODE_FAST
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETAUDIOLATENCYMODE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -347,19 +347,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setAudioLatencyMode fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0100
-     * @tc.desc        setStreamUsage_STREAM_USAGE_MUSIC
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0100
+     * @tc.desc   setStreamUsage_STREAM_USAGE_MUSIC
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
@@ -368,19 +368,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0200
-     * @tc.desc        setStreamUsage_STREAM_USAGE_UNKNOWN
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0200
+     * @tc.desc   setStreamUsage_STREAM_USAGE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_UNKNOWN;
@@ -389,19 +389,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(false).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(Number(err.code)).assertEqual(401);
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0400
-     * @tc.desc        setStreamUsage_STREAM_USAGE_VOICE_COMMUNICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0400
+     * @tc.desc   setStreamUsage_STREAM_USAGE_VOICE_COMMUNICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_COMMUNICATION;
@@ -410,7 +410,7 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
@@ -418,12 +418,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0500
-     * @tc.desc        setStreamUsage_STREAM_USAGE_VOICE_ASSISTANT
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0500
+     * @tc.desc   setStreamUsage_STREAM_USAGE_VOICE_ASSISTANT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_ASSISTANT;
@@ -433,19 +433,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0600
-     * @tc.desc        setStreamUsage_STREAM_USAGE_ALARM
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0600
+     * @tc.desc   setStreamUsage_STREAM_USAGE_ALARM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_ALARM;
@@ -454,19 +454,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0700
-     * @tc.desc        setStreamUsage_STREAM_USAGE_VOICE_MESSAGE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0700
+     * @tc.desc   setStreamUsage_STREAM_USAGE_VOICE_MESSAGE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_VOICE_MESSAGE;
@@ -475,19 +475,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0800
-     * @tc.desc        setStreamUsage_STREAM_USAGE_RINGTONE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0800
+     * @tc.desc   setStreamUsage_STREAM_USAGE_RINGTONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_RINGTONE;
@@ -496,19 +496,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0900
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0900
-     * @tc.desc        setStreamUsage_STREAM_USAGE_NOTIFICATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0900
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0900
+     * @tc.desc   setStreamUsage_STREAM_USAGE_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_NOTIFICATION;
@@ -517,19 +517,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1000
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1000
-     * @tc.desc        setStreamUsage_STREAM_USAGE_ACCESSIBILITY
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1000
+     * @tc.desc   setStreamUsage_STREAM_USAGE_ACCESSIBILITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_ACCESSIBILITY;
@@ -538,19 +538,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1100
-     * @tc.desc        setStreamUsage_STREAM_USAGE_MOVIE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1100
+     * @tc.desc   setStreamUsage_STREAM_USAGE_MOVIE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_MOVIE;
@@ -559,19 +559,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1200
-     * @tc.desc        setStreamUsage_STREAM_USAGE_GAME
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1200
+     * @tc.desc   setStreamUsage_STREAM_USAGE_GAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_GAME;
@@ -580,19 +580,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1300
-     * @tc.desc        setStreamUsage_STREAM_USAGE_AUDIOBOOK
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1300
+     * @tc.desc   setStreamUsage_STREAM_USAGE_AUDIOBOOK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_AUDIOBOOK;
@@ -601,19 +601,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success:  ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1400
-     * @tc.desc        setStreamUsage_STREAM_USAGE_NAVIGATION
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1400
+     * @tc.desc   setStreamUsage_STREAM_USAGE_NAVIGATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_SETSTREAMUSAGE_STATIC_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let setStreamUsage = audio.StreamUsage.STREAM_USAGE_NAVIGATION;
@@ -622,19 +622,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} setStreamUsage success: ${JSON.stringify(setStreamUsage)}`);
         expect(true).assertTrue();
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} setStreamUsage fail: ${JSON.stringify(err)}, ${err.code}`);
         expect(false).assertTrue();
         done()
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0100
-     * @tc.desc        Notification_createPlayer_release
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0100
+     * @tc.desc   Notification_createPlayer_release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_CREATEPLAYER_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioHapticPlayerOptions: audioHaptic.AudioHapticPlayerOptions = {
@@ -642,11 +642,11 @@ export default function AudioHapticTest() {
         muteHaptics: true
       }
       try {
-        const AudioHapticPlayer: audioHaptic.AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Notification, audioHapticPlayerOptions);
+        const AudioHapticPlayer: audioHaptic.AudioHapticPlayer | null= await AudioHapticManager.createPlayer(sourceId_Notification, audioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         console.log(`${tag} AudioHapticPlayer release 1`);
-        await AudioHapticPlayer.release();
+        await AudioHapticPlayer!.release();
         console.log(`${tag} AudioHapticPlayer release success`);
         expect(true).assertTrue();
         done();
@@ -666,12 +666,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0100
-     * @tc.desc        Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0100
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -684,22 +684,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let releasePlayer : Promise<void> = player.release();
+          let releasePlayer : Promise<void> = player!.release();
           await releasePlayer;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail222222: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done();
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -711,12 +711,12 @@ export default function AudioHapticTest() {
       };
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0200
-     * @tc.desc        Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0200
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -729,22 +729,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -757,12 +757,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0300
-     * @tc.desc        Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0300
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -775,22 +775,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -802,12 +802,12 @@ export default function AudioHapticTest() {
       };
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0400
-     * @tc.desc        Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0400
+     * @tc.desc   Notification_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -820,22 +820,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -849,12 +849,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0500
-     * @tc.desc        Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0500
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -867,22 +867,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -894,12 +894,12 @@ export default function AudioHapticTest() {
       }
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0600
-     * @tc.desc        Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0600
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_AUDIO_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_AUDIO;
@@ -912,22 +912,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -939,12 +939,12 @@ export default function AudioHapticTest() {
       };
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0700
-     * @tc.desc        Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0700
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_Muted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -957,22 +957,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(true);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -984,12 +984,12 @@ export default function AudioHapticTest() {
       };
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0800
-     * @tc.desc        Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0800
+     * @tc.desc   Ringtone_createPlayer_AUDIO_HAPTIC_TYPE_HAPTIC_UnMuted
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ISMUTE_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let type = audioHaptic.AudioHapticType.AUDIO_HAPTIC_TYPE_HAPTIC;
@@ -1002,22 +1002,22 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(player)}`);
         await sleep(100);
         try {
-          let isMute: boolean = player.isMuted(type);
+          let isMute: boolean = player!.isMuted(type);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${JSON.stringify(isMute)}`);
           console.log(`${tag} AUDIO_HAPTIC_TYPE_AUDIO ismute : ${typeof (isMute)}`);
           expect(isMute).assertEqual(false);
           await sleep(100);
-          let playerRelease : Promise<void> = player.release();
+          let playerRelease : Promise<void> = player!.release();
           await playerRelease;
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag} isMuted fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1029,12 +1029,12 @@ export default function AudioHapticTest() {
       };
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0100
-     * @tc.desc        Notification_createPlayer_start_release_normal
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0100
+     * @tc.desc   Notification_createPlayer_start_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1050,19 +1050,19 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1075,12 +1075,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0200
-     * @tc.desc        Notification_createPlayer_start_stop_release_normal
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0200
+     * @tc.desc   Notification_createPlayer_start_stop_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1097,22 +1097,22 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1125,12 +1125,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0300
-     * @tc.desc        Notification_createPlayer_start_release_fast
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0300
+     * @tc.desc   Notification_createPlayer_start_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1146,19 +1146,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1171,12 +1171,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0400
-     * @tc.desc        Notification_createPlayer_start_stop_release_fast
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0400
+     * @tc.desc   Notification_createPlayer_start_stop_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1193,22 +1193,22 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Notification, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1222,12 +1222,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0500
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0500
-     * @tc.desc        Ringtone_createPlayer_start_release_normal
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0500
+     * @tc.desc   Ringtone_createPlayer_start_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1243,19 +1243,19 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1268,12 +1268,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0600
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0600
-     * @tc.desc        Ringtone_createPlayer_start_stop_release_normal
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0600
+     * @tc.desc   Ringtone_createPlayer_start_stop_release_normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1290,22 +1290,22 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1318,12 +1318,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0700
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0700
-     * @tc.desc        Notification_createPlayer_start_release_fast
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0700
+     * @tc.desc   Notification_createPlayer_start_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1339,19 +1339,19 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1364,12 +1364,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0800
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0800
-     * @tc.desc        Ringtone_createPlayer_start_stop_release_fast
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0800
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0800
+     * @tc.desc   Ringtone_createPlayer_start_stop_release_fast
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_PLAY_STATIC_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_FAST;
@@ -1386,22 +1386,22 @@ export default function AudioHapticTest() {
         try {
           AudioHapticManager.setAudioLatencyMode(sourceId_Ringtone, AudioLatencyMode);
           console.log(`${tag} setAudioLatencyMode success: ${JSON.stringify(AudioLatencyMode)}`);
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
           await sleep(100);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1414,12 +1414,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0100
-     * @tc.desc        Ringtone_AudioHapticPlayer_on_endofStream
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0100
+     * @tc.desc   Ringtone_AudioHapticPlayer_on_endofStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1433,25 +1433,25 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Ringtone, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.onEndOfStream(() => {
+          AudioHapticPlayer!.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
           });
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(100);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
-          AudioHapticPlayer.offEndOfStream();
-          await AudioHapticPlayer.release();
+          AudioHapticPlayer!.offEndOfStream();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1465,12 +1465,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0200
-     * @tc.desc        Notification_AudioHapticPlayer_on_endofStream
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0200
+     * @tc.desc   Notification_AudioHapticPlayer_on_endofStream
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_ENDOFSTREAM_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1484,26 +1484,26 @@ export default function AudioHapticTest() {
         let AudioHapticPlayer = await AudioHapticManager.createPlayer(sourceId_Notification, AudioHapticPlayerOptions);
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         try {
-          AudioHapticPlayer.onEndOfStream(() => {
+          AudioHapticPlayer!.onEndOfStream(() => {
             console.info(`${tag} on endOfStream called `);
             console.log(`${tag} AudioHapticPlayer release success`);
           });
-          AudioHapticPlayer.offEndOfStream();
-          await AudioHapticPlayer.start();
+          AudioHapticPlayer!.offEndOfStream();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          await AudioHapticPlayer.stop();
+          await AudioHapticPlayer!.stop();
           console.log(`${tag} AudioHapticPlayer stop success`);
-          await AudioHapticPlayer.release();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           expect(true).assertTrue();
@@ -1516,12 +1516,12 @@ export default function AudioHapticTest() {
 
     })
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0100
-     * @tc.desc        AudioHapticPlayer_on_audioInterrupt
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0100
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_AUDIOHAPTIC_ON_AUDIOINTERRUPT_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let AudioLatencyMode = audioHaptic.AudioLatencyMode.AUDIO_LATENCY_MODE_NORMAL;
@@ -1536,23 +1536,23 @@ export default function AudioHapticTest() {
         console.log(`${tag} createPlayer success: ${JSON.stringify(AudioHapticPlayer)}`);
         await sleep(100);
         try {
-          AudioHapticPlayer.onAudioInterrupt((InterruptEvent) => {
+          AudioHapticPlayer!.onAudioInterrupt((InterruptEvent) => {
             console.info(`${tag} on audioInterrupt called `);
           });
-          await AudioHapticPlayer.start();
+          await AudioHapticPlayer!.start();
           console.log(`${tag} AudioHapticPlayer start success`);
           await sleep(1000);
-          AudioHapticPlayer.offAudioInterrupt();
-          await AudioHapticPlayer.release();
+          AudioHapticPlayer!.offAudioInterrupt();
+          await AudioHapticPlayer!.release();
           console.log(`${tag} AudioHapticPlayer release success`);
           expect(true).assertTrue();
           done();
-        } catch (err: BusinessError) {
+        } catch (err) {
           console.log(`${tag}  fail: ${JSON.stringify(err)}, ${err.code}`);
           expect(false).assertTrue();
           done()
         }
-      } catch(err: BusinessError) {
+      } catch(err) {
         console.log(`${tag} createPlayer fail: ${JSON.stringify(err)}, ${err.code}`);
         if (err.code === 5400106) {
           done();
@@ -1564,12 +1564,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100
-     * @tc.desc        AudioHapticPlayer_on_audioInterrupt
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let id = 0;
@@ -1588,7 +1588,7 @@ export default function AudioHapticTest() {
       await audioHapticManager.registerSourceFromFd(audioFd, hapticFd).then((value: int) => {
         console.info(`Promise returned to indicate that th id of registerSource`);
         id = value;
-      }).catch(async (err: BusinessError) => {
+      }).catch((err: Error) => {
         console.error(`fail to register source`);
         expect(false).assertTrue();
       });
@@ -1598,35 +1598,35 @@ export default function AudioHapticTest() {
       audioHapticManager.setStreamUsage(id, usage);
       let options:audioHaptic.AudioHapticPlayerOptions = {muteAudio:false, muteHaptics:false};
       let audioHapticPlayer:audioHaptic.AudioHapticPlayer;
-      await audioHapticManager.createPlayer(id, options).then(async(value:audioHaptic.AudioHapticPlayer) => {
+      await audioHapticManager.createPlayer(id, options).then((value:audioHaptic.AudioHapticPlayer | null) => {
         console.info(`Create Success`);
-        audioHapticPlayer = value;
+        audioHapticPlayer = value as audioHaptic.AudioHapticPlayer;
         await audioHapticPlayer.start().then(() => {
           console.info(`Create Success`);
-        }).catch(async (err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to start playing, ${err}`);
           expect(false).assertTrue();
         });
         await sleep(1000);
         await audioHapticPlayer.stop().then(()=>{
           console.info(`promise return to indicate stop successfully`);
-        }).catch(async (err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to start playing, ${err}`);
           expect(false).assertTrue();
         });
         await audioHapticPlayer.release().then(()=>{
           console.info(`release player successfully`);
-        }).catch(async (err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to start playing, ${err}`);
           expect(false).assertTrue();
         });
-      }).catch(async (err: BusinessError) => {
+      }).catch((err: Error) => {
         console.error(`fail to start playing, ${err}`);
         expect(false).assertTrue();
       });
       await audioHapticManager.unregisterSource(id).then(() => {
         console.info(`successfully to unregisterSource playing`);
-      }).catch(async (err: BusinessError) => {
+      }).catch((err: Error) => {
         console.error(`fail to start unregisterSource, ${err}`);
         expect(false).assertTrue();
       });
@@ -1634,12 +1634,12 @@ export default function AudioHapticTest() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200
-     * @tc.desc        AudioHapticPlayer_on_audioInterrupt
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200
+     * @tc.desc   AudioHapticPlayer_on_audioInterrupt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("SUB_MULTIMEDIA_AUDIO_HAPTIC_REGISTERSOURCEFROMFD_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let id = 0;
@@ -1658,7 +1658,7 @@ export default function AudioHapticTest() {
       await audioHapticManager.registerSourceFromFd(audioFd,hapticFd).then((value:int) => {
         console.info(`Promise returned to indicate that th id of registerSource`);
         id = value;
-      }).catch(async (err: BusinessError) => {
+      }).catch((err: Error) => {
         console.error(`fail to register source`);
         expect(false).assertTrue();
       });
@@ -1668,49 +1668,49 @@ export default function AudioHapticTest() {
       audioHapticManager.setStreamUsage(id,usage);
       let options:audioHaptic.AudioHapticPlayerOptions = {muteAudio:false, muteHaptics:false};
       let audioHapticPlayer:audioHaptic.AudioHapticPlayer;
-      await audioHapticManager.createPlayer(id,options).then(async(value:audioHaptic.AudioHapticPlayer)=>{
+      await audioHapticManager.createPlayer(id,options).then(async(value:audioHaptic.AudioHapticPlayer | null)=>{
         console.info(`Create Success`);
-        audioHapticPlayer = value;
+        audioHapticPlayer = value as audioHaptic.AudioHapticPlayer;
         await audioHapticPlayer.start().then(()=>{
           console.info(`Create Success`);
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to start playing, ${err}`);
           expect(false).assertTrue();
         });
         await sleep(1000);
         await audioHapticPlayer.setVolume(5).then(()=>{
           console.info(`setVolume player successfully`);
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to setVolume playing out of range, ${err.code}`);
           expect(Number(err.code)).assertEqual(5400108);
         });
         await audioHapticPlayer.stop().then(() => {
           console.info(`promise return to indicate stop successfully`);
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to stop playing, ${err}`);
           expect(false).assertTrue();
         });
         await audioHapticPlayer.release().then(() => {
           console.info(`release player successfully`);
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to release playing, ${err}`);
           expect(false).assertTrue();
         });
         await audioHapticPlayer.setVolume(0.50).then(()=>{
           console.info(`setVolume player successfully`);
           expect(false).assertTrue();
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to setVolume playing already release, ${err.code}`);
           expect(Number(err.code)).assertEqual(5400102);
         });
         await audioHapticPlayer.setLoop(true).then(() => {
           console.info(`setVolume player successfully`);
           expect(false).assertTrue();
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`fail to setloop playing, ${err.code}`);
           expect(Number(err.code)).assertEqual(5400102);
         });
-      }).catch(async(err: BusinessError) => {
+      }).catch((err: Error) => {
         console.error(`fail to start playing, ${err}`);
         expect(false).assertTrue();
       });

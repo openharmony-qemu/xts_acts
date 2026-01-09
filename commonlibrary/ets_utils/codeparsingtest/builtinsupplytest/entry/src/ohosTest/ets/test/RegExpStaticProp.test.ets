@@ -26,7 +26,6 @@ export default function builtinsRegExpStaticPropTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
     })
     afterEach(() => {
     })
@@ -35,12 +34,12 @@ export default function builtinsRegExpStaticPropTest() {
 
 
     /**
+     * @tc.name   builtinsRegExpStaticPropTest0100
      * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0100
-     * @tc.name builtinsRegExpStaticPropTest0100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpStaticPropTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpStaticPropTest0100';
@@ -55,12 +54,12 @@ export default function builtinsRegExpStaticPropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpStaticPropTest0200
      * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0200
-     * @tc.name builtinsRegExpStaticPropTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpStaticPropTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpStaticPropTest0200';
@@ -75,12 +74,12 @@ export default function builtinsRegExpStaticPropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpStaticPropTest0300
      * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0300
-     * @tc.name builtinsRegExpStaticPropTest0300
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpStaticPropTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpStaticPropTest0300';
@@ -95,12 +94,12 @@ export default function builtinsRegExpStaticPropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpStaticPropTest0400
      * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0400
-     * @tc.name builtinsRegExpStaticPropTest0400
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpStaticPropTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpStaticPropTest0400';
@@ -115,12 +114,12 @@ export default function builtinsRegExpStaticPropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpStaticPropTest0500
      * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0500
-     * @tc.name builtinsRegExpStaticPropTest0500
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpStaticPropTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpStaticPropTest0500';
@@ -135,12 +134,12 @@ export default function builtinsRegExpStaticPropTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpStaticPropTest0600
      * @tc.number SUB_BUILTINS_REGEXP_STATIC_PROP_TEST_0600
-     * @tc.name builtinsRegExpStaticPropTest0600
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpStaticPropTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpStaticPropTest0600';

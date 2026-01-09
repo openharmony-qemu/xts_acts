@@ -1,10 +1,13 @@
 {
     "devices": {
-        "general": [],
+        "general": [
+            "default",
+            "tablet"
+        ],
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Startup.SystemInfo"
+                    "SystemCapability.Graphic.Graphic2D.ColorManager.Core"
                 ]
             }
         ]

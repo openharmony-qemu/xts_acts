@@ -46,12 +46,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0100
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0100
-     * @tc.name ProcessSupplementTest0100
-     * @tc.desc test The uid is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The uid is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0100'
@@ -70,12 +70,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0200
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0200
-     * @tc.name ProcessSupplementTest0200
-     * @tc.desc test The uid is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The uid is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0200'
@@ -100,12 +100,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0300
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0300
-     * @tc.name ProcessSupplementTest0300
-     * @tc.desc test The uid is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The uid is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0300';
@@ -136,12 +136,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0400
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0400
-     * @tc.name ProcessSupplementTest0400
-     * @tc.desc test The pid is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The pid is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0400'
@@ -160,12 +160,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0500
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0500
-     * @tc.name ProcessSupplementTest0500
-     * @tc.desc test The pid is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The pid is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0500'
@@ -190,12 +190,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0600
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0600
-     * @tc.name ProcessSupplementTest0600
-     * @tc.desc test The pid is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The pid is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0600';
@@ -228,12 +228,12 @@ export default function ProcessSupplementTest() {
     })
     
     /**
+     * @tc.name   ProcessSupplementTest0700
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0700
-     * @tc.name ProcessSupplementTest0700
-     * @tc.desc test The tid is tested in the main thread
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The tid is tested in the main thread
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0500';
@@ -251,12 +251,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0800
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0800
-     * @tc.name ProcessSupplementTest0800
-     * @tc.desc test The tid is tested in the taskpool
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The tid is tested in the taskpool
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0800'
@@ -281,12 +281,12 @@ export default function ProcessSupplementTest() {
     })
 
     /**
+     * @tc.name   ProcessSupplementTest0900
      * @tc.number SUB_PROCESS_SUPPLEMENT_TEST_0900
-     * @tc.name ProcessSupplementTest0900
-     * @tc.desc test The tid is tested in the Worker
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test The tid is tested in the Worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ProcessSupplementTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'ProcessSupplementTest0900';

@@ -36,12 +36,12 @@ export default function TaskpoolTestTask() {
       await asyncSleep(1000);
     })
     /**
-     * @tc.number    : SUB_Runtime_Language_Backend_TaskpoolConcurrency_4600
-     * @tc.name      : testTaskpoolTask001
-     * @tc.desc      : Perform serial tasks
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testTaskpoolTask001
+     * @tc.number SUB_Runtime_Language_Backend_TaskpoolConcurrency_4600
+     * @tc.desc   Perform serial tasks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTaskpoolTask001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName: string = 'testTaskpoolTask001';

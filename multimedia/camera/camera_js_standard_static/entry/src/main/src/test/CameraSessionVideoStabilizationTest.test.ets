@@ -34,7 +34,7 @@ let mVideoRecorder: media.AVRecorder | undefined;
 let mCameraInput: cameraObj.CameraInput;
 let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
@@ -108,7 +108,7 @@ export default function cameraSessionVideoStabilizationTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -193,7 +193,7 @@ export default function cameraSessionVideoStabilizationTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mIsVideoStabilizationModeSupportedArray = new Array<boolean>(mCameraNum);
+    mIsVideoStabilizationModeSupportedArray = new Array<boolean>(mCameraNum.toInt());
 
     console.info('Exit getCameraSupportDevicesArray');
 
@@ -477,12 +477,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session support video stabilization off mode with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session support video stabilization off mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0100--------------");
@@ -529,12 +529,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100
-      * @tc.desc   Check capture session set video stabilization off mode with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100
+     * @tc.desc   Check capture session set video stabilization off mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0100--------------");
@@ -592,12 +592,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0200
-      * @tc.desc   Check capture session support video stabilization low mode with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0200
+     * @tc.desc   Check capture session support video stabilization low mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0200--------------");
@@ -644,12 +644,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200
-      * @tc.desc   Check capture session set video stabilization low mode with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200
+     * @tc.desc   Check capture session set video stabilization low mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0200--------------");
@@ -707,12 +707,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0300
-      * @tc.desc   Check capture session support video stabilization middle mode with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0300
+     * @tc.desc   Check capture session support video stabilization middle mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0300--------------");
@@ -759,12 +759,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300
-      * @tc.desc   Check capture session set video stabilization middle mode with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300
+     * @tc.desc   Check capture session set video stabilization middle mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0300--------------");
@@ -822,12 +822,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0400
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0400
-      * @tc.desc   Check capture session support video stabilization high mode with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0400
+     * @tc.desc   Check capture session support video stabilization high mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0400--------------");
@@ -874,12 +874,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400
-      * @tc.desc   Check capture session set video stabilization high mode with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400
+     * @tc.desc   Check capture session set video stabilization high mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0400--------------");
@@ -937,12 +937,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0500
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0500
-      * @tc.desc   Check capture session support video stabilization auto mode with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0500
+     * @tc.desc   Check capture session support video stabilization auto mode with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_IS_VIDEO_STABILIZATION_MODE_SUPPORT_PROMISE_STATIC_0500--------------");
@@ -989,12 +989,12 @@ export default function cameraSessionVideoStabilizationTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500
-      * @tc.desc   Check capture session set video stabilization auto mode with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500
+     * @tc.desc   Check capture session set video stabilization auto mode with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_GET_VIDEO_STABILIZATION_MODE_PROMISE_STATIC_0500--------------");

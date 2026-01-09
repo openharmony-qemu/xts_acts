@@ -26,13 +26,13 @@ export default function ImageAltTest(){
       done();
     })
 
-    /*
-     * @tc.number: imageAltTest001
-     * @tc.name: imageAltTest001
-     * @tc.desc: Test the alt interface to set normal values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   imageAltTest001
+     * @tc.number imageAltTest001
+     * @tc.desc   Test the alt interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('imageAltTest001', Level.LEVEL1, async (done: Function) => {
       console.info('imageAltTest001 START');
@@ -52,13 +52,13 @@ export default function ImageAltTest(){
       done();
     });
 
-    /*
-     * @tc.number: imageAltTest002
-     * @tc.name: imageAltTest002
-     * @tc.desc: Test the alt interface to set normal values
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   imageAltTest002
+     * @tc.number imageAltTest002
+     * @tc.desc   Test the alt interface to set normal values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('imageAltTest002', Level.LEVEL1, async (done: Function) => {
       console.info('imageAltTest002 START');

@@ -18,7 +18,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import eventEmitter from '@ohos.events.emitter';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { Permissions } from 'permissions';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import Common from './Common.test';
 import { FdObject } from './Common.test';
 import Utils from './Util.test';
@@ -139,7 +139,7 @@ export default function avRecorderTest() {
     let eventEmitterFun =
       (avRecorder: media.AVRecorder | undefined, avConfig: media.AVRecorderConfig, recorderTime: number, steps: string[],
         done: () => void) => {
-        let ed: Record<string, Object> = {
+        let ed: Record<String, RecordData> = {
           'avConfig': avConfig,
           'recorderTime': recorderTime,
           'steps': steps,
@@ -178,15 +178,15 @@ export default function avRecorderTest() {
 
     let setAVRecorderCallback = (avRecorder: media.AVRecorder, done: () => void) => {
       // 状态机变化回调函数
-      avRecorder.on('stateChange', (state, reason) => {
+      avRecorder.onStateChange((state, reason) => {
         console.info(TAG + 'current state is: ' + state);
       })
       // 录制监听回调函数
-      avRecorder.on('audioCapturerChange', (AudioCapturerChangeInfo) => {
+      avRecorder.onAudioCapturerChange((AudioCapturerChangeInfo) => {
         console.info(TAG + 'audioCapturerChange');
       });
       // 错误上报回调函数
-      avRecorder.on('error', (err: BusinessError|null) => {
+      avRecorder.onError((err: BusinessError|null) => {
         try {
           console.error(TAG + 'error ocConstantSourceNode, error message is ' + err!!);
           // await releaseRecorderPromise(avRecorder, done);
@@ -199,7 +199,7 @@ export default function avRecorderTest() {
 
     let registerAvRecorderCallback = (eventData: eventEmitter.EventData) => {
       console.log('SETONCALLBACK_EVENT 11 eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       try {
@@ -213,11 +213,11 @@ export default function avRecorderTest() {
         console.info('setAVRecorderCallback failed and catch error is ' + error);
       }
     }
-    eventEmitter.on(SETONCALLBACK_EVENT, registerAvRecorderCallback);
+    eventEmitter.onEventData(SETONCALLBACK_EVENT, registerAvRecorderCallback);
 
     let registerCreateCallback = (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       media.createAVRecorder((error: BusinessError|null, recorder: undefined|media.AVRecorder) => {
@@ -235,12 +235,12 @@ export default function avRecorderTest() {
         }
       });
     }
-    eventEmitter.on(CREATE_EVENT, registerCreateCallback);
+    eventEmitter.onEventData(CREATE_EVENT, registerCreateCallback);
 
     let registerPrepareCallback = (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
       try {
-        let data = eventData.data as Record<string, Object>;
+        let data = eventData.data as Record<String, RecordData>;
         let steps: string[] = data?.get('steps') as string[];
         steps.shift();
         let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -262,11 +262,11 @@ export default function avRecorderTest() {
         console.info(`PREPARE_EVENT fail, error:${err}`);
       }
     }
-    eventEmitter.on(PREPARE_EVENT, registerPrepareCallback);
+    eventEmitter.onEventData(PREPARE_EVENT, registerPrepareCallback);
 
-    eventEmitter.on(STARTRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(STARTRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('STARTRECORDER_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -296,9 +296,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(STOPRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(STOPRECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -326,9 +326,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(PAUSERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(PAUSERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -356,9 +356,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RESUMERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RESUMERECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -386,9 +386,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RELEASECORDER_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RELEASECORDER_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -407,9 +407,9 @@ export default function avRecorderTest() {
       })
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(START_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(START_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('START_TIMETEST_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -420,9 +420,9 @@ export default function avRecorderTest() {
       toNextStep(avRecorder, avConfig, recorderTime, steps, done);
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(END_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(END_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -430,7 +430,7 @@ export default function avRecorderTest() {
       let avConfig: media.AVRecorderConfig = data?.get("avConfig") as media.AVRecorderConfig
       let recorderTime: number = data?.get("recorderTime") as number
       let length = execTimes.length;
-      let sum = execTimes.reduce((prev: number, curr: number, index: number, array: Array<number>) => {
+      let sum = execTimes.reduce((prev: number, curr: number, index: int, array: Array<number>) => {
         return prev + curr;
       }, 0);
       let avg = sum / length;
@@ -438,9 +438,9 @@ export default function avRecorderTest() {
       toNextStep(avRecorder, avConfig, recorderTime, steps, done);
     } as Callback<eventEmitter.EventData>);
 
-    eventEmitter.on(RELEASECORDER_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
+    eventEmitter.onEventData(RELEASECORDER_TIMETEST_EVENT, (eventData: eventEmitter.EventData) => {
       console.log('CREATE_EVENT eventData = ', JSON.stringify(eventData))
-      let data = eventData.data as Record<string, Object>;
+      let data = eventData.data as Record<String, RecordData>;
       let steps: string[] = data?.get('steps') as string[];
       steps.shift();
       let avRecorder: media.AVRecorder = data?.get("avRecorder") as media.AVRecorder
@@ -471,13 +471,12 @@ export default function avRecorderTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0100
-      * @tc.desc    Recorder audio 001.pause
-      *               : 001.test pause
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0100
+     * @tc.desc   Recorder audio 001.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0100 start')
@@ -490,13 +489,12 @@ export default function avRecorderTest() {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0100 end')
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0200
-      * @tc.desc    Recorder audio pause->resume
-      *               : 002.pause->resume
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0200
+     * @tc.desc   Recorder audio pause->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0200 start')
@@ -512,13 +510,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0300
-      * @tc.desc    Local Video recording 3 seconds to stop
-      *               : 003.test recording 3 seconds to stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0300
+     * @tc.desc   Local Video recording 3 seconds to stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0300 start')
@@ -534,13 +531,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0400
-      * @tc.desc    Local Video pause->resume->pause
-      *               : 004.pause->resume->pause
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0400
+     * @tc.desc   Local Video pause->resume->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0400 start')
@@ -556,13 +552,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0500
-      * @tc.desc    Local Video pause->stop->reset
-      *               : 005.pause->stop->reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0500
+     * @tc.desc   Local Video pause->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0500 start')
@@ -578,13 +573,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0600
-      * @tc.desc    Local Video pause->resume->stop->reset
-      *               : 006.pause->resume->stop->reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0600
+     * @tc.desc   Local Video pause->resume->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0600 start')
@@ -600,13 +594,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0700
-      * @tc.desc    Local Video stop->reset->pause->resume->stop->reset
-      *               : 007.stop->reset->pause->resume->stop->reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0700
+     * @tc.desc   Local Video stop->reset->pause->resume->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0700 start')
@@ -622,13 +615,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0800
-      * @tc.desc    Local Video stop->reset->pause->stop->reset
-      *               : 008.stop->reset->pause->stop->reset
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0800
+     * @tc.desc   Local Video stop->reset->pause->stop->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0800 start')
@@ -644,13 +636,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0900
-      * @tc.desc    Local Video start->pause->start(error)
-      *               : 009.start->pause->start(error)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0900
+     * @tc.desc   Local Video start->pause->start(error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0900 start')
@@ -666,13 +657,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1000
-      * @tc.desc    Local Video start->stop->pause(error)
-      *               : 010.start->stop->pause(error)
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1000
+     * @tc.desc   Local Video start->stop->pause(error)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_1000 start')
@@ -688,13 +678,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1100
-      * @tc.desc    Local Video audioEncoderMime
-      *               : 011. API8 audioEncoderMime
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1100
+     * @tc.desc   Local Video audioEncoderMime
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_1100 start')
@@ -710,13 +699,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0100
-      * @tc.desc    Local Video recorder with designated latitude and longitude
-      *               : 音频录制，location对应的latitude和longitude为-30和60
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0100
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_0100 start')
@@ -741,13 +729,12 @@ export default function avRecorderTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0200
-      * @tc.desc    Local Video recorder with designated latitude and longitude
-      *               : 音频录制，location对应的latitude和longitude为90和180
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0200
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_0200 start')
@@ -772,13 +759,12 @@ export default function avRecorderTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0300
-      * @tc.desc    Local Video recorder with designated latitude and longitude
-      *               : 音频录制，location对应的latitude和longitude为60和-90
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0300
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_0300 start')
@@ -803,13 +789,12 @@ export default function avRecorderTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0400
-      * @tc.desc    Local Video recorder with designated latitude and longitude
-      *               : 音频录制，location对应的latitude和longitude为0和0
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0400
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_0400 start')
@@ -834,13 +819,12 @@ export default function avRecorderTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0500
-      * @tc.desc    Local Video recorder with designated latitude and longitude
-      *               : 音频录制，location对应的latitude和longitude为0和180
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0500
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_0500 start')
@@ -864,13 +848,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0600
-      * @tc.desc    Local Video recorder with designated latitude and longitude
-      *               : 音频录制，location对应的latitude和longitude为-90和-180
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0600
+     * @tc.desc   Local Video recorder with designated latitude and longitude
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_FORMAT_API_0600 start')
@@ -895,13 +878,12 @@ export default function avRecorderTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0100
-      * @tc.desc    Recorder pause->prepare 1000 times
-      *               : 001.test pause->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0100
+     * @tc.desc   Recorder pause->prepare 1000 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_0100 start')
@@ -915,13 +897,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0101
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0101
-      * @tc.desc    Recorder audio 001.pause
-      *               : 001.test pause
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0101
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0101
+     * @tc.desc   Recorder audio 001.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_static_0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_FUNCTION_0101 start')
@@ -935,13 +916,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0200
-      * @tc.desc    Recorder audio channel
-      *               : 001.test channel
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0200
+     * @tc.desc   Recorder audio channel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_0200 start')
@@ -955,13 +935,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0300
-      * @tc.desc    Recorder audio channel
-      *               : 001.test channel
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0300
+     * @tc.desc   Recorder audio channel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_0300 start')
@@ -975,13 +954,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0400
-      * @tc.desc    Recorder audio resume->prepare
-      *               : 001.test resume->prepare
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0400
+     * @tc.desc   Recorder audio resume->prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_0400 start')
@@ -995,13 +973,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0500
-      * @tc.desc    Recorder audio channel
-      *               : 001.test channel
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0500
+     * @tc.desc   Recorder audio channel
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PREPARE_API_0500 start')
@@ -1015,13 +992,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0600
-      * @tc.desc    Recorder audio pause->start
-      *               : 001.test pause->start
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0600
+     * @tc.desc   Recorder audio pause->start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_0600 start')
@@ -1035,13 +1011,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0700
-      * @tc.desc    Recorder audio resume->start
-      *               : 001.test resume->start
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0700
+     * @tc.desc   Recorder audio resume->start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_0700 start')
@@ -1055,13 +1030,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_0800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_0800
-      * @tc.desc    Recorder audio creatAVRecorder->pause
-      *               : 001.test creatAVRecorder->pause
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_0800
+     * @tc.desc   Recorder audio creatAVRecorder->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let fileName: string = commonFun.resourceName();
@@ -1074,13 +1048,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0900
-      * @tc.desc    Recorder audio prepare->pause
-      *               : 001.test prepare->pause
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0900
+     * @tc.desc   Recorder audio prepare->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_START_API_0900 start')
@@ -1094,13 +1067,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1000
-      * @tc.desc    Recorder audio start->pause
-      *               : 001.test start->pause
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1000
+     * @tc.desc   Recorder audio start->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_1000 start')
@@ -1114,13 +1086,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1100
-      * @tc.desc    Recorder audio resume->pause
-      *               : 001.test resume->pause
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1100
+     * @tc.desc   Recorder audio resume->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_1100 start')
@@ -1134,13 +1105,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1200
-      * @tc.desc    Recorder audio stop->pause
-      *               : 001.test stop->pause
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1200
+     * @tc.desc   Recorder audio stop->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_1200 start')
@@ -1154,13 +1124,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1300
-      * @tc.desc    Recorder audio reset->pause
-      *               : 001.test reset->pause
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1300
+     * @tc.desc   Recorder audio reset->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_1300 start')
@@ -1174,13 +1143,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1400
-      * @tc.desc    Recorder audio all step->pause
-      *               : 001.test all step->pause
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1400
+     * @tc.desc   Recorder audio all step->pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_1400 start')
@@ -1194,13 +1162,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1500
-      * @tc.desc    Recorder audio pause three times
-      *               : 001.test pause three times
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1500
+     * @tc.desc   Recorder audio pause three times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PAUSE_API_1500 start')
@@ -1214,13 +1181,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1600
-      * @tc.desc    Recorder audio creatAVRecorder->resume
-      *               : 001.test creatAVRecorder->resume
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1600
+     * @tc.desc   Recorder audio creatAVRecorder->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_1600 start')
@@ -1234,13 +1200,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1700
-      * @tc.desc    Recorder audio prepare->resume
-      *               : 001.test prepare->resume
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1700
+     * @tc.desc   Recorder audio prepare->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_1700 start')
@@ -1254,13 +1219,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1800
-      * @tc.desc    Recorder audio start->resume
-      *               : 001.test start->resume
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1800
+     * @tc.desc   Recorder audio start->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_1800 start')
@@ -1274,13 +1238,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1900
-      * @tc.desc    Recorder audio pause->resume
-      *               : 001.test pause->resume
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1900
+     * @tc.desc   Recorder audio pause->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_1900 start')
@@ -1294,13 +1257,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2000
-      * @tc.desc    Recorder audio stop->resume
-      *               : 001.test stop->resume
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2000
+     * @tc.desc   Recorder audio stop->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_2000 start')
@@ -1314,13 +1276,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2100
-      * @tc.desc    Recorder audio reset->resume
-      *               : 001.test reset->resume
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2100
+     * @tc.desc   Recorder audio reset->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_2100 start')
@@ -1334,13 +1295,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2200
-      * @tc.desc    Recorder audio all->resume
-      *               : 001.test all->resume
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2200
+     * @tc.desc   Recorder audio all->resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_2200 start')
@@ -1354,13 +1314,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2300
-      * @tc.desc    Recorder audio resume threee times
-      *               : 001.test resume threee times
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2300
+     * @tc.desc   Recorder audio resume threee times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_static_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESUME_API_2300 start')
@@ -1374,13 +1333,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_STOP_API_static_2400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_STOP_API_static_2400
-      * @tc.desc    Recorder audio pause->stop
-      *               : 001.test pause->stop
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_STOP_API_static_2400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_STOP_API_static_2400
+     * @tc.desc   Recorder audio pause->stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_STOP_API_static_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_STOP_API_2400 start')
@@ -1393,13 +1351,12 @@ export default function avRecorderTest() {
       done();
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2600
-      * @tc.desc    Recorder audio pause->reset
-      *               : 001.test pause->reset
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2600
+     * @tc.desc   Recorder audio pause->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_2600 start')
@@ -1412,13 +1369,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2700
-      * @tc.desc    Recorder audio resume->reset
-      *               : 001.test resume->reset
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2700
+     * @tc.desc   Recorder audio resume->reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_static_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RESET_API_2700 start')
@@ -1432,13 +1388,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2800
-      * @tc.desc    Recorder audio pause->release
-      *               : 001.test pause->release
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2800
+     * @tc.desc   Recorder audio pause->release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_2800 start')
@@ -1452,13 +1407,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2900
-      * @tc.desc    Recorder audio resume->release
-      *               : 001.test resume->release
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2900
+     * @tc.desc   Recorder audio resume->release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_2900 start')
@@ -1472,13 +1426,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_3000
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_3000
-      * @tc.desc    Recorder audio release 3 times
-      *               : 001.test release 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_3000
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_3000
+     * @tc.desc   Recorder audio release 3 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_static_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_RELEASE_API_3000 start')
@@ -1492,13 +1445,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3100
-      * @tc.desc    Recorder audio create->getInputSurface
-      *               : 001.test create->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3100
+     * @tc.desc   Recorder audio create->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3100 start')
@@ -1512,13 +1464,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3200
-      * @tc.desc    Recorder audio  prepare->getInputSurface
-      *               : 001.test  prepare->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3200
+     * @tc.desc   Recorder audio  prepare->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3200 start')
@@ -1532,13 +1483,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3300
-      * @tc.desc    Recorder audio  start->getInputSurface
-      *               : 001.test  start->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3300
+     * @tc.desc   Recorder audio  start->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3300 start')
@@ -1552,13 +1502,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3400
-      * @tc.desc    Recorder audio pause->getInputSurface
-      *               : 001.test pause->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3400
+     * @tc.desc   Recorder audio pause->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3400 start')
@@ -1572,13 +1521,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3500
-      * @tc.desc    Recorder audio resume->getInputSurface
-      *               : 001.test resume->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3500
+     * @tc.desc   Recorder audio resume->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3500 start')
@@ -1592,13 +1540,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3600
-      * @tc.desc    Recorder audio stop->getInputSurface
-      *               : 001.test stop->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3600
+     * @tc.desc   Recorder audio stop->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3600 start')
@@ -1612,13 +1559,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3700
-      * @tc.desc    Recorder audio reset->getInputSurface
-      *               : 001.test reset->getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3700
+     * @tc.desc   Recorder audio reset->getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3700 start')
@@ -1632,13 +1578,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3800
-      * @tc.desc    Recorder audio getInputSurface 3 times
-      *               : 001.test getInputSurface 3 times
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3800
+     * @tc.desc   Recorder audio getInputSurface 3 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_static_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETINPUTSURFACE_API_3800 start')
@@ -1652,13 +1597,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0100
-      * @tc.desc    Recorder audio createAVRecorder
-      *               : 001.test createAVRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0100
+     * @tc.desc   Recorder audio createAVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0100 start')
@@ -1672,13 +1616,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0200
-      * @tc.desc    Recorder audio AvRecorder.prepare
-      *               : 02.AvRecorder.prepare
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0200
+     * @tc.desc   Recorder audio AvRecorder.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0200 start')
@@ -1692,13 +1635,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0300
-      * @tc.desc    AvRecorder.getInputSurface
-      *               : 03.AvRecorder.getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0300
+     * @tc.desc   AvRecorder.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0300 start')
@@ -1712,13 +1654,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0400
-      * @tc.desc    AvRecorder.start
-      *               : 04.AvRecorder.start
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0400
+     * @tc.desc   AvRecorder.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0400 start')
@@ -1732,13 +1673,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0500
-      * @tc.desc    AvRecorder.pause
-      *               : 05.AvRecorder.pause
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0500
+     * @tc.desc   AvRecorder.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0500 start')
@@ -1752,13 +1692,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0600
-      * @tc.desc    AvRecorder.resume
-      *               : 06.AvRecorder.resume
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0600
+     * @tc.desc   AvRecorder.resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0600 start')
@@ -1772,13 +1711,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0700
-      * @tc.desc    AvRecorder.stop
-      *               : 07.AvRecorder.stop
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0700
+     * @tc.desc   AvRecorder.stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0700 start')
@@ -1792,13 +1730,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0800
-      * @tc.desc    AvRecorder.reset
-      *               : 08.AvRecorder.reset
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0800
+     * @tc.desc   AvRecorder.reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0800 start')
@@ -1812,13 +1749,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0900
-      * @tc.desc    AvRecorder.release
-      *               : 09.AvRecorder.release
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0900
+     * @tc.desc   AvRecorder.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_CALLBACK_01_0900 start')
@@ -1853,13 +1789,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0100
-      * @tc.desc    AvRecorder.createAVRecorder
-      *               : 01.createAVRecorder
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0100
+     * @tc.desc   AvRecorder.createAVRecorder
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0100 start')
@@ -1873,13 +1808,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0200
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0200
-      * @tc.desc    AvRecorder.prepare
-      *               : 02.AvRecorder.prepare
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0200
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0200
+     * @tc.desc   AvRecorder.prepare
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0200 start')
@@ -1893,13 +1827,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0300
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0300
-      * @tc.desc    AvRecorder.getInputSurface
-      *               : 03.AvRecorder.getInputSurface
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0300
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0300
+     * @tc.desc   AvRecorder.getInputSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0300 start')
@@ -1912,13 +1845,12 @@ export default function avRecorderTest() {
       done();
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0400
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0400
-      * @tc.desc    AvRecorder.start
-      *               : 04.AvRecorder.start
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0400
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0400
+     * @tc.desc   AvRecorder.start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0400 start')
@@ -1932,13 +1864,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0500
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0500
-      * @tc.desc    AvRecorder.pause
-      *               : 05.AvRecorder.pause
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0500
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0500
+     * @tc.desc   AvRecorder.pause
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0500 start')
@@ -1952,13 +1883,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0600
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0600
-      * @tc.desc    AvRecorder.resume
-      *               : 06.AvRecorder.resume
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0600
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0600
+     * @tc.desc   AvRecorder.resume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0600 start')
@@ -1972,13 +1902,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0700
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0700
-      * @tc.desc    AvRecorder.stop
-      *               : 07.AvRecorder.stop
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0700
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0700
+     * @tc.desc   AvRecorder.stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0700 start')
@@ -1992,13 +1921,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0800
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0800
-      * @tc.desc    AvRecorder.reset
-      *               : 08.AvRecorder.reset
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0800
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0800
+     * @tc.desc   AvRecorder.reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0800 start')
@@ -2012,13 +1940,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0900
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0900
-      * @tc.desc    AvRecorder.release
-      *               : 09.AvRecorder.release
-      * @tc.size    MediumTest
-      * @tc.type    Performance test
-      * @tc.level   Level 4
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0900
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0900
+     * @tc.desc   AvRecorder.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_PERFORMANCE_PROMISE_01_0900 start')
@@ -2032,13 +1959,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_001
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_001
-      * @tc.desc    Recorder audio create->getAVRecorderConfig
-      *               : 001.test create->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_001
+     * @tc.desc   Recorder audio create->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_001 start')
@@ -2052,13 +1978,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001
-      * @tc.desc    Recorder audio create->getAVRecorderConfig
-      *               : 001.test create->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001
+     * @tc.desc   Recorder audio create->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_CALLBACK_API_static_001 start')
@@ -2072,13 +1997,12 @@ export default function avRecorderTest() {
       done();
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_002
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_002
-      * @tc.desc    Recorder audio  prepare->getAVRecorderConfig
-      *               : 001.test  prepare->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_002
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_002
+     * @tc.desc   Recorder audio  prepare->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_002 start')
@@ -2092,13 +2016,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_003
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_003
-      * @tc.desc    Recorder audio  start->getAVRecorderConfig
-      *               : 001.test  start->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_003
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_003
+     * @tc.desc   Recorder audio  start->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_003 start')
@@ -2112,13 +2035,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_004
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_004
-      * @tc.desc    Recorder audio pause->getAVRecorderConfig
-      *               : 001.test pause->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_004
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_004
+     * @tc.desc   Recorder audio pause->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_004 start')
@@ -2132,13 +2054,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_005
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_005
-      * @tc.desc    Recorder audio resume->getAVRecorderConfig
-      *               : 001.test resume->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_005
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_005
+     * @tc.desc   Recorder audio resume->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_005 start')
@@ -2152,13 +2073,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_006
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_006
-      * @tc.desc    Recorder audio stop->getAVRecorderConfig
-      *               : 001.test stop->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_006
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_006
+     * @tc.desc   Recorder audio stop->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_006 start')
@@ -2172,13 +2092,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_007
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_007
-      * @tc.desc    Recorder audio reset->getAVRecorderConfig
-      *               : 001.test reset->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_007
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_007
+     * @tc.desc   Recorder audio reset->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_GETAVRECORDERCONFIG_API_007 start')
@@ -2192,13 +2111,12 @@ export default function avRecorderTest() {
     })
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_ONAUDIOCAPTURERCHANGECALLBACK_API_static_001
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_ONAUDIOCAPTURERCHANGECALLBACK_API_static_001
-      * @tc.desc    Recorder audio reset->getAVRecorderConfig
-      *               : 001.test reset->getAVRecorderConfig
-      * @tc.size    MediumTest
-      * @tc.type    Reliabilit test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_ONAUDIOCAPTURERCHANGECALLBACK_API_static_001
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_ONAUDIOCAPTURERCHANGECALLBACK_API_static_001
+     * @tc.desc   Recorder audio reset->getAVRecorderConfig
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_ONAUDIOCAPTURERCHANGECALLBACK_API_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_ONAUDIOCAPTURERCHANGECALLBACK_API_001 start')
@@ -2231,13 +2149,12 @@ export default function avRecorderTest() {
       done();
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_MP3_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_MP3_static_0100
-      * @tc.desc    Local Video recording mp3 3 seconds to stop
-      *               : 003.test recording mp3 3 seconds to stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_MP3_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_MP3_static_0100
+     * @tc.desc   Local Video recording mp3 3 seconds to stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_MP3_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_MP3_0100 start')
@@ -2255,13 +2172,12 @@ export default function avRecorderTest() {
       done();
     })
     /**
-      * @tc.number  SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_WAV_static_0100
-      * @tc.name    SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_WAV_static_0100
-      * @tc.desc    Local Video recording WAV 3 seconds to stop
-      *               : 003.test recording WAV 3 seconds to stop
-      * @tc.size    MediumTest
-      * @tc.type    Function test
-      * @tc.level   Level2
+     * @tc.name   SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_WAV_static_0100
+     * @tc.number SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_WAV_static_0100
+     * @tc.desc   Local Video recording WAV 3 seconds to stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_WAV_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       console.info(TAG + 'SUB_MULTIMEDIA_MEDIA_AVRECORDER_AUDIO_RECORDER_WAV_0100 start')

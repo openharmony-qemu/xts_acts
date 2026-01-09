@@ -57,7 +57,6 @@ export default function VectorStoreTest() {
     });
     console.info(TAG + "*************Unit Test Begin*************");
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   VectorStoreTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0100
      * @tc.desc   VectorEtsAPITest isVectorSupported
@@ -122,7 +121,6 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   VectorStoreTest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0200
      * @tc.desc   VectorEtsAPITest isVectorSupported
@@ -176,7 +174,6 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   VectorStoreTest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0300
      * @tc.desc   VectorEtsAPITest isVectorSupported
@@ -230,7 +227,6 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   VectorStoreTest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0400
      * @tc.desc   VectorEtsAPITest isVectorSupported
@@ -283,7 +279,6 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   VectorStoreTest0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0500
      * @tc.desc   VectorEtsAPITest isVectorSupported
@@ -336,7 +331,6 @@ export default function VectorStoreTest() {
       console.info(TAGTEST + " ************* End*************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   VectorStoreTest0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_VectorEtsAPITest_0600
      * @tc.desc   isVectorSupported test

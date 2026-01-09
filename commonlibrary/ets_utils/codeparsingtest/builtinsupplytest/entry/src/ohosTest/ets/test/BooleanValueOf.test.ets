@@ -21,7 +21,6 @@ export default function builtinsBooleanValueOfTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
     })
     afterEach(() => {
     })
@@ -29,12 +28,12 @@ export default function builtinsBooleanValueOfTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanValueOfTest0100
      * @tc.number SUB_BUILTINS_BOOLEAN_VALUE_OF_TEST_0100
-     * @tc.name builtinsBooleanValueOfTest0100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanValueOfTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanValueOfTest0100';
@@ -46,12 +45,12 @@ export default function builtinsBooleanValueOfTest() {
     })
 
     /**
+     * @tc.name   builtinsBooleanValueOfTest0200
      * @tc.number SUB_BUILTINS_BOOLEAN_VALUE_OF_TEST_0200
-     * @tc.name builtinsBooleanValueOfTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsBooleanValueOfTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsBooleanValueOfTest0200';

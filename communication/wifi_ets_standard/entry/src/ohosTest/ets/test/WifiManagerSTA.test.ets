@@ -70,7 +70,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0036
          * @tc.desc   Test enableWifi Sync API functionality.
@@ -105,7 +104,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0034
          * @tc.desc   Test isMeteredHotspot Sync API functionality.
@@ -128,7 +126,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0035
          * @tc.desc   Test isHotspotActive Sync API functionality.
@@ -153,7 +150,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0038
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0038
          * @tc.desc   Test getDeviceMacAddress Sync API functionality.
@@ -179,7 +175,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0039
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0039
          * @tc.desc   Test getMultiLinkedInfo Sync API functionality.
@@ -204,7 +199,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0040
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0040
          * @tc.desc   Test getLinkedInfoSync Sync API functionality.
@@ -232,7 +226,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0041
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0041
          * @tc.desc   Test WifiLinkType Sync API functionality.
@@ -269,7 +262,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0044
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0044
          * @tc.desc   Test connectToNetwork Sync API functionality.
@@ -289,7 +281,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0045
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0045
          * @tc.desc   Test removeDevice Sync API functionality.
@@ -309,7 +300,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_Sta_0046
          * @tc.number SUB_Communication_WiFi_XTS_Sta_0046
          * @tc.desc   Test DisableWifi Sync API functionality.
@@ -357,7 +347,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   SUB_Communication_WiFi_XTS_StartScan_0001
          * @tc.number SUB_Communication_WiFi_XTS_StartScan_0001
          * @tc.desc   Test startScan Sync API21 functionality
@@ -382,7 +371,6 @@ export default function wifiSta() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   Communication_WiFi_XTS_IsWifiActive_0001
          * @tc.number Communication_WiFi_XTS_IsWifiActive_0001
          * @tc.desc   Test isWifiActive Sync API functionality result
@@ -428,5 +416,73 @@ export default function wifiSta() {
 	        }
 	        done();
         })
-  })
+        /**
+         * @tc.name   Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0100
+         * @tc.number Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0100
+         * @tc.desc   Test wifimanager enumvalue value .
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('Communication_WiFi_XTS_WIFIMANAGER_ENUMVALUE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) =>{
+            try {
+                let value1 = wifiMg.EapMethod.EAP_NONE;
+                console.info('[wifi_js]get EAP_NONE is ' + JSON.stringify(value1));
+                expect(value1).assertEqual(0);
+                let value2 = wifiMg.EapMethod.EAP_PEAP;
+                console.info('[wifi_js]get EAP_PEAP is ' + JSON.stringify(value2));
+                expect(value2).assertEqual(1);
+                let value3 = wifiMg.EapMethod.EAP_TLS;
+                console.info('[wifi_js]get EAP_TLS is ' + JSON.stringify(value3));
+                expect(value3).assertEqual(2);
+                let value4 = wifiMg.EapMethod.EAP_TTLS;
+                console.info('[wifi_js]get EAP_TTLS is ' + JSON.stringify(value4));
+                expect(value4).assertEqual(3);
+                let value5 = wifiMg.EapMethod.EAP_PWD;
+                console.info('[wifi_js]get EAP_PWD is ' + JSON.stringify(value5));
+                expect(value5).assertEqual(4);
+                let value6 = wifiMg.EapMethod.EAP_SIM;
+                console.info('[wifi_js]get EAP_SIM is ' + JSON.stringify(value6));
+                expect(value6).assertEqual(5);
+                let value7 = wifiMg.EapMethod.EAP_AKA;
+                console.info('[wifi_js]get EAP_AKA is ' + JSON.stringify(value7));
+                expect(value7).assertEqual(6);
+                let value8 = wifiMg.EapMethod.EAP_AKA_PRIME;
+                console.info('[wifi_js]get EAP_AKA_PRIME is ' + JSON.stringify(value8));
+                expect(value8).assertEqual(7);
+                let value9 = wifiMg.EapMethod.EAP_UNAUTH_TLS;
+                console.info('[wifi_js]get EAP_UNAUTH_TLS is ' + JSON.stringify(value9));
+                expect(value9).assertEqual(8);
+                let value10 = wifiMg.Phase2Method.PHASE2_NONE;
+                console.info('[wifi_js]get PHASE2_NONE is ' + JSON.stringify(value10));
+                expect(value10).assertEqual(0);
+                let value11 = wifiMg.Phase2Method.PHASE2_PAP;
+                console.info('[wifi_js]get PHASE2_PAP is ' + JSON.stringify(value11));
+                expect(value11).assertEqual(1);
+                let value12 = wifiMg.Phase2Method.PHASE2_MSCHAP;
+                console.info('[wifi_js]get PHASE2_MSCHAP is ' + JSON.stringify(value12));
+                expect(value12).assertEqual(2);
+                let value13 = wifiMg.Phase2Method.PHASE2_MSCHAPV2;
+                console.info('[wifi_js]get PHASE2_MSCHAPV2 is ' + JSON.stringify(value13));
+                expect(value13).assertEqual(3);
+                let value14 = wifiMg.Phase2Method.PHASE2_GTC;
+                console.info('[wifi_js]get PHASE2_GTC is ' + JSON.stringify(value14));
+                expect(value14).assertEqual(4);
+                let value15 = wifiMg.Phase2Method.PHASE2_SIM;
+                console.info('[wifi_js]get PHASE2_SIM is ' + JSON.stringify(value15));
+                expect(value15).assertEqual(5);
+                let value16 = wifiMg.Phase2Method.PHASE2_AKA;
+                console.info('[wifi_js]get PHASE2_AKA is ' + JSON.stringify(value16));
+                expect(value16).assertEqual(6);
+                let value17 = wifiMg.Phase2Method.PHASE2_AKA_PRIME;
+                console.info('[wifi_js]get PHASE2_AKA_PRIME is ' + JSON.stringify(value17));
+                expect(value17).assertEqual(7);
+            }catch(err) {
+                console.error(`[wifi_js]get wifimanager enumvalue ,code is ${err.code},message is ${err.message}`);
+            }
+            done();
+        })
+
+
+    })
 }

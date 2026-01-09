@@ -41,14 +41,14 @@ export default function getTarget5Test() {
       done();
     });
     /**
-     * @tc.number    getTarget5
-     * @tc.name      getTarget5Test_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   getTarget5Test_0100
+     * @tc.number getTarget5
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('getTarget5Test_0100', Level.LEVEL0, async (done: Function) => {
+    it('getTarget5Test_0100', Level.LEVEL1, async (done: Function) => {
       console.info('getTarget5Test_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

@@ -113,6 +113,16 @@ export default function ActsDisplayNdkApi14Test() {
           console.log('jsUnittest getDisplayCapability failed');
         }
       }
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
       await getPermision();
       await sleep(300);
       await ClickButtonDriver();
@@ -133,12 +143,12 @@ export default function ActsDisplayNdkApi14Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2100
-     * @tc.name      : test_OH_NativeDisplayManager_CreatePrimaryDisplay
-     * @tc.desc      : test_OH_NativeDisplayManager_CreatePrimaryDisplay
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_CreatePrimaryDisplay
+     * @tc.number SUB_BASIC_DMS_NDK_2100
+     * @tc.desc   test_OH_NativeDisplayManager_CreatePrimaryDisplay
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_CreatePrimaryDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_CreatePrimaryDisplay';
@@ -178,12 +188,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2200
-     * @tc.name      : test_OH_NativeDisplayManager_CreateAllDisplays
-     * @tc.desc      : test_OH_NativeDisplayManager_CreateAllDisplays
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_CreateAllDisplays
+     * @tc.number SUB_BASIC_DMS_NDK_2200
+     * @tc.desc   test_OH_NativeDisplayManager_CreateAllDisplays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_CreateAllDisplays', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_CreateAllDisplays';
@@ -244,12 +254,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2300
-     * @tc.name      : test_OH_NativeDisplayManager_CreateDisplayById_0
-     * @tc.desc      : test_OH_NativeDisplayManager_CreateDisplayById_0
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_NativeDisplayManager_CreateDisplayById_0
+     * @tc.number SUB_BASIC_DMS_NDK_2300
+     * @tc.desc   test_OH_NativeDisplayManager_CreateDisplayById_0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_NativeDisplayManager_CreateDisplayById_0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_CreateDisplayById_0';
@@ -285,12 +295,12 @@ export default function ActsDisplayNdkApi14Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2400
-     * @tc.name      : test_OH_NativeDisplayManager_CreateDisplayById_123
-     * @tc.desc      : test_OH_NativeDisplayManager_CreateDisplayById_123
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_CreateDisplayById_123
+     * @tc.number SUB_BASIC_DMS_NDK_2400
+     * @tc.desc   test_OH_NativeDisplayManager_CreateDisplayById_123
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_CreateDisplayById_123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_CreateDisplayById_123';
@@ -306,12 +316,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2500
-     * @tc.name      : test_OH_NativeDisplayManager_DestroyDisplay_without_create
-     * @tc.desc      : test_OH_NativeDisplayManager_DestroyDisplay_without_create
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_NativeDisplayManager_DestroyDisplay_without_create
+     * @tc.number SUB_BASIC_DMS_NDK_2500
+     * @tc.desc   test_OH_NativeDisplayManager_DestroyDisplay_without_create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_NativeDisplayManager_DestroyDisplay_without_create', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_OH_NativeDisplayManager_DestroyDisplay_without_create';
@@ -327,12 +337,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2600
-     * @tc.name      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_UNKNOWN
-     * @tc.desc      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_UNKNOWN
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_UNKNOWN
+     * @tc.number SUB_BASIC_DMS_NDK_2600
+     * @tc.desc   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_UNKNOWN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_UNKNOWN', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_UNKNOWN';
@@ -348,12 +358,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2700
-     * @tc.name      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_OFF
-     * @tc.desc      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_OFF
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_OFF
+     * @tc.number SUB_BASIC_DMS_NDK_2700
+     * @tc.desc   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_OFF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_OFF', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_OFF';
@@ -369,12 +379,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2800
-     * @tc.name      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_ON
-     * @tc.desc      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_ON
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_ON
+     * @tc.number SUB_BASIC_DMS_NDK_2800
+     * @tc.desc   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_ON
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_ON', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_ON';
@@ -391,12 +401,12 @@ export default function ActsDisplayNdkApi14Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_2900
-     * @tc.name      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE
-     * @tc.desc      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE
+     * @tc.number SUB_BASIC_DMS_NDK_2900
+     * @tc.desc   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE';
@@ -413,12 +423,12 @@ export default function ActsDisplayNdkApi14Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_3000
-     * @tc.name      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE_SUSPEND
-     * @tc.desc      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE_SUSPEND
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE_SUSPEND
+     * @tc.number SUB_BASIC_DMS_NDK_3000
+     * @tc.desc   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE_SUSPEND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE_SUSPEND', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_STATE_DOZE_SUSPEND';
@@ -435,12 +445,12 @@ export default function ActsDisplayNdkApi14Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_3100
-     * @tc.name      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_VR
-     * @tc.desc      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_VR
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_VR
+     * @tc.number SUB_BASIC_DMS_NDK_3100
+     * @tc.desc   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_VR
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_VR', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_DISPLAY_VR';
@@ -456,12 +466,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_3200
-     * @tc.name      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_ON_SUSPEND
-     * @tc.desc      : test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_ON_SUSPEND
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_ON_SUSPEND
+     * @tc.number SUB_BASIC_DMS_NDK_3200
+     * @tc.desc   test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_ON_SUSPEND
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_ON_SUSPEND', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_DisplayState_DISPLAY_MANAGER_ON_SUSPEND';
@@ -477,12 +487,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_NDK_3300
-     * @tc.name      : test_NativeDisplayManager_CaptureScreenPixeImap
-     * @tc.desc      : test_NativeDisplayManager_CaptureScreenPixeImap
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_NativeDisplayManager_CaptureScreenPixeImap
+     * @tc.number SUB_BASIC_DMS_NDK_3300
+     * @tc.desc   test_NativeDisplayManager_CaptureScreenPixeImap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_NativeDisplayManager_CaptureScreenPixeImap', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_NativeDisplayManager_CaptureScreenPixeImap';
@@ -511,12 +521,12 @@ export default function ActsDisplayNdkApi14Test() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_DMS_JS_0100
-     * @tc.name      : test_getDefaultDisplaySync_api14
-     * @tc.desc      : test_getDefaultDisplaySync_api14
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_getDefaultDisplaySync_api14
+     * @tc.number SUB_BASIC_DMS_JS_0100
+     * @tc.desc   test_getDefaultDisplaySync_api14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getDefaultDisplaySync_api14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_getDefaultDisplaySync_api14';
@@ -554,12 +564,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_JS_0200
-     * @tc.name      : test_getPrimaryDisplaySync_api14
-     * @tc.desc      : test_getPrimaryDisplaySync_api14
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_getPrimaryDisplaySync_api14
+     * @tc.number SUB_BASIC_DMS_JS_0200
+     * @tc.desc   test_getPrimaryDisplaySync_api14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getPrimaryDisplaySync_api14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_getPrimaryDisplaySync_api14';
@@ -597,12 +607,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_JS_0300
-     * @tc.name      : test_js_capture
-     * @tc.desc      : test_js_capture
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_js_capture
+     * @tc.number SUB_BASIC_DMS_JS_0300
+     * @tc.desc   test_js_capture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_js_capture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_js_capture';
@@ -645,12 +655,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_JS_0400
-     * @tc.name      : test_js_capture_captureStatusChange
-     * @tc.desc      : test_js_capture_captureStatusChange
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_js_capture_captureStatusChange
+     * @tc.number SUB_BASIC_DMS_JS_0400
+     * @tc.desc   test_js_capture_captureStatusChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_js_capture_captureStatusChange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_js_capture_captureStatusChange';
@@ -695,12 +705,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_DMS_JS_0500
-     * @tc.name      : test_js_capture_privateWindow
-     * @tc.desc      : test_js_capture_privateWindow
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_js_capture_privateWindow
+     * @tc.number SUB_BASIC_DMS_JS_0500
+     * @tc.desc   test_js_capture_privateWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_js_capture_privateWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'test_js_capture_privateWindow';
@@ -751,12 +761,12 @@ export default function ActsDisplayNdkApi14Test() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_capture_0100
-     * @tc.name       : testcapture
-     * @tc.desc       : testcapture
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testcapture
+     * @tc.number SUB_BASIC_WMS_capture_0100
+     * @tc.desc   testcapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testcapture', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done:Function) => {
       let caseName = 'testcapture';
@@ -792,12 +802,12 @@ export default function ActsDisplayNdkApi14Test() {
       }
     })
     /**
-     * @tc.number : SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0200
-     * @tc.name   : testCaptureWithBlacklistNotFloatBall
-     * @tc.desc   : 截屏过滤窗口不为闪控球
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 2
+     * @tc.name   testCaptureWithBlacklistNotFloatBall
+     * @tc.number SUB_BASIC_WMS_FUNCTION_CAPTURE_FILTER_0200
+     * @tc.desc   截屏过滤窗口不为闪控球
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCaptureWithBlacklistNotFloatBall', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
       let caseName = 'testCaptureWithBlacklistNotFloatBall';

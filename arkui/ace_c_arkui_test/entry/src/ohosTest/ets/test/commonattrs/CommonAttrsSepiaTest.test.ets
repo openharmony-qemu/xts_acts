@@ -26,78 +26,78 @@ export default function commonAttrsSepiaTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0100
-     * @tc.name       : testCommonAttrsSepia001
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSepia001
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0100
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSepia001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSepia001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0200
-     * @tc.name       : testCommonAttrsSepia002
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSepia002
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0200
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSepia002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSepia002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0300
-     * @tc.name       : testCommonAttrsSepia003
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSepia003
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0300
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSepia003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSepia003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0400
-     * @tc.name       : testCommonAttrsSepia004
-     * @tc.desc       : testing sepia for stack with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsSepia004
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0400
+     * @tc.desc   testing sepia for stack with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSepia004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSepia004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0500
-     * @tc.name       : testCommonAttrsSepia005
-     * @tc.desc       : testing sepia for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsSepia005
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0500
+     * @tc.desc   testing sepia for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSepia005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSepia005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0600
-     * @tc.name       : testCommonAttrsSepia006
-     * @tc.desc       : testing sepia for stack with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testCommonAttrsSepia006
+     * @tc.number SUB_ARKUI_CAPI_COMMONATTRS_SEPIA_0600
+     * @tc.desc   testing sepia for stack with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsSepia006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsSepia006()).assertEqual(0)

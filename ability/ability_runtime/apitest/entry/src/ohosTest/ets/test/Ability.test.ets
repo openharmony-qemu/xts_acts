@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,6 +20,7 @@ import Want from '@ohos.app.ability.Want';
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import { Driver, ON } from '@ohos.UiTest';
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
 let subscriberInfo_MainAbility:CommonEventManager.CommonEventSubscribeInfo = {
@@ -38,6 +39,15 @@ export default function abilityTest() {
   describe('ActsChangeAbilityStagetest', () => {
     beforeAll(async (done:Function) => {
       console.info('beforeAll called');
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let delay = 3000;
       let start = new Date().getTime();
       while (true) {
@@ -57,10 +67,13 @@ export default function abilityTest() {
     })
     console.log('====>in describe====>');
 
-    /*
-     * @tc.number  : ACTS_DoAbilityForeground_0100
-     * @tc.name    : change abilitystage to foreground
-     * @tc.desc    : Use doAbilityForeground to change the abilitystage to foreground.(callback)
+    /**
+     * @tc.name   ACTS_DoAbilityForeground_0100
+     * @tc.number ACTS_DoAbilityForeground_0100
+     * @tc.desc   Use doAbilityForeground to change the abilitystage to foreground.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityForeground_0100', Level.LEVEL0, async (done:Function) => {
       console.log("====>in ACTS_DoAbilityForeground_0100====>");
@@ -125,10 +138,13 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityForeground_0200
-     * @tc.name    : change abilitystage to foreground
-     * @tc.desc    : Use doAbilityForeground to change the abilitystage to foreground.(callback)
+    /**
+     * @tc.name   ACTS_DoAbilityForeground_0200
+     * @tc.number ACTS_DoAbilityForeground_0200
+     * @tc.desc   Use doAbilityForeground to change the abilitystage to foreground.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityForeground_0200', Level.LEVEL0, async (done:Function) => {
       let ability:UIAbility
@@ -151,10 +167,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityForeground_0400
-     * @tc.name    : change abilitystage to foreground
-     * @tc.desc    : Use doAbilityForeground to change the abilitystage to foreground.(promise)
+    /**
+     * @tc.name   ACTS_DoAbilityForeground_0400
+     * @tc.number ACTS_DoAbilityForeground_0400
+     * @tc.desc   Use doAbilityForeground to change the abilitystage to foreground.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityForeground_0400', Level.LEVEL0, async (done:Function) => {
       let Subscriber:CommonEventManager.CommonEventSubscriber
@@ -213,10 +232,13 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityForeground_0500
-     * @tc.name    : change abilitystage to foreground
-     * @tc.desc    : Use doAbilityForeground to change the abilitystage to foreground.(promise)
+    /**
+     * @tc.name   ACTS_DoAbilityForeground_0500
+     * @tc.number ACTS_DoAbilityForeground_0500
+     * @tc.desc   Use doAbilityForeground to change the abilitystage to foreground.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityForeground_0500', Level.LEVEL0, async (done:Function) => {
       let ability:UIAbility
@@ -244,10 +266,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityBackground_0100
-     * @tc.name    : change abilitystage to background
-     * @tc.desc    : Use doAbilityBackground to change the abilitystage to background.(callback)
+    /**
+     * @tc.name   ACTS_DoAbilityBackground_0100
+     * @tc.number ACTS_DoAbilityBackground_0100
+     * @tc.desc   Use doAbilityBackground to change the abilitystage to background.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityBackground_0100', Level.LEVEL0, async (done:Function) => {
       let Subscriber:CommonEventManager.CommonEventSubscriber
@@ -312,10 +337,13 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityBackground_0500
-     * @tc.name    : change abilitystage to background
-     * @tc.desc    : Use doAbilityBackground to change the abilitystage to background.(promise)
+    /**
+     * @tc.name   ACTS_DoAbilityBackground_0500
+     * @tc.number ACTS_DoAbilityBackground_0500
+     * @tc.desc   Use doAbilityBackground to change the abilitystage to background.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityBackground_0500', Level.LEVEL0, async (done:Function) => {
       if (deviceSupport === 'false') {
@@ -376,10 +404,13 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityBackground_0700
-     * @tc.name    : change abilitystage to background
-     * @tc.desc    : Use doAbilityBackground to change the abilitystage to background.(promise)
+    /**
+     * @tc.name   ACTS_DoAbilityBackground_0700
+     * @tc.number ACTS_DoAbilityBackground_0700
+     * @tc.desc   Use doAbilityBackground to change the abilitystage to background.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityBackground_0700', Level.LEVEL0, async (done:Function) => {
       if (deviceSupport === 'false') {
@@ -472,10 +503,13 @@ export default function abilityTest() {
       setTimeout(timeout, 10000);
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityBackground_0800
-     * @tc.name    : change abilitystage to background
-     * @tc.desc    : Use doAbilityBackground to change the abilitystage to background failed.(promise)
+    /**
+     * @tc.name   ACTS_DoAbilityBackground_0800
+     * @tc.number ACTS_DoAbilityBackground_0800
+     * @tc.desc   Use doAbilityBackground to change the abilitystage to background failed.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityBackground_0800', Level.LEVEL0, async (done:Function) => {
       if (deviceSupport === 'false') {
@@ -568,11 +602,14 @@ export default function abilityTest() {
       setTimeout(timeout, 10000);
     })
 
-    /*
-   * @tc.number  : ACTS_DoAbilityForeground_0300
-   * @tc.name    : change abilitystage to foreground
-   * @tc.desc    : Use doAbilityForeground to change the abilitystage to foreground failed.(callback)
-   */
+    /**
+     * @tc.name   ACTS_DoAbilityForeground_0300
+     * @tc.number ACTS_DoAbilityForeground_0300
+     * @tc.desc   Use doAbilityForeground to change the abilitystage to foreground failed.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DoAbilityForeground_0300', Level.LEVEL0, async (done:Function) => {
       if (deviceSupport === 'false') {
         done();
@@ -629,11 +666,14 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
- * @tc.number  : ACTS_DoAbilityForeground_0600
- * @tc.name    : change abilitystage to foreground
- * @tc.desc    : Use doAbilityForeground to change the abilitystage to foreground failed.(promise)
- */
+    /**
+     * @tc.name   ACTS_DoAbilityForeground_0600
+     * @tc.number ACTS_DoAbilityForeground_0600
+     * @tc.desc   Use doAbilityForeground to change the abilitystage to foreground failed.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DoAbilityForeground_0600', Level.LEVEL0, async (done:Function) => {
       if (deviceSupport === 'false') {
         done();
@@ -685,10 +725,13 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
-     * @tc.number  : ACTS_DoAbilityBackground_0300
-     * @tc.name    : change abilitystage to background
-     * @tc.desc    : Use doAbilityBackground to change the abilitystage to background failed.(callback)
+    /**
+     * @tc.name   ACTS_DoAbilityBackground_0300
+     * @tc.number ACTS_DoAbilityBackground_0300
+     * @tc.desc   Use doAbilityBackground to change the abilitystage to background failed.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityBackground_0300', Level.LEVEL0, async (done:Function) => {
       if (deviceSupport === 'false') {
@@ -744,11 +787,14 @@ export default function abilityTest() {
       setTimeout(timeout, START_ABILITY_TIMEOUT);
     })
 
-    /*
- * @tc.number  : ACTS_DoAbilityBackground_0600
- * @tc.name    : change abilitystage to background
- * @tc.desc    : Use doAbilityBackground to change the abilitystage to background failed.(promise)
- */
+    /**
+     * @tc.name   ACTS_DoAbilityBackground_0600
+     * @tc.number ACTS_DoAbilityBackground_0600
+     * @tc.desc   Use doAbilityBackground to change the abilitystage to background failed.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_DoAbilityBackground_0600', Level.LEVEL0, async (done:Function) => {
       if (deviceSupport === 'false') {
         done();

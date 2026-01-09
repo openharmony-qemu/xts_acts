@@ -105,7 +105,6 @@ describe('rdbStoreDistributedTest', function () {
     console.info(TAG + "*************Unit Test Begin*************");
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0002
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0100
      * @tc.desc   rdb set distributed table using none table as argment
@@ -128,7 +127,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0003
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0200
      * @tc.desc   set distributed table using one table name
@@ -151,7 +149,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0004
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0300
      * @tc.desc   set distributed table using two table name
@@ -174,7 +171,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0005
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0400
      * @tc.desc   insert record after setting distributed table
@@ -201,7 +197,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0006
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0500
      * @tc.desc   update record after setting distributed table
@@ -235,7 +230,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0007
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0600
      * @tc.desc   query record after setting distributed table
@@ -273,7 +267,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0008
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0700
      * @tc.desc   delete record after setting distributed table
@@ -297,7 +290,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0009
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0800
      * @tc.desc   predicates inDevice
@@ -322,7 +314,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0010
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_0900
      * @tc.desc   predicates inAllDevices
@@ -346,7 +337,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1000
      * @tc.desc   sync test
@@ -376,7 +366,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 	
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributedCallback0011
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1100
      * @tc.desc   sync Callback test
@@ -411,7 +400,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   testRdbStoreDistributed0012
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1200
       * @tc.desc   subscribe test
@@ -433,7 +421,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   testRdbStoreDistributed0013
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1300
       * @tc.desc   subscribe test
@@ -455,7 +442,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 	
     /**
-     * @generated.time 2025-11-09 20:49:51
      * @tc.name   testRdbStoreDistributed0014
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1400
      * @tc.desc   obtainDistributedTableName test
@@ -478,7 +464,6 @@ describe('rdbStoreDistributedTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:51
       * @tc.name   testRdbStoreDistributed0015
       * @tc.number SUB_DistributedData_RelationalStore_SDK_RDBSyncJsAPITest_1500
       * @tc.desc   obtainDistributedTableName test

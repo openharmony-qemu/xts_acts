@@ -40,7 +40,6 @@ import getAttachedFrameNodeById from './FrameNodeTest/getAttachedFrameNodeById.t
 import getAttrsTest from './FrameNodeTest/getAttrs.test';
 import getPosition from './FrameNodeTest/getPosition.test';
 import onAppear from './FrameNodeTest/onAppear.test';
-import RELOAD from './FrameNodeTest/RELOAD.test';
 import setLayout from './FrameNodeTest/setLayout.test';
 import setMeasureSizeTest from './FrameNodeTest/setMeasureSize.test';
 
@@ -77,6 +76,16 @@ import isTransferredTest from './FrameNodeNewTest/isTransferredTest.test';
 
 import GetFrameNodeNullTest from './FrameNodeNewTest/GetFrameNodeNullTest.test';
 import GetFrameNodeMethodNullTest from './FrameNodeNewTest/GetFrameNodeMethodNullTest.test';
+import AdoptChildOneTest from './FrameNodeMethod/AdoptChildOneTest.test';
+import AdoptChildTwoTest from './FrameNodeMethod/AdoptChildTwoTest.test';
+import AdoptChildThreeTest from './FrameNodeMethod/AdoptChildThreeTest.test';
+import AdoptChildTest from './FrameNodeMethod/AdoptChildTest.test';
+
+import frameNodeApi from './FrameNodeTest/frameNodeApi.test';
+
+import GraphicsFourBoundaryTest from './FrameNodeNewTest/GraphicsFourBoundaryTest';
+import FrameNodeConvertPositionTest from './FrameNodeMethod/FrameNodeConvertPositionTest';
+import FrameNodeConvertPositionErrorCodeTest from './FrameNodeMethod/FrameNodeConvertPositionErrorCodeTest';
 
 export default function testsuite() {
   APIdisposeTreeTest();
@@ -107,7 +116,6 @@ export default function testsuite() {
   getAttrsTest();
   getPosition();
   onAppear();
-  RELOAD();
   setLayout();
   setMeasureSizeTest();
   frameNodeIsVisibleTest();
@@ -143,4 +151,14 @@ export default function testsuite() {
 
   GetFrameNodeNullTest();
   GetFrameNodeMethodNullTest();
+  AdoptChildOneTest();
+  AdoptChildTwoTest();
+  AdoptChildThreeTest();
+  AdoptChildTest();
+  
+  frameNodeApi();
+
+  GraphicsFourBoundaryTest();
+  FrameNodeConvertPositionTest();
+  FrameNodeConvertPositionErrorCodeTest();
 }

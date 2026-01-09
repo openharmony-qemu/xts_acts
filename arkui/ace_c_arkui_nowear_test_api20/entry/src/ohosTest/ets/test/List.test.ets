@@ -12,26 +12,32 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
+import RenderNodeTest from "./renderNode/RenderNodeTest.test"
+import RenderNodeUtilsTest from "./renderNodeUtils/renderNodeUtils.test"
+import RenderNodeAttributeTest from "./renderNode/TestRenderNodeAttribute.test"
 import buttonGetTypeTest from './button/ButtonGetTypeTest.test'
 import focusWrapModeTest from './grid/FocusWrapModeTest.test'
 import dragEventGetDisplayIdTest from './dragEventTest/dragEventGetDisplayId.test'
 import dragEventGetDragSourceTest from './dragEventTest/dragEventGetDragSource.test'
+import dragEventFuncTest from './dragEventTest/dragEventFunc.test'
+import DragGetPreDragStatusTest from "./InteractiveFramework/DragGetPreDragStatus.test";
 import enableDropDisallowedBadgeTest from './dropBadge/enableDropDisallowedBadge.test'
 import dialogGetStateTest from './dialog/DialogGetStateTest.test'
-import RenderNodeTest from "./renderNode/RenderNodeTest.test"
-import RenderNodeUtilsTest from "./renderNodeUtils/renderNodeUtils.test"
-import RenderNodeAttributeTest from "./renderNode/TestRenderNodeAttribute.test"
 import imageDraggableEventTest from './image/ImageDraggableEventTest.test'
+import RenderNodeParamTest from "./renderNodeUtils/RenderNodeParamTest.test"
 
 export default function testsuite() {
+  RenderNodeTest(); // 此条特殊用例请放在首行，勿动
+  RenderNodeUtilsTest();
+  RenderNodeAttributeTest();
   enableDropDisallowedBadgeTest();
   buttonGetTypeTest();
   focusWrapModeTest();
   dragEventGetDisplayIdTest();
   dragEventGetDragSourceTest();
+  dragEventFuncTest();
+  DragGetPreDragStatusTest();
   dialogGetStateTest();
-  RenderNodeTest();
-  RenderNodeUtilsTest();
-  RenderNodeAttributeTest();
   imageDraggableEventTest();
+  RenderNodeParamTest();
 }

@@ -15,16 +15,22 @@
 import Sim1Public from './Sim1Public.test';
 import Sim2Public from './Sim2Public.test';
 import Sim3Public from './Sim3Public.test';
+import Sim4Public from './Sim4Public.test';
 import EmptyTest from './Empty.test';
 import sim from '@ohos.telephony.sim';
 
 let simState: sim.SimState = sim.getSimStateSync(0);
 export default function testsuite() {
   if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
+    if(sim.hasSimCardSync(0)){
       Sim1Public();
       Sim2Public();
       Sim3Public();
+      Sim4Public();
+    } else {
+      Sim3Public();
+    }
   }else{
-    EmptyTest();
+    EmptyTest()
   }
 }

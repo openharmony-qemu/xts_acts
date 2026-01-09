@@ -76,12 +76,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ERRORS_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ERRORS_STATIC_0100
-     * @tc.desc        AUDIO_ERRORS
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ERRORS_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ERRORS_STATIC_0100
+     * @tc.desc   AUDIO_ERRORS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ERRORS_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info(`${TagFrmwk}: SUB_MULTIMEDIA_AUDIO_ERRORS_0100 start`);
@@ -97,12 +97,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_DEFAULT_VOLUME_GROUP_ID_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_DEFAULT_VOLUME_GROUP_ID_STATIC_0100
-     * @tc.desc        DEFAULT_VOLUME_GROUP_ID
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_DEFAULT_VOLUME_GROUP_ID_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_DEFAULT_VOLUME_GROUP_ID_STATIC_0100
+     * @tc.desc   DEFAULT_VOLUME_GROUP_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_DEFAULT_VOLUME_GROUP_ID_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.DEFAULT_VOLUME_GROUP_ID).assertEqual(1);
@@ -111,12 +111,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_DEFAULT_INTERRUPT_GROUP_ID_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_DEFAULT_INTERRUPT_GROUP_ID_STATIC_0100
-     * @tc.desc        DEFAULT_INTERRUPT_GROUP_ID
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_DEFAULT_INTERRUPT_GROUP_ID_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_DEFAULT_INTERRUPT_GROUP_ID_STATIC_0100
+     * @tc.desc   DEFAULT_INTERRUPT_GROUP_ID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_DEFAULT_INTERRUPT_GROUP_ID_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.DEFAULT_INTERRUPT_GROUP_ID).assertEqual(1);
@@ -125,12 +125,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_COMUNICATIONDEVICETYPE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_COMUNICATIONDEVICETYPE_STATIC_0100
-     * @tc.desc        COMUNICATIONDEVICETYPE
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_COMUNICATIONDEVICETYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_COMUNICATIONDEVICETYPE_STATIC_0100
+     * @tc.desc   COMUNICATIONDEVICETYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_COMUNICATIONDEVICETYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       expect(audio.CommunicationDeviceType.SPEAKER == 2).assertTrue();
@@ -140,12 +140,12 @@ export default function audioManagerApi9() {
 
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0100
-     * @tc.desc        getVolumeGroupManagerSync
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0100
+     * @tc.desc   getVolumeGroupManagerSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let audioVolumeManager = audioManager.getVolumeManager();
@@ -169,12 +169,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0400
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0400
-     * @tc.desc        getVolumeGroupManagerSync - String_Parameter - 6800101
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0400
+     * @tc.desc   getVolumeGroupManagerSync - String_Parameter - 6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SYNC_STATIC_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let audioVolumeManager = audioManager.getVolumeManager();
@@ -191,12 +191,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
-     * @tc.desc        getAPPVolumePercentage
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100
+     * @tc.desc   getAPPVolumePercentage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GET_VOLUME_PERCENTAGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let audioVolumeManager = audioManager.getVolumeManager();
@@ -219,12 +219,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
-     * @tc.desc        getVolumeGroupManager - callback - number_Parameter
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100
+     * @tc.desc   getVolumeGroupManager - callback - number_Parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGERERROR_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -246,12 +246,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0100
-     * @tc.desc        getVolumeGroupManager
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0100
+     * @tc.desc   getVolumeGroupManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let audioVolumeManager = audioManager.getVolumeManager();
@@ -275,12 +275,12 @@ export default function audioManagerApi9() {
 
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0200
-     * @tc.desc        getVolumeGroupManager
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0200
+     * @tc.desc   getVolumeGroupManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -302,12 +302,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0100
-     * @tc.desc        group manager getvolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0100
+     * @tc.desc   group manager getvolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let groupManager: audio.AudioVolumeGroupManager;
@@ -335,12 +335,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0200
-     * @tc.desc        group manager getvolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0200
+     * @tc.desc   group manager getvolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETVOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -363,12 +363,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0100
-     * @tc.desc        getMaxVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0100
+     * @tc.desc   getMaxVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -400,12 +400,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0200
-     * @tc.desc        getMaxVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0200
+     * @tc.desc   getMaxVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMAXVOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -430,12 +430,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0100
-     * @tc.desc        getMinVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0100
+     * @tc.desc   getMinVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
@@ -464,12 +464,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0200
-     * @tc.desc        getMaxVolume
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0200
+     * @tc.desc   getMaxVolume
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETMINVOLUME_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -491,12 +491,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0100
-     * @tc.desc        ismute - RINGTONE - Callback
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0100
+     * @tc.desc   ismute - RINGTONE - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let groupManager: audio.AudioVolumeGroupManager;
@@ -522,12 +522,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0200
-     * @tc.desc        ismute - RINGTONE - Promise
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0200
+     * @tc.desc   ismute - RINGTONE - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ISMUTE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -553,12 +553,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGERMODE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGERMODE_STATIC_0100
-     * @tc.desc        getRingerMode - RINGTONE - Callback
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGERMODE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGERMODE_STATIC_0100
+     * @tc.desc   getRingerMode - RINGTONE - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGERMODE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let groupManager: audio.AudioVolumeGroupManager;
@@ -570,15 +570,19 @@ export default function audioManagerApi9() {
             console.error(`audioManagerApi9Test: failed to getRingerMode : Callback:  ${err?.message}`);
             expect(false).assertTrue();
           } else {
-            if (data == audio.AudioRingMode.RINGER_MODE_SILENT ||
-              data == audio.AudioRingMode.RINGER_MODE_VIBRATE ||
-              data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
-              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
-                    getRingerMode : PASS:` + data);
-              expect(true).assertTrue();
+            if (data == audio.AudioRingMode.RINGER_MODE_SILENT){
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + data);
+              expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);
+            }
+            else if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE){
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + data);
+              expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+            }
+            else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + data);
+              expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
             } else {
-              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise:
-                    getRingerMode : FAIL: ` + data);
+              console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : FAIL: ` + data);
               expect(false).assertTrue();
             }
           }
@@ -593,25 +597,31 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200
-     * @tc.desc        setRingerMode - Set Ring more to Normal Mode
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200
+     * @tc.desc   setRingerMode - Get Ring more to Normal Mode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_SETRINGERMODE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
         let value = await groupManager.getRingerMode();
-        if (value == audio.AudioRingMode.RINGER_MODE_SILENT ||
-          value == audio.AudioRingMode.RINGER_MODE_VIBRATE ||
-          value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
-          console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: PASS :${value}`);
-          expect(true).assertTrue();
+        if (value == audio.AudioRingMode.RINGER_MODE_SILENT){
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + value);
+          expect(value).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);
+        }
+        else if (value == audio.AudioRingMode.RINGER_MODE_VIBRATE){
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + value);
+          expect(value).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        }
+        else if (value == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + value);
+          expect(value).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
         } else {
-          console.info(`${TagFrmwk}: Promise: setRingerMode RINGER_MODE_NORMAL: FAIL :${value}`);
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : FAIL: ` + value);
           expect(false).assertTrue();
         }
       } catch (err: BusinessError) {
@@ -622,19 +632,36 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0100
-     * @tc.desc        OnRingMode - RINGER_MODE_NORMAL
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0100
+     * @tc.desc   OnRingMode - RINGER_MODE_NORMAL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ONRINGMODECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         let audioVolumeManager = audioManager.getVolumeManager();
         let groupManager = await audioVolumeManager.getVolumeGroupManager(audio.DEFAULT_VOLUME_GROUP_ID);
-        groupManager.onRingerModeChange((AudioRingMode) => {
-        });
+        let ringerModeChangeCallback = (ringerMode: audio.AudioRingMode) => {
+          console.info(`Updated ringermode: ${ringerMode}`);
+          if (ringerMode == audio.AudioRingMode.RINGER_MODE_SILENT){
+          console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + ringerMode);
+          expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);
+          }
+          else if (ringerMode == audio.AudioRingMode.RINGER_MODE_VIBRATE){
+            console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + ringerMode);
+            expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+          }
+          else if (ringerMode == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+            console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : PASS:` + ringerMode);
+            expect(ringerMode).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
+          } else {
+            console.info(`${TagFrmwk}: audioManagerApi9Test: Promise: getRingerMode : FAIL: ` + ringerMode);
+            expect(false).assertTrue();
+          }
+        };
+        groupManager.onRingerModeChange(ringerModeChangeCallback);
         expect(true).assertTrue();
         done();
       } catch (err: BusinessError) {
@@ -645,12 +672,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100
-     * @tc.desc        isActive - Media - Promise - When stream is NOT playing
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100
+     * @tc.desc   isActive - Media - Promise - When stream is NOT playing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info(`${TagFrmwk}: Promise : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
@@ -673,12 +700,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0200
-     * @tc.desc        isActive - Media - Callback - When stream is NOT playing
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0200
+     * @tc.desc   isActive - Media - Callback - When stream is NOT playing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       console.info(`${TagFrmwk}: Callback : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
@@ -698,12 +725,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0100
-     * @tc.desc        isActive - Media - Sync - When stream is NOT playing
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0100
+     * @tc.desc   isActive - Media - Sync - When stream is NOT playing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_STREAM_MANAGER_ISACTIVE_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: () => void): void => {
       console.info(`${TagFrmwk}: Callback : isActive Media: NOTE: audio NOT PLAYING as MEDIA for the test case to PASS`);
@@ -725,12 +752,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_STATIC_0100
-     * @tc.desc        isCommunicationDeviceActiveSync speaker
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_STATIC_0100
+     * @tc.desc   isCommunicationDeviceActiveSync speaker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ISCOMMUNICATIONDEVICE_SYNC_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -775,12 +802,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0100
-     * @tc.desc        setCommunicationDevice speaker - Promise
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 1
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0100
+     * @tc.desc   setCommunicationDevice speaker - Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
@@ -827,12 +854,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0200
-     * @tc.desc        setCommunicationDevice speaker - Callback
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0200
+     * @tc.desc   setCommunicationDevice speaker - Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_SETCOMMUNICATIONDEVICE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let flag: boolean | null = null;
@@ -874,12 +901,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
-     * @tc.desc        OnVolumeChange - setVolume - MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100
+     * @tc.desc   OnVolumeChange - setVolume - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_ON_VOLUMECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let audioVolumeManager = audioManager.getVolumeManager();
@@ -900,12 +927,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
-     * @tc.name        SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
-     * @tc.desc        OnVolumeChange - getVolumeManager - MEDIA
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
+     * @tc.number SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200
+     * @tc.desc   OnVolumeChange - getVolumeManager - MEDIA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AUDIO_AUDIORENDER_OFF_DEVICECHANGE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -920,12 +947,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
-     * @tc.desc        OnAudioSceneChange - audioManager
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100
+     * @tc.desc   OnAudioSceneChange - audioManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ONAUDIOSCENECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -942,12 +969,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
-     * @tc.desc        OffAudioSceneChange - audioManager
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100
+     * @tc.desc   OffAudioSceneChange - audioManager
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_OFFAUDIOSCENECHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let cb = (audioScene: audio.AudioScene) => {
@@ -968,12 +995,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
-     * @tc.desc        Test that no recording stream is currently started
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100
+     * @tc.desc   Test that no recording stream is currently started
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let capturerInfo: audio.AudioCapturerInfo = {
@@ -991,12 +1018,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
-     * @tc.desc        Test that a recording stream is currently started
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 0
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200
+     * @tc.desc   Test that a recording stream is currently started
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let streamInfo: audio.AudioStreamInfo = {
@@ -1014,17 +1041,17 @@ export default function audioManagerApi9() {
         capturerInfo: capturerInfo
       };
       let checkCapturerInfo: audio.AudioCapturerInfo = {
-        source: audio.SourceType.SOURCE_TYPE_WAKEUP,
+        source: audio.SourceType.SOURCE_TYPE_MIC,
         capturerFlags: 0
       };
       try {
         let audioCap = await audio.createAudioCapturer(capturerOptions);
         console.info('AudioCapturer Created : Success : Stream Type: SUCCESS');
-        await audioCap.start();
+        await audioCap!.start();
         const isAvailable = streamManager.isRecordingAvailable(checkCapturerInfo);
-        expect(isAvailable).assertFalse();
-        await audioCap.stop();
-        await audioCap.release();
+        expect(isAvailable).assertTrue();
+        await audioCap!.stop();
+        await audioCap!.release();
       } catch (error: BusinessError) {
         console.log(`error code: ${error.code} ,message:${error.message}`);
         expect(false).assertTrue();
@@ -1033,12 +1060,12 @@ export default function audioManagerApi9() {
     })
 
     /**
-     * @tc.number      SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
-     * @tc.name        SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
-     * @tc.desc        Test input parameter sourceType invalid
-     * @tc.size        MEDIUM
-     * @tc.type        Function
-     * @tc.level       Level 2
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300
+     * @tc.desc   Test input parameter sourceType invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_AUDIO_MANAGER_ISRECORDINGAVAILABLE_STATIC_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let capturerInfo: audio.AudioCapturerInfo = {

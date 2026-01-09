@@ -16,8 +16,10 @@
 import webViewSrollableJsunit from './webViewSrollableJsunit.test'
 import webNestedScrollOptionsScrollBackwardTest from './WebNestedScrollOptionsScrollBackwardTest.test'
 import WebViewGetPageOffSet from './WebViewGetPageOffSet.test'
+import WebBackToTop from './WebBackToTop.test'
 export default function testsuite() {
   webNestedScrollOptionsScrollBackwardTest()
   webViewSrollableJsunit()
   WebViewGetPageOffSet()
+  WebBackToTop()
 }

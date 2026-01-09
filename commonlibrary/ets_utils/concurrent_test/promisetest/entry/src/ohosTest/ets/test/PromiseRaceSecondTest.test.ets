@@ -47,12 +47,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
 
 
     /**
+     * @tc.name   PromiseSecondRaceTest2700
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_2700
-     * @tc.name PromiseSecondRaceTest2700
-     * @tc.desc Test Promise.race where promise gets then handler first, then added to race, then race gets then handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise gets then handler first, then added to race, then race gets then handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest2700';
@@ -125,12 +125,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest2800
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_2800
-     * @tc.name PromiseSecondRaceTest2800
-     * @tc.desc Test Promise.race where promise gets then handler that throws exception, then added to race, then race gets then handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise gets then handler that throws exception, then added to race, then race gets then handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest2800';
@@ -220,12 +220,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest2900
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_2900
-     * @tc.name PromiseSecondRaceTest2900
-     * @tc.desc Test Promise.race where promise is added to race, then gets then handler that throws, then race gets then handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise is added to race, then gets then handler that throws, then race gets then handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest2900';
@@ -317,12 +317,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3000
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3000
-     * @tc.name PromiseSecondRaceTest3000
-     * @tc.desc Test Promise.race where promise is added to race, promise gets catch handler, race gets catch handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise is added to race, promise gets catch handler, race gets catch handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3000';
@@ -404,12 +404,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3100
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3100
-     * @tc.name PromiseSecondRaceTest3100
-     * @tc.desc Test Promise.race where promise gets catch handler first, then added to race, then race gets catch handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise gets catch handler first, then added to race, then race gets catch handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3100';
@@ -497,12 +497,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3200
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3200
-     * @tc.name PromiseSecondRaceTest3200
-     * @tc.desc Test Promise.race where promise gets then, added to race, promise gets finally that throws, race gets then
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise gets then, added to race, promise gets finally that throws, race gets then
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3200';
@@ -619,12 +619,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3300
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3300
-     * @tc.name PromiseSecondRaceTest3300
-     * @tc.desc Test Promise.race where promise gets then, then finally that throws, then added to race, then race gets then handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise gets then, then finally that throws, then added to race, then race gets then handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3300';
@@ -728,12 +728,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3400
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3400
-     * @tc.name PromiseSecondRaceTest3400
-     * @tc.desc Test Promise.race where promise gets then, then finally, then added to race, then race gets then handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise gets then, then finally, then added to race, then race gets then handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3400';
@@ -826,12 +826,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3500
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3500
-     * @tc.name PromiseSecondRaceTest3500
-     * @tc.desc Test Promise.race where input promise p1 rejects, is added to race. The racePromise chain then has .catch -> .finally (throws error) -> .catch -> .then. Verify the final .then executes.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where input promise p1 rejects, is added to race. The racePromise chain then has .catch -> .finally (throws error) -> .catch -> .then. Verify the final .then executes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3500';
@@ -933,12 +933,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3600
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3600
-     * @tc.name PromiseSecondRaceTest3600
-     * @tc.desc Test Promise.race where input promise p1 rejects. p1 gets a .finally handler (throws error, caught). Original p1 is added to race. Verify racePromise executes .catch reflecting p1's original rejection.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where input promise p1 rejects. p1 gets a .finally handler (throws error, caught). Original p1 is added to race. Verify racePromise executes .catch reflecting p1's original rejection.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3600';
@@ -1044,12 +1044,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3700
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3700
-     * @tc.name PromiseSecondRaceTest3700
-     * @tc.desc Test Promise.race where promise rejects first, gets finally handler, then is added to race, then race gets then handler - verifying execution order with array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise rejects first, gets finally handler, then is added to race, then race gets then handler - verifying execution order with array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3700';
@@ -1162,12 +1162,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3800
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3800
-     * @tc.name PromiseSecondRaceTest3800
-     * @tc.desc Test Promise.race where promise resolves, then handler throws exception, then added to race, then race gets then handler - verifying execution order with array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise resolves, then handler throws exception, then added to race, then race gets then handler - verifying execution order with array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3800';
@@ -1276,12 +1276,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest3900
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_3900
-     * @tc.name PromiseSecondRaceTest3900
-     * @tc.desc Test Promise.race where promise resolves first, then is added to race, then promise.then throws exception, then race gets then handler
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise resolves first, then is added to race, then promise.then throws exception, then race gets then handler
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest3900';
@@ -1393,12 +1393,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest4000
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_4000
-     * @tc.name PromiseSecondRaceTest4000
-     * @tc.desc Test Promise.race where promise resolves first, then is added to race, then race.then throws exception
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise resolves first, then is added to race, then race.then throws exception
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest4000';
@@ -1495,12 +1495,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest4100
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_4100
-     * @tc.name PromiseSecondRaceTest4100
-     * @tc.desc Test Promise.race where two promises are added to race, promise1 resolves, race executes then/catch, then promise2 executes then
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where two promises are added to race, promise1 resolves, race executes then/catch, then promise2 executes then
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest4100';
@@ -1572,12 +1572,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest4200
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_4200
-     * @tc.name PromiseSecondRaceTest4200
-     * @tc.desc Test Promise.race where two promises are added to race, race executes then/catch handlers, then promise1 executes then, then promise2 executes catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where two promises are added to race, race executes then/catch handlers, then promise1 executes then, then promise2 executes catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest4200';
@@ -1654,12 +1654,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest4300
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_4300
-     * @tc.name PromiseSecondRaceTest4300
-     * @tc.desc Test Promise.race where two promises are added to race, then race executes then/catch handlers, then promise1 executes then, then promise2 executes catch
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where two promises are added to race, then race executes then/catch handlers, then promise1 executes then, then promise2 executes catch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest4300';
@@ -1756,12 +1756,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest4400
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_4400
-     * @tc.name PromiseSecondRaceTest4400
-     * @tc.desc Test Promise.race where two promises are added to race, promise1 executes catch, race executes then/catch, promise2 executes then
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where two promises are added to race, promise1 executes catch, race executes then/catch, promise2 executes then
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest4400';
@@ -1858,12 +1858,12 @@ export default function TaskpoolPromiseRaceSecondTest() {
     });
 
     /**
+     * @tc.name   PromiseSecondRaceTest4500
      * @tc.number SUB_PROMISE_RACE_SECOND_TEST_4500
-     * @tc.name PromiseSecondRaceTest4500
-     * @tc.desc Test Promise.race where promise1 executes catch and finally, two promises are added to race, promise2 executes then, race executes then/catch, promise2 executes finally
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test Promise.race where promise1 executes catch and finally, two promises are added to race, promise2 executes then, race executes then/catch, promise2 executes finally
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('PromiseSecondRaceTest4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'PromiseSecondRaceTest4500';

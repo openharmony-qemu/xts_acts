@@ -82,7 +82,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore101
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4600
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 101
@@ -112,7 +111,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore102
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_3800
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 102
@@ -140,7 +138,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore103
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_3900
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 103
@@ -175,7 +172,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore104
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4000
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 104
@@ -211,7 +207,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore105
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4100
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 105
@@ -245,7 +240,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore106
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4200
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 106
@@ -279,7 +273,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore107
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4300
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 107
@@ -313,7 +306,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore108
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4400
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 108
@@ -347,7 +339,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore109
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4500
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 109
@@ -381,7 +372,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore110
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_3700
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 110
@@ -415,7 +405,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore111
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4700
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 111
@@ -449,7 +438,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore112
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4800
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 112
@@ -483,7 +471,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore113
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_4900
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 113
@@ -520,7 +507,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore114
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_5000
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 114
@@ -554,7 +540,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore115
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_5100
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 115
@@ -587,7 +572,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore116
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_5200
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 116
@@ -620,7 +604,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore117
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_5300
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 117
@@ -653,7 +636,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore118
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_5400
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 118
@@ -686,7 +668,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore119
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_5500
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 119
@@ -719,7 +700,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetKVStore120
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_6400
      * @tc.desc   Test Js Api KVManager.GetKVStore testcase 120
@@ -752,7 +732,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerCloseKVStore101
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_0500
      * @tc.desc   Test Js Api KVManager.CloseKVStore testcase 101
@@ -780,7 +759,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerCloseKVStore102
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_0600
      * @tc.desc   Test Js Api KVManager.CloseKVStore testcase 102
@@ -817,7 +795,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerCloseKVStore103
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_0700
      * @tc.desc   Test Js Api KVManager.CloseKVStore testcase 103
@@ -854,7 +831,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerCloseKVStore104
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_0800
      * @tc.desc   Test Js Api KVManager.CloseKVStore testcase 104
@@ -888,7 +864,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerDeleteKVStore101
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_1100
      * @tc.desc   Test Js Api KVManager.DeleteKVStore testcase 101
@@ -916,7 +891,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerDeleteKVStore102
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_1200
      * @tc.desc   Test Js Api KVManager.DeleteKVStore testcase 102
@@ -953,7 +927,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerDeleteKVStore103
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_1300
      * @tc.desc   Test Js Api KVManager.DeleteKVStore testcase 103
@@ -980,7 +953,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetAllKVStoreId101
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_1600
      * @tc.desc   Test Js Api KVManager.GetAllKVStoreId testcase 101
@@ -1005,7 +977,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVManagerGetAllKVStoreId102
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_1700
      * @tc.desc   Test Js Api KVManager.GetAllKVStoreId testcase 102
@@ -1045,7 +1016,6 @@ describe('kvManagerCallbackTest', function () {
     })
     
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testKVStorePut100
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_0100
      * @tc.desc   Test Js Api KVManager.Put testcase 100
@@ -1079,7 +1049,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   SUB_DISTRIBUTEDDATAMGR_CREATEKVMANAGER_CALLBACK_0100
      * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_1000
      * @tc.desc   Test Js Api createKVManager testcase 001
@@ -1109,7 +1078,6 @@ describe('kvManagerCallbackTest', function () {
     })
 
      /**
-      * @generated.time 2025-11-09 20:49:49
       * @tc.name   SUB_DISTRIBUTEDDATAMGR_CREATEKVMANAGER_CALLBACK_0200
       * @tc.number SUB_DistributedData_KVStore_SDK_KVStoreJsApiTest_6700
       * @tc.desc   Test Js Api createKVManager testcase 001

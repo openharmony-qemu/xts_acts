@@ -27,18 +27,20 @@ export default function textAreaOnInsertTest() {
       await Utils.pushPage(`textarea/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTAREA_ONINSERT_0100
-    * @tc.name       : testTextAreaOnInsert001
-    * @tc.desc       : test onInsert event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextAreaOnInsert001
+     * @tc.number SUB_ARKUI_CAPI_TEXTAREA_ONINSERT_0100
+     * @tc.desc   test onInsert event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextAreaOnInsert001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnInsertTestTextArea')
       await Utils.sleep(1000)
       await Utils.triggerKey(2040)
+      await Utils.sleep(1000)
+      await Utils.triggerKey(2047)
       await Utils.sleep(1000)
       let dataArray: number[][] = nativeRender.getTextAreaInsertData();
       console.log('testTextAreaOnInsert001', JSON.stringify(dataArray))

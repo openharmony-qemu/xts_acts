@@ -42,12 +42,14 @@ export default function DatePickerDialogShadowTest() {
       await CommonFunc.sleep(1000);
       console.info('textAreaInputTest after each called');
     });
-    /* *
-      * @tc.number: DatePickerDialogShadowTest_001
-      * @tc.name  : DatePickerDialogShadowTest_001
-      * @tc.desc  : To test the DatePickerDialog shadow color: Color.Red
-      * @tc.level : Level 0
-      */
+    /**
+     * @tc.name   DatePickerDialogShadowTest_001
+     * @tc.number DatePickerDialogShadowTest_001
+     * @tc.desc   To test the DatePickerDialog shadow color: Color.Red
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DatePickerDialogShadowTest_001',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('shadowOptionID'));
@@ -62,12 +64,14 @@ export default function DatePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogShadowTest_002
-     * @tc.name  : DatePickerDialogShadowTest_002
-     * @tc.desc  : To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_XS
-     * @tc.level : Level 0
-      */
+    /**
+     * @tc.name   DatePickerDialogShadowTest_002
+     * @tc.number DatePickerDialogShadowTest_002
+     * @tc.desc   To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_XS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('DatePickerDialogShadowTest_002',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('OUTER_DEFAULT_XS_ID'));
@@ -82,11 +86,13 @@ export default function DatePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogShadowTest_003
-     * @tc.name  : DatePickerDialogShadowTest_003
-     * @tc.desc  : To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_SM
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogShadowTest_003
+     * @tc.number DatePickerDialogShadowTest_003
+     * @tc.desc   To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogShadowTest_003',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -102,11 +108,13 @@ export default function DatePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogShadowTest_004
-     * @tc.name  : DatePickerDialogShadowTest_004
-     * @tc.desc  : To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_MD
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogShadowTest_004
+     * @tc.number DatePickerDialogShadowTest_004
+     * @tc.desc   To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogShadowTest_004',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -122,11 +130,13 @@ export default function DatePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogShadowTest_005
-     * @tc.name  : DatePickerDialogShadowTest_005
-     * @tc.desc  : To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_LG
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogShadowTest_005
+     * @tc.number DatePickerDialogShadowTest_005
+     * @tc.desc   To test the DatePickerDialog shadow ShadowStyle.OUTER_DEFAULT_LG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogShadowTest_005',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -142,11 +152,13 @@ export default function DatePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogShadowTest_006
-     * @tc.name  : DatePickerDialogShadowTest_006
-     * @tc.desc  : To test the DatePickerDialog shadow ShadowStyle.OUTER_FLOATING_SM
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogShadowTest_006
+     * @tc.number DatePickerDialogShadowTest_006
+     * @tc.desc   To test the DatePickerDialog shadow ShadowStyle.OUTER_FLOATING_SM
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogShadowTest_006',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();
@@ -162,11 +174,13 @@ export default function DatePickerDialogShadowTest() {
       await btn1?.click();
       done();
     })
-    /* *
-     * @tc.number: DatePickerDialogShadowTest_007
-     * @tc.name  : DatePickerDialogShadowTest_007
-     * @tc.desc  : To test the DatePickerDialog shadow ShadowStyle.OUTER_FLOATING_MD
-     * @tc.level : Level 0
+    /**
+     * @tc.name   DatePickerDialogShadowTest_007
+     * @tc.number DatePickerDialogShadowTest_007
+     * @tc.desc   To test the DatePickerDialog shadow ShadowStyle.OUTER_FLOATING_MD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DatePickerDialogShadowTest_007',Level.LEVEL0, async (done: Function) => {
       const driver = Driver.create();

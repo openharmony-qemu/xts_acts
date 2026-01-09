@@ -41,14 +41,14 @@ export default function checkboxGroupTest() {
       done();
     });
     /**
-     * @tc.number    checkboxGroupTest_0100
-     * @tc.name      checkboxGroupTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   checkboxGroupTest_0100
+     * @tc.number checkboxGroupTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('checkboxGroupTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('checkboxGroupTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('checkboxGroupTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);
@@ -70,14 +70,14 @@ export default function checkboxGroupTest() {
       done();
     });
     /**
-     * @tc.number    checkboxGroupTest_0200
-     * @tc.name      checkboxGroupTest_0200
-     * @tc.desc      api
-     * @tc.level:    Level 1
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   checkboxGroupTest_0200
+     * @tc.number checkboxGroupTest_0200
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('checkboxGroupTest_0200', Level.LEVEL0, async (done: Function) => {
+    it('checkboxGroupTest_0200', Level.LEVEL1, async (done: Function) => {
       console.info('checkboxGroupTest_0200 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

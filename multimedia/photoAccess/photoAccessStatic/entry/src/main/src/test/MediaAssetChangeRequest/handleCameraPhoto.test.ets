@@ -47,9 +47,9 @@ export default function handleCameraPhotoTest() {
           let flag: number = 2;
           let photoAsset: photoAccessHelper.PhotoAsset | undefined = undefined;
           let fetchResult: photoAccessHelper.FetchResult<photoAccessHelper.PhotoAsset> | undefined = undefined;
-          let date_added_before: int | long | number | string | boolean | undefined = 0;
-          let date_modified_before: int | long | number | string | boolean | undefined = 0;
-          let size_before: int | long | number | string | boolean | undefined = 0;
+          let date_added_before: int | long | number | string | boolean | undefined = 0 as Int;
+          let date_modified_before: int | long | number | string | boolean | undefined = 0 as Int;
+          let size_before: int | long | number | string | boolean | undefined = 0 as Int;
           let assetCount: int | undefined = 0;
           while (flag > 0) {
             fetchResult = await helper.getAssets(fetchOptions);
@@ -158,12 +158,12 @@ export default function handleCameraPhotoTest() {
 
 
     /**
-      * @tc.number  Sub_PhotoAccess_Helper_Save_Camera_Photo_Static_001
-      * @tc.name    save_camera_photo_by_exist_photo_asset_static_001
-      * @tc.desc    add existing photoAsset as param to saveCameraPhoto interface
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   save_camera_photo_by_exist_photo_asset_static_001
+     * @tc.number Sub_PhotoAccess_Helper_Save_Camera_Photo_Static_001
+     * @tc.desc   add existing photoAsset as param to saveCameraPhoto interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('save_camera_photo_by_exist_photo_asset_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -172,12 +172,12 @@ export default function handleCameraPhotoTest() {
       })
 
     /**
-      * @tc.number  Sub_PhotoAccess_Helper_Discard_Camera_Photo_Static_001
-      * @tc.name    discard_camera_photo_by_exist_photo_asset_static_001
-      * @tc.desc    add existing photoAsset as param to discardCameraPhoto interface, expect fail
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   discard_camera_photo_by_exist_photo_asset_static_001
+     * @tc.number Sub_PhotoAccess_Helper_Discard_Camera_Photo_Static_001
+     * @tc.desc   add existing photoAsset as param to discardCameraPhoto interface, expect fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('discard_camera_photo_by_exist_photo_asset_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -186,12 +186,12 @@ export default function handleCameraPhotoTest() {
       })
 
     /**
-      * @tc.number  Sub_PhotoAccess_Helper_Save_Camera_Photo_Static_002
-      * @tc.name    save_camera_photo_by_exist_photo_asset_static_002
-      * @tc.desc    add existing photoAsset as param to saveCameraPhoto interface using JPEG
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   save_camera_photo_by_exist_photo_asset_static_002
+     * @tc.number Sub_PhotoAccess_Helper_Save_Camera_Photo_Static_002
+     * @tc.desc   add existing photoAsset as param to saveCameraPhoto interface using JPEG
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('save_camera_photo_by_exist_photo_asset_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -206,12 +206,12 @@ export default function handleCameraPhotoTest() {
       })
 
     /**
-      * @tc.number  Sub_PhotoAccess_Helper_Save_Camera_Photo_Static_003
-      * @tc.name    save_camera_photo_by_exist_photo_asset_static_003
-      * @tc.desc    add existing photoAsset as param to saveCameraPhoto interface using HEIF
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   save_camera_photo_by_exist_photo_asset_static_003
+     * @tc.number Sub_PhotoAccess_Helper_Save_Camera_Photo_Static_003
+     * @tc.desc   add existing photoAsset as param to saveCameraPhoto interface using HEIF
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('save_camera_photo_by_exist_photo_asset_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

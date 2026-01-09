@@ -28,13 +28,13 @@ export default function KeyEventStopPropagationTest() {
     });
 
    
-      /*
-      * @tc.number     : SUB_ARKUI_CAPI_KeyEvent_StopPropagation_0100
-      * @tc.name       : KeyEventStopPropagationTest_001
-      * @tc.desc       : testing KeyEvent GetType
-      * @tc.size       : MediumTest
-      * @tc.type       : Function
-      * @tc.level      : Level 1
+     /**
+      * @tc.name   KeyEventStopPropagationTest_001
+      * @tc.number SUB_ARKUI_CAPI_KeyEvent_StopPropagation_0100
+      * @tc.desc   testing KeyEvent GetType
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL1
       */
      it('KeyEventStopPropagationTest_001', Level.LEVEL1, async (done: Function) => {
         console.info('KeyEventStopPropagationTest_001 START');

@@ -48,13 +48,13 @@ export default function textAreaLineHeight() {
     })
 
     /**
-       * @tc.number textAreaLineHeight_0100
-       * @tc.name   Test the properties of components
-       * @tc.desc   Set attribute values
-       * @tc.size   MediumTest
-       * @tc.type   Function
-       * @tc.level  0
-       */
+     * @tc.name   textAreaLineHeight_0100
+     * @tc.number textAreaLineHeight_0100
+     * @tc.desc   Set attribute values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('textAreaLineHeight_0100',  Level.LEVEL0, async  (done: Function) => {
       console.info('[textAreaLineHeight_0100] START');
       let strJson = getInspectorByKey('key_textArea_lineHeight_001');

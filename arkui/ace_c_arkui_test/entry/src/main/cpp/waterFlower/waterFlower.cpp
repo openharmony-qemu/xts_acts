@@ -77,5 +77,29 @@ static napi_value testWaterFlower_005(napi_env env, napi_callback_info info)
         NAPI_END;
 }
 
+static napi_value testWaterFlower_006(napi_env env, napi_callback_info info)
+{
+    auto result = OH_ArkUI_WaterFlowSectionOption_Create();
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WaterFlow", "section: %{public}o", result);
+    ASSERT_NOTNULL(result);
+    NAPI_END;
+}
+
+static napi_value testWaterFlower_007(napi_env env, napi_callback_info info)
+{
+    auto option = OH_ArkUI_WaterFlowSectionOption_Create();
+    OH_ArkUI_WaterFlowSectionOption_SetMargin(option, PARAM_0, PARAM_1, PARAM_2, PARAM_3, PARAM_4);
+    auto result = OH_ArkUI_WaterFlowSectionOption_GetMargin(option, PARAM_0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WaterFlow", "margin top: %{public}f", result.top);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WaterFlow", "margin right: %{public}f", result.right);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WaterFlow", "margin bottom: %{public}f", result.bottom);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WaterFlow", "margin left: %{public}f", result.left);
+
+    ASSERT_EQ(result.top, PARAM_1);
+    ASSERT_EQ(result.right, PARAM_2);
+    ASSERT_EQ(result.bottom, PARAM_3);
+    ASSERT_EQ(result.left, PARAM_4);
+    NAPI_END;
+}
 
 } 

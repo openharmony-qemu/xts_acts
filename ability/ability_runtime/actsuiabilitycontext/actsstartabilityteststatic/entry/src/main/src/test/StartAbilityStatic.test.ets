@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -26,6 +26,7 @@ import contextConstant from "@ohos.app.ability.contextConstant";
 import bundleManager from '@ohos.bundle.bundleManager';
 import fileIo from '@ohos.file.fs';
 import CompletionHandler from "@ohos.app.ability.CompletionHandler";
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -33,6 +34,17 @@ let context: common.UIAbilityContext
 
 export default function startAbilityTestStatic() {
   describe('ActsstartAbilityTestStatic', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
 
     beforeEach(() => {
       hilog.info(domain, tag, 'beforeAll start');
@@ -46,13 +58,13 @@ export default function startAbilityTestStatic() {
       hilog.info(domain, tag, 'beforeAll end');
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0100
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0100
-     * @tc.desc   : Call UIAbilityContext startAbility succeeded.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0100
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0100
+     * @tc.desc   Call UIAbilityContext startAbility succeeded.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0100', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0100`;
@@ -66,7 +78,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -78,13 +90,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0200
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0200
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0200
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0200
+     * @tc.desc   Call UIAbilityContext startAbility failed.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0200`;
@@ -98,7 +110,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
@@ -110,13 +122,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0300
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0300
-     * @tc.desc   : Call UIAbilityContext startAbility with options succeeded.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0300
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0300
+     * @tc.desc   Call UIAbilityContext startAbility with options succeeded.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0300', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0300`;
@@ -187,7 +199,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect().assertFail();
           done();
@@ -199,13 +211,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0400
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0400
-     * @tc.desc   : Call UIAbilityContext startAbility with options failed.(promise),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0400
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0400
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(promise),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0400', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0400`;
@@ -222,7 +234,7 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000001);
           done();
@@ -234,13 +246,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0500
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0500
-     * @tc.desc   : Call UIAbilityContext startAbility succeeded.(callback),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0500
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0500
+     * @tc.desc   Call UIAbilityContext startAbility succeeded.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0500', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0500`;
@@ -268,13 +280,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0600
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0600
-     * @tc.desc   : Call UIAbilityContext startAbility failed.(callback),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0600
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0600
+     * @tc.desc   Call UIAbilityContext startAbility failed.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0600', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0600`;
@@ -302,13 +314,13 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0700
-     * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0700
-     * @tc.desc   : Call UIAbilityContext startAbility with options succeeded.(callback),
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0700
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0700
+     * @tc.desc   Call UIAbilityContext startAbility with options succeeded.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0700', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0700`;
@@ -339,14 +351,14 @@ export default function startAbilityTestStatic() {
       }
     })
 
-    /*
-    * @tc.number : SUB_Ability_AbilityRuntime_startAbility_Static_0800
-    * @tc.name   : SUB_Ability_AbilityRuntime_startAbility_Static_0800
-    * @tc.desc   : Call UIAbilityContext startAbility with options failed.(callback),
-    * @tc.type   : Function
-    * @tc.size   : MediumTest
-    * @tc.level  : 0
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_startAbility_Static_0800
+     * @tc.number SUB_Ability_AbilityRuntime_startAbility_Static_0800
+     * @tc.desc   Call UIAbilityContext startAbility with options failed.(callback),
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityRuntime_startAbility_Static_0800', Level.LEVEL1, async (done: () => void): Promise<void> => {
       tag = `startAbility_Static_0800`;
       hilog.info(domain, tag, `it begin`);

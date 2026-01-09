@@ -63,14 +63,14 @@ export default function webPrivateNetworkAccessTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0001
-    * @tc.name       : testPrivateNetworkAccess01
-    * @tc.desc       : test enablePrivateNetworkAccess true isPrivateNetworkAccessEnabled true
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testPrivateNetworkAccess01
+     * @tc.number SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0001
+     * @tc.desc   test enablePrivateNetworkAccess true isPrivateNetworkAccessEnabled true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPrivateNetworkAccess01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitPrivateNetworkAccess01', 21);
       Utils.registerBaseEvent('testPrivateNetworkAccess01', true, 2025081409, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -78,14 +78,14 @@ export default function webPrivateNetworkAccessTest() {
       });
       sendEventByKey('WebPrivateNetworkAccessButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0002
-    * @tc.name       : testPrivateNetworkAccess02
-    * @tc.desc       : test enablePrivateNetworkAccess false isPrivateNetworkAccessEnabled false
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPrivateNetworkAccess02
+     * @tc.number SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0002
+     * @tc.desc   test enablePrivateNetworkAccess false isPrivateNetworkAccessEnabled false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPrivateNetworkAccess02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitPrivateNetworkAccess02', 21);
       Utils.registerBaseEvent('testPrivateNetworkAccess02', false, 2025081410, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -93,14 +93,14 @@ export default function webPrivateNetworkAccessTest() {
       });
       sendEventByKey('WebPrivateNetworkAccessButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0003
-    * @tc.name       : testPrivateNetworkAccessErrorCode01
-    * @tc.desc       : test enablePrivateNetworkAccess null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testPrivateNetworkAccessErrorCode01
+     * @tc.number SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0003
+     * @tc.desc   test enablePrivateNetworkAccess null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPrivateNetworkAccessErrorCode01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitPrivateNetworkAccessErrorCode01', 21);
       Utils.registerBaseEvent('testPrivateNetworkAccessErrorCode01', 401, 2025081411, done, (backData: events_emitter.EventData, expected: Object) => {
@@ -108,14 +108,14 @@ export default function webPrivateNetworkAccessTest() {
       });
       sendEventByKey('WebPrivateNetworkAccessButton', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0004
-    * @tc.name       : testPrivateNetworkAccessErrorCode02
-    * @tc.desc       : test enablePrivateNetworkAccess undefined
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testPrivateNetworkAccessErrorCode02
+     * @tc.number SUB_ACE_WEB_PRIVATENETWORKACCESS_API_0004
+     * @tc.desc   test enablePrivateNetworkAccess undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPrivateNetworkAccessErrorCode02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitPrivateNetworkAccessErrorCode02', 21);
       Utils.registerBaseEvent('testPrivateNetworkAccessErrorCode02', 401, 2025081412, done, (backData: events_emitter.EventData, expected: Object) => {

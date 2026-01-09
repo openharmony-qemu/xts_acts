@@ -45,12 +45,12 @@ describe("TreeSetTest1", (): void => {
     await Utils.msSleep(10)
   })
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0100
-   * @tc.name       : testTreeSet001
-   * @tc.desc       : Test the function By treeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet001
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0100
+   * @tc.desc   Test the function By treeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     try {
@@ -64,12 +64,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0200
-   * @tc.name       : testTreeSet002
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet002
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0200
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     try {
@@ -93,12 +93,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0300
-   * @tc.name       : testTreeSet003
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet003
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0300
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<string>();
@@ -108,12 +108,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0400
-   * @tc.name       : testTreeSet004
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet004
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0400
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -123,12 +123,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0500
-   * @tc.name       : testTreeSet005
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet005
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0500
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<Array<number>>();
@@ -139,12 +139,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0600
-   * @tc.name       : testTreeSet006
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet006
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0600
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<string>();
@@ -154,12 +154,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0700
-   * @tc.name       : testTreeSet007
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet007
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0700
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<InfoC>();
@@ -170,12 +170,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0800
-   * @tc.name       : testTreeSet008
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet008
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0800
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -185,12 +185,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_0900
-   * @tc.name       : testTreeSet009
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet009
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_0900
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<boolean>();
@@ -200,12 +200,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1000
-   * @tc.name       : testTreeSet010
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet010
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1000
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<string>();
@@ -215,12 +215,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1100
-   * @tc.name       : testTreeSet011
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet011
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1100
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -233,12 +233,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1200
-   * @tc.name       : testTreeSet012
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet012
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1200
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -250,12 +250,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1300
-   * @tc.name       : testTreeSet013
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet013
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1300
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -264,12 +264,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1400
-   * @tc.name       : testTreeSet014
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet014
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1400
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -281,12 +281,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1500
-   * @tc.name       : testTreeSet015
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet015
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1500
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -298,12 +298,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1600
-   * @tc.name       : testTreeSet016
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet016
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1600
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
@@ -317,26 +317,31 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1700
-   * @tc.name       : testTreeSet017
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet017
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1700
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL0
    */
   it("testTreeSet017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getFirstValue();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getFirstValue();
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1800
-   * @tc.name       : testTreeSet018
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet018
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1800
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -348,26 +353,31 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_1900
-   * @tc.name       : testTreeSet019
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet019
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_1900
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getLastValue();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getLastValue();
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2000
-   * @tc.name       : testTreeSet020
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet020
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2000
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -381,26 +391,31 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2100
-   * @tc.name       : testTreeSet021
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet021
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2100
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getLowerValue(2);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getLowerValue(2);
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2200
-   * @tc.name       : testTreeSet022
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet022
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2200
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -414,92 +429,107 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2300
-   * @tc.name       : testTreeSet023
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet023
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2300
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.getHigherValue(3);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getHigherValue(3);
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2400
-   * @tc.name       : testTreeSet024
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet024
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2400
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
-  // it("testTreeSet024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("e");
-  //   let res = treeSet.popFirst();
-  //   expect(res).assertEqual("a");
-  // });
+  it("testTreeSet024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("e");
+    let res = treeSet.popFirst();
+    expect(res).assertEqual("a");
+  });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2500
-   * @tc.name       : testTreeSet025
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet025
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2500
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.popFirst();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.popFirst();
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2600
-   * @tc.name       : testTreeSet026
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet026
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2600
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
-  // it("testTreeSet026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("e");
-  //   let res = treeSet.popLast();
-  //   expect(String(res)).assertEqual("e");
-  // });
+  it("testTreeSet026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("e");
+    let res = treeSet.popLast();
+    expect(String(res)).assertEqual("e");
+  });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2700
-   * @tc.name       : testTreeSet027
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet027
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2700
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
-    let res = treeSet.popLast();
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.popLast();
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2800
-   * @tc.name       : testTreeSet028
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet028
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2800
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -512,12 +542,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_2900
-   * @tc.name       : testTreeSet029
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet029
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_2900
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -527,17 +557,22 @@ describe("TreeSetTest1", (): void => {
     treeSet.clear();
     let res = treeSet.length;
     expect(String(res)).assertEqual('0');
-    let res1 = treeSet.popFirst();
-    expect(String(res1)).assertEqual('undefined');
+    try {
+      let res1 = treeSet.popFirst();
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3000
-   * @tc.name       : testTreeSet030
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet030
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3000
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<string>();
@@ -547,12 +582,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3100
-   * @tc.name       : testTreeSet031
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet031
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3100
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<string>();
@@ -561,12 +596,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3200
-   * @tc.name       : testTreeSet032
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet032
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3200
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<string>();
@@ -583,12 +618,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3300
-   * @tc.name       : testTreeSet033
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet033
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3300
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<string>();
@@ -597,35 +632,35 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3400
-   * @tc.name       : testTreeSet034
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet034
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3400
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
-  // it("testTreeSet034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-  //   let treeSet = new TreeSet<string>();
-  //   treeSet.add("a");
-  //   treeSet.add("b");
-  //   treeSet.add("c");
-  //   treeSet.add("d");
-  //   treeSet.add("g");
-  //   let res = treeSet.values();
-  //   expect(String(res.next().value)).assertEqual("a");
-  //   expect(String(res.next().value)).assertEqual("b");
-  //   expect(String(res.next().value)).assertEqual("c");
-  //   expect(String(res.next().value)).assertEqual("d");
-  //   expect(String(res.next().value)).assertEqual("g");
-  // });
+  it("testTreeSet034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+    let treeSet = new TreeSet<string>();
+    treeSet.add("a");
+    treeSet.add("b");
+    treeSet.add("c");
+    treeSet.add("d");
+    treeSet.add("g");
+    let res = treeSet.values();
+    expect(String(res.next().value)).assertEqual("a");
+    expect(String(res.next().value)).assertEqual("b");
+    expect(String(res.next().value)).assertEqual("c");
+    expect(String(res.next().value)).assertEqual("d");
+    expect(String(res.next().value)).assertEqual("g");
+  });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3500
-   * @tc.name       : testTreeSet035
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet035
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3500
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -645,12 +680,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3600
-   * @tc.name       : testTreeSet036
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet036
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3600
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<string>();
@@ -668,12 +703,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3700
-   * @tc.name       : testTreeSet037
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet037
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3700
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -693,12 +728,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3800
-   * @tc.name       : testTreeSet038
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet038
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3800
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it("testTreeSet038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let treeSet = new TreeSet<number>();
@@ -707,13 +742,13 @@ describe("TreeSetTest1", (): void => {
     treeSet.add(2);
     treeSet.add(3);
     treeSet.add(4);
-    let arr = new Array<[Double, Double]>();
-    let res = treeSet.entries();
-    let temp: [Double, Double] | undefined = undefined;
-    do {
-      temp = res.next().value!;
+    let arr = new Array<Double>();
+    let res = treeSet.values();
+    let temp: Double | undefined = res.next().value;
+    while (temp != undefined) {
       arr.push(temp);
-    } while (temp != undefined);
+      temp = res.next().value;
+    }
     let arr1 = [0, 1, 2, 3, 4];
     for (let i = 0; i < arr1.length; i++) {
       expect(arr[i]).assertEqual(arr1[i]);
@@ -721,12 +756,12 @@ describe("TreeSetTest1", (): void => {
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_3900
-   * @tc.name       : testTreeSet039
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet039
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_3900
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   //  it("testTreeSet039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
   //   let treeSet = new TreeSet<string>();
@@ -741,12 +776,12 @@ describe("TreeSetTest1", (): void => {
   // });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4000
-   * @tc.name       : testTreeSet040
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet040
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4000
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   // it('testTreeSet040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
   //   let  treeSet = new TreeSet();
@@ -760,14 +795,14 @@ describe("TreeSetTest1", (): void => {
   //   }
   // });
 
-  /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4100
-   * @tc.name       : testTreeSet041
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
-   */
+/**
+ * @tc.name   testTreeSet041
+ * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4100
+ * @tc.desc   Test the function By TreeMap.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 //   it('testTreeSet041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 //     let  treeSet = new TreeSet();
 //     try {
@@ -781,41 +816,51 @@ describe("TreeSetTest1", (): void => {
 //   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4200
-   * @tc.name       : testTreeSet042
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet042
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4200
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('testTreeSet042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let  treeSet = new TreeSet<null>();
-    let res = treeSet.getLowerValue(null);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getLowerValue(null);
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4300
-   * @tc.name       : testTreeSet043
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet043
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4300
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('testTreeSet043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let  treeSet = new TreeSet<null>();
-    let res = treeSet.getHigherValue(null);
-    expect(String(res)).assertEqual('undefined');
+    try {
+      let res = treeSet.getHigherValue(null);
+      expect(false).assertFail();
+    } catch (err) {
+      err = err as BusinessError;
+      expect(err.message).assertEqual("Container is empty");
+    }
   });
 
-  /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4400
-   * @tc.name       : testTreeSet044
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
-   */
+/**
+ * @tc.name   testTreeSet044
+ * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4400
+ * @tc.desc   Test the function By TreeMap.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 //   it('testTreeSet044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 //     let  treeSet = new TreeSet();
 //     try {
@@ -828,14 +873,14 @@ describe("TreeSetTest1", (): void => {
 //     }
 //   });
 
-  /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4500
-   * @tc.name       : testTreeSet045
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
-   */
+/**
+ * @tc.name   testTreeSet045
+ * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4500
+ * @tc.desc   Test the function By TreeMap.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 //   it('testTreeSet045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 //     let  treeSet = new TreeSet();
 //     try {
@@ -849,12 +894,12 @@ describe("TreeSetTest1", (): void => {
 //   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4600
-   * @tc.name       : testTreeSet046
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet046
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4600
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   // it('testTreeSet046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
   //   let  treeSet = new TreeSet<number>();
@@ -868,14 +913,14 @@ describe("TreeSetTest1", (): void => {
   //   }
   // });
 
-  /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4700
-   * @tc.name       : testTreeSet047
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
-   */
+/**
+ * @tc.name   testTreeSet047
+ * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4700
+ * @tc.desc   Test the function By TreeMap.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
+ */
 //   it('testTreeSet047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
 //     let  treeSet = new TreeSet();
 //     try {
@@ -889,12 +934,12 @@ describe("TreeSetTest1", (): void => {
 //   });
 
   /**
-   * @tc.number     : SUB_COMMONLIBRARY_UTIL_TREESET_4800
-   * @tc.name       : testTreeSet048
-   * @tc.desc       : Test the function By TreeMap.
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 0
+   * @tc.name   testTreeSet048
+   * @tc.number SUB_COMMONLIBRARY_UTIL_TREESET_4800
+   * @tc.desc   Test the function By TreeMap.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
    */
   it('testTreeSet048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     let  treeSet = new TreeSet<string>();

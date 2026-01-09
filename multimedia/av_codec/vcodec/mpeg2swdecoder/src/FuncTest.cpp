@@ -72,9 +72,12 @@ void Mpeg2SwdecFuncNdkTest::TearDown() {}
 
 namespace {
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010
- * @tc.name      : VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010
+ * @tc.number VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010, TestSize.Level1)
 {
@@ -95,9 +98,12 @@ HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0010, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020
- * @tc.name      : VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020
+ * @tc.number VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020, TestSize.Level0)
 {
@@ -118,9 +124,12 @@ HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0020, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040
- * @tc.name      : VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040
+ * @tc.number VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040, TestSize.Level1)
 {
@@ -141,9 +150,12 @@ HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_SYNC_SWMPEG2_FUNC_0040, TestSize.Le
 }
 
 /**
- * @tc.number    : VIDEO_DECODE_BLANK_FRAME_0010
- * @tc.name      : VIDEO_DECODE_BLANK_FRAME_0010
- * @tc.desc      : function test
+ * @tc.name   VIDEO_DECODE_BLANK_FRAME_0010
+ * @tc.number VIDEO_DECODE_BLANK_FRAME_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_BLANK_FRAME_0010, TestSize.Level1)
 {
@@ -157,6 +169,35 @@ HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_BLANK_FRAME_0010, TestSize.Level1)
         ASSERT_EQ(AV_ERR_OK, vDecSample->CreateVideoDecoder(g_codecNameMpeg2));
         vDecSample->WaitForEOS();
         ASSERT_EQ(0, vDecSample->errCount);
+    }
+}
+
+/**
+ * @tc.name   VIDEO_DECODE_BLANK_ADD_0010
+ * @tc.number VIDEO_DECODE_BLANK_ADD_0010
+ * @tc.desc   function test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+HWTEST_F(Mpeg2SwdecFuncNdkTest, VIDEO_DECODE_BLANK_ADD_0010, TestSize.Level2)
+{
+    if (cap_mpeg2 != nullptr) {
+        OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(
+            OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+        ASSERT_NE(nullptr, capability);
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(
+            capability, MPEG2_PROFILE_SIMPLE, MPEG2_LEVEL_LOW));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(
+            capability, MPEG2_PROFILE_MAIN, MPEG2_LEVEL_MAIN));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(
+            capability, MPEG2_PROFILE_SNR_SCALABLE, MPEG2_LEVEL_HIGH_1440));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(
+            capability, MPEG2_PROFILE_SPATIALLY_SCALABLE, MPEG2_LEVEL_HIGH));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(
+            capability, MPEG2_PROFILE_HIGH, MPEG2_LEVEL_HIGH));
+        ASSERT_EQ(true, OH_AVCapability_AreProfileAndLevelSupported(
+            capability, MPEG2_PROFILE_422, MPEG2_LEVEL_HIGH));
     }
 }
 }

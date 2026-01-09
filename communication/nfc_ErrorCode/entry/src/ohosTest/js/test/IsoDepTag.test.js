@@ -85,7 +85,6 @@ export default function nfcIsoDepErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0100
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0100
          * @tc.desc   Check whether extended APDUs are supported Promise. The error code is 401
@@ -116,7 +115,6 @@ export default function nfcIsoDepErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0200
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0200
          * @tc.desc   Check whether extended APDUs are supported callback. The error code is 401
@@ -148,7 +146,6 @@ export default function nfcIsoDepErrorTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:44
          * @tc.name   SUB_Communication_NFC_nfcIsoDep_js_0300
          * @tc.number SUB_Communication_NFC_nfcIsoDep_js_0300
          * @tc.desc   Obtains an object based on the tag information The error code is 401

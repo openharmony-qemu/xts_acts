@@ -18,6 +18,7 @@ import SecurityHuksKeyGenerateListAliasesTest from './SecurityHuksKeyGenerateLis
 import SecurityHuksCmacTest from './SecurityHuksCmac.test';
 import SecurityHuksSignVerifyRSATest from './SecurityHuksSignVerifyRSA.test';
 import SecurityHuksCipherRSATest from './SecurityHuksCipherRSA.test';
+import SecurityHuksCipherAesTest from './SecurityHuksCipherAES.test';
 import SecurityHuksCipherDESTest from './SecurityHuksCipherDES.test';
 import SecurityHuksCipher3DESTest from './SecurityHuksCipher3DES.test';
 import SecurityHuksImportTest from './SecurityHuksImport.test';
@@ -28,6 +29,7 @@ import SecurityHuksAccessControlUserAuthTest from './SecurityHuksAccessControlUs
 import SecurityHuksApiTest from './SecurityHuksApi.test';
 import SecurityHuksKeyGenerateOverrideTest from './SecurityHuksKeyGenerateOverride.test';
 import SecurityHuksSignVerifySM2Test from './SecurityHuksSignVerifySM2.test';
+import SecurityHuksGroupAPI23Test from './SecurityHuksGroupAPI23.test';
 
 export default function testsuite() {
   SecurityHuksAccessControlAsUserTest();
@@ -36,6 +38,7 @@ export default function testsuite() {
   SecurityHuksCmacTest();
   SecurityHuksSignVerifyRSATest();
   SecurityHuksCipherRSATest();
+  SecurityHuksCipherAesTest();
   SecurityHuksCipherDESTest();
   SecurityHuksCipher3DESTest();
   SecurityHuksImportTest();
@@ -45,5 +48,6 @@ export default function testsuite() {
   SecurityHuksAccessControlUserAuthTest();
   SecurityHuksApiTest();
   SecurityHuksKeyGenerateOverrideTest();
-  SecurityHuksSignVerifySM2Test()
+  SecurityHuksSignVerifySM2Test();
+  SecurityHuksGroupAPI23Test()
 }

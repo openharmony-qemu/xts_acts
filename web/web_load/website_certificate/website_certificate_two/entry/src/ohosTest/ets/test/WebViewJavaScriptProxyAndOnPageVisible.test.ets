@@ -57,14 +57,14 @@ export default function WebViewJavaScriptProxyAndOnPageVisible() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_SSLERRORHOSTMISMATCH_0100
-    * @tc.name       : testSslErrorHostMismatch001
-    * @tc.desc       : test SslError HostMismatch
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testSslErrorHostMismatch001
+     * @tc.number SUB_WEB_SSLERRORHOSTMISMATCH_0100
+     * @tc.desc   test SslError HostMismatch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testSslErrorHostMismatch001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitSslErrorHostMismatch", EVENT_ID_SET_EMIT_KEY);
       let isReturn = 0;

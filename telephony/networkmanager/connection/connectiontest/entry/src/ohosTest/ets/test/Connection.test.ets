@@ -15,6 +15,7 @@
 
 import { describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import connection from '@ohos.net.connection';
+import http from '@ohos.net.http'
 import { BusinessError } from '@ohos.base';
 import network from '@system.network';
 
@@ -40,12 +41,12 @@ export default function ConnectionTest() {
   describe('ConnectionTest', () => {
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0100
-     * @tc.name   : testNetworkConnectionSetHttpProxyCallback0100
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 1
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkConnectionSetHttpProxyCallback0100
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0100
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkConnectionSetHttpProxyCallback0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testNetworkConnectionSetHttpProxyCallback0100';
@@ -78,12 +79,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0200
-     * @tc.name   : testConnectionSetHttpProxyCallback0200
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0200
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0200
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0200';
@@ -117,12 +118,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0300
-     * @tc.name   : testConnectionSetHttpProxyCallback0300
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0300
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0300
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0300';
@@ -146,12 +147,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0400
-     * @tc.name   : testConnectionSetHttpProxyCallback0400
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0400
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0400
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0400';
@@ -184,12 +185,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0500
-     * @tc.name   : testConnectionSetHttpProxyCallback0500
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0500
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0500
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0500';
@@ -222,12 +223,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0600
-     * @tc.name   : testConnectionSetHttpProxyCallback0600
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0600
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0600
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0600';
@@ -251,12 +252,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0700
-     * @tc.name   : testConnectionSetHttpProxyCallback0700
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0700
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0700
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0700';
@@ -281,12 +282,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0800
-     * @tc.name   : testConnectionSetHttpProxyCallback0800
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0800
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0800
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0800';
@@ -320,12 +321,12 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number : SUB_Network_Connection_SetAppHttpProxy_0900
-     * @tc.name   : testConnectionSetHttpProxyCallback0900
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionSetHttpProxyCallback0900
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_0900
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetHttpProxyCallback0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetHttpProxyCallback0900';
@@ -359,12 +360,62 @@ export default function ConnectionTest() {
     });
 
     /**
-     * @tc.number     : SUB_Network_Connection_NetCapabilities_0200
-     * @tc.name       : testNetworkConnectionNetCapabilities0200
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testConnectionSetHttpProxyCallback1000
+     * @tc.number SUB_Network_Connection_SetAppHttpProxy_1000
+     * @tc.desc   Set network application level HTTP proxy username and password configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testConnectionSetHttpProxyCallback1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      const caseName: string = 'testConnectionSetHttpProxyCallback1000';
+      console.info(`${caseName}---Start`);
+      try {
+        let exclusionStr = "192.168,baidu.com";
+        let exclusionArray = exclusionStr.split(',');
+        connection.setAppHttpProxy ({
+          host: "gatewaytest.e-cology.com.cn",
+          port: 443,
+          exclusionList: exclusionArray,
+          username: 'admin',
+          password: '123456'
+        } as connection.HttpProxy);
+        console.info(`setAppHttpProxy success`);
+        let httpRequest = http.createHttp();
+        let options:http.HttpRequestOptions = {
+          usingProxy:true,
+        };
+        httpRequest.request("http://www.baidu.com",options,(err:BusinessError,data:http.HttpResponse) => {
+          if(!err) {
+            console.info(`Result: ${data.result}`);
+            console.info(`code: ${data.responseCode}`);
+            console.info(`type: ${JSON.stringify(data.resultType)}`);
+            console.info(`header: ${JSON.stringify(data.header)}`);
+            ExpectTrue(data.responseCode == 407);
+            console.info(`${caseName}---End`);
+            done();
+          } else {
+            console.error(`error: ${JSON.stringify(err)}`);
+            ExpectTrue(err.code == 2300005);
+            console.info(`${caseName}---End`);
+            done();
+          }
+        });
+      } catch (err) {
+        console.info(`${caseName} test failed err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done()
+      }
+    });
+
+    /**
+     * @tc.name   testNetworkConnectionNetCapabilities0200
+     * @tc.number SUB_Network_Connection_NetCapabilities_0200
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkConnectionNetCapabilities0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testNetworkConnectionNetCapabilities0200';
@@ -402,12 +453,12 @@ export default function ConnectionTest() {
 
 
     /**
-     * @tc.number : SUB_Network_Connection_setPacUrl_0100
-     * @tc.name   : testNetworkConnectionsetPacUrl0100
-     * @tc.desc   : Set the system-level proxy auto-config (PAC) script URL to be empty
-     * @tc.level  : Level 1
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkConnectionsetPacUrl0100
+     * @tc.number SUB_Network_Connection_setPacUrl_0100
+     * @tc.desc   Set the system-level proxy auto-config (PAC) script URL to be empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkConnectionsetPacUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testNetworkConnectionsetPacUrl0100';
@@ -426,12 +477,12 @@ export default function ConnectionTest() {
 
 
     /**
-     * @tc.number : SUB_Network_Connection_getPacUrl_0100
-     * @tc.name   : testNetworkConnectiongetPacUrl0100
-     * @tc.desc   :get the system-level proxy auto-config (PAC) script URL
-     * @tc.level  : Level 1
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkConnectiongetPacUrl0100
+     * @tc.number SUB_Network_Connection_getPacUrl_0100
+     * @tc.desc   get the system-level proxy auto-config (PAC) script URL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNetworkConnectiongetPacUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName: string = 'testNetworkConnectiongetPacUrl0100';
@@ -456,12 +507,12 @@ export default function ConnectionTest() {
 
     
     /**
-     * @tc.number : SUB_Network_Connection_setPacUrl_0200
-     * @tc.name   : testConnectionsetPacUrl0200
-     * @tc.desc   : Set network application level HTTP proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionsetPacUrl0200
+     * @tc.number SUB_Network_Connection_setPacUrl_0200
+     * @tc.desc   Set network application level HTTP proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionsetPacUrl0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionsetPacUrl0200';
@@ -479,12 +530,12 @@ export default function ConnectionTest() {
     });
   
     /**
-     * @tc.number : SUB_Network_Connection_findProxyForUrl_0100
-     * @tc.name   : testConnectionFindProxyForUrl0100
-     * @tc.desc   : The findProxyForURL interface passes in an unset pacURL address and returns an empty string.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testConnectionFindProxyForUrl0100
+     * @tc.number SUB_Network_Connection_findProxyForUrl_0100
+     * @tc.desc   The findProxyForURL interface passes in an unset pacURL address and returns an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionFindProxyForUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionFindProxyForUrl0100';
@@ -502,13 +553,13 @@ export default function ConnectionTest() {
       }
     });
 		
-		/**
-     * @tc.number : SUB_Network_Connection_setPacFileUrl_0100
-     * @tc.name   : testConnectionSetPacFileUrl0100
-     * @tc.desc   : Call the setPacFileURL interface to pass an empty string, return error code 401.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testConnectionSetPacFileUrl0100
+     * @tc.number SUB_Network_Connection_setPacFileUrl_0100
+     * @tc.desc   Call the setPacFileURL interface to pass an empty string, return error code 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetPacFileUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetPacFileUrl0100';
@@ -525,13 +576,13 @@ export default function ConnectionTest() {
       }
     });
 		
-		/**
-     * @tc.number : SUB_Network_Connection_setPacFileUrl_0200
-     * @tc.name   : testConnectionSetPacFileUrl0200
-     * @tc.desc   : Call setPacFileURL interface to pass non string type, return 401 error code.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testConnectionSetPacFileUrl0200
+     * @tc.number SUB_Network_Connection_setPacFileUrl_0200
+     * @tc.desc   Call setPacFileURL interface to pass non string type, return 401 error code.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionSetPacFileUrl0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionSetPacFileUrl0200';
@@ -548,13 +599,13 @@ export default function ConnectionTest() {
       }
     });
 		
-		/**
-     * @tc.number : SUB_Network_Connection_getPacFileUrl_0100
-     * @tc.name   : testConnectionGetPacFileUrl0100
-     * @tc.desc   : No pacFileURL set, calling the interface getPacFileURL returns 2100003.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testConnectionGetPacFileUrl0100
+     * @tc.number SUB_Network_Connection_getPacFileUrl_0100
+     * @tc.desc   No pacFileURL set, calling the interface getPacFileURL returns 2100003.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionGetPacFileUrl0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionGetPacFileUrl0100';
@@ -571,13 +622,13 @@ export default function ConnectionTest() {
       }
     });
 		
-		/**
-     * @tc.number : SUB_Network_Connection_getPacFileUrl_0300
-     * @tc.name   : testConnectionGetPacFileUrl0300
-     * @tc.desc   : Verify the value of pacFileURL based on the value set by the last call to the interface getPacFileURL.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+    /**
+     * @tc.name   testConnectionGetPacFileUrl0300
+     * @tc.number SUB_Network_Connection_getPacFileUrl_0300
+     * @tc.desc   Verify the value of pacFileURL based on the value set by the last call to the interface getPacFileURL.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConnectionGetPacFileUrl0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName: string = 'testConnectionGetPacFileUrl0300';
@@ -596,13 +647,13 @@ export default function ConnectionTest() {
       }
     });
 		
-   /**
-   * @tc.number : SUB_Network_Connection_findProxyForUrl_0200
-   * @tc.name   : testConnectionFindProxyForUrl0200
-   * @tc.desc   : FindProxyForURL interface passed an empty string, error 401.
-   * @tc.level  : Level 3
-   * @tc.type   : Function
-   * @tc.size   : MediumTest
+  /**
+   * @tc.name   testConnectionFindProxyForUrl0200
+   * @tc.number SUB_Network_Connection_findProxyForUrl_0200
+   * @tc.desc   FindProxyForURL interface passed an empty string, error 401.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('testConnectionFindProxyForUrl0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     const caseName: string = 'testConnectionFindProxyForUrl0200';
@@ -620,12 +671,12 @@ export default function ConnectionTest() {
   });
           
   /**
-   * @tc.number : SUB_Network_Connection_findProxyForUrl_0400
-   * @tc.name   : testConnectionFindProxyForUrl0400
-   * @tc.desc   : The findProxyForURL interface passes an empty string address and returns an empty string.
-   * @tc.level  : Level 3
-   * @tc.type   : Function
-   * @tc.size   : MediumTest
+   * @tc.name   testConnectionFindProxyForUrl0400
+   * @tc.number SUB_Network_Connection_findProxyForUrl_0400
+   * @tc.desc   The findProxyForURL interface passes an empty string address and returns an empty string.
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL3
    */
   it('testConnectionFindProxyForUrl0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
     const caseName: string = 'testConnectionFindProxyForUrl0400';

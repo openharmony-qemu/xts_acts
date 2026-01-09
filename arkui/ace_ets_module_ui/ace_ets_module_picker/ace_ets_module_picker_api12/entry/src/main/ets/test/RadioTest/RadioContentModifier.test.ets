@@ -47,12 +47,14 @@ export default function RadioContentModifier() {
     });
 
 
-    /*
-    * @tc.number      RadioContentModifier_001
-    * @tc.name        RadioContentModifier_001
-    * @tc.desc        Test triggerChange to trigger a change in the selection status of the radio box
-    * @tc.level       Level 2
-    */
+    /**
+     * @tc.name   RadioContentModifier_001
+     * @tc.number RadioContentModifier_001
+     * @tc.desc   Test triggerChange to trigger a change in the selection status of the radio box
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('RadioContentModifier_001', Level.LEVEL1, async (done: Function) => {
       console.info('[RadioContentModifier_001] START');
       await Utils.sleep(1000);

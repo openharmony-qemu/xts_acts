@@ -38,12 +38,12 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     });
     /**
-     * @tc.number  NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultNet_0100
-     * @tc.name    test_OHNetConnGetDefaultNet401
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   test_OHNetConnGetDefaultNet401
+     * @tc.number NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultNet_0100
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OHNetConnGetDefaultNet401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let testNumber = -1;
@@ -53,12 +53,12 @@ export default function abilityTest() {
     })
 
     /**
-     * @tc.number  NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultNet_0200
-     * @tc.name    test_OHNetConnGetDefaultNet0
-     * @tc.desc    check netConnection result
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 2
+     * @tc.name   test_OHNetConnGetDefaultNet0
+     * @tc.number NETWORKMANAGER_CONNECTION_OHNetConnGetDefaultNet_0200
+     * @tc.desc   check netConnection result
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OHNetConnGetDefaultNet0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
       let testNumber = 111111111;

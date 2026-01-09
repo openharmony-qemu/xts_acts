@@ -192,7 +192,16 @@
       },
       {
         "name": "ohos.permission.ENTERPRISE_MANAGE_USER_GRANT_PERMISSION"
-      }
+      },
+      {
+        "name": "ohos.permission.ENTERPRISE_MANAGE_DEVICE_ADMIN"
+      },
+      {
+        "name": "ohos.permission.ENTERPRISE_DEACTIVATE_DEVICE_ADMIN"
+      },
+ 	    {
+ 	      "name": "ohos.permission.ENTERPRISE_READ_LOG"
+ 	    }
     ]
   }
 }

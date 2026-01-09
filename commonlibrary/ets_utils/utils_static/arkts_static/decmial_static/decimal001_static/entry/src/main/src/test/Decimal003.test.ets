@@ -57,12 +57,12 @@ export default function DecimalTest003() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST3_001
-     * @tc.name      : Decimal_sqrt_Func_001
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_001
+     * @tc.number DECIMAL_TEST3_001
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sqrt_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -77,7 +77,7 @@ export default function DecimalTest003() {
       test_sqrt_002('2', 4, 20, 4);
       test_sqrt_002('0.1', 0.01, 20, 4);
       test_sqrt_002('0', 0, 20, 4);
-      test_sqrt_002('-0', -0, 20, 4);
+      test_sqrt_002('-0', -0.0, 20, 4);
       test_sqrt_001('0', '0', 20, 4);
       test_sqrt_001('-0', '-0', 20, 4);
       test_sqrt_002('Infinity', Infinity, 20, 4);
@@ -87,12 +87,12 @@ export default function DecimalTest003() {
       test_sqrt_001('NaN', '-0.00000000000001', 20, 4);
     });
     /**
-     * @tc.number    : DECIMAL_TEST3_002
-     * @tc.name      : Decimal_sqrt_Func_002
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_002
+     * @tc.number DECIMAL_TEST3_002
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sqrt_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -110,12 +110,12 @@ export default function DecimalTest003() {
       }
     });
     /**
-     * @tc.number    : DECIMAL_TEST3_003
-     * @tc.name      : Decimal_sqrt_Func_003
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_003
+     * @tc.number DECIMAL_TEST3_003
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sqrt_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -144,12 +144,12 @@ export default function DecimalTest003() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST3_004
-     * @tc.name      : Decimal_sqrt_Func_004
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_004
+     * @tc.number DECIMAL_TEST3_004
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sqrt_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -180,12 +180,12 @@ export default function DecimalTest003() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST3_005
-     * @tc.name      : Decimal_sqrt_Func_005
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_005
+     * @tc.number DECIMAL_TEST3_005
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sqrt_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -216,12 +216,12 @@ export default function DecimalTest003() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST3_006
-     * @tc.name      : Decimal_sqrt_Func_006
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_006
+     * @tc.number DECIMAL_TEST3_006
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("Decimal_sqrt_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   test_sqrt_001('0.0000000000000000000000000000000000000000000000000000140471526414353053458592377645343274655348630930173397', '1.97322497331782876158645511100784258994087355048761111111111111E-106', 54, 5);
@@ -239,12 +239,12 @@ export default function DecimalTest003() {
     // });
 
     /**
-     * @tc.number    : DECIMAL_TEST3_007
-     * @tc.name      : Decimal_sqrt_Func_007
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_007
+     * @tc.number DECIMAL_TEST3_007
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("Decimal_sqrt_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
     //   Decimal.set({ toExpNeg: 0, toExpPos: 0 });
@@ -974,12 +974,12 @@ export default function DecimalTest003() {
     // });
 
     /**
-     * @tc.number    : DECIMAL_TEST3_036
-     * @tc.name      : Decimal_sqrt_Func_036
-     * @tc.desc      : Test sqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sqrt_Func_036
+     * @tc.number DECIMAL_TEST3_036
+     * @tc.desc   Test sqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sqrt_Func_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -993,7 +993,8 @@ export default function DecimalTest003() {
       try {
         test_sqrt_001('e', 'eee', 21, 5);
         expect(true).assertEqual(false);
-      } catch (err : BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: eee`);

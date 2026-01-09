@@ -49,12 +49,12 @@ export default function DecimalTest015() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_log10_Func_001
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -77,12 +77,12 @@ export default function DecimalTest015() {
       test_log10_001('5.343396356119981189485859467758323594750088722349E+24892595', '2e+7', 1, 5);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_002
-     * @tc.name      : Decimal_log10_Func_002
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_002
+     * @tc.number DECIMAL_TEST_002
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -107,12 +107,12 @@ export default function DecimalTest015() {
       test_log10_001('3.07938388321764455968132812427213516E+38172329267940', '3.817232926794048846383244686011975e+13', 34, 5);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_003
-     * @tc.name      : Decimal_log10_Func_003
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_003
+     * @tc.number DECIMAL_TEST_003
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -139,12 +139,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_004
-     * @tc.name      : Decimal_log10_Func_004
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_004
+     * @tc.number DECIMAL_TEST_004
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -172,12 +172,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_005
-     * @tc.name      : Decimal_log10_Func_005
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_005
+     * @tc.number DECIMAL_TEST_005
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -200,12 +200,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_006
-     * @tc.name      : Decimal_log10_Func_006
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_006
+     * @tc.number DECIMAL_TEST_006
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -227,12 +227,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_007
-     * @tc.name      : Decimal_log10_Func_007
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_007
+     * @tc.number DECIMAL_TEST_007
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -258,12 +258,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_008
-     * @tc.name      : Decimal_log10_Func_008
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_008
+     * @tc.number DECIMAL_TEST_008
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -288,12 +288,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_009
-     * @tc.name      : Decimal_log10_Func_009
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_009
+     * @tc.number DECIMAL_TEST_009
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -318,12 +318,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_010
-     * @tc.name      : Decimal_log10_Func_010
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_010
+     * @tc.number DECIMAL_TEST_010
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -346,12 +346,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_011
-     * @tc.name      : Decimal_log10_Func_011
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_011
+     * @tc.number DECIMAL_TEST_011
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -376,12 +376,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_012
-     * @tc.name      : Decimal_log10_Func_012
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_012
+     * @tc.number DECIMAL_TEST_012
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -408,12 +408,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_013
-     * @tc.name      : Decimal_log10_Func_013
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_013
+     * @tc.number DECIMAL_TEST_013
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -439,12 +439,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_014
-     * @tc.name      : Decimal_log10_Func_014
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_014
+     * @tc.number DECIMAL_TEST_014
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -470,12 +470,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_015
-     * @tc.name      : Decimal_log10_Func_015
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_015
+     * @tc.number DECIMAL_TEST_015
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -501,12 +501,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_016
-     * @tc.name      : Decimal_log10_Func_016
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_016
+     * @tc.number DECIMAL_TEST_016
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -529,12 +529,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_017
-     * @tc.name      : Decimal_log10_Func_017
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_017
+     * @tc.number DECIMAL_TEST_017
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -556,12 +556,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_018
-     * @tc.name      : Decimal_log10_Func_018
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_018
+     * @tc.number DECIMAL_TEST_018
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -582,12 +582,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_019
-     * @tc.name      : Decimal_log10_Func_019
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_019
+     * @tc.number DECIMAL_TEST_019
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -613,12 +613,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_020
-     * @tc.name      : Decimal_log10_Func_020
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_020
+     * @tc.number DECIMAL_TEST_020
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -645,12 +645,12 @@ export default function DecimalTest015() {
       test_log10_001('8.651770318575700584685873853475430890180871856E+1831200086', '1.83120008693710498156002691964e+9', 30, 6);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_021
-     * @tc.name      : Decimal_log10_Func_021
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_021
+     * @tc.number DECIMAL_TEST_021
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -679,12 +679,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_022
-     * @tc.name      : Decimal_log10_Func_022
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_022
+     * @tc.number DECIMAL_TEST_022
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -713,12 +713,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_023
-     * @tc.name      : Decimal_log10_Func_023
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_023
+     * @tc.number DECIMAL_TEST_023
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -745,12 +745,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_024
-     * @tc.name      : Decimal_log10_Func_024
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_024
+     * @tc.number DECIMAL_TEST_024
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -774,12 +774,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_025
-     * @tc.name      : Decimal_log10_Func_025
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_025
+     * @tc.number DECIMAL_TEST_025
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -802,12 +802,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_026
-     * @tc.name      : Decimal_log10_Func_026
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_026
+     * @tc.number DECIMAL_TEST_026
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -834,12 +834,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_027
-     * @tc.name      : Decimal_log10_Func_027
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_027
+     * @tc.number DECIMAL_TEST_027
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -866,12 +866,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_028
-     * @tc.name      : Decimal_log10_Func_028
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_028
+     * @tc.number DECIMAL_TEST_028
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -900,12 +900,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_029
-     * @tc.name      : Decimal_log10_Func_029
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_029
+     * @tc.number DECIMAL_TEST_029
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -931,12 +931,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_030
-     * @tc.name      : Decimal_log10_Func_030
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_030
+     * @tc.number DECIMAL_TEST_030
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -961,12 +961,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_031
-     * @tc.name      : Decimal_log10_Func_031
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_031
+     * @tc.number DECIMAL_TEST_031
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -989,12 +989,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_032
-     * @tc.name      : Decimal_log10_Func_032
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_032
+     * @tc.number DECIMAL_TEST_032
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1020,12 +1020,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_033
-     * @tc.name      : Decimal_log10_Func_033
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_033
+     * @tc.number DECIMAL_TEST_033
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1052,12 +1052,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_034
-     * @tc.name      : Decimal_log10_Func_034
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_034
+     * @tc.number DECIMAL_TEST_034
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1081,12 +1081,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_035
-     * @tc.name      : Decimal_log10_Func_035
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_035
+     * @tc.number DECIMAL_TEST_035
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1110,12 +1110,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_036
-     * @tc.name      : Decimal_log10_Func_036
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_036
+     * @tc.number DECIMAL_TEST_036
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1139,12 +1139,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_037
-     * @tc.name      : Decimal_log10_Func_037
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_037
+     * @tc.number DECIMAL_TEST_037
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1171,12 +1171,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_038
-     * @tc.name      : Decimal_log10_Func_038
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_038
+     * @tc.number DECIMAL_TEST_038
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1203,12 +1203,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_039
-     * @tc.name      : Decimal_log10_Func_039
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_039
+     * @tc.number DECIMAL_TEST_039
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1234,12 +1234,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_040
-     * @tc.name      : Decimal_log10_Func_040
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_040
+     * @tc.number DECIMAL_TEST_040
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1262,12 +1262,12 @@ export default function DecimalTest015() {
       test_log10_001('2.953816209213038450561378564E+63693096648', '6.369309664847e+10', 13, 3);
     });
     /**
-     * @tc.number    : DECIMAL_TEST_041
-     * @tc.name      : Decimal_log10_Func_041
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_041
+     * @tc.number DECIMAL_TEST_041
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1289,12 +1289,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_042
-     * @tc.name      : Decimal_log10_Func_042
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_042
+     * @tc.number DECIMAL_TEST_042
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1319,12 +1319,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_043
-     * @tc.name      : Decimal_log10_Func_043
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_043
+     * @tc.number DECIMAL_TEST_043
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1349,12 +1349,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_044
-     * @tc.name      : Decimal_log10_Func_044
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_044
+     * @tc.number DECIMAL_TEST_044
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1381,12 +1381,12 @@ export default function DecimalTest015() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST_045
-     * @tc.name      : Decimal_log10_Func_045
-     * @tc.desc      : Test log10
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_log10_Func_045
+     * @tc.number DECIMAL_TEST_045
+     * @tc.desc   Test log10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_log10_Func_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -1400,7 +1400,8 @@ export default function DecimalTest015() {
       try {
         test_log10_001('e', 'e', 9, 0);
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

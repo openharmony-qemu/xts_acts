@@ -48,12 +48,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_0100
-     * @tc.name      : Camera CameraStatus Eunm
-     * @tc.desc      : Camera CameraStatus Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_0100
+     * @tc.desc   Camera CameraStatus Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERASTATUS_0100--------------");
@@ -67,12 +67,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_0100
-     * @tc.name      : Camera CameraPosition Eunm
-     * @tc.desc      : Camera CameraPosition Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_0100
+     * @tc.desc   Camera CameraPosition Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAPOSITION_0100--------------");
@@ -85,12 +85,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_0100
-     * @tc.name      : Camera ScenMode Eunm
-     * @tc.desc      : Camera ScenMode Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_0100
+     * @tc.desc   Camera ScenMode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_SCENEMODE_0100--------------");
@@ -102,12 +102,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_0100
-     * @tc.name      : Camera CameraType Eunm
-     * @tc.desc      : Camera CameraType Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_0100
+     * @tc.desc   Camera CameraType Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERATYPE_0100--------------");
@@ -122,12 +122,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_0100
-     * @tc.name      : Camera ConnectionType Eunm
-     * @tc.desc      : Camera ConnectionType Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_0100
+     * @tc.desc   Camera ConnectionType Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CONNECTIONTYPE_0100--------------");
@@ -140,12 +140,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100
-     * @tc.desc      : Camera HostDeviceType Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100
+     * @tc.desc   Camera HostDeviceType Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_HOSTDEVICETYPE_0100--------------");
@@ -158,12 +158,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_0100
-     * @tc.name      : Camera CameraFormat Eunm
-     * @tc.desc      : Camera CameraFormat Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_0100
+     * @tc.desc   Camera CameraFormat Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAFORMAT_0100--------------");
@@ -179,12 +179,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_0100
-     * @tc.name      : Camera FlashMode Eunm
-     * @tc.desc      : Camera FlashMode Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_0100
+     * @tc.desc   Camera FlashMode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_FLASHMODE_0100--------------");
@@ -198,12 +198,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_0100
-     * @tc.name      : Camera ExposureMode Eunm
-     * @tc.desc      : CameraExposureMode  Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_0100
+     * @tc.desc   CameraExposureMode  Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_EXPOSUREMODE_0100--------------");
@@ -215,12 +215,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_0100
-     * @tc.name      : Camera FocusMode  Eunm
-     * @tc.desc      : Camera FocusMode  Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_0100
+     * @tc.desc   Camera FocusMode  Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSMODE_0100--------------");
@@ -234,12 +234,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_0100
-     * @tc.name      : Camera FocusState Eunm
-     * @tc.desc      : Camera FocusState Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_0100
+     * @tc.desc   Camera FocusState Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_FOCUSSTATE_0100--------------");
@@ -252,12 +252,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_0100
-     * @tc.name      : Camera VideoStabilizationMode Eunm
-     * @tc.desc      : Camera VideoStabilizationMode Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_0100
+     * @tc.desc   Camera VideoStabilizationMode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOSTABILIZATIONMODE_0100--------------");
@@ -272,12 +272,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_0100
-     * @tc.name      : Camera ImageRotation Eunm
-     * @tc.desc      : Camera ImageRotation Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_0100
+     * @tc.desc   Camera ImageRotation Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_IMAGEROTATION_0100--------------");
@@ -291,12 +291,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_0100
-     * @tc.name      : Camera QualityLevel Eunm
-     * @tc.desc      : Camera QualityLevel Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_0100
+     * @tc.desc   Camera QualityLevel Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_QUALITYLEVEL_0100--------------");
@@ -309,12 +309,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_0100
-     * @tc.name      : Camera MetadataObjectType Eunm
-     * @tc.desc      : Camera MetadataObjectType Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_0100
+     * @tc.desc   Camera MetadataObjectType Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ENUM_METADATAOBJECTTYPE_0100--------------");
@@ -325,12 +325,12 @@ export default function cameraEnumTest() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_0100
-     * @tc.name      : Camera CameraErrorCode  Eunm
-     * @tc.desc      : Camera CameraErrorCode Eunm
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_0100
+     * @tc.desc   Camera CameraErrorCode Eunm
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_0100', Level.LEVEL2, async (done: Function) => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_ENUM_CAMERAERRORCODE_0100--------------");
@@ -361,12 +361,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_0100
-     * @tc.name      : test torchMode enum
-     * @tc.desc      : assert all torchMode
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_0100
+     * @tc.desc   assert all torchMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_TORCH_0100', Level.LEVEL0, async (done: Function) => {
       expect(camera.TorchMode.OFF == 0).assertTrue();
@@ -379,12 +379,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_0100
-     * @tc.name      : test VideoCodecType enum
-     * @tc.desc      : assert all VideoCodecType
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_0100
+     * @tc.desc   assert all VideoCodecType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_VIDEOCODECTYPE_0100', Level.LEVEL0, async (done: Function) => {
       expect(camera.VideoCodecType.AVC == 0).assertTrue();
@@ -395,12 +395,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0100
-     * @tc.name      : test preconfig type enum
-     * @tc.desc      : assert all preconfig type enums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0100
+     * @tc.desc   assert all preconfig type enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0100', Level.LEVEL0, async (done: Function) => {
       expect(camera.PreconfigType.PRECONFIG_720P == 0).assertTrue();
@@ -411,16 +411,18 @@ export default function cameraEnumTest() {
       console.info(`${TAG} PreconfigType.PRECONFIG_4K:${camera.PreconfigType.PRECONFIG_4K}`);
       expect(camera.PreconfigType.PRECONFIG_HIGH_QUALITY == 3).assertTrue();
       console.info(`${TAG} PreconfigType.PRECONFIG_HIGH_QUALITY:${camera.PreconfigType.PRECONFIG_HIGH_QUALITY}`);
+      expect(camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020 == 4).assertTrue();
+      console.info(`${TAG} PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020:${camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020}`);
       done();
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0101
-     * @tc.name      : test preconfig ratio enum
-     * @tc.desc      : assert all preconfig ratio enums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0101
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0101
+     * @tc.desc   assert all preconfig ratio enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_PRECONFIG_0101', Level.LEVEL0, async (done: Function) => {
       expect(camera.PreconfigRatio.PRECONFIG_RATIO_1_1 == 0).assertTrue();
@@ -433,12 +435,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_0100
-     * @tc.name      : test fold status enum
-     * @tc.desc      : assert all fold status enums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_0100
+     * @tc.desc   assert all fold status enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_FOLD_STATUS_0100', Level.LEVEL0, async (done: Function) => {
       expect(camera.FoldStatus.NON_FOLDABLE == 0).assertTrue();
@@ -451,12 +453,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_0100
-     * @tc.name      : test smooth zoom mode enum
-     * @tc.desc      : assert all smooth zoom mode enums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_0100
+     * @tc.desc   assert all smooth zoom mode enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_SMOOTH_ZOOM_MODE_0100', Level.LEVEL0, async (done: Function) => {
       expect(camera.SmoothZoomMode.NORMAL == 0).assertTrue();
@@ -465,12 +467,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_0100
-     * @tc.name      : test concurrent type  enums
-     * @tc.desc      : assert all concurrent type  enums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_0100
+     * @tc.desc   assert all concurrent type  enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_CONCURRENT_TYPE_0100', Level.LEVEL0, async (done: Function) => {
       expect(camera.CameraConcurrentType.CAMERA_LIMITED_CAPABILITY == 0).assertTrue();
@@ -481,12 +483,12 @@ export default function cameraEnumTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100
-     * @tc.desc      : assert all photo quality prioritization enums
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100
+     * @tc.desc   assert all photo quality prioritization enums
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_CAMERA_ENUM_PHOTO_QUALITY_PRIORITIZATION_0100', Level.LEVEL0, async (done: Function) => {
       expect(camera.PhotoQualityPrioritization.HIGH_QUALITY == 0).assertTrue();

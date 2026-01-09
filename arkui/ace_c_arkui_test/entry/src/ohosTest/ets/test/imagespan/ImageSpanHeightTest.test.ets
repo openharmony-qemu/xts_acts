@@ -26,39 +26,39 @@ export default function imageSpanHeightTest() {
       done();
     });
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_HEIGHT_0100
-     * @tc.name: testImageSpanHeight001
-     * @tc.desc: testing height for imageSpan with normal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanHeight001
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_HEIGHT_0100
+     * @tc.desc   testing height for imageSpan with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanHeight001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanHeight001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_HEIGHT_0200
-     * @tc.name: testImageSpanHeight002
-     * @tc.desc: testing height for imageSpan with abnormal value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+    /**
+     * @tc.name   testImageSpanHeight002
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_HEIGHT_0200
+     * @tc.desc   testing height for imageSpan with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanHeight002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanHeight002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number: SUB_ARKUI_CAPI_IMAGESPAN_HEIGHT_0300
-     * @tc.name: testImageSpanHeight003
-     * @tc.desc: testing height for imageSpan with large value
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+    /**
+     * @tc.name   testImageSpanHeight003
+     * @tc.number SUB_ARKUI_CAPI_IMAGESPAN_HEIGHT_0300
+     * @tc.desc   testing height for imageSpan with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSpanHeight003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSpanHeight003()).assertEqual(0)

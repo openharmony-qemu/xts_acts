@@ -315,12 +315,12 @@ export default function cameraSessionIsFocusModeSupported() {
     });
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_001
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_001
-     * @tc.desc       photoSession isFocusModeSupported api errorcode undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_001
+     * @tc.desc   photoSession isFocusModeSupported api errorcode undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_001', Level.LEVEL2, async (done: Function) => {
       photoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_001',undefined,(res?: boolean, errCode?: number) => {
@@ -335,12 +335,12 @@ export default function cameraSessionIsFocusModeSupported() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_002
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_002
-     * @tc.desc       VideoSession isFocusModeSupported api errorcode undefined
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_002
+     * @tc.desc   VideoSession isFocusModeSupported api errorcode undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_002', Level.LEVEL2, async (done: Function) => {
       videoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_002',undefined,(res?: boolean, errCode?: number) => {
@@ -355,12 +355,12 @@ export default function cameraSessionIsFocusModeSupported() {
     })
 
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_003
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_003
-     * @tc.desc       PhotoSession isFocusModeSupported api errorcode null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_003
+     * @tc.desc   PhotoSession isFocusModeSupported api errorcode null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_003', Level.LEVEL2, async (done: Function) => {
       photoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_003',null,(res?: boolean, errCode?: number) => {
@@ -374,12 +374,12 @@ export default function cameraSessionIsFocusModeSupported() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_004
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_004
-     * @tc.desc       videoSession isFocusModeSupported api errorcode null
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_004
+     * @tc.desc   videoSession isFocusModeSupported api errorcode null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_004', Level.LEVEL2, async (done: Function) => {
       videoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_004',null,(res?: boolean, errCode?: number) => {
@@ -393,12 +393,12 @@ export default function cameraSessionIsFocusModeSupported() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_005
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_005
-     * @tc.desc       PhotoSession isFocusModeSupported api errorcode -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_005
+     * @tc.desc   PhotoSession isFocusModeSupported api errorcode -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_005', Level.LEVEL2, async (done: Function) => {
       photoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_005',-1,(res?: boolean, errCode?: number) => {
@@ -412,12 +412,12 @@ export default function cameraSessionIsFocusModeSupported() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_006
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_006
-     * @tc.desc       videoSession isFocusModeSupported api errorcode -1
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_006
+     * @tc.desc   videoSession isFocusModeSupported api errorcode -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_006', Level.LEVEL2, async (done: Function) => {
       videoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_006',-1,(res?: boolean, errCode?: number) => {
@@ -431,12 +431,12 @@ export default function cameraSessionIsFocusModeSupported() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_007
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_007
-     * @tc.desc       PhotoSession isFocusModeSupported api errorcode 4
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_007
+     * @tc.desc   PhotoSession isFocusModeSupported api errorcode 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_007', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(camera.FocusMode);
@@ -451,12 +451,12 @@ export default function cameraSessionIsFocusModeSupported() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_008
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_008
-     * @tc.desc       videoSession isFocusModeSupported api errorcode 4
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_008
+     * @tc.desc   videoSession isFocusModeSupported api errorcode 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_008', Level.LEVEL2, async (done: Function) => {
       let maxEnum = getEnumMaxValue(camera.FocusMode);
@@ -471,12 +471,12 @@ export default function cameraSessionIsFocusModeSupported() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_009
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_009
-     * @tc.desc       PhotoSession isFocusModeSupported api errorcode 10000
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_009
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_009
+     * @tc.desc   PhotoSession isFocusModeSupported api errorcode 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_009', Level.LEVEL2, async (done: Function) => {
       photoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_009',1000,(res?: boolean, errCode?: number) => {
@@ -490,12 +490,12 @@ export default function cameraSessionIsFocusModeSupported() {
       done();
     })
     /**
-     * @tc.number     SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_010
-     * @tc.name       SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_010
-     * @tc.desc       videoSession isFocusModeSupported api errorcode 10000
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_010
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_010
+     * @tc.desc   videoSession isFocusModeSupported api errorcode 10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_010', Level.LEVEL2, async (done: Function) => {
       videoSessionisFocusModeSupported('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_ISFOCUSMODESUPPORTED_ERROR_010',10000,(res?: boolean, errCode?: number) => {

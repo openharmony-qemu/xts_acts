@@ -133,13 +133,11 @@ struct XtsFormHost {
   }
 
   getFormComponentId(): string {
-    const formId = this.formComponentIds.pop() as string;
-    return formId
+    return this.formComponentIds.pop() ?? this.falseFormId;
   }
 
   getTempFormComponentId(): string {
-    const formId = this.tempFormComponentIds.pop() as string;
-    return formId
+    return this.tempFormComponentIds.pop() ?? this.falseFormId;
   }
 
   registerTestEvents() {
@@ -160,8 +158,7 @@ struct XtsFormHost {
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.DeleteFormWithCallback),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteFormWithCallback start event triggered.');
-        const result = await formHost.addForm(this.createWant());
-        const formId = result.formId;
+        const formId = this.getFormComponentId();
         this.runDeleteFormWithCallback(formId);
       })
 
@@ -174,8 +171,7 @@ struct XtsFormHost {
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.DeleteFormWithPromise),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'DeleteFormWithPromise start event triggered.');
-        const result = await formHost.addForm(this.createWant());
-        const formId = result.formId;
+        const formId = this.getFormComponentId();
         this.runDeleteFormWithPromise(formId);
       })
 
@@ -505,19 +501,19 @@ struct XtsFormHost {
         this.runAcquireFormStateWithPromise(this.createFalseWant());
       })
 
-    emitter.once(this.formHostTestController.getTestEvent(EventIdMap.OnFormUninstall),
+    emitter.once(this.formHostTestController.getTestEvent(EventIdMap.OnFormUninstallWithoutString),
       (eventData: emitter.EventData) => {
-        hilog.info(DOMAIN, TAG, 'OnFormUninstall start event triggered.');
-        this.runOnFormUninstall((formId: string) => {
-          hilog.info(DOMAIN, TAG, 'Form uninstalled:', formId);
+        hilog.info(DOMAIN, TAG, 'onFormUninstallWithoutString start event triggered.');
+        this.runOnFormUninstallWithoutString((formId: string) => {
+          hilog.info(DOMAIN, TAG, 'Form onFormUninstallWithoutString:', formId);
         });
       })
 
-    emitter.once(this.formHostTestController.getTestEvent(EventIdMap.OffFormUninstall),
+    emitter.once(this.formHostTestController.getTestEvent(EventIdMap.OffFormUninstallWithoutString),
       (eventData: emitter.EventData) => {
-        hilog.info(DOMAIN, TAG, 'OffFormUninstall start event triggered.');
-        this.runOffFormUninstall((formId: string) => {
-          hilog.info(DOMAIN, TAG, 'Form uninstalled:', formId);
+        hilog.info(DOMAIN, TAG, 'offFormUninstallWithoutString start event triggered.');
+        this.runOffFormUninstallWithoutString((formId: string) => {
+          hilog.info(DOMAIN, TAG, 'Form offFormUninstallWithoutString:', formId);
         });
       })
 
@@ -657,6 +653,12 @@ struct XtsFormHost {
         this.runAcquireFormDataWithPromise(formId);
       })
 
+    emitter.once(this.formHostTestController.getFalseTestEvent(EventIdMap.AcquireFormDataWithPromise),
+      (eventData: emitter.EventData) => {
+        hilog.info(DOMAIN, TAG, 'AcquireFormDataWithPromise start event triggered.');
+        this.runAcquireFormDataWithPromise(this.emptyFormId);
+      })
+
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.SetRouterProxyWithPromise),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'SetRouterProxyWithPromise start event triggered.');
@@ -725,12 +727,9 @@ struct XtsFormHost {
           message: 'Form published!'
         };
         try {
-          formProvider.requestPublishForm(this.createWant()).then((formId: string) => {
-            this.runSetPublishFormResult(formId, publishResult);
-          }).catch((error: Error) => {
-            hilog.error(DOMAIN, TAG, `requestPublishForm->SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
-          });
-        } catch (error: Error) {
+          const formId = this.getFormComponentId();
+          this.runSetPublishFormResult(formId, publishResult);
+        } catch (error) {
           hilog.error(DOMAIN, TAG, `SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
         }
       })
@@ -825,8 +824,7 @@ struct XtsFormHost {
     emitter.once(this.formHostTestController.getTestEvent(EventIdMap.UpdateFormLockedStateWithPromise),
       (eventData: emitter.EventData) => {
         hilog.info(DOMAIN, TAG, 'UpdateFormLockedStateWithPromise start event triggered.');
-        const result = await formHost.addForm(this.createWant());
-        const formId = result.formId;
+        const formId = this.getFormComponentId();
         this.runUpdateFormLockedStateWithPromise(formId, false);
       })
 
@@ -848,7 +846,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `AddFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.AddFormWithPromise, false)
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `AddFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.AddFormWithPromise, false);
     }
@@ -865,7 +863,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.DeleteFormWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `DeleteFormWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.DeleteFormWithCallback, false);
     }
@@ -880,7 +878,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `DeleteFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.DeleteFormWithPromise, false)
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `DeleteFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.DeleteFormWithPromise, false);
     }
@@ -895,7 +893,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `ReleaseFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.ReleaseFormWithPromise, false)
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `ReleaseFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.ReleaseFormWithPromise, false);
     }
@@ -912,7 +910,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.ReleaseFormWithCacheCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `ReleaseFormWithCacheCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.ReleaseFormWithCacheCallback, false);
     }
@@ -929,7 +927,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.ReleaseFormWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `ReleaseFormWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.ReleaseFormWithCallback, false);
     }
@@ -944,7 +942,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `RequestFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.RequestFormWithPromise, false)
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `RequestFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.RequestFormWithPromise, false);
     }
@@ -961,7 +959,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.RequestFormWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `RequestFormWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.RequestFormWithCallback, false);
     }
@@ -982,7 +980,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `RequestFormWithParamsPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.RequestFormWithParamsPromise, false)
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `RequestFormWithParamsPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.RequestFormWithParamsPromise, false);
     }
@@ -999,7 +997,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.CastToNormalFormWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `CastToNormalFormWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.CastToNormalFormWithCallback, false);
     }
@@ -1014,7 +1012,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `CastToNormalFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.CastToNormalFormWithPromise, false)
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `CastToNormalFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.CastToNormalFormWithPromise, false);
     }
@@ -1029,7 +1027,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `NotifyVisibleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.NotifyVisibleFormsWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyVisibleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyVisibleFormsWithPromise, false);
     }
@@ -1046,7 +1044,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.NotifyVisibleFormsWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyVisibleFormsWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyVisibleFormsWithCallback, false);
     }
@@ -1061,7 +1059,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `NotifyInvisibleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.NotifyInvisibleFormsWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyInvisibleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyInvisibleFormsWithPromise, false);
     }
@@ -1078,7 +1076,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.NotifyInvisibleFormsWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyInvisibleFormsWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyInvisibleFormsWithCallback, false);
     }
@@ -1095,7 +1093,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.EnableFormsUpdateWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `EnableFormsUpdateWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.EnableFormsUpdateWithCallback, false);
     }
@@ -1110,7 +1108,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `EnableFormsUpdateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.EnableFormsUpdateWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `EnableFormsUpdateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.EnableFormsUpdateWithPromise, false);
     }
@@ -1125,7 +1123,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `DisableFormsUpdateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.DisableFormsUpdateWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `DisableFormsUpdateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.DisableFormsUpdateWithPromise, false);
     }
@@ -1142,7 +1140,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.DisableFormsUpdateWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `DisableFormsUpdateWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.DisableFormsUpdateWithCallback, false);
     }
@@ -1159,7 +1157,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.IsSystemReadyWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `IsSystemReadyWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.IsSystemReadyWithCallback, false);
     }
@@ -1174,7 +1172,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `IsSystemReadyWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.IsSystemReadyWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `IsSystemReadyWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.IsSystemReadyWithPromise, false);
     }
@@ -1189,7 +1187,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `GetAllFormsInfoWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.GetAllFormsInfoWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `GetAllFormsInfoWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.GetAllFormsInfoWithPromise, false);
     }
@@ -1206,7 +1204,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.GetAllFormsInfoWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `GetAllFormsInfoWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.GetAllFormsInfoWithCallback, false);
     }
@@ -1221,7 +1219,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `GetFormsInfoWithFilterPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithFilterPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `GetFormsInfoWithFilterPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithFilterPromise, false);
     }
@@ -1238,7 +1236,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithBundleModuleCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `GetFormsInfoWithBundleModuleCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithBundleModuleCallback, false);
     }
@@ -1253,7 +1251,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `GetFormsInfoWithBundleModulePromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithBundleModulePromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `GetFormsInfoWithBundleModulePromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithBundleModulePromise, false);
     }
@@ -1270,7 +1268,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithBundleCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `GetFormsInfoWithBundleCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.GetFormsInfoWithBundleCallback, false);
     }
@@ -1295,7 +1293,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `setFormsRecyclable->RecycleFormsWithPromise->DeleteInvalidFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.DeleteInvalidFormsWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `DeleteInvalidFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.DeleteInvalidFormsWithPromise, false);
     }
@@ -1322,7 +1320,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `setFormsRecyclable->RecycleFormsWithPromise->DeleteInvalidFormsWithCallback error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.DeleteInvalidFormsWithCallback, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `DeleteInvalidFormsWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.DeleteInvalidFormsWithCallback, false);
     }
@@ -1337,7 +1335,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `AcquireFormStateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.AcquireFormStateWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `AcquireFormStateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.AcquireFormStateWithPromise, false);
     }
@@ -1354,34 +1352,34 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.AcquireFormStateWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `AcquireFormStateWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.AcquireFormStateWithCallback, false);
     }
   }
 
-  runOnFormUninstall(callback: Callback<string>) {
+  runOnFormUninstallWithoutString(callback: Callback<string>) {
     try {
-      formHost.on('formUninstall', callback);
-      hilog.info(DOMAIN, TAG, 'OnFormUninstall register success');
-      this.formHostTestController.emitFinished(EventIdMap.OnFormUninstall, true);
-    } catch (error: Error) {
-      hilog.error(DOMAIN, TAG, `OnFormUninstall error | code: ${error?.code}, message: ${error?.message}`);
-      this.formHostTestController.emitFinished(EventIdMap.OnFormUninstall, false);
+      formHost.onFormUninstall(callback);
+      hilog.info(DOMAIN, TAG, 'OnFormUninstallWithoutString register success');
+      this.formHostTestController.emitFinished(EventIdMap.OnFormUninstallWithoutString, true);
+    } catch (error) {
+      hilog.error(DOMAIN, TAG, `OnFormUninstallWithoutString error | code: ${error?.code}, message: ${error?.message}`);
+      this.formHostTestController.emitFinished(EventIdMap.OnFormUninstallWithoutString, false);
     }
   }
 
-  runOffFormUninstall(callback ?: Callback<string>) {
+  runOffFormUninstallWithoutString(callback ?: Callback<string>) {
     try {
       if (callback != undefined) {
-        formHost.on('formUninstall', callback);
+        formHost.onFormUninstall(callback);
       }
-      formHost.off('formUninstall', callback);
-      hilog.info(DOMAIN, TAG, 'OffFormUninstall clear success');
-      this.formHostTestController.emitFinished(EventIdMap.OffFormUninstall, true);
-    } catch (error: Error) {
-      hilog.error(DOMAIN, TAG, `OffFormUninstall error | code: ${error?.code}, message: ${error?.message}`);
-      this.formHostTestController.emitFinished(EventIdMap.OffFormUninstall, false);
+      formHost.offFormUninstall(callback);
+      hilog.info(DOMAIN, TAG, 'formUninstallWithoutString clear success');
+      this.formHostTestController.emitFinished(EventIdMap.OffFormUninstallWithoutString, true);
+    } catch (error) {
+      hilog.error(DOMAIN, TAG, `formUninstallWithoutString error | code: ${error?.code}, message: ${error?.message}`);
+      this.formHostTestController.emitFinished(EventIdMap.OffFormUninstallWithoutString, false);
     }
   }
 
@@ -1396,7 +1394,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.NotifyFormsVisibleWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyFormsVisibleWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyFormsVisibleWithCallback, false);
     }
@@ -1411,7 +1409,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `NotifyFormsVisibleWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.NotifyFormsVisibleWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyFormsVisibleWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyFormsVisibleWithPromise, false);
     }
@@ -1426,7 +1424,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `NotifyFormsEnableUpdateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.NotifyFormsEnableUpdateWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyFormsEnableUpdateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyFormsEnableUpdateWithPromise, false);
     }
@@ -1443,7 +1441,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.NotifyFormsEnableUpdateWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyFormsEnableUpdateWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyFormsEnableUpdateWithCallback, false);
     }
@@ -1458,7 +1456,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `ShareFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.ShareFormWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `ShareFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.ShareFormWithPromise, false);
     }
@@ -1475,7 +1473,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.ShareFormWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `ShareFormWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.ShareFormWithCallback, false);
     }
@@ -1492,7 +1490,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.NotifyFormsPrivacyProtectedWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyFormsPrivacyProtectedWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyFormsPrivacyProtectedWithCallback, false);
     }
@@ -1507,7 +1505,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `NotifyFormsPrivacyProtectedWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.NotifyFormsPrivacyProtectedWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `NotifyFormsPrivacyProtectedWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.NotifyFormsPrivacyProtectedWithPromise, false);
     }
@@ -1524,7 +1522,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.AcquireFormDataWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `AcquireFormDataWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.AcquireFormDataWithCallback, false);
     }
@@ -1539,7 +1537,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `AcquireFormDataWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.AcquireFormDataWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `AcquireFormDataWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.AcquireFormDataWithPromise, false);
     }
@@ -1554,7 +1552,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `SetRouterProxyWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.SetRouterProxyWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `SetRouterProxyWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.SetRouterProxyWithPromise, false);
     }
@@ -1571,7 +1569,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.SetRouterProxyWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `SetRouterProxyWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.SetRouterProxyWithCallback, false);
     }
@@ -1588,7 +1586,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.ClearRouterProxyWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `ClearRouterProxyWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.ClearRouterProxyWithCallback, false);
     }
@@ -1603,7 +1601,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `ClearRouterProxyWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.ClearRouterProxyWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `ClearRouterProxyWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.ClearRouterProxyWithPromise, false);
     }
@@ -1614,7 +1612,7 @@ struct XtsFormHost {
       formHost.setPublishFormResult(formId, publishResult);
       hilog.info(DOMAIN, TAG, 'SetPublishFormResult success');
       this.formHostTestController.emitFinished(EventIdMap.SetPublishFormResult, true);
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.SetPublishFormResult, false);
     }
@@ -1629,7 +1627,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `SetFormsRecyclableWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.SetFormsRecyclableWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `SetFormsRecyclableWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.SetFormsRecyclableWithPromise, false);
     }
@@ -1646,7 +1644,7 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.SetFormsRecyclableWithCallback, true);
         }
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `SetFormsRecyclableWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.SetFormsRecyclableWithCallback, false);
     }
@@ -1666,7 +1664,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `setFormsRecyclable->RecycleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.RecycleFormsWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `RecycleFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.RecycleFormsWithPromise, false);
     }
@@ -1691,7 +1689,7 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `setFormsRecyclable->RecycleFormsWithPromise->RecoverFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.RecoverFormsWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `RecoverFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.RecoverFormsWithPromise, false);
     }
@@ -1715,10 +1713,10 @@ struct XtsFormHost {
           this.formHostTestController.emitFinished(EventIdMap.RecoverFormsWithCallback, false);
         });
       }).catch((error: Error) => {
-        hilog.error(DOMAIN, TAG, `setFormsRecyclable->RecycleFormsWithPromise->RecoverFormsWithPromise error | code: ${error?.code}, message: ${error?.message}`);
+        hilog.error(DOMAIN, TAG, `setFormsRecyclable->RecycleFormsWithPromise->RecoverFormsWithCallback error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.RecoverFormsWithCallback, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `RecoverFormsWithCallback error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.RecoverFormsWithCallback, false);
     }
@@ -1729,7 +1727,7 @@ struct XtsFormHost {
       formHost.updateFormLocation(formId, formInfo.FormLocation.SCREEN_LOCK);
       hilog.info(DOMAIN, TAG, 'UpdateFormLocation success');
       this.formHostTestController.emitFinished(EventIdMap.UpdateFormLocation, true);
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `UpdateFormLocation error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.UpdateFormLocation, false);
     }
@@ -1744,264 +1742,276 @@ struct XtsFormHost {
         hilog.error(DOMAIN, TAG, `UpdateFormLockedStateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
         this.formHostTestController.emitFinished(EventIdMap.UpdateFormLockedStateWithPromise, false);
       });
-    } catch (error: Error) {
+    } catch (error) {
       hilog.error(DOMAIN, TAG, `UpdateFormLockedStateWithPromise error | code: ${error?.code}, message: ${error?.message}`);
       this.formHostTestController.emitFinished(EventIdMap.UpdateFormLockedStateWithPromise, false);
     }
   }
 
   build() {
-    Scroll() {
-      Column(undefined) {
-        Button('AddFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          this.runAddFormWithPromise(this.createWant());
-        })
-        Button('DeleteFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const result = await formHost.addForm(this.createWant());
-          const formId = result.formId;
-          this.runDeleteFormWithCallback(formId);
-        })
-        Button('DeleteFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const result = await formHost.addForm(this.createWant());
-          const formId = result.formId;
-          this.runDeleteFormWithPromise(formId);
-        })
-        Button('ReleaseFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runReleaseFormWithPromise(formId);
-        })
-        Button('ReleaseFormWithCacheCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runReleaseFormWithCacheCallback(formId, true);
-        })
-        Button('ReleaseFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runReleaseFormWithCallback(formId);
-        })
-        Button('RequestFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runRequestFormWithPromise(formId);
-        })
-        Button('RequestFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runRequestFormWithCallback(formId);
-        })
-        Button('RequestFormWithParamsPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runRequestFormWithParamsPromise(formId);
-        })
-        Button('CastToNormalFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getTempFormComponentId();
-          this.runCastToNormalFormWithCallback(formId);
-        })
-        Button('CastToNormalFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getTempFormComponentId();
-          this.runCastToNormalFormWithPromise(formId);
-        })
-        Button('NotifyVisibleFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyVisibleFormsWithPromise(formIds);
-        })
-        Button('NotifyVisibleFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyVisibleFormsWithCallback(formIds);
-        })
-        Button('NotifyInvisibleFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyInvisibleFormsWithPromise(formIds);
-        })
-        Button('NotifyInvisibleFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyInvisibleFormsWithCallback(formIds);
-        })
-        Button('EnableFormsUpdateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runEnableFormsUpdateWithCallback(formIds);
-        })
-        Button('EnableFormsUpdateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runEnableFormsUpdateWithPromise(formIds);
-        })
-        Button('DisableFormsUpdateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runDisableFormsUpdateWithPromise(formIds);
-        })
-        Button('DisableFormsUpdateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runDisableFormsUpdateWithCallback(formIds);
-        })
-        Button('IsSystemReadyWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          this.runIsSystemReadyWithCallback();
-        })
-        Button('IsSystemReadyWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          this.runIsSystemReadyWithPromise();
-        })
-        Button('GetAllFormsInfoWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          this.runGetAllFormsInfoWithPromise();
-        })
-        Button('GetAllFormsInfoWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          this.runGetAllFormsInfoWithCallback();
-        })
-        Button('GetFormsInfoWithFilterPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const filter: formInfo.FormInfoFilter = {
-            bundleName: this.bundleName,
-            moduleName: this.moduleName
-          };
-          this.runGetFormsInfoWithFilterPromise(filter);
-        })
-        Button('GetFormsInfoWithBundleModuleCallback').fontSize(10).onClick((e: ClickEvent) => {
-          this.runGetFormsInfoWithBundleModuleCallback(this.bundleName, this.moduleName);
-        })
-        Button('GetFormsInfoWithBundleModulePromise').fontSize(10).onClick((e: ClickEvent) => {
-          this.runGetFormsInfoWithBundleModulePromise(this.bundleName, this.moduleName);
-        })
-        Button('GetFormsInfoWithBundleCallback').fontSize(10).onClick((e: ClickEvent) => {
-          this.runGetFormsInfoWithBundleCallback(this.bundleName);
-        })
-        Button('DeleteInvalidFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runDeleteInvalidFormsWithPromise(formIds);
-        })
-        Button('DeleteInvalidFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runDeleteInvalidFormsWithCallback(formIds);
-        })
-        Button('AcquireFormStateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          this.runAcquireFormStateWithPromise(this.createWant());
-        })
-        Button('AcquireFormStateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          this.runAcquireFormStateWithCallback(this.createWant());
-        })
-        Button('OnFormUninstall').fontSize(10).onClick((e: ClickEvent) => {
-          this.runOnFormUninstall((formId: string) => {
-            hilog.info(DOMAIN, TAG, 'Form uninstalled:', formId);
-          });
-        })
-        Button('OffFormUninstall').fontSize(10).onClick((e: ClickEvent) => {
-          this.runOffFormUninstall((formId: string) => {
-            hilog.info(DOMAIN, TAG, 'Form uninstalled:', formId);
-          });
-        })
-        Button('NotifyFormsVisibleWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyFormsVisibleWithCallback(formIds, true);
-        })
-        Button('NotifyFormsVisibleWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyFormsVisibleWithPromise(formIds, true);
-        })
-        Button('NotifyFormsEnableUpdateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyFormsEnableUpdateWithPromise(formIds, true);
-        })
-        Button('NotifyFormsEnableUpdateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyFormsEnableUpdateWithCallback(formIds, true);
-        })
-        Button('ShareFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runShareFormWithPromise(formId, '0');
-        })
-        Button('ShareFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runShareFormWithCallback(formId, '0');
-        })
-        Button('NotifyFormsPrivacyProtectedWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyFormsPrivacyProtectedWithCallback(formIds, true);
-        })
-        Button('NotifyFormsPrivacyProtectedWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runNotifyFormsPrivacyProtectedWithPromise(formIds, true);
-        })
-        Button('AcquireFormDataWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runAcquireFormDataWithCallback(formId);
-        })
-        Button('AcquireFormDataWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runAcquireFormDataWithPromise(formId);
-        })
-        Button('SetRouterProxyWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runSetRouterProxyWithPromise(formIds, (want: Want) => {
-            hilog.info(DOMAIN, TAG, 'Router proxy callback:', want);
-          });
-        })
-        Button('SetRouterProxyWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runSetRouterProxyWithCallback(formIds, (want: Want) => {
-            hilog.info(DOMAIN, TAG, 'Router proxy callback:', want);
-          });
-        })
-        Button('ClearRouterProxyWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runClearRouterProxyWithCallback(formIds);
-        })
-        Button('ClearRouterProxyWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runClearRouterProxyWithPromise(formIds);
-        })
-        Button('SetPublishFormResult').fontSize(10).onClick((e: ClickEvent) => {
-          let publishResult: formInfo.PublishFormResult = {
-            code: formInfo.PublishFormErrorCode.SUCCESS,
-            message: 'Form published!'
-          };
-          try {
-            formProvider.requestPublishForm(this.createWant()).then((formId: string) => {
-              this.runSetPublishFormResult(formId, publishResult);
+    Column() {
+      Text('XTS FormHost').fontSize(20)
+      Scroll() {
+        Column() {
+          Button('AddFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            this.runAddFormWithPromise(this.createWant());
+          })
+          Button('DeleteFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            formHost.addForm(this.createWant()).then((runningFormInfo: formInfo.RunningFormInfo) => {
+              hilog.info(DOMAIN, TAG, 'AddFormWithPromise success:' + JSON.stringify(runningFormInfo));
+              const formId = runningFormInfo.formId;
+              this.runDeleteFormWithCallback(formId);
             }).catch((error: Error) => {
-              hilog.error(DOMAIN, TAG, `requestPublishForm->SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
+              hilog.error(DOMAIN, TAG, `AddFormWithPromise->DeleteFormWithCallback error | code: ${error?.code}, message: ${error?.message}`);
             });
-          } catch (error: Error) {
-            hilog.error(DOMAIN, TAG, `SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
-          }
-        })
-        Button('SetFormsRecyclableWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runSetFormsRecyclableWithPromise(formIds);
-        })
-        Button('SetFormsRecyclableWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runSetFormsRecyclableWithCallback(formIds);
-        })
-        Button('RecycleFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runRecycleFormsWithPromise(formIds);
-        })
-        Button('RecoverFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runRecoverFormsWithPromise(formIds);
-        })
-        Button('RecoverFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
-          const formIds = [this.getFormComponentId()];
-          this.runRecoverFormsWithCallback(formIds);
-        })
-        Button('UpdateFormLocation').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runUpdateFormLocation(formId);
-        })
-        Button('UpdateFormLockedStateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
-          const formId = this.getFormComponentId();
-          this.runUpdateFormLockedStateWithPromise(formId, false);
-        })
-        Row() {
-          for (let i = 0; i < FORM_COMPONENT_COUNT; i++) {
-            FormHostComponent({
-              callback: (formId: string) => {
-                this.formComponentIds.push(formId);
-                hilog.info(DOMAIN, TAG, `formHostComponent formId: ${formId}`);
-              }
-            })
-          }
-          for (let i = 0; i < TEMP_FORM_COMPONENT_COUNT; i++) {
-            FormHostComponent({
-              isTemporary: true,
-              callback: (formId: string) => {
-                this.tempFormComponentIds.push(formId);
-                hilog.info(DOMAIN, TAG, `formHostComponent formId: ${formId}`);
-              }
-            })
+          })
+          Button('DeleteFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            formHost.addForm(this.createWant()).then((runningFormInfo: formInfo.RunningFormInfo) => {
+              hilog.info(DOMAIN, TAG, 'AddFormWithPromise success:' + JSON.stringify(runningFormInfo));
+              const formId = runningFormInfo.formId;
+              this.runDeleteFormWithPromise(formId);
+            }).catch((error: Error) => {
+              hilog.error(DOMAIN, TAG, `AddFormWithPromise->DeleteFormWithPromise error | code: ${error?.code}, message: ${error?.message}`);
+            });
+          })
+          Button('ReleaseFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runReleaseFormWithPromise(formId);
+          })
+          Button('ReleaseFormWithCacheCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runReleaseFormWithCacheCallback(formId, true);
+          })
+          Button('ReleaseFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runReleaseFormWithCallback(formId);
+          })
+          Button('RequestFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runRequestFormWithPromise(formId);
+          })
+          Button('RequestFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runRequestFormWithCallback(formId);
+          })
+          Button('RequestFormWithParamsPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runRequestFormWithParamsPromise(formId);
+          })
+          Button('CastToNormalFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getTempFormComponentId();
+            this.runCastToNormalFormWithCallback(formId);
+          })
+          Button('CastToNormalFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getTempFormComponentId();
+            this.runCastToNormalFormWithPromise(formId);
+          })
+          Button('NotifyVisibleFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyVisibleFormsWithPromise(formIds);
+          })
+          Button('NotifyVisibleFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyVisibleFormsWithCallback(formIds);
+          })
+          Button('NotifyInvisibleFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyInvisibleFormsWithPromise(formIds);
+          })
+          Button('NotifyInvisibleFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyInvisibleFormsWithCallback(formIds);
+          })
+          Button('EnableFormsUpdateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runEnableFormsUpdateWithCallback(formIds);
+          })
+          Button('EnableFormsUpdateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runEnableFormsUpdateWithPromise(formIds);
+          })
+          Button('DisableFormsUpdateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runDisableFormsUpdateWithPromise(formIds);
+          })
+          Button('DisableFormsUpdateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runDisableFormsUpdateWithCallback(formIds);
+          })
+          Button('IsSystemReadyWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            this.runIsSystemReadyWithCallback();
+          })
+          Button('IsSystemReadyWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            this.runIsSystemReadyWithPromise();
+          })
+          Button('GetAllFormsInfoWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            this.runGetAllFormsInfoWithPromise();
+          })
+          Button('GetAllFormsInfoWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            this.runGetAllFormsInfoWithCallback();
+          })
+          Button('GetFormsInfoWithFilterPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const filter: formInfo.FormInfoFilter = {
+              bundleName: this.bundleName,
+              moduleName: this.moduleName
+            };
+            this.runGetFormsInfoWithFilterPromise(filter);
+          })
+          Button('GetFormsInfoWithBundleModuleCallback').fontSize(10).onClick((e: ClickEvent) => {
+            this.runGetFormsInfoWithBundleModuleCallback(this.bundleName, this.moduleName);
+          })
+          Button('GetFormsInfoWithBundleModulePromise').fontSize(10).onClick((e: ClickEvent) => {
+            this.runGetFormsInfoWithBundleModulePromise(this.bundleName, this.moduleName);
+          })
+          Button('GetFormsInfoWithBundleCallback').fontSize(10).onClick((e: ClickEvent) => {
+            this.runGetFormsInfoWithBundleCallback(this.bundleName);
+          })
+          Button('DeleteInvalidFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runDeleteInvalidFormsWithPromise(formIds);
+          })
+          Button('DeleteInvalidFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runDeleteInvalidFormsWithCallback(formIds);
+          })
+          Button('AcquireFormStateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            this.runAcquireFormStateWithPromise(this.createWant());
+          })
+          Button('AcquireFormStateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            this.runAcquireFormStateWithCallback(this.createWant());
+          })
+          Button('OnFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
+            this.runOnFormUninstallWithoutString((formId: string) => {
+            hilog.info(DOMAIN, TAG, `Form onFormUninstallWithoutString: ${formId}` );
+            });
+           })
+           Button('OffFormUninstallWithoutString').fontSize(10).onClick((e: ClickEvent) => {
+            this.runOffFormUninstallWithoutString((formId: string) => {
+            hilog.info(DOMAIN, TAG, `Form OffFormUninstallWithoutString: ${formId}` );
+            });
+           })
+          Button('NotifyFormsVisibleWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyFormsVisibleWithCallback(formIds, true);
+          })
+          Button('NotifyFormsVisibleWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyFormsVisibleWithPromise(formIds, true);
+          })
+          Button('NotifyFormsEnableUpdateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyFormsEnableUpdateWithPromise(formIds, true);
+          })
+          Button('NotifyFormsEnableUpdateWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyFormsEnableUpdateWithCallback(formIds, true);
+          })
+          Button('ShareFormWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runShareFormWithPromise(formId, '0');
+          })
+          Button('ShareFormWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runShareFormWithCallback(formId, '0');
+          })
+          Button('NotifyFormsPrivacyProtectedWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyFormsPrivacyProtectedWithCallback(formIds, true);
+          })
+          Button('NotifyFormsPrivacyProtectedWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runNotifyFormsPrivacyProtectedWithPromise(formIds, true);
+          })
+          Button('AcquireFormDataWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runAcquireFormDataWithCallback(formId);
+          })
+          Button('AcquireFormDataWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runAcquireFormDataWithPromise(formId);
+          })
+          Button('SetRouterProxyWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runSetRouterProxyWithPromise(formIds, (want: Want) => {
+              hilog.info(DOMAIN, TAG, 'Router proxy callback:', want);
+            });
+          })
+          Button('SetRouterProxyWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runSetRouterProxyWithCallback(formIds, (want: Want) => {
+              hilog.info(DOMAIN, TAG, 'Router proxy callback:', want);
+            });
+          })
+          Button('ClearRouterProxyWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runClearRouterProxyWithCallback(formIds);
+          })
+          Button('ClearRouterProxyWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runClearRouterProxyWithPromise(formIds);
+          })
+          Button('SetPublishFormResult').fontSize(10).onClick((e: ClickEvent) => {
+            let publishResult: formInfo.PublishFormResult = {
+              code: formInfo.PublishFormErrorCode.SUCCESS,
+              message: 'Form published!'
+            };
+            try {
+              formProvider.requestPublishForm(this.createWant()).then((formId: string) => {
+                this.runSetPublishFormResult(formId, publishResult);
+              }).catch((error: Error) => {
+                hilog.error(DOMAIN, TAG,
+                  `requestPublishForm->SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
+              });
+            } catch (error) {
+              hilog.error(DOMAIN, TAG, `SetPublishFormResult error | code: ${error?.code}, message: ${error?.message}`);
+            }
+          })
+          Button('SetFormsRecyclableWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runSetFormsRecyclableWithPromise(formIds);
+          })
+          Button('SetFormsRecyclableWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runSetFormsRecyclableWithCallback(formIds);
+          })
+          Button('RecycleFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runRecycleFormsWithPromise(formIds);
+          })
+          Button('RecoverFormsWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runRecoverFormsWithPromise(formIds);
+          })
+          Button('RecoverFormsWithCallback').fontSize(10).onClick((e: ClickEvent) => {
+            const formIds = [this.getFormComponentId()];
+            this.runRecoverFormsWithCallback(formIds);
+          })
+          Button('UpdateFormLocation').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runUpdateFormLocation(formId);
+          })
+          Button('UpdateFormLockedStateWithPromise').fontSize(10).onClick((e: ClickEvent) => {
+            const formId = this.getFormComponentId();
+            this.runUpdateFormLockedStateWithPromise(formId, false);
+          })
+          Row() {
+            for (let i = 0; i < FORM_COMPONENT_COUNT; i++) {
+              FormHostComponent({
+                callback: (formId: string) => {
+                  this.formComponentIds.push(formId);
+                  hilog.info(DOMAIN, TAG, `formHostComponent formId: ${formId}`);
+                }
+              })
+            }
+            for (let i = 0; i < TEMP_FORM_COMPONENT_COUNT; i++) {
+              FormHostComponent({
+                isTemporary: true,
+                callback: (formId: string) => {
+                  this.tempFormComponentIds.push(formId);
+                  hilog.info(DOMAIN, TAG, `formHostComponent formId: ${formId}`);
+                }
+              })
+            }
           }
         }
       }

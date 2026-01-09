@@ -44,14 +44,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_ SETBLANKLESSLOADINGCACHECAPACITYTEST_0100
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity001
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_ SETBLANKLESSLOADINGCACHECAPACITYTEST_0100
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity001", 148201);
@@ -62,14 +62,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
         Utils.waitAndClickComponent('setBlanklessLoadingCacheCapacityTestButton', driver);
       })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0200
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity002
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0200
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity002", 148201);
@@ -79,14 +79,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
           });
         Utils.waitAndClickComponent('setBlanklessLoadingCacheCapacityTestButton', driver);
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0300
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity003
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0300
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity003", 148201);
@@ -96,14 +96,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
           });
         Utils.waitAndClickComponent('setBlanklessLoadingCacheCapacityTestButton', driver);
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0400
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity004
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0400
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity004", 148201);
@@ -113,14 +113,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
           });
         Utils.waitAndClickComponent('setBlanklessLoadingCacheCapacityTestButton', driver);
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0500
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity005
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0500
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity005", 148201);
@@ -130,14 +130,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
           });
         Utils.waitAndClickComponent('setBlanklessLoadingCacheCapacityTestButton', driver);
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0600
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity006
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0600
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity006", 148201);
@@ -147,14 +147,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
           });
         Utils.waitAndClickComponent('setBlanklessLoadingCacheCapacityTestButton', driver);
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0700
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity007
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity007
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0700
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity007", 148201);
@@ -171,6 +171,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
     * @tc.type       : Function
     * @tc.level      : Level 1
     */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity008
+     * @tc.number testsetBlanklessLoadingCacheCapacity008
+     * @tc.desc   testsetBlanklessLoadingCacheCapacity008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity008", 148201);
@@ -180,14 +188,14 @@ export default function setBlanklessLoadingCacheCapacityTest() {
           });
         Utils.waitAndClickComponent('setBlanklessLoadingCacheCapacityTestButton', driver);
       })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0900
-    * @tc.name       : testsetBlanklessLoadingCacheCapacity009
-    * @tc.desc       : test setBlanklessLoadingCacheCapacity
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testsetBlanklessLoadingCacheCapacity009
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SETBLANKLESSLOADINGCACHECAPACITYTEST_0900
+     * @tc.desc   test setBlanklessLoadingCacheCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testsetBlanklessLoadingCacheCapacity009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         Utils.emitEvent("testsetBlanklessLoadingCacheCapacity009", 148201);

@@ -101,12 +101,12 @@ export default function imageSourceCreatePixelMapTest() {
     });
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_001
-     * @tc.name      : imageSource_createPixelMap_promise_001
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_promise_001
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_001
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_promise_001';
@@ -126,12 +126,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_002
-     * @tc.name      : imageSource_createPixelMap_promise_002
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_promise_002
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_002
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_promise_002';
@@ -151,12 +151,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_003
-     * @tc.name      : imageSource_createPixelMap_promise_003
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_promise_003
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_003
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_promise_003';
@@ -167,12 +167,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_004
-     * @tc.name      : imageSource_createPixelMap_promise_004
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_promise_004
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_004
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_promise_004';
@@ -183,12 +183,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_005
-     * @tc.name      : imageSource_createPixelMap_callback_001
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_001
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_005
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_001';
@@ -199,12 +199,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_006
-     * @tc.name      : imageSource_createPixelMap_callback_002
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_002
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_006
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_002';
@@ -215,12 +215,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_007
-     * @tc.name      : imageSource_createPixelMap_callback_003
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_003
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_007
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_003';
@@ -231,12 +231,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_008
-     * @tc.name      : imageSource_createPixelMap_callback_004
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_004
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_008
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_004';
@@ -247,12 +247,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_009
-     * @tc.name      : imageSource_createPixelMap_callback_DecodingOptions_001
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_DecodingOptions_001
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_009
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_DecodingOptions_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_DecodingOptions_001';
@@ -272,12 +272,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_010
-     * @tc.name      : imageSource_createPixelMap_callback_DecodingOptions_002
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_DecodingOptions_002
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_010
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_DecodingOptions_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_DecodingOptions_002';
@@ -297,12 +297,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_011
-     * @tc.name      : imageSource_createPixelMap_callback_DecodingOptions_003
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_DecodingOptions_003
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_011
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_DecodingOptions_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_DecodingOptions_003';
@@ -322,12 +322,12 @@ export default function imageSourceCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number    : IMAGE_SOURCE_CREATE_PIXEL_MAP_012
-     * @tc.name      : imageSource_createPixelMap_callback_DecodingOptions_004
-     * @tc.desc      : imageSource_createPixelMap
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   imageSource_createPixelMap_callback_DecodingOptions_004
+     * @tc.number IMAGE_SOURCE_CREATE_PIXEL_MAP_012
+     * @tc.desc   imageSource_createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('imageSource_createPixelMap_callback_DecodingOptions_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'imageSource_createPixelMap_callback_DecodingOptions_004';

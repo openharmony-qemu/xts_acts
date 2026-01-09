@@ -28,6 +28,7 @@ import Want from '@ohos.app.ability.Want';
 import { ElementName } from 'bundleManager.ElementName';
 import rpc from '@ohos.rpc';
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 class ConnectOptions implements common.ConnectOptions {
   public isConnect: boolean = false;
@@ -63,6 +64,15 @@ export default function ApiCoverStaticTest() {
     const BUNDLE_NAME = 'com.example.apicoverhaptest.static';
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -73,12 +83,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_ABILITY_Extension_API_Static_012
-     * @tc.name    SUB_AA_ABILITY_Extension_API_Static_012
-     * @tc.desc    killProcessesBySelf with invalid param.
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_AA_ABILITY_Extension_API_Static_012
+     * @tc.number SUB_AA_ABILITY_Extension_API_Static_012
+     * @tc.desc   killProcessesBySelf with invalid param.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_ABILITY_Extension_API_Static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
@@ -99,7 +109,7 @@ export default function ApiCoverStaticTest() {
         expect((String(el5))).assertEqual("4");
         hilog.info(0x0000, 'SUB_AA_ABILITY_Extension_API_Static_012', `AreaMode end`);
         done()
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(0x0000, 'testTag', '%{public}s', `catch code: ${err.code}, message: ${err.message}`);
         expect().assertFail();
         done();
@@ -107,12 +117,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_Test_InsightIntent_Static_0100
-     * @tc.name    SUB_AA_Test_InsightIntent_Static_0100
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.desc    Test insightIntent.ExecuteMode
-     * @tc.level   3
+     * @tc.name   SUB_AA_Test_InsightIntent_Static_0100
+     * @tc.number SUB_AA_Test_InsightIntent_Static_0100
+     * @tc.desc   Test insightIntent.ExecuteMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_Test_InsightIntent_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       expect('0').assertEqual(insightIntent.ExecuteMode.UI_ABILITY_FOREGROUND + '');
@@ -122,12 +132,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_AbilityAppManager_Static_0100
-     * @tc.name    SUB_AA_AbilityAppManager_Static_0100
-     * @tc.desc    The form of a promise getRunningProcessInformation
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_AA_AbilityAppManager_Static_0100
+     * @tc.number SUB_AA_AbilityAppManager_Static_0100
+     * @tc.desc   The form of a promise getRunningProcessInformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_AbilityAppManager_Static_0100', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "SUB_AA_AbilityAppManager_Static_0100 begin");
@@ -139,10 +149,10 @@ export default function ApiCoverStaticTest() {
           for (let i = 0; i < data.length; i++) {
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.pid: ' + data[i].pid);
-            expect(typeof (data[i].pid)).assertEqual("number");
+            expect(typeof (data[i].pid)).assertEqual("int");
             expect(data[i].pid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.uid: ' + data[i].uid);
-            expect(typeof (data[i].uid)).assertEqual("number");
+            expect(typeof (data[i].uid)).assertEqual("int");
             expect(data[i].uid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.processName: ' + data[i].processName);
             expect(typeof (data[i].processName)).assertEqual("string");
@@ -151,14 +161,14 @@ export default function ApiCoverStaticTest() {
             expect(Array.isArray(data[i].bundleNames)).assertEqual(true);
             expect(data[i].bundleNames.length).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.bundleType: ' + data[i]?.bundleType);
-            expect(typeof (data[i]?.bundleType)).assertEqual("number");
+            expect(typeof (data[i]?.bundleType)).assertEqual("int");
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation data' + i + '.appCloneIndex: ' + data[i]?.appCloneIndex);
             expect(data[i]?.appCloneIndex).assertUndefined();
           }
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation done');
           done();
         })
-        .catch<void>((err: BusinessError): void => {
+        .catch<void>((err: Error): void => {
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0100 getRunningProcessInformation err: ' + err);
           expect().assertFail();
           done();
@@ -166,12 +176,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
-     * @tc.number  SUB_AA_AbilityAppManager_Static_0200
-     * @tc.name    SUB_AA_AbilityAppManager_Static_0200
-     * @tc.desc    The form of a callback getRunningProcessInformation
-     * @tc.size:   MediumTest
-     * @tc.type:   Function
-     * @tc.level   3
+     * @tc.name   SUB_AA_AbilityAppManager_Static_0200
+     * @tc.number SUB_AA_AbilityAppManager_Static_0200
+     * @tc.desc   The form of a callback getRunningProcessInformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_AA_AbilityAppManager_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, "SUB_AA_AbilityAppManager_Static_0200 begin");
@@ -181,10 +191,10 @@ export default function ApiCoverStaticTest() {
           hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data.length: ' + data!.length);
           for (let i = 0; i < data!.length; i++) {
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.pid: ' + data![i].pid);
-            expect(typeof (data![i].pid)).assertEqual("number");
+            expect(typeof (data![i].pid)).assertEqual("int");
             expect(data![i].pid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.uid: ' + data![i].uid);
-            expect(typeof (data![i].uid)).assertEqual("number");
+            expect(typeof (data![i].uid)).assertEqual("int");
             expect(data![i].uid).assertLarger(0.0);
             hilog.info(domain, tag, 'SUB_AA_AbilityAppManager_Static_0200 getRunningProcessInformation data' + i + '.processName: ' + data![i].processName);
             expect(typeof (data![i].processName)).assertEqual("string");
@@ -207,12 +217,12 @@ export default function ApiCoverStaticTest() {
     })
 
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700
      * @tc.number SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700
-     * @tc.name SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700
-     * @tc.desc test want as empty.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   test want as empty.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1700',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -230,7 +240,7 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`)
           expect(`${options.failedCode}`).assertEqual('16000001');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -239,13 +249,13 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_ErrorCode_Static_0004
-     * @tc.name    SUB_Ability_AbilityBase_ErrorCode_Static_0004
-     * @tc.desc    To verify the errcode 16000001 when The specified ability does not exist.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
-    */
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_Static_0004
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_Static_0004
+     * @tc.desc   To verify the errcode 16000001 when The specified ability does not exist.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_ErrorCode_Static_0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityBase_ErrorCode_Static_0004';
@@ -265,7 +275,7 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`);
           expect(`${options.failedCode}`).assertEqual('16000001');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -274,13 +284,13 @@ export default function ApiCoverStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_ErrorCode_Static_0005
-     * @tc.name    SUB_Ability_AbilityBase_ErrorCode_Static_0005
-     * @tc.desc    To verify the errcode 16000002 when Incorrect ability type.
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
-    */
+     * @tc.name   SUB_Ability_AbilityBase_ErrorCode_Static_0005
+     * @tc.number SUB_Ability_AbilityBase_ErrorCode_Static_0005
+     * @tc.desc   To verify the errcode 16000002 when Incorrect ability type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityBase_ErrorCode_Static_0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityBase_ErrorCode_Static_0005';
@@ -300,7 +310,7 @@ export default function ApiCoverStaticTest() {
           expect(options.isFailed).assertTrue();
           hilog.info(domain, tag, `${itName} options failedCode: ${options.failedCode}`);
           expect(`${options.failedCode}`).assertEqual('16000002');
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -309,12 +319,12 @@ export default function ApiCoverStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(promise)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_3800
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_3800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -334,7 +344,7 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -343,12 +353,12 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(callback)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_3900
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context, return errorcode 16000050.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_3900',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -371,13 +381,13 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-    * @tc.number  SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
-    * @tc.name    SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
-    * @tc.desc    connectServiceExtensionAbility is normal.
-    * @tc.size:   MediumTest
-    * @tc.type:   Function
-    * @tc.level   3
-    */
+     * @tc.name   SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
+     * @tc.number SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800
+     * @tc.desc   connectServiceExtensionAbility is normal.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
         const itName = 'SUB_Ability_AbilityRuntime_Context_AbilityContext_Static_1800';
@@ -394,7 +404,7 @@ export default function ApiCoverStaticTest() {
           await Utils.msSleep(2000);
           hilog.info(domain, tag, `${itName} options isConnect: ${options.isConnect}`);
           expect(options.isConnect).assertTrue();
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
         }
@@ -403,12 +413,12 @@ export default function ApiCoverStaticTest() {
       })
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context.(promise)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_4000
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context.(promise)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_4000',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -439,7 +449,7 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();
@@ -448,12 +458,12 @@ export default function ApiCoverStaticTest() {
       });
 
     /**
-     * @tc.number  SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
-     * @tc.name    SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
-     * @tc.desc    Call the interface disconnectServiceExtensionAbility through context.(callback)
-     * @tc.type    Function
-     * @tc.size    MediumTest
-     * @tc.level   0
+     * @tc.name   SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
+     * @tc.number SUB_Ability_AbilityBase_UIAbilityContext_Static_4100
+     * @tc.desc   Call the interface disconnectServiceExtensionAbility through context.(callback)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityBase_UIAbilityContext_Static_4100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
@@ -479,7 +489,7 @@ export default function ApiCoverStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           });
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
           expect().assertFail();
           done();

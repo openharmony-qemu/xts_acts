@@ -27,14 +27,14 @@ import {
 import { Decimal } from '@kit.ArkTS';
 import Utils from './Util.test';
 import { BusinessError } from '@ohos.base';
-function test_sign_001 (n: string, expected: int) {
+function test_sign_001 (n: string, expected: number) {
   if (Number.isNaN(expected)) {
     expect("NaN").assertEqual(Decimal.sign(n).toString());
   } else {
     expect(expected).assertEqual(Decimal.sign(n));
   }
 }
-function test_sign_002 (n: number, expected: int) {
+function test_sign_002 (n: number, expected: number) {
   if (Number.isNaN(expected)) {
     expect("NaN").assertEqual(Decimal.sign(n).toString());
   } else {
@@ -59,16 +59,16 @@ export default function DecimalTest020() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST20_001
-     * @tc.name      : Decimal_sign_Func_001
-     * @tc.desc      : Test sign
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sign_Func_001
+     * @tc.number DECIMAL_TEST20_001
+     * @tc.desc   Test sign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sign_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      test_sign_002(NaN, Double.toInt(NaN));
-      test_sign_001('NaN', Double.toInt(NaN));
+      test_sign_002(NaN, NaN);
+      test_sign_001('NaN', NaN);
       test_sign_002(Infinity, 1);
       test_sign_002(-Infinity, -1);
       test_sign_001('Infinity', 1);
@@ -81,18 +81,19 @@ export default function DecimalTest020() {
       test_sign_001('-9.99', -1);
     });
     /**
-     * @tc.number    : DECIMAL_TEST20_002
-     * @tc.name      : Decimal_sign_Func_002
-     * @tc.desc      : Test sign
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sign_Func_002
+     * @tc.number DECIMAL_TEST20_002
+     * @tc.desc   Test sign
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sign_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         test_sign_001('ee', 0);
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: ee`);

@@ -18,12 +18,12 @@ import libGraphics2DApi20 from 'libgraphicsApiNdk.so'
 export default function VSyncFenceTest() {
   describe('VSyncFenceTest', () => {
     /**
-     * @tc.number  : SUB_OH_NativeVSync_RequestFrame_0100
-     * @tc.name    : SUB_OH_NativeVSync_RequestFrame_0100
-     * @tc.desc    : test SUB_OH_NativeVSync_RequestFrame ok Scene
-     * @tc.level   : Level0
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeVSync_RequestFrame_0100
+     * @tc.number SUB_OH_NativeVSync_RequestFrame_0100
+     * @tc.desc   test SUB_OH_NativeVSync_RequestFrame ok Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeVSync_RequestFrame_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -40,12 +40,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeVSync_RequestFrame_0200
-     * @tc.name    : SUB_OH_NativeVSync_RequestFrame_0200
-     * @tc.desc    : test SUB_OH_NativeVSync_RequestFrame ok Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeVSync_RequestFrame_0200
+     * @tc.number SUB_OH_NativeVSync_RequestFrame_0200
+     * @tc.desc   test SUB_OH_NativeVSync_RequestFrame ok Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeVSync_RequestFrame_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -62,12 +62,12 @@ export default function VSyncFenceTest() {
       })
 
       /**
-       * @tc.number  : SUB_OH_NativeVSync_DVSyncSwitch_0100
-       * @tc.name    : SUB_OH_NativeVSync_DVSyncSwitch_0100
-       * @tc.desc    : test SUB_OH_NativeVSync_DVSyncSwitch ok Scene
-       * @tc.level   : Level0
-       * @tc.size    : MediumTest
-       * @tc.type    : Function
+       * @tc.name   SUB_OH_NativeVSync_DVSyncSwitch_0100
+       * @tc.number SUB_OH_NativeVSync_DVSyncSwitch_0100
+       * @tc.desc   test SUB_OH_NativeVSync_DVSyncSwitch ok Scene
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('SUB_OH_NativeVSync_DVSyncSwitch_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
         async (done: Function) => {
@@ -83,12 +83,12 @@ export default function VSyncFenceTest() {
         })
 
       /**
-       * @tc.number  : SUB_OH_NativeVSync_DVSyncSwitch_0200
-       * @tc.name    : SUB_OH_NativeVSync_DVSyncSwitch_0200
-       * @tc.desc    : test SUB_OH_NativeVSync_DVSyncSwitch ok Scene
-       * @tc.level   : Level3
-       * @tc.size    : MediumTest
-       * @tc.type    : Function
+       * @tc.name   SUB_OH_NativeVSync_DVSyncSwitch_0200
+       * @tc.number SUB_OH_NativeVSync_DVSyncSwitch_0200
+       * @tc.desc   test SUB_OH_NativeVSync_DVSyncSwitch ok Scene
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
        */
       it('SUB_OH_NativeVSync_DVSyncSwitch_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
         async (done: Function) => {
@@ -103,12 +103,12 @@ export default function VSyncFenceTest() {
           }
         })
     /**
-     * @tc.number  : SUB_OH_NativeFence_IsValid_0100
-     * @tc.name    : SUB_OH_NativeFence_IsValid_0100
-     * @tc.desc    : test SUB_OH_NativeFence_IsValid true Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_IsValid_0100
+     * @tc.number SUB_OH_NativeFence_IsValid_0100
+     * @tc.desc   test SUB_OH_NativeFence_IsValid true Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_IsValid_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -124,12 +124,12 @@ export default function VSyncFenceTest() {
         }
       })
     /**
-     * @tc.number  : SUB_OH_NativeFence_IsValid_0200
-     * @tc.name    : SUB_OH_NativeFence_IsValid_0200
-     * @tc.desc    : test SUB_OH_NativeFence_IsValid false Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_IsValid_0200
+     * @tc.number SUB_OH_NativeFence_IsValid_0200
+     * @tc.desc   test SUB_OH_NativeFence_IsValid false Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_IsValid_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -137,7 +137,7 @@ export default function VSyncFenceTest() {
           console.info("====>SUB_OH_NativeFence_IsValid_0200 start====");
           let result: number = libGraphics2DApi20.fenceIsValidFalse();
           console.info("====>SUB_OH_NativeFence_IsValid_0200 result====", result);
-          expect(result).assertEqual(1);
+          expect(result).assertEqual(0);
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_IsValid_0200 catch err: " + err);
@@ -146,12 +146,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeFence_Wait_0100
-     * @tc.name    : SUB_OH_NativeFence_Wait_0100
-     * @tc.desc    : test SUB_OH_NativeFence_Wait true Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_Wait_0100
+     * @tc.number SUB_OH_NativeFence_Wait_0100
+     * @tc.desc   test SUB_OH_NativeFence_Wait true Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_Wait_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -168,12 +168,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeFence_Wait_0200
-     * @tc.name    : SUB_OH_NativeFence_Wait_0200
-     * @tc.desc    : test SUB_OH_NativeFence_Wait false Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_Wait_0200
+     * @tc.number SUB_OH_NativeFence_Wait_0200
+     * @tc.desc   test SUB_OH_NativeFence_Wait false Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_Wait_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -181,7 +181,7 @@ export default function VSyncFenceTest() {
           console.info("====>SUB_OH_NativeFence_Wait_0200 start====");
           let result: number = libGraphics2DApi20.fenceWaitFalse();
           console.info("====>SUB_OH_NativeFence_Wait_0200 result====", result);
-          expect(result).assertEqual(1);
+          expect(result).assertEqual(0);
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_Wait_0200 catch err: " + err);
@@ -190,12 +190,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeFence_WaitForever_0100
-     * @tc.name    : SUB_OH_NativeFence_WaitForever_0100
-     * @tc.desc    : test SUB_OH_NativeFence_WaitForever true Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_WaitForever_0100
+     * @tc.number SUB_OH_NativeFence_WaitForever_0100
+     * @tc.desc   test SUB_OH_NativeFence_WaitForever true Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_WaitForever_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -212,12 +212,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeFence_WaitForever_0200
-     * @tc.name    : SUB_OH_NativeFence_WaitForever_0200
-     * @tc.desc    : test SUB_OH_NativeFence_WaitForever false Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_WaitForever_0200
+     * @tc.number SUB_OH_NativeFence_WaitForever_0200
+     * @tc.desc   test SUB_OH_NativeFence_WaitForever false Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_WaitForever_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -225,7 +225,7 @@ export default function VSyncFenceTest() {
           console.info("====>SUB_OH_NativeFence_WaitForever_0200 start====");
           let result: number = libGraphics2DApi20.fenceWaitForeverFalse();
           console.info("====>SUB_OH_NativeFence_WaitForever_0200 result====", result);
-          expect(result).assertEqual(1);
+          expect(result).assertEqual(0);
           done();
         } catch (err) {
           console.error("====>SUB_OH_NativeFence_WaitForever_0200 catch err: " + err);
@@ -234,12 +234,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeFence_Close_0100
-     * @tc.name    : SUB_OH_NativeFence_Close_0100
-     * @tc.desc    : test SUB_OH_NativeFence_Close true Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_Close_0100
+     * @tc.number SUB_OH_NativeFence_Close_0100
+     * @tc.desc   test SUB_OH_NativeFence_Close true Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_Close_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -256,12 +256,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeFence_Close_0200
-     * @tc.name    : SUB_OH_NativeFence_Close_0200
-     * @tc.desc    : test SUB_OH_NativeFence_Close false Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeFence_Close_0200
+     * @tc.number SUB_OH_NativeFence_Close_0200
+     * @tc.desc   test SUB_OH_NativeFence_Close false Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeFence_Close_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -278,12 +278,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100
-     * @tc.name    : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100
-     * @tc.desc    : test SUB_OH_NativeVSync_SetExpectedFrameRateRange success Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100
+     * @tc.number SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100
+     * @tc.desc   test SUB_OH_NativeVSync_SetExpectedFrameRateRange success Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeVSync_SetExpectedFrameRateRange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -300,12 +300,12 @@ export default function VSyncFenceTest() {
       })
 
     /**
-     * @tc.number  : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200
-     * @tc.name    : SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200
-     * @tc.desc    : test SUB_OH_NativeVSync_SetExpectedFrameRateRange fail Scene
-     * @tc.level   : Level3
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200
+     * @tc.number SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200
+     * @tc.desc   test SUB_OH_NativeVSync_SetExpectedFrameRateRange fail Scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_OH_NativeVSync_SetExpectedFrameRateRange_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {

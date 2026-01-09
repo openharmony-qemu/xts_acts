@@ -19,14 +19,13 @@ export default function getUserDir() {
   describe('environment_getUserDir_test', function () {
 
     /**
-    * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDesktopDir_0100
-    * @tc.name environment_test_getUserDesktopDir_001
-    * @tc.desc Test getDesktopDir() interfaces.
-    * @tc.size MEDIUM
-    * @tc.type Function
-    * @tc.level Level 0
-    * @tc.require
-   */
+     * @tc.name   environment_test_getUserDesktopDir_001
+     * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDesktopDir_0100
+     * @tc.desc   Test getDesktopDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDesktopDir_001', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDesktopDir();
@@ -42,14 +41,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDesktopDir_002
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDesktopDir_0200
-     * @tc.name environment_test_getUserDesktopDir_002
-     * @tc.desc Test getDesktopDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getDesktopDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDesktopDir_002', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDesktopDir("123%$&^");
@@ -65,14 +63,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDesktopDir_003
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDesktopDir_0300
-     * @tc.name environment_test_getUserDesktopDir_003
-     * @tc.desc Test getUserDesktopDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getUserDesktopDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDesktopDir_003', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDesktopDir(true);
@@ -88,14 +85,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDocumentDir_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDocumentDir_0100
-     * @tc.name environment_test_getUserDocumentDir_001
-     * @tc.desc Test getUserDocumentDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getUserDocumentDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDocumentDir_001', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDocumentDir();
@@ -111,14 +107,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDocumentDir_002
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDocumentDir_0200
-     * @tc.name environment_test_getUserDocumentDir_002
-     * @tc.desc Test getUserDocumentDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getUserDocumentDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDocumentDir_002', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDocumentDir("123%$&^");
@@ -134,14 +129,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDocumentDir_003
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDocumentDir_0300
-     * @tc.name environment_test_getUserDocumentDir_003
-     * @tc.desc Test getUserDocumentDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getUserDocumentDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDocumentDir_003', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDocumentDir(true);
@@ -157,14 +151,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDownloadDir_001
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDownloadDir_0100
-     * @tc.name environment_test_getUserDownloadDir_001
-     * @tc.desc Test getUserDownloadDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getUserDownloadDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDownloadDir_001', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDownloadDir();
@@ -180,14 +173,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDownloadDir_002
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDownloadDir_0200
-     * @tc.name environment_test_getUserDownloadDir_002
-     * @tc.desc Test getUserDownloadDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getUserDownloadDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDownloadDir_002', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDownloadDir("123%$&^");
@@ -203,14 +195,13 @@ export default function getUserDir() {
     });
 
     /**
+     * @tc.name   environment_test_getUserDownloadDir_003
      * @tc.number SUB_BASIC_FM_FileAPI_Environment_getUserDownloadDir_0300
-     * @tc.name environment_test_getUserDownloadDir_003
-     * @tc.desc Test getUserDownloadDir() interfaces.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
-    */
+     * @tc.desc   Test getUserDownloadDir() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('environment_test_getUserDownloadDir_003', Level.LEVEL0, async function () {
       try {
         let path = environment.getUserDownloadDir(true);

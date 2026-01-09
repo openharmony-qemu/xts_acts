@@ -39,6 +39,14 @@ namespace OHOS {
     {
     }
 
+    /**
+     * @tc.name   TestVulkanFragment_shading_rateTestCase
+     * @tc.number TestVulkanFragment_shading_rateTestCase
+     * @tc.desc   TestVulkanFragment_shading_rateTestCase
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     HWTEST_F(ActsVulkanFragmentshadingrateTest, TestVulkanFragment_shading_rateTestCase, Function | MediumTest | Level2)
     {
         printf("------start ActsVulkanFragmentshadingrateTest------\n");

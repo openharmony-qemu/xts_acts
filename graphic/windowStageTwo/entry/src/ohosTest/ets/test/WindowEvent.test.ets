@@ -61,6 +61,8 @@ export default function windowEventTest() {
     let windowClass: window.Window;
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
+    let isFreeWindowMode:boolean = false;
+    let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -76,18 +78,23 @@ export default function windowEventTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      isFreeWindowMode = windowClass.isInFreeWindowMode();
+      //isFreeWindowMode == true 自由窗口模式
+      //isFreeWindowMode == false 非自由窗口模式
+      console.info(`beforeall isFreeWindowMode: ${JSON.stringify(isFreeWindowMode)}`);
+      driver = Driver.create();
     })
     afterAll(async () => {
       
       await windowClass.setPreferredOrientation(window.Orientation.PORTRAIT);
     })
-/**
-     * @tc.number    : SUB_BASIC_WMS_TOUCHOUTSIDE_0100
-     * @tc.name      : testTouchOutSide_0100
-     * @tc.desc      : 验证子窗在主窗内，点击子窗，主窗可监听到touchoutside回调
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   testTouchOutSide_0100
+     * @tc.number SUB_BASIC_WMS_TOUCHOUTSIDE_0100
+     * @tc.desc   验证子窗在主窗内，点击子窗，主窗可监听到touchoutside回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTouchOutSide_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTouchOutSide_0100 ';
@@ -123,7 +130,6 @@ export default function windowEventTest() {
           done();
         }
         mainWindow.on('touchOutside', callback);
-        let driver: Driver = Driver.create();
         await sleep(200);
         await driver.click(Math.round(windowProperties.windowRect.left as number+10), Math.round(windowProperties.windowRect.top as number+10));
         await sleep(300);
@@ -141,12 +147,12 @@ export default function windowEventTest() {
     });
 
     /**
-     * @tc.number : SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
-     * @tc.name : testTouchOutSide_TopBar_0100
-     * @tc.desc : 验证点击窗口范围内的topbar区域不触发touchOutside回调
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.name   testTouchOutSide_TopBar_0100
+     * @tc.number SUB_BASIC_WMS_TOUCHOUTSIDE_TOPBAR_0100
+     * @tc.desc   验证点击窗口范围内的topbar区域不触发touchOutside回调
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testTouchOutSide_TopBar_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testTouchOutSide_TopBar_0100 ';
@@ -161,6 +167,9 @@ export default function windowEventTest() {
         console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
         await subWindowClass.resize(windowLimits.minWidth as number+200, windowLimits.minHeight as number);
         await subWindowClass.moveWindowTo(200, 0);
+        if(isFreeWindowMode){
+          await subWindowClass.moveWindowTo(200, 200);
+        }
         await subWindowClass.showWindow();
         await sleep(1000);
         
@@ -174,10 +183,9 @@ export default function windowEventTest() {
         await sleep(3000);
         let windowProperties = subWindowClass.getWindowProperties();
         console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-        let driver: Driver = Driver.create();
         await sleep(200);
         // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
-        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), 0);
+        await driver.click(Math.round((windowProperties.windowRect.left as number+10)), (windowProperties.windowRect.top as number+10));
         await sleep(300);
         console.log(`${caseName} timer1: ${timer}`);
         expect(timer).assertEqual(0);

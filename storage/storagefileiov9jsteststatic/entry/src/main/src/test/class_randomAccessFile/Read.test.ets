@@ -29,13 +29,12 @@ export default function fileIORandomAccessFileRead() {
   describe('fileIO_randomAccessFile_read', (): void => {
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_000
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0000
-     * @tc.name fileIO_randomaccessfile_read_sync_static_000
-     * @tc.desc Test readSync() interface. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_static_000', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_000');
@@ -61,13 +60,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_001
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0100
-     * @tc.name fileIO_randomaccessfile_read_sync_static_001
-     * @tc.desc Test readSync() interface. When the offset is 1. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is 1. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_static_001', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_001');
@@ -91,13 +89,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_003
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0300
-     * @tc.name fileIO_randomaccessfile_read_sync_static_003
-     * @tc.desc Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_static_003', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_003');
@@ -121,13 +118,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_004
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0400
-     * @tc.name fileIO_randomaccessfile_read_sync_static_004
-     * @tc.desc Test readSync() interface. When offset equals buffer length. Test to read data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When offset equals buffer length. Test to read data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_static_004', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_004');
@@ -151,13 +147,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_006
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0600
-     * @tc.name fileIO_randomaccessfile_read_sync_static_006
-     * @tc.desc Test readSync() interface. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_static_006', Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_006');
@@ -179,13 +174,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_007
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0700
-     * @tc.name fileIO_randomaccessfile_read_sync_static_007
-     * @tc.desc Test readSync() interface. When offset+length>buffer.size, read file_content.length - offset
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When offset+length>buffer.size, read file_content.length - offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_static_007', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_007');
@@ -208,13 +202,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_008
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0800
-     * @tc.name fileIO_randomaccessfile_read_sync_static_008
-     * @tc.desc Test readSync() interface. When the offset is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_static_008', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_008');
@@ -237,13 +230,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_009
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_sync_static_0900
-     * @tc.name fileIO_randomaccessfile_read_sync_static_009
-     * @tc.desc Test readSync() interface. When the length is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the length is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_static_009', Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_009');
@@ -264,13 +256,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_010
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1000
-     * @tc.name fileIO_randomaccessfile_read_sync_static_010
-     * @tc.desc Test readSync() interface. The "length" of option must > 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. The "length" of option must > 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_static_010', Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_010');
@@ -295,13 +286,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_012
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1200
-     * @tc.name fileIO_randomaccessfile_read_sync_static_012
-     * @tc.desc Test readSync() interface. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_sync_static_012', Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_012');
@@ -321,13 +311,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_sync_static_014
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_SYNC_1400
-     * @tc.name fileIO_randomaccessfile_read_sync_static_014
-     * @tc.desc Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously and filePointer after reading.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test readSync() interface. When the offset is 1 and the length is 5. Test to read data synchronously and filePointer after reading.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_sync_static_014', Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_sync_static_014');
@@ -354,13 +343,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_000
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0000
-     * @tc.name fileIO_randomaccessfile_read_async_static_000
-     * @tc.desc Test read() interface. return in callback mode. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_000', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_000');
@@ -386,13 +374,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_001
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0100
-     * @tc.name fileIO_randomaccessfile_read_async_static_001
-     * @tc.desc Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_001', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_001');
@@ -408,7 +395,7 @@ export default function fileIORandomAccessFileRead() {
           randomaccessfile?.read(new ArrayBuffer(length), { offset: 1 }).then((readLength: long) => {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_001 readLength: " + readLength);
             expect(readLength == length - 1).assertTrue();
-          }).catch((err: BusinessError): Promise<void> => {
+          }).catch((err: Error): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_001 failed with error message: " + err.message + ", error code: " + err.code);
           }).finally(() => {
             randomaccessfile?.close();
@@ -423,13 +410,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_002
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0200
-     * @tc.name fileIO_randomaccessfile_read_async_static_002
-     * @tc.desc Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_002', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_002');
@@ -456,13 +442,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_003
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0300
-     * @tc.name fileIO_randomaccessfile_read_async_static_003
-     * @tc.desc Test read() interface. return in callback mode. When the offset is 1 and the length is 5. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. When the offset is 1 and the length is 5. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_003', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_003');
@@ -488,13 +473,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_004
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0400
-     * @tc.name fileIO_randomaccessfile_read_async_static_004
-     * @tc.desc Test read() interface. return in promise mode. When offset equals buffer length. Test to read data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When offset equals buffer length. Test to read data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_004', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_004');
@@ -519,13 +503,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_005
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0500
-     * @tc.name fileIO_randomaccessfile_read_async_static_005
-     * @tc.desc Test read() interface. return in callback mode. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_static_005', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_005');
@@ -547,13 +530,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_006
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0600
-     * @tc.name fileIO_randomaccessfile_read_async_static_006
-     * @tc.desc Test read() interface. return in promise mode. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_static_006', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_006');
@@ -574,13 +556,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_007
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0700
-     * @tc.name fileIO_randomaccessfile_read_async_static_007
-     * @tc.desc Test read() interface. return in promise mode. When offset+length>buffer.size, read file_content.length - offset
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When offset+length>buffer.size, read file_content.length - offset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_007', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_007');
@@ -602,13 +583,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_008
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0800
-     * @tc.name fileIO_randomaccessfile_read_async_static_008
-     * @tc.desc Test read() interface. return in callback mode. When the offset is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. When the offset is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_008', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_008');
@@ -633,13 +613,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_009
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_read_async_static_0900
-     * @tc.name fileIO_randomaccessfile_read_async_static_009
-     * @tc.desc Test read() interface. return in promise mode. When the length is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the length is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_static_009', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_009');
@@ -661,13 +640,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_010
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1000
-     * @tc.name fileIO_randomaccessfile_read_async_static_010
-     * @tc.desc Test read() interface. return in promise mode. The "length" of option must > 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. The "length" of option must > 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_static_010', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_010');
@@ -693,13 +671,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_012
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1200
-     * @tc.name fileIO_randomaccessfile_read_async_static_012
-     * @tc.desc Test read() interface. return in promise mode. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_read_async_static_012', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_012');
@@ -719,13 +696,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_014
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1400
-     * @tc.name fileIO_randomaccessfile_read_async_static_014
-     * @tc.desc Test read() interface. return in callback mode. Test to read data asynchronously and checkout filePointer.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in callback mode. Test to read data asynchronously and checkout filePointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_014', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_014');
@@ -753,13 +729,12 @@ export default function fileIORandomAccessFileRead() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_read_async_static_015
      * @tc.number SUB_STORAGE_FILEIO_RANDOMACCESSFILE_READ_ASYNC_1500
-     * @tc.name fileIO_randomaccessfile_read_async_static_015
-     * @tc.desc Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously and checkout filePointer.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test read() interface. return in promise mode. When the offset is 1. Test to read data asynchronously and checkout filePointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_read_async_static_015', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_read_async_static_015');
@@ -778,7 +753,7 @@ export default function fileIORandomAccessFileRead() {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_015 readLength: " + readLength);
             expect(readLength == length - 1).assertTrue();
             expect(randomaccessfile?.filePointer == readLength + initOffset).assertTrue();
-          }).catch((err: BusinessError): Promise<void> => {
+          }).catch((err: Error): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', "fileIO_randomaccessfile_read_async_static_015 failed with error message: " + err.message + ", error code: " + err.code);
           }).finally(() => {
             randomaccessfile?.close();

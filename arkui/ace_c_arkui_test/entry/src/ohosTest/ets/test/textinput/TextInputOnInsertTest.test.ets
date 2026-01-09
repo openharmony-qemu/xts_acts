@@ -26,18 +26,20 @@ export default function textInputOnInsertTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ONINSERT_0100
-    * @tc.name       : testTextInputOnInsert001
-    * @tc.desc       : test onInsert event callback
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputOnInsert001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ONINSERT_0100
+     * @tc.desc   test onInsert event callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputOnInsert001', Level.LEVEL1, async (done: Function) => {
       focusControl.requestFocus('OnInsertTestTextInput')
       await Utils.sleep(1000)
       await Utils.triggerKey(2040)
+      await Utils.sleep(1000)
+      await Utils.triggerKey(2047)
       await Utils.sleep(1000)
       let dataArray: number[][] = nativeRender.getTextInputInsertData();
       let textInputInsertData: number[] = dataArray[0];

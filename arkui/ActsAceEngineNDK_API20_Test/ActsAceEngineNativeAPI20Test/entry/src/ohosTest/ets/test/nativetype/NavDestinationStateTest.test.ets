@@ -26,12 +26,12 @@ export default function NavDestinationStateTest() {
       await Utils.replacePageStandard("NativeType/NavDestination", done);
     })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_0100
-     * @tc.name    : testArkUIACENavDestinationState0100
-     * @tc.desc    : testing ArkUI_NavDestinationState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACENavDestinationState0100
+     * @tc.number SUB_ArkUI_ACE_NavDestinationState_0100
+     * @tc.desc   testing ArkUI_NavDestinationState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACENavDestinationState0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -58,12 +58,12 @@ export default function NavDestinationStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_0200
-     * @tc.name    : testArkUIACENavDestinationState0200
-     * @tc.desc    : testing ArkUI_NavDestinationState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACENavDestinationState0200
+     * @tc.number SUB_ArkUI_ACE_NavDestinationState_0200
+     * @tc.desc   testing ArkUI_NavDestinationState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACENavDestinationState0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -90,12 +90,12 @@ export default function NavDestinationStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_0300
-     * @tc.name    : testArkUIACENavDestinationState0300
-     * @tc.desc    : testing ArkUI_NavDestinationState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACENavDestinationState0300
+     * @tc.number SUB_ArkUI_ACE_NavDestinationState_0300
+     * @tc.desc   testing ArkUI_NavDestinationState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACENavDestinationState0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -122,12 +122,12 @@ export default function NavDestinationStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_0500
-     * @tc.name    : testArkUIACENavDestinationState0500
-     * @tc.desc    : testing ArkUI_NavDestinationState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACENavDestinationState0500
+     * @tc.number SUB_ArkUI_ACE_NavDestinationState_0500
+     * @tc.desc   testing ArkUI_NavDestinationState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACENavDestinationState0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -154,12 +154,12 @@ export default function NavDestinationStateTest() {
         }
       })
     /**
-     * @tc.number  : SUB_ArkUI_ACE_NavDestinationState_01000
-     * @tc.name    : testArkUIACENavDestinationState01000
-     * @tc.desc    : testing ArkUI_NavDestinationState enum.
-     * @tc.level   : Level1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIACENavDestinationState01000
+     * @tc.number SUB_ArkUI_ACE_NavDestinationState_01000
+     * @tc.desc   testing ArkUI_NavDestinationState enum.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIACENavDestinationState01000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

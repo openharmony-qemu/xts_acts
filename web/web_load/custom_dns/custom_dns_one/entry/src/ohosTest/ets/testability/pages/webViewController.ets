@@ -137,7 +137,8 @@ struct webViewController {
                 this.isPageEnd = -1;
                 this.controller.loadUrl("https://www.example.com/");
                 await Utils.waitForExist(()=>this.isPageEnd, 'webViewSetHttpDnsIsPageEnd', 1, 1000);
-                Utils.emitEvent(this.enterPageEnd, 330030)
+                console.log("title of this page: " + this.controller.getTitle());
+                Utils.emitEvent(this.controller.getTitle(), 330030);
                 this.enterPageEnd = true
               } catch (error) {
                 console.error(`ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -177,6 +178,18 @@ struct webViewController {
           if (event) {
             this.enterPageEnd = true
             this.isPageEnd = 1;
+          }
+        })
+        .onSslErrorEvent((event: SslErrorEvent) => {
+          if (event) {
+            console.log('onSslErrorEvent url: ' + event.url);
+            console.log('onSslErrorEvent error: ' + event.error);
+            console.log('onSslErrorEvent originalUrl: ' + event.originalUrl);
+            console.log('onSslErrorEvent referrer: ' + event.referrer);
+            console.log('onSslErrorEvent isFatalError: ' + event.isFatalError);
+            console.log('onSslErrorEvent isMainFrame: ' + event.isMainFrame);
+            console.log('onSslErrorEvent handler: ' + event.handler);
+            event.handler.handleConfirm();
           }
         })
         .onShowFileSelector((event) => {

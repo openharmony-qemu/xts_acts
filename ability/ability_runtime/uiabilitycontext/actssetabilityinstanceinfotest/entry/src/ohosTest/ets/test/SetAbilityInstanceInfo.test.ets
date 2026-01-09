@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 HiHope Open Source Organization.
+ * Copyright (C) 2024-2025 HiHope Open Source Organization.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { JSON } from '@kit.ArkTS';
 import { image } from '@kit.ImageKit';
 import { BusinessError, commonEventManager, deviceInfo } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 let testContext: common.UIAbilityContext;
 const DOMAIN = 0x0000;
@@ -43,6 +44,15 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done: Function) => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       try {
         const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility()
         testContext = ability.context;
@@ -53,13 +63,13 @@ export default function abilityTest() {
       done();
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0200
-     * @tc.name   : call setAbilityInstanceInfo in onBackground lifecycle
-     * @tc.desc   : Expect: call success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0200
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0200
+     * @tc.desc   Expect: call success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0200';
@@ -100,13 +110,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0300
-     * @tc.name   : call setAbilityInstanceInfo 10 times
-     * @tc.desc   : Expect: call success 10 times
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0300
+     * @tc.desc   Expect: call success 10 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0300', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0300';
@@ -134,14 +144,14 @@ export default function abilityTest() {
       }
     })
 
-    /*
- * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0400
- * @tc.name   : call setAbilityInstanceInfo in two different abilities
- * @tc.desc   : Expect: success in both abilities
- * @tc.type   : Function
- * @tc.size   : MediumTest
- * @tc.level  : 0
- */
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0400
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0400
+     * @tc.desc   Expect: success in both abilities
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0400', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0400';
       hilog.info(DOMAIN, LOG_TAG, tag + " it begin");
@@ -195,13 +205,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0600
-     * @tc.name   : call setAbilityInstanceInfo in two different specified instances
-     * @tc.desc   : Expect: success in both instances
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0600
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0600
+     * @tc.desc   Expect: success in both instances
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0600', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0600';
@@ -269,13 +279,13 @@ export default function abilityTest() {
 
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800
-     * @tc.name   : Normal setAbilityInstanceInfo call
-     * @tc.desc   : Expect: success for 2in1 device, others failed with code 201
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800
+     * @tc.desc   Expect: success for 2in1 device, others failed with code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_0800';
@@ -304,13 +314,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000
-     * @tc.name   : call setAbilityInstanceInfo without permission
-     * @tc.desc   : Expect: call failed with code 201
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000
+     * @tc.desc   Expect: call failed with code 201
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1000';
@@ -352,13 +362,13 @@ export default function abilityTest() {
       })
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1100
-     * @tc.name   : call setAbilityInstanceInfo with empty label
-     * @tc.desc   : Expect: call failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1100
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1100
+     * @tc.desc   Expect: call failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1100';
@@ -380,13 +390,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1200
-     * @tc.name   : call setAbilityInstanceInfo with null label
-     * @tc.desc   : Expect: call failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1200
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1200
+     * @tc.desc   Expect: call failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1200';
@@ -408,13 +418,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1300
-     * @tc.name   : call setAbilityInstanceInfo with undefined label
-     * @tc.desc   : Expect: call failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1300
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1300
+     * @tc.desc   Expect: call failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1300', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1300';
@@ -436,13 +446,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1400
-     * @tc.name   : call setAbilityInstanceInfo with special characters
-     * @tc.desc   : Expect: call success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1400
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1400
+     * @tc.desc   Expect: call success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1400', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1400';
@@ -463,13 +473,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1500
-     * @tc.name   : call setAbilityInstanceInfo with Chinese characters
-     * @tc.desc   : Expect: call success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1500
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1500
+     * @tc.desc   Expect: call success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1500', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1500';
@@ -490,13 +500,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1600
-     * @tc.name   : label length 1025, fail
-     * @tc.desc   : Expect: call failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1600
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1600
+     * @tc.desc   Expect: call failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1600', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1600';
@@ -523,13 +533,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1700
-     * @tc.name   : label length 1024, success
-     * @tc.desc   : Expect: call success
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1700
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1700
+     * @tc.desc   Expect: call success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1700', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1700';
@@ -554,13 +564,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1800
-     * @tc.name   : call setAbilityInstanceInfo with empty icon
-     * @tc.desc   : Expect: call failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1800
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1800
+     * @tc.desc   Expect: call failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1800', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_1800';
@@ -584,13 +594,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2000
-     * @tc.name   : call setAbilityInstanceInfo with null icon
-     * @tc.desc   : Expect: call failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2000
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2000
+     * @tc.desc   Expect: call failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2000', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2000';
@@ -612,13 +622,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2100
-     * @tc.name   : call setAbilityInstanceInfo with undefined icon
-     * @tc.desc   : Expect: call failed with code 401
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2100
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2100
+     * @tc.desc   Expect: call failed with code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2100', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2100';
@@ -641,13 +651,13 @@ export default function abilityTest() {
       }
     })
 
-    /*
-     * @tc.number : SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2200
-     * @tc.name   : call setAbilityInstanceInfo 2000 times
-     * @tc.desc   : Expect: success 2000 times
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
-     * @tc.level  : 0
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2200
+     * @tc.number SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2200
+     * @tc.desc   Expect: success 2000 times
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2200', Level.LEVEL0, async (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_SetAbilityInstanceInfo_2200';

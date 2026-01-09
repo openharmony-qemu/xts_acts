@@ -58,14 +58,14 @@ export default function V2ToV1() {
       console.info("V2ToV1 after each called");
     });
     /**
+     * @tc.name   v2Tov1_0100
      * @tc.number v2Tov1_0100
-     * @tc.name v2Tov1_0100
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0100', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0100] START');
       let Json = getInspectorByKey('string_param1');
       let Obj: ESObject = JSON.parse(Json);
@@ -75,14 +75,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0200
      * @tc.number v2Tov1_0200
-     * @tc.name v2Tov1_0200
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0200', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0200] START');
       let Json = getInspectorByKey('enum_value1');
       let Obj: ESObject = JSON.parse(Json);
@@ -91,14 +91,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0300
      * @tc.number v2Tov1_0300
-     * @tc.name v2Tov1_0300
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0300', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0300', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0300] START');
       let Json = getInspectorByKey('local_value1');
       let Obj: ESObject = JSON.parse(Json);
@@ -108,14 +108,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0400
      * @tc.number v2Tov1_0400
-     * @tc.name v2Tov1_0400
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0400', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0400', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0400] START');
       let Json = getInspectorByKey('bool_value1');
       let Obj: ESObject = JSON.parse(Json);
@@ -125,14 +125,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0500
      * @tc.number v2Tov1_0500
-     * @tc.name v2Tov1_0500
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0500', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0500', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0500] START');
       let Json = getInspectorByKey('undefined_value1');
       let Obj: ESObject = JSON.parse(Json);
@@ -142,14 +142,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0600
      * @tc.number v2Tov1_0600
-     * @tc.name v2Tov1_0600
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0600', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0600] START');
       let Json = getInspectorByKey('null_value1');
       let Obj: ESObject = JSON.parse(Json);
@@ -159,14 +159,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0700
      * @tc.number v2Tov1_0700
-     * @tc.name v2Tov1_0700
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0700', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0700', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0700] START');
       let Json = getInspectorByKey('func_value2');
       let Obj: ESObject = JSON.parse(Json);
@@ -176,14 +176,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0800
      * @tc.number v2Tov1_0800
-     * @tc.name v2Tov1_0800
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0800', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0800', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0800] START');
       let Json = getInspectorByKey('map_value');
       let Obj: ESObject = JSON.parse(Json);
@@ -193,14 +193,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_0900
      * @tc.number v2Tov1_0900
-     * @tc.name v2Tov1_0900
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_0900', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_0900', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_0900] START');
       let Json = getInspectorByKey('date_value');
       let Obj: ESObject = JSON.parse(Json);
@@ -210,14 +210,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_1000
      * @tc.number v2Tov1_1000
-     * @tc.name v2Tov1_1000
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_1000', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_1000', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_1000] START');
       let Json = getInspectorByKey('arr_value');
       let Obj: ESObject = JSON.parse(Json);
@@ -227,14 +227,14 @@ export default function V2ToV1() {
       done();
     })
     /**
+     * @tc.name   v2Tov1_1100
      * @tc.number v2Tov1_1100
-     * @tc.name v2Tov1_1100
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v2Tov1_1100', Level.LEVEL0, async (done: Function) => {
+    it('v2Tov1_1100', Level.LEVEL1, async (done: Function) => {
       console.info('[v2Tov1_1100] START');
       let Json = getInspectorByKey('set_value');
       let Obj: ESObject = JSON.parse(Json);

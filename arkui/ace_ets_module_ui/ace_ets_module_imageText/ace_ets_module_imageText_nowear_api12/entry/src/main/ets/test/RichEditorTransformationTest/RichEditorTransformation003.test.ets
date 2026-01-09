@@ -55,12 +55,12 @@ export default function RichEditorTransformation003() {
     });
 
     /**
-     * @tc.number: SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_005
-     * @tc.name  : SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_005
-     * @tc.desc  : When there is non textual content in the component, the scaling, translation, and rotation properties set still take effect to test RichEditor AffineTransformation
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_005
+     * @tc.number SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_005
+     * @tc.desc   When there is non textual content in the component, the scaling, translation, and rotation properties set still take effect to test RichEditor AffineTransformation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_005',  Level.LEVEL0, async (done: Function) => {
       console.info('SUB_ACE_UI_COMPONENT_TEXT_RICHEDITOR_AffineTransformation_005 START');

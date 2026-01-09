@@ -17,12 +17,23 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect , Leve
 import window from '@ohos.window';
 import {GlobalContext} from './GlobalContext.test'
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 export default function FloatingWindowTest() {
   describe('FloatingWindowTest', () => {
     let tag = 'FloatingWindowTestLog:'
-    beforeAll(() => {
+    beforeAll(async () => {
       console.info('beforeAll function.');
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     beforeEach(() => {
       console.info('beforeEach function.');
@@ -34,12 +45,12 @@ export default function FloatingWindowTest() {
       console.info('afterAll function.');
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_WULTMINDOW_LATERAL_FLOATING_1300
-     * @tc.name      : test_landscap_disableLandscapeMultiWindow
-     * @tc.desc      : preferMultWindowOrientation配置为landscap，调用disableLandscapeMultiWindow不报错
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_landscap_disableLandscapeMultiWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_WULTMINDOW_LATERAL_FLOATING_1300
+     * @tc.desc   preferMultWindowOrientation配置为landscap，调用disableLandscapeMultiWindow不报错
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_landscap_disableLandscapeMultiWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       try{

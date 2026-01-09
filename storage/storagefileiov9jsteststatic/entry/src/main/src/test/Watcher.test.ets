@@ -50,12 +50,13 @@ const callback = (data: WatchEvent) => {
 
 interface TestWatcher {
   flag: boolean,
-  watcher: Watcher
+  watcher: fs.Watcher|undefined
 }
 
 function startWatcher(testNum: string, eventCode: int|undefined , watchPath: string): TestWatcher {
   let ret: TestWatcher = {
     flag: false,
+    watcher: undefined
   }
   if(eventCode == undefined){
     hilog.info(domain, tag, '%{public}s', 'eventCode get fail');
@@ -72,7 +73,7 @@ function startWatcher(testNum: string, eventCode: int|undefined , watchPath: str
     hilog.info(domain, tag, '%{public}s', testNum + ' startWatcher failed for ' + e.message + ', code: ' + e.code);
     return ret;
   }
-  ret.watcher.start();
+  ret.watcher?.start();
   return ret;
 }
 
@@ -80,14 +81,12 @@ export default function fileIOWatcher() {
   describe('fileIO_fs_watcher', (): void => {
 
     /**
+     * @tc.name   fileIO_test_watcher_static_001
      * @tc.number SUB_DF_FILEIO_WATCHER_0100
-     * @tc.name fileIO_test_watcher_static_001
-     * @tc.desc Test watcher event '0x00000001': 'IN_ACCESS'
-     *    read a file, verifying the event is 'IN_ACCESS'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000001': 'IN_ACCESS'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_001', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_001';
@@ -103,7 +102,7 @@ export default function fileIOWatcher() {
         fs.readSync(file.fd, new ArrayBuffer(4096));
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -114,14 +113,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_002
      * @tc.number SUB_DF_FILEIO_WATCHER_0200
-     * @tc.name fileIO_test_watcher_static_002
-     * @tc.desc Test watcher event '0x00000002': 'IN_MODIFY'
-     *    write a file, verifying the event is 'IN_MODIFY'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000002': 'IN_MODIFY'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_002', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_002';
@@ -137,7 +134,7 @@ export default function fileIOWatcher() {
         fs.writeSync(file.fd, FILE_CONTENT);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -148,14 +145,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_003
      * @tc.number SUB_DF_FILEIO_WATCHER_0300
-     * @tc.name fileIO_test_watcher_static_003
-     * @tc.desc Test watcher event '0x00000004': 'IN_ATTRIB'
-     * Modify time of the file, verifying the event is 'IN_ATTRIB'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000004': 'IN_ATTRIB'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_003', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_003';
@@ -171,7 +166,7 @@ export default function fileIOWatcher() {
         fs.utimes(fpath,time);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -181,14 +176,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_004
      * @tc.number SUB_DF_FILEIO_WATCHER_0400
-     * @tc.name fileIO_test_watcher_static_004
-     * @tc.desc Test watcher event '0x00000008': 'IN_CLOSE_WRITE'
-     *    open a file on read_write mode and then close the file.fd, verifying the event is 'IN_CLOSE_WRITE'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000008': 'IN_CLOSE_WRITE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_004', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_004';
@@ -204,7 +197,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file.fd);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -214,14 +207,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_005
      * @tc.number SUB_DF_FILEIO_WATCHER_0500
-     * @tc.name fileIO_test_watcher_static_005
-     * @tc.desc Test watcher event '0x00000020': 'IN_OPEN'
-     *    open a file on only read mode, verifying the event is 'IN_OPEN'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000020': 'IN_OPEN'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_005', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_005';
@@ -236,7 +227,7 @@ export default function fileIOWatcher() {
         let file = fs.openSync(fpath, fs.OpenMode.READ_ONLY);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -247,14 +238,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_006
      * @tc.number SUB_DF_FILEIO_WATCHER_0600
-     * @tc.name fileIO_test_watcher_static_006
-     * @tc.desc Test watcher event '0x00000040': 'IN_MOVED_FROM', '0x00000080': 'IN_MOVED_TO',
-     *    rename a file, verifying the event is 'IN_MOVED_FROM' and 'IN_MOVED_TO'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000040': 'IN_MOVED_FROM', '0x00000080': 'IN_MOVED_TO',
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_006', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_006';
@@ -290,14 +279,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_007
      * @tc.number SUB_DF_FILEIO_WATCHER_0700
-     * @tc.name fileIO_test_watcher_static_007
-     * @tc.desc Test watcher event '0x00000100': 'IN_CREATE'
-     *    open a nonexistent file on create mode, verifying the event is 'IN_CREATE'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000100': 'IN_CREATE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_007', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_007';
@@ -310,7 +297,7 @@ export default function fileIOWatcher() {
         let file = fs.openSync(fpath, fs.OpenMode.CREATE);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.closeSync(file);
         fs.rmdirSync(dpath);
         done();
@@ -321,14 +308,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_008
      * @tc.number SUB_DF_FILEIO_WATCHER_0800
-     * @tc.name fileIO_test_watcher_static_008
-     * @tc.desc Test watcher event '0x00000100': 'IN_CREATE'
-     *    open a nonexistent folder on create mode, verifying the event is 'IN_CREATE'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000100': 'IN_CREATE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_008', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_008';
@@ -341,7 +326,7 @@ export default function fileIOWatcher() {
         fs.mkdirSync(ddpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -351,14 +336,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_009
      * @tc.number SUB_DF_FILEIO_WATCHER_0900
-     * @tc.name fileIO_test_watcher_static_009
-     * @tc.desc Test watcher event '0x00000200': 'IN_DELETE'
-     *    delete a file , verifying the event is 'IN_DELETE'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000200': 'IN_DELETE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_009', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_009';
@@ -373,7 +356,7 @@ export default function fileIOWatcher() {
         fs.unlinkSync(fpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -383,14 +366,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_010
      * @tc.number SUB_DF_FILEIO_WATCHER_1000
-     * @tc.name fileIO_test_watcher_static_010
-     * @tc.desc Test watcher event '0x00000200': 'IN_DELETE'
-     *    delete a directory , verifying the event is 'IN_DELETE'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000200': 'IN_DELETE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_010', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_010';
@@ -404,7 +385,7 @@ export default function fileIOWatcher() {
         fs.rmdirSync(ddpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -414,14 +395,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_011
      * @tc.number SUB_DF_FILEIO_WATCHER_1100
-     * @tc.name fileIO_test_watcher_static_011
-     * @tc.desc Test watcher event '0x00000400': 'IN_DELETE_SELF'
-     *    delete watcher folder , verifying the event is 'IN_DELETE_SELF'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000400': 'IN_DELETE_SELF'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_011', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_011';
@@ -433,7 +412,7 @@ export default function fileIOWatcher() {
         fs.rmdirSync(dpath);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         done();
       } catch (e: BusinessError) {
         hilog.info(domain, tag, '%{public}s', testNum + ' has failed for ' + e.message + ', code: ' + e.code);
@@ -442,14 +421,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_012
      * @tc.number SUB_DF_FILEIO_WATCHER_1200
-     * @tc.name fileIO_test_watcher_static_012
-     * @tc.desc Test watcher event '0x00000800': 'IN_MOVE_SELF'
-     *    rename watcher folder , verifying the event is 'IN_MOVE_SELF'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000800': 'IN_MOVE_SELF'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_012', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_012';
@@ -461,7 +438,7 @@ export default function fileIOWatcher() {
         fs.renameSync(dpath, dpath + 'newd');
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath + 'newd');
         done();
       } catch (e: BusinessError) {
@@ -471,14 +448,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_013
      * @tc.number SUB_DF_FILEIO_WATCHER_1300
-     * @tc.name fileIO_test_watcher_static_013
-     * @tc.desc Test watcher event '0x00000800': 'IN_MOVE_SELF'
-     *    rename watcher file , verifying the event is 'IN_MOVE_SELF'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000800': 'IN_MOVE_SELF'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_watcher_static_013', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_013';
@@ -491,7 +466,7 @@ export default function fileIOWatcher() {
         fs.renameSync(fpath, fpath + 'newd');
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.unlinkSync(fpath + 'newd');
         done();
       } catch (e: BusinessError) {
@@ -501,14 +476,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_014
      * @tc.number SUB_DF_FILEIO_WATCHER_1400
-     * @tc.name fileIO_test_watcher_static_014
-     * @tc.desc Test watcher event '0x00000010': 'IN_CLOSE_NOWRITE'
-     *    open a file on read only mode and then close the file.fd, verifying the event is 'IN_CLOSE_NOWRITE'.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test watcher event '0x00000010': 'IN_CLOSE_NOWRITE'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_014', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_014';
@@ -524,7 +497,7 @@ export default function fileIOWatcher() {
         fs.closeSync(file.fd);
         await Utils.msSleep(WAIT_HALF_SECOND);
         expect(resWatcher.flag == true).assertTrue();
-        resWatcher.watcher.stop();
+        resWatcher.watcher?.stop();
         fs.rmdirSync(dpath);
         done();
       } catch (e: BusinessError) {
@@ -534,13 +507,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_015
      * @tc.number SUB_DF_FILEIO_WATCHER_1500
-     * @tc.name fileIO_test_watcher_static_015
-     * @tc.desc Create multiple watchers in the same directory.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Create multiple watchers in the same directory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_watcher_static_015', Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_015';
@@ -581,13 +553,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_016
      * @tc.number SUB_DF_FILEIO_WATCHER_1600
-     * @tc.name fileIO_test_watcher_static_016
-     * @tc.desc Same event, different callback function.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Same event, different callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_watcher_static_016', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_016';
@@ -620,13 +591,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_017
      * @tc.number SUB_DF_FILEIO_WATCHER_1700
-     * @tc.name fileIO_test_watcher_static_017
-     * @tc.desc Same parameter, throw errno.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Same parameter, throw errno.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_watcher_static_017', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_017';
@@ -650,13 +620,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_021
      * @tc.number SUB_DF_FILEIO_WATCHER_2100
-     * @tc.name fileIO_test_watcher_static_021
-     * @tc.desc No watcher started.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   No watcher started.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_watcher_static_021', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_021';
@@ -677,13 +646,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_023
      * @tc.number SUB_DF_FILEIO_WATCHER_2300
-     * @tc.name fileIO_test_watcher_static_023
-     * @tc.desc Test Invalid parameter, events = -1
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test Invalid parameter, events = -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_watcher_static_023', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_023';
@@ -705,13 +673,12 @@ export default function fileIOWatcher() {
     });
 
     /**
+     * @tc.name   fileIO_test_watcher_static_025
      * @tc.number SUB_DF_FILEIO_WATCHER_2500
-     * @tc.name fileIO_test_watcher_static_025
-     * @tc.desc The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   The path point to nothing, no such file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_watcher_static_025', Level.LEVEL3, async (done:()=>void) : Promise<void> => {
       let testNum = 'fileIO_test_watcher_static_025';

@@ -29,14 +29,12 @@ export default function fileIOFsync() {
   describe('fileIO_fs_fsync', (): void => {
 
     /**
+     * @tc.name   fileIO_test_fsync_sync_static_000
      * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_0000
-     * @tc.name fileIO_test_fsync_sync_static_000
-     * @tc.desc Test fsyncSync() interface.
-     * Open the file in read-write mode, and synchronize the file content data.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test fsyncSync() interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_fsync_sync_static_000');
@@ -47,20 +45,19 @@ export default function fileIOFsync() {
         fs.fsyncSync(file.fd);
         fs.closeSync(file);
         fs.unlinkSync(fpath);
-      } catch (e: BusinessError) {
+      } catch (e) {
         hilog.info(domain, tag, '%{public}s', 'fileIO_test_fsync_sync_static_000 end error' + JSON.stringify(e));
         expect(false).assertTrue();
       }
     });
 
     /**
+     * @tc.name   fileIO_test_fsync_sync_static_001
      * @tc.number SUB_DF_FILEIO_FSYNC_SYNC_0100
-     * @tc.name fileIO_test_fsync_sync_static_001
-     * @tc.desc Test fsyncSync() interface. Invalid fd parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test fsyncSync() interface. Invalid fd parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, ():void => {
 
@@ -74,14 +71,12 @@ export default function fileIOFsync() {
     });
 
     /**
+     * @tc.name   fileIO_test_fsync_async_static_000
      * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0000
-     * @tc.name fileIO_test_fsync_async_static_000
-     * @tc.desc Test fsync() interface. await Promise.
-     * Open the file in read-write mode, and synchronize the file content data.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test fsync() interface. await Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_fsync_async_static_000');
@@ -100,14 +95,12 @@ export default function fileIOFsync() {
     });
 
     /**
+     * @tc.name   fileIO_test_fsync_async_static_001
      * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0100
-     * @tc.name fileIO_test_fsync_async_static_001
-     * @tc.desc Test fsync() interface. Promise.then().catch()
-     * Open the file in read-write mode, and synchronize the file content data.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test fsync() interface. Promise.then().catch()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_fsync_async_static_001');
@@ -119,7 +112,7 @@ export default function fileIOFsync() {
           fs.closeSync(file);
           fs.unlinkSync(fpath);
           done();
-        }).catch((err: ()=>void): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_fsync_async_static_001 error' + JSON.stringify(err));
           expect(false).assertTrue();
         });
@@ -130,14 +123,12 @@ export default function fileIOFsync() {
     });
 
     /**
+     * @tc.name   fileIO_test_fsync_async_static_002
      * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0200
-     * @tc.name fileIO_test_fsync_async_static_002
-     * @tc.desc Test fsync() interface. Callback.
-     * Open the file in read-write mode, and synchronize the file content data.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test fsync() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_test_fsync_sync_static_002');
@@ -157,14 +148,12 @@ export default function fileIOFsync() {
     });
 
     /**
+     * @tc.name   fileIO_test_fsync_async_static_003
      * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0300
-     * @tc.name fileIO_test_fsync_async_static_003
-     * @tc.desc Test fsync() interface. await Promise.
-     * Invalid fd parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test fsync() interface. await Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
 
@@ -179,14 +168,12 @@ export default function fileIOFsync() {
     });
 
     /**
+     * @tc.name   fileIO_test_fsync_async_static_004
      * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0400
-     * @tc.name fileIO_test_fsync_async_static_004
-     * @tc.desc Test fsync() interface. Callback.
-     * Invalid fd parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test fsync() interface. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
 
@@ -205,21 +192,19 @@ export default function fileIOFsync() {
     });
 
     /**
+     * @tc.name   fileIO_test_fsync_async_static_005
      * @tc.number SUB_DF_FILEIO_FSYNC_ASYNC_0500
-     * @tc.name fileIO_test_fsync_async_static_005
-     * @tc.desc Test fsync() interface. Promise.then().catch()
-     * Missing parameter.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test fsync() interface. Promise.then().catch()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_fsync_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void) : Promise<void> => {
 
       try {
         fs.fsync(-1).then(() => {
           expect(false).assertTrue();
-        }).catch((err: BusinessError): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           if(err?.code != 0){
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_fsync_async_static_005 error: {message: ' + JSON.stringify(err) + '}');
             expect(err?.code == 13900008 && err?.message == 'Bad file descriptor').assertTrue();

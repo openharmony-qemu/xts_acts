@@ -24,6 +24,7 @@
 #include <native_drawing/drawing_pixel_map.h>
 #include <multimedia/image_framework/image/pixelmap_native.h>
 #include <native_drawing/drawing_sampling_options.h>
+#include <common/native_common.h>
 
 void addEffectTest(std::vector<napi_property_descriptor>& descData)
 {
@@ -116,7 +117,9 @@ void addEffectTest(std::vector<napi_property_descriptor>& descData)
     napi_value result;
     OH_NativeImage* image = OH_NativeImage_Create(0, 0);
     float matrix[16] = {0};
-    int32_t  errorCode =  OH_NativeImage_GetTransformMatrixV2(nullptr, matrix);
+    int32_t  errorCode =  OH_NativeImage_GetTransformMatrixV2(image, matrix);
+    NAPI_ASSERT(env, errorCode == NATIVE_ERROR_OK, "");
+    errorCode =  OH_NativeImage_GetTransformMatrixV2(nullptr, matrix);
     napi_create_int32(env, errorCode == NATIVE_ERROR_INVALID_ARGUMENTS, &result);
     return result;
 }

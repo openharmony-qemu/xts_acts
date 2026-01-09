@@ -59,12 +59,12 @@ export default function sendableGetDensityTest() {
     });
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_DENSITY_001
-     * @tc.name      : getDensity_sendable_promise_001
-     * @tc.desc      : getDensity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getDensity_sendable_promise_001
+     * @tc.number PIXEL_MAP_GET_DENSITY_001
+     * @tc.desc   getDensity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDensity_sendable_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getDensity_sendable_promise_001';
@@ -74,12 +74,12 @@ export default function sendableGetDensityTest() {
     })
 
     /**
-     * @tc.number    : PIXEL_MAP_GET_DENSITY_002
-     * @tc.name      : getDensity_sendable_promise_002
-     * @tc.desc      : getDensity
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getDensity_sendable_promise_002
+     * @tc.number PIXEL_MAP_GET_DENSITY_002
+     * @tc.desc   getDensity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getDensity_sendable_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getDensity_sendable_promise_002';

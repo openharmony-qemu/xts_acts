@@ -41,15 +41,15 @@ export default function componentSnapshotSync() {
     });
     afterEach(async () => {
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0550
-     * @tc.name testButton
-     * @tc.desc api
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0    
-     */
 
+    /**
+     * @tc.name   componentSnapshotSync_0100
+     * @tc.number componentSnapshotSync_0100
+     * @tc.desc   componentSnapshotSync_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('componentSnapshotSync_0100', Level.LEVEL0, async (done: Function) => {
       console.info('componentSnapshotSync_0100 START');
       await CommonFunc.sleep(1000);
@@ -65,15 +65,15 @@ export default function componentSnapshotSync() {
       console.info('componentSnapshotSync_0100 END')
       done();
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0190
-     * @tc.name testButton
-     * @tc.desc api
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   componentSnapshotSync_0200
+     * @tc.number componentSnapshotSync_0200
+     * @tc.desc   componentSnapshotSync_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('componentSnapshotSync_0200', Level.LEVEL0, async (done: Function) => {
       console.info('componentSnapshotSync_0200 START');
       await CommonFunc.sleep(1000);
@@ -89,15 +89,15 @@ export default function componentSnapshotSync() {
       console.info('componentSnapshotSync_0200 END')
       done();
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0210
-     * @tc.name testButton
-     * @tc.desc api
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   componentSnapshotSync_0300
+     * @tc.number componentSnapshotSync_0300
+     * @tc.desc   componentSnapshotSync_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('componentSnapshotSync_0300', Level.LEVEL0, async (done: Function) => {
       console.info('componentSnapshotSync_0300 START');
       await CommonFunc.sleep(1000);
@@ -113,15 +113,15 @@ export default function componentSnapshotSync() {
       console.info('componentSnapshotSync_0300 END')
       done();
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0180
-     * @tc.name testButton
-     * @tc.desc  api
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   componentSnapshotSync_0400
+     * @tc.number componentSnapshotSync_0400
+     * @tc.desc   componentSnapshotSync_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('componentSnapshotSync_0400', Level.LEVEL0, async (done: Function) => {
       console.info('componentSnapshotSync_0400 START');
       await CommonFunc.sleep(1000);
@@ -137,15 +137,15 @@ export default function componentSnapshotSync() {
       console.info('componentSnapshotSync_0400 END')
       done();
     });
-    /**
-     * @tc.number SUB_ACE_UI_SNAPSHOT_GETSYNC_0170
-     * @tc.name testButton
-     * @tc.desc api
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
-     */
 
+    /**
+     * @tc.name   componentSnapshotSync_0500
+     * @tc.number componentSnapshotSync_0500
+     * @tc.desc   componentSnapshotSync_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('componentSnapshotSync_0500', Level.LEVEL0, async (done: Function) => {
       console.info('componentSnapshotSync_0500 START');
       await CommonFunc.sleep(1000);

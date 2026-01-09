@@ -43,12 +43,12 @@ export default function nestedScrollSwiper() {
     });
 
     /**
-     * @tc.number    nestedScrollSwiper_001
-     * @tc.name      nestedScrollSwiper_0100
-     * @tc.desc      NestdScroll setting SELF_ONLY.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   nestedScrollSwiper_0100
+     * @tc.number nestedScrollSwiper_001
+     * @tc.desc   NestdScroll setting SELF_ONLY.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nestedScrollSwiper_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[nestedScrollSwiper_0100] START');
@@ -82,12 +82,12 @@ export default function nestedScrollSwiper() {
     });
 
     /**
-     * @tc.number    nestedScrollSwiper_002
-     * @tc.name      nestedScrollSwiper_0200
-     * @tc.desc      NestdScroll setting SELF_FIRST.
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   nestedScrollSwiper_0200
+     * @tc.number nestedScrollSwiper_002
+     * @tc.desc   NestdScroll setting SELF_FIRST.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('nestedScrollSwiper_0200', Level.LEVEL0, async (done: Function) => {
       console.info('[nestedScrollSwiper_0200] START');

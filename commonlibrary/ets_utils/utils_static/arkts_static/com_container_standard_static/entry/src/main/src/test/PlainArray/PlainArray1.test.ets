@@ -45,17 +45,18 @@ export default function PlainArrayTest1() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0100
-     * @tc.name       : testPlainArray001
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0100
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let plainArray = new PlainArray<string>();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The PlainArray's constructor cannot be directly invoked");
@@ -63,12 +64,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0200
-     * @tc.name       : testPlainArray002
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0200
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -78,12 +79,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0300
-     * @tc.name       : testPlainArray003
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0300
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<Array<number>>();
@@ -94,12 +95,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0400
-     * @tc.name       : testPlainArray004
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0400
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<InfoC>();
@@ -110,12 +111,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0500
-     * @tc.name       : testPlainArray005
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0500
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<boolean>();
@@ -126,12 +127,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0600
-     * @tc.name       : testPlainArray006
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0600
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<number>();
@@ -141,12 +142,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0700
-     * @tc.name       : testPlainArray007
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0700
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -162,12 +163,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0800
-     * @tc.name       : testPlainArray008
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0800
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -183,12 +184,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0900
-     * @tc.name       : testPlainArray009
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_0900
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -212,12 +213,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1000
-     * @tc.name       : testPlainArray010
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1000
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -237,12 +238,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1100
-     * @tc.name       : testPlainArray011
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1100
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -258,12 +259,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1200
-     * @tc.name       : testPlainArray012
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1200
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -279,12 +280,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1300
-     * @tc.name       : testPlainArray013
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1300
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -300,12 +301,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1400
-     * @tc.name       : testPlainArray014
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1400
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -321,12 +322,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1500
-     * @tc.name       : testPlainArray015
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1500
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -340,12 +341,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1600
-     * @tc.name       : testPlainArray016
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1600
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -363,12 +364,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1700
-     * @tc.name       : testPlainArray017
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1700
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -384,12 +385,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1800
-     * @tc.name       : testPlainArray018
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testPlainArray018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1800
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testPlainArray018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let plainArray = new PlainArray<string>();
@@ -407,7 +408,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.removeRangeFrom(15, 5);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -416,12 +418,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1900
-     * @tc.name       : testPlainArray019
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_1900
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -439,7 +441,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.setValueAt(-1, "X");
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -448,12 +451,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2000
-     * @tc.name       : testPlainArray020
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2000
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -467,12 +470,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2100
-     * @tc.name       : testPlainArray021
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2100
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -492,12 +495,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2200
-     * @tc.name       : testPlainArray022
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2200
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -514,12 +517,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2300
-     * @tc.name       : testPlainArray023
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2300
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -533,12 +536,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2400
-     * @tc.name       : testPlainArray024
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2400
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<number>();
@@ -548,12 +551,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2500
-     * @tc.name       : testPlainArray025
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2500
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<null>();
@@ -563,12 +566,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2600
-     * @tc.name       : testPlainArray026
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2600
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testPlainArray026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let plainArray = new PlainArray<null>();
@@ -583,12 +586,12 @@ export default function PlainArrayTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2700
-     * @tc.name       : testPlainArray027
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2700
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -602,12 +605,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2800
-     * @tc.name       : testPlainArray028
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2800
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -621,12 +624,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2900
-     * @tc.name       : testPlainArray029
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2900
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -640,12 +643,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3000
-     * @tc.name       : testPlainArray030
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3000
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -655,16 +658,16 @@ export default function PlainArrayTest1() {
       plainArray.add(4, "D");
       plainArray.add(5, "E");
       let res = plainArray.getKeyAt(50);
-      expect(String(res)).assertEqual('undefined');
+      expect(String(res)).assertEqual('-1');
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3100
-     * @tc.name       : testPlainArray031
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3100
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -676,7 +679,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.getValueAt(50);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -685,12 +689,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3200
-     * @tc.name       : testPlainArray032
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3200
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -699,12 +703,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3300
-     * @tc.name       : testPlainArray033
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3300
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testPlainArray033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let plainArray = new PlainArray();
@@ -719,12 +723,12 @@ export default function PlainArrayTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3400
-     * @tc.name       : testPlainArray034
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3400
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -739,12 +743,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3500
-     * @tc.name       : testPlainArray035
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3500
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -756,7 +760,8 @@ export default function PlainArrayTest1() {
       try {
         plainArray.setValueAt(8, "V");
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -765,12 +770,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3600
-     * @tc.name       : testPlainArray036
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3600
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<number>();
@@ -784,12 +789,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3700
-     * @tc.name       : testPlainArray037
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3700
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<number>();
@@ -803,12 +808,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3800
-     * @tc.name       : testPlainArray038
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3800
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -822,12 +827,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3900
-     * @tc.name       : testPlainArray039
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3900
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<number | string | null | undefined | object | boolean | Array<number>>();
@@ -846,12 +851,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4000
-     * @tc.name       : testPlainArray040
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4000
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testPlainArray040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let plainArray = new PlainArray<number>();
@@ -869,12 +874,12 @@ export default function PlainArrayTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4100
-     * @tc.name       : testPlainArray041
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4100
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<number | string | boolean | InfoC | undefined | null | Array<number>>();
@@ -890,12 +895,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4200
-     * @tc.name       : testPlainArray042
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4200
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();
@@ -918,12 +923,12 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4300
-     * @tc.name       : testPlainArray043
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4300
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testPlainArray043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let plainArray = new PlainArray<string>();
@@ -941,12 +946,12 @@ export default function PlainArrayTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4400
-     * @tc.name       : testPlainArray044
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4400
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testPlainArray044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let plainArray = new PlainArray<string>();
@@ -966,12 +971,12 @@ export default function PlainArrayTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4500
-     * @tc.name       : testPlainArray045
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4500
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     //  it("testPlainArray045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let plainArray = new PlainArray();
@@ -991,12 +996,12 @@ export default function PlainArrayTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4600
-     * @tc.name       : testPlainArray046
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4600
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testPlainArray046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let plainArray = new PlainArray();
@@ -1016,12 +1021,12 @@ export default function PlainArrayTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4700
-     * @tc.name       : testPlainArray047
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4700
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     //   it("testPlainArray047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //     let plainArray = new PlainArray();
@@ -1041,12 +1046,12 @@ export default function PlainArrayTest1() {
     //   });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4800
-     * @tc.name       : testPlainArray048
-     * @tc.desc       : Test the function By PlainArray.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPlainArray048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4800
+     * @tc.desc   Test the function By PlainArray.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testPlainArray048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let plainArray = new PlainArray<string>();

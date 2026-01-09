@@ -47,9 +47,12 @@ export default function flexTextMargin_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchSubSetMargin
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_1400
-     * @tc.name testFlexItemAlignStretchSubSetMargin
-     * @tc.desc Subcomponents set margin within the scope of the parent component.
+     * @tc.desc   Subcomponents set margin within the scope of the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchSubSetMargin',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchSubSetMargin START');
@@ -87,9 +90,12 @@ export default function flexTextMargin_StretchJsunit() {
     });
 
     /**
+     * @tc.name   testFlexItemAlignStretchSubSetMarginExceed
      * @tc.number SUB_ACE_FLEXALIGNITEMS_STRETCH_1500
-     * @tc.name testFlexItemAlignStretchSubSetMarginExceed
-     * @tc.desc Subcomponents set margin outside the scope of the parent component.
+     * @tc.desc   Subcomponents set margin outside the scope of the parent component.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexItemAlignStretchSubSetMarginExceed',  Level.LEVEL0, async () => {
       console.info('new testFlexItemAlignStretchSubSetMarginExceed START');

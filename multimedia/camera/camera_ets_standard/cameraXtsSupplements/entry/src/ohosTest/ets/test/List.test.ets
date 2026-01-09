@@ -20,6 +20,18 @@ import CameraSessionHasSuppTest from './camera/CameraSessionHasSupp.test';
 import CameraDeprecatedCaptureSessionTest from './camera/CameraDeprecatedCaptureSession.test';
 import getSupportedSceneModesTest from './camera/getSupportedSceneModes.test';
 import CameraSessionPreviewRotationTest from "./camera/CameraSessionPreviewRotation.test";
+import CameraDeviceTest from './camera/CameraDeviceTest.test';
+import CameraSessionInputOutputTest from './camera/CameraSessionInputOutputTest.test';
+import CameraCaptureSessionInputOutputTest from './camera/CameraCaptureSessionInputOutputTest.test';
+import cameraCaptureSessionIsExposureModeAndIsFocusModeAb
+  from './camera/CameraCaptureSessionIsExposureModeAndIsFocusModeAb.test';
+import CameraSetMeterPointSuppTest from './camera/CameraSetMeteringPoint.test';
+import cameraSetFocusPointSuppTest from './camera/CameraSetFocusPointSuppTest.test';
+import cameraSetFrameRateTest from './camera/CameraSetFrameRateTest.test';
+import cameraCanPreconfigTest from "./camera/CameraPreconfigFIR.test";
+import cameraCanPreconfigSecTest from "./camera/CameraPreconfigSec.test";
+import cameraEnumTestSupp from './camera/CameraEnum.test';
+import CameraAPIEnumSupplementTest from "./camera/CameraAPIEnumSupplement.test";
 
 export default function testsuite() {
   CameraSessionFlashSuppTest();
@@ -44,4 +56,15 @@ export default function testsuite() {
   CameraSessionHasSuppTest();
   getSupportedSceneModesTest();
   CameraSessionPreviewRotationTest();
+  CameraDeviceTest();
+  CameraSessionInputOutputTest();
+  CameraCaptureSessionInputOutputTest();
+  cameraCaptureSessionIsExposureModeAndIsFocusModeAb();
+  CameraSetMeterPointSuppTest();
+  cameraSetFocusPointSuppTest();
+  cameraSetFrameRateTest();
+  cameraCanPreconfigTest();
+  cameraCanPreconfigSecTest();
+  cameraEnumTestSupp();
+  CameraAPIEnumSupplementTest();
 }

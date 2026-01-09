@@ -24,13 +24,12 @@ export default function CloudFileVersionTest(){
   describe('cloud_file_version_test', () => {
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_001
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0100
-     * @tc.name test_cloudSync_FileVersion_001
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.getHistoryVersionList
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.getHistoryVersionList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_001', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();
@@ -55,13 +54,12 @@ export default function CloudFileVersionTest(){
     });
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_002
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0200
-     * @tc.name test_cloudSync_FileVersion_002
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.getHistoryVersionList with uri is null.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.getHistoryVersionList with uri is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_002', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();
@@ -87,13 +85,12 @@ export default function CloudFileVersionTest(){
 
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_003
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0300
-     * @tc.name test_cloudSync_FileVersion_003
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.getHistoryVersionList with limit length is 0.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.getHistoryVersionList with limit length is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_003', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();
@@ -126,13 +123,12 @@ export default function CloudFileVersionTest(){
 
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_004
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0400
-     * @tc.name test_cloudSync_FileVersion_004
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.downloadHistoryVersion.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.downloadHistoryVersion.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_004', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();
@@ -164,13 +160,12 @@ export default function CloudFileVersionTest(){
     });
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_005
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0500
-     * @tc.name test_cloudSync_FileVersion_005
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.downloadHistoryVersion with versionId is null.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.downloadHistoryVersion with versionId is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_005', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();
@@ -205,13 +200,12 @@ export default function CloudFileVersionTest(){
 
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_006
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0600
-     * @tc.name test_cloudSync_FileVersion_006
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.replaceFileWithHistoryVersion.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.replaceFileWithHistoryVersion.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_006', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();
@@ -234,13 +228,12 @@ export default function CloudFileVersionTest(){
     });
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_007
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0700
-     * @tc.name test_cloudSync_FileVersion_007
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.isFileConflict.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.isFileConflict.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_007', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();
@@ -262,13 +255,12 @@ export default function CloudFileVersionTest(){
     });
 
     /**
+     * @tc.name   test_cloudSync_FileVersion_008
      * @tc.number SUB_FILE_VERSION_CLOUDSYNC_TEST_0800
-     * @tc.name test_cloudSync_FileVersion_008
-     * @tc.desc function of API, cloudSync_FileVersion, fileVersion.clearFileConflict.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   function of API, cloudSync_FileVersion, fileVersion.clearFileConflict.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_cloudSync_FileVersion_008', Level.LEVEL3, async (done: Function) => {
       let fileVersion = new cloudSync.FileVersion();

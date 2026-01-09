@@ -117,12 +117,12 @@ export default function AVCodeTest3() {
     });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderDestroy001
      * @tc.number SUB_AVCode_OH_AudioEncoderDestroy_001
-     * @tc.name testAVCodeOHAudioEncoderDestroy001
-     * @tc.desc Verify that AVCodeOHAudioEncoderDestroySuccess function correctly handles successful audio encoder destruction
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderDestroySuccess function correctly handles successful audio encoder destruction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderDestroy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -137,12 +137,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderDestroy002
      * @tc.number SUB_AVCode_OH_AudioEncoderDestroy_002
-     * @tc.name testAVCodeOHAudioEncoderDestroy002
-     * @tc.desc Verify that AVCodeOHAudioEncoderDestroyInvalidVal function properly handles invalid parameters during encoder destruction
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderDestroyInvalidVal function properly handles invalid parameters during encoder destruction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderDestroy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -157,12 +157,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderConfigure002
      * @tc.number SUB_AVCode_OH_AudioEncoderConfigure_002
-     * @tc.name testAVCodeOHAudioEncoderConfigure002
-     * @tc.desc Verify that AVCodeOHAudioEncoderConfigureInvalidVal function validates invalid configuration parameters correctly
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderConfigureInvalidVal function validates invalid configuration parameters correctly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderConfigure002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -177,12 +177,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderConfigure010
      * @tc.number SUB_AVCode_OH_AudioCodecConfigure_001
-     * @tc.name testAVCodeOHAudioEncoderConfigure010
-     * @tc.desc Verify that AVCodeOHAudioEncoderConfigureUnsupport function handles unsupported configuration parameters properly
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderConfigureUnsupport function handles unsupported configuration parameters properly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderConfigure010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -197,12 +197,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderPrepare002
      * @tc.number SUB_AVCode_OH_AudioEncoderPrepare_002
-     * @tc.name testAVCodeOHAudioEncoderPrepare002
-     * @tc.desc Verify that AVCodeOHAudioEncoderPrepareInvalidVal function validates invalid parameters during encoder preparation
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderPrepareInvalidVal function validates invalid parameters during encoder preparation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderPrepare002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -217,12 +217,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderPrepare010
      * @tc.number SUB_AVCode_OH_AudioEncoderPrepare_010
-     * @tc.name testAVCodeOHAudioEncoderPrepare010
-     * @tc.desc Verify that AVCodeOHAudioEncoderConfigureUnsupport function handles unsupported configurations during encoder preparation
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderConfigureUnsupport function handles unsupported configurations during encoder preparation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderPrepare010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -237,12 +237,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderStart002
      * @tc.number SUB_AVCode_OH_AudioEncoderStart_002
-     * @tc.name testAVCodeOHAudioEncoderStart002
-     * @tc.desc Verify that AVCodeOHAudioEncoderStartInvalidVal function validates invalid parameters during encoder startup
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderStartInvalidVal function validates invalid parameters during encoder startup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderStart002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -257,12 +257,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderStart009
      * @tc.number SUB_AVCode_OH_AudioEncoderStart_009
-     * @tc.name testAVCodeOHAudioEncoderStart009
-     * @tc.desc Verify that AVCodeOHAudioEncoderStartInvalidState function handles invalid states during encoder startup
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderStartInvalidState function handles invalid states during encoder startup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderStart009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -277,12 +277,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderStop002
      * @tc.number SUB_AVCode_OH_AudioEncoderStop_002
-     * @tc.name testAVCodeOHAudioEncoderStop002
-     * @tc.desc Verify that AVCodeOHAudioEncoderStopInvalidState function handles invalid states during encoder stop operation
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderStopInvalidState function handles invalid states during encoder stop operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderStop002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -297,12 +297,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderStop009
      * @tc.number SUB_AVCode_OH_AudioEncoderStop_009
-     * @tc.name testAVCodeOHAudioEncoderStop009
-     * @tc.desc Verify that AVCodeOHAudioEncoderStopInvalidState function handles error conditions during encoder stop
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderStopInvalidState function handles error conditions during encoder stop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderStop009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -317,12 +317,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderFlush002
      * @tc.number SUB_AVCode_OH_AudioEncoder_Flush_002
-     * @tc.name testAVCodeOHAudioEncoderFlush002
-     * @tc.desc Verify that AVCodeOHAudioEncoderFlushInvalidVal function validates invalid parameters during encoder flush
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderFlushInvalidVal function validates invalid parameters during encoder flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderFlush002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -337,12 +337,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderFlush009
      * @tc.number SUB_AVCode_OH_AudioEncoder_Flush_009
-     * @tc.name testAVCodeOHAudioEncoderFlush009
-     * @tc.desc Verify that AVCodeOHAudioEncoderFlushInvalidState function handles invalid states during encoder flush
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderFlushInvalidState function handles invalid states during encoder flush
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderFlush009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -357,12 +357,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderReset002
      * @tc.number SUB_AVCode_OH_AudioEncoder_Reset_002
-     * @tc.name testAVCodeOHAudioEncoderReset002
-     * @tc.desc Verify that AVCodeOHAudioEncoderResetInvalidVal function validates invalid parameters during encoder reset
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderResetInvalidVal function validates invalid parameters during encoder reset
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderReset002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -377,12 +377,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderSetParameter002
      * @tc.number SUB_AVCode_OH_AudioEncoder_SetParameter_002
-     * @tc.name testAVCodeOHAudioEncoderSetParameter002
-     * @tc.desc Verify that AVCodeOHAudioEncoderSetParameterInvalidVal function validates invalid parameters during encoder parameter setting
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderSetParameterInvalidVal function validates invalid parameters during encoder parameter setting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderSetParameter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -397,12 +397,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioEncoderPushInputData002
      * @tc.number SUB_AVCode_OH_AudioEncoder_PushInputData_002
-     * @tc.name testAVCodeOHAudioEncoderPushInputData002
-     * @tc.desc Verify that AVCodeOHAudioEncoderPushInputDataInvalidVal function validates invalid input data
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioEncoderPushInputDataInvalidVal function validates invalid input data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioEncoderPushInputData002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -417,12 +417,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioCodecSetParameter001
      * @tc.number SUB_AVCode_OH_AudioCodec_SetParameter_001
-     * @tc.name testAVCodeOHAudioCodecSetParameter001
-     * @tc.desc Verify that AVCodeOHAudioCodecSetParameterInvalidVal function validates invalid codec parameters
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioCodecSetParameterInvalidVal function validates invalid codec parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioCodecSetParameter001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -437,12 +437,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioCodecSetParameter002
      * @tc.number SUB_AVCode_OH_AudioCodec_SetParameter_002
-     * @tc.name testAVCodeOHAudioCodecSetParameter002
-     * @tc.desc Verify that AVCodeOHAudioCodecSetParameterOperateNotPermit function handles unauthorized parameter changes
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioCodecSetParameterOperateNotPermit function handles unauthorized parameter changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioCodecSetParameter002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -457,12 +457,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioCodecSetParameter003
      * @tc.number SUB_AVCode_OH_AudioCodec_SetParameter_003
-     * @tc.name testAVCodeOHAudioCodecSetParameter003
-     * @tc.desc Verify that AVCodeOHAudioCodecSetParameterOperateInvalidState function handles parameter changes in invalid states
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioCodecSetParameterOperateInvalidState function handles parameter changes in invalid states
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioCodecSetParameter003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -477,12 +477,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAudioCodecPushInputBuffer002
      * @tc.number SUB_AVCode_OH_AudioCodec_PushInputBuffer_002
-     * @tc.name testAVCodeOHAudioCodecPushInputBuffer002
-     * @tc.desc Verify that AVCodeOHAudioCodecPushInputBufferInvalidVal function validates invalid input buffers
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that AVCodeOHAudioCodecPushInputBufferInvalidVal function validates invalid input buffers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAudioCodecPushInputBuffer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -497,12 +497,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAACProfile001
      * @tc.number SUB_AVCode_OH_AACProfile_001
-     * @tc.name testAVCodeOHAACProfile001
-     * @tc.desc Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE_V2
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE_V2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAACProfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -517,12 +517,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHAACProfile002
      * @tc.number SUB_AVCode_OH_AACProfile_002
-     * @tc.name testAVCodeOHAACProfile002
-     * @tc.desc Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAACProfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -537,12 +537,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHHEVCProfile001
      * @tc.number SUB_AVCode_OH_HEVCProfile_001
-     * @tc.name testAVCodeOHHEVCProfile001
-     * @tc.desc Verify that EnumHEVCProfile1 function correctly enumerates HEVC_PROFILE_MAIN_STILL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumHEVCProfile1 function correctly enumerates HEVC_PROFILE_MAIN_STILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHHEVCProfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -557,12 +557,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHHEVCProfile002
      * @tc.number SUB_AVCode_OH_HEVCProfile_002
-     * @tc.name testAVCodeOHHEVCProfile002
-     * @tc.desc Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE_V2
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumAACPROFILEHE function correctly enumerates AAC_PROFILE_HE_V2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHHEVCProfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -577,12 +577,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile001
      * @tc.number SUB_AVCode_OH_VVCProfile_001
-     * @tc.name testAVCodeOHVVCProfile001
-     * @tc.desc Verify that EnumVVCProfile1 function correctly enumerates VVC_PROFILE_MAIN_10
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile1 function correctly enumerates VVC_PROFILE_MAIN_10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -597,12 +597,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile002
      * @tc.number SUB_AVCode_OH_VVCProfile_002
-     * @tc.name testAVCodeOHVVCProfile002
-     * @tc.desc Verify that EnumVVCProfile2 function correctly enumerates VVC_PROFILE_MAIN_12
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile2 function correctly enumerates VVC_PROFILE_MAIN_12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -617,12 +617,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile003
      * @tc.number SUB_AVCode_OH_VVCProfile_003
-     * @tc.name testAVCodeOHVVCProfile003
-     * @tc.desc Verify that EnumVVCProfile3 function correctly enumerates VVC_PROFILE_MAIN_12_INTRA
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile3 function correctly enumerates VVC_PROFILE_MAIN_12_INTRA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -637,12 +637,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile004
      * @tc.number SUB_AVCode_OH_VVCProfile_004
-     * @tc.name testAVCodeOHVVCProfile004
-     * @tc.desc Verify that EnumVVCProfile4 function correctly enumerates VVC_PROFILE_MULTI_MAIN_10
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile4 function correctly enumerates VVC_PROFILE_MULTI_MAIN_10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -657,12 +657,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile005
      * @tc.number SUB_AVCode_OH_VVCProfile_005
-     * @tc.name testAVCodeOHVVCProfile005
-     * @tc.desc Verify that EnumVVCProfile5 function correctly enumerates VVC_PROFILE_MAIN_10_444
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile5 function correctly enumerates VVC_PROFILE_MAIN_10_444
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -677,12 +677,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile006
      * @tc.number SUB_AVCode_OH_VVCProfile_006
-     * @tc.name testAVCodeOHVVCProfile006
-     * @tc.desc Verify that EnumVVCProfile6 function correctly enumerates VVC_PROFILE_MAIN_12_444
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile6 function correctly enumerates VVC_PROFILE_MAIN_12_444
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -697,12 +697,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile007
      * @tc.number SUB_AVCode_OH_VVCProfile_007
-     * @tc.name testAVCodeOHVVCProfile007
-     * @tc.desc Verify that EnumVVCProfile7 function correctly enumerates VVC_PROFILE_MAIN_16_444
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile7 function correctly enumerates VVC_PROFILE_MAIN_16_444
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -717,12 +717,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile008
      * @tc.number SUB_AVCode_OH_VVCProfile_008
-     * @tc.name testAVCodeOHVVCProfile008
-     * @tc.desc Verify that EnumVVCProfile8 function correctly enumerates VVC_PROFILE_MAIN_12_444_INTRA
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile8 function correctly enumerates VVC_PROFILE_MAIN_12_444_INTRA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -737,12 +737,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile009
      * @tc.number SUB_AVCode_OH_VVCProfile_009
-     * @tc.name testAVCodeOHVVCProfile009
-     * @tc.desc Verify that EnumVVCProfile9 function correctly enumerates VVC_PROFILE_MAIN_16_444_INTRA
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile9 function correctly enumerates VVC_PROFILE_MAIN_16_444_INTRA
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -757,12 +757,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile010
      * @tc.number SUB_AVCode_OH_VVCProfile_010
-     * @tc.name testAVCodeOHVVCProfile010
-     * @tc.desc Verify that EnumVVCProfile10 function correctly enumerates VVC_PROFILE_MULTI_MAIN_10_444
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile10 function correctly enumerates VVC_PROFILE_MULTI_MAIN_10_444
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -777,12 +777,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile011
      * @tc.number SUB_AVCode_OH_VVCProfile_011
-     * @tc.name testAVCodeOHVVCProfile011
-     * @tc.desc Verify that EnumVVCProfile11 function correctly enumerates VVC_PROFILE_MAIN_10_STILL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile11 function correctly enumerates VVC_PROFILE_MAIN_10_STILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -797,12 +797,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile012
      * @tc.number SUB_AVCode_OH_VVCProfile_012
-     * @tc.name testAVCodeOHVVCProfile012
-     * @tc.desc Verify that EnumVVCProfile12 function correctly enumerates VVC_PROFILE_MAIN_12_STILL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile12 function correctly enumerates VVC_PROFILE_MAIN_12_STILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -817,12 +817,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile013
      * @tc.number SUB_AVCode_OH_VVCProfile_013
-     * @tc.name testAVCodeOHVVCProfile013
-     * @tc.desc Verify that EnumVVCProfile13 function correctly enumerates VVC_PROFILE_MAIN_10_444_STILL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile13 function correctly enumerates VVC_PROFILE_MAIN_10_444_STILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -837,12 +837,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile014
      * @tc.number SUB_AVCode_OH_VVCProfile_014
-     * @tc.name testAVCodeOHVVCProfile014
-     * @tc.desc Verify that EnumVVCProfile14 function correctly enumerates VVC_PROFILE_MAIN_12_444_STILL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile14 function correctly enumerates VVC_PROFILE_MAIN_12_444_STILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -857,12 +857,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHVVCProfile015
      * @tc.number SUB_AVCode_OH_VVCProfile_015
-     * @tc.name testAVCodeOHVVCProfile015
-     * @tc.desc Verify that EnumVVCProfile15 function correctly enumerates VVC_PROFILE_MAIN_16_444_STILL
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumVVCProfile15 function correctly enumerates VVC_PROFILE_MAIN_16_444_STILL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHVVCProfile015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -877,12 +877,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile001
      * @tc.number SUB_AVCode_OH_MPEG2Profile_001
-     * @tc.name testAVCodeOHMPEG2Profile001
-     * @tc.desc Verify that EnumMPEGProfile1 function correctly enumerates MPEG2 profile 1
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile1 function correctly enumerates MPEG2 profile 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -897,12 +897,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile002
      * @tc.number SUB_AVCode_OH_MPEG2Profile_002
-     * @tc.name testAVCodeOHMPEG2Profile002
-     * @tc.desc Verify that EnumMPEGProfile2 function correctly enumerates MPEG2 profile 2
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile2 function correctly enumerates MPEG2 profile 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -917,12 +917,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile003
      * @tc.number SUB_AVCode_OH_MPEG2Profile_003
-     * @tc.name testAVCodeOHMPEG2Profile003
-     * @tc.desc Verify that EnumMPEGProfile3 function correctly enumerates MPEG2 profile 3
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile3 function correctly enumerates MPEG2 profile 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -937,12 +937,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile004
      * @tc.number SUB_AVCode_OH_MPEG2Profile_004
-     * @tc.name testAVCodeOHMPEG2Profile004
-     * @tc.desc Verify that EnumMPEGProfile4 function correctly enumerates MPEG2 profile 4
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile4 function correctly enumerates MPEG2 profile 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -957,12 +957,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile005
      * @tc.number SUB_AVCode_OH_MPEG2Profile_005
-     * @tc.name testAVCodeOHMPEG2Profile005
-     * @tc.desc Verify that EnumMPEGProfile5 function correctly enumerates MPEG2 profile 5
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile5 function correctly enumerates MPEG2 profile 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -977,12 +977,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile006
      * @tc.number SUB_AVCode_OH_MPEG2Profile_006
-     * @tc.name testAVCodeOHMPEG2Profile006
-     * @tc.desc Verify that EnumMPEGProfile6 function correctly enumerates MPEG2 profile 6
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile6 function correctly enumerates MPEG2 profile 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -997,12 +997,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile007
      * @tc.number SUB_AVCode_OH_MPEG2Profile_007
-     * @tc.name testAVCodeOHMPEG2Profile007
-     * @tc.desc Verify that EnumMPEGProfile7 function correctly enumerates MPEG2 profile 7
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile7 function correctly enumerates MPEG2 profile 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1017,12 +1017,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile008
      * @tc.number SUB_AVCode_OH_MPEG2Profile_008
-     * @tc.name testAVCodeOHMPEG2Profile008
-     * @tc.desc Verify that EnumMPEGProfile8 function correctly enumerates MPEG2 profile 8
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile8 function correctly enumerates MPEG2 profile 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1037,12 +1037,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile009
      * @tc.number SUB_AVCode_OH_MPEG2Profile_009
-     * @tc.name testAVCodeOHMPEG2Profile009
-     * @tc.desc Verify that EnumMPEGProfile9 function correctly enumerates MPEG2 profile 9
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile9 function correctly enumerates MPEG2 profile 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1057,12 +1057,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile010
      * @tc.number SUB_AVCode_OH_MPEG2Profile_010
-     * @tc.name testAVCodeOHMPEG2Profile010
-     * @tc.desc Verify that EnumMPEGProfile10 function correctly enumerates MPEG2 profile 10
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile10 function correctly enumerates MPEG2 profile 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1077,12 +1077,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile011
      * @tc.number SUB_AVCode_OH_MPEG2Profile_011
-     * @tc.name testAVCodeOHMPEG2Profile011
-     * @tc.desc Verify that EnumMPEGProfile11 function correctly enumerates MPEG2 profile 11
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile11 function correctly enumerates MPEG2 profile 11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1097,12 +1097,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile012
      * @tc.number SUB_AVCode_OH_MPEG2Profile_012
-     * @tc.name testAVCodeOHMPEG2Profile012
-     * @tc.desc Verify that EnumMPEGProfile12 function correctly enumerates MPEG2 profile 12
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile12 function correctly enumerates MPEG2 profile 12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1117,12 +1117,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile013
      * @tc.number SUB_AVCode_OH_MPEG2Profile_013
-     * @tc.name testAVCodeOHMPEG2Profile013
-     * @tc.desc Verify that EnumMPEGProfile13 function correctly enumerates MPEG2 profile 13
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile13 function correctly enumerates MPEG2 profile 13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1137,12 +1137,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile014
      * @tc.number SUB_AVCode_OH_MPEG2Profile_014
-     * @tc.name testAVCodeOHMPEG2Profile014
-     * @tc.desc Verify that EnumMPEGProfile14 function correctly enumerates MPEG2 profile 14
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile14 function correctly enumerates MPEG2 profile 14
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1157,12 +1157,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile015
      * @tc.number SUB_AVCode_OH_MPEG2Profile_015
-     * @tc.name testAVCodeOHMPEG2Profile015
-     * @tc.desc Verify that EnumMPEGProfile15 function correctly enumerates MPEG2 profile 15
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile15 function correctly enumerates MPEG2 profile 15
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1177,12 +1177,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile016
      * @tc.number SUB_AVCode_OH_MPEG2Profile_016
-     * @tc.name testAVCodeOHMPEG2Profile016
-     * @tc.desc Verify that EnumMPEGProfile16 function correctly enumerates MPEG2 profile 16
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile16 function correctly enumerates MPEG2 profile 16
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1197,12 +1197,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile017
      * @tc.number SUB_AVCode_OH_MPEG2Profile_017
-     * @tc.name testAVCodeOHMPEG2Profile017
-     * @tc.desc Verify that EnumMPEGProfile17 function correctly enumerates MPEG2 profile 17
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile17 function correctly enumerates MPEG2 profile 17
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1217,12 +1217,12 @@ export default function AVCodeTest3() {
       });
 
     /**
+     * @tc.name   testAVCodeOHMPEG2Profile018
      * @tc.number SUB_AVCode_OH_MPEG2Profile_018
-     * @tc.name testAVCodeOHMPEG2Profile018
-     * @tc.desc Verify that EnumMPEGProfile18 function correctly enumerates MPEG2 profile 18
-     * @tc.level Level1
-     * @tc.size MediumTest
-     * @tc.type Function
+     * @tc.desc   Verify that EnumMPEGProfile18 function correctly enumerates MPEG2 profile 18
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1237,12 +1237,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MPEG2Profile_019
-     @tc.name testAVCodeOHMPEG2Profile019
-     @tc.desc Verify that EnumMPEGProfile19 function correctly enumerates MPEG2 profile 19
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMPEG2Profile019
+     * @tc.number SUB_AVCode_OH_MPEG2Profile_019
+     * @tc.desc   Verify that EnumMPEGProfile19 function correctly enumerates MPEG2 profile 19
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1257,12 +1257,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MPEG2Profile_020
-     @tc.name testAVCodeOHMPEG2Profile020
-     @tc.desc Verify that EnumMPEGProfile20 function correctly enumerates MPEG2 profile 20
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMPEG2Profile020
+     * @tc.number SUB_AVCode_OH_MPEG2Profile_020
+     * @tc.desc   Verify that EnumMPEGProfile20 function correctly enumerates MPEG2 profile 20
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1277,12 +1277,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MPEG2Profile_021
-     @tc.name testAVCodeOHMPEG2Profile021
-     @tc.desc Verify that EnumMPEGProfile21 function correctly enumerates MPEG2 profile 21
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMPEG2Profile021
+     * @tc.number SUB_AVCode_OH_MPEG2Profile_021
+     * @tc.desc   Verify that EnumMPEGProfile21 function correctly enumerates MPEG2 profile 21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMPEG2Profile021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1297,12 +1297,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_H263Profile_001
-     @tc.name testAVCodeOHH263Profile001
-     @tc.desc Verify that EnumOHH263Profile1 function correctly enumerates MPEG2 profile 21
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHH263Profile001
+     * @tc.number SUB_AVCode_OH_H263Profile_001
+     * @tc.desc   Verify that EnumOHH263Profile1 function correctly enumerates MPEG2 profile 21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHH263Profile001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1317,12 +1317,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_H263Profile_002
-     @tc.name testAVCodeOHH263Profile002
-     @tc.desc Verify that EnumMPEGProfile21 function correctly enumerates MPEG2 profile 21
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHH263Profile002
+     * @tc.number SUB_AVCode_OH_H263Profile_002
+     * @tc.desc   Verify that EnumMPEGProfile21 function correctly enumerates MPEG2 profile 21
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHH263Profile002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1337,12 +1337,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_AVOutputFormat_001
-     @tc.name testAVCodeOHAVOutputFormat001
-     @tc.desc Verify that EnumOHAVOutputFormat1 function correctly enumerates AV output format 1
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHAVOutputFormat001
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_001
+     * @tc.desc   Verify that EnumOHAVOutputFormat1 function correctly enumerates AV output format 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAVOutputFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1357,12 +1357,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_AVOutputFormat_002
-     @tc.name testAVCodeOHAVOutputFormat002
-     @tc.desc Verify that EnumOHAVOutputFormat2 function correctly enumerates AV output format 2
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHAVOutputFormat002
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_002
+     * @tc.desc   Verify that EnumOHAVOutputFormat2 function correctly enumerates AV output format 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAVOutputFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1377,12 +1377,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_AVOutputFormat_003
-     @tc.name testAVCodeOHAVOutputFormat003
-     @tc.desc Verify that EnumOHAVOutputFormat3 function correctly enumerates AV output format 3
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHAVOutputFormat003
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_003
+     * @tc.desc   Verify that EnumOHAVOutputFormat3 function correctly enumerates AV output format 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAVOutputFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1397,12 +1397,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_AVOutputFormat_004
-     @tc.name testAVCodeOHAVOutputFormat004
-     @tc.desc Verify that EnumOHAVOutputFormat4 function correctly enumerates AV output format 4
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHAVOutputFormat004
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_004
+     * @tc.desc   Verify that EnumOHAVOutputFormat4 function correctly enumerates AV output format 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAVOutputFormat004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1417,12 +1417,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_AVOutputFormat_005
-     @tc.name testAVCodeOHAVOutputFormat005
-     @tc.desc Verify that EnumOHAVOutputFormat5 function correctly enumerates AV output format 5
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHAVOutputFormat005
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_005
+     * @tc.desc   Verify that EnumOHAVOutputFormat5 function correctly enumerates AV output format 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAVOutputFormat005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1437,12 +1437,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_AVOutputFormat_006
-     @tc.name testAVCodeOHAVOutputFormat006
-     @tc.desc Verify that EnumOHAVOutputFormat6 function correctly enumerates AV output format 6
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHAVOutputFormat006
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_006
+     * @tc.desc   Verify that EnumOHAVOutputFormat6 function correctly enumerates AV output format 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAVOutputFormat006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1455,14 +1455,34 @@ export default function AVCodeTest3() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+      
+    /**
+     * @tc.name   testAVCodeOHAVOutputFormat007
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_007
+     * @tc.desc   Verify that EnumOHAVOutputFormat7 function correctly enumerates AV output format 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVCodeOHAVOutputFormat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat7();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat007 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_001
-     @tc.name testAVCodeColorPrimary001
-     @tc.desc Verify that EnumOHAVColorPrimary1 function correctly enumerates OH_ColorPrimary 1
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary001
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_001
+     * @tc.desc   Verify that EnumOHAVColorPrimary1 function correctly enumerates OH_ColorPrimary 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1477,12 +1497,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_002
-     @tc.name testAVCodeColorPrimary002
-     @tc.desc Verify that EnumOHAVColorPrimary2 function correctly enumerates OH_ColorPrimary 2
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary002
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_002
+     * @tc.desc   Verify that EnumOHAVColorPrimary2 function correctly enumerates OH_ColorPrimary 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1497,12 +1517,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_003
-     @tc.name testAVCodeColorPrimary003
-     @tc.desc Verify that EnumOHAVColorPrimary3 function correctly enumerates OH_ColorPrimary 3
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary003
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_003
+     * @tc.desc   Verify that EnumOHAVColorPrimary3 function correctly enumerates OH_ColorPrimary 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1517,12 +1537,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_004
-     @tc.name testAVCodeColorPrimary004
-     @tc.desc Verify that EnumOHAVColorPrimary4 function correctly enumerates OH_ColorPrimary 4
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary004
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_004
+     * @tc.desc   Verify that EnumOHAVColorPrimary4 function correctly enumerates OH_ColorPrimary 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1537,12 +1557,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_005
-     @tc.name testAVCodeColorPrimary005
-     @tc.desc Verify that EnumOHAVColorPrimary5 function correctly enumerates OH_ColorPrimary 5
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary005
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_005
+     * @tc.desc   Verify that EnumOHAVColorPrimary5 function correctly enumerates OH_ColorPrimary 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1557,12 +1577,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_006
-     @tc.name testAVCodeColorPrimary006
-     @tc.desc Verify that EnumOHAVColorPrimary6 function correctly enumerates OH_ColorPrimary 6
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary006
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_006
+     * @tc.desc   Verify that EnumOHAVColorPrimary6 function correctly enumerates OH_ColorPrimary 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1577,12 +1597,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_007
-     @tc.name testAVCodeColorPrimary007
-     @tc.desc Verify that EnumOHAVColorPrimary7 function correctly enumerates OH_ColorPrimary 7
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary007
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_007
+     * @tc.desc   Verify that EnumOHAVColorPrimary7 function correctly enumerates OH_ColorPrimary 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1597,12 +1617,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_COLOR_PRIMARY_008
-     @tc.name testAVCodeColorPrimary008
-     @tc.desc Verify that EnumOHAVColorPrimary8 function correctly enumerates OH_ColorPrimary 8
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeColorPrimary008
+     * @tc.number SUB_AVCode_COLOR_PRIMARY_008
+     * @tc.desc   Verify that EnumOHAVColorPrimary8 function correctly enumerates OH_ColorPrimary 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeColorPrimary008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1617,12 +1637,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_001
-     @tc.name testAVCodeOHTransferCharacteristic001
-     @tc.desc Verify that EnumOHTransferCharacteristic1 function correctly enumerates OH_TransferCharacteristic 1
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic001
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_001
+     * @tc.desc   Verify that EnumOHTransferCharacteristic1 function correctly enumerates OH_TransferCharacteristic 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1637,12 +1657,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_002
-     @tc.name testAVCodeOHTransferCharacteristic002
-     @tc.desc Verify that EnumOHTransferCharacteristic2 function correctly enumerates OH_TransferCharacteristic 2
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic002
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_002
+     * @tc.desc   Verify that EnumOHTransferCharacteristic2 function correctly enumerates OH_TransferCharacteristic 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1657,12 +1677,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_003
-     @tc.name testAVCodeOHTransferCharacteristic003
-     @tc.desc Verify that EnumOHTransferCharacteristic3 function correctly enumerates OH_TransferCharacteristic 3
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic003
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_003
+     * @tc.desc   Verify that EnumOHTransferCharacteristic3 function correctly enumerates OH_TransferCharacteristic 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1677,12 +1697,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_004
-     @tc.name testAVCodeOHTransferCharacteristic004
-     @tc.desc Verify that EnumOHTransferCharacteristic4 function correctly enumerates OH_TransferCharacteristic 4
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic004
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_004
+     * @tc.desc   Verify that EnumOHTransferCharacteristic4 function correctly enumerates OH_TransferCharacteristic 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1697,12 +1717,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_005
-     @tc.name testAVCodeOHTransferCharacteristic005
-     @tc.desc Verify that EnumOHTransferCharacteristic5 function correctly enumerates OH_TransferCharacteristic 5
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic005
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_005
+     * @tc.desc   Verify that EnumOHTransferCharacteristic5 function correctly enumerates OH_TransferCharacteristic 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1717,12 +1737,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_006
-     @tc.name testAVCodeOHTransferCharacteristic006
-     @tc.desc Verify that EnumOHTransferCharacteristic6 function correctly enumerates OH_TransferCharacteristic 6
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic006
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_006
+     * @tc.desc   Verify that EnumOHTransferCharacteristic6 function correctly enumerates OH_TransferCharacteristic 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1737,12 +1757,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_007
-     @tc.name testAVCodeOHTransferCharacteristic007
-     @tc.desc Verify that EnumOHTransferCharacteristic7 function correctly enumerates OH_TransferCharacteristic 7
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic007
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_007
+     * @tc.desc   Verify that EnumOHTransferCharacteristic7 function correctly enumerates OH_TransferCharacteristic 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1757,12 +1777,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_008
-     @tc.name testAVCodeOHTransferCharacteristic008
-     @tc.desc Verify that EnumOHTransferCharacteristic8 function correctly enumerates OH_TransferCharacteristic 8
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic008
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_008
+     * @tc.desc   Verify that EnumOHTransferCharacteristic8 function correctly enumerates OH_TransferCharacteristic 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1777,12 +1797,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_009
-     @tc.name testAVCodeOHTransferCharacteristic009
-     @tc.desc Verify that EnumOHTransferCharacteristic9 function correctly enumerates OH_TransferCharacteristic 9
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic009
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_009
+     * @tc.desc   Verify that EnumOHTransferCharacteristic9 function correctly enumerates OH_TransferCharacteristic 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1797,12 +1817,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_010
-     @tc.name testAVCodeOHTransferCharacteristic010
-     @tc.desc Verify that EnumOHTransferCharacteristic10 function correctly enumerates OH_TransferCharacteristic 10
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic010
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_010
+     * @tc.desc   Verify that EnumOHTransferCharacteristic10 function correctly enumerates OH_TransferCharacteristic 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1817,12 +1837,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_011
-     @tc.name testAVCodeOHTransferCharacteristic011
-     @tc.desc Verify that EnumOHTransferCharacteristic11 function correctly enumerates OH_TransferCharacteristic 11
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic011
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_011
+     * @tc.desc   Verify that EnumOHTransferCharacteristic11 function correctly enumerates OH_TransferCharacteristic 11
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1837,12 +1857,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_012
-     @tc.name testAVCodeOHTransferCharacteristic012
-     @tc.desc Verify that EnumOHTransferCharacteristic12 function correctly enumerates OH_TransferCharacteristic 12
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic012
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_012
+     * @tc.desc   Verify that EnumOHTransferCharacteristic12 function correctly enumerates OH_TransferCharacteristic 12
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1857,12 +1877,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_TransferCharacteristic_013
-     @tc.name testAVCodeOHTransferCharacteristic013
-     @tc.desc Verify that EnumOHTransferCharacteristic13 function correctly enumerates OH_TransferCharacteristic 13
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHTransferCharacteristic013
+     * @tc.number SUB_AVCode_OH_TransferCharacteristic_013
+     * @tc.desc   Verify that EnumOHTransferCharacteristic13 function correctly enumerates OH_TransferCharacteristic 13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHTransferCharacteristic013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1877,12 +1897,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_001
-     @tc.name testAVCodeOHMatrixCoefficient001
-     @tc.desc Verify that EnumOHMatrixCoefficient1 function correctly enumerates OH_MatrixCoefficient 1
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient001
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_001
+     * @tc.desc   Verify that EnumOHMatrixCoefficient1 function correctly enumerates OH_MatrixCoefficient 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1897,12 +1917,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_002
-     @tc.name testAVCodeOHMatrixCoefficient002
-     @tc.desc Verify that EnumOHMatrixCoefficient2 function correctly enumerates OH_MatrixCoefficient 2
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient002
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_002
+     * @tc.desc   Verify that EnumOHMatrixCoefficient2 function correctly enumerates OH_MatrixCoefficient 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1917,12 +1937,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_003
-     @tc.name testAVCodeOHMatrixCoefficient003
-     @tc.desc Verify that EnumOHMatrixCoefficient3 function correctly enumerates OH_MatrixCoefficient 3
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient003
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_003
+     * @tc.desc   Verify that EnumOHMatrixCoefficient3 function correctly enumerates OH_MatrixCoefficient 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1937,12 +1957,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_004
-     @tc.name testAVCodeOHMatrixCoefficient004
-     @tc.desc Verify that EnumOHMatrixCoefficient4 function correctly enumerates OH_MatrixCoefficient 4
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient004
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_004
+     * @tc.desc   Verify that EnumOHMatrixCoefficient4 function correctly enumerates OH_MatrixCoefficient 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1957,12 +1977,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_005
-     @tc.name testAVCodeOHMatrixCoefficient005
-     @tc.desc Verify that EnumOHMatrixCoefficient5 function correctly enumerates OH_MatrixCoefficient 5
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient005
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_005
+     * @tc.desc   Verify that EnumOHMatrixCoefficient5 function correctly enumerates OH_MatrixCoefficient 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1977,12 +1997,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_006
-     @tc.name testAVCodeOHMatrixCoefficient006
-     @tc.desc Verify that EnumOHMatrixCoefficient6 function correctly enumerates OH_MatrixCoefficient 6
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient006
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_006
+     * @tc.desc   Verify that EnumOHMatrixCoefficient6 function correctly enumerates OH_MatrixCoefficient 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -1997,12 +2017,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_007
-     @tc.name testAVCodeOHMatrixCoefficient007
-     @tc.desc Verify that EnumOHMatrixCoefficient7 function correctly enumerates OH_MatrixCoefficient 7
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient007
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_007
+     * @tc.desc   Verify that EnumOHMatrixCoefficient7 function correctly enumerates OH_MatrixCoefficient 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2017,12 +2037,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_008
-     @tc.name testAVCodeOHMatrixCoefficient008
-     @tc.desc Verify that EnumOHMatrixCoefficient8 function correctly enumerates OH_MatrixCoefficient 8
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient008
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_008
+     * @tc.desc   Verify that EnumOHMatrixCoefficient8 function correctly enumerates OH_MatrixCoefficient 8
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2037,12 +2057,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_009
-     @tc.name testAVCodeOHMatrixCoefficient009
-     @tc.desc Verify that EnumOHMatrixCoefficient9 function correctly enumerates OH_MatrixCoefficient 9
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient009
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_009
+     * @tc.desc   Verify that EnumOHMatrixCoefficient9 function correctly enumerates OH_MatrixCoefficient 9
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2057,12 +2077,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_MatrixCoefficient_010
-     @tc.name testAVCodeOHMatrixCoefficient010
-     @tc.desc Verify that EnumOHMatrixCoefficient10 function correctly enumerates OH_MatrixCoefficient 10
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHMatrixCoefficient010
+     * @tc.number SUB_AVCode_OH_MatrixCoefficient_010
+     * @tc.desc   Verify that EnumOHMatrixCoefficient10 function correctly enumerates OH_MatrixCoefficient 10
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHMatrixCoefficient010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2077,12 +2097,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_BitsPerSample_001
-     @tc.name testAVCodeOHBitsPerSample001
-     @tc.desc Verify that EnumOHBitsPerSample1 function correctly enumerates OH_BitsPerSample 1
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHBitsPerSample001
+     * @tc.number SUB_AVCode_OH_BitsPerSample_001
+     * @tc.desc   Verify that EnumOHBitsPerSample1 function correctly enumerates OH_BitsPerSample 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHBitsPerSample001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2097,12 +2117,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_BitsPerSample_002
-     @tc.name testAVCodeOHBitsPerSample002
-     @tc.desc Verify that EnumOHBitsPerSample2 function correctly enumerates OH_BitsPerSample 2
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHBitsPerSample002
+     * @tc.number SUB_AVCode_OH_BitsPerSample_002
+     * @tc.desc   Verify that EnumOHBitsPerSample2 function correctly enumerates OH_BitsPerSample 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHBitsPerSample002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2117,12 +2137,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_BitsPerSample_003
-     @tc.name testAVCodeOHBitsPerSample003
-     @tc.desc Verify that EnumOHBitsPerSample3 function correctly enumerates OH_BitsPerSample 3
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHBitsPerSample003
+     * @tc.number SUB_AVCode_OH_BitsPerSample_003
+     * @tc.desc   Verify that EnumOHBitsPerSample3 function correctly enumerates OH_BitsPerSample 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHBitsPerSample003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2137,12 +2157,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_BitsPerSample_004
-     @tc.name testAVCodeOHBitsPerSample004
-     @tc.desc Verify that EnumOHBitsPerSample4 function correctly enumerates OH_BitsPerSample 4
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHBitsPerSample004
+     * @tc.number SUB_AVCode_OH_BitsPerSample_004
+     * @tc.desc   Verify that EnumOHBitsPerSample4 function correctly enumerates OH_BitsPerSample 4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHBitsPerSample004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2157,12 +2177,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_BitsPerSample_005
-     @tc.name testAVCodeOHBitsPerSample005
-     @tc.desc Verify that EnumOHBitsPerSample5 function correctly enumerates OH_BitsPerSample 5
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHBitsPerSample005
+     * @tc.number SUB_AVCode_OH_BitsPerSample_005
+     * @tc.desc   Verify that EnumOHBitsPerSample5 function correctly enumerates OH_BitsPerSample 5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHBitsPerSample005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2177,12 +2197,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_BitsPerSample_006
-     @tc.name testAVCodeOHBitsPerSample006
-     @tc.desc Verify that EnumOHBitsPerSample6 function correctly enumerates OH_BitsPerSample 6
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHBitsPerSample006
+     * @tc.number SUB_AVCode_OH_BitsPerSample_006
+     * @tc.desc   Verify that EnumOHBitsPerSample6 function correctly enumerates OH_BitsPerSample 6
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHBitsPerSample006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2197,12 +2217,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_BitsPerSample_007
-     @tc.name testAVCodeOHBitsPerSample007
-     @tc.desc Verify that EnumOHBitsPerSample7 function correctly enumerates OH_BitsPerSample 7
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHBitsPerSample007
+     * @tc.number SUB_AVCode_OH_BitsPerSample_007
+     * @tc.desc   Verify that EnumOHBitsPerSample7 function correctly enumerates OH_BitsPerSample 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHBitsPerSample007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2217,12 +2237,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_Core_HdrType_001
-     @tc.name testAVCodeOHCoreHdrType001
-     @tc.desc Verify that EnumOHCoreHdrType1 function correctly enumerates OH_CORE_HDR_TYPE_NONE
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHCoreHdrType001
+     * @tc.number SUB_AVCode_OH_Core_HdrType_001
+     * @tc.desc   Verify that EnumOHCoreHdrType1 function correctly enumerates OH_CORE_HDR_TYPE_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHCoreHdrType001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2237,12 +2257,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_Core_HdrType_002
-     @tc.name testAVCodeOHCoreHdrType002
-     @tc.desc Verify that EnumOHCoreHdrType2 function correctly enumerates OH_CORE_HDR_TYPE_VIVID
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHCoreHdrType002
+     * @tc.number SUB_AVCode_OH_Core_HdrType_002
+     * @tc.desc   Verify that EnumOHCoreHdrType2 function correctly enumerates OH_CORE_HDR_TYPE_VIVID
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHCoreHdrType002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2257,12 +2277,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_AVDataSource_001
-     @tc.name testAVCodeOHAVDataSource001
-     @tc.desc Verify that EnumOHCoreHdrType2 function correctly OH_AVDataSource size readAt
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHAVDataSource001
+     * @tc.number SUB_AVCode_OH_AVDataSource_001
+     * @tc.desc   Verify that EnumOHCoreHdrType2 function correctly OH_AVDataSource size readAt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHAVDataSource001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2277,12 +2297,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_ScalingMode_001
-     @tc.name testAVCodeOHScalingMode001
-     @tc.desc Verify that EnumOHScalingMode1 function correctly enumerates SCALING_MODE_SCALE_TO_WINDOW
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHScalingMode001
+     * @tc.number SUB_AVCode_OH_ScalingMode_001
+     * @tc.desc   Verify that EnumOHScalingMode1 function correctly enumerates SCALING_MODE_SCALE_TO_WINDOW
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHScalingMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -2297,12 +2317,12 @@ export default function AVCodeTest3() {
       });
 
     /**
-     @tc.number SUB_AVCode_OH_ScalingMode_002
-     @tc.name testAVCodeOHScalingMode002
-     @tc.desc Verify that EnumOHScalingMode2 function correctly enumerates SCALING_MODE_SCALE_CROP
-     @tc.level Level1
-     @tc.size MediumTest
-     @tc.type Function
+     * @tc.name   testAVCodeOHScalingMode002
+     * @tc.number SUB_AVCode_OH_ScalingMode_002
+     * @tc.desc   Verify that EnumOHScalingMode2 function correctly enumerates SCALING_MODE_SCALE_CROP
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAVCodeOHScalingMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {

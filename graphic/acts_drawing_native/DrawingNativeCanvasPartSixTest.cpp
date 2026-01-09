@@ -66,13 +66,13 @@ class DrawingNativeCanvasPart6Test : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5501
- * @tc.name: testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.desc: test for testCanvasDrawSingleChaWithFeaturesNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testCanvasDrawSingleChaWithFeaturesNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5501
+ * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesNormal, Function | SmallTest | Level0) {
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -89,6 +89,7 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesNormal
     float curX = 100;
     float curY = 100;
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
+    EXPECT_NE(features, nullptr);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
     OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str2, font, curX, curY, features),
@@ -111,13 +112,13 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesNormal
     OH_Drawing_FontFeaturesDestroy(features);
     OH_Drawing_CanvasDestroy(canvas);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5502
- * @tc.name: testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.desc: test for testCanvasDrawSingleChaWithFeaturesAbNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testCanvasDrawSingleChaWithFeaturesAbNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5502
+ * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesAbNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesAbNormal, Function | SmallTest | Level3) {
     float curX = 100.0f;
@@ -131,6 +132,7 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesAbNorm
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_FontSetTextSize(font, textSize);
     OH_Drawing_FontFeatures* feat = OH_Drawing_FontFeaturesCreate();
+    EXPECT_NE(feat, nullptr);
     OH_Drawing_ErrorCode code = OH_Drawing_CanvasDrawSingleCharacterWithFeatures(nullptr, str, font, curX, curY, feat);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
     code = OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, nullptr, font, curX, curY, feat);
@@ -151,13 +153,13 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesAbNorm
     OH_Drawing_FontFeaturesDestroy(feat);
     OH_Drawing_CanvasDestroy(canvas);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5503
- * @tc.name: testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.desc: test for testCanvasDrawSingleChaWithFeaturesCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testCanvasDrawSingleChaWithFeaturesCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_5503
+ * @tc.desc   test for testCanvasDrawSingleChaWithFeaturesCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesCalls, Function | SmallTest | Level2) {
     OH_Drawing_Canvas* canvas = OH_Drawing_CanvasCreate();
@@ -167,9 +169,10 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesCalls,
     float curY = 100;
     int count = 10;
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
+    EXPECT_NE(features, nullptr);
     for (int i = 0; i < count; i++) {
-    EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
+            OH_DRAWING_SUCCESS);
     }
     OH_Drawing_FontDestroy(font);
     OH_Drawing_FontFeaturesDestroy(features);

@@ -37,12 +37,12 @@ export default function showAlertDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showAlertDialogBlurStyleOptions_0100
-     * @tc.name      showAlertDialogBlurStyleOptions_0100
-     * @tc.desc      createShowAlertDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogBlurStyleOptions_0100
+     * @tc.number showAlertDialogBlurStyleOptions_0100
+     * @tc.desc   createShowAlertDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showAlertDialogBlurStyleOptions_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showAlertDialogBlurStyleOptions';
@@ -79,12 +79,12 @@ export default function showAlertDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showAlertDialogBlurStyleOptions_0200
-     * @tc.name      showAlertDialogBlurStyleOptions_0200
-     * @tc.desc      createShowAlertDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogBlurStyleOptions_0200
+     * @tc.number showAlertDialogBlurStyleOptions_0200
+     * @tc.desc   createShowAlertDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showAlertDialogBlurStyleOptions_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showAlertDialogBlurStyleOptions_0200';
@@ -111,12 +111,12 @@ export default function showAlertDialogBlurStyleOptionsTest() {
     });
 
     /**
-     * @tc.number    showAlertDialogBlurStyleOptions_0300
-     * @tc.name      showAlertDialogBlurStyleOptions_0300
-     * @tc.desc      createShowAlertDialogToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showAlertDialogBlurStyleOptions_0300
+     * @tc.number showAlertDialogBlurStyleOptions_0300
+     * @tc.desc   createShowAlertDialogToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('showAlertDialogBlurStyleOptions_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tagName = 'showAlertDialogBlurStyleOptions_0300';

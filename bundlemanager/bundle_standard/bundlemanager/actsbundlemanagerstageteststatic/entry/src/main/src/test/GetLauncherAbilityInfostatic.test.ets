@@ -40,16 +40,18 @@ export default function abilityTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number  Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.name    Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.desc    Test getLauncherAbilityInfoSync with valid value.
-     * @tc.size    MEDIUMTEST
-     * @tc.type    FUNCTION
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.desc   Test getLauncherAbilityInfoSync with valid value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let userId = USER_ID100;
         let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME100, USER_ID100);
+        expect(data.length>0).assertTrue();
         expect(data![0].userId).assertEqual(userId);
         expect(data![0].applicationInfo.name).assertEqual(BUNDLE_NAME100);
         expect(data![0].applicationInfo.description).assertEqual("$string:module_desc");
@@ -77,6 +79,7 @@ export default function abilityTest() {
         expect(data![0].applicationInfo.appIndex).assertEqual(APP_Index);
         expect(data![0].applicationInfo.installSource).assertEqual("unknown");
         expect(data![0].applicationInfo.cloudFileSyncEnabled).assertEqual(false);
+        expect(data![0].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
         expect(data![0].applicationInfo.descriptionId).assertLarger(0);
         expect(data![0].applicationInfo.labelId).assertLarger(0);
         expect(data![0].applicationInfo.iconId).assertLarger(0);
@@ -88,8 +91,8 @@ export default function abilityTest() {
         expect(data![0].elementName.abilityName).assertEqual("EntryAbility");
         expect(data![0].elementName.uri).assertEqual(URI);
         expect(data![0].elementName.shortName).assertEqual("");
-        done();
         hilog.info(domain, tag,"data is " + JSON.stringify(data));
+        done();
       } catch (errData) {
         let code = (errData as BusinessError).code;
         let message = (errData as BusinessError).message;

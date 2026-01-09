@@ -26,52 +26,52 @@ export default function textPickerAccessibilityGroupTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0100
-     * @tc.name       : testTextPickerAccessibilityGroup001
-     * @tc.desc       : testing accessibilityGroup for TextPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerAccessibilityGroup001
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0100
+     * @tc.desc   testing accessibilityGroup for TextPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerAccessibilityGroup001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerAccessibilityGroup001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0200
-     * @tc.name       : testTextPickerAccessibilityGroup002
-     * @tc.desc       : testing accessibilityGroup for TextPicker with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testTextPickerAccessibilityGroup002
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0200
+     * @tc.desc   testing accessibilityGroup for TextPicker with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerAccessibilityGroup002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerAccessibilityGroup002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0300
-     * @tc.name       : testTextPickerAccessibilityGroup003
-     * @tc.desc       : testing accessibilityGroup for TextPicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextPickerAccessibilityGroup003
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0300
+     * @tc.desc   testing accessibilityGroup for TextPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerAccessibilityGroup003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerAccessibilityGroup003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0400
-     * @tc.name       : testTextPickerAccessibilityGroup004
-     * @tc.desc       : testing accessibilityGroup for TextPicker with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testTextPickerAccessibilityGroup004
+     * @tc.number SUB_ARKUI_CAPI_TEXTPICKER_ACCESSIBILITYGROUP_0400
+     * @tc.desc   testing accessibilityGroup for TextPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextPickerAccessibilityGroup004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testTextPickerAccessibilityGroup004()).assertEqual(0)

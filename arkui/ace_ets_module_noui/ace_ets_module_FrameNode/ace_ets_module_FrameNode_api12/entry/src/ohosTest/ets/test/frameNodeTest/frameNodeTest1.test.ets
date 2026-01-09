@@ -52,16 +52,16 @@ export default function frameNodeTest1() {
       }
       done();
     });
+
+
     /**
-     * @tc.number frameNode
-     * @tc.name frameNodeTest1_0400
-     * @tc.desc api
-     * @tc.level: Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeTest1_0100
+     * @tc.number frameNodeTest1_0100
+     * @tc.desc   frameNodeTest1_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-
-
     it('frameNodeTest1_0100', Level.LEVEL0, async (done: Function) => {
       console.info('frameNodeTest1_0100 START');
       let driver = await Driver.create()

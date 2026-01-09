@@ -26,7 +26,7 @@ import { State } from '@ohos.arkui.stateManagement'
 import events_emitter from '@ohos.events.emitter';
 import Utils from '../../src/test/Util.test';
 import { Callback } from '@ohos.base'
-import { BusinessError } from '@ohos.arkui.component';
+import { BusinessError, RecordData } from '@ohos.arkui.component';
 import webview from '@ohos.web.webview';
 import emitter from '@ohos.events.emitter';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -64,8 +64,8 @@ struct WebComponent {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      if (eventData.data != null && (eventData.data as Record<string , object>)?.['ACTION'] != null) {
-        this.str = '' + (eventData.data as Record<string , object>)?.['ACTION'];
+      if (eventData.data != null && (eventData.data as Record<string , RecordData>)?.['ACTION'] != null) {
+        this.str = '' + (eventData.data as Record<string , RecordData>)?.['ACTION'];
       }
     }
   }
@@ -95,7 +95,7 @@ struct WebComponent {
                           Utils.emitEvent(true, 20241127);
                           console.info('suceess emit')
                         }
-                      }).catch((err: BusinessError): void => {
+                      }).catch((err: Error): void => {
                       console.error('createPDF write data to file failed with error message: ' + err.message +
                         ', error code: ' + err.code);
                     }).finally(() => {
@@ -124,7 +124,7 @@ struct WebComponent {
                       if(writeLen > 0) {
                         Utils.emitEvent(true, 20241128);
                       }
-                        }).catch((err: BusinessError): void => {
+                        }).catch((err: Error): void => {
                       console.error("createPDF write data to file failed with error message: " + err.message +
                         ", error code: " + err.code);
                     }).finally(() => {

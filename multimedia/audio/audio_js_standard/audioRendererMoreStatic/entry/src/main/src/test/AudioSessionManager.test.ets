@@ -141,13 +141,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
-    * @tc.desc        test AudioSessionManager operation:调用去激活预期结果是未激活,设置音频并发模式为默认模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level1
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1
+     * @tc.desc   test AudioSessionManager operation:调用去激活预期结果是未激活,设置音频并发模式为默认模式,查询音频会话状态是否激活,预期结果是激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       await deactivateAudioSession(done, !isDone);
       isAudioSessionActivatedFalse(done, !isDone);
@@ -159,13 +159,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
-    * @tc.desc        test AudioSessionManager operation:设置音频并发模式为混音模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2
+     * @tc.desc   test AudioSessionManager operation:设置音频并发模式为混音模式,查询音频会话状态是否激活,预期结果是激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_MIX_WITH_OTHERS
@@ -177,13 +177,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
-    * @tc.desc        test AudioSessionManager operation:设置音频并发模式为混音降低音量模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3
+     * @tc.desc   test AudioSessionManager operation:设置音频并发模式为混音降低音量模式,查询音频会话状态是否激活,预期结果是激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_3', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DUCK_OTHERS
@@ -193,13 +193,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
-    * @tc.desc        test AudioSessionManager operation:设置音频并发模式为暂停模式,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level4
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4
+     * @tc.desc   test AudioSessionManager operation:设置音频并发模式为暂停模式,查询音频会话状态是否激活,预期结果是激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL4
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL4, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_PAUSE_OTHERS
@@ -209,26 +209,26 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
-    * @tc.desc        test AudioSessionManager operation: 调用去激活,查询音频会话状态是否激活,预期结果是未激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6
+     * @tc.desc   test AudioSessionManager operation: 调用去激活,查询音频会话状态是否激活,预期结果是未激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_6', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await deactivateAudioSession(done, !isDone);
       isAudioSessionActivatedFalse(done, isDone);
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
-    * @tc.desc        test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7
+     * @tc.desc   test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_7', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
@@ -238,13 +238,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
-    * @tc.desc        test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8
+     * @tc.desc   test AudioSessionManager operation:调用激活-激活,查询音频会话状态是否激活,预期结果是激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_8', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       let strategy: audio.AudioSessionStrategy = {
         concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
@@ -256,13 +256,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
-    * @tc.desc        test AudioSessionManager operation:调用未激活-激活,查询音频会话状态是否激活,预期结果是激活
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9
+     * @tc.desc   test AudioSessionManager operation:调用未激活-激活,查询音频会话状态是否激活,预期结果是激活
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_9', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await deactivateAudioSession(done, !isDone);
       isAudioSessionActivatedFalse(done, !isDone);
@@ -274,13 +274,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
-    * @tc.desc        test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10
+     * @tc.desc   test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       sessionManager.onAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
         if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
@@ -304,13 +304,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11
-    * @tc.desc        test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11
+     * @tc.desc   test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         sessionManager.onAudioSessionStateChanged((AudioSessionStateChangedEvent: audio.AudioSessionStateChangedEvent) => {
@@ -325,13 +325,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12
-    * @tc.desc        test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level3
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12
+     * @tc.desc   test AudioSessionManager operation:调用AudioSessionManager注册事件和关闭注册事件覆盖参数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       try {
         sessionManager.onCurrentOutputDeviceChanged((CurrentOutputDeviceChangedEvent: audio.CurrentOutputDeviceChangedEvent) => {
@@ -346,13 +346,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13
-    * @tc.desc        test AudioSessionManager operation: setAudioSessionScene
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13
+     * @tc.desc   test AudioSessionManager operation: setAudioSessionScene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         sessionManager.setAudioSessionScene(audio.AudioSessionScene.AUDIO_SESSION_SCENE_MEDIA);
@@ -366,13 +366,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14
-    * @tc.desc        test AudioSessionManager operation: audioSessionStateChanged register with param
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14
+     * @tc.desc   test AudioSessionManager operation: audioSessionStateChanged register with param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         sessionManager.onAudioSessionStateChanged(sessionStateChangedEvent);
@@ -394,13 +394,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15
-    * @tc.desc        test AudioSessionManager operation: audioSessionStateChanged register with no param
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15
+     * @tc.desc   test AudioSessionManager operation: audioSessionStateChanged register with no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         sessionManager.onAudioSessionStateChanged(sessionStateChangedEvent);
@@ -422,13 +422,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16
-    * @tc.desc        test AudioSessionManager operation: getDefaultOutputDevice/setDefaultOutputDevice
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16
+     * @tc.desc   test AudioSessionManager operation: getDefaultOutputDevice/setDefaultOutputDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         let data = sessionManager.getDefaultOutputDevice();
@@ -462,13 +462,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17
-    * @tc.desc        test AudioSessionManager operation: currentOutputDeviceChanged register with param
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17
+     * @tc.desc   test AudioSessionManager operation: currentOutputDeviceChanged register with param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         sessionManager.onCurrentOutputDeviceChanged(sessionDeviceChangedChangedEvent);
@@ -490,13 +490,13 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18
-    * @tc.name        SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18
-    * @tc.desc        test AudioSessionManager operation: currentOutputDeviceChanged register with no param
-    * @tc.size        AudioTest
-    * @tc.type        Function
-    * @tc.level       Level2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18
+     * @tc.desc   test AudioSessionManager operation: currentOutputDeviceChanged register with no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       try {
         sessionManager.onCurrentOutputDeviceChanged(sessionDeviceChangedChangedEvent);
@@ -518,13 +518,45 @@ export default function audioSessionManagerTest() {
     })
 
     /**
-    * @tc.number      SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
-    * @tc.name        SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
-    * @tc.desc        setDefaultOutputDevice -6800101
-    * @tc.size        MEDIUMTEST
-    * @tc.type        FUNCTION
-    * @tc.level       LEVEL2
-    */
+     * @tc.name   SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_19
+     * @tc.number SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_19
+     * @tc.desc   test AudioSessionManager operation: currentOutputDeviceChanged register with no param
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_AUDIO_AUDIOSESSIONMANAGER_API_STATIC_19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      try {
+        sessionManager.onAudioSessionDeactivated((audioSessionDeactivatedEvent: audio.AudioSessionDeactivatedEvent) => {
+          if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_LOWER_PRIORITY){
+            console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+          }else if(audioSessionDeactivatedEvent.reason === audio.AudioSessionDeactivatedReason.DEACTIVATED_TIMEOUT){
+            console.info(`reason of audioSessionDeactivated: ${audioSessionDeactivatedEvent.reason} `);
+          }
+        });
+        let strategy: audio.AudioSessionStrategy = {
+          concurrencyMode: audio.AudioConcurrencyMode.CONCURRENCY_DEFAULT
+        }
+        await activateAudioSession(strategy, done, !isDone);
+        sessionManager.offAudioSessionDeactivated();
+        isAudioSessionActivatedTrue(done, isDone);
+        done();
+      } catch (err: BusinessError) {
+        expect(false).assertTrue();
+        console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
+        done();
+      }
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100
+     * @tc.desc   setDefaultOutputDevice -6800101
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSION_SETDEFAULTOUTPUTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       let audioManager:audio.AudioManager = audio.getAudioManager();
       let audioSessionManager:audio.AudioSessionManager = audioManager.getSessionManager();
@@ -537,6 +569,84 @@ export default function audioSessionManagerTest() {
         console.info(`${TAG}: err.code: ${err.code}, err.message: ${err.message}`);
         done();
       }
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETDEFAULTOUTPUTDEVICE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETDEFAULTOUTPUTDEVICE_STATIC_0100
+     * @tc.desc   inputAudioDevice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_AUDIOSESSIONMANAGER_GETDEFAULTOUTPUTDEVICE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioManager: audio.AudioManager = audio.getAudioManager();
+      let audioSessionManager: audio.AudioSessionManager = audioManager.getSessionManager();
+      try{
+        let deviceType: audio.DeviceType = audioSessionManager.getDefaultOutputDevice();
+        if(deviceType == audio.DeviceType.DEFAULT) {
+          expect(deviceType).assertEqual(1000);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType == audio.DeviceType.EARPIECE){
+          expect(deviceType).assertEqual(1);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.SPEAKER){
+          expect(deviceType).assertEqual(2);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.INVALID){
+          expect(deviceType).assertEqual(0);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.WIRED_HEADSET){
+          expect(deviceType).assertEqual(3);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.WIRED_HEADPHONES){
+          expect(deviceType).assertEqual(4);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.BLUETOOTH_SCO){
+          expect(deviceType).assertEqual(7);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.BLUETOOTH_A2DP){
+          expect(deviceType).assertEqual(8);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.MIC){
+          expect(deviceType).assertEqual(15);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.USB_HEADSET){
+          expect(deviceType).assertEqual(22);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.DISPLAY_PORT){
+          expect(deviceType).assertEqual(23);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.REMOTE_CAST){
+          expect(deviceType).assertEqual(24);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.USB_DEVICE){
+          expect(deviceType).assertEqual(25);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.ACCESSORY){
+          expect(deviceType).assertEqual(26);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.HDMI){
+          expect(deviceType).assertEqual(27);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.LINE_DIGITAL){
+          expect(deviceType).assertEqual(28);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.REMOTE_DAUDIO){
+          expect(deviceType).assertEqual(29);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.HEARING_AID){
+          expect(deviceType).assertEqual(30);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        } else if(deviceType = audio.DeviceType.NEARLINK){
+          expect(deviceType).assertEqual(31);
+          console.info(`getDefaultOutputDevice success: ${deviceType}`);
+        }
+      }catch (err: BusinessError){
+        console.log('getDefaultOutputDevice failed, err :' + err.message)
+        expect(false).assertTrue();
+      }
+      done();
     })
   })
 }

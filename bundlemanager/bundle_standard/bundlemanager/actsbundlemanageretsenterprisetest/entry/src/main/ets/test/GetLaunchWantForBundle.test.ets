@@ -18,20 +18,20 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 const NAME1 = "com.example.third1";
 const NAME2 = "com.example.l3jsdemo";
 const NAME3 = "com.notexist.com";
-const ABILITYNAME1 = "com.example.third1.MainAbility";
+const ABILITYNAME1 = "com.example.third1.entry.MainAbility";
 const ABILITYNAME2 = "com.example.l3jsdemo.MainAbility";
 
 export default function getLaunchWantForBundle() {
     describe('GetLaunchWantForBundleTest', function () {
 
-        /*
-        * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_3720
-        * @tc.name: testGetLaunchWantForBundle.
-        * @tc.desc: Test getLaunchWantForBundle api by promise and callback.
-        * @tc.size MediumTest
-        * @tc.type Function
-        * @tc.level Level 1
-        */
+        /**
+         * @tc.name   testGetLaunchWantForBundle
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_3720
+         * @tc.desc   Test getLaunchWantForBundle api by promise and callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testGetLaunchWantForBundle', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             await bundleMgr.getLaunchWantForBundle(NAME1).then(res => {
                 expect(res.bundleName).assertEqual(NAME1);
@@ -53,14 +53,14 @@ export default function getLaunchWantForBundle() {
             });
         });
 
-        /*
-        * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2720
-        * @tc.name: testGetLaunchWantForBundleWithManyHaps.
-        * @tc.desc: Test getLaunchWantForBundle api by promise and callback.
-        * @tc.size MediumTest
-        * @tc.type Function
-        * @tc.level Level 1
-        */
+        /**
+         * @tc.name   testGetLaunchWantForBundleWithManyHaps
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2720
+         * @tc.desc   Test getLaunchWantForBundle api by promise and callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('testGetLaunchWantForBundleWithManyHaps', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             await bundleMgr.getLaunchWantForBundle(NAME2).then(res => {
                 expect(res.bundleName).assertEqual(NAME2);
@@ -81,14 +81,14 @@ export default function getLaunchWantForBundle() {
                 done();
             });
         });
-        /*
-        * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2740
-        * @tc.name: testGetLaunchWantForBundleWithNotExist.
-        * @tc.desc: Test getLaunchWantForBundle api by promise and callback.
-        * @tc.size MediumTest
-        * @tc.type Function
-        * @tc.level Level 2
-        */
+        /**
+         * @tc.name   testGetLaunchWantForBundleWithNotExist
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2740
+         * @tc.desc   Test getLaunchWantForBundle api by promise and callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testGetLaunchWantForBundleWithNotExist', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await bundleMgr.getLaunchWantForBundle(NAME3).then(res => {
                 expect().assertFail();
@@ -106,14 +106,14 @@ export default function getLaunchWantForBundle() {
             });
         });
 
-        /*
-        * @tc.number: Sub_Bms_Framework_Query_AbilityInfo_2760
-        * @tc.name: testGetLaunchWantForBundleWithInvalidParam.
-        * @tc.desc: Test getLaunchWantForBundle api by promise and callback.
-        * @tc.size MediumTest
-        * @tc.type Function
-        * @tc.level Level 3
-        */
+        /**
+         * @tc.name   testGetLaunchWantForBundleWithInvalidParam
+         * @tc.number Sub_Bms_Framework_Query_AbilityInfo_2760
+         * @tc.desc   Test getLaunchWantForBundle api by promise and callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('testGetLaunchWantForBundleWithInvalidParam', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             await bundleMgr.getLaunchWantForBundle(null).then(res => {
                 expect().assertFail();

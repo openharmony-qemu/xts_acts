@@ -69,13 +69,13 @@ export default function menuThemeTest() {
       }
     });
     /**
-      * @tc.number    : ActsMenuThemeColors_0100
-      * @tc.name      : ActsMenuThemeColors_0100
-      * @tc.desc      : check system colors values of the Menu component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsMenuThemeColors_0100
+     * @tc.number ActsMenuThemeColors_0100
+     * @tc.desc   check system colors values of the Menu component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsMenuThemeColors_0100`, Level.LEVEL2, () => {
       const CASE: string = `ActsMenuThemeColors_0100`;
       console.info(`${SUITE} ${CASE} START`);
@@ -87,13 +87,13 @@ export default function menuThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsMenuThemeColors_0200
-      * @tc.name      : ActsMenuThemeColors_0200
-      * @tc.desc      : check custom colors values of the Menu component
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsMenuThemeColors_0200
+     * @tc.number ActsMenuThemeColors_0200
+     * @tc.desc   check custom colors values of the Menu component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it(`ActsMenuThemeColors_0200`, Level.LEVEL2, () => {
       const CASE: string = `ActsMenuThemeColors_0200`;
       console.info(`${SUITE} ${CASE} START`);
@@ -106,14 +106,13 @@ export default function menuThemeTest() {
       console.info(`${SUITE} ${CASE} END`);
     });
     /**
-      * @tc.number    : ActsMenuThemeColors_0300
-      * @tc.name      : ActsMenuThemeColors_0300
-      * @tc.desc      : check system colors values of the Menu component
-      *                 after change theme
-      * @tc.level     : Level 2
-      * @tc.size      : MediumTest
-      * @tc.type      : Function
-      */
+     * @tc.name   ActsMenuThemeColors_0300
+     * @tc.number ActsMenuThemeColors_0300
+     * @tc.desc   check system colors values of the Menu component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it(`ActsMenuThemeColors_0300`, Level.LEVEL0, async () => {
       const CASE: string = `ActsMenuThemeColors_0300`;
       console.info(`${SUITE} ${CASE} START`);

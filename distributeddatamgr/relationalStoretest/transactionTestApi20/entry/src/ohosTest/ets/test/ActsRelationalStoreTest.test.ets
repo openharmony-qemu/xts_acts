@@ -25,7 +25,6 @@ const RDB_E_ERROR = 14800000;
 export default function ActsRelationalStoreTest() {
   describe('ActsRelationalStoreTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetDbType_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetDbType_0100
      * @tc.desc   Test OH_Rdb_SetDbType Test RDB Does Not Have This Capability Scene
@@ -49,7 +48,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetCryptoParam_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetCryptoParam_0200
      * @tc.desc   Test OH_Rdb_SetCryptoParam Test Normal Scene.
@@ -73,7 +71,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0300
      * @tc.desc   test OH_Rdb_SetTokenizer Test Illegal Parameter Scene
@@ -97,7 +94,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_0400
      * @tc.desc   test OH_Rdb_SetTokenizer Test Normal Scene
@@ -121,7 +117,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetPersistent_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetPersistent_0500
      * @tc.desc   test OH_Rdb_SetPersistent Test Illegal Parameter Scene
@@ -145,7 +140,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetPersistent_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetPersistent_0600
      * @tc.desc   test OH_Rdb_SetPersistent Test Normal Scene
@@ -169,7 +163,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_IsTokenizerSupported_0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_IsTokenizerSupported_0700
      * @tc.desc   test OH_Rdb_IsTokenizerSupported Test Illegal Parameter Scene
@@ -196,7 +189,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_DeleteStore_0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_DeleteStore_0800
      * @tc.desc   test OH_Rdb_DeleteStore Test Illegal Parameter Scene
@@ -220,7 +212,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_DeleteStore_0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_DeleteStore_0900
      * @tc.desc   test OH_Rdb_DeleteStore Test OK Scene
@@ -244,7 +235,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Insert_1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Insert_1000
      * @tc.desc   test OH_Rdb_Insert Test Error Scene
@@ -268,7 +258,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_InsertWithConflictResolution_1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_InsertWithConflictResolution_1100
      * @tc.desc   test OH_Rdb_InsertWithConflictResolution Test Ok Scene
@@ -295,7 +284,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_InsertWithConflictResolution_1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_InsertWithConflictResolution_1200
      * @tc.desc   test OH_Rdb_InsertWithConflictResolution Test Error Codes For Common Exceptions Scene
@@ -322,7 +310,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BatchInsert_1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BatchInsert_1300
      * @tc.desc   test OH_Rdb_BatchInsert Test Illegal Parameter Scene
@@ -346,7 +333,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BatchInsert_1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BatchInsert_1400
      * @tc.desc   test OH_Rdb_BatchInsert Test Database Common Error Scene
@@ -370,7 +356,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Update_1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Update_1500
      * @tc.desc   test OH_Rdb_Update Test Update Failure Scene
@@ -395,7 +380,6 @@ export default function ActsRelationalStoreTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_UpdateWithConflictResolution_1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_UpdateWithConflictResolution_1600
      * @tc.desc   test OH_Rdb_UpdateWithConflictResolution Test Execution Success Scene
@@ -422,7 +406,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_UpdateWithConflictResolution_1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_UpdateWithConflictResolution_1700
      * @tc.desc   test OH_Rdb_UpdateWithConflictResolution Test Common Error Scene
@@ -449,7 +432,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Delete_1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Delete_1800
      * @tc.desc   test OH_Rdb_Delete Test Illegal Parameter Scene
@@ -473,7 +455,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Delete_1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Delete_1900
      * @tc.desc   test OH_Rdb_Delete Test Delete Failure Scene
@@ -497,7 +478,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Execute_2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Execute_2000
      * @tc.desc   test OH_Rdb_Execute Test Illegal Parameter Scene
@@ -521,7 +501,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteV2_2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteV2_2100
      * @tc.desc   test OH_Rdb_ExecuteV2 Test Illegal Parameter Scene
@@ -545,7 +524,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteV2_2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteV2_2200
      * @tc.desc   test OH_Rdb_ExecuteV2 Test Common Error Scene
@@ -570,7 +548,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BeginTransaction_2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BeginTransaction_2300
      * @tc.desc   test OH_Rdb_BeginTransaction Test Illegal Parameter Scene
@@ -595,7 +572,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BeginTransaction_2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_BeginTransaction_2400
      * @tc.desc   test OH_Rdb_BeginTransaction Test Execution Success Scene
@@ -620,7 +596,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBack_2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBack_2500
      * @tc.desc   test OH_Rdb_RollBack Test Illegal Parameter Scene
@@ -644,7 +619,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBack_2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBack_2600
      * @tc.desc   test OH_Rdb_RollBack Test Execution Success Scene
@@ -669,7 +643,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Commit_2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Commit_2700
      * @tc.desc   test OH_Rdb_Commit Test Illegal Parameter Scene
@@ -693,7 +666,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Commit_2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Commit_2800
      * @tc.desc   test OH_Rdb_Commit Test Execution Success Scene
@@ -717,7 +689,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Backup_2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Backup_2900
      * @tc.desc   test OH_Rdb_Backup Test Illegal Parameter Scene
@@ -741,7 +712,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Backup_3000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Backup_3000
      * @tc.desc   test OH_Rdb_Backup Test Execution Success Scene
@@ -765,7 +735,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Restore_3100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Restore_3100
      * @tc.desc   test OH_Rdb_Restore Test Illegal Parameter Scene
@@ -789,7 +758,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Restore_3200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Restore_3200
      * @tc.desc   test OH_Rdb_Restore Test Execution Success Scene
@@ -814,7 +782,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_GetVersion_3300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_GetVersion_3300
      * @tc.desc   test OH_Rdb_GetVersion Test Illegal Parameter Scene
@@ -838,7 +805,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_GetVersion_3400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_GetVersion_3400
      * @tc.desc   test OH_Rdb_GetVersion Test Execution Success Scene
@@ -863,7 +829,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetVersion_3500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetVersion_3500
      * @tc.desc   test OH_Rdb_SetVersion Test Illegal Parameter Scene
@@ -887,7 +852,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetVersion_3600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetVersion_3600
      * @tc.desc   test OH_Rdb_SetVersion Test Execution Success Scene
@@ -912,7 +876,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_LockRow_3700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_LockRow_3700
      * @tc.desc   test OH_Rdb_LockRow Test Illegal Parameter Scene
@@ -936,7 +899,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_UnlockRow_3800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_UnlockRow_3800
      * @tc.desc   test OH_Rdb_UnlockRow Test Illegal Parameter Scene
@@ -960,7 +922,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CreateTransaction_3900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CreateTransaction_3900
      * @tc.desc   test OH_Rdb_CreateTransaction Test Illegal Parameter Scene
@@ -985,7 +946,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetLocale_4000
      * @tc.desc   test OH_Rdb_SetLocale Test Normal Scene
@@ -1009,7 +969,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Attach_4100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Attach_4100
      * @tc.desc   Test the fault scenario that the database file of OH_Rdb_Attach interface is locked.
@@ -1033,7 +992,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Attach_4200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Attach_4200
      * @tc.desc   Test the fault scenario of the error code of the common exception of the OH_Rdb_Attach interface.
@@ -1057,7 +1015,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Detach_4300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Detach_4300
      * @tc.desc   Test the successful execution of the OH_Rdb_Detach interface.
@@ -1081,7 +1038,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Detach_4400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_Detach_4400
      * @tc.desc   Test the error code of the common exception of the OH_Rdb_Detach interface.
@@ -1105,7 +1061,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4500
      * @tc.desc   Test the scenario of enumeration value RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS.
@@ -1131,7 +1086,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_SetTokenizer_4600
      * @tc.desc   Test OH_Rdb_SetTokenizer test RDB does not have this ability.
@@ -1155,7 +1109,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_RollBackByTrxId_4700
      * @tc.desc   test OH_Rdb_RollBackByTrxId Test Normal Scene
@@ -1179,7 +1132,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_CommitByTrxId_4800
      * @tc.desc   test OH_Rdb_CommitByTrxId Test Normal Scene
@@ -1203,7 +1155,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:52
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS_4900
      * @tc.desc   Scenario for testing enumeration value RDB_SUBSCRIBE_TYPE_LOCAL_DETAILS.

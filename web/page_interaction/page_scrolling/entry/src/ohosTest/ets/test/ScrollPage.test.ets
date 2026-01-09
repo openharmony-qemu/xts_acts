@@ -55,14 +55,14 @@ export default function ScrollPage() {
       console.info("web beforeEach start");
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0100
-    * @tc.name       : testScrollTo001
-    * @tc.desc       : test scrollTo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollTo001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0100
+     * @tc.desc   test scrollTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testScrollTo001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -72,14 +72,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0200
-    * @tc.name       : testScrollTo002
-    * @tc.desc       : test scrollTo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollTo002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0200
+     * @tc.desc   test scrollTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testScrollTo002", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -89,14 +89,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0300
-    * @tc.name       : testScrollTo003
-    * @tc.desc       : test scrollTo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollTo003
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0300
+     * @tc.desc   test scrollTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testScrollTo003", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -106,14 +106,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0400
-    * @tc.name       : testScrollTo004
-    * @tc.desc       : test scrollTo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollTo004
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0400
+     * @tc.desc   test scrollTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testScrollTo004", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -123,14 +123,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0500
-    * @tc.name       : testScrollTo005
-    * @tc.desc       : test scrollTo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollTo005
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0500
+     * @tc.desc   test scrollTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollTo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testScrollTo005", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -140,14 +140,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0600
-    * @tc.name       : testScrollTo006
-    * @tc.desc       : test scrollTo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollTo006
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0600
+     * @tc.desc   test scrollTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollTo006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testScrollTo006", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -157,14 +157,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0700
-    * @tc.name       : testScrollTo007
-    * @tc.desc       : test scrollTo
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testScrollTo007
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SCROLLTO_0700
+     * @tc.desc   test scrollTo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testScrollTo007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testScrollTo007", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -174,14 +174,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PAGEDOWN_0100
-    * @tc.name       : testPageDown001
-    * @tc.desc       : test pageDown
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPageDown001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PAGEDOWN_0100
+     * @tc.desc   test pageDown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPageDown001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPageDown001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -191,14 +191,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PAGEDOWN_0200
-    * @tc.name       : testPageDown002
-    * @tc.desc       : test pageDown
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPageDown002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PAGEDOWN_0200
+     * @tc.desc   test pageDown
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPageDown002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPageDown002", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -208,14 +208,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PAGEUP_0100
-    * @tc.name       : testPageUp001
-    * @tc.desc       : test pageUp
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPageUp001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PAGEUP_0100
+     * @tc.desc   test pageUp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPageUp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPageUp001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -225,14 +225,14 @@ export default function ScrollPage() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PAGEUP_0200
-    * @tc.name       : testPageUp002
-    * @tc.desc       : test pageUp
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testPageUp002
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PAGEUP_0200
+     * @tc.desc   test pageUp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testPageUp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testPageUp002", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;
@@ -241,14 +241,14 @@ export default function ScrollPage() {
       await Utils.waitForExist(() => isReturn, "testPageUp002" + '_returnCheck', true, 1000);
       done();
     })
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_SLIDESCROLL_0100
-    * @tc.name       : testSlideScroll001
-    * @tc.desc       : test slideScroll
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testSlideScroll001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_SLIDESCROLL_0100
+     * @tc.desc   test slideScroll
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSlideScroll001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("testSlideScroll001", EVENT_ID_SET_SUITE_KEY)
       let isReturn = false;

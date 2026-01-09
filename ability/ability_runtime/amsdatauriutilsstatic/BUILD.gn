@@ -17,7 +17,7 @@ ohos_js_app_static_suite("AmsDataUriUtilsStaticTest") {
   # test_hap = true
   # testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "AmsDataUriUtilsStaticTest"
+  hap_name = "ActsDataUriUtilsStaticTest"
   part_name = "ability_runtime"
   subsystem_name = "ability"
 }

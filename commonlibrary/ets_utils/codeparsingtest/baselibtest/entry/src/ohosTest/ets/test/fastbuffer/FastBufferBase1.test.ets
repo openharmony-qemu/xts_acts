@@ -44,16 +44,15 @@ export default function FastBufferBaseTest1() {
       // Presets a clear action, which is performed after each unit test case ends.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: clear action function.
-      await sleep(10);
       done();
     })
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0100
-     * @tc.name  : testAlloc0001
-     * @tc.desc  : Testing alloc interface with normal size.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAlloc0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0100
+     * @tc.desc   Testing alloc interface with normal size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAlloc0001";
@@ -67,13 +66,13 @@ export default function FastBufferBaseTest1() {
       }
     })
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0200
-     * @tc.name  : testAlloc0002
-     * @tc.desc  : Testing alloc for fastbuffer with size '4294967296'
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAlloc0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0200
+     * @tc.desc   Testing alloc for fastbuffer with size '4294967296'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAlloc0002";
@@ -86,13 +85,13 @@ export default function FastBufferBaseTest1() {
       }
     })
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0300
-     * @tc.name  : testAlloc0003
-     * @tc.desc  : Testing alloc for parameter with size and fill.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAlloc0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0300
+     * @tc.desc   Testing alloc for parameter with size and fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAlloc0003";
@@ -106,13 +105,13 @@ export default function FastBufferBaseTest1() {
       }
     })
 
-    /*
-      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0400
-      * @tc.name  : testAlloc0004
-      * @tc.desc  : Testing alloc for parameter with size and fill.
-      * @tc.size: MediumTest
-      * @tc.type  : Function
-      * @tc.level: Level 0
+    /**
+     * @tc.name   testAlloc0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0400
+     * @tc.desc   Testing alloc for parameter with size and fill.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAlloc0004";
@@ -126,14 +125,14 @@ export default function FastBufferBaseTest1() {
       }
     })
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0500
-     * @tc.name: testAlloc0005
-     * @tc.desc: Testing alloc for parameter with size negetive
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-    */
+    /**
+     * @tc.name   testAlloc0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0500
+     * @tc.desc   Testing alloc for parameter with size negetive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlloc0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAlloc0005";
       try {
@@ -143,13 +142,13 @@ export default function FastBufferBaseTest1() {
         expect(err.code).assertEqual(401);
       }
     });
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0600
-     * @tc.name  : testAlloc0006
-     * @tc.desc  : Testing alloc for parameter with size and string base64
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAlloc0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_0600
+     * @tc.desc   Testing alloc for parameter with size and string base64
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlloc0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAlloc0006";
@@ -162,13 +161,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0100
-     * @tc.name  : testAllocUninitialized0001
-     * @tc.desc  : Testing allocUninitialized interface with normal size.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAllocUninitialized0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0100
+     * @tc.desc   Testing allocUninitialized interface with normal size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAllocUninitialized0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAllocUninitialized0001";
@@ -181,13 +180,13 @@ export default function FastBufferBaseTest1() {
         expect().assertFail();
       }
     })
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0200
-     * @tc.name  : testAllocUninitialized0002
-     * @tc.desc  : Testing allocUninitialized for fastbuffer with size '4294967296'
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAllocUninitialized0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0200
+     * @tc.desc   Testing allocUninitialized for fastbuffer with size '4294967296'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAllocUninitialized0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAllocUninitialized0002";
@@ -200,14 +199,14 @@ export default function FastBufferBaseTest1() {
       }
     })
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0500
-     * @tc.name: testAllocUninitialized0005
-     * @tc.desc: Testing allocUninitialized for parameter with size negetive
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-    */
+    /**
+     * @tc.name   testAllocUninitialized0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_0500
+     * @tc.desc   Testing allocUninitialized for parameter with size negetive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAllocUninitialized0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAllocUninitialized0005";
       try {
@@ -218,13 +217,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0100
-     * @tc.name  : testAllocUninitializedFromPool0001
-     * @tc.desc  : Testing allocUninitializedFromPool interface with normal size.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAllocUninitializedFromPool0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0100
+     * @tc.desc   Testing allocUninitializedFromPool interface with normal size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAllocUninitializedFromPool0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAllocUninitializedFromPool0001";
@@ -238,13 +237,13 @@ export default function FastBufferBaseTest1() {
       }
     })
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0200
-     * @tc.name  : testAllocUninitializedFromPool0002
-     * @tc.desc  : Testing allocUninitializedFromPool for fastbuffer with size '4294967296'
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testAllocUninitializedFromPool0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0200
+     * @tc.desc   Testing allocUninitializedFromPool for fastbuffer with size '4294967296'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAllocUninitializedFromPool0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAllocUninitializedFromPool0002";
@@ -257,14 +256,14 @@ export default function FastBufferBaseTest1() {
       }
     })
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0500
-     * @tc.name: testAllocUninitializedFromPool0005
-     * @tc.desc: Testing allocUninitializedFromPool for parameter with size negetive
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
-    */
+    /**
+     * @tc.name   testAllocUninitializedFromPool0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ALLOC_UNINITIALIZED_FROM_POOL_0500
+     * @tc.desc   Testing allocUninitializedFromPool for parameter with size negetive
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAllocUninitializedFromPool0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testAllocUninitializedFromPool0005";
       try {
@@ -275,13 +274,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0100
-     * @tc.name  : testByteLength0001
-     * @tc.desc  : Testing byteLength for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testByteLength0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0100
+     * @tc.desc   Testing byteLength for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testByteLength0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testByteLength0001";
@@ -294,13 +293,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0200
-     * @tc.name  : testByteLength0002
-     * @tc.desc  : Testing byteLength for fastbuffer with value '测试'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testByteLength0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0200
+     * @tc.desc   Testing byteLength for fastbuffer with value '测试'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testByteLength0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testByteLength0002";
@@ -313,13 +312,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0300
-     * @tc.name  : testByteLength0003
-     * @tc.desc  : Testing byteLength for fastbuffer with value '!@#$%'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testByteLength0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0300
+     * @tc.desc   Testing byteLength for fastbuffer with value '!@#$%'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testByteLength0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testByteLength0003";
@@ -332,13 +331,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0400
-     * @tc.name  : testByteLength0006
-     * @tc.desc  : Testing byteLength for fastbuffer with uint8array objects.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testByteLength0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0400
+     * @tc.desc   Testing byteLength for fastbuffer with uint8array objects.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testByteLength0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testByteLength0006";
@@ -354,13 +353,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0500
-     * @tc.name  : testByteLength0007
-     * @tc.desc  : Testing byteLength for fastbuffer with fastbuffer objects.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testByteLength0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0500
+     * @tc.desc   Testing byteLength for fastbuffer with fastbuffer objects.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testByteLength0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testByteLength0007";
@@ -374,13 +373,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0600
-     * @tc.name  : testByteLength0008
-     * @tc.desc  : Testing byteLength for fastbuffer with value '\u00bd + \u00bc = \u00be'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testByteLength0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BYTELENGTH_0600
+     * @tc.desc   Testing byteLength for fastbuffer with value '\u00bd + \u00bc = \u00be'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testByteLength0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testByteLength0008";
@@ -393,13 +392,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0100
-     * @tc.name  : testIsBuffer0001
-     * @tc.desc  : Testing isBuffer for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testIsBuffer0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0100
+     * @tc.desc   Testing isBuffer for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsBuffer0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testIsBuffer0001";
@@ -413,13 +412,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0200
-     * @tc.name  : testIsBuffer0002
-     * @tc.desc  : Testing isBuffer for fastbuffer with object value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testIsBuffer0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0200
+     * @tc.desc   Testing isBuffer for fastbuffer with object value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsBuffer0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testIsBuffer0002";
@@ -433,13 +432,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0300
-     * @tc.name  : testIsBuffer0003
-     * @tc.desc  : Testing isBuffer for fastbuffer with value '[]'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testIsBuffer0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0300
+     * @tc.desc   Testing isBuffer for fastbuffer with value '[]'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testIsBuffer0003";
@@ -452,13 +451,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0400
-     * @tc.name  : testIsBuffer0004
-     * @tc.desc  : Testing isBuffer for fastbuffer with value fastbuffer.from('foo').
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testIsBuffer0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0400
+     * @tc.desc   Testing isBuffer for fastbuffer with value fastbuffer.from('foo').
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsBuffer0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testIsBuffer0004";
@@ -471,13 +470,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0500
-     * @tc.name  : testIsBuffer0005
-     * @tc.desc  : Testing isBuffer for fastbuffer with value empty string.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testIsBuffer0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0500
+     * @tc.desc   Testing isBuffer for fastbuffer with value empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsBuffer0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testIsBuffer0005";
@@ -490,13 +489,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0600
-     * @tc.name  : testIsBuffer0006
-     * @tc.desc  : testing alloc for fastbuffer with uint8array
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 0
+    /**
+     * @tc.name   testIsBuffer0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISBUFFER_0600
+     * @tc.desc   testing alloc for fastbuffer with uint8array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testIsBuffer0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       TAG = "testIsBuffer0006";
@@ -509,13 +508,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0100
-     * @tc.name  : testIsEncoding0001
-     * @tc.desc  : Testing isEncoding for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testIsEncoding0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0100
+     * @tc.desc   Testing isEncoding for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsEncoding0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIsEncoding0001";
@@ -532,13 +531,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0200
-     * @tc.name  : testIsEncoding0002
-     * @tc.desc  : Testing isEncoding for fastbuffer with value utf-8.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testIsEncoding0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0200
+     * @tc.desc   Testing isEncoding for fastbuffer with value utf-8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsEncoding0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIsEncoding0002";
@@ -551,13 +550,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0300
-     * @tc.name  : testIsEncoding0003
-     * @tc.desc  : Testing isEncoding for fastbuffer with value 'abcd'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testIsEncoding0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0300
+     * @tc.desc   Testing isEncoding for fastbuffer with value 'abcd'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsEncoding0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIsEncoding0003";
@@ -570,13 +569,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0400
-     * @tc.name  : testIsEncoding0004
-     * @tc.desc  : Testing isEncoding for fastbuffer with value 'utf/8'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testIsEncoding0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0400
+     * @tc.desc   Testing isEncoding for fastbuffer with value 'utf/8'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsEncoding0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIsEncoding0004";
@@ -589,13 +588,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0500
-     * @tc.name  : testIsEncoding0005
-     * @tc.desc  : Testing isEncoding for fastbuffer with value null.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testIsEncoding0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ISCODEING_0500
+     * @tc.desc   Testing isEncoding for fastbuffer with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testIsEncoding0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIsEncoding0005";
@@ -608,13 +607,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0100
-     * @tc.name  : testStaticCompare0001
-     * @tc.desc  : Testing compare with value '1234' and '0123'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testStaticCompare0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0100
+     * @tc.desc   Testing compare with value '1234' and '0123'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStaticCompare0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testStaticCompare0001";
@@ -629,13 +628,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0200
-     * @tc.name  : testStaticCompare0002
-     * @tc.desc  : Testing compare with value '514' and '114'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testStaticCompare0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0200
+     * @tc.desc   Testing compare with value '514' and '114'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStaticCompare0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testStaticCompare0002";
@@ -650,13 +649,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0300
-     * @tc.name  : testStaticCompare0003
-     * @tc.desc  : Testing compare with value '比较一' and '比较二'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testStaticCompare0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0300
+     * @tc.desc   Testing compare with value '比较一' and '比较二'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStaticCompare0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testStaticCompare0003";
@@ -671,13 +670,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0400
-     * @tc.name  : testStaticCompare0004
-     * @tc.desc  : Testing compare with value '比较$&*' and '比较$&*'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testStaticCompare0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0400
+     * @tc.desc   Testing compare with value '比较$&*' and '比较$&*'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStaticCompare0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testStaticCompare0004";
@@ -692,13 +691,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0500
-     * @tc.name  : testStaticCompare0005
-     * @tc.desc  : Testing compare with value '1abc' and  and uint8array type.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testStaticCompare0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0500
+     * @tc.desc   Testing compare with value '1abc' and  and uint8array type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStaticCompare0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testStaticCompare0005";
@@ -715,13 +714,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0600
-     * @tc.name  : testStaticCompare0600
-     * @tc.desc  : Testing compare with value undefined and undefined.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testStaticCompare0600
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_STATICCOMPARE_0600
+     * @tc.desc   Testing compare with value undefined and undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStaticCompare0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testStaticCompare0006";
@@ -734,13 +733,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0100
-     * @tc.name  : testCompare0001
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0100
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0001";
@@ -755,13 +754,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0200
-     * @tc.name  : testCompare0002
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0200
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0002";
@@ -776,13 +775,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0300
-     * @tc.name  : testCompare0003
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0300
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0003";
@@ -797,13 +796,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0400
-     * @tc.name  : testCompare0004
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0400
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0004";
@@ -818,13 +817,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0500
-     * @tc.name  : testCompare0005
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0500
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0005";
@@ -839,13 +838,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0600
-     * @tc.name  : testCompare0006
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0600
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] out of bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0006";
@@ -860,13 +859,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0700
-     * @tc.name  : testCompare0007
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] one parameter.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0700
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] one parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0007";
@@ -881,13 +880,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0800
-     * @tc.name  : testCompare0008
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] two parameter.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0800
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] two parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0008";
@@ -902,13 +901,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0900
-     * @tc.name  : testCompare0009
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] three parameter.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_0900
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] three parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0009";
@@ -923,13 +922,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_1000
-     * @tc.name  : testCompare0010
-     * @tc.desc  : Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] four parameter.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testCompare0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COMPARE_1000
+     * @tc.desc   Testing compare with [1, 2, 3, 4, 5, 6, 7, 8, 9] and [5, 6, 7, 8, 9, 1, 2, 3, 4] four parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCompare0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCompare0010";
@@ -944,13 +943,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0100
-     * @tc.name  : testConcat0001
-     * @tc.desc  : Testing concat with value '1145, 1414'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testConcat0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0100
+     * @tc.desc   Testing concat with value '1145, 1414'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConcat0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testConcat0001";
@@ -966,13 +965,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0200
-     * @tc.name  : testConcat0002
-     * @tc.desc  : Testing concat with value '测测, #￥&*'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testConcat0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0200
+     * @tc.desc   Testing concat with value '测测, #￥&*'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConcat0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testConcat0002";
@@ -988,13 +987,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0300
-     * @tc.name  : testConcat0003
-     * @tc.desc  : Testing concat with value 'qwert, asdfg'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testConcat0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0300
+     * @tc.desc   Testing concat with value 'qwert, asdfg'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConcat0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testConcat0003";
@@ -1011,13 +1010,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0400
-     * @tc.name  : testConcat0004
-     * @tc.desc  : Testing concat with value 'qwert, asdfg' test truncate.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testConcat0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0400
+     * @tc.desc   Testing concat with value 'qwert, asdfg' test truncate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testConcat0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testConcat0004";
@@ -1033,14 +1032,14 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0500
-     * @tc.name: testConcat0005
-     * @tc.desc: Testing concat with value 'qwert, asdfg' test out of length.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   testConcat0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0500
+     * @tc.desc   Testing concat with value 'qwert, asdfg' test out of length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testConcat0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testConcat0005";
       let buf1 = fastbuffer.from("qwertyu");
@@ -1056,14 +1055,14 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0600
-     * @tc.name: testConcat0006
-     * @tc.desc: Testing concat with value 'ab, ab' test out of length.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   testConcat0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_CONTACT_0600
+     * @tc.desc   Testing concat with value 'ab, ab' test out of length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testConcat0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testConcat0006";
       let arr1 = new Uint8Array([97, 98]);
@@ -1078,13 +1077,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0100
-     * @tc.name: testFill0001
-     * @tc.desc: Testing fill with normal value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testFill0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0100
+     * @tc.desc   Testing fill with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFill0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFill0001";
@@ -1098,13 +1097,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0200
-     * @tc.name: testFill0002
-     * @tc.desc: Testing fill with value '('F1刘FG', 0, 10, codeType)'.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testFill0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0200
+     * @tc.desc   Testing fill with value '('F1刘FG', 0, 10, codeType)'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFill0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFill0002";
@@ -1142,13 +1141,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0300
-     * @tc.name: testFill0003
-     * @tc.desc: Testing fill with value '!@#'.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testFill0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0300
+     * @tc.desc   Testing fill with value '!@#'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFill0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFill0003";
@@ -1162,13 +1161,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0400
-     * @tc.name: testFill0004
-     * @tc.desc: Testing fill with value, offset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testFill0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0400
+     * @tc.desc   Testing fill with value, offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFill0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFill0004";
@@ -1182,13 +1181,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0500
-     * @tc.name: testFill0005
-     * @tc.desc: Testing fill with value, offset, end.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testFill0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_0500
+     * @tc.desc   Testing fill with value, offset, end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testFill0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFill0005";
@@ -1203,12 +1202,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_1100
-     * @tc.name: testFill1100
-     * @tc.desc: Testing the fill interface with value, offset, end, encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFill1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FILL_1100
+     * @tc.desc   Testing the fill interface with value, offset, end, encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFill1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {
@@ -1222,12 +1221,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0100
-     * @tc.name: testWrite0001
-     * @tc.desc: Testing the write interface with utf8.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWrite0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0100
+     * @tc.desc   Testing the write interface with utf8.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWrite0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {
@@ -1242,12 +1241,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0200
-     * @tc.name: testWrite0002
-     * @tc.desc: Testing the write interface with normal value ''.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWrite0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0200
+     * @tc.desc   Testing the write interface with normal value ''.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWrite0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWrite0002";
@@ -1264,12 +1263,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0300
-     * @tc.name: testWrite0003
-     * @tc.desc: Testing the write interface with normal value.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWrite0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0300
+     * @tc.desc   Testing the write interface with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWrite0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let buf = fastbuffer.alloc(10);
@@ -1284,12 +1283,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0400
-     * @tc.name: testWrite0004
-     * @tc.desc: Testing the write interface with normal value out of bounds.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWrite0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0400
+     * @tc.desc   Testing the write interface with normal value out of bounds.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWrite0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let buf = fastbuffer.alloc(10);
@@ -1303,12 +1302,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0500
-     * @tc.name: testWrite0005
-     * @tc.desc: Testing the write interface with normal value, offset, length.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWrite0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0500
+     * @tc.desc   Testing the write interface with normal value, offset, length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWrite0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let buf = fastbuffer.alloc(10);
@@ -1324,12 +1323,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0600
-     * @tc.name: testWrite0006
-     * @tc.desc: Testing the write interface with normal value, offset, length, encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWrite0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_Write_0600
+     * @tc.desc   Testing the write interface with normal value, offset, length, encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWrite0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let buf = fastbuffer.alloc(10);
@@ -1345,12 +1344,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigInt64BE_0100
-     * @tc.name: testWriteBigInt64BE0001
-     * @tc.desc: Testing the writeBigInt64BE interface with two parameters: BigInt(0x0102030405060708) and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteBigInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigInt64BE_0100
+     * @tc.desc   Testing the writeBigInt64BE interface with two parameters: BigInt(0x0102030405060708) and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteBigInt64BE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteBigInt64BE0001";
@@ -1365,12 +1364,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigInt64LE_0100
-     * @tc.name: testWriteBigInt64LE0001
-     * @tc.desc: Testing the writeBigInt64LE interface with two parameters: BigInt(0x0102030405060708) and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteBigInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigInt64LE_0100
+     * @tc.desc   Testing the writeBigInt64LE interface with two parameters: BigInt(0x0102030405060708) and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteBigInt64LE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteBigInt64LE0001";
@@ -1385,12 +1384,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigUInt64BE_0100
-     * @tc.name: testWriteBigUInt64BE0001
-     * @tc.desc: Testing the writeInt16BE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteBigUInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteBigUInt64BE_0100
+     * @tc.desc   Testing the writeInt16BE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteBigUInt64BE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteBigUInt64BE0001";
@@ -1405,12 +1404,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BigUInt64LE_0100
-     * @tc.name: testWriteBigUInt64LE0001
-     * @tc.desc: Testing the writeBigUInt64LE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteBigUInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_BigUInt64LE_0100
+     * @tc.desc   Testing the writeBigUInt64LE interface with two parameters: BigInt(0xdecafafecacefade) and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteBigUInt64LE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteBigUInt64LE0001";
@@ -1425,12 +1424,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteDoubleBE_0100
-     * @tc.name: testWriteDoubleBE0001
-     * @tc.desc: Testing the writeDoubleBE interface with two parameters: 123.456 and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteDoubleBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteDoubleBE_0100
+     * @tc.desc   Testing the writeDoubleBE interface with two parameters: 123.456 and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteDoubleBE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteDoubleBE0001";
@@ -1445,12 +1444,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteDoubleLE_0100
-     * @tc.name: testWriteDoubleLE0001
-     * @tc.desc: Testing the writeDoubleLE interface with two parameters: 123.456 and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteDoubleLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteDoubleLE_0100
+     * @tc.desc   Testing the writeDoubleLE interface with two parameters: 123.456 and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteDoubleLE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteDoubleLE0001";
@@ -1465,12 +1464,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteFloatBE_0100
-     * @tc.name: testWriteFloatBE0001
-     * @tc.desc: Testing the writeFloatBE interface with two parameters: 0xcafebabe and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteFloatBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteFloatBE_0100
+     * @tc.desc   Testing the writeFloatBE interface with two parameters: 0xcafebabe and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteFloatBE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteFloatBE0001";
@@ -1485,12 +1484,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteFloatLE_0100
-     * @tc.name: testWriteFloatLE0001
-     * @tc.desc: Testing the writeFloatLE interface with two parameters: 0xcafebabe and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteFloatLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteFloatLE_0100
+     * @tc.desc   Testing the writeFloatLE interface with two parameters: 0xcafebabe and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteFloatLE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteFloatLE0001";
@@ -1505,13 +1504,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt8_0100
-     * @tc.name: testWriteInt80001
-     * @tc.desc: Testing the writeInt8 interface with value to buf at the specified offset.
-     * value must be a valid signed 8-bit integer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt8_0100
+     * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteInt80001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteInt80001";
@@ -1526,12 +1524,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt8_0200
-     * @tc.name: testWriteInt80002
-     * @tc.desc: Testing the writeInt8 interface with value to buf at the specified offset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteInt80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt8_0200
+     * @tc.desc   Testing the writeInt8 interface with value to buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteInt80002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let buf = fastbuffer.allocUninitializedFromPool(2);
@@ -1545,12 +1543,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt16BE_0100
-     * @tc.name: testWriteInt16BE0001
-     * @tc.desc: Testing the writeInt16BE interface with two parameters: 0x0102 and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteInt16BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt16BE_0100
+     * @tc.desc   Testing the writeInt16BE interface with two parameters: 0x0102 and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteInt16BE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteInt16BE0001";
@@ -1565,12 +1563,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt16LE_0100
-     * @tc.name: testWriteInt16LE0001
-     * @tc.desc: Testing the writeInt16LE interface with two parameters: 0x0304 and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteInt16LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt16LE_0100
+     * @tc.desc   Testing the writeInt16LE interface with two parameters: 0x0304 and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteInt16LE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteDoubleLE0001";
@@ -1585,12 +1583,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt32BE_0100
-     * @tc.name: testWriteInt32BE0001
-     * @tc.desc: Testing the writeInt32BE interface with two parameters: 0x01020304 and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteInt32BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt32BE_0100
+     * @tc.desc   Testing the writeInt32BE interface with two parameters: 0x01020304 and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteInt32BE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteInt32BE0001";
@@ -1605,12 +1603,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt32LE_0100
-     * @tc.name: testWriteInt32LE0001
-     * @tc.desc: Testing the writeInt32LE interface with two parameters: 0x05060708 and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteInt32LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteInt32LE_0100
+     * @tc.desc   Testing the writeInt32LE interface with two parameters: 0x05060708 and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteInt32LE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteInt32LE0001";
@@ -1625,12 +1623,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteIntBE_0100
-     * @tc.name: testWriteIntBE0001
-     * @tc.desc: Testing the writeIntBE interface with three parameters: 0x1234567890ab, 0, 6.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteIntBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteIntBE_0100
+     * @tc.desc   Testing the writeIntBE interface with three parameters: 0x1234567890ab, 0, 6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteIntBE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteIntBE0001";
@@ -1645,12 +1643,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteIntLE_0100
-     * @tc.name: testWriteIntLE0001
-     * @tc.desc: Testing the writeIntLE interface with three parameters: 0x1234567890ab, 0, 6.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteIntLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteIntLE_0100
+     * @tc.desc   Testing the writeIntLE interface with three parameters: 0x1234567890ab, 0, 6.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteIntLE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteIntLE0001";
@@ -1665,12 +1663,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0100
-     * @tc.name: testWriteUInt80001
-     * @tc.desc: Testing the writeUInt8 interface with two parameters: 0x42 and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0100
+     * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt80001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUInt80001";
@@ -1685,12 +1683,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0200
-     * @tc.name: testWriteUInt80002
-     * @tc.desc: Testing the writeUInt8 interface with 0x4 and 1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt80002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0200
+     * @tc.desc   Testing the writeUInt8 interface with 0x4 and 1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt80002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUInt80002";
@@ -1705,12 +1703,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0300
-     * @tc.name: testWriteUInt80003
-     * @tc.desc: Testing the writeUInt8 interface with two parameters: 0x23 and 2.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt80003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0300
+     * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x23 and 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt80003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUInt80003";
@@ -1725,12 +1723,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0400
-     * @tc.name: testWriteUInt80004
-     * @tc.desc: Testing the writeUInt8 interface with two parameters: 0x42 and 3.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt80004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt8_0400
+     * @tc.desc   Testing the writeUInt8 interface with two parameters: 0x42 and 3.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt80004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       try {
@@ -1744,12 +1742,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16BE_0100
-     * @tc.name: testWriteUInt16BE0001
-     * @tc.desc: Testing the writeUInt16BE interface with two parameters: 0xdead and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt16BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16BE_0100
+     * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xdead and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt16BE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUInt16BE0001";
@@ -1764,12 +1762,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16BE_0200
-     * @tc.name: testWriteUInt16BE0002
-     * @tc.desc: Testing the writeUInt16BE interface with two parameters: 0xbeef and 2.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt16BE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16BE_0200
+     * @tc.desc   Testing the writeUInt16BE interface with two parameters: 0xbeef and 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt16BE0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
@@ -1783,12 +1781,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16LE_0100
-     * @tc.name: testWriteUInt16LE0001
-     * @tc.desc: Testing the writeUInt16LE interface with two parameters: 0xdead and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt16LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16LE_0100
+     * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xdead and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt16LE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUInt16LE0001";
@@ -1803,12 +1801,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16LE_0200
-     * @tc.name: testWriteUInt16LE0002
-     * @tc.desc: Testing the writeUInt16LE interface with two parameters: 0xbeef and 2.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt16LE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WriteUInt16LE_0200
+     * @tc.desc   Testing the writeUInt16LE interface with two parameters: 0xbeef and 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt16LE0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       let buf = fastbuffer.allocUninitializedFromPool(4);
@@ -1822,12 +1820,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT32BE_0100
-     * @tc.name: testWriteUInt32BE0100
-     * @tc.desc: Testing the writeUInt32BE interface with two parameters: 0xfeedface and 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testWriteUInt32BE0100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT32BE_0100
+     * @tc.desc   Testing the writeUInt32BE interface with two parameters: 0xfeedface and 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testWriteUInt32BE0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUInt32BE0100";
@@ -1841,13 +1839,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT32LE_0100
-     * @tc.name  : testWriteUInt32LE0001
-     * @tc.desc  : Testing writeUInt32LE with value '0xfeedface, 0'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testWriteUInt32LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINT32LE_0100
+     * @tc.desc   Testing writeUInt32LE with value '0xfeedface, 0'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWriteUInt32LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUInt32LE0001";
@@ -1861,13 +1859,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINTBE_0100
-     * @tc.name  : testWriteUIntBE0001
-     * @tc.desc  : Testing writeUIntBE with value '0x1234567890ab, 0, 6'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testWriteUIntBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINTBE_0100
+     * @tc.desc   Testing writeUIntBE with value '0x1234567890ab, 0, 6'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWriteUIntBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUIntBE0001";
@@ -1881,13 +1879,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINTLE_0100
-     * @tc.name  : testWriteUIntLE0001
-     * @tc.desc  : Testing writeUIntLE with value '0x1234567890ab, 0, 6'.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testWriteUIntLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEUINTLE_0100
+     * @tc.desc   Testing writeUIntLE with value '0x1234567890ab, 0, 6'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWriteUIntLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testWriteUIntLE0001";
@@ -1901,13 +1899,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGINT64BE_0100
-     * @tc.name  : testReadBigInt64BE0001
-     * @tc.desc  : Testing readBigInt64BE for fastbuffer with normal value
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadBigInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGINT64BE_0100
+     * @tc.desc   Testing readBigInt64BE for fastbuffer with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadBigInt64BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadBigInt64BE0001";
@@ -1922,13 +1920,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGINT64LE_0100
-     * @tc.name  : testReadBigInt64LE0001
-     * @tc.desc  : Testing readBigInt64LE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadBigInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_WRITEBIGINT64LE_0100
+     * @tc.desc   Testing readBigInt64LE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadBigInt64LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadBigInt64LE0001";
@@ -1943,13 +1941,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGUINT64BE_0100
-     * @tc.name  : testReadBigUInt64BE0001
-     * @tc.desc  : Testing readBigUInt64BE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadBigUInt64BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGUINT64BE_0100
+     * @tc.desc   Testing readBigUInt64BE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadBigUInt64BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadBigUInt64BE0001";
@@ -1964,13 +1962,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGUINT64LE_0100
-     * @tc.name  : testReadBigUInt64LE0001
-     * @tc.desc  : Testing readBigUInt64LE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadBigUInt64LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READBIGUINT64LE_0100
+     * @tc.desc   Testing readBigUInt64LE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadBigUInt64LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadBigUInt64LE0001";
@@ -1985,13 +1983,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READDOUBLEBE_0100
-     * @tc.name  : testReadDoubleBE0001
-     * @tc.desc  : Testing readDoubleBE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadDoubleBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READDOUBLEBE_0100
+     * @tc.desc   Testing readDoubleBE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadDoubleBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadDoubleBE0001";
@@ -2005,13 +2003,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READDOUBLELE_0100
-     * @tc.name  : testReadDoubleLE0001
-     * @tc.desc  : Testing readDoubleLE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadDoubleLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READDOUBLELE_0100
+     * @tc.desc   Testing readDoubleLE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadDoubleLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadDoubleLE0001";
@@ -2025,13 +2023,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READFLOATBE_0100
-     * @tc.name  : testReadFloatBE0001
-     * @tc.desc  : Testing readFloatBE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadFloatBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READFLOATBE_0100
+     * @tc.desc   Testing readFloatBE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadFloatBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadFloatBE0001";
@@ -2045,13 +2043,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READFLOATLE_0100
-     * @tc.name  : testReadFloatLE0001
-     * @tc.desc  : Testing readFloatLE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadFloatLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READFLOATLE_0100
+     * @tc.desc   Testing readFloatLE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadFloatLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadFloatLE0001";
@@ -2065,13 +2063,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT_0100
-     * @tc.name  : testReadInt80001
-     * @tc.desc  : Testing readInt8 for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadInt80001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT_0100
+     * @tc.desc   Testing readInt8 for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadInt80001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadInt80001";
@@ -2087,13 +2085,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT16BE_0100
-     * @tc.name  : testReadInt16BE0001
-     * @tc.desc  : Testing readInt16BE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadInt16BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT16BE_0100
+     * @tc.desc   Testing readInt16BE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadInt16BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadInt16BE0001";
@@ -2107,13 +2105,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT16LE_0100
-     * @tc.name  : testReadInt16LE0001
-     * @tc.desc  : Testing readInt16LE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadInt16LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT16LE_0100
+     * @tc.desc   Testing readInt16LE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadInt16LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadInt16LE0001";
@@ -2127,13 +2125,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT32BE_0100
-     * @tc.name  : testReadInt32BE0001
-     * @tc.desc  : Testing readInt32BE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadInt32BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT32BE_0100
+     * @tc.desc   Testing readInt32BE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadInt32BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadInt32BE0001";
@@ -2147,13 +2145,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT32LE_0100
-     * @tc.name  : testReadInt32LE0001
-     * @tc.desc  : Testing readInt32LE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadInt32LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINT32LE_0100
+     * @tc.desc   Testing readInt32LE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadInt32LE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadInt32LE0001";
@@ -2167,13 +2165,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTBE_0100
-     * @tc.name  : testReadIntBE0001
-     * @tc.desc  : Testing readIntBE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadIntBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTBE_0100
+     * @tc.desc   Testing readIntBE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadIntBE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadIntBE0001";
@@ -2188,13 +2186,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTBE_0200
-     * @tc.name  : testReadIntBE0002
-     * @tc.desc  : Testing readIntBE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadIntBE0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTBE_0200
+     * @tc.desc   Testing readIntBE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadIntBE0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadIntBE0002";
@@ -2208,13 +2206,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTLE_0001
-     * @tc.name  : testReadIntLE0001
-     * @tc.desc  : Testing readIntLE for fastbuffer with [0x12, 0x34, 0x56, 0x78, 0x90, 0xab].
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadIntLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READINTLE_0001
+     * @tc.desc   Testing readIntLE for fastbuffer with [0x12, 0x34, 0x56, 0x78, 0x90, 0xab].
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadIntLE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadIntLE0001";
@@ -2228,13 +2226,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT8_0100
-     * @tc.name  : testReadUInt80100
-     * @tc.desc  : Testing readUInt8 for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadUInt80100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT8_0100
+     * @tc.desc   Testing readUInt8 for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadUInt80100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadUInt80100";
@@ -2250,13 +2248,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT16BE_0100
-     * @tc.name  : testReadUInt16BE0001
-     * @tc.desc  : Testing readUInt16BE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testReadUInt16BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT16BE_0100
+     * @tc.desc   Testing readUInt16BE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testReadUInt16BE0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadUInt16BE0001";
@@ -2273,12 +2271,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_EQUALS_0100
-     * @tc.name: testEquals0001
-     * @tc.desc: Test the equals interface by two identical buffers which content is string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testEquals0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_EQUALS_0100
+     * @tc.desc   Test the equals interface by two identical buffers which content is string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testEquals0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testEquals0001";
@@ -2294,12 +2292,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_EQUALS_0200
-     * @tc.name: testEquals0002
-     * @tc.desc: Test the equals interface by two identical buffers which content is include chinese string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testEquals0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_EQUALS_0200
+     * @tc.desc   Test the equals interface by two identical buffers which content is include chinese string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testEquals0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testEquals0002";
@@ -2315,12 +2313,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_SUBARRAR_0100
-     * @tc.name: testSubarray0001
-     * @tc.desc: Test the subarray interface by pass the parameter start is 0 and end is 5.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testSubarray0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_SUBARRAR_0100
+     * @tc.desc   Test the subarray interface by pass the parameter start is 0 and end is 5.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testSubarray0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testSubarray0001";
@@ -2339,13 +2337,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0100
-     * @tc.name: testCopy0001
-     * @tc.desc: Test the copy interface by copying one fastbuffer of numeric string type to other fastbuffer of numeric
-     * string type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testCopy0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0100
+     * @tc.desc   Test the copy interface by copying one fastbuffer of numeric string type to other fastbuffer of numeric
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCopy0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCopy0001";
@@ -2364,13 +2361,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0200
-     * @tc.name: testCopy0002
-     * @tc.desc: Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
-     * string type,and setting the parameter targetStart to 5,sourceStart to 1,sourceStart to 3.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testCopy0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0200
+     * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCopy0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCopy0002";
@@ -2388,13 +2384,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0300
-     * @tc.name: testCopy0003
-     * @tc.desc: Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
-     * string type,and setting the parameter targetStart to 5,sourceStart to 1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testCopy0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0300
+     * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCopy0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCopy0003";
@@ -2412,13 +2407,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0400
-     * @tc.name: testCopy0004
-     * @tc.desc: Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
-     * string type,and setting the parameter targetStart to 5.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testCopy0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0400
+     * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCopy0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCopy0004";
@@ -2436,13 +2430,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0500
-     * @tc.name: testCopy0005
-     * @tc.desc: Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
-     * string type,and setting the parameter targetStart to 8,sourceStart to 16,sourceStart to 20.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testCopy0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_COPY_0500
+     * @tc.desc   Test the copy interface by copying one fastbuffer of chinese string type  to other fastbuffer of numeric
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testCopy0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testCopy0005";
@@ -2462,12 +2455,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0200
-     * @tc.name: testToString0002
-     * @tc.desc: Test the toString interface by source fastbuffer of chinese string type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0200
+     * @tc.desc   Test the toString interface by source fastbuffer of chinese string type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0002";
@@ -2485,12 +2478,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0300
-     * @tc.name: testToString0003
-     * @tc.desc: Test the toString interface by passing the parameter encoding to "binary".
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0300
+     * @tc.desc   Test the toString interface by passing the parameter encoding to "binary".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0003";
@@ -2505,12 +2498,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0400
-     * @tc.name: testToString0004
-     * @tc.desc: Test the toString interface by passing the parameter encoding to "ascii".
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0400
+     * @tc.desc   Test the toString interface by passing the parameter encoding to "ascii".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0004";
@@ -2525,12 +2518,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0500
-     * @tc.name: testToString0005
-     * @tc.desc: Test the toString interface by passing the parameter encoding to "base64".
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0500
+     * @tc.desc   Test the toString interface by passing the parameter encoding to "base64".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0005";
@@ -2545,12 +2538,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0600
-     * @tc.name: testToString0006
-     * @tc.desc: Test the toString interface by passing the parameter encoding to "hex".
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0600
+     * @tc.desc   Test the toString interface by passing the parameter encoding to "hex".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0006";
@@ -2565,12 +2558,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0700
-     * @tc.name: testToString0007
-     * @tc.desc: Test the toString interface by passing the parameter encoding to "latin1".
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0700
+     * @tc.desc   Test the toString interface by passing the parameter encoding to "latin1".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0007";
@@ -2585,12 +2578,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0800
-     * @tc.name: testToString0008
-     * @tc.desc: Test the toString interface by passing the parameter encoding with encoding, start.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0800
+     * @tc.desc   Test the toString interface by passing the parameter encoding with encoding, start.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0008";
@@ -2605,12 +2598,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0900
-     * @tc.name: testToString0009
-     * @tc.desc: Test the toString interface by passing the parameter encoding with encoding, start, end.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToString0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOSTRING_0900
+     * @tc.desc   Test the toString interface by passing the parameter encoding with encoding, start, end.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToString0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToString0009";
@@ -2625,12 +2618,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOJSON_0100
-     * @tc.name: testToJSON0001
-     * @tc.desc: Test the toJSON interface source fastbuffer of numerical string type.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testToJSON0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_TOJSON_0100
+     * @tc.desc   Test the toJSON interface source fastbuffer of numerical string type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testToJSON0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testToJSON0001";
@@ -2645,12 +2638,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0100
-     * @tc.name: testIndexOf0001
-     * @tc.desc: Test the indexOf interface by passing the parameter value to a character string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0100
+     * @tc.desc   Test the indexOf interface by passing the parameter value to a character string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIndexOf0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIndexOf0001";
@@ -2665,12 +2658,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0200
-     * @tc.name: testIndexOf0002
-     * @tc.desc: Test the indexOf interface by passing the parameter value to a character string, and byteOffset to 2.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0200
+     * @tc.desc   Test the indexOf interface by passing the parameter value to a character string, and byteOffset to 2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIndexOf0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIndexOf0002";
@@ -2685,12 +2678,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0300
-     * @tc.name: testIndexOf0003
-     * @tc.desc: Test the indexOf interface by passing the parameter value, byteOffset, encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0300
+     * @tc.desc   Test the indexOf interface by passing the parameter value, byteOffset, encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIndexOf0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIndexOf0003";
@@ -2705,12 +2698,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0400
-     * @tc.name: testIndexOf0004
-     * @tc.desc: Test the indexOf interface base test.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INDEXOF_0400
+     * @tc.desc   Test the indexOf interface base test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIndexOf0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIndexOf0004";
@@ -2727,12 +2720,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0100
-     * @tc.name: testLastIndexOf0001
-     * @tc.desc: Test the lastIndexOf interface by passing the parameter value to a character string which is in the fastbuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0100
+     * @tc.desc   Test the lastIndexOf interface by passing the parameter value to a character string which is in the fastbuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testLastIndexOf0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testLastIndexOf0001";
@@ -2747,13 +2740,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0200
-     * @tc.name: testLastIndexOf0002
-     * @tc.desc: Test the lastIndexOf interface by passing the parameter value to a character string which is in the buffer
-     * and byteOffset to 2.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLastIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0200
+     * @tc.desc   Test the lastIndexOf interface by passing the parameter value to a character string which is in the buffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testLastIndexOf0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testLastIndexOf0002";
@@ -2768,12 +2760,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0300
-     * @tc.name: testLastIndexOf0003
-     * @tc.desc: Test the lastIndexOf interface by passing the parameter value, offset, encoding.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLastIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0300
+     * @tc.desc   Test the lastIndexOf interface by passing the parameter value, offset, encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testLastIndexOf0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testLastIndexOf0003";
@@ -2788,12 +2780,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0400
-     * @tc.name: testLastIndexOf0004
-     * @tc.desc: Test the lastIndexOf interface base test.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testLastIndexOf0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_LASTINDEXOF_0400
+     * @tc.desc   Test the lastIndexOf interface base test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testLastIndexOf0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testLastIndexOf0004";
@@ -2810,12 +2802,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0100
-     * @tc.name: testIncludes0001
-     * @tc.desc: Test the includes interface by passing the parameter value to a numerical string which is in the fastbuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIncludes0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0100
+     * @tc.desc   Test the includes interface by passing the parameter value to a numerical string which is in the fastbuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIncludes0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIncludes0001";
@@ -2830,13 +2822,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0200
-     * @tc.name: testIncludes0002
-     * @tc.desc: Test the includes interface by passing the parameter value to a numerical string which is in the buffer,
-     * and byteOffset to 2.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIncludes0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0200
+     * @tc.desc   Test the includes interface by passing the parameter value to a numerical string which is in the buffer,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIncludes0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIncludes0002";
@@ -2851,12 +2842,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0300
-     * @tc.name: testIncludes0003
-     * @tc.desc: Test the includes interface by passing the parameter value to two numerical string which is in the fastbuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIncludes0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0300
+     * @tc.desc   Test the includes interface by passing the parameter value to two numerical string which is in the fastbuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIncludes0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIncludes0003";
@@ -2871,12 +2862,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0500
-     * @tc.name: testIncludes0005
-     * @tc.desc: Test the includes interface by passing the parameter value to string which is in the fastbuffer.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testIncludes0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_INCLUDES_0500
+     * @tc.desc   Test the includes interface by passing the parameter value to string which is in the fastbuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testIncludes0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testIncludes0005";
@@ -2893,12 +2884,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0100
-     * @tc.name: testKeys0001
-     * @tc.desc: Test the keys interface by source fastbuffer which created from uint8Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testKeys0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0100
+     * @tc.desc   Test the keys interface by source fastbuffer which created from uint8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testKeys0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testKeys0001";
@@ -2917,12 +2908,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0200
-     * @tc.name: testKeys0002
-     * @tc.desc: Test the keys interface by source fastbuffer created from uint8Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testKeys0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0200
+     * @tc.desc   Test the keys interface by source fastbuffer created from uint8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testKeys0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testKeys0002";
@@ -2946,12 +2937,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0300
-     * @tc.name: testKeys0003
-     * @tc.desc: Test the keys interface by source fastbuffer which size is 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testKeys0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_KEYS_0300
+     * @tc.desc   Test the keys interface by source fastbuffer which size is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testKeys0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testKeys0003";
@@ -2966,12 +2957,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0100
-     * @tc.name: testValues0001
-     * @tc.desc: Test the values interface by source fastbuffer which created from string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testValues0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0100
+     * @tc.desc   Test the values interface by source fastbuffer which created from string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testValues0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testValues0001";
@@ -2990,12 +2981,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0200
-     * @tc.name: testValues0002
-     * @tc.desc: Test the values interface by source fastbuffer which created from uint8Array.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testValues0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0200
+     * @tc.desc   Test the values interface by source fastbuffer which created from uint8Array.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testValues0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testValues0002";
@@ -3019,12 +3010,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0300
-     * @tc.name: testValues0003
-     * @tc.desc: Test the values interface by source fastbuffer which size is 0.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testValues0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_VALUES_0300
+     * @tc.desc   Test the values interface by source fastbuffer which size is 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testValues0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testValues0003";
@@ -3039,12 +3030,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ENTRIES_0100
-     * @tc.name: testEntries0001
-     * @tc.desc: Test the entries interface by source fastbuffer which created from string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_ENTRIES_0100
+     * @tc.desc   Test the entries interface by source fastbuffer which created from string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testEntries0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testEntries0001";
@@ -3065,12 +3056,12 @@ export default function FastBufferBaseTest1() {
     });
  
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0100
-     * @tc.name: testFrom0001
-     * @tc.desc: Test the from interface by Coping the passed fastbuffer data onto a new Buffer instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0100
+     * @tc.desc   Test the from interface by Coping the passed fastbuffer data onto a new Buffer instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0001";
@@ -3090,13 +3081,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0200
-     * @tc.name: testFrom0002
-     * @tc.desc: Test the from interface by Allocatting a new Buffer using an array of bytes in the range 0 – 255.
-     * Array entries outside that range will be truncated to fit into it.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0200
+     * @tc.desc   Test the from interface by Allocatting a new Buffer using an array of bytes in the range 0 – 255.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0002";
@@ -3111,12 +3101,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0300
-     * @tc.name: testFrom0003
-     * @tc.desc: Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0300
+     * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0003";
@@ -3137,12 +3127,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0400
-     * @tc.name: testFrom0004
-     * @tc.desc: Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0400
+     * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0004";
@@ -3163,12 +3153,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0500
-     * @tc.name: testFrom0005
-     * @tc.desc: Test the from interface by Copping the passed fastbuffer data onto a new Buffer instance.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0500
+     * @tc.desc   Test the from interface by Copping the passed fastbuffer data onto a new Buffer instance.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0005";
@@ -3187,13 +3177,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0600
-     * @tc.name: testFrom0006
-     * @tc.desc: Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
-     * the character encoding to be used when converting string into bytes.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_0600
+     * @tc.desc   Test the from interface by creatting a view of the ArrayBuffer without copying the underlying memory.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0006";
@@ -3216,12 +3205,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1100
-     * @tc.name: testFrom0011
-     * @tc.desc: Test the from interface by pass the parameter array to undefined
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1100
+     * @tc.desc   Test the from interface by pass the parameter array to undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0011";
@@ -3235,12 +3224,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1200
-     * @tc.name: testFrom0012
-     * @tc.desc: Test the from interface by pass the parameter array to null
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1200
+     * @tc.desc   Test the from interface by pass the parameter array to null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0012";
@@ -3254,12 +3243,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1400
-     * @tc.name: testFrom0014
-     * @tc.desc: Test the from interface create by uint8array base test.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1400
+     * @tc.desc   Test the from interface create by uint8array base test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0014";
@@ -3275,13 +3264,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1500
-     * @tc.name: testFrom0015
-     * @tc.desc: Test the from interface create by hex string base test.
-     * and lenrth to -1.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testFrom0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_FROM_1500
+     * @tc.desc   Test the from interface create by hex string base test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testFrom0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testFrom0015";
@@ -3297,13 +3285,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT16LE_0100
-     * @tc.name: testReadUInt16LE0001
-     * @tc.desc: Test the readUInt16LE interface by Reading an unsigned, little-endian 16-bit integer from buf at the
-     * specified offset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testReadUInt16LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT16LE_0100
+     * @tc.desc   Test the readUInt16LE interface by Reading an unsigned, little-endian 16-bit integer from buf at the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testReadUInt16LE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadUInt16LE0001";
@@ -3320,13 +3307,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT32BE_0100
-     * @tc.name: testReadUInt32BE0001
-     * @tc.desc: Test the readUInt32BE interface by Reading an unsigned, big-endian 32-bit integer from buf at the
-     * specified offset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testReadUInt32BE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT32BE_0100
+     * @tc.desc   Test the readUInt32BE interface by Reading an unsigned, big-endian 32-bit integer from buf at the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testReadUInt32BE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadUInt32BE0001";
@@ -3341,13 +3327,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT32LE_0100
-     * @tc.name: testReadUInt32LE0001
-     * @tc.desc: Test the readUInt32LE interface by Reading an unsigned, little-endian 32-bit integer from buf at the
-     * specified offset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testReadUInt32LE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINT32LE_0100
+     * @tc.desc   Test the readUInt32LE interface by Reading an unsigned, little-endian 32-bit integer from buf at the
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testReadUInt32LE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadUInt32LE0001";
@@ -3362,12 +3347,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINTBE_0100
-     * @tc.name: testReadUIntBE0001
-     * @tc.desc: Test the readUIntBE interface by reading an unsigned 8-bit integer from buf at the specified offset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testReadUIntBE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINTBE_0100
+     * @tc.desc   Test the readUIntBE interface by reading an unsigned 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testReadUIntBE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadUIntBE0001";
@@ -3382,12 +3367,12 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINTLE_0100
-     * @tc.name: testReadUIntLE0001
-     * @tc.desc: Test the readUIntLE interface by reading an unsigned 8-bit integer from buf at the specified offset.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 3
+     * @tc.name   testReadUIntLE0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READUINTLE_0100
+     * @tc.desc   Test the readUIntLE interface by reading an unsigned 8-bit integer from buf at the specified offset.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testReadUIntLE0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testReadUIntLE0001";
@@ -3401,13 +3386,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0100
-     * @tc.name  : testRead0001
-     * @tc.desc  : Testing readBigUInt64BE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testRead0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0100
+     * @tc.desc   Testing readBigUInt64BE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRead0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testRead0001";
@@ -3422,13 +3407,13 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-     * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0200
-     * @tc.name  : testRead0002
-     * @tc.desc  : Testing readBigInt64LE for fastbuffer with normal value.
-     * @tc.size: MediumTest
-     * @tc.type  : Function
-     * @tc.level: Level 3
+    /**
+     * @tc.name   testRead0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0200
+     * @tc.desc   Testing readBigInt64LE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testRead0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testRead0002";
@@ -3443,14 +3428,14 @@ export default function FastBufferBaseTest1() {
       }
     });
 
-    /*
-      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0300
-      * @tc.name  : testRead0003
-      * @tc.desc  : Testing readBigInt64BE for fastbuffer with normal value.
-      * @tc.size: MediumTest
-      * @tc.type  : Function
-      * @tc.level: Level 3
-  */
+    /**
+     * @tc.name   testRead0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0300
+     * @tc.desc   Testing readBigInt64BE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRead0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testRead0003";
       try {
@@ -3465,14 +3450,14 @@ export default function FastBufferBaseTest1() {
     });
 
 
-    /*
-      * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0400
-      * @tc.name  : testRead0004
-      * @tc.desc  : Testing readBigUInt64LE for fastbuffer with normal value.
-      * @tc.size: MediumTest
-      * @tc.type  : Function
-      * @tc.level: Level 3
-    */
+    /**
+     * @tc.name   testRead0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FASTBUFFER_READ_0400
+     * @tc.desc   Testing readBigUInt64LE for fastbuffer with normal value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testRead0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, () => {
       TAG = "testRead0004";
       try {
@@ -3487,26 +3472,26 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00100
-    * @tc.name: testAlloc0010
-    * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAlloc0010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00100
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAlloc0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf = fastbuffer.alloc(10);
       expect(buf.length).assertEqual(10);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00300
-    * @tc.name: testAlloc0012
-    * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAlloc0012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00300
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAlloc0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf1 = fastbuffer.alloc(10);
       let buf = fastbuffer.alloc(10).fill(buf1);
@@ -3514,26 +3499,26 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00400
-    * @tc.name: testAlloc0013
-    * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAlloc0013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00400
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAlloc0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf = fastbuffer.alloc(0);
       expect(buf.length).assertEqual(0);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00600
-    * @tc.name: testAlloc0015
-    * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAlloc0015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00600
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAlloc0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf1 = fastbuffer.alloc(10);
       let buf = fastbuffer.alloc(0).fill(buf1);
@@ -3541,13 +3526,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00700
-    * @tc.name: testAlloc0016
-    * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAlloc0016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_00700
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAlloc0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let buf = fastbuffer.alloc(-5);
@@ -3559,39 +3544,39 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01000
-    * @tc.name: testAlloc0019
-    * @tc.desc: Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAlloc0019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01000
+     * @tc.desc   Allocates a new Buffer for a fixed size bytes. If fill is undefined, the Buffer will be zero-filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAlloc0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf = fastbuffer.alloc(5.5);
       expect(buf.length).assertEqual(5);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01100
-    * @tc.name: testAllocUninitializedFromPool0020
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAllocUninitializedFromPool0020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01100
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAllocUninitializedFromPool0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf = fastbuffer.allocUninitializedFromPool(10);
       expect(buf.length).assertEqual(10);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01300
-    * @tc.name: testAllocUninitializedFromPool0022
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAllocUninitializedFromPool0022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01300
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAllocUninitializedFromPool0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf1 = fastbuffer.allocUninitializedFromPool(10);
       let buf = fastbuffer.allocUninitializedFromPool(10).fill(buf1);
@@ -3599,26 +3584,26 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01400
-    * @tc.name: testAllocUninitializedFromPool0023
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAllocUninitializedFromPool0023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01400
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAllocUninitializedFromPool0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf = fastbuffer.allocUninitializedFromPool(0);
       expect(buf.length).assertEqual(0);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01600
-    * @tc.name: testAllocUninitializedFromPool0025
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAllocUninitializedFromPool0025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01600
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAllocUninitializedFromPool0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf1 = fastbuffer.allocUninitializedFromPool(10);
       let buf = fastbuffer.allocUninitializedFromPool(0).fill(buf1);
@@ -3626,13 +3611,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01700
-    * @tc.name: testAllocUninitializedFromPool0026
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAllocUninitializedFromPool0026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01700
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAllocUninitializedFromPool0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       try {
         let buf = fastbuffer.allocUninitializedFromPool(-5);
@@ -3644,73 +3629,65 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01800
-    * @tc.name: testAllocUninitializedFromPool0029
-    * @tc.desc: Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testAllocUninitializedFromPool0029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01800
+     * @tc.desc   Allocates a new un-pooled Buffer for a fixed size bytes. The Buffer will not be initially filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testAllocUninitializedFromPool0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let buf = fastbuffer.allocUninitializedFromPool(5.5);
       expect(buf.length).assertEqual(5);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01900
-    * @tc.name: testByteLength0030
-    * @tc.desc: Returns the byte length of a string when encoded using `encoding`.
-    *           This is not the same as [`String.prototype.length`], which does not account
-    *           for the encoding that is used to convert the string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testByteLength0030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_01900
+     * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testByteLength0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let byteLen = fastbuffer.byteLength("abcd");
       expect(byteLen).assertEqual(4);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02000
-    * @tc.name: testByteLength0031
-    * @tc.desc: Returns the byte length of a string when encoded using `encoding`.
-    *           This is not the same as [`String.prototype.length`], which does not account
-    *           for the encoding that is used to convert the string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testByteLength0031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02000
+     * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testByteLength0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let byteLen = fastbuffer.byteLength("测试");
       expect(byteLen).assertEqual(6);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02100
-    * @tc.name: testByteLength0032
-    * @tc.desc: Returns the byte length of a string when encoded using `encoding`.
-    *           This is not the same as [`String.prototype.length`], which does not account
-    *           for the encoding that is used to convert the string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testByteLength0032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02100
+     * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testByteLength0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let byteLen = fastbuffer.byteLength("$&@*%");
       expect(byteLen).assertEqual(5);
     });
     
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02400
-    * @tc.name: testByteLength0035
-    * @tc.desc: Returns the byte length of a string when encoded using `encoding`.
-    *           This is not the same as [`String.prototype.length`], which does not account
-    *           for the encoding that is used to convert the string into bytes.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 0
-    */
+     * @tc.name   testByteLength0035
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02400
+     * @tc.desc   Returns the byte length of a string when encoded using `encoding`.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testByteLength0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       let uintarr = new Uint8Array(2);
       uintarr[0] = 21;
@@ -3720,13 +3697,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02500
-    * @tc.name: testIsBuffer0040
-    * @tc.desc: Returns true if obj is a Buffer, false otherwise
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIsBuffer0040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02500
+     * @tc.desc   Returns true if obj is a Buffer, false otherwise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIsBuffer0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(1);
       let flag = fastbuffer.isBuffer(buf);
@@ -3734,13 +3711,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02600
-    * @tc.name: testIsBuffer0045
-    * @tc.desc: Returns true if obj is a Buffer, false otherwise
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIsBuffer0045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02600
+     * @tc.desc   Returns true if obj is a Buffer, false otherwise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIsBuffer0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let obj = new Object(1);
       let flag = fastbuffer.isBuffer(obj);
@@ -3748,26 +3725,26 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02700
-    * @tc.name: testIsEncoding0050
-    * @tc.desc: Returns true if encoding is the name of a supported character encoding, or false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIsEncoding0050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02700
+     * @tc.desc   Returns true if encoding is the name of a supported character encoding, or false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIsEncoding0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let flag = fastbuffer.isEncoding("utf8");
       expect(flag).assertEqual(true);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02800
-    * @tc.name: testIsEncoding0053
-    * @tc.desc: Returns true if encoding is the name of a supported character encoding, or false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIsEncoding0053
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02800
+     * @tc.desc   Returns true if encoding is the name of a supported character encoding, or false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIsEncoding0053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let encodeArr = ['utf8', 'utf-8', 'ucs2', 'ucs-2', 'ascii', 'latin1', 'binary',
                       'utf16le', 'utf-16le', 'base64', 'base64url', 'hex'];
@@ -3778,26 +3755,26 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02900
-    * @tc.name: testIsEncoding0056
-    * @tc.desc: Returns true if encoding is the name of a supported character encoding, or false otherwise.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testIsEncoding0056
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_02900
+     * @tc.desc   Returns true if encoding is the name of a supported character encoding, or false otherwise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testIsEncoding0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let flag = fastbuffer.isEncoding('gbk');
       expect(flag).assertEqual(false);
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03000
-    * @tc.name: testStaticCompare0060
-    * @tc.desc: Compares buf1 to buf2.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStaticCompare0060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03000
+     * @tc.desc   Compares buf1 to buf2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testStaticCompare0060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf2 = fastbuffer.from("1235");
@@ -3806,13 +3783,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03100
-    * @tc.name: testStaticCompare0061
-    * @tc.desc: Compares buf1 to buf2.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStaticCompare0061
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03100
+     * @tc.desc   Compares buf1 to buf2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testStaticCompare0061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1235");
       let buf2 = fastbuffer.from("1236");
@@ -3821,13 +3798,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03200
-    * @tc.name: testStaticCompare0062
-    * @tc.desc: Compares buf1 to buf2.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStaticCompare0062
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03200
+     * @tc.desc   Compares buf1 to buf2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testStaticCompare0062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("测试一");
       let buf2 = fastbuffer.from("测试二");
@@ -3836,13 +3813,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03300
-    * @tc.name: testStaticCompare0063
-    * @tc.desc: Compares buf1 to buf2.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStaticCompare0063
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03300
+     * @tc.desc   Compares buf1 to buf2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testStaticCompare0063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("测试$&*");
       let buf2 = fastbuffer.from("测试$&*");
@@ -3851,13 +3828,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03400
-    * @tc.name: testStaticCompare0064
-    * @tc.desc: Compares buf1 to buf2.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testStaticCompare0064
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03400
+     * @tc.desc   Compares buf1 to buf2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testStaticCompare0064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf2 = fastbuffer.from("1236");
@@ -3866,14 +3843,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03700
-    * @tc.name: testConcat0070
-    * @tc.desc: Returns a new `Buffer` which is the result of concatenating
-    *           all the `Buffer`instances in the `list` together.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testConcat0070
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03700
+     * @tc.desc   Returns a new `Buffer` which is the result of concatenating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testConcat0070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf2 = fastbuffer.from("1235");
@@ -3883,14 +3859,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03800
-    * @tc.name: testConcat0071
-    * @tc.desc: Returns a new `Buffer` which is the result of concatenating
-    *           all the `Buffer`instances in the `list` together.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testConcat0071
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_03800
+     * @tc.desc   Returns a new `Buffer` which is the result of concatenating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testConcat0071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("测试");
       let buf2 = fastbuffer.from("$&*");
@@ -3900,14 +3875,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04000
-    * @tc.name: testConcat0073
-    * @tc.desc: Returns a new `Buffer` which is the result of concatenating
-    *           all the `Buffer`instances in the `list` together.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testConcat0073
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04000
+     * @tc.desc   Returns a new `Buffer` which is the result of concatenating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testConcat0073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("123$");
       let buf2 = fastbuffer.from("*35");
@@ -3918,14 +3892,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04100
-    * @tc.name: testConcat0074
-    * @tc.desc: Returns a new `Buffer` which is the result of concatenating
-    *           all the `Buffer`instances in the `list` together.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testConcat0074
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04100
+     * @tc.desc   Returns a new `Buffer` which is the result of concatenating
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testConcat0074", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("123$");
       let buf2 = fastbuffer.from("*35");
@@ -3938,13 +3911,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04300
-    * @tc.name: testTranscode0080
-    * @tc.desc: Re-encodes the given Buffer or Uint8Array instance from one character encoding to another.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testTranscode0080
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04300
+     * @tc.desc   Re-encodes the given Buffer or Uint8Array instance from one character encoding to another.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testTranscode0080", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("1236");
       let buf = fastbuffer.transcode(buf1, "ascii", "ucs2");
@@ -3953,13 +3926,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04400
-    * @tc.name: testTranscode0081
-    * @tc.desc: Re-encodes the given Buffer or Uint8Array instance from one character encoding to another.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testTranscode0081
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04400
+     * @tc.desc   Re-encodes the given Buffer or Uint8Array instance from one character encoding to another.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testTranscode0081", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf1 = fastbuffer.from("测试");
       let buf = fastbuffer.transcode(buf1, "utf8", "ucs2");
@@ -3968,13 +3941,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04800
-    * @tc.name: testFill0090
-    * @tc.desc: Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFill0090
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04800
+     * @tc.desc   Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFill0090", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let buf = fastbuffer.alloc(3).fill("abc");
       let str = buf.toString();
@@ -3982,13 +3955,13 @@ export default function FastBufferBaseTest1() {
     });
 
     /**
-    * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04900
-    * @tc.name: testFill0091
-    * @tc.desc: Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+     * @tc.name   testFill0091
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_FASTBUFFER_04900
+     * @tc.desc   Fills buf with the specified value. If the offset and end are not given, the entire buf will be filled.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testFill0091", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const buf1 = fastbuffer.alloc(10).fill('F1刘FG', 0, 10, 'hex');
       let str = buf1.toString('hex');

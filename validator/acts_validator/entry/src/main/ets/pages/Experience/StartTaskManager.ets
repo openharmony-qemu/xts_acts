@@ -153,9 +153,9 @@ struct CustomContainerUser {
                       abilityName: "com.ohos.launcher.MainAbility",
                     }
                     abilityContext.startAbility(str).then((data) => {
-
+                      console.info('start ability successfully:' + data)
                     }).catch((error: BusinessError) => {
-
+                      console.error('start ability failed:' + error)
                     })
                   })
               }
@@ -197,7 +197,7 @@ struct CustomContainerUser {
       }
     }
     .width('100%')
-    .height('80%')
+    .height('65%')
     .backgroundColor(Color.Black)
     .justifyContent(FlexAlign.SpaceEvenly)
   }

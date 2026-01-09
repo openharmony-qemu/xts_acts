@@ -19,6 +19,7 @@ import common from '@ohos.app.ability.common';
 import settings from '@ohos.settings';
 import { StartOptions } from '@kit.AbilityKit';
 import { display } from '@kit.ArkUI';
+import { Driver, ON } from '@kit.TestKit';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -64,7 +65,7 @@ export default function startabilityWindowRect() {
     let isAutoWindow: string = '';
     let isPCStatus: string = ''
 
-    beforeAll(() => {
+    beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
       windowStage = AppStorage.get('windowStage') as window.WindowStage;
@@ -72,15 +73,25 @@ export default function startabilityWindowRect() {
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
       isPCStatus = settings.getValueSync(context, 'isStatusBarExist', '', settings.domainName.USER_PROPERTY)
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0100
-     * @tc.name      : testWindow_StartAbility_Size_Location_0100
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindow_StartAbility_Size_Location_0100
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0100
+     * @tc.desc   testWindow_StartAbility_Size_Location_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_StartAbility_Size_Location_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0100';
@@ -135,12 +146,12 @@ export default function startabilityWindowRect() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0200
-     * @tc.name      : testWindow_StartAbility_Size_Location_0200
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindow_StartAbility_Size_Location_0200
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0200
+     * @tc.desc   testWindow_StartAbility_Size_Location_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_StartAbility_Size_Location_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0200';
@@ -210,12 +221,12 @@ export default function startabilityWindowRect() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0300
-     * @tc.name      : testWindow_StartAbility_Size_Location_0300
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindow_StartAbility_Size_Location_0300
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0300
+     * @tc.desc   testWindow_StartAbility_Size_Location_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_StartAbility_Size_Location_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0300';
@@ -327,12 +338,12 @@ export default function startabilityWindowRect() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0400
-     * @tc.name      : testWindow_StartAbility_Size_Location_0400
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindow_StartAbility_Size_Location_0400
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0400
+     * @tc.desc   testWindow_StartAbility_Size_Location_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_StartAbility_Size_Location_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0400';
@@ -425,12 +436,12 @@ export default function startabilityWindowRect() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0500
-     * @tc.name      : testWindow_StartAbility_Size_Location_0500
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0500
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindow_StartAbility_Size_Location_0500
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0500
+     * @tc.desc   testWindow_StartAbility_Size_Location_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_StartAbility_Size_Location_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0500';
@@ -524,12 +535,12 @@ export default function startabilityWindowRect() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0600
-     * @tc.name      : testWindow_StartAbility_Size_Location_0600
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0600
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindow_StartAbility_Size_Location_0600
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0600
+     * @tc.desc   testWindow_StartAbility_Size_Location_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindow_StartAbility_Size_Location_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0600';
@@ -637,12 +648,12 @@ export default function startabilityWindowRect() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0700
-     * @tc.name      : testWindow_StartAbility_Size_Location_0700
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0700
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testWindow_StartAbility_Size_Location_0700
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0700
+     * @tc.desc   testWindow_StartAbility_Size_Location_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindow_StartAbility_Size_Location_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0700';
@@ -788,12 +799,12 @@ export default function startabilityWindowRect() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0800
-     * @tc.name      : testWindow_StartAbility_Size_Location_0800
-     * @tc.desc      : testWindow_StartAbility_Size_Location_0800
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testWindow_StartAbility_Size_Location_0800
+     * @tc.number SUB_BASIC_WMS_WINDOW_STARTABILITY_SIZE_LOCATION_0800
+     * @tc.desc   testWindow_StartAbility_Size_Location_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindow_StartAbility_Size_Location_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'testWindow_StartAbility_Size_Location_0800';

@@ -92,6 +92,15 @@ static napi_value GetTimezone_0400(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value GetTimezone_0500(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+    napi_create_int32(env, (TimeService_ErrCode::TIMESERVICE_ERR_OK == 0 &&
+    TimeService_ErrCode::TIMESERVICE_ERR_INTERNAL_ERROR  == 13000001 &&
+    TimeService_ErrCode::TIMESERVICE_ERR_INVALID_PARAMETER == 13000002) ? 1 : 0, &result);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -99,7 +108,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "getTimezone_0100", nullptr, GetTimezone_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getTimezone_0200", nullptr, GetTimezone_0200, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "getTimezone_0300", nullptr, GetTimezone_0300, nullptr, nullptr, nullptr, napi_default, nullptr },
-        { "getTimezone_0400", nullptr, GetTimezone_0400, nullptr, nullptr, nullptr, napi_default, nullptr }
+        { "getTimezone_0400", nullptr, GetTimezone_0400, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "getTimezone_0500", nullptr, GetTimezone_0500, nullptr, nullptr, nullptr, napi_default, nullptr }
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

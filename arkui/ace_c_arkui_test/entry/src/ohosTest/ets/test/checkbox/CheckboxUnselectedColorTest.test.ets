@@ -26,40 +26,40 @@ export default function checkboxUnselectedColorTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_UNSELECTEDCOLOR_0100
-    * @tc.name       : testCheckboxUnselectedColor001
-    * @tc.desc       : testing unselectedColor for checkbox with normal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxUnselectedColor001
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_UNSELECTEDCOLOR_0100
+     * @tc.desc   testing unselectedColor for checkbox with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxUnselectedColor001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxUnselectedColor001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_UNSELECTEDCOLOR_0200
-    * @tc.name       : testCheckboxUnselectedColor002
-    * @tc.desc       : testing unselectedColor for checkbox with boundary value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxUnselectedColor002
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_UNSELECTEDCOLOR_0200
+     * @tc.desc   testing unselectedColor for checkbox with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxUnselectedColor002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxUnselectedColor002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CHECKBOX_UNSELECTEDCOLOR_0300
-    * @tc.name       : testCheckboxUnselectedColor003
-    * @tc.desc       : testing unselectedColor for checkbox with boundary value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCheckboxUnselectedColor003
+     * @tc.number SUB_ARKUI_CAPI_CHECKBOX_UNSELECTEDCOLOR_0300
+     * @tc.desc   testing unselectedColor for checkbox with boundary value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCheckboxUnselectedColor003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCheckboxUnselectedColor003()).assertEqual(0)
       done()

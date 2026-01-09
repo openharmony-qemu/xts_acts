@@ -54,66 +54,62 @@ export default function webTextAutosizing() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBTEXTAUTOSIZING_0100
-    * @tc.name       : testWebTextAutosizing001
-    * @tc.desc       : test WebTextAutosizing
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   TextAutosizing0100
+     * @tc.number SUB_WEB_WEBTEXTAUTOSIZING_0100
+     * @tc.desc   test WebTextAutosizing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('TextAutosizing0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0100", 150200)
       Utils.registerEvent("TextAutosizing0100", true, 150210, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBTEXTAUTOSIZING_0200
-    * @tc.name       : testWebTextAutosizing002
-    * @tc.desc       : test WebTextAutosizing
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   TextAutosizing0200
+     * @tc.number SUB_WEB_WEBTEXTAUTOSIZING_0200
+     * @tc.desc   test WebTextAutosizing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextAutosizing0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0200", 150200)
       Utils.registerEvent("TextAutosizing0200", true, 150220, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })
 
-      /*
-    * @tc.number     : SUB_WEB_WEBTEXTAUTOSIZING_0300
-    * @tc.name       : testWebTextAutosizing003
-    * @tc.desc       : test WebTextAutosizing
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   TextAutosizing0300
+     * @tc.number SUB_WEB_WEBTEXTAUTOSIZING_0300
+     * @tc.desc   test WebTextAutosizing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextAutosizing0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0300", 150200)
       Utils.registerEvent("TextAutosizing0300", true, 150230, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBTEXTAUTOSIZING_0400
-    * @tc.name       : testWebTextAutosizing004
-    * @tc.desc       : test WebTextAutosizing
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   TextAutosizing0400
+     * @tc.number SUB_WEB_WEBTEXTAUTOSIZING_0400
+     * @tc.desc   test WebTextAutosizing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('TextAutosizing0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("TextAutosizing0400", 150200)
       Utils.registerEvent("TextAutosizing0400", true, 150240, done);
-      let driver = Driver.create();
       let StartModel = await driver.findComponent(ON.id("WebTextAutosizing"));
       await StartModel.click();
     })

@@ -59,12 +59,12 @@ export default function RepeatListBoolean() {
     });
 
     /**
+     * @tc.name   RepeatListBoolean_001
      * @tc.number RepeatListBoolean_001
-     * @tc.name RepeatListBoolean_001
-     * @tc.desc Test RepeatListBoolean component
-     * @tc.level Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.desc   Test RepeatListBoolean component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('RepeatListBoolean_001', Level.LEVEL0, async (done: Function) => {
       console.info('[RepeatListBoolean_001] START');

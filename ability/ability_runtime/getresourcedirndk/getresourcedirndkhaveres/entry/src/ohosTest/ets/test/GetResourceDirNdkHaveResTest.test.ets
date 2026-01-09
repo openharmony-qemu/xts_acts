@@ -32,13 +32,13 @@ export default function getResourceDirNdkHaveResTest() {
     afterAll(() => {
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0100
-     * @tc.desc: Obtain the resource path of the entry module (with resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0100
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0100
+     * @tc.desc   Obtain the resource path of the entry module (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0100', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0100';
@@ -60,13 +60,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0200
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0200
-     * @tc.desc: Obtain the resource path of the feature module (with resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0200
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0200
+     * @tc.desc   Obtain the resource path of the feature module (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0200', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0200';
@@ -88,13 +88,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0300
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0300
-     * @tc.desc: Obtain the resource path of the shared module (with resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0300
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0300
+     * @tc.desc   Obtain the resource path of the shared module (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0300', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0300';
@@ -116,13 +116,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0400
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0400
-     * @tc.desc: Obtain the resource path of the application module (the dependent har has resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0400
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0400
+     * @tc.desc   Obtain the resource path of the application module (the dependent har has resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0400', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0400';
@@ -144,13 +144,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0500
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0500
-     * @tc.desc: Obtain the resource path of the non-existent module (the dependent har has resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0500
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0500
+     * @tc.desc   Obtain the resource path of the non-existent module (the dependent har has resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0500', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0500';
@@ -162,13 +162,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0600
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0600
-     * @tc.desc: Stability test
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0600
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0600
+     * @tc.desc   Stability test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0600', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0600';
@@ -184,13 +184,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0700
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0700
-     * @tc.desc: Empty ModuleName
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0700
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0700
+     * @tc.desc   Empty ModuleName
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0700', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0700';
@@ -202,13 +202,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0800
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0800
-     * @tc.desc: moduleName is nullptr
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0800
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0800
+     * @tc.desc   moduleName is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0800', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0800';
@@ -218,13 +218,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0900
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_0900
-     * @tc.desc: writeLength is nullptr
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_0900
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_0900
+     * @tc.desc   writeLength is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_0900', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_0900';
@@ -235,13 +235,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1000
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1000
-     * @tc.desc: buffer size less
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1000
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1000
+     * @tc.desc   buffer size less
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1000', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1000';
@@ -252,13 +252,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1100
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1100
-     * @tc.desc: buffer is nullptr
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1100
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1100
+     * @tc.desc   buffer is nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1100', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1100';
@@ -269,13 +269,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1200
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1200
-     * @tc.desc: buffer size larger
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1200
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1200
+     * @tc.desc   buffer size larger
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1200', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1200';
@@ -289,13 +289,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1300
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1300
-     * @tc.desc: buffer size equals
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1300
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1300
+     * @tc.desc   buffer size equals
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1300', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1300';
@@ -306,13 +306,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1400
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1400
-     * @tc.desc: Compare the resource paths of the entry module obtained through the NDK interface and the JS interface. (with resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1400
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1400
+     * @tc.desc   Compare the resource paths of the entry module obtained through the NDK interface and the JS interface. (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1400', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1400';
@@ -330,13 +330,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1500
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1500
-     * @tc.desc: Compare the resource paths of the feature module obtained through the NDK interface and the JS interface. (with resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1500
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1500
+     * @tc.desc   Compare the resource paths of the feature module obtained through the NDK interface and the JS interface. (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1500', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1500';
@@ -354,13 +354,13 @@ export default function getResourceDirNdkHaveResTest() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1600
-     * @tc.name: SUB_Ability_AbilityRuntime_GetResourceDirNdk_1600
-     * @tc.desc: Compare the resource paths of the shared module obtained through the NDK interface and the JS interface. (with resource files)
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1600
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1600
+     * @tc.desc   Compare the resource paths of the shared module obtained through the NDK interface and the JS interface. (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1600', Level.LEVEL3, (done: Function) => {
       let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1600';
@@ -375,6 +375,24 @@ export default function getResourceDirNdkHaveResTest() {
       let moduleContext = applicationContext.createModuleContext('shared');
       let jsResPath = moduleContext.resourceDir;
       expect(resPath).assertEqual(jsResPath);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900
+     * @tc.number SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900
+     * @tc.desc   Obtain the resource path of the Empty module (with resource files)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900', Level.LEVEL3, (done: Function) => {
+      let tag = 'SUB_Ability_AbilityRuntime_GetResourceDirNdk_1900';
+      hilog.info(0x0000, 'testTag', '%{public}s begin', tag);
+      let moduleName : string = '';
+      let res = testNapi.getResourceDir(moduleName);
+      let resCode = res[0];
+      expect(resCode).assertEqual(401);
       done();
     })
   })

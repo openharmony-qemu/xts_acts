@@ -47,9 +47,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStepperComponent
-         * @tc.desc      ACE
+         * @tc.name   testStepperComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStepperComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -72,9 +75,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testButtonComponent
-         * @tc.desc      ACE
+         * @tc.name   testButtonComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testButtonComponent', Level.LEVEL0, async function(done) {
             console.info('testButtonComponent START');
@@ -97,9 +103,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0300
-         * @tc.name      testInputComponent
-         * @tc.desc      ACE
+         * @tc.name   testInputComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0300
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testInputComponent', Level.LEVEL0, async function(done) {
             console.info('testButtonComponent START');
@@ -121,9 +130,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0400
-         * @tc.name      testSliderComponent
-         * @tc.desc      ACE
+         * @tc.name   testSliderComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0400
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSliderComponent', Level.LEVEL0, async function(done) {
             console.info('testSliderComponent START');
@@ -145,9 +157,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0400
-         * @tc.name      testTextComponent
-         * @tc.desc      ACE
+         * @tc.name   testTextComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0400
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -166,9 +181,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0400
-         * @tc.name      testLabelComponent
-         * @tc.desc      ACE
+         * @tc.name   testLabelComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0400
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testLabelComponent', Level.LEVEL0, async function(done) {
             console.info('testLabelComponent START');
@@ -188,9 +206,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testMarqueeComponent
-         * @tc.desc      ACE
+         * @tc.name   testMarqueeComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testMarqueeComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -209,9 +230,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDividerComponent
-         * @tc.desc      ACE
+         * @tc.name   testDividerComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDividerComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -230,9 +254,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testGetImageComponent
-         * @tc.desc      ACE
+         * @tc.name   testGetImageComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGetImageComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -251,9 +278,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testGetMenuComponent
-         * @tc.desc      ACE
+         * @tc.name   testGetMenuComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGetMenuComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -275,9 +305,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRatingComponent
-         * @tc.desc      ACE
+         * @tc.name   testRatingComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRatingComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -296,9 +329,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSearchComponent
-         * @tc.desc      ACE
+         * @tc.name   testSearchComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSearchComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -317,9 +353,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testToolbarComponent
-         * @tc.desc      ACE
+         * @tc.name   testToolbarComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testToolbarComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -338,9 +377,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTextareaComponent
-         * @tc.desc      ACE
+         * @tc.name   testTextareaComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTextareaComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -359,9 +401,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSpanComponent
-         * @tc.desc      ACE
+         * @tc.name   testSpanComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSpanComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -380,9 +425,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchComponent
-         * @tc.desc      ACE
+         * @tc.name   testSwitchComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -401,9 +449,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testToggleComponent
-         * @tc.desc      ACE
+         * @tc.name   testToggleComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testToggleComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -422,9 +473,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testOptionComponent
-         * @tc.desc      ACE
+         * @tc.name   testOptionComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOptionComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -443,9 +497,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testOptionComponent
-         * @tc.desc      ACE
+         * @tc.name   testOptionComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOptionComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -464,9 +521,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testOptionComponent2
-         * @tc.desc      ACE
+         * @tc.name   testOptionComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOptionComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -485,9 +545,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testOptionComponent3
-         * @tc.desc      ACE
+         * @tc.name   testOptionComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOptionComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -506,9 +569,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testOptionComponent4
-         * @tc.desc      ACE
+         * @tc.name   testOptionComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testOptionComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -528,9 +594,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -550,9 +619,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent1
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -570,9 +642,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent2
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -590,9 +665,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent2
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -610,9 +688,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent2
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -630,9 +711,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent2
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent5
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent5', Level.LEVEL0, async function(done) {
             let result;
@@ -650,9 +734,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent2
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent6', Level.LEVEL0, async function(done) {
             let result;
@@ -670,9 +757,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent2
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent7
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent7', Level.LEVEL0, async function(done) {
             let result;
@@ -690,9 +780,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPickerComponent8
-         * @tc.desc      ACE
+         * @tc.name   testPickerComponent8
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPickerComponent8', Level.LEVEL0, async function(done) {
             let result;
@@ -712,9 +805,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent
-         * @tc.desc      ACE
+         * @tc.name   testPieceComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -732,9 +828,13 @@ export default function() {
             done();
         });
 
-        /* @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent2
-         * @tc.desc      ACE
+        /**
+         * @tc.name   testPieceComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -752,9 +852,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent01
-         * @tc.desc      ACE
+         * @tc.name   testPieceComponent01
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent01', Level.LEVEL0, async function(done) {
             let result;
@@ -773,9 +876,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent2
-         * @tc.desc      ACE
+         * @tc.name   testPieceComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -793,9 +899,13 @@ export default function() {
             done();
         });
 
-        /* @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent4
-         * @tc.desc      ACE
+        /**
+         * @tc.name   testPieceComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -813,9 +923,13 @@ export default function() {
             done();
         });
 
-        /* @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent5
-         * @tc.desc      ACE
+        /**
+         * @tc.name   testPieceComponent5
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent5', Level.LEVEL0, async function(done) {
             let result;
@@ -834,9 +948,13 @@ export default function() {
         });
 
 
-        /* @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent6
-         * @tc.desc      ACE
+        /**
+         * @tc.name   testPieceComponent6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent6', Level.LEVEL0, async function(done) {
             let result;
@@ -854,9 +972,13 @@ export default function() {
             done();
         });
 
-        /* @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPieceComponent7
-         * @tc.desc      ACE
+        /**
+         * @tc.name   testPieceComponent7
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPieceComponent7', Level.LEVEL0, async function(done) {
             let result;
@@ -875,9 +997,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testProgressComponent
-         * @tc.desc      ACE
+         * @tc.name   testProgressComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testProgressComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -896,9 +1021,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testQrcodeComponent
-         * @tc.desc      ACE
+         * @tc.name   testQrcodeComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testQrcodeComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -917,9 +1045,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSelectComponent
-         * @tc.desc      ACE
+         * @tc.name   testSelectComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSelectComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -938,9 +1069,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testBadgeComponent
-         * @tc.desc      ACE
+         * @tc.name   testBadgeComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testBadgeComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -961,9 +1095,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testBadgeComponent1
-         * @tc.desc      ACE
+         * @tc.name   testBadgeComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testBadgeComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -983,9 +1120,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testBadgeComponent2
-         * @tc.desc      ACE
+         * @tc.name   testBadgeComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testBadgeComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -1005,9 +1145,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testBadgeComponent3
-         * @tc.desc      ACE
+         * @tc.name   testBadgeComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testBadgeComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -1027,9 +1170,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testBadgeComponent4
-         * @tc.desc      ACE
+         * @tc.name   testBadgeComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testBadgeComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -1049,9 +1195,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testBadgeComponent5
-         * @tc.desc      ACE
+         * @tc.name   testBadgeComponent5
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testBadgeComponent5', Level.LEVEL0, async function(done) {
             let result;
@@ -1071,9 +1220,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testBadgeComponent6
-         * @tc.desc      ACE
+         * @tc.name   testBadgeComponent6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testBadgeComponent6', Level.LEVEL0, async function(done) {
             let result;
@@ -1094,9 +1246,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDialogComponent
-         * @tc.desc      ACE
+         * @tc.name   testDialogComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDialogComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1116,9 +1271,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDialogComponent1
-         * @tc.desc      ACE
+         * @tc.name   testDialogComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDialogComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -1139,9 +1297,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDialogComponent2
-         * @tc.desc      ACE
+         * @tc.name   testDialogComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDialogComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -1162,9 +1323,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDialogComponent3
-         * @tc.desc      ACE
+         * @tc.name   testDialogComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDialogComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -1185,9 +1349,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testDivComponent
-         * @tc.desc      ACE
+         * @tc.name   testDivComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testDivComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1208,9 +1375,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testFormComponent
-         * @tc.desc      ACE
+         * @tc.name   testFormComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testFormComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1231,9 +1401,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListComponent
-         * @tc.desc      ACE
+         * @tc.name   testListComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1253,9 +1426,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListComponent1
-         * @tc.desc      ACE
+         * @tc.name   testListComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -1275,9 +1451,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListComponent2
-         * @tc.desc      ACE
+         * @tc.name   testListComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -1297,9 +1476,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListComponent3
-         * @tc.desc      ACE
+         * @tc.name   testListComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -1319,9 +1501,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListComponent4
-         * @tc.desc      ACE
+         * @tc.name   testListComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -1341,9 +1526,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListComponent5
-         * @tc.desc      ACE
+         * @tc.name   testListComponent5
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListComponent5', Level.LEVEL0, async function(done) {
             let result;
@@ -1363,9 +1551,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListComponent6
-         * @tc.desc      ACE
+         * @tc.name   testListComponent6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListComponent6', Level.LEVEL0, async function(done) {
             let result;
@@ -1386,9 +1577,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1409,9 +1603,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -1432,9 +1629,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -1456,9 +1656,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -1480,9 +1683,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -1504,9 +1710,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent5
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent5
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent5', Level.LEVEL0, async function(done) {
             let result;
@@ -1527,9 +1736,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent6
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent6', Level.LEVEL0, async function(done) {
             let result;
@@ -1550,9 +1762,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent7
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent7
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent7', Level.LEVEL0, async function(done) {
             let result;
@@ -1573,9 +1788,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemComponent8
-         * @tc.desc      ACE
+         * @tc.name   testListItemComponent8
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemComponent8', Level.LEVEL0, async function(done) {
             let result;
@@ -1598,9 +1816,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testListItemGroupComponent
-         * @tc.desc      ACE
+         * @tc.name   testListItemGroupComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testListItemGroupComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1621,9 +1842,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPanelComponent
-         * @tc.desc      ACE
+         * @tc.name   testPanelComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPanelComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1644,9 +1868,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPopupComponent
-         * @tc.desc      ACE
+         * @tc.name   testPopupComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPopupComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1667,9 +1894,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testStackComponent
-         * @tc.desc      ACE
+         * @tc.name   testStackComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testStackComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1690,9 +1920,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwiperComponent
-         * @tc.desc      ACE
+         * @tc.name   testSwiperComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwiperComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1714,9 +1947,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1737,9 +1973,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent1
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -1760,9 +1999,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent2
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -1782,9 +2024,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -1804,9 +2049,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -1826,9 +2074,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent5
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent5', Level.LEVEL0, async function(done) {
             let result;
@@ -1848,9 +2099,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent6
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent6', Level.LEVEL0, async function(done) {
             let result;
@@ -1870,9 +2124,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent7
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent7', Level.LEVEL0, async function(done) {
             let result;
@@ -1892,9 +2149,12 @@ export default function() {
             done();
         });
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testRefreshComponent8
-         * @tc.desc      ACE
+         * @tc.name   testRefreshComponent8
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testRefreshComponent8', Level.LEVEL0, async function(done) {
             let result;
@@ -1915,9 +2175,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageAnimatorComponent
-         * @tc.desc      ACE
+         * @tc.name   testImageAnimatorComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageAnimatorComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -1938,9 +2201,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageAnimatorComponent1
-         * @tc.desc      ACE
+         * @tc.name   testImageAnimatorComponent1
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageAnimatorComponent1', Level.LEVEL0, async function(done) {
             let result;
@@ -1961,9 +2227,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageAnimatorComponent2
-         * @tc.desc      ACE
+         * @tc.name   testImageAnimatorComponent2
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageAnimatorComponent2', Level.LEVEL0, async function(done) {
             let result;
@@ -1984,9 +2253,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageAnimatorComponent3
-         * @tc.desc      ACE
+         * @tc.name   testImageAnimatorComponent3
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageAnimatorComponent3', Level.LEVEL0, async function(done) {
             let result;
@@ -2007,9 +2279,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageAnimatorComponent4
-         * @tc.desc      ACE
+         * @tc.name   testImageAnimatorComponent4
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageAnimatorComponent4', Level.LEVEL0, async function(done) {
             let result;
@@ -2030,9 +2305,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageAnimatorComponent5
-         * @tc.desc      ACE
+         * @tc.name   testImageAnimatorComponent5
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageAnimatorComponent5', Level.LEVEL0, async function(done) {
             let result;
@@ -2053,9 +2331,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageAnimatorComponent6
-         * @tc.desc      ACE
+         * @tc.name   testImageAnimatorComponent6
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageAnimatorComponent6', Level.LEVEL0, async function(done) {
             let result;
@@ -2077,9 +2358,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabsComponent
-         * @tc.desc      ACE
+         * @tc.name   testTabsComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabsComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2100,9 +2384,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabBarComponent
-         * @tc.desc      ACE
+         * @tc.name   testTabBarComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabBarComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2123,9 +2410,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testTabContentComponent
-         * @tc.desc      ACE
+         * @tc.name   testTabContentComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testTabContentComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2146,9 +2436,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testGridContainerComponent
-         * @tc.desc      ACE
+         * @tc.name   testGridContainerComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGridContainerComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2169,9 +2462,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testGridRowComponent
-         * @tc.desc      ACE
+         * @tc.name   testGridRowComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGridRowComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2192,9 +2488,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testGridColComponent
-         * @tc.desc      ACE
+         * @tc.name   testGridColComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testGridColComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2215,9 +2514,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasComponent
-         * @tc.desc      ACE
+         * @tc.name   testCanvasComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2238,9 +2540,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasRenderingContext2DComponent
-         * @tc.desc      ACE
+         * @tc.name   testCanvasRenderingContext2DComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasRenderingContext2DComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2261,9 +2566,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testObjImageComponent
-         * @tc.desc      ACE
+         * @tc.name   testObjImageComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testObjImageComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2284,9 +2592,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCanvasGradientComponent
-         * @tc.desc      ACE
+         * @tc.name   testCanvasGradientComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCanvasGradientComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2307,9 +2618,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testImageDataComponent
-         * @tc.desc      ACE
+         * @tc.name   testImageDataComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testImageDataComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2330,9 +2644,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testPath2DComponent
-         * @tc.desc      ACE
+         * @tc.name   testPath2DComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testPath2DComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2353,9 +2670,12 @@ export default function() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testCameraComponent
-         * @tc.desc      ACE
+         * @tc.name   testCameraComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testCameraComponent', Level.LEVEL0, async function(done) {
             let result;
@@ -2377,9 +2697,12 @@ export default function() {
 
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testWebComponent
-         * @tc.desc      ACE
+         * @tc.name   testWebComponent
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testWebComponent', Level.LEVEL0, async function(done) {
             let result;

@@ -21,7 +21,6 @@ export default function builtinsRegExpEscapeTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
     })
     afterEach(() => {
     })
@@ -29,12 +28,12 @@ export default function builtinsRegExpEscapeTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpEscapeTest0100
      * @tc.number SUB_BUILTINS_REGEXP_ESCAPE_TEST_0100
-     * @tc.name builtinsRegExpEscapeTest0100
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpEscapeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpEscapeTest0100';
@@ -46,12 +45,12 @@ export default function builtinsRegExpEscapeTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpEscapeTest0200
      * @tc.number SUB_BUILTINS_REGEXP_ESCAPE_TEST_0200
-     * @tc.name builtinsRegExpEscapeTest0200
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpEscapeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpEscapeTest0200';
@@ -63,12 +62,12 @@ export default function builtinsRegExpEscapeTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpEscapeTest0300
      * @tc.number SUB_BUILTINS_REGEXP_ESCAPE_TEST_0300
-     * @tc.name builtinsRegExpEscapeTest0300
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpEscapeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpEscapeTest0300';
@@ -80,12 +79,12 @@ export default function builtinsRegExpEscapeTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpEscapeTest0400
      * @tc.number SUB_BUILTINS_REGEXP_ESCAPE_TEST_0400
-     * @tc.name builtinsRegExpEscapeTest0400
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpEscapeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpEscapeTest0400';
@@ -97,12 +96,12 @@ export default function builtinsRegExpEscapeTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpEscapeTest0500
      * @tc.number SUB_BUILTINS_REGEXP_ESCAPE_TEST_0500
-     * @tc.name builtinsRegExpEscapeTest0500
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpEscapeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpEscapeTest0500';
@@ -114,12 +113,12 @@ export default function builtinsRegExpEscapeTest() {
     })
 
     /**
+     * @tc.name   builtinsRegExpEscapeTest0600
      * @tc.number SUB_BUILTINS_REGEXP_ESCAPE_TEST_0600
-     * @tc.name builtinsRegExpEscapeTest0600
-     * @tc.desc Testing
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsRegExpEscapeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsRegExpEscapeTest0600';

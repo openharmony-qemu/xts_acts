@@ -53,12 +53,12 @@ export default function startAbilityOptions() {
     
 
     /**
-     * @tc.number: startAbilityStartOptions_16000001
-     * @tc.name: startAbilityStartOptions_16000001
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000001
+     * @tc.number startAbilityStartOptions_16000001
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000001', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000001-is begin`)
@@ -117,12 +117,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityStartOptions_16000004
-     * @tc.name: startAbilityStartOptions_16000004
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000004
+     * @tc.number startAbilityStartOptions_16000004
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000004', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000004-is begin`)
@@ -181,12 +181,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityStartOptions_16000019
-     * @tc.name: startAbilityStartOptions_16000019
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000019
+     * @tc.number startAbilityStartOptions_16000019
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000019', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000019-is begin`)
@@ -253,12 +253,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityStartOptions_16000050
-     * @tc.name: startAbilityStartOptions_16000050
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000050
+     * @tc.number startAbilityStartOptions_16000050
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000050', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000050-is begin`)
@@ -316,12 +316,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: startAbilityStartOptions_16000073
-     * @tc.name: startAbilityStartOptions_16000073
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000073
+     * @tc.number startAbilityStartOptions_16000073
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000073', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000073-is begin`)
@@ -379,12 +379,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: openLink_16000004
-     * @tc.name: openLink_16000004
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   openLink_16000004
+     * @tc.number openLink_16000004
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('openLink_16000004', Level.LEVEL0, async (done: Function) => {
       console.info(`openLink_16000004-is begin`)
@@ -441,12 +441,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: openLink_16000019
-     * @tc.name: openLink_16000019
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   openLink_16000019
+     * @tc.number openLink_16000019
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('openLink_16000019', Level.LEVEL0, async (done: Function) => {
       console.info(`openLink_16000019-is begin`)
@@ -512,12 +512,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000001
-     * @tc.name: startAbilityForResultCallback_16000001
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000001
+     * @tc.number startAbilityForResultCallback_16000001
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000001', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000001-is begin`)
@@ -575,12 +575,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: startAbilityForResultCallback_16000004
-     * @tc.name: startAbilityForResultCallback_16000004
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000004
+     * @tc.number startAbilityForResultCallback_16000004
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000004', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000004-is begin`)
@@ -638,12 +638,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: startAbilityForResultCallback_16000019
-     * @tc.name: startAbilityForResultCallback_16000019
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000019
+     * @tc.number startAbilityForResultCallback_16000019
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000019', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000019-is begin`)
@@ -709,12 +709,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000050
-     * @tc.name: startAbilityForResultCallback_16000050
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000050
+     * @tc.number startAbilityForResultCallback_16000050
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000050', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000050-is begin`)
@@ -772,12 +772,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000073
-     * @tc.name: startAbilityForResultCallback_16000073
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000073
+     * @tc.number startAbilityForResultCallback_16000073
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000073', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000073-is begin`)
@@ -836,12 +836,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000001
-     * @tc.name: startAbilityForResultOptions_16000001
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000001
+     * @tc.number startAbilityForResultOptions_16000001
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000001', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000001-is begin`)
@@ -901,12 +901,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: startAbilityForResultOptions_16000004
-     * @tc.name: startAbilityForResultOptions_16000004
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000004
+     * @tc.number startAbilityForResultOptions_16000004
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000004', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000004-is begin`)
@@ -966,12 +966,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: startAbilityForResultOptions_16000019
-     * @tc.name: startAbilityForResultOptions_16000019
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000019
+     * @tc.number startAbilityForResultOptions_16000019
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000019', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000019-is begin`)
@@ -1040,12 +1040,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000050
-     * @tc.name: startAbilityForResultOptions_16000050
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000050
+     * @tc.number startAbilityForResultOptions_16000050
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000050', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000050-is begin`)
@@ -1106,12 +1106,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000073
-     * @tc.name: startAbilityForResultOptions_16000073
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000073
+     * @tc.number startAbilityForResultOptions_16000073
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000073', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000073-is begin`)
@@ -1173,12 +1173,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000001
-     * @tc.name: startAbilityForResultOptions_16000001
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000001
+     * @tc.number startAbilityForResultOptions_16000001
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000001', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000001-is begin`)
@@ -1238,12 +1238,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: startAbilityForResultPromise_16000004
-     * @tc.name: startAbilityForResultPromise_16000004
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000004
+     * @tc.number startAbilityForResultPromise_16000004
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000004', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000004-is begin`)
@@ -1303,12 +1303,12 @@ export default function startAbilityOptions() {
       }
     })
     /**
-     * @tc.number: startAbilityForResultPromise_16000019
-     * @tc.name: startAbilityForResultPromise_16000019
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000019
+     * @tc.number startAbilityForResultPromise_16000019
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000019', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000019-is begin`)
@@ -1377,12 +1377,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultPromise_16000050
-     * @tc.name: startAbilityForResultPromise_16000050
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000050
+     * @tc.number startAbilityForResultPromise_16000050
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000050', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000050-is begin`)
@@ -1443,12 +1443,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultPromise_16000073
-     * @tc.name: startAbilityForResultPromise_16000073
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000073
+     * @tc.number startAbilityForResultPromise_16000073
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000073', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000073-is begin`)
@@ -1510,12 +1510,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: connectServiceExtensionAbilityOptions_16000001
-     * @tc.name: connectServiceExtensionAbilityOptions_16000001
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   connectServiceExtensionAbilityOptions_16000001
+     * @tc.number connectServiceExtensionAbilityOptions_16000001
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('connectServiceExtensionAbilityOptions_16000001', Level.LEVEL0, async (done: Function) => {
       console.info(`connectServiceExtensionAbilityOptions_16000001-is begin`)
@@ -1577,12 +1577,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: disconnectServiceExtensionAbilityCallback_16000050
-     * @tc.name: disconnectServiceExtensionAbilityCallback_16000050
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   disconnectServiceExtensionAbilityCallback_16000050
+     * @tc.number disconnectServiceExtensionAbilityCallback_16000050
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('disconnectServiceExtensionAbilityCallback_16000050', Level.LEVEL0, async (done: Function) => {
       console.info(`disconnectServiceExtensionAbilityCallback_16000050-is begin`)
@@ -1644,12 +1644,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: disconnectServiceExtensionAbilityPromise_16000050
-     * @tc.name: disconnectServiceExtensionAbilityPromise_16000050
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   disconnectServiceExtensionAbilityPromise_16000050
+     * @tc.number disconnectServiceExtensionAbilityPromise_16000050
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('disconnectServiceExtensionAbilityPromise_16000050', Level.LEVEL0, async (done: Function) => {
       console.info(`disconnectServiceExtensionAbilityPromise_16000050-is begin`)
@@ -1712,12 +1712,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityStartOptions_16000072
-     * @tc.name: startAbilityStartOptions_16000072
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000072
+     * @tc.number startAbilityStartOptions_16000072
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000072', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000072-is begin`)
@@ -1779,12 +1779,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityStartOptions_16000076
-     * @tc.name: startAbilityStartOptions_16000076
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000076
+     * @tc.number startAbilityStartOptions_16000076
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000076', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000076-is begin`)
@@ -1845,12 +1845,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityStartOptions_16000077
-     * @tc.name: startAbilityStartOptions_16000077
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000077
+     * @tc.number startAbilityStartOptions_16000077
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000077', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000077-is begin`)
@@ -1919,12 +1919,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityStartOptions_16000078
-     * @tc.name: startAbilityStartOptions_16000078
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000078
+     * @tc.number startAbilityStartOptions_16000078
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000078', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000078-is begin`)
@@ -1986,12 +1986,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityStartOptions_16000079
-     * @tc.name: startAbilityStartOptions_16000079
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000079
+     * @tc.number startAbilityStartOptions_16000079
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000079', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000079-is begin`)
@@ -2052,12 +2052,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityStartOptions_16000080
-     * @tc.name: startAbilityStartOptions_16000080
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityStartOptions_16000080
+     * @tc.number startAbilityStartOptions_16000080
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityStartOptions_16000080', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityStartOptions_16000080-is begin`)
@@ -2119,12 +2119,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000072
-     * @tc.name: startAbilityForResultCallback_16000072
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000072
+     * @tc.number startAbilityForResultCallback_16000072
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000072', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000072-is begin`)
@@ -2186,12 +2186,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000076
-     * @tc.name: startAbilityForResultCallback_16000076
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000076
+     * @tc.number startAbilityForResultCallback_16000076
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000076', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000076-is begin`)
@@ -2252,12 +2252,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000077
-     * @tc.name: startAbilityForResultCallback_16000077
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000077
+     * @tc.number startAbilityForResultCallback_16000077
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000077', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000077-is begin`)
@@ -2326,12 +2326,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000078
-     * @tc.name: startAbilityForResultCallback_16000078
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000078
+     * @tc.number startAbilityForResultCallback_16000078
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000078', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000078-is begin`)
@@ -2393,12 +2393,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000079
-     * @tc.name: startAbilityForResultCallback_16000079
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000079
+     * @tc.number startAbilityForResultCallback_16000079
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000079', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000079-is begin`)
@@ -2459,12 +2459,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultCallback_16000080
-     * @tc.name: startAbilityForResultCallback_16000080
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultCallback_16000080
+     * @tc.number startAbilityForResultCallback_16000080
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultCallback_16000080', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultCallback_16000080-is begin`)
@@ -2526,12 +2526,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000072
-     * @tc.name: startAbilityForResultOptions_16000072
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000072
+     * @tc.number startAbilityForResultOptions_16000072
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000072', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000072-is begin`)
@@ -2593,12 +2593,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000076
-     * @tc.name: startAbilityForResultOptions_16000076
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000076
+     * @tc.number startAbilityForResultOptions_16000076
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000076', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000076-is begin`)
@@ -2659,12 +2659,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000077
-     * @tc.name: startAbilityForResultOptions_16000077
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000077
+     * @tc.number startAbilityForResultOptions_16000077
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000077', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000077-is begin`)
@@ -2733,12 +2733,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000078
-     * @tc.name: startAbilityForResultOptions_16000078
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000078
+     * @tc.number startAbilityForResultOptions_16000078
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000078', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000078-is begin`)
@@ -2800,12 +2800,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000079
-     * @tc.name: startAbilityForResultOptions_16000079
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000079
+     * @tc.number startAbilityForResultOptions_16000079
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000079', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000079-is begin`)
@@ -2866,12 +2866,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000080
-     * @tc.name: startAbilityForResultOptions_16000080
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultOptions_16000080
+     * @tc.number startAbilityForResultOptions_16000080
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultOptions_16000080', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultOptions_16000080-is begin`)
@@ -2935,12 +2935,12 @@ export default function startAbilityOptions() {
     //3
 
     /**
-     * @tc.number: startAbilityForResultOptions_16000072
-     * @tc.name: startAbilityForResultOptions_16000072
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000072
+     * @tc.number startAbilityForResultOptions_16000072
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000072', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000072-is begin`)
@@ -3002,12 +3002,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultPromise_16000076
-     * @tc.name: startAbilityForResultPromise_16000076
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000076
+     * @tc.number startAbilityForResultPromise_16000076
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000076', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000076-is begin`)
@@ -3068,12 +3068,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultPromise_16000077
-     * @tc.name: startAbilityForResultPromise_16000077
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000077
+     * @tc.number startAbilityForResultPromise_16000077
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000077', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000077-is begin`)
@@ -3142,12 +3142,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultPromise_16000078
-     * @tc.name: startAbilityForResultPromise_16000078
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000078
+     * @tc.number startAbilityForResultPromise_16000078
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000078', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000078-is begin`)
@@ -3209,12 +3209,12 @@ export default function startAbilityOptions() {
 
 
     /**
-     * @tc.number: startAbilityForResultPromise_16000079
-     * @tc.name: startAbilityForResultPromise_16000079
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000079
+     * @tc.number startAbilityForResultPromise_16000079
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000079', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000079-is begin`)
@@ -3275,12 +3275,12 @@ export default function startAbilityOptions() {
     })
 
     /**
-     * @tc.number: startAbilityForResultPromise_16000080
-     * @tc.name: startAbilityForResultPromise_16000080
-     * @tc.desc: StartAbility code
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   startAbilityForResultPromise_16000080
+     * @tc.number startAbilityForResultPromise_16000080
+     * @tc.desc   StartAbility code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('startAbilityForResultPromise_16000080', Level.LEVEL0, async (done: Function) => {
       console.info(`startAbilityForResultPromise_16000080-is begin`)

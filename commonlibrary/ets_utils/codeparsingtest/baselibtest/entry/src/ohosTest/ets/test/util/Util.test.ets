@@ -72,7 +72,6 @@ export default function utilTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(50);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -88,12 +87,12 @@ export default function utilTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0100
-     * @tc.name       : testUtilFormat001
-     * @tc.desc       : Testing the format interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilFormat001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0100
+     * @tc.desc   Testing the format interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilFormat001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilFormat001';
@@ -108,12 +107,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0200
-     * @tc.name       : testUtilFormat002
-     * @tc.desc       : Testing the format interface with value undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilFormat002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0200
+     * @tc.desc   Testing the format interface with value undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilFormat002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilFormat002';
@@ -128,12 +127,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0300
-     * @tc.name       : testUtilFormat003
-     * @tc.desc       : Testing the format interface with value 'string+number'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilFormat003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILFORMAT_0300
+     * @tc.desc   Testing the format interface with value 'string+number'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilFormat003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilFormat003';
@@ -149,12 +148,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0100
-     * @tc.name       : testUtilErrnoToString001
-     * @tc.desc       : Testing the errnoToString interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0100
+     * @tc.desc   Testing the errnoToString interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString001';
@@ -169,12 +168,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0200
-     * @tc.name       : testUtilErrnoToString002
-     * @tc.desc       : Testing the errnoToString interface with value undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0200
+     * @tc.desc   Testing the errnoToString interface with value undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString002';
@@ -189,12 +188,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0600
-     * @tc.name       : testUtilErrnoToString006
-     * @tc.desc       : Testing the errnoToString interface with value -401.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0600
+     * @tc.desc   Testing the errnoToString interface with value -401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString006';
@@ -208,12 +207,12 @@ export default function utilTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0700
-     * @tc.name       : testUtilErrnoToString007
-     * @tc.desc       : Testing the errnoToString interface with value -1.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0700
+     * @tc.desc   Testing the errnoToString interface with value -1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString007';
@@ -228,12 +227,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0800
-     * @tc.name       : testUtilErrnoToString008
-     * @tc.desc       : Testing the errnoToString interface with value 401.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0800
+     * @tc.desc   Testing the errnoToString interface with value 401.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString008';
@@ -248,12 +247,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0900
-     * @tc.name       : testUtilErrnoToString009
-     * @tc.desc       : Testing the errnoToString interface with value 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_0900
+     * @tc.desc   Testing the errnoToString interface with value 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString009';
@@ -268,12 +267,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1000
-     * @tc.name       : testUtilErrnoToString010
-     * @tc.desc       : Testing the errnoToString interface with value 401.6895487.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1000
+     * @tc.desc   Testing the errnoToString interface with value 401.6895487.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString010';
@@ -288,12 +287,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1100
-     * @tc.name       : testUtilErrnoToString011
-     * @tc.desc       : Testing the errnoToString interface with value Number.MAX_SAFE_INTEGER.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testUtilErrnoToString011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1100
+     * @tc.desc   Testing the errnoToString interface with value Number.MAX_SAFE_INTEGER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testUtilErrnoToString011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testUtilErrnoToString011';
@@ -308,12 +307,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1200
-     * @tc.name       : testUtilErrnoToString012
-     * @tc.desc       : Testing the errnoToString interface with value Number.MIN_SAFE_INTEGER.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilErrnoToString012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1200
+     * @tc.desc   Testing the errnoToString interface with value Number.MIN_SAFE_INTEGER.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilErrnoToString012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilErrnoToString012';
@@ -328,12 +327,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1300
-     * @tc.name       : testUtilErrnoToString013
-     * @tc.desc       : Testing the errnoToString interface with value Number.MAX_VALUE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilErrnoToString013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1300
+     * @tc.desc   Testing the errnoToString interface with value Number.MAX_VALUE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilErrnoToString013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilErrnoToString013';
@@ -348,12 +347,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1400
-     * @tc.name       : testUtilErrnoToString014
-     * @tc.desc       : Testing the errnoToString interface with value Number.MIN_VALUE.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilErrnoToString014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILERRNOTOSTRING_1400
+     * @tc.desc   Testing the errnoToString interface with value Number.MIN_VALUE.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilErrnoToString014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilErrnoToString014';
@@ -367,12 +366,12 @@ export default function utilTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILCALLBACKWRAPPER_0100
-     * @tc.name       : testUtilCallbackWrapper001
-     * @tc.desc       : Testing the callbackWrapper interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilCallbackWrapper001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILCALLBACKWRAPPER_0100
+     * @tc.desc   Testing the callbackWrapper interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilCallbackWrapper001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilCallbackWrapper001';
@@ -386,12 +385,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILCALLBACKWRAPPER_0200
-     * @tc.name       : testUtilCallbackWrapper002
-     * @tc.desc       : Testing the callbackWrapper interface with value undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilCallbackWrapper002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILCALLBACKWRAPPER_0200
+     * @tc.desc   Testing the callbackWrapper interface with value undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilCallbackWrapper002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilCallbackWrapper002';
@@ -405,12 +404,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPROMISIFY_0100
-     * @tc.name       : testUtilPromisify001
-     * @tc.desc       : Testing the promisify interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilPromisify001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPROMISIFY_0100
+     * @tc.desc   Testing the promisify interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisify001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilPromisify001';
@@ -424,12 +423,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPROMISIFY_0200
-     * @tc.name       : testUtilPromisify002
-     * @tc.desc       : Testing the promisify interface with value undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilPromisify002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPROMISIFY_0200
+     * @tc.desc   Testing the promisify interface with value undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilPromisify002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilPromisify002';
@@ -443,12 +442,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0100
-     * @tc.name       : testUtilGenerateRandomUUID001
-     * @tc.desc       : Testing the generateRandomUUID interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0100
+     * @tc.desc   Testing the generateRandomUUID interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomUUID001';
@@ -463,12 +462,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0200
-     * @tc.name       : testUtilGenerateRandomUUID002
-     * @tc.desc       : Testing the generateRandomUUID interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0200
+     * @tc.desc   Testing the generateRandomUUID interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomUUID002';
@@ -483,12 +482,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0500
-     * @tc.name       : testUtilGenerateRandomUUID005
-     * @tc.desc       : Testing the generateRandomUUID interface with no para.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomUUID005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0500
+     * @tc.desc   Testing the generateRandomUUID interface with no para.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomUUID005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomUUID005';
@@ -502,12 +501,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0600
-     * @tc.name       : testUtilGenerateRandomUUID006
-     * @tc.desc       : Testing the generateRandomUUID interface with value false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomUUID006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0600
+     * @tc.desc   Testing the generateRandomUUID interface with value false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomUUID006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomUUID006';
@@ -522,12 +521,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0700
-     * @tc.name       : testUtilGenerateRandomUUID007
-     * @tc.desc       : Testing the generateRandomUUID interface with value true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomUUID007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0700
+     * @tc.desc   Testing the generateRandomUUID interface with value true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomUUID007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomUUID007';
@@ -542,12 +541,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0800
-     * @tc.name       : testUtilGenerateRandomUUID008
-     * @tc.desc       : Testing the generateRandomUUID interface with value true several times.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomUUID008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATERANDOMUUID_0800
+     * @tc.desc   Testing the generateRandomUUID interface with value true several times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomUUID008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomUUID008';
@@ -564,12 +563,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0100
-     * @tc.name       : testUtilGenerateRandomBinaryUUID001
-     * @tc.desc       : Testing the generateRandomBinaryUUID interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomBinaryUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0100
+     * @tc.desc   Testing the generateRandomBinaryUUID interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomBinaryUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomBinaryUUID001';
@@ -584,12 +583,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0200
-     * @tc.name       : testUtilGenerateRandomBinaryUUID002
-     * @tc.desc       : Testing the generateRandomBinaryUUID interface with value undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomBinaryUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0200
+     * @tc.desc   Testing the generateRandomBinaryUUID interface with value undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomBinaryUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomBinaryUUID002';
@@ -604,12 +603,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0500
-     * @tc.name       : testUtilGenerateRandomBinaryUUID005
-     * @tc.desc       : Testing the generateRandomBinaryUUID interface with no para.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomBinaryUUID005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0500
+     * @tc.desc   Testing the generateRandomBinaryUUID interface with no para.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomBinaryUUID005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomBinaryUUID005';
@@ -623,12 +622,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0600
-     * @tc.name       : testUtilGenerateRandomBinaryUUID006
-     * @tc.desc       : Testing the generateRandomBinaryUUID interface with value false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomBinaryUUID006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0600
+     * @tc.desc   Testing the generateRandomBinaryUUID interface with value false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomBinaryUUID006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomBinaryUUID006';
@@ -643,12 +642,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0700
-     * @tc.name       : testUtilGenerateRandomBinaryUUID007
-     * @tc.desc       : Testing the generateRandomBinaryUUID interface with value true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGenerateRandomBinaryUUID007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGENERATEBINARYRANDOMUUID_0700
+     * @tc.desc   Testing the generateRandomBinaryUUID interface with value true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGenerateRandomBinaryUUID007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGenerateRandomBinaryUUID007';
@@ -663,12 +662,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0100
-     * @tc.name       : testUtilParseUUID001
-     * @tc.desc       : Testing the parseUUID interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0100
+     * @tc.desc   Testing the parseUUID interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID001';
@@ -683,12 +682,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0200
-     * @tc.name       : testUtilParseUUID002
-     * @tc.desc       : Testing the parseUUID interface with value undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0200
+     * @tc.desc   Testing the parseUUID interface with value undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID002';
@@ -703,12 +702,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0600
-     * @tc.name       : testUtilParseUUID006
-     * @tc.desc       : Testing the parseUUID interface with value '84df796-66cc-4655-9b89-d6218d100f9c'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0600
+     * @tc.desc   Testing the parseUUID interface with value '84df796-66cc-4655-9b89-d6218d100f9c'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID006';
@@ -723,12 +722,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0700
-     * @tc.name       : testUtilParseUUID007
-     * @tc.desc       : Testing the parseUUID interface with value '84Wdf796-66cc-4655-9b89-d6218d100f9c'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0700
+     * @tc.desc   Testing the parseUUID interface with value '84Wdf796-66cc-4655-9b89-d6218d100f9c'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID007';
@@ -743,12 +742,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0800
-     * @tc.name       : testUtilParseUUID008
-     * @tc.desc       : Testing the parseUUID interface with UUID string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0800
+     * @tc.desc   Testing the parseUUID interface with UUID string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID008';
@@ -763,12 +762,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0900
-     * @tc.name       : testUtilParseUUID009
-     * @tc.desc       : Testing the parseUUID interface with 'Nil UUID 00000000-0000-0000-0000-000000000000'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_0900
+     * @tc.desc   Testing the parseUUID interface with 'Nil UUID 00000000-0000-0000-0000-000000000000'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID009';
@@ -783,12 +782,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1000
-     * @tc.name       : testUtilParseUUID010
-     * @tc.desc       : Testing the parseUUID interface with 'Namespace UUID 6ba7b810-9dad-11d1-80b4-00c04fd430c8'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1000
+     * @tc.desc   Testing the parseUUID interface with 'Namespace UUID 6ba7b810-9dad-11d1-80b4-00c04fd430c8'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID010';
@@ -803,12 +802,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1100
-     * @tc.name       : testUtilParseUUID011
-     * @tc.desc       : Testing the parseUUID interface with 'URL UUID 6ba7b810-9dad-11d1-80b4-00c04fd430c8'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1100
+     * @tc.desc   Testing the parseUUID interface with 'URL UUID 6ba7b810-9dad-11d1-80b4-00c04fd430c8'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID011';
@@ -823,12 +822,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1200
-     * @tc.name       : testUtilParseUUID012
-     * @tc.desc       : Testing the parseUUID interface with 'OID UUID 6ba7b812-9dad-11d1-80b4-00c04fd430c8'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1200
+     * @tc.desc   Testing the parseUUID interface with 'OID UUID 6ba7b812-9dad-11d1-80b4-00c04fd430c8'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID012';
@@ -843,12 +842,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1300
-     * @tc.name       : testUtilParseUUID013
-     * @tc.desc       : Testing the parseUUID interface with 'X.500 UUID 6ba7b814-9dad-11d1-80b4-00c04fd430c8'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1300
+     * @tc.desc   Testing the parseUUID interface with 'X.500 UUID 6ba7b814-9dad-11d1-80b4-00c04fd430c8'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID013';
@@ -863,12 +862,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1400
-     * @tc.name       : testUtilParseUUID013
-     * @tc.desc       : Testing the parseUUID interface with 'UUID FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilParseUUID014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILPARSEUUID_1400
+     * @tc.desc   Testing the parseUUID interface with 'UUID FFFFFFFF-FFFF-FFFF-FFFF-FFFFFFFFFFFF'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilParseUUID014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilParseUUID014';
@@ -883,12 +882,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0100
-     * @tc.name       : testUtilGetHash001
-     * @tc.desc       : Testing the getHash interface with value null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0100
+     * @tc.desc   Testing the getHash interface with value null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash001';
@@ -903,12 +902,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0200
-     * @tc.name       : testUtilGetHash002
-     * @tc.desc       : Testing the getHash interface with value undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0200
+     * @tc.desc   Testing the getHash interface with value undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash002';
@@ -923,12 +922,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0700
-     * @tc.name       : testUtilGetHash007
-     * @tc.desc       : Testing the getHash interface with json value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0700
+     * @tc.desc   Testing the getHash interface with json value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash007';
@@ -947,12 +946,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0800
-     * @tc.name       : testUtilGetHash008
-     * @tc.desc       : Testing the getHash interface with array value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0800
+     * @tc.desc   Testing the getHash interface with array value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash008';
@@ -968,12 +967,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0900
-     * @tc.name       : testUtilGetHash009
-     * @tc.desc       : Testing the getHash interface with class value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_0900
+     * @tc.desc   Testing the getHash interface with class value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash009';
@@ -999,12 +998,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1000
-     * @tc.name       : testUtilGetHash010
-     * @tc.desc       : Testing the getHash interface with date value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1000
+     * @tc.desc   Testing the getHash interface with date value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash010';
@@ -1021,12 +1020,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1100
-     * @tc.name       : testUtilGetHash011
-     * @tc.desc       : Testing the getHash interface with regular expression.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1100
+     * @tc.desc   Testing the getHash interface with regular expression.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash011';
@@ -1042,12 +1041,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1200
-     * @tc.name       : testUtilGetHash012
-     * @tc.desc       : Testing the getHash interface with math value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1200
+     * @tc.desc   Testing the getHash interface with math value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash012';
@@ -1063,12 +1062,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1300
-     * @tc.name       : testUtilGetHash013
-     * @tc.desc       : Testing the getHash interface with math nested json.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1300
+     * @tc.desc   Testing the getHash interface with math nested json.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash013';
@@ -1091,12 +1090,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1400
-     * @tc.name       : testUtilGetHash014
-     * @tc.desc       : Testing the getHash interface with value {}.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1400
+     * @tc.desc   Testing the getHash interface with value {}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash014';
@@ -1112,12 +1111,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1500
-     * @tc.name       : testUtilGetHash015
-     * @tc.desc       : Testing the getHash interface with value {}.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1500
+     * @tc.desc   Testing the getHash interface with value {}.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash015';
@@ -1133,12 +1132,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1600
-     * @tc.name       : testUtilGetHash016
-     * @tc.desc       : Testing the getHash interface with special json.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testUtilGetHash016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILGETHASH_1600
+     * @tc.desc   Testing the getHash interface with special json.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUtilGetHash016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testUtilGetHash016';
@@ -1158,12 +1157,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0100
-     * @tc.name       : testTextDecoderCreate001
-     * @tc.desc       : Testing the Constructor of TextDecoder.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0100
+     * @tc.desc   Testing the Constructor of TextDecoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate001';
@@ -1178,12 +1177,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0200
-     * @tc.name       : testTextDecoderCreate002
-     * @tc.desc       : Testing the textdecoder create interface with utf-8 value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0200
+     * @tc.desc   Testing the textdecoder create interface with utf-8 value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate002';
@@ -1200,12 +1199,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0300
-     * @tc.name       : testTextDecoderCreate003
-     * @tc.desc       : Testing the textdecoder.create interface with no para.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0300
+     * @tc.desc   Testing the textdecoder.create interface with no para.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate003';
@@ -1220,12 +1219,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0400
-     * @tc.name       : testTextDecoderCreate004
-     * @tc.desc       : Testing the textdecoder create interface with Illegal coding.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0400
+     * @tc.desc   Testing the textdecoder create interface with Illegal coding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate004';
@@ -1242,12 +1241,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0500
-     * @tc.name       : testTextDecoderCreate005
-     * @tc.desc       : Testing the textdecoder create while TextDecoderOptions with no paras.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0500
+     * @tc.desc   Testing the textdecoder create while TextDecoderOptions with no paras.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate005';
@@ -1263,12 +1262,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0600
-     * @tc.name       : testTextDecoderCreate006
-     * @tc.desc       : Testing the textdecoder create while ignoreBOM values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0600
+     * @tc.desc   Testing the textdecoder create while ignoreBOM values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate006';
@@ -1286,12 +1285,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0700
-     * @tc.name       : testTextDecoderCreate007
-     * @tc.desc       : Testing the textdecoder create while ignoreBOM values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0700
+     * @tc.desc   Testing the textdecoder create while ignoreBOM values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate007';
@@ -1309,12 +1308,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0800
-     * @tc.name       : testTextDecoderCreate008
-     * @tc.desc       : Testing the textdecoder create while fatal values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0800
+     * @tc.desc   Testing the textdecoder create while fatal values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate008';
@@ -1332,12 +1331,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0900
-     * @tc.name       : testTextDecoderCreate009
-     * @tc.desc       : Testing the textdecoder create while fatal values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_0900
+     * @tc.desc   Testing the textdecoder create while fatal values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate009';
@@ -1355,12 +1354,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1000
-     * @tc.name       : testTextDecoderCreate010
-     * @tc.desc       : Testing the textdecoder create while TextDecoderOptions with no paras.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1000
+     * @tc.desc   Testing the textdecoder create while TextDecoderOptions with no paras.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate010';
@@ -1376,12 +1375,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1100
-     * @tc.name       : testTextDecoderCreate011
-     * @tc.desc       : Testing the textdecoder create while ignoreBOM values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1100
+     * @tc.desc   Testing the textdecoder create while ignoreBOM values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate011';
@@ -1399,12 +1398,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1200
-     * @tc.name       : testTextDecoderCreate012
-     * @tc.desc       : Testing the textdecoder create while ignoreBOM values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1200
+     * @tc.desc   Testing the textdecoder create while ignoreBOM values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate012';
@@ -1422,12 +1421,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1300
-     * @tc.name       : testTextDecoderCreate013
-     * @tc.desc       : Testing the textdecoder create while fatal values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1300
+     * @tc.desc   Testing the textdecoder create while fatal values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate013';
@@ -1445,12 +1444,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1400
-     * @tc.name       : testTextDecoderCreate014
-     * @tc.desc       : Testing the textdecoder create while fatal values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1400
+     * @tc.desc   Testing the textdecoder create while fatal values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate014';
@@ -1468,12 +1467,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1500
-     * @tc.name       : testTextDecoderCreate015
-     * @tc.desc       : Testing the textdecoder create interface with iso-8859-15 value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1500
+     * @tc.desc   Testing the textdecoder create interface with iso-8859-15 value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate015';
@@ -1490,12 +1489,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1600
-     * @tc.name       : testTextDecoderCreate016
-     * @tc.desc       : Testing the textdecoder create interface with UTF-16 value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1600
+     * @tc.desc   Testing the textdecoder create interface with UTF-16 value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate016';
@@ -1512,12 +1511,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1700
-     * @tc.name       : testTextDecoderCreate017
-     * @tc.desc       : Testing the textdecoder create interface with UTF-32 value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1700
+     * @tc.desc   Testing the textdecoder create interface with UTF-32 value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate017';
@@ -1534,12 +1533,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1800
-     * @tc.name       : testTextDecoderCreate018
-     * @tc.desc       : Testing the textdecoder create interface while textDecoderOptions no paras.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1800
+     * @tc.desc   Testing the textdecoder create interface while textDecoderOptions no paras.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate018';
@@ -1554,12 +1553,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1900
-     * @tc.name       : testTextDecoderCreate019
-     * @tc.desc       : Testing the textdecoder create interface while textDecoderOptions values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_1900
+     * @tc.desc   Testing the textdecoder create interface while textDecoderOptions values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate019';
@@ -1574,12 +1573,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2000
-     * @tc.name       : testTextDecoderCreate020
-     * @tc.desc       : Testing the textdecoder create interface while fatal values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2000
+     * @tc.desc   Testing the textdecoder create interface while fatal values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate020';
@@ -1596,12 +1595,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2100
-     * @tc.name       : testTextDecoderCreate021
-     * @tc.desc       : Testing the textdecoder create interface while fatal values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2100
+     * @tc.desc   Testing the textdecoder create interface while fatal values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate021';
@@ -1618,12 +1617,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2200
-     * @tc.name       : testTextDecoderCreate022
-     * @tc.desc       : Testing the textdecoder create interface while ignoreBOM values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2200
+     * @tc.desc   Testing the textdecoder create interface while ignoreBOM values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate022';
@@ -1640,12 +1639,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2300
-     * @tc.name       : testTextDecoderCreate023
-     * @tc.desc       : Testing the textdecoder create interface while ignoreBOM values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoderCreate023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTDECODERCREAT_2300
+     * @tc.desc   Testing the textdecoder create interface while ignoreBOM values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoderCreate023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoderCreate023';
@@ -1662,12 +1661,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0100
-     * @tc.name       : testDecodeWithStream001
-     * @tc.desc       : Testing the decodeWithStream interface while input values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0100
+     * @tc.desc   Testing the decodeWithStream interface while input values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream001';
@@ -1686,12 +1685,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0200
-     * @tc.name       : testDecodeWithStream002
-     * @tc.desc       : Testing the decodeWithStream interface while input values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0200
+     * @tc.desc   Testing the decodeWithStream interface while input values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream002';
@@ -1710,12 +1709,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0300
-     * @tc.name       : testDecodeWithStream003
-     * @tc.desc       : Testing the decodeWithStream interface while input special value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0300
+     * @tc.desc   Testing the decodeWithStream interface while input special value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream003';
@@ -1734,12 +1733,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0400
-     * @tc.name       : testDecodeWithStream004
-     * @tc.desc       : Testing the decodeWithStream interface while input blank value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0400
+     * @tc.desc   Testing the decodeWithStream interface while input blank value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream004';
@@ -1758,12 +1757,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0500
-     * @tc.name       : testDecodeWithStream005
-     * @tc.desc       : Testing the decodeWithStream interface while input values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0500
+     * @tc.desc   Testing the decodeWithStream interface while input values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream005';
@@ -1782,12 +1781,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0600
-     * @tc.name       : testDecodeWithStream006
-     * @tc.desc       : Testing the decodeWithStream interface while input values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0600
+     * @tc.desc   Testing the decodeWithStream interface while input values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream006';
@@ -1806,12 +1805,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0700
-     * @tc.name       : testDecodeWithStream007
-     * @tc.desc       : Testing the decodeWithStream interface while stream values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0700
+     * @tc.desc   Testing the decodeWithStream interface while stream values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream007';
@@ -1830,12 +1829,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0800
-     * @tc.name       : testDecodeWithStream008
-     * @tc.desc       : Testing the decodeWithStream interface while stream values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0800
+     * @tc.desc   Testing the decodeWithStream interface while stream values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream008';
@@ -1854,12 +1853,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0900
-     * @tc.name       : testDecodeWithStream009
-     * @tc.desc       : Testing the decodeWithStream interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_0900
+     * @tc.desc   Testing the decodeWithStream interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream009';
@@ -1878,12 +1877,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1000
-     * @tc.name       : testDecodeWithStream010
-     * @tc.desc       : Testing the decodeWithStream interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1000
+     * @tc.desc   Testing the decodeWithStream interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream010';
@@ -1902,12 +1901,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1100
-     * @tc.name       : testDecodeWithStream011
-     * @tc.desc       : Testing the decodeWithStream interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1100
+     * @tc.desc   Testing the decodeWithStream interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream011';
@@ -1926,12 +1925,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1200
-     * @tc.name       : testDecodeWithStream012
-     * @tc.desc       : Testing the decodeWithStream interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeWithStream012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREAM_1200
+     * @tc.desc   Testing the decodeWithStream interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeWithStream012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeWithStream012';
@@ -1950,12 +1949,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0100
-     * @tc.name       : testTextEncoder001
-     * @tc.desc       : Testing the Constructor of TextEncoder.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0100
+     * @tc.desc   Testing the Constructor of TextEncoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder001';
@@ -1970,12 +1969,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0200
-     * @tc.name       : testTextEncoder002
-     * @tc.desc       : Testing the Constructor of TextEncoder.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0200
+     * @tc.desc   Testing the Constructor of TextEncoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder002';
@@ -1990,12 +1989,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0300
-     * @tc.name       : testTextEncoder003
-     * @tc.desc       : Testing the Constructor of TextEncoder values utf-9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0300
+     * @tc.desc   Testing the Constructor of TextEncoder values utf-9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder003';
@@ -2010,12 +2009,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0400
-     * @tc.name       : testTextEncoder004
-     * @tc.desc       : Testing the Constructor of TextEncoder values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODER_0400
+     * @tc.desc   Testing the Constructor of TextEncoder values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder004';
@@ -2030,12 +2029,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0100
-     * @tc.name       : testTextEncoderCreate001
-     * @tc.desc       : Testing the Constructor of TextEncoderCreate values iso-8859-14.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderCreate001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0100
+     * @tc.desc   Testing the Constructor of TextEncoderCreate values iso-8859-14.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderCreate001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderCreate001';
@@ -2050,12 +2049,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0200
-     * @tc.name       : testTextEncoderCreate002
-     * @tc.desc       : Testing the Constructor of TextEncoderCreate values no paras.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderCreate002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0200
+     * @tc.desc   Testing the Constructor of TextEncoderCreate values no paras.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderCreate002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderCreate002';
@@ -2070,12 +2069,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0300
-     * @tc.name       : testTextEncoderCreate003
-     * @tc.desc       : Testing the Constructor of TextEncoderCreate values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderCreate003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0300
+     * @tc.desc   Testing the Constructor of TextEncoderCreate values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderCreate003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderCreate003';
@@ -2090,12 +2089,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0400
-     * @tc.name       : testTextEncoderCreate004
-     * @tc.desc       : Testing the Constructor of TextEncoderCreate values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderCreate004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0400
+     * @tc.desc   Testing the Constructor of TextEncoderCreate values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderCreate004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderCreate004';
@@ -2110,12 +2109,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0500
-     * @tc.name       : testTextEncoderCreate005
-     * @tc.desc       : Testing the Constructor of TextEncoderCreate values 'windows-1250'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderCreate005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0500
+     * @tc.desc   Testing the Constructor of TextEncoderCreate values 'windows-1250'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderCreate005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderCreate005';
@@ -2130,12 +2129,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0600
-     * @tc.name       : testTextEncoderCreate006
-     * @tc.desc       : Testing the Constructor of TextEncoderCreate values 'utf-16'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderCreate006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0600
+     * @tc.desc   Testing the Constructor of TextEncoderCreate values 'utf-16'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderCreate006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderCreate006';
@@ -2150,12 +2149,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0700
-     * @tc.name       : testTextEncoderCreate007
-     * @tc.desc       : Testing the Constructor of TextEncoderCreate values 'utf-32'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderCreate007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERCREATE_0700
+     * @tc.desc   Testing the Constructor of TextEncoderCreate values 'utf-32'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderCreate007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderCreate007';
@@ -2170,12 +2169,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERINFO_0100
-     * @tc.name       : testTextEncoderInfo001
-     * @tc.desc       : Testing the Constructor of testTextEncoderInfo values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderInfo001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERINFO_0100
+     * @tc.desc   Testing the Constructor of testTextEncoderInfo values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderInfo001';
@@ -2190,12 +2189,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERINFO_0200
-     * @tc.name       : testTextEncoderInfo002
-     * @tc.desc       : Testing the Constructor of testTextEncoderInfo values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoderInfo002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILTEXTENCODERINFO_0200
+     * @tc.desc   Testing the Constructor of testTextEncoderInfo values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoderInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoderInfo002';
@@ -2210,12 +2209,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0100
-     * @tc.name       : testEncodeIntoUint8Array001
-     * @tc.desc       : Testing the Constructor of testEncodeIntoUint8Array input values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncodeIntoUint8Array001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0100
+     * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array input values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeIntoUint8Array001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncodeIntoUint8Array001';
@@ -2232,12 +2231,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0200
-     * @tc.name       : testEncodeIntoUint8Array002
-     * @tc.desc       : Testing the Constructor of testEncodeIntoUint8Array input values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncodeIntoUint8Array002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0200
+     * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array input values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeIntoUint8Array002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncodeIntoUint8Array002';
@@ -2254,12 +2253,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0300
-     * @tc.name       : testEncodeIntoUint8Array003
-     * @tc.desc       : Testing the Constructor of testEncodeIntoUint8Array desc values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncodeIntoUint8Array003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0300
+     * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array desc values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeIntoUint8Array003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncodeIntoUint8Array003';
@@ -2275,12 +2274,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0400
-     * @tc.name       : testEncodeIntoUint8Array004
-     * @tc.desc       : Testing the Constructor of testEncodeIntoUint8Array desc values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncodeIntoUint8Array004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILencodeIntoUint8Array_0400
+     * @tc.desc   Testing the Constructor of testEncodeIntoUint8Array desc values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncodeIntoUint8Array004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncodeIntoUint8Array004';
@@ -2296,12 +2295,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0100
-     * @tc.name       : testDecodeToString001
-     * @tc.desc       : Testing the decodeWithSting interface while input values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0100
+     * @tc.desc   Testing the decodeWithSting interface while input values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString001';
@@ -2319,12 +2318,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0200
-     * @tc.name       : testDecodeToString002
-     * @tc.desc       : Testing the decodeToString interface while input values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0200
+     * @tc.desc   Testing the decodeToString interface while input values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString002';
@@ -2340,12 +2339,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0300
-     * @tc.name       : testDecodeToString003
-     * @tc.desc       : Testing the decodeToString interface while input special value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0300
+     * @tc.desc   Testing the decodeToString interface while input special value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const that = util.TextDecoder.create('utf-8');
@@ -2356,12 +2355,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0400
-     * @tc.name       : testDecodeToString004
-     * @tc.desc       : Testing the decodeToString interface while input blank value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0400
+     * @tc.desc   Testing the decodeToString interface while input blank value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let decodeToStringOptions: util.DecodeToStringOptions = {
@@ -2375,12 +2374,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0500
-     * @tc.name       : testDecodeToString005
-     * @tc.desc       : Testing the decodeToString interface while input values undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0500
+     * @tc.desc   Testing the decodeToString interface while input values undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString005';
@@ -2393,12 +2392,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0600
-     * @tc.name       : testDecodeToString006
-     * @tc.desc       : Testing the decodeToString interface while input values null.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0600
+     * @tc.desc   Testing the decodeToString interface while input values null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString006';
@@ -2410,12 +2409,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0700
-     * @tc.name       : testDecodeToString007
-     * @tc.desc       : Testing the decodeToString interface while stream values true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0700
+     * @tc.desc   Testing the decodeToString interface while stream values true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString007';
@@ -2431,12 +2430,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0800
-     * @tc.name       : testDecodeToString008
-     * @tc.desc       : Testing the decodeToString interface while stream values false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0800
+     * @tc.desc   Testing the decodeToString interface while stream values false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString008';
@@ -2452,12 +2451,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0900
-     * @tc.name       : testDecodeToString009
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_0900
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString009';
@@ -2474,12 +2473,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1000
-     * @tc.name       : testDecodeToString010
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1000
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString010';
@@ -2495,12 +2494,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1100
-     * @tc.name       : testDecodeToString011
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1100
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString011';
@@ -2517,12 +2516,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1200
-     * @tc.name       : testDecodeToString012
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testDecodeToString012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTILDECODEWITHSTREING_1200
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testDecodeToString012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testDecodeToString012';
@@ -2537,12 +2536,12 @@ export default function utilTest() {
 
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0100
-     * @tc.name       : testEncode001
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncode001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0100
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode001';
@@ -2552,12 +2551,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0200
-     * @tc.name       : testEncode002
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncode002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0200
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode002';
@@ -2567,12 +2566,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0300
-     * @tc.name       : testEncode002
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncode003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0300
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncode003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode003';
@@ -2595,12 +2594,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0400
-     * @tc.name       : testEncode004
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncode004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0400
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncode004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode004';
@@ -2611,12 +2610,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0500
-     * @tc.name       : testEncode005
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncode005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0500
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncode005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode005';
@@ -2636,12 +2635,12 @@ export default function utilTest() {
         '"evictionCount":1,"hitCount":0,"missCount":0,"length":2,"cache":{}}');
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0600
-     * @tc.name       : testEncode006
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncode006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0600
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncode006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode006';
@@ -2658,12 +2657,12 @@ export default function utilTest() {
       expect(JSON.stringify(result)).assertEqual('{"0":"2","1":"10","2":"3","3":"15"}')
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0700
-     * @tc.name       : testEncode007
-     * @tc.desc       : Testing the decodeToString interface while different code format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testEncode007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ENCODE_0700
+     * @tc.desc   Testing the decodeToString interface while different code format.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEncode007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testEncode007';
@@ -2679,12 +2678,12 @@ export default function utilTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0100
-     * @tc.name       : testPromisify0001
-     * @tc.desc       : Test the function of the interface promisify.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testPromisify0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0100
+     * @tc.desc   Test the function of the interface promisify.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testPromisify0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async () => {
       const TAG = 'testPromisify0001';
@@ -2698,12 +2697,12 @@ export default function utilTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0200
-     * @tc.name       : testGenerateRandomBinaryUUID0001
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0200
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0001';
@@ -2717,12 +2716,12 @@ export default function utilTest() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0300
-     * @tc.name       : testGenerateRandomBinaryUUID0002
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0300
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0002';
@@ -2739,12 +2738,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0400
-     * @tc.name       : testGenerateRandomBinaryUUID0003
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0400
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0003';
@@ -2761,12 +2760,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0500
-     * @tc.name       : testGenerateRandomBinaryUUID0004
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0500
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0004';
@@ -2782,12 +2781,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0600
-     * @tc.name       : testGenerateRandomBinaryUUID0005
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0600
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0005';
@@ -2803,12 +2802,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0700
-     * @tc.name       : testGenerateRandomBinaryUUID0006
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0700
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0006';
@@ -2824,12 +2823,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0800
-     * @tc.name       : testGenerateRandomBinaryUUID0007
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0800
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0007';
@@ -2845,12 +2844,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0900
-     * @tc.name       : testGenerateRandomBinaryUUID0008
-     * @tc.desc       : Test the function of the interface generateRandomBinaryUUID.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomBinaryUUID0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_0900
+     * @tc.desc   Test the function of the interface generateRandomBinaryUUID.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomBinaryUUID0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomBinaryUUID0008';
@@ -2866,12 +2865,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1000
-     * @tc.name       : testGenerateRandomUUID90001
-     * @tc.desc       : Test the function of the interface generateRandomUUID9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomUUID90001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1000
+     * @tc.desc   Test the function of the interface generateRandomUUID9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomUUID90001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomUUID90001';
@@ -2887,12 +2886,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1100
-     * @tc.name       : testGenerateRandomUUID90002
-     * @tc.desc       : Test the function of the interface generateRandomUUID9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomUUID90002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1100
+     * @tc.desc   Test the function of the interface generateRandomUUID9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomUUID90002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomUUID90002';
@@ -2908,12 +2907,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1200
-     * @tc.name       : testGenerateRandomUUID90003
-     * @tc.desc       : Test the function of the interface generateRandomUUID9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomUUID90003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1200
+     * @tc.desc   Test the function of the interface generateRandomUUID9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomUUID90003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomUUID90003';
@@ -2929,12 +2928,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1300
-     * @tc.name       : testGenerateRandomUUID90004
-     * @tc.desc       : Test the function of the interface generateRandomUUID9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomUUID90004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1300
+     * @tc.desc   Test the function of the interface generateRandomUUID9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomUUID90004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomUUID90004';
@@ -2950,12 +2949,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1400
-     * @tc.name       : testGenerateRandomUUID90005
-     * @tc.desc       : Test the function of the interface generateRandomUUID9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomUUID90005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1400
+     * @tc.desc   Test the function of the interface generateRandomUUID9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomUUID90005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomUUID90005';
@@ -2971,12 +2970,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1500
-     * @tc.name       : testGenerateRandomUUID90006
-     * @tc.desc       : Test the function of the interface generateRandomUUID9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomUUID90006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1500
+     * @tc.desc   Test the function of the interface generateRandomUUID9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomUUID90006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomUUID90006';
@@ -2992,12 +2991,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1600
-     * @tc.name       : testGenerateRandomUUID90007
-     * @tc.desc       : Test the function of the interface generateRandomUUID9.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGenerateRandomUUID90007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1600
+     * @tc.desc   Test the function of the interface generateRandomUUID9.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGenerateRandomUUID90007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testGenerateRandomUUID90007';
@@ -3021,12 +3020,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1700
-     * @tc.name       : testTextDecoder00001
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1700
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00001';
@@ -3041,12 +3040,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1800
-     * @tc.name       : testTextDecoder00002
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1800
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00002';
@@ -3066,12 +3065,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1900
-     * @tc.name       : testTextDecoder00003
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_1900
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00003';
@@ -3086,12 +3085,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2000
-     * @tc.name       : testTextDecoder00004
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2000
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00004';
@@ -3108,12 +3107,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2100
-     * @tc.name       : testTextDecoder00005
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2100
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00005';
@@ -3128,12 +3127,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2200
-     * @tc.name       : testTextDecoder00006
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2200
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00006';
@@ -3151,12 +3150,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2300
-     * @tc.name       : testTextDecoder00007
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2300
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00007';
@@ -3172,12 +3171,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2400
-     * @tc.name       : testTextDecoder00008
-     * @tc.desc       : Test the function of the interface TextDecoderCreate.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2400
+     * @tc.desc   Test the function of the interface TextDecoderCreate.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00008';
@@ -3194,12 +3193,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2500
-     * @tc.name       : testTextDecoder00009
-     * @tc.desc       : Test the function of the interface TextDecoderDecodeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2500
+     * @tc.desc   Test the function of the interface TextDecoderDecodeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00009';
@@ -3223,12 +3222,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2600
-     * @tc.name       : testTextDecoder00010
-     * @tc.desc       : Test the function of the interface TextDecoderDecodeToString.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextDecoder00010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2600
+     * @tc.desc   Test the function of the interface TextDecoderDecodeToString.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextDecoder00010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextDecoder00010';
@@ -3259,12 +3258,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2700
-     * @tc.name       : testTextEncoder0001
-     * @tc.desc       : Test the function of the interface TextEncoder-TextEncoder.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2700
+     * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder0001';
@@ -3279,12 +3278,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2800
-     * @tc.name       : testTextEncoder0002
-     * @tc.desc       : Test the function of the interface TextEncoder-TextEncoder.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2800
+     * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder0002';
@@ -3300,12 +3299,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2900
-     * @tc.name       : testTextEncoder0003
-     * @tc.desc       : Test the function of the interface TextEncoder-TextEncoder.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_2900
+     * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder0003';
@@ -3320,12 +3319,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3000
-     * @tc.name       : testTextEncoder0004
-     * @tc.desc       : Test the function of the interface TextEncoder-TextEncoder.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3000
+     * @tc.desc   Test the function of the interface TextEncoder-TextEncoder.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder0004';
@@ -3340,12 +3339,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3100
-     * @tc.name       : testTextEncoder0005
-     * @tc.desc       : Test the function of the interface TextEncoder-encodeInto.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3100
+     * @tc.desc   Test the function of the interface TextEncoder-encodeInto.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder0005';
@@ -3362,12 +3361,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3200
-     * @tc.name       : testTextEncoder0006
-     * @tc.desc       : Test the function of the interface TextEncoder-encodeInto.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3200
+     * @tc.desc   Test the function of the interface TextEncoder-encodeInto.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder0006';
@@ -3383,12 +3382,12 @@ export default function utilTest() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3300
-     * @tc.name       : testTextEncoder0007
-     * @tc.desc       : Test the function of the interface TextEncoder-encodeInto.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testTextEncoder0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_UTIL_3300
+     * @tc.desc   Test the function of the interface TextEncoder-encodeInto.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTextEncoder0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTextEncoder0007';
@@ -3405,12 +3404,12 @@ export default function utilTest() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_001
-     * @tc.name       : testGetMainThreadStackTrace001
-     * @tc.desc       : Testing the getMainThreadStackTrace interface in main thread.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetMainThreadStackTrace001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_001
+     * @tc.desc   Testing the getMainThreadStackTrace interface in main thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetMainThreadStackTrace001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       let recursion = (n: number): string => {
@@ -3424,12 +3423,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_002
-     * @tc.name       : testGetMainThreadStackTrace002
-     * @tc.desc       : Testing the getMainThreadStackTrace interface in worker thread.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetMainThreadStackTrace002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_002
+     * @tc.desc   Testing the getMainThreadStackTrace interface in worker thread.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetMainThreadStackTrace002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let stackTrace = "";
@@ -3459,12 +3458,12 @@ export default function utilTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_003
-     * @tc.name       : testGetMainThreadStackTrace003
-     * @tc.desc       : Testing the getMainThreadStackTrace interface in taskpool.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetMainThreadStackTrace003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_GET_MAIN_THREAD_STACK_TRACE_003
+     * @tc.desc   Testing the getMainThreadStackTrace interface in taskpool.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetMainThreadStackTrace003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let task = new taskpool.Task(taskpoolFunc);
@@ -3486,5 +3485,34 @@ export default function utilTest() {
       done();
     });
 
+    /**
+     * @tc.name   testSetMultithreadingDetectionEnabled001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_SET_MULTITHREAD_001
+     * @tc.desc   Set multithreading detection to on and off.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testSetMultithreadingDetectionEnabled001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      util.ArkTSVM.setMultithreadingDetectionEnabled(true);
+      let task = new taskpool.Task(taskpoolFunc);
+      let recursion = (n: number): void => {
+        if (n == 1) {
+          blockSleep(1);
+          return;
+        }
+        return recursion(n - 1);
+      }
+      taskpool.execute(task).then(
+        (value: object) => {
+          expect(value).assertContain('blockSleep');
+        }
+      )
+      recursion(10);
+      let stackTrace = await taskpool.execute(task);
+      expect(stackTrace).assertEqual('');
+      util.ArkTSVM.setMultithreadingDetectionEnabled(false);
+      done();
+    });
   })
 }

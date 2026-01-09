@@ -47,9 +47,12 @@ export default function notificationSlotTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationSlot_0100
-     * @tc.name: Test the NotificationSlot.notificationType property.
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.name   Acts_NotificationSlot_0100
+     * @tc.number Acts_NotificationSlot_0100
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.SOCIAL_COMMUNICATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_0100', Level.LEVEL2, async (done: Function) => {
 
@@ -81,9 +84,12 @@ export default function notificationSlotTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationSlot_0200
-     * @tc.name: Test the NotificationSlot.notificationType property.
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.name   Acts_NotificationSlot_0200
+     * @tc.number Acts_NotificationSlot_0200
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.SERVICE_INFORMATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_0200', Level.LEVEL2, async (done: Function) => {
 
@@ -115,9 +121,12 @@ export default function notificationSlotTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationSlot_0300
-     * @tc.name: Test the NotificationSlot.notificationType property.
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.name   Acts_NotificationSlot_0300
+     * @tc.number Acts_NotificationSlot_0300
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.CONTENT_INFORMATION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_0300', Level.LEVEL2, async (done: Function) => {
 
@@ -149,9 +158,12 @@ export default function notificationSlotTest() {
     })
 
     /**
-     * @tc.number: Acts_NotificationSlot_0400
-     * @tc.name: Test the NotificationSlot.notificationType property.
-     * @tc.desc: Set NotificationSlot attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.name   Acts_NotificationSlot_0400
+     * @tc.number Acts_NotificationSlot_0400
+     * @tc.desc   Set NotificationSlot attribute parameters notificationManager.SlotType.OTHER_TYPES.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationSlot_0400', Level.LEVEL2, async (done: Function) => {
 

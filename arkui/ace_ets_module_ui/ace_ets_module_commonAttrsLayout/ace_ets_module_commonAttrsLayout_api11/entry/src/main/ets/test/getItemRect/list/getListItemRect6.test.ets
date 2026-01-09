@@ -48,12 +48,14 @@ export default function getListItemRect6() {
       console.info("BadgeFocus after each called");
     });
 
-    /* *
-    * @tc.number: SUB_ACE_TS_COMPONENT_getListItemRect6_0100
-    * @tc.name  : onGetItemRect
-    * @tc.desc  : set index to 3,Delete listItem3
-    * @tc.level : Level 2,Delete listItem3
-    */
+    /**
+     * @tc.name   getListItemRect6_0100
+     * @tc.number SUB_ACE_TS_COMPONENT_getListItemRect6_0100
+     * @tc.desc   set index to 3,Delete listItem3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('getListItemRect6_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[getListItemRect6_0100] START');

@@ -75,3 +75,10 @@ export const testGetDoublePluralStringByName140: (resmgr: resourceManager.Resour
 export const testGetIntPluralStringByName141: (resmgr: resourceManager.ResourceManager, resName: string) => Boolean;
 export const testGetDoublePluralStringByName142: (resmgr: resourceManager.ResourceManager, resName: string) => Boolean;
 export const getResourceConfiguration: (resmgr: resourceManager.ResourceManager) => Boolean;
+export const getRawFileDescriptorFalseOrTrue: (resmgr: resourceManager.ResourceManager, path: string) => Boolean;
+export const getRawFileDescriptorDataFalseOrTrue: (resmgr: resourceManager.ResourceManager, path: string) => Boolean;
+export const getRawFileDescriptor64FalseOrTrue: (resmgr: resourceManager.ResourceManager, path: string) => Boolean;
+export const initNativeRsMgrOpenRawDirRawFile64Null: (resmgr: resourceManager.ResourceManager) => Boolean;
+export const isRawDirTrue: (resmgr: resourceManager.ResourceManager, path: string) => Boolean;
+export const getDirectionVertical: (resmgr: resourceManager.ResourceManager) => Boolean;
+export const getEmuTypeErrorCode: (resmgr: resourceManager.ResourceManager) => Boolean;

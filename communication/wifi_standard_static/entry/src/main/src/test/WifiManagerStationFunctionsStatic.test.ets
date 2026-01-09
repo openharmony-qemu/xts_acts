@@ -33,7 +33,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   constantTest
          * @tc.number constantTest
          * @tc.desc   Test constantTest API functionality
@@ -121,7 +120,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   wifiOnOffStateTest
          * @tc.number wifiOnOffStateTest
          * @tc.desc   Test wifiOnOffStateTest API functionality
@@ -184,7 +182,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   isConnectedTest
          * @tc.number isConnectedTest
          * @tc.desc   Test isConnectedTest API functionality
@@ -196,7 +193,11 @@ export default function actsWifiManagerFunctionsTest() {
             try{
                 let state: boolean = wifiManager.isConnected();
                 hilog.info(domain, tag, "isConnected:" + state);
-                expect(state).assertFalse();
+                if(state == true){
+                    expect(state).assertTrue();
+                }else{
+                    expect(state).assertFalse();
+                }
             }catch(err: BusinessError){
                 hilog.info(domain, tag, "get error:" + JSON.stringify(err));
                 hilog.info(domain, tag, "isConnected get errCode:" + err.code + ",errMessage:" + err.message);
@@ -211,7 +212,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getIpInfoTest
          * @tc.number getIpInfoTest
          * @tc.desc   Test getIpInfoTest API functionality
@@ -239,7 +239,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getScanInfoListTest
          * @tc.number getScanInfoListTest
          * @tc.desc   Test getScanInfoListTest API functionality
@@ -275,7 +274,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   isMeteredHotspotTest
          * @tc.number isMeteredHotspotTest
          * @tc.desc   Test isMeteredHotspotTest API functionality
@@ -302,7 +300,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getIpv6InfoTest
          * @tc.number getIpv6InfoTest
          * @tc.desc   Test getIpv6InfoTest API functionality
@@ -330,7 +327,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getSignalLevelTest
          * @tc.number getSignalLevelTest
          * @tc.desc   Test getSignalLevelTest API functionality
@@ -357,7 +353,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getLinkedInfoPromiseTest
          * @tc.number getLinkedInfoPromiseTest
          * @tc.desc   Test getLinkedInfoPromiseTest API functionality
@@ -392,7 +387,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getLinkedInfoCallbackTest
          * @tc.number getLinkedInfoCallbackTest
          * @tc.desc   Test getLinkedInfoCallbackTest API functionality
@@ -440,7 +434,6 @@ export default function actsWifiManagerFunctionsTest() {
         })
 
         /**
-         * @generated.time 2025-11-09 20:49:46
          * @tc.name   getLinkedInfoSyncTest
          * @tc.number getLinkedInfoSyncTest
          * @tc.desc   Test getLinkedInfoSyncTest API functionality

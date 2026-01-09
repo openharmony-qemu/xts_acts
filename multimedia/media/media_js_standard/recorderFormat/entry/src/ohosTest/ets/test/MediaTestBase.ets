@@ -182,6 +182,11 @@ export default class MediaTestBase {
     console.info(`driver is ${JSON.stringify(driver)}`)
     console.info(`UiDriver start`)
     await this.sleep(500)
+    let btn1 = await driver.findComponent(BY.text('稍后'))
+    if (btn1 != null) {
+      console.info(`wlan btn click`)
+      await btn1.click()
+    }
     for (let i = 0; i < num; i++) {
       let button = await driver.findComponent(BY.text('允许'))
       if (button == null) {

@@ -46,12 +46,12 @@ export default function ParamTest0010() {
     });
 
     /**
-     * @tc.number    SUB_ACE_STATUSMANAGER_PARAM_0010
-     * @tc.name      ParamTest0010_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   ParamTest0010_001
+     * @tc.number SUB_ACE_STATUSMANAGER_PARAM_0010
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamTest0010_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ParamTest0010_001] START');

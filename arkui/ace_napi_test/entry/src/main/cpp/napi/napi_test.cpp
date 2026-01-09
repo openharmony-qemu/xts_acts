@@ -68,6 +68,7 @@ const int NAPI_UTF8_MAX = 255;
 const int NAPI_ARGS_LENGTH = 2;
 const uint32_t NAPI_NATIVE_VALUE1 = 11;
 const uint32_t NAPI_NATIVE_VALUE2 = 22;
+static constexpr int INT_ARG_100 = 100;
 
 
 struct CallbackData {
@@ -17783,6 +17784,205 @@ static napi_value NapiWrapEnhanceTest12(napi_env env, napi_callback_info info)
     return rst;
 }
 
+static void StringFinalizerASCII(void* data, void* hint)
+{
+    // 释放外部资源
+    delete[] static_cast<char*>(data);
+}
+
+static napi_value NapiCreateExternalStringAscii(napi_env env, napi_callback_info info)
+{
+    const char source[] = "hello, World!, successes to create ASCII string! 111";
+    napi_value result = nullptr;
+    int charLength = sizeof(source) / sizeof(char);
+    char* str = new char[charLength];
+    std::copy(source, source + charLength, str);
+
+    napi_status status = napi_create_external_string_ascii(
+        env,
+        str,
+        NAPI_AUTO_LENGTH,
+        StringFinalizerASCII,
+        nullptr,
+        &result
+    );
+
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_external_string_ascii");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static void StringFinalizerUTF16(void* data, void* hint)
+{
+    // 释放外部资源
+    delete[] static_cast<char16_t*>(data);
+}
+
+static napi_value NapiCreateExternalStringUtf16(napi_env env, napi_callback_info info)
+{
+    const char16_t source[] = u"你好, World!, successes to create UTF-16 string! 111";
+    napi_value result = nullptr;
+    int char16tLength = sizeof(source) / sizeof(char16_t);
+    char16_t* str = new char16_t[char16tLength];
+    std::copy(source, source + char16tLength, str);
+
+    napi_status status = napi_create_external_string_utf16(
+        env,
+        str,
+        NAPI_AUTO_LENGTH,
+        StringFinalizerUTF16,
+        nullptr,
+        &result
+    );
+    NAPI_ASSERT(env, status == napi_ok, "napi_create_external_string_utf16");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiCreateStrongSendableRef(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_value sObj = nullptr;
+    napi_sendable_ref ref = nullptr;
+
+    napi_status status = napi_create_array(env, &obj);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_array");
+    status = napi_create_sendable_array(env, &sObj);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_sendable_array");
+
+    status = napi_create_strong_sendable_reference(nullptr, sObj, &ref);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_create_sendable_array p1");
+    status = napi_create_strong_sendable_reference(env, nullptr, &ref);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_create_sendable_array p2");
+
+    status = napi_create_strong_sendable_reference(env, sObj, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_create_sendable_array p3");
+
+    status = napi_create_strong_sendable_reference(env, obj, &ref);
+    NAPI_ASSERT(env, status == napi_object_expected, "call napi_create_sendable_array p4");
+    NAPI_ASSERT(env, ref == nullptr, "call napi_create_sendable_array p5");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiGetStrongSendableRef(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_value sObj = nullptr;
+    napi_sendable_ref ref = nullptr;
+
+    napi_status status = napi_create_array(env, &obj);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_array");
+    status = napi_create_sendable_array(env, &sObj);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_sendable_array");
+
+    status = napi_create_strong_sendable_reference(env, sObj, &ref);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_strong_sendable_reference");
+    NAPI_ASSERT(env, ref != nullptr, "call napi_create_strong_sendable_reference ref");
+
+    napi_value value = nullptr;
+    status = napi_get_strong_sendable_reference_value(nullptr, ref, &value);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_get_strong_sendable_reference_value p1");
+
+    status = napi_get_strong_sendable_reference_value(env, nullptr, &value);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_get_strong_sendable_reference_value p2");
+
+    status = napi_get_strong_sendable_reference_value(env, ref, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_get_strong_sendable_reference_value p3");
+
+    status = napi_delete_strong_sendable_reference(env, ref);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_delete_strong_sendable_reference");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+static napi_value NapiDelStrongSendableRef(napi_env env, napi_callback_info info)
+{
+    napi_value obj = nullptr;
+    napi_value sObj = nullptr;
+    napi_sendable_ref ref = nullptr;
+
+    napi_status status = napi_create_array(env, &obj);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_array");
+    status = napi_create_sendable_array(env, &sObj);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_sendable_array");
+
+    status = napi_create_strong_sendable_reference(env, sObj, &ref);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_create_strong_sendable_reference");
+    NAPI_ASSERT(env, ref != nullptr, "call napi_create_strong_sendable_reference ref");
+
+    status = napi_delete_strong_sendable_reference(nullptr, ref);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_delete_strong_sendable_reference p1");
+    status = napi_delete_strong_sendable_reference(env, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "call napi_delete_strong_sendable_reference p2");
+
+    status = napi_delete_strong_sendable_reference(env, ref);
+    NAPI_ASSERT(env, status == napi_ok, "call napi_delete_strong_sendable_reference");
+
+    napi_value rst;
+    bool bRet = true;
+    napi_get_boolean(env, bRet, &rst);
+    return rst;
+}
+
+// napi_throw_business_error
+// 1.Normal function
+static napi_value NapiThrowBusinessError(napi_env env,napi_callback_info info)
+{
+    NAPI_CALL(env, napi_throw_business_error(env, INT_ARG_100, "Error Message"));
+    napi_value result;
+    NAPI_CALL(env, napi_create_int32(env, 0, &result));
+    return result;
+}
+
+// 2. Error parameter test
+static napi_value NapiThrowBusinessErrorPar(napi_env env, napi_callback_info info)
+{
+    // env is nullptr
+    napi_status status = napi_throw_business_error(nullptr, INT_ARG_100, "napi_throw_business_error env is nullptr");
+    NAPI_ASSERT(env, status == napi_invalid_arg, "env is nullptr, napi_throw_business_error failed.");
+
+    // msg is nullptr
+    status = napi_throw_business_error(env, INT_ARG_100, nullptr);
+    NAPI_ASSERT(env, status == napi_invalid_arg, "msg is nullptr, napi_throw_business_error failed.");
+    napi_value result;
+    NAPI_CALL(env, napi_create_int32(env, 0, &result));
+    return result;
+}
+
+// 3. Pending exception test
+static napi_value NapiThrowBusinessErrorPendingError(napi_env env, napi_callback_info info)
+{
+    napi_throw_business_error(env, INT_ARG_100, "This is a pre-existing exception");
+    napi_status status = napi_throw_business_error(env, INT_ARG_100, "error message");
+    NAPI_ASSERT(env, status == napi_pending_exception, "napi_throw_business_error not napi_pending_exception");
+
+    napi_value error;
+    status = napi_get_and_clear_last_exception(env, &error);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_and_clear_last_exception failed.");
+
+    status = napi_throw_business_error(env, INT_ARG_100, "error message after clear");
+    NAPI_ASSERT(env, status == napi_ok, "napi_throw_business_error after clear failed.");
+
+    status = napi_get_and_clear_last_exception(env, &error);
+    NAPI_ASSERT(env, status == napi_ok, "napi_get_and_clear_last_exception failed.");
+
+    napi_value result;
+    NAPI_CALL(env, napi_create_int32(env, 0, &result));
+    return result;
+}
 
 EXTERN_C_START
 
@@ -18542,6 +18742,14 @@ static napi_value Init(napi_env env, napi_value exports)
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest10", NapiWrapEnhanceTest10),
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest11", NapiWrapEnhanceTest11),
         DECLARE_NAPI_FUNCTION("NapiWrapEnhanceTest12", NapiWrapEnhanceTest12),
+        DECLARE_NAPI_FUNCTION("NapiCreateExternalStringUtf16", NapiCreateExternalStringUtf16),
+        DECLARE_NAPI_FUNCTION("NapiCreateExternalStringAscii", NapiCreateExternalStringAscii),
+        DECLARE_NAPI_FUNCTION("NapiCreateStrongSendableRef", NapiCreateStrongSendableRef),
+        DECLARE_NAPI_FUNCTION("NapiGetStrongSendableRef", NapiGetStrongSendableRef),
+        DECLARE_NAPI_FUNCTION("NapiDelStrongSendableRef", NapiDelStrongSendableRef),
+        DECLARE_NAPI_FUNCTION("NapiThrowBusinessError", NapiThrowBusinessError),
+        DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPar", NapiThrowBusinessErrorPar),
+        DECLARE_NAPI_FUNCTION("NapiThrowBusinessErrorPendingError", NapiThrowBusinessErrorPendingError),
     };
     NAPI_CALL(env, napi_define_properties(env, exports, sizeof(properties) / sizeof(properties[0]), properties));
 

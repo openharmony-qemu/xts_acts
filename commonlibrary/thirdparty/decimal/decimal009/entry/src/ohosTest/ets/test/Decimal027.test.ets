@@ -30,12 +30,12 @@ export default function DecimalTest027() {
     });
         console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST_001
-     * @tc.name      : Decimal_powSqrt_Func_001
-     * @tc.desc      : Test powSqrt
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   Decimal_powSqrt_Func_001
+     * @tc.number DECIMAL_TEST_001
+     * @tc.desc   Test powSqrt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_powSqrt_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
         Decimal.set ({

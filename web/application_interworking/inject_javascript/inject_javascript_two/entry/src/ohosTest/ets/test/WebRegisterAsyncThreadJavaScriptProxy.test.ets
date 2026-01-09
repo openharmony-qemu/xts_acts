@@ -59,14 +59,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0001
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy001
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy webTag null permission null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy001
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0001
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy webTag null permission null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRegisterAsyncThreadJavaScriptProxy001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
         Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy001", 172850)
         Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy001", true, 172860, done,
@@ -76,14 +76,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
         sendEventByKey('RegisterAsyncThreadJavaScriptProxy', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0002
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy002
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy webTag WebTagTest permission null
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy002
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0002
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy webTag WebTagTest permission null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRegisterAsyncThreadJavaScriptProxy002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy002", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy002", true, 172870, done,
@@ -94,14 +94,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0003
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy003
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission null 执行testNdkProxyObjMethod1  ARKWEB_JAVASCRIPT_STRING
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy003
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0003
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission null 执行testNdkProxyObjMethod1  ARKWEB_JAVASCRIPT_STRING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRegisterAsyncThreadJavaScriptProxy003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy003", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy003", true, 172880, done,
@@ -111,14 +111,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
       sendEventByKey('RegisterAsyncThreadJavaScriptProxy', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0004
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy004
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission null 执行testNdkProxyObjMethod2  ARKWEB_JAVASCRIPT_BOOL
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy004
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0004
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission null 执行testNdkProxyObjMethod2  ARKWEB_JAVASCRIPT_BOOL
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRegisterAsyncThreadJavaScriptProxy004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy004", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy004", true, 172890, done,
@@ -128,14 +128,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
       sendEventByKey('RegisterAsyncThreadJavaScriptProxy', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0005
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy005
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy  webTag ArkWeb permission null 执行window.ndkProxy.method3  ARKWEB_JAVASCRIPT_NONE
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy005
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0005
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy  webTag ArkWeb permission null 执行window.ndkProxy.method3  ARKWEB_JAVASCRIPT_NONE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRegisterAsyncThreadJavaScriptProxy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy005", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy005", true, 172900, done,
@@ -144,14 +144,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
         });
       sendEventByKey('RegisterAsyncThreadJavaScriptProxy', 10, '');
     })
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0006
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy006
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission null 执行testNdkProxyObjMethod1 testNdkProxyObjMethod2  异步方法线程id相同
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy006
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0006
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission null 执行testNdkProxyObjMethod1 testNdkProxyObjMethod2  异步方法线程id相同
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testRegisterAsyncThreadJavaScriptProxy006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy006", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy006", true, 172910, done,
@@ -162,14 +162,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
     })
 
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0007
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy007
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission https://www.example.com  访问网址，执行方法window.ndkProxy.method1
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy007
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0007
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission https://www.example.com  访问网址，执行方法window.ndkProxy.method1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRegisterAsyncThreadJavaScriptProxy007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy007", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy007", true, 172920, done,
@@ -179,14 +179,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
       sendEventByKey('RegisterAsyncThreadJavaScriptProxy', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0008
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy008
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission https://www.example.com  访问网址https://www.baidu.com，执行方法window.ndkProxy.method1
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy008
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0008
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy webTag ArkWeb permission https://www.example.com  访问网址https://www.baidu.com，执行方法window.ndkProxy.method1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testRegisterAsyncThreadJavaScriptProxy008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy008", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy008", true, 172930, done,
@@ -196,14 +196,14 @@ export default function WebRegisterAsyncThreadJavaScriptProxy() {
       sendEventByKey('RegisterAsyncThreadJavaScriptProxy', 10, '');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0009
-    * @tc.name       : testRegisterAsyncThreadJavaScriptProxy009
-    * @tc.desc       : test RegisterAsyncThreadJavaScriptProxy  webTag ArkWeb permission https://www.example.com  访问网址https://www.baidu.com，再访问https://www.example.com 执行方法window.ndkProxy.method1
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testRegisterAsyncThreadJavaScriptProxy009
+     * @tc.number SUB_ACE_WEB_REGISTERASYNCTHREADJAVASCRIPTPROXY_NAPI_0009
+     * @tc.desc   test RegisterAsyncThreadJavaScriptProxy  webTag ArkWeb permission https://www.example.com  访问网址https://www.baidu.com，再访问https://www.example.com 执行方法window.ndkProxy.method1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testRegisterAsyncThreadJavaScriptProxy009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("emitRegisterAsyncThreadJavaScriptProxy009", 172850)
       Utils.registerBaseEvent("testRegisterAsyncThreadJavaScriptProxy009", true, 172940, done,

@@ -72,15 +72,15 @@ export default function ResourceStrarray() {
             }
             done()
         })
-        /*
-         * @tc.number       ResourceStrarray_0100
-         * @tc.name         ResourceStrarray_0100
-         * @tc.desic         ResourceStrarray
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
-         */
 
+        /**
+         * @tc.name   ResourceStrarray_0100
+         * @tc.number ResourceStrarray_0100
+         * @tc.desc   ResourceStrarray_0100
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("ResourceStrarray_0100", Level.LEVEL0, async (done: Function) => {
             console.info("ResourceStrarray_0100 START")
             try {
@@ -105,15 +105,15 @@ export default function ResourceStrarray() {
             console.info("[ResourceStrarray_0100] END")
             done()
         })
-        /*
-         * @tc.number       ResourceStrarray_0200
-         * @tc.name         ResourceStrarray_0200
-         * @tc.desic         ResourceStrarray
-         * @tc.size       : MediumTest
-         * @tc.type       : Function
-         * @tc.level      : LEVEL0
-         */
 
+        /**
+         * @tc.name   ResourceStrarray_0200
+         * @tc.number ResourceStrarray_0200
+         * @tc.desc   ResourceStrarray_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it("ResourceStrarray_0200", Level.LEVEL0, async (done: Function) => {
             console.info("ResourceStrarray_0200 START")
             let driver = Driver.create()

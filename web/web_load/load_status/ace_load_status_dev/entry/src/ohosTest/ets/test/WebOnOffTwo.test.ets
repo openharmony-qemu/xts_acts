@@ -50,15 +50,15 @@ export default function webOnOffTwoTest() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_WEB_EMITONOFFONETWO_0100
-    * @tc.name        : emitOnOffTwo
-    * @tc.desc        : test on normal
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
 
+    /**
+     * @tc.name   emitOnOffTwo
+     * @tc.number emitOnOffTwo
+     * @tc.desc   emitOnOffTwo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitOnOffTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnOffTwo", 141341)
       let isReturn = false;

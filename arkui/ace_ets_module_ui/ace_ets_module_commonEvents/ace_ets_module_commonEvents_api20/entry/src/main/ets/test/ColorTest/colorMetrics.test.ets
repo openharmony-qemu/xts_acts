@@ -44,10 +44,12 @@ export default function colorMetricsTest() {
       console.info('colorMetrics after each called');
     });
     /**
-     * @tc.number    colorMetricsTest_0010
-     * @tc.name      colorMetricsTest_0010
-     * @tc.desc      backgroundColor test succ
-     * @tc.level:    Level 1  
+     * @tc.name   colorMetricsTest_0010
+     * @tc.number colorMetricsTest_0010
+     * @tc.desc   backgroundColor test succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('colorMetricsTest_0010', Level.LEVEL1, async (done: Function) => {
       console.info('colorMetricsTest_0010 START');
@@ -65,10 +67,12 @@ export default function colorMetricsTest() {
     });
 
     /**
-     * @tc.number    colorMetricsTest_0020
-     * @tc.name      colorMetricsTest_0020
-     * @tc.desc      SweepGradient test succ
-     * @tc.level:    Level 1  
+     * @tc.name   colorMetricsTest_0020
+     * @tc.number colorMetricsTest_0020
+     * @tc.desc   SweepGradient test succ
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('colorMetricsTest_0020', Level.LEVEL1, async (done: Function) => {
       console.info('colorMetricsTest_0020 START');

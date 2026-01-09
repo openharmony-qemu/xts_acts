@@ -41,14 +41,14 @@ export default function twoWayBindTest() {
       done();
     });
     /**
-     * @tc.number    Computed
-     * @tc.name      twoWayBindTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.name   twoWayBindTest_0100
+     * @tc.number Computed
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('twoWayBindTest_0100', Level.LEVEL0, async (done: Function) => {
+    it('twoWayBindTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('twoWayBindTest_0100 START');
       let driver = await Driver.create()
       await CommonFunc.sleep(1000);

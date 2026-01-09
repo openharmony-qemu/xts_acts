@@ -50,12 +50,15 @@ export default function AlignContent_Start_FlexP_Fixed_Margin() {
       console.info("AlignContent_Start_FlexP_Fixed_Margin after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_1100
-     * @tc.name testAlignContentStartFlexFixedMarginSatisfy
-     * @tc.desc Change the flex component's subcomponent margin so that it does not overflow the flex component.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexFixedMarginSatisfy
+     * @tc.number testAlignContentStartFlexFixedMarginSatisfy
+     * @tc.desc   testAlignContentStartFlexFixedMarginSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexFixedMarginSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexFixedMarginSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -110,12 +113,15 @@ export default function AlignContent_Start_FlexP_Fixed_Margin() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_1200
-     * @tc.name testAlignContentStartFlexFixedMarginNoSatisfy
-     * @tc.desc Change the flex component's subcomponent margin to overflow the flex component.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexFixedMarginNoSatisfy
+     * @tc.number testAlignContentStartFlexFixedMarginNoSatisfy
+     * @tc.desc   testAlignContentStartFlexFixedMarginNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexFixedMarginNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexFixedMarginNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

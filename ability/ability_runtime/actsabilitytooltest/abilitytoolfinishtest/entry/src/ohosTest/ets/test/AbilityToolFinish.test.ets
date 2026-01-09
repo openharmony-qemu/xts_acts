@@ -52,15 +52,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_20600
-     * @tc.name      : The parameters of the test command are valid, and the finishTest API is called in AsyncCallback mode,
-     * and the msg parameter (including Chinese and special characters) and code parameter (Number.MIN_VALUE-1) are invalid.
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is valid (Number.MIN_VALUE-1)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20600
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20600', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -76,15 +73,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_20700
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest interface in AsyncCallback mode,
-     * the msg parameter is valid (including Chinese and special characters) and the code parameter is invalid (non-number)
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is invalid ('ABCD')
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20700
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20700', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -100,15 +94,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_20800
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest API in AsyncCallback mode,
-     * the msg parameter is valid (including Chinese and special characters) and the code parameter is valid (1)
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is valid (1)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20800
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20800', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -124,15 +115,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_20900
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest interface in AsyncCallback mode,
-     * the msg parameter is valid (including Chinese and special characters) and the code parameter is valid (Number.MAX_VALUE)
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is valid (Number.MAX_VALUE)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_20900
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_20900
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_20900', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -148,15 +136,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21000
-     * @tc.name      : The parameters of the test command are valid, and the finishTest API is called in AsyncCallback mode,
-     * and the msg parameter (including Chinese and special characters) and code parameter (Number.MIN_VALUE) are valid.
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is valid (Number.MIN_VALUE)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21000
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21000
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21000', Level.LEVEL3, (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -172,13 +157,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21100
-     * @tc.name      : The parameters of the test command are valid, and the finishTest API is called in Promise mode,
-     * and the msg parameter is invalid (null) and the code parameter is valid (1).
-     * @tc.desc      : for testing finishTest by promise msg msg parameter is invalid(null) and the code is valid(1)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21100
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21100
+     * @tc.desc   for testing finishTest by promise msg msg parameter is invalid(null) and the code is valid(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21100', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21100';
@@ -197,13 +181,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21200
-     * @tc.name      : The parameters of the test command are valid, call the finishTest API in Promise mode,
-     *                 and the msg parameter is invalid (Undefined) and the code parameter is valid (1)
-     * @tc.desc      : for testing finishTest by promise msg msg parameter is invalid(undefined) and the code is valid(1)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21200
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21200
+     * @tc.desc   for testing finishTest by promise msg msg parameter is invalid(undefined) and the code is valid(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21200', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21200';
@@ -222,13 +205,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21300
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest interface in Promise mode,
-     *                 the msg parameter is valid (including Chinese and special characters) and the code parameter is invalid (Number.MAX_VALUE+1)
-     * @tc.desc      : for testing finishTest by promise msg msg parameter is invalid('测试日志!@#$%^&*()_+QWE{}|?><Fafq3146') and the code is invalid(Number.MAX_VALUE+1)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21300
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21300
+     * @tc.desc   for testing finishTest by promise msg msg parameter is invalid('测试日志!@#$%^&*()_+QWE{}|?><Fafq3146') and the code is invalid(Number.MAX_VALUE+1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21300', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -243,13 +225,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400
-     * @tc.name      : The parameters of the test command are valid, call the finishTest API in Promise mode,
-     *                 and the msg parameter is valid (including Chinese and special characters) and the code parameter is invalid (Number.MIN_VALUE-1)
-     * @tc.desc      : for testing finishTest by promise msg msg parameter is invalid('测试日志!@#$%^&*()_+QWE{}|?><Fafq3146') and the code is invalid(Number.MIN_VALUE-1)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400
+     * @tc.desc   for testing finishTest by promise msg msg parameter is invalid('测试日志!@#$%^&*()_+QWE{}|?><Fafq3146') and the code is invalid(Number.MIN_VALUE-1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -264,15 +245,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21500
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest interface in Promise mode,
-     *                 msg parameter is valid (including Chinese and special characters) and code parameter is invalid (non-number)
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called by promise
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is invalid ('ABCD')
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21500
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21500
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called by promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21500', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -287,15 +265,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21600
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest interface in Promise mode,
-     *                 msg parameter (including Chinese and special characters) and code parameter are valid (1)
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in promise
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is valid (1)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21600
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21600
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21600', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -310,15 +285,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21700
-     * @tc.name      : Each parameter of the test command is valid, call the finishTest interface in Promise mode,
-     *                 msg parameter is valid (including Chinese and special characters) and code parameter is valid (Number.MAX_VALUE)
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in promise
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is valid (Number.MAX_VALUE)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21700
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21700
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21700', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';
@@ -333,15 +305,12 @@ export default function abilityToolFinishTest() {
     })
 
     /**
-     * @tc.number    : SUB_Ability_AbilityTools_AbilityDelegator_Stage_21800
-     * @tc.name      : The parameters of the test command are valid, call the finishTest API in Promise mode,
-     *                 and the msg parameter (including Chinese and special characters) and code parameter (Number.MIN_VALUE) are valid.
-     * @tc.desc      : The parameters of the test command are valid, and the finishTest interface is called in promise
-     *                  mode. The msg parameter is valid(including Chinese and special characters) and the code parameter
-     *                  is valid (Number.MIN_VALUE)
-     * @tc.level     : Level 3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
+     * @tc.name   SUB_Ability_AbilityTools_AbilityDelegator_Stage_21800
+     * @tc.number SUB_Ability_AbilityTools_AbilityDelegator_Stage_21800
+     * @tc.desc   The parameters of the test command are valid, and the finishTest interface is called in promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityTools_AbilityDelegator_Stage_21800', Level.LEVEL3, async (done: Function) => {
       const TEST_CASE_NAME: string = 'SUB_Ability_AbilityTools_AbilityDelegator_Stage_21400';

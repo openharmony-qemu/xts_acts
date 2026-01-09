@@ -46,10 +46,13 @@ export default function stepperInterface006() {
       console.info("stepperInterface006 after each called");
     });
 
-    /*
-     * @tc.number       stepperInterface0060
-     * @tc.name         stepperInterface0060
-     * @tc.desc         stepperInterface0060
+    /**
+     * @tc.name   stepperInterface0060
+     * @tc.number stepperInterface0060
+     * @tc.desc   stepperInterface0060
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('stepperInterface0060',  Level.LEVEL0, async (done: Function) => {
       console.info('stepperInterface0060 START');

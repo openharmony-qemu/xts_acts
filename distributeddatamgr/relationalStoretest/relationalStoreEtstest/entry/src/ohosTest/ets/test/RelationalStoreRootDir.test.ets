@@ -67,7 +67,6 @@ export default function rdbrootDirTest() {
       console.log(TAG + "*************Unit Test End*************");
     });
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0100
      * @tc.desc   invalid rootDir path promise test
@@ -103,7 +102,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0200
      * @tc.desc   invalid rootDir path callback test
@@ -140,7 +138,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0300
      * @tc.desc   db not exist promise test
@@ -176,7 +173,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0400
      * @tc.desc   db not exist callback test
@@ -213,7 +209,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0500
      * @tc.desc   query promise test
@@ -257,7 +252,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0600
      * @tc.desc   query callback test
@@ -302,7 +296,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0700
      * @tc.desc   not write promise test
@@ -343,7 +336,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0800
      * @tc.desc   not write callback test
@@ -384,7 +376,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_0900
      * @tc.desc   deleteRdb success promise test
@@ -422,7 +413,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1000
      * @tc.desc   deleteRdb success callback test
@@ -460,7 +450,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1100
      * @tc.desc   invalid rootDir deleteRdb promise test
@@ -496,7 +485,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1200
      * @tc.desc   invalid rootDir deleteRdb callback test
@@ -533,7 +521,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1300
      * @tc.desc   db not exist deleteRdbStore promise test
@@ -568,7 +555,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1400
      * @tc.desc   db not exist deleteRdbStore callback test
@@ -603,7 +589,6 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest1400 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1500
      * @tc.desc   encrpy database invalid rootDir path test
@@ -642,7 +627,6 @@ export default function rdbrootDirTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1600
      * @tc.desc   encrpy database db not exist test
@@ -680,7 +664,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1700
      * @tc.desc   encrpy database rootDir query test success
@@ -726,7 +709,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1800
      * @tc.desc   encrpy database rootDir not write test
@@ -769,7 +751,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_1900
      * @tc.desc   rootDir is "/data/storage/el2/database/" customDir is "rdb/tester/test" query test
@@ -813,7 +794,6 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest1900 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2000
      * @tc.desc   rootDir is "//data/storage/el2/database" query test
@@ -856,7 +836,6 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest2000 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2100
      * @tc.desc   invalid rootDir path "data/storage/el2/database"
@@ -892,7 +871,6 @@ export default function rdbrootDirTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2200
      * @tc.desc   rootDir is undefined query test
@@ -934,7 +912,6 @@ export default function rdbrootDirTest() {
       console.log(TAG + "************* rdbrootDirTest2200 end *************");
     })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   rdbrootDirTest2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_rootDirJsAPITest_2300
      * @tc.desc   rootDir is undefined customDir is "data/storage/el2/database/rdb/" test

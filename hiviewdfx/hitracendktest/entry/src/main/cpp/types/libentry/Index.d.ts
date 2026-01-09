@@ -20,3 +20,7 @@ export const oHHiTraceCountTraceEx: () => number;
 export const begin: () => number;
 export const beginflag: () => number;
 export const beginSpan: () => number;
+export const oHHiTraceIsIdValid: () => boolean;
+export const oHHiTraceIsFlagEnabled: () => boolean;
+export const oHHiTraceIsTraceEnabled: () => boolean;
+export const oHHiTraceIsTraceEnabl2: () => boolean;

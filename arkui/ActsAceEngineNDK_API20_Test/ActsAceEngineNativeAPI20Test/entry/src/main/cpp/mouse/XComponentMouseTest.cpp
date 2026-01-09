@@ -128,13 +128,19 @@ void InitNode()
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "GetNativeXComponent error");
     }
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "GetNativeXComponent success");
-    OH_NativeXComponent_RegisterMouseEventCallback(nativeXComponent, &XComponentCallback);
+    if (nativeXComponent) {
+        OH_NativeXComponent_RegisterMouseEventCallback(nativeXComponent, &XComponentCallback);
+    }
     auto typeRet = XComponent.getAttribute(NODE_XCOMPONENT_TYPE);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent type: %{public}d",
+    if (typeRet){
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent type: %{public}d",
                  typeRet->value[0].i32);
+    }
     auto idRet = XComponent.getAttribute(NODE_XCOMPONENT_ID);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent id: %{public}s",
+    if (idRet){
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "PluginManager", "xcomponent id: %{public}s",
                  idRet->string);
+    }
     std::shared_ptr<ArkUICapiTest::Component> child = std::make_shared<ArkUICapiTest::XComponent>(XComponent);
     ColumnComponent.AddChild(child);
 }

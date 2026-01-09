@@ -513,12 +513,12 @@ export default function CameraVideoMirrorTest() {
       console.info('afterAll case');
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_IS_MIRROR_SUPPORTED_0100
-     * @tc.name      : Check whether video output is mirror supported
-     * @tc.desc      : Check whether video output is mirror supported
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_IS_MIRROR_SUPPORTED_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_IS_MIRROR_SUPPORTED_0100
+     * @tc.desc   Check whether video output is mirror supported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_IS_MIRROR_SUPPORTED_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_IS_MIRROR_SUPPORTED_0100--------------");
@@ -549,12 +549,12 @@ export default function CameraVideoMirrorTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_ENABLE_MIRROR_0100
-     * @tc.name      : Check video output enable mirror
-     * @tc.desc      : Check video output enable mirror
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_ENABLE_MIRROR_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_ENABLE_MIRROR_0100
+     * @tc.desc   Check video output enable mirror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_ENABLE_MIRROR_0100', Level.LEVEL2, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_ENABLE_MIRROR_0100--------------");

@@ -58,7 +58,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0100
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0100
      * @tc.desc   check the language
@@ -73,7 +72,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0120
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0120
      * @tc.desc   check the language
@@ -90,7 +88,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0130
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0130
      * @tc.desc   check the language
@@ -107,7 +104,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0140
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0140
      * @tc.desc   check the language
@@ -123,7 +119,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0200
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0200
      * @tc.desc   check the language
@@ -138,7 +133,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0300
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0300
      * @tc.desc   check the script
@@ -153,7 +147,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0400
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0400
      * @tc.desc   check the region
@@ -168,7 +161,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0500
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0500
      * @tc.desc   check the basename
@@ -183,7 +175,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0600
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0600
      * @tc.desc   check the ja-Jpan-JP-u-ca-japanese-hc-h12 basename
@@ -198,7 +189,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0700
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0700
      * @tc.desc   check the hourCycle
@@ -213,7 +203,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0800
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0800
      * @tc.desc   check the calendar
@@ -228,7 +217,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_0900
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_0900
      * @tc.desc   check the japanese calendar
@@ -243,7 +231,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1000
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1000
      * @tc.desc   check the h12 hourCycle
@@ -258,7 +245,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1100
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1100
      * @tc.desc   check the caseFirst
@@ -273,7 +259,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1120
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1120
      * @tc.desc   check the caseFirst
@@ -288,7 +273,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1140
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1140
      * @tc.desc   check the caseFirst
@@ -303,7 +287,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1200
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1200
      * @tc.desc   check the collation
@@ -318,7 +301,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1300
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1300
      * @tc.desc   check the numeric
@@ -333,7 +315,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1350
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1350
      * @tc.desc   check the numeric
@@ -348,7 +329,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1400
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1400
      * @tc.desc   check the numberingSystem
@@ -363,7 +343,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1500
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1500
      * @tc.desc   check the toString method with zh
@@ -378,7 +357,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1600
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1600
      * @tc.desc   check the toString method with zh-CN
@@ -393,7 +371,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1700
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1700
      * @tc.desc   check the toString method with zh-Hans-CN
@@ -408,7 +385,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1800
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1800
      * @tc.desc   check the toString method with zh-Hans-CN-u-hc-h12-ca-japanese
@@ -423,7 +399,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_1900
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_1900
      * @tc.desc   check the maximize method with zh-u-ca-gregory-co-compact param
@@ -438,7 +413,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2000
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2000
      * @tc.desc   check the toString method with zh-CN-u-ca-gregory-co-compact param
@@ -453,7 +427,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2100
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2100
      * @tc.desc   check the toString method with zh-hans-CN-u-ca-gregory-co-compact param
@@ -468,7 +441,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2200
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2200
      * @tc.desc   check the minimize method with one param zh
@@ -483,7 +455,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2201
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2201
      * @tc.desc   check the minimize method with one param zh-CN
@@ -498,7 +469,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2202
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2202
      * @tc.desc   check the minimize method with one param zh-Hans-CN
@@ -513,7 +483,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2203
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2203
      * @tc.desc   check the minimize method with one param zh-Hans-CN-u-ca-gregory-co-compact
@@ -528,7 +497,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2204
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2204
      * @tc.desc   check the minimize method with zh lcoale
@@ -543,7 +511,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2205
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2205
      * @tc.desc   check the minimize method with zh-CN lcoale
@@ -558,7 +525,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2206
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2206
      * @tc.desc   check the minimize method with zh-Hans-CN lcoale
@@ -573,7 +539,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2300
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2300
      * @tc.desc   check the maximize method with one param zh
@@ -588,7 +553,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2301
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2301
      * @tc.desc   check the maximize method with one param zh-CN
@@ -603,7 +567,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2302
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2302
      * @tc.desc   check the maximize method with one param zh-Hans-CN-u-ca-gregory-co-compact
@@ -618,7 +581,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2303
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2303
      * @tc.desc   check the maximize method with zh-Hans-CN-u-ca-gregory-co-compact locale
@@ -633,7 +595,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2304
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2304
      * @tc.desc   check the maximize method with zh locale
@@ -648,7 +609,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2305
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2305
      * @tc.desc   check the maximize method with zh-CN locale
@@ -663,7 +623,6 @@ describe('LocaleInIntlTest', function () {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:57
      * @tc.name   locale_test_2306
      * @tc.number SUB_GLOBAL_INTL_JS_LOCALE_2306
      * @tc.desc   check the maximize method with zh-Hans-CN locale

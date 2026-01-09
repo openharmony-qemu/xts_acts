@@ -44,6 +44,14 @@ export default function ShowDialogJsunit() {
     });
 
 
+    /**
+     * @tc.name   ShowDialogJsunit_0100
+     * @tc.number ShowDialogJsunit_0100
+     * @tc.desc   ShowDialogJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('ShowDialogJsunit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('ShowDialogJsunit_0100 START');
 	    let driver = await Driver.create()

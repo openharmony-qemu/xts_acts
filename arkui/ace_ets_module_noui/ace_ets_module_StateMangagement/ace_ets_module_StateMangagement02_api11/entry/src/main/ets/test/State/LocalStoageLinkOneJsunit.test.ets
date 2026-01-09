@@ -67,6 +67,14 @@ export default function LocalStoageLinkOneJsunit() {
     });
 
 
+    /**
+     * @tc.name   LocalStoageLinkOneJsunit_0100
+     * @tc.number LocalStoageLinkOneJsunit_0100
+     * @tc.desc   LocalStoageLinkOneJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStoageLinkOneJsunit_0100', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoageLinkOneJsunit_0100] START');
@@ -85,6 +93,14 @@ export default function LocalStoageLinkOneJsunit() {
     });
 
 
+    /**
+     * @tc.name   LocalStoageLinkOneJsunit_0200
+     * @tc.number LocalStoageLinkOneJsunit_0200
+     * @tc.desc   LocalStoageLinkOneJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStoageLinkOneJsunit_0200', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoageLinkOneJsunit_0200] START');
@@ -103,6 +119,14 @@ export default function LocalStoageLinkOneJsunit() {
     });
 
 
+    /**
+     * @tc.name   LocalStoageLinkOneJsunit_0300
+     * @tc.number LocalStoageLinkOneJsunit_0300
+     * @tc.desc   LocalStoageLinkOneJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStoageLinkOneJsunit_0300', Level.LEVEL0, async (done: Function) => {
 
       console.info('[LocalStoageLinkOneJsunit_0300] START');
@@ -121,6 +145,14 @@ export default function LocalStoageLinkOneJsunit() {
     });
 
 
+    /**
+     * @tc.name   LocalStoageLinkOneJsunit_0400
+     * @tc.number LocalStoageLinkOneJsunit_0400
+     * @tc.desc   LocalStoageLinkOneJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('LocalStoageLinkOneJsunit_0400', Level.LEVEL0, async (done: Function) => {
       console.info('[LocalStoageLinkOneJsunit_0400] START');
       let strJson1 = getInspectorByKey('text_getValue1');

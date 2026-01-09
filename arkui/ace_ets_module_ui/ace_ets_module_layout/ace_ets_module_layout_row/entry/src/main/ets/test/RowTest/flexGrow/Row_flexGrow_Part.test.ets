@@ -46,9 +46,12 @@ export default function Row_flexGrow_Part() {
       console.info("Row_flexGrow_Part after each called")
     });
     /**
+     * @tc.name   SUB_ACE_Row_flexGrow_Part_TEST_0100
      * @tc.number SUB_ACE_Row_flexGrow_Part_TEST_0100
-     * @tc.name testFlexGrow
-     * @tc.desc row1 set layoutWeight(1), row2、row3 set flexGrow(1)
+     * @tc.desc   row1 set layoutWeight(1), row2、row3 set flexGrow(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexGrow_Part_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexGrow_Part_TEST_0100] START');
@@ -102,9 +105,12 @@ export default function Row_flexGrow_Part() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_Row_flexGrow_Part_TEST_0200
      * @tc.number SUB_ACE_Row_flexGrow_Part_TEST_0200
-     * @tc.name testFlexGrow
-     * @tc.desc row1 set layoutWeight(1), row2、row3 set flexGrow(2)
+     * @tc.desc   row1 set layoutWeight(1), row2、row3 set flexGrow(2)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexGrow_Part_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexGrow_Part_TEST_0200] START');
@@ -159,9 +165,12 @@ export default function Row_flexGrow_Part() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_Row_flexGrow_Part_TEST_0300
      * @tc.number SUB_ACE_Row_flexGrow_Part_TEST_0300
-     * @tc.name testFlexGrow
-     * @tc.desc row1 set layoutWeight(1), row、row2、row3 set flexGrow(3)、flexGrow(2)、flexGrow(1)
+     * @tc.desc   row1 set layoutWeight(1), row、row2、row3 set flexGrow(3)、flexGrow(2)、flexGrow(1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexGrow_Part_TEST_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexGrow_Part_TEST_0300] START');
@@ -216,9 +225,12 @@ export default function Row_flexGrow_Part() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_flexGrow_Part_TEST_0400
      * @tc.number SUB_ACE_Row_flexGrow_Part_TEST_0400
-     * @tc.name testFlexGrow
-     * @tc.desc row1 set layoutWeight(1), row2、row3 set flexGrow(3)
+     * @tc.desc   row1 set layoutWeight(1), row2、row3 set flexGrow(3)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexGrow_Part_TEST_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexGrow_Part_TEST_0400] START');
@@ -274,9 +286,12 @@ export default function Row_flexGrow_Part() {
       done();
     });
     /**
+     * @tc.name   SUB_ACE_Row_flexGrow_Part_TEST_0500
      * @tc.number SUB_ACE_Row_flexGrow_Part_TEST_0500
-     * @tc.name testFlexGrow
-     * @tc.desc colum1 set layoutWeight('aaa'),column1, column2, and column3 are displayed according to their own height
+     * @tc.desc   colum1 set layoutWeight('aaa'),column1, column2, and column3 are displayed according to their own height
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_flexGrow_Part_TEST_0500',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_flexGrow_Part_TEST_0500] START');

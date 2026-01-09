@@ -48,10 +48,12 @@ export default function clear1() {
     });
 
     /**
-     * @tc.number    clear1_0100
-     * @tc.name      clear1_0100
-     * @tc.desc      Test clear
-     * @tc.level     Level 2
+     * @tc.name   clear1_0100
+     * @tc.number clear1_0100
+     * @tc.desc   Test clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('clear1_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[clear1_0100] START');

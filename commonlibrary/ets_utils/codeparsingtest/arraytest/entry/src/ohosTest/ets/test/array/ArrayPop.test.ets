@@ -43,12 +43,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0001
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0001
-     * @tc.name testArrayPop0001
-     * @tc.desc Verify pop returns last number element and reduces length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last number element and reduces length
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -59,12 +59,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0002
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0002
-     * @tc.name testArrayPop0002
-     * @tc.desc Verify pop on empty array returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on empty array returns undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = [];
@@ -74,12 +74,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0003
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0003
-     * @tc.name testArrayPop0003
-     * @tc.desc Verify pop on boolean array returns last value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on boolean array returns last value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false];
@@ -90,12 +90,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0004
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0004
-     * @tc.name testArrayPop0004
-     * @tc.desc Verify pop works with array of arrays and returns last sub-array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop works with array of arrays and returns last sub-array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -106,12 +106,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0005
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0005
-     * @tc.name testArrayPop0005
-     * @tc.desc Verify pop returns object from array of objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns object from array of objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Item { a: number; }
@@ -124,12 +124,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0006
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0006
-     * @tc.name testArrayPop0006
-     * @tc.desc Verify successive pop calls reduce length each time
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify successive pop calls reduce length each time
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -139,12 +139,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0007
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0007
-     * @tc.name testArrayPop0007
-     * @tc.desc Verify pop combined with push maintains LIFO
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop combined with push maintains LIFO
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b'];
@@ -155,12 +155,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0008
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0008
-     * @tc.name testArrayPop0008
-     * @tc.desc Verify pop on single element array empties it
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on single element array empties it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [42];
@@ -171,12 +171,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0009
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0009
-     * @tc.name testArrayPop0009
-     * @tc.desc Verify pop with heterogeneous union types returns expected last
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop with heterogeneous union types returns expected last
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1, 'two', 2];
@@ -186,12 +186,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0010
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0010
-     * @tc.name testArrayPop0010
-     * @tc.desc Verify pop works repeatedly until empty (third pop yields undefined)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop works repeatedly until empty (third pop yields undefined)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['x', 'y'];
@@ -202,12 +202,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0011
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0011
-     * @tc.name testArrayPop0011
-     * @tc.desc Verify pop after reverse returns expected last element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after reverse returns expected last element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -218,12 +218,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0012
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0012
-     * @tc.name testArrayPop0012
-     * @tc.desc Verify pop returns last string after shift operation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last string after shift operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c'];
@@ -234,12 +234,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0013
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0013
-     * @tc.name testArrayPop0013
-     * @tc.desc Verify pop with optional property objects and assert property value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop with optional property objects and assert property value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { a?: number; }
@@ -252,12 +252,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0014
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0014
-     * @tc.name testArrayPop0014
-     * @tc.desc Verify pop works with class instances and returns last instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop works with class instances and returns last instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class Box {
@@ -275,12 +275,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0015
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0015
-     * @tc.name testArrayPop0015
-     * @tc.desc Verify Array.prototype.pop.call on array-like object decreases length and returns last numeric property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify Array.prototype.pop.call on array-like object decreases length and returns last numeric property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArrayPop0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   class ArrLike {
@@ -303,12 +303,12 @@ export default function ArrayPopTest() {
     // });
 
     /**
+     * @tc.name   testArrayPop0016
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0016
-     * @tc.name testArrayPop0016
-     * @tc.desc Verify pop combined with concat does not affect combined copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop combined with concat does not affect combined copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2];
@@ -320,12 +320,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0017
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0017
-     * @tc.name testArrayPop0017
-     * @tc.desc Verify pop on nested arrays returns last nested array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on nested arrays returns last nested array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1], [2], [3]];
@@ -335,12 +335,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0018
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0018
-     * @tc.name testArrayPop0018
-     * @tc.desc Verify pop removes last element and previous remains intact
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop removes last element and previous remains intact
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['x', 'y', 'z'];
@@ -349,12 +349,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0019
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0019
-     * @tc.name testArrayPop0019
-     * @tc.desc Verify pop after push of union type returns expected last
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push of union type returns expected last
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1];
@@ -365,12 +365,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0020
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0020
-     * @tc.name testArrayPop0020
-     * @tc.desc Verify pop after splice returns expected last element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after splice returns expected last element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3, 4];
@@ -381,12 +381,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0021
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0021
-     * @tc.name testArrayPop0021
-     * @tc.desc Verify pop returns last boolean from boolean array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last boolean from boolean array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -396,12 +396,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0022
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0022
-     * @tc.name testArrayPop0022
-     * @tc.desc Verify pop with array of tuples returns last tuple
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop with array of tuples returns last tuple
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -411,12 +411,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0023
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0023
-     * @tc.name testArrayPop0023
-     * @tc.desc Verify pop on large array reduces length by one
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on large array reduces length by one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = Array(100).fill(1);
@@ -425,12 +425,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0024
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0024
-     * @tc.name testArrayPop0024
-     * @tc.desc Verify pop returns last element from array filled with same value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last element from array filled with same value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = new Array(3).fill(5);
@@ -440,12 +440,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0025
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0025
-     * @tc.name testArrayPop0025
-     * @tc.desc Verify pop after sort returns expected last element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after sort returns expected last element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['c', 'a', 'b'];
@@ -456,12 +456,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0026
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0026
-     * @tc.name testArrayPop0026
-     * @tc.desc Verify pop on array of class instances with optional field
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of class instances with optional field
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class OptBox {
@@ -479,12 +479,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0027
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0027
-     * @tc.name testArrayPop0027
-     * @tc.desc Verify pop after push and unshift returns last element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push and unshift returns last element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [2];
@@ -496,12 +496,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0028
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0028
-     * @tc.name testArrayPop0028
-     * @tc.desc Verify pop from array of union with null returns last numeric value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop from array of union with null returns last numeric value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | null)[] = [1, null, 2];
@@ -511,12 +511,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0029
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0029
-     * @tc.name testArrayPop0029
-     * @tc.desc Verify consecutive pop calls on empty array return undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify consecutive pop calls on empty array return undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = [];
@@ -526,12 +526,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0030
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0030
-     * @tc.name testArrayPop0030
-     * @tc.desc Verify pop on original array does not change slice copy
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on original array does not change slice copy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -542,12 +542,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0031
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0031
-     * @tc.name testArrayPop0031
-     * @tc.desc Verify pop removes last string element and returns it
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop removes last string element and returns it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['x', 'y', 'z'];
@@ -557,12 +557,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0032
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0032
-     * @tc.name testArrayPop0032
-     * @tc.desc Verify pop after push null values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push null values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | null)[] = [];
@@ -572,12 +572,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0033
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0033
-     * @tc.name testArrayPop0033
-     * @tc.desc Verify pop on array of optional property objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of optional property objects
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { a?: number }
@@ -588,12 +588,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0034
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0034
-     * @tc.name testArrayPop0034
-     * @tc.desc Verify pop returns last boolean and length decreases
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last boolean and length decreases
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -603,12 +603,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0035
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0035
-     * @tc.name testArrayPop0035
-     * @tc.desc Verify pop removes nested array from array of arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop removes nested array from array of arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[][] = [['a'], ['b', 'c']];
@@ -617,12 +617,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0036
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0036
-     * @tc.name testArrayPop0036
-     * @tc.desc Verify pop on array after multiple push-pop cycles
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after multiple push-pop cycles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [];
@@ -634,12 +634,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0037
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0037
-     * @tc.name testArrayPop0037
-     * @tc.desc Verify pop returns last class instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last class instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -656,12 +656,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0038
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0038
-     * @tc.name testArrayPop0038
-     * @tc.desc Verify pop on array of union types with null
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of union types with null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (string | null)[] = ['a', null];
@@ -670,12 +670,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0039
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0039
-     * @tc.name testArrayPop0039
-     * @tc.desc Verify pop returns function and can invoke it
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns function and can invoke it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type F = (n: number) => number;
@@ -686,12 +686,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0040
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0040
-     * @tc.name testArrayPop0040
-     * @tc.desc Verify pop from array of numbers leaves empty array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop from array of numbers leaves empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [100];
@@ -701,12 +701,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0041
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0041
-     * @tc.name testArrayPop0041
-     * @tc.desc Verify pop after push undefined value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push undefined value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, undefined];
@@ -715,12 +715,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0042
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0042
-     * @tc.name testArrayPop0042
-     * @tc.desc Verify pop returns last string after concat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last string after concat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: string[] = ['a', 'b'];
@@ -730,12 +730,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0043
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0043
-     * @tc.name testArrayPop0043
-     * @tc.desc Verify pop after reverse returns first of reversed
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after reverse returns first of reversed
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -745,12 +745,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0044
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0044
-     * @tc.name testArrayPop0044
-     * @tc.desc Verify pop returns last array of numbers from mixed array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last array of numbers from mixed array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string[])[] = [1, ['a', 'b']];
@@ -759,12 +759,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0045
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0045
-     * @tc.name testArrayPop0045
-     * @tc.desc Verify pop after fill on array of numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after fill on array of numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = new Array(3).fill(9);
@@ -774,12 +774,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0046
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0046
-     * @tc.name testArrayPop0046
-     * @tc.desc Verify pop from array containing class instances and primitives
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop from array containing class instances and primitives
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -796,12 +796,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0047
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0047
-     * @tc.name testArrayPop0047
-     * @tc.desc Verify pop on array of promises
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of promises
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const p1: Promise<number> = Promise.resolve(1);
@@ -811,12 +811,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0048
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0048
-     * @tc.name testArrayPop0048
-     * @tc.desc Verify pop after push multiple string values and splice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push multiple string values and splice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b', 'c', 'd'];
@@ -826,12 +826,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0049
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0049
-     * @tc.name testArrayPop0049
-     * @tc.desc Verify pop on array of tuples
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of tuples
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -840,12 +840,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0050
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0050
-     * @tc.name testArrayPop0050
-     * @tc.desc Verify pop after sort on array of numbers
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after sort on array of numbers
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 1, 3];
@@ -855,12 +855,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0051
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0051
-     * @tc.name testArrayPop0051
-     * @tc.desc Verify pop after push multiple booleans
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push multiple booleans
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: boolean[] = [true, false, true];
@@ -870,12 +870,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0052
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0052
-     * @tc.name testArrayPop0052
-     * @tc.desc Verify pop from empty array returns undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop from empty array returns undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = [];
@@ -884,12 +884,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0053
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0053
-     * @tc.name testArrayPop0053
-     * @tc.desc Verify pop after shift to remove first element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after shift to remove first element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [1, 2, 3];
@@ -899,12 +899,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0054
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0054
-     * @tc.name testArrayPop0054
-     * @tc.desc Verify pop returns last element from array of interfaces
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last element from array of interfaces
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Item { id: number; }
@@ -915,12 +915,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0055
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0055
-     * @tc.name testArrayPop0055
-     * @tc.desc Verify pop after push object literal matching interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push object literal matching interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface User { name: string; }
@@ -932,12 +932,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0056
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0056
-     * @tc.name testArrayPop0056
-     * @tc.desc Verify pop on nested array three levels deep
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on nested array three levels deep
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][][] = [[[1], [2]], [[3], [4]]];
@@ -946,12 +946,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0057
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0057
-     * @tc.name testArrayPop0057
-     * @tc.desc Verify pop returns last Date object
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last Date object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const d1: Date = new Date(2020, 1, 1);
@@ -962,12 +962,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0058
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0058
-     * @tc.name testArrayPop0058
-     * @tc.desc Verify pop on array after unshift adds at start
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after unshift adds at start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['b'];
@@ -977,12 +977,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0059
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0059
-     * @tc.name testArrayPop0059
-     * @tc.desc Verify pop returns last element from mixed tuple array
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last element from mixed tuple array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -991,12 +991,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0060
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0060
-     * @tc.name testArrayPop0060
-     * @tc.desc Verify pop after map transform still returns correct last element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after map transform still returns correct last element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1006,12 +1006,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0061
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0061
-     * @tc.name testArrayPop0061
-     * @tc.desc Verify pop returns last string after slice used
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last string after slice used
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: string[] = ['x', 'y', 'z'];
@@ -1021,12 +1021,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0062
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0062
-     * @tc.name testArrayPop0062
-     * @tc.desc Verify pop on array of functions returns last function
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of functions returns last function
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type F = (x: number) => number;
@@ -1038,12 +1038,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0063
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0063
-     * @tc.name testArrayPop0063
-     * @tc.desc Verify pop on array of mixed numbers and class instances returns last
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of mixed numbers and class instances returns last
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1060,12 +1060,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0064
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0064
-     * @tc.name testArrayPop0064
-     * @tc.desc Verify pop after push object with optional fields
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push object with optional fields
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt {
@@ -1079,12 +1079,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0065
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0065
-     * @tc.name testArrayPop0065
-     * @tc.desc Verify pop after push multiple nested arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push multiple nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1], [2]];
@@ -1093,12 +1093,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0066
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0066
-     * @tc.name testArrayPop0066
-     * @tc.desc Verify pop on array with boolean null union type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array with boolean null union type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0066', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (boolean | null)[] = [true, null];
@@ -1107,12 +1107,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0067
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0067
-     * @tc.name testArrayPop0067
-     * @tc.desc Verify pop on array of Dates after sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of Dates after sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0067', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: Date[] = [new Date(2020, 1, 1), new Date(2019, 1, 1)];
@@ -1122,12 +1122,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0068
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0068
-     * @tc.name testArrayPop0068
-     * @tc.desc Verify pop after push Promise resolves to number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push Promise resolves to number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0068', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const p: Promise<number> = Promise.resolve(10);
@@ -1137,12 +1137,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0069
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0069
-     * @tc.name testArrayPop0069
-     * @tc.desc Verify pop on array after copyWithin operation
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after copyWithin operation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0069', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -1152,12 +1152,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0070
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0070
-     * @tc.name testArrayPop0070
-     * @tc.desc Verify pop after push and flat array returns correct value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after push and flat array returns correct value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0070', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[][] = [[1, 2], [3, 4]];
@@ -1168,12 +1168,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0071
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0071
-     * @tc.name testArrayPop0071
-     * @tc.desc Verify pop after splice leaves expected last element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after splice leaves expected last element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0071', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -1183,12 +1183,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0072
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0072
-     * @tc.name testArrayPop0072
-     * @tc.desc Verify pop on array containing undefined values
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array containing undefined values
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0072', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1, undefined, 3];
@@ -1197,12 +1197,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0073
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0073
-     * @tc.name testArrayPop0073
-     * @tc.desc Verify pop returns last RegExp instance
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last RegExp instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0073', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: RegExp[] = [/a/, /b/];
@@ -1211,12 +1211,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0074
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0074
-     * @tc.name testArrayPop0074
-     * @tc.desc Verify pop returns last element from frozen inner arrays
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop returns last element from frozen inner arrays
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArrayPop0074', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const inner:number[]=Object.freeze([1,2]);
@@ -1226,12 +1226,12 @@ export default function ArrayPopTest() {
     // });
 
     /**
+     * @tc.name   testArrayPop0075
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0075
-     * @tc.name testArrayPop0075
-     * @tc.desc Verify pop on array of symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of symbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArrayPop0075', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const s1:unique symbol=Symbol('a');
@@ -1242,12 +1242,12 @@ export default function ArrayPopTest() {
     // });
 
     /**
+     * @tc.name   testArrayPop0076
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0076
-     * @tc.name testArrayPop0076
-     * @tc.desc Verify pop on array after reverse order
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after reverse order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0076', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1257,12 +1257,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0077
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0077
-     * @tc.name testArrayPop0077
-     * @tc.desc Verify pop on array of nested objects with optional property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested objects with optional property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0077', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: number; }
@@ -1273,12 +1273,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0078
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0078
-     * @tc.name testArrayPop0078
-     * @tc.desc Verify pop after concat returns expected last element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop after concat returns expected last element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0078', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2];
@@ -1288,12 +1288,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0079
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0079
-     * @tc.name testArrayPop0079
-     * @tc.desc Verify pop on array containing nulls
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array containing nulls
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0079', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (string | null)[] = ['x', null];
@@ -1302,12 +1302,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0080
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0080
-     * @tc.name testArrayPop0080
-     * @tc.desc Verify pop on array of class instances sorted by property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of class instances sorted by property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0080', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1325,12 +1325,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0081
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0081
-     * @tc.name testArrayPop0081
-     * @tc.desc Verify pop on array of tuples after push new tuple
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of tuples after push new tuple
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0081', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, string][] = [[1, 'a']];
@@ -1340,12 +1340,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0082
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0082
-     * @tc.name testArrayPop0082
-     * @tc.desc Verify pop on array of booleans after filter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of booleans after filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0082', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: boolean[] = [true, false, true];
@@ -1355,12 +1355,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0083
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0083
-     * @tc.name testArrayPop0083
-     * @tc.desc Verify pop on array of numbers after fill modifies elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of numbers after fill modifies elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0083', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [0, 0, 0];
@@ -1370,12 +1370,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0084
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0084
-     * @tc.name testArrayPop0084
-     * @tc.desc Verify pop on array of mixed string and number union type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of mixed string and number union type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0084', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (string | number)[] = [1, 'a', 2];
@@ -1384,12 +1384,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0085
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0085
-     * @tc.name testArrayPop0085
-     * @tc.desc Verify pop on array of functions returns correct behavior
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of functions returns correct behavior
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0085', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = (n: number) => number;
@@ -1401,12 +1401,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0086
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0086
-     * @tc.name testArrayPop0086
-     * @tc.desc Verify pop on array of sets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of sets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0086', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const s1: Set<number> = new Set([1]);
@@ -1417,12 +1417,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0087
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0087
-     * @tc.name testArrayPop0087
-     * @tc.desc Verify pop on array after push undefined explicitly
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after push undefined explicitly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0087', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [1];
@@ -1432,12 +1432,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0088
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0088
-     * @tc.name testArrayPop0088
-     * @tc.desc Verify pop on array of Maps returns last Map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of Maps returns last Map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0088', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const m1: Map<string, number> = new Map([['a', 1]]);
@@ -1448,12 +1448,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0089
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0089
-     * @tc.name testArrayPop0089
-     * @tc.desc Verify pop on array after push empty object matches interface
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after push empty object matches interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0089', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { name?: string }
@@ -1464,12 +1464,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0090
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0090
-     * @tc.name testArrayPop0090
-     * @tc.desc Verify pop on array of nested tuples returns correct last
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested tuples returns correct last
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, number][] = [[1, 2], [3, 4]];
@@ -1478,12 +1478,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0091
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0091
-     * @tc.name testArrayPop0091
-     * @tc.desc Verify pop on array of objects after map transform
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of objects after map transform
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { x: number; }
@@ -1495,12 +1495,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0092
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0092
-     * @tc.name testArrayPop0092
-     * @tc.desc Verify pop on array of booleans after fill and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of booleans after fill and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: boolean[] = [false, false, false];
@@ -1511,12 +1511,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0093
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0093
-     * @tc.name testArrayPop0093
-     * @tc.desc Verify pop on array of numbers after reverse and push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of numbers after reverse and push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0093', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1527,12 +1527,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0094
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0094
-     * @tc.name testArrayPop0094
-     * @tc.desc Verify pop on array of class instances after filter
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of class instances after filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0094', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1550,12 +1550,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0095
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0095
-     * @tc.name testArrayPop0095
-     * @tc.desc Verify pop on array of strings after push multiple elements
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of strings after push multiple elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0095', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: string[] = ['a', 'b'];
@@ -1565,12 +1565,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0096
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0096
-     * @tc.name testArrayPop0096
-     * @tc.desc Verify pop on array of optional objects after splice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of optional objects after splice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0096', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: number; }
@@ -1582,12 +1582,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0097
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0097
-     * @tc.name testArrayPop0097
-     * @tc.desc Verify pop on array of nested arrays after flatMap
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested arrays after flatMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0097', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[][] = [[1, 2], [3, 4]];
@@ -1598,12 +1598,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0098
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0098
-     * @tc.name testArrayPop0098
-     * @tc.desc Verify pop on array of tuples after map modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of tuples after map modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0098', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -1617,12 +1617,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0099
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0099
-     * @tc.name testArrayPop0099
-     * @tc.desc Verify pop on array of numbers after unshift and pop sequence
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of numbers after unshift and pop sequence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2];
@@ -1632,12 +1632,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0100
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0100
-     * @tc.name testArrayPop0100
-     * @tc.desc Verify pop on array of mixed number and string union type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of mixed number and string union type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | string)[] = [1, 'a', 2];
@@ -1646,12 +1646,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0101
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0101
-     * @tc.name testArrayPop0101
-     * @tc.desc Verify pop on array after slice and push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after slice and push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1662,12 +1662,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0102
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0102
-     * @tc.name testArrayPop0102
-     * @tc.desc Verify pop on array of class instances with optional property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of class instances with optional property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArrayPop0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   class C { constructor(public val?:number){} }
@@ -1677,12 +1677,12 @@ export default function ArrayPopTest() {
     // });
 
     /**
+     * @tc.name   testArrayPop0103
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0103
-     * @tc.name testArrayPop0103
-     * @tc.desc Verify pop on array of nested objects after JSON parse/stringify
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested objects after JSON parse/stringify
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { x: number; }
@@ -1695,12 +1695,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0104
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0104
-     * @tc.name testArrayPop0104
-     * @tc.desc Verify pop on array of functions returning string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of functions returning string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0104', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type F = () => string;
@@ -1712,12 +1712,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0105
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0105
-     * @tc.name testArrayPop0105
-     * @tc.desc Verify pop on array of arrays after unshift and push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of arrays after unshift and push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0105', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[][] = [[1], [2]];
@@ -1728,12 +1728,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0106
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0106
-     * @tc.name testArrayPop0106
-     * @tc.desc Verify pop on array after reverse and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after reverse and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0106', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -1744,12 +1744,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0107
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0107
-     * @tc.name testArrayPop0107
-     * @tc.desc Verify pop on array of nested tuples after map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested tuples after map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0107', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: [number, string][] = [[1, 'a'], [2, 'b']];
@@ -1763,12 +1763,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0108
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0108
-     * @tc.name testArrayPop0108
-     * @tc.desc Verify pop on array of numbers after multiple operations
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of numbers after multiple operations
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3];
@@ -1780,12 +1780,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0109
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0109
-     * @tc.name testArrayPop0109
-     * @tc.desc Verify pop on array of optional strings
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of optional strings
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0109', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: string }
@@ -1796,12 +1796,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0110
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0110
-     * @tc.name testArrayPop0110
-     * @tc.desc Verify pop on array of nested arrays with push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested arrays with push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1], [2], [3]];
@@ -1811,12 +1811,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0111
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0111
-     * @tc.name testArrayPop0111
-     * @tc.desc Verify pop on array of numbers after fill and slice
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of numbers after fill and slice
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0111', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [0, 0, 0, 0];
@@ -1827,12 +1827,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0112
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0112
-     * @tc.name testArrayPop0112
-     * @tc.desc Verify pop on array of optional numbers after push undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of optional numbers after push undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0112', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Opt { val?: number }
@@ -1844,12 +1844,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0113
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0113
-     * @tc.name testArrayPop0113
-     * @tc.desc Verify pop on array of tuples after push and map
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of tuples after push and map
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0113', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: [number, string][] = [[1, 'a']];
@@ -1864,12 +1864,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0114
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0114
-     * @tc.name testArrayPop0114
-     * @tc.desc Verify pop on array of boolean values after filter false
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of boolean values after filter false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0114', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: boolean[] = [true, false, true];
@@ -1879,12 +1879,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0115
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0115
-     * @tc.name testArrayPop0115
-     * @tc.desc Verify pop on array of class instances after sort
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of class instances after sort
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0115', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -1902,12 +1902,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0116
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0116
-     * @tc.name testArrayPop0116
-     * @tc.desc Verify pop on array of strings after concat and pop
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of strings after concat and pop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0116', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: string[] = ['a', 'b'];
@@ -1917,12 +1917,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0117
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0117
-     * @tc.name testArrayPop0117
-     * @tc.desc Verify pop on array of nested objects with optional props
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested objects with optional props
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0117', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Obj { val?: string }
@@ -1933,12 +1933,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0118
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0118
-     * @tc.name testArrayPop0118
-     * @tc.desc Verify pop on array of arrays after flatMap modification
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of arrays after flatMap modification
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0118', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1, 2], [3, 4]];
@@ -1955,12 +1955,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0119
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0119
-     * @tc.name testArrayPop0119
-     * @tc.desc Verify pop on array of unique symbols
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of unique symbols
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testArrayPop0119', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const s1:unique symbol=Symbol('s1');
@@ -1971,12 +1971,12 @@ export default function ArrayPopTest() {
     // });
 
     /**
+     * @tc.name   testArrayPop0120
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0120
-     * @tc.name testArrayPop0120
-     * @tc.desc Verify pop on array of RegExp after push new pattern
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of RegExp after push new pattern
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: RegExp[] = [/a/, /b/];
@@ -1986,12 +1986,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0121
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0121
-     * @tc.name testArrayPop0121
-     * @tc.desc Verify pop on array of functions returning number
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of functions returning number
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0121', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       type Fn = (x: number) => number;
@@ -2007,12 +2007,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0122
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0122
-     * @tc.name testArrayPop0122
-     * @tc.desc Verify pop on array of class instances after push optional property
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of class instances after push optional property
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0122', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       class C {
@@ -2030,12 +2030,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0123
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0123
-     * @tc.name testArrayPop0123
-     * @tc.desc Verify pop on array of Maps
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of Maps
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0123', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const m1: Map<string, number> = new Map([['a', 1]]);
@@ -2046,12 +2046,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0124
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0124
-     * @tc.name testArrayPop0124
-     * @tc.desc Verify pop on array of Sets
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of Sets
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0124', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const s1: Set<number> = new Set([1]);
@@ -2062,12 +2062,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0125
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0125
-     * @tc.name testArrayPop0125
-     * @tc.desc Verify pop on array after multiple push and unshift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after multiple push and unshift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0125', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2];
@@ -2078,12 +2078,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0126
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0126
-     * @tc.name testArrayPop0126
-     * @tc.desc Verify pop on array of nested arrays with push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of nested arrays with push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0126', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[][] = [[1], [2], [3]];
@@ -2093,12 +2093,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0127
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0127
-     * @tc.name testArrayPop0127
-     * @tc.desc Verify pop on array of numbers after filter and push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of numbers after filter and push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0127', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [1, 2, 3, 4];
@@ -2109,12 +2109,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0128
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0128
-     * @tc.name testArrayPop0128
-     * @tc.desc Verify pop on array of objects with nested properties
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of objects with nested properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0128', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       interface Inner { x: number };
@@ -2126,12 +2126,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0129
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0129
-     * @tc.name testArrayPop0129
-     * @tc.desc Verify pop on array after push nested tuples
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array after push nested tuples
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0129', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: [number, string][][] = [[[1, 'a']], [[2, 'b']]];
@@ -2141,12 +2141,12 @@ export default function ArrayPopTest() {
     });
 
     /**
+     * @tc.name   testArrayPop0130
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Pop_0130
-     * @tc.name testArrayPop0130
-     * @tc.desc Verify pop on array of numbers after fill, reverse, and push
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Verify pop on array of numbers after fill, reverse, and push
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayPop0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr: number[] = [0, 0, 0];

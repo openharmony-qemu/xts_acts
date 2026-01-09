@@ -59,13 +59,13 @@ export default function httpAuthHandlerEnhanced() {
     })
 
     /**
-    * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONFIRM_FALSE_0100
-    * @tc.name   testHttpAuthHandlerConfirmFalse
-    * @tc.desc   test HttpAuthHandler confirm false
-    * @tc.size   MediumTest
-    * @tc.type   Function
-    * @tc.level  Level 0
-    */
+     * @tc.name   testHttpAuthHandlerConfirmFalse
+     * @tc.number SUB_WEB_HTTPAUTHHANDLER_CONFIRM_FALSE_0100
+     * @tc.desc   test HttpAuthHandler confirm false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testHttpAuthHandlerConfirmFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitHttpAuthHandlerConfirmFalse", 121)
       Utils.registerBaseEvent("testHttpAuthHandlerConfirmFalse", false, 2025102107,

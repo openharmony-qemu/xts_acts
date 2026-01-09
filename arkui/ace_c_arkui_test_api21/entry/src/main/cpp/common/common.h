@@ -124,6 +124,7 @@ namespace ArkUICapiTest {
 #define ON_DRAW_EVENT_ID 6013
 #define ON_HOVER_EVENT_ID 6014
 #define ON_AXIS_EVENT_ID 6015
+#define LIST_ON_WILL_SCROLL_EVENT_ID 6203
 #define ON_CUSTOM_EVENT_1_ID 9001
 #define ON_CUSTOM_EVENT_2_ID 9002
 #define ON_CUSTOM_EVENT_3_ID 9003
@@ -206,6 +207,14 @@ const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
 #define ASSERT_OBJ(result, expect)                                                                                     \
     do {                                                                                                               \
         if ((result) != (expect)) {                                                                                    \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
+
+#define ASSERT_OBJ_NE(result, expect)                                                                                     \
+    do {                                                                                                               \
+        if ((result) == (expect)) {                                                                                    \
             napi_value errorResult = nullptr;                                                                          \
             return errorResult;                                                                                        \
         }                                                                                                              \

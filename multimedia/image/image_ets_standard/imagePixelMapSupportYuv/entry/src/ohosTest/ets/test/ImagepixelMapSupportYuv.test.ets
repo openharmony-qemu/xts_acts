@@ -371,9 +371,9 @@ export default function imagepixelMapSupportYuv() {
       }
       newImageInfo = pixelMap.getImageInfoSync()
       hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}: compareImageInfo${JSON.stringify(newImageInfo)}`)
-      const widthCheck = oldMapImageInfo.size.width * scaleX === newImageInfo.size.width
-      const heightCheck = oldMapImageInfo.size.height * scaleY === newImageInfo.size.height
-      expect(widthCheck && heightCheck)
+      const widthCheck = Math.round(oldMapImageInfo.size.width * scaleX) === newImageInfo.size.width
+      const heightCheck = Math.round(oldMapImageInfo.size.height * scaleY) === newImageInfo.size.height
+      expect(widthCheck && heightCheck).assertTrue();
       done()
     }
 
@@ -684,14 +684,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0100
-     * @tc.name      : readPixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0100"
@@ -714,14 +712,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0200
-     * @tc.name      : readPixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0200"
@@ -744,14 +740,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0300
-     * @tc.name      : readPixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0300"
@@ -774,14 +768,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0400
-     * @tc.name      : readPixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0400"
@@ -804,14 +796,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0500
-     * @tc.name      : readPixelsSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0500
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0500', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELS_0500"
@@ -834,14 +824,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0100
-     * @tc.name      : writePixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0100"
@@ -864,14 +852,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0200
-     * @tc.name      : writePixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0200"
@@ -894,14 +880,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0300
-     * @tc.name      : writePixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0300"
@@ -924,14 +908,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0400
-     * @tc.name      : writePixelsSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEPIXELS_0400"
@@ -955,14 +937,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0100
-     * @tc.name      : writePixels
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0100"
@@ -979,14 +959,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0200
-     * @tc.name      : writePixels
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0200"
@@ -1003,14 +981,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0300
-     * @tc.name      : writePixels
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0300"
@@ -1030,14 +1006,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0400
-     * @tc.name      : writePixels
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0400"
@@ -1058,14 +1032,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0500
-     * @tc.name      : writePixels
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0500
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0500', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ISEDITABLE_0500"
@@ -1085,14 +1057,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0100
-     * @tc.name      : getImageInfo -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0100"
@@ -1107,14 +1077,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0200
-     * @tc.name      : getImageInfo -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0200"
@@ -1129,14 +1097,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0300
-     * @tc.name      : getImageInfoSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_GETIMAGEINFO_0300"
@@ -1151,14 +1117,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0100
-     * @tc.name      : applyColorSpace -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0100"
@@ -1175,14 +1139,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0200
-     * @tc.name      : applyColorSpace -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0200"
@@ -1199,14 +1161,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0300
-     * @tc.name      : applyColorSpace -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0300"
@@ -1223,14 +1183,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0400
-     * @tc.name      : applyColorSpace -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_APPLYCOLORSPACE_0400"
@@ -1247,14 +1205,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0100
-     * @tc.name      : scale -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.scale
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0100"
@@ -1269,14 +1225,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0200
-     * @tc.name      : scale -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.scale
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0200"
@@ -1291,14 +1245,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0300
-     * @tc.name      : scaleSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.scale
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_SCALE_0300"
@@ -1313,14 +1265,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0100
-     * @tc.name      : flip -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.flip
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0100"
@@ -1337,14 +1287,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0200
-     * @tc.name      : flip -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.flip
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0200"
@@ -1361,14 +1309,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0300
-     * @tc.name      : flipSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.flip
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_FLIP_0300"
@@ -1386,14 +1332,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0100
-     * @tc.name      : translate -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.translate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0100"
@@ -1410,14 +1354,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0200
-     * @tc.name      : translate -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.translate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0200"
@@ -1434,14 +1376,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0300
-     * @tc.name      : translateSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.translate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_TRANSLATE_0300"
@@ -1458,14 +1398,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0100
-     * @tc.name      : rotate -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.rotate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0100"
@@ -1480,14 +1418,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0200
-     * @tc.name      : rotate -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.rotate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0200"
@@ -1503,14 +1439,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0300
-     * @tc.name      : rotateSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.rotate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_ROTATE_0300"
@@ -1525,14 +1459,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_CROP_0100
-     * @tc.name      : crop -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_CROP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_CROP_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_CROP_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_CROP_0100"
@@ -1549,14 +1481,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_CROP_0200
-     * @tc.name      : crop -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_CROP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_CROP_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_CROP_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV12_CROP_0200'
@@ -1572,14 +1502,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_CROP_0300
-     * @tc.name      : crop -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_CROP_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_CROP_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_CROP_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV12_CROP_0300'
@@ -1595,14 +1523,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_CROP_0400
-     * @tc.name      : crop -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_CROP_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_CROP_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_CROP_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV12_CROP_0400'
@@ -1618,14 +1544,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_CROP_0500
-     * @tc.name      : crop -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_CROP_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_CROP_0500
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_CROP_0500', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV12_CROP_0500'
@@ -1641,14 +1565,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_CROP_0600
-     * @tc.name      : crop -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_CROP_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_CROP_0600
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_CROP_0600', Level.LEVEL0, async (done:Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV12_CROP_0600'
@@ -1664,14 +1586,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_CROP_0700
-     * @tc.name      : cropSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_CROP_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_CROP_0700
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_CROP_0700', Level.LEVEL0, async (done: Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV12_CROP_0700'
@@ -1687,13 +1607,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0100
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packing
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0100
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0100', Level.LEVEL0,  async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0100"
@@ -1710,13 +1629,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0200
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packing
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0200
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0200', Level.LEVEL0,  async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_PACKING_0200"
@@ -1734,13 +1652,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0100
-     * @tc.name      : packToFile -promise
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packToFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0100
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0100', Level.LEVEL0,  async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0100"
@@ -1757,13 +1674,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0200
-     * @tc.name      : packToFile  -callback
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packToFile
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0200
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0200', Level.LEVEL0,  async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_PACKTOFILE_0200"
@@ -1782,14 +1698,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_COLORSPACE_0100
-     * @tc.name      : setColorSpace -sync
-     * @tc.desc      : 1.setColorSpace
-     *                 2.getColorSpace
-     *                 3.getColorSpaceName
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_COLORSPACE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_COLORSPACE_0100
+     * @tc.desc   1.setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_COLORSPACE_0100', Level.LEVEL0,  async (done:Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV12_COLORSPACE_0100'
@@ -1806,16 +1720,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_MARSHALLING_0100
-     * @tc.name      : marshalling
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 2.MySequence
-     *                 3.rpc.MessageSequence.writeParcelable
-     *                 4.rpc.MessageSequence.readParcelable
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_MARSHALLING_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_MARSHALLING_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_MARSHALLING_0100', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_MARSHALLING_0100"
@@ -1830,14 +1740,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0100
-     * @tc.name      : release -promise
-     * @tc.desc      : 1.createPixelMap
-     *                 2.pixelMap.release
-     *                 3.pixelMap.getImageInfoSync()
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0100
+     * @tc.desc   1.createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0100', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0100"
@@ -1854,14 +1762,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0200
-     * @tc.name      : release -callback
-     * @tc.desc      : 1.createPixelMap
-     *                 2.pixelMap.release
-     *                 3.pixelMap.getImageInfoSync()
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0200
+     * @tc.desc   1.createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0200', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV12_RELEASE_0200"
@@ -1878,14 +1784,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0100
-     * @tc.name      : readPixelsToBuffer -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixelsToBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0100"
@@ -1903,14 +1807,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0200
-     * @tc.name      : readPixelsToBuffer -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixelsToBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0200"
@@ -1928,14 +1830,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0300
-     * @tc.name      : readPixelsToBufferSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixelsToBufferSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_READPIXELSTOBUFFER_0300"
@@ -1953,14 +1853,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0100
-     * @tc.name      : writeBufferToPixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writeBufferToPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0100"
@@ -1977,14 +1875,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0200
-     * @tc.name      : writeBufferToPixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixelsToBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0200"
@@ -2001,14 +1897,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0300
-     * @tc.name      : writeBufferToPixelsSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixelsToBufferSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_WRITEBUFFERTOPIXELS_0300"
@@ -2025,14 +1919,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0100
-     * @tc.name      : writePixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0100"
@@ -2055,14 +1947,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0200
-     * @tc.name      : writePixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0200"
@@ -2085,14 +1975,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0300
-     * @tc.name      : writePixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0300"
@@ -2115,14 +2003,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0400
-     * @tc.name      : writePixelsSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEPIXELS_0400"
@@ -2145,14 +2031,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0100
-     * @tc.name      : readPixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0100"
@@ -2175,14 +2059,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0200
-     * @tc.name      : readPixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0200"
@@ -2205,14 +2087,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0300
-     * @tc.name      : readPixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0300"
@@ -2235,14 +2115,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0400
-     * @tc.name      : readPixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0400"
@@ -2265,14 +2143,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0500
-     * @tc.name      : readPixelsSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0500
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0500', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELS_0500"
@@ -2295,14 +2171,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0100
-     * @tc.name      : getImageInfo -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0100"
@@ -2317,14 +2191,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0200
-     * @tc.name      : getImageInfo -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0200"
@@ -2339,14 +2211,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0300
-     * @tc.name      : getImageInfoSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_GETIMAGEINFO_0300"
@@ -2361,14 +2231,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0100
-     * @tc.name      : applyColorSpace -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0100"
@@ -2386,14 +2254,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0200
-     * @tc.name      : applyColorSpace -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0200"
@@ -2410,14 +2276,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0300
-     * @tc.name      : applyColorSpace -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0300"
@@ -2434,14 +2298,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0400
-     * @tc.name      : applyColorSpace -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.applyColorSpace
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_APPLYCOLORSPACE_0400"
@@ -2458,14 +2320,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0100
-     * @tc.name      : scale -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.scale
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0100"
@@ -2480,14 +2340,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0200
-     * @tc.name      : scale -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.scale
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0200', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0200"
@@ -2502,14 +2360,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0300
-     * @tc.name      : scaleSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.scale
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_SCALE_0300"
@@ -2524,14 +2380,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0100
-     * @tc.name      : flip -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.flip
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0100"
@@ -2548,14 +2402,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0200
-     * @tc.name      : flip -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.flip
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0200', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0200"
@@ -2573,14 +2425,12 @@ export default function imagepixelMapSupportYuv() {
 
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0300
-     * @tc.name      : flipSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.flip
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0300', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_FLIP_0300"
@@ -2597,14 +2447,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0100
-     * @tc.name      : translate -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.translate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0100"
@@ -2621,14 +2469,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0200
-     * @tc.name      : translate -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.translate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0200', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0200"
@@ -2645,14 +2491,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0300
-     * @tc.name      : translateSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.translate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_TRANSLATE_0300"
@@ -2669,14 +2513,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0100
-     * @tc.name      : rotate -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.rotate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0100', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0100"
@@ -2691,14 +2533,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0200
-     * @tc.name      : rotate -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.rotate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0200', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0200"
@@ -2713,14 +2553,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0300
-     * @tc.name      : rotateSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.rotate
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0300', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_ROTATE_0300"
@@ -2735,14 +2573,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_CROP_0100
-     * @tc.name      : crop -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_CROP_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_CROP_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_CROP_0100', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_CROP_0100"
@@ -2758,14 +2594,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_CROP_0200
-     * @tc.name      : crop -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_CROP_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_CROP_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_CROP_0200', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_CROP_0200"
@@ -2781,14 +2615,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_CROP_0300
-     * @tc.name      : crop -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_CROP_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_CROP_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_CROP_0300', Level.LEVEL0, async (done: Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_CROP_0300"
@@ -2803,14 +2635,12 @@ export default function imagepixelMapSupportYuv() {
       }
     })
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_CROP_0400
-     * @tc.name      : crop -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_CROP_0400
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_CROP_0400
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_CROP_0400', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_CROP_0400"
@@ -2826,14 +2656,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_CROP_0500
-     * @tc.name      : crop -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_CROP_0500
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_CROP_0500
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_CROP_0500', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_CROP_0500"
@@ -2849,14 +2677,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_CROP_0600
-     * @tc.name      : crop -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_CROP_0600
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_CROP_0600
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_CROP_0600', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_CROP_0600"
@@ -2872,14 +2698,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_CROP_0700
-     * @tc.name      : cropSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.crop
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_CROP_0700
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_CROP_0700
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_CROP_0700', Level.LEVEL0, async (done: Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_CROP_0700"
@@ -2895,13 +2719,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0100
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packing
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0100
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0100', Level.LEVEL0,  async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0100"
@@ -2918,13 +2741,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0200
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packing
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0200
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0200', Level.LEVEL0,  async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKING_0200"
@@ -2941,13 +2763,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0100
-     * @tc.name      : packing -promise
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packing
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0100
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0100', Level.LEVEL0,  async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0100"
@@ -2964,13 +2785,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0200
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.modifyImageProperty
-     *                 2.packing
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0200
+     * @tc.desc   1.modifyImageProperty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0200', Level.LEVEL0,  async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_PACKTOFILE_0200"
@@ -2987,14 +2807,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_COLORSPACE_0100
-     * @tc.name      : packing -callback
-     * @tc.desc      : 1.setColorSpace
-     *                 2.getColorSpace
-     *                 3.getColorSpaceName
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_COLORSPACE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_COLORSPACE_0100
+     * @tc.desc   1.setColorSpace
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_COLORSPACE_0100', Level.LEVEL0,  async (done:Function) => {
       const testTag = 'SUB_MULTIMEDIA_IMAGE_NV21_COLORSPACE_0100'
@@ -3011,16 +2829,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_MARSHALLING_0100
-     * @tc.name      : marshalling
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 2.MySequence
-     *                 3.rpc.MessageSequence.writeParcelable
-     *                 4.rpc.MessageSequence.readParcelable
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_MARSHALLING_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_MARSHALLING_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_MARSHALLING_0100', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_MARSHALLING_0100"
@@ -3035,13 +2849,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0100
-     * @tc.name      : release -promise
-     * @tc.desc      : 1.pixelMap.release
-     *                 2.pixelMap.getImageInfoSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0100
+     * @tc.desc   1.pixelMap.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0100', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0100"
@@ -3058,13 +2871,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0200
-     * @tc.name      : release - callback
-     * @tc.desc      : 1.pixelMap.release
-     *                 2.pixelMap.getImageInfoSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0200
+     * @tc.desc   1.pixelMap.release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0200', Level.LEVEL0, async (done:Function) => {
       const testTag ="SUB_MULTIMEDIA_IMAGE_NV21_RELEASE_0200"
@@ -3081,14 +2893,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0100
-     * @tc.name      : readPixelsToBuffer -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixelsToBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0100"
@@ -3106,14 +2916,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0200
-     * @tc.name      : readPixelsToBuffer -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixelsToBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0200"
@@ -3131,14 +2939,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0300
-     * @tc.name      : readPixelsToBufferSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.readPixelsToBufferSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_READPIXELSTOBUFFER_0300"
@@ -3156,14 +2962,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0100
-     * @tc.name      : writeBufferToPixels -promise
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writeBufferToPixels
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0100"
@@ -3180,14 +2984,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0200
-     * @tc.name      : writeBufferToPixels -callback
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixelsToBuffer
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0200"
@@ -3204,14 +3006,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0300
-     * @tc.name      : writeBufferToPixelsSync
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.writePixelsToBufferSync
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_WRITEBUFFERTOPIXELS_0300"
@@ -3228,14 +3028,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0100
-     * @tc.name      : sourceDensity_fitDensity
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0100"
@@ -3252,14 +3050,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0200
-     * @tc.name      : sourceDensity_fitDensity
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0200"
@@ -3276,14 +3072,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0300
-     * @tc.name      : sourceDensity_fitDensity
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV21_DENSITYOPTION_0300"
@@ -3300,14 +3094,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0100
-     * @tc.name      : sourceDensity_fitDensity
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0100
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0100', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0100"
@@ -3324,14 +3116,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0200
-     * @tc.name      : sourceDensity_fitDensity
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0200
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0200', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0200"
@@ -3348,14 +3138,12 @@ export default function imagepixelMapSupportYuv() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0300
-     * @tc.name      : sourceDensity_fitDensity
-     * @tc.desc      : 1.createImageSource
-     *                 2.createPixelMap
-     *                 3.PixelMap.getImageInfo
-     * @tc.size      : MediumTest
-     * @tc.type      : Functional
-     * @tc.level     : Level 3
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0300
+     * @tc.desc   1.createImageSource
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0300', Level.LEVEL0, async (done:Function) => {
       const testTag = "SUB_MULTIMEDIA_IMAGE_NV12_DENSITYOPTION_0300"

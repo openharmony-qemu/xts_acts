@@ -54,7 +54,7 @@ export default function ReflectTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100);
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -70,12 +70,12 @@ export default function ReflectTest() {
     })
 
     /**
+     * @tc.name   ReflectTest0100
      * @tc.number SUB_Reflect_TEST_0100
-     * @tc.name ReflectTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0100';
@@ -90,12 +90,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest0200
      * @tc.number SUB_Reflect_TEST_0200
-     * @tc.name ReflectTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0200';
@@ -109,12 +109,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest0300
      * @tc.number SUB_Reflect_TEST_0300
-     * @tc.name ReflectTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0300';
@@ -128,12 +128,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest0400
      * @tc.number SUB_Reflect_TEST_0400
-     * @tc.name ReflectTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0300'
@@ -148,12 +148,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest0500
      * @tc.number SUB_Reflect_TEST_0500
-     * @tc.name ReflectTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0500';
@@ -166,12 +166,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest0600
      * @tc.number SUB_Reflect_TEST_0600
-     * @tc.name ReflectTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0600';
@@ -185,12 +185,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest0700
      * @tc.number SUB_Reflect_TEST_0700
-     * @tc.name ReflectTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0700';
@@ -204,12 +204,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest0800
      * @tc.number SUB_Reflect_TEST_0800
-     * @tc.name ReflectTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0800';
@@ -223,12 +223,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest0900
      * @tc.number SUB_Reflect_TEST_0900
-     * @tc.name ReflectTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest0900';
@@ -241,12 +241,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest1000
      * @tc.number SUB_Reflect_TEST_1000
-     * @tc.name ReflectTest1000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1000';
@@ -260,12 +260,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest1100
      * @tc.number SUB_Reflect_TEST_1100
-     * @tc.name ReflectTest1100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1100';
@@ -278,12 +278,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest1200
      * @tc.number SUB_Reflect_TEST_1200
-     * @tc.name ReflectTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1200';
@@ -296,12 +296,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest1300
      * @tc.number SUB_Reflect_TEST_1300
-     * @tc.name ReflectTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1300';
@@ -315,12 +315,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest1400
      * @tc.number SUB_Reflect_TEST_1400
-     * @tc.name ReflectTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1400';
@@ -333,12 +333,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest1500
      * @tc.number SUB_Reflect_TEST_1500
-     * @tc.name ReflectTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1500';
@@ -352,12 +352,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest1600
      * @tc.number SUB_Reflect_TEST_1600
-     * @tc.name ReflectTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1600';
@@ -371,12 +371,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest1700
      * @tc.number SUB_Reflect_TEST_1700
-     * @tc.name ReflectTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1700';
@@ -391,12 +391,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest1800
      * @tc.number SUB_Reflect_TEST_1800
-     * @tc.name ReflectTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1800';
@@ -409,12 +409,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest1900
      * @tc.number SUB_Reflect_TEST_1900
-     * @tc.name ReflectTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest1900';
@@ -427,12 +427,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest2000
      * @tc.number SUB_Reflect_TEST_2000
-     * @tc.name ReflectTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2000';
@@ -446,12 +446,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest2100
      * @tc.number SUB_Reflect_TEST_2100
-     * @tc.name ReflectTest2100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2100';
@@ -465,12 +465,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest2200
      * @tc.number SUB_Reflect_TEST_2200
-     * @tc.name ReflectTest2200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2200';
@@ -484,12 +484,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest2300
      * @tc.number SUB_Reflect_TEST_2300
-     * @tc.name ReflectTest2300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2300';
@@ -502,12 +502,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest2400
      * @tc.number SUB_Reflect_TEST_2400
-     * @tc.name ReflectTest2400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2400';
@@ -521,12 +521,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest2500
      * @tc.number SUB_Reflect_TEST_2500
-     * @tc.name ReflectTest2500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2500';
@@ -540,12 +540,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest2600
      * @tc.number SUB_Reflect_TEST_2600
-     * @tc.name ReflectTest2600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2600';
@@ -559,12 +559,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest2700
      * @tc.number SUB_Reflect_TEST_2700
-     * @tc.name ReflectTest2700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2700';
@@ -578,12 +578,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest2800
      * @tc.number SUB_Reflect_TEST_2800
-     * @tc.name ReflectTest2800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2800';
@@ -596,12 +596,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest2900
      * @tc.number SUB_Reflect_TEST_2900
-     * @tc.name ReflectTest2900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest2900';
@@ -614,12 +614,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest3000
      * @tc.number SUB_Reflect_TEST_3000
-     * @tc.name ReflectTest3000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest3000';
@@ -633,12 +633,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest3100
      * @tc.number SUB_Reflect_TEST_3100
-     * @tc.name ReflectTest3100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest3100';
@@ -651,12 +651,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest3200
      * @tc.number SUB_Reflect_TEST_3200
-     * @tc.name ReflectTest3200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest3200';
@@ -669,12 +669,12 @@ export default function ReflectTest() {
     });
 
     /**
+     * @tc.name   ReflectTest3300
      * @tc.number SUB_Reflect_TEST_3300
-     * @tc.name ReflectTest3300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest3300';
@@ -689,12 +689,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest3400
      * @tc.number SUB_Reflect_TEST_3400
-     * @tc.name ReflectTest3400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest3400';
@@ -708,12 +708,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest3500
      * @tc.number SUB_Reflect_TEST_3500
-     * @tc.name ReflectTest3500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest3500';
@@ -727,12 +727,12 @@ export default function ReflectTest() {
 
 
     /**
+     * @tc.name   ReflectTest3600
      * @tc.number SUB_Reflect_TEST_3600
-     * @tc.name ReflectTest3600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ReflectTest3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done:Function) => {
       const caseName = 'ReflectTest3600';

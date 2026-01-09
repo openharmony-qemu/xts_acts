@@ -45,6 +45,14 @@ export default function ColumnFixAtIdealSizeTest() {
     afterEach(async () => {
     });
     
+    /**
+     * @tc.name   ColumnFixAtIdealSizeTest_0100
+     * @tc.number ColumnFixAtIdealSizeTest_0100
+     * @tc.desc   ColumnFixAtIdealSizeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('ColumnFixAtIdealSizeTest_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[ColumnFixAtIdealSizeTest_0100] START');
       let driver = await Driver.create()

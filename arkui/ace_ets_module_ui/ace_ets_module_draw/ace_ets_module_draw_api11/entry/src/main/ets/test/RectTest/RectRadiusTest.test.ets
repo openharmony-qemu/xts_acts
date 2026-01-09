@@ -44,10 +44,13 @@ export default function RectRadiusTest() {
       console.info("RectRadiusTest after each called");
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0001
-     * @tc.name         testRectRadiusTest_0010
-     * @tc.desic        test Rect radius
+    /**
+     * @tc.name   testRectRadiusTest_0010
+     * @tc.number SUB_ACE_BASIC_ETS_API_0001
+     * @tc.desc   testRectRadiusTest_0010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRectRadiusTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('[testRectRadiusTest_0010] START');
@@ -66,10 +69,13 @@ export default function RectRadiusTest() {
       done();
     });
 
-    /*
-     * @tc.number       SUB_ACE_BASIC_ETS_API_0002
-     * @tc.name         testRectRadiusTest_0020
-     * @tc.desic        test Rect radius
+    /**
+     * @tc.name   testRectRadiusTest_0020
+     * @tc.number SUB_ACE_BASIC_ETS_API_0002
+     * @tc.desc   testRectRadiusTest_0020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testRectRadiusTest_0020', Level.LEVEL0, async (done: Function) => {
       console.info('[testRectRadiusTest_0020] START');

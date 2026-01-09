@@ -59,10 +59,13 @@ export default function webViewOnSslError() {
       done();
     })
 
-    /*
-     *tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR4_API_0100
-     *tc.name testOnsslerroreventreceive
-     *tc.desc onsslerroreventreceive after load http://http.badssl.com/
+    /**
+     * @tc.name   testOnsslerroreventreceive
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWPATR4_API_0100
+     * @tc.desc   onsslerroreventreceive after load http://http.badssl.com/
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnsslerroreventreceive',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) =>{
       Utils.emitEvent("testOnsslerroreventreceive", EVENT_ID_SET_EIMIT_KEY)

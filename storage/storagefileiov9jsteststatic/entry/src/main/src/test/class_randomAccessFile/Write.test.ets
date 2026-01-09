@@ -30,13 +30,12 @@ export default function fileIORandomAccessFileWrite() {
   describe('fileIO_randomAccessFile_write', (): void => {
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_000
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0000
-     * @tc.name fileIO_randomaccessfile_write_sync_static_000
-     * @tc.desc Test writeSync() interface. Test write data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_000');
@@ -56,13 +55,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_001
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0100
-     * @tc.name fileIO_randomaccessfile_write_sync_static_001
-     * @tc.desc Test writeSync() interface. When the offset is 1. Test write data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When the offset is 1. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_001');
@@ -82,13 +80,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_002
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0200
-     * @tc.name fileIO_randomaccessfile_write_sync_static_002
-     * @tc.desc Test writeSync() interface. When the offset is 1. Test write data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When the offset is 1. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_002');
@@ -109,13 +106,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_003
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0300
-     * @tc.name fileIO_randomaccessfile_write_sync_static_003
-     * @tc.desc Test writeSync() interface. When the offset is 1 and length is 10. Test write data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When the offset is 1 and length is 10. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_003');
@@ -135,13 +131,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_004
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0400
-     * @tc.name fileIO_randomaccessfile_write_sync_static_004
-     * @tc.desc Test writeSync() interface. When the offset is 5. Test write data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When the offset is 5. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_004');
@@ -169,13 +164,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_005
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0500
-     * @tc.name fileIO_randomaccessfile_write_sync_static_005
-     * @tc.desc Test writeSync() interface. When offset equals buffer length. Test write data synchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When offset equals buffer length. Test write data synchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_005');
@@ -195,13 +189,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_006
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0600
-     * @tc.name fileIO_randomaccessfile_write_sync_static_006
-     * @tc.desc Test writeSync() interface. When offset+length>buffer.size.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When offset+length>buffer.size.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_006');
@@ -219,13 +212,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_007
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0700
-     * @tc.name fileIO_randomaccessfile_write_sync_static_007
-     * @tc.desc Test writeSync() interface. When the offset is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When the offset is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_007');
@@ -244,13 +236,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_008
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0800
-     * @tc.name fileIO_randomaccessfile_write_sync_static_008
-     * @tc.desc Test writeSync() interface. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_write_sync_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_008');
@@ -270,13 +261,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_009
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_0900
-     * @tc.name fileIO_randomaccessfile_write_sync_static_009
-     * @tc.desc Test writeSync() interface. The "length" of option must > 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. The "length" of option must > 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_write_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_009');
@@ -295,13 +285,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_sync_static_010
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_sync_static_1000
-     * @tc.name fileIO_randomaccessfile_write_sync_static_010
-     * @tc.desc Test writeSync() interface. When the length is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test writeSync() interface. When the length is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_write_sync_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_sync_static_010');
@@ -320,13 +309,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_000
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0000
-     * @tc.name fileIO_randomaccessfile_write_async_static_000
-     * @tc.desc Test write() interface. return in promise mode. Test write data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_000');
@@ -337,7 +325,7 @@ export default function fileIORandomAccessFileWrite() {
           let length = 4096;
           randomaccessfile?.write(new ArrayBuffer(length)).then((bytesWritten: long) => {
             expect(bytesWritten == length).assertTrue();
-          }).catch((err: BusinessError): Promise<void> => {
+          }).catch((err: Error): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'create randomAccessFile failed with error message: ' +  err.message + ", error code: " + err.code);
           }).finally(() => {
             randomaccessfile?.close();
@@ -352,13 +340,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_001
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0100
-     * @tc.name fileIO_randomaccessfile_write_async_static_001
-     * @tc.desc Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_001');
@@ -381,13 +368,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_002
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0200
-     * @tc.name fileIO_randomaccessfile_write_async_static_002
-     * @tc.desc Test write() interface. return in promise mode. When the offset is 1. Test write data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 1. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_002');
@@ -407,13 +393,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_003
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0300
-     * @tc.name fileIO_randomaccessfile_write_async_static_003
-     * @tc.desc Test write() interface. return in promise mode. When the offset is 1 and length is 10. Test write data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 1 and length is 10. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_003');
@@ -433,13 +418,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_004
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0400
-     * @tc.name fileIO_randomaccessfile_write_async_static_004
-     * @tc.desc Test write() interface. return in promise mode. When the offset is 5. Test write data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is 5. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_004');
@@ -468,13 +452,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_005
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0500
-     * @tc.name fileIO_randomaccessfile_write_async_static_005
-     * @tc.desc Test write() interface. return in promise mode. When offset equals buffer length. Test write data asynchronously.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. When offset equals buffer length. Test write data asynchronously.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_005');
@@ -495,13 +478,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_006
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0600
-     * @tc.name fileIO_randomaccessfile_write_async_static_006
-     * @tc.desc Test write() interface. return in promise mode. When offset+length>buffer.size. Write correctly.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. When offset+length>buffer.size. Write correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_006');
@@ -524,13 +506,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_007
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0700
-     * @tc.name fileIO_randomaccessfile_write_async_static_007
-     * @tc.desc Test write() interface. return in callback mode. When the offset is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_007');
@@ -551,13 +532,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_008
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0800
-     * @tc.name fileIO_randomaccessfile_write_async_static_008
-     * @tc.desc Test write() interface. return in promise mode. When the offset is negative.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. When the offset is negative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_write_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_008');
@@ -578,13 +558,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_009
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_0900
-     * @tc.name fileIO_randomaccessfile_write_async_static_009
-     * @tc.desc Test write() interface. return in promise mode. The "length" of option must > 0.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. The "length" of option must > 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_write_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_009');
@@ -604,13 +583,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_010
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1000
-     * @tc.name fileIO_randomaccessfile_write_async_static_010
-     * @tc.desc Test write() interface. return in promise mode. When the length is greater than the buffer length.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test write() interface. return in promise mode. When the length is greater than the buffer length.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_randomaccessfile_write_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_010');
@@ -630,13 +608,12 @@ export default function fileIORandomAccessFileWrite() {
     });
 
     /**
+     * @tc.name   fileIO_randomaccessfile_write_async_static_011
      * @tc.number SUB_STORAGE_fileIO_randomaccessfile_write_async_static_1100
-     * @tc.name fileIO_randomaccessfile_write_async_static_011
-     * @tc.desc Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously and checkout filePointer.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test write() interface. return in callback mode. When the offset is 1. Test write data asynchronously and checkout filePointer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_randomaccessfile_write_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:()=>void): Promise<void> => {
       let fpath = await Utils.nextFileName('fileIO_randomaccessfile_write_async_static_011');

@@ -128,12 +128,12 @@ export default function ArrayTest() {
     })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0100
-     * @tc.name      : test_concurrent_array_001
-     * @tc.desc      : test_concurrent_array_001
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_001
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0100
+     * @tc.desc   test_concurrent_array_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -162,12 +162,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0200
-     * @tc.name      : test_concurrent_array_002
-     * @tc.desc      : test_concurrent_array_002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_002
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0200
+     * @tc.desc   test_concurrent_array_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -196,12 +196,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0300
-     * @tc.name      : test_concurrent_array_003
-     * @tc.desc      : test_concurrent_array_003
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_003
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0300
+     * @tc.desc   test_concurrent_array_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -230,12 +230,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0400
-     * @tc.name      : test_concurrent_array_004
-     * @tc.desc      : test_concurrent_array_004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_004
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0400
+     * @tc.desc   test_concurrent_array_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -264,12 +264,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0500
-     * @tc.name      : test_concurrent_array_005
-     * @tc.desc      : test_concurrent_array_005
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_005
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0500
+     * @tc.desc   test_concurrent_array_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -298,12 +298,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0600
-     * @tc.name      : test_concurrent_array_006
-     * @tc.desc      : test_concurrent_array_006
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_006
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0600
+     * @tc.desc   test_concurrent_array_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -332,12 +332,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0700
-     * @tc.name      : test_concurrent_array_007
-     * @tc.desc      : test_concurrent_array_007
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_007
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0700
+     * @tc.desc   test_concurrent_array_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -369,12 +369,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0800
-     * @tc.name      : test_concurrent_array_008
-     * @tc.desc      : test_concurrent_array_008
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_008
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0800
+     * @tc.desc   test_concurrent_array_008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -406,12 +406,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_0900
-     * @tc.name      : test_concurrent_array_009
-     * @tc.desc      : test_concurrent_array_009
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_009
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_0900
+     * @tc.desc   test_concurrent_array_009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -440,12 +440,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1000
-     * @tc.name      : test_concurrent_array_010
-     * @tc.desc      : test_concurrent_array_010
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_010
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1000
+     * @tc.desc   test_concurrent_array_010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -478,12 +478,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1100
-     * @tc.name      : test_concurrent_array_011
-     * @tc.desc      : test_concurrent_array_011
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_011
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1100
+     * @tc.desc   test_concurrent_array_011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -520,12 +520,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1200
-     * @tc.name      : test_concurrent_array_012
-     * @tc.desc      : test_concurrent_array_012
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_012
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1200
+     * @tc.desc   test_concurrent_array_012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -554,12 +554,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1300
-     * @tc.name      : test_concurrent_array_013
-     * @tc.desc      : test_concurrent_array_013
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_013
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1300
+     * @tc.desc   test_concurrent_array_013
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -588,12 +588,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1400
-     * @tc.name      : test_concurrent_array_014
-     * @tc.desc      : test_concurrent_array_014
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_014
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1400
+     * @tc.desc   test_concurrent_array_014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -622,12 +622,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1500
-     * @tc.name      : test_concurrent_array_015
-     * @tc.desc      : test_concurrent_array_015
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_015
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1500
+     * @tc.desc   test_concurrent_array_015
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -656,12 +656,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1600
-     * @tc.name      : test_concurrent_array_016
-     * @tc.desc      : test_concurrent_array_016
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_016
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1600
+     * @tc.desc   test_concurrent_array_016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -690,12 +690,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1700
-     * @tc.name      : test_concurrent_array_017
-     * @tc.desc      : test_concurrent_array_017
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_017
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1700
+     * @tc.desc   test_concurrent_array_017
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -724,12 +724,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1800
-     * @tc.name      : test_concurrent_array_018
-     * @tc.desc      : test_concurrent_array_018
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_018
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1800
+     * @tc.desc   test_concurrent_array_018
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -758,12 +758,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_1900
-     * @tc.name      : test_concurrent_array_019
-     * @tc.desc      : test_concurrent_array_019
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_019
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_1900
+     * @tc.desc   test_concurrent_array_019
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -792,12 +792,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2000
-     * @tc.name      : test_concurrent_array_020
-     * @tc.desc      : test_concurrent_array_020
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_020
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2000
+     * @tc.desc   test_concurrent_array_020
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -826,12 +826,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2100
-     * @tc.name      : test_concurrent_array_021
-     * @tc.desc      : test_concurrent_array_021
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_021
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2100
+     * @tc.desc   test_concurrent_array_021
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -860,12 +860,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2200
-     * @tc.name      : test_concurrent_array_022
-     * @tc.desc      : test_concurrent_array_022
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_022
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2200
+     * @tc.desc   test_concurrent_array_022
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -894,12 +894,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2300
-     * @tc.name      : test_concurrent_array_023
-     * @tc.desc      : test_concurrent_array_023
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_023
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2300
+     * @tc.desc   test_concurrent_array_023
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -928,12 +928,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2400
-     * @tc.name      : test_concurrent_array_024
-     * @tc.desc      : test_concurrent_array_024
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_024
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2400
+     * @tc.desc   test_concurrent_array_024
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -962,12 +962,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2500
-     * @tc.name      : test_concurrent_array_025
-     * @tc.desc      : test_concurrent_array_025
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_025
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2500
+     * @tc.desc   test_concurrent_array_025
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -996,12 +996,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2600
-     * @tc.name      : test_concurrent_array_026
-     * @tc.desc      : test_concurrent_array_026
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_026
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2600
+     * @tc.desc   test_concurrent_array_026
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1030,12 +1030,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2700
-     * @tc.name      : test_concurrent_array_027
-     * @tc.desc      : test_concurrent_array_027
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_027
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2700
+     * @tc.desc   test_concurrent_array_027
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1064,12 +1064,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2800
-     * @tc.name      : test_concurrent_array_028
-     * @tc.desc      : test_concurrent_array_028
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_028
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2800
+     * @tc.desc   test_concurrent_array_028
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1098,12 +1098,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_2900
-     * @tc.name      : test_concurrent_array_029
-     * @tc.desc      : test_concurrent_array_029
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_029
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_2900
+     * @tc.desc   test_concurrent_array_029
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1132,12 +1132,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3000
-     * @tc.name      : test_concurrent_array_030
-     * @tc.desc      : test_concurrent_array_030
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_030
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3000
+     * @tc.desc   test_concurrent_array_030
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1166,12 +1166,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3100
-     * @tc.name      : test_concurrent_array_031
-     * @tc.desc      : test_concurrent_array_031
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_031
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3100
+     * @tc.desc   test_concurrent_array_031
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1200,12 +1200,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3200
-     * @tc.name      : test_concurrent_array_032
-     * @tc.desc      : test_concurrent_array_032
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_032
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3200
+     * @tc.desc   test_concurrent_array_032
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1234,12 +1234,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3300
-     * @tc.name      : test_concurrent_array_033
-     * @tc.desc      : test_concurrent_array_033
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_033
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3300
+     * @tc.desc   test_concurrent_array_033
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1268,12 +1268,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3400
-     * @tc.name      : test_concurrent_array_034
-     * @tc.desc      : test_concurrent_array_034
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_034
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3400
+     * @tc.desc   test_concurrent_array_034
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1302,12 +1302,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3500
-     * @tc.name      : test_concurrent_array_035
-     * @tc.desc      : test_concurrent_array_035
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_035
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3500
+     * @tc.desc   test_concurrent_array_035
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1336,12 +1336,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3600
-     * @tc.name      : test_concurrent_array_036
-     * @tc.desc      : test_concurrent_array_036
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_036
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3600
+     * @tc.desc   test_concurrent_array_036
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1370,12 +1370,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3700
-     * @tc.name      : test_concurrent_array_037
-     * @tc.desc      : test_concurrent_array_037
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_037
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3700
+     * @tc.desc   test_concurrent_array_037
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1404,12 +1404,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3800
-     * @tc.name      : test_concurrent_array_038
-     * @tc.desc      : test_concurrent_array_038
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_038
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3800
+     * @tc.desc   test_concurrent_array_038
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1438,12 +1438,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_3900
-     * @tc.name      : test_concurrent_array_039
-     * @tc.desc      : test_concurrent_array_039
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_039
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_3900
+     * @tc.desc   test_concurrent_array_039
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1472,12 +1472,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_4000
-     * @tc.name      : test_concurrent_array_040
-     * @tc.desc      : test_concurrent_array_040
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_040
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_4000
+     * @tc.desc   test_concurrent_array_040
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1506,12 +1506,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_4100
-     * @tc.name      : test_concurrent_array_041
-     * @tc.desc      : test_concurrent_array_041
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_041
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_4100
+     * @tc.desc   test_concurrent_array_041
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1540,12 +1540,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_4200
-     * @tc.name      : test_concurrent_array_042
-     * @tc.desc      : test_concurrent_array_042
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_042
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_4200
+     * @tc.desc   test_concurrent_array_042
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1574,12 +1574,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_4300
-     * @tc.name      : test_concurrent_array_043
-     * @tc.desc      : test_concurrent_array_043 - test ConcatArray index access
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_043
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_4300
+     * @tc.desc   test_concurrent_array_043 - test ConcatArray index access
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_043', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1608,12 +1608,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_4400
-     * @tc.name      : test_concurrent_array_044
-     * @tc.desc      : test_concurrent_array_044 - test ConcatArray join method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_044
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_4400
+     * @tc.desc   test_concurrent_array_044 - test ConcatArray join method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_044', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1642,12 +1642,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_4500
-     * @tc.name      : test_concurrent_array_045
-     * @tc.desc      : test_concurrent_array_045 - test ConcatArray slice method
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_045
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_4500
+     * @tc.desc   test_concurrent_array_045 - test ConcatArray slice method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -1677,12 +1677,12 @@ export default function ArrayTest() {
       })
 
     /**
-     * @tc.number    : SUB_CONCURRENT_ARRAY_TEST_4600
-     * @tc.name      : test_concurrent_array_046
-     * @tc.desc      : test_concurrent_array_046
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_concurrent_array_046
+     * @tc.number SUB_CONCURRENT_ARRAY_TEST_4600
+     * @tc.desc   test_concurrent_array_046
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_concurrent_array_046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

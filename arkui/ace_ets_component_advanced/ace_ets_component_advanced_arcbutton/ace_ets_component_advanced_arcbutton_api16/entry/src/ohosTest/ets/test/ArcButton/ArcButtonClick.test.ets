@@ -16,6 +16,7 @@ import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it,  Leve
 import router from '@system.router';
 import { Driver, ON } from '@ohos.UiTest';
 import CommonFunc from '../../MainAbility/utils/Common';
+import { ArcButtonStatus, ArcButtonStyleMode, ArcButtonPosition, LevelMode, promptAction } from '@kit.ArkUI';
 
 interface optionsObj {
   uri: string
@@ -56,12 +57,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0100
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0100
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0100
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0100 START');
@@ -88,12 +89,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0200
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0200
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0200
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0200 START');
@@ -119,12 +120,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0300
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0300
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0300
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0300',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0300 START');
@@ -150,12 +151,12 @@ export default function ChipOnClose() {
     });
 
     /**
-     * @tc.number: ArkUX_Stage_ArcButton_ComponentTest_0400
-     * @tc.name  : testArcButtonComponent
-     * @tc.desc  : verifyBaseFunction
-     * @tc.size  : MediumTest
-     * @tc.type  : Function
-     * @tc.level : Level 0
+     * @tc.name   ArkUX_Stage_ArcButton_ComponentTest_0400
+     * @tc.number ArkUX_Stage_ArcButton_ComponentTest_0400
+     * @tc.desc   verifyBaseFunction
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ArkUX_Stage_ArcButton_ComponentTest_0400',  Level.LEVEL0, async (done: Function) => {
       console.info('ArkUX_Stage_ArcButton_ComponentTest_0400 START');
@@ -166,6 +167,119 @@ export default function ChipOnClose() {
       await CommonFunc.sleep(2000);
       await driver.assertComponentExist(ON.text('白色风车'))
       console.info('[ArkUX_Stage_ArcButton_ComponentTest_0400] END');
+      done();
+    });
+
+    /**
+     * @tc.name   ArcButtonStyleMode_001
+     * @tc.number ArcButtonStyleMode_001
+     * @tc.desc   ArcButtonStyleMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonStyleMode_001', Level.LEVEL3, async (done: Function) => {
+      console.info('ArcButtonStyleMode_001 START');
+      expect(ArcButtonStyleMode.EMPHASIZED_LIGHT+'').assertEqual('0');
+      console.info("[ArcButtonStyleMode_001] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonStyleMode_002
+     * @tc.number ArcButtonStyleMode_002
+     * @tc.desc   ArcButtonStyleMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonStyleMode_002', Level.LEVEL3, async (done: Function) => {
+      console.info('ArcButtonStyleMode_002 START');
+      expect(ArcButtonStyleMode.EMPHASIZED_DARK+'').assertEqual('1');
+      console.info("[ArcButtonStyleMode_002] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonStyleMode_003
+     * @tc.number ArcButtonStyleMode_003
+     * @tc.desc   ArcButtonStyleMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonStyleMode_003', Level.LEVEL3, async (done: Function) => {
+      console.info('ArcButtonStyleMode_003 START');
+      expect(ArcButtonStyleMode.NORMAL_DARK+'').assertEqual('3');
+      console.info("[ArcButtonStyleMode_003] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonStyleMode_004
+     * @tc.number ArcButtonStyleMode_004
+     * @tc.desc   ArcButtonStyleMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonStyleMode_004', Level.LEVEL3, async (done: Function) => {
+      console.info('ArcButtonStyleMode_004 START');
+      expect(ArcButtonStyleMode.CUSTOM+'').assertEqual('4');
+      console.info("[ArcButtonStyleMode_004] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonStyleMode_005
+     * @tc.number ArcButtonStyleMode_005
+     * @tc.desc   ArcButtonStyleMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonStyleMode_005', Level.LEVEL3, async (done: Function) => {
+      console.info('ArcButtonStyleMode_005 START');
+      expect(ArcButtonStatus.NORMAL+'').assertEqual('0');
+      console.info("[ArcButtonStyleMode_005] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonStyleMode_006
+     * @tc.number ArcButtonStyleMode_006
+     * @tc.desc   ArcButtonStyleMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonStyleMode_006', Level.LEVEL3, async (done: Function) => {
+      console.info('ArcButtonStyleMode_006 START');
+      expect(ArcButtonStatus.PRESSED+'').assertEqual('1');
+      console.info("[ArcButtonStyleMode_006] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonStyleMode_007
+     * @tc.number ArcButtonStyleMode_007
+     * @tc.desc   ArcButtonStyleMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonStyleMode_007', Level.LEVEL3, async (done: Function) => {
+      console.info('ArcButtonStyleMode_007 START');
+      expect(ArcButtonStatus.DISABLED+'').assertEqual('2');
+      console.info("[ArcButtonStyleMode_007] end");
+      done();
+    });
+    /**
+     * @tc.name   ArcButtonPosition_001
+     * @tc.number ArcButtonPosition_001
+     * @tc.desc   ArcButtonPosition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('ArcButtonPosition_001', Level.LEVEL0, async (done: Function) => {
+      console.info('ArcButtonPosition_001 START');
+      expect(ArcButtonPosition.BOTTOM_EDGE).assertEqual(1);
+      console.info("[ArcButtonPosition_001] end");
       done();
     });
   })

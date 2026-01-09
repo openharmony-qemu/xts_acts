@@ -173,12 +173,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000
-     * @tc.desc algorithm is scrypt stub test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt stub test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -198,7 +198,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         taskGroup.addTask(doScryptKdfCallbackStub, 256, 1024, 8, 16);
         taskGroup.addTask(doScryptKdfCallbackStub, 512, 1024, 8, 16);
         taskGroup.addTask(doScryptKdfCallbackStub, 1024, 1024, 8, 16);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<boolean> = res?(res as Array<boolean>) : new Array<Boolean>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i] as boolean;
@@ -215,12 +215,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100
-     * @tc.desc algorithm is scrypt test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -234,7 +234,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(16), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -253,12 +253,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200
-     * @tc.desc algorithm is scrypt test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -272,7 +272,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(16), CallbackType.TYPE_IS_SYNC);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -289,12 +289,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300
-     * @tc.desc algorithm is scrypt salt is empty test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt salt is empty test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -308,7 +308,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -325,12 +325,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400
-     * @tc.desc algorithm is scrypt salt is empty test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt salt is empty test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -344,7 +344,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(), CallbackType.TYPE_IS_SYNC);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -361,12 +361,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500
-     * @tc.desc algorithm is scrypt passphrase is Uint8Array test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt passphrase is Uint8Array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -380,7 +380,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             new Uint8Array(8), new Uint8Array(), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -397,12 +397,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600
-     * @tc.desc algorithm is scrypt passphrase is Uint8Array test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt passphrase is Uint8Array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -416,7 +416,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             new Uint8Array(8), new Uint8Array(), CallbackType.TYPE_IS_PROMISE);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -433,12 +433,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700
-     * @tc.desc algorithm is scrypt passphrase is Uint8Array test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt passphrase is Uint8Array test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -452,7 +452,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             new Uint8Array(8), new Uint8Array(), CallbackType.TYPE_IS_CALLBACK);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -469,12 +469,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800
-     * @tc.desc algorithm is scrypt passphrase is string test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt passphrase is string test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -488,7 +488,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
             "password", new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
         }
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let ret: boolean = tmp[i].ret as boolean;
@@ -505,12 +505,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900
-     * @tc.desc algorithm is scrypt keySize is zero test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt keySize is zero test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_0900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -523,7 +523,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -540,12 +540,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000
-     * @tc.desc algorithm is scrypt keySize is zero test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt keySize is zero test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -558,7 +558,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -575,12 +575,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100
-     * @tc.desc algorithm is scrypt p is zero test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt p is zero test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -593,7 +593,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -610,12 +610,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200
-     * @tc.desc algorithm is scrypt n is zero test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt n is zero test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -628,7 +628,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -645,12 +645,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300
-     * @tc.desc algorithm is scrypt n is 1 test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt n is 1 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -663,7 +663,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -680,12 +680,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400
-     * @tc.desc algorithm is scrypt n is not power of 2 test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt n is not power of 2 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -698,7 +698,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -715,12 +715,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500
-     * @tc.desc algorithm is scrypt n is negative number test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt n is negative number test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -733,7 +733,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -750,12 +750,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600
-     * @tc.desc algorithm is scrypt r is zero test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt r is zero test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -768,7 +768,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -785,12 +785,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700
-     * @tc.desc algorithm is scrypt r is negative number test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt r is negative number test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -803,7 +803,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -820,12 +820,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800
-     * @tc.desc algorithm is scrypt n >= 2^(128 * r/8) test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt n >= 2^(128 * r/8) test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -838,7 +838,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -855,12 +855,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900
-     * @tc.desc algorithm is scrypt n >= ((UINT32_MAX/128)/r) test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt n >= ((UINT32_MAX/128)/r) test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -873,7 +873,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -890,12 +890,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000
-     * @tc.desc algorithm is scrypt p > ((2^32 -1) * 32)/(128 * r) test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt p > ((2^32 -1) * 32)/(128 * r) test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -908,7 +908,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -925,12 +925,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100
-     * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt r * p > 2^30 - 1 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -943,7 +943,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -960,12 +960,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200
-     * @tc.desc algorithm is scrypt r * p * 128 >= UINT32_MAX test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt r * p * 128 >= UINT32_MAX test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -978,7 +978,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -995,12 +995,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300
-     * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt r * p > 2^30 - 1 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -1013,7 +1013,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "password", new Uint8Array(12), CallbackType.TYPE_IS_PROMISE);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1030,12 +1030,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400
-     * @tc.desc algorithm is scrypt r * p > 2^30 - 1 test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt r * p > 2^30 - 1 test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -1048,7 +1048,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           new Uint8Array(64), new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1065,12 +1065,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500
-     * @tc.desc algorithm is scrypt r * p * 128 > UINT32_MAX test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt r * p * 128 > UINT32_MAX test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -1083,7 +1083,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           new Uint8Array(64), new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1100,12 +1100,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600
-     * @tc.desc algorithm is scrypt passphrase is empty, type string test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt passphrase is empty, type string test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -1118,7 +1118,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           "", new Uint8Array(12), CallbackType.TYPE_IS_CALLBACK);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1135,12 +1135,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700
-     * @tc.desc algorithm is scrypt passphrase is empty, type string test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt passphrase is empty, type string test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       try {
@@ -1153,7 +1153,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
         let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
         taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, keySize,
           new Uint8Array(), new Uint8Array(12), CallbackType.TYPE_IS_SYNC);
-        await taskpool.execute(taskGroup).then((res: NullishType) => {
+        await taskpool.execute(taskGroup).then((res: Any) => {
           let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
           for (let i = 0; i< tmp.length; i++) {
             let res: secretResult = tmp[i] as secretResult;
@@ -1170,12 +1170,12 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800
      * @tc.number SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800
-     * @tc.name SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800
-     * @tc.desc algorithm is scrypt vector test
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level0
+     * @tc.desc   algorithm is scrypt vector test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_Security_CryptoFramework_Scrypt_Kdf_Func_2800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       let expectSecret: cryptoFramework.DataBlob;
@@ -1190,7 +1190,7 @@ export default function SecurityCryptoFwScryptKdfTestUnit() {
           let taskGroup: taskpool.TaskGroup = new taskpool.TaskGroup();
           taskGroup.addTask(doScryptKdfTaskPool, maxMemory, n, r, p, vector.keySize,
             vector.passphrase, salt, CallbackType.TYPE_IS_PROMISE);
-          await taskpool.execute(taskGroup).then((res: NullishType) => {
+          await taskpool.execute(taskGroup).then((res: Any) => {
             let tmp: Array<secretResult> = res?(res as Array<secretResult>) : new Array<secretResult>();
             for (let i = 0; i< tmp.length; i++) {
               let res: secretResult = tmp[i] as secretResult;

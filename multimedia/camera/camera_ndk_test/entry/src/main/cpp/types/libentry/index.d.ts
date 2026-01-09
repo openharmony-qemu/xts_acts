@@ -202,15 +202,23 @@ export const getWhiteBalanceTest: () => number;
 
 export const getMacroStatusChangeTest: () => number;
 
+export const getIsoInfoChangeTest: () => number;
+
 export const createCameraInput: () => number;
 
 export const createCameraInputWithPositionAndType: (position: number, type: number) => number;
 
 export const getSupportedOutputCapability: () => cameraOutputCapability;
 
+export const getSupportedFullOutputCapability: () => cameraOutputCapability;
+
 export const createPreviewOutput: () => number;
 
+export const adjustHeifIdx: (idx: number) => number;
+
 export const createPhotoOutput: (surfaceId: string) => number;
+
+export const createHeifPhotoOutput: (surfaceId: string, idx: number) => number;
 
 export const createVideoOutput: (surfaceId: string) => number;
 
@@ -326,9 +334,15 @@ export const sessionUnregisterControlCenterEffectStatusChange: (index:number) =>
 
 export const sessionGetPhotoRotation: (a: number) => number;
 
+export const sessionGetPhotoRotationWithoutDeviceDegree: () => number;
+
 export const sessionGetVideoRotation: (a: number) => number;
 
+export const sessionGetVideoRotationWithoutDeviceDegree: () => number;
+
 export const sessionGetPreviewRotation: (a: number) => number;
+
+export const sessionGetPreviewRotationWithoutDisplayRotation: () => number;
 
 export const sessionGetImageRotation: (a: number) => number;
 

@@ -60,14 +60,14 @@ export default function ActsAcewebViewSetWebDestroyMode() {
       done();
     })
 
-    /*
-    * @tc.number      : SUB_ACE_WEB_WEBVIEWSETWEBDESTROYMODE_API_0001
-    * @tc.name        : emitwebViewSetWebDestroyMode001
-    * @tc.desc        : emitwebViewSetWebDestroyMode001
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 0
-    */
+    /**
+     * @tc.name   emitwebViewSetWebDestroyMode001
+     * @tc.number SUB_ACE_WEB_WEBVIEWSETWEBDESTROYMODE_API_0001
+     * @tc.desc   emitwebViewSetWebDestroyMode001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('emitwebViewSetWebDestroyMode001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         Utils.emitEvent('emitwebViewSetWebDestroyMode001', 138550)
@@ -75,13 +75,13 @@ export default function ActsAcewebViewSetWebDestroyMode() {
         await Utils.waitAndClickComponent(driver, 'webViewSetWebDestroyModeKey', 'emitwebViewSetWebDestroyMode001');
       })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_WEBVIEWSETWEBDESTROYMODE_API_0002
-     * @tc.name        : emitwebViewSetWebDestroyMode002
-     * @tc.desc        : emitwebViewSetWebDestroyMode002
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   emitwebViewSetWebDestroyMode002
+     * @tc.number SUB_ACE_WEB_WEBVIEWSETWEBDESTROYMODE_API_0002
+     * @tc.desc   emitwebViewSetWebDestroyMode002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('emitwebViewSetWebDestroyMode002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {

@@ -36,9 +36,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001
      * @tc.number SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001
-     * @tc.name Test enumcolorspace_Test_001
-     * @tc.desc test the value of enum color space
+     * @tc.desc   test the value of enum color space
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_ENUMCOLORSPACE_JSAPI_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -84,9 +87,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_002
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_002
-     * @tc.name Test createcolorspacemanager_Test_002
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -105,9 +111,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_003
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_003
-     * @tc.name Test createcolorspacemanager_Test_003
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -126,9 +135,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_004
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_004
-     * @tc.name Test createcolorspacemanager_Test_004
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -147,9 +159,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_005
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_005
-     * @tc.name Test createcolorspacemanager_Test_005
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -168,9 +183,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_006
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_006
-     * @tc.name Test createcolorspacemanager_Test_006
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -189,9 +207,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_007
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_007
-     * @tc.name Test createcolorspacemanager_Test_007
-     * @tc.desc test the interface of create colorSpaceManager.ColorSpace.CUSTOM invalid
+     * @tc.desc   test the interface of create colorSpaceManager.ColorSpace.CUSTOM invalid
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -210,9 +231,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_008
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_008
-     * @tc.name Test createcolorspacemanager_Test_008
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager08 begin');
@@ -247,9 +271,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_009
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_009
-     * @tc.name Test createcolorspacemanager_Test_009
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -269,9 +296,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_010
      * @tc.number SUB_GRAPHIC_CREATE_JSAPI_010
-     * @tc.name Test createcolorspacemanager_Test_010
-     * @tc.desc test the interface of create
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -287,12 +317,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number    : testColorSpace_create001
-     * @tc.name      : testColorSpace_create001
-     * @tc.desc      : test ColorSpaceManager ErrorCode
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testColorSpace_create001
+     * @tc.number testColorSpace_create001
+     * @tc.desc   test ColorSpaceManager ErrorCode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testColorSpace_create001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let colorSpace: colorSpaceManager.ColorSpaceManager;
@@ -324,12 +354,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number: SUB_GRAPHIC_CREATE_JSAPI_011
-     * @tc.name: SUB_GRAPHIC_CREATE_JSAPI_011
-     * @tc.desc: the DISPLAY_BT2020_SRGB
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   SUB_GRAPHIC_CREATE_JSAPI_011
+     * @tc.number SUB_GRAPHIC_CREATE_JSAPI_011
+     * @tc.desc   the DISPLAY_BT2020_SRGB
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_GRAPHIC_CREATE_JSAPI_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test createcolorspacemanager begin');
@@ -349,12 +379,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number     getColorSpaceEnum_0100
-     * @tc.name       getColorSpaceEnum_0100
-     * @tc.desc       the get colorSpace Enum
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   getColorSpaceEnum_0100
+     * @tc.number getColorSpaceEnum_0100
+     * @tc.desc   the get colorSpace Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getColorSpaceEnum_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0100 begin');
@@ -398,12 +428,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number     getColorSpaceEnum_0200
-     * @tc.name       getColorSpaceEnum_0200
-     * @tc.desc       the get colorSpace Enum
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   getColorSpaceEnum_0200
+     * @tc.number getColorSpaceEnum_0200
+     * @tc.desc   the get colorSpace Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getColorSpaceEnum_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0200 begin');
@@ -447,12 +477,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number     getColorSpaceEnum_0300
-     * @tc.name       getColorSpaceEnum_0300
-     * @tc.desc       the get colorSpace Enum
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   getColorSpaceEnum_0300
+     * @tc.number getColorSpaceEnum_0300
+     * @tc.desc   the get colorSpace Enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getColorSpaceEnum_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0300 begin');
@@ -499,12 +529,12 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number     testGetWhitePoint_0100
-     * @tc.name       testGetWhitePoint_0100
-     * @tc.desc       test getWhitePoint
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 1
+     * @tc.name   testGetWhitePoint_0100
+     * @tc.number testGetWhitePoint_0100
+     * @tc.desc   test getWhitePoint
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testGetWhitePoint_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('test getColorSpaceEnum_0300 begin');

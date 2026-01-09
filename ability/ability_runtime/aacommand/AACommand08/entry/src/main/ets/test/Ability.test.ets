@@ -55,6 +55,14 @@ function UnSubscribeCallback() {
 
 export default function abilityTest() {
   describe('ACTS_AACommand_01_3', () => {
+    /**
+     * @tc.name   ACTS_AACommand_package_0800
+     * @tc.number ACTS_AACommand_package_0800
+     * @tc.desc   ACTS_AACommand_package_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('ACTS_AACommand_package_0800', Level.LEVEL0, async (done: Function) => {
       emitter.on({
         eventId: 2

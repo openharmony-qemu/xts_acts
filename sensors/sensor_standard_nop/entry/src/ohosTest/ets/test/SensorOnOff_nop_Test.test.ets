@@ -141,13 +141,13 @@ export default function SensorOnOff_nop_Test() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test001
-     * @tc.name: SensorOnOff_nop_Test001
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test001
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test001
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -171,13 +171,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test002
-     * @tc.name: SensorOnOff_nop_Test002
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test002
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test002
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -200,13 +200,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test003
-     * @tc.name: SensorOnOff_nop_Test003
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test003
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test003
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -230,13 +230,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test004
-     * @tc.name: SensorOnOff_nop_Test004
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test004
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test004
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -259,13 +259,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test005
-     * @tc.name: SensorOnOff_nop_Test005
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test005
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test005
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -289,13 +289,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test006
-     * @tc.name: SensorOnOff_nop_Test006
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test006
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test006
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -318,13 +318,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test007
-     * @tc.name: SensorOnOff_nop_Test007
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test007
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test007
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -348,13 +348,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test008
-     * @tc.name: SensorOnOff_nop_Test008
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test008
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test008
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -377,13 +377,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test009
-     * @tc.name: SensorOnOff_nop_Test009
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test009
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test009
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -407,13 +407,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test010
-     * @tc.name: SensorOnOff_nop_Test010
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test010
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test010
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -436,13 +436,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test011
-     * @tc.name: SensorOnOff_nop_Test011
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test011
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test011
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -466,13 +466,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test012
-     * @tc.name: SensorOnOff_nop_Test012
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test012
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test012
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -495,13 +495,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test013
-     * @tc.name: SensorOnOff_nop_Test013
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test013
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test013
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -525,13 +525,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test014
-     * @tc.name: SensorOnOff_nop_Test014
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test014
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test014
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -554,13 +554,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test015
-     * @tc.name: SensorOnOff_nop_Test015
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test015
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test015
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -584,13 +584,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test016
-     * @tc.name: SensorOnOff_nop_Test016
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test016
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test016
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -613,13 +613,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test017
-     * @tc.name: SensorOnOff_nop_Test017
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test017
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test017
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -643,13 +643,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test018
-     * @tc.name: SensorOnOff_nop_Test018
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test018
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test018
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -672,13 +672,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test019
-     * @tc.name: SensorOnOff_nop_Test019
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test019
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test019
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -702,13 +702,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test020
-     * @tc.name: SensorOnOff_nop_Test020
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test020
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test020
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -731,13 +731,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test021
-     * @tc.name: SensorOnOff_nop_Test021
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test021
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test021
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -761,13 +761,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test022
-     * @tc.name: SensorOnOff_nop_Test022
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test022
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test022
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -790,13 +790,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test023
-     * @tc.name: SensorOnOff_nop_Test023
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test023
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test023
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -820,13 +820,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test024
-     * @tc.name: SensorOnOff_nop_Test024
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test024
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test024
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -849,13 +849,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test025
-     * @tc.name: SensorOnOff_nop_Test025
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test025
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test025
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -879,13 +879,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test026
-     * @tc.name: SensorOnOff_nop_Test026
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test026
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test026
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -908,13 +908,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test027
-     * @tc.name: SensorOnOff_nop_Test027
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test027
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test027
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {
@@ -938,13 +938,13 @@ export default function SensorOnOff_nop_Test() {
       }
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_Sensor_nop_Test028
-     * @tc.name: SensorOnOff_nop_Test028
-     * @tc.desc:Using the on method without permission
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SensorOnOff_nop_Test028
+     * @tc.number SUB_SensorsSystem_Sensor_nop_Test028
+     * @tc.desc   Using the on method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SensorOnOff_nop_Test028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       try {

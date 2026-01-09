@@ -56,9 +56,12 @@ export default function propJsunit() {
     });
 
     /**
+     * @tc.name   propTest001
      * @tc.number SUB_ACE_BASIC_ETS_API_0470
-     * @tc.name propTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('propTest001', Level.LEVEL2, async () => {
       console.info('propTest001 START');
@@ -74,9 +77,12 @@ export default function propJsunit() {
     });
 
     /**
+     * @tc.name   propTest002
      * @tc.number SUB_ACE_BASIC_ETS_API_0480
-     * @tc.name propTest001
-     * @tc.desc aceEtsTest
+     * @tc.desc   aceEtsTest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('propTest002', Level.LEVEL2, async () => {
       console.info('propTest002 START');

@@ -20,12 +20,12 @@ export default function UiStatesTest() {
   describe('UiStatesTest', () => {
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_UI_STATE_NORMAL_0100
-     * @tc.name    : testUIState0100
-     * @tc.desc    : Test the ArkUI_UIState.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUIState0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_UI_STATE_NORMAL_0100
+     * @tc.desc   Test the ArkUI_UIState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIState0100', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -42,12 +42,12 @@ export default function UiStatesTest() {
     })
 
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_UI_STATE_FOCUSED_0100
-     * @tc.name    : testUIState0200
-     * @tc.desc    : Test the ArkUI_UIState.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUIState0200
+     * @tc.number SUB_ARKUI_ACE_ENGINE_UI_STATE_FOCUSED_0100
+     * @tc.desc   Test the ArkUI_UIState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIState0200', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -63,12 +63,12 @@ export default function UiStatesTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_UI_STATE_DISABLED_0100
-     * @tc.name    : testUIState0300
-     * @tc.desc    : Test the ArkUI_UIState.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUIState0300
+     * @tc.number SUB_ARKUI_ACE_ENGINE_UI_STATE_DISABLED_0100
+     * @tc.desc   Test the ArkUI_UIState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIState0300', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -84,12 +84,12 @@ export default function UiStatesTest() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_UI_STATE_SELECTED_0100
-     * @tc.name    : testUIState0400
-     * @tc.desc    : Test the ArkUI_UIState.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUIState0400
+     * @tc.number SUB_ARKUI_ACE_ENGINE_UI_STATE_SELECTED_0100
+     * @tc.desc   Test the ArkUI_UIState.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUIState0400', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

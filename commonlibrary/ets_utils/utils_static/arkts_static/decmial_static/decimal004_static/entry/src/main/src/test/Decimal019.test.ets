@@ -52,12 +52,12 @@ export default function DecimalTest019() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST19_001
-     * @tc.name      : Decimal_negate_Func_001
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_001
+     * @tc.number DECIMAL_TEST19_001
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -75,7 +75,7 @@ export default function DecimalTest019() {
       test_negate_002('-1', 1);
       test_negate_002('1', -1);
       test_negate_002('-0', 0);
-      test_negate_002('0', -0);
+      test_negate_002('0', -0.0);
       test_negate_001('-0', '0');
       test_negate_001('0', '-0');
       test_negate_002('NaN', NaN);
@@ -86,6 +86,14 @@ export default function DecimalTest019() {
      * @tc.size      : MediumTest
      * @tc.type      : Function
      * @tc.level     : Level 1
+     */
+    /**
+     * @tc.name   Decimal_negate_Func_002
+     * @tc.number Decimal_negate_Func_002
+     * @tc.desc   Decimal_negate_Func_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('NaN', 'NaN');
@@ -104,12 +112,12 @@ export default function DecimalTest019() {
       test_negate_001('1.3e-11', '-0.000000000013');
     });
     /**
-     * @tc.number    : DECIMAL_TEST19_003
-     * @tc.name      : Decimal_negate_Func_003
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_003
+     * @tc.number DECIMAL_TEST19_003
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('-33.1', '33.1');
@@ -129,12 +137,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_004
-     * @tc.name      : Decimal_negate_Func_004
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_004
+     * @tc.number DECIMAL_TEST19_004
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('-3', '3');
@@ -152,12 +160,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_005
-     * @tc.name      : Decimal_negate_Func_005
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_005
+     * @tc.number DECIMAL_TEST19_005
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('1582', '-1582');
@@ -178,12 +186,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_006
-     * @tc.name      : Decimal_negate_Func_006
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_006
+     * @tc.number DECIMAL_TEST19_006
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('3.6', '-3.6');
@@ -207,12 +215,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_007
-     * @tc.name      : Decimal_negate_Func_007
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_007
+     * @tc.number DECIMAL_TEST19_007
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('-2', '2');
@@ -238,12 +246,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_008
-     * @tc.name      : Decimal_negate_Func_008
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_008
+     * @tc.number DECIMAL_TEST19_008
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('-5e-9', '0.0000000050');
@@ -268,12 +276,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_009
-     * @tc.name      : Decimal_negate_Func_009
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_009
+     * @tc.number DECIMAL_TEST19_009
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('1.023e-15', '-0.000000000000001023');
@@ -299,12 +307,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_010
-     * @tc.name      : Decimal_negate_Func_010
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_010
+     * @tc.number DECIMAL_TEST19_010
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       test_negate_001('199724', '-199724');
@@ -328,12 +336,12 @@ export default function DecimalTest019() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_011
-     * @tc.name      : Decimal_negate_Func_011
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_011
+     * @tc.number DECIMAL_TEST19_011
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("Decimal_negate_Func_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   test_negate_001('6.8', '-6.8');
@@ -353,12 +361,12 @@ export default function DecimalTest019() {
     // });
 
     /**
-     * @tc.number    : DECIMAL_TEST19_012
-     * @tc.name      : Decimal_negate_Func_012
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_012
+     * @tc.number DECIMAL_TEST19_012
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -389,12 +397,12 @@ export default function DecimalTest019() {
       test_negate_001('4.2773e+0', '-4.2773e+0');
     });
     /**
-     * @tc.number    : DECIMAL_TEST19_013
-     * @tc.name      : Decimal_negate_Func_013
-     * @tc.desc      : Test negate
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_negate_Func_013
+     * @tc.number DECIMAL_TEST19_013
+     * @tc.desc   Test negate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_negate_Func_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({

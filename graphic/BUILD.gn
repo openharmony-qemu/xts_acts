@@ -37,8 +37,8 @@ group("graphic") {
       "graphicDisplaySyncStatic:ActsGraphicDisplaySyncStaticTest",
       "graphicDrawingFont:ActsGraphicDrawingFontTest",
       "graphicEGL:ActsGraphicEglTest",
-      "graphicGL4:ActsGraphicGl4Test",
       "graphicEffectKitStatic:ActsGraphicEffectKitStaticTest",
+      "graphicGL4:ActsGraphicGl4Test",
       "graphicGLES3:ActsGraphicGles3Test",
       "graphicGLES3v2:ActsGraphicGles3v2Test",
       "graphicGlesExtension:ActsGraphicGlesExtensionTest",
@@ -70,6 +70,10 @@ group("graphic") {
       "windowStage:ActsWindowStageTest",
       "windowStageTwo:ActsWindowStageTwoTest",
       "windowstandard:window_hap_test",
+      "ActsDrawingNativeTest:ActsNewDrawingNativeTest",
+      "ActsGraphicNapiFontTest:ActsGraphicNapiFontHapTest",
+      "ActsGraphicGlesExtensionTest:ActsGraphicGlesExtensionHapTest",
+      "ActsGraphicVulkanNapiTest:ActsGraphicVulkanNapiNdkTest",
     ]
     if (!(product_name == "ohcore")) {
       deps += [

@@ -291,9 +291,12 @@ static BOOL ShareTaskFuncTestSuiteTearDown(void)
 }
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SharedTask_0010
- * @tc.name      : Service share taskpool by the same priority, the first task function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSharedTask0010
+ * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0010
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest | Level2)
 {
@@ -342,9 +345,12 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0010, Function | MediumTest
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SharedTask_0020
- * @tc.name      : Service share taskpool by the same priority, the second task function is ok
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSharedTask0020
+ * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0020
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest | Level2)
 {
@@ -393,9 +399,12 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0020, Function | MediumTest
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SharedTask_0030
- * @tc.name      : Service share taskpool by the same priority, the thread id of the services is the same
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSharedTask0030
+ * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0030
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest | Level2)
 {
@@ -431,9 +440,12 @@ LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0030, Function | MediumTest
 };
 
 /**
- * @tc.number    : DMSLite_SAMGR_Taskpool_SharedTask_0040
- * @tc.name      : Service share taskpool by the same priority, the thread id of the features is the same
- * @tc.desc      : [C- SOFTWARE -0200]
+ * @tc.name   testSharedTask0040
+ * @tc.number DMSLite_SAMGR_Taskpool_SharedTask_0040
+ * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
  */
 LITE_TEST_CASE(ShareTaskFuncTestSuite, testSharedTask0040, Function | MediumTest | Level2)
 {

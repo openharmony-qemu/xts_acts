@@ -63,14 +63,14 @@ export default function abilityTest() {
     afterAll(() => {
     })
 
-    /*
-    * @tc.number  UriPermissionTest_0100
-    * @tc.name    Grant uri permission to ServiceExtension
-    * @tc.desc    Grant uri permission to ServiceExtension by call startServiceExtension can success
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   UriPermissionTest_0100
+     * @tc.number UriPermissionTest_0100
+     * @tc.desc   Grant uri permission to ServiceExtension by call startServiceExtension can success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UriPermissionTest_0100', Level.LEVEL0, async (done: Function) => {
       log("========================= UriPermissionTest_0100 Begin ===================");
       log("step1. createBundleNameFile...");
@@ -152,14 +152,14 @@ export default function abilityTest() {
       log("========================= UriPermissionTest_0100 End ===================");
     })
 
-    /*
-    * @tc.number  UriPermissionTest_0200
-    * @tc.name    Grant uri permission to activated ServiceExtension
-    * @tc.desc    Grant uri permission to activated ServiceExtension by call startServiceExtension can success
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   UriPermissionTest_0200
+     * @tc.number UriPermissionTest_0200
+     * @tc.desc   Grant uri permission to activated ServiceExtension by call startServiceExtension can success
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UriPermissionTest_0200', Level.LEVEL0, async (done: Function) => {
       log("========================= UriPermissionTest_0200 Begin ===================");
       log("step1. createBundleNameFile...");
@@ -259,14 +259,14 @@ export default function abilityTest() {
       log("========================= UriPermissionTest_0200 End ===================");
     })
 
-    /*
-    * @tc.number  UriPermissionTest_0300
-    * @tc.name    Check revoke uri permission from ServiceExtension
-    * @tc.desc    Revoke uri permission from ServiceExtension by call stopServiceExtension
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   UriPermissionTest_0300
+     * @tc.number UriPermissionTest_0300
+     * @tc.desc   Revoke uri permission from ServiceExtension by call stopServiceExtension
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('UriPermissionTest_0300', Level.LEVEL0, async (done: Function) => {
       log("========================= UriPermissionTest_0300 Begin ===================");
       log("step1. Create bundleName file.");

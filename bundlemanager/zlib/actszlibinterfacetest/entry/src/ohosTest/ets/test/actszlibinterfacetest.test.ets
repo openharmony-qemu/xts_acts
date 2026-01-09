@@ -48,12 +48,12 @@ export default function ActsZlibInterfaceTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_01
-     * @tc.name       : ActsZlibInterfaceTest01
-     * @tc.desc       : test getOriginalSize
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ActsZlibInterfaceTest01
+     * @tc.number ACTS_ZlibInterfaceTest_01
+     * @tc.desc   test getOriginalSize
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ActsZlibInterfaceTest01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
         console.info("==================ACTS_ZlibInterfaceTest_01 start==================");
@@ -95,14 +95,14 @@ export default function ActsZlibInterfaceTest() {
         console.info("==================ACTS_ZlibInterfaceTest_01 end==================");
     })
 
-    /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_02
-     * @tc.name       : ActsZlibInterfaceTest02
-     * @tc.desc       : test getOriginalSize 401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
-     */
+     /**
+      * @tc.name   ActsZlibInterfaceTest02
+      * @tc.number ACTS_ZlibInterfaceTest_02
+      * @tc.desc   test getOriginalSize 401
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL3
+      */
      it('ActsZlibInterfaceTest02', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
          console.info("==================ACTS_ZlibInterfaceTest_02 start==================");
          try {
@@ -136,12 +136,12 @@ export default function ActsZlibInterfaceTest() {
      })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_03
-     * @tc.name       : ActsZlibInterfaceTest03
-     * @tc.desc       : test getOriginalSize 900001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ActsZlibInterfaceTest03
+     * @tc.number ACTS_ZlibInterfaceTest_03
+     * @tc.desc   test getOriginalSize 900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsZlibInterfaceTest03', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
         console.info("==================ACTS_ZlibInterfaceTest_03 start==================");
@@ -165,12 +165,12 @@ export default function ActsZlibInterfaceTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_04
-     * @tc.name       : ActsZlibInterfaceTest04
-     * @tc.desc       : test getOriginalSize 900003
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ActsZlibInterfaceTest04
+     * @tc.number ACTS_ZlibInterfaceTest_04
+     * @tc.desc   test getOriginalSize 900003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ActsZlibInterfaceTest04', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
         console.info("==================ACTS_ZlibInterfaceTest_04 start==================");
@@ -194,12 +194,12 @@ export default function ActsZlibInterfaceTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_05
-     * @tc.name       : ActsZlibInterfaceTest05
-     * @tc.desc       : test compressFiles
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ActsZlibInterfaceTest05
+     * @tc.number ACTS_ZlibInterfaceTest_05
+     * @tc.desc   test compressFiles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ActsZlibInterfaceTest05', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: Function) => {
         console.info("==================ACTS_ZlibInterfaceTest_05 start==================");
@@ -231,12 +231,12 @@ export default function ActsZlibInterfaceTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_06
-     * @tc.name       : ActsZlibInterfaceTest06
-     * @tc.desc       : test compressFiles 401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ActsZlibInterfaceTest06
+     * @tc.number ACTS_ZlibInterfaceTest_06
+     * @tc.desc   test compressFiles 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     // it('ActsZlibInterfaceTest06', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: Function) => {
     //     console.info("==================ACTS_ZlibInterfaceTest_06 start==================");
@@ -264,12 +264,12 @@ export default function ActsZlibInterfaceTest() {
     // })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_07
-     * @tc.name       : ActsZlibInterfaceTest07
-     * @tc.desc       : test compressFiles 900001
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ActsZlibInterfaceTest07
+     * @tc.number ACTS_ZlibInterfaceTest_07
+     * @tc.desc   test compressFiles 900001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ActsZlibInterfaceTest07', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
         console.info("==================ACTS_ZlibInterfaceTest_07 start==================");
@@ -301,12 +301,12 @@ export default function ActsZlibInterfaceTest() {
     })
 
     /**
-     * @tc.number     : ACTS_ZlibInterfaceTest_08
-     * @tc.name       : ActsZlibInterfaceTest08
-     * @tc.desc       : test compressFiles 900002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   ActsZlibInterfaceTest08
+     * @tc.number ACTS_ZlibInterfaceTest_08
+     * @tc.desc   test compressFiles 900002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('ActsZlibInterfaceTest08', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: Function) => {
         console.info("==================ACTS_ZlibInterfaceTest_08 start==================");

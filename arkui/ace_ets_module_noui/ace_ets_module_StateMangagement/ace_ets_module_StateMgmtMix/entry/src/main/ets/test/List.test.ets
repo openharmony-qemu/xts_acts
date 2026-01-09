@@ -52,9 +52,9 @@ import FreezeV2Child from './FreezeV2/Freeze003.test';
 import FreezeV1Test from './FreezeV1/Freeze001.test';
 import FreezeV1Test02 from './FreezeV1/Freeze002.test';
 import FreezeV1Test03 from './FreezeV1/Freeze003.test';
+import freezeInactive from './FreezeV1/freezeInactive.test';
 import twoWayBindTest from './twoWayBindTest/twoWayBind.test';
 import twoWayBindTest02 from './twoWayBindTest/twoWayBind02.test';
-
 import bindContentCoverTest from './twoWayBindTest/bindContentCover.test';
 import bindSheetTest from './twoWayBindTest/bindSheet.test';
 import checkboxTest from './twoWayBindTest/checkbox.test';
@@ -64,7 +64,31 @@ import swiperTest from './twoWayBindTest/swiper.test';
 import textAreaTest from './twoWayBindTest/textArea.test';
 import textInputTest from './twoWayBindTest/textInput.test';
 import toggleTest from './twoWayBindTest/toggle.test';
+import EnvironmentTest0040 from './Environment/EnvironmentTest0040.test';
+import EnvironmentReturnValue from './Environment/EnvironmentReturnValue.test';
+import StorageDeprecatedTest from './Environment/StorageDeprecatedTest.test';
+import getSharedLocalStorageTest from './GetSharedLocalTest/getSharedLocalStorage.test';
+import useSharedStorageTest from './GetSharedLocalTest/useSharedStorage.test';
+import persistStorageATest from './GetSharedLocalTest/persistStorageA.test';
+import Enum001 from './enum/Enum001.test';
+import V1LinkObservedTest from './uiutilsTest/LinkObserved.test';
+import V1LocalStoageLinkObservedTest from './uiutilsTest/LocalStoageLinkObserved.test';
+import V1LocalStoagePropObservedTest from './uiutilsTest/LocalStoagePropObserved.test';
+import V1ObjectLinkObservedTest from './uiutilsTest/ObjectLinkObserved.test';
+import V1PropObservedTest from './uiutilsTest/PropObserved.test';
+import V1ProvideConsumTest from './uiutilsTest/ProvideConsum.test';
+import V1StateObservedTest from './uiutilsTest/StateObserved.test';
+import V2ObservedTest from './uiutilsTest/V2Observed.test';
+
 export default function testsuite() {
+    V1LinkObservedTest();
+    V1LocalStoageLinkObservedTest();
+    V1LocalStoagePropObservedTest();
+    V1ObjectLinkObservedTest();
+    V1PropObservedTest();
+    V1ProvideConsumTest();
+    V1StateObservedTest();
+    V2ObservedTest();
     ApplySync001();
     FlushUpdates001();
     FlushErrorCode();
@@ -105,6 +129,7 @@ export default function testsuite() {
     FreezeV1Test();
     FreezeV1Test02();
     FreezeV1Test03();
+    freezeInactive();
     twoWayBindTest();
     twoWayBindTest02();
     bindContentCoverTest();
@@ -116,4 +141,11 @@ export default function testsuite() {
     textAreaTest();
     textInputTest();
     toggleTest();
+    EnvironmentReturnValue();
+    EnvironmentTest0040();
+    StorageDeprecatedTest();
+    getSharedLocalStorageTest();
+    useSharedStorageTest();
+    persistStorageATest();
+    Enum001();
 }

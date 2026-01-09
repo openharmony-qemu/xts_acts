@@ -59,10 +59,12 @@ export default function navigation_pushDestination10() {
     });
 
     /**
+     * @tc.name   navigation_pushDestination10_0100
      * @tc.number SUB_ACE_UI_COMPONENT_NAV_NAVIGATION_PUSH_011
-     * @tc.name navigation_pushDestination10_0100
-     * @tc.desc Navigation pushDestination result test
-     * @tc.level Level 1
+     * @tc.desc   Navigation pushDestination result test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('navigation_pushDestination10_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[navigation_pushDestination10_0100] START');

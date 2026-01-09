@@ -26,7 +26,7 @@ struct CoastingAxisTest {
       CommonView({
         pageTag: this.PAGE_TAG,
       }).onAppear(() => {
-        render.CoastingAxisTest_a();
+        render.CoastingAxisTest(this.PAGE_TAG);
       })
     }
   }

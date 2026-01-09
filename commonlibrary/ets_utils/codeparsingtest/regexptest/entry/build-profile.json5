@@ -15,6 +15,14 @@
 {
   "apiType": 'stageMode',
   "buildOption": {
+    "sourceOption": {
+      "workers": [
+        "./src/ohosTest/ets/workers/Worker001.ets",
+        "./src/ohosTest/ets/workers/Worker002.ets",
+        "./src/ohosTest/ets/workers/Worker003.ets",
+        "./src/ohosTest/ets/workers/Worker004.ets"
+      ]
+    },
   },
   "targets": [
     {

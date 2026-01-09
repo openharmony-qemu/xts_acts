@@ -133,4 +133,12 @@ export const AbilityRuntimeErrorCodeUpperLimitReachedCode: () => number;
 export const AbilityRuntimeErrorAppInstanceKeyNotSupportCode: () => number;
 export const ApplicationContextGetVersionCodeNoError: () => number;
 export const ApplicationContextGetVersionCodeParamInvalid: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsInstanceKeyNotSupport: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsNoError: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsUpperLimitReached: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsNoSuchAbility: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsCodeCrossApp: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsCodeInternal: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsInvalidAppInstanceKey: () => number;
+export const StartSelfUIAbilityWithPidWithStartOptionsVisibilitySettingDisabled: () => number;
 

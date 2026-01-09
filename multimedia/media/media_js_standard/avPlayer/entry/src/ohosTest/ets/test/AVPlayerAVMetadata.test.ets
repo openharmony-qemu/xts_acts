@@ -44,6 +44,10 @@ function fullZero(num: string, digitalNum: number = 2){
 }
 
 function validateType(track: media.MediaDescription, key: string, type: string, composedKeys: string): void{
+  if (track[key] === undefined) {
+    console.log(`key ${key} is undefined, skip validation`);
+    return;
+  }
   const trackType = Math.pow(2,track[media.MediaDescriptionKey.MD_KEY_TRACK_TYPE] as number).toString(2)
   const composedKeysFirstPart = Number(`0b${composedKeys.split('.')[0]}`)
   const composedKeysSecondPart = Number(`0b${fullZero(composedKeys.split('.')[1] || '0')}`)
@@ -104,6 +108,8 @@ function validateMediaDescriptionKey(track: media.MediaDescription): void{
   validateType(track, media.MediaDescriptionKey.MD_KEY_AUD_SAMPLE_DEPTH, 'number', composeKeys([BinaryKeys.get("AUD")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_WIDTH, 'number', composeKeys([BinaryKeys.get("VID")!]))
   validateType(track, media.MediaDescriptionKey.MD_KEY_ORIGINAL_HEIGHT, 'number', composeKeys([BinaryKeys.get("VID")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_TRACK_REFERENCE_TYPE, 'string', composeKeys([BinaryKeys.get("ALL")!]))
+  validateType(track, media.MediaDescriptionKey.MD_KEY_REFERENCE_TRACK_IDS, 'string', composeKeys([BinaryKeys.get("ALL")!]))
 }
 
 export default function AVMetadata() {
@@ -132,14 +138,14 @@ export default function AVMetadata() {
       await mediaTestBase.closeFdNumber(AVFileDescriptor2.fd);
       await mediaTestBase.closeFdNumber(AVFileDescriptor3.fd);
     });
-    /* *
-       * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_0100
-       * @tc.name      : 001.testAVMeta album
-       * @tc.desc      : Local Video playback control test
-       * @tc.size      : MediumTest
-       * @tc.type      : Function Test
-       * @tc.level     : Level0
-           */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -156,14 +162,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_0200
-      * @tc.name      : 001.testAVMeta albumArtist
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_0200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_0200', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -180,14 +186,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_0300
-      * @tc.name      : 001.testAVMeta artist
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_0300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_0300', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -203,14 +209,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_0400
-      * @tc.name      : 001.testAVMeta author
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_0400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_0400', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -227,14 +233,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_0500
-      * @tc.name      : 001.testAVMeta dateTime
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_0500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_0500', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -253,14 +259,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIMEFORMAT_PROMISE_FUNCTION_0600
-      * @tc.name      : 001.testAVMeta dateTimeFormat
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIMEFORMAT_PROMISE_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIMEFORMAT_PROMISE_FUNCTION_0600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIMEFORMAT_PROMISE_FUNCTION_0600', Level.LEVEL0,async (done: Function) => {
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
       console.info('AVMetadataExtractor success   22222222222');
@@ -276,14 +282,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_0700
-      * @tc.name      : 001.testAVMeta composer
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_0700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_0700', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -300,14 +306,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_0800
-      * @tc.name      : 001.testAVMeta duration
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_0800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_0800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_0800', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -324,14 +330,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_0900
-      * @tc.name      : 001.testAVMeta genre
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_0900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_0900
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_0900', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -348,14 +354,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_1000
-        * @tc.name      : 001.testAVMeta hasAudio
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function Test
-        * @tc.level     : Level0
-           */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_1000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_1000
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_1000', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -372,14 +378,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_1100
-        * @tc.name      : 001.testAVMeta hasVideo
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function Test
-        * @tc.level     : Level0
-           */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_1100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_1100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_1100', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -396,14 +402,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_1200
-      * @tc.name      : 001.testAVMeta mimeType
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_1200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_1200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_1200', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -420,14 +426,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_1300
-      * @tc.name      : 001.testAVMeta trackCount
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_1300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_1300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_1300', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -437,21 +443,21 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor.fetchMetadata().then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, trackCount: ${metadata.trackCount}`);
-        expect(metadata.trackCount).assertEqual('1');
+        expect(metadata.trackCount).assertEqual("2");
         avMetadataExtractor.release();
       }).catch((error: BusinessError) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_SAMPLERATE_PROMISE_FUNCTION_1400
-      * @tc.name      : 001.testAVMeta sampleRate
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_SAMPLERATE_PROMISE_FUNCTION_1400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_SAMPLERATE_PROMISE_FUNCTION_1400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_SAMPLERATE_PROMISE_FUNCTION_1400', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -468,14 +474,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_TITLE_PROMISE_FUNCTION_1500
-      * @tc.name      : 001.testAVMeta title
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TITLE_PROMISE_FUNCTION_1500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TITLE_PROMISE_FUNCTION_1500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TITLE_PROMISE_FUNCTION_1500', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -492,14 +498,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_1600
-      * @tc.name      : 001.testAVMeta videoHeight
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_1600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_1600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_1600', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -509,21 +515,21 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor.fetchMetadata().then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, videoHeight: ${metadata.videoHeight}`);
-        expect(metadata.videoHeight).assertEqual("");
+        expect(metadata.videoHeight).assertEqual("1276");
         avMetadataExtractor.release();
       }).catch((error: BusinessError) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_1700
-      * @tc.name      : 001.testAVMeta videoWidth
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_1700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_1700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_1700', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -533,21 +539,21 @@ export default function AVMetadata() {
       // 获取元信息
       await avMetadataExtractor.fetchMetadata().then((metadata) => {
         console.info(TAG, `fetchMetadata callback success, videoWidth: ${metadata.videoWidth}`);
-        expect(metadata.videoWidth).assertEqual("");
+        expect(metadata.videoWidth).assertEqual("1702");
         avMetadataExtractor.release();
       }).catch((error: BusinessError) => {
         console.error(`fetchMetadata catchCallback, error message:${error.message}`);
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_1800
-      * @tc.name      : 001.testAVMeta videoOrientation
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_1800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_1800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_1800', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -564,14 +570,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_1900
-    * @tc.name      : 001.testAVMeta album
-    * @tc.desc      : Local Video playback control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function Test
-    * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_1900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_1900
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUM_PROMISE_FUNCTION_1900', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -588,14 +594,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_2000
-      * @tc.name      : 001.testAVMeta albumArtist
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_2000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_2000
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_ALBUMARTIST_PROMISE_FUNCTION_2000', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -612,14 +618,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_2100
-      * @tc.name      : 001.testAVMeta artist
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_2100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_2100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_ARTIST_PROMISE_FUNCTION_2100', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -636,14 +642,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_2200
-      * @tc.name      : 001.testAVMeta author
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_2200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_2200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUTHOR_PROMISE_FUNCTION_2200', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -660,14 +666,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_2300
-      * @tc.name      : 001.testAVMeta dateTime
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_2300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_2300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DATETIME_PROMISE_FUNCTION_2300', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -684,14 +690,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_2400
-      * @tc.name      : 001.testAVMeta composer
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_2400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_2400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_COMPOSER_PROMISE_FUNCTION_2400', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -708,14 +714,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_2500
-      * @tc.name      : 001.testAVMeta duration
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_02500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_2500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DURATION_PROMISE_FUNCTION_02500', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -732,14 +738,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_2600
-      * @tc.name      : 001.testAVMeta genre
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_02600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_2600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_GENRE_PROMISE_FUNCTION_02600', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -756,14 +762,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_2700
-        * @tc.name      : 001.testAVMeta hasAudio
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function Test
-        * @tc.level     : Level0
-           */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_02700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_2700
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASAUDIO_PROMISE_FUNCTION_02700', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -780,14 +786,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-        * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_2800
-        * @tc.name      : 001.testAVMeta hasVideo
-        * @tc.desc      : Local Video playback control test
-        * @tc.size      : MediumTest
-        * @tc.type      : Function Test
-        * @tc.level     : Level0
-           */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_02800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_2800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_HASVIDEO_PROMISE_FUNCTION_02800', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -804,14 +810,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_2900
-      * @tc.name      : 001.testAVMeta mimeType
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_02900
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_2900
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_MIMETYPE_PROMISE_FUNCTION_02900', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -828,14 +834,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_3000
-      * @tc.name      : 001.testAVMeta trackCount
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_3000
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_3000
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_TRACKCOUNT_PROMISE_FUNCTION_3000', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -852,14 +858,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA__SAMPLERATE_PROMISE_FUNCTION_3100
-      * @tc.name      : 001.testAVMeta sampleRate
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA__SAMPLERATE_PROMISE_FUNCTION_3100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA__SAMPLERATE_PROMISE_FUNCTION_3100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA__SAMPLERATE_PROMISE_FUNCTION_3100', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -876,14 +882,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_03200
-      * @tc.name      : 001.testAVMeta videoHeight
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA__PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_03200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_03200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA__PLAYER_AVMETADATA_VIDEOHEIGHT_PROMISE_FUNCTION_03200', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -900,14 +906,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_03300
-      * @tc.name      : 001.testAVMeta videoWidth
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_03300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_03300
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOWIDTH_PROMISE_FUNCTION_03300', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -924,14 +930,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-      * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_3400
-      * @tc.name      : 001.testAVMeta videoOrientation
-      * @tc.desc      : Local Video playback control test
-      * @tc.size      : MediumTest
-      * @tc.type      : Function Test
-      * @tc.level     : Level0
-         */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_3400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_3400
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_VIDEOORIENTATION_PROMISE_FUNCTION_3400', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -948,14 +954,14 @@ export default function AVMetadata() {
       });
       done();
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_3500
-    * @tc.name      : 001.testAVMeta PixelMap
-    * @tc.desc      : Local Video playback control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function Test
-    * @tc.level     : Level0
-      */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_3500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_3500
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_AUDIOPIXELMAP_PROMISE_FUNCTION_3500', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success   11111111111');
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -984,14 +990,38 @@ export default function AVMetadata() {
       await mediaTestBase.msleepAsync(SLEEP_TIME)
       done();
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
-    * @tc.name      : 001.testAVMeta album
-    * @tc.desc      : Local Video playback control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function Test
-    * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_DESCRIPTION_PROMISE_FUNCTION_3600', Level.LEVEL0,async (done: Function) => {
+      console.info('AVMetadataExtractor success   11111111111');
+      let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
+      // 获取元数据
+      console.info('AVMetadataExtractor success   22222222222');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 获取元信息
+      await avMetadataExtractor.fetchMetadata().then((metadata) => {
+        console.info(TAG, `fetchMetadata callback success video description :${metadata.description}}`);
+        expect(metadata.description).assertEqual("Test");
+        avMetadataExtractor.release();
+      }).catch((error: BusinessError) => {
+        console.error(`fetchMetadata catchCallback, error message:${error.message}`);
+      });
+      done();
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AUDIO_PLAYER_AVMETADATA_ALBUM_CB_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + "0100 is success");
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -1007,14 +1037,14 @@ export default function AVMetadata() {
         done();
       });
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0200
-    * @tc.name      : 001.testAVMeta PixelMap
-    * @tc.desc      : Local Video playback control test
-    * @tc.size      : MediumTest
-    * @tc.type      : Function Test
-    * @tc.level     : Level0
-       */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0200
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0200', Level.LEVEL0,async (done: Function) => {
       console.info(TAG + "SUB_MULTIMEDIA_AUDIO_PLAYER_VIDEOHEIGHT_PIXELMAP_CB_FUNCTION_0200  is success");
       let avMetadataExtractor: media.AVMetadataExtractor = await media.createAVMetadataExtractor();
@@ -1029,14 +1059,14 @@ export default function AVMetadata() {
         done();
       });
     });
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_PROMISE_FUNCTION_1800
-     * @tc.name      : 001.testAVMeta hdrType
-     * @tc.desc      : Local Video playback control test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function Test
-     * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_PROMISE_FUNCTION_1800
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_PROMISE_FUNCTION_1800
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_PROMISE_FUNCTION_1800', Level.LEVEL0,async (done: Function) => {
       console.info('AVMetadataExtractor success');
       let avMetadataExtractor = await media.createAVMetadataExtractor();
@@ -1053,14 +1083,14 @@ export default function AVMetadata() {
       done();
     });
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_CALLBACK_FUNCTION_0100
-     * @tc.name      : 001.testAVMeta hdrType
-     * @tc.desc      : Local Video playback control test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function Test
-     * @tc.level     : Level0
-        */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_CALLBACK_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_CALLBACK_FUNCTION_0100
+     * @tc.desc   Local Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_HDRTYPE_CALLBACK_FUNCTION_0100', Level.LEVEL0, (done: Function) => {
       console.info(TAG + "0100 is success");
       let avMetadataExtractor: media.AVMetadataExtractor;
@@ -1088,13 +1118,13 @@ export default function AVMetadata() {
       });
     });
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0100
-     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0100
-     * @tc.desc      : Online http Video playback control test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function Test
-     * @tc.level     : Level0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0100
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
@@ -1121,13 +1151,13 @@ export default function AVMetadata() {
       done();
     });
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0200
-     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0200
-     * @tc.desc      : Online http Video with httpheader playback control test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function Test
-     * @tc.level     : Level0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0200
+     * @tc.desc   Online http Video with httpheader playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_SERURLSOURCE_VOID_FUNCTION_0200', Level.LEVEL0, async (done: Function) => {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
@@ -1157,13 +1187,13 @@ export default function AVMetadata() {
       done();
     });
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0100
-     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0100
-     * @tc.desc      : Online http Video playback control test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function Test
-     * @tc.level     : Level0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0100
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAME_PROMISE_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
       let avMetadataExtractor = await media.createAVMetadataExtractor();
@@ -1189,13 +1219,52 @@ export default function AVMetadata() {
       done();
     });
 
-    /* *
-     * @tc.number    : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100
-     * @tc.name      : SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100
-     * @tc.desc      : By fetchMetadata to get tracks info test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function Test
-     * @tc.level     : Level0
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0100
+     * @tc.desc   Online http Video playback control test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHFRAMES_CALLBACK_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
+      let avMetadataExtractor = await media.createAVMetadataExtractor();
+      console.info('AVMetadataExtractor success');
+      avMetadataExtractor.fdSrc = AVFileDescriptor2;
+      // 初始化入参
+      let timesUs: number[] = [];
+      for (let i = 0; i<10; i++) {
+        timesUs.push(1000000 + i*10000);
+      }
+      let queryOption = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width : 300,
+        height : 300
+      };
+      // 批量获取缩略图
+      avMetadataExtractor.fetchFramesByTimes (timesUs, queryOption, param, async (frameInfo: media.FrameInfo, error: BusinessError) => {
+        if (error) {
+          console.info(TAG, `fetchFrameByTime callback fail, error = ${JSON.stringify(error)}`);
+        }
+        if (frameInfo != undefined && frameInfo.image != undefined) {
+          let pixelMap: image.PixelMap = frameInfo.image;
+          expect(pixelMap).not().assertUndefined();
+        }
+        console.info(TAG, `fetchFramesByTimes success`);
+      });
+      avMetadataExtractor.cancelAllFetchFrames();
+      await mediaTestBase.msleepAsync(SLEEP_TIME);
+      avMetadataExtractor.release();
+      done();
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100
+     * @tc.desc   By fetchMetadata to get tracks info test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_PLAYER_AVMETADATA_FETCHMETADATA_PROMISE_FUNCTION_0100', Level.LEVEL0, async (done: Function) => {
       let avMetadataExtractor = await media.createAVMetadataExtractor();

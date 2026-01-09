@@ -49,10 +49,12 @@ export default function EnableModeChangeAnimation() {
 
 
     /**
-     * @tc.number    EnableModeChangeAnimation_0100
-     * @tc.name      EnableModeChangeAnimation_0100
-     * @tc.desc      Test EnableModeChangeAnimation true
-     * @tc.level     Level 2
+     * @tc.name   EnableModeChangeAnimation_0100
+     * @tc.number EnableModeChangeAnimation_0100
+     * @tc.desc   Test EnableModeChangeAnimation true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableModeChangeAnimation_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('EnableModeChangeAnimation_0100 START');
@@ -87,11 +89,13 @@ export default function EnableModeChangeAnimation() {
       done();
     });
 
-        /**
-     * @tc.number    EnableModeChangeAnimation_0100
-     * @tc.name      EnableModeChangeAnimation_0100
-     * @tc.desc      Test EnableModeChangeAnimation false
-     * @tc.level     Level 2
+    /**
+     * @tc.name   EnableModeChangeAnimation_0200
+     * @tc.number EnableModeChangeAnimation_0100
+     * @tc.desc   Test EnableModeChangeAnimation false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('EnableModeChangeAnimation_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('EnableModeChangeAnimation_0200 START');

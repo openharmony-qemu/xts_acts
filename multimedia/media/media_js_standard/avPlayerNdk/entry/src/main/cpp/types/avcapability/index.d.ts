@@ -17,3 +17,4 @@ export const AVCapabilityIsSupportedH263: () => number;
 export const AVCapabilityIsSupportedMPEG2: () => number;
 export const AVCapabilityIsSupportedMPEG4: () => number;
 export const AVCapabilityIsVideoSizeSupported: (width:number,height:number) => number;
+export const AVCapabilityIsVideoSizeSupportedEncoder: (width:number,height:number) => number;

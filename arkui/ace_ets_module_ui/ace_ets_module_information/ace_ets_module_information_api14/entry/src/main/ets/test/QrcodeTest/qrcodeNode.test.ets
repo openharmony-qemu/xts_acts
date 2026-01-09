@@ -47,13 +47,13 @@ export default function QrcodeNodeTest() {
       console.info('qrcodeNode after each called');
     })
 
-     /**
-     * @tc.number    QRCodeNode0100
-     * @tc.name      QRCodeNode0100
-     * @tc.desc      frameNode: createNodeQRCodeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+    /**
+     * @tc.name   QRCodeNode0100
+     * @tc.number QRCodeNode0100
+     * @tc.desc   frameNode: createNodeQRCodeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('QRCodeNode0100', Level.LEVEL2, async (done: Function) => {
 

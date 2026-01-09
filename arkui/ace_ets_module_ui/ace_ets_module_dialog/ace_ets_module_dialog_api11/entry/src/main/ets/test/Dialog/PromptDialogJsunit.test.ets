@@ -43,6 +43,14 @@ export default function PromptDialogAJsunit() {
     });
 
 
+    /**
+     * @tc.name   PromptDialogAJsunit_0100
+     * @tc.number PromptDialogAJsunit_0100
+     * @tc.desc   PromptDialogAJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('PromptDialogAJsunit_0100', Level.LEVEL2, async (done: Function) => {
 
       console.info('PromptDialogAJsunit_0100 START');

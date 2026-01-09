@@ -50,12 +50,15 @@ export default function AlignContent_FlexAlign_Start_padding() {
       console.info("AlignContent_FlexAlign_Start_padding after each called");
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_0300
-     * @tc.name testAlignContentStartFlexPaddingNoSatisfy
-     * @tc.desc padding is set for the flex component so that it does not meet the child component size requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexPaddingNoSatisfy
+     * @tc.number testAlignContentStartFlexPaddingNoSatisfy
+     * @tc.desc   testAlignContentStartFlexPaddingNoSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexPaddingNoSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexPaddingNoSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({
@@ -103,12 +106,15 @@ export default function AlignContent_FlexAlign_Start_padding() {
 
     });
 
-    /**
-     * @tc.number SUB_ACE_FLEXALIGNCONTENT_START_0400
-     * @tc.name testAlignContentStartFlexPaddingSatisfy
-     * @tc.desc padding is set up for the flex component to meet the child component size requirements.
-     */
 
+    /**
+     * @tc.name   testAlignContentStartFlexPaddingSatisfy
+     * @tc.number testAlignContentStartFlexPaddingSatisfy
+     * @tc.desc   testAlignContentStartFlexPaddingSatisfy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testAlignContentStartFlexPaddingSatisfy',  Level.LEVEL0, async () => {
       console.info('testAlignContentStartFlexPaddingSatisfy START');
       GlobalContext.getContext().getObject<number>('value').message.notify({

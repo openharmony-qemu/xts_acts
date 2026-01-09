@@ -35,14 +35,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0100
-    * @tc.name      : test interface checkAppAccess callbcak
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0100
+     * @tc.number AppAccountErrCodeCheck_0100
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0100 "
       console.info(tag + "start====");
@@ -67,14 +67,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0200
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0200
+     * @tc.number AppAccountErrCodeCheck_0200
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0200 "
       console.info(tag + "start====");
@@ -93,14 +93,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0300
-    * @tc.name      : test interface checkAppAccess callbcak
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0300
+     * @tc.number AppAccountErrCodeCheck_0300
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0300 "
       console.info(tag + "start====");
@@ -125,14 +125,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0400
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0400
+     * @tc.number AppAccountErrCodeCheck_0400
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0400 "
       console.info(tag + "start====");
@@ -151,14 +151,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0500
-    * @tc.name      : test interface checkAppAccess callbcak
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0500
+     * @tc.number AppAccountErrCodeCheck_0500
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0500 "
       console.info(tag + "start====");
@@ -183,14 +183,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0600
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0600
+     * @tc.number AppAccountErrCodeCheck_0600
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0600 "
       console.info(tag + "start====");
@@ -209,14 +209,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0700
-    * @tc.name      : test interface checkAppAccess callbcak
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0700
+     * @tc.number AppAccountErrCodeCheck_0700
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0700 "
       console.info(tag + "start====");
@@ -241,14 +241,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0800
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0800
+     * @tc.number AppAccountErrCodeCheck_0800
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0800 "
       console.info(tag + "start====");
@@ -267,14 +267,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_0900
-    * @tc.name      : test interface getAllAccounts callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_0900
+     * @tc.number AppAccountErrCodeCheck_0900
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_0900 "
       console.info(tag + "start====");
@@ -291,14 +291,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1000
-    * @tc.name      : test interface getAllAccounts callback
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1000
+     * @tc.number AppAccountErrCodeCheck_1000
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1000 "
       console.info(tag + "start====");
@@ -315,14 +315,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1100
-    * @tc.name      : test interface off
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1100
+     * @tc.number AppAccountErrCodeCheck_1100
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1100 "
       console.info(tag + "start====");
@@ -346,14 +346,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1200
-    * @tc.name      : test interface off
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1200
+     * @tc.number AppAccountErrCodeCheck_1200
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1200 "
       console.info(tag + "start====");
@@ -377,14 +377,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1300
-    * @tc.name      : test interface off
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1300
+     * @tc.number AppAccountErrCodeCheck_1300
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1300 "
       console.info(tag + "start====");
@@ -401,14 +401,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1400
-    * @tc.name      : test interface off
-    * @tc.desc      : 401 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1400
+     * @tc.number AppAccountErrCodeCheck_1400
+     * @tc.desc   401 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1400 "
       console.info(tag + "start====");
@@ -425,14 +425,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1500
-    * @tc.name      : test interface createAccount
-    * @tc.desc      : 12300007 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1500
+     * @tc.number AppAccountErrCodeCheck_1500
+     * @tc.desc   12300007 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1500 "
       let options:account.CreateAccountOptions  = {
@@ -486,14 +486,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1600
-    * @tc.name      : test interface setCustomData
-    * @tc.desc      : 12400003 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1600
+     * @tc.number AppAccountErrCodeCheck_1600
+     * @tc.desc   12400003 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1600 "
       console.info(tag + "start====");
@@ -523,14 +523,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1700
-    * @tc.name      : test interface setAuthToken
-    * @tc.desc      : 12400004 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1700
+     * @tc.number AppAccountErrCodeCheck_1700
+     * @tc.desc   12400004 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1700 "
       console.info(tag + "start====");
@@ -565,14 +565,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1800
-    * @tc.name      : test interface setAuthTokenVisibility promise
-    * @tc.desc      : 12400005 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1800
+     * @tc.number AppAccountErrCodeCheck_1800
+     * @tc.desc   12400005 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1800 "
       console.info(tag + "start====");
@@ -608,14 +608,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_1900
-    * @tc.name      : test interface deleteCredential callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_1900
+     * @tc.number AppAccountErrCodeCheck_1900
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_1900 "
       console.info(tag + "start====");
@@ -637,14 +637,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2000
-    * @tc.name      : test interface deleteCredential promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2000
+     * @tc.number AppAccountErrCodeCheck_2000
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2000 "
       console.info(tag + "start====");
@@ -652,8 +652,7 @@ export default function AppAccountErrCodeCheck() {
       try {
         let appAccountManager = account.createAppAccountManager();
         console.info(tag + "start deleteCredential");
-        let data = await appAccountManager.deleteCredential(accountName, "PIN");
-        console.info(tag + "data: " + JSON.stringify(data));
+        await appAccountManager.deleteCredential(accountName, "PIN");
         expect().assertFail();
         done();
       } catch (err) {
@@ -664,14 +663,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2100
-    * @tc.name      : test interface deleteCredential callback
-    * @tc.desc      : 12300003 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2100
+     * @tc.number AppAccountErrCodeCheck_2100
+     * @tc.desc   12300003 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2100 "
       console.info(tag + "start====");
@@ -681,9 +680,8 @@ export default function AppAccountErrCodeCheck() {
       }
       let appAccountManager = account.createAppAccountManager();
       console.info(tag + "start deleteCredential");
-      appAccountManager.deleteCredential(accountName, "PIN", (err, data) => {
+      appAccountManager.deleteCredential(accountName, "PIN", (err) => {
         console.info(tag + "err: " + JSON.stringify(err));
-        console.info(tag + "data: " + JSON.stringify(data));
         try {
           expect(err.code).assertEqual(12300003);
         } catch (err) {
@@ -693,14 +691,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2200
-    * @tc.name      : test interface deleteCredential promise
-    * @tc.desc      : 12300003 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2200
+     * @tc.number AppAccountErrCodeCheck_2200
+     * @tc.desc   12300003 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2200 "
       console.info(tag + "start====");
@@ -708,8 +706,7 @@ export default function AppAccountErrCodeCheck() {
       try {
         let appAccountManager = account.createAppAccountManager();
         console.info(tag + "start deleteCredential");
-        let data = await appAccountManager.deleteCredential(accountName, "PIN");
-        console.info(tag + "data: " + JSON.stringify(data));
+        await appAccountManager.deleteCredential(accountName, "PIN");
         expect().assertFail();
         done();
       } catch (err) {
@@ -720,14 +717,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2300
-    * @tc.name      : test interface deleteCredential callback
-    * @tc.desc      : 12300102 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2300
+     * @tc.number AppAccountErrCodeCheck_2300
+     * @tc.desc   12300102 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2300 "
       console.info(tag + "start====");
@@ -735,9 +732,8 @@ export default function AppAccountErrCodeCheck() {
       console.info(tag + "start createAccount");
       await appAccountManager.createAccount(name);
       console.info(tag + "start deleteCredential");
-      appAccountManager.deleteCredential(name, "PIN", (err, data) => {
+      appAccountManager.deleteCredential(name, "PIN", (err) => {
         console.info(tag + "err: " + JSON.stringify(err));
-        console.info(tag + "data: " + JSON.stringify(data));
         try {
           expect(err.code).assertEqual(12300102);
         } catch (err) {
@@ -747,14 +743,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2400
-    * @tc.name      : test interface deleteCredential promise
-    * @tc.desc      : 12300102 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2400
+     * @tc.number AppAccountErrCodeCheck_2400
+     * @tc.desc   12300102 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2400 "
       console.info(tag + "start====");
@@ -763,8 +759,7 @@ export default function AppAccountErrCodeCheck() {
         console.info(tag + "start createAccount");
         await appAccountManager.createAccount(name);
         console.info(tag + "start deleteCredential");
-        let data = await appAccountManager.deleteCredential(name, "PIN");
-        console.info(tag + "data: " + JSON.stringify(data));
+        await appAccountManager.deleteCredential(name, "PIN");
         expect().assertFail();
         done();
       } catch (err) {
@@ -775,14 +770,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2500
-    * @tc.name      : test interface checkAppAccess callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2500
+     * @tc.number AppAccountErrCodeCheck_2500
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2500 "
       console.info(tag + "start====");
@@ -804,14 +799,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2600
-    * @tc.name      : test interface checkAppAccess callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2600
+     * @tc.number AppAccountErrCodeCheck_2600
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2600 "
       console.info(tag + "start====");
@@ -830,14 +825,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2700
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2700
+     * @tc.number AppAccountErrCodeCheck_2700
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2700 "
       console.info(tag + "start====");
@@ -857,14 +852,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2800
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2800
+     * @tc.number AppAccountErrCodeCheck_2800
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2800 "
       console.info(tag + "start====");
@@ -887,14 +882,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_2900
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_2900
+     * @tc.number AppAccountErrCodeCheck_2900
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_2900 "
       console.info(tag + "start====");
@@ -920,14 +915,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3000
-    * @tc.name      : test interface checkAppAccess callback
-    * @tc.desc      : 12300003 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3000
+     * @tc.number AppAccountErrCodeCheck_3000
+     * @tc.desc   12300003 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3000 "
       let bundleName = '';
@@ -949,14 +944,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3100
-    * @tc.name      : test interface checkAppAccess promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3100
+     * @tc.number AppAccountErrCodeCheck_3100
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3100 "
       console.info(tag + "start====");
@@ -978,14 +973,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3200
-    * @tc.name      : test interface checkAppAccess callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3200
+     * @tc.number AppAccountErrCodeCheck_3200
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3200 "
       let bundleName = '';
@@ -1010,14 +1005,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3300
-    * @tc.name      : test interface getCustomDataSync
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3300
+     * @tc.number AppAccountErrCodeCheck_3300
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3300 "
       console.info(tag + "start====");
@@ -1042,14 +1037,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3400
-    * @tc.name      : test interface getCustomDataSync
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3400
+     * @tc.number AppAccountErrCodeCheck_3400
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3400 "
       console.info(tag + "start====");
@@ -1072,14 +1067,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3500
-    * @tc.name      : test interface getCustomDataSync
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3500
+     * @tc.number AppAccountErrCodeCheck_3500
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3500 "
       console.info(tag + "start====");
@@ -1103,14 +1098,14 @@ export default function AppAccountErrCodeCheck() {
     });
 
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3600
-    * @tc.name      : test interface getCustomDataSync
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3600
+     * @tc.number AppAccountErrCodeCheck_3600
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3600 "
       console.info(tag + "start====");
@@ -1135,14 +1130,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3700
-    * @tc.name      : test interface setCredential promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3700
+     * @tc.number AppAccountErrCodeCheck_3700
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3700 "
       console.info(tag + "start====");
@@ -1166,14 +1161,14 @@ export default function AppAccountErrCodeCheck() {
     });
 
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3800
-    * @tc.name      : test interface setCredential callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3800
+     * @tc.number AppAccountErrCodeCheck_3800
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3800 "
       console.info(tag + "start====");
@@ -1195,14 +1190,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_3900
-    * @tc.name      : test interface setCredential promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_3900
+     * @tc.number AppAccountErrCodeCheck_3900
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_3900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_3900 "
       console.info(tag + "start====");
@@ -1226,14 +1221,14 @@ export default function AppAccountErrCodeCheck() {
     });
 
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4000
-    * @tc.name      : test interface setCredential callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4000
+     * @tc.number AppAccountErrCodeCheck_4000
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4000 "
       console.info(tag + "start====");
@@ -1255,14 +1250,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4100
-    * @tc.name      : test interface setCredential promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4100
+     * @tc.number AppAccountErrCodeCheck_4100
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4100 "
       console.info(tag + "start====");
@@ -1285,14 +1280,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4200
-    * @tc.name      : test interface setCredential callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4200
+     * @tc.number AppAccountErrCodeCheck_4200
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4200 "
       console.info(tag + "start====");
@@ -1314,14 +1309,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4300
-    * @tc.name      : test interface setCustomData promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4300
+     * @tc.number AppAccountErrCodeCheck_4300
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4300 "
       console.info(tag + "start====");
@@ -1344,14 +1339,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4400
-    * @tc.name      : test interface setCustomData callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4400
+     * @tc.number AppAccountErrCodeCheck_4400
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4400 "
       console.info(tag + "start====");
@@ -1373,14 +1368,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4500
-    * @tc.name      : test interface setCustomData promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4500
+     * @tc.number AppAccountErrCodeCheck_4500
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4500 "
       console.info(tag + "start====");
@@ -1403,14 +1398,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4600
-    * @tc.name      : test interface setCustomData callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4600
+     * @tc.number AppAccountErrCodeCheck_4600
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4600 "
       console.info(tag + "start====");
@@ -1432,14 +1427,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4700
-    * @tc.name      : test interface setCustomData promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4700
+     * @tc.number AppAccountErrCodeCheck_4700
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4700 "
       console.info(tag + "start====");
@@ -1462,14 +1457,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4800
-    * @tc.name      : test interface setCustomData callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4800
+     * @tc.number AppAccountErrCodeCheck_4800
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4800 "
       console.info(tag + "start====");
@@ -1491,14 +1486,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_4900
-    * @tc.name      : test interface getCredential promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_4900
+     * @tc.number AppAccountErrCodeCheck_4900
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_4900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_4900 "
       console.info(tag + "start====");
@@ -1521,14 +1516,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5000
-    * @tc.name      : test interface getCredential callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5000
+     * @tc.number AppAccountErrCodeCheck_5000
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5000 "
       console.info(tag + "start====");
@@ -1550,14 +1545,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5100
-    * @tc.name      : test interface getCredential promise
-    * @tc.desc      : 13200003 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5100
+     * @tc.number AppAccountErrCodeCheck_5100
+     * @tc.desc   13200003 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5100 "
       console.info(tag + "start====");
@@ -1580,14 +1575,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5200
-    * @tc.name      : test interface getCredential callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5200
+     * @tc.number AppAccountErrCodeCheck_5200
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5200 "
       console.info(tag + "start====");
@@ -1609,14 +1604,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5201
-    * @tc.name      : test interface getCredential promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5201
+     * @tc.number AppAccountErrCodeCheck_5201
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5201 "
       console.info(tag + "start====");
@@ -1639,14 +1634,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5202
-    * @tc.name      : test interface getCredential callback
-    * @tc.desc      : 12300003 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5202
+     * @tc.number AppAccountErrCodeCheck_5202
+     * @tc.desc   12300003 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5202', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5202 "
       console.info(tag + "start====");
@@ -1668,14 +1663,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5300
-    * @tc.name      : test interface getCustomData promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5300
+     * @tc.number AppAccountErrCodeCheck_5300
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5300 "
       console.info(tag + "start====");
@@ -1698,14 +1693,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5400
-    * @tc.name      : test interface getCustomData callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5400
+     * @tc.number AppAccountErrCodeCheck_5400
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5400 "
       console.info(tag + "start====");
@@ -1727,14 +1722,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5500
-    * @tc.name      : test interface getCustomData callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5500
+     * @tc.number AppAccountErrCodeCheck_5500
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5500 "
       console.info(tag + "start====");
@@ -1756,14 +1751,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5600
-    * @tc.name      : test interface getCustomData promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5600
+     * @tc.number AppAccountErrCodeCheck_5600
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5600 "
       console.info(tag + "start====");
@@ -1786,14 +1781,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6600
-    * @tc.name      : test interface getCustomData callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5700
+     * @tc.number AppAccountErrCodeCheck_6600
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5700 "
       console.info(tag + "start====");
@@ -1817,14 +1812,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5800
-    * @tc.name      : test interface getCustomData promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5800
+     * @tc.number AppAccountErrCodeCheck_5800
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5800 "
       console.info(tag + "start====");
@@ -1849,14 +1844,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_5900
-    * @tc.name      : test interface on accountChange
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_5900
+     * @tc.number AppAccountErrCodeCheck_5900
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_5900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_5900 "
       console.info(tag + "start====");
@@ -1876,14 +1871,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6000
-    * @tc.name      : test interface getAuthList promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6000
+     * @tc.number AppAccountErrCodeCheck_6000
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6000 "
       console.info(tag + "start====");
@@ -1906,14 +1901,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6100
-    * @tc.name      : test interface getAuthList callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6100
+     * @tc.number AppAccountErrCodeCheck_6100
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6100 "
       console.info(tag + "start====");
@@ -1935,14 +1930,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6200
-    * @tc.name      : test interface getAuthList promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6200
+     * @tc.number AppAccountErrCodeCheck_6200
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6200 "
       console.info(tag + "start====");
@@ -1965,14 +1960,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6300
-    * @tc.name      : test interface getAuthList callback
-    * @tc.desc      : 12300002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6300
+     * @tc.number AppAccountErrCodeCheck_6300
+     * @tc.desc   12300002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6300 "
       console.info(tag + "start====");
@@ -1994,14 +1989,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6400
-    * @tc.name      : test interface getAuthCallback promise
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6400
+     * @tc.number AppAccountErrCodeCheck_6400
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6400 "
       console.info(tag + "start====");
@@ -2024,14 +2019,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6500
-    * @tc.name      : test interface getAuthCallback callback
-    * @tc.desc      : 13200108 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6500
+     * @tc.number AppAccountErrCodeCheck_6500
+     * @tc.desc   13200108 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6500 "
       console.info(tag + "start====");
@@ -2050,14 +2045,14 @@ export default function AppAccountErrCodeCheck() {
       });
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6600
-    * @tc.name      : test interface getAuthCallback promise
-    * @tc.desc      : 13200108 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6600
+     * @tc.number AppAccountErrCodeCheck_6600
+     * @tc.desc   13200108 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6600 "
       console.info(tag + "start====");
@@ -2080,14 +2075,14 @@ export default function AppAccountErrCodeCheck() {
       }
     });
 
-    /*
-    * @tc.number    : AppAccountErrCodeCheck_6700
-    * @tc.name      : test interface getAuthCallback callback
-    * @tc.desc      : 13200002 err code check
-    * @tc.level     : Level3
-    * @tc.size      : MediumTest
-    * @tc.type      : Function
-    */
+    /**
+     * @tc.name   AppAccountErrCodeCheck_6700
+     * @tc.number AppAccountErrCodeCheck_6700
+     * @tc.desc   13200002 err code check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('AppAccountErrCodeCheck_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let tag = "====>AppAccountErrCodeCheck_6700 "
       console.info(tag + "start====");

@@ -47,9 +47,12 @@ export default function Row_layoutWeight_All() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_All_TEST_0100
      * @tc.number SUB_ACE_Row_layoutWeight_All_TEST_0100
-     * @tc.name testLayoutWeight
-     * @tc.desc row1、row2 and row3 set layoutWeight('3')
+     * @tc.desc   row1、row2 and row3 set layoutWeight('3')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_All_TEST_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_All_TEST_0100] START');
@@ -105,9 +108,12 @@ export default function Row_layoutWeight_All() {
     });
 
     /**
+     * @tc.name   SUB_ACE_Row_layoutWeight_All_TEST_0200
      * @tc.number SUB_ACE_Row_layoutWeight_All_TEST_0200
-     * @tc.name testLayoutWeight
-     * @tc.desc row1 set layoutWeight('3') , row2 set layoutWeight('2'),row3 set layoutWeight('1')
+     * @tc.desc   row1 set layoutWeight('3') , row2 set layoutWeight('2'),row3 set layoutWeight('1')
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_ACE_Row_layoutWeight_All_TEST_0200',  Level.LEVEL0, async (done: Function) => {
       console.info('[SUB_ACE_Row_layoutWeight_All_TEST_0200] START');

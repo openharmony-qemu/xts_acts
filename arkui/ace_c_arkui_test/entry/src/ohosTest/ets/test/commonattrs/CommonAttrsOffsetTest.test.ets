@@ -26,78 +26,78 @@ export default function commonAttrsOffsetTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OFFSET_0100
-     * @tc.name       : testCommonAttrsOffset001
-     * @tc.desc       : testing offset for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOffset001
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OFFSET_0100
+     * @tc.desc   testing offset for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOffset001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCommonAttrsOffset001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OFFSET_0200
-     * @tc.name       : testCommonAttrsOffset002
-     * @tc.desc       : testing offset for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOffset002
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OFFSET_0200
+     * @tc.desc   testing offset for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOffset002', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsOffset002()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OFFSET_0300
-     * @tc.name       : testCommonAttrsOffset003
-     * @tc.desc       : testing offset for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOffset003
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OFFSET_0300
+     * @tc.desc   testing offset for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOffset003', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsOffset003()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OFFSET_0400
-     * @tc.name       : testCommonAttrsOffset004
-     * @tc.desc       : testing offset for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOffset004
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OFFSET_0400
+     * @tc.desc   testing offset for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOffset004', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsOffset004()).assertEqual(0)
         done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OFFSET_0500
-     * @tc.name       : testCommonAttrsOffset005
-     * @tc.desc       : testing offset for commonattrs with valid value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOffset005
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OFFSET_0500
+     * @tc.desc   testing offset for commonattrs with valid value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOffset005', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsOffset005()).assertEqual(0)
         done()
     })   
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_COLUMN_OFFSET_0600
-     * @tc.name       : testCommonAttrsOffset006
-     * @tc.desc       : testing resetAttribute offset for commonattrs
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCommonAttrsOffset006
+     * @tc.number SUB_ARKUI_CAPI_COLUMN_OFFSET_0600
+     * @tc.desc   testing resetAttribute offset for commonattrs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCommonAttrsOffset006', Level.LEVEL1, async (done: Function) => {
         expect(nativeFunc.testCommonAttrsOffset006()).assertEqual(0)

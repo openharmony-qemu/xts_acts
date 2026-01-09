@@ -14,6 +14,78 @@
  */
 export const TestBackgroundColor: () => number;
 
+export  const  dragEventFuncTest001: () => number;
+
+export  const  dragEventFuncTest002: () => number;
+
+export  const  dragEventFuncTest003: () => number;
+
+export  const  dragEventFuncTest004: () => number;
+
+export  const  dragEventFuncTest005: () => number;
+
+export  const  dragEventFuncTest006: () => number;
+
+export  const  dragEventFuncTest007: () => number;
+
+export  const  dragEventFuncTest008: () => number;
+
+export  const  dragEventFuncTest009: () => number;
+
+export  const  dragEventFuncTest010: () => number;
+
+export  const  dragEventFuncTest011: () => number;
+
+export  const  dragEventFuncTest012: () => number;
+
+export  const  dragEventFuncTest013: () => number;
+
+export  const  dragEventFuncTest015: () => number;
+
+export  const  dragEventFuncTest016: () => number;
+
+export  const  dragEventFuncTest017: () => number;
+
+export  const  dragEventFuncTest018: () => number;
+
+export  const  dragEventFuncTest019: () => number;
+
+export  const  dragEventFuncTest020: () => number;
+
+export  const  dragEventFuncTest021: () => number;
+
+export  const  dragEventFuncTest022: () => number;
+
+export  const  dragEventFuncTest023: () => number;
+
+export  const  dragEventFuncTest024: () => number;
+
+export  const  dragEventFuncTest026: () => number;
+
+export  const  dragEventFuncTest027: () => number;
+
+export  const  dragEventFuncTest028: () => number;
+
+export  const  dragEventFuncTest029: () => number;
+
+export  const  dragEventFuncTest030: () => number;
+
+export  const  dragEventFuncTest031: () => number;
+
+export  const  dragEventFuncTest032: () => number;
+
+export  const  dragEventFuncTest033: () => number;
+
+export  const  dragEventFuncTest034: () => number;
+
+export  const  dragEventFuncTest035: () => number;
+
+export  const  dragEventFuncTest036: () => number;
+
+export  const  dragEventFuncTest038: () => number;
+
+export  const  dragEventFuncTest040: () => number;
+
 export const TestBorderColor: () => number;
 
 export const TestBorderRadius: () => number;
@@ -73,7 +145,71 @@ export const TestClearRenderNodeChildren001: () => number;
 export const TestClearRenderNodeChildren002: () => number;
 
 export const TestInvalidate: () => number;
+export const RenderNodeErrorCode001: () => number;
+export const RenderNodeErrorCode002: () => number;
+export const RenderNodeErrorCode003: () => number;
+export const RenderNodeErrorCode004: () => number;
+export const RenderNodeErrorCode005: () => number;
+export const RenderNodeErrorCode006: () => number;
+export const RenderNodeErrorCode007: () => number;
+export const RenderNodeErrorCode008: () => number;
+export const RenderNodeErrorCode009: () => number;
+export const RenderNodeErrorCode010: () => number;
+export const RenderNodeErrorCode011: () => number;
+export const RenderNodeErrorCode012: () => number;
+export const RenderNodeErrorCode013: () => number;
+export const RenderNodeErrorCode014: () => number;
+export const RenderNodeErrorCode015: () => number;
+export const RenderNodeErrorCode016: () => number;
+export const RenderNodeErrorCode017: () => number;
+export const RenderNodeErrorCode018: () => number;
+export const RenderNodeErrorCode019: () => number;
+export const RenderNodeErrorCode020: () => number;
+export const RenderNodeErrorCode021: () => number;
+export const RenderNodeErrorCode022: () => number;
+export const RenderNodeErrorCode023: () => number;
+export const RenderNodeErrorCode024: () => number;
+export const RenderNodeErrorCode025: () => number;
+export const RenderNodeErrorCode026: () => number;
+export const RenderNodeErrorCode027: () => number;
+export const RenderNodeErrorCode028: () => number;
+export const RenderNodeErrorCode029: () => number;
+export const RenderNodeErrorCode030: () => number;
+export const RenderNodeErrorCode031: () => number;
+export const RenderNodeErrorCode032: () => number;
+export const RenderNodeErrorCode033: () => number;
+export const RenderNodeErrorCode034: () => number;
+export const RenderNodeErrorCode035: () => number;
+export const RenderNodeErrorCode036: () => number;
+export const RenderNodeErrorCode037: () => number;
+export const RenderNodeErrorCode038: () => number;
+export const RenderNodeErrorCode039: () => number;
+export const RenderNodeErrorCode040: () => number;
+export const RenderNodeErrorCode041: () => number;
+export const RenderNodeErrorCode042: () => number;
+export const RenderNodeErrorCode043: () => number;
+export const RenderNodeErrorCode044: () => number;
+export const RenderNodeErrorCode045: () => number;
+export const RenderNodeErrorCode046: () => number;
+export const RenderNodeErrorCode047: () => number;
+export const RenderNodeErrorCode048: () => number;
+export const RenderNodeErrorCode049: () => number;
+export const RenderNodeErrorCode050: () => number;
+export const RenderNodeErrorCode051: () => number;
+export const RenderNodeErrorCode052: () => number;
+export const RenderNodeErrorCode053: () => number;
+export const RenderNodeErrorCode054: () => number;
+export const RenderNodeErrorCode055: () => number;
+export const RenderNodeErrorCode056: () => number;
+export const RenderNodeErrorCode057: () => number;
+export const RenderNodeErrorCode058: () => number;
+export const RenderNodeErrorCode059: () => number;
+export const RenderNodeErrorCode060: () => number;
+
+export const RenderNodeNullTest001: () => number;
+export const RenderNodeNullTest002: () => number;
 export const TestRenderNode001: () => number;
+export const TestRenderNode009: () => number;
 export const TestRenderNode002: () => number;
 export const TestRenderNode003: () => number;
 export const TestRenderNode004: () => number;
@@ -113,3 +249,39 @@ export const RenderNodeUtils_014: () => number;
 export const RenderNodeUtils_015: () => number;
 
 export const RenderNodeUtils_016: () => number;
+export const RenderNodeParam001: () => number;
+export const RenderNodeParam002: () => number;
+export const RenderNodeParam003: () => number;
+export const RenderNodeParam004: () => number;
+export const RenderNodeParam005: () => number;
+export const RenderNodeParam006: () => number;
+export const RenderNodeParam007: () => number;
+export const RenderNodeParam008: () => number;
+export const RenderNodeParam009: () => number;
+export const RenderNodeParam010: () => number;
+export const RenderNodeParam011: () => number;
+export const RenderNodeParam012: () => number;
+export const RenderNodeParam013: () => number;
+export const RenderNodeParam014: () => number;
+export const RenderNodeParam015: () => number;
+export const RenderNodeParam016: () => number;
+export const RenderNodeParam017: () => number;
+export const RenderNodeParam018: () => number;
+export const RenderNodeParam019: () => number;
+export const RenderNodeParam020: () => number;
+export const RenderNodeParam021: () => number;
+export const RenderNodeParam022: () => number;
+export const RenderNodeParam023: () => number;
+export const RenderNodeParam024: () => number;
+export const RenderNodeParam025: () => number;
+export const RenderNodeParam026: () => number;
+export const RenderNodeParam027: () => number;
+export const RenderNodeParam028: () => number;
+export const RenderNodeParam029: () => number;
+export const RenderNodeParam030: () => number;
+export const RenderNodeParam031: () => number;
+export const RenderNodeParam032: () => number;
+export const RenderNodeParam033: () => number;
+export const RenderNodeParam034: () => number;
+export const RenderNodeParam035: () => number;
+export const RenderNodeParam036: () => number;

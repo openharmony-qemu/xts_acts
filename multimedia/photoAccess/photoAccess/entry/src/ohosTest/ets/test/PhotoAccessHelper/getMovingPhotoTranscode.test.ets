@@ -14,7 +14,7 @@
  */
 
 
-import { describe, it, expect, beforeAll, Level } from "@ohos/hypium";
+import { describe, it, expect, beforeAll, Level, afterAll } from "@ohos/hypium";
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
 import dataSharePredicates from '@ohos.data.dataSharePredicates';
 import fs from '@ohos.file.fs'
@@ -35,6 +35,11 @@ export default function getMovingPhotoTranscodeTest() {
       await getPermission();
       await driveFn();
       await sleep(1000);
+    });
+
+    afterAll(async (done: Function) => {
+      await sleep(5000);
+      done();
     });
 
     let TestHandler: photoAccessHelper.MediaAssetProgressHandler = {
@@ -81,6 +86,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeNoProgressContent = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -134,6 +140,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeNoProgressContentArrayBuffer = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -180,6 +187,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeContent = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -234,6 +242,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoTranscodeContentArrayBuffer = async (done: Function, testNum: string, case_num: number) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -281,6 +290,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorDeliveryModeNull = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -313,6 +323,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorCompatibleModeNull = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -344,6 +355,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorProgressHandlerNull = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -375,6 +387,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorDeliveryModeUndefined = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -407,6 +420,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorCompatibleModeUndefined = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -439,6 +453,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorProgressHandlerUndefined = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -471,6 +486,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorDeliveryModeOutlier = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -503,6 +519,7 @@ export default function getMovingPhotoTranscodeTest() {
     
     const requestMovingPhotoErrorCompatibleModeOutlier = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -535,6 +552,7 @@ export default function getMovingPhotoTranscodeTest() {
 
     const requestMovingPhotoErrorProgressHandlerOutlier = async (done: Function, testNum: string) => {
       try {
+        await createMovingPhoto(done, 'create_moving_photo_0001');
         let predicates: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
         predicates.equalTo(photoAccessHelper.PhotoKeys.DISPLAY_NAME, 'test_transcode_moving_photo.jpeg');
         let fetchOptions: photoAccessHelper.FetchOptions = {
@@ -566,24 +584,24 @@ export default function getMovingPhotoTranscodeTest() {
     }
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CREATE_MOVING_PHOTO_0001
-     * @tc.name      : create_moving_photo_0001
-     * @tc.desc      : create a moving photo by sandbox resourece
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   create_moving_photo_0001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CREATE_MOVING_PHOTO_0001
+     * @tc.desc   create a moving photo by sandbox resourece
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('create_moving_photo_0001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'create_moving_photo_0001';
       await createMovingPhoto(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_0001
-     * @tc.name      : request_moving_photo_content_handler_0001
-     * @tc.desc      : request moving photo all content to sandbox
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_handler_0001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_0001
+     * @tc.desc   request moving photo all content to sandbox
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_handler_0001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_handler_0001';
@@ -620,48 +638,48 @@ export default function getMovingPhotoTranscodeTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0001
-     * @tc.name      : request_moving_photo_content_transcode_0001
-     * @tc.desc      : request moving photo content transcode to sandbox, then cacel request
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_0001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0001
+     * @tc.desc   request moving photo content transcode to sandbox, then cacel request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_0001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_0001';
       await requestMovingPhotoTranscodeContent(done, testNum, 0);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0002
-     * @tc.name      : request_moving_photo_content_transcode_0002
-     * @tc.desc      : request moving photo the part of img to sandbox
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_0002
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0002
+     * @tc.desc   request moving photo the part of img to sandbox
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_0002', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_0002';
       await requestMovingPhotoTranscodeContent(done, testNum, 1);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0003
-     * @tc.name      : request_moving_photo_content_transcode_0003
-     * @tc.desc      : request moving photo the part of video to sandbox
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_0003
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0003
+     * @tc.desc   request moving photo the part of video to sandbox
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_0003', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_0003';
       await requestMovingPhotoTranscodeContent(done, testNum, 2);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0004
-     * @tc.name      : request_moving_photo_content_transcode_0004
-     * @tc.desc      : request moving photo the part of ArrayBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_0004
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0004
+     * @tc.desc   request moving photo the part of ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_0004', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_0004';
@@ -669,12 +687,12 @@ export default function getMovingPhotoTranscodeTest() {
       done();
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0005
-     * @tc.name      : request_moving_photo_content_transcode_0005
-     * @tc.desc      : request moving photo the part of ArrayBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_0005
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_0005
+     * @tc.desc   request moving photo the part of ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_0005', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_0005';
@@ -683,168 +701,168 @@ export default function getMovingPhotoTranscodeTest() {
     });
 
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0001
-     * @tc.name      : request_moving_photo_content_transcode_noprogress_0001
-     * @tc.desc      : request moving photo content transcode to sandbox, then cacel request
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_noprogress_0001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0001
+     * @tc.desc   request moving photo content transcode to sandbox, then cacel request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_noprogress_0001', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_noprogress_0001';
       await requestMovingPhotoTranscodeNoProgressContent(done, testNum, 0);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0002
-     * @tc.name      : request_moving_photo_content_transcode_noprogress_0002
-     * @tc.desc      : request moving photo the part of img to sandbox
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_noprogress_0002
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0002
+     * @tc.desc   request moving photo the part of img to sandbox
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_noprogress_0002', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_noprogress_0002';
       await requestMovingPhotoTranscodeNoProgressContent(done, testNum, 1);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0003
-     * @tc.name      : request_moving_photo_content_transcode_noprogress_0003
-     * @tc.desc      : request moving photo the part of video to sandbox
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_noprogress_0003
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0003
+     * @tc.desc   request moving photo the part of video to sandbox
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_noprogress_0003', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_noprogress_0003';
       await requestMovingPhotoTranscodeNoProgressContent(done, testNum, 2);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0004
-     * @tc.name      : request_moving_photo_content_transcode_noprogress_0004
-     * @tc.desc      : request moving photo the part of ArrayBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_noprogress_0004
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0004
+     * @tc.desc   request moving photo the part of ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_noprogress_0004', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_noprogress_0004';
       await requestMovingPhotoTranscodeNoProgressContentArrayBuffer(done, testNum, 0);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0005
-     * @tc.name      : request_moving_photo_content_transcode_noprogress_0005
-     * @tc.desc      : request moving photo the part of ArrayBuffer
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   request_moving_photo_content_transcode_noprogress_0005
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_TRANSCODE_NOPROGRESS_0005
+     * @tc.desc   request moving photo the part of ArrayBuffer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_transcode_noprogress_0005', Level.LEVEL0, async (done: Function) => {
       const testNum = 'request_moving_photo_content_transcode_noprogress_0005';
       await requestMovingPhotoTranscodeNoProgressContentArrayBuffer(done, testNum, 1);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0001
-     * @tc.name      : request_moving_photo_error_content_0001
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0001
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0001', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0001';
       await requestMovingPhotoErrorDeliveryModeNull(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0002
-     * @tc.name      : request_moving_photo_error_content_0002
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0002
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0002
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0002', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0002';
       await requestMovingPhotoErrorCompatibleModeNull(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0003
-     * @tc.name      : request_moving_photo_error_content_0003
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0003
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0003
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0003', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0003';
       await requestMovingPhotoErrorProgressHandlerNull(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0004
-     * @tc.name      : request_moving_photo_error_content_0004
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0004
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0004
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0004', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0004';
       await requestMovingPhotoErrorDeliveryModeUndefined(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0005
-     * @tc.name      : request_moving_photo_error_content_0005
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0005
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0005
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0005', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0005';
       await requestMovingPhotoErrorCompatibleModeUndefined(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0006
-     * @tc.name      : request_moving_photo_error_content_0006
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0006
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0006
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0006', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0006';
       await requestMovingPhotoErrorProgressHandlerUndefined(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0007
-     * @tc.name      : request_moving_photo_error_content_0007
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0007
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0007
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0007', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0007';
       await requestMovingPhotoErrorDeliveryModeOutlier(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0008
-     * @tc.name      : request_moving_photo_error_content_0008
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0008
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0008
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0008', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0008';
       await requestMovingPhotoErrorCompatibleModeOutlier(done, testNum);
     });
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0009
-     * @tc.name      : request_moving_photo_error_content_0009
-     * @tc.desc      : request moving photo error code 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   request_moving_photo_error_content_0009
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_ERROR_CONTENT_0009
+     * @tc.desc   request moving photo error code 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('request_moving_photo_error_content_0009', Level.LEVEL2, async (done: Function) => {
       const testNum = 'request_moving_photo_error_content_0009';

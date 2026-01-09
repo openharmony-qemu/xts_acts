@@ -450,6 +450,41 @@ Camera_ErrorCode NDKCamera::GetSupportedOutputCapability(void)
     return ret_;
 }
 
+Camera_ErrorCode NDKCamera::GetSupportedFullOutputCapability(void)
+{
+    if (cameraManager_ == nullptr) {
+        LOG("ndkXTS cameraManager_ is null.");
+    } else if (cameras_ == nullptr) {
+        LOG("ndkXTS cameras_ is null.");
+    }
+    ret_ = OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode(
+        cameraManager_, cameras_, NORMAL_PHOTO, &cameraOutputCapability_);
+    if (cameraOutputCapability_ == nullptr || ret_ != CAMERA_OK) {
+        LOG("ndkXTS GetSupportedFullCameraOutputCapabilityWithSceneMode failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    return ret_;
+}
+
+int NDKCamera::AdjustHeifIdx(int idx)
+{
+    if (idx == -1) {
+        return idx;
+    }
+    if (cameraOutputCapability_ == nullptr) {
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    for (; idx < cameraOutputCapability_->photoProfilesSize; idx++) {
+        if (cameraOutputCapability_->photoProfiles[idx]->format == CAMERA_FORMAT_HEIC) {
+            break;
+        }
+    }
+    if (idx >= cameraOutputCapability_->photoProfilesSize) {
+        idx = -1;
+    }
+    return idx;
+}
+
 Camera_ErrorCode NDKCamera::CreatePreviewOutput(void)
 {
     profile_ = cameraOutputCapability_->previewProfiles[0];
@@ -517,6 +552,27 @@ Camera_ErrorCode NDKCamera::CreatePhotoOutput(char* photoSurfaceId)
         return CAMERA_INVALID_ARGUMENT;
     }
     LOG("ndkXTS CreatePhotoOutput start.");
+    ret_ = OH_CameraManager_CreatePhotoOutput(cameraManager_, profile_, photoSurfaceId, &photoOutput_);
+    PhotoOutputRegisterCallback();
+
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CreateHeifPhotoOutput(char* photoSurfaceId, int idx)
+{
+    LOG("ndkXTS CreateHeifPhotoOutput start.");
+    profile_ = cameraOutputCapability_->photoProfiles[idx];
+    LOG("ndkXTS CreateHeifPhotoOutput photoProfiles start.");
+    if (profile_ == nullptr) {
+        LOG("ndkXTS Get photoProfiles failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+
+    if (photoSurfaceId == nullptr) {
+        LOG("ndkXTS CreateHeifPhotoOutput failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    LOG("ndkXTS CreateHeifPhotoOutput start.");
     ret_ = OH_CameraManager_CreatePhotoOutput(cameraManager_, profile_, photoSurfaceId, &photoOutput_);
     PhotoOutputRegisterCallback();
 
@@ -1012,6 +1068,18 @@ Camera_ErrorCode NDKCamera::SessionGetPhotoRotation(int rotation)
     return ret;
 }
 
+Camera_ErrorCode NDKCamera::SessionGetPhotoRotationWithoutDeviceDegree()
+{
+    LOG("GetPhotoRotationWithoutDeviceDegree begin.");
+    Camera_ErrorCode ret = OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(photoOutput_, &imageRotation_);
+    if (ret == CAMERA_OK) {
+        LOG("OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree success.");
+    } else {
+        LOG("OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree failed. %d ", ret);
+    }
+    return ret;
+}
+
 Camera_ErrorCode NDKCamera::SessionGetVideoRotation(int rotation)
 {
     LOG("GetVideoRotation begin.");
@@ -1026,6 +1094,18 @@ Camera_ErrorCode NDKCamera::SessionGetVideoRotation(int rotation)
     return ret;
 }
 
+Camera_ErrorCode NDKCamera::SessionGetVideoRotationWithoutDeviceDegree()
+{
+    LOG("GetVideoRotationWithoutDeviceDegree begin.");
+    Camera_ErrorCode ret = OH_VideoOutput_GetVideoRotationWithoutDeviceDegree(videoOutput_, &imageRotation_);
+    if (ret == CAMERA_OK) {
+        LOG("OH_VideoOutput_GetVideoRotationWithoutDeviceDegree success.");
+    } else {
+        LOG("OH_VideoOutput_GetVideoRotationWithoutDeviceDegree failed. %d ", ret);
+    }
+    return ret;
+}
+
 Camera_ErrorCode NDKCamera::SessionGetPreviewRotation(int rotation)
 {
     LOG("GetPreviewRotation begin.");
@@ -1036,6 +1116,18 @@ Camera_ErrorCode NDKCamera::SessionGetPreviewRotation(int rotation)
         LOG("OH_PreviewOutput_GetPreviewRotation success.");
     } else {
         LOG("OH_PreviewOutput_GetPreviewRotation failed. %d ", ret);
+    }
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::SessionGetPreviewRotationWithoutDisplayRotation()
+{
+    LOG("GetPreviewRotationWithoutDisplayRotation begin.");
+    Camera_ErrorCode ret = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(previewOutput_, &imageRotation_);
+    if (ret == CAMERA_OK) {
+        LOG("OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation success.");
+    } else {
+        LOG("OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation failed. %d ", ret);
     }
     return ret;
 }
@@ -3358,5 +3450,20 @@ Camera_ErrorCode NDKCamera::MacroStatusChangeTest(void)
         captureSession_, OnMacroStatusChange);
     ret_ = OH_CaptureSession_UnregisterMacroStatusChangeCallback(
         captureSession_, OnMacroStatusChange);
+    return ret_;
+}
+
+void OnIsoInfoChange(Camera_CaptureSession* session, int32_t isoValue)
+{
+    LOG("OnIsoInfoChange IsoInfo ENTER");
+}
+
+Camera_ErrorCode NDKCamera::IsoInfoChangeTest(void)
+{
+    LOG("IsoInfoChangeTest begin.");
+    ret_ = OH_CaptureSession_RegisterIsoChangeCallback(
+        captureSession_, OnIsoInfoChange);
+    ret_ = OH_CaptureSession_UnregisterIsoChangeCallback(
+        captureSession_, OnIsoInfoChange);
     return ret_;
 }

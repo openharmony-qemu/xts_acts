@@ -53,12 +53,12 @@ export default function DecimalTest011() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST11_001
-     * @tc.name      : Decimal_floor_Func_001
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_001
+     * @tc.number DECIMAL_TEST11_001
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_001",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -70,7 +70,7 @@ export default function DecimalTest011() {
         maxE: 9e15
       });
       test_floor_001('0', 0);
-      test_floor_001('-0', -0);
+      test_floor_001('-0', -0.0);
       test_floor_002('0', '0.000');
       test_floor_001('Infinity', Infinity);
       test_floor_001('-Infinity', -Infinity);
@@ -83,12 +83,12 @@ export default function DecimalTest011() {
       test_floor_002('-1', '-0.49999999999999994');
     });
     /**
-     * @tc.number    : DECIMAL_TEST11_002
-     * @tc.name      : Decimal_floor_Func_002
-     * @tc.desc      : Test ln
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_002
+     * @tc.number DECIMAL_TEST11_002
+     * @tc.desc   Test ln
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_002",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -118,12 +118,12 @@ export default function DecimalTest011() {
 
 
     /**
-     * @tc.number    : DECIMAL_TEST11_003
-     * @tc.name      : Decimal_floor_Func_003
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_003
+     * @tc.number DECIMAL_TEST11_003
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_003",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -150,12 +150,12 @@ export default function DecimalTest011() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST11_004
-     * @tc.name      : Decimal_floor_Func_004
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_004
+     * @tc.number DECIMAL_TEST11_004
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_004",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -177,12 +177,12 @@ export default function DecimalTest011() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST11_005
-     * @tc.name      : Decimal_floor_Func_005
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_005
+     * @tc.number DECIMAL_TEST11_005
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_005",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -212,12 +212,12 @@ export default function DecimalTest011() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST11_006
-     * @tc.name      : Decimal_floor_Func_006
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_006
+     * @tc.number DECIMAL_TEST11_006
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_006",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -248,12 +248,12 @@ export default function DecimalTest011() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST11_007
-     * @tc.name      : Decimal_floor_Func_007
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_007
+     * @tc.number DECIMAL_TEST11_007
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_007",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -275,12 +275,12 @@ export default function DecimalTest011() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST11_008
-     * @tc.name      : Decimal_floor_Func_008
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_008
+     * @tc.number DECIMAL_TEST11_008
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_008",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -307,12 +307,12 @@ export default function DecimalTest011() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST11_009
-     * @tc.name      : Decimal_floor_Func_009
-     * @tc.desc      : Test floor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_floor_Func_009
+     * @tc.number DECIMAL_TEST11_009
+     * @tc.desc   Test floor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_floor_Func_009",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void =>  {
       Decimal.set ({
@@ -326,7 +326,8 @@ export default function DecimalTest011() {
       try {
         test_floor_002('e', 'e');
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

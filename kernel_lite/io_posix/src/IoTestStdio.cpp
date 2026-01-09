@@ -28,9 +28,12 @@
 using namespace testing::ext;
 
 /**
+ * @tc.name   testUngetc
  * @tc.number SUB_KERNEL_IO_STDIO_0100
- * @tc.name   ungetc basic function test
  * @tc.desc   [C- SOFTWAret -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testUngetc, Function | MediumTest | Level1)
 {
@@ -49,9 +52,12 @@ HWTEST_F(IoTest, testUngetc, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testPuts
  * @tc.number SUB_KERNEL_IO_STDIO_0200
- * @tc.name   puts basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPuts, Function | MediumTest | Level1)
 {
@@ -63,9 +69,12 @@ HWTEST_F(IoTest, testPuts, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFmemopen
  * @tc.number SUB_KERNEL_IO_STDIO_0300
- * @tc.name   fmemopen basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFmemopen, Function | MediumTest | Level1)
 {
@@ -80,9 +89,12 @@ HWTEST_F(IoTest, testFmemopen, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testGetw
  * @tc.number SUB_KERNEL_IO_STDIO_0400
- * @tc.name   getw basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testGetw, Function | MediumTest | Level1)
 {
@@ -108,9 +120,12 @@ int FormatVdprintf(int fd, const char *format, ...)
 }
 
 /**
+ * @tc.name   testVdprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0500
- * @tc.name   vdprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVdprintf, Function | MediumTest | Level1)
 {
@@ -131,9 +146,12 @@ HWTEST_F(IoTest, testVdprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testDprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0600
- * @tc.name   dprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testDprintf, Function | MediumTest | Level1)
 {
@@ -154,9 +172,12 @@ HWTEST_F(IoTest, testDprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0700
- * @tc.name   fprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFprintf, Function | MediumTest | Level1)
 {
@@ -195,9 +216,12 @@ int FormatVfscanf(FILE *stream, const char *format, ...)
 }
 
 /**
+ * @tc.name   testVfprintf
  * @tc.number SUB_KERNEL_IO_STDIO_0800
- * @tc.name   vfprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVfprintf, Function | MediumTest | Level1)
 {
@@ -218,9 +242,12 @@ HWTEST_F(IoTest, testVfprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testClearerr
  * @tc.number SUB_KERNEL_IO_STDIO_0900
- * @tc.name   clearerr basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testClearerr, Function | MediumTest | Level1)
 {
@@ -236,9 +263,12 @@ HWTEST_F(IoTest, testClearerr, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testPrintf
  * @tc.number SUB_KERNEL_IO_STDIO_1000
- * @tc.name   printf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPrintf, Function | MediumTest | Level1)
 {
@@ -275,9 +305,12 @@ HWTEST_F(IoTest, testPrintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testScanf
  * @tc.number SUB_KERNEL_IO_STDIO_1100
- * @tc.name   scanf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testScanf, Function | MediumTest | Level1)
 {
@@ -320,9 +353,12 @@ int FormatVasprintf(char **buffer, const char *fmt, ...)
 }
 
 /**
+ * @tc.name   testVasprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1200
- * @tc.name   vasprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVasprintf, Function | MediumTest | Level1)
 {
@@ -338,9 +374,12 @@ HWTEST_F(IoTest, testVasprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testGetline
  * @tc.number SUB_KERNEL_IO_STDIO_1300
- * @tc.name   getline basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testGetline, Function | MediumTest | Level1)
 {
@@ -362,9 +401,12 @@ HWTEST_F(IoTest, testGetline, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testGetdelim
  * @tc.number SUB_KERNEL_IO_STDIO_1400
- * @tc.name   getdelim basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testGetdelim, Function | MediumTest | Level1)
 {
@@ -386,9 +428,12 @@ HWTEST_F(IoTest, testGetdelim, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFgetpos
  * @tc.number SUB_KERNEL_IO_STDIO_1500
- * @tc.name   fgetpos basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFgetpos, Function | MediumTest | Level1)
 {
@@ -411,9 +456,12 @@ HWTEST_F(IoTest, testFgetpos, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSnprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1600
- * @tc.name   snprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSnprintf, Function | MediumTest | Level1)
 {
@@ -428,9 +476,12 @@ HWTEST_F(IoTest, testSnprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testAsprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1700
- * @tc.name   asprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testAsprintf, Function | MediumTest | Level1)
 {
@@ -446,9 +497,12 @@ HWTEST_F(IoTest, testAsprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testGets
  * @tc.number SUB_KERNEL_IO_STDIO_1800
- * @tc.name   gets basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testGets, Function | MediumTest | Level1)
 {
@@ -501,9 +555,12 @@ int FormatVsscanf(const char *str, const char *format, ...)
 }
 
 /**
+ * @tc.name   testVsprintf
  * @tc.number SUB_KERNEL_IO_STDIO_1900
- * @tc.name   vsprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVsprintf, Function | MediumTest | Level1)
 {
@@ -521,9 +578,12 @@ HWTEST_F(IoTest, testVsprintf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFgetln
  * @tc.number SUB_KERNEL_IO_STDIO_2000
- * @tc.name   fgetln basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFgetln, Function | MediumTest | Level1)
 {
@@ -548,9 +608,12 @@ int FormatVsnprintf(char *format, ...)
 }
 
 /**
+ * @tc.name   testVsnprintf
  * @tc.number SUB_KERNEL_IO_STDIO_2100
- * @tc.name   vsnprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVsnprintf, Function | MediumTest | Level1)
 {
@@ -578,9 +641,12 @@ void VwarnxTest(char *fmt, ...)
 }
 
 /**
+ * @tc.name   testPerror
  * @tc.number SUB_KERNEL_IO_STDIO_2200
- * @tc.name   perror basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPerror, Function | MediumTest | Level1)
 {
@@ -623,9 +689,12 @@ HWTEST_F(IoTest, testPerror, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testRewind
  * @tc.number SUB_KERNEL_IO_STDIO_2300
- * @tc.name   rewind basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testRewind, Function | MediumTest | Level1)
 {
@@ -650,9 +719,12 @@ int FormatVprintf(char *format, ...)
 }
 
 /**
+ * @tc.name   testVprintf
  * @tc.number SUB_KERNEL_IO_STDIO_2400
- * @tc.name   vprintf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVprintf, Function | MediumTest | Level1)
 {
@@ -698,9 +770,12 @@ int FormatVscanf(const char *format, ...)
 }
 
 /**
+ * @tc.name   testVscanf
  * @tc.number SUB_KERNEL_IO_STDIO_2500
- * @tc.name   vscanf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testVscanf, Function | MediumTest | Level1)
 {
@@ -755,9 +830,12 @@ void *Thread(void *arg)
 }
 
 /**
+ * @tc.name   testGetcharUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2600
- * @tc.name   getchar_unlocked basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testGetcharUnlocked, Function | MediumTest | Level1)
 {
@@ -794,9 +872,12 @@ HWTEST_F(IoTest, testGetcharUnlocked, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testPutcharUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2700
- * @tc.name   putchar_unlocked basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPutcharUnlocked, Function | MediumTest | Level1)
 {
@@ -807,9 +888,12 @@ HWTEST_F(IoTest, testPutcharUnlocked, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testPutcUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2800
- * @tc.name   putc_unlocked basic function test
  * @tc.desc   [C- SOFTWAret -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testPutcUnlocked, Function | MediumTest | Level1)
 {
@@ -826,9 +910,12 @@ HWTEST_F(IoTest, testPutcUnlocked, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testFputcUnlocked
  * @tc.number SUB_KERNEL_IO_STDIO_2900
- * @tc.name   fputc_unlocked basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testFputcUnlocked, Function | MediumTest | Level1)
 {
@@ -845,9 +932,12 @@ HWTEST_F(IoTest, testFputcUnlocked, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSetbuffer
  * @tc.number SUB_KERNEL_IO_STDIO_3000
- * @tc.name   setbuffer basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSetbuffer, Function | MediumTest | Level1)
 {
@@ -879,9 +969,12 @@ HWTEST_F(IoTest, testSetbuffer, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSetlinebuf
  * @tc.number SUB_KERNEL_IO_STDIO_3100
- * @tc.name   setlinebuf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSetlinebuf, Function | MediumTest | Level1)
 {
@@ -909,9 +1002,12 @@ HWTEST_F(IoTest, testSetlinebuf, Function | MediumTest | Level1)
 }
 
 /**
+ * @tc.name   testSetbuf
  * @tc.number SUB_KERNEL_IO_STDIO_3200
- * @tc.name   setbuf basic function test
  * @tc.desc   [C- SOFTWARE -0200]
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(IoTest, testSetbuf, Function | MediumTest | Level1)
 {

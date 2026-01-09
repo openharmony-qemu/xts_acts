@@ -43,12 +43,12 @@ export default function SpaceMain5JustifyContentJsunit() {
     });
 
     /**
-     * @tc.number    SpaceMain5JustifyContentTest_0010
-     * @tc.name      SpaceMain5JustifyContentTest_0010
-     * @tc.desc      Flex space main=5: wrap: FlexWrap.NoWrap
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceMain5JustifyContentTest_0010
+     * @tc.number SpaceMain5JustifyContentTest_0010
+     * @tc.desc   Flex space main=5: wrap: FlexWrap.NoWrap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceMain5JustifyContentTest_0010',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceMain5JustifyContentTest_0010 START');
@@ -62,12 +62,12 @@ export default function SpaceMain5JustifyContentJsunit() {
     });
 
     /**
-     * @tc.number    SpaceMain5JustifyContentTest_0020
-     * @tc.name      SpaceMain5JustifyContentTest_0020
-     * @tc.desc      Flex space main=5: justifyContent: FlexAlign.Start
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceMain5JustifyContentTest_0020
+     * @tc.number SpaceMain5JustifyContentTest_0020
+     * @tc.desc   Flex space main=5: justifyContent: FlexAlign.Start
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceMain5JustifyContentTest_0020',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceMain5JustifyContentTest_0020 START');
@@ -81,12 +81,12 @@ export default function SpaceMain5JustifyContentJsunit() {
     }); 
 
     /**
-     * @tc.number    SpaceMain5JustifyContentTest_0030
-     * @tc.name      SpaceMain5JustifyContentTest_0030
-     * @tc.desc      Flex space main=5: justifyContent: FlexAlign.Center
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceMain5JustifyContentTest_0030
+     * @tc.number SpaceMain5JustifyContentTest_0030
+     * @tc.desc   Flex space main=5: justifyContent: FlexAlign.Center
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceMain5JustifyContentTest_0030',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceMain5JustifyContentTest_0030 START');
@@ -100,12 +100,12 @@ export default function SpaceMain5JustifyContentJsunit() {
     }); 
 
     /**
-     * @tc.number    SpaceMain5JustifyContentTest_0040
-     * @tc.name      SpaceMain5JustifyContentTest_0040
-     * @tc.desc      Flex space main=5: justifyContent: FlexAlign.End
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceMain5JustifyContentTest_0040
+     * @tc.number SpaceMain5JustifyContentTest_0040
+     * @tc.desc   Flex space main=5: justifyContent: FlexAlign.End
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceMain5JustifyContentTest_0040',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceMain5JustifyContentTest_0040 START');
@@ -119,12 +119,12 @@ export default function SpaceMain5JustifyContentJsunit() {
     });
 
     /**
-     * @tc.number    SpaceMain5JustifyContentTest_0050
-     * @tc.name      SpaceMain5JustifyContentTest_0050
-     * @tc.desc      Flex space main=5: justifyContent: FlexAlign.SpaceBetween
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceMain5JustifyContentTest_0050
+     * @tc.number SpaceMain5JustifyContentTest_0050
+     * @tc.desc   Flex space main=5: justifyContent: FlexAlign.SpaceBetween
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceMain5JustifyContentTest_0050',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceMain5JustifyContentTest_0050 START');
@@ -138,12 +138,12 @@ export default function SpaceMain5JustifyContentJsunit() {
     });
 
     /**
-     * @tc.number    SpaceMain5JustifyContentTest_0060
-     * @tc.name      SpaceMain5JustifyContentTest_0060
-     * @tc.desc      Flex space main=5: justifyContent: FlexAlign.SpaceAround
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceMain5JustifyContentTest_0060
+     * @tc.number SpaceMain5JustifyContentTest_0060
+     * @tc.desc   Flex space main=5: justifyContent: FlexAlign.SpaceAround
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceMain5JustifyContentTest_0060',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceMain5JustifyContentTest_0060 START');
@@ -157,12 +157,12 @@ export default function SpaceMain5JustifyContentJsunit() {
     }); 
 
     /**
-     * @tc.number    SpaceMain5JustifyContentTest_0070
-     * @tc.name      SpaceMain5JustifyContentTest_0070
-     * @tc.desc      Flex space main=5: justifyContent: FlexAlign.SpaceEvenly
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   SpaceMain5JustifyContentTest_0070
+     * @tc.number SpaceMain5JustifyContentTest_0070
+     * @tc.desc   Flex space main=5: justifyContent: FlexAlign.SpaceEvenly
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SpaceMain5JustifyContentTest_0070',  Level.LEVEL0, async (done: Function) => {
       console.info('SpaceMain5JustifyContentTest_0070 START');

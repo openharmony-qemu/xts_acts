@@ -17,17 +17,28 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
-import { Driver, ON } from '@ohos.UiTest';
+import { Driver, ON, Component } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
-let driver = Driver.create();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
-const START_ABILITY_TIMEOUT_THOUSAND = 1000;
 
 export default function BackgroundPromise() {
   describe("BackgroundPromise", () => {
-    beforeEach(async (done: Function) => {
+
+    beforeAll(async () => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+
+    beforeEach((done: Function) => {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({
         abilityName: "MainAbility",
@@ -36,16 +47,16 @@ export default function BackgroundPromise() {
       });
       setTimeout(() => {
         done();
-      }, 200);
+      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001
-     * @tc.name actsDoAbilityBackgroundPromise0001
-     * @tc.desc Test the api: doAbilityBackground, swith the ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
       abilityDelegator.printSync(
@@ -55,12 +66,13 @@ export default function BackgroundPromise() {
         done();
         return;
       }
+      setTimeout(() => {
       abilityDelegator.startAbility({
           abilityName: "Main4Ability",
           bundleName: "com.example.crossplatformpromise",
           moduleName: "entry_test",
-        }, async () => {
-          await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+        }, () => {
+          setTimeout(() => {
           abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
               abilityDelegator.printSync(
                 "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001 Main4Ability: " +
@@ -70,8 +82,8 @@ export default function BackgroundPromise() {
                 abilityName: "Main3Ability",
                 bundleName: "com.example.crossplatformpromise",
                 moduleName: "entry_test",
-              }, async () => {
-                await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              }, () => {
+                setTimeout(() => {
                 abilityDelegator.getCurrentTopAbility(
                   (err: BusinessError, ability2: UIAbility) => {
                     abilityDelegator.printSync(
@@ -100,28 +112,31 @@ export default function BackgroundPromise() {
                             );
                           }
                           done();
-                        }, START_ABILITY_TIMEOUT_THOUSAND);
+                        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                       })
                       .catch((error: BusinessError) => {
-                        abilityDelegator.printSync(
-                          "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001 error error:" +
-                            error
-                        );
-                      });
-                    }
-                  );
+                          abilityDelegator.printSync(
+                            "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0001 error error:" +
+                              error
+                          );
+                        });
+                      }
+                    );
+                  }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+                });
               });
-            });
-        });
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          });
+        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002
-     * @tc.name actsDoAbilityBackgroundPromise0002
-     * @tc.desc Test the api: doAbilityBackground, swith the wrong ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the wrong ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002",
@@ -134,6 +149,7 @@ export default function BackgroundPromise() {
           done();
           return;
         }
+        setTimeout(() => {
         abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
           abilityDelegator.printSync(
             "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002 Main4Ability: " +
@@ -143,11 +159,11 @@ export default function BackgroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, async () => {
+            }, () => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0002 startAbility"
             );
-            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            setTimeout(() => {
             abilityDelegator.getCurrentTopAbility(
               (err: BusinessError, ability2: UIAbility) => {
                 try {
@@ -195,18 +211,19 @@ export default function BackgroundPromise() {
                 }
               }
             );
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
           });
-          });
-      }
-    );
-
+        });
+      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+    }
+  );
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004
-     * @tc.name actsDoAbilityBackgroundPromise0004
-     * @tc.desc Test the api: doAbilityBackground, swith the ability which is background to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the ability which is background to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004", Level.LEVEL0, async (done: Function) => {
 
@@ -221,8 +238,8 @@ export default function BackgroundPromise() {
         abilityName: "Main4Ability",
         bundleName: "com.example.crossplatformpromise",
         moduleName: "entry_test",
-      }, async () => {
-        await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+      }, () => {
+        setTimeout(() => {
         abilityDelegator.getCurrentTopAbility((err: BusinessError, ability1: UIAbility) => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_BACKGROUND_PROMISE_0004 Main4Ability: " +
@@ -232,8 +249,8 @@ export default function BackgroundPromise() {
               abilityName: "Main3Ability",
               bundleName: "com.example.crossplatformpromise",
               moduleName: "entry_test",
-            }, async () => {
-              await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            }, () => {
+              setTimeout(() => {
               abilityDelegator.getCurrentTopAbility(
                 (err: BusinessError, ability2: UIAbility) => {
                   abilityDelegator.printSync(
@@ -272,7 +289,7 @@ export default function BackgroundPromise() {
                             done();
                           }
                         );
-                      }, START_ABILITY_TIMEOUT_THOUSAND);
+                      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                     })
                     .catch((error: BusinessError) => {
                       abilityDelegator.printSync(
@@ -280,20 +297,22 @@ export default function BackgroundPromise() {
                           error
                       );
                     });
-                }
-                );
+                  }
+                  );
+                }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
+              });
             });
-          });
+          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
       });
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005
      * @tc.number ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005
-     * @tc.name actsDoAbilityBackgroundPromise0005
-     * @tc.desc Test the api: doAbilityBackground, swith the wrong ability to background.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityBackground, swith the wrong ability to background.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005",
@@ -315,11 +334,11 @@ export default function BackgroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, async () => {
+          }, () => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_BACKGROUND_PROMISE_ERROR_0005 startAbility"
             );
-            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            setTimeout(() => {
             abilityDelegator.getCurrentTopAbility(
               (err: BusinessError, ability2: UIAbility) => {
                 ability2.context.terminateSelf(() => {
@@ -339,10 +358,11 @@ export default function BackgroundPromise() {
                       );
                     }
                     done();
-                  }, START_ABILITY_TIMEOUT_THOUSAND);
+                  }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                 });
               }
             );
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
           });
         });
       }

@@ -117,12 +117,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0100
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0100
-     * @tc.name testErrorManger_0100
-     * @tc.desc 验证在进程中的任一线程注册errormanager.on接口，支持捕获其他子线程
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   验证在进程中的任一线程注册errormanager.on接口，支持捕获其他子线程
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testErrorManger_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("====> testErrorManger_0100 globalErrorOccurred start");
@@ -155,12 +155,12 @@ export default function ErrormangerTest() {
     })
     
     /**
+     * @tc.name   testErrorManger_0200
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0200
-     * @tc.name testErrorManger_0200
-     * @tc.desc 验证在进程中任一线程注册被拒绝promise监听器，注册后可以捕获到当前进程中未被捕获到的promise rejection
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   验证在进程中任一线程注册被拒绝promise监听器，注册后可以捕获到当前进程中未被捕获到的promise rejection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testErrorManger_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("====> testErrorManger_0200 globalUnhandledRejectionDetected start");
@@ -180,12 +180,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0300
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0300
-     * @tc.name testErrorManger_0300
-     * @tc.desc 验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let observer: errorManager.LoopObserver = {
@@ -209,12 +209,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0400
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0400
-     * @tc.name testErrorManger_0400
-     * @tc.desc 验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间,传入异常值 -1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间,传入异常值 -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let observer: errorManager.LoopObserver = {
@@ -236,12 +236,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0500
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0500
-     * @tc.name testErrorManger_0500
-     * @tc.desc 验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间,on传入异常值 undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间,on传入异常值 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let observer: errorManager.LoopObserver = {
@@ -263,12 +263,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0600
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0600
-     * @tc.name testErrorManger_0600
-     * @tc.desc 验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间,off传入异常值 undefined
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间,off传入异常值 undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let observer: errorManager.LoopObserver = {
@@ -290,12 +290,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0700
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0700
-     * @tc.name testErrorManger_0700
-     * @tc.desc 注册被拒绝promise监听器,注册后可以捕获到当前线程中未被捕获到的promise rejection。
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   注册被拒绝promise监听器,注册后可以捕获到当前线程中未被捕获到的promise rejection。
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let observer: errorManager.UnhandledRejectionObserver = (reason: Error, promise: Promise<void>) => {
@@ -328,12 +328,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0800
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0800
-     * @tc.name testErrorManger_0800
-     * @tc.desc 在主线程注册errormanager.on接口,不支持捕获其他线程
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   在主线程注册errormanager.on接口,不支持捕获其他线程
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testErrorManger_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let observer: errorManager.ErrorObserver = {
@@ -365,12 +365,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_0900
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_0900
-     * @tc.name testErrorManger_0900
-     * @tc.desc 注销错误观测器。使用callback异步返回
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   注销错误观测器。使用callback异步返回
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testErrorManger_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       let observerId = 100;
@@ -388,12 +388,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_1000
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1000
-     * @tc.name testErrorManger_1000
-     * @tc.desc 注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间。校验错误码 16200001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   注册主线程消息处理耗时监听器。注册后可以捕获到应用主线程处理消息的具体执行时间。校验错误码 16200001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testErrorManger_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("====>testErrorManger_1000 start");
@@ -417,12 +417,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_1100
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1100
-     * @tc.name testErrorManger_1100
-     * @tc.desc 验证errorManager.on('globalErrorOccurred', errorFunc),返回错误码16300004
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.on('globalErrorOccurred', errorFunc),返回错误码16300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info("====> testErrorManger_1100 globalErrorOccurred start");
@@ -441,12 +441,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_1200
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1200
-     * @tc.name testErrorManger_1200
-     * @tc.desc 验证errorManager.on("globalUnhandledRejectionDetected", promiseFunc),返回错误码16300004
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.on("globalUnhandledRejectionDetected", promiseFunc),返回错误码16300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info("====> testErrorManger_1200 globalUnhandledRejectionDetected start");
@@ -467,12 +467,12 @@ export default function ErrormangerTest() {
 
 
     /**
+     * @tc.name   testErrorManger_1300
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1300
-     * @tc.name testErrorManger_1300
-     * @tc.desc 验证errorManager.on("freeze", freezeCallback),返回错误码16300004
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level0
+     * @tc.desc   验证errorManager.on("freeze", freezeCallback),返回错误码16300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testErrorManger_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("====> testErrorManger_1300 freeze start");
@@ -491,12 +491,12 @@ export default function ErrormangerTest() {
 
 
     /**
+     * @tc.name   testErrorManger_1400
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1400
-     * @tc.name testErrorManger_1400
-     * @tc.desc 验证errorManager.on("freeze", freezeCallback),返回错误码16300004
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.on("freeze", freezeCallback),返回错误码16300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info("====> testErrorManger_1400 freeze start");
@@ -514,12 +514,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_1500
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1500
-     * @tc.name testErrorManger_1500
-     * @tc.desc 验证errorManager.on("globalUnhandledRejectionDetected", func),主线程抛出异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.on("globalUnhandledRejectionDetected", func),主线程抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let result = ""
@@ -547,17 +547,17 @@ export default function ErrormangerTest() {
       errorManager.off("globalUnhandledRejectionDetected", func)
       expect(result).assertEqual("throw error");
       console.info("====> testErrorManger_1500 result instaceType " + JSON.stringify(instanceType2))
-      expect(instanceType2==0 ).assertTrue();
+      expect(instanceType2==errorManager.InstanceType.MAIN).assertTrue();
       done();
     })
 
     /**
+     * @tc.name   testErrorManger_1600
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1600
-     * @tc.name testErrorManger_1600
-     * @tc.desc 验证errorManager.on("globalUnhandledRejectionDetected", func),taskpool抛出异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.on("globalUnhandledRejectionDetected", func),taskpool抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       errorManager.off("globalErrorOccurred");
@@ -583,18 +583,20 @@ export default function ErrormangerTest() {
       console.info("====> testErrorManger_1600 wait end");
       errorManager.off("globalErrorOccurred", func)
       expect(result).assertEqual("throw error");
-      expect(instanceType2==2).assertTrue();
-      console.info("====> testErrorManger_1600 end");
+      expect(instanceType2==errorManager.InstanceType.TASKPOOL).assertTrue();
+      console.info("====> testErrorManger_1600 end1");
+      expect(errorManager.InstanceType.CUSTOM  == 3).assertTrue();
+      console.info("====> testErrorManger_1600 end2");
       done();
     })
 
     /**
+     * @tc.name   testErrorManger_1700
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1700
-     * @tc.name testErrorManger_1700
-     * @tc.desc 验证errorManager.on("globalErrorOccurred", func),worker线程抛出异常
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.on("globalErrorOccurred", func),worker线程抛出异常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testErrorManger_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       let result: Array<string> = []
@@ -618,17 +620,17 @@ export default function ErrormangerTest() {
       expect(result.indexOf("throw error task19") != -1).assertTrue()
       errorManager.off("globalErrorOccurred", func)
       console.info("====> testErrorManger_1700 result instaceType " + JSON.stringify(instanceType2))
-      expect(instanceType2==1).assertTrue();
+      expect(instanceType2==errorManager.InstanceType.WORKER).assertTrue();
       done();
     })
 
-        /**
+    /**
+     * @tc.name   testErrorManger_1800
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1800
-     * @tc.name testErrorManger_1800
-     * @tc.desc 验证errorManager.setDefaultErrorHandler(handler1&2链式调用)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.setDefaultErrorHandler(handler1&2链式调用)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testErrorManger_1800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info("testErrorManger_1800 start");;
@@ -647,12 +649,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_1900
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_1900
-     * @tc.name testErrorManger_1900
-     * @tc.desc 验证errorManager.setDefaultErrorHandler()
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.setDefaultErrorHandler()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testErrorManger_1900", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info("testErrorManger_1900 start");;
@@ -671,12 +673,12 @@ export default function ErrormangerTest() {
     })
 
     /**
+     * @tc.name   testErrorManger_2000
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_2000
-     * @tc.name testErrorManger_2000
-     * @tc.desc 验证errorManager.setDefaultErrorHandler(null) 抛出错误码 401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.setDefaultErrorHandler(null) 抛出错误码 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testErrorManger_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info("testErrorManger_2000 start");;
@@ -694,12 +696,12 @@ export default function ErrormangerTest() {
 
 
     /**
+     * @tc.name   testErrorManger_2100
      * @tc.number SUB_DFX_DFR_Errormanger_Ets_2100
-     * @tc.name testErrorManger_2100
-     * @tc.desc 验证errorManager.setDefaultErrorHandler() 在taskpool线程抛出 16000205
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证errorManager.setDefaultErrorHandler() 在taskpool线程抛出 16000205
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testErrorManger_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
 

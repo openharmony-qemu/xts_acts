@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Huawei Device Co., Ltd.
+ * Copyright (c) 2024-2025 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -125,5 +125,9 @@ napi_value OHDrawingGetRun001(napi_env env, napi_callback_info info);
 napi_value OHDrawingSetTypographyStyleAttributeDouble001(napi_env env, napi_callback_info info);
 napi_value OHDrawingSetTypographyStyleAttributeInt001(napi_env env, napi_callback_info info);
 napi_value OHDrawingSetTextStyleAttributeDouble001(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble002(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble003(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeDouble004(napi_env env, napi_callback_info info);
 napi_value OHDrawingSetTextStyleAttributeInt001(napi_env env, napi_callback_info info);
+napi_value OHDrawingGetFontFullDescriptorsFromPath001(napi_env env, napi_callback_info info);
 #endif // NATIVEFONTNDK_USELESS_H

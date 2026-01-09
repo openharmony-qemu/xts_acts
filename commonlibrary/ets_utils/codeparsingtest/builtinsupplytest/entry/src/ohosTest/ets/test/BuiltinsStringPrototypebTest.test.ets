@@ -30,7 +30,7 @@ export default function builtinsStringPrototypebTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100)
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -45,12 +45,12 @@ export default function builtinsStringPrototypebTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   builtinsStringPrototypebTest8600
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_8600
-     * @tc.name builtinsStringPrototypebTest8600
-     * @tc.desc test String.prototype.padEnd() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padEnd() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest8600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -65,12 +65,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest8700
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_8700
-     * @tc.name builtinsStringPrototypebTest8700
-     * @tc.desc test String.prototype.padEnd() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padEnd() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest8700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -85,12 +85,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest8800
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_8800
-     * @tc.name builtinsStringPrototypebTest8800
-     * @tc.desc test String.prototype.padEnd() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padEnd() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -105,12 +105,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest8900
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_8900
-     * @tc.name builtinsStringPrototypebTest8900
-     * @tc.desc test String.prototype.padEnd() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padEnd() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest8900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -125,12 +125,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest9000
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9000
-     * @tc.name builtinsStringPrototypebTest9000
-     * @tc.desc test String.prototype.padEnd() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padEnd() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -145,12 +145,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest9100
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9100
-     * @tc.name builtinsStringPrototypebTest9100
-     * @tc.desc test String.prototype.padEnd() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padEnd() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -165,12 +165,12 @@ export default function builtinsStringPrototypebTest() {
       })
     
     /**
+     * @tc.name   builtinsStringPrototypebTest9200
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9200
-     * @tc.name builtinsStringPrototypebTest9200
-     * @tc.desc test String.prototype.padStart() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padStart() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -185,12 +185,12 @@ export default function builtinsStringPrototypebTest() {
       })
     
     /**
+     * @tc.name   builtinsStringPrototypebTest9300
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9300
-     * @tc.name builtinsStringPrototypebTest9300
-     * @tc.desc test String.prototype.padStart() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padStart() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -205,12 +205,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest9400
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9400
-     * @tc.name builtinsStringPrototypebTest9400
-     * @tc.desc test String.prototype.padStart() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padStart() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -225,12 +225,12 @@ export default function builtinsStringPrototypebTest() {
       })
     
     /**
+     * @tc.name   builtinsStringPrototypebTest9500
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9500
-     * @tc.name builtinsStringPrototypebTest9500
-     * @tc.desc test String.prototype.padStart() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padStart() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -245,12 +245,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest9600
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9600
-     * @tc.name builtinsStringPrototypebTest9600
-     * @tc.desc test String.prototype.padStart() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.padStart() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -265,12 +265,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest9700
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9700
-     * @tc.name builtinsStringPrototypebTest9700
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -285,12 +285,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest9800
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9800
-     * @tc.name builtinsStringPrototypebTest9800
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -305,12 +305,12 @@ export default function builtinsStringPrototypebTest() {
       })
     
     /**
+     * @tc.name   builtinsStringPrototypebTest9900
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_9900
-     * @tc.name builtinsStringPrototypebTest9900
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest9900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -325,12 +325,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest10000
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_10000
-     * @tc.name builtinsStringPrototypebTest10000
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest10000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -345,12 +345,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest0100
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_0100
-     * @tc.name builtinsStringPrototypebTest0100
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -365,12 +365,12 @@ export default function builtinsStringPrototypebTest() {
       })
     
     /**
+     * @tc.name   builtinsStringPrototypebTest0200
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_0200
-     * @tc.name builtinsStringPrototypebTest0200
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -390,12 +390,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest0300
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_0300
-     * @tc.name builtinsStringPrototypebTest0300
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -415,12 +415,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest0400
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_0400
-     * @tc.name builtinsStringPrototypebTest0400
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -440,12 +440,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest0500
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_0500
-     * @tc.name builtinsStringPrototypebTest0500
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -459,12 +459,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest0600
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_0600
-     * @tc.name builtinsStringPrototypebTest0600
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -478,12 +478,12 @@ export default function builtinsStringPrototypebTest() {
       })
 
     /**
+     * @tc.name   builtinsStringPrototypebTest0700
      * @tc.number SUB_BUILTINS_STRING_PROTOTYPEB_TEST_0700
-     * @tc.name builtinsStringPrototypebTest0700
-     * @tc.desc test String.prototype.repeat() return value
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test String.prototype.repeat() return value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsStringPrototypebTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {

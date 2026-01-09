@@ -47,10 +47,12 @@ export default function AlignCenter_NoSpace() {
     });
 
     /**
+     * @tc.name   testFlexAlignCenterFlexWidthOverflow
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_0100
-     * @tc.name testFlexAlignCenterFlexWidthOverflow
-     * @tc.desc The parent component layout space does not meet the interface display of the spindle layout of
-     * the child component
+     * @tc.desc   The parent component layout space does not meet the interface display of the spindle layout of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterFlexWidthOverflow',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterFlexWidthOverflow] START');
@@ -87,10 +89,12 @@ export default function AlignCenter_NoSpace() {
 
     });
     /**
+     * @tc.name   testFlexAlignCenterFlexWidthMeet
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_CENTER_TEST_0200
-     * @tc.name testFlexAlignCenterFlexWidthMeet
-     * @tc.desc The interface display where the parent component layout space satisfies the spindle layout of
-     * the child component
+     * @tc.desc   The interface display where the parent component layout space satisfies the spindle layout of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testFlexAlignCenterFlexWidthMeet',  Level.LEVEL0, async () => {
       console.info('[testFlexAlignCenterFlexWidthMeet] START');

@@ -41,9 +41,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0100
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0100
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0100
-     * @tc.desc the asyAlgoName is "SM4_128|CTR|NoPadding", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CTR|NoPadding", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0100",
@@ -68,9 +71,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0200
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0200
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0200
-     * @tc.desc the asyAlgoName is "SM4_128|CTR|PKCS5", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CTR|PKCS5", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0200",
@@ -92,9 +98,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0300
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0300
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0300
-     * @tc.desc the asyAlgoName is "SM4_128|CTR|PKCS7", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CTR|PKCS7", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0300",
@@ -116,9 +125,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0400
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0400
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0400
-     * @tc.desc the asyAlgoName is "SM4_128|ECB|NoPadding", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|ECB|NoPadding", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0400",
@@ -143,9 +155,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0500
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0500
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0500
-     * @tc.desc the asyAlgoName is "SM4_128|ECB|PKCS5", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|ECB|PKCS5", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0500",
@@ -167,9 +182,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0600
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0600
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0600
-     * @tc.desc the asyAlgoName is "SM4_128|ECB|PKCS7", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|ECB|PKCS7", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0600",
@@ -191,9 +209,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0700
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0700
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0700
-     * @tc.desc the asyAlgoName is "SM4_128|CBC|NoPadding", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CBC|NoPadding", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0700",
@@ -218,9 +239,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0800
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0800
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0800
-     * @tc.desc the asyAlgoName is "SM4_128|CBC|PKCS5", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CBC|PKCS5", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0800",
@@ -242,9 +266,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_0900
      * @tc.number Security_CryptoFramework_CipherSMX_Func_0900
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_0900
-     * @tc.desc the asyAlgoName is "SM4_128|CBC|PKCS7", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CBC|PKCS7", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_0900",
@@ -266,9 +293,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1000
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1000
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1000
-     * @tc.desc the asyAlgoName is "SM4_128|OFB|NoPadding", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|OFB|NoPadding", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1000",
@@ -293,9 +323,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1100
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1100
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1100
-     * @tc.desc the asyAlgoName is "SM4_128|OFB|PKCS5", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|OFB|PKCS5", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1100",
@@ -317,9 +350,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1200
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1200
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1200
-     * @tc.desc the asyAlgoName is "SM4_128|OFB|PKCS7", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|OFB|PKCS7", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1200",
@@ -341,9 +377,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1300
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1300
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1300
-     * @tc.desc the asyAlgoName is "SM4_128|CFB|NoPadding", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CFB|NoPadding", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1300",
@@ -368,9 +407,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1400
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1400
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1400
-     * @tc.desc the asyAlgoName is "SM4_128|CFB|PKCS5", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CFB|PKCS5", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1400",
@@ -392,9 +434,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1500
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1500
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1500
-     * @tc.desc the asyAlgoName is "SM4_128|CFB|PKCS5", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CFB|PKCS5", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1500",
@@ -416,9 +461,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1600
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1600
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1600
-     * @tc.desc the asyAlgoName is "SM4_128|CFB128|NoPadding", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CFB128|NoPadding", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1600",
@@ -443,9 +491,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1700
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1700
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1700
-     * @tc.desc the asyAlgoName is "SM4_128|CFB128|PKCS5", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CFB128|PKCS5", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1700",
@@ -470,9 +521,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1800
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1800
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1800
-     * @tc.desc the asyAlgoName is "SM4_128|CFB128|PKCS7", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4_128|CFB128|PKCS7", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1800",
@@ -497,9 +551,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_1900
      * @tc.number Security_CryptoFramework_CipherSMX_Func_1900
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_1900
-     * @tc.desc the asyAlgoName is "SM4|ECB|PKCS7", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM4|ECB|PKCS7", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_1900",
@@ -521,9 +578,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2000
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2000
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2000
-     * @tc.desc the asyAlgoName is "SM2_256|C1C3C2|MD5", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM2_256|C1C3C2|MD5", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2000",
@@ -545,9 +605,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2100
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2100
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2100
-     * @tc.desc the asyAlgoName is "SM2_256|SM3", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM2_256|SM3", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2100",
@@ -569,9 +632,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2200
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2200
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2200
-     * @tc.desc the asyAlgoName is "SM2_256|C1C3C2|SHA1", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM2_256|C1C3C2|SHA1", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2200",
@@ -593,9 +659,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2300
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2300
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2300
-     * @tc.desc the asyAlgoName is "SM2_256|SHA224", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM2_256|SHA224", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2300",
@@ -617,9 +686,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2400
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2400
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2400
-     * @tc.desc the asyAlgoName is "SM2_256|C1C3C2||SHA256", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM2_256|C1C3C2||SHA256", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2400",
@@ -641,9 +713,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2500
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2500
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2500
-     * @tc.desc the asyAlgoName is "SM2_256|SHA384", Use the Promise Style of Interface
+     * @tc.desc   the asyAlgoName is "SM2_256|SHA384", Use the Promise Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2500",
@@ -665,9 +740,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2600
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2600
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2600
-     * @tc.desc the asyAlgoName is "SM2_256|C1C3C2|SHA512", Use the Callback Style of Interface
+     * @tc.desc   the asyAlgoName is "SM2_256|C1C3C2|SHA512", Use the Callback Style of Interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2600",
@@ -689,14 +767,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2700
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2700
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2700
-     * @tc.desc Pass in an exception parameter null and call it as a async
-     * @tc.desc Pass in an exception parameter "SM2257|SHA256" and call it as a async
-     * @tc.desc Pass in an exception parameter "SM2_256|SHA257" and call it as a async
-     * @tc.desc Pass in an exception parameter "SM2_256|C1C2C3|SHA512" and call it as a async
-     * @tc.desc Pass in an exception parameter "SM4_192|CFB|PKCS5" and call it as a async
-     * @tc.desc Pass in an exception parameter "SM4_256|CFB|PKCS5" and call it as a async
+     * @tc.desc   Pass in an exception parameter "SM4_256|CFB|PKCS5" and call it as a async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2700",
@@ -743,11 +819,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_2800
      * @tc.number Security_CryptoFramework_CipherSMX_Func_2800
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_2800
-     * @tc.desc Pass in an exception parameter null and call it as a async
-     * @tc.desc Pass in an exception parameter "SM2_256|SHA257" and call it as a async
-     * @tc.desc Pass in an exception parameter "SM2257|SHA256" and call it as a async
+     * @tc.desc   Pass in an exception parameter "SM2257|SHA256" and call it as a async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_2800",
@@ -772,14 +849,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_3000
      * @tc.number Security_CryptoFramework_CipherSMX_Func_3000
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_3000
-     * @tc.desc The encrypt object was not initialized, and the data to be signed "This is a sign test"
-     * was passed in as a promise to be called
-     * @tc.desc Call it as a promise without passing in parameters
-     * @tc.desc Pass in an exception parameter null and call it as a promise
-     * @tc.desc Pass in two exception parameters "This is a cipher test" and "This is a cipher test"
-     * and call them as promise
+     * @tc.desc   Pass in two exception parameters "This is a cipher test" and "This is a cipher test"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_3000",
@@ -817,11 +892,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_3100
      * @tc.number Security_CryptoFramework_CipherSMX_Func_3100
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_3100
-     * @tc.desc The encrypt object was not initialized, and the data to be signed 'This is a sign test'
-     * was passed in as a callback to be called
-     * @tc.desc Call it as a callback without passing in parameters
+     * @tc.desc   Call it as a callback without passing in parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_3100",
@@ -872,9 +948,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_3200
      * @tc.number Security_CryptoFramework_CipherSMX_Func_3200
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_3200
-     * @tc.desc Pass in an exception parameter "SM4_257|SHA256" and call it as a async
+     * @tc.desc   Pass in an exception parameter "SM4_257|SHA256" and call it as a async
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_3200",
@@ -892,9 +971,12 @@ export default function SecurityCipherSM2SM4Jsunit() {
     );
 
     /**
+     * @tc.name   Security_CryptoFramework_CipherSMX_Func_3300
      * @tc.number Security_CryptoFramework_CipherSMX_Func_3300
-     * @tc.name Security_CryptoFramework_CipherSMX_Func_3300
-     * @tc.desc Pass in algorithm name "SM2_256|SM3" and call it using the async method
+     * @tc.desc   Pass in algorithm name "SM2_256|SM3" and call it using the async method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it(
       "Security_CryptoFramework_CipherSMX_Func_3300",

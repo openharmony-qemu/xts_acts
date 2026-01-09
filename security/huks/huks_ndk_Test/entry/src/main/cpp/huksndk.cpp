@@ -21,6 +21,7 @@
 
 #include "napi/native_api.h"
 #include "utils.cpp"
+#include "huks_api_test.h"
 
 #define FAIL (-1)
 #define PARAM_0 0
@@ -1339,11 +1340,11 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHHuksGetSdkVersionErr", nullptr, OHHuksGetSdkVersionErr, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksGenerateKeyItem", nullptr, OHHuksGenerateKeyItem, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksGenerateKeyItemErr", nullptr, OHHuksGenerateKeyItemErr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksExportPublicKeyItem", nullptr, OHHuksExportPublicKeyItem, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksExportPublicKeyItemErr", nullptr, OHHuksExportPublicKeyItemErr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksImportKeyItem", nullptr, OHHuksImportKeyItem, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksImportKeyItemErr", nullptr, OHHuksImportKeyItemErr, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksDeleteKeyItem", nullptr, OHHuksDeleteKeyItem, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -1363,14 +1364,14 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHHuksFreeParamSet", nullptr, OHHuksFreeParamSet, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksIsParamSetValid", nullptr, OHHuksIsParamSetValid, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksIsParamSetValidErr", nullptr, OHHuksIsParamSetValidErr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksIsParamSetTagValid", nullptr, OHHuksIsParamSetTagValid, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksIsParamSetTagValidErr", nullptr, OHHuksIsParamSetTagValidErr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksCheckParamMatch", nullptr, OHHuksCheckParamMatch, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksCheckParamMatchErr", nullptr, OHHuksCheckParamMatchErr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksFreshParamSet", nullptr, OHHuksFreshParamSet, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksFreshParamSetErr", nullptr, OHHuksFreshParamSetErr, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksGetParam", nullptr, OHHuksGetParam, nullptr, nullptr, nullptr, napi_default, nullptr},
@@ -1384,18 +1385,24 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHHuksAbortSession", nullptr, OHHuksAbortSession, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksAbortSessionErr", nullptr, OHHuksAbortSessionErr, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksGetKeyItemParamSet", nullptr, OHHuksGetKeyItemParamSet, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksGetKeyItemParamSetErr", nullptr, OHHuksGetKeyItemParamSetErr, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksImportWrappedKeyItem", nullptr, OHHuksImportWrappedKeyItem, nullptr, nullptr, nullptr, napi_default,
-         nullptr},
+            nullptr},
         {"oHHuksImportWrappedKeyItemErr", nullptr, OHHuksImportWrappedKeyItemErr, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
+            napi_default, nullptr},
         {"oHHuksAnonAttestKeyItem", nullptr, OHHuksAnonAttestKeyItem, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksListAliases", nullptr, OHHuksListAliases, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksFreeKeyAliasSet", nullptr, OHHuksFreeKeyAliasSet, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksWrapKey", nullptr, OHHuksWrapKey, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"oHHuksUnwrapKey", nullptr, OHHuksUnwrapKey, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"huksNativeApi22Type0300", nullptr, OHHuksNativeApi22Type0300, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Type0400", nullptr, OHHuksNativeApi22Type0400, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
+        {"huksNativeApi22Type0500", nullptr, OHHuksNativeApi22Type0500, nullptr, nullptr, nullptr, napi_default,
+            nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;

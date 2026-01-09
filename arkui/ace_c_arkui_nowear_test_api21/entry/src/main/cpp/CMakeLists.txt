@@ -19,6 +19,7 @@ add_library(nativerender SHARED
     component/TextComponentTest.cpp
     list/SwipeActionTest.cpp
     list/SwipeErrorTest.cpp
+    sourceType/SourceTypeTest.cpp
 
 )
 

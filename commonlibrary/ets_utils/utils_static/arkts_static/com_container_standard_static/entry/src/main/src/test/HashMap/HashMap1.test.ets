@@ -34,18 +34,19 @@ export default function HashMapTest1() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0100
-     * @tc.name       : testHashMap0001
-     * @tc.desc       : Test the function By HashMap.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0100
+     * @tc.desc   Test the function By HashMap.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       try {
         let hashMap = new HashMap<number, string>();
         expect(String(hashMap != undefined)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200012);
         expect(err.message).assertEqual("The HashMap's constructor cannot be directly invoked");
@@ -53,12 +54,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0200
-     * @tc.name       : testHashMap0002
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0200
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -68,12 +69,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0300
-     * @tc.name       : testHashMap0003
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0300
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -83,28 +84,28 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0400
-     * @tc.name       : testHashMap0004
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0400
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, number[]>();
-      let c = [1, 2, 3];
+      let c: number[] = [1, 2, 3];
       hashMap.set(1, c);
       let res = hashMap.get(1);
       expect(String(res)).assertEqual(String(c));
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0500
-     * @tc.name       : testHashMap0005
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0500
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, InfoC>()
@@ -115,12 +116,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0600
-     * @tc.name       : testHashMap0006
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0600
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<string, string>();
@@ -130,12 +131,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0700
-     * @tc.name       : testHashMap0007
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0700
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<string, string>();
@@ -145,12 +146,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0800
-     * @tc.name       : testHashMap0008
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0800
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<string, string>();
@@ -160,12 +161,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_0900
-     * @tc.name       : testHashMap0009
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_0900
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -175,12 +176,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01000
-     * @tc.name       : testHashMap0010
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01000
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -190,12 +191,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01100
-     * @tc.name       : testHashMap0011
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01100
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -205,12 +206,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01200
-     * @tc.name       : testHashMap0012
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01200
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<Object, string>();
@@ -221,12 +222,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01300
-     * @tc.name       : testHashMap0013
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01300
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, null>();
@@ -236,12 +237,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01400
-     * @tc.name       : testHashMap0014
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01400
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -251,12 +252,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01500
-     * @tc.name       : testHashMap0015
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01500
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -266,12 +267,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01600
-     * @tc.name       : testHashMap0016
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01600
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -281,12 +282,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01700
-     * @tc.name       : testHashMap0017
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01700
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, Object>();
@@ -297,12 +298,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01800
-     * @tc.name       : testHashMap0018
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01800
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -316,12 +317,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_01900
-     * @tc.name       : testHashMap0019
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_01900
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -335,12 +336,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02000
-     * @tc.name       : testHashMap0020
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testHashMap0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02000
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testHashMap0020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -354,12 +355,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02100
-     * @tc.name       : testHashMap0021
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0021
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02100
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -375,12 +376,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02200
-     * @tc.name       : testHashMap0022
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0022
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02200
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -389,12 +390,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02300
-     * @tc.name       : testHashMap0023
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0023
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02300
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string | number>();
@@ -410,12 +411,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02400
-     * @tc.name       : testHashMap0024
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0024
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02400
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -428,12 +429,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02500
-     * @tc.name       : testHashMap0025
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0025
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02500
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -442,12 +443,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02600
-     * @tc.name       : testHashMap0026
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0026
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02600
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -461,12 +462,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02700
-     * @tc.name       : testHashMap0027
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0027
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02700
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0027", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -475,12 +476,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02800
-     * @tc.name       : testHashMap0028
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0028
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02800
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0028", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string | number>();
@@ -507,12 +508,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_02900
-     * @tc.name       : testHashMap0029
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0029
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_02900
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -533,12 +534,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03000
-     * @tc.name       : testHashMap0030
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0030
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03000
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -554,12 +555,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03100
-     * @tc.name       : testHashMap0031
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0031
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03100
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -568,12 +569,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03200
-     * @tc.name       : testHashMap0032
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0032
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03200
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -590,12 +591,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03300
-     * @tc.name       : testHashMap0033
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0033
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03300
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -605,12 +606,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03400
-     * @tc.name       : testHashMap0034
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0034
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03400
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -627,12 +628,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03500
-     * @tc.name       : testHashMap0035
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0035
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03500
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -649,12 +650,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03600
-     * @tc.name       : testHashMap0036
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0036
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03600
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -669,12 +670,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03700
-     * @tc.name       : testHashMap0037
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0037
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03700
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -683,12 +684,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03800
-     * @tc.name       : testHashMap0038
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0038
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03800
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -714,12 +715,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_03900
-     * @tc.name       : testHashMap0039
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0039
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_03900
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -731,12 +732,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04000
-     * @tc.name       : testHashMap0040
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0040
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04000
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -759,12 +760,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04100
-     * @tc.name       : testHashMap0041
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0041
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04100
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -776,12 +777,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04200
-     * @tc.name       : testHashMap0042
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0042
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04200
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -806,12 +807,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04300
-     * @tc.name       : testHashMap0043
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0043
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04300
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -820,12 +821,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04400
-     * @tc.name       : testHashMap0044
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0044
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04400
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -841,12 +842,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04500
-     * @tc.name       : testHashMap0045
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0045
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04500
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -863,12 +864,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04600
-     * @tc.name       : testHashMap0046
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0046
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04600
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -877,12 +878,12 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04700
-     * @tc.name       : testHashMap0047
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0047
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04700
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, string>();
@@ -904,12 +905,12 @@ export default function HashMapTest1() {
       expect(String(flag)).assertEqual('true');
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04800
-     * @tc.name       : testHashMap0048
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0048
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04800
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testHashMap0048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let hashMap = new HashMap<number, string>();
@@ -924,12 +925,12 @@ export default function HashMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_04900
-     * @tc.name       : testHashMap0049
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0049
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_04900
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testHashMap0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let hashMap = new HashMap<number, string>();
@@ -946,12 +947,12 @@ export default function HashMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05000
-     * @tc.name       : testHashMap0050
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0050
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05000
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("testHashMap0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number, number>();
@@ -978,12 +979,12 @@ export default function HashMapTest1() {
 
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05100
-     * @tc.name       : testHashMap0051
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0051
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05100
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it("testHashMap0051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let hashMap = new HashMap<string, string>();
@@ -998,12 +999,12 @@ export default function HashMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05200
-     * @tc.name       : testHashMap0052
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0052
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05200
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashMap0052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<string, string>();
@@ -1011,12 +1012,12 @@ export default function HashMapTest1() {
       expect(a).assertEqual(true);
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05300
-     * @tc.name       : testHashMap0053
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0053
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05300
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashMap0053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<string, string>();
@@ -1026,47 +1027,49 @@ export default function HashMapTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05400
-     * @tc.name       : testHashMap0054
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0054
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05400
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashMap0054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<string, string>();
       try {
         hashMap.set("name", "jenny");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200011);
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05500
-     * @tc.name       : testHashMap0055
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0055
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05500
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHashMap0055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let hashMap = new HashMap<number | undefined, number>();
       try {
         hashMap.set(undefined, 11);
         expect(true).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(401);
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05600
-     * @tc.name       : testHashMap0056
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0056
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05600
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testHashMap0056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let  hashMap = new HashMap<string, string>();
@@ -1081,12 +1084,12 @@ export default function HashMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05700
-     * @tc.name       : testHashMap0057
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0057
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05700
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testHashMap0057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let  hashMap = new HashMap<string, string>();
@@ -1101,12 +1104,12 @@ export default function HashMapTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_HASHMAP_05800
-     * @tc.name       : testHashMap0058
-     * @tc.desc       : Test the function By HashMap
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHashMap0058
+     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHMAP_05800
+     * @tc.desc   Test the function By HashMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     // it('testHashMap0058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let  hashMap = new HashMap<string, string>();

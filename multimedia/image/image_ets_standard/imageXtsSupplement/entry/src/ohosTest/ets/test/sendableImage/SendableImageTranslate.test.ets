@@ -85,12 +85,12 @@ export default function SendableImageTranslateTest() {
     });
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_0001
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_0001
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_TEST_0001
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_0001
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_TEST_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_TEST_0001';
@@ -101,12 +101,12 @@ export default function SendableImageTranslateTest() {
       });
     })
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_0002
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_0002
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_TEST_0002
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_0002
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_TEST_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_TEST_0002';
@@ -117,12 +117,12 @@ export default function SendableImageTranslateTest() {
       });
     })
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_0003
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_0003
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_TEST_0003
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_0003
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_TEST_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_TEST_0003';
@@ -133,12 +133,12 @@ export default function SendableImageTranslateTest() {
       });
     })
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_0004
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_0004
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_TEST_0004
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_0004
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_TEST_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_TEST_0004';
@@ -150,12 +150,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_0005
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_0005
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_TEST_0005
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_0005
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_TEST_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_TEST_0005';
@@ -167,12 +167,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_0006
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_0006
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_TEST_0006
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_0006
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_TEST_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_TEST_0006';
@@ -184,12 +184,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_0007
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_0007
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_TEST_0007
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_0007
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_TEST_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_TEST_0007';
@@ -201,12 +201,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0001
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0001
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0001
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0001
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0001';
@@ -218,12 +218,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0002
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0002
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0002
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0002
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0002';
@@ -235,12 +235,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0003
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0003
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0003
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0003
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0003';
@@ -252,12 +252,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0004
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0004
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0004
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0004
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0004';
@@ -269,12 +269,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0005
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0005
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0005
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0005
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0005';
@@ -286,12 +286,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0006
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0006
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0006
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0006
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0006', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0006';
@@ -303,12 +303,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0007
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0007
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0007
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0007
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0007', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0007';
@@ -320,12 +320,12 @@ export default function SendableImageTranslateTest() {
     })
 
     /**
-     * @tc.number     SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0008
-     * @tc.name       SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0008
-     * @tc.desc       translate
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0008
+     * @tc.number SENDABLE_IMAGE_TRANSLATE_ABNORMAL_0008
+     * @tc.desc   translate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0008', Level.LEVEL0, async (done: Function) => {
       const testName = 'SENDABLE_IMAGE_TRANSLATE_ABNORMAL_TEST_0008';

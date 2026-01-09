@@ -315,6 +315,11 @@ export default class AVRecorderNdkTestBase {
     console.info(`driver is ${JSON.stringify(driver)}`)
     await this.msleepAsync(2000)
     console.info(`UiDriver start`)
+    let btn1 = await driver.findComponent(BY.text('稍后'))
+    if (btn1 != null) {
+      console.info(`wlan btn click`)
+      await btn1.click()
+    }
     for (let i = 0; i < num; i++) {
       let button = await driver.findComponent(BY.text('允许'))
       if (button == null) {

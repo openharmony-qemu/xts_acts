@@ -41,12 +41,12 @@ export default function ConnectionPublicTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNet_0100
-     * @tc.name       : testNetworkMgrConnectionHasDefaultNet_static_0100
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionHasDefaultNet_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNet_0100
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrConnectionHasDefaultNet_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionHasDefaultNet_static_0100";
@@ -74,12 +74,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNet_0600
-     * @tc.name       : testNetworkMgrConnectionHasDefaultNet_static_0600
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionHasDefaultNet_static_0600
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNet_0600
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrConnectionHasDefaultNet_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionHasDefaultNet_static_0600";
@@ -106,12 +106,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_HasDefaultNetSync_0100
-     * @tc.name       : testNetworkMgrConnectionHasDefaultNetSync_static_0100
-     * @tc.desc       : Check if the default data network is activated
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionHasDefaultNetSync_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_HasDefaultNetSync_0100
+     * @tc.desc   Check if the default data network is activated
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testNetworkMgrConnectionHasDefaultNetSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionHasDefaultNetSync_static_0100";
@@ -131,12 +131,12 @@ export default function ConnectionPublicTest() {
 
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0100
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0100
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0100
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0100";
@@ -155,12 +155,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0200
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0200
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0200
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0200";
@@ -183,12 +183,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0300
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0300
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0300
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0300";
@@ -211,12 +211,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0400
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0400
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0400
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0400";
@@ -239,12 +239,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0500
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0500
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0500
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0500
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0500";
@@ -267,12 +267,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0600
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0600
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0600
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0600
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0600";
@@ -295,12 +295,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0700
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0700
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0700
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0700
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0700";
@@ -323,12 +323,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0800
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0800
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0800
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0800
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0800";
@@ -351,12 +351,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_0900
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_0900
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_0900
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_0900
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_0900";
@@ -379,12 +379,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1000
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1000
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1000
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1000
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1000";
@@ -407,12 +407,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1100
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1100
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1100
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1100
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1100";
@@ -435,12 +435,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1200
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1200
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1200
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1200
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1200";
@@ -463,12 +463,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1300
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1300
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1300
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1300
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1300";
@@ -491,12 +491,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1400
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1400
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1400
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1400
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1400";
@@ -519,12 +519,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1500
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1500
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1500
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1500
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1500";
@@ -547,12 +547,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1600
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1600
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1600
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1600
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1600";
@@ -575,12 +575,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_CreateNetConnection_1700
-     * @tc.name       : testNetworkMgrConnectionCreateNetConnection_static_1700
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionCreateNetConnection_static_1700
+     * @tc.number SUB_NetworkMgr_Connection_CreateNetConnection_1700
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionCreateNetConnection_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionCreateNetConnection_static_1700";
@@ -603,12 +603,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0100
-     * @tc.name       : testNetworkMgrConnectionGetDefaultNetCallback_static_0100
-     * @tc.desc       : test obtain the default activated data network and use the callback method as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetCallback_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Callback_0100
+     * @tc.desc   test obtain the default activated data network and use the callback method as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetDefaultNetCallback_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultNetCallback_static_0100";
@@ -635,12 +635,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNet_Promise_0100
-     * @tc.name       : testNetworkMgrConnectionGetDefaultNetPromise_static_0100
-     * @tc.desc       : test obtain the default activated data network and use Promise as an asynchronous method
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetPromise_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNet_Promise_0100
+     * @tc.desc   test obtain the default activated data network and use Promise as an asynchronous method
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetDefaultNetPromise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultNetPromise_static_0100";
@@ -652,7 +652,7 @@ export default function ConnectionPublicTest() {
             blocked: true
           }
           hilog.info(domain, tag, '%{public}s', caseName +':getDefaultNet: data-'+JSON.stringify(data));
-          ExpectTrue(typeof data.netId == 'number');
+          ExpectTrue(typeof data.netId == 'int');
           hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
           done();
         }).catch((error: Error) => {
@@ -671,19 +671,19 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultNetSync_0100
-     * @tc.name       : testNetworkMgrConnectionGetDefaultNetSync_static_0100
-     * @tc.desc       : test use synchronization method to obtain default activated data network
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetDefaultNetSync_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultNetSync_0100
+     * @tc.desc   test use synchronization method to obtain default activated data network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetDefaultNetSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultNetSync_static_0100";
       hilog.info(domain, tag, '%{public}s', caseName+ ' start');
       try {
         let netHandle: connection.NetHandle = connection.getDefaultNetSync();
-        ExpectTrue(typeof netHandle.netId == 'number');
+        ExpectTrue(typeof netHandle.netId == 'int');
         hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
         done();
       } catch (err:BusinessError) {
@@ -695,12 +695,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Callback_0100
-     * @tc.name       : testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0100
-     * @tc.desc       : test obtain default proxy configuration information for the network
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Callback_0100
+     * @tc.desc   test obtain default proxy configuration information for the network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0100";
@@ -729,12 +729,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Callback_0200
-     * @tc.name       : testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0200
-     * @tc.desc       : test obtain default proxy configuration information for the network
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Callback_0200
+     * @tc.desc   test obtain default proxy configuration information for the network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultHttpProxyCallback_static_0200";
@@ -772,12 +772,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Promise_0100
-     * @tc.name       : testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0100
-     * @tc.desc       : test obtain default proxy configuration information for the network
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_GetDefaultHttpProxy_Promise_0100
+     * @tc.desc   test obtain default proxy configuration information for the network
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetDefaultHttpProxyPromise_static_0100";
@@ -804,12 +804,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNets_0100
-     * @tc.name       : testNetworkMgrConnectionGetAllNets_static_0100
-     * @tc.desc       : Obtain a list of all connected networks and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetAllNets_static_0100
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNets_0100
+     * @tc.desc   Obtain a list of all connected networks and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAllNets_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetAllNets_static_0100";
@@ -837,12 +837,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNets_0500
-     * @tc.name       : testNetworkMgrConnectionGetAllNets_static_0500
-     * @tc.desc       : Obtain a list of all connected networks and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetAllNets_static_0500
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNets_0500
+     * @tc.desc   Obtain a list of all connected networks and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAllNets_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetAllNets_static_0500";
@@ -869,12 +869,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetAllNetsSync_0100
-     * @tc.name       : testNetworkMgrConnectionGetAllNetsSync_static_0100
-     * @tc.desc       : Use synchronization method to obtain a list of all connected networks.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetAllNetsSync_static_0100
+     * @tc.number SUB_NetworkMgr_ConnectionGetAllNetsSync_0100
+     * @tc.desc   Use synchronization method to obtain a list of all connected networks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetAllNetsSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetAllNetsSync_static_0100";
@@ -893,12 +893,12 @@ export default function ConnectionPublicTest() {
       }
     });
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_0100
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_0100
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_0100
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0100
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0100";
@@ -934,12 +934,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_0600
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_0600
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_0600
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0600
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0600";
@@ -976,12 +976,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_0700
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_0700
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_0700
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0700
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0700";
@@ -1018,12 +1018,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_0800
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_0800
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_0800
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0800
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0800";
@@ -1060,12 +1060,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_1700
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_1700
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_1700
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_1700
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1700";
@@ -1102,12 +1102,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_0900
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_0900
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_0900
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_0900
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_0900";
@@ -1145,12 +1145,12 @@ export default function ConnectionPublicTest() {
       }
     });
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_1400
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_1400
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_1400
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_1400
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1400";
@@ -1186,12 +1186,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_1500
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_1500
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_1500
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_1500
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1500";
@@ -1227,12 +1227,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_1600
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_1600
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_1600
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_1600
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1600";
@@ -1268,12 +1268,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionProperties_1800
-     * @tc.name       : testNetworkMgrConnectionGetConnectionProperties_static_1800
-     * @tc.desc       : Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetConnectionProperties_static_1800
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionProperties_1800
+     * @tc.desc   Obtain the connection information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionProperties_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionProperties_static_1800";
@@ -1309,12 +1309,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0100
-     * @tc.name       : testNetworkMgrConnectionGetConnectionPropertiesSync_static_0100
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync_static_0100
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0100
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync_static_0100";
@@ -1334,12 +1334,12 @@ export default function ConnectionPublicTest() {
       }
     });
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0600
-     * @tc.name       : testNetworkMgrConnectionGetConnectionPropertiesSync_static_0600
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync_static_0600
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0600
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesSync_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync_static_0600";
@@ -1361,12 +1361,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0700
-     * @tc.name       : testNetworkMgrConnectionGetConnectionPropertiesSync_static_0700
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync_static_0700
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0700
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesSync_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync_static_0700";
@@ -1388,12 +1388,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0800
-     * @tc.name       : testNetworkMgrConnectionGetConnectionPropertiesSync_static_0800
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync_static_0800
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0800
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesSync_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync_static_0800";
@@ -1415,12 +1415,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0900
-     * @tc.name       : testNetworkMgrConnectionGetConnectionPropertiesSync_static_0900
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetConnectionPropertiesSync_static_0900
+     * @tc.number SUB_NetworkMgr_ConnectionGetConnectionPropertiesSync_0900
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetConnectionPropertiesSync_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetConnectionPropertiesSync_static_0900";
@@ -1442,12 +1442,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_0100
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_0100
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_0100
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0100
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0100";
@@ -1483,12 +1483,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_0600
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_0600
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_0600
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0600
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0600";
@@ -1525,12 +1525,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_0700
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_0700
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_0700
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0700
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0700";
@@ -1567,12 +1567,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_0800
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_0800
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_0800
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0800
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0800";
@@ -1609,12 +1609,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_1700
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_1700
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_1700
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1700
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the callback method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1700";
@@ -1651,12 +1651,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_0900
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_0900
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_0900
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_0900
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_0900";
@@ -1694,12 +1694,12 @@ export default function ConnectionPublicTest() {
       }
     });
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_1400
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_1400
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_1400
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1400
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1400";
@@ -1735,12 +1735,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_1500
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_1500
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_1500
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1500
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1500";
@@ -1776,12 +1776,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_1600
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_1600
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_1600
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1600
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1600";
@@ -1817,12 +1817,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilities_1800
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilities_static_1800
-     * @tc.desc       : Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilities_static_1800
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilities_1800
+     * @tc.desc   Obtain the capability information of the network corresponding to netHandle and use the Promise method as an asynchronous method.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilities_static_1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilities_static_1800";
@@ -1858,12 +1858,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0100
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilitiesSync_static_0100
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync_static_0100
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0100
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesSync_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilitiesSync_static_0100";
@@ -1883,12 +1883,12 @@ export default function ConnectionPublicTest() {
       }
     });
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0600
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilitiesSync_static_0600
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync_static_0600
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0600
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesSync_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilitiesSync_static_0600";
@@ -1910,12 +1910,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0700
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilitiesSync_static_0700
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync_static_0700
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0700
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesSync_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilitiesSync_static_0700";
@@ -1937,12 +1937,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0800
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilitiesSync_static_0800
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync_static_0800
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0800
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesSync_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilitiesSync_static_0800";
@@ -1964,12 +1964,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0900
-     * @tc.name       : testNetworkMgrConnectionGetNetCapabilitiesSync_static_0900
-     * @tc.desc       : Use synchronization method to obtain network information bound to the app.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionGetNetCapabilitiesSync_static_0900
+     * @tc.number SUB_NetworkMgr_ConnectionGetNetCapabilitiesSync_0900
+     * @tc.desc   Use synchronization method to obtain network information bound to the app.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionGetNetCapabilitiesSync_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionGetNetCapabilitiesSync_static_0900";
@@ -1990,12 +1990,12 @@ export default function ConnectionPublicTest() {
       }
     });
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCap_0100
-     * @tc.name       : testNetworkMgrConnectionNetCap_static_0100
-     * @tc.desc       : Specific network capabilities .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionNetCap_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_NetCap_0100
+     * @tc.desc   Specific network capabilities .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCap_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCap_static_0100";
@@ -2013,12 +2013,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCap_0200
-     * @tc.name       : testNetworkMgrConnectionNetCap_static_0200
-     * @tc.desc       : Specific network capabilities .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionNetCap_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_NetCap_0200
+     * @tc.desc   Specific network capabilities .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCap_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCap_static_0200";
@@ -2036,12 +2036,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCap_0300
-     * @tc.name       : testNetworkMgrConnectionNetCap_static_0300
-     * @tc.desc       : Specific network capabilities .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionNetCap_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_NetCap_0300
+     * @tc.desc   Specific network capabilities .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCap_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCap_static_0300";
@@ -2059,12 +2059,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCap_0400
-     * @tc.name       : testNetworkMgrConnectionNetCap_static_0400
-     * @tc.desc       : Specific network capabilities .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionNetCap_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_NetCap_0400
+     * @tc.desc   Specific network capabilities .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCap_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCap_static_0400";
@@ -2082,12 +2082,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCap_0500
-     * @tc.name       : testNetworkMgrConnectionNetCap_static_0500
-     * @tc.desc       : Specific network capabilities .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionNetCap_static_0500
+     * @tc.number SUB_NetworkMgr_Connection_NetCap_0500
+     * @tc.desc   Specific network capabilities .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCap_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCap_static_0500";
@@ -2105,12 +2105,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCap_0600
-     * @tc.name       : testNetworkMgrConnectionNetCap_static_0600
-     * @tc.desc       : Specific network capabilities .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionNetCap_static_0600
+     * @tc.number SUB_NetworkMgr_Connection_NetCap_0600
+     * @tc.desc   Specific network capabilities .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCap_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCap_static_0600";
@@ -2128,12 +2128,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCap_0700
-     * @tc.name       : testNetworkMgrConnectionNetCap_static_0700
-     * @tc.desc       : Specific network capabilities .
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionNetCap_static_0700
+     * @tc.number SUB_NetworkMgr_Connection_NetCap_0700
+     * @tc.desc   Specific network capabilities .
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCap_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCap_static_0700";
@@ -2151,12 +2151,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_HttpProxy_0100
-     * @tc.name   : testNetworkMgrConnectionHttpProxy_static_0100
-     * @tc.desc   : Network proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionHttpProxy_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_HttpProxy_0100
+     * @tc.desc   Network proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionHttpProxy_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testNetworkMgrConnectionHttpProxy_static_0100';
@@ -2181,12 +2181,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_HttpProxy_0200
-     * @tc.name   : testNetworkMgrConnectionHttpProxy_static_0200
-     * @tc.desc   : Network proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionHttpProxy_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_HttpProxy_0200
+     * @tc.desc   Network proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionHttpProxy_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testNetworkMgrConnectionHttpProxy_static_0200';
@@ -2211,12 +2211,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number : SUB_NetworkMgr_Connection_HttpProxy_0300
-     * @tc.name   : testNetworkMgrConnectionHttpProxy_static_0300
-     * @tc.desc   : Network proxy configuration information.
-     * @tc.level  : Level 3
-     * @tc.type   : Function
-     * @tc.size   : MediumTest
+     * @tc.name   testNetworkMgrConnectionHttpProxy_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_HttpProxy_0300
+     * @tc.desc   Network proxy configuration information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionHttpProxy_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = 'testNetworkMgrConnectionHttpProxy_static_0300';
@@ -2241,12 +2241,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCapabilities_0100
-     * @tc.name       : testNetworkMgrConnectionNetCapabilities_static_0100
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetCapabilities_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_NetCapabilities_0100
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCapabilities_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCapabilities_static_0100";
@@ -2277,12 +2277,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCapabilities_0200
-     * @tc.name       : testNetworkMgrConnectionNetCapabilities_static_0200
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetCapabilities_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_NetCapabilities_0200
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCapabilities_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCapabilities_static_0200";
@@ -2313,12 +2313,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCapabilities_0300
-     * @tc.name       : testNetworkMgrConnectionNetCapabilities_static_0300
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetCapabilities_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_NetCapabilities_0300
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCapabilities_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCapabilities_static_0300";
@@ -2343,12 +2343,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetCapabilities_0400
-     * @tc.name       : testNetworkMgrConnectionNetCapabilities_static_0400
-     * @tc.desc       : test create a NetConnection object
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetCapabilities_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_NetCapabilities_0400
+     * @tc.desc   test create a NetConnection object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetCapabilities_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetCapabilities_static_0400";
@@ -2373,12 +2373,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0100
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0100
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0100
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0100";
@@ -2414,12 +2414,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0200
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0200
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0200
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0200";
@@ -2455,12 +2455,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0300
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0300
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0300
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0300";
@@ -2496,12 +2496,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0400
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0400
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0400
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0400";
@@ -2537,12 +2537,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0500
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0500
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0500
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0500
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0500";
@@ -2578,12 +2578,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0600
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0600
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0600
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0600
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0600";
@@ -2598,7 +2598,7 @@ export default function ConnectionPublicTest() {
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
-              ExpectTrue(typeof data?.mtu == 'number');
+              ExpectTrue(typeof data?.mtu == 'int');
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
@@ -2619,12 +2619,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0700
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0700
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0700
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0700
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0700";
@@ -2659,12 +2659,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0800
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0800
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0800
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0800
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0800";
@@ -2699,12 +2699,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_0900
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_0900
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_0900
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_0900
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_0900";
@@ -2739,12 +2739,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_1000
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_1000
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_1000
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1000
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_1000";
@@ -2779,12 +2779,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_1100
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_1100
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_1100
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1100
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_1100";
@@ -2819,12 +2819,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_ConnectionProperties_1200
-     * @tc.name       : testNetworkMgrConnectionConnectionProperties_static_1200
-     * @tc.desc       : Network connection information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionConnectionProperties_static_1200
+     * @tc.number SUB_NetworkMgr_Connection_ConnectionProperties_1200
+     * @tc.desc   Network connection information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionConnectionProperties_static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionConnectionProperties_static_1200";
@@ -2833,7 +2833,7 @@ export default function ConnectionPublicTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: success data ->'+JSON.stringify(data));
-            ExpectTrue(typeof data.mtu == 'number');
+            ExpectTrue(typeof data.mtu == 'int');
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           }).catch((error: Error) => {
@@ -2859,12 +2859,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0200
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0200
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_0200
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0200";
@@ -2900,12 +2900,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0300
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0300
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_0300
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0300";
@@ -2941,12 +2941,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0400
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0400
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_0400
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0400";
@@ -2982,12 +2982,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0500
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0500
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_0500
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_0500
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0500";
@@ -3023,12 +3023,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0700
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0700
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_0700
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_0700
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0700";
@@ -3063,12 +3063,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0800
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0800
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_0800
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_0800
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0800";
@@ -3103,12 +3103,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_0900
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_0900
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_0900
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_0900
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_0900";
@@ -3143,12 +3143,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_RouteInfo_1000
-     * @tc.name       : testNetworkMgrConnectionRouteInfo_static_1000
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRouteInfo_static_1000
+     * @tc.number SUB_NetworkMgr_Connection_RouteInfo_1000
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRouteInfo_static_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRouteInfo_static_1000";
@@ -3183,12 +3183,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_LinkAddress_0100
-     * @tc.name       : testNetworkMgrConnectionLinkAddress_static_0100
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionLinkAddress_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_LinkAddress_0100
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionLinkAddress_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionLinkAddress_static_0100";
@@ -3203,7 +3203,7 @@ export default function ConnectionPublicTest() {
               done();
             } else {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
-              ExpectTrue(typeof data?.routes[0].destination.prefixLength == 'number');
+              ExpectTrue(typeof data?.routes[0].destination.prefixLength == 'int');
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
@@ -3224,12 +3224,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_LinkAddress_0200
-     * @tc.name       : testNetworkMgrConnectionLinkAddress_static_0200
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionLinkAddress_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_LinkAddress_0200
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionLinkAddress_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionLinkAddress_static_0200";
@@ -3265,12 +3265,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_LinkAddress_0300
-     * @tc.name       : testNetworkMgrConnectionLinkAddress_static_0300
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionLinkAddress_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_LinkAddress_0300
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionLinkAddress_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionLinkAddress_static_0300";
@@ -3305,12 +3305,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_LinkAddress_0400
-     * @tc.name       : testNetworkMgrConnectionLinkAddress_static_0400
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionLinkAddress_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_LinkAddress_0400
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionLinkAddress_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionLinkAddress_static_0400";
@@ -3319,7 +3319,7 @@ export default function ConnectionPublicTest() {
         connection.getDefaultNet().then((netHandle: connection.NetHandle) => {
           connection.getConnectionProperties(netHandle).then((data: connection.ConnectionProperties) => {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: success data ->'+JSON.stringify(data));
-            ExpectTrue(typeof data.routes[0].destination.prefixLength == 'number');
+            ExpectTrue(typeof data.routes[0].destination.prefixLength == 'int');
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           }).catch((error: Error) => {
@@ -3345,12 +3345,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetAddress_0100
-     * @tc.name       : testNetworkMgrConnectionNetAddress_static_0100
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetAddress_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_NetAddress_0100
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetAddress_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetAddress_static_0100";
@@ -3386,12 +3386,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetAddress_0200
-     * @tc.name       : testNetworkMgrConnectionNetAddress_static_0200
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetAddress_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_NetAddress_0200
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetAddress_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetAddress_static_0200";
@@ -3427,12 +3427,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetAddress_0300
-     * @tc.name       : testNetworkMgrConnectionNetAddress_static_0300
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetAddress_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_NetAddress_0300
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetAddress_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetAddress_static_0300";
@@ -3449,7 +3449,7 @@ export default function ConnectionPublicTest() {
               hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: data->'+JSON.stringify(data));
               let portTypeof: string = typeof data?.routes[0]?.destination?.address?.port;
               hilog.info(domain, tag, '%{public}s', caseName +': portTypeof ->'+ portTypeof);
-              ExpectTrue(portTypeof == 'number' || portTypeof == 'undefined');
+              ExpectTrue(portTypeof == 'int' || portTypeof == 'undefined');
               hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
               done();
             }
@@ -3470,12 +3470,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetAddress_0400
-     * @tc.name       : testNetworkMgrConnectionNetAddress_static_0400
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetAddress_static_0400
+     * @tc.number SUB_NetworkMgr_Connection_NetAddress_0400
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetAddress_static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetAddress_static_0400";
@@ -3510,12 +3510,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetAddress_0500
-     * @tc.name       : testNetworkMgrConnectionNetAddress_static_0500
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetAddress_static_0500
+     * @tc.number SUB_NetworkMgr_Connection_NetAddress_0500
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetAddress_static_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetAddress_static_0500";
@@ -3550,12 +3550,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_NetAddress_0600
-     * @tc.name       : testNetworkMgrConnectionNetAddress_static_0600
-     * @tc.desc       : Network routing information.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionNetAddress_static_0600
+     * @tc.number SUB_NetworkMgr_Connection_NetAddress_0600
+     * @tc.desc   Network routing information.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionNetAddress_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionNetAddress_static_0600";
@@ -3566,7 +3566,7 @@ export default function ConnectionPublicTest() {
             hilog.info(domain, tag, '%{public}s', caseName +': getConnectionProperties: success data ->'+JSON.stringify(data));
             let portTypeof: string = typeof data?.routes[0]?.destination?.address?.port;
             hilog.info(domain, tag, '%{public}s', caseName +': portTypeof ->'+ portTypeof);
-            ExpectTrue(portTypeof == 'number' || portTypeof == 'undefined');
+            ExpectTrue(portTypeof === 'int' || portTypeof === 'undefined');
             hilog.info(domain, tag, '%{public}s', caseName+ '---test end');
             done();
           }).catch((error: Error) => {
@@ -3592,12 +3592,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_On_0100
-     * @tc.name       : testNetworkMgrConnectionOn_static_0100
-     * @tc.desc       : Subscribe to network available events.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionOn_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_On_0100
+     * @tc.desc   Subscribe to network available events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionOn_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionOn_static_0100";
@@ -3629,12 +3629,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_On_0200
-     * @tc.name       : testNetworkMgrConnectionOn_static_0200
-     * @tc.desc       : Subscription to network capability change events.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionOn_static_0200
+     * @tc.number SUB_NetworkMgr_Connection_On_0200
+     * @tc.desc   Subscription to network capability change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionOn_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionOn_static_0200";
@@ -3666,12 +3666,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_On_0300
-     * @tc.name       : testNetworkMgrConnectionOn_static_0300
-     * @tc.desc       : Subscription network connection information change events.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionOn_static_0300
+     * @tc.number SUB_NetworkMgr_Connection_On_0300
+     * @tc.desc   Subscription network connection information change events.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionOn_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionOn_static_0300";
@@ -3704,12 +3704,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_Register_0100
-     * @tc.name       : testNetworkMgrConnectionRegister_static_0100
-     * @tc.desc       : test subscribe to notifications of specified network status changes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testNetworkMgrConnectionRegister_static_0100
+     * @tc.number SUB_NetworkMgr_Connection_Register_0100
+     * @tc.desc   test subscribe to notifications of specified network status changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionRegister_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionRegister_static_0100";
@@ -3747,12 +3747,12 @@ export default function ConnectionPublicTest() {
     });
 
     /**
-     * @tc.number     : SUB_NetworkMgr_Connection_Unregister_0600
-     * @tc.name       : testNetworkMgrConnectionUnregister_static_0600
-     * @tc.desc       : test unsubscribe from notifications of default network state changes
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testNetworkMgrConnectionUnregister_static_0600
+     * @tc.number SUB_NetworkMgr_Connection_Unregister_0600
+     * @tc.desc   test unsubscribe from notifications of default network state changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testNetworkMgrConnectionUnregister_static_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       const caseName: string = "testNetworkMgrConnectionUnregister_static_0600";

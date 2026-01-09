@@ -537,12 +537,12 @@ export default function SessionTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallback0100
-     * @tc.name       : testOHCaptureSessionRegisterCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallback0100
+     * @tc.desc   Test OH_CaptureSession_RegisterCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -553,12 +553,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallback0200
-     * @tc.name       : testOHCaptureSessionRegisterCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterCallback in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallback0200
+     * @tc.desc   Test OH_CaptureSession_RegisterCallback in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -569,12 +569,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallback0300
-     * @tc.name       : testOHCaptureSessionRegisterCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterCallback in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallback0300
+     * @tc.desc   Test OH_CaptureSession_RegisterCallback in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -585,12 +585,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallback0100
-     * @tc.name       : testOHCaptureSessionUnregisterCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallback0100
+     * @tc.desc   Test OH_CaptureSession_UnregisterCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -602,12 +602,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallback0200
-     * @tc.name       : testOHCaptureSessionUnregisterCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterCallback in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallback0200
+     * @tc.desc   Test OH_CaptureSession_UnregisterCallback in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -618,12 +618,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallback0300
-     * @tc.name       : testOHCaptureSessionUnregisterCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterCallback in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallback0300
+     * @tc.desc   Test OH_CaptureSession_UnregisterCallback in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -634,12 +634,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRegisterSmoothZoomInfoCallback0100
-     * @tc.name       : testOHCaptureSessionRegisterSmoothZoomInfoCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterSmoothZoomInfoCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterSmoothZoomInfoCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRegisterSmoothZoomInfoCallback0100
+     * @tc.desc   Test OH_CaptureSession_RegisterSmoothZoomInfoCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterSmoothZoomInfoCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -654,13 +654,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRegisterSmoothZoomInfoCallback0200
-     * @tc.name       : testOHCaptureSessionRegisterSmoothZoomInfoCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterSmoothZoomInfoCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterSmoothZoomInfoCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRegisterSmoothZoomInfoCallback0200
+     * @tc.desc   Test OH_CaptureSession_RegisterSmoothZoomInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterSmoothZoomInfoCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -675,13 +674,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRegisterSmoothZoomInfoCallback0300
-     * @tc.name       : testOHCaptureSessionRegisterSmoothZoomInfoCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterSmoothZoomInfoCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterSmoothZoomInfoCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionRegisterSmoothZoomInfoCallback0300
+     * @tc.desc   Test OH_CaptureSession_RegisterSmoothZoomInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterSmoothZoomInfoCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -696,12 +694,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionUnregisterSmoothZoomInfoCallback0100
-     * @tc.name       : testOHCaptureSessionUnregisterSmoothZoomInfoCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterSmoothZoomInfoCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterSmoothZoomInfoCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionUnregisterSmoothZoomInfoCallback0100
+     * @tc.desc   Test OH_CaptureSession_UnregisterSmoothZoomInfoCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterSmoothZoomInfoCallback0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -718,13 +716,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionUnregisterSmoothZoomInfoCallback0200
-     * @tc.name       : testOHCaptureSessionUnregisterSmoothZoomInfoCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterSmoothZoomInfoCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterSmoothZoomInfoCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionUnregisterSmoothZoomInfoCallback0200
+     * @tc.desc   Test OH_CaptureSession_UnregisterSmoothZoomInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterSmoothZoomInfoCallback0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -741,13 +738,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionUnregisterSmoothZoomInfoCallback0300
-     * @tc.name       : testOHCaptureSessionUnregisterSmoothZoomInfoCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterSmoothZoomInfoCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterSmoothZoomInfoCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionUnregisterSmoothZoomInfoCallback0300
+     * @tc.desc   Test OH_CaptureSession_UnregisterSmoothZoomInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterSmoothZoomInfoCallback0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -764,12 +760,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0100
-     * @tc.name       : testOHCaptureSessionSetSessionMode0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSessionMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSessionMode0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0100
+     * @tc.desc   Test OH_CaptureSession_SetSessionMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSessionMode0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -782,12 +778,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0200
-     * @tc.name       : testOHCaptureSessionSetSessionMode0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSessionMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSessionMode0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0200
+     * @tc.desc   Test OH_CaptureSession_SetSessionMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSessionMode0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -800,12 +796,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0300
-     * @tc.name       : testOHCaptureSessionSetSessionMode0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSessionMode in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSessionMode0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0300
+     * @tc.desc   Test OH_CaptureSession_SetSessionMode in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSessionMode0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -825,12 +821,12 @@ export default function SessionTest() {
       console.info(TAG+"testOHCaptureSessionSetSessionMode0300 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0400
-     * @tc.name       : testOHCaptureSessionSetSessionMode0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSessionMode in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSessionMode0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0400
+     * @tc.desc   Test OH_CaptureSession_SetSessionMode in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSessionMode0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -843,12 +839,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0500
-     * @tc.name       : testOHCaptureSessionSetSessionMode0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSessionMode in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSessionMode0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionSetSessionMode0500
+     * @tc.desc   Test OH_CaptureSession_SetSessionMode in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSessionMode0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -861,12 +857,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0100
-     * @tc.name       : testOHCaptureSessionCanAddInput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddInput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddInput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0100
+     * @tc.desc   Test OH_CaptureSession_CanAddInput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddInput0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -885,12 +881,12 @@ export default function SessionTest() {
       expect(canAddInput.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0200
-     * @tc.name       : testOHCaptureSessionCanAddInput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddInput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddInput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0200
+     * @tc.desc   Test OH_CaptureSession_CanAddInput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddInput0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -909,12 +905,12 @@ export default function SessionTest() {
       expect(canAddInput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0300
-     * @tc.name       : testOHCaptureSessionCanAddInput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddInput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddInput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0300
+     * @tc.desc   Test OH_CaptureSession_CanAddInput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddInput0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -933,12 +929,12 @@ export default function SessionTest() {
       expect(canAddInput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0400
-     * @tc.name       : testOHCaptureSessionCanAddInput0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddInput in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddInput0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddInput0400
+     * @tc.desc   Test OH_CaptureSession_CanAddInput in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddInput0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -957,12 +953,12 @@ export default function SessionTest() {
       expect(canAddInput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0100
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0100
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -982,12 +978,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0200
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0200
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1007,12 +1003,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0300
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0300
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1033,12 +1029,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0400
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0400
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1058,12 +1054,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0500
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0500
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1083,12 +1079,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0600
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0600
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1108,12 +1104,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0700
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0700
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1134,12 +1130,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0800
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0800
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0800
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0800
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0800', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1159,12 +1155,12 @@ export default function SessionTest() {
       expect(canAddPreviewOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0900
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput0900
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput0900
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput0900
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput0900', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1191,12 +1187,12 @@ export default function SessionTest() {
       console.info(TAG+"testOHCaptureSessionCanAddPreviewOutput0900 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput1000
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput1000
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput1000
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput1000
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput1000', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1224,12 +1220,12 @@ export default function SessionTest() {
       console.info(TAG+"testOHCaptureSessionCanAddPreviewOutput1000 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput1100
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput1100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput1100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput1100
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput1100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1257,10 +1253,12 @@ export default function SessionTest() {
       console.info(TAG+"testOHCaptureSessionCanAddPreviewOutput1100 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput1200
-     * @tc.name       : testOHCaptureSessionCanAddPreviewOutput1200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the third parameter is null.
+     * @tc.name   testOHCaptureSessionCanAddPreviewOutput1200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPreviewOutput1200
+     * @tc.desc   Test OH_CaptureSession_CanAddPreviewOutput in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPreviewOutput1200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1288,12 +1286,12 @@ export default function SessionTest() {
       console.info(TAG+"testOHCaptureSessionCanAddPreviewOutput1200 end");
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0100
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0100
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1313,12 +1311,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0200
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0200
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1338,12 +1336,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0300
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0300
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1363,12 +1361,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0400
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0400
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1388,12 +1386,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0500
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0500
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1413,12 +1411,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0600
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0600
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1438,12 +1436,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0700
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0700
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1463,12 +1461,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0800
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0800
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0800
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0800
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0800', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1488,12 +1486,12 @@ export default function SessionTest() {
       expect(canAddPhotoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0900
-     * @tc.name       : testOHCaptureSessionCanAddPhotoOutput0900
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, scene mode is secure photo.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddPhotoOutput0900
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddPhotoOutput0900
+     * @tc.desc   Test OH_CaptureSession_CanAddPhotoOutput in abnormal condition, scene mode is secure photo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddPhotoOutput0900', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1520,12 +1518,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0100
-     * @tc.name       : testOHCaptureSessionCanAddVideoOutput0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddVideoOutput in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddVideoOutput0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0100
+     * @tc.desc   Test OH_CaptureSession_CanAddVideoOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddVideoOutput0100', Level.LEVEL0, () => {
       console.info(TAG + "guocheng1 ");
@@ -1558,12 +1556,12 @@ export default function SessionTest() {
       expect(canAddVideoOutput.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0200
-     * @tc.name       : testOHCaptureSessionCanAddVideoOutput0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddVideoOutput0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0200
+     * @tc.desc   Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddVideoOutput0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1583,12 +1581,12 @@ export default function SessionTest() {
       expect(canAddVideoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0300
-     * @tc.name       : testOHCaptureSessionCanAddVideoOutput0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddVideoOutput0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0300
+     * @tc.desc   Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddVideoOutput0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1608,12 +1606,12 @@ export default function SessionTest() {
       expect(canAddVideoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0400
-     * @tc.name       : testOHCaptureSessionCanAddVideoOutput0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddVideoOutput0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0400
+     * @tc.desc   Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddVideoOutput0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1633,11 +1631,12 @@ export default function SessionTest() {
       expect(canAddVideoOutput.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0500
-     * @tc.name       : testOHCaptureSessionCanAddVideoOutput0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, scene mode is normal photo.
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddVideoOutput0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0500
+     * @tc.desc   Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, scene mode is normal photo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddVideoOutput0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1658,12 +1657,12 @@ export default function SessionTest() {
       expect(canAddVideoOutput.isAddVideoOutput).assertEqual(false);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0600
-     * @tc.name       : testOHCaptureSessionCanAddVideoOutput0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, scene mode is secure photo.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanAddVideoOutput0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanAddVideoOutput0600
+     * @tc.desc   Test OH_CaptureSession_CanAddVideoOutput in abnormal condition, scene mode is secure photo.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanAddVideoOutput0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1690,12 +1689,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallbackOn0100
-     * @tc.name       : testOHCaptureSessionRegisterCallbackOn0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterCallback in normal condition, all callback is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterCallbackOn0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallbackOn0100
+     * @tc.desc   Test OH_CaptureSession_RegisterCallback in normal condition, all callback is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterCallbackOn0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1705,12 +1704,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallbackOn0200
-     * @tc.name       : testOHCaptureSessionRegisterCallbackOn0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterCallback in normal condition, only on error.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterCallbackOn0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallbackOn0200
+     * @tc.desc   Test OH_CaptureSession_RegisterCallback in normal condition, only on error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterCallbackOn0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1720,12 +1719,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallbackOn0300
-     * @tc.name       : testOHCaptureSessionRegisterCallbackOn0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_RegisterCallback in normal condition, only on focus state change.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionRegisterCallbackOn0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionRegisterCallbackOn0300
+     * @tc.desc   Test OH_CaptureSession_RegisterCallback in normal condition, only on focus state change.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionRegisterCallbackOn0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1735,12 +1734,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallbackOff0100
-     * @tc.name       : testOHCaptureSessionUnregisterCallbackOff0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterCallback in normal condition, all callback is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterCallbackOff0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallbackOff0100
+     * @tc.desc   Test OH_CaptureSession_UnregisterCallback in normal condition, all callback is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterCallbackOff0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1750,12 +1749,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallbackOff0200
-     * @tc.name       : testOHCaptureSessionUnregisterCallbackOff0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterCallback in normal condition, only on error.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterCallbackOff0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallbackOff0200
+     * @tc.desc   Test OH_CaptureSession_UnregisterCallback in normal condition, only on error.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterCallbackOff0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1766,12 +1765,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallbackOff0300
-     * @tc.name       : testOHCaptureSessionUnregisterCallbackOff0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_UnregisterCallback in normal condition, only on focus state change.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionUnregisterCallbackOff0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionUnregisterCallbackOff0300
+     * @tc.desc   Test OH_CaptureSession_UnregisterCallback in normal condition, only on focus state change.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionUnregisterCallbackOff0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1782,12 +1781,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0100
-     * @tc.name       : testOHCaptureSessionCanPreconfig0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfig0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0100
+     * @tc.desc   Test OH_CaptureSession_CanPreconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfig0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1805,12 +1804,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0200
-     * @tc.name       : testOHCaptureSessionCanPreconfig0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfig0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0200
+     * @tc.desc   Test OH_CaptureSession_CanPreconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfig0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1828,12 +1827,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0300
-     * @tc.name       : testOHCaptureSessionCanPreconfig0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfig0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0300
+     * @tc.desc   Test OH_CaptureSession_CanPreconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfig0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1851,12 +1850,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0400
-     * @tc.name       : testOHCaptureSessionCanPreconfig0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfig0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0400
+     * @tc.desc   Test OH_CaptureSession_CanPreconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfig0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1874,12 +1873,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0500
-     * @tc.name       : testOHCaptureSessionCanPreconfig0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfig in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfig0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0500
+     * @tc.desc   Test OH_CaptureSession_CanPreconfig in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfig0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1893,13 +1892,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0600
-     * @tc.name       : testOHCaptureSessionCanPreconfig0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfig in abnormal condition, preconfigType is an exceptional
-     *                  value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfig0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0600
+     * @tc.desc   Test OH_CaptureSession_CanPreconfig in abnormal condition, preconfigType is an exceptional
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfig0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1913,12 +1911,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0700
-     * @tc.name       : testOHCaptureSessionCanPreconfig0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfig in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfig0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfig0700
+     * @tc.desc   Test OH_CaptureSession_CanPreconfig in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfig0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1932,12 +1930,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0100
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0100
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1955,12 +1953,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0200
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0200
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -1978,12 +1976,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0300
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0300
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2001,12 +1999,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0400
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0400
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2024,12 +2022,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0500
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0500
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2047,12 +2045,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0600
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0600
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2070,12 +2068,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0700
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0700
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2093,12 +2091,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0800
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0800
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0800
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0800
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0800', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2116,12 +2114,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0900
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio0900
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio0900
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio0900
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio0900', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2139,12 +2137,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1000
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio1000
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio1000
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1000
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio1000', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2162,12 +2160,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1100
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio1100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio1100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1100
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio1100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2185,12 +2183,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1200
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio1200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio1200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1200
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio1200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2208,13 +2206,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1300
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio1300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, the first parameter is
-     *                  null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio1300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1300
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, the first parameter is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio1300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2228,13 +2225,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1400
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio1400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, preconfigType is an
-     *                  exceptional value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio1400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1400
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, preconfigType is an
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio1400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2248,13 +2244,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1500
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio1500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, preconfigRatio is an
-     *                  exceptional value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio1500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1500
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, preconfigRatio is an
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio1500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2268,13 +2263,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1600
-     * @tc.name       : testOHCaptureSessionCanPreconfigWithRatio1600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, the fourth parameter is
-     *                  null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionCanPreconfigWithRatio1600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionCanPreconfigWithRatio1600
+     * @tc.desc   Test OH_CaptureSession_CanPreconfigWithRatio in abnormal condition, the fourth parameter is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionCanPreconfigWithRatio1600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2288,12 +2282,12 @@ export default function SessionTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0100
-     * @tc.name       : testOHCaptureSessionPreconfig0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_Preconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfig0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0100
+     * @tc.desc   Test OH_CaptureSession_Preconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfig0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2310,12 +2304,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0200
-     * @tc.name       : testOHCaptureSessionPreconfig0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_Preconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfig0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0200
+     * @tc.desc   Test OH_CaptureSession_Preconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfig0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2332,12 +2326,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0300
-     * @tc.name       : testOHCaptureSessionPreconfig0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_Preconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfig0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0300
+     * @tc.desc   Test OH_CaptureSession_Preconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfig0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2354,12 +2348,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0400
-     * @tc.name       : testOHCaptureSessionPreconfig0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_Preconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfig0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0400
+     * @tc.desc   Test OH_CaptureSession_Preconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfig0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2376,12 +2370,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0500
-     * @tc.name       : testOHCaptureSessionPreconfig0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_Preconfig in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfig0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0500
+     * @tc.desc   Test OH_CaptureSession_Preconfig in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfig0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2398,12 +2392,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0600
-     * @tc.name       : testOHCaptureSessionPreconfig0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_Preconfig in abnormal condition, preconfigType is an exceptional value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfig0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0600
+     * @tc.desc   Test OH_CaptureSession_Preconfig in abnormal condition, preconfigType is an exceptional value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfig0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2420,12 +2414,36 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0100
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfig0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfig0700
+     * @tc.desc   Test OH_CaptureSession_Preconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfig0700', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfig(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG+"testOHCaptureSessionPreconfig0700 canPreconfig: " + ret.canPreconfig);
+      if (ret.canPreconfig) {
+        let preconfig = cameraObj.oHCaptureSessionPreconfig(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+          Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfig0700:"+preconfig)
+        expect(preconfig).assertEqual(CAMERA_OK);
+      }
+    })
+    /**
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0100
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2441,12 +2459,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0200
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0200
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2462,12 +2480,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0300
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0300
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2483,12 +2501,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0400
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0400
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2505,12 +2523,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0500
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0500
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2526,12 +2544,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0600
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0600
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0600', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2547,12 +2565,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0700
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0700
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0700
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0700', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2568,12 +2586,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0800
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0800
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0800
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0800
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0800', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2590,12 +2608,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0900
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio0900
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio0900
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio0900
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio0900', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2611,12 +2629,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1000
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio1000
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1000
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1000
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio1000', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2632,12 +2650,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1100
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio1100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1100
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio1100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2653,12 +2671,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1200
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio1200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1200
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio1200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2675,12 +2693,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1300
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio1300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1300
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio1300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2696,13 +2714,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1400
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio1400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in abnormal condition, preconfigType an exceptional
-     *                  value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1400
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in abnormal condition, preconfigType an exceptional
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio1400', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2719,13 +2736,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1500
-     * @tc.name       : testOHCaptureSessionPreconfigWithRatio1500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_PreconfigWithRatio in abnormal condition, preconfigRatio an exceptional
-     *                  value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1500
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in abnormal condition, preconfigRatio an exceptional
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionPreconfigWithRatio1500', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -2741,12 +2757,84 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0100
-     * @tc.name       : testOHCameraManagerCreatePreviewOutputUsedInPreconfig0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1600
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfigWithRatio1600', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Camera_PreconfigRatio.PRECONFIG_RATIO_1, Parameter_Setting.ALL_PARAMETER_OK);
+      if (ret.canPreconfig) {
+        let preconfigWithRatio =
+          cameraObj.oHCaptureSessionPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+            Camera_PreconfigRatio.PRECONFIG_RATIO_1, Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfigWithRatio1600:"+preconfigWithRatio);
+        expect(preconfigWithRatio).assertEqual(CAMERA_OK);
+      }
+    })
+    /**
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1700
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfigWithRatio1700', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Camera_PreconfigRatio.PRECONFIG_RATIO_4, Parameter_Setting.ALL_PARAMETER_OK);
+      if (ret.canPreconfig) {
+        let preconfigWithRatio =
+          cameraObj.oHCaptureSessionPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+            Camera_PreconfigRatio.PRECONFIG_RATIO_4, Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfigWithRatio1700:"+preconfigWithRatio);
+        expect(preconfigWithRatio).assertEqual(CAMERA_OK);
+      }
+    })
+    /**
+     * @tc.name   testOHCaptureSessionPreconfigWithRatio1800
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCaptureSessionPreconfigWithRatio1800
+     * @tc.desc   Test OH_CaptureSession_PreconfigWithRatio in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCaptureSessionPreconfigWithRatio1800', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      createCaptureSession();
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      setSessionMode();
+      let ret = cameraObj.oHCaptureSessionCanPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+        Camera_PreconfigRatio.PRECONFIG_RATIO_16, Parameter_Setting.ALL_PARAMETER_OK);
+      if (ret.canPreconfig) {
+        let preconfigWithRatio =
+          cameraObj.oHCaptureSessionPreconfigWithRatio(Camera_PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
+            Camera_PreconfigRatio.PRECONFIG_RATIO_16, Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG+"testOHCaptureSessionPreconfigWithRatio1800:"+preconfigWithRatio);
+        expect(preconfigWithRatio).assertEqual(CAMERA_OK);
+      }
+    })
+    /**
+     * @tc.name   testOHCameraManagerCreatePreviewOutputUsedInPreconfig0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0100
+     * @tc.desc   Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePreviewOutputUsedInPreconfig0100', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2757,13 +2845,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0200
-     * @tc.name       : testOHCameraManagerCreatePreviewOutputUsedInPreconfig0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the first
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePreviewOutputUsedInPreconfig0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0200
+     * @tc.desc   Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePreviewOutputUsedInPreconfig0200', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2774,13 +2861,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0300
-     * @tc.name       : testOHCameraManagerCreatePreviewOutputUsedInPreconfig0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the second
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePreviewOutputUsedInPreconfig0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0300
+     * @tc.desc   Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePreviewOutputUsedInPreconfig0300', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2792,13 +2878,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0400
-     * @tc.name       : testOHCameraManagerCreatePreviewOutputUsedInPreconfig0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the surfaceId is
-     *                  an invalid value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePreviewOutputUsedInPreconfig0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0400
+     * @tc.desc   Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the surfaceId is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePreviewOutputUsedInPreconfig0400', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2809,13 +2894,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0500
-     * @tc.name       : testOHCameraManagerCreatePreviewOutputUsedInPreconfig0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the third
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePreviewOutputUsedInPreconfig0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePreviewOutputUsedInPreconfig0500
+     * @tc.desc   Test OH_CameraManager_CreatePreviewOutputUsedInPreconfig in abnormal condition, the third
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePreviewOutputUsedInPreconfig0500', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2827,12 +2911,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0100
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputUsedInPreconfig0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputUsedInPreconfig0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0100
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputUsedInPreconfig0100', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2850,13 +2934,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0200
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputUsedInPreconfig0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the first
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputUsedInPreconfig0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0200
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputUsedInPreconfig0200', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2874,13 +2957,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0300
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputUsedInPreconfig0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the second
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputUsedInPreconfig0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0300
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputUsedInPreconfig0300', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2898,13 +2980,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0400
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputUsedInPreconfig0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the surfaceId is
-     *                  an invalid value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputUsedInPreconfig0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0400
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the surfaceId is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputUsedInPreconfig0400', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2921,13 +3002,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0500
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputUsedInPreconfig0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the third
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputUsedInPreconfig0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputUsedInPreconfig0500
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the third
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputUsedInPreconfig0500', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2944,13 +3024,13 @@ export default function SessionTest() {
         expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
       }
     })
-     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0100
-     * @tc.name       : testOHCameraManagerCreateVideoOutputUsedInPreconfig0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreateVideoOutputUsedInPreconfig in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   testOHCameraManagerCreateVideoOutputUsedInPreconfig0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0100
+     * @tc.desc   Test OH_CameraManager_CreateVideoOutputUsedInPreconfig in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutputUsedInPreconfig0100', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2970,12 +3050,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0200
-     * @tc.name       : testOHCameraManagerCreateVideoOutputUsedInPreconfig0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the first
-     *                  parameter is null.
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutputUsedInPreconfig0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0200
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutputUsedInPreconfig0200', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -2995,13 +3075,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0300
-     * @tc.name       : testOHCameraManagerCreateVideoOutputUsedInPreconfig0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the second
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutputUsedInPreconfig0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0300
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutputUsedInPreconfig0300', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3021,13 +3100,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0400
-     * @tc.name       : testOHCameraManagerCreateVideoOutputUsedInPreconfig0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the surfaceId is
-     *                  an invalid value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutputUsedInPreconfig0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0400
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the surfaceId is
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutputUsedInPreconfig0400', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3046,13 +3124,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0500
-     * @tc.name       : testOHCameraManagerCreateVideoOutputUsedInPreconfig0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the third
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreateVideoOutputUsedInPreconfig0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerCreateVideoOutputUsedInPreconfig0500
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputUsedInPreconfig in abnormal condition, the third
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreateVideoOutputUsedInPreconfig0500', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3072,12 +3149,12 @@ export default function SessionTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0100
-     * @tc.name       : testOHPreviewOutputGetActiveProfile0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveProfile0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0100
+     * @tc.desc   Test OH_PreviewOutput_GetActiveProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveProfile0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3098,12 +3175,12 @@ export default function SessionTest() {
       cameraObj.oHPreviewOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0200
-     * @tc.name       : testOHPreviewOutputGetActiveProfile0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveProfile0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0200
+     * @tc.desc   Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveProfile0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3123,12 +3200,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0300
-     * @tc.name       : testOHPreviewOutputGetActiveProfile0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveProfile0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0300
+     * @tc.desc   Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveProfile0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3148,12 +3225,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0400
-     * @tc.name       : testOHPreviewOutputGetActiveProfile0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveProfile0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0400
+     * @tc.desc   Test OH_PreviewOutput_GetActiveProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveProfile0400', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3171,12 +3248,12 @@ export default function SessionTest() {
       cameraObj.oHPreviewOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0500
-     * @tc.name       : testOHPreviewOutputGetActiveProfile0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveProfile0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0500
+     * @tc.desc   Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveProfile0500', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3193,12 +3270,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0600
-     * @tc.name       : testOHPreviewOutputGetActiveProfile0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveProfile0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputGetActiveProfile0600
+     * @tc.desc   Test OH_PreviewOutput_GetActiveProfile in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveProfile0600', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3215,12 +3292,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputDeleteProfile0100
-     * @tc.name       : testOHPreviewOutputDeleteProfile0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_DeleteProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputDeleteProfile0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputDeleteProfile0100
+     * @tc.desc   Test OH_PreviewOutput_DeleteProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputDeleteProfile0100', Level.LEVEL0, () => {
       getPreviewOutputActiveProfile();
@@ -3229,12 +3306,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputDeleteProfile0200
-     * @tc.name       : testOHPreviewOutputDeleteProfile0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_DeleteProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputDeleteProfile0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPreviewOutputDeleteProfile0200
+     * @tc.desc   Test OH_PreviewOutput_DeleteProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputDeleteProfile0200', Level.LEVEL0, () => {
       getPreviewOutputActiveProfile();
@@ -3244,12 +3321,12 @@ export default function SessionTest() {
       cameraObj.oHPreviewOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0100
-     * @tc.name       : testOHVideoOutputGetActiveProfile0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveProfile0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0100
+     * @tc.desc   Test OH_VideoOutput_GetActiveProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveProfile0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3272,12 +3349,12 @@ export default function SessionTest() {
       cameraObj.oHVideoOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0200
-     * @tc.name       : testOHVideoOutputGetActiveProfile0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveProfile0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0200
+     * @tc.desc   Test OH_VideoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveProfile0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3299,12 +3376,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0300
-     * @tc.name       : testOHVideoOutputGetActiveProfile0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveProfile0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0300
+     * @tc.desc   Test OH_VideoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveProfile0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3326,12 +3403,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0400
-     * @tc.name       : testOHVideoOutputGetActiveProfile0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveProfile0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0400
+     * @tc.desc   Test OH_VideoOutput_GetActiveProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveProfile0400', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3351,12 +3428,12 @@ export default function SessionTest() {
       cameraObj.oHVideoOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0500
-     * @tc.name       : testOHVideoOutputGetActiveProfile0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveProfile0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0500
+     * @tc.desc   Test OH_VideoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveProfile0500', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3375,12 +3452,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0600
-     * @tc.name       : testOHVideoOutputGetActiveProfile0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveProfile0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputGetActiveProfile0600
+     * @tc.desc   Test OH_VideoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveProfile0600', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3399,12 +3476,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputDeleteProfile0100
-     * @tc.name       : testOHVideoOutputDeleteProfile0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_DeleteProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputDeleteProfile0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputDeleteProfile0100
+     * @tc.desc   Test OH_VideoOutput_DeleteProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputDeleteProfile0100', Level.LEVEL0, () => {
       getVideoOutputGetActiveProfile();
@@ -3413,12 +3490,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputDeleteProfile0200
-     * @tc.name       : testOHVideoOutputDeleteProfile0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_DeleteProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputDeleteProfile0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHVideoOutputDeleteProfile0200
+     * @tc.desc   Test OH_VideoOutput_DeleteProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputDeleteProfile0200', Level.LEVEL0, () => {
       getVideoOutputGetActiveProfile();
@@ -3428,12 +3505,12 @@ export default function SessionTest() {
       cameraObj.oHVideoOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0100
-     * @tc.name       : testOHPhotoOutputGetActiveProfile0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_GetActiveProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputGetActiveProfile0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0100
+     * @tc.desc   Test OH_PhotoOutput_GetActiveProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputGetActiveProfile0100', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3451,12 +3528,12 @@ export default function SessionTest() {
       cameraObj.oHPhotoOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0200
-     * @tc.name       : testOHPhotoOutputGetActiveProfile0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputGetActiveProfile0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0200
+     * @tc.desc   Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputGetActiveProfile0200', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3473,12 +3550,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0300
-     * @tc.name       : testOHPhotoOutputGetActiveProfile0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputGetActiveProfile0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0300
+     * @tc.desc   Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputGetActiveProfile0300', Level.LEVEL0, () => {
       getCameraManagerInstance();
@@ -3495,12 +3572,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0400
-     * @tc.name       : testOHPhotoOutputGetActiveProfile0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_GetActiveProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputGetActiveProfile0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0400
+     * @tc.desc   Test OH_PhotoOutput_GetActiveProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputGetActiveProfile0400', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3518,12 +3595,12 @@ export default function SessionTest() {
       cameraObj.oHPhotoOutputDeleteProfile(Parameter_Setting.ALL_PARAMETER_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0500
-     * @tc.name       : testOHPhotoOutputGetActiveProfile0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputGetActiveProfile0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0500
+     * @tc.desc   Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputGetActiveProfile0500', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3540,12 +3617,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0600
-     * @tc.name       : testOHPhotoOutputGetActiveProfile0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputGetActiveProfile0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputGetActiveProfile0600
+     * @tc.desc   Test OH_PhotoOutput_GetActiveProfile in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputGetActiveProfile0600', Level.LEVEL0, () => {
       let canPreconfig = captureSessionPreconfig();
@@ -3562,12 +3639,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputDeleteProfile0100
-     * @tc.name       : testOHPhotoOutputDeleteProfile0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_DeleteProfile in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputDeleteProfile0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputDeleteProfile0100
+     * @tc.desc   Test OH_PhotoOutput_DeleteProfile in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputDeleteProfile0100', Level.LEVEL0, () => {
       getPhotoOutputActiveProfile();
@@ -3576,12 +3653,12 @@ export default function SessionTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputDeleteProfile0200
-     * @tc.name       : testOHPhotoOutputDeleteProfile0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_DeleteProfile in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputDeleteProfile0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHPhotoOutputDeleteProfile0200
+     * @tc.desc   Test OH_PhotoOutput_DeleteProfile in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputDeleteProfile0200', Level.LEVEL0, () => {
       getPhotoOutputActiveProfile();

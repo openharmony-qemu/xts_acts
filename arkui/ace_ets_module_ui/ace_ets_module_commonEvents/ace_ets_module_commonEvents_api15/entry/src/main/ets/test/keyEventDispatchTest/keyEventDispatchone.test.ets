@@ -43,12 +43,12 @@ export default function keyEventDispatchTest() {
     });
 
     /**
-     * @tc.number keyEventDispatchTest_0100
      * @tc.name   keyEventDispatchTest_0100
+     * @tc.number keyEventDispatchTest_0100
      * @tc.desc   test the onKeyEvent api16 CallBack data  when trigger 'TAB' key
-     * @tc.size   MediumTest
-     * @tc.type   Function
-     * @tc.level  0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('keyEventDispatchTest_0100', Level.LEVEL0, async (done: Function) => {
       console.info('[keyEventDispatchTest_0100] START');

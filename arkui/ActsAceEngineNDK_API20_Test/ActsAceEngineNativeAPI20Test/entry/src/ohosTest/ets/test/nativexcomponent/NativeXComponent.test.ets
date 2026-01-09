@@ -30,12 +30,12 @@ export default function NativeXComponent() {
       await Utils.sleep(1000);
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTION_0100
-     * @tc.name    : testGetKeyEventAction001
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventAction001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTION_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventAction001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -54,12 +54,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTION_0200
-     * @tc.name    : testGetKeyEventAction002
-     * @tc.desc    : Test get native xcomopnent key event action invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventAction002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTION_0200
+     * @tc.desc   Test get native xcomopnent key event action invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventAction002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -78,12 +78,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSOURCETYPE_0100
-     * @tc.name    : testGetKeyEventSourceType001
-     * @tc.desc    : Test get native xcomopnent key event sourcetype works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventSourceType001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSOURCETYPE_0100
+     * @tc.desc   Test get native xcomopnent key event sourcetype works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventSourceType001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -102,12 +102,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSOURCETYPE_0200
-     * @tc.name    : testGetKeyEventSourceType002
-     * @tc.desc    : Test get native xcomopnent key event sourcetype invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventSourceType002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSOURCETYPE_0200
+     * @tc.desc   Test get native xcomopnent key event sourcetype invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventSourceType002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -126,12 +126,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTDEVICEID_0100
-     * @tc.name    : testGetKeyEventDeviceId001
-     * @tc.desc    : Test get native xcomopnent key event device id works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventDeviceId001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTDEVICEID_0100
+     * @tc.desc   Test get native xcomopnent key event device id works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventDeviceId001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -150,12 +150,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTDEVICEID_0200
-     * @tc.name    : testGetKeyEventDeviceId002
-     * @tc.desc    : Test get native xcomopnent key event device id invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventDeviceId002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTDEVICEID_0200
+     * @tc.desc   Test get native xcomopnent key event device id invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventDeviceId002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -174,12 +174,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTTIMESTAMP_0100
-     * @tc.name    : testGetKeyEventTimestamp001
-     * @tc.desc    : Test get native xcomopnent key event timestamp works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventTimestamp001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTTIMESTAMP_0100
+     * @tc.desc   Test get native xcomopnent key event timestamp works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventTimestamp001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -198,12 +198,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTTIMESTAMP_0200
-     * @tc.name    : testGetKeyEventTimestamp002
-     * @tc.desc    : Test get native xcomopnent key event timestamp invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventTimestamp002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTTIMESTAMP_0200
+     * @tc.desc   Test get native xcomopnent key event timestamp invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventTimestamp002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -222,12 +222,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTMODIFIERKEYSTATES_0100
-     * @tc.name    : testGetKeyEventModifierKeyStates001
-     * @tc.desc    : Test get native xcomopnent key event modifier key states works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventModifierKeyStates001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTMODIFIERKEYSTATES_0100
+     * @tc.desc   Test get native xcomopnent key event modifier key states works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventModifierKeyStates001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -246,12 +246,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTMODIFIERKEYSTATES_0200
-     * @tc.name    : testGetKeyEventModifierKeyStates002
-     * @tc.desc    : Test get native xcomopnent key event modifier key states invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventModifierKeyStates002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTMODIFIERKEYSTATES_0200
+     * @tc.desc   Test get native xcomopnent key event modifier key states invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventModifierKeyStates002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -270,12 +270,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTNUMLOCKSTATE_0100
-     * @tc.name    : testGetKeyEventNumLockState001
-     * @tc.desc    : Test get native xcomopnent key event num lock states works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventNumLockState001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTNUMLOCKSTATE_0100
+     * @tc.desc   Test get native xcomopnent key event num lock states works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventNumLockState001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -294,12 +294,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTNUMLOCKSTATE_0200
-     * @tc.name    : testGetKeyEventNumLockState002
-     * @tc.desc    : Test get native xcomopnent key event num lock states invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventNumLockState002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTNUMLOCKSTATE_0200
+     * @tc.desc   Test get native xcomopnent key event num lock states invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventNumLockState002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -318,12 +318,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTCAPSLOCKSTATE_0100
-     * @tc.name    : testGetKeyEventCapsLockState001
-     * @tc.desc    : Test get native xcomopnent key event caps lock states works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventCapsLockState001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTCAPSLOCKSTATE_0100
+     * @tc.desc   Test get native xcomopnent key event caps lock states works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventCapsLockState001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -342,12 +342,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTCAPSLOCKSTATE_0200
-     * @tc.name    : testGetKeyEventCapsLockState002
-     * @tc.desc    : Test get native xcomopnent key event caps lock states invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventCapsLockState002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTCAPSLOCKSTATE_0200
+     * @tc.desc   Test get native xcomopnent key event caps lock states invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventCapsLockState002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -366,12 +366,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSCROLLLOCKSTATE_0100
-     * @tc.name    : testGetKeyEventScrollLockState001
-     * @tc.desc    : Test get native xcomopnent key event scroll lock states works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventScrollLockState001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSCROLLLOCKSTATE_0100
+     * @tc.desc   Test get native xcomopnent key event scroll lock states works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventScrollLockState001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -390,12 +390,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSCROLLLOCKSTATE_0200
-     * @tc.name    : testGetKeyEventScrollLockState002
-     * @tc.desc    : Test get native xcomopnent key event scroll lock states invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventScrollLockState002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTSCROLLLOCKSTATE_0200
+     * @tc.desc   Test get native xcomopnent key event scroll lock states invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventScrollLockState002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -414,12 +414,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTIONENUM_0100
-     * @tc.name    : testGetKeyEventActionEnum001
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventActionEnum001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTIONENUM_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventActionEnum001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -437,12 +437,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTIONENUM_0200
-     * @tc.name    : testGetKeyEventActionEnum002
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetKeyEventActionEnum002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETKEYEVENTACTIONENUM_0200
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetKeyEventActionEnum002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -460,12 +460,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_SETEXPECTEDFRAMERATERANGE_0100
-     * @tc.name    : testSetExpectedFrameRateRange001
-     * @tc.desc    : Test native xcomopnent set expected frame rate range works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetExpectedFrameRateRange001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_SETEXPECTEDFRAMERATERANGE_0100
+     * @tc.desc   Test native xcomopnent set expected frame rate range works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetExpectedFrameRateRange001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -481,12 +481,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_SETEXPECTEDFRAMERATERANGE_0200
-     * @tc.name    : testSetExpectedFrameRateRange002
-     * @tc.desc    : Test native xcomopnent set expected frame rate range invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetExpectedFrameRateRange002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_SETEXPECTEDFRAMERATERANGE_0200
+     * @tc.desc   Test native xcomopnent set expected frame rate range invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetExpectedFrameRateRange002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -502,12 +502,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_SETEXPECTEDFRAMERATERANGE_0200
-     * @tc.name    : testSetArkUIExpectedFrameRateRange002
-     * @tc.desc    : Test native xcomopnent set expected frame rate range invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testSetArkUIExpectedFrameRateRange002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_SETEXPECTEDFRAMERATERANGE_0200
+     * @tc.desc   Test native xcomopnent set expected frame rate range invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetArkUIExpectedFrameRateRange002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -523,12 +523,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONFRAMECALLBACK_0100
-     * @tc.name    : testRegisterOnFrameCallback001
-     * @tc.desc    : Test native xcomopnent register on frame callback works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterOnFrameCallback001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONFRAMECALLBACK_0100
+     * @tc.desc   Test native xcomopnent register on frame callback works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterOnFrameCallback001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -544,12 +544,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONFRAMECALLBACK_0200
-     * @tc.name    : testRegisterOnFrameCallback002
-     * @tc.desc    : Test native xcomopnent register on frame callback invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterOnFrameCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONFRAMECALLBACK_0200
+     * @tc.desc   Test native xcomopnent register on frame callback invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterOnFrameCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -565,12 +565,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_REGISTERONFRAMECALLBACK_0200
-     * @tc.name    : testArkUIRegisterOnFrameCallback002
-     * @tc.desc    : Test native xcomopnent register on frame callback invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIRegisterOnFrameCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_REGISTERONFRAMECALLBACK_0200
+     * @tc.desc   Test native xcomopnent register on frame callback invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIRegisterOnFrameCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -586,12 +586,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_UNREGISTERONFRAMECALLBACK_0100
-     * @tc.name    : testUnregisterOnFrameCallback001
-     * @tc.desc    : Test native xcomopnent unregister on frame callback works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUnregisterOnFrameCallback001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_UNREGISTERONFRAMECALLBACK_0100
+     * @tc.desc   Test native xcomopnent unregister on frame callback works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterOnFrameCallback001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -607,12 +607,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_UNREGISTERONFRAMECALLBACK_0200
-     * @tc.name    : testUnregisterOnFrameCallback002
-     * @tc.desc    : Test native xcomopnent unregister on frame callback invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testUnregisterOnFrameCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_UNREGISTERONFRAMECALLBACK_0200
+     * @tc.desc   Test native xcomopnent unregister on frame callback invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUnregisterOnFrameCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -628,12 +628,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_UNREGISTERONFRAMECALLBACK_0200
-     * @tc.name    : testArkUIUnregisterOnFrameCallback002
-     * @tc.desc    : Test native xcomopnent unregister on frame callback invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testArkUIUnregisterOnFrameCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_ARKUI_XCOMPONENT_UNREGISTERONFRAMECALLBACK_0200
+     * @tc.desc   Test native xcomopnent unregister on frame callback invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArkUIUnregisterOnFrameCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -649,12 +649,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERUIINPUTEVENTCALLBACK_0100
-     * @tc.name    : testRegisterUIInputEventCallback001
-     * @tc.desc    : Test native xcomopnent register ui input event callback works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterUIInputEventCallback001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERUIINPUTEVENTCALLBACK_0100
+     * @tc.desc   Test native xcomopnent register ui input event callback works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterUIInputEventCallback001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -670,12 +670,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERUIINPUTEVENTCALLBACK_0200
-     * @tc.name    : testRegisterUIInputEventCallback002
-     * @tc.desc    : Test native xcomopnent register ui input event callback invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterUIInputEventCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERUIINPUTEVENTCALLBACK_0200
+     * @tc.desc   Test native xcomopnent register ui input event callback invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterUIInputEventCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -691,12 +691,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONTOUCHINTERCEPTCALLBACK_0100
-     * @tc.name    : testRegisterOnTouchInterceptCallback001
-     * @tc.desc    : Test native xcomopnent register ui input event callback works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterOnTouchInterceptCallback001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONTOUCHINTERCEPTCALLBACK_0100
+     * @tc.desc   Test native xcomopnent register ui input event callback works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterOnTouchInterceptCallback001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -712,12 +712,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONTOUCHINTERCEPTCALLBACK_0200
-     * @tc.name    : testRegisterOnTouchInterceptCallback002
-     * @tc.desc    : Test native xcomopnent register ui input event callback invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterOnTouchInterceptCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERONTOUCHINTERCEPTCALLBACK_0200
+     * @tc.desc   Test native xcomopnent register ui input event callback invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterOnTouchInterceptCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -733,12 +733,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETNATIVEACCESSIBILITYPROVIDER_0100
-     * @tc.name    : testGetNativeAccessibilityProvider001
-     * @tc.desc    : Test native xcomopnent get native accessibilityprovider works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetNativeAccessibilityProvider001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETNATIVEACCESSIBILITYPROVIDER_0100
+     * @tc.desc   Test native xcomopnent get native accessibilityprovider works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetNativeAccessibilityProvider001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -754,12 +754,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETNATIVEACCESSIBILITYPROVIDER_0200
-     * @tc.name    : testGetNativeAccessibilityProvider002
-     * @tc.desc    : Test native xcomopnent get native accessibilityprovider invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetNativeAccessibilityProvider002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETNATIVEACCESSIBILITYPROVIDER_0200
+     * @tc.desc   Test native xcomopnent get native accessibilityprovider invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetNativeAccessibilityProvider002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -775,12 +775,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERKEYEVENTCALLBACKWITHRESULT_0100
-     * @tc.name    : testRegisterKeyEventCallbackWithResult001
-     * @tc.desc    : Test native xcomopnent register key event callback with result invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterKeyEventCallbackWithResult001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERKEYEVENTCALLBACKWITHRESULT_0100
+     * @tc.desc   Test native xcomopnent register key event callback with result invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterKeyEventCallbackWithResult001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -796,12 +796,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERKEYEVENTCALLBACKWITHRESULT_0200
-     * @tc.name    : testRegisterKeyEventCallbackWithResult002
-     * @tc.desc    : Test native xcomopnent register key event callback with result invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterKeyEventCallbackWithResult002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERKEYEVENTCALLBACKWITHRESULT_0200
+     * @tc.desc   Test native xcomopnent register key event callback with result invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterKeyEventCallbackWithResult002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -817,12 +817,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_XCOMPONENTINITIALIZE_0100
-     * @tc.name    : testXComponentInitialize001
-     * @tc.desc    : Test native xcomopnent register key event callback with result invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testXComponentInitialize001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_XCOMPONENTINITIALIZE_0100
+     * @tc.desc   Test native xcomopnent register key event callback with result invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentInitialize001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -838,12 +838,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_XCOMPONENTFINALIZE_0200
-     * @tc.name    : testXComponentFinalize002
-     * @tc.desc    : Test native xcomopnent register key event callback with result invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testXComponentFinalize002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_XCOMPONENTFINALIZE_0200
+     * @tc.desc   Test native xcomopnent register key event callback with result invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentFinalize002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -859,12 +859,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_XCOMPONENTSETNEEDSOFTKEYBOARD_0200
-     * @tc.name    : testXComponentSetNeedSoftKeyboard002
-     * @tc.desc    : Test native xcomopnent register key event callback with result invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testXComponentSetNeedSoftKeyboard002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_XCOMPONENTSETNEEDSOFTKEYBOARD_0200
+     * @tc.desc   Test native xcomopnent register key event callback with result invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXComponentSetNeedSoftKeyboard002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -880,21 +880,21 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0100
-     * @tc.name    : testGetExtraMouseEventInfo001
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetExtraMouseEventInfo001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetExtraMouseEventInfo001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         nativexcomponent.ChooseTestFunction(0);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0100 start<====`);
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
-                                                                                       globalThis.winHeight / 2 });
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft + globalThis.winWidth / 2), y: Math.round(globalThis.winTop +
+          globalThis.winHeight / 2) });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft), y: Math.round(globalThis.winTop) });
         let Result: number = nativexcomponent.GetExtraMouseEventInfo001();
         expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(Result);
         done()
@@ -905,21 +905,21 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0200
-     * @tc.name    : testGetExtraMouseEventInfo002
-     * @tc.desc    : Test get native xcomopnent key event action invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetExtraMouseEventInfo002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0200
+     * @tc.desc   Test get native xcomopnent key event action invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetExtraMouseEventInfo002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         nativexcomponent.ChooseTestFunction(1);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0200 start<====`);
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
-                                                                                       globalThis.winHeight / 2 });
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft + globalThis.winWidth / 2), y: Math.round(globalThis.winTop +
+          globalThis.winHeight / 2) });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft), y: Math.round(globalThis.winTop) });
         let Result: number = nativexcomponent.GetExtraMouseEventInfo002();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -930,21 +930,21 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETMOUSEEVENTMODIFIERKEYSTATES_0200
-     * @tc.name    : testGetMouseEventModifierKeyStates002
-     * @tc.desc    : Test get native xcomopnent key event action invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testGetMouseEventModifierKeyStates002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETMOUSEEVENTMODIFIERKEYSTATES_0200
+     * @tc.desc   Test get native xcomopnent key event action invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetMouseEventModifierKeyStates002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       try {
         nativexcomponent.ChooseTestFunction(1);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETMOUSEEVENTMODIFIERKEYSTATES_0200 start<====`);
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
-                                                                                       globalThis.winHeight / 2 });
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft + globalThis.winWidth / 2), y: Math.round(globalThis.winTop +
+          globalThis.winHeight / 2 )});
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft), y: Math.round(globalThis.winTop) });
         let Result: number = nativexcomponent.GetMouseEventModifierKeyStates002();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -955,12 +955,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERFOCUSEVENTCALLBACK_0100
-     * @tc.name    : testRegisterFocusEventCallback001
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterFocusEventCallback001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERFOCUSEVENTCALLBACK_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterFocusEventCallback001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -977,12 +977,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERFOCUSEVENTCALLBACK_0200
-     * @tc.name    : testRegisterFocusEventCallback002
-     * @tc.desc    : Test get native xcomopnent key event action invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterFocusEventCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERFOCUSEVENTCALLBACK_0200
+     * @tc.desc   Test get native xcomopnent key event action invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterFocusEventCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -999,12 +999,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERBLUREVENTCALLBACK_0100
-     * @tc.name    : testRegisterBlurEventCallback001
-     * @tc.desc    : Test get native xcomopnent key event action works.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterBlurEventCallback001
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERBLUREVENTCALLBACK_0100
+     * @tc.desc   Test get native xcomopnent key event action works.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterBlurEventCallback001', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
@@ -1021,12 +1021,12 @@ export default function NativeXComponent() {
       }
     })
     /**
-     * @tc.number  : SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERBLUREVENTCALLBACK_0200
-     * @tc.name    : testRegisterBlurEventCallback002
-     * @tc.desc    : Test get native xcomopnent key event action invalid.
-     * @tc.level   : LEVEL1
-     * @tc.size    : MediumTest
-     * @tc.type    : Function
+     * @tc.name   testRegisterBlurEventCallback002
+     * @tc.number SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_REGISTERBLUREVENTCALLBACK_0200
+     * @tc.desc   Test get native xcomopnent key event action invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testRegisterBlurEventCallback002', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {

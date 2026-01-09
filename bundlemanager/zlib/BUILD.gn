@@ -21,6 +21,7 @@ group("zlib") {
       "actsgzipdecompressiontest:ActsGzipDecompressionTest",
       "actszipfileandunzipfiletest:actszipfileandunzipfiletest",
       "actsziptest:ActsZipTest",
+      "actszipteststatic:ActsZipStaticTest",
       "actszlibchecksumtest:ActsChecksumTest",
       "actszlibinterfacetest:ActsZlibInterfaceTest",
       "actszlibndktest:ActsZlibNdkTest",
@@ -28,7 +29,8 @@ group("zlib") {
       "actsbmszlibchecksumteststatic:ActsBmsZlibChecksumStaticTest",
       "actsgzipdecompressionteststatic:ActsGzipDecompressionStaticTest",
       "actszlibinterfaceteststatic:ActsZlibInterfaceStaticTest",
-      "actszipfileandunzipfileteststatic:ActsZipFileAndUnzipFileStaticTest"
+      "actszipfileandunzipfileteststatic:ActsZipFileAndUnzipFileStaticTest",
+      "ActsZlibHapTest:ActsZlibHapTest",
     ]
   }
 }

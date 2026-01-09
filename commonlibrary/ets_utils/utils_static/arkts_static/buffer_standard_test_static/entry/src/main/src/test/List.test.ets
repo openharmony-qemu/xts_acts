@@ -16,9 +16,11 @@
 import BufferTest from './Buffer.test'
 import buffer1Test from './buffer/Buffer1.test';
 import buffer2Test from './buffer/Buffer2.test';
+import buffer3Test from './buffer/Buffer3.test';
 
 export default function testsuite() {
   BufferTest();
   buffer1Test();
   buffer2Test();
+  buffer3Test();
 }

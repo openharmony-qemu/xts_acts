@@ -49,9 +49,12 @@ export default function flexAlign_SpaceAround_fixedParentVisibility() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapVisibilityNone
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_1000
-     * @tc.name testAlignSpaceAroundRowNoWrapVisibilityNone
-     * @tc.desc Parent component fixed, child component binding visibility none properties
+     * @tc.desc   Parent component fixed, child component binding visibility none properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapVisibilityNone',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapVisibilityNone START');
@@ -91,9 +94,12 @@ export default function flexAlign_SpaceAround_fixedParentVisibility() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapVisibilityHidden
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_1100
-     * @tc.name testAlignSpaceAroundRowNoWrapVisibilityHidden
-     * @tc.desc Parent component fixed, child component binding visibility hidden properties
+     * @tc.desc   Parent component fixed, child component binding visibility hidden properties
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapVisibilityHidden',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapVisibilityHidden START');

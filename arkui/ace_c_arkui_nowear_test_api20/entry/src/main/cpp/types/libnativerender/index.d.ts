@@ -26,8 +26,30 @@ export const dragEventGetDragSource: (a: string) => void;
 
 export const dragEventGetGlobalDisplay: (a: string) => void;
 
+export const dragEventFuncTest: (a:string) => void;
+
+export  const  dragEventFuncTest014: (a: string) => number;
+
+export  const  dragEventFuncTest036: (a: string) => number;
+
+export  const  GetPanGesture036Ret: () => number;
+
+export  const  dragEventFuncTest037: (a: string) => number;
+
+export  const  dragEventFuncTest039: (a: string) => number;
+
+export  const  dragEventFuncTest041: (a: string) => number;
+
+export const getPreDragStatusTest: (a: string) => void;
+
+export  const  Enum_ARKUI_DRAG_STATUS_STARTED: () => number;
+
 export const enableDropDisallowedBadge: (a: string) => void;
 
 export const dialogGetStateTest: (a: string) => void;
+
+export const dialogGetStateErrorCode_001: () => string[];
+
+export const dialogGetStateErrorCode_002: () => string[];
 
 export const imageDraggableEventTest: (a: string) => void;

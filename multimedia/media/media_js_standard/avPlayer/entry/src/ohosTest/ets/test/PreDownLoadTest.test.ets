@@ -318,14 +318,14 @@ export default function PreDownLoadTest() {
       }
     })
 
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100
-    * @tc.name      : 001.test createSource -> avplayer -> setSource -> prepare -> play -> pause -> release
-    * @tc.desc      : start-pause-resume-stop-release
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100
+     * @tc.desc   start-pause-resume-stop-release
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100 begin');
       let preConfig: PreDownConfig = {
@@ -354,14 +354,14 @@ export default function PreDownLoadTest() {
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FUNCTION_0100 end');
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100
-    * @tc.name      : 001.test finishLoading
-    * @tc.desc      : LOADING_ERROR_SUCCESS
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100
+     * @tc.desc   LOADING_ERROR_SUCCESS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100 begin');
       let preConfig: PreDownConfig = {
@@ -389,14 +389,14 @@ export default function PreDownLoadTest() {
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100 end');
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200
-    * @tc.name      : 001.test finishLoading LOADING_ERROR_NOT_READY
-    * @tc.desc      : LOADING_ERROR_NOT_READY
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200
+     * @tc.desc   LOADING_ERROR_NOT_READY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200 begin');
       let preConfig: PreDownConfig = {
@@ -424,14 +424,14 @@ export default function PreDownLoadTest() {
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0200 end');
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100
-    * @tc.name      : 001.test finishLoading LOADING_ERROR_NO_RESOURCE
-    * @tc.desc      : LOADING_ERROR_NO_RESOURCE
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0300
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0100
+     * @tc.desc   LOADING_ERROR_NO_RESOURCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0300', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0300 begin');
       let preConfig: PreDownConfig = {
@@ -457,14 +457,14 @@ export default function PreDownLoadTest() {
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0300 end');
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400
-    * @tc.name      : 001.test finishLoading LOADING_ERROR_INVAID_HANDLE
-    * @tc.desc      : LOADING_ERROR_INVAID_HANDLE
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400
+     * @tc.desc   LOADING_ERROR_INVAID_HANDLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400 begin');
       let preConfig: PreDownConfig = {
@@ -490,14 +490,14 @@ export default function PreDownLoadTest() {
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0400 end');
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500
-    * @tc.name      : 001.test finishLoading LOADING_ERROR_ACCESS_DENIED
-    * @tc.desc      : LOADING_ERROR_ACCESS_DENIED
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500
+     * @tc.desc   LOADING_ERROR_ACCESS_DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500 begin');
       let preConfig: PreDownConfig = {
@@ -523,14 +523,14 @@ export default function PreDownLoadTest() {
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0500 end');
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600
-    * @tc.name      : 001.test finishLoading LOADING_ERROR_ACCESS_TIMEOUT
-    * @tc.desc      : LOADING_ERROR_ACCESS_TIMEOUT
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600
+     * @tc.desc   LOADING_ERROR_ACCESS_TIMEOUT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600 begin');
       let preConfig: PreDownConfig = {
@@ -556,14 +556,14 @@ export default function PreDownLoadTest() {
       toNextStep(avPlayer, preConfig, mySteps, done)
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0600 end');
     });
-    /* *
-    * @tc.number    : SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0700
-    * @tc.name      : 001.test finishLoading LOADING_ERROR_AUTHORIZE_FAILED
-    * @tc.desc      : LOADING_ERROR_AUTHORIZE_FAILED
-    * @tc.size      : MediumTest
-    * @tc.type      : Function test
-    * @tc.level     : Level2
-    */
+    /**
+     * @tc.name   SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0700
+     * @tc.number SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0700
+     * @tc.desc   LOADING_ERROR_AUTHORIZE_FAILED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0700', Level.LEVEL0,async (done: Function) => {
       console.info('SUB_MULTIMEDIA_PLAYER_PRE_DOWNLOAD_FINISH_LOADING_FUNCTION_0700 begin');
       let preConfig: PreDownConfig = {

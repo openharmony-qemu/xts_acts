@@ -385,12 +385,12 @@ export default function AVMetadataExtractorTest() {
     });
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_001
-     * @tc.name      : createAVMetadataExtractor_video_callback_001
-     * @tc.desc      : create AVMetadataExtractor callback-mp4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVMetadataExtractor_video_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_001
+     * @tc.desc   create AVMetadataExtractor callback-mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVMetadataExtractor_video_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVMetadataExtractor_video_callback_001';
@@ -398,12 +398,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_002
-     * @tc.name      : createAVMetadataExtractor_audio_callback_001
-     * @tc.desc      : create AVMetadataExtractor callback-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVMetadataExtractor_audio_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_002
+     * @tc.desc   create AVMetadataExtractor callback-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVMetadataExtractor_audio_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVMetadataExtractor_audio_callback_001';
@@ -411,12 +411,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_003
-     * @tc.name      : createAVMetadataExtractor_video_promise_001
-     * @tc.desc      : create AVMetadataExtractor promise-mp4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVMetadataExtractor_video_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_003
+     * @tc.desc   create AVMetadataExtractor promise-mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVMetadataExtractor_video_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVMetadataExtractor_video_promise_001';
@@ -424,12 +424,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_004
-     * @tc.name      : createAVMetadataExtractor_audio_promise_001
-     * @tc.desc      : create AVMetadataExtractor promise-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   createAVMetadataExtractor_audio_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_004
+     * @tc.desc   create AVMetadataExtractor promise-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createAVMetadataExtractor_audio_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createAVMetadataExtractor_audio_promise_001';
@@ -437,12 +437,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_005
-     * @tc.name      : fetchMetadata_video_callback_001
-     * @tc.desc      : fetch Metadata callback-mp4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_video_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_005
+     * @tc.desc   fetch Metadata callback-mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_video_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_video_callback_001';
@@ -450,12 +450,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_006
-     * @tc.name      : fetchMetadata_audio_callback_001
-     * @tc.desc      : fetch Metadata callback-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_audio_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_006
+     * @tc.desc   fetch Metadata callback-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_audio_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_audio_callback_001';
@@ -463,12 +463,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_007
-     * @tc.name      : fetchMetadata_video_promise_001
-     * @tc.desc      : fetch Metadata promise-mp4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_video_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_007
+     * @tc.desc   fetch Metadata promise-mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_video_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_video_promise_001';
@@ -476,12 +476,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_008
-     * @tc.name      : fetchMetadata_audio_promise_001
-     * @tc.desc      : fetch Metadata promise-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_audio_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_008
+     * @tc.desc   fetch Metadata promise-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_audio_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_audio_promise_001';
@@ -489,12 +489,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_009
-     * @tc.name      : fetchMetadata_callback_abnormal_001
-     * @tc.desc      : fetch Metadata callback-unSupported file
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_callback_abnormal_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_009
+     * @tc.desc   fetch Metadata callback-unSupported file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_callback_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_callback_abnormal_001';
@@ -503,12 +503,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_010
-     * @tc.name      : fetchMetadata_callback_abnormal_001
-     * @tc.desc      : fetch Metadata callback-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_callback_abnormal_002
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_010
+     * @tc.desc   fetch Metadata callback-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_callback_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_callback_abnormal_001';
@@ -517,12 +517,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_011
-     * @tc.name      : fetchMetadata_promise_abnormal_001
-     * @tc.desc      : fetch Metadata promise-unSupported file
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_promise_abnormal_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_011
+     * @tc.desc   fetch Metadata promise-unSupported file
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_promise_abnormal_001';
@@ -531,12 +531,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_012
-     * @tc.name      : fetchMetadata_promise_abnormal_002
-     * @tc.desc      : fetch Metadata promise-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchMetadata_promise_abnormal_002
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_012
+     * @tc.desc   fetch Metadata promise-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchMetadata_promise_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchMetadata_promise_abnormal_002';
@@ -545,12 +545,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_014
-     * @tc.name      : fetchAlbumCover_audio_callback_001
-     * @tc.desc      : fetch AlbumCover callback-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchAlbumCover_audio_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_014
+     * @tc.desc   fetch AlbumCover callback-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchAlbumCover_audio_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchAlbumCover_audio_callback_001';
@@ -558,12 +558,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_016
-     * @tc.name      : fetchAlbumCover_audio_promise_001
-     * @tc.desc      : fetch AlbumCover promise-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchAlbumCover_audio_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_016
+     * @tc.desc   fetch AlbumCover promise-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchAlbumCover_audio_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchAlbumCover_audio_promise_001';
@@ -571,12 +571,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_017
-     * @tc.name      : fetchAlbumCover_callback_abnormal_001
-     * @tc.desc      : fetch AlbumCover callback-unSupported file type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchAlbumCover_callback_abnormal_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_017
+     * @tc.desc   fetch AlbumCover callback-unSupported file type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchAlbumCover_callback_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchAlbumCover_callback_abnormal_001';
@@ -585,12 +585,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_018
-     * @tc.name      : fetchAlbumCover_callback_abnormal_002
-     * @tc.desc      : fetch AlbumCover callback-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchAlbumCover_callback_abnormal_002
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_018
+     * @tc.desc   fetch AlbumCover callback-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchAlbumCover_callback_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchAlbumCover_callback_abnormal_002';
@@ -599,12 +599,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_019
-     * @tc.name      : fetchAlbumCover_promise_abnormal_001
-     * @tc.desc      : fetch AlbumCover promise-unSupported file type
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchAlbumCover_promise_abnormal_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_019
+     * @tc.desc   fetch AlbumCover promise-unSupported file type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchAlbumCover_promise_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchAlbumCover_promise_abnormal_001';
@@ -613,12 +613,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_020
-     * @tc.name      : fetchAlbumCover_promise_abnormal_002
-     * @tc.desc      : fetch AlbumCover promise-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   fetchAlbumCover_promise_abnormal_002
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_020
+     * @tc.desc   fetch AlbumCover promise-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fetchAlbumCover_promise_abnormal_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'fetchAlbumCover_promise_abnormal_002';
@@ -627,12 +627,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_021
-     * @tc.name      : release_video_callback_001
-     * @tc.desc      : release callback-mp4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_video_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_021
+     * @tc.desc   release callback-mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_video_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_callback_001';
@@ -640,12 +640,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_022
-     * @tc.name      : release_audio_callback_001
-     * @tc.desc      : release callback-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_audio_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_022
+     * @tc.desc   release callback-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_audio_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_audio_callback_001';
@@ -653,12 +653,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_023
-     * @tc.name      : release_video_promise_001
-     * @tc.desc      : release promise-mp4
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_video_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_023
+     * @tc.desc   release promise-mp4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_video_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_video_promise_001';
@@ -666,12 +666,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_024
-     * @tc.name      : release_audio_promise_001
-     * @tc.desc      : release promise-mp3
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_audio_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_024
+     * @tc.desc   release promise-mp3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_audio_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_audio_promise_001';
@@ -679,12 +679,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_025
-     * @tc.name      : release_no_fdSrc_callback_001
-     * @tc.desc      : release callback-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_no_fdSrc_callback_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_025
+     * @tc.desc   release callback-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_no_fdSrc_callback_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_no_fdSrc_callback_001';
@@ -692,12 +692,12 @@ export default function AVMetadataExtractorTest() {
     })
 
     /**
-     * @tc.number    : AV_METADATA_EXTRACTOR_TEST_026
-     * @tc.name      : release_no_fdSrc_promise_001
-     * @tc.desc      : release promise-no fdSrc
-     * @tc.size      : MediumTest
-     * @tc.type      : Function test
-     * @tc.level     : Level0
+     * @tc.name   release_no_fdSrc_promise_001
+     * @tc.number AV_METADATA_EXTRACTOR_TEST_026
+     * @tc.desc   release promise-no fdSrc
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('release_no_fdSrc_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'release_no_fdSrc_promise_001';

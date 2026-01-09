@@ -41,7 +41,6 @@ export default function RunningLockPermissionTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0100
      * @tc.number RunningLockPermissionTest_0100
      * @tc.desc   Function test
@@ -65,7 +64,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0200
      * @tc.number RunningLockPermissionTest_0200
      * @tc.desc   Function test
@@ -98,7 +96,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0300
      * @tc.number RunningLockPermissionTest_0300
      * @tc.desc   Function test
@@ -130,7 +127,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0400
      * @tc.number RunningLockPermissionTest_0400
      * @tc.desc   Function test
@@ -161,7 +157,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0500
      * @tc.number RunningLockPermissionTest_0500
      * @tc.desc   Function test
@@ -186,7 +181,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0600
      * @tc.number RunningLockPermissionTest_0600
      * @tc.desc   Function test
@@ -220,7 +214,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0700
      * @tc.number RunningLockPermissionTest_0700
      * @tc.desc   Function test
@@ -252,7 +245,6 @@ export default function RunningLockPermissionTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   RunningLockPermissionTest_0800
      * @tc.number RunningLockPermissionTest_0800
      * @tc.desc   Function test
@@ -278,6 +270,71 @@ export default function RunningLockPermissionTest() {
         }
       } else {
         expect(lock).assertUndefined();
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   RunningLockPermissionTest_0900
+     * @tc.number RunningLockPermissionTest_0900
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('RunningLockPermissionTest_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let TAG = 'RunningLockPermissionTest_0900';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          let lock = await runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+          console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+          expect().assertFail();
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(201);
+      } finally {
+        console.info(`${TAG} finally`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   RunningLockPermissionTest_1000
+     * @tc.number RunningLockPermissionTest_1000
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('RunningLockPermissionTest_1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+      let TAG = 'RunningLockPermissionTest_1000';
+      try {
+        let isSupported = runningLock.isSupported(runningLock.RunningLockType.BACKGROUND_USER_IDLE);
+        console.info(`${TAG} isSupported: ${isSupported}`);
+        if (isSupported) {
+          runningLock.create(TAG, runningLock.RunningLockType.BACKGROUND_USER_IDLE,
+            (error: BusinessError, lock: runningLock.RunningLock) => {
+              if (error) {
+                console.error(`${TAG} error: ${JSON.stringify(error)}`);
+                expect(error.code).assertEqual(201);
+              } else {
+                console.info(`${TAG} lock: ${JSON.stringify(lock)}`);
+                expect().assertFail();
+              }
+            });
+        } else {
+          console.error(`${TAG} The device does not support this type of lock!`);
+        }
+      } catch (error) {
+        console.error(`${TAG} error: ${JSON.stringify(error)}`);
+        expect(error.code).assertEqual(201);
+      } finally {
+        console.info(`${TAG} finally`);
         done();
       }
     });

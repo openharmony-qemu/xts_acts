@@ -19,7 +19,6 @@ export default function fieldNodeStageTest(){
   describe('fieldNodeStageTest', function() {
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsAppendChild001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0400
      * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 001
@@ -48,7 +47,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsAppendChild002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0100
      * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 002
@@ -71,7 +69,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsAppendChild003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0600
      * @tc.desc   Test Js Api FieldNode.AppendChild() testcase 003
@@ -92,7 +89,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsToJson001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0500
      * @tc.desc   Test Js Api FieldNode.ToJson() testcase 001
@@ -112,7 +108,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsToJson002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0200
      * @tc.desc   Test Js Api FieldNode.ToJson() testcase 002
@@ -132,7 +127,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsToJson003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0300
      * @tc.desc   Test Js Api FieldNode.ToJson() testcase 003
@@ -153,7 +147,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsdefault001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0700
      * @tc.desc   Test Js Api FieldNode.default testcase 001
@@ -174,7 +167,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtsnullable001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0800
      * @tc.desc   Test Js Api FieldNode.nullable testcase 001
@@ -195,7 +187,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtstype001
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1400
      * @tc.desc   Test Js Api FieldNode.type testcase 001
@@ -217,7 +208,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtstype002
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1300
      * @tc.desc   Test Js Api FieldNode.type testcase 002
@@ -239,7 +229,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtstype003
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1200
      * @tc.desc   Test Js Api FieldNode.type testcase 003
@@ -261,7 +250,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtstype004
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1000
      * @tc.desc   Test Js Api FieldNode.type testcase 004
@@ -283,7 +271,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtstype005
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_0900
      * @tc.desc   Test Js Api FieldNode.type testcase 005
@@ -306,7 +293,6 @@ export default function fieldNodeStageTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testEtstype006
      * @tc.number SUB_DistributedData_KVStore_SDK_KvStoreSchemaEtsApiTest_1100
      * @tc.desc   Test Js Api FieldNode.type testcase 006

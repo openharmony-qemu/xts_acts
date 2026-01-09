@@ -176,8 +176,11 @@ public:
     Camera_ErrorCode GetCameraHostTypeInspection(void);
     Camera_ErrorCode GetCameraHostType(void);
     Camera_ErrorCode GetSupportedOutputCapability(void);
+    Camera_ErrorCode GetSupportedFullOutputCapability(void);
     Camera_ErrorCode CreatePreviewOutput(void);
     Camera_ErrorCode CreatePhotoOutput(char* photoSurfaceId);
+    Camera_ErrorCode CreateHeifPhotoOutput(char* photoSurfaceId, int idx);
+    int AdjustHeifIdx(int idx);
     Camera_ErrorCode CreateVideoOutput(char* videoId);
     Camera_ErrorCode CreateMetadataOutput(void);
     Camera_ErrorCode IsCameraMuted(void);
@@ -236,8 +239,11 @@ public:
     Camera_ErrorCode SessionSetExposureBias(float exposureBias);
     Camera_ErrorCode SessionGetExposureBias(void);
     Camera_ErrorCode SessionGetPhotoRotation(int rotation);
+    Camera_ErrorCode SessionGetPhotoRotationWithoutDeviceDegree();
     Camera_ErrorCode SessionGetVideoRotation(int rotation);
+    Camera_ErrorCode SessionGetVideoRotationWithoutDeviceDegree();
     Camera_ErrorCode SessionGetPreviewRotation(int rotation);
+    Camera_ErrorCode SessionGetPreviewRotationWithoutDisplayRotation();
     Camera_ErrorCode SessionSetPreviewRotation(int rotation, bool isDisplayLocked);
 
     Camera_ErrorCode SessionIsFocusModeSupported(uint32_t mode);
@@ -389,7 +395,7 @@ public:
     Camera_ErrorCode CreatePreviewOutputByIndex(int index);
     Camera_ErrorCode CreateVideoOutputByIndex(char* videoId, int index);
     Camera_ErrorCode MacroStatusChangeTest(void);
-
+    Camera_ErrorCode IsoInfoChangeTest(void);
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,

@@ -15,9 +15,12 @@
 import WebViewEnumAndSetWebController from './WebViewEnumAndSetWebController.test'
 import WebViewJavaScriptProxyAndOnPageVisible from './WebViewJavaScriptProxyAndOnPageVisible.test'
 import webOnHttpErrorReceiveTest from './WebOnHttpErrorReceive.test'
+import WebConsoleMessageSource from './WebConsoleMessageSource.test'
+
 
 export default function testsuite() {
   WebViewEnumAndSetWebController()
   WebViewJavaScriptProxyAndOnPageVisible()
   webOnHttpErrorReceiveTest()
+  WebConsoleMessageSource()
 }

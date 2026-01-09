@@ -25,7 +25,6 @@ const RDB_E_TYPE_MISMATCH = 14800064;
 export default function ActsRelationalStoreTest() {
   describe('ActsRelationalStoreTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_GetUri_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetUri_0100
      * @tc.desc   test OH_Data_Asset_GetUri Test Normal Scene
@@ -47,7 +46,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_GetPath_0200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetPath_0200
      * @tc.desc   test OH_Data_Asset_GetPath Test Normal Scene
@@ -69,7 +67,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_GetCreateTime_0300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetCreateTime_0300
      * @tc.desc   test OH_Data_Asset_GetCreateTime Test Normal Scene
@@ -91,7 +88,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_GetModifyTime_0400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetModifyTime_0400
      * @tc.desc   test OH_Data_Asset_GetModifyTime Test Normal Scene
@@ -113,7 +109,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_GetSize_0500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetSize_0500
      * @tc.desc   test OH_Data_Asset_GetSize Test Normal Scene
@@ -135,7 +130,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_GetStatus_0600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_GetStatus_0600
      * @tc.desc   test OH_Data_Asset_GetStatus Test Normal Scene
@@ -157,7 +151,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_DestroyOne_0700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_DestroyOne_0700
      * @tc.desc   test OH_Data_Asset_DestroyOne Test Normal Scene
@@ -179,7 +172,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_Destroy_0900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_Destroy_0900
      * @tc.desc   test OH_VBuckets_Destroy Test Illegal Parameter Scene
@@ -201,7 +193,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_PutRow_1000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_PutRow_1000
      * @tc.desc   test OH_VBuckets_PutRow Test Illegal Parameter Scene
@@ -223,7 +214,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_PutRows_1100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_PutRows_1100
      * @tc.desc   test OH_VBuckets_PutRows Test Illegal Parameter Scene
@@ -245,7 +235,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_RowCount_1200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_VBuckets_RowCount_1200
      * @tc.desc   test OH_VBuckets_RowCount Test Illegal Parameter Scene
@@ -268,7 +257,6 @@ export default function ActsRelationalStoreTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_Destroy_1300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_Destroy_1300
      * @tc.desc   test OH_Values_Destroy Test Illegal Parameter Scene
@@ -290,7 +278,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutNull_1400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutNull_1400
      * @tc.desc   test OH_Values_PutNull Test Illegal Parameter Scene
@@ -312,7 +299,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutInt_1500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutInt_1500
      * @tc.desc   test OH_Values_PutInt Test Illegal Parameter Scene
@@ -334,7 +320,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutReal_1600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutReal_1600
      * @tc.desc   test OH_Values_PutReal Test Illegal Parameter Scene
@@ -356,7 +341,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutText_1700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutText_1700
      * @tc.desc   test OH_Values_PutText Test Illegal Parameter Scene
@@ -378,7 +362,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutBlob_1800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutBlob_1800
      * @tc.desc   test OH_Values_PutBlob Test Illegal Parameter Scene
@@ -400,7 +383,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutAsset_1900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutAsset_1900
      * @tc.desc   test OH_Values_PutAsset Test Illegal Parameter Scene
@@ -422,7 +404,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutAssets_2000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutAssets_2000
      * @tc.desc   test OH_Values_PutAssets Test Illegal Parameter Scene
@@ -444,7 +425,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_PutUnlimitedInt_2100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_PutUnlimitedInt_2100
      * @tc.desc   test OH_Values_PutUnlimitedInt Test Illegal Parameter Scene
@@ -469,7 +449,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_Count_2200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_Count_2200
      * @tc.desc   test OH_Values_Count Test Illegal Parameter Scene
@@ -491,7 +470,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetType_2300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetType_2300
      * @tc.desc   test OH_Values_GetType Test Illegal Parameter Scene
@@ -513,7 +491,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_Get_2400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_Get_2400
      * @tc.desc   test OH_Values_Get Test Illegal Parameter Scene
@@ -535,7 +512,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_IsNull_2500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_IsNull_2500
      * @tc.desc   test OH_Values_IsNull Test Illegal Parameter Scene
@@ -557,7 +533,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetInt_2600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetInt_2600
      * @tc.desc   test OH_Values_GetInt Test Illegal Parameter Scene
@@ -579,7 +554,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetInt_2700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetInt_2700
      * @tc.desc   test OH_Values_GetInt Test Data Types Do Not Match Scene
@@ -601,7 +575,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetInt_2800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetInt_2800
      * @tc.desc   test OH_Values_GetInt Test Storage Data Is Empty Scene
@@ -623,7 +596,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetReal_2900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetReal_2900
      * @tc.desc   test OH_Values_GetReal Test Illegal Parameter Scene
@@ -645,7 +617,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetReal_3000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetReal_3000
      * @tc.desc   test OH_Values_GetReal Test Data Types Do Not Match Scene
@@ -667,7 +638,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetReal_3100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetReal_3100
      * @tc.desc   test OH_Values_GetReal Test Storage Data Is Empty Scene
@@ -689,7 +659,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetText_3200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetText_3200
      * @tc.desc   test OH_Values_GetText Test Illegal Parameter Scene
@@ -711,7 +680,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetText_3300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetText_3300
      * @tc.desc   test OH_Values_GetText Test Data Types Do Not Match Scene
@@ -733,7 +701,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetText_3400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetText_3400
      * @tc.desc   test OH_Values_GetText Test Storage Data Is Empty Scene
@@ -755,7 +722,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetBlob_3500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetBlob_3500
      * @tc.desc   test OH_Values_GetBlob Test Illegal Parameter Scene
@@ -777,7 +743,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetBlob_3600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetBlob_3600
      * @tc.desc   test OH_Values_GetBlob Test Data Types Do Not Match Scene
@@ -799,7 +764,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetBlob_3700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetBlob_3700
      * @tc.desc   test OH_Values_GetBlob Test Storage Data Is Empty Scene
@@ -821,7 +785,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAsset_3800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAsset_3800
      * @tc.desc   test OH_Values_GetAsset Test Illegal Parameter Scene
@@ -843,7 +806,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAsset_3900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAsset_3900
      * @tc.desc   test OH_Values_GetAsset Test Data Types Do Not Match Scene
@@ -865,7 +827,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAsset_4000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAsset_4000
      * @tc.desc   test OH_Values_GetAsset Test Storage Data Is Empty Scene
@@ -888,7 +849,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssetsCount_4100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssetsCount_4100
      * @tc.desc   test OH_Values_GetAssetsCount Test Illegal Parameter Scene
@@ -911,7 +871,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssetsCount_4200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssetsCount_4200
      * @tc.desc   test OH_Values_GetAssetsCount Test Data Types Do Not Match Scene
@@ -934,7 +893,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssetsCount_4300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssetsCount_4300
      * @tc.desc   test OH_Values_GetAssetsCount Test Storage Data Is Empty Scene
@@ -957,7 +915,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssets_4400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssets_4400
      * @tc.desc   test OH_Values_GetAssets Test Illegal Parameter Scene
@@ -980,7 +937,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssets_4500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssets_4500
      * @tc.desc   test OH_Values_GetAssets Test Data Types Do Not Match Scene
@@ -1003,7 +959,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssets_4600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetAssets_4600
      * @tc.desc   test OH_Values_GetAssets Test Storage Data Is Empty Scene
@@ -1026,7 +981,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVectorCount_4700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVectorCount_4700
      * @tc.desc   test OH_Values_GetFloatVectorCount Test Illegal Parameter Scene
@@ -1051,7 +1005,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVectorCount_4800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVectorCount_4800
      * @tc.desc   test OH_Values_GetFloatVectorCount Test Data Types Do Not Match Scene
@@ -1076,7 +1029,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVectorCount_4900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVectorCount_4900
      * @tc.desc   test OH_Values_GetFloatVectorCount Test Storage Data Is Empty Scene
@@ -1101,7 +1053,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVector_5000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVector_5000
      * @tc.desc   test OH_Values_GetFloatVector Test Illegal Parameter Scene
@@ -1124,7 +1075,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVector_5100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVector_5100
      * @tc.desc   test OH_Values_GetFloatVector Test Data Types Do Not Match Scene
@@ -1147,7 +1097,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVector_5200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetFloatVector_5200
      * @tc.desc   test OH_Values_GetFloatVector Test Storage Data Is Empty Scene
@@ -1170,7 +1119,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedIntBand_5300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedIntBand_5300
      * @tc.desc   test OH_Values_GetUnlimitedIntBand Test Illegal Parameter Scene
@@ -1195,7 +1143,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedIntBand_5400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedIntBand_5400
      * @tc.desc   test OH_Values_GetUnlimitedIntBand Test Data Types Do Not Match Scene
@@ -1220,7 +1167,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedIntBand_5500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedIntBand_5500
      * @tc.desc   test OH_Values_GetUnlimitedIntBand Test Storage Data Is Empty Scene
@@ -1245,7 +1191,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedInt_5600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedInt_5600
      * @tc.desc   test OH_Values_GetUnlimitedInt Test Illegal Parameter Scene
@@ -1270,7 +1215,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedInt_5700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedInt_5700
      * @tc.desc   test OH_Values_GetUnlimitedInt Test Data Types Do Not Match Scene
@@ -1295,7 +1239,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedInt_5800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Values_GetUnlimitedInt_5800
      * @tc.desc   test OH_Values_GetUnlimitedInt Test Storage Data Is Empty Scene
@@ -1320,7 +1263,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_Destroy_6000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_Destroy_6000
      * @tc.desc   test OH_Value_Destroy Test Illegal Parameter Scene
@@ -1342,7 +1284,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_PutNull_6100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_PutNull_6100
      * @tc.desc   test OH_Value_PutNull Test Illegal Parameter Scene
@@ -1364,7 +1305,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_PutReal_6200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_PutReal_6200
      * @tc.desc   test OH_Value_PutReal Test Illegal Parameter Scene
@@ -1386,7 +1326,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_PutText_6300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_PutText_6300
      * @tc.desc   test OH_Value_PutText Test Illegal Parameter Scene
@@ -1408,7 +1347,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_PutBlob_6400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_PutBlob_6400
      * @tc.desc   test OH_Value_PutBlob Test Illegal Parameter Scene
@@ -1430,7 +1368,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_PutAsset_6500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_PutAsset_6500
      * @tc.desc   test OH_Value_PutAsset Test Illegal Parameter Scene
@@ -1452,7 +1389,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_PutAssets_6600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_PutAssets_6600
      * @tc.desc   test OH_Value_PutAssets Test Illegal Parameter Scene
@@ -1474,7 +1410,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_PutUnlimitedInt_6700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_PutUnlimitedInt_6700
      * @tc.desc   test OH_Value_PutUnlimitedInt Test Illegal Parameter Scene
@@ -1497,7 +1432,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetType_6800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetType_6800
      * @tc.desc   test OH_Value_GetType Test Illegal Parameter Scene
@@ -1519,7 +1453,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_IsNull_6900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_IsNull_6900
      * @tc.desc   test OH_Value_IsNull Test Illegal Parameter Scene
@@ -1541,7 +1474,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetInt_7000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetInt_7000
      * @tc.desc   test OH_Value_GetInt Test Illegal Parameter Scene
@@ -1563,7 +1495,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetInt_7100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetInt_7100
      * @tc.desc   test OH_Value_GetInt Test Data Types Do Not Match Scene
@@ -1585,7 +1516,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetInt_7200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetInt_7200
      * @tc.desc   test OH_Value_GetInt Test Storage Data Is Empty Scene
@@ -1607,7 +1537,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetReal_7300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetReal_7300
      * @tc.desc   test OH_Value_GetReal Test Illegal Parameter Scene
@@ -1629,7 +1558,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetText_7400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetText_7400
      * @tc.desc   test OH_Value_GetText Test Illegal Parameter Scene
@@ -1651,7 +1579,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetText_7500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetText_7500
      * @tc.desc   test OH_Value_GetText Test Data Types Do Not Match Scene
@@ -1673,7 +1600,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetText_7600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetText_7600
      * @tc.desc   test OH_Value_GetText Test Storage Data Is Empty Scene
@@ -1695,7 +1621,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetBlob_7700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetBlob_7700
      * @tc.desc   test OH_Value_GetBlob Test Illegal Parameter Scene
@@ -1717,7 +1642,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetBlob_7800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetBlob_7800
      * @tc.desc   test OH_Value_GetBlob Test Data Types Do Not Match Scene
@@ -1739,7 +1663,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetBlob_7900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetBlob_7900
      * @tc.desc   test OH_Value_GetBlob Test Storage Data Is Empty Scene
@@ -1761,7 +1684,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAsset_8000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAsset_8000
      * @tc.desc   test OH_Value_GetAsset Test Illegal Parameter Scene
@@ -1783,7 +1705,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAsset_8100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAsset_8100
      * @tc.desc   test OH_Value_GetAsset Test Data Types Do Not Match Scene
@@ -1805,7 +1726,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAsset_8200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAsset_8200
      * @tc.desc   test OH_Value_GetAsset Test Storage Data Is Empty Scene
@@ -1827,7 +1747,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssetsCount_8300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssetsCount_8300
      * @tc.desc   test OH_Value_GetAssetsCount Test Illegal Parameter Scene
@@ -1850,7 +1769,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssetsCount_8400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssetsCount_8400
      * @tc.desc   test OH_Value_GetAssetsCount Test Data Types Do Not Match Scene
@@ -1873,7 +1791,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssetsCount_8500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssetsCount_8500
      * @tc.desc   test OH_Value_GetAssetsCount Test Storage Data Is Empty Scene
@@ -1896,7 +1813,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssets_8600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssets_8600
      * @tc.desc   test OH_Value_GetAssets Test Illegal Parameter Scene
@@ -1918,7 +1834,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssets_8700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssets_8700
      * @tc.desc   test OH_Value_GetAssets Test Data Types Do Not Match Scene
@@ -1940,7 +1855,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssets_8800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetAssets_8800
      * @tc.desc   test OH_Value_GetAssets Test Storage Data Is Empty Scene
@@ -1962,7 +1876,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVectorCount_8900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVectorCount_8900
      * @tc.desc   test OH_Value_GetFloatVectorCount Test Illegal Parameter Scene
@@ -1987,7 +1900,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVectorCount_9000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVectorCount_9000
      * @tc.desc   test OH_Value_GetFloatVectorCount Test Data Types Do Not Match Scene
@@ -2012,7 +1924,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVectorCount_9100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVectorCount_9100
      * @tc.desc   test OH_Value_GetFloatVectorCount Test Storage Data Is Empty Scene
@@ -2037,7 +1948,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVector_9200
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVector_9200
      * @tc.desc   test OH_Value_GetFloatVector Test Illegal Parameter Scene
@@ -2060,7 +1970,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVector_9300
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVector_9300
      * @tc.desc   test OH_Value_GetFloatVector Test Data Types Do Not Match Scene
@@ -2083,7 +1992,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVector_9400
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetFloatVector_9400
      * @tc.desc   test OH_Value_GetFloatVector Test Storage Data Is Empty Scene
@@ -2106,7 +2014,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedIntBand_9500
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedIntBand_9500
      * @tc.desc   test OH_Value_GetUnlimitedIntBand Test Illegal Parameter Scene
@@ -2131,7 +2038,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedIntBand_9600
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedIntBand_9600
      * @tc.desc   test OH_Value_GetUnlimitedIntBand Test Data Types Do Not Match Scene
@@ -2156,7 +2062,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedIntBand_9700
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedIntBand_9700
      * @tc.desc   test OH_Value_GetUnlimitedIntBand Test Storage Data Is Empty Scene
@@ -2181,7 +2086,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedInt_9800
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedInt_9800
      * @tc.desc   test OH_Value_GetUnlimitedInt Test Illegal Parameter Scene
@@ -2204,7 +2108,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedInt_9900
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedInt_9900
      * @tc.desc   test OH_Value_GetUnlimitedInt Test Data Types Do Not Match Scene
@@ -2227,7 +2130,6 @@ export default function ActsRelationalStoreTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedInt_10000
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Value_GetUnlimitedInt_10000
      * @tc.desc   test OH_Value_GetUnlimitedInt Test Storage Data Is Empty Scene
@@ -2251,7 +2153,6 @@ export default function ActsRelationalStoreTest() {
         }
       })
     /**
-     * @generated.time 2025-11-09 20:49:50
      * @tc.name   SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100
      * @tc.number SUB_DistributedData_RelationalStore_SDK_OH_Rdb_ExecuteByTrxId_0100
      * @tc.desc   test OH_Value_GetUnlimitedInt Test Storage Data Is Empty Scene

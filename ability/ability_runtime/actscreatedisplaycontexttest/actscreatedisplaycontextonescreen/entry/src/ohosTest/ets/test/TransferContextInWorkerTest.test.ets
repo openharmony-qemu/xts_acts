@@ -19,11 +19,25 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { application, common, Context } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
 import { JSON, worker, MessageEvents } from '@kit.ArkTS';
+import { Driver, ON } from '@ohos.UiTest';
+
 let uiAbilityContext: common.UIAbilityContext | undefined;
 
 export default function transfercontextinworkertest() {
 
   describe('ActsTransferTest', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+    
     beforeEach(async (done: Function) => {
       console.info('beforeEach===start ');
       setTimeout(()=>{
@@ -36,13 +50,13 @@ export default function transfercontextinworkertest() {
       }, 1000);
     })
 
-    /*
-     * @tc.number: SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
-     * @tc.name: SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
-     * @tc.desc: Create a Context transfer in worker
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level Level 3
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
+     * @tc.number SUB_Ability_AbilityRuntime_TransferContextInWorker_0100
+     * @tc.desc   Create a Context transfer in worker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_TransferContextInWorker_0100', Level.LEVEL3, async (done: Function) => {
       console.log('[SUB_Ability_AbilityRuntime_TransferContextInWorker_0100]: start');

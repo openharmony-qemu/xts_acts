@@ -78,12 +78,12 @@ export default function ArraySomeTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
+     * @tc.name   ArraySomeTest001
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0100
-     * @tc.name ArraySomeTest001
-     * @tc.desc Array has element > 10, return true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Array has element > 10, return true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [2, 5, 12, 8];
@@ -95,12 +95,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest002
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0200
-     * @tc.name ArraySomeTest002
-     * @tc.desc Array has no element > 10, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Array has no element > 10, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [2, 5, 8, 1];
@@ -111,12 +111,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest003
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0300
-     * @tc.name ArraySomeTest003
-     * @tc.desc Empty array, return false
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Empty array, return false
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [];
@@ -132,12 +132,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest004
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0400
-     * @tc.name ArraySomeTest004
-     * @tc.desc Single-element array, element passes test (return true)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Single-element array, element passes test (return true)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [15];
@@ -148,12 +148,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest005
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0500
-     * @tc.name ArraySomeTest005
-     * @tc.desc Single-element array, element fails test (return false)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Single-element array, element fails test (return false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [5];
@@ -164,12 +164,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest006
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0600
-     * @tc.name ArraySomeTest006
-     * @tc.desc Check if any string has length > 5
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check if any string has length > 5
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest006', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = ["spray", "elite", "exuberant"];
@@ -180,12 +180,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest007
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0700
-     * @tc.name ArraySomeTest007
-     * @tc.desc Check if any object has active: true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check if any object has active: true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest007', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       interface BaseI{
@@ -204,12 +204,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest008
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0800
-     * @tc.name ArraySomeTest008
-     * @tc.desc Check if any boolean is true
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check if any boolean is true
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest008', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [false, false, true, false];
@@ -220,12 +220,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest009
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_0900
-     * @tc.name ArraySomeTest009
-     * @tc.desc Check if any element is null
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check if any element is null
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, null, 3];
@@ -236,12 +236,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest010
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1000
-     * @tc.name ArraySomeTest010
-     * @tc.desc Check if any element is undefined
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Check if any element is undefined
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL1
      */
     it('ArraySomeTest010', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
       const arr = [1, undefined, 3];
@@ -252,12 +252,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest011
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1100
-     * @tc.name ArraySomeTest011
-     * @tc.desc Eligible element at array start (short-circuit: 1 callback call)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Eligible element at array start (short-circuit: 1 callback call)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [15, 2, 8, 1];
@@ -273,12 +273,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest012
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1200
-     * @tc.name ArraySomeTest012
-     * @tc.desc Eligible element in array middle (short-circuit: stop at middle)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Eligible element in array middle (short-circuit: stop at middle)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [2, 5, 12, 8, 1];
@@ -294,12 +294,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest013
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1300
-     * @tc.name ArraySomeTest013
-     * @tc.desc No eligible elements (all callbacks called)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   No eligible elements (all callbacks called)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [2, 5, 8, 1];
@@ -315,12 +315,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest014
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1400
-     * @tc.name ArraySomeTest014
-     * @tc.desc Verify callback parameters (element, index, array)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Verify callback parameters (element, index, array)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest014', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       interface BaseI{
@@ -343,12 +343,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest015
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1500
-     * @tc.name ArraySomeTest015
-     * @tc.desc Some() on sparse array (empty slots skipped)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Some() on sparse array (empty slots skipped)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest015', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [1, , 3, , 12];
@@ -364,48 +364,48 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest016
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1600
-     * @tc.name ArraySomeTest016
-     * @tc.desc Some() on non-array object (class array) via call()
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Some() on non-array object (class array) via call()
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest016', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArraySomeTest016()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest017
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1700
-     * @tc.name ArraySomeTest017
-     * @tc.desc Use thisArg to bind this in callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Use thisArg to bind this in callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest017', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArraySomeTest017()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest018
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_1800
-     * @tc.name ArraySomeTest018
-     * @tc.desc No thisArg: this is undefined in strict mode callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   No thisArg: this is undefined in strict mode callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest018', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       expect(ArraySomeTest018()).assertEqual(undefined);
     });
 
     /**
+     * @tc.name   ArraySomeTest020
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2000
-     * @tc.name ArraySomeTest020
-     * @tc.desc Some() with BigInt elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Some() with BigInt elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL2
      */
     it('ArraySomeTest020', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
       const arr = [5n, 15n, 8n];
@@ -416,12 +416,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest021
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2100
-     * @tc.name ArraySomeTest021
-     * @tc.desc Callback throws error during iteration (traversal interrupts)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback throws error during iteration (traversal interrupts)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 15, 8];
@@ -447,12 +447,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest022
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2200
-     * @tc.name ArraySomeTest022
-     * @tc.desc Modify array during iteration (add element beyond initial length)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Modify array during iteration (add element beyond initial length)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -474,12 +474,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest023
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2300
-     * @tc.name ArraySomeTest023
-     * @tc.desc Modify unvisited element during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Modify unvisited element during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -499,12 +499,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest024
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2400
-     * @tc.name ArraySomeTest024
-     * @tc.desc Delete unvisited element during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Delete unvisited element during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest024', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const result = ArraySomeTest024();
@@ -515,24 +515,24 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest025
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2500
-     * @tc.name ArraySomeTest025
-     * @tc.desc Some() with Symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with Symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest025', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest025()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest026
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2600
-     * @tc.name ArraySomeTest026
-     * @tc.desc Some() with nested objects (check reference equality)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with nested objects (check reference equality)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest026', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -552,12 +552,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest027
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2700
-     * @tc.name ArraySomeTest027
-     * @tc.desc Callback is non-function (throws TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Callback is non-function (throws TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 2];
@@ -573,24 +573,24 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest028
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2800
-     * @tc.name ArraySomeTest028
-     * @tc.desc Some() on non-array object without length (returns false)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() on non-array object without length (returns false)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest028', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest028()).assertEqual(false);
     });
 
     /**
+     * @tc.name   ArraySomeTest029
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_2900
-     * @tc.name ArraySomeTest029
-     * @tc.desc Some() with NaN elements (check if any NaN exists)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with NaN elements (check if any NaN exists)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, NaN, 3];
@@ -602,12 +602,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest030
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3000
-     * @tc.name ArraySomeTest030
-     * @tc.desc Comprehensive test: mixed types + dynamic modification + thisArg
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Comprehensive test: mixed types + dynamic modification + thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       const result = ArraySomeTest030();
@@ -617,12 +617,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest031
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3100
-     * @tc.name ArraySomeTest031
-     * @tc.desc Some() with negative numbers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with negative numbers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [-5, -10, 3];
@@ -633,12 +633,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest032
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3200
-     * @tc.name ArraySomeTest032
-     * @tc.desc Some() with zero
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with zero
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 0, 3];
@@ -649,12 +649,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest033
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3300
-     * @tc.name ArraySomeTest033
-     * @tc.desc Some() with empty strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with empty strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = ['hello', '', 'world'];
@@ -665,12 +665,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest034
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3400
-     * @tc.name ArraySomeTest034
-     * @tc.desc Some() with multi-line strings
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with multi-line strings
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest034', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = ['line1', 'line1\nline2', 'line3'];
@@ -681,12 +681,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest035
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3500
-     * @tc.name ArraySomeTest035
-     * @tc.desc Some() with function elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with function elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest035', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const func1 = () => 'hello';
@@ -699,12 +699,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest036
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3600
-     * @tc.name ArraySomeTest036
-     * @tc.desc Some() with regex elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with regex elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest036', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, /test/, 'text'];
@@ -715,12 +715,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest037
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3700
-     * @tc.name ArraySomeTest037
-     * @tc.desc Some() with date objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with date objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest037', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new Date(), 'text'];
@@ -731,12 +731,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest038
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3800
-     * @tc.name ArraySomeTest038
-     * @tc.desc Some() with array elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest038', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, [1, 2], 'text'];
@@ -747,12 +747,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest039
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_3900
-     * @tc.name ArraySomeTest039
-     * @tc.desc Some() with map objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with map objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest039', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new Map<string, string>(), 'text'];
@@ -763,12 +763,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest040
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4000
-     * @tc.name ArraySomeTest040
-     * @tc.desc Some() with set objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with set objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest040', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new Set<string>(), 'text'];
@@ -779,12 +779,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest041
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4100
-     * @tc.name ArraySomeTest041
-     * @tc.desc Some() with weakmap objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with weakmap objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest041', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new WeakMap<object, string>(), 'text'];
@@ -795,12 +795,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest042
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4200
-     * @tc.name ArraySomeTest042
-     * @tc.desc Some() with weakset objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with weakset objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest042', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new WeakSet(), 'text'];
@@ -811,12 +811,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest043
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4300
-     * @tc.name ArraySomeTest043
-     * @tc.desc Some() with typed arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with typed arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest043', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new Uint8Array(), 'text'];
@@ -827,12 +827,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest044
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4400
-     * @tc.name ArraySomeTest044
-     * @tc.desc Some() with data views objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with data views objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest044', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const buffer = new ArrayBuffer(16);
@@ -844,12 +844,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest045
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4500
-     * @tc.name ArraySomeTest045
-     * @tc.desc Some() with array buffers
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array buffers
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest045', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new ArrayBuffer(16), 'text'];
@@ -860,12 +860,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest046
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4600
-     * @tc.name ArraySomeTest046
-     * @tc.desc Some() with promises
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with promises
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest046', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, Promise.resolve(), 'text'];
@@ -876,12 +876,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest047
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4700
-     * @tc.name ArraySomeTest047
-     * @tc.desc Some() with error objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with error objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest047', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, new Error('test'), 'text'];
@@ -892,24 +892,24 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest048
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4800
-     * @tc.name ArraySomeTest048
-     * @tc.desc Some() with symbol elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with symbol elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest048', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest048()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest049
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_4900
-     * @tc.name ArraySomeTest049
-     * @tc.desc Some() with bigint elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with bigint elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest049', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, 10n, 'text'];
@@ -920,12 +920,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest050
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5000
-     * @tc.name ArraySomeTest050
-     * @tc.desc Some() with null elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with null elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest050', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, null, 'text'];
@@ -936,12 +936,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest051
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5100
-     * @tc.name ArraySomeTest051
-     * @tc.desc Some() with undefined elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with undefined elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest051', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, undefined, 'text'];
@@ -952,12 +952,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest052
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5200
-     * @tc.name ArraySomeTest052
-     * @tc.desc Some() with NaN elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with NaN elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest052', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, NaN, 'text'];
@@ -968,12 +968,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest053
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5300
-     * @tc.name ArraySomeTest053
-     * @tc.desc Some() with Infinity elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with Infinity elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest053', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, Infinity, 'text'];
@@ -984,12 +984,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest054
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5400
-     * @tc.name ArraySomeTest054
-     * @tc.desc Some() with -Infinity elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with -Infinity elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest054', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, -Infinity, 'text'];
@@ -1000,12 +1000,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest055
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5500
-     * @tc.name ArraySomeTest055
-     * @tc.desc Some() with sparse arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with sparse arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest055', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, , 3];
@@ -1021,12 +1021,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest056
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5600
-     * @tc.name ArraySomeTest056
-     * @tc.desc Some() with empty array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with empty array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest056', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [];
@@ -1042,12 +1042,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest057
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5700
-     * @tc.name ArraySomeTest057
-     * @tc.desc Some() with single element array (pass)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with single element array (pass)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [15];
@@ -1058,12 +1058,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest058
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5800
-     * @tc.name ArraySomeTest058
-     * @tc.desc Some() with single element array (fail)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with single element array (fail)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [5];
@@ -1074,60 +1074,60 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest059
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_5900
-     * @tc.name ArraySomeTest059
-     * @tc.desc Some() with array-like objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array-like objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest059', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest059()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest060
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6000
-     * @tc.name ArraySomeTest060
-     * @tc.desc Some() with strings (treated as array-like)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with strings (treated as array-like)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest060', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest060()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest061
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6100
-     * @tc.name ArraySomeTest061
-     * @tc.desc Some() with arguments object
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with arguments object
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest061', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest061()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest063
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6300
-     * @tc.name ArraySomeTest063
-     * @tc.desc Some() with thisArg binding
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with thisArg binding
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest063', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest063()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest064
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6400
-     * @tc.name ArraySomeTest064
-     * @tc.desc Some() with arrow function and thisArg (no binding)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with arrow function and thisArg (no binding)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest064', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1142,72 +1142,72 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest065
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6500
-     * @tc.name ArraySomeTest065
-     * @tc.desc Some() with strict mode function and thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with strict mode function and thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest065', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest065()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest066
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6600
-     * @tc.name ArraySomeTest066
-     * @tc.desc Some() with strict mode function without thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with strict mode function without thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest066', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest066()).assertEqual(undefined);
     });
 
     /**
+     * @tc.name   ArraySomeTest067
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6700
-     * @tc.name ArraySomeTest067
-     * @tc.desc Some() with non-strict mode function without thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with non-strict mode function without thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest067', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest067()).assertEqual(undefined);
     });
 
     /**
+     * @tc.name   ArraySomeTest068
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6800
-     * @tc.name ArraySomeTest068
-     * @tc.desc Some() with null thisArg in non-strict mode
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with null thisArg in non-strict mode
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest068', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest068()).assertEqual(null);
     });
 
     /**
+     * @tc.name   ArraySomeTest069
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_6900
-     * @tc.name ArraySomeTest069
-     * @tc.desc Some() with null thisArg in strict mode
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with null thisArg in strict mode
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest069', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest069()).assertEqual(null);
     });
 
     /**
+     * @tc.name   ArraySomeTest070
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7000
-     * @tc.name ArraySomeTest070
-     * @tc.desc Some() with modified array during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with modified array during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1223,12 +1223,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest071
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7100
-     * @tc.name ArraySomeTest071
-     * @tc.desc Some() with array elements added during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array elements added during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1245,12 +1245,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest072
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7200
-     * @tc.name ArraySomeTest072
-     * @tc.desc Some() with elements removed during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with elements removed during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 15, 8];
@@ -1267,12 +1267,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest073
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7300
-     * @tc.name ArraySomeTest073
-     * @tc.desc Some() with elements shifted during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with elements shifted during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 15];
@@ -1288,12 +1288,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest074
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7400
-     * @tc.name ArraySomeTest074
-     * @tc.desc Some() with elements unshifted during iteration
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with elements unshifted during iteration
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1309,12 +1309,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest075
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7500
-     * @tc.name ArraySomeTest075
-     * @tc.desc Some() with callback throwing exception
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with callback throwing exception
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1339,12 +1339,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest076
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7600
-     * @tc.name ArraySomeTest076
-     * @tc.desc Some() with non-function callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with non-function callback (TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest076', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1360,12 +1360,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest077
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7700
-     * @tc.name ArraySomeTest077
-     * @tc.desc Some() with null callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with null callback (TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest077', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1381,12 +1381,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest078
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7800
-     * @tc.name ArraySomeTest078
-     * @tc.desc Some() with undefined callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with undefined callback (TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1402,12 +1402,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest079
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_7900
-     * @tc.name ArraySomeTest079
-     * @tc.desc Some() with number callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with number callback (TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest079', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1423,12 +1423,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest080
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8000
-     * @tc.name ArraySomeTest080
-     * @tc.desc Some() with object callback (TypeError)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with object callback (TypeError)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest080', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [2, 5, 8];
@@ -1444,84 +1444,84 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest081
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8100
-     * @tc.name ArraySomeTest081
-     * @tc.desc Some() with proxy object as thisArg
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with proxy object as thisArg
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest081', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest081()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest082
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8200
-     * @tc.name ArraySomeTest082
-     * @tc.desc Some() with proxy object as array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with proxy object as array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest082', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest082()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest083
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8300
-     * @tc.name ArraySomeTest083
-     * @tc.desc Some() with frozen array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with frozen array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest083', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest083()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest084
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8400
-     * @tc.name ArraySomeTest084
-     * @tc.desc Some() with sealed array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with sealed array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest084', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest084()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest085
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8500
-     * @tc.name ArraySomeTest085
-     * @tc.desc Some() with non-writable array elements
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with non-writable array elements
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest085', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest085()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest086
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8600
-     * @tc.name ArraySomeTest086
-     * @tc.desc Some() with getter properties in array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with getter properties in array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest086', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest086()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest087
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8700
-     * @tc.name ArraySomeTest087
-     * @tc.desc Some() with async callback (non-awaiting)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with async callback (non-awaiting)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [5, 15, 8];
@@ -1533,24 +1533,24 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest088
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8800
-     * @tc.name ArraySomeTest088
-     * @tc.desc Some() with generator function callback
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with generator function callback
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest088', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest088()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest089
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_8900
-     * @tc.name ArraySomeTest089
-     * @tc.desc Some() with recursive structure
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with recursive structure
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest089', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1568,12 +1568,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest090
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9000
-     * @tc.name ArraySomeTest090
-     * @tc.desc Some() with very large array (performance)
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with very large array (performance)
+     * @tc.type   FUNCTION
+     * @tc.size   LARGETEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest090', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL3, async () => {
       const arr = new Array<number>(1000000).fill(5);
@@ -1592,36 +1592,36 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest091
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9100
-     * @tc.name ArraySomeTest091
-     * @tc.desc Some() with typed array of large size
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with typed array of large size
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest091', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest091()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest092
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9200
-     * @tc.name ArraySomeTest092
-     * @tc.desc Some() with large string
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with large string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest092', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest092()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest093
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9300
-     * @tc.name ArraySomeTest093
-     * @tc.desc Some() with array of dates
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array of dates
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest093', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const pastDate = new Date('2020-01-01');
@@ -1633,12 +1633,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest094
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9400
-     * @tc.name ArraySomeTest094
-     * @tc.desc Some() with array of regex patterns
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array of regex patterns
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest094', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [/hello/, /world/, /test/];
@@ -1647,12 +1647,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest095
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9500
-     * @tc.name ArraySomeTest095
-     * @tc.desc Some() with array of class instances
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array of class instances
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest095', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       class User {
@@ -1668,24 +1668,24 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest096
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9600
-     * @tc.name ArraySomeTest096
-     * @tc.desc Some() with array of symbols
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array of symbols
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest096', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest096()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest097
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9700
-     * @tc.name ArraySomeTest097
-     * @tc.desc Some() with array of bigints
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array of bigints
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest097', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [10n, 20n, 5n];
@@ -1694,12 +1694,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest098
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9800
-     * @tc.name ArraySomeTest098
-     * @tc.desc Some() with array of maps
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array of maps
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest098', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const map1 = new Map([['a', 1]]);
@@ -1712,12 +1712,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest099
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_9900
-     * @tc.name ArraySomeTest099
-     * @tc.desc Some() with array of sets
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array of sets
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest099', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const set1 = new Set([1, 2]);
@@ -1730,12 +1730,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest100
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_10000
-     * @tc.name ArraySomeTest100
-     * @tc.desc Some() with mixed types array
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with mixed types array
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest100', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1747,12 +1747,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest101
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_10100
-     * @tc.name ArraySomeTest101
-     * @tc.desc Some() with deeply nested arrays
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with deeply nested arrays
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest101', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [
@@ -1777,12 +1777,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest102
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_10200
-     * @tc.name ArraySomeTest102
-     * @tc.desc Some() with deeply nested objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with deeply nested objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest102', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1805,12 +1805,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest112
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_11200
-     * @tc.name ArraySomeTest112
-     * @tc.desc Some() with array containing buffers (Node.js)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing buffers (Node.js)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest112', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
 
@@ -1823,12 +1823,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest114
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_11400
-     * @tc.name ArraySomeTest114
-     * @tc.desc Some() with array containing timers (Node.js)
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing timers (Node.js)
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest114', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const timeoutId = setTimeout(() => {}, 0);
@@ -1841,12 +1841,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest117
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_11700
-     * @tc.name ArraySomeTest117
-     * @tc.desc Some() with array containing promises with different states
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing promises with different states
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest117', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const pendingPromise = new Promise<void>(() => {});
@@ -1861,12 +1861,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest118
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_11800
-     * @tc.name ArraySomeTest118
-     * @tc.desc Some() with array containing weak references
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing weak references
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest118', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       interface BaseI{
@@ -1882,24 +1882,24 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest119
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_11900
-     * @tc.name ArraySomeTest119
-     * @tc.desc Some() with array containing finalization registries
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing finalization registries
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest119', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest119()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest120
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_12000
-     * @tc.name ArraySomeTest120
-     * @tc.desc Some() with array containing atomics objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing atomics objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest120', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const arr = [1, Atomics, 3];
@@ -1910,12 +1910,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest121
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_12100
-     * @tc.name ArraySomeTest121
-     * @tc.desc Some() with array containing intl objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing intl objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest121', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const formatter = new Intl.DateTimeFormat('en-US');
@@ -1927,24 +1927,24 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest122
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_12200
-     * @tc.name ArraySomeTest122
-     * @tc.desc Some() with array containing reflection objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing reflection objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest122', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       expect(ArraySomeTest122()).assertEqual(true);
     });
 
     /**
+     * @tc.name   ArraySomeTest123
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_12300
-     * @tc.name ArraySomeTest123
-     * @tc.desc Some() with array containing typed array views
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing typed array views
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest123', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const buffer = new ArrayBuffer(16);
@@ -1957,12 +1957,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest143
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_14300
-     * @tc.name ArraySomeTest143
-     * @tc.desc Some() with array containing RangeError objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing RangeError objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest143', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const error = new RangeError('Out of range');
@@ -1974,12 +1974,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest144
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_14400
-     * @tc.name ArraySomeTest144
-     * @tc.desc Some() with array containing ReferenceError objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing ReferenceError objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest144', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const error = new ReferenceError('Variable not defined');
@@ -1991,12 +1991,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest145
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_14500
-     * @tc.name ArraySomeTest145
-     * @tc.desc Some() with array containing SyntaxError objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing SyntaxError objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest145', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const error = new SyntaxError('Invalid syntax');
@@ -2008,12 +2008,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest146
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_14600
-     * @tc.name ArraySomeTest146
-     * @tc.desc Some() with array containing TypeError objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing TypeError objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest146', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const error = new TypeError('Wrong type');
@@ -2025,12 +2025,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest147
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_14700
-     * @tc.name ArraySomeTest147
-     * @tc.desc Some() with array containing URIError objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing URIError objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest147', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const error = new URIError('Invalid URI');
@@ -2042,12 +2042,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest148
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_14800
-     * @tc.name ArraySomeTest148
-     * @tc.desc Some() with array containing EvalError objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing EvalError objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest148', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       if (typeof EvalError === 'undefined') {
@@ -2063,12 +2063,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest149
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_14900
-     * @tc.name ArraySomeTest149
-     * @tc.desc Some() with array containing AggregateError objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing AggregateError objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest149', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       if (typeof AggregateError === 'undefined') {
@@ -2084,12 +2084,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest150
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_15000
-     * @tc.name ArraySomeTest150
-     * @tc.desc Some() with array containing Intl objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing Intl objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest150', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const formatter = new Intl.DateTimeFormat('en-US');
@@ -2101,12 +2101,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest151
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_15100
-     * @tc.name ArraySomeTest151
-     * @tc.desc Some() with array containing RegExp objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing RegExp objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest151', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const regex = /test/;
@@ -2118,12 +2118,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest152
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_15200
-     * @tc.name ArraySomeTest152
-     * @tc.desc Some() with array containing Date objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing Date objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest152', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const date = new Date();
@@ -2135,12 +2135,12 @@ export default function ArraySomeTest() {
     });
 
     /**
+     * @tc.name   ArraySomeTest153
      * @tc.number SUB_BUILTINS_ARRAY_SOME_TEST_15300
-     * @tc.name ArraySomeTest153
-     * @tc.desc Some() with array containing Map objects
-     * @tc.size SmallTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   Some() with array containing Map objects
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL3
      */
     it('ArraySomeTest153', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
       const map = new Map<string, string>();

@@ -73,7 +73,18 @@
                 "./resource/image/RAW_PANASONIC_LX3.RW2 ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
                 "./resource/image/RAW_SAMSUNG_EX2F.SRW ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
                 "./resource/image/023A9785.CR3 ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
-                "./resource/image/023A9867.CR3 ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files"
+                "./resource/image/023A9867.CR3 ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_Deflate.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_G3.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_G4.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_Jpeg.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_Lzw.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_Next.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_none.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_Packbits.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_PixarLog_RGB.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/1920x1080_SGILOG_gray16.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files",
+                "./resource/image/thunderscan-1920x1080.tiff ->/data/app/el2/100/base/ohos.acts.multimedia.imagePixelMapNDK/haps/entry_test/files"
             ]
         },
         {

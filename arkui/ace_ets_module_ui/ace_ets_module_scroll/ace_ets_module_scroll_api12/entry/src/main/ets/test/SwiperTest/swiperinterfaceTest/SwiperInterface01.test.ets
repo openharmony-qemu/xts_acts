@@ -57,12 +57,12 @@ export default function SwiperInterface01() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070
      * @tc.number SWIPER_INTERFACE_1070
-     * @tc.name step
-     * @tc.desc interval
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1070 START");
@@ -77,12 +77,12 @@ export default function SwiperInterface01() {
 
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090
      * @tc.number SWIPER_INTERFACE_1090
-     * @tc.name step
-     * @tc.desc interval
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1090 START");
@@ -96,12 +96,12 @@ export default function SwiperInterface01() {
     });
 
     /**
+     * @tc.name   SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110
      * @tc.number SWIPER_INTERFACE_1110
-     * @tc.name step
-     * @tc.desc interval
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   interval
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110', Level.LEVEL1, async (done: Function) => {
       console.info("SUB_ACE_UI_COMPONENT_SCROLL_SWIPER_INTERFACE_1110 START");

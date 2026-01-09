@@ -60,6 +60,7 @@ export default function windowFocusTest() {
     let windowStage: ohosWindow.WindowStage;
     let windowClass: window.Window;
     let isAutoWindow:string = '';
+    let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -74,6 +75,21 @@ export default function windowFocusTest() {
       //isAutoWindow == 'true' PAD设备自由多窗模式
       //isAutoWindow == 'false' PAD设备非自由多窗模式
       console.info(`isAutoWindow: ${JSON.stringify(isAutoWindow)}`);
+      let mainWindowId = windowClass.getWindowProperties().id;
+      console.info(`beforeall mainWindowId: ${mainWindowId}`);
+      let topWindow = await window.getLastWindow(context);
+      let topWindowId = topWindow.getWindowProperties().id;
+      console.info(`beforeall topWindowId: ${topWindowId}`);
+      driver = Driver.create();
+      try {
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
     })
     afterEach(async ()=>{
       try {
@@ -94,12 +110,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_ONWINDOWHIGHLIGHTCHANGE_0100
-     * @tc.name      : test_OH_OnWindowHighlightChange_One
-     * @tc.desc      : test_OH_OnWindowHighlightChange_One
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_OH_OnWindowHighlightChange_One
+     * @tc.number SUB_BASIC_ONWINDOWHIGHLIGHTCHANGE_0100
+     * @tc.desc   test_OH_OnWindowHighlightChange_One
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_OH_OnWindowHighlightChange_One', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msg = 'test_OH_OnWindowHighlightChange_One ';
@@ -142,12 +158,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_ONWINDOWHIGHLIGHTCHANGE_0200
-     * @tc.name      : test_OH_OnWindowHighlightChange_Mul
-     * @tc.desc      : test_OH_OnWindowHighlightChange_Mul
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_OH_OnWindowHighlightChange_Mul
+     * @tc.number SUB_BASIC_ONWINDOWHIGHLIGHTCHANGE_0200
+     * @tc.desc   test_OH_OnWindowHighlightChange_Mul
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_OH_OnWindowHighlightChange_Mul', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msg = 'test_OH_OnWindowHighlightChange_Mul ';
@@ -195,12 +211,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_OFFWINDOWHIGHLIGHTCHANGE_0300
-     * @tc.name      : test_OH_OffWindowHighlightChange_clear_all
-     * @tc.desc      : test_OH_OffWindowHighlightChange_clear_all
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_OffWindowHighlightChange_clear_all
+     * @tc.number SUB_BASIC_OFFWINDOWHIGHLIGHTCHANGE_0300
+     * @tc.desc   test_OH_OffWindowHighlightChange_clear_all
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_OffWindowHighlightChange_clear_all', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msg = 'test_OH_OffWindowHighlightChange_clear_all '
@@ -247,12 +263,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_OFFWINDOWHIGHLIGHTCHANGE_0400
-     * @tc.name      : test_OH_OffWindowHighlightChange_one
-     * @tc.desc      : test_OH_OffWindowHighlightChange_one
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_OffWindowHighlightChange_one
+     * @tc.number SUB_BASIC_OFFWINDOWHIGHLIGHTCHANGE_0400
+     * @tc.desc   test_OH_OffWindowHighlightChange_one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_OffWindowHighlightChange_one', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msg = 'test_OH_OffWindowHighlightChange_one '
@@ -299,12 +315,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_SETEXCLUSIVELYHIGHLIGHTED_0500
-     * @tc.name      : test_OH_setExclusivelyHighlighted_one
-     * @tc.desc      : test_OH_setExclusivelyHighlighted_one
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_OH_setExclusivelyHighlighted_one
+     * @tc.number SUB_BASIC_SETEXCLUSIVELYHIGHLIGHTED_0500
+     * @tc.desc   test_OH_setExclusivelyHighlighted_one
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_OH_setExclusivelyHighlighted_one', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msg = 'test_OH_setExclusivelyHighlighted_one ';
@@ -399,12 +415,12 @@ export default function windowFocusTest() {
 
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0100
-     * @tc.name      : test_ISWINDOWHIGHLIGHTED_0100
-     * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   test_ISWINDOWHIGHLIGHTED_0100
+     * @tc.number SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0100
+     * @tc.desc   test_ISWINDOWHIGHLIGHTED_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_ISWINDOWHIGHLIGHTED_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0100';
@@ -428,12 +444,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0200
-     * @tc.name      : test_ISWINDOWHIGHLIGHTED_0200
-     * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   test_ISWINDOWHIGHLIGHTED_0200
+     * @tc.number SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0200
+     * @tc.desc   test_ISWINDOWHIGHLIGHTED_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_ISWINDOWHIGHLIGHTED_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0200';
@@ -452,12 +468,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0300
-     * @tc.name      : test_ISWINDOWHIGHLIGHTED_0300
-     * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_ISWINDOWHIGHLIGHTED_0300
+     * @tc.number SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0300
+     * @tc.desc   test_ISWINDOWHIGHLIGHTED_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_ISWINDOWHIGHLIGHTED_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0300';
@@ -485,12 +501,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0400
-     * @tc.name      : test_ISWINDOWHIGHLIGHTED_0400
-     * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_ISWINDOWHIGHLIGHTED_0400
+     * @tc.number SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0400
+     * @tc.desc   test_ISWINDOWHIGHLIGHTED_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_ISWINDOWHIGHLIGHTED_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0400';
@@ -524,13 +540,13 @@ export default function windowFocusTest() {
         }
       }
     });
-   /**
-     * @tc.number    : SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0500
-     * @tc.name      : test_ISWINDOWHIGHLIGHTED_0500
-     * @tc.desc      : test_ISWINDOWHIGHLIGHTED_0500
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+    /**
+     * @tc.name   test_ISWINDOWHIGHLIGHTED_0500
+     * @tc.number SUB_BASIC_WMS_ISWINDOWHIGHLIGHTED_0500
+     * @tc.desc   test_ISWINDOWHIGHLIGHTED_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_ISWINDOWHIGHLIGHTED_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_ISWINDOWHIGHLIGHTED_0500';
@@ -569,15 +585,15 @@ export default function windowFocusTest() {
         }
       }
     });
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0100
-     * @tc.name      : test_mainWindow_on_noInteractionDetected
-     * @tc.desc      : test_mainWindow_on_noInteractionDetected
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @tc.name   test_mainWindow_on_noInteractionDetected
+     * @tc.number test_mainWindow_on_noInteractionDetected
+     * @tc.desc   test_mainWindow_on_noInteractionDetected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_mainWindow_on_noInteractionDetected", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_mainWindow_on_noInteractionDetected";
       console.log(msgStr + "begin");
@@ -612,15 +628,15 @@ export default function windowFocusTest() {
       }
     })
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0200
-     * @tc.name      : test_mainWindow_off_noInteractionDetected
-     * @tc.desc      : test_mainWindow_off_noInteractionDetected
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
-     */
 
+    /**
+     * @tc.name   test_mainWindow_off_noInteractionDetected
+     * @tc.number test_mainWindow_off_noInteractionDetected
+     * @tc.desc   test_mainWindow_off_noInteractionDetected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_mainWindow_off_noInteractionDetected", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_mainWindow_off_noInteractionDetected";
       console.log(msgStr + "begin");
@@ -649,15 +665,15 @@ export default function windowFocusTest() {
       }
     })
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0300
-     * @tc.name      : test_subWindow_on_noInteractionDetected
-     * @tc.desc      : test_subWindow_on_noInteractionDetected
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
 
+    /**
+     * @tc.name   test_subWindow_on_noInteractionDetected
+     * @tc.number test_subWindow_on_noInteractionDetected
+     * @tc.desc   test_subWindow_on_noInteractionDetected
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_subWindow_on_noInteractionDetected", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_subWindow_on_noInteractionDetected";
       console.log(msgStr + "begin");
@@ -711,15 +727,15 @@ export default function windowFocusTest() {
         }
       }
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0400
-     * @tc.name      : test_mainWindow_on_noInteractionDetected_two
-     * @tc.desc      : test_mainWindow_on_noInteractionDetected_two
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
 
+    /**
+     * @tc.name   test_mainWindow_on_noInteractionDetected_two
+     * @tc.number test_mainWindow_on_noInteractionDetected_two
+     * @tc.desc   test_mainWindow_on_noInteractionDetected_two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_mainWindow_on_noInteractionDetected_two", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_mainWindow_on_noInteractionDetected_two";
       console.log(msgStr + "begin");
@@ -768,15 +784,15 @@ export default function windowFocusTest() {
         }
       }
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0500
-     * @tc.name      : test_mainWindow_on_noInteractionDetected_One
-     * @tc.desc      : test_mainWindow_on_noInteractionDetected_One
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
 
+    /**
+     * @tc.name   test_mainWindow_on_noInteractionDetected_One
+     * @tc.number test_mainWindow_on_noInteractionDetected_One
+     * @tc.desc   test_mainWindow_on_noInteractionDetected_One
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_mainWindow_on_noInteractionDetected_One", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_mainWindow_on_noInteractionDetected_One";
       console.log(msgStr + "begin");
@@ -826,15 +842,15 @@ export default function windowFocusTest() {
         }
       }
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0600
-     * @tc.name      : test_mainWindow_off_noInteractionDetected_All
-     * @tc.desc      : test_mainWindow_off_noInteractionDetected_All
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
 
+    /**
+     * @tc.name   test_mainWindow_on_noInteractionDetected_Two
+     * @tc.number test_mainWindow_on_noInteractionDetected_Two
+     * @tc.desc   test_mainWindow_on_noInteractionDetected_Two
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_mainWindow_on_noInteractionDetected_Two", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_mainWindow_on_noInteractionDetected_Two";
       console.log(msgStr + "begin");
@@ -883,19 +899,18 @@ export default function windowFocusTest() {
         }
       }
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0700
-     * @tc.name      : test_mainWindow_on_noInteractionDetected_Not_triggered
-     * @tc.desc      :  test_mainWindow_on_noInteractionDetected_Not_triggered
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
 
+    /**
+     * @tc.name    test_mainWindow_on_noInteractionDetected_Not_triggered
+     * @tc.number  test_mainWindow_on_noInteractionDetected_Not_triggered
+     * @tc.desc    test_mainWindow_on_noInteractionDetected_Not_triggered
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it(" test_mainWindow_on_noInteractionDetected_Not_triggered", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_Not_triggered";
       console.log(msgStr + "begin");
-      let driver: Driver = Driver.create();
       let flag = false;
       let windowClass = await windowStage.getMainWindow();
       try {
@@ -924,15 +939,15 @@ export default function windowFocusTest() {
         }
       }
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0800
-     * @tc.name      : test_mainWindow_on_noInteractionDetected_0.5
-     * @tc.desc      :  test_mainWindow_on_noInteractionDetected_0.5
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
 
+    /**
+     * @tc.name    test_mainWindow_on_noInteractionDetected_0_5
+     * @tc.number  test_mainWindow_on_noInteractionDetected_0_5
+     * @tc.desc    test_mainWindow_on_noInteractionDetected_0_5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it(" test_mainWindow_on_noInteractionDetected_0_5", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_0.5";
       console.log(msgStr + "begin");
@@ -963,15 +978,15 @@ export default function windowFocusTest() {
         }
       }
     })
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_ON_NOINTERCATIONDETECTED_0900
-     * @tc.name      : test_mainWindow_on_noInteractionDetected_-1
-     * @tc.desc      :  test_mainWindow_on_noInteractionDetected_-1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
-     */
 
+    /**
+     * @tc.name    test_mainWindow_on_noInteractionDetected__1
+     * @tc.number  test_mainWindow_on_noInteractionDetected__1
+     * @tc.desc    test_mainWindow_on_noInteractionDetected__1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it(" test_mainWindow_on_noInteractionDetected__1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_-1";
       console.log(msgStr + "begin");
@@ -1002,12 +1017,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_windowHighlightChange_401_0100
-     * @tc.name       : testOnwindowHighlightChange401
-     * @tc.desc       : testOnwindowHighlightChange401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnwindowHighlightChange401
+     * @tc.number SUB_BASIC_WMS_windowHighlightChange_401_0100
+     * @tc.desc   testOnwindowHighlightChange401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnwindowHighlightChange401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnwindowHighlightChange401";
@@ -1030,12 +1045,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_windowHighlightChange_401_0200
-     * @tc.name       : testoffwindowHighlightChange401
-     * @tc.desc       : testoffwindowHighlightChange401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testoffwindowHighlightChange401
+     * @tc.number SUB_BASIC_WMS_windowHighlightChange_401_0200
+     * @tc.desc   testoffwindowHighlightChange401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testoffwindowHighlightChange401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testoffwindowHighlightChange401";
@@ -1055,12 +1070,12 @@ export default function windowFocusTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_windowHighlightChange_1300002_0300
-     * @tc.name       : testoffwindowHighlightChange1300002
-     * @tc.desc       : testoffwindowHighlightChange1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testoffwindowHighlightChange1300002
+     * @tc.number SUB_BASIC_WMS_windowHighlightChange_1300002_0300
+     * @tc.desc   testoffwindowHighlightChange1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testoffwindowHighlightChange1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testoffwindowHighlightChange1300002";
@@ -1088,12 +1103,12 @@ export default function windowFocusTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_setExclusivelyHighlighted_401_0100
-     * @tc.name       : testsetExclusivelyHighlighted401
-     * @tc.desc       : testsetExclusivelyHighlighted401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testsetExclusivelyHighlighted401
+     * @tc.number SUB_BASIC_WMS_setExclusivelyHighlighted_401_0100
+     * @tc.desc   testsetExclusivelyHighlighted401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testsetExclusivelyHighlighted401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testsetExclusivelyHighlighted401";
@@ -1121,12 +1136,12 @@ export default function windowFocusTest() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setExclusivelyHighlighted_1300004_0200
-     * @tc.name       : testsetExclusivelyHighlighted_1300004
-     * @tc.desc       : testsetExclusivelyHighlighted_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testsetExclusivelyHighlighted_1300004
+     * @tc.number SUB_BASIC_WMS_setExclusivelyHighlighted_1300004_0200
+     * @tc.desc   testsetExclusivelyHighlighted_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testsetExclusivelyHighlighted_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testsetExclusivelyHighlighted_1300004";
@@ -1158,12 +1173,12 @@ export default function windowFocusTest() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_setExclusivelyHighlighted_1300002_0300
-     * @tc.name       : testsetExclusivelyHighlighted_1300002
-     * @tc.desc       : testsetExclusivelyHighlighted_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testsetExclusivelyHighlighted_1300002
+     * @tc.number SUB_BASIC_WMS_setExclusivelyHighlighted_1300002_0300
+     * @tc.desc   testsetExclusivelyHighlighted_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testsetExclusivelyHighlighted_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testsetExclusivelyHighlighted_1300002";
@@ -1201,12 +1216,12 @@ export default function windowFocusTest() {
     })
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0100 ';
@@ -1248,12 +1263,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0200 ';
@@ -1287,12 +1302,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0300 ';
@@ -1331,12 +1346,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_ERRORCODE_0400 ';
@@ -1379,12 +1394,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0100
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_0100
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_0100
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0100
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0100
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_0100 ';
@@ -1423,12 +1438,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0200
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_0200
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_0200
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0200
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0200
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_0200 ';
@@ -1475,12 +1490,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0300
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_0300
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_0300
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0300
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0300
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_0300 ';
@@ -1553,12 +1568,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0400
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_0400
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_0400
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0400
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0400
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_0400 ';
@@ -1629,12 +1644,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0500
-     * @tc.name      : test_SHOWWINDOW_FOCUSONSHOW_0500
-     * @tc.desc      : test_SHOWWINDOW_FOCUSONSHOW_0500
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   test_SHOWWINDOW_FOCUSONSHOW_0500
+     * @tc.number SUB_BASIC_WMS_SHOWWINDOW_FOCUSONSHOW_0500
+     * @tc.desc   test_SHOWWINDOW_FOCUSONSHOW_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_SHOWWINDOW_FOCUSONSHOW_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SHOWWINDOW_FOCUSONSHOW_0500 ';
@@ -1694,12 +1709,12 @@ export default function windowFocusTest() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_ACTIVE_ORDER_0100
-     * @tc.name      : testWindowHighlightChange_Order_0100
-     * @tc.desc      : 焦点切换激活态通知保序
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testWindowHighlightChange_Order_0100
+     * @tc.number SUB_BASIC_WMS_ACTIVE_ORDER_0100
+     * @tc.desc   焦点切换激活态通知保序
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindowHighlightChange_Order_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'testWindowHighlightChange_Order_0100 ';

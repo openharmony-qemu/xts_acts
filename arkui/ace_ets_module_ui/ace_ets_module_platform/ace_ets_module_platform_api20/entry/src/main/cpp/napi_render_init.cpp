@@ -24,7 +24,7 @@
 #include <arkui/native_node.h>
 #include <arkui/native_interface.h>
 #include "AccessibilityManagerTest.h"
-
+#include "common/common.h"
 #include <arkui/native_node.h>
 #include <arkui/native_gesture.h>
 #include <arkui/native_interface.h>
@@ -716,36 +716,6 @@ napi_value unbindNode(napi_env env, napi_callback_info info)
     return nullptr;
 }
 
-napi_value setFrameRate(napi_env env, napi_callback_info info)
-{
-    size_t argc = 4;
-    napi_value args[4] = {nullptr};
-    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
-    std::string nodeId = value2String(env, args[0]);
-    auto node = nodeHandleMap[nodeId];
-    
-    int32_t min = 0;
-    napi_get_value_int32(env, args[1], &min);
-
-    int32_t max = 0;
-    napi_get_value_int32(env, args[2], &max);
-
-    int32_t expected = 0;
-    napi_get_value_int32(env, args[3], &expected);
-    OH_NativeXComponent_ExpectedRateRange range = {
-        .min = min,
-        .max = max,
-        .expected = expected
-    };
-    int32_t status = OH_ArkUI_XComponent_SetExpectedFrameRateRange(node, range);
-    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "setFrameRate %{public}d", status);
-
-    napi_value statusCode;
-    napi_status ret = napi_create_int32(env, status, &(statusCode));
-
-    return statusCode;
-}
-
 napi_value setNeedSoftKeyboard(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -758,9 +728,7 @@ napi_value setNeedSoftKeyboard(napi_env env, napi_callback_info info)
     napi_get_value_bool(env, args[1], &needSoftKeyboard);
     int32_t status = OH_ArkUI_XComponent_SetNeedSoftKeyboard(node, needSoftKeyboard);
 
-    napi_value statusCode;
-    napi_status ret = napi_create_int32(env, status, &(statusCode));
-    return statusCode;
+    return nullptr;
 }
 
 napi_value disposeProvider(napi_env env, napi_callback_info info)
@@ -819,18 +787,163 @@ napi_value unregisterFrameCallback(napi_env env, napi_callback_info info)
     return statusCode;
 }
 
+napi_value TestSetExpectedFrameRateRangeErrorCode_001(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    
+    OH_NativeXComponent_ExpectedRateRange range = {
+        .min = 0,
+        .max = 120,
+        .expected = 60
+    };
+    int32_t status = OH_ArkUI_XComponent_SetExpectedFrameRateRange(node, range);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "setFrameRate %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value TestSetExpectedFrameRateRangeErrorCode_002(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    
+    OH_NativeXComponent_ExpectedRateRange range = {
+        .min = 120,
+        .max = 100,
+        .expected = 60
+    };
+    int32_t status = OH_ArkUI_XComponent_SetExpectedFrameRateRange(node, range);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "setFrameRate %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TestSetNeedSoftKeyboardErrorCode_001(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    
+    bool needSoftKeyboard = false;
+    napi_get_value_bool(env, args[1], &needSoftKeyboard);
+    int32_t status = OH_ArkUI_XComponent_SetNeedSoftKeyboard(node, needSoftKeyboard);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestSetNeedSoftKeyboardErrorCode_001 %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value TestSetNeedSoftKeyboardErrorCode_002(napi_env env, napi_callback_info info)
+{
+    size_t argc = 2;
+    napi_value args[2] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    
+    bool needSoftKeyboard = false;
+    napi_get_value_bool(env, args[1], &needSoftKeyboard);
+    int32_t status = OH_ArkUI_XComponent_SetNeedSoftKeyboard(nullptr, needSoftKeyboard);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestSetNeedSoftKeyboardErrorCode_002 %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TestRegisterOnFrameCallbackErrorCode_001(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    int32_t status = OH_ArkUI_XComponent_RegisterOnFrameCallback(node, OnFrameCallback);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestRegisterOnFrameCallbackErrorCode_001 %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value TestRegisterOnFrameCallbackErrorCode_002(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    int32_t status = OH_ArkUI_XComponent_RegisterOnFrameCallback(nullptr, OnFrameCallback);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestRegisterOnFrameCallbackErrorCode_002 %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
+napi_value TestUnregisterOnFrameCallbackErrorCode_001(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    int32_t status = OH_ArkUI_XComponent_UnregisterOnFrameCallback(node);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestUnregisterOnFrameCallbackErrorCode_001 %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_NO_ERROR);
+    NAPI_END;
+}
+
+napi_value TestUnregisterOnFrameCallbackErrorCode_002(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+    std::string nodeId = value2String(env, args[0]);
+    auto node = nodeHandleMap[nodeId];
+    int32_t status = OH_ArkUI_XComponent_UnregisterOnFrameCallback(nullptr);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, 0xff00, "wds", "TestUnregisterOnFrameCallbackErrorCode_002 %{public}d", status);
+
+    ASSERT_EQ(status, ARKUI_ERROR_CODE_PARAM_INVALID);
+    NAPI_END;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
     napi_property_descriptor desc[] = {
         {"bindNode", nullptr, bindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"unbindNode", nullptr, unbindNode, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"setFrameRate", nullptr, setFrameRate, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"setNeedSoftKeyboard", nullptr, setNeedSoftKeyboard, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"disposeProvider", nullptr, disposeProvider, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"createProvider", nullptr, createProvider, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"registerFrameCallback", nullptr, registerFrameCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"unregisterFrameCallback", nullptr, unregisterFrameCallback, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSetExpectedFrameRateRangeErrorCode_001", nullptr, TestSetExpectedFrameRateRangeErrorCode_001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSetExpectedFrameRateRangeErrorCode_002", nullptr, TestSetExpectedFrameRateRangeErrorCode_002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestRegisterOnFrameCallbackErrorCode_001", nullptr, TestRegisterOnFrameCallbackErrorCode_001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestRegisterOnFrameCallbackErrorCode_002", nullptr, TestRegisterOnFrameCallbackErrorCode_002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestUnregisterOnFrameCallbackErrorCode_001", nullptr, TestUnregisterOnFrameCallbackErrorCode_001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestUnregisterOnFrameCallbackErrorCode_002", nullptr, TestUnregisterOnFrameCallbackErrorCode_002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSetNeedSoftKeyboardErrorCode_001", nullptr, TestSetNeedSoftKeyboardErrorCode_001,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestSetNeedSoftKeyboardErrorCode_002", nullptr, TestSetNeedSoftKeyboardErrorCode_002,
+         nullptr, nullptr, nullptr, napi_default, nullptr},
         
         {"createNativeNode", nullptr, createNativeNode, nullptr, nullptr, nullptr, napi_default, nullptr },
         {"getKeyStr", nullptr, GetKeyString, nullptr, nullptr, nullptr, napi_default, nullptr},

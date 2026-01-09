@@ -56,13 +56,13 @@ export default function webONHttpErrorRecvExampleIsReady() {
       done();
     })
 
-    /*
-     * @tc.number     : SUB_ACE_BASIC_ETS_WEBERRORRECV_API_0400
-     * @tc.name       : testOnHttpErrorRecvExampleIsReadyFalseWebc
-     * @tc.desc       : test interface of onHttpErrorReceive with parameter used by example but setResponseIsReady false
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+    /**
+     * @tc.name   testOnHttpErrorRecvExampleIsReadyFalseWebc
+     * @tc.number SUB_ACE_BASIC_ETS_WEBERRORRECV_API_0400
+     * @tc.desc   test interface of onHttpErrorReceive with parameter used by example but setResponseIsReady false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnHttpErrorRecvExampleIsReadyFalseWebc', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("emitOnHttpErrorRecvExampleIsReadyFalseWebc", EVENT_ID_SET_EMIT_KEY);

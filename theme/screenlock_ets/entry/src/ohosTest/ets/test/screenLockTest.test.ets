@@ -27,7 +27,6 @@ export default function screenLockJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   SUB_MISC_THEME_screenLock_API_0001
          * @tc.number SUB_MISC_THEME_screenLock_API_0001
          * @tc.desc   Test ScreenLock API functionality.
@@ -65,7 +64,6 @@ export default function screenLockJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   SUB_MISC_THEME_screenLock_API_0002
          * @tc.number SUB_MISC_THEME_screenLock_API_0002
          * @tc.desc   Test ScreenLock API functionality.
@@ -97,7 +95,6 @@ export default function screenLockJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   SUB_MISC_THEME_screenLock_API_0003
          * @tc.number SUB_MISC_THEME_screenLock_API_0003
          * @tc.desc   Test ScreenLock API functionality.
@@ -128,7 +125,6 @@ export default function screenLockJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   SUB_MISC_THEME_screenLock_API_0004
          * @tc.number SUB_MISC_THEME_screenLock_API_0004
          * @tc.desc   Test ScreenLock API functionality.
@@ -164,7 +160,6 @@ export default function screenLockJSUnit() {
         });
 
         /**
-         * @generated.time 2025-11-09 20:57:55
          * @tc.name   SUB_MISC_THEME_screenLock_API_0007
          * @tc.number SUB_MISC_THEME_screenLock_API_0007
          * @tc.desc   Test ScreenLock API functionality.

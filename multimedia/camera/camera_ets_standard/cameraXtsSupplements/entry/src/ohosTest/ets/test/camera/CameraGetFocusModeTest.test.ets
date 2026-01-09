@@ -324,12 +324,12 @@ export default function cameraGetFocusModeTest() {
 
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_001
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_001
-     * @tc.desc      photoSession GetFocusMode 0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_001
+     * @tc.desc   photoSession GetFocusMode 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_001';
@@ -344,12 +344,12 @@ export default function cameraGetFocusModeTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_002
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_002
-     * @tc.desc      VideoSession GetFocusMode 0
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_002
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_002
+     * @tc.desc   VideoSession GetFocusMode 0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_002';
@@ -364,12 +364,12 @@ export default function cameraGetFocusModeTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_003
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_003
-     * @tc.desc      PhotoSession  GetFocusMode 1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_003
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_003
+     * @tc.desc   PhotoSession  GetFocusMode 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_003';
@@ -384,12 +384,12 @@ export default function cameraGetFocusModeTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_004
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_004
-     * @tc.desc      videoSession GetFocusMode 1
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_004
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_004
+     * @tc.desc   videoSession GetFocusMode 1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_004', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_004';
@@ -404,12 +404,12 @@ export default function cameraGetFocusModeTest() {
     })
 
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_005
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_005
-     * @tc.desc      PhotoSession GetFocusMode 2
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_005
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_005
+     * @tc.desc   PhotoSession GetFocusMode 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_005', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_005';
@@ -423,12 +423,12 @@ export default function cameraGetFocusModeTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_006
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_006
-     * @tc.desc      videoSession GetFocusMode 2
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_006
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_006
+     * @tc.desc   videoSession GetFocusMode 2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_006', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_006';
@@ -442,12 +442,12 @@ export default function cameraGetFocusModeTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_007
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_007
-     * @tc.desc      PhotoSession GetFocusMode 3
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_007
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_007
+     * @tc.desc   PhotoSession GetFocusMode 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_007', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_007';
@@ -461,12 +461,12 @@ export default function cameraGetFocusModeTest() {
       })
     })
     /**
-     * @tc.number    SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_008
-     * @tc.name      SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_008
-     * @tc.desc      videoSession GetFocusMode 3
-     * @tc.size      MEDIUM
-     * @tc.type      Function
-     * @tc.level     Level 0
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_008
+     * @tc.number SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_008
+     * @tc.desc   videoSession GetFocusMode 3
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_008', Level.LEVEL2, async (done: Function) => {
       const testName ='SUB_MULTIMEDIA_CAMERA_FOCUS_GETFOCUSMODE_008';

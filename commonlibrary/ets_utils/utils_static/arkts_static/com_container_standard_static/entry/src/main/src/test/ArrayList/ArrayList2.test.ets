@@ -44,31 +44,32 @@ export default function ArrayListTest2() {
       await Utils.msSleep(10)
     })
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_LENGTH_0100
-     * @tc.name      : testArrayListLength0001
-     * @tc.desc      : Testing ArrayList length is ok
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListLength0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_LENGTH_0100
+     * @tc.desc   Testing ArrayList length is ok
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListLength0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListLength0001';
       try {
         const arrayList = new ArrayList<number>();
         expect(String(arrayList.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONSTRUCTOR_0100
-     * @tc.name      : testArrayListConstructor0001
-     * @tc.desc      : Testing ArrayList constructor support dataType
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONSTRUCTOR_0100
+     * @tc.desc   Testing ArrayList constructor support dataType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListConstructor0001';
@@ -80,19 +81,20 @@ export default function ArrayListTest2() {
           Int16Array | Int32Array | undefined | null | Uint8Array | Uint16Array | Uint32Array |
           BigInt64Array | BigUint64Array>();
         expect(String(arrayList.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0100
-     * @tc.name      : testArrayListAdd0001
-     * @tc.desc      : Testing ArrayList Add different dataType data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListAdd0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0100
+     * @tc.desc   Testing ArrayList Add different dataType data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListAdd0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListAdd0001';
@@ -110,19 +112,20 @@ export default function ArrayListTest2() {
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult)
           .assertEqual(`{"0":"zhang san","1":1,"3":null,"4":true}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0200
-     * @tc.name      : testArrayListAdd0002
-     * @tc.desc      : Testing ArrayList add special string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListAdd0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ADD_0200
+     * @tc.desc   Testing ArrayList add special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListAdd0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListAdd0002';
@@ -137,19 +140,20 @@ export default function ArrayListTest2() {
         let jsonResult = JSON.stringify(arrayList);
         console.log(`${TAG} jsonResult: ${jsonResult}`);
         expect(jsonResult).assertEqual(`{"0":"","1":"\`","2":"%","3":"\\""}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0100
-     * @tc.name      : testArrayListInsert0001
-     * @tc.desc      : Testing ArrayList insert data in start and end
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListInsert0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0100
+     * @tc.desc   Testing ArrayList insert data in start and end
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListInsert0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListInsert0001';
@@ -166,19 +170,20 @@ export default function ArrayListTest2() {
         expect(String(arrayList.has("end"))).assertEqual('false');
         // expect(arrayList.has("start")).assertEqual(false);
         // expect(arrayList.has("end")).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err){
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0200
-     * @tc.name      : testArrayListInsert0002
-     * @tc.desc      : Testing ArrayList insert special string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListInsert0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_INSERT_0200
+     * @tc.desc   Testing ArrayList insert special string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListInsert0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListInsert0002';
@@ -199,18 +204,19 @@ export default function ArrayListTest2() {
         // expect(arrayList.has("`")).assertEqual(false);
         // expect(arrayList.has("%")).assertEqual(false);
         // expect(arrayList.has(`"`)).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_HAS_0100
-     * @tc.name      : testArrayListHas0001
-     * @tc.desc      : Testing ArrayList check has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListHas0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_HAS_0100
+     * @tc.desc   Testing ArrayList check has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListHas0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListHas0001';
@@ -270,19 +276,20 @@ export default function ArrayListTest2() {
         expect(String(arrayList.has("`"))).assertEqual('false');
         expect(String(arrayList.has("%"))).assertEqual('false');
         expect(String(arrayList.has(`"`))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETINDEXOF_0100
-     * @tc.name      : testArrayListGetIndexOf0001
-     * @tc.desc      : Testing ArrayList getIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETINDEXOF_0100
+     * @tc.desc   Testing ArrayList getIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListGetIndexOf0001';
@@ -318,19 +325,20 @@ export default function ArrayListTest2() {
 
         expect(String(arrayList.has("zhang san"))).assertEqual('true');
         expect(String(arrayList.has(1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETLASTINDEXOF_0100
-     * @tc.name      : testArrayListGetLastIndexOf0001
-     * @tc.desc      : Testing ArrayList getLastIndexOf
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetLastIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETLASTINDEXOF_0100
+     * @tc.desc   Testing ArrayList getLastIndexOf
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetLastIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListGetLastIndexOf0001';
@@ -366,18 +374,19 @@ export default function ArrayListTest2() {
 
         expect(String(arrayList.has("zhang san"))).assertEqual('true');
         expect(String(arrayList.has(1))).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0100
-     * @tc.name      : testArrayListRemoveByIndexOf0001
-     * @tc.desc      : Testing ArrayList removeByIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByIndexOf0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0100
+     * @tc.desc   Testing ArrayList removeByIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByIndexOf0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListRemoveByIndexOf0001';
@@ -410,19 +419,20 @@ export default function ArrayListTest2() {
         let result2 = arrayList.removeByIndex(index2);
         let result3 = arrayList.removeByIndex(index2);
         expect(String(result2 != result3)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0200
-     * @tc.name      : testArrayListRemoveByIndexOf0002
-     * @tc.desc      : Testing ArrayList removeByIndex -2
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByIndexOf0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0200
+     * @tc.desc   Testing ArrayList removeByIndex -2
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByIndexOf0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testArrayListRemoveByIndexOf0002"
@@ -449,19 +459,20 @@ export default function ArrayListTest2() {
         arrayList.removeByIndex(-2);
         arrayList.removeByIndex(arrayList.length);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001);
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0300
-     * @tc.name      : testArrayListRemoveByIndexOf0003
-     * @tc.desc      : Testing ArrayList removeByIndex index > arrayList.length -1
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByIndexOf0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYINDEX_0300
+     * @tc.desc   Testing ArrayList removeByIndex index > arrayList.length -1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByIndexOf0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListRemoveByIndexOf0003'
@@ -487,19 +498,20 @@ export default function ArrayListTest2() {
 
         arrayList.removeByIndex(arrayList.length);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001);
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0100
-     * @tc.name      : testArrayListRemove0001
-     * @tc.desc      : Testing ArrayList remove same data and check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemove0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0100
+     * @tc.desc   Testing ArrayList remove same data and check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemove0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListRemove0001';
@@ -544,19 +556,20 @@ export default function ArrayListTest2() {
         arrayList.remove("zhang san");
         let index1 = arrayList.getIndexOf("zhang san");
         expect(String(index1 === 0)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0200
-     * @tc.name      : testArrayListRemove0002
-     * @tc.desc      : Testing ArrayList removeByIndex same data and check
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemove0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVE_0200
+     * @tc.desc   Testing ArrayList removeByIndex same data and check
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemove0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListRemove0002';
@@ -601,19 +614,20 @@ export default function ArrayListTest2() {
         arrayList.removeByIndex(index);
         let index1 = arrayList.getIndexOf("zhang san");
         expect(String(index1 === 0)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0100
-     * @tc.name      : testArrayListRemoveByRange0001
-     * @tc.desc      : Testing ArrayList removeByRange fromIndex == toIndex
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByRange0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0100
+     * @tc.desc   Testing ArrayList removeByRange fromIndex == toIndex
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByRange0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListRemoveByRange0001';
@@ -639,19 +653,20 @@ export default function ArrayListTest2() {
 
         arrayList.removeByRange(1, 1);
         expect(false).assertFail();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err.code}`);
         expect(err.code).assertEqual(10200001);
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0200
-     * @tc.name      : testArrayListRemoveByRange0002
-     * @tc.desc      : Testing ArrayList removeByRange toIndex is Math.floor(arrayList.length)
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListRemoveByRange0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REMOVEBYRANGE_0200
+     * @tc.desc   Testing ArrayList removeByRange toIndex is Math.floor(arrayList.length)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListRemoveByRange0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListRemoveByRange0002';
@@ -678,95 +693,98 @@ export default function ArrayListTest2() {
         let fromIndex = Math.floor(1.5);
         arrayList.removeByRange(fromIndex as int, Math.floor(arrayList.length) as int);
         expect(String(arrayList.length)).assertEqual(String(fromIndex));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0100
-     * @tc.name      : testArrayListReplaceAllElement0001
-     * @tc.desc      : Testing ArrayList replaceAllElement add same data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElement0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0100
+     * @tc.desc   Testing ArrayList replaceAllElement add same data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    // it('testArrayListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testArrayListReplaceAllElement0001';
-    //   try {
-    //     let arrayList: ArrayList<string> = new ArrayList<string>();
-    //     arrayList.add("zhang san");
-    //     arrayList.add("");
-    //     arrayList.add("`");
-    //     arrayList.add("%");
-    //     arrayList.add(`"`);
-    //     arrayList.replaceAllElements((value: string, index: number) => {
-    //       let tmp = value;
-    //       value = tmp + value;
-    //       let result = arrayList[index];
-    //       expect(String(value)).assertEqual(String(result + result))
-    //       return value;
-    //     })
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testArrayListReplaceAllElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testArrayListReplaceAllElement0001';
+      try {
+        let arrayList: ArrayList<string> = new ArrayList<string>();
+        arrayList.add("zhang san");
+        arrayList.add("");
+        arrayList.add("`");
+        arrayList.add("%");
+        arrayList.add(`"`);
+        arrayList.replaceAllElements((value: string, index: int) => {
+          let tmp = value;
+          value = tmp + value;
+          let result = arrayList[index];
+          expect(String(value)).assertEqual(String(result + result))
+          return value;
+        })
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0200
-     * @tc.name      : testArrayListReplaceAllElement0002
-     * @tc.desc      : Testing ArrayList replaceAllElement insert new string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElement0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENT_0200
+     * @tc.desc   Testing ArrayList replaceAllElement insert new string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
-    // it('testArrayListReplaceAllElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = 'testArrayListReplaceAllElement0002';
-    //   try {
-    //     let arrayList: ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object> = new ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
-    //     Object>();
-    //     arrayList.add("zhang san");
-    //     arrayList.add(1);
-    //     let temp: Temp = {
-    //       age: 10, name: "zhang"
-    //     };
-    //     arrayList.add(temp);
-    //     arrayList.add(undefined);
-    //     arrayList.add(null);
-    //     arrayList.add(true);
-    //     let array = [0, 1, 2, undefined];
-    //     arrayList.add(array);
-    //     arrayList.add("");
-    //     arrayList.add("`");
-    //     arrayList.add("%");
-    //     arrayList.add(`"`);
-    //
-    //     arrayList.replaceAllElements((value, index, tempList) => {
-    //       let indexValue = (index == null) ? 0 : index;
-    //       let length = tempList ? tempList.length - 1 : 0;
-    //       if (indexValue === length) {
-    //         let tmp = value as string;
-    //         value = tmp + "add last index";
-    //       }
-    //       return value;
-    //     })
-    //     expect(String(arrayList.has(`"add last index`))).assertEqual('true');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testArrayListReplaceAllElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = 'testArrayListReplaceAllElement0002';
+      try {
+        let arrayList: ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object> = new ArrayList<number | string | Array<number | string | boolean> | boolean | undefined | null |
+        Object>();
+        arrayList.add("zhang san");
+        arrayList.add(1);
+        let temp: Temp = {
+          age: 10, name: "zhang"
+        };
+        arrayList.add(temp);
+        arrayList.add(undefined);
+        arrayList.add(null);
+        arrayList.add(true);
+        let array = [0, 1, 2, undefined];
+        arrayList.add(array);
+        arrayList.add("");
+        arrayList.add("`");
+        arrayList.add("%");
+        arrayList.add(`"`);
+
+        arrayList.replaceAllElements((value, index, tempList) => {
+          let indexValue = (index == null) ? 0 : index;
+          let length = tempList ? tempList.length - 1 : 0;
+          if (indexValue === length) {
+            let tmp = value as string;
+            value = tmp + "add last index";
+          }
+          return value;
+        })
+        expect(String(arrayList.has(`"add last index`))).assertEqual('true');
+      } catch (err) {
+        err = err as BusinessError;
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
-     * @tc.name      : testArrayListForEach0001
-     * @tc.desc      : Testing ArrayList forEach
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListForEach0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
+     * @tc.desc   Testing ArrayList forEach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListForEach0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListForEach0001';
@@ -793,18 +811,19 @@ export default function ArrayListTest2() {
         arrayList.forEach((value) => {
           expect(String(arrayList.has(value))).assertEqual('true');
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0100
-     * @tc.name      : testArrayListSort0001
-     * @tc.desc      : Testing ArrayList sort by Ascending Order
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0100
+     * @tc.desc   Testing ArrayList sort by Ascending Order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListSort0001';
@@ -821,19 +840,20 @@ export default function ArrayListTest2() {
         arrayList.sort((firstValue, secondValue) => firstValue - secondValue);
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList)).assertEqual(`{"0":0,"1":1,"2":3,"3":5,"4":8,"5":22,"6":24,"7":51}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0200
-     * @tc.name      : testArrayListSort0002
-     * @tc.desc      : Testing ArrayList sort by Descending Order
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0200
+     * @tc.desc   Testing ArrayList sort by Descending Order
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListSort0002';
@@ -850,19 +870,20 @@ export default function ArrayListTest2() {
         arrayList.sort((firstValue, secondValue) => secondValue - firstValue);
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList)).assertEqual(`{"0":51,"1":24,"2":22,"3":8,"4":5,"5":3,"6":1,"7":0}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0300
-     * @tc.name      : testArrayListSort0003
-     * @tc.desc      : Testing ArrayList sort insert string
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0300
+     * @tc.desc   Testing ArrayList sort insert string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListSort0003';
@@ -881,19 +902,20 @@ export default function ArrayListTest2() {
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList))
           .assertEqual(`{"0":0,"1":1,"2":22,"3":24,"4":3,"5":5,"6":51,"7":8,"8":"zhang san"}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0400
-     * @tc.name      : testArrayListSort0004
-     * @tc.desc      : Testing ArrayList sort insert 'A'
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSort0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SORT_0400
+     * @tc.desc   Testing ArrayList sort insert 'A'
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSort0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListSort0004';
@@ -912,19 +934,20 @@ export default function ArrayListTest2() {
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList))
           .assertEqual(`{"0":0,"1":1,"2":22,"3":24,"4":3,"5":5,"6":51,"7":8,"8":"A"}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SUBARRAYLIST_0100
-     * @tc.name      : testArrayListSubArrayList0001
-     * @tc.desc      : Testing ArrayList subArrayList
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSubArrayList0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SUBARRAYLIST_0100
+     * @tc.desc   Testing ArrayList subArrayList
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSubArrayList0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListSubArrayList0001';
@@ -942,19 +965,20 @@ export default function ArrayListTest2() {
         console.log(JSON.stringify(arrayList));
         expect(JSON.stringify(arrayList))
           .assertEqual(`{"0":1,"1":22,"2":3,"3":24,"4":5,"5":51,"6":8,"7":0}`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLEAR_0100
-     * @tc.name      : testArrayListClear0001
-     * @tc.desc      : Testing ArrayList insert->add->subArrayList->clear
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListClear0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLEAR_0100
+     * @tc.desc   Testing ArrayList insert->add->subArrayList->clear
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListClear0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListClear0001';
@@ -966,19 +990,20 @@ export default function ArrayListTest2() {
         arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         arrayList.clear();
         expect(String(arrayList.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0100
-     * @tc.name      : testArrayListClone0001
-     * @tc.desc      : Testing ArrayList insert->add->subArrayList->clone
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListClone0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0100
+     * @tc.desc   Testing ArrayList insert->add->subArrayList->clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListClone0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListClone0001';
@@ -990,19 +1015,20 @@ export default function ArrayListTest2() {
         arrayList.subArrayList(Math.floor(1) as int, Math.floor(2) as int);
         let result = arrayList.clone();
         expect(String(arrayList.length)).assertEqual(String(result.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0200
-     * @tc.name      : testArrayListClone0002
-     * @tc.desc      : Testing ArrayList insert->add->subArrayList->clear->clone
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListClone0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CLONE_0200
+     * @tc.desc   Testing ArrayList insert->add->subArrayList->clear->clone
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListClone0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListClone0002';
@@ -1015,19 +1041,20 @@ export default function ArrayListTest2() {
         arrayList.clear();
         let result = arrayList.clone();
         expect(String(result.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0100
-     * @tc.name      : testArrayListGetCapacity0001
-     * @tc.desc      : Testing ArrayList insert->add->remove->subArrayList->getCapacity
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetCapacity0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0100
+     * @tc.desc   Testing ArrayList insert->add->remove->subArrayList->getCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetCapacity0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListGetCapacity0001';
@@ -1042,19 +1069,20 @@ export default function ArrayListTest2() {
         arrayList.trimToCurrentLength();
         let result = arrayList.getCapacity();
         expect(String(result)).assertEqual(String(arrayList.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0200
-     * @tc.name      : testArrayListGetCapacity0002
-     * @tc.desc      : Testing ArrayList insert->add->remove->subArrayList->clear->getCapacity
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListGetCapacity0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_GETCAPACITY_0200
+     * @tc.desc   Testing ArrayList insert->add->remove->subArrayList->clear->getCapacity
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListGetCapacity0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListGetCapacity0002';
@@ -1070,18 +1098,19 @@ export default function ArrayListTest2() {
         expect(arrayList.getCapacity()).assertEqual(0);
         arrayList.increaseCapacityTo(1)
         expect(String(arrayList.getCapacity())).assertEqual('1');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0100
-     * @tc.name      : testArrayListConvertToArray0001
-     * @tc.desc      : Testing ArrayList convertToArray filter
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListConvertToArray0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0100
+     * @tc.desc   Testing ArrayList convertToArray filter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListConvertToArray0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListConvertToArray0001';
@@ -1091,19 +1120,20 @@ export default function ArrayListTest2() {
         arrayList.add(dog);
         let array = arrayList.convertToArray();
         expect(array[0] instanceof Dog).assertEqual(true);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0200
-     * @tc.name      : testArrayListConvertToArray0002
-     * @tc.desc      : Testing ArrayList convertToArray fill
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListConvertToArray0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_CONVERTTOARRAY_0200
+     * @tc.desc   Testing ArrayList convertToArray fill
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListConvertToArray0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListConvertToArray0002';
@@ -1115,38 +1145,40 @@ export default function ArrayListTest2() {
         let cat = new Cat(2, "li li");
         array.fill(cat);
         expect(array[0] instanceof Dog).assertEqual(false);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0100
-     * @tc.name      : testArrayListIsEmpty0001
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListIsEmpty0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0100
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListIsEmpty0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListIsEmpty0001';
       try {
         let arrayList: ArrayList<number> = new ArrayList<number>();
         expect(String(arrayList.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0200
-     * @tc.name      : testArrayListIsEmpty0002
-     * @tc.desc      : Testing ArrayList isEmpty has data
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListIsEmpty0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0200
+     * @tc.desc   Testing ArrayList isEmpty has data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListIsEmpty0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListIsEmpty0002';
@@ -1171,19 +1203,20 @@ export default function ArrayListTest2() {
         arrayList.add(`"`);
 
         expect(String(arrayList.isEmpty())).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0300
-     * @tc.name      : testArrayListIsEmpty0003
-     * @tc.desc      : Testing ArrayList isEmpty clear->isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListIsEmpty0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_ISEMPTY_0300
+     * @tc.desc   Testing ArrayList isEmpty clear->isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListIsEmpty0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListIsEmpty0003';
@@ -1208,19 +1241,20 @@ export default function ArrayListTest2() {
         arrayList.add(`"`);
         arrayList.clear();
         expect(String(arrayList.isEmpty())).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_ITERATOR_0100
-     * @tc.name      : testArrayListSymbolIterator0001
-     * @tc.desc      : Testing ArrayList Symbol.iterator
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSymbolIterator0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_ITERATOR_0100
+     * @tc.desc   Testing ArrayList Symbol.iterator
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSymbolIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListSymbolIterator0001';
@@ -1249,18 +1283,19 @@ export default function ArrayListTest2() {
             expect(String(arrayList.has(value))).assertEqual('true');
           }
         });
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0100
-     * @tc.name      : testArrayListReplaceAllElements0001
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0100
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListReplaceAllElements0001';
@@ -1274,19 +1309,20 @@ export default function ArrayListTest2() {
           return value + 1;
         });
         expect(arrayList.convertToArray().toString()).assertEqual("3,5,6,5");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0200
-     * @tc.name      : testArrayListReplaceAllElements0002
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0200
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListReplaceAllElements0002';
@@ -1300,7 +1336,8 @@ export default function ArrayListTest2() {
           return value - 1;
         });
         expect(arrayList.convertToArray().toString()).assertEqual("1,3,4,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1308,12 +1345,12 @@ export default function ArrayListTest2() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
-     * @tc.name      : testArrayListReplaceAllElements0003
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListReplaceAllElements0003';
@@ -1329,19 +1366,20 @@ export default function ArrayListTest2() {
         });
         expect(arrayList.convertToArray().toString()).assertEqual("1,3,4,3");
         expect(newArrayList.convertToArray().toString()).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
-     * @tc.name      : testArrayListReplaceAllElements0003
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListReplaceAllElements0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_REPLACEALLELEMENTS_0300
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListReplaceAllElements0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListReplaceAllElements0004';
@@ -1360,7 +1398,8 @@ export default function ArrayListTest2() {
         });
         expect(arrayList.convertToArray().toString()).assertEqual("1,3,4,3");
         expect(newArrayList.convertToArray().toString()).assertEqual("3,5,7");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1368,12 +1407,12 @@ export default function ArrayListTest2() {
 
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0200
-     * @tc.name      : testArrayListForEach0002
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListForEach0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0200
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListForEach0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListForEach0002';
@@ -1392,18 +1431,19 @@ export default function ArrayListTest2() {
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(newArrayList.convertToArray().toString()).assertEqual("");
         expect(result.convertToArray().toString()).assertEqual("2,0,4,1,5,2,4,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
-     * @tc.name      : testArrayListForEach0003
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListForEach0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0100
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListForEach0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListForEach0003';
@@ -1423,19 +1463,20 @@ export default function ArrayListTest2() {
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(newArrayList.convertToArray().toString()).assertEqual("4");
         expect(result.convertToArray().toString()).assertEqual("2,0,4,1,5,2,4,3");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number    : SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_0200
-     * @tc.name      : testArrayListSymbol0002
-     * @tc.desc      : Testing ArrayList isEmpty
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   testArrayListSymbol0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_SYMBOL_0200
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testArrayListSymbol0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = 'testArrayListSymbol0002';
@@ -1453,10 +1494,31 @@ export default function ArrayListTest2() {
         }
         expect(arrayList.convertToArray().toString()).assertEqual("2,4,5,4");
         expect(result.convertToArray().toString()).assertEqual("2,4,5,4");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
+    });
+
+    /**
+     * @tc.name   testArrayListForEach0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ARRAYLIST_FOREACH_0700
+     * @tc.desc   Testing ArrayList isEmpty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArrayListForEach0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<int> = new ArrayList<int>();
+      expect(arrayList.length).assertEqual(0);
+      arrayList.add(2);
+      arrayList.add(4);
+      arrayList.add(5);
+      arrayList.add(4);
+      expect(arrayList.length).assertEqual(4);
+      expect(arrayList[0]).assertEqual(2);
+      expect(arrayList[3]).assertEqual(4);
     });
   });
 }

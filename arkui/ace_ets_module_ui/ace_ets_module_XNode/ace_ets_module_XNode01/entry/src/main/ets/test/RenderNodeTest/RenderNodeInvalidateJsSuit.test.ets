@@ -47,12 +47,12 @@ export default function RenderNodeInvalidateJsSuit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_COMPONENT_RenderNodeInvalidateJsSuit_0100
-     * @tc.name : RenderNodeInvalidateJsSuit_0100
-     * @tc.desc : set api
-     * @tc.level : Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   RenderNodeInvalidateJsSuit_0100
+     * @tc.number SUB_ACE_COMPONENT_RenderNodeInvalidateJsSuit_0100
+     * @tc.desc   set api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('RenderNodeInvalidateJsSuit_0100', Level.LEVEL2, async (done: Function) => {
       console.info('[RenderNodeInvalidateJsSuit_0100] START');

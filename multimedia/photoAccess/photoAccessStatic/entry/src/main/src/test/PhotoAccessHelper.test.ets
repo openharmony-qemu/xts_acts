@@ -28,12 +28,12 @@ export default function PhotoAccessHelperStaticTest() {
     hilog.info(domain, tag, '%{public}s', 'PhotoAccessHelperStaticTest start');
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_PHOTO_ACCESS_HELPER_TEST_STATIC_0000
-      * @tc.name    PhotoAccessHelperTestStatic001
-      * @tc.desc    Obtains a photoAccess instance
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 1
+     * @tc.name   PhotoAccessHelperTestStatic001
+     * @tc.number SUB_PHOTOACCESS_HELPER_PHOTO_ACCESS_HELPER_TEST_STATIC_0000
+     * @tc.desc   Obtains a photoAccess instance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("PhotoAccessHelperTestStatic001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: () => void): Promise<void> => {

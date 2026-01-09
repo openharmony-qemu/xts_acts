@@ -36,6 +36,7 @@ const LABEL_DISTRIBUTED_TRANSMISSION = "distributedTransmissionOutgoing";
 const LABEL_MTP_CLIENT = "mtpClient";
 const LABEL_MTP_SERVER = "mtpServer";
 const LABEL_RECOVERY_KEY = "diskRecoveryKey";
+const LABEL_OPEN_FILE_BOOST = "openFileBoost";
 const LABEL_SET_APN = "setApn";
 const LABEL_SET_ETHERNET_IP = "setEthernetIp";
 const LABEL_USB_STORAGE_DEVICE_WRITE = "usbStorageDeviceWrite";
@@ -56,6 +57,7 @@ const LABLE_RANDOM_MAC = "randomMac";
 const LABEL_APP_CLONE = "appClone";
 const LABEL_UNMUTE_DEVICE = "unmuteDevice";
 const LABEL_VIRTUAL_SERVICE = "virtualService";
+const LABEL_MODIFY_WALLPAPER = "modifyWallpaper";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -68,17 +70,19 @@ export default function restrictionsTest() {
     testGetDisallowedListForAccountPolicy();
     testSetUserRestrictionPolicy();
     testGetUserRestrictedPolicy();
+    testSetUserRestrictionForAccountPolicy();
+    testGetUserRestrictedForAccountPolicy();
   })
 }
 
 function testSetDisallowedPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0100
-   * @tc.name      : test_set_disallowed_policy_0100
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0100
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -94,12 +98,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0101
-   * @tc.name      : test_set_disallowed_policy_0101
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0101
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -115,12 +119,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0102
-   * @tc.name      : test_set_disallowed_policy_0102
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0102
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -136,12 +140,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0103
-   * @tc.name      : test_set_disallowed_policy_0103
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0103
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -157,12 +161,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0104
-   * @tc.name      : test_set_disallowed_policy_0104
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0104
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -178,12 +182,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0105
-   * @tc.name      : test_set_disallowed_policy_0105
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0105
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -199,12 +203,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0106
-   * @tc.name      : test_set_disallowed_policy_0106
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0106
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -220,12 +224,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0107
-   * @tc.name      : test_set_disallowed_policy_0107
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0107
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0107", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -242,12 +246,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0108
-   * @tc.name      : test_set_disallowed_policy_0108
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0108
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0108", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -264,12 +268,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0109
-   * @tc.name      : test_set_disallowed_policy_0109
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0109
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0109", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -286,12 +290,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0110
-   * @tc.name      : test_set_disallowed_policy_0110
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0110
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0110", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -308,12 +312,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0111
-   * @tc.name      : test_set_disallowed_policy_0111
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0111
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0111", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -330,12 +334,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0112
-   * @tc.name      : test_set_disallowed_policy_0112
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0112
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0112", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -352,12 +356,12 @@ function testSetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0113
-   * @tc.name      : test_set_disallowed_policy_0113
-   * @tc.desc      : test restrictions setDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_0113
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0113
+   * @tc.desc   test restrictions setDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_0113", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -376,12 +380,12 @@ function testSetDisallowedPolicy() {
 
 function testGetDisallowedPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0100
-   * @tc.name      : test_get_disallowed_policy_0100
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0100
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -397,12 +401,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0101
-   * @tc.name      : test_get_disallowed_policy_0101
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0101
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0101
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0101", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -418,12 +422,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0102
-   * @tc.name      : test_get_disallowed_policy_0102
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0102
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0102
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0102", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -439,12 +443,12 @@ function testGetDisallowedPolicy() {
   });
   
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0103
-   * @tc.name      : test_get_disallowed_policy_0103
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0103
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0103
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0103", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -460,12 +464,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0104
-   * @tc.name      : test_get_disallowed_policy_0104
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0104
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0104
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0104", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -481,12 +485,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0105
-   * @tc.name      : test_get_disallowed_policy_0105
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0105
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0105
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0105", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -502,12 +506,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0106
-   * @tc.name      : test_get_disallowed_policy_0106
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0106
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0106
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0106", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -523,12 +527,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0107
-   * @tc.name      : test_get_disallowed_policy_0107
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0107
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0107
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0107", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -545,12 +549,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0108
-   * @tc.name      : test_get_disallowed_policy_0108
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0108
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0108", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -567,12 +571,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0109
-   * @tc.name      : test_get_disallowed_policy_0109
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0109
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0109
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0109", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -589,12 +593,12 @@ function testGetDisallowedPolicy() {
   });
   
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0110
-   * @tc.name      : test_get_disallowed_policy_0110
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0110
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0110
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0110", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -611,12 +615,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0111
-   * @tc.name      : test_get_disallowed_policy_0111
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0111
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0111
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0111", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -633,12 +637,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0112
-   * @tc.name      : test_get_disallowed_policy_0112
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0112
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0112
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0112", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -655,12 +659,12 @@ function testGetDisallowedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0113
-   * @tc.name      : test_get_disallowed_policy_0113
-   * @tc.desc      : test restrictions getDisallowedPolicy with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_0113
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0113
+   * @tc.desc   test restrictions getDisallowedPolicy with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_0113", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -679,12 +683,12 @@ function testGetDisallowedPolicy() {
 
 function testSetDisallowedForAccountPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0100
-   * @tc.name      : test_set_disallowed_policy_for_account_0100
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_for_account_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -700,12 +704,12 @@ function testSetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0200
-   * @tc.name      : test_set_disallowed_policy_for_account_0200
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_for_account_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0200
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_for_account_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -721,12 +725,12 @@ function testSetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0300
-   * @tc.name      : test_set_disallowed_policy_for_account_0300
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_for_account_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0300
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_for_account_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -742,12 +746,12 @@ function testSetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0400
-   * @tc.name      : test_set_disallowed_policy_for_account_0400
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_for_account_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0400
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_for_account_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -763,12 +767,12 @@ function testSetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0500
-   * @tc.name      : test_set_disallowed_policy_for_account_0500
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_for_account_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0500
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_for_account_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -784,12 +788,12 @@ function testSetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0600
-   * @tc.name      : test_set_disallowed_policy_for_account_0600
-   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_disallowed_policy_for_account_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0600
+   * @tc.desc   test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_disallowed_policy_for_account_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -803,16 +807,37 @@ function testSetDisallowedForAccountPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_FOR_ACCOUNT_JS_0700
+   * @tc.name      : test_set_disallowed_policy_for_account_0700
+   * @tc.desc      : test restrictions setDisallowedPolicyForAccount with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_set_disallowed_policy_for_account_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setDisallowedPolicyForAccount(SELFWANT, LABEL_OPEN_FILE_BOOST, false, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedForAccountPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0100
-   * @tc.name      : test_get_disallowed_policy_for_account_0100
-   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0100
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_for_account_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -828,12 +853,12 @@ function testGetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0200
-   * @tc.name      : test_get_disallowed_policy_for_account_0200
-   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_for_account_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0200
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_for_account_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -849,12 +874,12 @@ function testGetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0300
-   * @tc.name      : test_get_disallowed_policy_for_account_0300
-   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_for_account_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0300
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_for_account_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -870,12 +895,12 @@ function testGetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0400
-   * @tc.name      : test_get_disallowed_policy_for_account_0400
-   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_for_account_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0400
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_for_account_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -891,12 +916,12 @@ function testGetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0500
-   * @tc.name      : test_get_disallowed_policy_for_account_0500
-   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_for_account_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0500
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_for_account_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -912,12 +937,12 @@ function testGetDisallowedForAccountPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0600
-   * @tc.name      : test_get_disallowed_policy_for_account_0600
-   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_policy_for_account_0600
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0600
+   * @tc.desc   test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_policy_for_account_0600", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -931,16 +956,37 @@ function testGetDisallowedForAccountPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_FOR_ACCOUNT_POLICY_JS_0700
+   * @tc.name      : test_get_disallowed_policy_for_account_0700
+   * @tc.desc      : test restrictions getDisallowedPolicyForAccount with normal admin
+   * @tc.level     : Level 2
+   * @tc.type      : Function
+   * @tc.size      : MediumTest
+   */
+  it("test_get_disallowed_policy_for_account_0700", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getDisallowedPolicyForAccount(SELFWANT, LABEL_OPEN_FILE_BOOST, DEFAULT_USER_ID);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 201 || error.code == 801).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
 }
 
 function testAddDisallowedListForAccountPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_LIST_FOR_ACCOUNT_JS_0100
-   * @tc.name      : test_add_disallowed_list_for_account_0100
-   * @tc.desc      : test restrictions addDisallowedListForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_add_disallowed_list_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_ADD_DISALLOWED_LIST_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions addDisallowedListForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_add_disallowed_list_for_account_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -958,12 +1004,12 @@ function testAddDisallowedListForAccountPolicy() {
 
 function testRemoveDisallowedListForAccountPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_LIST_FOR_ACCOUNT_JS_0100
-   * @tc.name      : test_remove_disallowed_list_for_account_0100
-   * @tc.desc      : test restrictions removeDisallowedListForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_remove_disallowed_list_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_REMOVE_DISALLOWED_LIST_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions removeDisallowedListForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_remove_disallowed_list_for_account_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -981,12 +1027,12 @@ function testRemoveDisallowedListForAccountPolicy() {
 
 function testGetDisallowedListForAccountPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_LIST_FOR_ACCOUNT_JS_0100
-   * @tc.name      : test_get_disallowed_list_for_account_0100
-   * @tc.desc      : test restrictions getDisallowedListForAccount with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_disallowed_list_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_LIST_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions getDisallowedListForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_disallowed_list_for_account_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1004,12 +1050,12 @@ function testGetDisallowedListForAccountPolicy() {
 
 function testSetUserRestrictionPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0100
-   * @tc.name      : test_set_user_restriction_0100
-   * @tc.desc      : test restrictions setUserRestriction with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_user_restriction_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0100
+   * @tc.desc   test restrictions setUserRestriction with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_user_restriction_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1026,12 +1072,12 @@ function testSetUserRestrictionPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0200
-   * @tc.name      : test_set_user_restriction_0200
-   * @tc.desc      : test restrictions setUserRestriction with setting item 'setEthernetIp' with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_user_restriction_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0200
+   * @tc.desc   test restrictions setUserRestriction with setting item 'setEthernetIp' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_user_restriction_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1048,12 +1094,12 @@ function testSetUserRestrictionPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0300
-   * @tc.name      : test_set_user_restriction_0300
-   * @tc.desc      : test restrictions setUserRestriction with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_user_restriction_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0300
+   * @tc.desc   test restrictions setUserRestriction with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_user_restriction_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1070,13 +1116,12 @@ function testSetUserRestrictionPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0400
-   * @tc.name      : test_set_user_restriction_0400
-   * @tc.desc      : test restrictions setUserRestriction with setting item 'setBiometricsAndScreenLock'
-   *                 with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_user_restriction_0400
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0400
+   * @tc.desc   test restrictions setUserRestriction with setting item 'setBiometricsAndScreenLock'
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_user_restriction_0400", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1093,12 +1138,12 @@ function testSetUserRestrictionPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0500
-   * @tc.name      : test_set_user_restriction_0500
-   * @tc.desc      : test restrictions setUserRestriction with setting item 'setDeviceName' with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_set_user_restriction_0500
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_JS_0500
+   * @tc.desc   test restrictions setUserRestriction with setting item 'setDeviceName' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_set_user_restriction_0500", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1117,12 +1162,12 @@ function testSetUserRestrictionPolicy() {
 
 function testGetUserRestrictedPolicy() {
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0100
-   * @tc.name      : test_get_user_restricted_0100
-   * @tc.desc      : test restrictions getUserRestricted with setting item 'setEthernetIp' with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_user_restricted_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0100
+   * @tc.desc   test restrictions getUserRestricted with setting item 'setEthernetIp' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_user_restricted_0100", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1139,12 +1184,12 @@ function testGetUserRestrictedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0200
-   * @tc.name      : test_get_user_restricted_0200
-   * @tc.desc      : test restrictions getUserRestricted with setting item 'setBiometricsAndScreenLock' with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_user_restricted_0200
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0200
+   * @tc.desc   test restrictions getUserRestricted with setting item 'setBiometricsAndScreenLock' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_user_restricted_0200", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1161,12 +1206,12 @@ function testGetUserRestrictedPolicy() {
   });
 
   /**
-   * @tc.number    : SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0300
-   * @tc.name      : test_get_user_restricted_0300
-   * @tc.desc      : test restrictions getUserRestricted with setting item 'setDeviceName' with normal admin
-   * @tc.level     : Level 2
-   * @tc.type      : Function
-   * @tc.size      : MediumTest
+   * @tc.name   test_get_user_restricted_0300
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_JS_0300
+   * @tc.desc   test restrictions getUserRestricted with setting item 'setDeviceName' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
    */
   it("test_get_user_restricted_0300", Level.LEVEL2, async (done: Function) => {
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
@@ -1175,6 +1220,54 @@ function testGetUserRestrictedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_user_restricted_0100 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testSetUserRestrictionForAccountPolicy() {
+  /**
+   * @tc.name   test_set_user_restriction_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_USER_RESTRICTION_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions setUserRestrictionForAccount with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_user_restriction_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.setUserRestrictionForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info(' --- test_set_user_restriction_for_account_0100 error 201 or 801 is expected, actually catch: ' + error.code);
+      expect((error.code == 201) || (error.code == 801)).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+}
+
+function testGetUserRestrictedForAccountPolicy() {
+  /**
+   * @tc.name   test_get_user_restricted_for_account_0100
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_USER_RESTRICTED_FOR_ACCOUNT_JS_0100
+   * @tc.desc   test restrictions getUserRestrictedForAccount with setting item 'modifyWallpaper' with normal admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_user_restricted_for_account_0100", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_NORMAL);
+    try {
+      restrictions.getUserRestrictedForAccount(SELFWANT, LABEL_MODIFY_WALLPAPER, 100);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_user_restricted_for_account_0100 error 201 or 801 is expected, actually catch: ' + error.code);
       expect((error.code == 201) || (error.code == 801)).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);

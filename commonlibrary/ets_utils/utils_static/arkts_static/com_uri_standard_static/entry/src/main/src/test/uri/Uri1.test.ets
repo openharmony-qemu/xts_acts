@@ -33,51 +33,54 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0100
-     * @tc.name: testUriConstruction001
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0100
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('#http://username:password@host:8080/directory/file?foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0300
-     * @tc.name: testUriConstruction003
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0300
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('ht/tp://username:pas sword@host:8080/directory/file?foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0400
-     * @tc.name: testUriConstruction004
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0400
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::]:8080/directory/file?Query#gaogao faofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
         expect(err.code).assertEqual(10200002)
         expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
@@ -86,131 +89,138 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0500
-     * @tc.name: testUriConstruction005
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0500
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@host:8080/directory/file?foo^=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0600
-     * @tc.name: testUriConstruction006
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0600
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('1http://username:password@host:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0700
-     * @tc.name: testUriConstruction007
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0700
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('ht@tp://username:password@host:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0800
-     * @tc.name: testUriConstruction008
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0800
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::]:80r80/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_0900
-     * @tc.name: testUriConstruction009
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction009
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_0900
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::12:55:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1000
-     * @tc.name: testUriConstruction010
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1000
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:pa^ssword@[::12:55]:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1100
-     * @tc.name: testUriConstruction011
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1100
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::1你2:55]:8080/directory/file?foo=1&bar=2#gaogaofaofao');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1200
-     * @tc.name: testUriConstruction012
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1200
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@www.baidu.com:99/path/path?query#fagment');
@@ -227,12 +237,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1300
-     * @tc.name: testUriConstruction013
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1300
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1080::8:800:200C:417A]:99/path/66path1?query#fagment');
@@ -249,12 +259,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1400
-     * @tc.name: testUriConstruction014
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1400
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[::]:88/path/path66?foooo#gaogao');
@@ -271,12 +281,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1500
-     * @tc.name: testUriConstruction015
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1500
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path/66path1?query#fagment');
@@ -293,12 +303,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1600
-     * @tc.name: testUriConstruction016
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1600
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[::FFFF:129.144.52.38]:99/path/path?query#fagment');
@@ -315,12 +325,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1700
-     * @tc.name: testUriConstruction017
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1700
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[::192.9.5.5]:99/path/path?query#fagment');
@@ -337,12 +347,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1800
-     * @tc.name: testUriConstruction018
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1800
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[22::22:2:2%ss]:99/path/path?query#fagment');
@@ -359,12 +369,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_1900
-     * @tc.name: testUriConstruction019
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_1900
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao =
@@ -382,12 +392,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2000
-     * @tc.name: testUriConstruction020
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2000
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[fe80::0001:0000]:99/path/path?query#fagment');
@@ -404,12 +414,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2100
-     * @tc.name: testUriConstruction021
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2100
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@199.98.55.44:99/path/path?query#fagment');
@@ -426,12 +436,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2200
-     * @tc.name: testUriConstruction022
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2200
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://16.9.5.4:99/path/path?query#fagment');
@@ -448,12 +458,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2300
-     * @tc.name: testUriConstruction023
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2300
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://49.99.54.12:50/path/path23?query#fagment');
@@ -470,12 +480,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2400
-     * @tc.name: testUriConstruction024
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2400
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://user@49.10pe8.54.12:80/path/path23?query#qwer');
@@ -492,12 +502,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2500
-     * @tc.name: testUriConstruction025
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2500
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://user@www.baidu.com/path/path23?query#qwer');
@@ -514,12 +524,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2600
-     * @tc.name: testUriConstruction026
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2600
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://user@www.hw.com:77/path/path23?query#qwer');
@@ -536,12 +546,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2700
-     * @tc.name: testUriConstruction027
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2700
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('ht2tp://user@www.h12343w.com:77/path/path23?query#qwer');
@@ -558,12 +568,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2800
-     * @tc.name: testUriConstruction028
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2800
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('ht2tp://user@www.1hw.1com:77/path/path23?query#qwer');
@@ -580,12 +590,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_2900
-     * @tc.name: testUriConstruction029
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_2900
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://user@hosthost/path/path23?query#qwer');
@@ -602,12 +612,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3000
-     * @tc.name: testUriConstruction030
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3000
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://user@[::]/path/path23?query#qwer');
@@ -624,12 +634,12 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3100
-     * @tc.name: testUriConstruction031
-     * @tc.desc: Constructs a URI by parsing the given string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3100
+     * @tc.desc   Constructs a URI by parsing the given string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://[::192:0:5]/path/path23?query#qwer');
@@ -646,12 +656,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3200
-     * @tc.name: testEquals001
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEquals001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3200
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -662,12 +672,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3300
-     * @tc.name: testEquals002
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEquals002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3300
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -678,12 +688,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3400
-     * @tc.name: testEquals003
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEquals003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3400
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -694,12 +704,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3500
-     * @tc.name: testEquals004
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEquals004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3500
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@wwwaaa:99/path1?query#fagment');
@@ -710,12 +720,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3600
-     * @tc.name: testEquals005
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEquals005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3600
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEquals005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -726,12 +736,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3700
-     * @tc.name: testEqualsTo001
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEqualsTo001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3700
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEqualsTo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -742,12 +752,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3800
-     * @tc.name: testEqualsTo002
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEqualsTo002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3800
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEqualsTo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -758,12 +768,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_3900
-     * @tc.name: testEqualsTo003
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEqualsTo003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_3900
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEqualsTo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -774,12 +784,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4000
-     * @tc.name: testEqualsTo004
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEqualsTo004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4000
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEqualsTo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@wwwaaa:99/path1?query#fagment');
@@ -790,12 +800,12 @@ export default function uriTest1() {
 
     // Check the UriEquals.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4100
-     * @tc.name: testEqualsTo005
-     * @tc.desc: Tests this URI for equality with another object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testEqualsTo005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4100
+     * @tc.desc   Tests this URI for equality with another object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testEqualsTo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path1?query#fagment');
@@ -806,12 +816,12 @@ export default function uriTest1() {
 
     // Check the UriNormalize.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4400
-     * @tc.name: testNormalize001
-     * @tc.desc: Tests Normalizes this URI's path.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNormalize001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4400
+     * @tc.desc   Tests Normalizes this URI's path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNormalize001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/path/66./../././mm/.././path1?query#fagment');
@@ -822,12 +832,12 @@ export default function uriTest1() {
 
     // Check the UriNormalize.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4500
-     * @tc.name: testNormalize002
-     * @tc.desc: Tests Normalizes this URI's path.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNormalize002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4500
+     * @tc.desc   Tests Normalizes this URI's path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNormalize002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path?query#fagment');
@@ -838,12 +848,12 @@ export default function uriTest1() {
 
     // Check the UriNormalize.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4600
-     * @tc.name: testNormalize003
-     * @tc.desc: Tests Normalizes this URI's path.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNormalize003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4600
+     * @tc.desc   Tests Normalizes this URI's path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNormalize003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path/.././../aa/bb/cc?query#fagment');
@@ -854,12 +864,12 @@ export default function uriTest1() {
 
     // Check the UriNormalize.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4700
-     * @tc.name: testNormalize004
-     * @tc.desc: Tests Normalizes this URI's path.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNormalize004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4700
+     * @tc.desc   Tests Normalizes this URI's path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNormalize004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../path/.././../aa/bb/cc?query');
@@ -870,12 +880,12 @@ export default function uriTest1() {
 
     // Check the UriNormalize.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4800
-     * @tc.name: testNormalize005
-     * @tc.desc: Tests Normalizes this URI's path.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testNormalize005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4800
+     * @tc.desc   Tests Normalizes this URI's path.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testNormalize005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/./path/./aa/bb/cc?query#fagment');
@@ -886,12 +896,12 @@ export default function uriTest1() {
 
     // Check the UriToString.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_4900
-     * @tc.name: testToString001
-     * @tc.desc: Returns the content of this URI as a US-ASCII string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testToString001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_4900
+     * @tc.desc   Returns the content of this URI as a US-ASCII string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToString001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@[1:0:0:1:2:1:2:1]:99/../../path/.././../aa/bb/cc?query#fagment');
@@ -901,12 +911,12 @@ export default function uriTest1() {
 
     // Check the UriToString.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5000
-     * @tc.name: testToString002
-     * @tc.desc: Returns the content of this URI as a US-ASCII string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testToString002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5000
+     * @tc.desc   Returns the content of this URI as a US-ASCII string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToString002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('htt1p://gg:gaogao@[::192.9.5.5]:99/path/66path1?query#fagment');
@@ -916,12 +926,12 @@ export default function uriTest1() {
 
     // Check the UriToString.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5100
-     * @tc.name: testToString003
-     * @tc.desc: Returns the content of this URI as a US-ASCII string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testToString003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5100
+     * @tc.desc   Returns the content of this URI as a US-ASCII string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToString003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('ftp://username:password@www.baidu.com:88/path?query#fagment');
@@ -931,12 +941,12 @@ export default function uriTest1() {
 
     // Check the UriToString.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5200
-     * @tc.name: testToString004
-     * @tc.desc: Returns the content of this URI as a US-ASCII string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testToString004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5200
+     * @tc.desc   Returns the content of this URI as a US-ASCII string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToString004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gao你好gao@199.98.55.44:99/path/p你好ath?qu你好ery#fag你好ment');
@@ -947,12 +957,12 @@ export default function uriTest1() {
 
     // Check the UriToString.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5300
-     * @tc.name: testToString005
-     * @tc.desc: Returns the content of this URI as a US-ASCII string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testToString005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5300
+     * @tc.desc   Returns the content of this URI as a US-ASCII string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testToString005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http://gg:gaogao@199.98.55.44:99/path/path?query#fagment');
@@ -962,12 +972,12 @@ export default function uriTest1() {
 
     // Check the UriCheckIsAbsolute.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5400
-     * @tc.name: testCheckIsAbsolute001
-     * @tc.desc: Tells whether or not this URI is absolute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckIsAbsolute001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5400
+     * @tc.desc   Tells whether or not this URI is absolute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckIsAbsolute001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('f/tp://username:password@www.baidu.com:88/path?query#fagment');
@@ -977,12 +987,12 @@ export default function uriTest1() {
 
     // Check the UriCheckIsAbsolute.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5500
-     * @tc.name: testCheckIsAbsolute002
-     * @tc.desc: Tells whether or not this URI is absolute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckIsAbsolute002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5500
+     * @tc.desc   Tells whether or not this URI is absolute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckIsAbsolute002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('ftp://username:password@www.baidu.com:88/path?query#fagment');
@@ -992,12 +1002,12 @@ export default function uriTest1() {
 
     // Check the UriCheckIsAbsolute.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5600
-     * @tc.name: testCheckIsAbsolute003
-     * @tc.desc: Tells whether or not this URI is absolute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckIsAbsolute003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5600
+     * @tc.desc   Tells whether or not this URI is absolute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckIsAbsolute003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('htt/p://username:password@www.baidu.com:88/path?query#fagment');
@@ -1007,12 +1017,12 @@ export default function uriTest1() {
 
     // Check the UriCheckIsAbsolute.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5700
-     * @tc.name: testCheckIsAbsolute004
-     * @tc.desc: Tells whether or not this URI is absolute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckIsAbsolute004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5700
+     * @tc.desc   Tells whether or not this URI is absolute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckIsAbsolute004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('https://username:password@www.baidu.com:88/path?query#fagment');
@@ -1022,12 +1032,12 @@ export default function uriTest1() {
 
     // Check the UriCheckIsAbsolute.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5800
-     * @tc.name: testCheckIsAbsolute005
-     * @tc.desc: Tells whether or not this URI is absolute.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckIsAbsolute005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5800
+     * @tc.desc   Tells whether or not this URI is absolute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckIsAbsolute005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let gaogao = new uri.URI('http1://username:password@www.baidu.com:88/path?query#fagment');
@@ -1037,12 +1047,12 @@ export default function uriTest1() {
 
     // Check the UriCheckRelative.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_5900
-     * @tc.name: testCheckRelative001
-     * @tc.desc: Tells whether or not this URI is relative.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckRelative001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_5900
+     * @tc.desc   Tells whether or not this URI is relative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckRelative001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/images/pic.jpg');
@@ -1052,12 +1062,12 @@ export default function uriTest1() {
 
     // Check the UriCheckRelative.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6000
-     * @tc.name: testCheckRelative002
-     * @tc.desc: Tells whether or not this URI is relative.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckRelative002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6000
+     * @tc.desc   Tells whether or not this URI is relative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckRelative002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('/images/pic.jpg');
@@ -1067,12 +1077,12 @@ export default function uriTest1() {
 
     // Check the UriCheckRelative.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6100
-     * @tc.name: testCheckRelative003
-     * @tc.desc: Tells whether or not this URI is relative.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckRelative003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6100
+     * @tc.desc   Tells whether or not this URI is relative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckRelative003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/images/logo.jpg');
@@ -1082,12 +1092,12 @@ export default function uriTest1() {
 
     // Check the UriCheckRelative.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6200
-     * @tc.name: testCheckRelative004
-     * @tc.desc: Tells whether or not this URI is relative.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckRelative004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6200
+     * @tc.desc   Tells whether or not this URI is relative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckRelative004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('aaa');
@@ -1097,12 +1107,12 @@ export default function uriTest1() {
 
     // Check the UriCheckRelative.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6300
-     * @tc.name: testCheckRelative005
-     * @tc.desc: Tells whether or not this URI is relative.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckRelative005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6300
+     * @tc.desc   Tells whether or not this URI is relative.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckRelative005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let mailtoRoute = new uri.URI('mailto:user@test.com');
@@ -1112,12 +1122,12 @@ export default function uriTest1() {
 
     // Check the UriCheckOpaque.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6400
-     * @tc.name: testCheckOpaque001
-     * @tc.desc: Tells whether or not this URI is opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckOpaque001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6400
+     * @tc.desc   Tells whether or not this URI is opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckOpaque001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/images/pic.jpg');
@@ -1127,12 +1137,12 @@ export default function uriTest1() {
 
     // Check the UriCheckOpaque.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6500
-     * @tc.name: testCheckOpaque002
-     * @tc.desc: Tells whether or not this URI is Opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckOpaque002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6500
+     * @tc.desc   Tells whether or not this URI is Opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckOpaque002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('images/pic.jpg');
@@ -1142,12 +1152,12 @@ export default function uriTest1() {
 
     // Check the UriCheckOpaque.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6600
-     * @tc.name: testCheckOpaque003
-     * @tc.desc: Tells whether or not this URI is Opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckOpaque003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6600
+     * @tc.desc   Tells whether or not this URI is Opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckOpaque003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('mailto:user@test.com');
@@ -1157,12 +1167,12 @@ export default function uriTest1() {
 
     // Check the UriCheckOpaque.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6700
-     * @tc.name: testCheckOpaque004
-     * @tc.desc: Tells whether or not this URI is Opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckOpaque004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6700
+     * @tc.desc   Tells whether or not this URI is Opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckOpaque004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('tel:1234567890');
@@ -1172,12 +1182,12 @@ export default function uriTest1() {
 
     // Check the UriCheckHierarchical.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6800
-     * @tc.name: testCheckHierarchical001
-     * @tc.desc: Tells whether or not this URI is Opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckHierarchical001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6800
+     * @tc.desc   Tells whether or not this URI is Opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckHierarchical001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/images/pic.jpg');
@@ -1187,12 +1197,12 @@ export default function uriTest1() {
 
     // Check the UriCheckHierarchical.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_6900
-     * @tc.name: testCheckHierarchical002
-     * @tc.desc: Tells whether or not this URI is Opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckHierarchical002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_6900
+     * @tc.desc   Tells whether or not this URI is Opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckHierarchical002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('mailto:test@test.com');
@@ -1202,12 +1212,12 @@ export default function uriTest1() {
 
     // Check the UriCheckHierarchical.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7000
-     * @tc.name: testCheckHierarchical003
-     * @tc.desc: Tells whether or not this URI is Opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckHierarchical003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7000
+     * @tc.desc   Tells whether or not this URI is Opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckHierarchical003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('images/pic.jpg');
@@ -1217,12 +1227,12 @@ export default function uriTest1() {
 
     // Check the UriCheckHierarchical.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7100
-     * @tc.name: testCheckHierarchical004
-     * @tc.desc: Tells whether or not this URI is Opaque.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testCheckHierarchical004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7100
+     * @tc.desc   Tells whether or not this URI is Opaque.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCheckHierarchical004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('path');
@@ -1233,12 +1243,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7200
-     * @tc.name: testUriGetQueryValue001
-     * @tc.desc: Get specific query parameters from URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValue001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7200
+     * @tc.desc   Get specific query parameters from URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1&param2=value2');
@@ -1250,12 +1260,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7300
-     * @tc.name: testUriGetQueryValue002
-     * @tc.desc: Get specific query parameters from URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValue002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7300
+     * @tc.desc   Get specific query parameters from URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1266,12 +1276,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7400
-     * @tc.name: testUriGetQueryValue003
-     * @tc.desc: Get specific query parameters from URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValue003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7400
+     * @tc.desc   Get specific query parameters from URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1&param1=value2&param1=value3');
@@ -1282,12 +1292,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7500
-     * @tc.name: testUriGetQueryValue004
-     * @tc.desc: Get specific query parameters from URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValue004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7500
+     * @tc.desc   Get specific query parameters from URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=hello%20world');
@@ -1298,12 +1308,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7600
-     * @tc.name: testUriGetQueryValue005
-     * @tc.desc: Get specific query parameters from URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValue005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7600
+     * @tc.desc   Get specific query parameters from URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param%201=hello');
@@ -1314,12 +1324,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7700
-     * @tc.name: testUriGetQueryValue006
-     * @tc.desc: Get specific query parameters from URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValue006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7700
+     * @tc.desc   Get specific query parameters from URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValue006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=&param2=');
@@ -1331,12 +1341,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7800
-     * @tc.name: testUriGetQueryValue007
-     * @tc.desc: Get specific query parameters from URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValue007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7800
+     * @tc.desc   Get specific query parameters from URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValue007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let emptyParameter1 = new uri.URI('https://www.test.com?param1=value1&&param3=value3');
@@ -1349,12 +1359,12 @@ export default function uriTest1() {
 
     // Check the UriAddQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_7900
-     * @tc.name: testUriAddQueryValue001
-     * @tc.desc: Add query parameters for URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddQueryValue001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_7900
+     * @tc.desc   Add query parameters for URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddQueryValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1367,12 +1377,12 @@ export default function uriTest1() {
 
     // Check the UriAddQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8000
-     * @tc.name: testUriAddQueryValue002
-     * @tc.desc: Add query parameters for URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddQueryValue002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8000
+     * @tc.desc   Add query parameters for URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddQueryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1384,12 +1394,12 @@ export default function uriTest1() {
 
     // Check the UriAddQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8100
-     * @tc.name: testUriAddQueryValue003
-     * @tc.desc: Add query parameters for URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddQueryValue003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8100
+     * @tc.desc   Add query parameters for URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddQueryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1403,12 +1413,12 @@ export default function uriTest1() {
 
     // Check the UriAddQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8200
-     * @tc.name: testUriAddQueryValue004
-     * @tc.desc: Add query parameters for URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddQueryValue004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8200
+     * @tc.desc   Add query parameters for URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddQueryValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1418,12 +1428,12 @@ export default function uriTest1() {
 
     // Check the UriAddQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8300
-     * @tc.name: testUriAddQueryValue005
-     * @tc.desc: Add query parameters for URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddQueryValue005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8300
+     * @tc.desc   Add query parameters for URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddQueryValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1435,12 +1445,12 @@ export default function uriTest1() {
 
     // Check the UriAddQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8400
-     * @tc.name: testUriAddQueryValue006
-     * @tc.desc: Add query parameters for URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddQueryValue006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8400
+     * @tc.desc   Add query parameters for URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddQueryValue006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let value = "value";
@@ -1458,12 +1468,12 @@ export default function uriTest1() {
 
     // Check the UriAddQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8500
-     * @tc.name: testUriAddQueryValue007
-     * @tc.desc: Add query parameters for URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddQueryValue007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8500
+     * @tc.desc   Add query parameters for URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddQueryValue007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1473,12 +1483,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryNames.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8600
-     * @tc.name: testUriGetQueryNames001
-     * @tc.desc: Get the names of all query parameters in the URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryNames001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8600
+     * @tc.desc   Get the names of all query parameters in the URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryNames001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1&param2=value2');
@@ -1489,12 +1499,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryNames.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8700
-     * @tc.name: testUriGetQueryNames002
-     * @tc.desc: Get the names of all query parameters in the URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryNames002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8700
+     * @tc.desc   Get the names of all query parameters in the URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryNames002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1504,12 +1514,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryNames.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8800
-     * @tc.name: testUriGetQueryNames003
-     * @tc.desc: Get the names of all query parameters in the URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryNames003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8800
+     * @tc.desc   Get the names of all query parameters in the URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryNames003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1&&param3=value3');
@@ -1523,12 +1533,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryNames.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_8900
-     * @tc.name: testUriGetQueryNames004
-     * @tc.desc: Get the names of all query parameters in the URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryNames004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_8900
+     * @tc.desc   Get the names of all query parameters in the URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryNames004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1&=value2&param3=value3');
@@ -1542,12 +1552,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryNames.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9000
-     * @tc.name: testUriGetQueryNames005
-     * @tc.desc: Get the names of all query parameters in the URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryNames005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9000
+     * @tc.desc   Get the names of all query parameters in the URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryNames005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1&&&a&b=v&param3');
@@ -1563,12 +1573,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryNames.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9100
-     * @tc.name: testUriGetQueryNames006
-     * @tc.desc: Get the names of all query parameters in the URI
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryNames006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9100
+     * @tc.desc   Get the names of all query parameters in the URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryNames006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param%201=value1');
@@ -1583,12 +1593,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9200
-     * @tc.name: testUriGetQueryValues001
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9200
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?query=name&sort=asc&filter=f');
@@ -1598,12 +1608,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9300
-     * @tc.name: testUriGetQueryValues002
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9300
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?query=name');
@@ -1613,12 +1623,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9400
-     * @tc.name: testUriGetQueryValues003
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9400
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let emptyParameter1 = new uri.URI('https://www.test.com/search?query=');
@@ -1643,12 +1653,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9500
-     * @tc.name: testUriGetQueryValues004
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9500
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search');
@@ -1658,12 +1668,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9600
-     * @tc.name: testUriGetQueryValues005
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9600
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?query=my%20query');
@@ -1673,12 +1683,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9700
-     * @tc.name: testUriGetQueryValues006
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9700
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?query=name&query=my');
@@ -1689,12 +1699,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9800
-     * @tc.name: testUriGetQueryValues007
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9800
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?query=hello+world');
@@ -1704,12 +1714,12 @@ export default function uriTest1() {
 
     // Check the UriGetQueryValues.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_9900
-     * @tc.name: testUriGetQueryValues008
-     * @tc.desc: Get all parameters and their corresponding values in the URI query string
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetQueryValues008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_9900
+     * @tc.desc   Get all parameters and their corresponding values in the URI query string
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetQueryValues008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route1 = new uri.URI('https://www.test.com?param_g=value_1');
@@ -1720,12 +1730,12 @@ export default function uriTest1() {
 
     // Check the UriGetBooleanQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10000
-     * @tc.name: testUriGetBooleanQueryValue001
-     * @tc.desc: Get the Boolean value of the URI query parameter
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetBooleanQueryValue001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10000
+     * @tc.desc   Get the Boolean value of the URI query parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetBooleanQueryValue001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?active=true');
@@ -1735,12 +1745,12 @@ export default function uriTest1() {
 
     // Check the UriGetBooleanQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10100
-     * @tc.name: testUriGetBooleanQueryValue002
-     * @tc.desc: Get the Boolean value of the URI query parameter
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetBooleanQueryValue002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10100
+     * @tc.desc   Get the Boolean value of the URI query parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetBooleanQueryValue002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search');
@@ -1750,12 +1760,12 @@ export default function uriTest1() {
 
     // Check the UriGetBooleanQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10200
-     * @tc.name: testUriGetBooleanQueryValue003
-     * @tc.desc: Get the Boolean value of the URI query parameter
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetBooleanQueryValue003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10200
+     * @tc.desc   Get the Boolean value of the URI query parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetBooleanQueryValue003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?active=name');
@@ -1765,12 +1775,12 @@ export default function uriTest1() {
 
     // Check the UriGetBooleanQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10300
-     * @tc.name: testUriGetBooleanQueryValue004
-     * @tc.desc: Get the Boolean value of the URI query parameter
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetBooleanQueryValue004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10300
+     * @tc.desc   Get the Boolean value of the URI query parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetBooleanQueryValue004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search');
@@ -1780,12 +1790,12 @@ export default function uriTest1() {
 
     // Check the UriGetBooleanQueryValue.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10400
-     * @tc.name: testUriGetBooleanQueryValue005
-     * @tc.desc: Get the Boolean value of the URI query parameter
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetBooleanQueryValue005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10400
+     * @tc.desc   Get the Boolean value of the URI query parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetBooleanQueryValue005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?active=true&active=false');
@@ -1799,12 +1809,12 @@ export default function uriTest1() {
 
     // Check the UriClearQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10500
-     * @tc.name: testUriClearQuery001
-     * @tc.desc: Clear URI query parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriClearQuery001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10500
+     * @tc.desc   Clear URI query parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriClearQuery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com');
@@ -1814,12 +1824,12 @@ export default function uriTest1() {
 
     // Check the UriClearQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10600
-     * @tc.name: testUriClearQuery002
-     * @tc.desc: Clear URI query parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriClearQuery002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10600
+     * @tc.desc   Clear URI query parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriClearQuery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1');
@@ -1829,12 +1839,12 @@ export default function uriTest1() {
 
     // Check the UriClearQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10700
-     * @tc.name: testUriClearQuery003
-     * @tc.desc: Clear URI query parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriClearQuery003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10700
+     * @tc.desc   Clear URI query parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriClearQuery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1%');
@@ -1844,12 +1854,12 @@ export default function uriTest1() {
 
     // Check the UriClearQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10800
-     * @tc.name: testUriClearQuery004
-     * @tc.desc: Clear URI query parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriClearQuery004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10800
+     * @tc.desc   Clear URI query parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriClearQuery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com?param1=value1&param1=value2');
@@ -1859,12 +1869,12 @@ export default function uriTest1() {
 
     // Check the UriGetLastSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_10900
-     * @tc.name: testUriGetLastSegment001
-     * @tc.desc: Get the last segment of URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetLastSegment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_10900
+     * @tc.desc   Get the last segment of URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetLastSegment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/files/image.jpg');
@@ -1874,12 +1884,12 @@ export default function uriTest1() {
 
     // Check the UriGetLastSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11000
-     * @tc.name: testUriGetLastSegment002
-     * @tc.desc: Get the last segment of URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetLastSegment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11000
+     * @tc.desc   Get the last segment of URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetLastSegment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/');
@@ -1889,12 +1899,12 @@ export default function uriTest1() {
 
     // Check the UriGetLastSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11100
-     * @tc.name: testUriGetLastSegment003
-     * @tc.desc: Get the last segment of URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetLastSegment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11100
+     * @tc.desc   Get the last segment of URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetLastSegment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri');
@@ -1904,12 +1914,12 @@ export default function uriTest1() {
 
     // Check the UriGetLastSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11200
-     * @tc.name: testUriGetLastSegment004
-     * @tc.desc: Get the last segment of URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetLastSegment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11200
+     * @tc.desc   Get the last segment of URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetLastSegment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/files/');
@@ -1919,12 +1929,12 @@ export default function uriTest1() {
 
     // Check the UriGetLastSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11300
-     * @tc.name: testUriGetLastSegment005
-     * @tc.desc: Get the last segment of URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetLastSegment005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11300
+     * @tc.desc   Get the last segment of URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetLastSegment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/files/my%20file.jpg');
@@ -1934,12 +1944,12 @@ export default function uriTest1() {
 
     // Check the UriGetLastSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11400
-     * @tc.name: testUriGetLastSegment006
-     * @tc.desc: Get the last segment of URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetLastSegment006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11400
+     * @tc.desc   Get the last segment of URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetLastSegment006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/files/my+file.jpg');
@@ -1949,18 +1959,19 @@ export default function uriTest1() {
 
     // Check the UriGetSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11500
-     * @tc.name: testUriGetSegment007
-     * @tc.desc: Get all segments in the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetSegment007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11500
+     * @tc.desc   Get all segments in the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetSegment007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let route = new uri.URI('content://com.test.uri/files/a a');
         let segments = route.getSegment();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
         expect(err.code).assertEqual(10200002);
         expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
@@ -1969,12 +1980,12 @@ export default function uriTest1() {
 
     // Check the UriGetSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11600
-     * @tc.name: testUriGetSegment001
-     * @tc.desc: Get all segments in the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetSegment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11600
+     * @tc.desc   Get all segments in the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetSegment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/files/images');
@@ -1986,12 +1997,12 @@ export default function uriTest1() {
 
     // Check the UriGetSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11700
-     * @tc.name: testUriGetSegment002
-     * @tc.desc: Get all segments in the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetSegment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11700
+     * @tc.desc   Get all segments in the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetSegment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/');
@@ -2001,12 +2012,12 @@ export default function uriTest1() {
 
     // Check the UriGetSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11800
-     * @tc.name: testUriGetSegment003
-     * @tc.desc: Get all segments in the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetSegment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11800
+     * @tc.desc   Get all segments in the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetSegment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/files/');
@@ -2016,12 +2027,12 @@ export default function uriTest1() {
 
     // Check the UriGetSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_11900
-     * @tc.name: testUriGetSegment004
-     * @tc.desc: Get all segments in the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetSegment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_11900
+     * @tc.desc   Get all segments in the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetSegment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri');
@@ -2033,12 +2044,12 @@ export default function uriTest1() {
 
     // Check the UriGetSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12000
-     * @tc.name: testUriGetSegment005
-     * @tc.desc: Get all segments in the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetSegment005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12000
+     * @tc.desc   Get all segments in the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetSegment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('content://com.test.uri/files/a%20a/b%20b');
@@ -2050,12 +2061,12 @@ export default function uriTest1() {
 
     // Check the UriGetSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12100
-     * @tc.name: testUriGetSegment006
-     * @tc.desc: Get all segments in the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriGetSegment006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12100
+     * @tc.desc   Get all segments in the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriGetSegment006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/path/to/image.jpg');
@@ -2065,12 +2076,12 @@ export default function uriTest1() {
 
     // Check the UriAddSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12200
-     * @tc.name: testUriAddSegment001
-     * @tc.desc: Add a path segment to the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddSegment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12200
+     * @tc.desc   Add a path segment to the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddSegment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/');
@@ -2081,12 +2092,12 @@ export default function uriTest1() {
 
     // Check the UriAddSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12300
-     * @tc.name: testUriAddSegment002
-     * @tc.desc: Add a path segment to the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddSegment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12300
+     * @tc.desc   Add a path segment to the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddSegment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route1 = new uri.URI('http://www.test.com');
@@ -2102,12 +2113,12 @@ export default function uriTest1() {
 
     // Check the UriAddSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12400
-     * @tc.name: testUriAddSegment003
-     * @tc.desc: Add a path segment to the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddSegment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12400
+     * @tc.desc   Add a path segment to the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddSegment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com');
@@ -2118,12 +2129,12 @@ export default function uriTest1() {
 
     // Check the UriAddEncodedSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12500
-     * @tc.name: testUriAddEncodedSegment001
-     * @tc.desc: Encode the path segment and add it to the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddEncodedSegment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12500
+     * @tc.desc   Encode the path segment and add it to the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddEncodedSegment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com');
@@ -2133,12 +2144,12 @@ export default function uriTest1() {
 
     // Check the UriAddEncodedSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12600
-     * @tc.name: testUriAddEncodedSegment002
-     * @tc.desc: Encode the path segment and add it to the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddEncodedSegment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12600
+     * @tc.desc   Encode the path segment and add it to the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddEncodedSegment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route1 = new uri.URI('http://www.test.com?param%2B1=value1&param+2=value%202#fra+gemnt');
@@ -2174,18 +2185,19 @@ export default function uriTest1() {
 
     // Check the UriAddEncodedSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12700
-     * @tc.name: testUriAddEncodedSegment003
-     * @tc.desc: Encode the path segment and add it to the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddEncodedSegment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12700
+     * @tc.desc   Encode the path segment and add it to the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddEncodedSegment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let route = new uri.URI('http://www.test.com/');
         let newRoute = route.addEncodedSegment("my files");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.toString()).assertEqual("BusinessError: Syntax Error. Invalid Uri string");
         expect(err.code).assertEqual(10200002);
         expect(err.message).assertEqual("Syntax Error. Invalid Uri string");
@@ -2194,12 +2206,12 @@ export default function uriTest1() {
 
     // Check the UriCreateFromParts.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12800
-     * @tc.name: testUriCreateFromParts001
-     * @tc.desc: Build a new URI object
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriCreateFromParts001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12800
+     * @tc.desc   Build a new URI object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriCreateFromParts001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = uri.URI.createFromParts("http", "", "fragment");
@@ -2208,12 +2220,12 @@ export default function uriTest1() {
 
     // Check the UriCreateFromParts.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_12900
-     * @tc.name: testUriCreateFromParts002
-     * @tc.desc: Build a new URI object
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriCreateFromParts002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_12900
+     * @tc.desc   Build a new URI object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriCreateFromParts002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = uri.URI.createFromParts("mailto", "no body", "top");
@@ -2222,12 +2234,12 @@ export default function uriTest1() {
 
     // Check the UriCreateFromParts.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13100
-     * @tc.name: testUriCreateFromParts004
-     * @tc.desc: Build a new URI object
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriCreateFromParts004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13100
+     * @tc.desc   Build a new URI object
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriCreateFromParts004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let scheme = "https";
@@ -2239,12 +2251,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13200
-     * @tc.name: testUriEncodedUserInfo001
-     * @tc.desc:Encoded URI user information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedUserInfo001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13200
+     * @tc.desc   Encoded URI user information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedUserInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://username:name@www.test.com/');
@@ -2253,12 +2265,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13300
-     * @tc.name: testUriEncodedUserInfo002
-     * @tc.desc: Encoded URI user information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedUserInfo002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13300
+     * @tc.desc   Encoded URI user information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedUserInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://username:@www.test.com/');
@@ -2267,12 +2279,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13400
-     * @tc.name: testUriEncodedUserInfo003
-     * @tc.desc: Encoded URI user information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedUserInfo003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13400
+     * @tc.desc   Encoded URI user information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedUserInfo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://username:my%20name@www.test.com/');
@@ -2281,12 +2293,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13500
-     * @tc.name: testUriEncodedUserInfo004
-     * @tc.desc: Encoded URI user information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedUserInfo004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13500
+     * @tc.desc   Encoded URI user information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedUserInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com');
@@ -2297,12 +2309,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13600
-     * @tc.name: testUriEncodedPath001
-     * @tc.desc: Encoded URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedPath001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13600
+     * @tc.desc   Encoded URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/file/image.jpg');
@@ -2311,12 +2323,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13700
-     * @tc.name: testUriEncodedPath002
-     * @tc.desc: Encoded URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedPath002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13700
+     * @tc.desc   Encoded URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedPath002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/');
@@ -2325,12 +2337,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13800
-     * @tc.name: testUriEncodedPath003
-     * @tc.desc: Encoded URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedPath003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13800
+     * @tc.desc   Encoded URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedPath003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com');
@@ -2341,12 +2353,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_13900
-     * @tc.name: testUriEncodedPath004
-     * @tc.desc: Encoded URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedPath004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_13900
+     * @tc.desc   Encoded URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedPath004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://www.test.com/my%20file');
@@ -2355,12 +2367,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14000
-     * @tc.name: testUriUriEncodedQuery001
-     * @tc.desc: Encoded URI parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriUriEncodedQuery001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14000
+     * @tc.desc   Encoded URI parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriUriEncodedQuery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?query=name&query=my');
@@ -2369,12 +2381,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14100
-     * @tc.name: testUriUriEncodedQuery002
-     * @tc.desc: Encoded URI parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriUriEncodedQuery002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14100
+     * @tc.desc   Encoded URI parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriUriEncodedQuery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?');
@@ -2383,12 +2395,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14200
-     * @tc.name: testUriUriEncodedQuery003
-     * @tc.desc: Encoded URI parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriUriEncodedQuery003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14200
+     * @tc.desc   Encoded URI parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriUriEncodedQuery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/');
@@ -2397,12 +2409,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14300
-     * @tc.name: testUriUriEncodedQuery004
-     * @tc.desc: Encoded URI parameters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriUriEncodedQuery004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14300
+     * @tc.desc   Encoded URI parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriUriEncodedQuery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?query=my%20test');
@@ -2411,12 +2423,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14400
-     * @tc.name: testUriEncodedFragment001
-     * @tc.desc: Encoded URI fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedFragment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14400
+     * @tc.desc   Encoded URI fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedFragment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('mailto:body#top');
@@ -2425,12 +2437,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14500
-     * @tc.name: testUriEncodedFragment002
-     * @tc.desc: Encoded URI fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedFragment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14500
+     * @tc.desc   Encoded URI fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedFragment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('mailto:body#');
@@ -2439,12 +2451,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14600
-     * @tc.name: testUriEncodedFragment003
-     * @tc.desc: Encoded URI fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedFragment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14600
+     * @tc.desc   Encoded URI fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedFragment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('mailto:body#te%20st');
@@ -2453,12 +2465,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14700
-     * @tc.name: testUriEncodedFragment004
-     * @tc.desc: Encoded URI fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedFragment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14700
+     * @tc.desc   Encoded URI fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedFragment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('mailto:body');
@@ -2467,12 +2479,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14800
-     * @tc.name: testUriEncodedAuthority001
-     * @tc.desc: Encoded resource location information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedAuthority001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14800
+     * @tc.desc   Encoded resource location information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedAuthority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/search?query=name&query=my');
@@ -2481,12 +2493,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_14900
-     * @tc.name: testUriEncodedAuthority002
-     * @tc.desc: Encoded resource location information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedAuthority002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_14900
+     * @tc.desc   Encoded resource location information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedAuthority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://username:my%20name@www.test.com/');
@@ -2495,12 +2507,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_15000
-     * @tc.name: testUriEncodedAuthority003
-     * @tc.desc: Encoded resource location information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedAuthority003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_15000
+     * @tc.desc   Encoded resource location information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedAuthority003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('mailto:body#top');
@@ -2509,12 +2521,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_15100
-     * @tc.name: testUriEncodedAuthority004
-     * @tc.desc: Encoded resource location information
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedAuthority004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_15100
+     * @tc.desc   Encoded resource location information
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedAuthority004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com:8080/');
@@ -2523,12 +2535,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedSSP.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_15200
-     * @tc.name: testUriEncodedSSP001
-     * @tc.desc: Encoded URI specific scheme section
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedSSP001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_15200
+     * @tc.desc   Encoded URI specific scheme section
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedSSP001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://username:name@www.test.com/path?query=example');
@@ -2537,12 +2549,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedSSP.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_15300
-     * @tc.name: testUriEncodedSSP002
-     * @tc.desc: Encoded URI specific scheme section
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedSSP002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_15300
+     * @tc.desc   Encoded URI specific scheme section
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedSSP002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('http://username:my%20name@www.test.com');
@@ -2553,12 +2565,12 @@ export default function uriTest1() {
 
     // Check the UriEncodedSSP.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_15400
-     * @tc.name: testUriEncodedSSP003
-     * @tc.desc: Encoded URI specific scheme section
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriEncodedSSP003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_15400
+     * @tc.desc   Encoded URI specific scheme section
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriEncodedSSP003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let route = new uri.URI('https://www.test.com/');
@@ -2566,12 +2578,12 @@ export default function uriTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_16600
-     * @tc.name: testTildeUnderline001
-     * @tc.desc: Encoded URI specific scheme section
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTildeUnderline001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_16600
+     * @tc.desc   Encoded URI specific scheme section
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTildeUnderline001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriTest = new uri.URI('http://www.bian~_cheng.net/inde~_x?param=10~_!*&para~_m1=20!-~_');
@@ -2586,12 +2598,12 @@ export default function uriTest1() {
       expect(uriTest.encodedSSP).assertEqual('//www.bian~_cheng.net/inde~_x?param=10~_!*&para~_m1=20!-~_');
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_16700
-     * @tc.name: testTildeUnderline002
-     * @tc.desc: Encoded URI specific scheme section
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTildeUnderline002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_16700
+     * @tc.desc   Encoded URI specific scheme section
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTildeUnderline002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriTest = new uri.URI('http://www.bian_cheng.net/inde_x?param=10_!*&para_m1=20!-_');
@@ -2606,12 +2618,12 @@ export default function uriTest1() {
       expect(uriTest.encodedSSP).assertEqual('//www.bian_cheng.net/inde_x?param=10_!*&para_m1=20!-_');
     })
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_16800
-     * @tc.name: testTildeUnderline003
-     * @tc.desc: Encoded URI specific scheme section
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testTildeUnderline003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_16800
+     * @tc.desc   Encoded URI specific scheme section
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testTildeUnderline003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriTest = new uri.URI('http://www.bian~cheng.net/inde~x?param=10~!*&para~m1=20!-~');
@@ -2627,12 +2639,12 @@ export default function uriTest1() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_16900
-     * @tc.name: testAddQueryJson001
-     * @tc.desc: URI query add json
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testAddQueryJson001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_16900
+     * @tc.desc   URI query add json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testAddQueryJson001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriTest = new uri.URI('aaa://drive/page?need=false&bbb=true');
@@ -2647,12 +2659,12 @@ export default function uriTest1() {
 
     // Check the Uri constructor json.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_17700
-     * @tc.name: testConstructorJson001
-     * @tc.desc: URI constructor json
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConstructorJson001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_17700
+     * @tc.desc   URI constructor json
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConstructorJson001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriObj = new uri.URI("testUri://testHost/testNumPage?need=false&bbb=true&data={\"aaa\":0,\"bbb\":\"ccc\"}");
@@ -2664,12 +2676,12 @@ export default function uriTest1() {
 
     // Check the Uri Special Characters.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_17800
-     * @tc.name: testSpecialCharacters001
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testSpecialCharacters001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_17800
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecialCharacters001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriStr =
@@ -2687,12 +2699,12 @@ export default function uriTest1() {
     })
     // Check the Uri Port.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_17900
-     * @tc.name: testspecialPort001
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testspecialPort001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_17900
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testspecialPort001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriStr = "http://publickinfo:-1";
@@ -2704,12 +2716,12 @@ export default function uriTest1() {
     })
     // Check the Uri Port.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18000
-     * @tc.name: testspecialPort002
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testspecialPort002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18000
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testspecialPort002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriStr = "http://publickinfo:2147483647";
@@ -2721,12 +2733,12 @@ export default function uriTest1() {
     })
     // Check the Uri Port.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18100
-     * @tc.name: testspecialPort003
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testspecialPort003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18100
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testspecialPort003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriStr = "http://publickinfo:600000000332";
@@ -2738,12 +2750,12 @@ export default function uriTest1() {
     })
     // Check the Uri Port.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18200
-     * @tc.name: testspecialPort004
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testspecialPort004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18200
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testspecialPort004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let uriStr = "http://publickinfo:0";
@@ -2756,78 +2768,82 @@ export default function uriTest1() {
 
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18300
-     * @tc.name: testUriConstruction032
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18300
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('ht/tp://username:pas sword@host:8080/di[rectory/file?foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18400
-     * @tc.name: testUriConstruction033
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18400
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let that = new uri.URI('http://username:password@[::]:8080/directory/file?Query#abc^de');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002)
       }
     })
     // Check the UriConstruction.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18500
-     * @tc.name: testUriConstruction034
-     * @tc.desc: URI Special Characters
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriConstruction034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18500
+     * @tc.desc   URI Special Characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriConstruction034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let route = new uri.URI('content://com.test.uri/files/a^a');
         let segments = route.getSegment();
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002);
       }
     })
     // Check the UriAddEncodedSegment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18600
-     * @tc.name: testUriAddEncodedSegment004
-     * @tc.desc: Encode the path segment and add it to the URI path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testUriAddEncodedSegment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18600
+     * @tc.desc   Encode the path segment and add it to the URI path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testUriAddEncodedSegment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       try {
         let route = new uri.URI('http://www.test.com/');
         let newRoute = route.addEncodedSegment("my`files");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.code).assertEqual(10200002);
       }
     })
     // Check the UriSetScheme.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18700
-     * @tc.name: testUriUriSetScheme001
-     * @tc.desc: Encode Scheme and set it to the URI Scheme
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetScheme001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18700
+     * @tc.desc   Encode Scheme and set it to the URI Scheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetScheme001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
@@ -2836,12 +2852,12 @@ export default function uriTest1() {
     })
     // Check the UriSetScheme.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18800
-     * @tc.name: testUriUriSetScheme002
-     * @tc.desc: Encode Scheme and set it to the URI Scheme
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetScheme002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18800
+     * @tc.desc   Encode Scheme and set it to the URI Scheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetScheme002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
@@ -2850,12 +2866,12 @@ export default function uriTest1() {
     })
     // Check the UriSetScheme.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_18900
-     * @tc.name: testUriUriSetScheme003
-     * @tc.desc: Encode Scheme and set it to the URI Scheme
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetScheme003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_18900
+     * @tc.desc   Encode Scheme and set it to the URI Scheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetScheme003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
@@ -2864,12 +2880,12 @@ export default function uriTest1() {
     })
     // Check the UriSetScheme.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19000
-     * @tc.name: testUriUriSetScheme004
-     * @tc.desc: Encode Scheme and set it to the URI Scheme
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetScheme004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19000
+     * @tc.desc   Encode Scheme and set it to the URI Scheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetScheme004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("ht2tp://user@www.1hw.1com:77/path/path23?query#qwer");
@@ -2878,12 +2894,12 @@ export default function uriTest1() {
     })
     // Check the UriSetScheme.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19100
-     * @tc.name: testUriUriSetScheme005
-     * @tc.desc: Encode Scheme and set it to the URI Scheme
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetScheme005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19100
+     * @tc.desc   Encode Scheme and set it to the URI Scheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetScheme005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.1hw.1com:77/path/path23?query#qwer");
@@ -2892,12 +2908,12 @@ export default function uriTest1() {
     })
     // Check the UriSetScheme.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19200
-     * @tc.name: testUriUriSetScheme006
-     * @tc.desc: Encode Scheme and set it to the URI Scheme
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetScheme006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19200
+     * @tc.desc   Encode Scheme and set it to the URI Scheme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetScheme006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.1hw.1com:77?query#qwer");
@@ -2906,12 +2922,12 @@ export default function uriTest1() {
     })
     // Check the UriSetUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19300
-     * @tc.name: testUriUriSetUserInfo001
-     * @tc.desc: Encode UserInfo and set it to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetUserInfo001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19300
+     * @tc.desc   Encode UserInfo and set it to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetUserInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.hw.com:77/path/path23?query#qwer");
@@ -2921,12 +2937,12 @@ export default function uriTest1() {
     })
     // Check the UriSetUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19400
-     * @tc.name: testUriUriSetUserInfo002
-     * @tc.desc: Encode UserInfo and set it to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetUserInfo002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19400
+     * @tc.desc   Encode UserInfo and set it to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetUserInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://www.test.com:77/path/path23?query#qwer");
@@ -2936,12 +2952,12 @@ export default function uriTest1() {
     })
     // Check the UriSetUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19500
-     * @tc.name: testUriUriSetUserInfo003
-     * @tc.desc: Encode UserInfo and set it to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetUserInfo003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19500
+     * @tc.desc   Encode UserInfo and set it to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetUserInfo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -2951,12 +2967,12 @@ export default function uriTest1() {
     })
     // Check the UriSetUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19600
-     * @tc.name: testUriUriSetUserInfo004
-     * @tc.desc: Encode UserInfo and set it to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetUserInfo004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19600
+     * @tc.desc   Encode UserInfo and set it to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetUserInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/path/path23?query#qwer");
@@ -2966,12 +2982,12 @@ export default function uriTest1() {
     })
     // Check the UriSetUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19700
-     * @tc.name: testUriUriSetUserInfo005
-     * @tc.desc: Encode UserInfo and set it to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetUserInfo005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19700
+     * @tc.desc   Encode UserInfo and set it to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetUserInfo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -2981,12 +2997,12 @@ export default function uriTest1() {
     })
     // Check the UriSetPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19800
-     * @tc.name: testUriUriSetPath001
-     * @tc.desc: Encode Path and set it to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetPath001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19800
+     * @tc.desc   Encode Path and set it to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -2996,12 +3012,12 @@ export default function uriTest1() {
     })
     // Check the UriSetPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_19900
-     * @tc.name: testUriUriSetPath002
-     * @tc.desc: Encode Path and set it to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetPath002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_19900
+     * @tc.desc   Encode Path and set it to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetPath002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3011,12 +3027,12 @@ export default function uriTest1() {
     })
     // Check the UriSetPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20000
-     * @tc.name: testUriUriSetPath003
-     * @tc.desc: Encode Path and set it to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetPath003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20000
+     * @tc.desc   Encode Path and set it to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetPath003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3026,12 +3042,12 @@ export default function uriTest1() {
     })
     // Check the UriSetPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20100
-     * @tc.name: testUriUriSetPath004
-     * @tc.desc: Encode Path and set it to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetPath004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20100
+     * @tc.desc   Encode Path and set it to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetPath004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77?query#qwer");
@@ -3041,12 +3057,12 @@ export default function uriTest1() {
     })
     // Check the UriSetPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20200
-     * @tc.name: testUriUriSetPath005
-     * @tc.desc: Encode Path and set it to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetPath005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20200
+     * @tc.desc   Encode Path and set it to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetPath005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77?query#qwer");
@@ -3056,12 +3072,12 @@ export default function uriTest1() {
     })
     // Check the UriSetPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20300
-     * @tc.name: testUriUriSetPath006
-     * @tc.desc: Encode Path and set it to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetPath006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20300
+     * @tc.desc   Encode Path and set it to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetPath006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3071,12 +3087,12 @@ export default function uriTest1() {
     })
     // Check the UriSetQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20400
-     * @tc.name: testUriUriSetQuery001
-     * @tc.desc: Encode Query and set it to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetQuery001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20400
+     * @tc.desc   Encode Query and set it to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetQuery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3087,12 +3103,12 @@ export default function uriTest1() {
     })
     // Check the UriSetQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20500
-     * @tc.name: testUriUriSetQuery002
-     * @tc.desc: Encode Query and set it to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetQuery002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20500
+     * @tc.desc   Encode Query and set it to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetQuery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3103,12 +3119,12 @@ export default function uriTest1() {
     })
     // Check the UriSetQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20600
-     * @tc.name: testUriUriSetQuery003
-     * @tc.desc: Encode Query and set it to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetQuery003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20600
+     * @tc.desc   Encode Query and set it to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetQuery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3118,12 +3134,12 @@ export default function uriTest1() {
     })
     // Check the UriSetQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20700
-     * @tc.name: testUriUriSetQuery004
-     * @tc.desc: Encode Query and set it to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetQuery004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20700
+     * @tc.desc   Encode Query and set it to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetQuery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3135,12 +3151,12 @@ export default function uriTest1() {
     })
     // Check the UriSetQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20800
-     * @tc.name: testUriUriSetQuery005
-     * @tc.desc: Encode Query and set it to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetQuery005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20800
+     * @tc.desc   Encode Query and set it to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetQuery005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3152,12 +3168,12 @@ export default function uriTest1() {
     })
     // Check the UriSetFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_20900
-     * @tc.name: testUriUriSetFragment001
-     * @tc.desc: Encode Fragment and set it to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetFragment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_20900
+     * @tc.desc   Encode Fragment and set it to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetFragment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3169,12 +3185,12 @@ export default function uriTest1() {
     })
     // Check the UriSetFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21000
-     * @tc.name: testUriUriSetFragment002
-     * @tc.desc: Encode Fragment and set it to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetFragment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21000
+     * @tc.desc   Encode Fragment and set it to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetFragment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3184,12 +3200,12 @@ export default function uriTest1() {
     })
     // Check the UriSetFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21100
-     * @tc.name: testUriUriSetFragment003
-     * @tc.desc: Encode Fragment and set it to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetFragment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21100
+     * @tc.desc   Encode Fragment and set it to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetFragment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3200,12 +3216,12 @@ export default function uriTest1() {
     })
     // Check the UriSetFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21200
-     * @tc.name: testUriUriSetFragment004
-     * @tc.desc: Encode Fragment and set it to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetFragment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21200
+     * @tc.desc   Encode Fragment and set it to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetFragment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query");
@@ -3216,12 +3232,12 @@ export default function uriTest1() {
     })
     // Check the UriSetFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21300
-     * @tc.name: testUriUriSetFragment005
-     * @tc.desc: Encode Fragment and set it to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetFragment005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21300
+     * @tc.desc   Encode Fragment and set it to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetFragment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:userinfo@www.test.com:77/testuri017/p大p/?query");
@@ -3232,12 +3248,12 @@ export default function uriTest1() {
     })
     // Check the UriSetAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21400
-     * @tc.name: testUriUriSetAuthority001
-     * @tc.desc: Encode Authority and set it to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetAuthority001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21400
+     * @tc.desc   Encode Authority and set it to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetAuthority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3249,12 +3265,12 @@ export default function uriTest1() {
     })
     // Check the UriSetAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21500
-     * @tc.name: testUriUriSetAuthority002
-     * @tc.desc: Encode Authority and set it to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetAuthority002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21500
+     * @tc.desc   Encode Authority and set it to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetAuthority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3267,12 +3283,12 @@ export default function uriTest1() {
     })
     // Check the UriSetAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21600
-     * @tc.name: testUriUriSetAuthority003
-     * @tc.desc: Encode Authority and set it to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetAuthority003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21600
+     * @tc.desc   Encode Authority and set it to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetAuthority003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3286,12 +3302,12 @@ export default function uriTest1() {
     })
     // Check the UriSetAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21700
-     * @tc.name: testUriUriSetAuthority004
-     * @tc.desc: Encode Authority and set it to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetAuthority004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21700
+     * @tc.desc   Encode Authority and set it to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetAuthority004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3305,12 +3321,12 @@ export default function uriTest1() {
     })
     // Check the UriSetSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21800
-     * @tc.name: testUriUriSetSsp001
-     * @tc.desc: Encode Ssp and set it to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetSsp001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21800
+     * @tc.desc   Encode Ssp and set it to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetSsp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3325,12 +3341,12 @@ export default function uriTest1() {
     })
     // Check the UriSetSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_21900
-     * @tc.name: testUriUriSetSsp002
-     * @tc.desc: Encode Ssp and set it to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetSsp002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_21900
+     * @tc.desc   Encode Ssp and set it to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetSsp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3344,12 +3360,12 @@ export default function uriTest1() {
     })
     // Check the UriSetSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22000
-     * @tc.name: testUriUriSetSsp003
-     * @tc.desc: Encode Ssp and set it to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetSsp003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22000
+     * @tc.desc   Encode Ssp and set it to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetSsp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3363,12 +3379,12 @@ export default function uriTest1() {
     })
     // Check the UriSetSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22100
-     * @tc.name: testUriUriSetSsp004
-     * @tc.desc: Encode Ssp and set it to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetSsp004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22100
+     * @tc.desc   Encode Ssp and set it to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetSsp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asdasf");
@@ -3382,12 +3398,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22200
-     * @tc.name: testUriUriSetEncodedUserInfo001
-     * @tc.desc: set EncodedUserInfo to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedUserInfo001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22200
+     * @tc.desc   set EncodedUserInfo to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedUserInfo001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://user@www.hw.com:77/path/path23?query#qwer");
@@ -3397,12 +3413,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22300
-     * @tc.name: testUriUriSetEncodedUserInfo002
-     * @tc.desc: set EncodedUserInfo to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedUserInfo002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22300
+     * @tc.desc   set EncodedUserInfo to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedUserInfo002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://www.test.com:77/path/path23?query#qwer");
@@ -3412,12 +3428,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22400
-     * @tc.name: testUriUriSetEncodedUserInfo003
-     * @tc.desc: set EncodedUserInfo to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedUserInfo003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22400
+     * @tc.desc   set EncodedUserInfo to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedUserInfo003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3427,12 +3443,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22500
-     * @tc.name: testUriUriSetEncodedUserInfo004
-     * @tc.desc: set EncodedUserInfo to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedUserInfo004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22500
+     * @tc.desc   set EncodedUserInfo to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedUserInfo004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3442,12 +3458,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedUserInfo.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22600
-     * @tc.name: testUriUriSetEncodedUserInfo005
-     * @tc.desc: set EncodedUserInfo to the URI UserInfo
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedUserInfo005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22600
+     * @tc.desc   set EncodedUserInfo to the URI UserInfo
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedUserInfo005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3457,12 +3473,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22700
-     * @tc.name: testUriUriSetEncodedPath001
-     * @tc.desc: set EncodedPath to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedPath001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22700
+     * @tc.desc   set EncodedPath to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedPath001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3472,12 +3488,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22800
-     * @tc.name: testUriUriSetEncodedPath002
-     * @tc.desc: set EncodedPath to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedPath002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22800
+     * @tc.desc   set EncodedPath to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedPath002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3487,12 +3503,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_22900
-     * @tc.name: testUriUriSetEncodedPath003
-     * @tc.desc: set EncodedPath to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedPath003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_22900
+     * @tc.desc   set EncodedPath to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedPath003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/path/path23?query#qwer");
@@ -3502,12 +3518,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23000
-     * @tc.name: testUriUriSetEncodedPath004
-     * @tc.desc: set EncodedPath to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedPath004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23000
+     * @tc.desc   set EncodedPath to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedPath004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77?query#qwer");
@@ -3517,12 +3533,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedPath.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23100
-     * @tc.name: testUriUriSetEncodedPath005
-     * @tc.desc: set EncodedPath to the URI Path
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedPath005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23100
+     * @tc.desc   set EncodedPath to the URI Path
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedPath005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77");
@@ -3532,12 +3548,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23200
-     * @tc.name: testUriUriSetEncodedQuery001
-     * @tc.desc: set EncodedQuery to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedQuery001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23200
+     * @tc.desc   set EncodedQuery to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedQuery001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3548,12 +3564,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23300
-     * @tc.name: testUriUriSetEncodedQuery002
-     * @tc.desc: set EncodedQuery to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedQuery002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23300
+     * @tc.desc   set EncodedQuery to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedQuery002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3563,12 +3579,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23400
-     * @tc.name: testUriUriSetEncodedQuery003
-     * @tc.desc: set EncodedQuery to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedQuery003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23400
+     * @tc.desc   set EncodedQuery to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedQuery003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3578,12 +3594,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23500
-     * @tc.name: testUriUriSetEncodedQuery004
-     * @tc.desc: set EncodedQuery to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedQuery004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23500
+     * @tc.desc   set EncodedQuery to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedQuery004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3594,12 +3610,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedQuery.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23600
-     * @tc.name: testUriUriSetEncodedQuery005
-     * @tc.desc: set EncodedQuery to the URI Query
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedQuery005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23600
+     * @tc.desc   set EncodedQuery to the URI Query
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedQuery005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3610,12 +3626,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23700
-     * @tc.name: testUriUriSetEncodedFragment001
-     * @tc.desc: set EncodedFragment to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedFragment001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23700
+     * @tc.desc   set EncodedFragment to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedFragment001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3626,12 +3642,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23800
-     * @tc.name: testUriUriSetEncodedFragment002
-     * @tc.desc: set EncodedFragment to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedFragment002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23800
+     * @tc.desc   set EncodedFragment to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedFragment002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3641,12 +3657,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_23900
-     * @tc.name: testUriUriSetEncodedFragment003
-     * @tc.desc: set EncodedFragment to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedFragment003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_23900
+     * @tc.desc   set EncodedFragment to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedFragment003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:/userinfo@www.test.com:77/testuri017/p大p/?query#qwer");
@@ -3656,12 +3672,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24000
-     * @tc.name: testUriUriSetEncodedFragment004
-     * @tc.desc: set EncodedFragment to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedFragment004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24000
+     * @tc.desc   set EncodedFragment to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedFragment004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query");
@@ -3671,12 +3687,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedFragment.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24100
-     * @tc.name: testUriUriSetEncodedFragment005
-     * @tc.desc: set EncodedFragment to the URI Fragment
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedFragment005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24100
+     * @tc.desc   set EncodedFragment to the URI Fragment
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedFragment005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http:userinfo@www.test.com:77/testuri017/p大p/?query");
@@ -3686,12 +3702,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24200
-     * @tc.name: testUriUriSetEncodedAuthority001
-     * @tc.desc: set EncodedAuthority to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedAuthority001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24200
+     * @tc.desc   set EncodedAuthority to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedAuthority001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3703,12 +3719,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24300
-     * @tc.name: testUriUriSetEncodedAuthority002
-     * @tc.desc: set EncodedAuthority to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedAuthority002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24300
+     * @tc.desc   set EncodedAuthority to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedAuthority002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3721,12 +3737,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24400
-     * @tc.name: testUriUriSetEncodedAuthority003
-     * @tc.desc: set EncodedAuthority to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedAuthority003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24400
+     * @tc.desc   set EncodedAuthority to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedAuthority003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3740,12 +3756,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedAuthority.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24500
-     * @tc.name: testUriUriSetEncodedAuthority004
-     * @tc.desc: set EncodedAuthority to the URI Authority
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedAuthority004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24500
+     * @tc.desc   set EncodedAuthority to the URI Authority
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedAuthority004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3759,12 +3775,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24600
-     * @tc.name: testUriUriSetEncodedSsp001
-     * @tc.desc: set EncodedSsp to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedSsp001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24600
+     * @tc.desc   set EncodedSsp to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedSsp001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3779,12 +3795,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24700
-     * @tc.name: testUriUriSetEncodedSsp002
-     * @tc.desc: set EncodedSsp to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedSsp002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24700
+     * @tc.desc   set EncodedSsp to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedSsp002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("http://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3798,12 +3814,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24800
-     * @tc.name: testUriUriSetEncodedSsp003
-     * @tc.desc: set EncodedSsp to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedSsp003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24800
+     * @tc.desc   set EncodedSsp to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedSsp003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asd");
@@ -3817,12 +3833,12 @@ export default function uriTest1() {
     })
     // Check the UriSetEncodedSsp.
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URI_24900
-     * @tc.name: testUriUriSetEncodedSsp004
-     * @tc.desc: set EncodedSsp to the URI Ssp
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 2
+     * @tc.name   testUriUriSetEncodedSsp004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URI_24900
+     * @tc.desc   set EncodedSsp to the URI Ssp
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testUriUriSetEncodedSsp004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       let uriObj = new uri.URI("safdcas://userinfo@www.test.com:77/testuri017/p大p/?query#asdasf");

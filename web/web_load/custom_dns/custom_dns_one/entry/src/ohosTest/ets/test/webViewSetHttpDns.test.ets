@@ -50,9 +50,12 @@ export default function webViewSetHttpDns() {
     })
 
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0100
-     * @tc.name     testSetHttpDnsSecureOnlyExample
-     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.name   testSetHttpDnsSecureOnlyExample
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0100
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetHttpDnsSecureOnlyExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
 
@@ -63,9 +66,12 @@ export default function webViewSetHttpDns() {
       await StartModel.click();
     })
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0200
-     * @tc.name     testSetHttpDnsSecureOnlyUserDefine
-     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.name   testSetHttpDnsSecureOnlyUserDefine
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0200
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetHttpDnsSecureOnlyUserDefine',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
 
@@ -76,9 +82,12 @@ export default function webViewSetHttpDns() {
       await StartModel.click();
     })
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0300
-     * @tc.name     testSetHttpDnsAutoExample
-     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.name   testSetHttpDnsAutoExample
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0300
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetHttpDnsAutoExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitSetHttpDnsAutoExample";
@@ -89,9 +98,12 @@ export default function webViewSetHttpDns() {
 
     })
     /**
-     * @tc.number   SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0400
-     * @tc.name     testSetHttpDnsOffExample
-     * @tc.desc     test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.name   testSetHttpDnsOffExample
+     * @tc.number SUB_ACE_BASIC_ETS_WEBVIEWSETHTTPDNS_API_0400
+     * @tc.desc   test interface of sethttpdns with parameter SetHttpDnsSecureOnlyExample
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetHttpDnsOffExample',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,async (done: Function) =>{
       emitKey="emitSetHttpDnsOffExample";

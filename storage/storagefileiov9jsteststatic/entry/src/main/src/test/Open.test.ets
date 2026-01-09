@@ -31,14 +31,12 @@ export default function fileIOOpen() {
     hilog.info(domain, tag, '%{public}s', 'fileIO_fs_open start');
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_000
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0000
-     * @tc.name fileIO_test_open_sync_static_000
-     * @tc.desc Test openSync() interfaces. mode=0o0.
-     * Open the file in read-only mode, verifying the file is readable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_000 start');
@@ -58,14 +56,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_001
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0100
-     * @tc.name fileIO_test_open_sync_static_001
-     * @tc.desc Test openSync() interfaces. mode=0o1.
-     * Open the file in write-only mode, verifying the file is writable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o1.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_001 start');
@@ -85,14 +81,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_002
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0200
-     * @tc.name fileIO_test_open_sync_static_002
-     * @tc.desc Test openSync() interfaces. mode=0o2.
-     * Open the file in read-write mode, verifying the file is readable and writable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o2.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_002 start');
@@ -115,14 +109,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_003
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0300
-     * @tc.name fileIO_test_open_sync_static_003
-     * @tc.desc Test openSync() interfaces. mode=0o102.
-     * If the path point to the file which does not exist, the file can be created.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o102.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_003 start');
@@ -139,14 +131,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_004
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0400
-     * @tc.name fileIO_test_open_sync_static_004
-     * @tc.desc Test openSync() interfaces. mode=0o1002.
-     * If the file exists and the file is opened for read-write, trim its length to zero.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o1002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_004 start');
@@ -166,14 +156,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_005
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0500
-     * @tc.name fileIO_test_open_sync_static_005
-     * @tc.desc Test openSync() interfaces. mode=0o2002.
-     * Open as append, subsequent writes will append to the end of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o2002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_005 start');
@@ -196,14 +184,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_006
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0600
-     * @tc.name fileIO_test_open_sync_static_006
-     * @tc.desc Test openSync() interfaces. mode=0o4002.
-     * If the file is a special file, the opening and subsequent IOs perform non-blocking operations.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o4002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_006 start');
@@ -221,14 +207,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_007
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0700
-     * @tc.name fileIO_test_open_sync_static_007
-     * @tc.desc Test openSync() interfaces. mode=0o200000.
-     * The path points to a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o200000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_007 start');
@@ -245,14 +229,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_008
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0800
-     * @tc.name fileIO_test_open_sync_static_008
-     * @tc.desc Test openSync() interfaces. mode=0o200000.
-     * The path does not a directory, throw error.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o200000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_008 start');
@@ -270,14 +252,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_009
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_0900
-     * @tc.name fileIO_test_open_sync_static_009
-     * @tc.desc Test openSync() interfaces. mode=0o400002.
-     * The path does not point to a symbolic link.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o400002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_009 start');
@@ -295,14 +275,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_010
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_1000
-     * @tc.name fileIO_test_open_sync_static_010
-     * @tc.desc Test openSync() interfaces. mode=0o4010002.
-     * Open the file in the way of synchronous IO.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o4010002.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_010 start');
@@ -320,14 +298,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_011
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_1100
-     * @tc.name fileIO_test_open_sync_static_011
-     * @tc.desc Test openSync() interfaces. mode=0o200000.
-     * The path refers to a directory, not a file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o200000.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_011 start');
@@ -344,14 +320,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_012
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_1200
-     * @tc.name fileIO_test_open_sync_static_012
-     * @tc.desc Test openSync() interfaces.
-     * Undefined option arguments, use default mode = 0o0.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_012 start');
@@ -374,14 +348,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_sync_static_013
      * @tc.number SUB_DF_FILEIO_OPEN_SYNC_1300
-     * @tc.name fileIO_test_open_sync_static_013
-     * @tc.desc Test openSync() interfaces. mode=0o102.
-     * File name too long.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test openSync() interfaces. mode=0o102.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('fileIO_test_open_sync_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_sync_static_013 start');
@@ -397,14 +369,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_000
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0000
-     * @tc.name fileIO_test_open_async_static_000
-     * @tc.desc Test open() interfaces. mode=0o0. Promise.
-     * Open the file in read-only mode, verifying the file is readable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o0. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_000 start');
@@ -426,14 +396,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_001
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0100
-     * @tc.name fileIO_test_open_async_static_001
-     * @tc.desc Test open() interfaces. mode=0o0. Callback.
-     * Open the file in read-only mode, verifying the file is readable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o0. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_001 start');
@@ -445,7 +413,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_001 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.read(file!.fd, new ArrayBuffer(4096)).then((readLen: long) => {
             expect(readLen == FILE_CONTENT.length).assertTrue();
             fs.closeSync(file!);
@@ -460,14 +428,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_002
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0200
-     * @tc.name fileIO_test_open_async_static_002
-     * @tc.desc Test open() interfaces. mode=0o1. Promise.
-     * Open the file in write-only mode, verifying the file is writable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o1. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_002 start');
@@ -490,14 +456,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_003
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0300
-     * @tc.name fileIO_test_open_async_static_003
-     * @tc.desc Test open() interfaces. mode=0o1. Callback.
-     * Open the file in write-only mode, verifying the file is writable.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o1. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_003 start');
@@ -510,7 +474,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_003 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.write(file!.fd, new ArrayBuffer(length)).then((bytesWritten: long) => {
             expect(bytesWritten == length).assertTrue();
             fs.closeSync(file!);
@@ -525,14 +489,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_004
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0400
-     * @tc.name fileIO_test_open_async_static_004
-     * @tc.desc Test open() interfaces. mode=0o2. Promise.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o2. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_004 start');
@@ -548,14 +510,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_005
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0500
-     * @tc.name fileIO_test_open_async_static_005
-     * @tc.desc Test open() interfaces. mode=0o2. Callback.
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o2. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_005 start');
@@ -575,14 +535,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_006
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0600
-     * @tc.name fileIO_test_open_async_static_006
-     * @tc.desc Test open() interfaces. mode=0o2. Promise.then().catch()
-     * The path point to nothing, no such file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o2. Promise.then().catch()
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_006 start');
@@ -590,7 +548,7 @@ export default function fileIOOpen() {
       try {
         fs.open(fpath, fs.OpenMode.READ_WRITE).then(() => {
           expect(false).assertTrue();
-        }).catch((err: BusinessError) : Promise<void> => {
+        }).catch((err: Error) : Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_006 has error for' + JSON.stringify(err));
           expect(err.code == 13900002 && err.message == 'No such file or directory').assertTrue();
           done();
@@ -602,14 +560,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_007
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0700
-     * @tc.name fileIO_test_open_async_static_007
-     * @tc.desc Test open() interfaces. mode=0o102. Promise.
-     * If the path point to the file which does not exist, the file can be created.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o102. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_007 start');
@@ -627,14 +583,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_008
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0800
-     * @tc.name fileIO_test_open_async_static_008
-     * @tc.desc Test open() interfaces. mode=0o102. Callback.
-     * If the path point to the file which does not exist, the file can be created.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o102. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_008 start');
@@ -645,7 +599,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_008 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();
@@ -657,14 +611,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_009
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_0900
-     * @tc.name fileIO_test_open_async_static_009
-     * @tc.desc Test open() interfaces. mode=0o1002. Promise.
-     * If the file exists and the file is opened for read-write, trim its length to zero.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o1002. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_009 start');
@@ -686,14 +638,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_010
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1000
-     * @tc.name fileIO_test_open_async_static_010
-     * @tc.desc Test open() interfaces. mode=0o1002. Callback.
-     * If the file exists and the file is opened for read-write, trim its length to zero.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o1002. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_010 start');
@@ -705,7 +655,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_010 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.read(file!.fd, new ArrayBuffer(4096)).then((readLen: long) => {
             expect(readLen == 0).assertTrue();
             fs.closeSync(file!);
@@ -720,14 +670,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_011
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1100
-     * @tc.name fileIO_test_open_async_static_011
-     * @tc.desc Test open() interfaces. mode=0o2002. Promise.
-     * Open as append, subsequent writes will append to the end of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o2002. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_011 start');
@@ -751,14 +699,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_012
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1200
-     * @tc.name fileIO_test_open_async_static_012
-     * @tc.desc Test open() interfaces. mode=0o2002. Callback.
-     * Open as append, subsequent writes will append to the end of the file.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o2002. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_012 start');
@@ -771,7 +717,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_012 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.writeSync(file!.fd, new ArrayBuffer(length));
           fs.read(file!.fd, new ArrayBuffer(4096), { offset: 0 }).then((readLen: long) => {
             expect(readLen == length + FILE_CONTENT.length).assertTrue();
@@ -787,14 +733,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_013
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1300
-     * @tc.name fileIO_test_open_async_static_013
-     * @tc.desc Test open() interfaces. mode=0o4002. Promise.
-     * If the file is a special file, the opening and subsequent IOs perform non-blocking operations.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o4002. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_013 start');
@@ -813,14 +757,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_014
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1400
-     * @tc.name fileIO_test_open_async_static_014
-     * @tc.desc Test open() interfaces. mode=0o4002. Callback.
-     * If the file is a special file, the opening and subsequent IOs perform non-blocking operations.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o4002. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_014 start');
@@ -832,7 +774,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_014 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();
@@ -844,14 +786,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_015
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1500
-     * @tc.name fileIO_test_open_async_static_015
-     * @tc.desc Test open() interfaces. mode=0o200000. Promise.
-     * The path points to a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o200000. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_015 start');
@@ -869,14 +809,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_016
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1600
-     * @tc.name fileIO_test_open_async_static_016
-     * @tc.desc Test open() interfaces. mode=0o200000. Callback.
-     * The path points to a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o200000. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_016 start');
@@ -888,7 +826,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_016 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.rmdirSync(dpath);
           done();
         });
@@ -899,14 +837,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_017
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1700
-     * @tc.name fileIO_test_open_async_static_017
-     * @tc.desc Test open() interfaces. mode=0o200000. Promise.
-     * The path does not point to a directory, throw error.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o200000. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_017 start');
@@ -924,14 +860,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_018
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1800
-     * @tc.name fileIO_test_open_async_static_018
-     * @tc.desc Test open() interfaces. mode=0o200000. Callback.
-     * The path does not point to a directory, throw error.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o200000. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_018 start');
@@ -953,14 +887,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_019
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_1900
-     * @tc.name fileIO_test_open_async_static_019
-     * @tc.desc Test open() interfaces. mode=0o200000. Promise.then().catch().
-     * The path does not point to a directory, throw error.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o200000. Promise.then().catch().
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_019 start');
@@ -969,7 +901,7 @@ export default function fileIOOpen() {
       try {
         await fs.open(fpath, fs.OpenMode.DIR).then(() => {
           expect(false).assertTrue();
-        }).catch((err: BusinessError) : Promise<void> => {
+        }).catch((err: Error) : Promise<void> => {
           fs.unlinkSync(fpath);
           hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_019 has error for' + JSON.stringify(err));
           expect(err.code == 13900018 && err.message == 'Not a directory').assertTrue();
@@ -982,14 +914,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_020
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2000
-     * @tc.name fileIO_test_open_async_static_020
-     * @tc.desc Test open() interfaces. mode=0o400002. Promise.
-     * The path does not point to a symbolic link.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o400002. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_020 start');
@@ -1008,14 +938,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_021
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2100
-     * @tc.name fileIO_test_open_async_static_021
-     * @tc.desc Test open() interfaces. mode=0o400002. Callback.
-     * The path does not point to a symbolic link.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o400002. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_021 start');
@@ -1027,7 +955,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_021 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();
@@ -1039,14 +967,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_022
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2200
-     * @tc.name fileIO_test_open_async_static_022
-     * @tc.desc Test open() interfaces. mode=0o4010002. Promise.
-     * Open the file in the way of synchronous IO.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o4010002. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_022 start');
@@ -1065,14 +991,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_023
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2300
-     * @tc.name fileIO_test_open_async_static_023
-     * @tc.desc Test open() interfaces. mode=0o4010002. Callback.
-     * Open the file in the way of synchronous IO.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o4010002. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_023 start');
@@ -1084,7 +1008,7 @@ export default function fileIOOpen() {
             hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_023 has error for' + JSON.stringify(err));
             expect(false).assertTrue();
           }
-          expect(typeof file?.fd == 'number').assertTrue();
+          expect(typeof file?.fd == 'int').assertTrue();
           fs.closeSync(file!);
           fs.unlinkSync(fpath);
           done();
@@ -1096,14 +1020,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_024
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2400
-     * @tc.name fileIO_test_open_async_static_024
-     * @tc.desc Test open() interfaces. Promise.
-     * The path refers to a file, not a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_024 start');
@@ -1121,14 +1043,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_025
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2500
-     * @tc.name fileIO_test_open_async_static_025
-     * @tc.desc Test open() interfaces. Callback.
-     * The path refers to a file, not a directory.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_025 start');
@@ -1150,14 +1070,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_026
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2600
-     * @tc.name fileIO_test_open_async_static_026
-     * @tc.desc Test open() interfaces. Promise.
-     * Undefined option arguments, use default mode = 0o0.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_026 start');
@@ -1181,14 +1099,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_028
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2800
-     * @tc.name fileIO_test_open_async_static_028
-     * @tc.desc Test open() interfaces. mode=0o102. Promise.
-     * File name too long.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o102. Promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_028 start');
@@ -1205,14 +1121,12 @@ export default function fileIOOpen() {
     });
 
     /**
+     * @tc.name   fileIO_test_open_async_static_029
      * @tc.number SUB_DF_FILEIO_OPEN_ASYNC_2900
-     * @tc.name fileIO_test_open_async_static_029
-     * @tc.desc Test open() interfaces. mode=0o102. Callback.
-     * File name too long.
-     * @tc.size MEDIUM
-     * @tc.type Functoin
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test open() interfaces. mode=0o102. Callback.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('fileIO_test_open_async_static_029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:()=>void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', 'fileIO_test_open_async_static_029 start');

@@ -24,7 +24,7 @@ export default function BuiltinsNumberConstructorTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100);
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -40,12 +40,12 @@ export default function BuiltinsNumberConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0100
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0100
-     * @tc.name builtinsNumberConstructorTest0100
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0100';
@@ -59,12 +59,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0200
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0200
-     * @tc.name builtinsNumberConstructorTest0200
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0200';
@@ -78,12 +78,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0300
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0300
-     * @tc.name builtinsNumberConstructorTest0300
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0300';
@@ -97,12 +97,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0400
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0400
-     * @tc.name builtinsNumberConstructorTest0400
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0400';
@@ -117,12 +117,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0500
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0500
-     * @tc.name builtinsNumberConstructorTest0500
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0500';
@@ -136,12 +136,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0600
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0600
-     * @tc.name builtinsNumberConstructorTest0600
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0600';
@@ -156,12 +156,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0700
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0700
-     * @tc.name builtinsNumberConstructorTest0700
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0700';
@@ -174,12 +174,12 @@ export default function BuiltinsNumberConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0800
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0800
-     * @tc.name builtinsNumberConstructorTest0800
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0800';
@@ -192,12 +192,12 @@ export default function BuiltinsNumberConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberConstructorTest0900
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_0900
-     * @tc.name builtinsNumberConstructorTest0900
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest0900';
@@ -211,12 +211,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest1000
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_1000
-     * @tc.name builtinsNumberConstructorTest1000
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest1000';
@@ -229,12 +229,12 @@ export default function BuiltinsNumberConstructorTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberConstructorTest1100
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_1100
-     * @tc.name builtinsNumberConstructorTest1100
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest1100';
@@ -249,12 +249,12 @@ export default function BuiltinsNumberConstructorTest() {
 
 
     /**
+     * @tc.name   builtinsNumberConstructorTest1200
      * @tc.number SUB_BUILTINS_NUMBER_CONSTRUCTOR_TEST_1200
-     * @tc.name builtinsNumberConstructorTest1200
-     * @tc.desc Testing Task
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Testing Task
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberConstructorTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberConstructorTest1200';

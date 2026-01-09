@@ -29,10 +29,12 @@ export default function ActsNotificationContentTest() {
     let ctx: common.UIAbilityContext;
 
     /**
-     * @tc.number  Acts_NotificationContent_Static_0100
-     * @tc.name  Acts_NotificationContent_Static_0100
-     * @tc.desc  Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT.
+     * @tc.name   Acts_NotificationContent_Static_0100
+     * @tc.number Acts_NotificationContent_Static_0100
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_Static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -84,10 +86,12 @@ export default function ActsNotificationContentTest() {
       })
 
     /**
-     * @tc.number  Acts_NotificationContent_Static_0200
-     * @tc.name Acts_NotificationContent_Static_0200
-     * @tc.desc Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_LONG_TEXT.
+     * @tc.name   Acts_NotificationContent_Static_0200
+     * @tc.number Acts_NotificationContent_Static_0200
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_Static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -122,7 +126,7 @@ export default function ActsNotificationContentTest() {
         try {
           notificationManager.publish(notificationRequest, (err: BusinessError | null) => {
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s', JSON.stringify(err));
-            expect(err).assertEqual(null);
+            expect().assertFail();
             hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
             done();
           })
@@ -136,10 +140,12 @@ export default function ActsNotificationContentTest() {
       })
 
     /**
-     * @tc.number  Acts_NotificationContent_Static_0300
-     * @tc.name  Acts_NotificationContent_Static_0300
-     * @tc.desc  Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_PICTURE.
+     * @tc.name   Acts_NotificationContent_Static_0300
+     * @tc.number Acts_NotificationContent_Static_0300
+     * @tc.desc   Set notificationContentType attribute parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Acts_NotificationContent_Static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -161,7 +167,7 @@ export default function ActsNotificationContentTest() {
         let pixelMap: image.PixelMap = image.createPixelMapSync(color, opts);
         pixelMap.getImageInfo().then((imageInfo: image.ImageInfo) => {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} =====size: ====  ${imageInfo.size}`);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error("Failed to obtain the image pixel map information." + JSON.stringify(err));
         })
         let notificationRequest: notificationManager.NotificationRequest = {
@@ -201,20 +207,22 @@ export default function ActsNotificationContentTest() {
         } catch (err: BusinessError) {
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME}` + 'publish fail,result is : %{public}s',
             JSON.stringify(err));
-          expect(err.code).assertEqual(401);
+          expect().assertFail();
           hilog.info(0x000, `${TAG}`, `${TEST_CASE_NAME} test case end`);
           done();
         }
       })
 
 
-    /**
-     * @tc.number  Acts_NotificationContent_Static_0400
-     * @tc.name  Acts_NotificationContent_Static_0400
-     * @tc.desc  Set notificationContentType attribute parameters
-     *           notificationManager.ContentType.NOTIFICATION_CONTENT_MULTILINE.
-     */
     
+    /**
+     * @tc.name   Acts_NotificationContent_Static_0400
+     * @tc.number Acts_NotificationContent_Static_0400
+     * @tc.desc   Acts_NotificationContent_Static_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('Acts_NotificationContent_Static_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         const TEST_CASE_NAME = 'Acts_NotificationContent_Static_0400';

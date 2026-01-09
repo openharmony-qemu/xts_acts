@@ -130,7 +130,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DataObject_on_Change_ErrTest_0100
      * @tc.number SUB_DataObject_on_Change_ErrTest_0100
      * @tc.desc   Test DataObject on Change
@@ -152,7 +151,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   SUB_DataObject_off_Change_ErrTest_0100
      * @tc.number SUB_DataObject_off_Change_ErrTest_0100
      * @tc.desc   Test DataObject off Change
@@ -174,7 +172,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest03
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0300
      * @tc.desc   Test DataObject offStatus
@@ -196,7 +193,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest04
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0400
      * @tc.desc   Test DataObject save
@@ -219,7 +215,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest05
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0500
      * @tc.desc   Test DataObject save
@@ -243,7 +238,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest06
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0600
      * @tc.desc   Test DataObject revokeSave
@@ -266,7 +260,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest07
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0700
      * @tc.desc   Test DataObject bindAssetStore
@@ -294,7 +287,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest08
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0800
      * @tc.desc   Test DataObject bindAssetStore
@@ -322,7 +314,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest09
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_0900
      * @tc.desc   Test DataObject setAsset
@@ -347,7 +338,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest10
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1000
      * @tc.desc   Test DataObject setAssets
@@ -371,7 +361,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest11
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1100
      * @tc.desc   Test DataObject on change20
@@ -393,7 +382,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest12
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1200
      * @tc.desc   Test DataObject on change20
@@ -415,7 +403,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest13
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1300
      * @tc.desc   Test DataObject on change20
@@ -437,7 +424,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest14
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1400
      * @tc.desc   Test DataObject on change20
@@ -460,7 +446,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest15
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1500
      * @tc.desc   Test DataObject on change20
@@ -483,7 +468,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest16
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1600
      * @tc.desc   Test DataObject on status20
@@ -505,7 +489,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest17
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1700
      * @tc.desc   Test DataObject on status20
@@ -527,7 +510,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest18
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1800
      * @tc.desc   Test DataObject on status20
@@ -549,7 +531,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest19
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_1900
      * @tc.desc   Test DataObject on status20
@@ -572,7 +553,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest20
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2000
      * @tc.desc   Test DataObject on status20
@@ -595,7 +575,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest21
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2100
      * @tc.desc   Test DataObject off change20
@@ -618,7 +597,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest22
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2200
      * @tc.desc   Test DataObject off change20
@@ -642,7 +620,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest23
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2300
      * @tc.desc   Test DataObject off change20
@@ -665,7 +642,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest24
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2400
      * @tc.desc   Test DataObject off change20
@@ -688,7 +664,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest25
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2500
      * @tc.desc   Test DataObject off change20
@@ -711,7 +686,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest26
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2600
      * @tc.desc   Test DataObject off change20
@@ -734,7 +708,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest27
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2700
      * @tc.desc   Test DataObject off_status20
@@ -757,7 +730,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest28
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2800
      * @tc.desc   Test DataObject off_status20
@@ -781,7 +753,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest29
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_2900
      * @tc.desc   Test DataObject off_status20
@@ -804,7 +775,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest30
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3000
      * @tc.desc   Test DataObject off_status20
@@ -827,7 +797,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest31
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3100
      * @tc.desc   Test DataObject setAsset
@@ -850,7 +819,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest32
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3200
      * @tc.desc   Test DataObject setAsset
@@ -873,7 +841,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest33
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3300
      * @tc.desc   Test DataObject setAsset
@@ -896,7 +863,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest34
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3400
      * @tc.desc   Test DataObject setAsset
@@ -919,7 +885,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest35
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3500
      * @tc.desc   Test DataObject setAsset
@@ -942,7 +907,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest36
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3600
      * @tc.desc   Test DataObject setAsset
@@ -965,7 +929,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest37
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3700
      * @tc.desc   Test DataObject setAsset
@@ -988,7 +951,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest38
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3800
      * @tc.desc   Test DataObject setAsset
@@ -1013,7 +975,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest39
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_3900
      * @tc.desc   Test DataObject setAssets
@@ -1036,7 +997,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest40
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4000
      * @tc.desc   Test DataObject setAssets
@@ -1063,7 +1023,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest41
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4100
      * @tc.desc   Test DataObject setAssets
@@ -1086,7 +1045,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest42
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4200
      * @tc.desc   Test DataObject setAssets
@@ -1120,7 +1078,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest43
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4300
      * @tc.desc   Test DataObject setAssets
@@ -1145,7 +1102,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest44
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4400
      * @tc.desc   Test DataObject setAssets
@@ -1168,7 +1124,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest45
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4500
      * @tc.desc   Test DataObject setAssets
@@ -1191,7 +1146,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest46
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4600
      * @tc.desc   Test DataObject setAssets
@@ -1214,7 +1168,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest47
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4700
      * @tc.desc   Test DataObject setAssets
@@ -1237,7 +1190,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest48
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4800
      * @tc.desc   Test DataObject setAssets
@@ -1260,7 +1212,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest49
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_4900
      * @tc.desc   Test DataObject setAssets
@@ -1283,7 +1234,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest50
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5000
      * @tc.desc   Test DataObject on progressChanged
@@ -1305,7 +1255,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest51
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5100
      * @tc.desc   Test DataObject on progressChanged
@@ -1327,7 +1276,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest52
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5200
      * @tc.desc   Test DataObject on progressChanged
@@ -1349,7 +1297,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest53
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5300
      * @tc.desc   Test DataObject on progressChanged
@@ -1372,7 +1319,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest54
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5400
      * @tc.desc   Test DataObject on progressChanged
@@ -1395,7 +1341,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest55
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5500
      * @tc.desc   Test DataObject off progressChanged
@@ -1418,7 +1363,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest56
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5600
      * @tc.desc   Test DataObject off progressChanged
@@ -1441,7 +1385,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest57
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5700
      * @tc.desc   Test DataObject off progressChanged
@@ -1465,7 +1408,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest58
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5800
      * @tc.desc   Test DataObject off progressChanged
@@ -1489,7 +1431,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest59
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_5900
      * @tc.desc   Test DataObject off
@@ -1511,7 +1452,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest60
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6000
      * @tc.desc   Test DataObject off
@@ -1533,7 +1473,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest61
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6100
      * @tc.desc   Test DataObject off
@@ -1555,7 +1494,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest62
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6200
      * @tc.desc   Test DataObject off
@@ -1577,7 +1515,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest63
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6300
      * @tc.desc   Test DataObject off
@@ -1599,7 +1536,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest64
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6400
      * @tc.desc   Test DataObject on progressChanged 2000
@@ -1623,7 +1559,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest65
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6500
      * @tc.desc   Test DataObject on status 2000
@@ -1647,7 +1582,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest66
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6600
      * @tc.desc   Test DataObject on change 2000
@@ -1671,7 +1605,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest67
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6700
      * @tc.desc   Test DataObject on progressChanged off on
@@ -1700,7 +1633,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest68
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6800
      * @tc.desc   Test DataObject on status off on
@@ -1729,7 +1661,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest69
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_6900
      * @tc.desc   Test DataObject on change off on
@@ -1758,7 +1689,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest70
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7000
      * @tc.desc   Test DataObject SetSessionId Test
@@ -1787,7 +1717,6 @@ export default function DataObjectErrTest() {
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:47
      * @tc.name   DataObjectErrTest71
      * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7100
      * @tc.desc   Test DataObject SetSessionId Test
@@ -1813,6 +1742,160 @@ export default function DataObjectErrTest() {
       let result = g_object.setSessionId('123456@123');
       expect(result).assertEqual(false);
       console.info(TAG + '************ DataObjectErrTest71 end ************');
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest72
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7200
+     * @tc.desc   Test DistributedObject SetSessionId 128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest72', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest72 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let str = "a".repeat(128);
+      let result = g_object.setSessionId(str);
+      expect(result).assertEqual(true);
+      console.info(TAG + '************ DataObjectErrTest72 end ************');
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest73
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7300
+     * @tc.desc   Test DistributedObject SetSessionId 129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest73', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
+      console.info(TAG + '************ DataObjectErrTest73 start ************')
+      class SourceObject {
+        name: string
+        age: number
+        isVis: boolean
+
+        constructor(name: string, age: number, isVis: boolean) {
+          this.name = name
+          this.age = age
+          this.isVis = isVis
+        }
+      }
+      let source: SourceObject = new SourceObject('jack', 18, false);
+      let g_object: distributedDataObject.DistributedObject = distributedDataObject.createDistributedObject(source);
+      let str = "b".repeat(129);
+      let result = g_object.setSessionId(str);
+      expect(result).assertEqual(false);
+      console.info(TAG + '************ DataObjectErrTest73 end ************');
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest74
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7400
+     * @tc.desc   Test Object SetSessionId callback 128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest74', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      console.info(TAG + '************ DataObjectErrTest74 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "c".repeat(128);
+      g_object.setSessionId(str, (err) => {
+        if(err){
+          console.error(TAG + 'err' + JSON.stringify(err));
+          expect().assertFail();
+        }
+        expect(err).assertNull();
+        console.info(TAG + '************ DataObjectErrTest74 end ************');
+        done();
+      });
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest75
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7500
+     * @tc.desc   Test Object SetSessionId callback 129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest75', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: Function) => {
+      console.info(TAG + '************ DataObjectErrTest75 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "d".repeat(129);
+      try {
+        g_object.setSessionId(str, (err) => {
+          if(err){
+            console.error(TAG + 'err' + JSON.stringify(err));
+          }
+          expect().assertFail();
+        });
+      } catch (err) {
+        console.error(TAG + 'catchErr' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+        console.info(TAG + '************ DataObjectErrTest75 end ************');
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest76
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7600
+     * @tc.desc   Test Object SetSessionId promise 128
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest76', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ DataObjectErrTest76 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "e".repeat(128);
+      try {
+        let count = 0;
+        await g_object.setSessionId(str);
+        count += 1;
+        expect(count).assertEqual(1);
+      } catch (err) {
+        console.error(TAG + 'catchErr' + JSON.stringify(err));
+        expect().assertFail();
+      }
+      console.info(TAG + '************ DataObjectErrTest76 end ************');
+    })
+
+    /**
+     * @tc.name   DataObjectErrTest77
+     * @tc.number SUB_DistributedData_DataObject_JsApiErrTest_7700
+     * @tc.desc   Test Object SetSessionId promise 129
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('DataObjectErrTest77', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
+      console.info(TAG + '************ DataObjectErrTest77 start ************')
+      let g_object: distributedDataObject.DataObject = distributedDataObject.create(context, note);
+      let str = "e".repeat(129);
+      try {
+        await g_object.setSessionId(str);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG + 'catchErr' + JSON.stringify(err));
+        expect(err.code).assertEqual(401);
+      }
+      console.info(TAG + '************ DataObjectErrTest77 end ************');
     })
   })
 }

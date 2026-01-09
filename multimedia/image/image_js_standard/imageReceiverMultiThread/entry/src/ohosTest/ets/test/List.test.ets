@@ -14,7 +14,9 @@
  */
 
 import multiThreadTest from './imageMultiThread.test'
+import ImageReceiverTest from './ImageReceiver.test'
 
 export default function List() {
-    multiThreadTest()
+    multiThreadTest();
+    ImageReceiverTest();
 }

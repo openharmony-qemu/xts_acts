@@ -21,6 +21,7 @@ import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import application from '@ohos.app.ability.application'
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -49,7 +50,16 @@ export default function actsStageContextTestStatic() {
       count3 = 0;
     })
 
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -65,9 +75,12 @@ export default function actsStageContextTestStatic() {
 
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1500
-     * @tc.name       ACTS_StageContext_Static_1500
-     * @tc.desc       test CreateModuleContext
+     * @tc.name   ACTS_StageContext_Static_1500
+     * @tc.number ACTS_StageContext_Static_1500
+     * @tc.desc   test CreateModuleContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StageContext_Static_1500", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'ACTS_StageContext_Static_1500 begin');
@@ -91,12 +104,12 @@ export default function actsStageContextTestStatic() {
           hilog.info(domain, tag, 'createContext stageMode: ' + JSON.stringify(Context.stageMode));
           expect(Context.stageMode + "").assertEqual("true");
           done();
-        }).catch((error : BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
           expect().assertFail();
           done()
         })
-      } catch (error : BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
         expect().assertFail();
         done()
@@ -104,9 +117,12 @@ export default function actsStageContextTestStatic() {
     });
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1600
-     * @tc.name       ACTS_StageContext_Static_1600
-     * @tc.desc       test CreateModuleContext
+     * @tc.name   ACTS_StageContext_Static_1600
+     * @tc.number ACTS_StageContext_Static_1600
+     * @tc.desc   test CreateModuleContext
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StageContext_Static_1600", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("ACTS_StageContext_Static_1600 begin");
@@ -116,12 +132,12 @@ export default function actsStageContextTestStatic() {
           hilog.info(domain, tag, 'createContext applicationInfo.name: ' + JSON.stringify(Context.applicationInfo.name));
           expect(Context.applicationInfo.name + "").assertEqual("com.example.stage_app.static");
           done();
-        }).catch((error : BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
           expect().assertFail();
           done()
         })
-      } catch (error : BusinessError) {
+      } catch (error) {
         hilog.info(domain, tag, 'createContext fail' + JSON.stringify(error));
         expect().assertFail();
         done()
@@ -129,9 +145,12 @@ export default function actsStageContextTestStatic() {
     });
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1700
-     * @tc.name       ACTS_StageContext_Static_1700
-     * @tc.desc       test CreateModuleContext with invalid param to verify the errcode 401
+     * @tc.name   ACTS_StageContext_Static_1700
+     * @tc.number ACTS_StageContext_Static_1700
+     * @tc.desc   test CreateModuleContext with invalid param to verify the errcode 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_StageContext_Static_1700", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, 'ACTS_StageContext_Static_1700 begin');
@@ -142,12 +161,12 @@ export default function actsStageContextTestStatic() {
           hilog.info(domain, tag, 'createContext applicationInfo.name: ' + `${Context.applicationInfo.name}`);
           expect(Context.applicationInfo.name + "").assertEqual("com.example.stage_app.static");
           done();
-        }).catch((error : BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(domain, tag, 'err: createContext fail');
           expect(error.code).assertEqual(401);
           done()
         })
-      } catch (paramError: Error) {
+      } catch (paramError) {
         let code: number = (paramError as BusinessError).code;
         hilog.info(domain, tag, 'createContext fail');
         expect().assertFail();
@@ -156,9 +175,12 @@ export default function actsStageContextTestStatic() {
     });
     
     /**
-     * @tc.number     ACTS_StageContext_Static_0900
-     * @tc.name       ACTS_StageContext_Static_0900
-     * @tc.desc       test EventHub test multiple callbacks
+     * @tc.name   ACTS_StageContext_Static_0900
+     * @tc.number ACTS_StageContext_Static_0900
+     * @tc.desc   test EventHub test multiple callbacks
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: ()=> void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_0900';
@@ -190,9 +212,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1000
-     * @tc.name       ACTS_StageContext_Static_1000
-     * @tc.desc       test EventHub test different events
+     * @tc.name   ACTS_StageContext_Static_1000
+     * @tc.number ACTS_StageContext_Static_1000
+     * @tc.desc   test EventHub test different events
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1000', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1000';
@@ -221,9 +246,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1100
-     * @tc.name       ACTS_StageContext_Static_1100
-     * @tc.desc       test EventHub test repeat on/off
+     * @tc.name   ACTS_StageContext_Static_1100
+     * @tc.number ACTS_StageContext_Static_1100
+     * @tc.desc   test EventHub test repeat on/off
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1100';
@@ -244,9 +272,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1200
-     * @tc.name       ACTS_StageContext_Static_1200
-     * @tc.desc       test EventHub test call off() in callback
+     * @tc.name   ACTS_StageContext_Static_1200
+     * @tc.number ACTS_StageContext_Static_1200
+     * @tc.desc   test EventHub test call off() in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1200';
@@ -275,9 +306,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1300
-     * @tc.name       ACTS_StageContext_Static_1300
-     * @tc.desc       test EventHub test call off() in callback
+     * @tc.name   ACTS_StageContext_Static_1300
+     * @tc.number ACTS_StageContext_Static_1300
+     * @tc.desc   test EventHub test call off() in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1300';
@@ -304,9 +338,12 @@ export default function actsStageContextTestStatic() {
     })
 
     /**
-     * @tc.number     ACTS_StageContext_Static_1400
-     * @tc.name       ACTS_StageContext_Static_1400
-     * @tc.desc       test EventHub test call on/off in callback
+     * @tc.name   ACTS_StageContext_Static_1400
+     * @tc.number ACTS_StageContext_Static_1400
+     * @tc.desc   test EventHub test call on/off in callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ACTS_StageContext_Static_1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       const itName = 'ACTS_StageContext_Static_1400';

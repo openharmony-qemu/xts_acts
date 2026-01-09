@@ -301,6 +301,18 @@ function getSupportedCameraOutputCapability() {
   return true;
 }
 
+function getSupportedCameraFullOutputCapability() {
+  let cameraOutputCapability = cameraObj.getSupportedFullOutputCapability();
+  console.info(TAG + 'cameraOutputCapability[0] = ' + cameraOutputCapability.previewProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[1] = ' + cameraOutputCapability.photoProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[2] = ' + cameraOutputCapability.videoProfilesSize);
+  console.info(TAG + 'cameraOutputCapability[3] = ' + cameraOutputCapability.metadataProfilesSize);
+  return true;
+}
+function adjustHeifIdx(idx: number) {
+  return cameraObj.adjustHeifIdx(idx);
+}
+
 function setSessionMode() {
   let ret = cameraObj.oHCaptureSessionSetSessionMode(Parameter_Setting.ALL_PARAMETER_OK);
   if (ret != 0) {
@@ -425,6 +437,19 @@ function captureSessionstart() {
   sessionFlow();
 }
 
+function heifCaptureSessionstart(i: number) {
+  getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+  setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+  setSessionMode();
+  createHeifPreviewOutput();
+  createCameraInput();
+  sessionFlow();
+  let ret = createHeifPhotoOutput(i);
+  addPhotoOutput();
+  sessionCommitConfig();
+  return ret;
+}
+
 function nativeBufferColorSpace() {
   let ret = cameraObj.oHNativeBufferColorSpace();
   console.info(TAG + "oHNativeBufferColorSpace.colorSpaceSupportSize: " + ret.colorSpaceSupportSize);
@@ -457,12 +482,38 @@ function createPreviewOutput() {
   }
 }
 
+function createHeifPreviewOutput() {
+  let previewProfiles = cameraObj.getPreviewProfiles();
+  console.info("previewProfiles is "+ JSON.stringify(previewProfiles));
+  let previewProfileIndex = 0;
+  let previewProfileHeigth = 1080;
+  let previewProfileWidth = 1920;
+  //View the previewprofile with an aspect ratio of 4:3
+  for (let i = 0; i < previewProfiles.length; i++) {
+    if (Math.abs((previewProfiles[i].width / previewProfiles[i].height) - (4 / 3)) < 0.1) {
+      previewProfileWidth = previewProfiles[i].width;
+      previewProfileHeigth = previewProfiles[i].height;
+      previewProfileIndex = i;
+      break;
+    }
+  }
+  if (cameraObj.createPreviewOutputByIndex(previewProfileIndex)) {
+    console.info(TAG + "createPreviewOutput FAILED");
+    expect().assertFail();
+  }
+}
+
 function createPhotoOutput() {
   let mPhotoOutput = cameraObj.createPhotoOutput(mPhotoSurface);
   if (mPhotoOutput != 0) {
     console.info(TAG + "mPhotoOutput FAILED");
     expect().assertFail();
   }
+}
+
+function createHeifPhotoOutput(i: number) {
+  let mPhotoOutput = cameraObj.createHeifPhotoOutput(mPhotoSurface, i);
+  return mPhotoOutput;
 }
 
 let getPermissions1 = () => {
@@ -646,12 +697,12 @@ export default function PhotoTest() {
     afterAll(() => {
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0100
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputWithoutSurface0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputWithoutSurface in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputWithoutSurface0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0100
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputWithoutSurface in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputWithoutSurface0100', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -663,13 +714,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0200
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputWithoutSurface0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputWithoutSurface in abnormal condition, the first
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputWithoutSurface0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0200
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputWithoutSurface in abnormal condition, the first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputWithoutSurface0200', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -681,13 +731,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0300
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputWithoutSurface0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputWithoutSurface in abnormal condition, the second
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputWithoutSurface0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0300
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputWithoutSurface in abnormal condition, the second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputWithoutSurface0300', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -699,13 +748,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0400
-     * @tc.name       : testOHCameraManagerCreatePhotoOutputWithoutSurface0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CameraManager_CreatePhotoOutputWithoutSurface in abnormal condition, the third
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCameraManagerCreatePhotoOutputWithoutSurface0400
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHCameraManagerCreatePhotoOutputWithoutSurface0400
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutputWithoutSurface in abnormal condition, the third
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCameraManagerCreatePhotoOutputWithoutSurface0400', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -717,12 +765,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAvailableCallback0100
-     * @tc.name       : testOHPhotoOutputRegisterPhotoAvailableCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterPhotoAvailableCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterPhotoAvailableCallback0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAvailableCallback0100
+     * @tc.desc   Test OH_PhotoOutput_RegisterPhotoAvailableCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterPhotoAvailableCallback0100', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -735,13 +783,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAvailableCallback0200
-     * @tc.name       : testOHPhotoOutputRegisterPhotoAvailableCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterPhotoAvailableCallback in abnormal condition, the first parameter
-     *                  is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterPhotoAvailableCallback0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAvailableCallback0200
+     * @tc.desc   Test OH_PhotoOutput_RegisterPhotoAvailableCallback in abnormal condition, the first parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterPhotoAvailableCallback0200', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -754,13 +801,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAvailableCallback0300
-     * @tc.name       : testOHPhotoOutputRegisterPhotoAvailableCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterPhotoAvailableCallback in abnormal condition, the second parameter
-     *                  is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterPhotoAvailableCallback0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAvailableCallback0300
+     * @tc.desc   Test OH_PhotoOutput_RegisterPhotoAvailableCallback in abnormal condition, the second parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterPhotoAvailableCallback0300', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -773,12 +819,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAvailableCallback0100
-     * @tc.name       : testOHPhotoOutputUnregisterPhotoAvailableCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterPhotoAvailableCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterPhotoAvailableCallback0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAvailableCallback0100
+     * @tc.desc   Test OH_PhotoOutput_UnregisterPhotoAvailableCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterPhotoAvailableCallback0100', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -792,13 +838,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAvailableCallback0200
-     * @tc.name       : testOHPhotoOutputUnregisterPhotoAvailableCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterPhotoAvailableCallback in abnormal condition, the first parameter
-     *                  is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterPhotoAvailableCallback0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAvailableCallback0200
+     * @tc.desc   Test OH_PhotoOutput_UnregisterPhotoAvailableCallback in abnormal condition, the first parameter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterPhotoAvailableCallback0200', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -812,13 +857,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAvailableCallback0300
-     * @tc.name       : testOHPhotoOutputUnregisterPhotoAvailableCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterPhotoAvailableCallback in abnormal condition, the second
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterPhotoAvailableCallback0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAvailableCallback0300
+     * @tc.desc   Test OH_PhotoOutput_UnregisterPhotoAvailableCallback in abnormal condition, the second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterPhotoAvailableCallback0300', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -832,12 +876,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAssetAvailableCallback0100
-     * @tc.name       : testOHPhotoOutputRegisterPhotoAssetAvailableCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterPhotoAssetAvailableCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterPhotoAssetAvailableCallback0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAssetAvailableCallback0100
+     * @tc.desc   Test OH_PhotoOutput_RegisterPhotoAssetAvailableCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterPhotoAssetAvailableCallback0100', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -850,13 +894,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAssetAvailableCallback0200
-     * @tc.name       : testOHPhotoOutputRegisterPhotoAssetAvailableCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterPhotoAssetAvailableCallback in abnormal condition, the first
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterPhotoAssetAvailableCallback0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAssetAvailableCallback0200
+     * @tc.desc   Test OH_PhotoOutput_RegisterPhotoAssetAvailableCallback in abnormal condition, the first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterPhotoAssetAvailableCallback0200', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -869,13 +912,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAssetAvailableCallback0300
-     * @tc.name       : testOHPhotoOutputRegisterPhotoAssetAvailableCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterPhotoAssetAvailableCallback in abnormal condition, the second
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterPhotoAssetAvailableCallback0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputRegisterPhotoAssetAvailableCallback0300
+     * @tc.desc   Test OH_PhotoOutput_RegisterPhotoAssetAvailableCallback in abnormal condition, the second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterPhotoAssetAvailableCallback0300', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -888,12 +930,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAssetAvailableCallback0100
-     * @tc.name       : testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAssetAvailableCallback0100
+     * @tc.desc   Test OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0100', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -907,13 +949,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAssetAvailableCallback0200
-     * @tc.name       : testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback in abnormal condition, the first
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAssetAvailableCallback0200
+     * @tc.desc   Test OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback in abnormal condition, the first
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0200', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -927,13 +968,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAssetAvailableCallback0300
-     * @tc.name       : testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback in abnormal condition, the second
-     *                  parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputUnregisterPhotoAssetAvailableCallback0300
+     * @tc.desc   Test OH_PhotoOutput_UnregisterPhotoAssetAvailableCallback in abnormal condition, the second
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterPhotoAssetAvailableCallback0300', Level.LEVEL0, () => {
       readyCreatePhotoOutputWithoutSurface();
@@ -947,12 +987,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0100
-     * @tc.name       : testOHPhotoOutputIsMovingPhotoSupported0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsMovingPhotoSupported in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsMovingPhotoSupported0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0100
+     * @tc.desc   Test OH_PhotoOutput_IsMovingPhotoSupported in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsMovingPhotoSupported0100', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -971,12 +1011,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0200
-     * @tc.name       : testOHPhotoOutputIsMovingPhotoSupported0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsMovingPhotoSupported in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsMovingPhotoSupported0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0200
+     * @tc.desc   Test OH_PhotoOutput_IsMovingPhotoSupported in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsMovingPhotoSupported0200', Level.LEVEL0, () => {
       let canPreconfig = preconfig();
@@ -996,12 +1036,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0300
-     * @tc.name       : testOHPhotoOutputIsMovingPhotoSupported0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsMovingPhotoSupported in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsMovingPhotoSupported0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0300
+     * @tc.desc   Test OH_PhotoOutput_IsMovingPhotoSupported in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsMovingPhotoSupported0300', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1016,12 +1056,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0400
-     * @tc.name       : testOHPhotoOutputIsMovingPhotoSupported0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsMovingPhotoSupported in abnormal condition, the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsMovingPhotoSupported0400
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsMovingPhotoSupported0400
+     * @tc.desc   Test OH_PhotoOutput_IsMovingPhotoSupported in abnormal condition, the second parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsMovingPhotoSupported0400', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1036,12 +1076,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0100
-     * @tc.name       : testOHPhotoOutputEnableMovingPhoto0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputEnableMovingPhoto0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0100
+     * @tc.desc   Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputEnableMovingPhoto0100', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1061,12 +1101,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0200
-     * @tc.name       : testOHPhotoOutputEnableMovingPhoto0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputEnableMovingPhoto0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0200
+     * @tc.desc   Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputEnableMovingPhoto0200', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1086,12 +1126,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0300
-     * @tc.name       : testOHPhotoOutputEnableMovingPhoto0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputEnableMovingPhoto0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0300
+     * @tc.desc   Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputEnableMovingPhoto0300', Level.LEVEL0, () => {
       let canPreconfig = preconfig();
@@ -1112,12 +1152,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0400
-     * @tc.name       : testOHPhotoOutputEnableMovingPhoto0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputEnableMovingPhoto0400
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0400
+     * @tc.desc   Test OH_PhotoOutput_EnableMovingPhoto in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputEnableMovingPhoto0400', Level.LEVEL0, () => {
       let canPreconfig = preconfig();
@@ -1138,12 +1178,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0500
-     * @tc.name       : testOHPhotoOutputEnableMovingPhoto0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_EnableMovingPhoto in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputEnableMovingPhoto0500
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputEnableMovingPhoto0500
+     * @tc.desc   Test OH_PhotoOutput_EnableMovingPhoto in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputEnableMovingPhoto0500', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1160,12 +1200,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0100
-     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsPhotoQualityPrioritizationSupported0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0100
+     * @tc.desc   Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0100', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1186,12 +1226,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0200
-     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsPhotoQualityPrioritizationSupported0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0200
+     * @tc.desc   Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0200', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1212,12 +1252,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0300
-     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsPhotoQualityPrioritizationSupported0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0300
+     * @tc.desc   Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0300', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1234,12 +1274,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0400
-     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when the second parameter is invalid.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsPhotoQualityPrioritizationSupported0400
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0400
+     * @tc.desc   Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when the second parameter is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0400', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1256,12 +1296,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0500
-     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in abnormal condition, the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsPhotoQualityPrioritizationSupported0500
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0500
+     * @tc.desc   Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported in abnormal condition, the third parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0500', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1278,12 +1318,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0600
-     * @tc.name       : testOHPhotoOutputIsPhotoQualityPrioritizationSupported0600
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when session is not config.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputIsPhotoQualityPrioritizationSupported0600
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputIsPhotoQualityPrioritizationSupported_0600
+     * @tc.desc   Test OH_PhotoOutput_IsPhotoQualityPrioritizationSupported when session is not config.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputIsPhotoQualityPrioritizationSupported0600', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1298,12 +1338,12 @@ export default function PhotoTest() {
       expect(ret.errorCode).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0100
-     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputSetPhotoQualityPrioritization0100
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0100
+     * @tc.desc   Test OH_PhotoOutput_SetPhotoQualityPrioritization in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputSetPhotoQualityPrioritization0100', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1322,12 +1362,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0200
-     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputSetPhotoQualityPrioritization0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0200
+     * @tc.desc   Test OH_PhotoOutput_SetPhotoQualityPrioritization in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputSetPhotoQualityPrioritization0200', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1346,12 +1386,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0300
-     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization when the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputSetPhotoQualityPrioritization0300
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0300
+     * @tc.desc   Test OH_PhotoOutput_SetPhotoQualityPrioritization when the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputSetPhotoQualityPrioritization0300', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1366,12 +1406,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0400
-     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization when the second parameter is invalid.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputSetPhotoQualityPrioritization0400
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0400
+     * @tc.desc   Test OH_PhotoOutput_SetPhotoQualityPrioritization when the second parameter is invalid.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputSetPhotoQualityPrioritization0400', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1386,12 +1426,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0500
-     * @tc.name       : testOHPhotoOutputSetPhotoQualityPrioritization0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_SetPhotoQualityPrioritization when session is not commit.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputSetPhotoQualityPrioritization0500
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoOutputSetPhotoQualityPrioritization_0500
+     * @tc.desc   Test OH_PhotoOutput_SetPhotoQualityPrioritization when session is not commit.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputSetPhotoQualityPrioritization0500', Level.LEVEL0, () => {
       createPreviewOutput();
@@ -1404,12 +1444,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OPERATION_NOT_ALLOWED);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeGetMain0200
-     * @tc.name       : testOHPhotoNativeGetMain0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoNative_GetMainImage in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoNativeGetMain0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeGetMain0200
+     * @tc.desc   Test OH_PhotoNative_GetMainImage in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoNativeGetMain0200', Level.LEVEL0, () => {
       let ret = cameraObj.oHPhotoNativeGetMainImage(Parameter_Setting.FIRST_PARAMETER_ERROR);
@@ -1417,12 +1457,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeRelease0100
-     * @tc.name       : testOHPhotoNativeRelease0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoNative_Release in abnormal condition, the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoNativeRelease0200
+     * @tc.number SUB_MULTIMEDIA_OHCAMERANDK_OHPhotoNativeRelease0100
+     * @tc.desc   Test OH_PhotoNative_Release in abnormal condition, the first parameter is null.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoNativeRelease0200', Level.LEVEL0, () => {
       let ret = cameraObj.oHPhotoNativeRelease(Parameter_Setting.FIRST_PARAMETER_ERROR);
@@ -1430,12 +1470,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureStartWithInfoCallback0100
-     * @tc.name       : testOHPhotoOutputRegisterCaptureStartWithInfoCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureStartWithInfoCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureStartWithInfoCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureStartWithInfoCallback0100
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureStartWithInfoCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureStartWithInfoCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1444,13 +1484,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureStartWithInfoCallback0200
-     * @tc.name       : testOHPhotoOutputRegisterCaptureStartWithInfoCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureStartWithInfoCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureStartWithInfoCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureStartWithInfoCallback0200
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureStartWithInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureStartWithInfoCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1459,13 +1498,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureStartWithInfoCallback0300
-     * @tc.name       : testOHPhotoOutputRegisterCaptureStartWithInfoCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureStartWithInfoCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureStartWithInfoCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureStartWithInfoCallback0300
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureStartWithInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureStartWithInfoCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1474,12 +1512,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureStartWithInfoCallback0100
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureStartWithInfoCallback0100
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1488,13 +1526,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureStartWithInfoCallback0200
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureStartWithInfoCallback0200
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1503,13 +1540,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureStartWithInfoCallback0300
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureStartWithInfoCallback0300
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureStartWithInfoCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureStartWithInfoCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1519,12 +1555,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureEndCallback0100
-     * @tc.name       : testOHPhotoOutputRegisterCaptureEndCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureEndCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureEndCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureEndCallback0100
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureEndCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureEndCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1533,13 +1569,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureEndCallback0200
-     * @tc.name       : testOHPhotoOutputRegisterCaptureEndCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureEndCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureEndCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureEndCallback0200
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureEndCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1548,13 +1583,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureEndCallback0300
-     * @tc.name       : testOHPhotoOutputRegisterCaptureEndCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureEndCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureEndCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureEndCallback0300
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureEndCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1563,12 +1597,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureEndCallback0100
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureEndCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureEndCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureEndCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureEndCallback0100
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureEndCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureEndCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1577,13 +1611,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureEndCallback0200
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureEndCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureEndCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureEndCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureEndCallback0200
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureEndCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1592,13 +1625,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureEndCallback0300
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureEndCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureEndCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureEndCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureEndCallback0300
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureEndCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1607,12 +1639,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterFrameShutterEndCallback0100
-     * @tc.name       : testOHPhotoOutputRegisterFrameShutterEndCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterFrameShutterEndCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterFrameShutterEndCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterFrameShutterEndCallback0100
+     * @tc.desc   Test OH_PhotoOutput_RegisterFrameShutterEndCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterFrameShutterEndCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1621,13 +1653,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterFrameShutterEndCallback0200
-     * @tc.name       : testOHPhotoOutputRegisterFrameShutterEndCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterFrameShutterEndCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterFrameShutterEndCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterFrameShutterEndCallback0200
+     * @tc.desc   Test OH_PhotoOutput_RegisterFrameShutterEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterFrameShutterEndCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1636,13 +1667,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterFrameShutterEndCallback0300
-     * @tc.name       : testOHPhotoOutputRegisterFrameShutterEndCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterFrameShutterEndCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterFrameShutterEndCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterFrameShutterEndCallback0300
+     * @tc.desc   Test OH_PhotoOutput_RegisterFrameShutterEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterFrameShutterEndCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1651,12 +1681,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterFrameShutterEndCallback0100
-     * @tc.name       : testOHPhotoOutputUnregisterFrameShutterEndCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterFrameShutterEndCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterFrameShutterEndCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterFrameShutterEndCallback0100
+     * @tc.desc   Test OH_PhotoOutput_UnregisterFrameShutterEndCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterFrameShutterEndCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1665,13 +1695,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterFrameShutterEndCallback0200
-     * @tc.name       : testOHPhotoOutputUnregisterFrameShutterEndCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterFrameShutterEndCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterFrameShutterEndCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterFrameShutterEndCallback0200
+     * @tc.desc   Test OH_PhotoOutput_UnregisterFrameShutterEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterFrameShutterEndCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1680,13 +1709,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterFrameShutterEndCallback0300
-     * @tc.name       : testOHPhotoOutputUnregisterFrameShutterEndCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterFrameShutterEndCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterFrameShutterEndCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterFrameShutterEndCallback0300
+     * @tc.desc   Test OH_PhotoOutput_UnregisterFrameShutterEndCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterFrameShutterEndCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1695,12 +1723,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureReadyCallback0100
-     * @tc.name       : testOHPhotoOutputRegisterCaptureReadyCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureReadyCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureReadyCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureReadyCallback0100
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureReadyCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureReadyCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1709,13 +1737,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureReadyCallback0200
-     * @tc.name       : testOHPhotoOutputRegisterCaptureReadyCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureReadyCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureReadyCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureReadyCallback0200
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureReadyCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureReadyCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1724,13 +1751,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureReadyCallback0300
-     * @tc.name       : testOHPhotoOutputRegisterCaptureReadyCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterCaptureReadyCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterCaptureReadyCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterCaptureReadyCallback0300
+     * @tc.desc   Test OH_PhotoOutput_RegisterCaptureReadyCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterCaptureReadyCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1739,12 +1765,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureReadyCallback0100
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureReadyCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureReadyCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureReadyCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureReadyCallback0100
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureReadyCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureReadyCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1753,13 +1779,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureReadyCallback0200
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureReadyCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureReadyCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureReadyCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureReadyCallback0200
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureReadyCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureReadyCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1768,13 +1793,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureReadyCallback0300
-     * @tc.name       : testOHPhotoOutputUnregisterCaptureReadyCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterCaptureReadyCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterCaptureReadyCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterCaptureReadyCallback0300
+     * @tc.desc   Test OH_PhotoOutput_UnregisterCaptureReadyCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterCaptureReadyCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1783,12 +1807,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterEstimatedCaptureDurationCallback0100
-     * @tc.name       : testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterEstimatedCaptureDurationCallback0100
+     * @tc.desc   Test OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1797,13 +1821,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterEstimatedCaptureDurationCallback0200
-     * @tc.name       : testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterEstimatedCaptureDurationCallback0200
+     * @tc.desc   Test OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1813,13 +1836,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterEstimatedCaptureDurationCallback0300
-     * @tc.name       : testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputRegisterEstimatedCaptureDurationCallback0300
+     * @tc.desc   Test OH_PhotoOutput_RegisterEstimatedCaptureDurationCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputRegisterEstimatedCaptureDurationCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1829,12 +1851,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterEstimatedCaptureDurationCallback0100
-     * @tc.name       : testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterEstimatedCaptureDurationCallback0100
+     * @tc.desc   Test OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0100', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1843,13 +1865,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterEstimatedCaptureDurationCallback0200
-     * @tc.name       : testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterEstimatedCaptureDurationCallback0200
+     * @tc.desc   Test OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0200', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1859,13 +1880,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterEstimatedCaptureDurationCallback0300
-     * @tc.name       : testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPhotoOutputUnregisterEstimatedCaptureDurationCallback0300
+     * @tc.desc   Test OH_PhotoOutput_UnregisterEstimatedCaptureDurationCallback in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputUnregisterEstimatedCaptureDurationCallback0300', Level.LEVEL0, () => {
       createPhotoOutput();
@@ -1875,12 +1895,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetSupportedFrameRates0100
-     * @tc.name       : testOHVideoOutputGetSupportedFrameRates0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetSupportedFrameRates in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetSupportedFrameRates0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetSupportedFrameRates0100
+     * @tc.desc   Test OH_VideoOutput_GetSupportedFrameRates in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetSupportedFrameRates0100', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -1889,13 +1909,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetSupportedFrameRates0200
-     * @tc.name       : testOHVideoOutputGetSupportedFrameRates0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetSupportedFrameRates in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetSupportedFrameRates0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetSupportedFrameRates0200
+     * @tc.desc   Test OH_VideoOutput_GetSupportedFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetSupportedFrameRates0200', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -1904,13 +1923,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetSupportedFrameRates0300
-     * @tc.name       : testOHVideoOutputGetSupportedFrameRates0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetSupportedFrameRates in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetSupportedFrameRates0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetSupportedFrameRates0300
+     * @tc.desc   Test OH_VideoOutput_GetSupportedFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetSupportedFrameRates0300', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -1919,12 +1937,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputDeleteFrameRates0100
-     * @tc.name       : testOHVideoOutputDeleteFrameRates0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_DeleteFrameRates in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputDeleteFrameRates0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputDeleteFrameRates0100
+     * @tc.desc   Test OH_VideoOutput_DeleteFrameRates in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputDeleteFrameRates0100', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -1937,13 +1955,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputDeleteFrameRates0200
-     * @tc.name       : testOHVideoOutputDeleteFrameRates0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_DeleteFrameRates in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputDeleteFrameRates0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputDeleteFrameRates0200
+     * @tc.desc   Test OH_VideoOutput_DeleteFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputDeleteFrameRates0200', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -1953,13 +1970,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputDeleteFrameRates0300
-     * @tc.name       : testOHVideoOutputDeleteFrameRates0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_DeleteFrameRates in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputDeleteFrameRates0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputDeleteFrameRates0300
+     * @tc.desc   Test OH_VideoOutput_DeleteFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputDeleteFrameRates0300', Level.LEVEL0, async () => {
 
@@ -1970,12 +1986,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetActiveFrameRate0100
-     * @tc.name       : testOHVideoOutputGetActiveFrameRate0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveFrameRate in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveFrameRate0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetActiveFrameRate0100
+     * @tc.desc   Test OH_VideoOutput_GetActiveFrameRate in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveFrameRate0100', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -1986,13 +2002,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetActiveFrameRate0200
-     * @tc.name       : testOHVideoOutputGetActiveFrameRate0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveFrameRate in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveFrameRate0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetActiveFrameRate0200
+     * @tc.desc   Test OH_VideoOutput_GetActiveFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveFrameRate0200', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -2002,13 +2017,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetActiveFrameRate0300
-     * @tc.name       : testOHVideoOutputGetActiveFrameRate0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_GetActiveFrameRate in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputGetActiveFrameRate0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputGetActiveFrameRate0300
+     * @tc.desc   Test OH_VideoOutput_GetActiveFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputGetActiveFrameRate0300', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -2018,12 +2032,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0100
-     * @tc.name       : testOHVideoOutputSetFrameRate0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_SetFrameRate in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputSetFrameRate0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0100
+     * @tc.desc   Test OH_VideoOutput_SetFrameRate in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputSetFrameRate0100', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -2036,13 +2050,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0200
-     * @tc.name       : testOHVideoOutputSetFrameRate0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_SetFrameRate in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputSetFrameRate0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0200
+     * @tc.desc   Test OH_VideoOutput_SetFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputSetFrameRate0200', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -2053,13 +2066,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0300
-     * @tc.name       : testOHVideoOutputSetFrameRate0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_SetFrameRate in abnormal condition,
-     *                  FrameRates is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputSetFrameRate0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0300
+     * @tc.desc   Test OH_VideoOutput_SetFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputSetFrameRate0300', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -2072,13 +2084,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0400
-     * @tc.name       : testOHVideoOutputSetFrameRate0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_VideoOutput_SetFrameRate in abnormal condition,
-     *                  the second and third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHVideoOutputSetFrameRate0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHVideoOutputSetFrameRate0400
+     * @tc.desc   Test OH_VideoOutput_SetFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHVideoOutputSetFrameRate0400', Level.LEVEL0, async () => {
       await videoOutputFrameRate();
@@ -2090,12 +2101,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0100
-     * @tc.name       : testOHPreviewOutputGetSupportedFrameRates0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetSupportedFrameRates in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetSupportedFrameRates0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0100
+     * @tc.desc   Test OH_PreviewOutput_GetSupportedFrameRates in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetSupportedFrameRates0100', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2105,13 +2116,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0200
-     * @tc.name       : testOHPreviewOutputGetSupportedFrameRates0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetSupportedFrameRates in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetSupportedFrameRates0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0200
+     * @tc.desc   Test OH_PreviewOutput_GetSupportedFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetSupportedFrameRates0200', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2121,13 +2131,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0300
-     * @tc.name       : testOHPreviewOutputGetSupportedFrameRates0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetSupportedFrameRates in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetSupportedFrameRates0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0300
+     * @tc.desc   Test OH_PreviewOutput_GetSupportedFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetSupportedFrameRates0300', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2137,13 +2146,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0400
-     * @tc.name       : testOHPreviewOutputGetSupportedFrameRates0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetSupportedFrameRates in abnormal condition,
-     *                  the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetSupportedFrameRates0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetSupportedFrameRates0400
+     * @tc.desc   Test OH_PreviewOutput_GetSupportedFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetSupportedFrameRates0400', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2153,12 +2161,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputDeleteFrameRates0100
-     * @tc.name       : testOHPreviewOutputDeleteFrameRates0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_DeleteFrameRates in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputDeleteFrameRates0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputDeleteFrameRates0100
+     * @tc.desc   Test OH_PreviewOutput_DeleteFrameRates in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputDeleteFrameRates0100', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2172,13 +2180,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputDeleteFrameRates0200
-     * @tc.name       : testOHPreviewOutputDeleteFrameRates0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_DeleteFrameRates in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputDeleteFrameRates0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputDeleteFrameRates0200
+     * @tc.desc   Test OH_PreviewOutput_DeleteFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputDeleteFrameRates0200', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2189,13 +2196,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputDeleteFrameRates0300
-     * @tc.name       : testOHPreviewOutputDeleteFrameRates0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_DeleteFrameRates in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputDeleteFrameRates0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputDeleteFrameRates0300
+     * @tc.desc   Test OH_PreviewOutput_DeleteFrameRates in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputDeleteFrameRates0300', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2206,12 +2212,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetActiveFrameRate0100
-     * @tc.name       : testOHPreviewOutputGetActiveFrameRate0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveFrameRate in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveFrameRate0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetActiveFrameRate0100
+     * @tc.desc   Test OH_PreviewOutput_GetActiveFrameRate in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveFrameRate0100', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2225,13 +2231,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetActiveFrameRate0200
-     * @tc.name       : testOHPreviewOutputGetActiveFrameRate0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveFrameRate in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveFrameRate0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetActiveFrameRate0200
+     * @tc.desc   Test OH_PreviewOutput_GetActiveFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveFrameRate0200', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2242,13 +2247,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetActiveFrameRate0300
-     * @tc.name       : testOHPreviewOutputGetActiveFrameRate0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_GetActiveFrameRate in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputGetActiveFrameRate0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputGetActiveFrameRate0300
+     * @tc.desc   Test OH_PreviewOutput_GetActiveFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputGetActiveFrameRate0300', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2259,12 +2263,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0100
-     * @tc.name       : testOHPreviewOutputSetFrameRate0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_SetFrameRate in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputSetFrameRate0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0100
+     * @tc.desc   Test OH_PreviewOutput_SetFrameRate in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputSetFrameRate0100', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2281,13 +2285,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0200
-     * @tc.name       : testOHPreviewOutputSetFrameRate0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_SetFrameRate in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputSetFrameRate0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0200
+     * @tc.desc   Test OH_PreviewOutput_SetFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputSetFrameRate0200', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2299,13 +2302,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0300
-     * @tc.name       : testOHPreviewOutputSetFrameRate0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_SetFrameRate in abnormal condition,
-     *                  FrameRates is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputSetFrameRate0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0300
+     * @tc.desc   Test OH_PreviewOutput_SetFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputSetFrameRate0300', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2320,13 +2322,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0400
-     * @tc.name       : testOHPreviewOutputSetFrameRate0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_PreviewOutput_SetFrameRate in abnormal condition,
-     *                  the second and third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHPreviewOutputSetFrameRate0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHPreviewOutputSetFrameRate0400
+     * @tc.desc   Test OH_PreviewOutput_SetFrameRate in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHPreviewOutputSetFrameRate0400', Level.LEVEL0, () => {
       getSupportedCameraOutputCapability();
@@ -2341,12 +2342,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetExposureValue0100
-     * @tc.name       : testOHCaptureSessionGetExposureValue0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetExposureValue in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetExposureValue0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetExposureValue0100
+     * @tc.desc   Test OH_CaptureSession_GetExposureValue in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetExposureValue0100', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2356,13 +2357,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetExposureValue0200
-     * @tc.name       : testOHCaptureSessionGetExposureValue0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetExposureValue in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetExposureValue0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetExposureValue0200
+     * @tc.desc   Test OH_CaptureSession_GetExposureValue in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetExposureValue0200', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2371,13 +2371,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetExposureValue0300
-     * @tc.name       : testOHCaptureSessionGetExposureValue0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetExposureValue in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetExposureValue0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetExposureValue0300
+     * @tc.desc   Test OH_CaptureSession_GetExposureValue in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetExposureValue0300', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2386,12 +2385,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetFocalLength0100
-     * @tc.name       : testOHCaptureSessionGetFocalLength0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetFocalLength in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetFocalLength0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetFocalLength0100
+     * @tc.desc   Test OH_CaptureSession_GetFocalLength in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetFocalLength0100', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2401,13 +2400,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetFocalLength0200
-     * @tc.name       : testOHCaptureSessionGetFocalLength0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetFocalLength in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetFocalLength0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetFocalLength0200
+     * @tc.desc   Test OH_CaptureSession_GetFocalLength in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetFocalLength0200', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2416,13 +2414,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetFocalLength0300
-     * @tc.name       : testOHCaptureSessionGetFocalLength0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetFocalLength in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetFocalLength0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetFocalLength0300
+     * @tc.desc   Test OH_CaptureSession_GetFocalLength in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetFocalLength0300', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2431,12 +2428,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0100
-     * @tc.name       : testOHCaptureSessionSetSmoothZoom0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSmoothZoom in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSmoothZoom0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0100
+     * @tc.desc   Test OH_CaptureSession_SetSmoothZoom in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSmoothZoom0100', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2446,13 +2443,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0200
-     * @tc.name       : testOHCaptureSessionSetSmoothZoom0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSmoothZoom in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSmoothZoom0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0200
+     * @tc.desc   Test OH_CaptureSession_SetSmoothZoom in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSmoothZoom0200', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2461,12 +2457,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0300
-     * @tc.name       : testOHCaptureSessionSetSmoothZoom0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetSmoothZoom in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetSmoothZoom0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetSmoothZoom0300
+     * @tc.desc   Test OH_CaptureSession_SetSmoothZoom in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetSmoothZoom0300', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2476,12 +2472,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0100
-     * @tc.name       : testOHCaptureSessionGetSupportedColorSpaces0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetSupportedColorSpaces in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetSupportedColorSpaces0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0100
+     * @tc.desc   Test OH_CaptureSession_GetSupportedColorSpaces in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetSupportedColorSpaces0100', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2490,13 +2486,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_OK);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0200
-     * @tc.name       : testOHCaptureSessionGetSupportedColorSpaces0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetSupportedColorSpaces in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetSupportedColorSpaces0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0200
+     * @tc.desc   Test OH_CaptureSession_GetSupportedColorSpaces in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetSupportedColorSpaces0200', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2505,13 +2500,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0300
-     * @tc.name       : testOHCaptureSessionGetSupportedColorSpaces0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetSupportedColorSpaces in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetSupportedColorSpaces0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0300
+     * @tc.desc   Test OH_CaptureSession_GetSupportedColorSpaces in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetSupportedColorSpaces0300', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2520,13 +2514,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0400
-     * @tc.name       : testOHCaptureSessionGetSupportedColorSpaces0400
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetSupportedColorSpaces in abnormal condition,
-     *                  the third parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionGetSupportedColorSpaces0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetSupportedColorSpaces0400
+     * @tc.desc   Test OH_CaptureSession_GetSupportedColorSpaces in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetSupportedColorSpaces0400', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2535,12 +2528,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionDeleteColorSpaces0100
-     * @tc.name       : testOHCaptureSessionDeleteColorSpaces0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_DeleteColorSpaces in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionDeleteColorSpaces0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionDeleteColorSpaces0100
+     * @tc.desc   Test OH_CaptureSession_DeleteColorSpaces in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionDeleteColorSpaces0100', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2553,13 +2546,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionDeleteColorSpaces0200
-     * @tc.name       : testOHCaptureSessionDeleteColorSpaces0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_DeleteColorSpaces in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionDeleteColorSpaces0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionDeleteColorSpaces0200
+     * @tc.desc   Test OH_CaptureSession_DeleteColorSpaces in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionDeleteColorSpaces0200', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2569,13 +2561,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionDeleteColorSpaces0300
-     * @tc.name       : testOHCaptureSessionDeleteColorSpaces0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_DeleteColorSpaces in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionDeleteColorSpaces0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionDeleteColorSpaces0300
+     * @tc.desc   Test OH_CaptureSession_DeleteColorSpaces in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionDeleteColorSpaces0300', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2584,13 +2575,13 @@ export default function PhotoTest() {
       console.info(TAG+"testOHCaptureSessionDeleteColorSpaces0300:"+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
-    /**ret
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetActiveColorSpace0100
-     * @tc.name       : testOHCaptureSessionGetActiveColorSpace0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetActiveColorSpace in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   testOHCaptureSessionGetActiveColorSpace0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetActiveColorSpace0100
+     * @tc.desc   Test OH_CaptureSession_GetActiveColorSpace in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetActiveColorSpace0100', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2602,14 +2593,13 @@ export default function PhotoTest() {
         console.error(TAG+"GetSupportedColorSpaces not supported!");
       }
     })
-    /**ret
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetActiveColorSpace0200
-     * @tc.name       : testOHCaptureSessionGetActiveColorSpace0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetActiveColorSpace in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   testOHCaptureSessionGetActiveColorSpace0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetActiveColorSpace0200
+     * @tc.desc   Test OH_CaptureSession_GetActiveColorSpace in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetActiveColorSpace0200', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2618,14 +2608,13 @@ export default function PhotoTest() {
       console.info(TAG+"testOHCaptureSessionGetActiveColorSpace0200:"+ret);
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
-    /**ret
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetActiveColorSpace0300
-     * @tc.name       : testOHCaptureSessionGetActiveColorSpace0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_GetActiveColorSpace in abnormal condition,
-     *                  the second parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   testOHCaptureSessionGetActiveColorSpace0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionGetActiveColorSpace0300
+     * @tc.desc   Test OH_CaptureSession_GetActiveColorSpace in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionGetActiveColorSpace0300', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2635,12 +2624,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0100
-     * @tc.name       : testOHCaptureSessionSetActiveColorSpace0100
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetActiveColorSpace in normal condition.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetActiveColorSpace0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0100
+     * @tc.desc   Test OH_CaptureSession_SetActiveColorSpace in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetActiveColorSpace0100', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2655,13 +2644,12 @@ export default function PhotoTest() {
       }
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0200
-     * @tc.name       : testOHCaptureSessionSetActiveColorSpace0200
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetActiveColorSpace in abnormal condition,
-     *                  the first parameter is null.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetActiveColorSpace0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0200
+     * @tc.desc   Test OH_CaptureSession_SetActiveColorSpace in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetActiveColorSpace0200', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2671,13 +2659,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0300
-     * @tc.name       : testOHCaptureSessionSetActiveColorSpace0300
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetActiveColorSpace in abnormal condition,
-     *                  the second parameter is an exceptional value.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetActiveColorSpace0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0300
+     * @tc.desc   Test OH_CaptureSession_SetActiveColorSpace in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetActiveColorSpace0300', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2687,13 +2674,12 @@ export default function PhotoTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0500
-     * @tc.name       : testOHCaptureSessionSetActiveColorSpace0500
-     * @tc.size       : MediumTest
-     * @tc.desc       : Test OH_CaptureSession_SetActiveColorSpace in abnormal condition,
-     *                  ActiveColorSpace is not supported.
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOHCaptureSessionSetActiveColorSpace0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCaptureSessionSetActiveColorSpace0500
+     * @tc.desc   Test OH_CaptureSession_SetActiveColorSpace in abnormal condition,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOHCaptureSessionSetActiveColorSpace0500', Level.LEVEL0, () => {
       captureSessionstart();
@@ -2707,6 +2693,34 @@ export default function PhotoTest() {
         }
       } else {
         console.info(TAG+"ColorSpace not supported!");
+      }
+    })
+    /**
+     * @tc.name   testOHHeifPhotoOutput0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_HEIF_PROFILE_STATIC_0100
+     * @tc.desc   Test OH_CameraManager_CreatePhotoOutput in normal condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHHeifPhotoOutput0100', Level.LEVEL0, () => {
+      let i = 0;
+      while(i != -1){
+        getCameraManagerInstance();
+        createCaptureSession();
+        getSupportedCamerasInstance();
+        getSupportedCameraFullOutputCapability();
+        i = adjustHeifIdx(i);
+        if(i != -1){
+          let ret = heifCaptureSessionstart(i);
+          if (ret != 0) {
+            expect().assertFail();
+          }
+          i++;
+          i = adjustHeifIdx(i);
+        }       
+        if(i == -1) break;
+        releaseCamera();
       }
     })
   })

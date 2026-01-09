@@ -115,51 +115,51 @@ export function setCallback(avPlayer: media.AVPlayer | null, type: string, count
   }
   switch (type) {
     case 'volumeChange':
-      avPlayer?.on('volumeChange', (volume) => {
+      avPlayer?.onVolumeChange((volume) => {
         console.info(`case volumeChange called, volume is ${volume}`);
         addCnt(countArr);
       });
       break;
     case 'endOfStream':
-      avPlayer?.on('endOfStream', () => {
+      avPlayer?.onEndOfStream(() => {
         console.info(`case endOfStream called`);
         addCnt(countArr);
       });
       break;
     case 'speedDone':
-      avPlayer?.on('speedDone', (speedMode) => {
+      avPlayer?.onSpeedDone((speedMode) => {
         console.info(`case speedDone called, speedMode is ${speedMode}`);
         addCnt(countArr);
       });
       break;
     case 'bitrateDone':
-      avPlayer?.on('bitrateDone', (bitrate) => {
+      avPlayer?.onBitrateDone((bitrate) => {
         console.info(`case bitrateDone called, bitrate is ${bitrate}`);
       });
       break;
     case 'timeUpdate':
-      avPlayer?.on('timeUpdate', (time) => {
+      avPlayer?.onTimeUpdate((time) => {
         console.info('case timeUpdate callback, time:' + time);
       });
       break;
     case 'bufferingUpdate':
-      avPlayer?.on('bufferingUpdate', (infoType, value) => {
+      avPlayer?.onBufferingUpdate((infoType, value) => {
       });
       break;
     case 'durationUpdate':
-      avPlayer?.on('durationUpdate', (duration) => {
+      avPlayer?.onDurationUpdate((duration) => {
         console.info('case durationUpdate called,duration:' + duration);
         addCnt(countArr);
       });
       break;
     case 'startRenderFrame':
-      avPlayer?.on('startRenderFrame', () => {
+      avPlayer?.onStartRenderFrame(() => {
         console.info('case startRenderFrame called');
         addCnt(countArr);
       });
       break;
     case 'videoSizeChange':
-      avPlayer?.on('videoSizeChange', (w, h) => {
+      avPlayer?.onVideoSizeChange((w, h) => {
         console.info(`case videoSizeChange called, weight is ${w}, height is ${h}`);
         addCnt(countArr);
       });
@@ -167,7 +167,7 @@ export function setCallback(avPlayer: media.AVPlayer | null, type: string, count
     case 'audioInterrupt':
       break;
     case 'availableBitrates':
-      avPlayer?.on('availableBitrates', (bitrates) => {
+      avPlayer?.onAvailableBitrates((bitrates) => {
         for (let i = 0; i < bitrates.length; i++) {
           console.info('case availableBitrates : ' + bitrates[i]);
         }
@@ -187,42 +187,42 @@ export function offCallback(avPlayer: media.AVPlayer | null, typeArr: Array<stri
   for (let i = 0; i < typeArr.length; i++) {
     switch (typeArr[i]) {
       case 'stateChange':
-        avPlayer.off('stateChange');
+        avPlayer.offStateChange();
         break;
       case 'volumeChange':
-        avPlayer.off('volumeChange');
+        avPlayer.offVolumeChange();
         break;
       case 'endOfStream':
-        avPlayer.off('endOfStream');
+        avPlayer.offEndOfStream();
         break;
       case 'seekDone':
-        avPlayer.off('seekDone');
+        avPlayer.offSeekDone();
         break;
       case 'speedDone':
-        avPlayer.off('speedDone');
+        avPlayer.offSpeedDone();
         break;
       case 'timeUpdate':
-        avPlayer.off('timeUpdate');
+        avPlayer.offTimeUpdate();
         break;
       case 'durationUpdate':
-        avPlayer.off('durationUpdate');
+        avPlayer.offDurationUpdate();
         break;
       case 'bufferingUpdate':
-        avPlayer.off('bufferingUpdate');
+        avPlayer.offBufferingUpdate();
         break;
       case 'startRenderFrame':
-        avPlayer.off('startRenderFrame');
+        avPlayer.offStartRenderFrame();
         break;
       case 'videoSizeChange':
-        avPlayer.off('videoSizeChange');
+        avPlayer.offVideoSizeChange();
         break;
       case 'audioInterrupt':
         break;
       case 'availableBitrates':
-        avPlayer.off('availableBitrates');
+        avPlayer.offAvailableBitrates();
         break;
       case 'error':
-        avPlayer.off('error');
+        avPlayer.offError();
         break;
       default:
         break;
@@ -233,19 +233,19 @@ export function offCallback(avPlayer: media.AVPlayer | null, typeArr: Array<stri
 export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null,
   playTest: PlayTest,
   playTime: number, done: () => void) {
-  let volumeCnt = [0];
-  let endOfStreamCnt = [0];
-  let speedDoneCnt = [0];
-  let videoSizeCnt = [0];
-  let startRenderFrameCnt = [0];
-  let durationUpdateCnt = [0];
-  let seekDoneCnt = [0];
+  let volumeCnt: number[] = [0];
+  let endOfStreamCnt: number[] = [0];
+  let speedDoneCnt: number[] = [0];
+  let videoSizeCnt: number[] = [0];
+  let startRenderFrameCnt: number[] = [0];
+  let durationUpdateCnt: number[] = [0];
+  let seekDoneCnt: number[] = [0];
   let prepareCnt = 0;
   let playCnt = 0;
   let completedCnt = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case setAVPlayerFunCb in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     if (reason == media.StateChangeReason.BACKGROUND) {
       console.info(`case media.StateChangeReason.BACKGROUND`);
@@ -371,7 +371,7 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
         break;
     }
   });
-  avPlayer?.on('seekDone', (seekDoneTime: int) => {
+  avPlayer?.onSeekDone((seekDoneTime: int) => {
     seekDoneCnt[0]++;
     console.info(`case seekDone called, seekDoneCnt is ${seekDoneCnt}, seekDoneTime is ${seekDoneTime}`);
     let count: int = Math.floor(seekDoneCnt[0]) as int;
@@ -424,7 +424,7 @@ export function setAVPlayerFunCb(src: string | media.AVFileDescriptor, avPlayer:
   setCallback(avPlayer, 'startRenderFrame', startRenderFrameCnt);
   setCallback(avPlayer, 'videoSizeChange', videoSizeCnt);
   setCallback(avPlayer, 'availableBitrates', null);
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -448,7 +448,7 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
   let playPauseCount = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case setAVPlayerPlayAndPauseWithCallBack in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -510,7 +510,7 @@ async function setAVPlayerPlayAndPauseWithCallBack(src: string | media.AVFileDes
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -545,7 +545,7 @@ let createToReleaseLoopCount = 0;
 async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -587,7 +587,7 @@ async function createToReleaseLoop(src: string | media.AVFileDescriptor, avPlaye
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -615,7 +615,7 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
   let playToCompletedCount = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case playToCompletedLoop in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -671,7 +671,7 @@ async function playToCompletedLoop(src: string | media.AVFileDescriptor, avPlaye
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -715,7 +715,7 @@ export async function seekLoop(src: string | media.AVFileDescriptor, avPlayer: m
 async function seekLoopWithCallback(avPlayer: media.AVPlayer) {
   for (let loopTime = 0; loopTime < 5000; loopTime += 5) {
     new Promise<string>((resolve, reject) => {
-      avPlayer?.on('seekDone', seekDoneTime => {
+      avPlayer?.onSeekDone(seekDoneTime => {
         console.info(`case seekDone called seekDoneTime is ${seekDoneTime}`);
         resolve("ok");
       });
@@ -729,7 +729,7 @@ async function seekLoopWithoutCallbackLoop(src: string | media.AVFileDescriptor,
   let seekLoopWithoutCallbackLoop = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case seekLoopWithoutCallbackLoop in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -776,7 +776,7 @@ async function seekLoopWithoutCallbackLoop(src: string | media.AVFileDescriptor,
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -797,7 +797,7 @@ async function prepareToStopLoop(src: string | media.AVFileDescriptor, avPlayer:
   let prepareToStopLoopCount = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case prepareToStopLoop in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -839,7 +839,7 @@ async function prepareToStopLoop(src: string | media.AVFileDescriptor, avPlayer:
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -860,7 +860,7 @@ async function prepareToResetLoop(src: string | media.AVFileDescriptor, avPlayer
   let prepareToResetLoopCount = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case prepareToResetLoop in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -911,7 +911,7 @@ async function prepareToResetLoop(src: string | media.AVFileDescriptor, avPlayer
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -933,7 +933,7 @@ let createToReleaseLoopCount2 = 0;
 async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null | undefined, done: () => void) {
   let surfaceID: string = globalThis.value;
   console.info(`case createToReleaseLoop2 in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -980,7 +980,7 @@ async function createToReleaseLoop2(src: string | media.AVFileDescriptor, avPlay
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -1011,7 +1011,7 @@ export async function createTimeWithCallback(src: string | media.AVFileDescripto
 function createTimeCallback(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | null, done: () => void) {
   let end: number;
   let execution: number;
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`createTimeCallback stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`createTimeCallback state is ${state}`);
     switch (state) {
@@ -1112,7 +1112,7 @@ async function prepareTimeCallback(src: string | media.AVFileDescriptor, avPlaye
   let loopTime = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1209,7 +1209,7 @@ export async function playTimeCallback(avPlayer: media.AVPlayer | undefined | nu
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1332,7 +1332,7 @@ async function pauseTimeCallback(avPlayer: media.AVPlayer | undefined | null, do
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1448,7 +1448,7 @@ async function stopTimeCallback(src: string | media.AVFileDescriptor, avPlayer: 
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1560,7 +1560,7 @@ async function resetTimeCallback(src: string | media.AVFileDescriptor, avPlayer:
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1646,7 +1646,7 @@ async function releaseTimeCallback(src: string | media.AVFileDescriptor, avPlaye
   let end: number = 0;
   let execution: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1741,7 +1741,7 @@ async function seekTimeCallback(avPlayer: media.AVPlayer | undefined | null, don
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1795,7 +1795,7 @@ async function seekTimeCallback(avPlayer: media.AVPlayer | undefined | null, don
         break;
     }
   });
-  avPlayer?.on('seekDone', (seekDoneTime) => {
+  avPlayer?.onSeekDone((seekDoneTime) => {
     end = Date.now();
     console.info(`seekTimeCallback end time is : ${end}`)
     execution = (end - start)
@@ -1868,7 +1868,7 @@ async function getTrackDescriptionTimeCallback(avPlayer: media.AVPlayer | undefi
   let totalTime: number = 0;
   let arrayDescription: Array<media.MediaDescription>;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -1988,7 +1988,7 @@ async function setSpeedTimeCallback(avPlayer: media.AVPlayer | undefined, done: 
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -2042,7 +2042,7 @@ async function setSpeedTimeCallback(avPlayer: media.AVPlayer | undefined, done: 
         break;
     }
   });
-  avPlayer?.on('speedDone', (speed) => {
+  avPlayer?.onSpeedDone((speed) => {
     end = Date.now();
     console.info(`setSpeedTimeCallback end time is : ${end}`)
     execution = (end - start)
@@ -2135,7 +2135,7 @@ async function setVolumeTimeCallback(avPlayer: media.AVPlayer | undefined, done:
   let loopTime: number = 0;
   let totalTime: number = 0;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -2190,7 +2190,7 @@ async function setVolumeTimeCallback(avPlayer: media.AVPlayer | undefined, done:
         break;
     }
   });
-  avPlayer?.on('volumeChange', (vol) => {
+  avPlayer?.onVolumeChange((vol) => {
     end = Date.now();
     console.info(`setVolumeTimeCallback end time is : ${end}`)
     execution = (end - start)
@@ -2215,7 +2215,7 @@ export async function firstFrameTime(src: string | media.AVFileDescriptor, avPla
     expect(avPlayer?.state).assertEqual(PREPARED);
     console.info('firstFrameTime avPlayer state is prepared')
   }).catch(mediaTestBase.catchCallback);
-  avPlayer?.on('startRenderFrame', () => {
+  avPlayer?.onStartRenderFrame(() => {
     console.info('startRenderFrame success')
     let end = Date.now();
     console.info(`firstFrameTime end time is : ${end}`)
@@ -2285,7 +2285,7 @@ export async function avPlayerWithoutCallBack(src: string | media.AVFileDescript
 async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, done: () => void) {
   let surfaceID: string = globalThis.value;
   console.info(`case setAVPlayerPlay in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     console.info(`case state is ${state}`);
     switch (state) {
@@ -2330,7 +2330,7 @@ async function setAVPlayerPlay(src: string | media.AVFileDescriptor, avPlayer: m
         break;
     }
   });
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
     expect().assertFail();
     await avPlayer!!.release().then(() => {
@@ -2364,14 +2364,14 @@ export async function testAVPlayerFun(src: string | media.AVFileDescriptor, avPl
 }
 
 export function setAVPlayerSeekCb(src: string | media.AVFileDescriptor, avPlayer: media.AVPlayer | undefined | null, playTest: PlayTest, playTime: number, done: () => void) {
-  let volumeCnt = [0];
+  let volumeCnt: number[] = [0];
   let endOfStreamCnt: int = 0;
   let seekDoneCnt: int = 0;
-  let speedDoneCnt = [0];
+  let speedDoneCnt: number[] = [0];
   let playCnt: int = 0;
   let surfaceID: string = globalThis.value;
   console.info(`case setCallback in, surfaceID is ${surfaceID}`);
-  avPlayer?.on('stateChange', (state, reason) => {
+  avPlayer?.onStateChange((state, reason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     if (reason == media.StateChangeReason.BACKGROUND) {
       avPlayer?.release().then(() => {
@@ -2451,7 +2451,7 @@ export function setAVPlayerSeekCb(src: string | media.AVFileDescriptor, avPlayer
     }
   });
 
-  avPlayer?.on('endOfStream', () => {
+  avPlayer?.onEndOfStream(() => {
     console.info(`case endOfStream called`);
     endOfStreamCnt++;
     // step 9: seek + reset
@@ -2465,7 +2465,7 @@ export function setAVPlayerSeekCb(src: string | media.AVFileDescriptor, avPlayer
       }
     });
   });
-  avPlayer?.on('seekDone', (seekDoneTime) => {
+  avPlayer?.onSeekDone((seekDoneTime) => {
     seekDoneCnt++;
     console.info(`case seekDone called, seekDoneCnt is ${seekDoneCnt}, seekDoneTime is ${seekDoneTime}`);
     switch (seekDoneCnt) {
@@ -2514,7 +2514,7 @@ export function setAVPlayerSeekCb(src: string | media.AVFileDescriptor, avPlayer
   setCallback(avPlayer!, 'videoSizeChange', null);
   setCallback(avPlayer!, 'audioInterrupt', null);
   setCallback(avPlayer!, 'availableBitrates', null);
-  avPlayer?.on('error', (err: BusinessError) => {
+  avPlayer?.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
   });
 }

@@ -46,13 +46,13 @@ observerNopTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_observerNop001
-     * @tc.name: observerNop001
-     * @tc.desc:Using the observer on ('networkStateChange',options,callback) method without permission
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   observerNop001
+     * @tc.number SUB_observerNop001
+     * @tc.desc   Using the observer on ('networkStateChange',options,callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("observerNop001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('--------observerNop0001----before----');
@@ -77,13 +77,13 @@ observerNopTest() {
       console.info('--------observerNop001----after----');
     })
 
-    /*
-     * @tc.number:SUB_observerNop002
-     * @tc.name: observerNop002
-     * @tc.desc:Using the observer on ('networkStateChange',callback) method without permission
-     * @tc.level:Level 2
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   observerNop002
+     * @tc.number SUB_observerNop002
+     * @tc.desc   Using the observer on ('networkStateChange',callback) method without permission
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("observerNop002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.info('--------observerNop002----before----');

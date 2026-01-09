@@ -121,6 +121,7 @@ export default function windowModalTest() {
     let windowStage: ohosWindow.WindowStage;
     let isAutoWindow:string = '';
     let isPCStatus: string = '';
+    let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -139,6 +140,7 @@ export default function windowModalTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      driver = Driver.create();
       
     })
     afterEach(async ()=>{
@@ -160,12 +162,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0100
-     * @tc.name      : testsetSubWindowModal_Function_Promise1
-     * @tc.desc      : Test the function value of setSubWindowModal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testsetSubWindowModal_Function_Promise1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0100
+     * @tc.desc   Test the function value of setSubWindowModal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testsetSubWindowModal_Function_Promise1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testsetSubWindowModal_Function_Promise1 ";
@@ -212,12 +214,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0200
-     * @tc.name      : testsetSubWindowModal_Function_Promise2
-     * @tc.desc      : Test the function value of setSubWindowModal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testsetSubWindowModal_Function_Promise2
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0200
+     * @tc.desc   Test the function value of setSubWindowModal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testsetSubWindowModal_Function_Promise2", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testsetSubWindowModal_Function_Promise2 ";
@@ -264,12 +266,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0300
-     * @tc.name      : testsetSubWindowModal_Function_Promise3
-     * @tc.desc      : Test the function value of setSubWindowModal
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testsetSubWindowModal_Function_Promise3
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0300
+     * @tc.desc   Test the function value of setSubWindowModal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testsetSubWindowModal_Function_Promise3", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testsetSubWindowModal_Function_Promise3 ";
@@ -294,17 +296,16 @@ export default function windowModalTest() {
       });
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0100
-         * @tc.name      : test_SubWindow_IsModal_true
-         * @tc.desc      : test_SubWindow_IsModal_true
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_SubWindow_IsModal_true
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0100
+     * @tc.desc   test_SubWindow_IsModal_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_SubWindow_IsModal_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SubWindow_IsModal_true";
       console.log(msgStr + "begin");
-      let driver: Driver = Driver.create();
       let num = 0;
       let minWidth = 0;
       let minHeight = 0;
@@ -383,19 +384,18 @@ export default function windowModalTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0200
-     * @tc.name      : test_SubWindow_IsModal_false
-     * @tc.desc      : test_SubWindow_IsModal_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SubWindow_IsModal_false
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0200
+     * @tc.desc   test_SubWindow_IsModal_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_SubWindow_IsModal_false", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SubWindow_IsModal_false";
       console.log(msgStr + "begin");
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       let num = 0;
       let subWindowClass: ohosWindow.Window;
       let windowClass = await windowStage.getMainWindow();
@@ -472,17 +472,16 @@ export default function windowModalTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0300
-     * @tc.name      : test_SubWindow_hide_IsModal_true
-     * @tc.desc      : test_SubWindow_hide_IsModal_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_SubWindow_hide_IsModal_true
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0300
+     * @tc.desc   test_SubWindow_hide_IsModal_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_SubWindow_hide_IsModal_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SubWindow_hide_IsModal_true";
       console.log(msgStr + "begin");
-      let driver: Driver = Driver.create();
       let num = 0;
       let subWindowClass: ohosWindow.Window;
       let windowClass = await windowStage.getMainWindow();
@@ -532,12 +531,12 @@ export default function windowModalTest() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0400
-     * @tc.name      : test_setSubWindowModal_isModal_null_401
-     * @tc.desc      : test_setSubWindowModal_isModal_null_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   test_setSubWindowModal_isModal_null_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0400
+     * @tc.desc   test_setSubWindowModal_isModal_null_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_setSubWindowModal_isModal_null_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_isModal_null_401";
@@ -582,13 +581,13 @@ export default function windowModalTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0500
-         * @tc.name      : test_setSubWindowModal_ModalityType_TypeError_401
-         * @tc.desc      : test_setSubWindowModal_ModalityType_TypeError_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_setSubWindowModal_ModalityType_TypeError_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0500
+     * @tc.desc   test_setSubWindowModal_ModalityType_TypeError_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_setSubWindowModal_ModalityType_TypeError_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_ModalityType_TypeError_401";
       console.log(msgStr + "begin");
@@ -632,13 +631,13 @@ export default function windowModalTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0600
-         * @tc.name      : test_setSubWindowModal_ModalityType_incorrect_401
-         * @tc.desc      : test_setSubWindowModal_ModalityType_incorrect_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_setSubWindowModal_ModalityType_incorrect_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0600
+     * @tc.desc   test_setSubWindowModal_ModalityType_incorrect_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_setSubWindowModal_ModalityType_incorrect_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_ModalityType_incorrect_401";
       console.log(msgStr + "begin");
@@ -682,13 +681,13 @@ export default function windowModalTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0700
-         * @tc.name      : test_setSubWindowModal_ModalityType_isModal_false_401
-         * @tc.desc      : test_setSubWindowModal_ModalityType_isModal_false_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_setSubWindowModal_ModalityType_isModal_false_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0700
+     * @tc.desc   test_setSubWindowModal_ModalityType_isModal_false_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_setSubWindowModal_ModalityType_isModal_false_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_ModalityType_isModal_false_401";
       console.log(msgStr + "begin");
@@ -732,13 +731,13 @@ export default function windowModalTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0800
-         * @tc.name      : test_setSubWindowModal_ModalityType_null_401
-         * @tc.desc      : test_setSubWindowModal_ModalityType_null_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_setSubWindowModal_ModalityType_null_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0800
+     * @tc.desc   test_setSubWindowModal_ModalityType_null_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_setSubWindowModal_ModalityType_null_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_ModalityType_null_401";
       console.log(msgStr + "begin");
@@ -782,13 +781,13 @@ export default function windowModalTest() {
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0900
-         * @tc.name      : test_setSubWindowModal_ModalityType_enum
-         * @tc.desc      : test_setSubWindowModal_ModalityType_enum
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level0
-         */
+     * @tc.name   test_setSubWindowModal_ModalityType_enum
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_0900
+     * @tc.desc   test_setSubWindowModal_ModalityType_enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_setSubWindowModal_ModalityType_enum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_ModalityType_enum";
       console.log(msgStr + "begin");
@@ -798,13 +797,13 @@ export default function windowModalTest() {
     })
 
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_1000
-         * @tc.name      : test_setSubWindowModal_subWindow_destory_1300002
-         * @tc.desc      : test_setSubWindowModal_subWindow_destory_1300002
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   test_setSubWindowModal_subWindow_destory_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_1000
+     * @tc.desc   test_setSubWindowModal_subWindow_destory_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_setSubWindowModal_subWindow_destory_1300002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_subWindow_destory_1300002";
       console.log(msgStr + "begin");
@@ -848,13 +847,13 @@ export default function windowModalTest() {
       }
     })
     /**
-             * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_1100
-             * @tc.name      : test_setSubWindowModal_MainWindow_1300004
-             * @tc.desc      : test_setSubWindowModal_MainWindow_1300004
-             * @tc.size      : MediumTest
-             * @tc.type      : Function
-             * @tc.level     : Level3
-             */
+     * @tc.name   test_setSubWindowModal_MainWindow_1300004
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SET_SUBWINDOW_MODEL_1100
+     * @tc.desc   test_setSubWindowModal_MainWindow_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("test_setSubWindowModal_MainWindow_1300004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_setSubWindowModal_MainWindow_1300004";
       console.log(msgStr + "begin");
@@ -882,13 +881,13 @@ export default function windowModalTest() {
       }
     });
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0100
-         * @tc.name      : testCreateSubWindowWithOptions_name_is_null_401
-         * @tc.desc      : testCreateSubWindowWithOptions_name_is_null_401
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   testCreateSubWindowWithOptions_name_is_null_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0100
+     * @tc.desc   testCreateSubWindowWithOptions_name_is_null_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testCreateSubWindowWithOptions_name_is_null_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testCreateSubWindowWithOptions_name_is_null_401";
       console.log(msgStr + " begin");
@@ -920,13 +919,13 @@ export default function windowModalTest() {
     })
 
     /**
-             * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0200
-             * @tc.name      : testCreateSubWindowWithOptions_modalityType_401
-             * @tc.desc      : testCreateSubWindowWithOptions_modalityType_401
-             * @tc.size      : MediumTest
-             * @tc.type      : Function
-             * @tc.level     : Level3
-             */
+     * @tc.name   testCreateSubWindowWithOptions_modalityType_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0200
+     * @tc.desc   testCreateSubWindowWithOptions_modalityType_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testCreateSubWindowWithOptions_modalityType_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testCreateSubWindowWithOptions_modalityType_401";
       console.log(msgStr + " begin");
@@ -959,13 +958,13 @@ export default function windowModalTest() {
     })
 
     /**
-             * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0300
-             * @tc.name      : testCreateSubWindowWithOptions_modalityType_is_INCORRECT_401
-             * @tc.desc      : testCreateSubWindowWithOptions_modalityType_is_INCORRECT_401
-             * @tc.size      : MediumTest
-             * @tc.type      : Function
-             * @tc.level     : Level3
-             */
+     * @tc.name   testCreateSubWindowWithOptions_modalityType_is_INCORRECT_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0300
+     * @tc.desc   testCreateSubWindowWithOptions_modalityType_is_INCORRECT_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testCreateSubWindowWithOptions_modalityType_is_INCORRECT_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testCreateSubWindowWithOptions_modalityType_is_INCORRECT_401";
       console.log(msgStr + " begin");
@@ -997,13 +996,13 @@ export default function windowModalTest() {
 
     })
     /**
-       * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0400
-       * @tc.name      : testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY
-       * @tc.desc      : testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY
-       * @tc.size      : MediumTest
-       * @tc.type      : Function
-       * @tc.level     : Level3
-      */
+     * @tc.name   testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0400
+     * @tc.desc   testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testCreateSubWindowWithOptions_modalityType_APPLICATION_MODALITY";
       console.log(msgStr + " begin");
@@ -1047,13 +1046,13 @@ export default function windowModalTest() {
     })
 
     /**
-           * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0500
-           * @tc.name      : testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY
-           * @tc.desc      : testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY
-           * @tc.size      : MediumTest
-           * @tc.type      : Function
-           * @tc.level     : LEVEL0
-          */
+     * @tc.name   testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_CREATE_SUBWINDOW_WITH_OPTIONS_0500
+     * @tc.desc   testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testCreateSubWindowWithOptions_modalityType_WINDOW_MODALITY";
       console.log(msgStr + " begin");
@@ -1092,12 +1091,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testSetSubWindowModalModalityType_0100
-     * @tc.name      : testSetSubWindowModalModalityType_0100
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSubWindowModalModalityType_0100
+     * @tc.number testSetSubWindowModalModalityType_0100
+     * @tc.desc   testSetSubWindowModalModalityType_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSubWindowModalModalityType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setSubWindowModalModalityTypeTest_0100';
@@ -1145,12 +1144,12 @@ export default function windowModalTest() {
       done()
     })
     /**
-     * @tc.number    : testSetSubWindowModalModalityType_0200
-     * @tc.name      : testSetSubWindowModalModalityType_0200
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSubWindowModalModalityType_0200
+     * @tc.number testSetSubWindowModalModalityType_0200
+     * @tc.desc   testSetSubWindowModalModalityType_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSubWindowModalModalityType_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setSubWindowModalModalityTypeTest_0200';
@@ -1198,12 +1197,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testSetSubWindowModalModalityType_0300
-     * @tc.name      : testSetSubWindowModalModalityType_0300
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetSubWindowModalModalityType_0300
+     * @tc.number testSetSubWindowModalModalityType_0300
+     * @tc.desc   testSetSubWindowModalModalityType_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetSubWindowModalModalityType_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setSubWindowModalModalityTypeTest_0400';
@@ -1234,12 +1233,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testSetSubWindowModalModalityType_0400
-     * @tc.name      : testSetSubWindowModalModalityType_0400
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetSubWindowModalModalityType_0400
+     * @tc.number testSetSubWindowModalModalityType_0400
+     * @tc.desc   testSetSubWindowModalModalityType_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetSubWindowModalModalityType_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'setSubWindowModalModalityTypeTest_0300';
@@ -1274,12 +1273,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testCreateSubWindowWithOptionsModalityType_0100
-     * @tc.name      : testCreateSubWindowWithOptionsModalityType_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateSubWindowWithOptionsModalityType_0100
+     * @tc.number testCreateSubWindowWithOptionsModalityType_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateSubWindowWithOptionsModalityType_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testCreateSubWindowWithOptionsModalityType_0100';
@@ -1324,12 +1323,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testCreateSubWindowWithOptionsModalityType_0200
-     * @tc.name      : testCreateSubWindowWithOptionsModalityType_0200
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCreateSubWindowWithOptionsModalityType_0200
+     * @tc.number testCreateSubWindowWithOptionsModalityType_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCreateSubWindowWithOptionsModalityType_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testCreateSubWindowWithOptionsModalityTypeTest_0200';
@@ -1379,12 +1378,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testCreateSubWindowWithOptionsModalityType_0300
-     * @tc.name      : testCreateSubWindowWithOptionsModalityType_0300
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testCreateSubWindowWithOptionsModalityType_0300
+     * @tc.number testCreateSubWindowWithOptionsModalityType_0300
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCreateSubWindowWithOptionsModalityType_0300',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const message = 'testCreateSubWindowWithOptionsModalityTypeTest_0300';
@@ -1420,12 +1419,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowModalTrue
-     * @tc.name      : testSetWindowModalTrue
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowModalTrue
+     * @tc.number testSetWindowModalTrue
+     * @tc.desc   testSetWindowModalTrue
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowModalTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetWindowModalTrueTest';
@@ -1434,7 +1433,6 @@ export default function windowModalTest() {
       await sleep(300);
       let windowRect = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowRect = ${JSON.stringify(windowRect)}`)
-      let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1500)
       let btnPoint = await btn.getBoundsCenter()
@@ -1495,12 +1493,12 @@ export default function windowModalTest() {
     })
 
     /**
-     * @tc.number    : testSetWindowModalFalse
-     * @tc.name      : testSetWindowModalFalse
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetWindowModalFalse
+     * @tc.number testSetWindowModalFalse
+     * @tc.desc   testSetWindowModalFalse
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowModalFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'testSetWindowModalFalseTest';
@@ -1509,7 +1507,6 @@ export default function windowModalTest() {
       await sleep(300);
       let windowRect = windowClass.getWindowProperties().windowRect
       console.info(`${message} windowRect = ${JSON.stringify(windowRect)}`)
-      let driver = Driver.create()
       let btn = await driver.findComponent(ON.id('ModalityText'))
       await sleep(1000)
       let btnPoint = await btn.getBoundsCenter()

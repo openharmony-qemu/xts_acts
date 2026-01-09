@@ -52,12 +52,12 @@ export default function DecimalTest006() {
     });
     console.info("start################################start");
     /**
-     * @tc.number    : DECIMAL_TEST6_001
-     * @tc.name      : Decimal_sinh_Func_001
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_001
+     * @tc.number DECIMAL_TEST6_001
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -81,12 +81,12 @@ export default function DecimalTest006() {
       test_sinh_001('-0.7', 10, 1, '-0.7585837018');
     });
     /**
-     * @tc.number    : DECIMAL_TEST6_002
-     * @tc.name      : Decimal_sinh_Func_002
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_002
+     * @tc.number DECIMAL_TEST6_002
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -112,12 +112,12 @@ export default function DecimalTest006() {
       test_sinh_001('0.01952', 4, 6, '0.01952');
     });
     /**
-     * @tc.number    : DECIMAL_TEST6_003
-     * @tc.name      : Decimal_sinh_Func_003
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_003
+     * @tc.number DECIMAL_TEST6_003
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -145,12 +145,12 @@ export default function DecimalTest006() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST6_004
-     * @tc.name      : Decimal_sinh_Func_004
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_004
+     * @tc.number DECIMAL_TEST6_004
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -177,12 +177,12 @@ export default function DecimalTest006() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST6_005
-     * @tc.name      : Decimal_sinh_Func_005
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_005
+     * @tc.number DECIMAL_TEST6_005
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -210,12 +210,12 @@ export default function DecimalTest006() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST6_006
-     * @tc.name      : Decimal_sinh_Func_006
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_006
+     * @tc.number DECIMAL_TEST6_006
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -246,12 +246,12 @@ export default function DecimalTest006() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST6_007
-     * @tc.name      : Decimal_sinh_Func_007
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_007
+     * @tc.number DECIMAL_TEST6_007
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -281,12 +281,12 @@ export default function DecimalTest006() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST6_008
-     * @tc.name      : Decimal_sinh_Func_008
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_008
+     * @tc.number DECIMAL_TEST6_008
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set({
@@ -322,12 +322,12 @@ export default function DecimalTest006() {
     });
 
     /**
-     * @tc.number    : DECIMAL_TEST6_009
-     * @tc.name      : Decimal_sinh_Func_009
-     * @tc.desc      : Test sinh
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   Decimal_sinh_Func_009
+     * @tc.number DECIMAL_TEST6_009
+     * @tc.desc   Test sinh
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Decimal_sinh_Func_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       Decimal.set ({
@@ -341,7 +341,8 @@ export default function DecimalTest006() {
       try {
         test_sinh_001('e', 21, 4, '-0.201349168898446405328');
         expect(true).assertEqual(false);
-      } catch (err:BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         expect(err.name).assertEqual(`BusinessError`);
         expect(err.code).assertEqual(401);
         expect(err.message).assertEqual(`The type of "test(str)" must be Hex/Binary/Octal. Received value is: e`);

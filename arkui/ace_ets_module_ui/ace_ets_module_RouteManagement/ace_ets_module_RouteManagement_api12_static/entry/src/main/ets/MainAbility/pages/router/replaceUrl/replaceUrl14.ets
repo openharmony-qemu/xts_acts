@@ -1,0 +1,74 @@
+'use static';
+/**
+ * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Licensed under the Apache License, Version 2.0 (the "License");
+ * you may not use this file except in compliance with the License.
+ * You may obtain a copy of the License at
+ *
+ *     http://www.apache.org/licenses/LICENSE-2.0
+ *
+ * Unless required by applicable law or agreed to in writing, software
+ * distributed under the License is distributed on an "AS IS" BASIS,
+ * WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
+ * See the License for the specific language governing permissions and
+ * limitations under the License.
+ */
+import router from '@ohos.router'
+import { BusinessError } from '@ohos.base'
+import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
+import { State, AppStorage } from '@ohos.arkui.stateManagement';
+
+class routerParams14 implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
+  data1:string
+
+  constructor(str:string) {
+    this.data1 = str
+  }
+
+  constructor() {
+    this.data1 = "";
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.getString("data1")
+  }
+
+  toJSON(): jsonx.JsonElement {
+     let root: Map<string, jsonx.JsonElement> = {
+      "view": jsonx.JsonElement.createString(this.data1)
+    }
+    return jsonx.JsonElement.createObject(root)
+  }
+}
+
+@Entry
+@Component
+struct replaceUrl14 {
+  @State str:string = 'replaceUrl14'
+  @State code:string = ''
+
+  build() {
+    Column({space:5} as ColumnOptions) {
+
+      Text(this.str + 'code' + this.code).id('replaceUrl14_text')
+
+      Button('replaceUrl14')
+        .id('replaceUrl14_btn')
+        .onClick((e:ClickEvent)=>{
+          this.getUIContext().getRouter().replaceUrl({
+            url: 'MainAbility/pages/router/replaceUrl/detail11111',
+            params: (new routerParams14('message')).toJSON()
+          })
+            .then(() => {
+            })
+            .catch((err:Error) => {
+              this.code = err.code + ''
+              console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
+            });
+        })
+
+    }.width('100%').height('100%')
+
+
+  }
+}

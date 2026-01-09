@@ -26,7 +26,7 @@ const ABILITIY_NAME1 = "com.example.third5.MainAbilityA";
 const ABILITIY_NAME2 = "com.example.third5.MainAbilityB";
 const ABILITIY_NAME3 = "com.example.third2.MainAbilityA";
 const ABILITIY_NAME4 = "com.example.third4.MainAbility";
-const ABILITIY_NAME5 = "com.example.third1.MainAbilityA";
+const ABILITIY_NAME5 = "com.example.third1.entry.MainAbilityA";
 const ABILITIY_NAME6 = "com.example.third3.MainAbilityA";
 const NUM_TWO = 2;
 const NUM_THREE = 3;
@@ -59,12 +59,14 @@ export default function ActsBmsGetBackGroundModes() {
 
        
 
-        /*
-        * @tc.number: Sub_Bms_BundleTool_Query_Hap_1500
-        * @tc.name: getBackgroundModesAllModes
-        * @tc.desc: Get all background modes information, and each ability of the application
-        *               contains one of the background mode
-        */
+        /**
+         * @tc.name   getBackgroundModesAllModes
+         * @tc.number Sub_Bms_BundleTool_Query_Hap_1500
+         * @tc.desc   Get all background modes information, and each ability of the application
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('getBackgroundModesAllModes', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async function (done) {
             let dataInfos = await bundle.queryAbilityByWant({
                 action: 'action.system.home',
@@ -81,11 +83,14 @@ export default function ActsBmsGetBackGroundModes() {
         });
 
       
-        /*
-        * @tc.number: Sub_Bms_BundleTool_Query_Hap_1700
-        * @tc.name: getBackgroundModesNotModes
-        * @tc.desc: Read the backgroundModes information of the app's ability and replace invalid attributes 
-        */
+        /**
+         * @tc.name   getBackgroundModesNotModes
+         * @tc.number Sub_Bms_BundleTool_Query_Hap_1700
+         * @tc.desc   Read the backgroundModes information of the app's ability and replace invalid attributes
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
         it('getBackgroundModesNotModes', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async function (done) {
             let dataInfos = await bundle.queryAbilityByWant({
                 action: 'action.system.home',
@@ -102,11 +107,14 @@ export default function ActsBmsGetBackGroundModes() {
             done();
         });
 
-        /*
-        * @tc.number: Sub_Bms_BundleTool_Query_Hap_1800
-        * @tc.name: getBackgroundModesMultiHap
-        * @tc.desc: Get the backgroundModes information of the multi-hap package of the application 
-        */
+        /**
+         * @tc.name   getBackgroundModesMultiHap
+         * @tc.number Sub_Bms_BundleTool_Query_Hap_1800
+         * @tc.desc   Get the backgroundModes information of the multi-hap package of the application
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it('getBackgroundModesMultiHap', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async function (done) {
             let dataInfos = await bundle.queryAbilityByWant({
                 action: 'action.system.home',

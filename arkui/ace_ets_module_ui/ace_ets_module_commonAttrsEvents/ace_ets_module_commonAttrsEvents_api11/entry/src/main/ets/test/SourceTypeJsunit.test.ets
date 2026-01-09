@@ -48,6 +48,14 @@ export default function sourceTypeJsunit() {
       console.info("sourceType after each called");
     });
 
+    /**
+     * @tc.name   sourceTypeTest_0100
+     * @tc.number sourceTypeTest_0100
+     * @tc.desc   sourceTypeTest_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('sourceTypeTest_0100', Level.LEVEL0, async (done: Function) => {
       await Utils.sleep(1000)
 

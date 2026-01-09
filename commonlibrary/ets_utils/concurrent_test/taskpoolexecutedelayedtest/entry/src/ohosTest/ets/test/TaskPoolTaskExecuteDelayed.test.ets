@@ -42,12 +42,12 @@ export default function taskPoolTaskExecuteDelayedTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskExecuteDelayed1001
      * @tc.number TASKPOOL_TASK_EXECUTEDELAYED_TEST_0100
-     * @tc.name taskPoolTaskExecuteDelayed1001
-     * @tc.desc test TaskGroup
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test TaskGroup
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskExecuteDelayed1001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -81,12 +81,12 @@ export default function taskPoolTaskExecuteDelayedTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskExecuteDelayed1002
      * @tc.number TASKPOOL_TASK_EXECUTEDELAYED_0200
-     * @tc.name taskPoolTaskExecuteDelayed1002
-     * @tc.desc test GenericsTask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   test GenericsTask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('taskPoolTaskExecuteDelayed1002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -121,12 +121,12 @@ export default function taskPoolTaskExecuteDelayedTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskExecuteDelayed1003
      * @tc.number TASKPOOL_TASK_EXECUTEDELAYED_0300
-     * @tc.name taskPoolTaskExecuteDelayed1003
-     * @tc.desc test GenericsTask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test GenericsTask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskExecuteDelayed1003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -177,12 +177,12 @@ export default function taskPoolTaskExecuteDelayedTest() {
 
 
     /**
+     * @tc.name   taskPoolTaskExecuteDelayed1004
      * @tc.number TASKPOOL_TASKGROUP_EXECUTE_0400
-     * @tc.name taskPoolTaskExecuteDelayed1004
-     * @tc.desc test task1.name
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test task1.name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskExecuteDelayed1004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
@@ -216,12 +216,12 @@ export default function taskPoolTaskExecuteDelayedTest() {
     })
 
     /**
+     * @tc.name   taskPoolTaskExecuteDelayed1005
      * @tc.number TASKPOOL_TASK_EXECUTEDELAYED_0300
-     * @tc.name taskPoolTaskExecuteDelayed1003
-     * @tc.desc test GenericsTask
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   test GenericsTask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('taskPoolTaskExecuteDelayed1005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.

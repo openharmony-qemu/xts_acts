@@ -35,14 +35,14 @@ export default function webViewSrollableJsunit() {
       console.info('scroll beforeEach start');
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SCROLL_API_001
-    * @tc.name       : scrollStatic01
-    * @tc.desc       : test blurMode01 interface when choose callback mode.
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   scrollStatic01
+     * @tc.number SUB_ACE_BASIC_ETS_SCROLL_API_001
+     * @tc.desc   test blurMode01 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('scrollStatic01',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       Utils.emitEvent('scroll01', 10)
@@ -60,14 +60,14 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ACE_BASIC_ETS_SCROLL_API_002
-    * @tc.name       : scrollStatic02
-    * @tc.desc       : test blurMode02 interface when choose callback mode.
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 3
-    */
+    /**
+     * @tc.name   scrollStatic02
+     * @tc.number SUB_ACE_BASIC_ETS_SCROLL_API_002
+     * @tc.desc   test blurMode02 interface when choose callback mode.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('scrollStatic02',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
       await Utils.msSleep(1000);
@@ -85,6 +85,14 @@ export default function webViewSrollableJsunit() {
       done();
     })
 
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number emitonSwitchNextPage
+     * @tc.desc   emitonSwitchNextPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         Utils.emitEvent('emitonSwitchNextPage2', 10)

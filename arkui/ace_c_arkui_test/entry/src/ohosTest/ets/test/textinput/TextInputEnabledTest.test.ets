@@ -26,14 +26,14 @@ export default function textInputEnabledTest() {
       await Utils.pushPage(`textinput/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ENABLED_0100
-    * @tc.name       : testTextInputEnabled001
-    * @tc.desc       : testing enabled event callback for textInput with normal value (1)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputEnabled001
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLED_0100
+     * @tc.desc   testing enabled event callback for textInput with normal value (1)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputEnabled001', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickEnabledTextInput')
       await Utils.sleep(1000)
@@ -50,14 +50,14 @@ export default function textInputEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ENABLED_0200
-    * @tc.name       : testTextInputEnabled002
-    * @tc.desc       : testing enabled event callback for textInput with normal value (0)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testTextInputEnabled002
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLED_0200
+     * @tc.desc   testing enabled event callback for textInput with normal value (0)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputEnabled002', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickDisabledTextInput')
       await Utils.sleep(1000)
@@ -74,14 +74,14 @@ export default function textInputEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_TEXTINPUT_ENABLED_0300
-    * @tc.name       : testTextInputEnabled003
-    * @tc.desc       : testing enabled event callback for textInput with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testTextInputEnabled003
+     * @tc.number SUB_ARKUI_CAPI_TEXTINPUT_ENABLED_0300
+     * @tc.desc   testing enabled event callback for textInput with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testTextInputEnabled003', Level.LEVEL1, async (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalTextInput')
       await Utils.sleep(1000)

@@ -48,13 +48,13 @@ class DrawingNativeImageFilterTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0100
- * @tc.name: testImageFilterCreateBlurNormal
- * @tc.desc: Test for creating a blur image filter with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testImageFilterCreateBlurNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0100
+ * @tc.desc   Test for creating a blur image filter with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurNormal, Function | SmallTest | Level0) {
     // 1. Enumerate OH_Drawing_TileMode values in OH_Drawing_ImageFilterCreateBlur
@@ -84,13 +84,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurNormal, Function
     OH_Drawing_ImageFilterDestroy(filter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0101
- * @tc.name: testImageFilterCreateBlurNULL
- * @tc.desc: Test for creating a blur image filter with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateBlurNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0101
+ * @tc.desc   Test for creating a blur image filter with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurNULL, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ImageFilterCreateBlur with the first parameter being null
@@ -105,13 +105,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurNULL, Function |
     OH_Drawing_ImageFilterDestroy(filter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0102
- * @tc.name: testImageFilterCreateBlurMultipleCalls
- * @tc.desc: Test for multiple calls of creating a blur image filter.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateBlurMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0102
+ * @tc.desc   Test for multiple calls of creating a blur image filter.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_ImageFilterCreateBlur (pass random values for sigmaX and sigmaY, random enum value for
@@ -129,13 +129,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurMultipleCalls, F
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0103
- * @tc.name: testImageFilterCreateBlurAbnormal
- * @tc.desc: Test for creating a blur image filter with abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateBlurAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0103
+ * @tc.desc   Test for creating a blur image filter with abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurAbnormal, Function | SmallTest | Level3) {
     // 1. Pass negative values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
@@ -147,13 +147,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurAbnormal, Functi
     OH_Drawing_ImageFilterDestroy(filter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0104
- * @tc.name: testImageFilterCreateBlurMaximum
- * @tc.desc: Test for creating a blur image filter with maximum values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateBlurMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0104
+ * @tc.desc   Test for creating a blur image filter with maximum values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurMaximum, Function | SmallTest | Level3) {
     // 1. Create a blur image filter with maximum values for sigmaX and sigmaY in OH_Drawing_ImageFilterCreateBlur
@@ -165,13 +165,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurMaximum, Functio
     OH_Drawing_ImageFilterDestroy(filter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0200
- * @tc.name: testImageFilterCreateFromColorFilterNormal
- * @tc.desc: Test for creating an image filter from a color filter with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testImageFilterCreateFromColorFilterNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0200
+ * @tc.desc   Test for creating an image filter from a color filter with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromColorFilterNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_ImageFilterCreateBlur
@@ -200,13 +200,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromColorFilterNorma
     OH_Drawing_ImageFilterDestroy(filter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0201
- * @tc.name: testImageFilterCreateFromColorFilterNULL
- * @tc.desc: Test for creating an image filter from a color filter with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateFromColorFilterNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0201
+ * @tc.desc   Test for creating an image filter from a color filter with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromColorFilterNULL, Function | SmallTest | Level3) {
     OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(1, 1, OH_Drawing_TileMode::MIRROR, nullptr);
@@ -220,13 +220,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromColorFilterNULL,
     OH_Drawing_ImageFilterDestroy(filter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0202
- * @tc.name: testImageFilterCreateFromColorFilterMultipleCalls
- * @tc.desc: Test for multiple calls of creating an image filter from a color filter.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateFromColorFilterMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0202
+ * @tc.desc   Test for multiple calls of creating an image filter from a color filter.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromColorFilterMultipleCalls, Function | SmallTest | Level3) {
     for (int i = 0; i < 10; i++) {
@@ -242,13 +242,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromColorFilterMulti
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0300
- * @tc.name: testImageFilterDestroyNormal
- * @tc.desc: Test for destroying an image filter with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testImageFilterDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0300
+ * @tc.desc   Test for destroying an image filter with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterDestroyNormal, Function | SmallTest | Level0) {
     OH_Drawing_ImageFilter *filter = OH_Drawing_ImageFilterCreateBlur(1, 1, OH_Drawing_TileMode::MIRROR, nullptr);
@@ -257,13 +257,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterDestroyNormal, Function | 
     OH_Drawing_ImageFilterDestroy(filter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0301
- * @tc.name: testImageFilterDestroyNULL
- * @tc.desc: Test for destroying an image filter with NULL parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterDestroyNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0301
+ * @tc.desc   Test for destroying an image filter with NULL parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterDestroyNULL, Function | SmallTest | Level3) {
     OH_Drawing_ImageFilterDestroy(nullptr);
@@ -271,13 +271,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterDestroyNULL, Function | Sm
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0302
- * @tc.name: testImageFilterDestroyMultipleCalls
- * @tc.desc: Test for multiple calls of destroying an image filter.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterDestroyMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0302
+ * @tc.desc   Test for multiple calls of destroying an image filter.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterDestroyMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_ImageFilterCreateFromColorFilter 10 times
@@ -305,13 +305,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterDestroyMultipleCalls, Func
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0400
- * @tc.name: testImageFilterCreateOffsetNormal
- * @tc.desc: test for testImageFilterCreateOffsetNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testImageFilterCreateOffsetNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0400
+ * @tc.desc   test for testImageFilterCreateOffsetNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetNormal, Function | SmallTest | Level0) {
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
@@ -327,13 +327,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetNormal, Functi
     OH_Drawing_ImageFilterDestroy(imageFilter2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0401
- * @tc.name: testImageFilterCreateOffsetNULL
- * @tc.desc: test for testImageFilterCreateOffsetNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateOffsetNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0401
+ * @tc.desc   test for testImageFilterCreateOffsetNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetNULL, Function | SmallTest | Level3) {
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
@@ -359,13 +359,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetNULL, Function
     OH_Drawing_ImageFilterDestroy(imageFilter4);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0402
- * @tc.name: testImageFilterCreateOffsetAbnormal
- * @tc.desc: test for testImageFilterCreateOffsetAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateOffsetAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0402
+ * @tc.desc   test for testImageFilterCreateOffsetAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetAbnormal, Function | SmallTest | Level3) {
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
@@ -374,25 +374,33 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetAbnormal, Func
     EXPECT_NE(imageFilter1, nullptr);
     // 2. The first parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to maximum value.
     OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateOffset(0xFFFFFFFF, 10, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(0x7FFFFFFF, 10, imageFilter1);
     EXPECT_NE(imageFilter2, nullptr);
     // 3. The second parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to maximum value.
     OH_Drawing_ImageFilter *imageFilter3 =
-        OH_Drawing_ImageFilterCreateOffset(10, 0xFFFFFFFF, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(10, 0x7FFFFFFF, imageFilter1);
     EXPECT_NE(imageFilter3, nullptr);
+    OH_Drawing_ImageFilter *imageFilter4 =
+        OH_Drawing_ImageFilterCreateOffset(0xFF7F0000, 10, imageFilter1);
+    EXPECT_NE(imageFilter4, nullptr);
+    OH_Drawing_ImageFilter *imageFilter5 =
+        OH_Drawing_ImageFilterCreateOffset(10, 0xFF7F0000, imageFilter1);
+    EXPECT_NE(imageFilter5, nullptr);
     // 4. Destroy objects.
     OH_Drawing_ImageFilterDestroy(imageFilter1);
     OH_Drawing_ImageFilterDestroy(imageFilter2);
     OH_Drawing_ImageFilterDestroy(imageFilter3);
+    OH_Drawing_ImageFilterDestroy(imageFilter4);
+    OH_Drawing_ImageFilterDestroy(imageFilter5);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0403
- * @tc.name: testImageFilterCreateOffsetMultipleCalls
- * @tc.desc: test for testImageFilterCreateOffsetMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateOffsetMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0403
+ * @tc.desc   test for testImageFilterCreateOffsetMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateBlur.
@@ -410,13 +418,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetMultipleCalls,
     OH_Drawing_ImageFilterDestroy(imageFilter1);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0500
- * @tc.name: testImageFilterCreateFromShderEffectNormal
- * @tc.desc: test for testImageFilterCreateFromShderEffectNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testImageFilterCreateFromShderEffectNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0500
+ * @tc.desc   test for testImageFilterCreateFromShderEffectNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromShderEffectNormal, Function | SmallTest | Level0) {
     // 1. Create an instance object through the interface OH_Drawing_ShaderEffectCreateColorShder.
@@ -430,13 +438,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromShderEffectNorma
     OH_Drawing_ImageFilterDestroy(imageFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0501
- * @tc.name: testImageFilterCreateFromShderEffectNULL
- * @tc.desc: test for testImageFilterCreateFromShderEffectNULL.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateFromShderEffectNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0501
+ * @tc.desc   test for testImageFilterCreateFromShderEffectNULL.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromShderEffectNULL, Function | SmallTest | Level3) {
     // 1. Create an instance object through the interface OH_Drawing_ImageFilterCreateFromShaderEffect.
@@ -446,13 +454,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromShderEffectNULL,
     OH_Drawing_ImageFilterDestroy(imageFilter);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0502
- * @tc.name: testImageFilterCreateFromShderEffectMultipleCalls
- * @tc.desc: test for testImageFilterCreateFromShderEffectMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateFromShderEffectMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0502
+ * @tc.desc   test for testImageFilterCreateFromShderEffectMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromShderEffectMultipleCalls,
     Function | SmallTest | Level3) {
@@ -469,13 +477,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateFromShderEffectMulti
     OH_Drawing_ShaderEffectDestroy(shaderEffect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0600
- * @tc.name: testImageFilterCreateBlurWithCropNormal
- * @tc.desc: test for testImageFilterCreateBlurWithCropNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testImageFilterCreateBlurWithCropNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0600
+ * @tc.desc   test for testImageFilterCreateBlurWithCropNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropNormal, Function | SmallTest | Level0) {
     OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200, 200);
@@ -491,13 +499,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropNormal, 
     OH_Drawing_ImageFilterDestroy(imageFilter2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0601
- * @tc.name: testImageFilterCreateBlurWithCropNull
- * @tc.desc: test for testImageFilterCreateBlurWithCropNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateBlurWithCropNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0601
+ * @tc.desc   test for testImageFilterCreateBlurWithCropNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropNull, Function | SmallTest | Level3) {
     OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200, 200);
@@ -522,13 +530,13 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropNull, Fu
     OH_Drawing_ImageFilterDestroy(imageFilter2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0602
- * @tc.name: testImageFilterCreateBlurWithCropMultiCalls
- * @tc.desc: test for testImageFilterCreateBlurWithCropMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testImageFilterCreateBlurWithCropMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_IMAGE_FILTER_0602
+ * @tc.desc   test for testImageFilterCreateBlurWithCropMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateBlurWithCropMultiCalls, Function | SmallTest | Level3) {
     OH_Drawing_Rect *cropRect = OH_Drawing_RectCreate(0, 0, 200, 200);

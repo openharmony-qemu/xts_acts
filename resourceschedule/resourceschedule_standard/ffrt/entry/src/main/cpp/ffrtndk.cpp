@@ -60,6 +60,16 @@ const uint64_t COST_TIME_200 = 200;
 const uint64_t COST_TIME_300 = 300;
 const uint64_t COST_TIME_500 = 500;
 const uint64_t COST_TIME_600 = 600;
+const int TASK_STORAGE_SIZE = 128;
+const int STORAGE_SIZE = 64;
+#if defined(__aarch64__)
+const int FIBER_STORAGE_SIZE = 22;
+#elif defined(__arm__)
+const int FIBER_STORAGE_SIZE = 64;
+#elif defined(__x86_64__)
+const int FIBER_STORAGE_SIZE = 8;
+#endif
+const int FUNCTION_STORAGE_SIZE = 96;
 
 void OnePlusForTest(void* arg)
 {
@@ -555,7 +565,7 @@ static napi_value ConditionVariableApiTest001(napi_env env, napi_callback_info i
     if (ret != ffrt_error_inval) {
         resultEnd = 7;
     }
-    ffrt_condattr_t attr;
+    ffrt_condattr_t attr = {0};
     ret = ffrt_cond_init(&cond, &attr);
     if (ret != ffrt_success) {
         resultEnd = 8;
@@ -828,10 +838,30 @@ static napi_value RecursiveMutexAbnormalParamTest001(napi_env env, napi_callback
     return flag;
 }
 
+static napi_value SharedMutexAbnormalParamTest001(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    int type = 0;
+    ffrt_rwlockattr_t attr = {0};
+    ffrt_rwlock_t mtx = {0};
+    int ret = ffrt_rwlock_init(&mtx, nullptr);
+    if (ret != ffrt_success) {
+        result = ERR_CODE_1;
+    }
+    ret = ffrt_mutexattr_settype(NULL, ffrt_mutex_normal);
+    ret = ffrt_mutexattr_settype(NULL, ffrt_mutex_default);
+    if (ret != ffrt_error_inval) {
+        result = ERR_CODE_2;
+    }
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
 static napi_value RecursiveMutexAbnormalInvalidParamTest001(napi_env env, napi_callback_info info)
 {
     int result = 0;
-    ffrt_mutexattr_t attr;
+    ffrt_mutexattr_t attr = {0};
     int ret = ffrt_mutexattr_init(NULL);
     if (ret != ffrt_error_inval) {
         result = ERR_CODE_1;
@@ -1541,6 +1571,9 @@ static napi_value QueueApiTest014(napi_env env, napi_callback_info info)
     }
     int a = 0;
     ffrt_task_handle_t handle = ffrt_queue_submit_h_f(queue_handle, OnePlusForTest, &a, nullptr);
+    if (handle == nullptr) {
+        result += 1;
+    }
     ffrt_queue_wait(handle);
     if (a != 1) {
         result += 1;
@@ -1595,6 +1628,36 @@ static napi_value QueueApiTest016(napi_env env, napi_callback_info info)
     };
     ffrt_queue_submit(queue_handle, create_function_wrapper(basicFunc, ffrt_function_kind_queue), nullptr);
     if (!ffrt_queue_attr_get_thread_mode(&queue_attr)) {
+        result += 1;
+    }
+
+    // 销毁队列
+    ffrt_queue_attr_destroy(&queue_attr);
+    ffrt_queue_destroy(queue_handle);
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
+static napi_value QueueApiTest017(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    ffrt_queue_attr_t queue_attr;
+    (void)ffrt_queue_attr_init(&queue_attr);
+
+    ffrt_queue_attr_set_thread_mode(&queue_attr, false);
+    ffrt_queue_t queue_handle = ffrt_queue_create(ffrt_queue_serial, "test_queue", &queue_attr);
+    if (queue_handle == nullptr) {
+        result += 1;
+    }
+    int a = 0;
+
+    ffrt_task_handle_t handle = ffrt_queue_submit_h_f(nullptr, OnePlusForTest, &a, nullptr);
+    if (ffrt_queue_attr_get_thread_mode(&queue_attr)) {
+        result += 1;
+    }
+
+    if (handle != nullptr) {
         result += 1;
     }
 
@@ -2212,12 +2275,15 @@ static napi_value SubmitAbnormalTest(napi_env env, napi_callback_info info)
     ffrt_function_header_t* ffrt_header_t = create_function_wrapper((func));
 
     ffrt_submit_base(nullptr, &in, &out, nullptr);
-    ffrt_submit_h_base(nullptr, &in, &out, nullptr);
+    ffrt_task_handle_t handle = ffrt_submit_h_base(nullptr, &in, &out, nullptr);
+    if (handle != nullptr) {
+        result = 1;
+    }
     ffrt_task_handle_destroy(nullptr);
     ffrt_submit_base(ffrt_header_t, &in, &out, nullptr);
     ffrt_wait();
     if (x != 1) {
-        result = 1;
+        result += 1;
     }
     napi_value flag = nullptr;
     napi_create_double(env, result, &flag);
@@ -2649,11 +2715,14 @@ static napi_value SubmitHBasicTest001(napi_env env, napi_callback_info info)
     ffrt_deps_t out{static_cast<uint32_t>(out_deps.size()), out_deps.data()};
     ffrt_function_header_t* ffrt_header_t = create_function_wrapper((func));
     ffrt_task_handle_t task = ffrt_submit_h_base(ffrt_header_t, &in, &out, nullptr);
+    if (task == nullptr) {
+        result = 1;
+    }
     const std::vector<ffrt_dependence_t> wait_deps = {{ffrt_dependence_data, &x}};
     ffrt_deps_t wait{static_cast<uint32_t>(wait_deps.size()), wait_deps.data()};
     ffrt_wait_deps(&wait);
     if (x != 1) {
-        result = 1;
+        result += 1;
     }
     ffrt_task_handle_destroy(task);
     napi_value flag = nullptr;
@@ -2691,6 +2760,9 @@ static napi_value SubmitHFTest001(napi_env env, napi_callback_info info)
     ffrt_task_attr_t attr;
     ffrt_task_attr_init(&attr);
     ffrt_task_handle_t task = ffrt_submit_h_f(OnePlusForTest, &a, nullptr, nullptr, &attr);
+    if (task == nullptr) {
+        result += 1;
+    }
     const std::vector<ffrt_dependence_t> wait_deps = {{ffrt_dependence_task, task}};
     ffrt_deps_t wait{static_cast<uint32_t>(wait_deps.size()), wait_deps.data()};
     ffrt_wait_deps(&wait);
@@ -3948,6 +4020,110 @@ static napi_value ffrt_fiber_001(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value ffrt_alloc_function_0001(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    ffrt_function_kind_t kind = ffrt_function_kind_general;
+    auto p = ffrt_alloc_auto_managed_function_storage_base(kind);
+    if (p == nullptr) {
+        result += 1;
+    }
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
+static napi_value ffrtStorageSizeCheck(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    ffrt_storage_size_t ret = ffrt_task_attr_storage_size;
+    if (ret != TASK_STORAGE_SIZE) {
+        result = ERR_CODE_1;
+    }
+    ret = ffrt_auto_managed_function_storage_size;
+    if (ret != STORAGE_SIZE + sizeof(ffrt_function_header_t)) {
+        result = ERR_CODE_2;
+    }
+    ret = ffrt_mutex_storage_size;
+    if (ret != STORAGE_SIZE) {
+        result = ERR_CODE_3;
+    }
+    ret = ffrt_cond_storage_size;
+    if (ret != STORAGE_SIZE) {
+        result = ERR_CODE_4;
+    }
+    ret = ffrt_queue_attr_storage_size;
+    if (ret != TASK_STORAGE_SIZE) {
+        result = ERR_CODE_5;
+    }
+    ret = ffrt_rwlock_storage_size;
+    if (ret != STORAGE_SIZE) {
+        result = ERR_CODE_6;
+    }
+    ret = ffrt_fiber_storage_size;
+    if (ret != FIBER_STORAGE_SIZE) {
+        result = ERR_CODE_7;
+    }
+
+    ffrt_error_t ero = ffrt_error_timedout;
+    if (ero != ETIMEDOUT) {
+        result = ERR_CODE_8;
+    }
+    ero = ffrt_error;
+    if (ero != -1) {
+        result = ERR_CODE_9;
+    }
+    ero = ffrt_error_nomem;
+    if (ero != ENOMEM) {
+        result = -1;
+    }
+
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
+static napi_value ffrtQueueQosCheck(napi_env env, napi_callback_info info)
+{
+    int result = 0;
+    ffrt_task_attr_t* attr = (ffrt_task_attr_t *) malloc(sizeof(ffrt_task_attr_t));
+    ffrt_queue_attr_t queue_attr;
+    (void)ffrt_queue_attr_init(&queue_attr);
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_inherit));
+    ffrt_qos_t queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_inherit)) {
+        result = ERR_CODE_1;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_background));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_background)) {
+        result = ERR_CODE_2;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_utility));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_utility)) {
+        result = ERR_CODE_3;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_user_initiated));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_user_initiated)) {
+        result = ERR_CODE_4;
+    }
+    ffrt_queue_attr_set_qos(&queue_attr, static_cast<ffrt_qos_t>(ffrt::qos_default));
+    queueqos = ffrt_queue_attr_get_qos(&queue_attr);
+    if (queueqos != static_cast<int>(ffrt::qos_default)) {
+        result = ERR_CODE_5;
+    }
+    ffrt_mutex_t mutex = {0};
+    ffrt_fiber_t fiber = {0};
+    ffrt_cond_t cond = {0};
+    free(attr);
+
+    napi_value flag = nullptr;
+    napi_create_double(env, result, &flag);
+    return flag;
+}
+
 napi_property_descriptor desc[] = {
     {"conditionVariableTest001", nullptr, ConditionVariableTest001, nullptr, nullptr, nullptr,
         napi_default, nullptr },
@@ -3968,6 +4144,8 @@ napi_property_descriptor desc[] = {
     {"delayCTest001", nullptr, DelayCTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"ffrtYieldC0001", nullptr, FfrtYieldC0001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"recursiveMutexAbnormalParamTest001", nullptr, RecursiveMutexAbnormalParamTest001, nullptr,
+        nullptr, nullptr, napi_default, nullptr },
+    {"sharedMutexAbnormalParamTest001", nullptr, SharedMutexAbnormalParamTest001, nullptr,
         nullptr, nullptr, napi_default, nullptr },
     {"recursiveMutexAbnormalInvalidParamTest001", nullptr, RecursiveMutexAbnormalInvalidParamTest001, nullptr,
         nullptr, nullptr, napi_default, nullptr },
@@ -3994,6 +4172,7 @@ napi_property_descriptor desc[] = {
     {"queueApiTest014", nullptr, QueueApiTest014, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"queueApiTest015", nullptr, QueueApiTest015, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"queueApiTest016", nullptr, QueueApiTest016, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"queueApiTest017", nullptr, QueueApiTest017, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"queueCancelTest001", nullptr, QueueCancelTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"queueCancelTest003", nullptr, QueueCancelTest003, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"queueCancelTest004", nullptr, QueueCancelTest004, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -4080,6 +4259,9 @@ napi_property_descriptor desc[] = {
     {"ffrtThisTaskUpdateQos", nullptr, FfrtThisTaskUpdateQos, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"sharedMutexTest001", nullptr, SharedMutexTest001, nullptr, nullptr, nullptr, napi_default, nullptr },
     {"ffrt_fiber_001", nullptr, ffrt_fiber_001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrt_alloc_function_0001", nullptr, ffrt_alloc_function_0001, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrtStorageSizeCheck", nullptr, ffrtStorageSizeCheck, nullptr, nullptr, nullptr, napi_default, nullptr },
+    {"ffrtQueueQosCheck", nullptr, ffrtQueueQosCheck, nullptr, nullptr, nullptr, napi_default, nullptr },
 };
 
 EXTERN_C_START

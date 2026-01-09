@@ -58,14 +58,14 @@ export default function V1ToV2() {
       console.info("V1ToV2 after each called");
     });
     /**
+     * @tc.name   v1Tov2_001
      * @tc.number v1Tov2_001
-     * @tc.name v1Tov2_001
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_001', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_001', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_001] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('state_string_value'));
       await CommonFunc.sleep(1000);
@@ -75,14 +75,14 @@ export default function V1ToV2() {
       done();
     })
     /**
+     * @tc.name   v1Tov2_002
      * @tc.number v1Tov2_002
-     * @tc.name v1Tov2_002
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_002', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_002', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_002] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('prop_number_value'));
       await CommonFunc.sleep(1000);
@@ -92,14 +92,14 @@ export default function V1ToV2() {
       done();
     })
     /**
+     * @tc.name   v1Tov2_003
      * @tc.number v1Tov2_003
-     * @tc.name v1Tov2_003
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_003', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_003', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_003] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('provide_enum_value'));
       await CommonFunc.sleep(1000);
@@ -109,14 +109,14 @@ export default function V1ToV2() {
       done();
     })
     /**
+     * @tc.name   v1Tov2_004
      * @tc.number v1Tov2_004
-     * @tc.name v1Tov2_004
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_004', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_004', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_004] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('consume_null_value'));
       await CommonFunc.sleep(1000);
@@ -125,15 +125,15 @@ export default function V1ToV2() {
       console.info('[v1Tov2_004] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_005
      * @tc.number v1Tov2_005
-     * @tc.name v1Tov2_005
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_005', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_005', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_005] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('storage_link_undefined_value'));
       await CommonFunc.sleep(1000);
@@ -142,15 +142,15 @@ export default function V1ToV2() {
       console.info('[v1Tov2_005] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_006
      * @tc.number v1Tov2_006
-     * @tc.name v1Tov2_006
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_006', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_006', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_006] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('storage_prop_string_value'));
       await CommonFunc.sleep(1000);
@@ -159,15 +159,15 @@ export default function V1ToV2() {
       console.info('[v1Tov2_006] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_007
      * @tc.number v1Tov2_007
-     * @tc.name v1Tov2_007
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_007', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_007', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_007] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('func_value2'));
       await CommonFunc.sleep(1000);
@@ -176,15 +176,15 @@ export default function V1ToV2() {
       console.info('[v1Tov2_007] END');
       done();
     })
-     /**
+    /**
+     * @tc.name   v1Tov2_008
      * @tc.number v1Tov2_008
-     * @tc.name v1Tov2_008
-     * @tc.desc test v2 to v1
-     * @tc.level Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.desc   test v2 to v1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('v1Tov2_008', Level.LEVEL0, async (done: Function) => {
+    it('v1Tov2_008', Level.LEVEL1, async (done: Function) => {
       console.info('[v1Tov2_008] START');
       let obj: ESObject = JSON.parse(getInspectorByKey('link_boolean_value'));
       await CommonFunc.sleep(1000);

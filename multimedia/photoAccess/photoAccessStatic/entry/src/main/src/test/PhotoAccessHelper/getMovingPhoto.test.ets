@@ -362,12 +362,12 @@ export default function getMovingPhotoTest() {
     }
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_STATIC_0001
-      * @tc.name    request_moving_photo_content_static_0001
-      * @tc.desc    request moving photo content to sandbox, then cacel request
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   request_moving_photo_content_static_0001
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_STATIC_0001
+     * @tc.desc   request moving photo content to sandbox, then cacel request
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -382,12 +382,12 @@ export default function getMovingPhotoTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_STATIC_0002
-      * @tc.name    request_moving_photo_content_static_0002
-      * @tc.desc    request moving photo the part of img to sandbox
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   request_moving_photo_content_static_0002
+     * @tc.number SUB_PHOTOACCESS_HELPER_REQUEST_CONTENT_STATIC_0002
+     * @tc.desc   request moving photo the part of img to sandbox
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('request_moving_photo_content_static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -400,12 +400,12 @@ export default function getMovingPhotoTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_CANEL_REQUEST_STATIC_0200
-      * @tc.name    cancel_request_static_002
-      * @tc.desc    cancelRequest by error requestId,error code is 401
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 2
+     * @tc.name   cancel_request_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_CANEL_REQUEST_STATIC_0200
+     * @tc.desc   cancelRequest by error requestId,error code is 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('cancel_request_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

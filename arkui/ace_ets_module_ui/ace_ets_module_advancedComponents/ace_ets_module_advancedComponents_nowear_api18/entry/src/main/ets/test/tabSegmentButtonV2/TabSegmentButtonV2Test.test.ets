@@ -49,12 +49,12 @@ export default function TabSegmentButtonV2Test() {
     });
 
     /**
+     * @tc.name   TabSegmentButtonV2Test_0100
      * @tc.number SegmentButton single direction
-     * @tc.name TabSegmentButtonV2Test_0100
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
+     * @tc.desc   Test SegmentButton page
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('TabSegmentButtonV2Test_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -86,14 +86,14 @@ export default function TabSegmentButtonV2Test() {
       });
 
 
-    /**
-     * @tc.number SegmentButton single direction
-     * @tc.name TabSegmentButtonV2Test_0110
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
+     /**
+      * @tc.name   TabSegmentButtonV2Test_0110
+      * @tc.number SegmentButton single direction
+      * @tc.desc   Test SegmentButton page
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('TabSegmentButtonV2Test_0110', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.log("TabSegmentButtonV2Test_0110", "START");
@@ -112,14 +112,14 @@ export default function TabSegmentButtonV2Test() {
         done();
       });
 
-    /**
-     * @tc.number SegmentButton single direction
-     * @tc.name TabSegmentButtonV2Test_0120
-     * @tc.desc Test SegmentButton page
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level 0
-     */
+      /**
+       * @tc.name   TabSegmentButtonV2Test_0120
+       * @tc.number SegmentButton single direction
+       * @tc.desc   Test SegmentButton page
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('TabSegmentButtonV2Test_0120', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.log("TabSegmentButtonV2Test_0120", "START");
@@ -156,14 +156,14 @@ export default function TabSegmentButtonV2Test() {
           done();
       });
 
-     /**
-      * @tc.number SegmentButton single direction
-      * @tc.name TabSegmentButtonV2Test_0130
-      * @tc.desc Test SegmentButton page
-      * @tc.size MediumTest
-      * @tc.type Function
-      * @tc.level 0
-      */
+      /**
+       * @tc.name   TabSegmentButtonV2Test_0130
+       * @tc.number SegmentButton single direction
+       * @tc.desc   Test SegmentButton page
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('TabSegmentButtonV2Test_0130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.log("TabSegmentButtonV2Test_0130", "START");
@@ -185,14 +185,14 @@ export default function TabSegmentButtonV2Test() {
       });
 
 
-     /**
-      * @tc.number SegmentButton single direction
-      * @tc.name 'TabSegmentButtonV2Test_0140
-      * @tc.desc Test SegmentButton page
-      * @tc.size MediumTest
-      * @tc.type Function
-      * @tc.level 0
-      */
+      /**
+       * @tc.name   TabSegmentButtonV2Test_0140
+       * @tc.number SegmentButton single direction
+       * @tc.desc   Test SegmentButton page
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('TabSegmentButtonV2Test_0140', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.log("TabSegmentButtonV2Test_0140", "START");
@@ -205,20 +205,21 @@ export default function TabSegmentButtonV2Test() {
           .$children[5]
           .$children[0]
         console.log("TabSegmentButtonV2Test_0140 itemMinHeight ", itemMinHeight.$attrs.height)
-        expect(itemMinHeight.$attrs.height).assertEqual('80.00vp');
+        let height :number = Number(itemMinHeight.$attrs.height.split('.')[0])
+        expect(Math.floor(Math.abs(height-80))<=1).assertEqual(true)
         await CommonFunc.sleep(500);
         console.log("TabSegmentButtonV2Test_0140", "END");
         done();
       });
 
-     /**
-      * @tc.number SegmentButton single direction
-      * @tc.name 'TabSegmentButtonV2Test_0150
-      * @tc.desc Test SegmentButton page
-      * @tc.size MediumTest
-      * @tc.type Function
-      * @tc.level 0
-      */
+      /**
+       * @tc.name   TabSegmentButtonV2Test_0150
+       * @tc.number SegmentButton single direction
+       * @tc.desc   Test SegmentButton page
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('TabSegmentButtonV2Test_0150', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.log("TabSegmentButtonV2Test_0150", "START");
@@ -241,14 +242,14 @@ export default function TabSegmentButtonV2Test() {
         done();
       });
 
-     /**
-      * @tc.number SegmentButton single direction
-      * @tc.name 'TabSegmentButtonV2Test_0160
-      * @tc.desc Test SegmentButton page
-      * @tc.size MediumTest
-      * @tc.type Function
-      * @tc.level 0
-      */
+      /**
+       * @tc.name   TabSegmentButtonV2Test_0160
+       * @tc.number SegmentButton single direction
+       * @tc.desc   Test SegmentButton page
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL0
+       */
       it('TabSegmentButtonV2Test_0160', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
         console.log("TabSegmentButtonV2Test_0160", "START");

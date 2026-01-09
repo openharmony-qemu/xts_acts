@@ -25,7 +25,7 @@ async function getTypeTest(done: Function, testName: string, path: string,
   AuxiliaryPictureType: image.AuxiliaryPictureType, callback: (type: image.AuxiliaryPictureType) => void) {
   try {
     let testContext: common.UIAbilityContext = AppStorage.get('testContext') as common.UIAbilityContext;
-    let array = new ArrayBuffer(299700600);
+    let array = new ArrayBuffer(20000000);
     let pathUri = 'file://' + testContext.filesDir + "/" + path;
     const fd = await fs.open(pathUri, fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
     let readLength = await fs.read(fd.fd, array);
@@ -78,12 +78,12 @@ export default function AuxiliaryGetTypeTest() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_GETTYPE_001
-     * @tc.name       SUB_MEDIA_IMAGE_GETTYPE_001
-     * @tc.desc       Test getType with AuxiliaryPictureType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   auxiliaryPicture_getType_promise_0001
+     * @tc.number SUB_MEDIA_IMAGE_GETTYPE_001
+     * @tc.desc   Test getType with AuxiliaryPictureType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_getType_promise_0001', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_getType_promise_0001';
@@ -95,12 +95,12 @@ export default function AuxiliaryGetTypeTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_GETTYPE_002
-     * @tc.name       SUB_MEDIA_IMAGE_GETTYPE_002
-     * @tc.desc       Test getType with AuxiliaryPictureType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   auxiliaryPicture_getType_promise_0002
+     * @tc.number SUB_MEDIA_IMAGE_GETTYPE_002
+     * @tc.desc   Test getType with AuxiliaryPictureType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_getType_promise_0002', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_getType_promise_0002';
@@ -112,12 +112,12 @@ export default function AuxiliaryGetTypeTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_GETTYPE_003
-     * @tc.name       SUB_MEDIA_IMAGE_GETTYPE_003
-     * @tc.desc       Test getType with AuxiliaryPictureType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   auxiliaryPicture_getType_promise_0003
+     * @tc.number SUB_MEDIA_IMAGE_GETTYPE_003
+     * @tc.desc   Test getType with AuxiliaryPictureType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_getType_promise_0003', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_getType_promise_0003';
@@ -129,12 +129,12 @@ export default function AuxiliaryGetTypeTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_GETTYPE_004
-     * @tc.name       SUB_MEDIA_IMAGE_GETTYPE_004
-     * @tc.desc       Test getType with AuxiliaryPictureType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   auxiliaryPicture_getType_promise_0004
+     * @tc.number SUB_MEDIA_IMAGE_GETTYPE_004
+     * @tc.desc   Test getType with AuxiliaryPictureType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_getType_promise_0004', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_getType_promise_0004';
@@ -146,12 +146,12 @@ export default function AuxiliaryGetTypeTest() {
     })
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_GETTYPE_005
-     * @tc.name       SUB_MEDIA_IMAGE_GETTYPE_005
-     * @tc.desc       Test getType with AuxiliaryPictureType
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   auxiliaryPicture_getType_promise_0005
+     * @tc.number SUB_MEDIA_IMAGE_GETTYPE_005
+     * @tc.desc   Test getType with AuxiliaryPictureType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('auxiliaryPicture_getType_promise_0005', Level.LEVEL0, async (done: Function) => {
       const testName = 'auxiliaryPicture_getType_promise_0005';

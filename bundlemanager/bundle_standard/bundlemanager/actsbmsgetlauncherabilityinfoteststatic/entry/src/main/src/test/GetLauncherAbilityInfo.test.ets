@@ -31,16 +31,20 @@ let tag: string = 'testtag';
 const BUNDLE_NAME2 = 'ohos.acts.bms.getlauncherabilityinfo.test.static';
 const TEST_SUITE_NAME = 'launcherBundleManagerTest'
 const PARAM_0: int = 0;
+const URI_0100 = "abcde://urigetabilityinfotest";
 
 export default function actsGetLauncherAbilityInfoTest() {
 
   describe("ActsGetLauncherAbilityInfoTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
-     * @tc.desc: Test getLauncherAbilityInfoSync with valid value.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100
+     * @tc.desc   Test getLauncherAbilityInfoSync with valid value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
       const TEST_CASE_NAME = 'Sub_Bms_Framework_GetLauncherAbilityInfoSync_static_0100';
@@ -49,18 +53,20 @@ export default function actsGetLauncherAbilityInfoTest() {
         let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, 100);
         // hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getLauncherAbilityInfoSync success, result is: %{public}s', JSON.stringify(data));
         console.log('getLauncherAbilityInfoSync success');
+        expect(data.length>0).assertTrue();
         expect(data[0].labelId).assertLarger(0.0);
         expect(data[0].iconId).assertLarger(0.0);
         expect(data[0].userId).assertEqual(100);
         expect(data[0].installTime).assertLarger(0.0);
+        expect(data[0].applicationInfo.cloudStructuredDataSyncEnabled).assertEqual(false);
         expect(data[0].elementName.deviceId).assertEqual("");
         expect(data[0].elementName.bundleName).assertEqual(BUNDLE_NAME2);
         expect(data[0].elementName.moduleName).assertEqual("entry");
         expect(data[0].elementName.abilityName).assertEqual('EntryAbility');
         expect(data[0].elementName.shortName).assertEqual('');
         expect(data[0].elementName.uri).assertEqual('/ohos.acts.bms.getlauncherabilityinfo.test.static/entry/EntryAbility');
-        done();
         hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+        done();
       } catch (errData) {
         // hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+' getLauncherAbilityInfoSync failed, result is: %{public}s', JSON.stringify(err));
         console.log('getLauncherAbilityInfoSync failed');
@@ -77,10 +83,13 @@ export default function actsGetLauncherAbilityInfoTest() {
       }
     });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
-     * @tc.desc: Test getLauncherAbilityInfoSync with bundle name is not found return errcode 17700001.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200
+     * @tc.desc   Test getLauncherAbilityInfoSync with bundle name is not found return errcode 17700001.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_0200", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -107,10 +116,13 @@ export default function actsGetLauncherAbilityInfoTest() {
         }
       });
 
-    /*
-     * @tc.number: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
-     * @tc.name: Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
-     * @tc.desc: Test getLauncherAbilityInfoSync with user ID is not found return errcode 17700004.
+    /**
+     * @tc.name   Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
+     * @tc.number Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300
+     * @tc.desc   Test getLauncherAbilityInfoSync with user ID is not found return errcode 17700004.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("Sub_Bms_Framework_GetLauncherAbilityInfoSync_0300", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1,
       async (done: () => void): Promise<void> => {
@@ -119,8 +131,8 @@ export default function actsGetLauncherAbilityInfoTest() {
           hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case start');
           let data = launcherBundleManager.getLauncherAbilityInfoSync(BUNDLE_NAME2, 111);
           expect().assertFail();
-          done();
           hilog.info(0x0000, `${tag}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}`+'test case end');
+          done();
         } catch (errData) {
           let errMsg = (errData as BusinessError).message;
           let code = (errData as BusinessError).code;
@@ -137,16 +149,16 @@ export default function actsGetLauncherAbilityInfoTest() {
         }
       });
 
-     /**
-     * @tc.number  Sub_Bms_Framework_getAbilityInfo_static_00
-     * @tc.name    Sub_Bms_Framework_getAbilityInfo_static_00
-     * @tc.desc    Test getAbilityInfo normal
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level1
+    /**
+     * @tc.name   Sub_Bms_Framework_getAbilityInfo_static_00
+     * @tc.number Sub_Bms_Framework_getAbilityInfo_static_00
+     * @tc.desc   Test getAbilityInfo normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getAbilityInfo_static_00', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
-      let uri = "https://www.example.com";
+      let uri = URI_0100;
       let abilityFlags = bundleManager.AbilityFlag.GET_ABILITY_INFO_WITH_APPLICATION;
       bundleManager.getAbilityInfo(uri, abilityFlags).then((abilityInfos: Array<bundleManager.AbilityInfo>) => {
         expect(abilityInfos.length).assertLarger(PARAM_0);
@@ -158,7 +170,7 @@ export default function actsGetLauncherAbilityInfoTest() {
           expect(abilityInfos[index].labelId).assertLarger(PARAM_0);
           expect(abilityInfos[index].description).assertEqual("$string:EntryAbility_desc");
           expect(abilityInfos[index].descriptionId).assertLarger(PARAM_0);
-          expect(abilityInfos[index].icon).assertEqual("$media:icon");
+          expect(abilityInfos[index].icon).assertEqual("$media:layered_image");
           expect(abilityInfos[index].iconId).assertLarger(PARAM_0);
           expect(abilityInfos[index].process).assertEqual("");
           expect(abilityInfos[index].exported).assertEqual(true);
@@ -166,7 +178,7 @@ export default function actsGetLauncherAbilityInfoTest() {
           expect(abilityInfos[index].launchType).assertEqual(PARAM_0);
           expect(abilityInfos[index].permissions.length).assertEqual(PARAM_0);
           expect(abilityInfos[index].deviceTypes.length).assertEqual(PARAM_0);
-          expect(abilityInfos[index].applicationInfo).assertEqual(null);
+          expect(abilityInfos[index].applicationInfo).not().assertNull();
           expect(abilityInfos[index].metadata.length).assertEqual(PARAM_0);
           expect(abilityInfos[index].enabled).assertEqual(true);
           expect(abilityInfos[index].supportWindowModes.length).assertLarger(PARAM_0);
@@ -182,7 +194,7 @@ export default function actsGetLauncherAbilityInfoTest() {
           expect(abilityInfos[index].orientationId).assertEqual(PARAM_0);
         }
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_00 catch failed errCode:${err.code} message:${err.message}`);
         if(err.code == 201){
           expect(err.code).assertEqual(201);
@@ -195,12 +207,12 @@ export default function actsGetLauncherAbilityInfoTest() {
     })
 
     /**
-     * @tc.number  Sub_Bms_Framework_getAbilityInfo_static_01
-     * @tc.name    Sub_Bms_Framework_getAbilityInfo_static_01
-     * @tc.desc    Test getAbilityInfo with error code
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level1
+     * @tc.name   Sub_Bms_Framework_getAbilityInfo_static_01
+     * @tc.number Sub_Bms_Framework_getAbilityInfo_static_01
+     * @tc.desc   Test getAbilityInfo with error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Bms_Framework_getAbilityInfo_static_01', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let uri = "6666666";
@@ -208,7 +220,7 @@ export default function actsGetLauncherAbilityInfoTest() {
       bundleManager.getAbilityInfo(uri, abilityFlags).then((data: Array<bundleManager.AbilityInfo>) => {
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_01 catch failed errCode:${err.code} message:${err.message}`);
         if(err.code == 201){
           expect(err.code).assertEqual(201);

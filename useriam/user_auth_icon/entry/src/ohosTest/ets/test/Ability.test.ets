@@ -38,7 +38,6 @@ export default function abilityTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @generated.time 2025-11-09 20:57:56
      * @tc.name   SUB_Security_IAM_authWidget_Func_0330
      * @tc.number SUB_Security_IAM_authWidget_Func_0330
      * @tc.desc   abnormal test

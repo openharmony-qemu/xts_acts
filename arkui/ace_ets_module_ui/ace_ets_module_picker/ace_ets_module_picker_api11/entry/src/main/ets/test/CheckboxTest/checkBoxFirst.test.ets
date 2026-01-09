@@ -45,6 +45,14 @@ export default function checkBoxGroupJsunit2() {
       console.info("checkBoxGroup after each called");
     });
 
+    /**
+     * @tc.name   testcheckBoxGroup001
+     * @tc.number testcheckBoxGroup001
+     * @tc.desc   testcheckBoxGroup001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testcheckBoxGroup001', Level.LEVEL1, async (done:Function) => {
       console.info('checkBoxGroup testcheckBoxGroup001 START');
       await Utils.sleep(2000);

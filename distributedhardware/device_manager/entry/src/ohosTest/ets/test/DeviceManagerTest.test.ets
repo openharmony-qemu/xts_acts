@@ -22,7 +22,6 @@ const KEY_CODE_EVENT_ERROR = 1
 export default function DeviceManagerTest() {
   describe('DeviceManagerTest', () => {
     /**
-     * @generated.time 2025-11-09 20:49:56
      * @tc.name   testDistributedServiceKitGetLocalDeviceName0100
      * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_0100
      * @tc.desc   testing ERR_OK interface
@@ -43,6 +42,52 @@ export default function DeviceManagerTest() {
           expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
           done()
         }
-      })
+      });
+
+    /**
+     * @tc.name   testDistributedServiceKitGetLocalDeviceName0200
+     * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_0200
+     * @tc.desc   testing ERR_OK interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testDistributedServiceKitGetLocalDeviceName0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          console.info("====>testDistributedServiceKitGetLocalDeviceName0200 start====");
+          let result: number = devicemanagerndktest.FisrtGetLocalDeviceNameErrorCode401();
+          console.info("====>testDistributedServiceKitGetLocalDeviceName0200 result====" + result);
+          expect(KEY_CODE_EVENT_OK).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>testDistributedServiceKitGetLocalDeviceName0200 catch err: " + err);
+          expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
+          done()
+        }
+      });
+
+      /**
+       * @tc.name   testDistributedServiceKitGetLocalDeviceName0300
+       * @tc.number SUB_DistributedServiceKit_Get_Local_Device_Name_0300
+       * @tc.desc   testing ERR_OK interface
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL1
+       */
+      it('testDistributedServiceKitGetLocalDeviceName0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+        async (done: Function) => {
+          try {
+            console.info("====>testDistributedServiceKitGetLocalDeviceName0300 start====");
+            let result: number = devicemanagerndktest.SecondGetLocalDeviceNameErrorCode401();
+            console.info("====>testDistributedServiceKitGetLocalDeviceName0300 result====" + result);
+            expect(KEY_CODE_EVENT_OK).assertEqual(result);
+            done()
+          } catch (err) {
+            console.error("====>testDistributedServiceKitGetLocalDeviceName0300 catch err: " + err);
+            expect(false).assertEqual(KEY_CODE_EVENT_ERROR);
+            done()
+          }
+        });
   })
 }

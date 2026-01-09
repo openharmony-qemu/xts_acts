@@ -24,7 +24,6 @@ export default function BuiltinsNumberParseTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -40,12 +39,12 @@ export default function BuiltinsNumberParseTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberParseTest0100
      * @tc.number SUB_BUILTINS_NUMBER_PARSE_TEST_0100
-     * @tc.name builtinsNumberParseTest0100
-     * @tc.desc ParseFloat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ParseFloat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberParseTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberParseTest0100';
@@ -59,12 +58,12 @@ export default function BuiltinsNumberParseTest() {
 
 
     /**
+     * @tc.name   builtinsNumberParseTest0200
      * @tc.number SUB_BUILTINS_NUMBER_PARSE_TEST_0200
-     * @tc.name builtinsNumberParseTest0200
-     * @tc.desc ParseFloat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ParseFloat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberParseTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberParseTest0200';
@@ -78,12 +77,12 @@ export default function BuiltinsNumberParseTest() {
 
 
     /**
+     * @tc.name   builtinsNumberParseTest0300
      * @tc.number SUB_BUILTINS_NUMBER_PARSE_TEST_0300
-     * @tc.name builtinsNumberParseTest0300
-     * @tc.desc ParseFloat
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ParseFloat
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberParseTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberParseTest0300';
@@ -97,12 +96,12 @@ export default function BuiltinsNumberParseTest() {
 
 
     /**
+     * @tc.name   builtinsNumberParseTest0400
      * @tc.number SUB_BUILTINS_NUMBER_PARSE_TEST_0400
-     * @tc.name builtinsNumberParseTest0400
-     * @tc.desc ParseInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ParseInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberParseTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberParseTest0400';
@@ -115,12 +114,12 @@ export default function BuiltinsNumberParseTest() {
     })
 
     /**
+     * @tc.name   builtinsNumberParseTest0500
      * @tc.number SUB_BUILTINS_NUMBER_PARSE_TEST_0500
-     * @tc.name builtinsNumberParseTest0500
-     * @tc.desc ParseInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ParseInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberParseTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberParseTest0500';
@@ -135,12 +134,12 @@ export default function BuiltinsNumberParseTest() {
 
 
     /**
+     * @tc.name   builtinsNumberParseTest0600
      * @tc.number SUB_BUILTINS_NUMBER_PARSE_TEST_0600
-     * @tc.name builtinsNumberParseTest0600
-     * @tc.desc ParseInt
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   ParseInt
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsNumberParseTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'builtinsNumberParseTest0600';

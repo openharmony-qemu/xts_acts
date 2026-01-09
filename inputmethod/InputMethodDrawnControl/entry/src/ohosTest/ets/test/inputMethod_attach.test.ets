@@ -59,7 +59,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Async_0100
      * @tc.number SUB_Misc_inputMethod_attach_Async_0100
      * @tc.desc   Function test
@@ -97,7 +96,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Async_0200
      * @tc.number SUB_Misc_inputMethod_attach_Async_0200
      * @tc.desc   Function test
@@ -135,7 +133,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Async_0300
      * @tc.number SUB_Misc_inputMethod_attach_Async_0300
      * @tc.desc   Function test
@@ -175,7 +172,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Async_0400
      * @tc.number SUB_Misc_inputMethod_attach_Async_0400
      * @tc.desc   Function test
@@ -215,7 +211,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Promise_0100
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0100
      * @tc.desc   Function test
@@ -244,7 +239,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Promise_0200
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0200
      * @tc.desc   Function test
@@ -274,7 +268,6 @@ export default function inputMethodTest() {
 
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Promise_0300
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0300
      * @tc.desc   Function test
@@ -305,7 +298,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Promise_0400
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0400
      * @tc.desc   Function test
@@ -336,7 +328,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Promise_0500
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0500
      * @tc.desc   Function test
@@ -367,7 +358,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Promise_0700
      * @tc.number SUB_Misc_inputMethod_attach_Promise_0700
      * @tc.desc   Function test
@@ -393,7 +383,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   SUB_Misc_inputMethod_attach_Promise_1000
      * @tc.number SUB_Misc_inputMethod_attach_Promise_1000
      * @tc.desc   Function test
@@ -422,7 +411,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethod_test_stopInputSession_0011
      * @tc.number inputMethod_test_stopInputSession_0011
      * @tc.desc   Stop input().interfaces.Callback
@@ -460,7 +448,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputMethod_test_stopInputSession_0021
      * @tc.number inputMethod_test_stopInputSession_0021
      * @tc.desc   Stop input().interfaces.Promise
@@ -491,7 +478,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethoh_test_0051
      * @tc.number inputmethoh_test_0051
      * @tc.desc   Stop input().interfaces.Callback
@@ -529,7 +515,6 @@ export default function inputMethodTest() {
     });
 
     /**
-     * @generated.time 2025-11-09 20:53:26
      * @tc.name   inputmethoh_test_0061
      * @tc.number inputmethoh_test_0061
      * @tc.desc   Stop input().interfaces.Promise

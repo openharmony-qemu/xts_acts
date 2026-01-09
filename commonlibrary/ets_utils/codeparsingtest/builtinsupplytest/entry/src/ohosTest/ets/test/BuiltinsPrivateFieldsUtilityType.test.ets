@@ -24,7 +24,7 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100)
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -40,12 +40,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0100
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0100
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0100
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0100';
@@ -100,12 +100,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0200
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0200
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0200
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0200';
@@ -139,12 +139,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0300
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0300
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0300
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0300';
@@ -188,12 +188,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0400
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0400
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0400
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0400';
@@ -232,12 +232,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0500
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0500
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0500
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0500';
@@ -281,12 +281,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0600
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0600
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0600
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0600';
@@ -325,12 +325,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0700
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0700
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0700
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0700';
@@ -370,12 +370,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0800
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0800
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0800
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0800';
@@ -414,12 +414,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest0900
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_0900
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest0900
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest0900';
@@ -458,12 +458,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1000
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1000
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1000
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1000';
@@ -501,12 +501,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1100
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1100
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1100
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1100';
@@ -545,12 +545,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1200
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1200
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1200
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1200';
@@ -590,12 +590,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1300
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1300
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1300
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1300';
@@ -639,12 +639,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1400
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1400
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1400
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1400';
@@ -688,12 +688,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1500
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1500
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1500
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1500';
@@ -736,12 +736,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1600
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1600
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1600
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1600';
@@ -779,12 +779,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1700
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1700
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1700
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1700';
@@ -820,12 +820,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1800
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1800
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1800
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1800';
@@ -862,12 +862,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest1900
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_1900
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest1900
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest1900';
@@ -904,12 +904,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2000
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2000
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2000
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2000';
@@ -947,12 +947,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2100
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2100
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2100
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2100';
@@ -989,12 +989,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2200
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2200
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2200
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2200';
@@ -1037,12 +1037,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2300
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2300
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2300
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2300';
@@ -1076,12 +1076,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2400
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2400
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2400
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2400';
@@ -1115,12 +1115,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2500
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2500
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2500
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2500';
@@ -1154,12 +1154,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2600
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2600
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2600
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2600';
@@ -1193,12 +1193,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2700
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2700
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2700
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2700';
@@ -1231,12 +1231,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2800
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2800
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2800
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2800';
@@ -1269,12 +1269,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest2900
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_2900
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest2900
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest2900';
@@ -1313,12 +1313,12 @@ export default function BuiltinsPrivateFieldsUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsPrivateFieldsUtilityTypeTest3000
      * @tc.number SUB_BUILTINS_PRIVATE_FIELDS_UTILITY_TEST_3000
-     * @tc.name BuiltinsPrivateFieldsUtilityTypeTest3000
-     * @tc.desc Private Fields Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Private Fields Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsPrivateFieldsUtilityTypeTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsPrivateFieldsUtilityTypeTest3000';

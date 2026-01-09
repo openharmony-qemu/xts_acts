@@ -45,7 +45,6 @@ export default function XmlTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -60,12 +59,12 @@ export default function XmlTest() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0100
-     * @tc.name       : testXmlConstructor0001
-     * @tc.desc       : Testing the XML constructor with a invalid ArrayBuffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0100
+     * @tc.desc   Testing the XML constructor with a invalid ArrayBuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0001';
@@ -89,12 +88,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0200
-     * @tc.name       : testXmlConstructor0002
-     * @tc.desc       : Testing the XML constructor with a zero ArrayBuffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0200
+     * @tc.desc   Testing the XML constructor with a zero ArrayBuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0002';
@@ -118,12 +117,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0300
-     * @tc.name       : testXmlConstructor0003
-     * @tc.desc       : Testing the XML constructor with ArrayBuffer < 0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0300
+     * @tc.desc   Testing the XML constructor with ArrayBuffer < 0.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0003';
@@ -139,12 +138,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0400
-     * @tc.name       : testXmlConstructor0004
-     * @tc.desc       : Testing the XML constructor with a valid ArrayBuffer.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0400
+     * @tc.desc   Testing the XML constructor with a valid ArrayBuffer.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0004';
@@ -163,13 +162,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0500
-     * @tc.name       : testXmlConstructor0005
-     * @tc.desc       : Testing the XML constructor using the an ArrayBuffer value
-     *                  that is exactly the same length as the expected Result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0500
+     * @tc.desc   Testing the XML constructor using the an ArrayBuffer value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0005';
@@ -188,12 +186,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0600
-     * @tc.name       : testXmlConstructor0006
-     * @tc.desc       : Testing the XML constructor with a valid DataView.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0600
+     * @tc.desc   Testing the XML constructor with a valid DataView.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0006';
@@ -213,12 +211,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0700
-     * @tc.name       : testXmlConstructor0007
-     * @tc.desc       : Testing the XML constructor with a valid DataView and without encoding.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0700
+     * @tc.desc   Testing the XML constructor with a valid DataView and without encoding.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0007';
@@ -237,12 +235,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0800
-     * @tc.name       : testXmlConstructor0008
-     * @tc.desc       : Testing the XML constructor with a valid DataView and encoding "utf-8".
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0800
+     * @tc.desc   Testing the XML constructor with a valid DataView and encoding "utf-8".
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0008';
@@ -261,12 +259,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0900
-     * @tc.name       : testXmlConstructor0009
-     * @tc.desc       : Testing the XML constructor with a valid DataView and encoding 'gbk'.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlConstructor0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_CONSTRUCTOR_0900
+     * @tc.desc   Testing the XML constructor with a valid DataView and encoding 'gbk'.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlConstructor0009';
@@ -282,13 +280,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0100
-     * @tc.name       : testXmlSetAttributes0001
-     * @tc.desc       : Testing the XML serializer's setAttributes method with undefined parameters,
-     *                  expecting a BusinessError to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlSetAttributes0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0100
+     * @tc.desc   Testing the XML serializer's setAttributes method with undefined parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetAttributes0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlSetAttributes0001';
@@ -305,13 +302,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0200
-     * @tc.name       : testXmlSetAttributes0002
-     * @tc.desc       : Testing the XML serializer's setAttributes method with null parameters,
-     *                  expecting a BusinessError to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlSetAttributes0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0200
+     * @tc.desc   Testing the XML serializer's setAttributes method with null parameters,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetAttributes0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlSetAttributes0002';
@@ -328,13 +324,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0300
-     * @tc.name       : testXmlSetAttributes0003
-     * @tc.desc       : Testing the XML serializer's setAttributes method with "",
-     *                  expecting a BusinessError to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlSetAttributes0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0300
+     * @tc.desc   Testing the XML serializer's setAttributes method with "",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetAttributes0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlSetAttributes0003';
@@ -351,13 +346,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0400
-     * @tc.name       : testXmlSetAttributes0004
-     * @tc.desc       : Testing the XML serializer's setAttributes method with "",
-     *                  expecting a BusinessError to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlSetAttributes0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0400
+     * @tc.desc   Testing the XML serializer's setAttributes method with "",
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetAttributes0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlSetAttributes0004';
@@ -382,13 +376,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0500
-     * @tc.name       : testXmlSetAttributes0005
-     * @tc.desc       : Testing the XML serializer's setAttributes method with a 10K size string,
-     *                  expecting a correct result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlSetAttributes0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0500
+     * @tc.desc   Testing the XML serializer's setAttributes method with a 10K size string,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetAttributes0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlSetAttributes0005';
@@ -415,12 +408,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0600
-     * @tc.name       : testXmlSetAttributes0006
-     * @tc.desc       : Testing the XML serializer's setAttributes method expecting a correct result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testXmlSetAttributes0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETATTRIBUTES_0600
+     * @tc.desc   Testing the XML serializer's setAttributes method expecting a correct result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testXmlSetAttributes0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, () => {
       const TAG = 'testXmlSetAttributes0006';
@@ -446,13 +439,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0100
-     * @tc.name       : testXmlAddEmptyElement0001
-     * @tc.desc       : Test the XML serializer's addEmptyElement with undefined,
-     *                  expecting an error to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0100
+     * @tc.desc   Test the XML serializer's addEmptyElement with undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0001';
@@ -469,13 +461,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0200
-     * @tc.name       : testXmlAddEmptyElement0002
-     * @tc.desc       : Test the XML serializer's addEmptyElement with null,
-     *                  expecting an error to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0200
+     * @tc.desc   Test the XML serializer's addEmptyElement with null,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0002';
@@ -492,13 +483,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0300
-     * @tc.name       : testXmlAddEmptyElement0003
-     * @tc.desc       : Test the XML serializer's addEmptyElement with null and undefined,
-     *                  expecting an error to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0300
+     * @tc.desc   Test the XML serializer's addEmptyElement with null and undefined,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0003';
@@ -516,13 +506,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0400
-     * @tc.name       : testXmlAddEmptyElement0004
-     * @tc.desc       : Testing the XML serializer's addEmptyElement with an empty string,
-     *                  expecting an error to be thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0400
+     * @tc.desc   Testing the XML serializer's addEmptyElement with an empty string,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0004';
@@ -539,13 +528,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0500
-     * @tc.name       : testXmlAddEmptyElement0005
-     * @tc.desc       : Testing the XML serializer's addEmptyElement method by adding 2560 "note" elements
-     *                  in a loop, verifying the total output length and the count of added elements.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0500
+     * @tc.desc   Testing the XML serializer's addEmptyElement method by adding 2560 "note" elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0005';
@@ -572,13 +560,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0600
-     * @tc.name       : testXmlAddEmptyElement0006
-     * @tc.desc       : Testing the XML serializer's addEmptyElement method by adding two "aaaaa" elements
-     *                  and verifying the output XML structure and element count.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0600
+     * @tc.desc   Testing the XML serializer's addEmptyElement method by adding two "aaaaa" elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0006';
@@ -601,13 +588,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0700
-     * @tc.name       : testXmlAddEmptyElement0007
-     * @tc.desc       : Testing the XML serializer's addEmptyElement method by adding any elements
-     *                  and verifying the output XML structure and element count.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0700
+     * @tc.desc   Testing the XML serializer's addEmptyElement method by adding any elements
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0007';
@@ -631,13 +617,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0800
-     * @tc.name       : testXmlAddEmptyElement0008
-     * @tc.desc       : Testing the XML serializer's addEmptyElement method by adding an empty element
-     *                  and verifying that the output XML structure matches the expected format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0800
+     * @tc.desc   Testing the XML serializer's addEmptyElement method by adding an empty element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0008';
@@ -660,13 +645,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0900
-     * @tc.name       : testXmlAddEmptyElement0009
-     * @tc.desc       : Testing the XML serializer's addEmptyElement method by adding an empty element
-     *                  and verifying that the output XML structure matches the expected format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_0900
+     * @tc.desc   Testing the XML serializer's addEmptyElement method by adding an empty element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0009';
@@ -689,13 +673,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_1000
-     * @tc.name       : testXmlAddEmptyElement0010
-     * @tc.desc       : Testing the XML serializer's addEmptyElement method by adding an empty element
-     *                  and verifying that the output XML structure matches the expected format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlAddEmptyElement0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ADDELEM_1000
+     * @tc.desc   Testing the XML serializer's addEmptyElement method by adding an empty element
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlAddEmptyElement0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlAddEmptyElement0010';
@@ -718,14 +701,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDECLARATION_0100
-     * @tc.name       : testXmlSetDeclaration0001
-     * @tc.desc       : Testing the XML serializer's setDeclaration method by setting
-     *                  an XML declaration and verifying that the output starts with
-     *                  the correct declaration format.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDeclaration0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDECLARATION_0100
+     * @tc.desc   Testing the XML serializer's setDeclaration method by setting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDeclaration0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetDeclaration0001';
@@ -748,13 +729,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0100
-     * @tc.name       : testXmlStartElement0001
-     * @tc.desc       : Testing the XML serializer's startElement method with null as the element name
-     *                  and verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElement0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0100
+     * @tc.desc   Testing the XML serializer's startElement method with null as the element name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlStartElement0001';
@@ -771,13 +751,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0200
-     * @tc.name       : testXmlStartElement0002
-     * @tc.desc       : Testing the XML serializer's startElement method with undefined as the element name
-     *                  and verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElement0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0200
+     * @tc.desc   Testing the XML serializer's startElement method with undefined as the element name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlStartElement0002';
@@ -794,13 +773,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0300
-     * @tc.name       : testXmlStartElement0003
-     * @tc.desc       : Testing the XML serializer's startElement method with an empty string as the element name
-     *                  and verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElement0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0300
+     * @tc.desc   Testing the XML serializer's startElement method with an empty string as the element name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElement0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlStartElement0003';
@@ -817,13 +795,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0400
-     * @tc.name       : testXmlStartElement0004
-     * @tc.desc       : Testing the XML serializer's startElement method by adding a
-     *                  valid element name twice and verifying the output.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElement0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0400
+     * @tc.desc   Testing the XML serializer's startElement method by adding a
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElement0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlStartElement0004';
@@ -849,13 +826,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0500
-     * @tc.name       : testXmlStartElement0005
-     * @tc.desc       : Testing the XML serializer's startElement method by adding duplicate element names
-     *                  and verifies that no error is thrown.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElement0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0500
+     * @tc.desc   Testing the XML serializer's startElement method by adding duplicate element names
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElement0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlStartElement0005';
@@ -881,13 +857,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0600
-     * @tc.name       : testXmlStartElement0006
-     * @tc.desc       : Testing the XML serializer's startElement method with a 10K size string,
-     *                  expecting a correct result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElement0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0600
+     * @tc.desc   Testing the XML serializer's startElement method with a 10K size string,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElement0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlStartElement0006';
@@ -914,13 +889,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0700
-     * @tc.name       : testXmlStartElement0007
-     * @tc.desc       : Testing the XML serializer's startElement method with nest,
-     *                  expecting a correct result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlStartElement0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_STARTELEMENT_0700
+     * @tc.desc   Testing the XML serializer's startElement method with nest,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlStartElement0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlStartElement0007';
@@ -946,12 +920,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ENDELEMENT_0100
-     * @tc.name       : testXmlEndElement0001
-     * @tc.desc       : Testing the XML serializer's endElement , expecting a correct result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlEndElement0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ENDELEMENT_0100
+     * @tc.desc   Testing the XML serializer's endElement , expecting a correct result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlEndElement0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlEndElement0001';
@@ -971,12 +945,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ENDELEMENT_0200
-     * @tc.name       : testXmlEndElement0002
-     * @tc.desc       : Testing the XML serializer's endElement , expecting a correct result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlEndElement0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ENDELEMENT_0200
+     * @tc.desc   Testing the XML serializer's endElement , expecting a correct result.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlEndElement0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlEndElement0002';
@@ -998,13 +972,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0100
-     * @tc.name       : testXmlSetNamespace0001
-     * @tc.desc       : Testing the XML serializer's setNamespace method with valid namespace and uri.
-     *                  Verifies that it handles it correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0100
+     * @tc.desc   Testing the XML serializer's setNamespace method with valid namespace and uri.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0001';
@@ -1025,13 +998,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0200
-     * @tc.name       : testXmlSetNamespace0002
-     * @tc.desc       : Testing the XML serializer's setNamespace method with empty string namespace parameter,
-     *                  checking that it handles the error gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0200
+     * @tc.desc   Testing the XML serializer's setNamespace method with empty string namespace parameter,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0002';
@@ -1048,13 +1020,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0300
-     * @tc.name       : testXmlSetNamespace0003
-     * @tc.desc       : Testing the XML serializer's setNamespace method with empty string prefix parameter,
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0300
+     * @tc.desc   Testing the XML serializer's setNamespace method with empty string prefix parameter,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0003';
@@ -1071,13 +1042,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0400
-     * @tc.name       : testXmlSetNamespace0004
-     * @tc.desc       : Testing the XML serializer's setNamespace method with null for namespace and uri.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0400
+     * @tc.desc   Testing the XML serializer's setNamespace method with null for namespace and uri.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0004';
@@ -1094,13 +1064,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0500
-     * @tc.name       : testXmlSetNamespace0005
-     * @tc.desc       : Testing the XML serializer's setNamespace method with undefined as parameters.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0500
+     * @tc.desc   Testing the XML serializer's setNamespace method with undefined as parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0005';
@@ -1117,12 +1086,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0600
-     * @tc.name       : testXmlSetNamespace0006
-     * @tc.desc       : Testing the XML serializer's setNamespace method with empty string parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0600
+     * @tc.desc   Testing the XML serializer's setNamespace method with empty string parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0006';
@@ -1139,13 +1108,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0700
-     * @tc.name       : testXmlSetNamespace0007
-     * @tc.desc       : Testing the XML serializer's setNamespace method with special characters in namespace and uri.
-     *                  Verifies the output is as expected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0700
+     * @tc.desc   Testing the XML serializer's setNamespace method with special characters in namespace and uri.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0007';
@@ -1166,13 +1134,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0800
-     * @tc.name       : testXmlSetNamespace0008
-     * @tc.desc       : Testing the XML serializer's setNamespace method with set namespace twice,
-     *                  expecting a correct result.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0800
+     * @tc.desc   Testing the XML serializer's setNamespace method with set namespace twice,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0008';
@@ -1196,13 +1163,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0900
-     * @tc.name       : testXmlSetNamespace0009
-     * @tc.desc       : Testing the XML serializer's setNamespace method with a 10k string as namespace.
-     *                  Ensuring it handles large inputs as expected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetNamespace0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETNAMESPACE_0900
+     * @tc.desc   Testing the XML serializer's setNamespace method with a 10k string as namespace.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetNamespace0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetNamespace0009';
@@ -1227,13 +1193,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0100
-     * @tc.name       : testXmlSetComment0001
-     * @tc.desc       : Testing the XML serializer's setComment with undefined as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetComment0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0100
+     * @tc.desc   Testing the XML serializer's setComment with undefined as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetComment0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetComment0001';
@@ -1250,13 +1215,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0200
-     * @tc.name       : testXmlSetComment0002
-     * @tc.desc       : Testing the XML serializer's setComment with null as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetComment0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0200
+     * @tc.desc   Testing the XML serializer's setComment with null as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetComment0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetComment0002';
@@ -1273,13 +1237,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0300
-     * @tc.name       : testXmlSetComment0003
-     * @tc.desc       : Testing the XML serializer's setComment with an empty string.
-     *                  Verifies that it prints an empty comment.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetComment0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0300
+     * @tc.desc   Testing the XML serializer's setComment with an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetComment0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetComment0003';
@@ -1296,13 +1259,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0400
-     * @tc.name       : testXmlSetComment0004
-     * @tc.desc       : Testing the XML serializer's setComment with special characters.
-     *                  Verifies that the output is as expected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetComment0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0400
+     * @tc.desc   Testing the XML serializer's setComment with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetComment0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetComment0004';
@@ -1321,13 +1283,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0500
-     * @tc.name       : testXmlSetComment0005
-     * @tc.desc       : Testing the XML serializer's setComment called multiple times.
-     *                  Verifies the last comment is the one that is used.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetComment0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0500
+     * @tc.desc   Testing the XML serializer's setComment called multiple times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetComment0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetComment0005';
@@ -1348,13 +1309,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0600
-     * @tc.name       : testXmlSetComment0006
-     * @tc.desc       : Testing the XML serializer's setComment in combination with other methods.
-     *                  Ensures proper handling of the comment with startElement and endElement.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetComment0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0600
+     * @tc.desc   Testing the XML serializer's setComment in combination with other methods.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetComment0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetComment0006';
@@ -1380,13 +1340,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0700
-     * @tc.name       : testXmlSetComment0007
-     * @tc.desc       : Testing the XML serializer's setComment with a large data input (10k characters).
-     *                  Verifies that it handles large inputs properly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetComment0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCOMMENT_0700
+     * @tc.desc   Testing the XML serializer's setComment with a large data input (10k characters).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetComment0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetComment0007';
@@ -1406,13 +1365,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0100
-     * @tc.name       : testXmlSetCData0001
-     * @tc.desc       : Testing the XML serializer's setCDATA with undefined as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCData0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0100
+     * @tc.desc   Testing the XML serializer's setCDATA with undefined as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCData0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetCData0001';
@@ -1429,13 +1387,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0200
-     * @tc.name       : testXmlSetCData0002
-     * @tc.desc       : Testing the XML serializer's setCDATA with null as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCData0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0200
+     * @tc.desc   Testing the XML serializer's setCDATA with null as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCData0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetCData0002';
@@ -1452,13 +1409,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0300
-     * @tc.name       : testXmlSetCData0003
-     * @tc.desc       : Testing the XML serializer's setCDATA with an empty string.
-     *                  Verifies it handles it correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCData0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0300
+     * @tc.desc   Testing the XML serializer's setCDATA with an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCData0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetCData0003';
@@ -1475,13 +1431,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0400
-     * @tc.name       : testXmlSetCData0004
-     * @tc.desc       : Testing the XML serializer's setCDATA with special characters.
-     *                  Verifies that the output is as expected.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCData0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0400
+     * @tc.desc   Testing the XML serializer's setCDATA with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCData0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetCData0004';
@@ -1500,13 +1455,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0500
-     * @tc.name       : testXmlSetCData0005
-     * @tc.desc       : Testing the XML serializer's setCDATA with escaped characters.
-     *                  Verifies that it handles escape characters properly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCData0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0500
+     * @tc.desc   Testing the XML serializer's setCDATA with escaped characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCData0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetCData0005';
@@ -1526,13 +1480,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0600
-     * @tc.name       : testXmlSetCData0006
-     * @tc.desc       : Testing the XML serializer's setCDATA with repeated calls.
-     *                  Verifies that the last call is reflected properly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCData0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0600
+     * @tc.desc   Testing the XML serializer's setCDATA with repeated calls.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCData0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetCData0006';
@@ -1554,13 +1507,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0700
-     * @tc.name       : testXmlSetCData0007
-     * @tc.desc       : Testing the XML serializer's setCDATA with a large input (10k characters).
-     *                  Verifies that it handles large inputs properly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetCData0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETCDATA_0700
+     * @tc.desc   Testing the XML serializer's setCDATA with a large input (10k characters).
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetCData0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetCData0007';
@@ -1580,13 +1532,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0100
-     * @tc.name       : testXmlSetText0001
-     * @tc.desc       : Testing the XML serializer's setText with undefined as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetText0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0100
+     * @tc.desc   Testing the XML serializer's setText with undefined as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetText0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetText0001';
@@ -1603,13 +1554,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0200
-     * @tc.name       : testXmlSetText0002
-     * @tc.desc       : Testing the XML serializer's setText with null as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetText0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0200
+     * @tc.desc   Testing the XML serializer's setText with null as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetText0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetText0002';
@@ -1626,13 +1576,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0300
-     * @tc.name       : testXmlSetText0003
-     * @tc.desc       : Testing the XML serializer's setText with an empty string.
-     *                  Confirms that the XML contains a text node.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetText0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0300
+     * @tc.desc   Testing the XML serializer's setText with an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetText0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetText0003';
@@ -1650,13 +1599,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0400
-     * @tc.name       : testXmlSetText0004
-     * @tc.desc       : Testing the XML serializer's setText with special characters.
-     *                  Verifies that it handles them correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetText0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0400
+     * @tc.desc   Testing the XML serializer's setText with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetText0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetText0004';
@@ -1677,13 +1625,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0500
-     * @tc.name       : testXmlSetText0005
-     * @tc.desc       : Testing setText called multiple times.
-     *                  Verifies that the last setText value is used.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetText0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0500
+     * @tc.desc   Testing setText called multiple times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetText0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetText0005';
@@ -1705,13 +1652,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0600
-     * @tc.name       : testXmlSetText0006
-     * @tc.desc       : Testing the XML serializer's setText with large data input.
-     *                  Verifies that it handles large inputs properly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetText0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETTEXT_0600
+     * @tc.desc   Testing the XML serializer's setText with large data input.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetText0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetText0006';
@@ -1733,13 +1679,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0100
-     * @tc.name       : testXmlSetDocType0001
-     * @tc.desc       : Testing the XML serializer's setDocType with undefined as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDocType0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0100
+     * @tc.desc   Testing the XML serializer's setDocType with undefined as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDocType0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetDocType0001';
@@ -1756,13 +1701,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0200
-     * @tc.name       : testXmlSetDocType0002
-     * @tc.desc       : Testing the XML serializer's setDocType with null as parameter.
-     *                  Verifies that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDocType0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0200
+     * @tc.desc   Testing the XML serializer's setDocType with null as parameter.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDocType0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetDocType0002';
@@ -1779,13 +1723,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0300
-     * @tc.name       : testXmlSetDocType0003
-     * @tc.desc       : Testing the XML serializer's setDocType with an empty string.
-     *                  Confirms that it handles it gracefully.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDocType0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0300
+     * @tc.desc   Testing the XML serializer's setDocType with an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDocType0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetDocType0003';
@@ -1802,13 +1745,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0400
-     * @tc.name       : testXmlSetDocType0004
-     * @tc.desc       : Testing the XML serializer's setDocType with special characters.
-     *                  Verifies that it handles them correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDocType0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0400
+     * @tc.desc   Testing the XML serializer's setDocType with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDocType0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetDocType0004';
@@ -1827,13 +1769,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0500
-     * @tc.name       : testXmlSetDocType0005
-     * @tc.desc       : Testing setDocType called multiple times.
-     *                  Verifies that only one DOCTYPE declaration is present.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDocType0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0500
+     * @tc.desc   Testing setDocType called multiple times.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDocType0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetDocType0005';
@@ -1854,13 +1795,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0600
-     * @tc.name       : testXmlSetDocType0006
-     * @tc.desc       : Testing the XML serializer's setDocType with large data input.
-     *                  Verifies that it handles large inputs properly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlSetDocType0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_SETDOCTYPE_0600
+     * @tc.desc   Testing the XML serializer's setDocType with large data input.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlSetDocType0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlSetDocType0006';
@@ -1880,12 +1820,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0100
-     * @tc.name       : testXmlPullParserConstructor0001
-     * @tc.desc       : Testing the XML PullParser's Constructor with the attribute value is not within ''.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0100
+     * @tc.desc   Testing the XML PullParser's Constructor with the attribute value is not within ''.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0001';
@@ -1916,12 +1856,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0200
-     * @tc.name       : testXmlPullParserConstructor0002
-     * @tc.desc       : Testing the XML PullParser's constructor with a single tag.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0200
+     * @tc.desc   Testing the XML PullParser's constructor with a single tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0002';
@@ -1947,12 +1887,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0300
-     * @tc.name       : testXmlPullParserConstructor0003
-     * @tc.desc       : Testing the XML PullParser's constructor with a double tag.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0300
+     * @tc.desc   Testing the XML PullParser's constructor with a double tag.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0003';
@@ -1984,12 +1924,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0400
-     * @tc.name       : testXmlPullParserConstructor0004
-     * @tc.desc       : Testing the XML PullParser's constructor with incorrect nested tags.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0400
+     * @tc.desc   Testing the XML PullParser's constructor with incorrect nested tags.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0004';
@@ -2015,12 +1955,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0500
-     * @tc.name       : testXmlPullParserConstructor0005
-     * @tc.desc       : Testing the XML PullParser's constructor with comments.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0500
+     * @tc.desc   Testing the XML PullParser's constructor with comments.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0005';
@@ -2049,12 +1989,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0600
-     * @tc.name       : testXmlPullParserConstructor0006
-     * @tc.desc       : Testing the XML PullParser's constructor with element names starting with a number.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0600
+     * @tc.desc   Testing the XML PullParser's constructor with element names starting with a number.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0006';
@@ -2082,12 +2022,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0700
-     * @tc.name       : testXmlPullParserConstructor0007
-     * @tc.desc       : Testing the XML PullParser with tag names that contain spaces.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0700
+     * @tc.desc   Testing the XML PullParser with tag names that contain spaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0007';
@@ -2117,12 +2057,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0800
-     * @tc.name       : testXmlPullParserConstructor0008
-     * @tc.desc       : Testing the XML PullParser with names containing special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0800
+     * @tc.desc   Testing the XML PullParser with names containing special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0008';
@@ -2151,12 +2091,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1000
-     * @tc.name       : testXmlPullParserConstructor0010
-     * @tc.desc       : Testing the XML PullParser constructor with an empty string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1000
+     * @tc.desc   Testing the XML PullParser constructor with an empty string.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0010';
@@ -2179,13 +2119,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1100
-     * @tc.name       : testXmlPullParserConstructor0011
-     * @tc.desc       : Testing the XML PullParser's constructor with long character input.
-     *                  Verifies that it handles large inputs properly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1100
+     * @tc.desc   Testing the XML PullParser's constructor with long character input.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0011';
@@ -2215,13 +2154,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1200
-     * @tc.name       : testXmlPullParserConstructor0012
-     * @tc.desc       : Testing the XML PullParser's constructor with namespaces.
-     *                  Verifies that it handles XML namespaces correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1200
+     * @tc.desc   Testing the XML PullParser's constructor with namespaces.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0012';
@@ -2258,13 +2196,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1300
-     * @tc.name       : testXmlPullParserConstructor0013
-     * @tc.desc       : Testing the XML PullParser with a malformed CDATA section.
-     *                  Verifies that it throws a meaningful error for invalid CDATA.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1300
+     * @tc.desc   Testing the XML PullParser with a malformed CDATA section.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0013';
@@ -2299,13 +2236,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1400
-     * @tc.name       : testXmlPullParserConstructor0014
-     * @tc.desc       : Testing the XML PullParser with nested CDATA sections.
-     *                  Verifies that it handles nested CDATA sections correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1400
+     * @tc.desc   Testing the XML PullParser with nested CDATA sections.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0014';
@@ -2340,13 +2276,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1500
-     * @tc.name       : testXmlPullParserConstructor0015
-     * @tc.desc       : Testing the XML PullParser with content containing "]]>" within CDATA.
-     *                  Verifies that it handles the input correctly without error.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0015
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1500
+     * @tc.desc   Testing the XML PullParser with content containing "]]>" within CDATA.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0015';
@@ -2381,13 +2316,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0016
-     * @tc.name       : testXmlPullParserConstructor0016
-     * @tc.desc       : Testing the XML PullParser with special characters inside elements.
-     *                  Verifies that it can handle such cases correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0016
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_0016
+     * @tc.desc   Testing the XML PullParser with special characters inside elements.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0016';
@@ -2424,12 +2358,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1700
-     * @tc.name       : testXmlPullParserConstructor0017
-     * @tc.desc       : Testing the XML PullParser with introduced declaration, parsed correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0017
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1700
+     * @tc.desc   Testing the XML PullParser with introduced declaration, parsed correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0017';
@@ -2466,13 +2400,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1800
-     * @tc.name       : testXmlPullParserConstructor0018
-     * @tc.desc       : Testing the XML PullParser with escaped characters in content.
-     *                  Verifies that it can handle such cases correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0018
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1800
+     * @tc.desc   Testing the XML PullParser with escaped characters in content.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0018';
@@ -2501,13 +2434,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1900
-     * @tc.name       : testXmlPullParserConstructor0019
-     * @tc.desc       : Testing the XML PullParser with special characters in content.
-     *                  Verifies that it can handle such cases correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0019
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_1900
+     * @tc.desc   Testing the XML PullParser with special characters in content.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0019';
@@ -2533,12 +2465,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_2000
-     * @tc.name       : testXmlPullParserConstructor0020
-     * @tc.desc       : Testing the XML PullParser without <>.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserConstructor0020
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_CONSTRUCTOR_2000
+     * @tc.desc   Testing the XML PullParser without <>.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserConstructor0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserConstructor0020';
@@ -2567,12 +2499,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0100
-     * @tc.name       : testXmlPullParserParseOptions0001
-     * @tc.desc       : Testing the XML PullParser with supportDoctype set to true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0100
+     * @tc.desc   Testing the XML PullParser with supportDoctype set to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0001';
@@ -2602,12 +2534,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0200
-     * @tc.name       : testXmlPullParserParseOptions0002
-     * @tc.desc       : Testing the XML PullParser with supportDoctype set to false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0200
+     * @tc.desc   Testing the XML PullParser with supportDoctype set to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0002';
@@ -2636,12 +2568,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0300
-     * @tc.name       : testXmlPullParserParseOptions0003
-     * @tc.desc       : Testing XML PullParser with ignoreNameSpace set to true.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0300
+     * @tc.desc   Testing XML PullParser with ignoreNameSpace set to true.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0003';
@@ -2670,12 +2602,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0400
-     * @tc.name       : testXmlPullParserParseOptions0004
-     * @tc.desc       : Testing XML PullParser with ignoreNameSpace set to false.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0400
+     * @tc.desc   Testing XML PullParser with ignoreNameSpace set to false.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0004';
@@ -2704,12 +2636,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0500
-     * @tc.name       : testXmlPullParserParseOptions0005
-     * @tc.desc       : Testing XML PullParser with tagValueCallbackFunction as undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0500
+     * @tc.desc   Testing XML PullParser with tagValueCallbackFunction as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0005';
@@ -2738,12 +2670,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0600
-     * @tc.name       : testXmlPullParserParseOptions0006
-     * @tc.desc       : Testing XML PullParser with tagValueCallbackFunction as function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0600
+     * @tc.desc   Testing XML PullParser with tagValueCallbackFunction as function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0006';
@@ -2772,12 +2704,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0700
-     * @tc.name       : testXmlPullParserParseOptions0007
-     * @tc.desc       : Testing XML PullParser with attributeValueCallbackFunction as function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0700
+     * @tc.desc   Testing XML PullParser with attributeValueCallbackFunction as function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0007';
@@ -2807,12 +2739,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0800
-     * @tc.name       : testXmlPullParserParseOptions0008
-     * @tc.desc       : Testing XML PullParser with tokenValueCallbackFunction as function.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0800
+     * @tc.desc   Testing XML PullParser with tokenValueCallbackFunction as function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0008';
@@ -2844,12 +2776,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0900
-     * @tc.name       : testXmlPullParserParseOptions0009
-     * @tc.desc       : Testing XML PullParser with tokenValueCallbackFunction as undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_0900
+     * @tc.desc   Testing XML PullParser with tokenValueCallbackFunction as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0009';
@@ -2879,12 +2811,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_1000
-     * @tc.name       : testXmlPullParserParseOptions0010
-     * @tc.desc       : Testing XML PullParser with attributeValueCallbackFunction as undefined.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlPullParserParseOptions0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PULLPARSER_PARSEOPTIONS_1000
+     * @tc.desc   Testing XML PullParser with attributeValueCallbackFunction as undefined.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlPullParserParseOptions0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlPullParserParseOptions0010';
@@ -2914,12 +2846,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0100
-     * @tc.name       : testXmlParseInfoGetColumnNumber0001
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with START_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0100
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with START_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0001';
@@ -2947,12 +2879,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0200
-     * @tc.name       : testXmlParseInfoGetColumnNumber0002
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with END_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0200
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with END_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0002';
@@ -2980,12 +2912,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0300
-     * @tc.name       : testXmlParseInfoGetColumnNumber0003
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with start tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0300
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with start tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0003';
@@ -3013,12 +2945,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0400
-     * @tc.name       : testXmlParseInfoGetColumnNumber0004
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with end tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0400
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with end tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0004';
@@ -3046,12 +2978,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0500
-     * @tc.name       : testXmlParseInfoGetColumnNumber0005
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with TEXT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0500
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with TEXT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0005';
@@ -3079,12 +3011,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0600
-     * @tc.name       : testXmlParseInfoGetColumnNumber0006
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with CDSECT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0600
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with CDSECT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0006';
@@ -3112,12 +3044,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0700
-     * @tc.name       : testXmlParseInfoGetColumnNumber0007
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with COMMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0700
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with COMMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0007';
@@ -3145,12 +3077,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0800
-     * @tc.name       : testXmlParseInfoGetColumnNumber0008
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with DOCDECL event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0800
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with DOCDECL event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0008';
@@ -3178,12 +3110,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0900
-     * @tc.name       : testXmlParseInfoGetColumnNumber0009
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with INSTRUCTION event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_0900
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with INSTRUCTION event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0009';
@@ -3211,12 +3143,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_1000
-     * @tc.name       : testXmlParseInfoGetColumnNumber0010
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with ENTITY_REFERENCE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_1000
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with ENTITY_REFERENCE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0010';
@@ -3244,12 +3176,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_1100
-     * @tc.name       : testXmlParseInfoGetColumnNumber0011
-     * @tc.desc       : Testing XML ParseInfo getColumnNumber with WHITESPACE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetColumnNumber0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETCOLUMNNUMBER_1100
+     * @tc.desc   Testing XML ParseInfo getColumnNumber with WHITESPACE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetColumnNumber0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetColumnNumber0011';
@@ -3277,12 +3209,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0100
-     * @tc.name       : testXmlParseInfoGetDepth0001
-     * @tc.desc       : Testing XML ParseInfo getDepth with START_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0100
+     * @tc.desc   Testing XML ParseInfo getDepth with START_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0001';
@@ -3310,12 +3242,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0200
-     * @tc.name       : testXmlParseInfoGetDepth0002
-     * @tc.desc       : Testing XML ParseInfo getDepth with END_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0200
+     * @tc.desc   Testing XML ParseInfo getDepth with END_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0002';
@@ -3343,12 +3275,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0300
-     * @tc.name       : testXmlParseInfoGetDepth0003
-     * @tc.desc       : Testing XML ParseInfo getDepth with start tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0300
+     * @tc.desc   Testing XML ParseInfo getDepth with start tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0003';
@@ -3376,12 +3308,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0400
-     * @tc.name       : testXmlParseInfoGetDepth0004
-     * @tc.desc       : Testing XML ParseInfo getDepth with end tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0400
+     * @tc.desc   Testing XML ParseInfo getDepth with end tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0004';
@@ -3409,12 +3341,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0500
-     * @tc.name       : testXmlParseInfoGetDepth0005
-     * @tc.desc       : Testing XML ParseInfo getDepth with TEXT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0500
+     * @tc.desc   Testing XML ParseInfo getDepth with TEXT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0005';
@@ -3442,12 +3374,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0600
-     * @tc.name       : testXmlParseInfoGetDepth0006
-     * @tc.desc       : Testing XML ParseInfo getDepth with CDSECT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0600
+     * @tc.desc   Testing XML ParseInfo getDepth with CDSECT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0006';
@@ -3475,12 +3407,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0700
-     * @tc.name       : testXmlParseInfoGetDepth0007
-     * @tc.desc       : Testing XML ParseInfo getDepth with COMMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0700
+     * @tc.desc   Testing XML ParseInfo getDepth with COMMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0007';
@@ -3508,12 +3440,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0800
-     * @tc.name       : testXmlParseInfoGetDepth0008
-     * @tc.desc       : Testing XML ParseInfo getDepth with DOCDECL event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0800
+     * @tc.desc   Testing XML ParseInfo getDepth with DOCDECL event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0008';
@@ -3541,12 +3473,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0900
-     * @tc.name       : testXmlParseInfoGetDepth0009
-     * @tc.desc       : Testing XML ParseInfo getDepth with INSTRUCTION event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_0900
+     * @tc.desc   Testing XML ParseInfo getDepth with INSTRUCTION event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0009';
@@ -3574,12 +3506,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_1000
-     * @tc.name       : testXmlParseInfoGetDepth0010
-     * @tc.desc       : Testing XML ParseInfo getDepth with ENTITY_REFERENCE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_1000
+     * @tc.desc   Testing XML ParseInfo getDepth with ENTITY_REFERENCE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0010';
@@ -3607,12 +3539,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_1100
-     * @tc.name       : testXmlParseInfoGetDepth0011
-     * @tc.desc       : Testing XML ParseInfo getDepth with WHITESPACE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetDepth0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETDEPTH_1100
+     * @tc.desc   Testing XML ParseInfo getDepth with WHITESPACE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetDepth0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetDepth0011';
@@ -3640,12 +3572,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0100
-     * @tc.name       : testXmlParseInfoGetLineNumber0001
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with START_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0100
+     * @tc.desc   Testing XML ParseInfo getLineNumber with START_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0001';
@@ -3673,12 +3605,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0200
-     * @tc.name       : testXmlParseInfoGetLineNumber0002
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with END_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0200
+     * @tc.desc   Testing XML ParseInfo getLineNumber with END_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0002';
@@ -3706,12 +3638,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0300
-     * @tc.name       : testXmlParseInfoGetLineNumber0003
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with start tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0300
+     * @tc.desc   Testing XML ParseInfo getLineNumber with start tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0003';
@@ -3739,12 +3671,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0400
-     * @tc.name       : testXmlParseInfoGetLineNumber0004
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with end tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0400
+     * @tc.desc   Testing XML ParseInfo getLineNumber with end tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0004';
@@ -3772,12 +3704,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0500
-     * @tc.name       : testXmlParseInfoGetLineNumber0005
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with TEXT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0500
+     * @tc.desc   Testing XML ParseInfo getLineNumber with TEXT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0005';
@@ -3805,12 +3737,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0600
-     * @tc.name       : testXmlParseInfoGetLineNumber0006
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with CDSECT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0600
+     * @tc.desc   Testing XML ParseInfo getLineNumber with CDSECT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0006';
@@ -3838,12 +3770,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0700
-     * @tc.name       : testXmlParseInfoGetLineNumber0007
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with COMMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0700
+     * @tc.desc   Testing XML ParseInfo getLineNumber with COMMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0007';
@@ -3871,12 +3803,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0800
-     * @tc.name       : testXmlParseInfoGetLineNumber0008
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with DOCDECL event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0800
+     * @tc.desc   Testing XML ParseInfo getLineNumber with DOCDECL event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0008';
@@ -3904,12 +3836,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0900
-     * @tc.name       : testXmlParseInfoGetLineNumber0009
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with INSTRUCTION event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_0900
+     * @tc.desc   Testing XML ParseInfo getLineNumber with INSTRUCTION event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0009';
@@ -3937,12 +3869,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_1000
-     * @tc.name       : testXmlParseInfoGetLineNumber0010
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with ENTITY_REFERENCE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_1000
+     * @tc.desc   Testing XML ParseInfo getLineNumber with ENTITY_REFERENCE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0010';
@@ -3970,12 +3902,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_1100
-     * @tc.name       : testXmlParseInfoGetLineNumber0011
-     * @tc.desc       : Testing XML ParseInfo getLineNumber with WHITESPACE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetLineNumber0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETLINENUMBER_1100
+     * @tc.desc   Testing XML ParseInfo getLineNumber with WHITESPACE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetLineNumber0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetLineNumber0011';
@@ -4003,12 +3935,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0100
-     * @tc.name       : testXmlParseInfoGetName0001
-     * @tc.desc       : Testing XML ParseInfo getName with START_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0100
+     * @tc.desc   Testing XML ParseInfo getName with START_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0001';
@@ -4036,12 +3968,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0200
-     * @tc.name       : testXmlParseInfoGetName0002
-     * @tc.desc       : Testing XML ParseInfo getName with END_DOCUMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0200
+     * @tc.desc   Testing XML ParseInfo getName with END_DOCUMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0002';
@@ -4069,12 +4001,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0300
-     * @tc.name       : testXmlParseInfoGetName0003
-     * @tc.desc       : Testing XML ParseInfo getName with start tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0300
+     * @tc.desc   Testing XML ParseInfo getName with start tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0003';
@@ -4102,12 +4034,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0400
-     * @tc.name       : testXmlParseInfoGetName0004
-     * @tc.desc       : Testing XML ParseInfo getName with end tag event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0400
+     * @tc.desc   Testing XML ParseInfo getName with end tag event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0004';
@@ -4135,12 +4067,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0500
-     * @tc.name       : testXmlParseInfoGetName0005
-     * @tc.desc       : Testing XML ParseInfo getName with TEXT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0500
+     * @tc.desc   Testing XML ParseInfo getName with TEXT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0005';
@@ -4168,12 +4100,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0600
-     * @tc.name       : testXmlParseInfoGetName0006
-     * @tc.desc       : Testing XML ParseInfo getName with CDSECT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0600
+     * @tc.desc   Testing XML ParseInfo getName with CDSECT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0006';
@@ -4201,12 +4133,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0700
-     * @tc.name       : testXmlParseInfoGetName0007
-     * @tc.desc       : Testing XML ParseInfo getName with COMMENT event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0700
+     * @tc.desc   Testing XML ParseInfo getName with COMMENT event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0007';
@@ -4234,12 +4166,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0800
-     * @tc.name       : testXmlParseInfoGetName0008
-     * @tc.desc       : Testing XML ParseInfo getName with DOCDECL event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0800
+     * @tc.desc   Testing XML ParseInfo getName with DOCDECL event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0008';
@@ -4267,12 +4199,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0900
-     * @tc.name       : testXmlParseInfoGetName0009
-     * @tc.desc       : Testing XML ParseInfo getName with INSTRUCTION event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_0900
+     * @tc.desc   Testing XML ParseInfo getName with INSTRUCTION event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0009';
@@ -4300,12 +4232,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1000
-     * @tc.name       : testXmlParseInfoGetName0010
-     * @tc.desc       : Testing XML ParseInfo getName with ENTITY_REFERENCE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1000
+     * @tc.desc   Testing XML ParseInfo getName with ENTITY_REFERENCE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0010';
@@ -4333,12 +4265,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1100
-     * @tc.name       : testXmlParseInfoGetName0011
-     * @tc.desc       : Testing XML ParseInfo getName with WHITESPACE event.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1100
+     * @tc.desc   Testing XML ParseInfo getName with WHITESPACE event.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0011';
@@ -4366,12 +4298,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1200
-     * @tc.name       : testXmlParseInfoGetName0012
-     * @tc.desc       : Testing XML ParseInfo getName with invalid testXml.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1200
+     * @tc.desc   Testing XML ParseInfo getName with invalid testXml.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0012';
@@ -4404,12 +4336,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1300
-     * @tc.name       : testXmlParseInfoGetName0013
-     * @tc.desc       : Testing XML ParseInfo getName with single testXml.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetName0013
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAME_1300
+     * @tc.desc   Testing XML ParseInfo getName with single testXml.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetName0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetName0013';
@@ -4439,12 +4371,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAMESPACE_0100
-     * @tc.name       : testXmlParseInfoGetNamespace0001
-     * @tc.desc       : Testing XML ParseInfo getNamespace with namespace is existent.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetNamespace0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAMESPACE_0100
+     * @tc.desc   Testing XML ParseInfo getNamespace with namespace is existent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetNamespace0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetNamespace0001';
@@ -4474,12 +4406,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAMESPACE_0200
-     * @tc.name       : testXmlParseInfoGetNamespace0002
-     * @tc.desc       : Testing XML ParseInfo getNamespace with namespace is not existent.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetNamespace0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETNAMESPACE_0200
+     * @tc.desc   Testing XML ParseInfo getNamespace with namespace is not existent.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetNamespace0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetNamespace0002';
@@ -4509,12 +4441,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETPREFIX_0100
-     * @tc.name       : testXmlParseInfoGetPrefix0001
-     * @tc.desc       : Testing XML ParseInfo Prefix.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetPrefix0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETPREFIX_0100
+     * @tc.desc   Testing XML ParseInfo Prefix.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetPrefix0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetPrefix0001';
@@ -4544,12 +4476,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETTEXT_0100
-     * @tc.name       : testXmlParseInfoGetText0001
-     * @tc.desc       : Testing XML ParseInfo GetText with legal content.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetText0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETTEXT_0100
+     * @tc.desc   Testing XML ParseInfo GetText with legal content.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetText0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetText0001';
@@ -4575,12 +4507,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETTEXT_0200
-     * @tc.name       : testXmlParseInfoGetText0002
-     * @tc.desc       : Testing XML ParseInfo GetText with illegal content.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlParseInfoGetText0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_PARSEINFO_GETTEXT_0200
+     * @tc.desc   Testing XML ParseInfo GetText with illegal content.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlParseInfoGetText0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlParseInfoGetText0002';
@@ -4606,12 +4538,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0100
-     * @tc.name       : testXmlIsEmptyElementTag0001
-     * @tc.desc       : Testing XML isEmptyElementTag with valid empty element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlIsEmptyElementTag0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0100
+     * @tc.desc   Testing XML isEmptyElementTag with valid empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlIsEmptyElementTag0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlIsEmptyElementTag0001';
@@ -4641,12 +4573,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0200
-     * @tc.name       : testXmlIsEmptyElementTag0002
-     * @tc.desc       : Testing XML isEmptyElementTag with valid non-empty element.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlIsEmptyElementTag0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0200
+     * @tc.desc   Testing XML isEmptyElementTag with valid non-empty element.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlIsEmptyElementTag0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlIsEmptyElementTag0002';
@@ -4672,12 +4604,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0300
-     * @tc.name       : testXmlIsEmptyElementTag0003
-     * @tc.desc       : Testing XML isEmptyElementTag with illegal XML structure.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlIsEmptyElementTag0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISEMPTYELEMENTTAG_0300
+     * @tc.desc   Testing XML isEmptyElementTag with illegal XML structure.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlIsEmptyElementTag0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlIsEmptyElementTag0003';
@@ -4707,12 +4639,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_ISWHITESPACE_0100
-     * @tc.name       : testXmlIsWhitespace0001
-     * @tc.desc       : Testing XML isWhitespace with valid whitespace.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlIsWhitespace0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_ISWHITESPACE_0100
+     * @tc.desc   Testing XML isWhitespace with valid whitespace.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlIsWhitespace0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlIsWhitespace0001';
@@ -4742,12 +4674,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0100
-     * @tc.name       : testXmlGetAttributeCount0001
-     * @tc.desc       : Testing XML getAttributeCount with one valid attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlGetAttributeCount0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0100
+     * @tc.desc   Testing XML getAttributeCount with one valid attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlGetAttributeCount0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlGetAttributeCount0001';
@@ -4774,12 +4706,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0200
-     * @tc.name       : testXmlGetAttributeCount0002
-     * @tc.desc       : Testing XML getAttributeCount with multiple valid attributes.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlGetAttributeCount0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0200
+     * @tc.desc   Testing XML getAttributeCount with multiple valid attributes.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlGetAttributeCount0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlGetAttributeCount0002';
@@ -4806,12 +4738,12 @@ export default function XmlTest() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0300
-     * @tc.name       : testXmlGetAttributeCount0003
-     * @tc.desc       : Testing XML getAttributeCount with illegal attribute.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testXmlGetAttributeCount0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_XML_GETATTRIBUTESCOUNT_0300
+     * @tc.desc   Testing XML getAttributeCount with illegal attribute.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testXmlGetAttributeCount0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testXmlGetAttributeCount0003';

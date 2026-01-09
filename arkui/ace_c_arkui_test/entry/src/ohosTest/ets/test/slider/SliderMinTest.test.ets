@@ -26,66 +26,66 @@ export default function sliderMinTest() {
       done();
     });
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MIN_0100
-    * @tc.name: testSliderMin001
-    * @tc.desc: testing min value for slider with default value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMin001
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MIN_0100
+     * @tc.desc   testing min value for slider with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMin001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMin001()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MIN_0200
-    * @tc.name: testSliderMin002
-    * @tc.desc: testing min value for slider with normal value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMin002
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MIN_0200
+     * @tc.desc   testing min value for slider with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMin002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMin002()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MIN_0300
-    * @tc.name: testSliderMin003
-    * @tc.desc: testing min value for slider with negative value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 2
-    */
+    /**
+     * @tc.name   testSliderMin003
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MIN_0300
+     * @tc.desc   testing min value for slider with negative value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMin003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMin003()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MIN_0400
-    * @tc.name: testSliderMin004
-    * @tc.desc: testing min value for slider with value greater than 100
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMin004
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MIN_0400
+     * @tc.desc   testing min value for slider with value greater than 100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMin004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMin004()).assertEqual(0)
       done()
     })
 
-    /*
-    * @tc.number: SUB_ARKUI_CAPI_SLIDER_MIN_0500
-    * @tc.name: testSliderMin005
-    * @tc.desc: testing min value for slider with zero value
-    * @tc.size: MediumTest
-    * @tc.type: Function
-    * @tc.level: Level 1
-    */
+    /**
+     * @tc.name   testSliderMin005
+     * @tc.number SUB_ARKUI_CAPI_SLIDER_MIN_0500
+     * @tc.desc   testing min value for slider with zero value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testSliderMin005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testSliderMin005()).assertEqual(0)
       done()

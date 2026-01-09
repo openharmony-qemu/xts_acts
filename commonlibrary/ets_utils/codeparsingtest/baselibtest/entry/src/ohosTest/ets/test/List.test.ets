@@ -20,6 +20,7 @@ import fastbufferBase2Test from './fastbuffer/FastBufferBase2.test';
 import processTest from './process/Process.test';
 import uriTest from './uri/Uri.test';
 import urlTest from './url/Url.test';
+import UtilTypeTest from './util/UtilType.test';
 import utilTest from './util/Util.test';
 import util2Test from './util/Util2.test';
 import timerTest from './timer/Timer.test';
@@ -33,6 +34,9 @@ import arrayListTest from './arraylist/ArrayList.test';
 import xmlTest from './xml/Xml.test';
 import dynamicXmlTest from './xml/DynamicXml';
 import convertXmlTest from './convertxml/ConvertXml.test';
+import ConvertXml2Test from './convertxml/ConvertXml2.test';
+import ConvertXml3Test from './convertxml/ConvertXml3.test';
+import ConvertXml4Test from './convertxml/ConvertXml4.test';
 import queueTest from './queue/Queue.test';
 import stackTest from './stack/Stack.test';
 import dequeTest from './deque/Deque.test';
@@ -62,26 +66,30 @@ export default function testsuite() {
   urlTest();
   utilTest();
   util2Test();
+  UtilTypeTest();
   timerTest();
   jsonTest();
   tresMapTest();
-  treeSetTest()
-  hashSetTest()
-  hashMapTest()
-  arkListTest()
-  arrayListTest()
-  xmlTest()
-  dynamicXmlTest()
-  convertXmlTest()
-  queueTest()
-  stackTest()
-  dequeTest()
-  lightWeightSetTest()
-  lightWeightMapTest()
-  linkedListTest()
-  plainArrayTest()
-  stringDecoderTest()
-  streamTest()
+  treeSetTest();
+  hashSetTest();
+  hashMapTest();
+  arkListTest();
+  arrayListTest();
+  xmlTest();
+  dynamicXmlTest();
+  convertXmlTest();
+  ConvertXml2Test();
+  ConvertXml3Test();
+  ConvertXml4Test();
+  queueTest();
+  stackTest();
+  dequeTest();
+  lightWeightSetTest();
+  lightWeightMapTest();
+  linkedListTest();
+  plainArrayTest();
+  stringDecoderTest();
+  streamTest();
   specialChar();
   consoleTest();
   LRUCacheTest();

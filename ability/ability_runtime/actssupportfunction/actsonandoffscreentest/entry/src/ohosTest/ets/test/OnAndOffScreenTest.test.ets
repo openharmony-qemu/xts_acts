@@ -125,10 +125,13 @@ export default function OnAndOffScreenTest() {
       }, sleepTimeOne);
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_OnAndOffScreen_0100
-     * @tc.name    : Verify the life cycle of on / off screen ability
-     * @tc.desc    : FA model is applied in the foreground, and the device is locked.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_OnAndOffScreen_0100
+     * @tc.number SUB_AA_OpenHarmony_OnAndOffScreen_0100
+     * @tc.desc   FA model is applied in the foreground, and the device is locked.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_OnAndOffScreen_0100', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_OnAndOffScreen_0100 == ';
@@ -220,10 +223,13 @@ export default function OnAndOffScreenTest() {
       }
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_OnAndOffScreen_0300
-     * @tc.name    : Verify the life cycle of on / off screen ability
-     * @tc.desc    : Stage model is applied in the foreground, and the device locks the screen.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_OnAndOffScreen_0300
+     * @tc.number SUB_AA_OpenHarmony_OnAndOffScreen_0300
+     * @tc.desc   Stage model is applied in the foreground, and the device locks the screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_OnAndOffScreen_0300', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_OnAndOffScreen_0300 == ';
@@ -315,10 +321,13 @@ export default function OnAndOffScreenTest() {
       }
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_OnAndOffScreen_0400
-     * @tc.name    : Verify the life cycle of on / off screen ability
-     * @tc.desc    : The stage model is applied in the foreground, the device locks the screen, and then unlocks.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_OnAndOffScreen_0400
+     * @tc.number SUB_AA_OpenHarmony_OnAndOffScreen_0400
+     * @tc.desc   The stage model is applied in the foreground, the device locks the screen, and then unlocks.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_OnAndOffScreen_0400', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_OnAndOffScreen_0400 == ';
@@ -417,10 +426,13 @@ export default function OnAndOffScreenTest() {
       }
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_OnAndOffScreen_0500
-     * @tc.name    : Verify the life cycle of on / off screen ability
-     * @tc.desc    : Application in the background, device lock screen.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_OnAndOffScreen_0500
+     * @tc.number SUB_AA_OpenHarmony_OnAndOffScreen_0500
+     * @tc.desc   Application in the background, device lock screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_OnAndOffScreen_0500', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_OnAndOffScreen_0500 == ';
@@ -522,10 +534,13 @@ export default function OnAndOffScreenTest() {
       }
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_OnAndOffScreen_0600
-     * @tc.name    : Verify the life cycle of on / off screen ability
-     * @tc.desc    : Application in the background, device lock screen.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_OnAndOffScreen_0600
+     * @tc.number SUB_AA_OpenHarmony_OnAndOffScreen_0600
+     * @tc.desc   Application in the background, device lock screen.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_OnAndOffScreen_0600', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_OnAndOffScreen_0600 == ';
@@ -657,10 +672,13 @@ export default function OnAndOffScreenTest() {
       }
     })
 
-    /*
-     * @tc.number  : SUB_AA_OpenHarmony_Share_1000
-     * @tc.name    : Verify the ability implicit start
-     * @tc.desc    : Verify that the capability is started implicitly, and the input parameter is a nonexistent action.
+    /**
+     * @tc.name   SUB_AA_OpenHarmony_Share_1000
+     * @tc.number SUB_AA_OpenHarmony_Share_1000
+     * @tc.desc   Verify that the capability is started implicitly, and the input parameter is a nonexistent action.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_AA_OpenHarmony_Share_1000', Level.LEVEL0, async (done: Function) => {
       TAG = 'SUB_AA_OpenHarmony_Share_1000 == ';

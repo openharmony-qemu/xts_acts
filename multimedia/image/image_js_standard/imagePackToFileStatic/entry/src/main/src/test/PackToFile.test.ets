@@ -116,8 +116,18 @@ export default function imagePackToFile() {
             fileio.closeSync(fd)
             console.info(`${testNum} file size ${fileio.statSync(fPath).size}`);
             let imgSource = image.createImageSource(fPath);
+            if (imgSource == undefined) {
+              expect().assertFail();
+              done();
+              return undefined;
+            }
             let info = await imgSource.getImageInfo();
             await imgSource.release();
+            if (info == undefined) {
+              expect().assertFail();
+              done();
+              return undefined;
+            }
             console.log(`${testNum} file size ${info.size.width}`);
             console.log(`${testNum} file size ${info.size.height}`);
             checkSize(info.size.width, info.size.height)
@@ -168,11 +178,19 @@ export default function imagePackToFile() {
                   done();
                 } else {
                   let imgSource = image.createImageSource(fPath);
-                  let info = await imgSource.getImageInfo();
-                  await imgSource.release();
-                  console.log(`${testNum} file size ${info.size.width}`);
-                  console.log(`${testNum} file size ${info.size.height}`);
-                  checkSize(info.size.width, info.size.height)
+                  if (imgSource == undefined) {
+                    expect().assertFail();
+                  } else {
+                    let info = await imgSource.getImageInfo();
+                    if (info == undefined) {
+                      expect().assertFail();
+                    } else {
+                      await imgSource.release();
+                      console.log(`${testNum} file size ${info.size.width}`);
+                      console.log(`${testNum} file size ${info.size.height}`);
+                      checkSize(info.size.width, info.size.height)
+                    }
+                  }
                   done();
                 }
               } catch (e1) {
@@ -194,11 +212,19 @@ export default function imagePackToFile() {
                   done();
                 } else {
                   let imgSource = image.createImageSource(fPath);
-                  let info = await imgSource.getImageInfo();
-                  await imgSource.release();
-                  console.log(`${testNum} file size ${info.size.width}`);
-                  console.log(`${testNum} file size ${info.size.height}`);
-                  checkSize(info.size.width, info.size.height)
+                  if(imgSource == undefined) {
+                    expect().assertFail();
+                  } else {
+                    let info = await imgSource.getImageInfo();
+                    await imgSource.release();
+                    if(info != undefined) {
+                      console.log(`${testNum} file size ${info.size.width}`);
+                      console.log(`${testNum} file size ${info.size.height}`);
+                      checkSize(info.size.width, info.size.height)
+                    } else {
+                      expect().assertFail();
+                    }
+                  }
                   done();
                 }
               } catch (e1) {
@@ -300,23 +326,28 @@ export default function imagePackToFile() {
     }
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0100
-      * @tc.desc    sub_multimedia_image_packToFile_promise_imagesource_001
-      *               : 1.create imagesource
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with imagesource-jpg
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0100
+     * @tc.desc   sub_multimedia_image_packToFile_promise_imagesource_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_image_source.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -326,23 +357,28 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0200
-      * @tc.desc    sub_multimedia_image_packToFile_promise_imagesource_002
-      *               : 1.create imagesource-png
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with imagesource-webp
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0200
+     * @tc.desc   sub_multimedia_image_packToFile_promise_imagesource_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("webp_image_source.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -352,23 +388,28 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0300
-      * @tc.desc    sub_multimedia_image_packToFile_promise_imagesource_003
-      *               : 1.create imagesource
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with imagesource-png
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0300
+     * @tc.desc   sub_multimedia_image_packToFile_promise_imagesource_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_IMAGE_SOURCE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("png_image_source.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -378,23 +419,28 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0100
-      * @tc.desc    sub_multimedia_image_packToFile_callback_imagesource_001
-      *               : 1.create imagesource
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with imagesource-jpg
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0100
+     * @tc.desc   sub_multimedia_image_packToFile_callback_imagesource_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_image_source.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -404,23 +450,28 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0200
-      * @tc.desc    sub_multimedia_image_packToFile_callback_imagesource_002
-      *               : 1.create imagesource
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with imagesource-webp
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0200
+     * @tc.desc   sub_multimedia_image_packToFile_callback_imagesource_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_image_source.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -430,23 +481,28 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0300
-      * @tc.desc    sub_multimedia_image_packToFile_callback_imagesource_003
-      *               : 1.create imagesource
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with imagesource-png
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0300
+     * @tc.desc   sub_multimedia_image_packToFile_callback_imagesource_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_IMAGE_SOURCE_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let imageSource = getImageSourceData("test.png")
-      expect(imageSource!= undefined).assertTrue();
+      if (imageSource == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_image_source.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
       let imageInfo = await imageSource.getImageInfo();
+      if (imageInfo == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let checkSize = (width: int, height: int) => {
         expect(width == imageInfo!.size.width).assertTrue();
         expect(height == imageInfo!.size.height).assertTrue();
@@ -456,20 +512,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0100
-      * @tc.desc    sub_multimedia_image_packToFile_promise_pixelmap_001
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with pixelmap-jpg
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0100
+     * @tc.desc   sub_multimedia_image_packToFile_promise_pixelmap_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
 
@@ -482,20 +538,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0200
-      * @tc.desc    sub_multimedia_image_packToFile_promise_pixelmap_002
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with pixelmap-webp
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0200
+     * @tc.desc   sub_multimedia_image_packToFile_promise_pixelmap_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
 
@@ -508,20 +564,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0300
-      * @tc.desc    sub_multimedia_image_packToFile_promise_pixelmap_003
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with pixelmap-png
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0300
+     * @tc.desc   sub_multimedia_image_packToFile_promise_pixelmap_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_PIXEL_MAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
 
@@ -534,20 +590,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0100
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0100
-      * @tc.desc    sub_multimedia_image_packToFile_callback_pixelmap_001
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with pixelmap-jpg
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0100
+     * @tc.desc   sub_multimedia_image_packToFile_callback_pixelmap_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0100", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map.jpg")
       let ops: image.PackingOption = { format: "image/jpeg", quality: 100 };
 
@@ -560,20 +616,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0200
-      * @tc.desc    sub_multimedia_image_packToFile_callback_pixelmap_002
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with pixelmap-webp
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0200
+     * @tc.desc   sub_multimedia_image_packToFile_callback_pixelmap_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map.webp")
       let ops: image.PackingOption = { format: "image/webp", quality: 98 };
 
@@ -586,20 +642,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0300
-      * @tc.desc    sub_multimedia_image_packToFile_callback_pixelmap_003
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile with pixelmap-png
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0300
+     * @tc.desc   sub_multimedia_image_packToFile_callback_pixelmap_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_PIXEL_MAP_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map.png")
       let ops: image.PackingOption = { format: "image/png", quality: 100 };
 
@@ -612,20 +668,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200
-      * @tc.desc    sub_multimedia_image_packToFile_callback_pixelmap_err_002
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile { format: "image/jpeg", quality: 101 }
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200
+     * @tc.desc   sub_multimedia_image_packToFile_callback_pixelmap_err_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map_errb.jpg");
       let ops: image.PackingOption = { format: "image/jpeg", quality: 101 };
       await packToFileCbErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0200",
@@ -633,20 +689,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300
-      * @tc.desc    sub_multimedia_image_packToFile_callback_pixelmap_err_003
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile { format: "image/txt", quality: 100 };
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300
+     * @tc.desc   sub_multimedia_image_packToFile_callback_pixelmap_err_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("callback_pixel_map_errc.jpg");
       let ops: image.PackingOption = { format: "image/txt", quality: 100 };
       await packToFileCbErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_CALLBACK_ERR_STATIC_0300",
@@ -654,20 +710,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200
-      * @tc.desc    sub_multimedia_image_packToFile_promise_pixelmap_err_002
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile { format: "image/jpeg", quality: 101 };
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200
+     * @tc.desc   sub_multimedia_image_packToFile_promise_pixelmap_err_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map_errb.jpg");
       let ops: image.PackingOption = { format: "image/jpeg", quality: 101 };
       await packToFilePromiseErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0200",
@@ -676,20 +732,20 @@ export default function imagePackToFile() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300
-      * @tc.name    SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300
-      * @tc.desc    sub_multimedia_image_packToFile_promise_pixelmap_err_003
-      *               : 1.create pixelmap
-      *               : 2.get writefd
-      *               : 3.create ImagePacker
-      *               : 4.packToFile { format: "image/txt", quality: 100 };
-      * @tc.size    MEDIUM
-      * @tc.type    Functional
-      * @tc.level   level 0
+     * @tc.name   SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300
+     * @tc.number SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300
+     * @tc.desc   sub_multimedia_image_packToFile_promise_pixelmap_err_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300", Level.LEVEL0, async (done: () => void): Promise<void> => {
       let pixelmap = getPixelMapData()
-      expect(pixelmap!= undefined).assertTrue();
+      if (pixelmap == undefined) {
+        expect().assertFail();
+        done();
+        return undefined;
+      }
       let fileInfo = getWriteFd("promise_pixel_map_errc.jpg");
       let ops: image.PackingOption = { format: "image/txt", quality: 100 };
       await packToFilePromiseErr(done, "SUB_MULTIMEDIA_IMAGE_PACK_TO_FILE_PROMISE_ERR_STATIC_0300",

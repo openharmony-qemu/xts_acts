@@ -63,13 +63,13 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
       done();
     })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_SharedRenderProcessToken_API_0001
-     * @tc.name        : testWebViewSharedRenderProcessToken
-     * @tc.desc        : test SharedRenderProcessToken
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewSharedRenderProcessToken
+     * @tc.number SUB_ACE_WEB_SharedRenderProcessToken_API_0001
+     * @tc.desc   test SharedRenderProcessToken
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewSharedRenderProcessToken', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: Function) => {
@@ -82,13 +82,13 @@ export default function ActsAcewebViewSharedRenderProcessToken() {
           'emitWebViewSharedRenderProcessToken');
       })
 
-    /*
-     * @tc.number      : SUB_ACE_WEB_JSBRIDGE_API_0001
-     * @tc.name        : testWebViewWebViewJsBridge
-     * @tc.desc        : test WebViewJsBridge
-     * @tc.size        : MediumTest
-     * @tc.type        : Function
-     * @tc.level       : Level 0
+    /**
+     * @tc.name   testWebViewWebViewJsBridge
+     * @tc.number SUB_ACE_WEB_JSBRIDGE_API_0001
+     * @tc.desc   test WebViewJsBridge
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWebViewWebViewJsBridge', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewWebViewJsBridge', 138350);

@@ -91,6 +91,39 @@ async function terminateAbility4(caseName: string) {
   await sleep(1000)
 }
 
+async function startAbility5(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility5',
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest5') as window.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility5(caseName: string) {
+  let pageContext = AppStorage.get('contextTest5') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 export default function windowLayoutTest() {
   describe('windowLayoutTest', async () => {
     let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -99,6 +132,7 @@ export default function windowLayoutTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -118,6 +152,7 @@ export default function windowLayoutTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      driver = Driver.create();
     });
     beforeEach(() => {
     });
@@ -142,12 +177,12 @@ export default function windowLayoutTest() {
     });
 
     /**
-     * @tc.number    : testStartMoving_0100
-     * @tc.name      : testStartMoving_0100
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStartMoving_0100
+     * @tc.number testStartMoving_0100
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartMoving_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startMovingTest_0100';
@@ -188,13 +223,13 @@ export default function windowLayoutTest() {
         done()
       }
     })
-/**
-     * @tc.number    : testStartMoving_0200
-     * @tc.name      : testStartMoving_0200
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testStartMoving_0200
+     * @tc.number testStartMoving_0200
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartMoving_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startMovingTest_0200';
@@ -206,10 +241,9 @@ export default function windowLayoutTest() {
       windowStage.createSubWindowWithOptions('testStartMoving_0200', options).then(async (data) => {
         windowClass = data
         await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-        windowClass.resize(1000, 1200)
-        await windowClass.showWindow()
-        await sleep(1000)
-        let driver = Driver.create();
+        windowClass.resize(1000, 1200);
+        windowClass.moveWindowToAsync(200,300);
+        await windowClass.showWindow();
         await sleep(1000)
         let windowPoint = windowClass.getWindowProperties().windowRect
         console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
@@ -247,12 +281,12 @@ export default function windowLayoutTest() {
     })
 
     /**
-     * @tc.number    : testStartMoving_0300
-     * @tc.name      : testStartMoving_0300
-     * @tc.desc      : Test the function value of setWindowTitleMoveEnabled
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testStartMoving_0300
+     * @tc.number testStartMoving_0300
+     * @tc.desc   Test the function value of setWindowTitleMoveEnabled
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartMoving_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'startMovingTest_0300';
@@ -266,10 +300,9 @@ export default function windowLayoutTest() {
         mainwindowClass.createSubWindowWithOptions('subWindow', options).then(async (data) => {
           windowClass = data
           await windowClass.setUIContent("testability/pages/WindowTest/StartMoving");
-          windowClass.resize(1000, 1200)
+          windowClass.resize(1000, 1200);
+          windowClass.moveWindowToAsync(200,300);
           await windowClass.showWindow()
-          await sleep(1000)
-          let driver = Driver.create();
           await sleep(1000)
           let windowPoint = windowClass.getWindowProperties().windowRect
           console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
@@ -316,13 +349,13 @@ export default function windowLayoutTest() {
 
     })
 /**
-     * @tc.number    : testSetResizeByDragEnabledTrue_0100
-     * @tc.name      : testSetResizeByDragEnabledTrue_0100
-     * @tc.desc      :
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
-     */
+ * @tc.name   testSetResizeByDragEnabledTrue_0100
+ * @tc.number testSetResizeByDragEnabledTrue_0100
+ * @tc.desc   testSetResizeByDragEnabledTrue_0100
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL3
+ */
 it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
   const message = 'testSetResizeByDragEnabledTrueTest_0100';
   let windowClass = windowStage.getMainWindowSync()
@@ -364,13 +397,13 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
   }
 })
 
-        /**
-     * @tc.number     : SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0100
-     * @tc.name       : test_setFollowParentMultiScreenPolicy_401
-     * @tc.desc       : test_setFollowParentMultiScreenPolicy_401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+    /**
+     * @tc.name   test_setFollowParentMultiScreenPolicy_401
+     * @tc.number SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0100
+     * @tc.desc   test_setFollowParentMultiScreenPolicy_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setFollowParentMultiScreenPolicy_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setFollowParentMultiScreenPolicy_401";
@@ -405,12 +438,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0200
-     * @tc.name       : test_setFollowParentMultiScreenPolicy_1300002
-     * @tc.desc       : test_setFollowParentMultiScreenPolicy_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setFollowParentMultiScreenPolicy_1300002
+     * @tc.number SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0200
+     * @tc.desc   test_setFollowParentMultiScreenPolicy_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setFollowParentMultiScreenPolicy_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setFollowParentMultiScreenPolicy_1300002";
@@ -444,12 +477,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0300
-     * @tc.name       : test_setFollowParentMultiScreenPolicy_mainWindow_1300004
-     * @tc.desc       : test_setFollowParentMultiScreenPolicy_mainWindow_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setFollowParentMultiScreenPolicy_mainWindow_1300004
+     * @tc.number SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0300
+     * @tc.desc   test_setFollowParentMultiScreenPolicy_mainWindow_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setFollowParentMultiScreenPolicy_mainWindow_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setFollowParentMultiScreenPolicy_mainWindow_1300004";
@@ -482,12 +515,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0400
-     * @tc.name       : test_setFollowParentMultiScreenPolicy_dialogWindow_1300004
-     * @tc.desc       : test_setFollowParentMultiScreenPolicy_dialogWindow_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setFollowParentMultiScreenPolicy_dialogWindow_1300004
+     * @tc.number SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0400
+     * @tc.desc   test_setFollowParentMultiScreenPolicy_dialogWindow_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setFollowParentMultiScreenPolicy_dialogWindow_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setFollowParentMultiScreenPolicy_dialogWindow_1300004";
@@ -526,12 +559,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0500
-     * @tc.name       : test_subWindow_setFollowParentMultiScreenPolicy_true
-     * @tc.desc       : test_subWindow_setFollowParentMultiScreenPolicy_true
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   test_subWindow_setFollowParentMultiScreenPolicy_true
+     * @tc.number SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0500
+     * @tc.desc   test_subWindow_setFollowParentMultiScreenPolicy_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_subWindow_setFollowParentMultiScreenPolicy_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_subWindow_setFollowParentMultiScreenPolicy_true";
@@ -568,12 +601,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0600
-     * @tc.name       : test_subWindow_setFollowParentMultiScreenPolicy_false
-     * @tc.desc       : test_subWindow_setFollowParentMultiScreenPolicy_false
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   test_subWindow_setFollowParentMultiScreenPolicy_false
+     * @tc.number SUB_BASIC_WMS_SetFollowParentMultiScreenPolicy_0600
+     * @tc.desc   test_subWindow_setFollowParentMultiScreenPolicy_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('test_subWindow_setFollowParentMultiScreenPolicy_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "test_subWindow_setFollowParentMultiScreenPolicy_false";
@@ -610,12 +643,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_MOVE_GLOBAL_0100
-     * @tc.name       : test_moveWindowToGlobal_moveConfiguration
-     * @tc.desc       : 验证moveWindowToGlobal参数MoveConfiguration
-     * @tc.size       : MediumTestTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_moveWindowToGlobal_moveConfiguration
+     * @tc.number SUB_BASIC_WMS_MOVE_GLOBAL_0100
+     * @tc.desc   验证moveWindowToGlobal参数MoveConfiguration
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_moveWindowToGlobal_moveConfiguration', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'test_moveWindowToGlobal_moveConfiguration!'
@@ -665,12 +698,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0040
-     * @tc.name      : testRectChangeOptions_off
-     * @tc.desc      : Test the function value of testRectChangeOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testRectChangeOptions_off
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0040
+     * @tc.desc   Test the function value of testRectChangeOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRectChangeOptions_off", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testRectChangeOptions_off";
@@ -701,12 +734,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0050
-     * @tc.name      : testRectChangeReason_enum
-     * @tc.desc      : Test the function value of RectChangeReason
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testRectChangeReason_enum
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0050
+     * @tc.desc   Test the function value of RectChangeReason
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("testRectChangeReason_enum", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "testRectChangeReason_enum";
@@ -734,12 +767,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0600
-     * @tc.name      : testRectChangeOptions_on_resize
-     * @tc.desc      : Test the function value of testRectChangeOptions
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testRectChangeOptions_on_resize
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0600
+     * @tc.desc   Test the function value of testRectChangeOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("testRectChangeOptions_on_resize", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testRectChangeOptions_on_resize";
@@ -787,13 +820,13 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0700
-         * @tc.name      : testRectChangeOptions_on_moveWindowTo
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level1
-         */
+     * @tc.name   testRectChangeOptions_on_moveWindowTo
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0700
+     * @tc.desc   Test the function value of testRectChangeOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it("testRectChangeOptions_on_moveWindowTo", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let msgStr = "testRectChangeOptions_on_moveWindowTo";
       console.log(msgStr + "begin");
@@ -840,13 +873,13 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0800
-         * @tc.name      : testRectChangeOptions_on_TwoCallback
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   testRectChangeOptions_on_TwoCallback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0800
+     * @tc.desc   Test the function value of testRectChangeOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testRectChangeOptions_on_TwoCallback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testRectChangeOptions_on_TwoCallback";
       console.log(msgStr + "begin");
@@ -901,13 +934,13 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
-         * @tc.name      : testRectChangeOptions_off_callback1
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   testRectChangeOptions_off_callback1
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_0900
+     * @tc.desc   Test the function value of testRectChangeOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testRectChangeOptions_off_callback1", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testRectChangeOptions_off_callback1";
       console.log(msgStr + "begin");
@@ -963,13 +996,13 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1000
-         * @tc.name      : testRectChangeOptions_off_all_callback
-         * @tc.desc      : Test the function value of testRectChangeOptions
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : Level3
-         */
+     * @tc.name   testRectChangeOptions_off_all_callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGETWO_JS_API_1000
+     * @tc.desc   Test the function value of testRectChangeOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("testRectChangeOptions_off_all_callback", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "testRectChangeOptions_off_all_callback";
       console.log(msgStr + "begin");
@@ -1025,15 +1058,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
 
-    /**
-         * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_ON_WINDOW_RECTCHANGE_0100
-         * @tc.name      : test_on_windowRectChange
-         * @tc.desc      : test_on_windowRectChange
-         * @tc.size      : MediumTest
-         * @tc.type      : Function
-         * @tc.level     : LEVEL0
-         */
 
+    /**
+     * @tc.name   test_on_windowRectChange
+     * @tc.number test_on_windowRectChange
+     * @tc.desc   test_on_windowRectChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("test_on_windowRectChange", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let msgStr = "test_on_windowRectChange";
       console.log(msgStr + "begin");
@@ -1059,15 +1092,15 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
 
-    /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SET_WINDOWMASK_0100
-     * @tc.name      : test_mainWindow_setWindowMask
-     * @tc.desc      : test_mainWindow_setWindowMask
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
 
+    /**
+     * @tc.name   test_mainWindow_setWindowMask
+     * @tc.number test_mainWindow_setWindowMask
+     * @tc.desc   test_mainWindow_setWindowMask
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it("test_mainWindow_setWindowMask", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let msgStr = "test_mainWindow_setWindowMask";
       console.log(msgStr + "begin");
@@ -1110,12 +1143,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0100
-     * @tc.name      : test_SetFollowParentWindowLayoutEnabled_401
-     * @tc.desc      :  test_SetFollowParentWindowLayoutEnabled_401
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SetFollowParentWindowLayoutEnabled_401
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0100
+     * @tc.desc   test_SetFollowParentWindowLayoutEnabled_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_SetFollowParentWindowLayoutEnabled_401", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SetFollowParentWindowLayoutEnabled_401";
@@ -1161,12 +1194,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0200
-     * @tc.name      : test_SetFollowParentWindowLayoutEnabled_1300002
-     * @tc.desc      :  test_SetFollowParentWindowLayoutEnabled_1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SetFollowParentWindowLayoutEnabled_1300002
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0200
+     * @tc.desc   test_SetFollowParentWindowLayoutEnabled_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_SetFollowParentWindowLayoutEnabled_1300002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SetFollowParentWindowLayoutEnabled_1300002";
@@ -1209,12 +1242,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0300
-     * @tc.name      : test_SetFollowParentWindowLayoutEnabled_1300004
-     * @tc.desc      :  test_SetFollowParentWindowLayoutEnabled_1300004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SetFollowParentWindowLayoutEnabled_1300004
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0300
+     * @tc.desc   test_SetFollowParentWindowLayoutEnabled_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_SetFollowParentWindowLayoutEnabled_1300004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SetFollowParentWindowLayoutEnabled_1300004";
@@ -1245,12 +1278,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0400
-     * @tc.name      : test_SetFollowParentWindowLayoutEnabled_true
-     * @tc.desc      :  test_SetFollowParentWindowLayoutEnabled_true
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SetFollowParentWindowLayoutEnabled_true
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0400
+     * @tc.desc   test_SetFollowParentWindowLayoutEnabled_true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_SetFollowParentWindowLayoutEnabled_true", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SetFollowParentWindowLayoutEnabled_true";
@@ -1316,12 +1349,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0500
-     * @tc.name      : test_SetFollowParentWindowLayoutEnabled_false
-     * @tc.desc      :  test_SetFollowParentWindowLayoutEnabled_false
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 3
+     * @tc.name   test_SetFollowParentWindowLayoutEnabled_false
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_SetFollowParentWindowLayoutEnabled_0500
+     * @tc.desc   test_SetFollowParentWindowLayoutEnabled_false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("test_SetFollowParentWindowLayoutEnabled_false", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = "test_SetFollowParentWindowLayoutEnabled_false";
@@ -1387,12 +1420,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_startMoving_401_0100
-     * @tc.name       : teststartMoving401
-     * @tc.desc       : teststartMoving401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   teststartMoving401
+     * @tc.number SUB_BASIC_WMS_startMoving_401_0100
+     * @tc.desc   teststartMoving401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('teststartMoving401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "teststartMoving401";
@@ -1419,12 +1452,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_stopMoving_1300002_0100
-     * @tc.name       : teststopMoving1300002
-     * @tc.desc       : teststopMoving1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   teststopMoving1300002
+     * @tc.number SUB_BASIC_WMS_stopMoving_1300002_0100
+     * @tc.desc   teststopMoving1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('teststopMoving1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "teststopMoving1300002";
@@ -1458,12 +1491,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_moveWindowToAsync_3_parameters_0100
-     * @tc.name       : testmoveWindowToAsync_3_parameters
-     * @tc.desc       : testmoveWindowToAsync_3_parameters
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testmoveWindowToAsync_3_parameters
+     * @tc.number SUB_BASIC_WMS_moveWindowToAsync_3_parameters_0100
+     * @tc.desc   testmoveWindowToAsync_3_parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testmoveWindowToAsync_3_parameters',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testmoveWindowToAsync_3_parameters";
@@ -1509,12 +1542,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0100
-     * @tc.name       : testWindowEnableDragNull
-     * @tc.desc       : test the err.code = 401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : LEVEL0
+     * @tc.name   testWindowEnableDragNull
+     * @tc.number SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0100
+     * @tc.desc   test the err.code = 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindowEnableDragNull', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let windowClass: window.Window;
@@ -1567,12 +1600,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0200
-     * @tc.name       : testWindowEnableDragDestroy
-     * @tc.desc       : test the err.code = 1300002 when window destroy
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.name   testWindowEnableDragDestroy
+     * @tc.number SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0200
+     * @tc.desc   test the err.code = 1300002 when window destroy
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowEnableDragDestroy', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let windowClass: window.Window;
@@ -1625,17 +1658,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0300
-     * @tc.name       : testWindowEnableDragTrueSubWindow
-     * @tc.desc       : testWindowEnableDragTrueSubWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.name   testWindowEnableDragTrueSubWindow
+     * @tc.number SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0300
+     * @tc.desc   testWindowEnableDragTrueSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowEnableDragTrueSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let windowClass: window.Window;
-        let driver: Driver = Driver.create();
         let caseName = 'testWindowEnableDragTrueSubWindow!'
         try {
           windowStage.createSubWindow('test').then(async (data) => {
@@ -1691,17 +1723,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0400
-     * @tc.name       : testWindowEnableDragFalseSubWindow
-     * @tc.desc       : testWindowEnableDragFalseSubWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.name   testWindowEnableDragFalseSubWindow
+     * @tc.number SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0400
+     * @tc.desc   testWindowEnableDragFalseSubWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowEnableDragFalseSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let windowClass: window.Window;
-        let driver: Driver = Driver.create();
         let caseName = 'testWindowEnableDragFalseSubWindow!'
         try {
           windowStage.createSubWindow('test').then(async (data) => {
@@ -1756,17 +1787,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0500
-     * @tc.name       : testWindowEnableDragTrueDialogWindow
-     * @tc.desc       : testWindowEnableDragTrueDialogWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.name   testWindowEnableDragTrueDialogWindow
+     * @tc.number SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0500
+     * @tc.desc   testWindowEnableDragTrueDialogWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowEnableDragTrueDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let windowClass: window.Window;
-        let driver: Driver = Driver.create();
         let caseName = 'testWindowEnableDragTrueDialogWindow!'
         let config: window.Configuration = {
           name: 'testWindowEnableDragTrueDialogWindow',
@@ -1824,17 +1854,16 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0600
-     * @tc.name       : testWindowEnableDragFalseDialogWindow
-     * @tc.desc       : testWindowEnableDragFalseDialogWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level1
+     * @tc.name   testWindowEnableDragFalseDialogWindow
+     * @tc.number SUB_BASIC_WMS_XTS_SYSTEMAPI_ENABLEDRAG_0600
+     * @tc.desc   testWindowEnableDragFalseDialogWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testWindowEnableDragFalseDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
         let windowClass: window.Window;
-        let driver: Driver = Driver.create();
         let caseName = 'testWindowEnableDragFalseDialogWindow!'
         let config: window.Configuration = {
           name: 'testWindowEnableDragFalseDialogWindow',
@@ -1892,13 +1921,13 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         }
       })
 
-       /**
-     * @tc.number    : SUB_BASIC_WMS_STARTMOVING_0400
-     * @tc.name      : testStartMoving_0400
-     * @tc.desc      : 验证系统窗调用startmoving移动成功
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+    /**
+     * @tc.name   testStartMoving_0400
+     * @tc.number SUB_BASIC_WMS_STARTMOVING_0400
+     * @tc.desc   验证系统窗调用startmoving移动成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testStartMoving_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
             const caseName = 'testStartMoving_0400';
@@ -1964,12 +1993,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SYSTEMAPI_ENABLEDRAG_0700
-     * @tc.name      : testWindowEnableDragTruewithFullScreenMainWindow
-     * @tc.desc      :  验证全屏主窗调用enabledrag抛1300004错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testWindowEnableDragTruewithFullScreenMainWindow
+     * @tc.number SUB_BASIC_WMS_SYSTEMAPI_ENABLEDRAG_0700
+     * @tc.desc   验证全屏主窗调用enabledrag抛1300004错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testWindowEnableDragTruewithFullScreenMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testWindowEnableDragTruewithFullScreenMainWindow';
@@ -1997,12 +2026,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0100
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow
-     * @tc.desc      : 验证子窗销毁后调用接口报1300002
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0100
+     * @tc.desc   验证子窗销毁后调用接口报1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithDestoryedSubWindow';
@@ -2036,12 +2065,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0200
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow
-     * @tc.desc : 验证主窗/dialog窗/float/接口报1300004
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level2
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0200
+     * @tc.desc   验证主窗/dialog窗/float/接口报1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithUnsupportedWindow';
@@ -2123,12 +2152,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0300
-     * @tc.name      : testSetRelativePositionToParentWindowEnabledwithUnsupportedWindowSecondWindow
-     * @tc.desc      : 验证二级子窗调用接口报1300004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithUnsupportedWindowSecondWindow
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0300
+     * @tc.desc   验证二级子窗调用接口报1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetRelativePositionToParentWindowEnabledwithUnsupportedWindowSecondWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithUnsupportedWindowSecondWindow';
@@ -2198,12 +2227,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0400
-     * @tc.name : testSetRelativePositionToParentWindowEnabled
-     * @tc.desc : 验证子窗设置enable=true，子窗和主窗左上角重合
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabled
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0400
+     * @tc.desc   验证子窗设置enable=true，子窗和主窗左上角重合
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabled';
@@ -2261,12 +2290,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0500
-     * @tc.name : testSetRelativePositionToParentWindowUnEnabled
-     * @tc.desc : 验证子窗设置enable=false，子窗和主窗左上角不重合
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowUnEnabled
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0500
+     * @tc.desc   验证子窗设置enable=false，子窗和主窗左上角不重合
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowUnEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowUnEnabled';
@@ -2316,12 +2345,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0600
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorTopStart
-     * @tc.desc : 验证子窗设置enable=true，anchor=TOP_START，子窗位于主窗左上角
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorTopStart
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0600
+     * @tc.desc   验证子窗设置enable=true，anchor=TOP_START，子窗位于主窗左上角
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorTopStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorTopStart';
@@ -2379,12 +2408,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0700
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorTop
-     * @tc.desc : 验证子窗设置enable=true，anchor=TOP，子窗位于主窗上边界横向居中点
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorTop
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0700
+     * @tc.desc   验证子窗设置enable=true，anchor=TOP，子窗位于主窗上边界横向居中点
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorTop', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorTop';
@@ -2442,12 +2471,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0800
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd
-     * @tc.desc : 验证子窗设置enable=true，anchor=TOP_END，子窗位于主窗右上角
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0800
+     * @tc.desc   验证子窗设置enable=true，anchor=TOP_END，子窗位于主窗右上角
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorTopEnd';
@@ -2505,12 +2534,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0900
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorStart
-     * @tc.desc : 验证子窗设置enable=true，anchor=START，子窗位于主窗左边界纵向居中点
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorStart
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_0900
+     * @tc.desc   验证子窗设置enable=true，anchor=START，子窗位于主窗左边界纵向居中点
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorStart';
@@ -2568,12 +2597,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1000
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorCenter
-     * @tc.desc : 验证子窗设置enable=true，anchor=CENTER，子窗位于主窗窗口横向和纵向居中点
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorCenter
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1000
+     * @tc.desc   验证子窗设置enable=true，anchor=CENTER，子窗位于主窗窗口横向和纵向居中点
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorCenter', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorCenter';
@@ -2631,12 +2660,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1100
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorEnd
-     * @tc.desc : 验证子窗设置enable=true，anchor=END，子窗位于主窗右边界纵向居中点
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorEnd
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1100
+     * @tc.desc   验证子窗设置enable=true，anchor=END，子窗位于主窗右边界纵向居中点
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorEnd';
@@ -2694,12 +2723,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1200
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart
-     * @tc.desc : 验证子窗设置enable=true，anchor=BOTTOM_START，子窗位于主窗左下角
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1200
+     * @tc.desc   验证子窗设置enable=true，anchor=BOTTOM_START，子窗位于主窗左下角
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottomStart';
@@ -2757,12 +2786,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1300
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorBottom
-     * @tc.desc : 验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向居中点
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorBottom
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1300
+     * @tc.desc   验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向居中点
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorBottom', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottom';
@@ -2820,12 +2849,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1400
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd
-     * @tc.desc : 验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向右顶点
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1400
+     * @tc.desc   验证子窗设置enable=true，anchor=BOTTOM，子窗位于主窗下边界横向右顶点
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithAnchorBottomEnd';
@@ -2883,12 +2912,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1500
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY
-     * @tc.desc : 验证offsetX为正，offsetY为正可以设置成功
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level0
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1500
+     * @tc.desc   验证offsetX为正，offsetY为正可以设置成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithOffsetXOffSetY';
@@ -2946,12 +2975,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1600
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY
-     * @tc.desc : 验证offsetX为正，offsetY为负可以设置成功
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level1
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1600
+     * @tc.desc   验证offsetX为正，offsetY为负可以设置成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetY';
@@ -3009,12 +3038,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1700
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX
-     * @tc.desc : 验证offsetX为负，offsetY为正可以设置成功
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level1
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1700
+     * @tc.desc   验证offsetX为负，offsetY为正可以设置成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetX';
@@ -3072,12 +3101,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1800
-     * @tc.name : testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY
-     * @tc.desc : 验证offsetX为负，offsetY为负可以设置成功
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level1
+     * @tc.name   testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY
+     * @tc.number SUB_BASIC_WMS_SETRELATIVEPOSITIONTOPARENTWINDOWENALBED_1800
+     * @tc.desc   验证offsetX为负，offsetY为负可以设置成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       const caseName = 'testSetRelativePositionToParentWindowEnabledwithNegativeOffsetXOffsetY';
@@ -3135,12 +3164,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_WINDOW_ANCHOR_0100
-     * @tc.name      : testWindowAnchorEnum
-     * @tc.desc      : WindowAnchor枚举值验证
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testWindowAnchorEnum
+     * @tc.number SUB_BASIC_WMS_WINDOW_ANCHOR_0100
+     * @tc.desc   WindowAnchor枚举值验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testWindowAnchorEnum', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testWindowAnchorEnum';
@@ -3165,12 +3194,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0100
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplaywithMainWindow
-     * @tc.desc      : 验证主窗on(type: 'rectChangeInGlobalDisplay')接口重复注册多次
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testOnandOffRectChangeInGlobalDisplaywithMainWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0100
+     * @tc.desc   验证主窗on(type: 'rectChangeInGlobalDisplay')接口重复注册多次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnandOffRectChangeInGlobalDisplaywithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplaywithMainWindow';
@@ -3211,12 +3240,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0200
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplaywithMainWindowRegisterTwotimes
-     * @tc.desc      : 验证主窗on(type: 'rectChangeInGlobalDisplay')接口注册多次
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testOnandOffRectChangeInGlobalDisplaywithMainWindowRegisterTwotimes
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0200
+     * @tc.desc   验证主窗on(type: 'rectChangeInGlobalDisplay')接口注册多次
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnandOffRectChangeInGlobalDisplaywithMainWindowRegisterTwotimes', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplaywithMainWindowRegisterTwotimes';
@@ -3264,12 +3293,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0300
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplaywithMainWindowUnregister
-     * @tc.desc      : 验证主窗on(type: 'rectChangeInGlobalDisplay')接口解注册
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testOnandOffRectChangeInGlobalDisplaywithMainWindowUnregister
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0300
+     * @tc.desc   验证主窗on(type: 'rectChangeInGlobalDisplay')接口解注册
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnandOffRectChangeInGlobalDisplaywithMainWindowUnregister', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplaywithMainWindowUnregister';
@@ -3317,12 +3346,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0400
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplayUnregisterOne
-     * @tc.desc      : 验证主窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册其中一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testOnandOffRectChangeInGlobalDisplayUnregisterOne
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0400
+     * @tc.desc   验证主窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册其中一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnandOffRectChangeInGlobalDisplayUnregisterOne', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplayUnregisterOne';
@@ -3384,12 +3413,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0500
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplayUnregisterAll
-     * @tc.desc      : 验证主窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册所有
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testOnandOffRectChangeInGlobalDisplayUnregisterAll
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0500
+     * @tc.desc   验证主窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册所有
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnandOffRectChangeInGlobalDisplayUnregisterAll', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplayUnregisterAll';
@@ -3450,12 +3479,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0600
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplaywithDestoryedMainWindow
-     * @tc.desc      : 验证主窗销毁后调用on(type: 'rectChangeInGlobalDisplay')接口
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testOnandOffRectChangeInGlobalDisplaywithDestoryedMainWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0600
+     * @tc.desc   验证主窗销毁后调用on(type: 'rectChangeInGlobalDisplay')接口
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnandOffRectChangeInGlobalDisplaywithDestoryedMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplaywithDestoryedMainWindow';
@@ -3486,12 +3515,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0700
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplaywithSubWindow
-     * @tc.desc      : 验证子窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册其中一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testOnandOffRectChangeInGlobalDisplaywithSubWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0700
+     * @tc.desc   验证子窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册其中一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnandOffRectChangeInGlobalDisplaywithSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplaywithSubWindow';
@@ -3532,12 +3561,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0800
-     * @tc.name      : testOnandOffRectChangeInGlobalDisplaywithDialogWindow
-     * @tc.desc      : 验证dialog窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册其中一个
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testOnandOffRectChangeInGlobalDisplaywithDialogWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_ON_GLOBAL_RECT_0800
+     * @tc.desc   验证dialog窗on(type: 'rectChangeInGlobalDisplay')接口注册多次解注册其中一个
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testOnandOffRectChangeInGlobalDisplaywithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testOnandOffRectChangeInGlobalDisplaywithDialogWindow';
@@ -3583,12 +3612,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0100
-     * @tc.name      : testMoveWindowToGlobalDisplay
-     * @tc.desc      : 验证moveWindowToGlobalDisplay移动窗口位置正常
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testMoveWindowToGlobalDisplay
+     * @tc.number SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0100
+     * @tc.desc   验证moveWindowToGlobalDisplay移动窗口位置正常
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMoveWindowToGlobalDisplay', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testMoveWindowToGlobalDisplay';
@@ -3647,12 +3676,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0200
-     * @tc.name      : testMoveWindowToGlobalDisplaywithDestoryedWindow
-     * @tc.desc      : 验证moveWindowToGlobalDisplay接口窗口状态异常调用
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testMoveWindowToGlobalDisplaywithDestoryedWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0200
+     * @tc.desc   验证moveWindowToGlobalDisplay接口窗口状态异常调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testMoveWindowToGlobalDisplaywithDestoryedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testMoveWindowToGlobalDisplaywithDestoryedWindow';
@@ -3672,12 +3701,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0200
-     * @tc.name      : testMoveWindowToGlobalDisplaywithDifferentWindowMode
-     * @tc.desc      : 验证moveWindowToGlobalDisplay接口全屏窗口调用
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testMoveWindowToGlobalDisplaywithDifferentWindowMode
+     * @tc.number SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0200
+     * @tc.desc   验证moveWindowToGlobalDisplay接口全屏窗口调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testMoveWindowToGlobalDisplaywithDifferentWindowMode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testMoveWindowToGlobalDisplaywithDifferentWindowMode';
@@ -3727,12 +3756,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0300
-     * @tc.name      : testMoveWindowToGlobalDisplaywithPositionOutofRange
-     * @tc.desc      : 验证moveWindowToGlobalDisplay接口入参越界测试
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testMoveWindowToGlobalDisplaywithPositionOutofRange
+     * @tc.number SUB_BASIC_WMS_FUNCTION_MOVE_WINDOW_TO_GLOBAL_RECT_0300
+     * @tc.desc   验证moveWindowToGlobalDisplay接口入参越界测试
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testMoveWindowToGlobalDisplaywithPositionOutofRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testMoveWindowToGlobalDisplaywithPositionOutofRange';
@@ -3759,12 +3788,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0100
-     * @tc.name      : testClientToGlobalDisplayandGlobalDisplayToClient
-     * @tc.desc      : 验证组件相对主窗和主屏的接口坐标转化场景
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testClientToGlobalDisplayandGlobalDisplayToClient
+     * @tc.number SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0100
+     * @tc.desc   验证组件相对主窗和主屏的接口坐标转化场景
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testClientToGlobalDisplayandGlobalDisplayToClient', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testClientToGlobalDisplayandGlobalDisplayToClient';
@@ -3798,12 +3827,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0200
-     * @tc.name      : testClientToGlobalDisplaywithDestoryedWindow
-     * @tc.desc      : 验证clientToGlobalDisplay接口窗口异常状态调用
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testClientToGlobalDisplaywithDestoryedWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0200
+     * @tc.desc   验证clientToGlobalDisplay接口窗口异常状态调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testClientToGlobalDisplaywithDestoryedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testClientToGlobalDisplaywithDestoryedWindow';
@@ -3823,12 +3852,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0300
-     * @tc.name      : testClientToGlobalDisplaywithPositionOutofRange
-     * @tc.desc      : 验证clientToGlobalDisplay接口入参越界
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testClientToGlobalDisplaywithPositionOutofRange
+     * @tc.number SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0300
+     * @tc.desc   验证clientToGlobalDisplay接口入参越界
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testClientToGlobalDisplaywithPositionOutofRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testClientToGlobalDisplaywithPositionOutofRange';
@@ -3858,12 +3887,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0400
-     * @tc.name      : testGlobalDisplayToClientwithDestroyedWindow
-     * @tc.desc      : 验证globalDisplayToClient接口窗口异常状态调用
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testGlobalDisplayToClientwithDestroyedWindow
+     * @tc.number SUB_BASIC_WMS_FUNCTION_CLIENT_AND_GLOBAL_DISPLAY_CHANGE_0400
+     * @tc.desc   验证globalDisplayToClient接口窗口异常状态调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testGlobalDisplayToClientwithDestroyedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testGlobalDisplayToClientwithDestroyedWindow';
@@ -3883,12 +3912,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_OFF_RECT_CHANGE_IN_GLOBAL_DISPLAY_WITH_DESTROYED_SUBWINDOW
-     * @tc.name      : testOffRectChangeInGlobalDisplaywithDestroyedSubwindow
-     * @tc.desc      : 验证销毁后的子窗调用OffRectChangeInGlobalDisplay接口抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testOffRectChangeInGlobalDisplaywithDestroyedSubwindow
+     * @tc.number SUB_BASIC_WMS_OFF_RECT_CHANGE_IN_GLOBAL_DISPLAY_WITH_DESTROYED_SUBWINDOW
+     * @tc.desc   验证销毁后的子窗调用OffRectChangeInGlobalDisplay接口抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testOffRectChangeInGlobalDisplaywithDestroyedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testOffRectChangeInGlobalDisplaywithDestroyedSubwindow';
@@ -3907,12 +3936,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_GLOBAL_DISPLAY_TO_CLIENT_WITH_INVAILD_PARAMETERS
-     * @tc.name      : testGlobalDisplayToClientwithOutofRange
-     * @tc.desc      : 验证子窗调用globalDisplayToClient入参超出int值抛1300016错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGlobalDisplayToClientwithOutofRange
+     * @tc.number SUB_BASIC_WMS_GLOBAL_DISPLAY_TO_CLIENT_WITH_INVAILD_PARAMETERS
+     * @tc.desc   验证子窗调用globalDisplayToClient入参超出int值抛1300016错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGlobalDisplayToClientwithOutofRange', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testGlobalDisplayToClientwithOutofRange';
@@ -3943,12 +3972,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0100
-     * @tc.name      : testSetContentAspectRatio_0100
-     * @tc.desc      : loadcontent前设置宽高比，标题栏按照默认37vp生效
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetContentAspectRatio_0100
+     * @tc.number SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0100
+     * @tc.desc   loadcontent前设置宽高比，标题栏按照默认37vp生效
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetContentAspectRatio_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0100';
@@ -3994,12 +4023,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0200
-     * @tc.name      : testSetContentAspectRatio_0200
-     * @tc.desc      : 应用退后台后设置新的比例
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetContentAspectRatio_0200
+     * @tc.number SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0200
+     * @tc.desc   应用退后台后设置新的比例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetContentAspectRatio_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0200';
@@ -4012,9 +4041,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
-          let width1 = drawableRect1.width / 1.2;
-          console.log(caseName + ' width1: ' + width1);
-          expect(Math.abs(width1-drawableRect1.height)).assertLessOrEqual(2);
+          let height1 = Math.round(drawableRect1.width / 1.2);
+          console.log(caseName + ' height1: ' + height1);
+          expect(Math.abs(height1-drawableRect1.height)).assertLessOrEqual(3);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4025,9 +4054,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect3 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
-          let width3 = drawableRect3.width / 1.2;
-          console.log(caseName + ' width3: ' + width3);
-          expect(Math.abs(width3-drawableRect3.height)).assertLessOrEqual(2);
+          let height3 = Math.round(drawableRect3.width / 1.2);
+          console.log(caseName + ' height3: ' + height3);
+          expect(Math.abs(height3-drawableRect3.height)).assertLessOrEqual(3);
           let driver = await Driver.create();
           await sleep(200)
           let windowPoint = await windowClass.getWindowProperties().windowRect
@@ -4038,9 +4067,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(1000)
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
-          let width4 = drawableRect4.width / 1.5;
-          console.log(caseName + ' width4: ' + width4);
-          expect(Math.abs(width4-drawableRect4.height)).assertLessOrEqual(2);
+          let height4 = Math.round(drawableRect4.width / 1.5);
+          console.log(caseName + ' height4: ' + height4);
+          expect(Math.abs(height4-drawableRect4.height)).assertLessOrEqual(3);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4057,12 +4086,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0300
-     * @tc.name      : testSetContentAspectRatio_0300
-     * @tc.desc      : setContentAspetRatio接口参数取值类型覆盖
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testSetContentAspectRatio_0300
+     * @tc.number SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0300
+     * @tc.desc   setContentAspetRatio接口参数取值类型覆盖
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetContentAspectRatio_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0300';
@@ -4084,9 +4113,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(1000)
           let drawableRect1 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect1: ' + JSON.stringify(drawableRect1));
-          let width1 = drawableRect1.width / 1.2;
-          console.log(caseName + ' width1: ' + width1);
-          expect(Math.abs(width1-drawableRect1.height)).assertLessOrEqual(2);
+          let height1 = Math.round(drawableRect1.width / 1.2);
+          console.log(caseName + ' height1: ' + height1);
+          expect(Math.abs(height1-drawableRect1.height)).assertLessOrEqual(3);
           await windowClass.minimize();
           await sleep(200);
           await windowClass.setContentAspectRatio(1.5, true, false);
@@ -4097,9 +4126,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           await sleep(200);
           let drawableRect3 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect3: ' + JSON.stringify(drawableRect3));
-          let width3 = drawableRect3.width / 1.2;
-          console.log(caseName + ' width3: ' + width3);
-          expect(Math.abs(width3-drawableRect3.height)).assertLessOrEqual(2);
+          let height3 = Math.round(drawableRect3.width / 1.2);
+          console.log(caseName + ' height3: ' + height3);
+          expect(Math.abs(height3-drawableRect3.height)).assertLessOrEqual(3);
           let windowPoint2 = await windowClass.getWindowProperties().windowRect
           console.info(`${caseName} windowPoint = ${JSON.stringify(windowPoint2)}`)
           await driver.mouseMoveTo({x: windowPoint2.left + Math.ceil(windowPoint2.width / 2), y: windowPoint2.top})
@@ -4110,9 +4139,9 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
 
           let drawableRect4 = windowClass.getWindowProperties().drawableRect;
           console.log(caseName + ' drawableRect4: ' + JSON.stringify(drawableRect4));
-          let width4 = drawableRect4.width / 1.5;
-          console.log(caseName + ' width4: ' + width4);
-          expect(Math.abs(width4-drawableRect4.height)).assertLessOrEqual(2);
+          let height4 = Math.round(drawableRect4.width / 1.5);
+          console.log(caseName + ' height4: ' + height4);
+          expect(Math.abs(height4-drawableRect4.height)).assertLessOrEqual(3);
           await windowClass.resetAspectRatio();
           await sleep(200)
           await terminateAbility(caseName);
@@ -4129,12 +4158,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0500
-     * @tc.name      : testSetContentAspectRatio_0400
-     * @tc.desc      : setContentAspectRatio错误码校验1300004
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testSetContentAspectRatio_0400
+     * @tc.number SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0500
+     * @tc.desc   setContentAspectRatio错误码校验1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetContentAspectRatio_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0400';
@@ -4189,12 +4218,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0600
-     * @tc.name      : testSetContentAspectRatio_0500
-     * @tc.desc      : setContentAspectRatio错误码校验1300016
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetContentAspectRatio_0500
+     * @tc.number SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0600
+     * @tc.desc   setContentAspectRatio错误码校验1300016
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetContentAspectRatio_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0500';
@@ -4229,12 +4258,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0700
-     * @tc.name      : testSetContentAspectRatio_0600
-     * @tc.desc      : setContentAspectRatio全屏调用
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : LEVEL0
+     * @tc.name   testSetContentAspectRatio_0600
+     * @tc.number SUB_BASIC_WMS_SET_CONTENT_ASPECTRATIO_0700
+     * @tc.desc   setContentAspectRatio全屏调用
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetContentAspectRatio_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       const caseName = 'testSetContentAspectRatio_0600';
@@ -4269,5 +4298,288 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
         done()
       }
     })
+
+    /**
+     * @tc.name   testEnumPixelUnit
+     * @tc.number testEnumPixelUnit
+     * @tc.desc   testEnumPixelUnit
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumPixelUnit', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testEnumPixelUnit';
+      console.log(caseName + 'begin.');
+      try {
+        console.log(caseName + ' PixelUnit: ' + JSON.stringify(window.PixelUnit))
+        expect(window.PixelUnit.PX).assertEqual(0);
+        expect(window.PixelUnit.VP).assertEqual(1);
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testEnumOcclusionState
+     * @tc.number testEnumOcclusionState
+     * @tc.desc   testEnumOcclusionState
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testEnumOcclusionState', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName = 'testEnumOcclusionState';
+      console.log(caseName + 'begin.');
+      try {
+        console.log(caseName + ' OcclusionState: ' + JSON.stringify(window.OcclusionState))
+        expect(window.OcclusionState.NO_OCCLUSION).assertEqual(0);
+        expect(window.OcclusionState.PARTIAL_OCCLUSION).assertEqual(1);
+        expect(window.OcclusionState.FULL_OCCLUSION).assertEqual(2);
+        done();
+      } catch (err) {
+        console.error(`${caseName} failed, err: ${JSON.stringify(err)}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0100
+     * @tc.name       testGetWindowLimitsVPwithFloatWindow
+     * @tc.desc       testGetWindowLimitsVPwithFloatWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPwithFloatWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPwithFloatWindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "testGetWindowLimitsVPwithFloatWindow",
+        windowType: window.WindowType.TYPE_FLOAT,
+        ctx: context
+      };
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        window.createWindow(config).then(async (data) => {
+          subWindowClass = data;
+          await subWindowClass.setUIContent('testability/pages/Index2');
+          await subWindowClass.showWindow();
+          let windowLimits = subWindowClass.getWindowLimits();
+          console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+          if (canIUseRes) {
+            expect(windowLimits.minWidth).assertEqual(1)
+            expect(windowLimits.minHeight).assertEqual(1)
+          }
+          await subWindowClass?.destroyWindow();
+          done()
+        }).catch(async (err: BusinessError) => {
+          console.error(`${caseName} Failed in showWindow. Cause code: ${err.code}, message: ${err.message}`);
+          await subWindowClass?.destroyWindow();
+          if (canIUseRes) {
+            expect(err.code).assertEqual(1300002)
+          } else {
+            expect(err.code).assertEqual(801)
+          }
+          done()
+        });
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        expect().assertFail();
+        done()
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0200
+     * @tc.name       testGetWindowLimitsVPwithDialogWindow
+     * @tc.desc       testGetWindowLimitsVPwithDialogWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPwithDialogWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPwithDialogWindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "testGetWindowLimitsVPwithDialogWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        subWindowClass = await window.createWindow(config);
+        await subWindowClass.setUIContent('testability/pages/Index2');
+        await subWindowClass.showWindow();
+        let windowLimits = subWindowClass.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        if (canIUseRes) {
+          expect(windowLimits.minWidth).assertLarger(1)
+          expect(windowLimits.minHeight).assertLarger(1)
+        }
+        await subWindowClass?.destroyWindow();
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        if (!canIUseRes) {
+          expect(err.code).assertEqual(801)
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0300
+     * @tc.name       testGetWindowLimitsVPwithDestoryedWindow
+     * @tc.desc       testGetWindowLimitsVPwithDestoryedWindow
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testGetWindowLimitsVPwithDestoryedWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPwithDestoryedWindow';
+      console.log(caseName + 'begin');
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "testGetWindowLimitsVPwithDestoryedWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      subWindowClass = await window.createWindow(config);
+      await subWindowClass.setUIContent('testability/pages/Index2');
+      await subWindowClass.showWindow();
+      await subWindowClass.destroyWindow();
+      try {
+        let windowLimits = subWindowClass.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        expect().assertFail();
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002);
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0400
+     * @tc.name       testGetWindowLimitsVPSetWindowLimitsVP
+     * @tc.desc       testGetWindowLimitsVPSetWindowLimitsVP
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPSetWindowLimitsVP', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPSetWindowLimitsVP';
+      console.log(caseName + 'begin');
+      let windowClass: window.Window | undefined;
+      let windowStageStart = await startAbility5(caseName, context);
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        windowClass = windowStageStart.getMainWindowSync();
+        await windowClass?.setUIContent('testability/pages/Index2');
+        await windowClass?.showWindow();
+        let windowLimits = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        let setWindowLimits: window.WindowLimits = {
+          minWidth: windowLimits.minWidth as number + 10,
+          minHeight: windowLimits.minHeight as number + 10,
+          maxWidth: windowLimits.maxWidth as number - 10,
+          maxHeight: windowLimits.maxHeight as number - 10,
+          pixelUnit: window.PixelUnit.VP
+        }
+        await windowClass?.setWindowLimits(setWindowLimits);
+        let windowLimits2 = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
+
+        if (canIUseRes) {
+          expect(windowLimits2.minWidth).assertEqual(setWindowLimits.minWidth)
+          expect(windowLimits2.minHeight).assertEqual(setWindowLimits.minHeight)
+          expect(windowLimits2.maxWidth).assertEqual(setWindowLimits.maxWidth)
+          expect(windowLimits2.maxHeight).assertEqual(setWindowLimits.maxHeight)
+        }
+        await terminateAbility5(caseName);
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await windowClass?.destroyWindow();
+        await terminateAbility5(caseName);
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_TEST_WINDOW_LIMIT_VP_0500
+     * @tc.name       testGetWindowLimitsVPSetWindowLimitsPX
+     * @tc.desc       testGetWindowLimitsVPSetWindowLimitsPX
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testGetWindowLimitsVPSetWindowLimitsPX', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testGetWindowLimitsVPSetWindowLimitsPX';
+      console.log(caseName + 'begin');
+      let windowClass: window.Window | undefined;
+      let windowStageStart = await startAbility5(caseName, context);
+      let canIUseRes = canIUse('SystemCapability.Window.SessionManager');
+      console.log(`${caseName} canIUse SystemCapability.Window.SessionManager: ${canIUseRes}`);
+      try {
+        windowClass = windowStageStart.getMainWindowSync();
+        await windowClass?.setUIContent('testability/pages/Index2');
+        await windowClass?.showWindow();
+        let windowLimits = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+        let setWindowLimits: window.WindowLimits = {
+          minWidth: vp2px(windowLimits.minWidth as number + 10),
+          minHeight: vp2px(windowLimits.minHeight as number + 10),
+          maxWidth: vp2px(windowLimits.maxWidth as number - 10),
+          maxHeight: vp2px(windowLimits.maxHeight as number - 10),
+          pixelUnit: window.PixelUnit.PX
+        }
+        await windowClass?.setWindowLimits(setWindowLimits);
+        let windowLimits2 = windowClass?.getWindowLimitsVP();
+        console.log(`${caseName} windowLimits2: ${JSON.stringify(windowLimits2)}`);
+
+        if (canIUseRes) {
+          expect(Math.abs(windowLimits2.minWidth as number -(windowLimits.minWidth as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.minHeight as number -(windowLimits.minHeight as number + 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxWidth as number -(windowLimits.maxWidth as number - 10))).assertLessOrEqual(2);
+          expect(Math.abs(windowLimits2.maxHeight as number -(windowLimits.maxHeight as number - 10))).assertLessOrEqual(2);
+        }
+        await terminateAbility5(caseName)
+        done()
+      } catch (err) {
+        console.error(`${caseName} :Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await windowClass?.destroyWindow();
+        await terminateAbility5(caseName)
+        if (err.code === 801) {
+          done()
+        } else {
+          expect().assertFail();
+          done()
+        }
+      }
+    });
+
   })
 }

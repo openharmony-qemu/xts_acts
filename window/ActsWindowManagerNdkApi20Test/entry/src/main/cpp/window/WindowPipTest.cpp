@@ -1865,4 +1865,547 @@ napi_value PictureInPicturePipStatePart2(napi_env env, napi_callback_info info)
     return retValue;
 }
 
+napi_value TestSetPipMainWindowIdBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_SetPipMainWindowId(pipConfig, PARAM_0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipMainWindowIdBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_SetPipMainWindowId(pipConfig, PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipMainWindowIdBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestSetPipRectBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_SetPipRect(pipConfig, PARAM_0, PARAM_2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipRectBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_SetPipRect(pipConfig, PARAM_4294967294, PARAM_2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipRectBoundaryValue 2: %{public}d", result2);
+    int32_t result3 = OH_PictureInPicture_SetPipRect(pipConfig, PARAM_4294967295, PARAM_2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipRectBoundaryValue 3: %{public}d", result3);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_3] = {result, result2};
+    for (int i = 0; i < PARAM_3; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestSetPipControlGroupBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    PictureInPicture_PipControlGroup pipControlGroup[] = {
+        VIDEO_PLAY_FAST_FORWARD_BACKWARD
+    };
+    int32_t result = OH_PictureInPicture_SetPipControlGroup(pipConfig, pipControlGroup, PARAM_0);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipControlGroupBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_SetPipControlGroup(pipConfig, pipControlGroup, PARAM_3);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipControlGroupBoundaryValue 2: %{public}d", result2);
+    int32_t result3 = OH_PictureInPicture_SetPipControlGroup(pipConfig, pipControlGroup, PARAM_4);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipControlGroupBoundaryValue 3: %{public}d", result3);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_3] = {result, result2};
+    for (int i = 0; i < PARAM_3; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestDeletePipBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_DeletePip(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestDeletePipBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_DeletePip(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestDeletePipBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestStartPipBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_StartPip(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestStartPipBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_StartPip(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestStartPipBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestStopPipBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_StopPip(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestStopPipBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_StopPip(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestStopPipBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUpdatePipContentSizeBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UpdatePipContentSize(PARAM_4294967294, PARAM_2, PARAM_2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUpdatePipContentSizeBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UpdatePipContentSize(PARAM_4294967295, PARAM_2, PARAM_2);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUpdatePipContentSizeBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUpdatePipControlStatusBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UpdatePipControlStatus(PARAM_4294967294,
+        PictureInPicture_PipControlType(mt() % PARAM_9), PictureInPicture_PipControlStatus(mt() % PARAM_2));
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUpdatePipControlStatusBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UpdatePipControlStatus(PARAM_4294967295,
+        PictureInPicture_PipControlType(mt() % PARAM_9), PictureInPicture_PipControlStatus(mt() % PARAM_2));
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUpdatePipControlStatusBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestSetPipControlEnabledBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_SetPipControlEnabled(PARAM_4294967294,
+        PictureInPicture_PipControlType(mt() % PARAM_9), false);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipControlEnabledBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_SetPipControlEnabled(PARAM_4294967295,
+        PictureInPicture_PipControlType(mt() % PARAM_9), false);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipControlEnabledBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestSetPipInitialSurfaceRectBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_SetPipInitialSurfaceRect(PARAM_4294967294,
+        PARAM_10, PARAM_10, PARAM_10, PARAM_10);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipInitialSurfaceRectBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_SetPipInitialSurfaceRect(PARAM_4294967295,
+        PARAM_10, PARAM_10, PARAM_10, PARAM_10);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestSetPipInitialSurfaceRectBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnsetPipInitialSurfaceRectBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnsetPipInitialSurfaceRect(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnsetPipInitialSurfaceRectBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnsetPipInitialSurfaceRect(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnsetPipInitialSurfaceRectBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestRegisterStartPipCallbackBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_RegisterStartPipCallback(PARAM_4294967294, WebPipStartPipCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterStartPipCallbackBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_RegisterStartPipCallback(PARAM_4294967295, WebPipStartPipCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterStartPipCallbackBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterStartPipCallbackBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterStartPipCallback(PARAM_4294967294, WebPipStartPipCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterStartPipCallbackBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterStartPipCallback(PARAM_4294967295, WebPipStartPipCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterStartPipCallbackBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterAllStartPipCallbacksBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterAllStartPipCallbacks(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllStartPipCallbacksBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterAllStartPipCallbacks(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllStartPipCallbacksBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestRegisterLifecycleListenerBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_RegisterLifecycleListener(PARAM_4294967294, WebPipLifecycleCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterLifecycleListenerBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_RegisterLifecycleListener(PARAM_4294967295, WebPipLifecycleCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterLifecycleListenerBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterLifecycleListenerBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterLifecycleListener(PARAM_4294967294, WebPipLifecycleCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterLifecycleListenerBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterLifecycleListener(PARAM_4294967295, WebPipLifecycleCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterLifecycleListenerBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterAllLifecycleListenersBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterAllLifecycleListeners(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllLifecycleListenersBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterAllLifecycleListeners(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllLifecycleListenersBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestRegisterControlEventListenerBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_RegisterControlEventListener(PARAM_4294967294, WebPipControlEventCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterControlEventListenerBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_RegisterControlEventListener(PARAM_4294967295, WebPipControlEventCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterControlEventListenerBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterControlEventListenerBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterControlEventListener(PARAM_4294967294, WebPipControlEventCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterControlEventListenerBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterControlEventListener(PARAM_4294967295, WebPipControlEventCallBack);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterControlEventListenerBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterAllControlEventListenersBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterAllControlEventListeners(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllControlEventListenersBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterAllControlEventListeners(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllControlEventListenersBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestRegisterResizeListenerBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_RegisterResizeListener(PARAM_4294967294, WebPipResizeCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterResizeListenerBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_RegisterResizeListener(PARAM_4294967295, WebPipResizeCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestRegisterResizeListenerBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterResizeListenerBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterResizeListener(PARAM_4294967294, WebPipResizeCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterResizeListenerBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterResizeListener(PARAM_4294967295, WebPipResizeCallback);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterResizeListenerBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
+
+napi_value TestUnregisterAllResizeListenersBoundaryValue(napi_env env, napi_callback_info info)
+{
+    napi_value retValue = PARAM_0;
+    PictureInPicture_PipConfig pipConfig;
+    OH_PictureInPicture_CreatePipConfig(&pipConfig);
+    int32_t result = OH_PictureInPicture_UnregisterAllResizeListeners(PARAM_4294967294);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllResizeListenersBoundaryValue 1: %{public}d", result);
+    int32_t result2 = OH_PictureInPicture_UnregisterAllResizeListeners(PARAM_4294967295);
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "WindowPip",
+                 "TestUnregisterAllResizeListenersBoundaryValue 2: %{public}d", result2);
+    if (napi_create_array(env, &retValue) != napi_ok) {
+        return nullptr;
+    }
+    int32_t values[PARAM_2] = {result, result2};
+    for (int i = 0; i < PARAM_2; i++) {
+        napi_value element;
+        napi_create_int32(env, values[i], &element);
+        napi_set_element(env, retValue, i, element);
+    }
+    return retValue;
+}
 }

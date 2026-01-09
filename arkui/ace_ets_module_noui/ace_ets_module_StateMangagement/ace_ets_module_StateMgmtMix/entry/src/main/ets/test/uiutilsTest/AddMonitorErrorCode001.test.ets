@@ -46,14 +46,14 @@ export default function AddMonitorErrorCode001() {
     });
 
     /**
-     * @tc.number    AddMonitorErrorCode001_001
-     * @tc.name      AddMonitorErrorCode001_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   AddMonitorErrorCode001_001
+     * @tc.number AddMonitorErrorCode001_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('AddMonitorErrorCode001_001', Level.LEVEL0, async (done: Function) => {
+    it('AddMonitorErrorCode001_001', Level.LEVEL1, async (done: Function) => {
       console.info('[AddMonitorErrorCode001_001] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();
@@ -76,14 +76,14 @@ export default function AddMonitorErrorCode001() {
     });
 
     /**
-     * @tc.number    AddMonitorErrorCode001_002
-     * @tc.name      AddMonitorErrorCode001_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   AddMonitorErrorCode001_002
+     * @tc.number AddMonitorErrorCode001_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('AddMonitorErrorCode001_002', Level.LEVEL0, async (done: Function) => {
+    it('AddMonitorErrorCode001_002', Level.LEVEL1, async (done: Function) => {
       console.info('[AddMonitorErrorCode001_002] START');
       await CommonFunc.sleep(2000);
       let driver: Driver = Driver.create();

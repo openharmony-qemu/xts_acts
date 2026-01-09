@@ -52,12 +52,12 @@ export default function urlTest1() {
       await Utils.msSleep(20);
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0100
-     * @tc.name       : testParamsEntries0001
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0100
+     * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0001";
@@ -68,19 +68,19 @@ export default function urlTest1() {
           entries.push(pair[0], pair[1]);
         }
         expect(entries[1]).assertEqual("value1");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0200
-     * @tc.name       : testParamsEntries0002
-     * @tc.desc       : Testing URLParams.entries() with empty string to validate it handles absence of
-     *                  key-value pairs correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0200
+     * @tc.desc   Testing URLParams.entries() with empty string to validate it handles absence of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0002";
@@ -91,20 +91,20 @@ export default function urlTest1() {
           entries.push(pair[0], pair[1]);
         }
         expect(String(entries.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0300
-     * @tc.name       : testParamsEntries0003
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value
-     *                  pairs from a nested array.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0300
+     * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0003";
@@ -116,20 +116,20 @@ export default function urlTest1() {
         }
         expect(entries[1]).assertEqual("value1");
         expect(entries[3]).assertEqual("value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0400
-     * @tc.name       : testParamsEntries0004
-     * @tc.desc       : Testing URLParams.entries() with an empty nested array to validate it handles absence
-     *                  of key-value pairs correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0400
+     * @tc.desc   Testing URLParams.entries() with an empty nested array to validate it handles absence
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0004";
@@ -140,20 +140,20 @@ export default function urlTest1() {
           entries.push(pair[0], pair[1]);
         }
         expect(String(entries.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0500
-     * @tc.name       : testParamsEntries0005
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
-     *                  from an object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0500
+     * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0005";
@@ -165,20 +165,20 @@ export default function urlTest1() {
         }
         expect(entries[1]).assertEqual("value1");
         expect(entries[3]).assertEqual("value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0600
-     * @tc.name       : testParamsEntries0006
-     * @tc.desc       : Testing URLParams.entries() with an empty object to validate it handles absence of
-     *                  key-value pairs correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0600
+     * @tc.desc   Testing URLParams.entries() with an empty object to validate it handles absence of
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0006";
@@ -189,20 +189,20 @@ export default function urlTest1() {
           entries.push(pair[0], pair[1]);
         }
         expect(String(entries.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0700
-     * @tc.name       : testParamsEntries0007
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
-     *                  from URL search parameters and toString() produces correct query string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0700
+     * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0007";
@@ -212,20 +212,20 @@ export default function urlTest1() {
         const params = new Url.URLParams(url.search);
         const result = params.toString();
         expect(result).assertEqual('foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0800
-     * @tc.name       : testParamsEntries0008
-     * @tc.desc       : Testing URLParams.entries() with URL having no search parameters to validate it handles
-     *                   absence of key-value pairs correctly and toString() is an empty string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0800
+     * @tc.desc   Testing URLParams.entries() with URL having no search parameters to validate it handles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0008";
@@ -235,20 +235,20 @@ export default function urlTest1() {
         const params = new Url.URLParams(url.search);
         const result = params.toString();
         expect(result).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0900
-     * @tc.name       : testParamsEntries0009
-     * @tc.desc       : Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
-     *                  from URL params and toString() produces correct query string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_0900
+     * @tc.desc   Testing URLParams.entries() to validate it correctly parses and returns key-value pairs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0009";
@@ -258,20 +258,20 @@ export default function urlTest1() {
         const params = new Url.URLParams(url.search);
         const result = params.toString();
         expect(result).assertEqual('foo=1&bar=2');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_1000
-     * @tc.name       : testParamsEntries0010
-     * @tc.desc       : Testing URLParams.entries() with URL having no search parameters to validate it handles
-     *                  absence of key-value pairs correctly and toString() is an empty string.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntries0010
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIES_1000
+     * @tc.desc   Testing URLParams.entries() with URL having no search parameters to validate it handles
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntries0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntries0010";
@@ -281,18 +281,19 @@ export default function urlTest1() {
         const params = new Url.URLParams(url.search);
         const result = params.toString();
         expect(result).assertEqual('');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0100
-     * @tc.name       : testParamsEntriesAppend0001
-     * @tc.desc       : Testing URLParams.append() to validate it correctly adds new key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntriesAppend0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0100
+     * @tc.desc   Testing URLParams.append() to validate it correctly adds new key-value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntriesAppend0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntriesAppend0001";
@@ -301,20 +302,20 @@ export default function urlTest1() {
         params.append("ma 大", "jk￥");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2&ma+%E5%A4%A7=jk%EF%BF%A5");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0200
-     * @tc.name       : testParamsEntriesAppend0002
-     * @tc.desc       : Testing URLParams.append() to validate it correctly handles adding a key with an empty
-     *                  string to an existing URLParams object.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntriesAppend0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0200
+     * @tc.desc   Testing URLParams.append() to validate it correctly handles adding a key with an empty
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntriesAppend0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntriesAppend0002";
@@ -323,19 +324,20 @@ export default function urlTest1() {
         params.append("", "jk￥");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2&=jk%EF%BF%A5");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0300
-     * @tc.name       : testParamsEntriesAppend0003
-     * @tc.desc       : Testing URLParams.append() to validate it correctly adds new key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntriesAppend0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0300
+     * @tc.desc   Testing URLParams.append() to validate it correctly adds new key-value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntriesAppend0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntriesAppend0003";
@@ -348,19 +350,20 @@ export default function urlTest1() {
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2&ma+%E5%A4%A7=jk%EF%BF%A5&" +
           "ma+%E5%A4%A7=jk%EF%BF%A5&ma+%E5%A4%A7=ma+%E5%A4%A7&key2=jk%EF%BF%A5");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0400
-     * @tc.name       : testParamsEntriesAppend0004
-     * @tc.desc       : Testing URLParams.append() to validate adding a key with the same name and different values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntriesAppend0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0400
+     * @tc.desc   Testing URLParams.append() to validate adding a key with the same name and different values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntriesAppend0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntriesAppend0004";
@@ -369,19 +372,20 @@ export default function urlTest1() {
         params.append("key3", "jk￥");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2&key3=jk%EF%BF%A5");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0500
-     * @tc.name       : testParamsEntriesAppend0005
-     * @tc.desc       : Testing URLParams.append() to validate adding multiple keys with the same name.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntriesAppend0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0500
+     * @tc.desc   Testing URLParams.append() to validate adding multiple keys with the same name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntriesAppend0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntriesAppend0005";
@@ -390,19 +394,20 @@ export default function urlTest1() {
         params.append("ma 大", "");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2&ma+%E5%A4%A7=");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0600
-     * @tc.name       : testParamsEntriesAppend0006
-     * @tc.desc       : Testing URLParams.append() to validate key-value pairs with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsEntriesAppend0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSENTRIESAPPEND_0600
+     * @tc.desc   Testing URLParams.append() to validate key-value pairs with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsEntriesAppend0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsEntriesAppend0006";
@@ -415,18 +420,19 @@ export default function urlTest1() {
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2&ma+%E5%A4%A7=jk%EF%BF%A5&" +
           "ma+%E5%A4%A7=jk%EF%BF%A5&jk%EF%BF%A5=jk%EF%BF%A5&ma+%E5%A4%A7=value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0100
-     * @tc.name       : testParamsDelete0001
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly deletes key-value pairs.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsDelete0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0100
+     * @tc.desc   Testing URLParams.delete() to validate it correctly deletes key-value pairs.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsDelete0001";
@@ -442,19 +448,20 @@ export default function urlTest1() {
         params.append("key2", "value2");
         let paramsResult3 = params.toString();
         expect(paramsResult3).assertEqual("key1=value1&key2=value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0200
-     * @tc.name       : testParamsDelete0002
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly handles deleting non-existent keys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsDelete0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0200
+     * @tc.desc   Testing URLParams.delete() to validate it correctly handles deleting non-existent keys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsDelete0002";
@@ -463,19 +470,20 @@ export default function urlTest1() {
         params.delete("nonExistentKey");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0300
-     * @tc.name       : testParamsDelete0003
-     * @tc.desc       : Testing URLParams.delete() to validate it handles deleting keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsDelete0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0300
+     * @tc.desc   Testing URLParams.delete() to validate it handles deleting keys with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsDelete0003";
@@ -487,19 +495,20 @@ export default function urlTest1() {
         params.delete(str2Decode);
         let paramsResult2 = params.toString();
         expect(paramsResult2).assertEqual("key1=value1&key2=value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0400
-     * @tc.name       : testParamsDelete0004
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly deletes all instances of a key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsDelete0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0400
+     * @tc.desc   Testing URLParams.delete() to validate it correctly deletes all instances of a key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsDelete0004";
@@ -508,19 +517,20 @@ export default function urlTest1() {
         params.delete("key1");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key2=value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0500
-     * @tc.name       : testParamsDelete0005
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly updates the URLParams object after deletion.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsDelete0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0500
+     * @tc.desc   Testing URLParams.delete() to validate it correctly updates the URLParams object after deletion.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsDelete0005";
@@ -529,19 +539,20 @@ export default function urlTest1() {
         params.delete("ma 大");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("key1=value1&key2=value2");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0600
-     * @tc.name       : testParamsDelete0006
-     * @tc.desc       : Testing URLParams.delete() to validate it correctly handles empty URLParams.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testParamsDelete0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSDELETE_0600
+     * @tc.desc   Testing URLParams.delete() to validate it correctly handles empty URLParams.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testParamsDelete0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParamsDelete0006";
@@ -550,7 +561,8 @@ export default function urlTest1() {
         params.delete("key1");
         let paramsResult = params.toString();
         expect(paramsResult).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -796,12 +808,12 @@ export default function urlTest1() {
     //   }
     // });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0100
-     * @tc.name       : testGetAllValuesForKey0001
-     * @tc.desc       : Testing URLParams getAll() method for key "" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAllValuesForKey0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0100
+     * @tc.desc   Testing URLParams getAll() method for key "" to ensure all values are correctly retrieved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllValuesForKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetAllValuesForKey0001";
@@ -813,19 +825,20 @@ export default function urlTest1() {
         for (let i = 0; i < valuesForKeyA.length; i++) {
           expect(String(valuesForKeyA[i])).assertEqual(String(expectedValuesForKeyA[i]));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0200
-     * @tc.name       : testGetAllValuesForKey0002
-     * @tc.desc       : Testing URLParams getAll() method for key "b" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAllValuesForKey0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0200
+     * @tc.desc   Testing URLParams getAll() method for key "b" to ensure all values are correctly retrieved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllValuesForKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetAllValuesForKey0002";
@@ -837,19 +850,20 @@ export default function urlTest1() {
         for (let i = 0; i < valuesForKeyB.length; i++) {
           expect(String(valuesForKeyB[i])).assertEqual(String(expectedValuesForKeyB[i]));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0300
-     * @tc.name       : testGetAllValuesForKey0003
-     * @tc.desc       : Testing URLParams getAll() method for key "c" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAllValuesForKey0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0300
+     * @tc.desc   Testing URLParams getAll() method for key "c" to ensure all values are correctly retrieved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllValuesForKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetAllValuesForKey0003";
@@ -861,20 +875,20 @@ export default function urlTest1() {
         for (let i = 0; i < valuesForKeyC.length; i++) {
           expect(String(valuesForKeyC[i])).assertEqual(String(expectedValuesForKeyC[i]));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0400
-     * @tc.name       : testGetAllValuesForKey0004
-     * @tc.desc       : Testing URLParams getAll() method for a non-existing key "d" to ensure an empty array
-     *                  is returned.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAllValuesForKey0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0400
+     * @tc.desc   Testing URLParams getAll() method for a non-existing key "d" to ensure an empty array
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllValuesForKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetAllValuesForKey0004";
@@ -883,20 +897,20 @@ export default function urlTest1() {
         let valuesForKeyD = searchParamsObject.getAll("d");
         let expectedValuesForKeyD: string[] = [];
         expect(String(valuesForKeyD.length)).assertEqual(String(expectedValuesForKeyD.length));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0500
-     * @tc.name       : testGetAllValuesForKey0005
-     * @tc.desc       : Testing URLParams getAll() method for a key with special characters
-     *                  "耄耋鍟毗粢ASGDDest1312%#^$%" to ensure all values are correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetAllValuesForKey0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0500
+     * @tc.desc   Testing URLParams getAll() method for a key with special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetAllValuesForKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetAllValuesForKey0005";
@@ -909,18 +923,19 @@ export default function urlTest1() {
         for (let i = 0; i < valuesForKeyD.length; i++) {
           expect(String(valuesForKeyD[i])).assertEqual(String(expectedValuesForKeyD[i]));
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0100
-     * @tc.name       : testGetValueForKey0001
-     * @tc.desc       : Testing URLParams get() method for key "" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetValueForKey0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0100
+     * @tc.desc   Testing URLParams get() method for key "" to ensure the first value is correctly retrieved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetValueForKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetValueForKey0001";
@@ -929,19 +944,20 @@ export default function urlTest1() {
         let valueForKeyA = searchParamsObject.get("");
         let expectedValueForKeyA = "1";
         expect(valueForKeyA).assertEqual(expectedValueForKeyA);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0200
-     * @tc.name       : testGetValueForKey0002
-     * @tc.desc       : Testing URLParams get() method for key "b" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetValueForKey0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0200
+     * @tc.desc   Testing URLParams get() method for key "b" to ensure the first value is correctly retrieved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetValueForKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetValueForKey0002";
@@ -950,19 +966,20 @@ export default function urlTest1() {
         let valueForKeyB = searchParamsObject.get("b");
         let expectedValueForKeyB = "1";
         expect(valueForKeyB).assertEqual(expectedValueForKeyB);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0300
-     * @tc.name       : testGetValueForKey0003
-     * @tc.desc       : Testing URLParams get() method for key "c" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetValueForKey0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0300
+     * @tc.desc   Testing URLParams get() method for key "c" to ensure the first value is correctly retrieved.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetValueForKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetValueForKey0003";
@@ -971,19 +988,20 @@ export default function urlTest1() {
         let valueForKeyC = searchParamsObject.get("c");
         let expectedValueForKeyC = "5";
         expect(valueForKeyC).assertEqual(expectedValueForKeyC);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0400
-     * @tc.name       : testGetValueForKey0004
-     * @tc.desc       : Testing URLParams get() method for a non-existing key "d" to ensure null is returned.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetValueForKey0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0400
+     * @tc.desc   Testing URLParams get() method for a non-existing key "d" to ensure null is returned.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetValueForKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetValueForKey0004";
@@ -991,20 +1009,20 @@ export default function urlTest1() {
         let searchParamsObject = new Url.URLParams("a=1&a=2&b=3&b=4&c=5");
         let valueForKeyD = searchParamsObject.get("d");
         expect(valueForKeyD).assertEqual(undefined);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0500
-     * @tc.name       : testGetValueForKey0005
-     * @tc.desc       : Testing URLParams get() method for a key with special characters
-     *                  "耄耋鍟毗粢ASGDDest1312%#^$%" to ensure the first value is correctly retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetValueForKey0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0500
+     * @tc.desc   Testing URLParams get() method for a key with special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetValueForKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetValueForKey0005";
@@ -1014,20 +1032,20 @@ export default function urlTest1() {
         let valueForKeyD = searchParamsObject.get("耄耋鍟毗粢ASGDDest1312%#^$%");
         let expectedValueForKeyD = "1";
         expect(String(valueForKeyD)).assertEqual(String(expectedValueForKeyD));
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0600
-     * @tc.name       : testGetValueForKey0006
-     * @tc.desc       : Testing URLParams get() method for various special character cases,
-     *                  ensuring the method correctly retrieves the first value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testGetValueForKey0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETVALUEFORKEY_0600
+     * @tc.desc   Testing URLParams get() method for various special character cases,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testGetValueForKey0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testGetValueForKey0006";
@@ -1072,18 +1090,19 @@ export default function urlTest1() {
           const actualValue = searchParamsObject.get(key);
           expect(actualValue).assertEqual(expectedValue);
         }
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0100
-     * @tc.name       : testHasKey0001
-     * @tc.desc       : Testing URLParams has() method for key "" to ensure it correctly identifies existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHasKey0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0100
+     * @tc.desc   Testing URLParams has() method for key "" to ensure it correctly identifies existence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHasKey0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHasKey0001";
@@ -1091,19 +1110,20 @@ export default function urlTest1() {
         let searchParamsObject = new Url.URLParams("=1&=2&b=3&b=4&c=5");
         let hasKey = searchParamsObject.has("");
         expect(String(hasKey)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0200
-     * @tc.name       : testHasKey0002
-     * @tc.desc       : Testing URLParams has() method for key "b" to ensure it correctly identifies existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHasKey0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0200
+     * @tc.desc   Testing URLParams has() method for key "b" to ensure it correctly identifies existence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHasKey0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHasKey0002";
@@ -1111,19 +1131,20 @@ export default function urlTest1() {
         let searchParamsObject = new Url.URLParams("b=1&b=2&b=3&b=4&c=5");
         let hasKey = searchParamsObject.has("b");
         expect(String(hasKey)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0300
-     * @tc.name       : testHasKey0003
-     * @tc.desc       : Testing URLParams has() method for key "c" to ensure it correctly identifies existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHasKey0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0300
+     * @tc.desc   Testing URLParams has() method for key "c" to ensure it correctly identifies existence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHasKey0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHasKey0003";
@@ -1131,19 +1152,20 @@ export default function urlTest1() {
         let searchParamsObject = new Url.URLParams("a=1&a=2&b=3&b=4&c=5");
         let hasKey = searchParamsObject.has("c");
         expect(String(hasKey)).assertEqual('true');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0400
-     * @tc.name       : testHasKey0004
-     * @tc.desc       : Testing URLParams has() method for a non-existing key "d" to ensure it correctly identifies non-existence.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHasKey0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0400
+     * @tc.desc   Testing URLParams has() method for a non-existing key "d" to ensure it correctly identifies non-existence.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHasKey0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHasKey0004";
@@ -1151,20 +1173,20 @@ export default function urlTest1() {
         let searchParamsObject = new Url.URLParams("a=1&a=2&b=3&b=4&c=5");
         let hasKey = searchParamsObject.has("d");
         expect(String(hasKey)).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0500
-     * @tc.name       : testHasKey0005
-     * @tc.desc       : Testing URLParams has() method for special character key "耄耋鍟毗粢ASGDDest1312%#^$%"
-     *                  to ensure the method correctly identifies the existence of the key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHasKey0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0500
+     * @tc.desc   Testing URLParams has() method for special character key "耄耋鍟毗粢ASGDDest1312%#^$%"
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHasKey0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHasKey0005";
@@ -1182,20 +1204,20 @@ export default function urlTest1() {
           }
         ];
         testKeyPresence("耄耋鍟毗粢ASGDDest1312%#^$%=1&a=2&b=3&耄耋鍟毗粢ASGDDest1312%#^$%a!$#%#=4&c=5", testCases1);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0600
-     * @tc.name       : testHasKey0006
-     * @tc.desc       : Testing URLParams has() method for special character keys ("%20", "%2b", "%26")
-     *                  to ensure the method correctly identifies the non-existence of these keys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testHasKey0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_HASKEY_0600
+     * @tc.desc   Testing URLParams has() method for special character keys ("%20", "%2b", "%26")
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testHasKey0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testHasKey0006";
@@ -1220,18 +1242,19 @@ export default function urlTest1() {
         ];
         testKeyPresence("http://dass/saf.com?ab=ku%20kua¶m2=value2&%D5%8F=1&a=2&b=3&b=4" +
           "&c=5&%20=1&%2b=2&d=%2b&e=%20&f=%26&%26=1", testCases2);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0100
-     * @tc.name       : testSetKeyAndValue0001
-     * @tc.desc       : Testing URLSearchParams set() method with an empty name.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0100
+     * @tc.desc   Testing URLSearchParams set() method with an empty name.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0001";
@@ -1242,19 +1265,20 @@ export default function urlTest1() {
         expect(String(hasEmptyKey)).assertEqual('true');
         let value = searchParamsObject.get("");
         expect(String(value)).assertEqual("newValue");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0200
-     * @tc.name       : testSetKeyAndValue0002
-     * @tc.desc       : Testing URLSearchParams set() method with an empty value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0200
+     * @tc.desc   Testing URLSearchParams set() method with an empty value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0002";
@@ -1265,19 +1289,20 @@ export default function urlTest1() {
         expect(String(hasNewKey)).assertEqual('true');
         let value = searchParamsObject.get("newKey");
         expect(String(value)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0300
-     * @tc.name       : testSetKeyAndValue0003
-     * @tc.desc       : Testing URLSearchParams set() method with an empty name and empty value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0300
+     * @tc.desc   Testing URLSearchParams set() method with an empty name and empty value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0003";
@@ -1288,19 +1313,20 @@ export default function urlTest1() {
         expect(String(hasEmptyKey)).assertEqual('true');
         let value = searchParamsObject.get("");
         expect(String(value)).assertEqual("");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0400
-     * @tc.name       : testSetKeyAndValue0004
-     * @tc.desc       : Testing URLSearchParams set() method with multiple duplicate keys.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0400
+     * @tc.desc   Testing URLSearchParams set() method with multiple duplicate keys.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0004";
@@ -1309,19 +1335,20 @@ export default function urlTest1() {
         expect(paramsObject.toString()).assertEqual("name=Jonathan&name=YH&name=DKH");
         paramsObject.set('name', 'zhuDi');
         expect(paramsObject.toString()).assertEqual("name=zhuDi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0500
-     * @tc.name       : testSetKeyAndValue0005
-     * @tc.desc       : Testing URLSearchParams set() method with a single key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0500
+     * @tc.desc   Testing URLSearchParams set() method with a single key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0005";
@@ -1330,19 +1357,20 @@ export default function urlTest1() {
         expect(paramsObject.toString()).assertEqual("name=Jonathan");
         paramsObject.set('name', 'zhudi');
         expect(paramsObject.toString()).assertEqual("name=zhudi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0600
-     * @tc.name       : testSetKeyAndValue0006
-     * @tc.desc       : Testing URLSearchParams set() method with a non-existent key.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0006
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0600
+     * @tc.desc   Testing URLSearchParams set() method with a non-existent key.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0006";
@@ -1353,19 +1381,20 @@ export default function urlTest1() {
         expect(paramsObject.toString()).assertEqual("a=1&b=2&name=zhudi");
         let value = paramsObject.get('name');
         expect(value).assertEqual("zhudi");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0700
-     * @tc.name       : testSetKeyAndValue0007
-     * @tc.desc       : Testing URLSearchParams set() method with a key containing special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0700
+     * @tc.desc   Testing URLSearchParams set() method with a key containing special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0007";
@@ -1377,19 +1406,20 @@ export default function urlTest1() {
         expect(paramsObject.toString()).assertEqual(`a=1&b=2&${encodeURIComponent(specialKey)}=specialValue`);
         let value = paramsObject.get(specialKey);
         expect(value).assertEqual("specialValue");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0800
-     * @tc.name       : testSetKeyAndValue0008
-     * @tc.desc       : Testing URLSearchParams set() method with encoded characters in key and value.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSetKeyAndValue0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SETKEYANDVALUE_0800
+     * @tc.desc   Testing URLSearchParams set() method with encoded characters in key and value.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetKeyAndValue0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSetKeyAndValue0008";
@@ -1410,18 +1440,19 @@ export default function urlTest1() {
         expect(value2).assertEqual("valueWithPlus");
         let value3 = paramsObject.get('name');
         expect(value3).assertEqual("value&contains&ampersand");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0100
-     * @tc.name       : testSort0001
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters are sorted correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSort0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0100
+     * @tc.desc   Testing URLParams sort() method to ensure parameters are sorted correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSort0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSort0001";
@@ -1439,22 +1470,22 @@ export default function urlTest1() {
         );
         paramsObject.sort();
         expect(paramsObject.toString()).assertEqual(
-          '1=c&5=c&a=c&ab=c&ad=c&b=c&ca=c&name=YH&name=DKH&name=Jonathan'
+          '1=c&5=c&a=c&ab=c&ad=c&b=c&ca=c&name=Jonathan&name=YH&name=DKH'
         );
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0200
-     * @tc.name       : testSort0002
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters with same keys but different
-     *                  values are sorted by adding order correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSort0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0200
+     * @tc.desc   Testing URLParams sort() method to ensure parameters with same keys but different
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSort0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSort0002";
@@ -1478,20 +1509,21 @@ export default function urlTest1() {
         }
         expect(paramsObject.toString()).assertEqual('1=3&1=6&1=1&1=2&1=3&1=4&2=5&3=5&4=2&2=2&1=3&3=7&0=9');
         paramsObject.sort();
-        expect(paramsObject.toString()).assertEqual('0=9&1=6&1=1&1=2&1=3&1=4&1=3&1=3&2=5&2=2&3=7&3=5&4=2');
-      } catch (err: BusinessError) {
+        expect(paramsObject.toString()).assertEqual('0=9&1=3&1=6&1=1&1=2&1=3&1=4&1=3&2=5&2=2&3=5&3=7&4=2');
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0300
-     * @tc.name       : testSort0003
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters with special characters are sorted correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSort0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0300
+     * @tc.desc   Testing URLParams sort() method to ensure parameters with special characters are sorted correctly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSort0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSort0003";
@@ -1509,22 +1541,21 @@ export default function urlTest1() {
         expect(paramsObject.toString()).assertEqual('key%401=value1&key%232=value2&key%401=value3&' +
           'key%232=value4&key*3=value5&key%284%29=value6');
         paramsObject.sort();
-        expect(paramsObject.toString()).assertEqual('key%232=value2&key%232=value4&key%284%29=value6&' +
-          'key*3=value5&key%401=value3&key%401=value1');
-      } catch (err: BusinessError) {
+        expect(paramsObject.toString()).assertEqual('key%232=value2&key%232=value4&key%284%29=value6&key*3=value5&key%401=value1&key%401=value3');
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_SORT_0400
-     * @tc.name       : testSort0004
-     * @tc.desc       : Testing URLParams sort() method to ensure parameters with special characters
-     *                  in values are sorted correctly.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSort0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SORT_0400
+     * @tc.desc   Testing URLParams sort() method to ensure parameters with special characters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSort0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSort0004";
@@ -1544,7 +1575,8 @@ export default function urlTest1() {
         paramsObject.sort();
         expect(paramsObject.toString()).assertEqual('key1=value&key1=hello%40&key2=world%21&' +
           'key2=foo%23&key3=bar%24&key4=baz%25');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1728,12 +1760,12 @@ export default function urlTest1() {
     //   }
     // });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0100
-     * @tc.name       : testSpecial0001
-     * @tc.desc       : Testing URLParams for handling special characters in query values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0001
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0100
+     * @tc.desc   Testing URLParams for handling special characters in query values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0001";
@@ -1747,19 +1779,20 @@ export default function urlTest1() {
         expect(res1).assertEqual("!!#%(())**  -..//::<<==>>??[");
         expect(res2).assertEqual("!!22\"##$$%%&&(())**+");
         expect(res3).assertEqual("21!22\"23#$$%%&&''(");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0200
-     * @tc.name       : testSpecial0002
-     * @tc.desc       : Testing append for handling special characters in query values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0002
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0200
+     * @tc.desc   Testing append for handling special characters in query values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0002";
@@ -1772,19 +1805,20 @@ export default function urlTest1() {
         params1.append('fod', '21!\"#$%&\'()*+,-./:;<=++>?@[\\]^_&&`{|}~');
         let res3 = params.get('fod');
         expect(res3).assertEqual('!"#$%&&&\'()*+++,-./:;<=>?@[\\]^_`{|}~');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0300
-     * @tc.name       : testSpecial0003
-     * @tc.desc       : Testing getAll for handling multiple values with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0003
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0300
+     * @tc.desc   Testing getAll for handling multiple values with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0003";
@@ -1796,19 +1830,20 @@ export default function urlTest1() {
         let res = params.getAll('fod');
         expect(res.toString()).assertEqual('!"#$%&&&\'()*+++,-./:;<=>?@[\\]^_`{|}~,21!"#$%&\'()*' +
           '+,-./:;<=++>?@[\\]^_&&`{|}~,Another special value: %^&*()_+|');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0400
-     * @tc.name       : testSpecial0004
-     * @tc.desc       : Testing set for handling special characters in query values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0004
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0400
+     * @tc.desc   Testing set for handling special characters in query values.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0004";
@@ -1828,19 +1863,20 @@ export default function urlTest1() {
         expect(newRes).assertEqual('%21%21%22%22%23%23%24%24%25%25%26%26%27%27%28%28%2' +
           'A%2A%2B%2B%2C%2C%2D%2D%2E%2E%2F%2F%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40' +
           '%40%5B%5B%5C%5C%5D%5D%5E%5E%5F%5F%60%60%7B%7B%7C%7C%7D%7D%7E%7E');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0500
-     * @tc.name       : testSpecial0005
-     * @tc.desc       : Testing values for handling multiple values with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0005
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0500
+     * @tc.desc   Testing values for handling multiple values with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0005";
@@ -1849,11 +1885,13 @@ export default function urlTest1() {
         params.append('fod', "!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`{|}~");
         params.append('fod', 'Another special value: %^&*()_+|');
         params.append('fod', 'More special characters: ~`!@#$%^&*()-_=+');
-        let resultValues = params.values();
-        expect(String(resultValues)).assertEqual("2,!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`" +
+        let arr = Array.from<string>(params.values())
+        let str = arr.join(',');
+        expect(str).assertEqual("2,!\"#$%&&&'()*+++,-./:;<=>?@[\\]^_`" +
           "{|}~,Another special value: %^&*()_+|,More special characters: " +
           "~`!@#$%^&*()-_=+");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -1901,12 +1939,12 @@ export default function urlTest1() {
     // })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0700
-     * @tc.name       : testSpecial0007
-     * @tc.desc       : Testing forEach for handling keys and values with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0007
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0700
+     * @tc.desc   Testing forEach for handling keys and values with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0007";
@@ -1924,19 +1962,20 @@ export default function urlTest1() {
           params.append(pair[0], pair[1]);
         }
         expect(specialValuePairs.toString()).assertEqual("key4,value$4,key5,value&5,key6,value%6,key7,value^7");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0800
-     * @tc.name       : testSpecial0008
-     * @tc.desc       : Testing parseURL for handling special characters in query parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0008
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0800
+     * @tc.desc   Testing parseURL for handling special characters in query parameters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0008";
@@ -1946,19 +1985,20 @@ export default function urlTest1() {
         let params1 = Url.URL.parseURL(url);
         let fodValue = params1.params.get('fod');
         expect(fodValue).assertEqual("!!\"\"");
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0900
-     * @tc.name       : testSpecial0009
-     * @tc.desc       : Testing delete for handling keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0009
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0900
+     * @tc.desc   Testing delete for handling keys with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0009";
@@ -1985,7 +2025,8 @@ export default function urlTest1() {
         expect(String(res1.length)).assertEqual('0');
         expect(String(res2.length)).assertEqual('0');
         expect(String(res3.length)).assertEqual('0');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2023,12 +2064,12 @@ export default function urlTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1100
-     * @tc.name       : testSpecial0011
-     * @tc.desc       : Testing has method for checking existence of keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0011
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1100
+     * @tc.desc   Testing has method for checking existence of keys with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0011";
@@ -2037,19 +2078,20 @@ export default function urlTest1() {
         let params1 = new Url.URLParams(`key1=value1&${str1}=value1`);
         expect(String(params1.has('key1') && params1.has(str1))).assertEqual('true');
         expect(String(params1.has('nonexistent'))).assertEqual('false');
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1200
-     * @tc.name       : testSpecial0012
-     * @tc.desc       : Testing sort method for URL parameters with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0012
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1200
+     * @tc.desc   Testing sort method for URL parameters with special characters.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0012";
@@ -2081,7 +2123,8 @@ export default function urlTest1() {
         expect(res1).assertEqual(`bard=2&fod=${str1}&nan=po`);
         expect(res2).assertEqual(`bard=2&fod=${str2}&nan=po`);
         expect(res3).assertEqual(`bard=2&fod=${str3}&nan=po`);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }
@@ -2130,12 +2173,12 @@ export default function urlTest1() {
     // });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1400
-     * @tc.name       : testSpecial0014
-     * @tc.desc       : Testing URLSearchParams for additional special characters extraction.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testSpecial0014
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1400
+     * @tc.desc   Testing URLSearchParams for additional special characters extraction.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSpecial0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0014";
@@ -2161,7 +2204,8 @@ export default function urlTest1() {
         expect(Params1.toString()).assertEqual(str1);
         expect(Params2.toString()).assertEqual(str2);
         expect(Params3.toString()).assertEqual(str3);
-      } catch (err: BusinessError) {
+      } catch (err) {
+        err = err as BusinessError;
         console.error(`${TAG} failed, error: ${err}`);
         expect(false).assertFail();
       }

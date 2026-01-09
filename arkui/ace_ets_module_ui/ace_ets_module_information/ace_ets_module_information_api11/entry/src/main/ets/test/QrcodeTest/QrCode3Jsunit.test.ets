@@ -55,6 +55,14 @@ export default function qrCodeJsunit() {
       console.info("QrCode after each called");
     });
 
+    /**
+     * @tc.name   test_qrCode_001
+     * @tc.number test_qrCode_001
+     * @tc.desc   test_qrCode_001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_qrCode_001', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_001] START');
       await CommonFunc.sleep(1000);
@@ -67,6 +75,14 @@ export default function qrCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_qrCode_002
+     * @tc.number test_qrCode_002
+     * @tc.desc   test_qrCode_002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_qrCode_002', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_002] START');
       await CommonFunc.sleep(1000);
@@ -95,6 +111,14 @@ export default function qrCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_qrCode_003
+     * @tc.number test_qrCode_003
+     * @tc.desc   test_qrCode_003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_qrCode_003', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_003] START');
       await CommonFunc.sleep(1000);
@@ -123,6 +147,14 @@ export default function qrCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_qrCode_004
+     * @tc.number test_qrCode_004
+     * @tc.desc   test_qrCode_004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_qrCode_004', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_004] START');
       await CommonFunc.sleep(1000);
@@ -155,6 +187,14 @@ export default function qrCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_qrCode_005
+     * @tc.number test_qrCode_005
+     * @tc.desc   test_qrCode_005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_qrCode_005', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_005] START');
       await CommonFunc.sleep(1000);
@@ -180,6 +220,14 @@ export default function qrCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_qrCode_006
+     * @tc.number test_qrCode_006
+     * @tc.desc   test_qrCode_006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_qrCode_006', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_006] START');
       await CommonFunc.sleep(1000);
@@ -215,6 +263,14 @@ export default function qrCodeJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   test_qrCode_007
+     * @tc.number test_qrCode_007
+     * @tc.desc   test_qrCode_007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('test_qrCode_007', Level.LEVEL0, async (done: Function) => {
       console.info('[test_qrCode_007] START');
       await CommonFunc.sleep(1000);

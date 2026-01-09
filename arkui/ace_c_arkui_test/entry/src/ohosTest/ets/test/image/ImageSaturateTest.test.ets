@@ -26,91 +26,91 @@ export default function imageSaturateTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SATURATE_0100
-     * @tc.name       : testImageSaturate001
-     * @tc.desc       : testing saturate for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSaturate001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SATURATE_0100
+     * @tc.desc   testing saturate for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSaturate001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSaturate001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SATURATE_0200
-     * @tc.name       : testImageSaturate002
-     * @tc.desc       : testing saturate for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSaturate002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SATURATE_0200
+     * @tc.desc   testing saturate for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSaturate002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSaturate002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SATURATE_0300
-     * @tc.name       : testImageSaturate003
-     * @tc.desc       : testing saturate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSaturate003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SATURATE_0300
+     * @tc.desc   testing saturate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSaturate003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSaturate003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SATURATE_0400
-     * @tc.name       : testImageSaturate004
-     * @tc.desc       : testing saturate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSaturate004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SATURATE_0400
+     * @tc.desc   testing saturate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSaturate004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSaturate004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SATURATE_0500
-     * @tc.name       : testImageSaturate005
-     * @tc.desc       : testing saturate for image with large value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageSaturate005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SATURATE_0500
+     * @tc.desc   testing saturate for image with large value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSaturate005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSaturate005()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SATURATE_0600
-     * @tc.name       : testImageSaturate006
-     * @tc.desc       : testing saturate for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageSaturate006
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SATURATE_0600
+     * @tc.desc   testing saturate for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSaturate006', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSaturate006()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_SATURATE_0700
-     * @tc.name       : testImageSaturate007
-     * @tc.desc       : testing saturate for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageSaturate007
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_SATURATE_0700
+     * @tc.desc   testing saturate for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageSaturate007', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageSaturate007()).assertEqual(0)

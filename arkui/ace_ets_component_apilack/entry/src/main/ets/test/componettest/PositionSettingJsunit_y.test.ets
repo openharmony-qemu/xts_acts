@@ -44,6 +44,14 @@ export default function positionSettingJsunit() {
       console.info("positionSetting after each called");
     });
 
+    /**
+     * @tc.name   testPositionSetting001
+     * @tc.number testPositionSetting001
+     * @tc.desc   testPositionSetting001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting001', Level.LEVEL0, async () => {
       console.info('[testPositionSetting001] START');
       await Utils.sleep(1000);
@@ -55,6 +63,14 @@ export default function positionSettingJsunit() {
       console.info('[testPositionSetting001] END');
     });
 
+    /**
+     * @tc.name   testPositionSetting002
+     * @tc.number testPositionSetting002
+     * @tc.desc   testPositionSetting002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting002', Level.LEVEL0, async () => {
       console.info('[testPositionSetting002] START');
       await Utils.sleep(1000);
@@ -66,6 +82,14 @@ export default function positionSettingJsunit() {
       console.info('[testPositionSetting002] END');
     });
 
+    /**
+     * @tc.name   testPositionSetting003
+     * @tc.number testPositionSetting003
+     * @tc.desc   testPositionSetting003
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting003', Level.LEVEL0, async () => {
       console.info('[testPositionSetting003] START');
       try {
@@ -92,6 +116,14 @@ export default function positionSettingJsunit() {
       console.info('[testPositionSetting003] END');
     });
 
+    /**
+     * @tc.name   testPositionSetting004
+     * @tc.number testPositionSetting004
+     * @tc.desc   testPositionSetting004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting004', Level.LEVEL0, async () => {
       console.info('[testPositionSetting004] START');
       await Utils.sleep(1000);
@@ -119,6 +151,14 @@ export default function positionSettingJsunit() {
       console.info('[testPositionSetting004] END');
     });
 
+    /**
+     * @tc.name   testPositionSetting005
+     * @tc.number testPositionSetting005
+     * @tc.desc   testPositionSetting005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting005', Level.LEVEL0, async () => {
       console.info('[testPositionSetting005] START');
       await Utils.sleep(1000);
@@ -137,6 +177,14 @@ export default function positionSettingJsunit() {
       console.info('[testPositionSetting005] END');
     });
 
+    /**
+     * @tc.name   testPositionSetting006
+     * @tc.number testPositionSetting006
+     * @tc.desc   testPositionSetting006
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting006', Level.LEVEL0, async () => {
       console.info('[testPositionSetting006] START');
       await Utils.sleep(1000);
@@ -178,6 +226,14 @@ export default function positionSettingJsunit() {
 
     });
 
+    /**
+     * @tc.name   testPositionSetting007
+     * @tc.number testPositionSetting007
+     * @tc.desc   testPositionSetting007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting007', Level.LEVEL0, async () => {
       console.info('[testPositionSetting007] START');
       await Utils.sleep(1000);
@@ -191,6 +247,14 @@ export default function positionSettingJsunit() {
 
     });
 
+    /**
+     * @tc.name   testPositionSetting008
+     * @tc.number testPositionSetting008
+     * @tc.desc   testPositionSetting008
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting008', Level.LEVEL0, async () => {
       console.info('[testPositionSetting008] START');
       await Utils.sleep(1000);
@@ -223,6 +287,14 @@ export default function positionSettingJsunit() {
 
     });
 
+    /**
+     * @tc.name   testPositionSetting009
+     * @tc.number testPositionSetting009
+     * @tc.desc   testPositionSetting009
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting009', Level.LEVEL0, async () => {
       console.info('[testPositionSetting009] START');
       await Utils.sleep(1000);
@@ -238,6 +310,14 @@ export default function positionSettingJsunit() {
 
     });
 
+    /**
+     * @tc.name   testPositionSetting010
+     * @tc.number testPositionSetting010
+     * @tc.desc   testPositionSetting010
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting010', Level.LEVEL0, async () => {
       console.info('[testPositionSetting010] START');
       await Utils.sleep(1000);
@@ -270,6 +350,14 @@ export default function positionSettingJsunit() {
 
     });
 
+    /**
+     * @tc.name   testPositionSetting011
+     * @tc.number testPositionSetting011
+     * @tc.desc   testPositionSetting011
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting011', Level.LEVEL0, async () => {
       console.info('[testPositionSetting011] START');
       await Utils.sleep(1000);
@@ -281,6 +369,14 @@ export default function positionSettingJsunit() {
 
     });
 
+    /**
+     * @tc.name   testPositionSetting012
+     * @tc.number testPositionSetting012
+     * @tc.desc   testPositionSetting012
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPositionSetting012', Level.LEVEL0, async () => {
       console.info('[testPositionSetting012] START');
       try {

@@ -34,11 +34,14 @@ export default function uitestUiWindowErrorTest() {
       hilog.info(domain, tag, "UitestUiWindowErrorTest loadup over!!!!!")
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_001
-   * @tc.name: test_UiWindow_getBundleName_17000004_static
-   * @tc.desc: setPoint 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_getBundleName_17000004_static
+     * @tc.number uitestUiWindowErrorTest_001
+     * @tc.desc setPoint 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getBundleName_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getBundleName_17000004_static start`);
       try {
@@ -63,11 +66,14 @@ export default function uitestUiWindowErrorTest() {
     })
 
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_002
-   * @tc.name: test_UiWindow_getBounds_17000004_static
-   * @tc.desc: getBounds 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_getBounds_17000004_static
+     * @tc.number uitestUiWindowErrorTest_002
+     * @tc.desc getBounds 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getBounds_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getBounds_17000004_static start`);
       try {
@@ -90,11 +96,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getBounds_17000004_static end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_003
-   * @tc.name: test_UiWindow_getTitle_17000004_static
-   * @tc.desc: getTitle 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_getTitle_17000004_static
+     * @tc.number uitestUiWindowErrorTest_003
+     * @tc.desc getTitle 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getTitle_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getTitle_17000004_static start`);
       try {
@@ -119,11 +128,14 @@ export default function uitestUiWindowErrorTest() {
     })
 
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_004
-   * @tc.name: test_UiWindow_getWindowMode_17000004_static
-   * @tc.desc: getWindowMode 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_getWindowMode_17000004_static
+     * @tc.number uitestUiWindowErrorTest_004
+     * @tc.desc getWindowMode 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_getWindowMode_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004_static start`);
       try {
@@ -147,11 +159,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_getWindowMode_17000004_static end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_005
-   * @tc.name: test_UiWindow_isFocused_17000004_static
-   * @tc.desc: isFocused 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_isFocused_17000004_static
+     * @tc.number uitestUiWindowErrorTest_005
+     * @tc.desc isFocused 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isFocused_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_isFocused_17000004_static start`);
       try {
@@ -175,11 +190,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_isFocused_17000004_static end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_006
-   * @tc.name: test_UiWindow_isActive_17000004_static
-   * @tc.desc: isActive 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_isActive_17000004_static
+     * @tc.number uitestUiWindowErrorTest_006
+     * @tc.desc isActive 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isActive_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_isActive_17000004_static start`);
       try {
@@ -204,11 +222,14 @@ export default function uitestUiWindowErrorTest() {
     })
 
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_0007
-   * @tc.name: test_UiWindow_isactive_17000004_static
-   * @tc.desc: isactive 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_isactive_17000004_static
+     * @tc.number uitestUiWindowErrorTest_0007
+     * @tc.desc isactive 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_isactive_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_isactive_17000004_static start`);
       try {
@@ -232,11 +253,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_isactive_17000004_static end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_0008
-   * @tc.name: test_UiWindow_focus_17000004_static
-   * @tc.desc: focus 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_focus_17000004_static
+     * @tc.number uitestUiWindowErrorTest_0008
+     * @tc.desc focus 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_focus_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_focus_17000004_static start`);
       try {
@@ -260,11 +284,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_focus_17000004_static end`);
     })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_0009
-   * @tc.name: test_UiWindow_moveTo_17000004_static
-   * @tc.desc: moveTo 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_moveTo_17000004_static
+     * @tc.number uitestUiWindowErrorTest_0009
+     * @tc.desc moveTo 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_moveTo_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static start`);
       let isSupport = false;
@@ -303,33 +330,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_moveTo_17000004_static end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_010
-  * @tc.name: test_UiWindow_moveTo_17000005_static
-  * @tc.desc: moveTo 17000005 test.
-  */
-    it('test_UiWindow_moveTo_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_UiWindow_moveTo_17000005_static start`);
-      try {
-        let driver = Driver.create();
-        let window = await driver.findWindow({active: true});
-        if (window != null) {
-          await window.moveTo(100, 100);
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_moveTo_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
-      }
-      await Utils.msSleep(1000)
-      console.log(`${TestTag}, test_UiWindow_moveTo_17000005_static end`);
-    })
-
-    /*
-   * @tc.number: uitestUiWindowErrorTest_011
-   * @tc.name: test_UiWindow_resize_17000004_static
-   * @tc.desc: resize 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_resize_17000004_static
+     * @tc.number uitestUiWindowErrorTest_011
+     * @tc.desc resize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resize_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_resize_17000004_static start`);
       let isSupportResize = true;
@@ -370,33 +378,15 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resize_17000004_static end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_012
-  * @tc.name: test_UiWindow_resize_17000005_static
-  * @tc.desc: resize 17000005 test.
-  */
-    it('test_UiWindow_resize_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_UiWindow_resize_17000005_static start`);
-      try {
-        let driver = Driver.create();
-        let window = await driver.findWindow({active: true});
-        if (window != null) {
-          await window.resize(100, 100, ResizeDirection.LEFT);
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_resize_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
-      }
-      await Utils.msSleep(1000)
-      console.log(`${TestTag}, test_UiWindow_resize_17000005_static end`);
-    })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_013
-   * @tc.name: test_UiWindow_split_17000004_static
-   * @tc.desc: split 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_split_17000004_static
+     * @tc.number uitestUiWindowErrorTest_013
+     * @tc.desc split 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_split_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_split_17000004_static start`);
       let isSupportSpilt = true;
@@ -437,33 +427,15 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_split_17000004_static end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_014
-  * @tc.name: test_UiWindow_split_17000005_static
-  * @tc.desc: split 17000005 test.
-  */
-    it('test_UiWindow_split_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_UiWindow_split_17000005_static start`);
-      try {
-        let driver = Driver.create();
-        let window = await driver.findWindow({active: true});
-        if (window != null) {
-          await window.split();
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_split_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
-      }
-      await Utils.msSleep(1000)
-      console.log(`${TestTag}, test_UiWindow_split_17000005_static end`);
-    })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_015
-   * @tc.name: test_UiWindow_maximize_17000004_static
-   * @tc.desc: maximize 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_maximize_17000004_static
+     * @tc.number uitestUiWindowErrorTest_015
+     * @tc.desc maximize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_maximize_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_maximize_17000004_static start`);
       let isSupportMaximize = true;
@@ -503,33 +475,15 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_maximize_17000004_static end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_016
-  * @tc.name: test_UiWindow_maximize_17000005_static
-  * @tc.desc: maximize 17000005 test.
-  */
-    it('test_UiWindow_maximize_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_UiWindow_maximize_17000005_static start`);
-      try {
-        let driver = Driver.create();
-        let window = await driver.findWindow({active: true});
-        if (window != null) {
-          await window.maximize();
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_maximize_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
-      }
-      await Utils.msSleep(1000)
-      console.log(`${TestTag}, test_UiWindow_maximize_17000005_static end`);
-    })
 
-    /*
-   * @tc.number: uitestUiWindowErrorTest_017
-   * @tc.name: test_UiWindow_minimize_17000004_static
-   * @tc.desc: minimize 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_minimize_17000004_static
+     * @tc.number uitestUiWindowErrorTest_017
+     * @tc.desc minimize 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_minimize_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_minimize_17000004_static start`);
       let isSupportMinimize = false;
@@ -568,33 +522,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_minimize_17000004_static end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_018
-  * @tc.name: test_UiWindow_minimize_17000005_static
-  * @tc.desc: minimize 17000005 test.
-  */
-    it('test_UiWindow_minimize_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_UiWindow_minimize_17000005_static start`);
-      try {
-        let driver = Driver.create();
-        let window = await driver.findWindow({active: true});
-        if (window != null) {
-          await window.minimize();
-        }
-        expect().assertFail()
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_minimize_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
-      }
-      await Utils.msSleep(1000)
-      console.log(`${TestTag}, test_UiWindow_minimize_17000005_static end`);
-    })
-
-    /*
-   * @tc.number: uitestUiWindowErrorTest_019
-   * @tc.name: test_UiWindow_resume_17000004_static
-   * @tc.desc: resume 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_resume_17000004_static
+     * @tc.number uitestUiWindowErrorTest_019
+     * @tc.desc resume 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_resume_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_resume_17000004_static start`);
       let isSupportResume = true;
@@ -634,33 +569,14 @@ export default function uitestUiWindowErrorTest() {
       console.log(`${TestTag}, test_UiWindow_resume_17000004_static end`);
     })
 
-    /*
-  * @tc.number: uitestUiWindowErrorTest_020
-  * @tc.name: test_UiWindow_resume_17000005_static
-  * @tc.desc: resume 17000005 test.
-  */
-    it('test_UiWindow_resume_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_UiWindow_resume_17000005_static start`);
-      try {
-        let driver = Driver.create();
-        let window = await driver.findWindow({active: true});
-        if (window != null) {
-          await window.resume();
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_resume_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
-      }
-      await Utils.msSleep(1000)
-      console.log(`${TestTag}, test_UiWindow_resume_17000005_static end`);
-    })
-
-    /*
-   * @tc.number: uitestUiWindowErrorTest_021
-   * @tc.name: test_UiWindow_close_17000004_static
-   * @tc.desc: close 17000004 test.
-   */
+    /**
+     * @tc.name test_UiWindow_close_17000004_static
+     * @tc.number uitestUiWindowErrorTest_021
+     * @tc.desc close 17000004 test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('test_UiWindow_close_17000004_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
       console.log(`${TestTag}, test_UiWindow_close_17000004_static start`);
       let isSupportClose = true;
@@ -698,28 +614,6 @@ export default function uitestUiWindowErrorTest() {
       }
       await Utils.msSleep(1000)
       console.log(`${TestTag}, test_UiWindow_close_17000004_static end`);
-    })
-
-    /*
-  * @tc.number: uitestUiWindowErrorTest_022
-  * @tc.name: test_UiWindow_close_17000005_static
-  * @tc.desc: close 17000005 test.
-  */
-    it('test_UiWindow_close_17000005_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (): Promise<void> => {
-      console.log(`${TestTag}, test_UiWindow_close_17000005_static start`);
-      try {
-        let driver = Driver.create();
-        let window = await driver.findWindow({active: true});
-        if (window != null) {
-          await window.close();
-        }
-        expect().assertFail();
-      }catch (e: BusinessError) {
-        console.log(`${TestTag}, test_UiWindow_close_17000005_static error is: ${JSON.stringify(e)}`);
-        expect(e.code).assertEqual(DeviceErrorCode);
-      }
-      await Utils.msSleep(1000)
-      console.log(`${TestTag}, test_UiWindow_close_17000005_static end`);
     })
   })
 }

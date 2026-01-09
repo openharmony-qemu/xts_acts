@@ -16,15 +16,92 @@
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium'
 import notificationManager from '@ohos.notificationManager'
 import { BusinessError } from '@ohos.base'
+import { common } from '@kit.AbilityKit';
+import { Driver, ON } from '@kit.TestKit';
+import { hilog } from '@kit.PerformanceAnalysisKit';
+
+function sleep(time: number) {
+  return new Promise<void>((resolve: Function) => setTimeout(resolve, time));
+}
+let ctx = getContext(this) as common.UIAbilityContext;
 
 export default function ActsNotificationBadgeTest() {
   describe('SUB_NOTIFICATION_ANS_BADGE_TEST', () => {
     let TAG = 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test ===>'
     console.info(TAG + 'SUB_NOTIFICATION_ANS_MANAGER_BADGE_test START')
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_SetNum_0900
-     * @tc.name: setBadgeNumber()
-     * @tc.desc: verify the callback function of setBadgeNumber
+    beforeAll(async (done: Function) => {
+      await sleep(1500);
+      let driver = Driver.create();
+      let button1 = await driver.findComponent(ON.type('Button').text('确定').within(ON.type('Dialog')));
+      console.info(`button1 is ${JSON.stringify(button1)}`);
+        if (button1 !== null) {
+          await sleep(1000);
+          await button1.click();
+          await sleep(1000);
+        } else {
+          console.info('null button1');
+        }
+      notificationManager.requestEnableNotification(ctx).then(() => {
+        console.info(`${TAG} requestEnableNotification succeeded`);
+      }).catch((err: Error) => {
+        console.info(`${TAG} requestEnableNotification err: `+ JSON.stringify(err));
+        expect(err).assertNull()
+        done()
+      });
+      await sleep(1500)
+      let button = await driver.findComponent(ON.text('允许'));
+      console.info(`${TAG} button is ${JSON.stringify(button)}`);
+      if (button !== null) {
+        await sleep(1000);
+        await button.click();
+        await sleep(1000);
+        done()
+      } else {
+        console.info('${TAG} null button');
+        expect(button).assertContain('允许')
+        done()
+      }
+    })
+
+    /**
+     * @tc.number  Sub_Notification_Ans_Corner_Query_0004
+     * @tc.name    Sub_Notification_Ans_Corner_Query_0004
+     * @tc.desc    non-system application invokes the onBadgeNumberQuery and offBadgeNumberQuery interfaces.
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 2
+     */
+    it('Sub_Notification_Ans_Corner_Query_0004', Level.LEVEL2, async (done: Function) => {
+      TAG = TAG + "Sub_Notification_Ans_Corner_Query_0004 "
+      try{
+        notificationManager.onBadgeNumberQuery(
+          async (bundleOption: notificationManager.BundleOption) => {
+            return 1;
+          }
+        );
+      } catch(err) {
+        hilog.info(0x0000, TAG, `onBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(202)
+      }
+      await sleep(500)
+      try{
+        notificationManager.offBadgeNumberQuery();
+      } catch(err) {
+        hilog.info(0x0000, TAG, `offBadgeNumberQuery failed, code is ${err.code}, message is ${err.message}`);
+        expect(err.code).assertEqual(202)
+        console.info(TAG + "Sub_Notification_Ans_Corner_Query_0004 PASS");
+        done()
+      }
+    })
+
+
+    /**
+     * @tc.name   Sub_Notification_Ans_Corner_SetNum_0900
+     * @tc.number Sub_Notification_Ans_Corner_SetNum_0900
+     * @tc.desc   verify the callback function of setBadgeNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_0900', Level.LEVEL0, async (done: Function) => {
       try {
@@ -51,10 +128,13 @@ export default function ActsNotificationBadgeTest() {
       }
     })
 
-    /*
-     * @tc.number: Sub_Notification_Ans_Corner_SetNum_1000
-     * @tc.name: setBadgeNumber()
-     * @tc.desc: verify the promise function of setBadgeNumber
+    /**
+     * @tc.name   Sub_Notification_Ans_Corner_SetNum_1000
+     * @tc.number Sub_Notification_Ans_Corner_SetNum_1000
+     * @tc.desc   verify the promise function of setBadgeNumber
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Ans_Corner_SetNum_1000', Level.LEVEL0, async (done: Function) => {
       try {

@@ -42,13 +42,13 @@ class DrawingNativePointTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0100
- * @tc.name: testPointCreateNormal
- * @tc.desc: test for testPointCreateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPointCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0100
+ * @tc.desc   test for testPointCreateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePointTest, testPointCreateNormal, Function | SmallTest | Level0) {
     // 1. Pass integer values for X and Y coordinates to OH_Drawing_PointCreate interface
@@ -64,13 +64,13 @@ HWTEST_F(DrawingNativePointTest, testPointCreateNormal, Function | SmallTest | L
     OH_Drawing_PointDestroy(point2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0101
- * @tc.name: testPointCreateNull
- * @tc.desc: test for testPointCreateNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointCreateNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0101
+ * @tc.desc   test for testPointCreateNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointCreateNull, Function | SmallTest | Level3) {
     // 1. The first parameter of OH_Drawing_PointCreate is empty
@@ -86,13 +86,13 @@ HWTEST_F(DrawingNativePointTest, testPointCreateNull, Function | SmallTest | Lev
     OH_Drawing_PointDestroy(point2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0102
- * @tc.name: testPointCreateAbnormal
- * @tc.desc: test for testPointCreateAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointCreateAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0102
+ * @tc.desc   test for testPointCreateAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointCreateAbnormal, Function | SmallTest | Level3) {
     // 1. The first parameter of OH_Drawing_PointCreate is negative
@@ -108,13 +108,13 @@ HWTEST_F(DrawingNativePointTest, testPointCreateAbnormal, Function | SmallTest |
     OH_Drawing_PointDestroy(point2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0103
- * @tc.name: testPointCreateMaximum
- * @tc.desc: test for testPointCreateMaximum.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointCreateMaximum
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0103
+ * @tc.desc   test for testPointCreateMaximum.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointCreateMaximum, Function | SmallTest | Level3) {
     // 1. The first parameter of OH_Drawing_PointCreate is FLT_MAX
@@ -130,13 +130,13 @@ HWTEST_F(DrawingNativePointTest, testPointCreateMaximum, Function | SmallTest | 
     OH_Drawing_PointDestroy(point2);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0104
- * @tc.name: testPointCreateMultipleCalls
- * @tc.desc: test for testPointCreateMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointCreateMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0104
+ * @tc.desc   test for testPointCreateMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointCreateMultipleCalls, Function | SmallTest | Level3) {
     // 1. Call OH_Drawing_PointCreate 10 times with random values for X and Y coordinates
@@ -151,13 +151,13 @@ HWTEST_F(DrawingNativePointTest, testPointCreateMultipleCalls, Function | SmallT
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0200
- * @tc.name: testPointDestroyNormal
- * @tc.desc: test for testPointDestroyNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPointDestroyNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0200
+ * @tc.desc   test for testPointDestroyNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePointTest, testPointDestroyNormal, Function | SmallTest | Level0) {
     // 1. Call OH_Drawing_PointCreate
@@ -168,13 +168,13 @@ HWTEST_F(DrawingNativePointTest, testPointDestroyNormal, Function | SmallTest | 
     OH_Drawing_PointDestroy(point);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0201
- * @tc.name: testPointDestroyNull
- * @tc.desc: test for testPointDestroyNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointDestroyNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0201
+ * @tc.desc   test for testPointDestroyNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointDestroyNull, Function | SmallTest | Level3) {
     // 1. The parameter of OH_Drawing_PointDestroy is nullptr
@@ -183,13 +183,13 @@ HWTEST_F(DrawingNativePointTest, testPointDestroyNull, Function | SmallTest | Le
     EXPECT_TRUE(true);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0300
- * @tc.name: testPointGetXNormal
- * @tc.desc: test for testPointGetXNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPointGetXNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0300
+ * @tc.desc   test for testPointGetXNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePointTest, testPointGetXNormal, Function | SmallTest | Level0) {
     //1. Pass integer values to OH_Drawing_PointGetX interface
@@ -208,13 +208,13 @@ HWTEST_F(DrawingNativePointTest, testPointGetXNormal, Function | SmallTest | Lev
     OH_Drawing_PointDestroy(point1);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0301
- * @tc.name: testPointGetXNull
- * @tc.desc: test for testPointGetXNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointGetXNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0301
+ * @tc.desc   test for testPointGetXNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointGetXNull, Function | SmallTest | Level3) {
     //1. OH_Drawing_PointGetX with the first parameter as null
@@ -229,38 +229,35 @@ HWTEST_F(DrawingNativePointTest, testPointGetXNull, Function | SmallTest | Level
     OH_Drawing_PointDestroy(point);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0302
- * @tc.name: testPointGetXMultipleCalls
- * @tc.desc: test for testPointGetXMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointGetXMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0302
+ * @tc.desc   test for testPointGetXMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointGetXMultipleCalls, Function | SmallTest | Level3) {
     //1. Call OH_Drawing_PointGetX 10 times with random values
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, 100);
     float x;
-    OH_Drawing_Point *point = nullptr;
     for (int i = 0; i < 10; i++) {
-        point = OH_Drawing_PointCreate(dis(gen), dis(gen));
+        OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
         // add assert
         EXPECT_NE(point, nullptr);
-        OH_Drawing_PointGetX(point, &x);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetX(point, &x);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(x, 100);
+        OH_Drawing_PointDestroy(point);
     }
-    //2. free memory
-    OH_Drawing_PointDestroy(point);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400
- * @tc.name: testPointGetYNormal
- * @tc.desc: test for testPointGetYNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPointGetYNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400
+ * @tc.desc   test for testPointGetYNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePointTest, testPointGetYNormal, Function | SmallTest | Level0) {
     //1. Pass integer values to OH_Drawing_PointGetY interface
@@ -268,24 +265,28 @@ HWTEST_F(DrawingNativePointTest, testPointGetYNormal, Function | SmallTest | Lev
     // add assert
     EXPECT_NE(point, nullptr);
     float y;
-    OH_Drawing_PointGetX(nullptr, &y);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetY(point, &y);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(y, 60);
     //2. Pass floating-point values to OH_Drawing_PointGetX interface
     OH_Drawing_Point *point1 = OH_Drawing_PointCreate(100.0f, 60.0f);
     // add assert
     EXPECT_NE(point1, nullptr);
-    OH_Drawing_PointGetX(point1, &y);
+    errorCode = OH_Drawing_PointGetY(point1, &y);
+    EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+    EXPECT_EQ(y, 60.0f);
     //3. free memory
     OH_Drawing_PointDestroy(point);
     OH_Drawing_PointDestroy(point1);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401
- * @tc.name: testPointGetYNull
- * @tc.desc: test for testPointGetYNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointGetYNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401
+ * @tc.desc   test for testPointGetYNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointGetYNull, Function | SmallTest | Level3) {
     //1. OH_Drawing_PointGetY with the first parameter as null
@@ -300,38 +301,35 @@ HWTEST_F(DrawingNativePointTest, testPointGetYNull, Function | SmallTest | Level
     OH_Drawing_PointDestroy(point);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402
- * @tc.name: testPointGetYMultipleCalls
- * @tc.desc: test for testPointGetYMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointGetYMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402
+ * @tc.desc   test for testPointGetYMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointGetYMultipleCalls, Function | SmallTest | Level3) {
     //1. Call OH_Drawing_PointGetX 10 times with random values
-    std::random_device rd;
-    std::mt19937 gen(rd());
-    std::uniform_real_distribution<float> dis(0, 100);
     float y;
-    OH_Drawing_Point *point = nullptr;
     for (int i = 0; i < 10; i++) {
-        OH_Drawing_Point *point = OH_Drawing_PointCreate(dis(gen), dis(gen));
+        OH_Drawing_Point *point = OH_Drawing_PointCreate(100, 100);
         // add assert
         EXPECT_NE(point, nullptr);
-        OH_Drawing_PointGetX(point, &y);
+        OH_Drawing_ErrorCode errorCode = OH_Drawing_PointGetY(point, &y);
+        EXPECT_EQ(errorCode, OH_DRAWING_SUCCESS);
+        EXPECT_EQ(y, 100);
+        OH_Drawing_PointDestroy(point);
     }
-    //2. free memory
-    OH_Drawing_PointDestroy(point);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400
- * @tc.name: testPointSetNormal
- * @tc.desc: test for testPointSetNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPointSetNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0400
+ * @tc.desc   test for testPointSetNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePointTest, testPointSetNormal, Function | SmallTest | Level0) {
     //1. Pass integar point values to OH_Drawing_PointSet interface
@@ -347,13 +345,13 @@ HWTEST_F(DrawingNativePointTest, testPointSetNormal, Function | SmallTest | Leve
     OH_Drawing_PointDestroy(point);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401
- * @tc.name: testPointSetNull
- * @tc.desc: test for testPointSetNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointSetNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0401
+ * @tc.desc   test for testPointSetNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointSetNull, Function | SmallTest | Level3) {
     //1. OH_Drawing_PointSet with the first parameter as null
@@ -369,13 +367,13 @@ HWTEST_F(DrawingNativePointTest, testPointSetNull, Function | SmallTest | Level3
     OH_Drawing_PointDestroy(point);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402
- * @tc.name: testPointSetMultipleCalls
- * @tc.desc: test for testPointSetMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPointSetMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_POINT_0402
+ * @tc.desc   test for testPointSetMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePointTest, testPointSetMultipleCalls, Function | SmallTest | Level3) {
     //1. Call OH_Drawing_PointSet 10 times with random values

@@ -41,12 +41,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0100
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0100
-     * @tc.name builtinsArrayShiftTest0100
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 0
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('builtinsArrayShiftTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0100';
@@ -70,12 +70,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0200
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0200
-     * @tc.name builtinsArrayShiftTest0200
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayShiftTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0200';
@@ -97,12 +97,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0300
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0300
-     * @tc.name builtinsArrayShiftTest0300
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayShiftTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0300';
@@ -124,12 +124,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0400
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0400
-     * @tc.name builtinsArrayShiftTest0400
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayShiftTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0400';
@@ -155,12 +155,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0500
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0500
-     * @tc.name builtinsArrayShiftTest0500
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayShiftTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0500';
@@ -185,12 +185,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0600
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0600
-     * @tc.name builtinsArrayShiftTest0600
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayShiftTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0600';
@@ -220,12 +220,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0700
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0700
-     * @tc.name builtinsArrayShiftTest0700
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayShiftTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0700';
@@ -249,12 +249,12 @@ export default function builtinsArrayShiftTest() {
     })
 
     /**
+     * @tc.name   builtinsArrayShiftTest0800
      * @tc.number SUB_BUILTINS_ARRAY_SHIFT_TEST_0800
-     * @tc.name builtinsArrayShiftTest0800
-     * @tc.desc Testing shift
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
+     * @tc.desc   Testing shift
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('builtinsArrayShiftTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
       const caseName = 'builtinsArrayShiftTest0800';

@@ -54,12 +54,14 @@ export default function comSizeAbilityTest_16() {
       }
       done()
     })
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_41
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_41', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_41 START')
       await CommonFunc.sleep(1000);
@@ -101,12 +103,14 @@ export default function comSizeAbilityTest_16() {
       await CommonFunc.sleep(1000);
       done()
     })
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_42
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_42', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_42 START')
       await CommonFunc.sleep(1000);
@@ -150,12 +154,14 @@ export default function comSizeAbilityTest_16() {
       await CommonFunc.sleep(1000);
       done()
     })
-    /* *
-        * @tc.number: 测试编号
-        * @tc.name  : comSizeAbilityTestJsunit_01
-        * @tc.desc  : test the size of component
-        * @tc.level : Level 2
-        */
+    /**
+     * @tc.name   comSizeAbilityTestJsunit_43
+     * @tc.number 测试编号
+     * @tc.desc   test the size of component
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('comSizeAbilityTestJsunit_43', Level.LEVEL0, async (done: Function) => {
       console.info('comSizeAbilityTestJsunit_43 START')
       await CommonFunc.sleep(1000);

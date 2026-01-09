@@ -27,12 +27,12 @@ export default function NdkSetIsolationUidTest() {
     
     
     /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetIsolationUid_0100
      * @tc.number SUB_Ability_AbilityRuntime_SetIsolationUid_0100
-     * @tc.name SUB_Ability_AbilityRuntime_SetIsolationUid_0100
-     * @tc.desc To verify use OH_Ability_ChildProcessConfigs_SetIsolationUid with nullptr.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 3
+     * @tc.desc   To verify use OH_Ability_ChildProcessConfigs_SetIsolationUid with nullptr.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_Ability_AbilityRuntime_SetIsolationUid_0100', Level.LEVEL3, async (done: Function) => {
       let tag = `SUB_Ability_AbilityRuntime_SetIsolationUid_0100`;
@@ -40,6 +40,24 @@ export default function NdkSetIsolationUidTest() {
       let ret : Number = testNapi.ndkSetIsolationUid_0100();
       hilog.info(0x0000, tag, '%{public}s', ` ${tag} execute result:` + ret);
       expect(ret).assertEqual(401);
+      done();
+    })
+
+    
+    /**
+     * @tc.name   SUB_Ability_AbilityRuntime_SetIsolationUid_0200
+     * @tc.number SUB_Ability_AbilityRuntime_SetIsolationUid_0200
+     * @tc.desc   To verify use OH_Ability_ChildProcessConfigs_SetIsolationUid success.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_Ability_AbilityRuntime_SetIsolationUid_0200', Level.LEVEL3, async (done: Function) => {
+      let tag = `SUB_Ability_AbilityRuntime_SetIsolationUid_0200`;
+      console.log(`${tag}, it begin`);
+      let ret : Number = testNapi.ndkSetIsolationUid_0200();
+      hilog.info(0x0000, tag, '%{public}s', ` ${tag} execute result:` + ret);
+      expect(ret).assertEqual(0);
       done();
     })
 

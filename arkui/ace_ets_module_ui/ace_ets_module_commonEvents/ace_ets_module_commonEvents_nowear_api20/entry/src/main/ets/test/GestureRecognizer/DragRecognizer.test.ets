@@ -60,10 +60,12 @@ export default function DragRecognizerTest() {
     });
 
     /**
-     * @tc.number : DragRecognizer_0100
-     * @tc.name  : DragRecognizer_0100
-     * @tc.desc  : To test whether DragRecognizer is effective.
-     * @tc.level : Level 0
+     * @tc.name   DragRecognizer_0100
+     * @tc.number DragRecognizer_0100
+     * @tc.desc   To test whether DragRecognizer is effective.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('DragRecognizer_0100', Level.LEVEL0, async (done: Function) => {
       console.info('DragRecognizer_0100 START');

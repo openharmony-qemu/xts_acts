@@ -60,13 +60,13 @@ export default function ActsAceWebviewBFCacheSuspendPlayer() {
     })
 
     /**
-    * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0002
-    * @tc.name          testWebviewBFCacheSuspendPlayerTwo
-    * @tc.desc          test WebviewBFCacheSuspendPlayer
-    * @tc.size          MediumTest
-    * @tc.type          Function
-    * @tc.level         Level 2
-    */
+     * @tc.name   testWebviewBFCacheSuspendPlayerTwo
+     * @tc.number SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0002
+     * @tc.desc   test WebviewBFCacheSuspendPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewBFCacheSuspendPlayerTwo', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         Utils.emitEvent('emitWebviewBFCacheSuspendPlayerTwo', 137500);
@@ -78,13 +78,13 @@ export default function ActsAceWebviewBFCacheSuspendPlayer() {
       })
 
     /**
-    * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0001
-    * @tc.name          testWebviewBFCacheSuspendPlayerZero
-    * @tc.desc          test WebviewBFCacheSuspendPlayer
-    * @tc.size          MediumTest
-    * @tc.type          Function
-    * @tc.level         Level 2
-    */
+     * @tc.name   testWebviewBFCacheSuspendPlayerZero
+     * @tc.number SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0001
+     * @tc.desc   test WebviewBFCacheSuspendPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewBFCacheSuspendPlayerZero', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         Utils.emitEvent('emitWebviewBFCacheSuspendPlayerZero', 137500);
@@ -96,13 +96,13 @@ export default function ActsAceWebviewBFCacheSuspendPlayer() {
       })
 
     /**
-    * @tc.number        SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0003
-    * @tc.name          testWebviewBFCacheSuspendPlayerOne
-    * @tc.desc          test WebviewBFCacheSuspendPlayer
-    * @tc.size          MediumTest
-    * @tc.type          Function
-    * @tc.level         Level 2
-    */
+     * @tc.name   testWebviewBFCacheSuspendPlayerOne
+     * @tc.number SUB_ACE_WEBVIEW_BFCACHE_SUSPENDPLAYER_API_0003
+     * @tc.desc   test WebviewBFCacheSuspendPlayer
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
     it('testWebviewBFCacheSuspendPlayerOne', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: Function) => {
         Utils.emitEvent('emitWebviewBFCacheSuspendPlayerOne', 137500);

@@ -28,13 +28,13 @@ export default function KeyEventGetTypeTest() {
       await Utils.pushPage(`keyEvent/${PAGE_TAG}`, done);
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_KeyEvent_GetType_0100
-     * @tc.name       : KeyEventGetTypeTest_001
-     * @tc.desc       : testing KeyEvent GetType
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   KeyEventGetTypeTest_001
+     * @tc.number SUB_ARKUI_CAPI_KeyEvent_GetType_0100
+     * @tc.desc   testing KeyEvent GetType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('KeyEventGetTypeTest_001', Level.LEVEL1, async (done: Function) => {
       console.info('KeyEventGetTypeTest_001 START');

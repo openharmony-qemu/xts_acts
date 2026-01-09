@@ -42,20 +42,20 @@ export default function WebAttributeTest() {
       console.info("WebAttributeTest afterEach start");
     })
 
-    /*
-    * @tc.number      : SUB_WEB_INITIALSCALE_0100
-    * @tc.name        : testInitialScale001
-    * @tc.desc        : test initialScale from 100 to 120
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testInitialScaleStatic001
+     * @tc.number SUB_WEB_INITIALSCALE_0100
+     * @tc.desc   test initialScale from 100 to 120
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInitialScaleStatic001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1500);
         Utils.emitEvent("emitInitialScale001", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testInitialScale001", 'oldScale=100,newScale=500', 70001, done);
+        Utils.registerEvent("testInitialScale001", 'oldScale=100,newScale=300', 70001, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebAttributeTestButton', 10, '');
         await Utils.msSleep(2000);
@@ -64,20 +64,20 @@ export default function WebAttributeTest() {
         done();
       })
 
-    /*
-    * @tc.number      : SUB_WEB_INITIALSCALE_0200
-    * @tc.name        : testInitialScale002
-    * @tc.desc        : test initialScale from 100 to 80
-    * @tc.size        : MediumTest
-    * @tc.type        : Function
-    * @tc.level       : Level 3
-    */
+    /**
+     * @tc.name   testInitialScaleStatic002
+     * @tc.number SUB_WEB_INITIALSCALE_0200
+     * @tc.desc   test initialScale from 100 to 80
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('testInitialScaleStatic002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         await Utils.msSleep(1000);
         Utils.emitEvent("emitInitialScale002", 10)
         await Utils.msSleep(2000);
-        Utils.registerEvent("testInitialScale002", 'oldScale=500,newScale=100', 70003, done);
+        Utils.registerEvent("testInitialScale002", 'oldScale=300,newScale=100', 70003, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('WebAttributeTestButton', 10, '');
         await Utils.msSleep(2000);

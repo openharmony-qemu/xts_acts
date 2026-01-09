@@ -17,17 +17,15 @@ import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
-import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
-let driver = Driver.create();
 const START_ABILITY_TIMEOUT_TWO_THOUSAND = 2000;
 const START_ABILITY_TIMEOUT_THOUSAND = 1000;
 
 export default function ForegroundPromise() {
   describe("ForegroundPromise", () => {
-    beforeEach(async (done: Function) => {
+    beforeEach((done: Function) => {
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       abilityDelegator.startAbility({
         abilityName: "MainAbility",
@@ -36,19 +34,21 @@ export default function ForegroundPromise() {
       });
       setTimeout(() => {
         done();
-      }, 200);
+      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
     });
 
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001
-     * @tc.name actsDoAbilityForegroundPromise0001
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001", Level.LEVEL0, async (done: Function) => {
+
+      setTimeout(() => {
       abilityDelegator.printSync(
           "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 start"
         );
@@ -60,8 +60,8 @@ export default function ForegroundPromise() {
           abilityName: "Main4Ability",
           bundleName: "com.example.crossplatformpromise",
           moduleName: "entry_test",
-        }, async () => {
-          await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+        }, () => {
+          setTimeout(() => {
           abilityDelegator.getCurrentTopAbility((err:BusinessError, ability1: UIAbility) => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0001 Main4Ability: " +
@@ -71,8 +71,8 @@ export default function ForegroundPromise() {
               abilityName: "Main3Ability",
               bundleName: "com.example.crossplatformpromise",
               moduleName: "entry_test",
-            }, async () => {
-              await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            }, () => {
+              setTimeout(() => {
               abilityDelegator.getCurrentTopAbility(
                 (err:BusinessError, ability2: UIAbility) => {
                   abilityDelegator.printSync(
@@ -109,7 +109,7 @@ export default function ForegroundPromise() {
                             done();
                           }
                         );
-                      }, START_ABILITY_TIMEOUT_THOUSAND);
+                      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                     })
                     .catch((error:BusinessError) => {
                       abilityDelegator.printSync(
@@ -119,18 +119,21 @@ export default function ForegroundPromise() {
                     });
                 }
               );
+              }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
             });
           });
+          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
         });
+        }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002
-     * @tc.name actsDoAbilityForegroundPromiseError0002
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002",
@@ -152,11 +155,11 @@ export default function ForegroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, async () => {
-            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          }, () => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0002 startAbility"
             );
+            setTimeout(() => {
             try {
               abilityDelegator
                 .doAbilityForeground(undefined)
@@ -199,18 +202,19 @@ export default function ForegroundPromise() {
                 }
               );
             }
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
           });
         });
       }
     );
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004
-     * @tc.name actsDoAbilityForegroundPromise004
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004", Level.LEVEL0, async (done: Function) => {
 
@@ -225,8 +229,8 @@ export default function ForegroundPromise() {
         abilityName: "Main4Ability",
         bundleName: "com.example.crossplatformpromise",
         moduleName: "entry_test",
-      }, async () => {
-        await driver.waitForComponent(ON.text('EntryMain4'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+      }, () => {
+        setTimeout(() => {
         abilityDelegator.getCurrentTopAbility((err:BusinessError, ability1: UIAbility) => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_FOREGROUND_PROMISE_0004 Main4Ability: " +
@@ -236,8 +240,8 @@ export default function ForegroundPromise() {
               abilityName: "Main3Ability",
               bundleName: "com.example.crossplatformpromise",
               moduleName: "entry_test",
-            }, async () => {
-              await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+            }, () => {
+              setTimeout(() => {
               abilityDelegator.getCurrentTopAbility(
                 (err:BusinessError, ability2: UIAbility) => {
                   abilityDelegator.printSync(
@@ -276,7 +280,7 @@ export default function ForegroundPromise() {
                             done();
                           }
                         );
-                      }, START_ABILITY_TIMEOUT_THOUSAND);
+                      }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                     })
                     .catch((error:BusinessError) => {
                       abilityDelegator.printSync(
@@ -286,18 +290,20 @@ export default function ForegroundPromise() {
                     });
                 }
               );
+              }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
             });
           });
+          }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
       });
     });
 
     /**
+     * @tc.name   ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005
      * @tc.number ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005
-     * @tc.name actsDoAbilityForegroundPromiseError0005
-     * @tc.desc Test the api: doAbilityForeground, swith the ability forground.
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Test the api: doAbilityForeground, swith the ability forground.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  [CORRECT ME] INVALID TCLEVEL.
      */
     it(
       "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005",
@@ -319,11 +325,11 @@ export default function ForegroundPromise() {
             abilityName: "Main3Ability",
             bundleName: "com.example.crossplatformpromise",
             moduleName: "entry_test",
-          }, async () => {
-            await driver.waitForComponent(ON.text('EntryMain3'), START_ABILITY_TIMEOUT_TWO_THOUSAND);
+          }, () => {
             abilityDelegator.printSync(
               "ACTS_DO_ABILITY_FOREGROUND_PROMISE_ERROR_0005 startAbility"
             );
+            setTimeout(() => {
             abilityDelegator.getCurrentTopAbility(
               (err:BusinessError, ability2: UIAbility) => {
                 ability2.context.terminateSelf(() => {
@@ -343,10 +349,11 @@ export default function ForegroundPromise() {
                       );
                     }
                     done();
-                  }, START_ABILITY_TIMEOUT_THOUSAND);
+                  }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
                 });
               }
             );
+            }, START_ABILITY_TIMEOUT_TWO_THOUSAND);
           });
         });
       }

@@ -36,7 +36,7 @@ let mPreviewOutput: cameraObj.PreviewOutput;
 let mPhotoOutput: cameraObj.PhotoOutput;
 let mVideoOutput: cameraObj.VideoOutput;
 let AVRecorder: media.AVRecorder;
-let receiver: image.ImageReceiver;
+let receiver: image.ImageReceiver | undefined;
 let mPhotoSurface: string;
 let mVideoSurface: string | undefined;
 let mFdPath: string;
@@ -109,7 +109,7 @@ export default function cameraVideoCodecTypeTest() {
     console.log(TAG + 'before receiver check')
     if (receiver !== undefined) {
       console.log(TAG + 'Photo receiver is created successfully')
-      mPhotoSurface = await receiver.getReceivingSurfaceId()
+      mPhotoSurface = await receiver!.getReceivingSurfaceId()
       console.log(TAG + 'Photo received id: ' + JSON.stringify(mPhotoSurface))
     } else {
       console.log(TAG + 'Photo receiver is created failed')
@@ -176,7 +176,7 @@ export default function cameraVideoCodecTypeTest() {
 
     console.info(TAG + "getCameraSupportDevicesArray is: " + mCameraNum);
 
-    mIsVideoCodecTypeModeSupportedArray = new Array<boolean>(mCameraNum);
+    mIsVideoCodecTypeModeSupportedArray = new Array<boolean>(mCameraNum.toInt());
     console.info('Exit getCameraSupportDevicesArray');
     return true;
   }
@@ -391,12 +391,12 @@ export default function cameraVideoCodecTypeTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_SUPPOERTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_SUPPOERTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_STATIC_0100
-      * @tc.desc   Check capture session get supported moving photo video codec types with promise or not
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_GET_SUPPOERTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_GET_SUPPOERTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_STATIC_0100
+     * @tc.desc   Check capture session get supported moving photo video codec types with promise or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_GET_SUPPOERTED_MOVING_PHOTO_VIDEO_CODEC_TYPES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -441,12 +441,12 @@ export default function cameraVideoCodecTypeTest() {
       })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0100
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0100
-      * @tc.desc   Check capture session set moving photo video codec type with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0100
+     * @tc.desc   Check capture session set moving photo video codec type with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0100--------------");
@@ -486,12 +486,12 @@ export default function cameraVideoCodecTypeTest() {
     })
 
     /**
-      * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0200
-      * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0200
-      * @tc.desc   Check capture session set moving photo video codec type with promise
-      * @tc.size   MEDIUM
-      * @tc.type   Function
-      * @tc.level  Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0200
+     * @tc.desc   Check capture session set moving photo video codec type with promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_SESSION_SET_MOVING_PHOTO_VIDEO_CODEC_TYPE_STATIC_0200--------------");

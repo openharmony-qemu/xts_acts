@@ -43,12 +43,12 @@ export default function PromiseAsyncOperationTest() {
     });
 
     /**
+     * @tc.name   PromiseAsyncOperationTest0100
      * @tc.number SUB_PROMISE_ASYNC_OPERATION_TEST_0100
-     * @tc.name PromiseAsyncOperationTest0100
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseAsyncOperationTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = "AsyncOperationTest0100";
@@ -66,12 +66,12 @@ export default function PromiseAsyncOperationTest() {
     })
 
     /**
+     * @tc.name   PromiseAsyncOperationTest0200
      * @tc.number SUB_PROMISE_ASYNC_OPERATION_TEST_0200
-     * @tc.name PromiseAsyncOperationTest0200
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseAsyncOperationTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncFunction = async () => {
@@ -88,12 +88,12 @@ export default function PromiseAsyncOperationTest() {
     })
 
     /**
+     * @tc.name   PromiseAsyncOperationTest0300
      * @tc.number SUB_PROMISE_ASYNC_OPERATION_TEST_0300
-     * @tc.name PromiseAsyncOperationTest0300
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseAsyncOperationTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let task =  new  taskpool.Task(taskFunction);
@@ -103,12 +103,12 @@ export default function PromiseAsyncOperationTest() {
     })
 
     /**
+     * @tc.name   PromiseAsyncOperationTest0400
      * @tc.number SUB_PROMISE_ASYNC_OPERATION_TEST_0400
-     * @tc.name PromiseAsyncOperationTest0400
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseAsyncOperationTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       let task =  new  taskpool.Task(taskFunction);
@@ -120,12 +120,12 @@ export default function PromiseAsyncOperationTest() {
 
 
     /**
+     * @tc.name   PromiseAsyncOperationTest0500
      * @tc.number SUB_PROMISE_ASYNC_OPERATION_TEST_0500
-     * @tc.name PromiseAsyncOperationTest0500
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseAsyncOperationTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncLock: ArkTSUtils.locks.AsyncLock = ArkTSUtils.locks.AsyncLock.request('Lock');
@@ -135,12 +135,12 @@ export default function PromiseAsyncOperationTest() {
     })
 
     /**
+     * @tc.name   PromiseAsyncOperationTest0600
      * @tc.number SUB_PROMISE_ASYNC_OPERATION_TEST_0600
-     * @tc.name PromiseAsyncOperationTest0600
-     * @tc.desc async lazy import taskPool three nest
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   async lazy import taskPool three nest
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('PromiseAsyncOperationTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const asyncLock: ArkTSUtils.locks.AsyncLock = ArkTSUtils.locks.AsyncLock.request('Lock');

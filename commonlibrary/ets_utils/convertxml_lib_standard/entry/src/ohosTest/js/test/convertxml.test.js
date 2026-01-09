@@ -17,12 +17,12 @@ import  convertxml from '@ohos.convertxml'
 export default function XmlTest() {
 describe('XmlTest', function () {
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0100
-     * @tc.name: testConvert001
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testConvert001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0100
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvert001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let xml =
@@ -61,12 +61,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0200
-     * @tc.name: testConvert002
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testConvert002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0200
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvert002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let xml =
@@ -105,12 +105,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0300
-     * @tc.name: testConvert003
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testConvert003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0300
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvert003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let xml =
@@ -147,12 +147,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0400
-     * @tc.name: testConvert004
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testConvert004
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0400
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvert004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let xml =
@@ -193,12 +193,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0500
-     * @tc.name: testConvert005
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 0
+     * @tc.name   testConvert005
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0500
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testConvert005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, function () {
         let xml =
@@ -235,12 +235,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0600
-     * @tc.name: testConvert006
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert006
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0600
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -280,12 +280,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0700
-     * @tc.name: testConvert007
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert007
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0700
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -325,12 +325,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0800
-     * @tc.name: testConvert008
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert008
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0800
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -370,12 +370,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0900
-     * @tc.name: testConvert09
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert09
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_0900
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -415,12 +415,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1000
-     * @tc.name: testConvert010
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert010
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1000
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -453,12 +453,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1100
-     * @tc.name: testConvert011
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert011
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1100
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -497,12 +497,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1200
-     * @tc.name: testConvert012
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert012
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1200
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -545,12 +545,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1300
-     * @tc.name: testConvert013
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert013
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1300
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -593,12 +593,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1400
-     * @tc.name: testConvert014
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert014
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1400
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -637,12 +637,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1500
-     * @tc.name: testConvert015
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert015
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1500
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -684,12 +684,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1600
-     * @tc.name: testConvert016
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert016
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1600
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -731,12 +731,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1700
-     * @tc.name: testConvert017
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert017
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1700
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -780,12 +780,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1800
-     * @tc.name: testConvert018
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert018
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1800
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -824,12 +824,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1900
-     * @tc.name: testConvert019
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert019
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_1900
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -868,12 +868,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2000
-     * @tc.name: testConvert020
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert020
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2000
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -912,12 +912,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2100
-     * @tc.name: testConvert021
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert021
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2100
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert021', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml = '<?xml?>';
@@ -933,12 +933,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2200
-     * @tc.name: testConvert022
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert022
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2200
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<?xml version="1.0" encoding="utf-8"?>';
@@ -955,12 +955,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2300
-     * @tc.name: testConvert023
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert023
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2300
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert023', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<?xml?>\n<a/>';
@@ -976,12 +976,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2400
-     * @tc.name: testConvert024
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert024
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2400
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert024', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<?go there?>';
@@ -999,12 +999,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2500
-     * @tc.name: testConvert025
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert025
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2500
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<?go there?><?come here?>';
@@ -1025,12 +1025,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2600
-     * @tc.name: testConvert026
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert026
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2600
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<!-- \t Hello World! \t -->';
@@ -1051,12 +1051,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2700
-     * @tc.name: testConvert027
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert027
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2700
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<!-- \t Hello \t -->\n<!-- \t World \t -->';
@@ -1080,12 +1080,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2800
-     * @tc.name: testConvert028
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert028
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2800
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml = '<?xml version="1.0" encoding="utf-8"?><![CDATA[ \t <foo>\r\n</bar> \t ]]>';
@@ -1102,12 +1102,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2900
-     * @tc.name: testConvert029
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert029
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_2900
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml = '<?xml version="1.0" encoding="utf-8"?><![CDATA[ \t data\n]]><![CDATA[< > " and & \t ]]>';
@@ -1127,12 +1127,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3000
-     * @tc.name: testConvert030
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert030
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3000
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a/>';
@@ -1149,12 +1149,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3100
-     * @tc.name: testConvert031
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert031
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3100
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a/>\n<a/>';
@@ -1173,12 +1173,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3200
-     * @tc.name: testConvert032
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert032
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3200
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert032', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a/>\n<b/>';
@@ -1197,12 +1197,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3300
-     * @tc.name: testConvert033
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert033
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3300
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert033', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a x="hello"/>';
@@ -1220,12 +1220,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3400
-     * @tc.name: testConvert034
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert034
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3400
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert034', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a x="1.234" y="It\'s"/>';
@@ -1244,12 +1244,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3500
-     * @tc.name: testConvert035
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert035
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3500
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a> \t Hi \t </a>';
@@ -1269,12 +1269,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3600
-     * @tc.name: testConvert036
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert036
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3600
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a>  Hi  There \t </a>';
@@ -1294,12 +1294,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3700
-     * @tc.name: testConvert037
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert037
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3700
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a>\n\v<b/>\n</a>';
@@ -1318,12 +1318,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3800
-     * @tc.name: testConvert038
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert038
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3800
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert038', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let  xml = '<a>\n\v<b>\n\v\v<c/>\n\v</b>\n</a>';
@@ -1344,12 +1344,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3900
-     * @tc.name: testConvert039
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert039
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_3900
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert039', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml =
@@ -1390,12 +1390,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4000
-     * @tc.name: testConvert040
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert040
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4000
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert040', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml = '<?xml version="1.0" encoding="utf-8"?>' +
@@ -1413,12 +1413,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4100
-     * @tc.name: testConvert041
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert041
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4100
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let xml = '<?xml version="1.0" encoding="utf-8"?><![CDATA[\nHello\\n World\\\n \tHello\\t World\\\t]]>';
@@ -1430,12 +1430,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4200
-     * @tc.name: testBusinessError001
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testBusinessError001
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4200
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBusinessError001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1453,12 +1453,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4300
-     * @tc.name: testBusinessError002
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testBusinessError002
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4300
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBusinessError002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1478,12 +1478,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4400
-     * @tc.name: testBusinessError003
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testBusinessError003
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4400
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testBusinessError003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         try {
@@ -1497,12 +1497,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4500
-     * @tc.name: testConvert045
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert045
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4500
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert045', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1523,12 +1523,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4600
-     * @tc.name: testConvert046
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert046
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4600
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert046', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1550,12 +1550,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4700
-     * @tc.name: testConvert047
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert047
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4700
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert047', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1577,12 +1577,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4800
-     * @tc.name: testConvert048
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert048
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4800
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert048', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1605,12 +1605,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4900
-     * @tc.name: testConvert049
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert049
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_4900
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert049', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1633,12 +1633,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5000
-     * @tc.name: testConvert050
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert050
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5000
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert050', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1661,12 +1661,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5100
-     * @tc.name: testConvert051
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert051
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5100
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert051', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1690,12 +1690,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5200
-     * @tc.name: testConvert052
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert052
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5200
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert052', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<?xml?>';
@@ -1711,12 +1711,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5300
-     * @tc.name: testConvert053
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert053
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5300
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert053', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<?xml version="1.0" encoding="utf-8"?>';
@@ -1727,12 +1727,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5400
-     * @tc.name: testConvert054
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert054
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5400
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert054', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<!-- \t Hello World! \t -->';
@@ -1743,12 +1743,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5500
-     * @tc.name: testConvert055
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert055
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5500
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert055', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<!-- \t Hello \t -->\n<!-- \t World \t -->';
@@ -1765,12 +1765,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5600
-     * @tc.name: testConvert056
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert056
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5600
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert056', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<?xml version="1.0" encoding="utf-8"?><![CDATA[ \t <foo>\r\n</bar> \t ]]>';
@@ -1787,12 +1787,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5700
-     * @tc.name: testConvert057
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert057
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5700
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<a/>';
@@ -1808,12 +1808,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5800
-     * @tc.name: testConvert058
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert058
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5800
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert058', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<a/>\n<a/>';
@@ -1830,12 +1830,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5900
-     * @tc.name: testConvert059
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert059
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_5900
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<a x="hello"/>';
@@ -1851,12 +1851,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6000
-     * @tc.name: testConvert060
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert060
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6000
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<a x="1.234" y="It\'s"/>';
@@ -1873,12 +1873,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6100
-     * @tc.name: testConvert061
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert061
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6100
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<a> \t Hi \t </a>';
@@ -1895,12 +1895,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6200
-     * @tc.name: testConvert062
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert062
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6200
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<a>\n<b>\n\<c/>\n\</b>\n</a>';
@@ -1917,12 +1917,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6300
-     * @tc.name: testConvert063
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert063
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6300
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml =
@@ -1942,12 +1942,12 @@ describe('XmlTest', function () {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6400
-     * @tc.name: testConvert064
-     * @tc.desc: To convert XML text to JavaScript object.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.name   testConvert064
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_CONVERTXML_6400
+     * @tc.desc   To convert XML text to JavaScript object.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testConvert064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, function () {
         let strXml = '<?xml version="1.0" encoding="utf-8"?><![CDATA[\nHello\\n World\\\n \tHello\\t World\\\t]]>';

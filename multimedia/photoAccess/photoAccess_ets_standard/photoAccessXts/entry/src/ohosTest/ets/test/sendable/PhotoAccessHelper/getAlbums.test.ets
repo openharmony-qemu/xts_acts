@@ -187,12 +187,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     });
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_001
-     * @tc.name      : getAlbums_sendable_promise_user_ops_001
-     * @tc.desc      : promise, USER-USER_GENERIC, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_ops_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_001
+     * @tc.desc   promise, USER-USER_GENERIC, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_ops_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_001';
@@ -207,12 +207,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_002
-     * @tc.name      : getAlbums_sendable_promise_user_ops_002
-     * @tc.desc      : promise, USER-FAVORITE, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_ops_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_002
+     * @tc.desc   promise, USER-FAVORITE, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_ops_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_002';
@@ -227,12 +227,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_003
-     * @tc.name      : getAlbums_sendable_promise_user_ops_003
-     * @tc.desc      : promise, USER-VIDEO, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_ops_003
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_003
+     * @tc.desc   promise, USER-VIDEO, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_ops_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_003';
@@ -247,12 +247,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_004
-     * @tc.name      : getAlbums_sendable_promise_user_ops_004
-     * @tc.desc      : promise, USER-IMAGE, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_ops_004
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_004
+     * @tc.desc   promise, USER-IMAGE, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_ops_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_004';
@@ -267,12 +267,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_005
-     * @tc.name      : getAlbums_sendable_promise_user_ops_005
-     * @tc.desc      : promise, USER-ANY, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_ops_005
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_005
+     * @tc.desc   promise, USER-ANY, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_ops_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_005';
@@ -287,12 +287,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_006
-     * @tc.name      : getAlbums_sendable_promise_user_ops_006
-     * @tc.desc      : promise, USER-ANY, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_ops_006
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_006
+     * @tc.desc   promise, USER-ANY, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_ops_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_006';
@@ -307,12 +307,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_007
-     * @tc.name      : getAlbums_sendable_promise_user_ops_abnormal_001
-     * @tc.desc      : promise, USER-ANY, album->invalid name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_ops_abnormal_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_007
+     * @tc.desc   promise, USER-ANY, album->invalid name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_ops_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_abnormal_001';
@@ -324,12 +324,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_008
-     * @tc.name      : getAlbums_sendable_promise_user_ops_abnormal_002
-     * @tc.desc      : promise, USER-ANY, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_user_ops_abnormal_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_008
+     * @tc.desc   promise, USER-ANY, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_user_ops_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_abnormal_002';
@@ -344,12 +344,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_009
-     * @tc.name      : getAlbums_sendable_promise_user_ops_abnormal_003
-     * @tc.desc      : promise, USER-ANY, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_user_ops_abnormal_003
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_009
+     * @tc.desc   promise, USER-ANY, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_user_ops_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_abnormal_003';
@@ -364,12 +364,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_010     //TODO
-     * @tc.name      : getAlbums_sendable_promise_user_ops_abnormal_004
-     * @tc.desc      : promise, USER-ANY, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_user_ops_abnormal_004
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_010     //TODO
+     * @tc.desc   promise, USER-ANY, fetchOps->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_user_ops_abnormal_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_ops_abnormal_004';
@@ -381,12 +381,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_011
-     * @tc.name      : getAlbums_sendable_promise_user_001
-     * @tc.desc      : promise, USER-ANY, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_user_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_011
+     * @tc.desc   promise, USER-ANY, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_user_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_001';
@@ -397,12 +397,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_012
-     * @tc.name      : getAlbums_sendable_promise_user_abnormal_001
-     * @tc.desc      : promise, USER-ANY, no fetchOptions, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_user_abnormal_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_012
+     * @tc.desc   promise, USER-ANY, no fetchOptions, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_user_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_abnormal_001';
@@ -413,12 +413,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_013
-     * @tc.name      : getAlbums_sendable_promise_user_abnormal_002
-     * @tc.desc      : promise, USER-ANY, no fetchOptions, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_user_abnormal_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_013
+     * @tc.desc   promise, USER-ANY, no fetchOptions, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_user_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_user_abnormal_002';
@@ -429,12 +429,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_014
-     * @tc.name      : getAlbums_sendable_promise_system_ops_001
-     * @tc.desc      : promise, SYSTEM-USER_GENERIC, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_ops_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_014
+     * @tc.desc   promise, SYSTEM-USER_GENERIC, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_ops_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_001';
@@ -449,12 +449,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_015
-     * @tc.name      : getAlbums_sendable_promise_system_ops_002
-     * @tc.desc      : promise, SYSTEM-FAVORITE, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_ops_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_015
+     * @tc.desc   promise, SYSTEM-FAVORITE, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_ops_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_002';
@@ -469,12 +469,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_016
-     * @tc.name      : getAlbums_sendable_promise_system_ops_003
-     * @tc.desc      : promise, SYSTEM-VIDEO, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_ops_003
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_016
+     * @tc.desc   promise, SYSTEM-VIDEO, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_ops_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_003';
@@ -489,12 +489,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_017
-     * @tc.name      : getAlbums_sendable_promise_system_ops_004
-     * @tc.desc      : promise, SYSTEM-IMAGE, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_ops_004
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_017
+     * @tc.desc   promise, SYSTEM-IMAGE, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_ops_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_004';
@@ -509,12 +509,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_018
-     * @tc.name      : getAlbums_sendable_promise_system_ops_005
-     * @tc.desc      : promise, SYSTEM-ANY, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_ops_005
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_018
+     * @tc.desc   promise, SYSTEM-ANY, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_ops_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_005';
@@ -529,12 +529,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_019
-     * @tc.name      : getAlbums_sendable_promise_system_ops_006
-     * @tc.desc      : promise, SYSTEM-ANY, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_ops_006
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_019
+     * @tc.desc   promise, SYSTEM-ANY, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_ops_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_006';
@@ -549,12 +549,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_020
-     * @tc.name      : getAlbums_sendable_promise_system_ops_abnormal_001
-     * @tc.desc      : promise, SYSTEM-ANY, album->invalid name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_ops_abnormal_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_020
+     * @tc.desc   promise, SYSTEM-ANY, album->invalid name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_ops_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_abnormal_001';
@@ -566,12 +566,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_021
-     * @tc.name      : getAlbums_sendable_promise_system_ops_abnormal_002
-     * @tc.desc      : promise, SYSTEM-ANY, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_system_ops_abnormal_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_021
+     * @tc.desc   promise, SYSTEM-ANY, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_system_ops_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_abnormal_002';
@@ -586,12 +586,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_022
-     * @tc.name      : getAlbums_sendable_promise_system_ops_abnormal_003
-     * @tc.desc      : promise, SYSTEM-ANY, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_system_ops_abnormal_003
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_022
+     * @tc.desc   promise, SYSTEM-ANY, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_system_ops_abnormal_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_abnormal_003';
@@ -606,12 +606,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_023    //TODO
-     * @tc.name      : getAlbums_sendable_promise_system_ops_abnormal_004
-     * @tc.desc      : promise, SYSTEM-ANY, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_system_ops_abnormal_004
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_023    //TODO
+     * @tc.desc   promise, SYSTEM-ANY, fetchOps->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_system_ops_abnormal_004', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_ops_abnormal_004';
@@ -623,12 +623,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_024
-     * @tc.name      : getAlbums_sendable_promise_system_001
-     * @tc.desc      : promise, SYSTEM-ANY, no fetchOptions
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_system_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_024
+     * @tc.desc   promise, SYSTEM-ANY, no fetchOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_system_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_001';
@@ -639,12 +639,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_025
-     * @tc.name      : getAlbums_sendable_promise_system_abnormal_001
-     * @tc.desc      : promise, SYSTEM-ANY, no fetchOptions, type->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_system_abnormal_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_025
+     * @tc.desc   promise, SYSTEM-ANY, no fetchOptions, type->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_system_abnormal_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_abnormal_001';
@@ -655,12 +655,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_026
-     * @tc.name      : getAlbums_sendable_promise_system_abnormal_002
-     * @tc.desc      : promise, SYSTEM-ANY, no fetchOptions, subType->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_system_abnormal_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_026
+     * @tc.desc   promise, SYSTEM-ANY, no fetchOptions, subType->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getAlbums_sendable_promise_system_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_system_abnormal_002';
@@ -671,12 +671,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_027
-     * @tc.name      : getAlbums_sendable_promise_only_options_001
-     * @tc.desc      : promise, fetchOps->new
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_only_options_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_027
+     * @tc.desc   promise, fetchOps->new
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_only_options_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_only_options_001';
@@ -689,12 +689,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_028
-     * @tc.name      : getAlbums_sendable_promise_only_options_002
-     * @tc.desc      : promise, fetchColumns->album name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_only_options_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_028
+     * @tc.desc   promise, fetchColumns->album name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_only_options_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_only_options_002';
@@ -707,12 +707,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_029
-     * @tc.name      : getAlbums_sendable_promise_only_options_abnormal_001
-     * @tc.desc      : promise, album->invalid name
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getAlbums_sendable_promise_only_options_abnormal_001
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_029
+     * @tc.desc   promise, album->invalid name
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getAlbums_sendable_promise_only_options_abnormal_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_only_options_abnormal_001';
@@ -722,12 +722,12 @@ export default function sendablePhotoAccessHelperGetAlbumsTest() {
     })
 
     /**
-     * @tc.number    : SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_030
-     * @tc.name      : getAlbums_sendable_promise_only_options_abnormal_002
-     * @tc.desc      : promise, fetchOps->undefined
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   getAlbums_sendable_promise_only_options_abnormal_002
+     * @tc.number SENDABLE_PHOTO_ACCESS_HELPER_GET_ALBUMS_SENDABLE_030
+     * @tc.desc   promise, fetchOps->undefined
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     /*it('getAlbums_sendable_promise_only_options_abnormal_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'getAlbums_sendable_promise_only_options_abnormal_002';

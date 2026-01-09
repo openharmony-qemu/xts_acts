@@ -58,13 +58,13 @@ export default function HitTest() {
       done();
     })
 
-    /*
-     * @tc.number     : getLastHitTest001
-     * @tc.name       : getLastHitTest001
-     * @tc.desc       : test getLastHitTest001
-     * @tc.size       : getLastHitTest001
-     * @tc.type       : FunctgetLastHitTest001ion
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   getLastHitTest001
+     * @tc.number getLastHitTest001
+     * @tc.desc   test getLastHitTest001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('getLastHitTest001',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       Utils.emitEvent("getLastHitTest001", EVENT_ID_SET_SUITE_KEY)

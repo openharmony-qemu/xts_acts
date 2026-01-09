@@ -50,12 +50,12 @@ export default function setOrientationChangeRequestTest() {
       }
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_0000
-      * @tc.name    set_orientation_change_request_static_000
-      * @tc.desc    change image asset correct orientation
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   set_orientation_change_request_static_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_0000
+     * @tc.desc   change image asset correct orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('set_orientation_change_request_static_000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -118,12 +118,12 @@ export default function setOrientationChangeRequestTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_1000
-      * @tc.name    set_orientation_change_request_static_001
-      * @tc.desc    change image asset wrong orientation
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   set_orientation_change_request_static_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_1000
+     * @tc.desc   change image asset wrong orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('set_orientation_change_request_static_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -153,12 +153,12 @@ export default function setOrientationChangeRequestTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_2000
-      * @tc.name    set_orientation_change_request_static_002
-      * @tc.desc    change image asset super large orientation
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   set_orientation_change_request_static_002
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_2000
+     * @tc.desc   change image asset super large orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('set_orientation_change_request_static_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -188,12 +188,12 @@ export default function setOrientationChangeRequestTest() {
       });
 
     /**
-      * @tc.number  SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_3000
-      * @tc.name    set_orientation_change_request_static_003
-      * @tc.desc    change video asset correct orientation
-      * @tc.size    MEDIUM
-      * @tc.type    Function
-      * @tc.level   Level 0
+     * @tc.name   set_orientation_change_request_static_003
+     * @tc.number SUB_PHOTOACCESS_HELPER_SET_ORIENTATION_CHANGE_REQUEST_STATIC_3000
+     * @tc.desc   change video asset correct orientation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('set_orientation_change_request_static_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

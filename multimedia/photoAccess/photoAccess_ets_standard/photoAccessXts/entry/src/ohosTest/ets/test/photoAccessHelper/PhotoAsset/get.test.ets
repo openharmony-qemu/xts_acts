@@ -154,12 +154,12 @@ export default function getTest() {
     });
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_001
-     * @tc.name      : get_image_uri_001
-     * @tc.desc      : image get photoKeys.URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_uri_001
+     * @tc.number PHOTO_ASSET_GET_001
+     * @tc.desc   image get photoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_uri_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_uri_001';
@@ -172,12 +172,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_002
-     * @tc.name      : get_image_photo_type_001
-     * @tc.desc      : image get photoKeys.PHOTO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_photo_type_001
+     * @tc.number PHOTO_ASSET_GET_002
+     * @tc.desc   image get photoKeys.PHOTO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_photo_type_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_photo_type_001';
@@ -190,12 +190,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_003
-     * @tc.name      : get_image_displayName_001
-     * @tc.desc      : image get photoKeys.DISPLAY_NAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_displayName_001
+     * @tc.number PHOTO_ASSET_GET_003
+     * @tc.desc   image get photoKeys.DISPLAY_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_displayName_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_displayName_001';
@@ -207,12 +207,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_004
-     * @tc.name      : get_image_date_added_001
-     * @tc.desc      : image get photoKeys.DATE_ADDED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_date_added_001
+     * @tc.number PHOTO_ASSET_GET_004
+     * @tc.desc   image get photoKeys.DATE_ADDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_added_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_date_added_001';
@@ -225,12 +225,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_005
-     * @tc.name      : get_image_date_modified_001
-     * @tc.desc      : image get photoKeys.DATE_MODIFIED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_date_modified_001
+     * @tc.number PHOTO_ASSET_GET_005
+     * @tc.desc   image get photoKeys.DATE_MODIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_modified_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_date_modified_001';
@@ -243,12 +243,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_006
-     * @tc.name      : get_image_duration_001
-     * @tc.desc      : image get photoKeys.DURATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_duration_001
+     * @tc.number PHOTO_ASSET_GET_006
+     * @tc.desc   image get photoKeys.DURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_duration_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_duration_001';
@@ -261,12 +261,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_007
-     * @tc.name      : get_image_width_001
-     * @tc.desc      : image get photoKeys.WIDTH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_width_001
+     * @tc.number PHOTO_ASSET_GET_007
+     * @tc.desc   image get photoKeys.WIDTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_width_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_width_001';
@@ -279,12 +279,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_008
-     * @tc.name      : get_image_height_001
-     * @tc.desc      : image get photoKeys.HEIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_height_001
+     * @tc.number PHOTO_ASSET_GET_008
+     * @tc.desc   image get photoKeys.HEIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_height_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_height_001';
@@ -297,12 +297,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_009
-     * @tc.name      : get_image_date_taken_001
-     * @tc.desc      : image get photoKeys.DATE_TAKEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_date_taken_001
+     * @tc.number PHOTO_ASSET_GET_009
+     * @tc.desc   image get photoKeys.DATE_TAKEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_date_taken_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_date_taken_001';
@@ -315,12 +315,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_010
-     * @tc.name      : get_image_orientation_001
-     * @tc.desc      : image get photoKeys.ORIENTATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_orientation_001
+     * @tc.number PHOTO_ASSET_GET_010
+     * @tc.desc   image get photoKeys.ORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_orientation_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_orientation_001';
@@ -333,12 +333,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_011
-     * @tc.name      : get_image_favorite_001
-     * @tc.desc      : image get photoKeys.FAVORITE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_favorite_001
+     * @tc.number PHOTO_ASSET_GET_011
+     * @tc.desc   image get photoKeys.FAVORITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_favorite_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_favorite_001';
@@ -351,12 +351,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_012
-     * @tc.name      : get_image_size_001
-     * @tc.desc      : image get photoKeys.SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_size_001
+     * @tc.number PHOTO_ASSET_GET_012
+     * @tc.desc   image get photoKeys.SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     /*it('get_image_size_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_size_001';
@@ -369,12 +369,12 @@ export default function getTest() {
     })*/
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_013
-     * @tc.name      : get_image_title_001
-     * @tc.desc      : image get photoKeys.TITLE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_title_001
+     * @tc.number PHOTO_ASSET_GET_013
+     * @tc.desc   image get photoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_title_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_title_001';
@@ -387,12 +387,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_014
-     * @tc.name      : get_image_position_001
-     * @tc.desc      : image get photoKeys.POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_position_001
+     * @tc.number PHOTO_ASSET_GET_014
+     * @tc.desc   image get photoKeys.POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_position_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_position_001';
@@ -405,12 +405,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_015
-     * @tc.name      : get_video_uri_001
-     * @tc.desc      : video get photoKeys.URI
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_uri_001
+     * @tc.number PHOTO_ASSET_GET_015
+     * @tc.desc   video get photoKeys.URI
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_uri_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_uri_001';
@@ -423,12 +423,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_016
-     * @tc.name      : get_video_photo_type_001
-     * @tc.desc      : video get photoKeys.PHOTO_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_photo_type_001
+     * @tc.number PHOTO_ASSET_GET_016
+     * @tc.desc   video get photoKeys.PHOTO_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_photo_type_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_photo_type_001';
@@ -441,12 +441,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_017
-     * @tc.name      : get_video_display_name_001
-     * @tc.desc      : video get photoKeys.DISPLAY_NAME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_display_name_001
+     * @tc.number PHOTO_ASSET_GET_017
+     * @tc.desc   video get photoKeys.DISPLAY_NAME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_display_name_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_display_name_001';
@@ -458,12 +458,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_018
-     * @tc.name      : get_video_date_added_001
-     * @tc.desc      : video get photoKeys.DATE_ADDED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_added_001
+     * @tc.number PHOTO_ASSET_GET_018
+     * @tc.desc   video get photoKeys.DATE_ADDED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_added_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_date_added_001';
@@ -476,12 +476,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_019
-     * @tc.name      : get_video_date_modified_001
-     * @tc.desc      : video get photoKeys.DATE_MODIFIED
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_modified_001
+     * @tc.number PHOTO_ASSET_GET_019
+     * @tc.desc   video get photoKeys.DATE_MODIFIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_modified_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_date_modified_001';
@@ -494,12 +494,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_020
-     * @tc.name      : get_video_duration_001
-     * @tc.desc      : video get photoKeys.DURATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_duration_001
+     * @tc.number PHOTO_ASSET_GET_020
+     * @tc.desc   video get photoKeys.DURATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     /*it('get_video_duration_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_duration_001';
@@ -512,12 +512,12 @@ export default function getTest() {
     })*/
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_021
-     * @tc.name      : get_video_width_001
-     * @tc.desc      : video get photoKeys.WIDTH
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_width_001
+     * @tc.number PHOTO_ASSET_GET_021
+     * @tc.desc   video get photoKeys.WIDTH
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_width_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_width_001';
@@ -530,12 +530,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_022
-     * @tc.name      : get_video_height_001
-     * @tc.desc      : video get photoKeys.HEIGHT
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_height_001
+     * @tc.number PHOTO_ASSET_GET_022
+     * @tc.desc   video get photoKeys.HEIGHT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_height_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_height_001';
@@ -548,12 +548,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_023
-     * @tc.name      : get_video_date_taken_001
-     * @tc.desc      : video get photoKeys.DATE_TAKEN
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_taken_001
+     * @tc.number PHOTO_ASSET_GET_023
+     * @tc.desc   video get photoKeys.DATE_TAKEN
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_taken_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_date_taken_001';
@@ -566,12 +566,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_024
-     * @tc.name      : get_video_orientation_001
-     * @tc.desc      : video get photoKeys.ORIENTATION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_orientation_001
+     * @tc.number PHOTO_ASSET_GET_024
+     * @tc.desc   video get photoKeys.ORIENTATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_orientation_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_orientation_001';
@@ -584,12 +584,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_025
-     * @tc.name      : get_video_favorite_001
-     * @tc.desc      : video get photoKeys.FAVORITE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_favorite_001
+     * @tc.number PHOTO_ASSET_GET_025
+     * @tc.desc   video get photoKeys.FAVORITE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_favorite_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_favorite_001';
@@ -602,12 +602,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_026
-     * @tc.name      : get_video_size_001
-     * @tc.desc      : video get photoKeys.SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_size_001
+     * @tc.number PHOTO_ASSET_GET_026
+     * @tc.desc   video get photoKeys.SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     /*it('get_video_size_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_size_001';
@@ -620,12 +620,12 @@ export default function getTest() {
     })*/
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_027
-     * @tc.name      : get_video_title_001
-     * @tc.desc      : video get photoKeys.TITLE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_title_001
+     * @tc.number PHOTO_ASSET_GET_027
+     * @tc.desc   video get photoKeys.TITLE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_title_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_title_001';
@@ -638,12 +638,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_028
-     * @tc.name      : get_video_position_001
-     * @tc.desc      : video get photoKeys.POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_position_001
+     * @tc.number PHOTO_ASSET_GET_028
+     * @tc.desc   video get photoKeys.POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_position_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_position_001';
@@ -656,12 +656,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_029
-     * @tc.name      : get_image_date_add_ms_001
-     * @tc.desc      : image get photoKeys.DATE_ADDED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_date_add_ms_001
+     * @tc.number PHOTO_ASSET_GET_029
+     * @tc.desc   image get photoKeys.DATE_ADDED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_add_ms_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_date_add_ms_001';
@@ -681,12 +681,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_030
-     * @tc.name      : get_video_date_added_ms_001
-     * @tc.desc      : video get photoKeys.DATE_ADDED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_date_added_ms_001
+     * @tc.number PHOTO_ASSET_GET_030
+     * @tc.desc   video get photoKeys.DATE_ADDED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_added_ms_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_video_date_add_ms_001';
@@ -706,12 +706,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_031
-     * @tc.name      : get_image_date_modified_ms_001
-     * @tc.desc      : image get photoKeys.DATE_MODIFIED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_date_modified_ms_001
+     * @tc.number PHOTO_ASSET_GET_031
+     * @tc.desc   image get photoKeys.DATE_MODIFIED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_modified_ms_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_date_modified_ms_001';
@@ -731,12 +731,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_032
-     * @tc.name      : get_video_date_modified_ms_001
-     * @tc.desc      : video get photoKeys.DATE_MODIFIED_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_date_modified_ms_001
+     * @tc.number PHOTO_ASSET_GET_032
+     * @tc.desc   video get photoKeys.DATE_MODIFIED_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_modified_ms_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_video_date_modified_ms_001';
@@ -756,12 +756,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_033
-     * @tc.name      : get_image_dynamic_range_type_001
-     * @tc.desc      : image get photoKeys.DYNAMIC_RANGE_TYPE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_dynamic_range_type_001
+     * @tc.number PHOTO_ASSET_GET_033
+     * @tc.desc   image get photoKeys.DYNAMIC_RANGE_TYPE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_dynamic_range_type_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_dynamic_range_type_001';
@@ -774,12 +774,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_034
-     * @tc.name      : get_image_cover_position_001
-     * @tc.desc      : common image get photoKeys.COVER_POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_cover_position_001
+     * @tc.number PHOTO_ASSET_GET_034
+     * @tc.desc   common image get photoKeys.COVER_POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_cover_position_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_cover_position_001';
@@ -792,12 +792,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_035
-     * @tc.name      : get_video_cover_position_001
-     * @tc.desc      : video get photoKeys.COVER_POSITION
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_cover_position_001
+     * @tc.number PHOTO_ASSET_GET_035
+     * @tc.desc   video get photoKeys.COVER_POSITION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_cover_position_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_video_cover_position_001';
@@ -810,12 +810,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_036
-     * @tc.name      : get_image_burst_key_001
-     * @tc.desc      : image get photoKeys.BURST_KEY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_burst_key_001
+     * @tc.number PHOTO_ASSET_GET_036
+     * @tc.desc   image get photoKeys.BURST_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_burst_key_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_burst_key_001';
@@ -829,12 +829,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_037
-     * @tc.name      : get_video_burst_key_001
-     * @tc.desc      : video get photoKeys.BURST_KEY
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_burst_key_001
+     * @tc.number PHOTO_ASSET_GET_037
+     * @tc.desc   video get photoKeys.BURST_KEY
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_burst_key_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_video_burst_key_001';
@@ -848,12 +848,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_038
-     * @tc.name      : get_image_lcd_size_001
-     * @tc.desc      : image get photoKeys.LCD_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_lcd_size_001
+     * @tc.number PHOTO_ASSET_GET_038
+     * @tc.desc   image get photoKeys.LCD_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_lcd_size_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_lcd_size_001';
@@ -866,12 +866,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_039
-     * @tc.name      : get_video_lcd_size_001
-     * @tc.desc      : video get photoKeys.LCD_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_lcd_size_001
+     * @tc.number PHOTO_ASSET_GET_039
+     * @tc.desc   video get photoKeys.LCD_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_lcd_size_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_video_lcd_size_001';
@@ -884,12 +884,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_040
-     * @tc.name      : get_image_thm_size_001
-     * @tc.desc      : image get photoKeys.THM_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_thm_size_001
+     * @tc.number PHOTO_ASSET_GET_040
+     * @tc.desc   image get photoKeys.THM_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_thm_size_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_thm_size_001';
@@ -903,12 +903,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_041
-     * @tc.name      : get_video_thm_size_001
-     * @tc.desc      : video get photoKeys.THM_SIZE
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_thm_size_001
+     * @tc.number PHOTO_ASSET_GET_041
+     * @tc.desc   video get photoKeys.THM_SIZE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_thm_size_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_video_thm_size_001';
@@ -922,12 +922,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_042 // TODO
-     * @tc.name      : get_image_detail_time_001
-     * @tc.desc      : image get photoKeys.DETAIL_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_detail_time_001
+     * @tc.number PHOTO_ASSET_GET_042 // TODO
+     * @tc.desc   image get photoKeys.DETAIL_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     /*    it('get_image_detail_time_001', Level.LEVEL1,
           async (done: Function) => {
@@ -957,12 +957,12 @@ export default function getTest() {
           })*/
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_043 // TODO
-     * @tc.name      : get_video_detail_time_001
-     * @tc.desc      : video get photoKeys.DETAIL_TIME
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_detail_time_001
+     * @tc.number PHOTO_ASSET_GET_043 // TODO
+     * @tc.desc   video get photoKeys.DETAIL_TIME
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     /*    it('get_video_detail_time_001', Level.LEVEL1, async (done: Function) => {
           const testName = 'get_video_detail_time_00';
@@ -991,12 +991,12 @@ export default function getTest() {
         })*/
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_044
-     * @tc.name      : get_image_date_taken_ms_001
-     * @tc.desc      : image get photoKeys.DATE_TAKEN_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_image_date_taken_ms_001
+     * @tc.number PHOTO_ASSET_GET_044
+     * @tc.desc   image get photoKeys.DATE_TAKEN_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_image_date_taken_ms_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_image_date_taken_ms_001';
@@ -1016,12 +1016,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_045
-     * @tc.name      : get_video_date_taken_ms_001
-     * @tc.desc      : video get photoKeys.DATE_TAKEN_MS
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.name   get_video_date_taken_ms_001
+     * @tc.number PHOTO_ASSET_GET_045
+     * @tc.desc   video get photoKeys.DATE_TAKEN_MS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('get_video_date_taken_ms_001', Level.LEVEL1, async (done: Function) => {
       const testName = 'get_video_date_taken_ms_001';
@@ -1041,12 +1041,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_046
-     * @tc.name      : get_video_date_taken_ms_002
-     * @tc.desc      : video get key '', error code 14000014
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_taken_ms_002
+     * @tc.number PHOTO_ASSET_GET_046
+     * @tc.desc   video get key '', error code 14000014
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_taken_ms_002', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_date_taken_ms_002';
@@ -1060,12 +1060,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_047
-     * @tc.name      : get_video_date_taken_ms_003
-     * @tc.desc      : video get key undefined, error code 13900020 or 401
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_date_taken_ms_003
+     * @tc.number PHOTO_ASSET_GET_047
+     * @tc.desc   video get key undefined, error code 13900020 or 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_date_taken_ms_003', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_date_taken_ms_003';
@@ -1078,12 +1078,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_048
-     * @tc.name      : get_image_subtype_001
-     * @tc.desc      : get Subtypes of media files.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_subtype_001
+     * @tc.number PHOTO_ASSET_GET_048
+     * @tc.desc   get Subtypes of media files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_subtype_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_subtype_001';
@@ -1096,12 +1096,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_049
-     * @tc.name      : get_video_subtype_001
-     * @tc.desc      : get Subtypes of media files.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_subtype_001
+     * @tc.number PHOTO_ASSET_GET_049
+     * @tc.desc   get Subtypes of media files.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_subtype_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_subtype_001';
@@ -1114,12 +1114,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_050
-     * @tc.name      : get_image_media_suffix_001
-     * @tc.desc      : Get the suffix of file.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_image_media_suffix_001
+     * @tc.number PHOTO_ASSET_GET_050
+     * @tc.desc   Get the suffix of file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_image_media_suffix_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_image_media_suffix_001';
@@ -1132,12 +1132,12 @@ export default function getTest() {
     })
 
     /**
-     * @tc.number    : PHOTO_ASSET_GET_051
-     * @tc.name      : get_video_media_suffix_001
-     * @tc.desc      : Get the suffix of file.
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   get_video_media_suffix_001
+     * @tc.number PHOTO_ASSET_GET_051
+     * @tc.desc   Get the suffix of file.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('get_video_media_suffix_001', Level.LEVEL2, async (done: Function) => {
       const testName = 'get_video_media_suffix_001';
@@ -1147,6 +1147,46 @@ export default function getTest() {
       const key: string = photoKeys.MEDIA_SUFFIX;
       const value: string = 'mp4';
       await checkPhotoKeysValue(done, testName, fetchOps, key, value);
+    })
+
+    /**
+     * @tc.number     PHOTO_ASSET_GET_052
+     * @tc.name       get_video_media_aspect_ratio_001
+     * @tc.desc       Get the photoKeys.ASPECT_RATIO
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('get_video_media_aspect_ratio_001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'get_video_media_aspect_ratio_001';
+      const displayName = 'getTest.mp4';
+      const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testName, photoKeys.DISPLAY_NAME, displayName);
+      await checkProvisionAsset(done, testName, displayName);
+      const key: string = photoKeys.ASPECT_RATIO;
+      const value: string = 'mp4';
+      let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testName, fetchOps);
+      expect(isNum(asset.get(key))).assertTrue();
+      done()
+    })
+
+    /**
+     * @tc.number     PHOTO_ASSET_GET_053
+     * @tc.name       get_video_media_owner_album_id_001
+     * @tc.desc       Get the photoKeys.OWNER_ALBUM_ID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('get_video_media_owner_album_id_001', Level.LEVEL2, async (done: Function) => {
+      const testName = 'get_video_media_owner_album_id_001';
+      const displayName = 'getTest.mp4';
+      const fetchOps: photoAccessHelper.FetchOptions = photoFetchOption(testName, photoKeys.DISPLAY_NAME, displayName);
+      await checkProvisionAsset(done, testName, displayName);
+      const key: string = photoKeys.OWNER_ALBUM_ID;
+      const value: string = 'mp4';
+      let asset: photoAccessHelper.PhotoAsset = await getFileAsset(testContext, testName, fetchOps);
+      expect(isNum(asset.get(key))).assertTrue();
+      done()
     })
   })
 }

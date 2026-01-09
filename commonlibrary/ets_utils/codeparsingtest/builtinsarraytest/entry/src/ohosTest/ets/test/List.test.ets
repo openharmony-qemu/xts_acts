@@ -52,6 +52,9 @@ import builtinsArrayLastIndexOfTest from './array/BuildinsArrayLastIndexOfTest.t
 import BuiltinsArrayIndexOfTest from './array/BuiltinsArrayIndexOfTest.test';
 import BuiltinsArraySliceTest from './array/BuiltinsArraySliceTest.test';
 import BuiltinsArraySomeTest from './array/BuiltinsArraySomeTest.test';
+import ArrayConstructor1Test from './array/ArrayCombination1Test.test';
+import ArrayConstructor2Test from './array/ArrayCombination2Test.test';
+import ArrayConstructorTestErr from './array/ArrayCombinationTestErr.test';
 
 import builtinsArrayBufferByteLengthTest from "./ArrayBuffer/BuildinsArrayBufferByteLengthTest.test";
 import builtinsArrayBufferConstructorTest from "./ArrayBuffer/BuildinsArrayBufferConstructorTest.test";
@@ -91,6 +94,7 @@ import builtinsRegExpMatchArrayGroupsTest from "./RegExpArray/RegExpMatchArrayGr
 import builtinsRegExpMatchArrayIndexTest from "./RegExpArray/RegExpMatchArrayIndex.test";
 import builtinsRegExpMatchArrayInputTest from "./RegExpArray/RegExpMatchArrayInput.test";
 import builtinsRegExpMatchArrayStringTest from "./RegExpArray/RegExpMatchArrayString.test";
+import RegExpCombination1Test from "./RegExpArray/RegExpCombination1Test.test";
 import typeArrayBigInt64ArrayTest from './TypeArray/TypeArrayBigInt64Array.test';
 import typeArrayBigUint64ArrayTest from './TypeArray/TypeArrayBigUint64Array.test';
 import typeArrayFloat32ArrayTest from './TypeArray/TypeArrayFloat32Array.test';
@@ -102,6 +106,27 @@ import typeArrayUint16ArrayTest from './TypeArray/TypeArrayUint16Array.test';
 import typeArrayUint32ArrayTest from './TypeArray/TypeArrayUint32Array.test';
 import typeArrayUint8ArrayTest from './TypeArray/TypeArrayUint8Array.test';
 import typeArrayUint8ClampedArrayTest from './TypeArray/TypeArrayUint8ClampedArray.test';
+
+import indexedCollections01Test from './TypeArray2/IndexedCollections01.test';
+import indexedCollections02Test from './TypeArray2/IndexedCollections02.test';
+import indexedCollections03Test from './TypeArray2/IndexedCollections03.test';
+import indexedCollections04Test from './TypeArray2/IndexedCollections04.test';
+import indexedCollections05Test from './TypeArray2/IndexedCollections05.test';
+import indexedCollections06Test from './TypeArray2/IndexedCollections06.test';
+import indexedCollections07Test from './TypeArray2/IndexedCollections07.test';
+import indexedCollections08Test from './TypeArray2/IndexedCollections08.test';
+import indexedCollections09Test from './TypeArray2/IndexedCollections09.test';
+import indexedCollections10Test from './TypeArray2/IndexedCollections10.test';
+import indexedCollections11Test from './TypeArray2/IndexedCollections11.test';
+import indexedCollections12Test from './TypeArray2/IndexedCollections12.test';
+import indexedCollections13Test from './TypeArray2/IndexedCollections13.test';
+import indexedCollections14Test from './TypeArray2/IndexedCollections14.test';
+import indexedCollections15Test from './TypeArray2/IndexedCollections15.test';
+import indexedCollections16Test from './TypeArray2/IndexedCollections16.test';
+import indexedCollections17Test from './TypeArray2/IndexedCollections17.test';
+import indexedCollections18Test from './TypeArray2/IndexedCollections18.test';
+import indexedCollections19Test from './TypeArray2/IndexedCollections19.test';
+import indexedCollections20Test from './TypeArray2/IndexedCollections20.test';
 
 
 export default function testsuite() {
@@ -155,6 +180,9 @@ export default function testsuite() {
   BuiltinsArrayIndexOfTest();
   BuiltinsArraySliceTest();
   BuiltinsArraySomeTest();
+  ArrayConstructor1Test();
+  ArrayConstructor2Test();
+  ArrayConstructorTestErr();
   
   builtinsArrayBufferByteLengthTest();
   builtinsArrayBufferConstructorTest();
@@ -196,4 +224,26 @@ export default function testsuite() {
   builtinsRegExpMatchArrayIndexTest();
   builtinsRegExpMatchArrayInputTest();
   builtinsRegExpMatchArrayStringTest();
+  RegExpCombination1Test();
+
+  indexedCollections01Test();
+  indexedCollections02Test();
+  indexedCollections03Test();
+  indexedCollections04Test();
+  indexedCollections05Test();
+  indexedCollections06Test();
+  indexedCollections07Test();
+  indexedCollections08Test();
+  indexedCollections09Test();
+  indexedCollections10Test();
+  indexedCollections11Test();
+  indexedCollections12Test();
+  indexedCollections13Test();
+  indexedCollections14Test();
+  indexedCollections15Test();
+  indexedCollections16Test();
+  indexedCollections17Test();
+  indexedCollections18Test();
+  indexedCollections19Test();
+  indexedCollections20Test();
 }

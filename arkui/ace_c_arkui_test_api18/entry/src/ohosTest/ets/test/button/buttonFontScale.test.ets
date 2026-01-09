@@ -26,14 +26,14 @@ export default function buttonFontScaleTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0100
-    * @tc.name       : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0100
-    * @tc.desc       : button minFontScale input normal value: 0.5,return value:0.500000
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0100
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0100
+     * @tc.desc   button minFontScale input normal value: 0.5,return value:0.500000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestButtonFontScale001 START');
       let PAGE_TAG = 'ButtonFontScale';
@@ -47,14 +47,14 @@ export default function buttonFontScaleTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0200
-    * @tc.name       : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0200
-    * @tc.desc       : button minFontScale input normal value: 0,return value:0.000000
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0200
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0200
+     * @tc.desc   button minFontScale input normal value: 0,return value:0.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestButtonFontScale002 START');
       let PAGE_TAG = 'ButtonFontScale';
@@ -68,14 +68,14 @@ export default function buttonFontScaleTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0300
-    * @tc.name       : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0300
-    * @tc.desc       : button minFontScale input normal value: 1,return value:1.000000
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0300
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0300
+     * @tc.desc   button minFontScale input normal value: 1,return value:1.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestButtonFontScale003 START');
       let PAGE_TAG = 'ButtonFontScale';
@@ -89,14 +89,14 @@ export default function buttonFontScaleTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0400
-    * @tc.name       : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0400
-    * @tc.desc       : button maxFontScale input normal value: 2,return value:2.000000
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0400
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0400
+     * @tc.desc   button maxFontScale input normal value: 2,return value:2.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestButtonFontScale004 START');
       let PAGE_TAG = 'ButtonFontScale';
@@ -110,14 +110,14 @@ export default function buttonFontScaleTest() {
       done();
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0500
-    * @tc.name       : SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0500
-    * @tc.desc       : button maxFontScale input normal value: 1,return value:1.000000
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0500
+     * @tc.number SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0500
+     * @tc.desc   button maxFontScale input normal value: 1,return value:1.000000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_ARKUI_CAPI_BUTTON_FONTSCALE_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       console.info('TestButtonFontScale005 START');
       let PAGE_TAG = 'ButtonFontScale';

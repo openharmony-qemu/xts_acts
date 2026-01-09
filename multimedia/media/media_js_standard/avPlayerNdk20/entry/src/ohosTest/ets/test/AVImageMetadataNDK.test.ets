@@ -27,12 +27,12 @@ export default function AVImageMetadataNDKTest() {
   describe('AVImageMetadataNDKTest', () => {
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_SetFDSource0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_SetFDSource0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVImageGenerator_SetFDSource0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVImageGenerator_SetFDSource0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVImageGenerator_SetFDSource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -49,12 +49,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVImageGenerator_FetchFrameByTime0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -71,12 +71,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_Release0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_Release0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVImageGenerator_Release0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVImageGenerator_Release0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVImageGenerator_Release0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -93,12 +93,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0100
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0100
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -123,12 +123,12 @@ export default function AVImageMetadataNDKTest() {
         }
       })
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0101
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0101
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -154,12 +154,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0102
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0102
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0102
+     * @tc.number SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0102
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0102', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -185,12 +185,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0103
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0103
-     * @tc.desc       : test OH_LowPowerAudioSink
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0103
+     * @tc.number SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0103
+     * @tc.desc   test OH_LowPowerAudioSink
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVImageGenerator_QueryOptions0103', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -216,12 +216,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVMetadataExtractor_SetFDSource0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVMetadataExtractor_SetFDSource0100
-     * @tc.desc       : test OH_AVMetadataExtractor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVMetadataExtractor_SetFDSource0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVMetadataExtractor_SetFDSource0100
+     * @tc.desc   test OH_AVMetadataExtractor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_SetFDSource0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -238,12 +238,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0100
-     * @tc.desc       : test OH_AVMetadataExtractor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0100
+     * @tc.desc   test OH_AVMetadataExtractor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -260,12 +260,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0101
-     * @tc.desc       : test OH_AVMetadataExtractor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0101
+     * @tc.desc   test OH_AVMetadataExtractor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchMetadata0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -282,12 +282,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0100
-     * @tc.desc       : test OH_AVMetadataExtractor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0100
+     * @tc.desc   test OH_AVMetadataExtractor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -304,12 +304,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101
-     * @tc.desc       : test OH_AVMetadataExtractor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101
+     * @tc.number SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101
+     * @tc.desc   test OH_AVMetadataExtractor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_FetchAlbumCover0101', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -335,12 +335,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_AVMetadataExtractor_Release0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_AVMetadataExtractor_Release0100
-     * @tc.desc       : test OH_AVMetadataExtractor
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_AVMetadataExtractor_Release0100
+     * @tc.number SUB_MULTIMEIDA_OH_AVMetadataExtractor_Release0100
+     * @tc.desc   test OH_AVMetadataExtractor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_AVMetadataExtractor_Release0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (done: Function) => {
@@ -357,12 +357,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoProcessing_RegisterCallback0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoProcessing_RegisterCallback0100
-     * @tc.desc       : test OH_VideoProcessing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoProcessing_RegisterCallback0100
+     * @tc.number SUB_MULTIMEIDA_OH_VideoProcessing_RegisterCallback0100
+     * @tc.desc   test OH_VideoProcessing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoProcessing_RegisterCallback0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -380,12 +380,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoProcessing_GetSurface0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoProcessing_GetSurface0100
-     * @tc.desc       : test OH_VideoProcessing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoProcessing_GetSurface0100
+     * @tc.number SUB_MULTIMEIDA_OH_VideoProcessing_GetSurface0100
+     * @tc.desc   test OH_VideoProcessing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoProcessing_GetSurface0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -403,12 +403,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0100
-     * @tc.desc       : test OH_VideoProcessing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0100
+     * @tc.number SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0100
+     * @tc.desc   test OH_VideoProcessing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -426,12 +426,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0101
-     * @tc.desc       : test OH_VideoProcessing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0101
+     * @tc.number SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0101
+     * @tc.desc   test OH_VideoProcessing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoProcessing_SetParameter0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -449,12 +449,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0100
-     * @tc.desc       : test OH_VideoProcessing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0100
+     * @tc.number SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0100
+     * @tc.desc   test OH_VideoProcessing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -472,12 +472,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0101
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0101
-     * @tc.desc       : test OH_VideoProcessing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0101
+     * @tc.number SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0101
+     * @tc.desc   test OH_VideoProcessing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoProcessing_GetParameter0101',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
@@ -495,12 +495,12 @@ export default function AVImageMetadataNDKTest() {
       })
 
     /**
-     * @tc.number     : SUB_MULTIMEIDA_OH_VideoProcessing_RenderOutputBuffer0100
-     * @tc.name       : SUB_MULTIMEIDA_OH_VideoProcessing_RenderOutputBuffer0100
-     * @tc.desc       : test OH_VideoProcessing
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   SUB_MULTIMEIDA_OH_VideoProcessing_RenderOutputBuffer0100
+     * @tc.number SUB_MULTIMEIDA_OH_VideoProcessing_RenderOutputBuffer0100
+     * @tc.desc   test OH_VideoProcessing
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_MULTIMEIDA_OH_VideoProcessing_RenderOutputBuffer0100',
       TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,

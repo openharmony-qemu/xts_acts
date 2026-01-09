@@ -47,12 +47,12 @@ export default function frameNodeMoveOneTest() {
     });
 
     /**
-     * @tc.number    frameNodeMoveOneTest_0100
-     * @tc.name      frameNodeMoveOneTest_0100
-     * @tc.desc      frameNode: test UINode node move
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeMoveOneTest_0100
+     * @tc.number frameNodeMoveOneTest_0100
+     * @tc.desc   frameNode: test UINode node move
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('frameNodeMoveOneTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('frameNodeMoveOneTest_0100 START');
@@ -84,12 +84,12 @@ export default function frameNodeMoveOneTest() {
     });
 
     /**
-     * @tc.number    frameNodeMoveOneTest_0200
-     * @tc.name      frameNodeMoveOneTest_0200
-     * @tc.desc      frameNode: test UINode node text move
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   frameNodeMoveOneTest_0200
+     * @tc.number frameNodeMoveOneTest_0200
+     * @tc.desc   frameNode: test UINode node text move
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('frameNodeMoveOneTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('frameNodeMoveOneTest_0200 START');

@@ -46,12 +46,12 @@ export default function Local1Jsunit() {
     });
 
     /**
-     * @tc.number    Local1Jsunit_001
-     * @tc.name      Local1Jsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 2
-     * @tc.type
-     * @tc.size
+     * @tc.name   Local1Jsunit_001
+     * @tc.number Local1Jsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Local1Jsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[Local1Jsunit_001] START');

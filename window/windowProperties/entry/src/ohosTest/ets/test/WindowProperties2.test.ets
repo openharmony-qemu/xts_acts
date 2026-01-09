@@ -58,6 +58,39 @@ async function terminateAbility(caseName: string) {
   await sleep(1000)
 }
 
+async function startAbility3(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
+  let want: Want = {
+    bundleName: AppStorage.get('bundleName'),
+    abilityName: 'StartTestAbility3'
+  };
+  if (options) {
+    await context.startAbility(want, options).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  } else {
+    await context.startAbility(want).then(() => {
+      console.info(`${caseName} Succeeded in starting ability.`);
+    }).catch((err: BusinessError) => {
+      console.info(`${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
+    });
+  }
+  await sleep(1000)
+  let windowStageStart = AppStorage.get('windowStageStartTest3') as ohosWindow.WindowStage;
+  return windowStageStart
+}
+
+async function terminateAbility3(caseName: string) {
+  let pageContext = AppStorage.get('contextTest3') as common.UIAbilityContext
+  await pageContext.terminateSelf().then(() => {
+    console.log(`${caseName} terminateSelf success`);
+  }).catch((err: BusinessError) => {
+    console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
+  });
+  await sleep(1000)
+}
+
 async function startAbility4(caseName: string, context: common.UIAbilityContext, options?: StartOptions) {
   let want: Want = {
     bundleName: AppStorage.get('bundleName'),
@@ -138,12 +171,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
-     * @tc.name      : testStatusBarContentColor
-     * @tc.desc      : test_statusBarContentColor
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testStatusBarContentColor
+     * @tc.number SUB_BASIC_WMS_STATUS_BAR_CONTENT_COLOR_0100
+     * @tc.desc   test_statusBarContentColor
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testStatusBarContentColor', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_statusBarContentColor';
@@ -163,12 +196,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_DRAWABLE_RECT_0100
-     * @tc.name      : testWindowPropertiesDrawableRect
-     * @tc.desc      : test_WindowProperties_drawableRect
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testWindowPropertiesDrawableRect
+     * @tc.number SUB_BASIC_WMS_DRAWABLE_RECT_0100
+     * @tc.desc   test_WindowProperties_drawableRect
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testWindowPropertiesDrawableRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_WindowProperties_drawableRect';
@@ -190,12 +223,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0100
-     * @tc.name       : test_setStatusBarColor_401
-     * @tc.desc       : test_setStatusBarColor_401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setStatusBarColor_401
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0100
+     * @tc.desc   test_setStatusBarColor_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setStatusBarColor_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setStatusBarColor_401";
@@ -220,12 +253,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0200
-     * @tc.name       : test_setStatusBarColor_1300002
-     * @tc.desc       : test_setStatusBarColor_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setStatusBarColor_1300002
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_ErrorCode_0200
+     * @tc.desc   test_setStatusBarColor_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setStatusBarColor_1300002',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setStatusBarColor_1300002";
@@ -257,12 +290,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_0300
-     * @tc.name       : test_setStatusBarColor_normal1
-     * @tc.desc       : 验证设置正常状态栏颜色
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setStatusBarColor_normal1
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_0300
+     * @tc.desc   验证设置正常状态栏颜色
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setStatusBarColor_normal1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setStatusBarColor_normal1";
@@ -289,12 +322,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SetStatusBarColor_0400
-     * @tc.name       : test_setStatusBarColor_normal2
-     * @tc.desc       : 验证横屏设置状态栏颜色
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setStatusBarColor_normal2
+     * @tc.number SUB_BASIC_WMS_SetStatusBarColor_0400
+     * @tc.desc   验证横屏设置状态栏颜色
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setStatusBarColor_normal2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setStatusBarColor_normal2";
@@ -324,12 +357,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getStatusBarProperty_ErrorCode_0100
-     * @tc.name       : test_getStatusBarProperty_1300002
-     * @tc.desc       : test_getStatusBarProperty_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getStatusBarProperty_1300002
+     * @tc.number SUB_BASIC_WMS_getStatusBarProperty_ErrorCode_0100
+     * @tc.desc   test_getStatusBarProperty_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getStatusBarProperty_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getStatusBarProperty_1300002";
@@ -356,12 +389,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowBackgroundColor_0100
-     * @tc.name       : test_setWindowBackgroundColor_ColorMetrics_mainWindow
-     * @tc.desc       : test_setWindowBackgroundColor_ColorMetrics_mainWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setWindowBackgroundColor_ColorMetrics_mainWindow
+     * @tc.number SUB_BASIC_WMS_setWindowBackgroundColor_0100
+     * @tc.desc   test_setWindowBackgroundColor_ColorMetrics_mainWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setWindowBackgroundColor_ColorMetrics_mainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setWindowBackgroundColor_ColorMetrics_mainWindow";
@@ -382,12 +415,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowBackgroundColor_0200
-     * @tc.name       : test_setWindowBackgroundColor_ColorMetrics_subWindow
-     * @tc.desc       : test_setWindowBackgroundColor_ColorMetrics_subWindow
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   test_setWindowBackgroundColor_ColorMetrics_subWindow
+     * @tc.number SUB_BASIC_WMS_setWindowBackgroundColor_0200
+     * @tc.desc   test_setWindowBackgroundColor_ColorMetrics_subWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('test_setWindowBackgroundColor_ColorMetrics_subWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "test_setWindowBackgroundColor_ColorMetrics_subWindow";
@@ -415,12 +448,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0100
-     * @tc.name       : test_setWindowShadowRadius_401
-     * @tc.desc       : test_setWindowShadowRadius_401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_401
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0100
+     * @tc.desc   test_setWindowShadowRadius_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_401";
@@ -447,12 +480,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0200
-     * @tc.name       : test_setWindowShadowRadius_1300002
-     * @tc.desc       : test_setWindowShadowRadius_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_1300002
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0200
+     * @tc.desc   test_setWindowShadowRadius_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_1300002";
@@ -479,12 +512,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0300
-     * @tc.name       : test_setWindowShadowRadius_1300004
-     * @tc.desc       : test_setWindowShadowRadius_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_1300004
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0300
+     * @tc.desc   test_setWindowShadowRadius_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_1300004";
@@ -505,12 +538,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0400
-     * @tc.name       : test_setWindowShadowRadius_negative1
-     * @tc.desc       : test_setWindowShadowRadius_negative1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_negative1
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_ErrorCode_0400
+     * @tc.desc   test_setWindowShadowRadius_negative1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_negative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_negative1";
@@ -537,12 +570,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0100
-     * @tc.name       : test_setWindowShadowRadius_0100
-     * @tc.desc       : 验证子窗设置没有阴影
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_0100
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0100
+     * @tc.desc   验证子窗设置没有阴影
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_0100";
@@ -577,12 +610,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0200
-     * @tc.name       : test_setWindowShadowRadius_0200
-     * @tc.desc       : 验证子窗设置阴影为4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_0200
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0200
+     * @tc.desc   验证子窗设置阴影为4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_0200";
@@ -617,12 +650,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0300
-     * @tc.name       : test_setWindowShadowRadius_0300
-     * @tc.desc       : 验证子窗设置阴影为超大值
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowShadowRadius_0300
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0300
+     * @tc.desc   验证子窗设置阴影为超大值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowShadowRadius_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowShadowRadius_0300";
@@ -657,12 +690,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0400
-     * @tc.name       : testSetWindowShadowRadiusTYPE_FLOAT0
-     * @tc.desc       : 验证悬浮窗设置阴影为0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowShadowRadiusTYPE_FLOAT0
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0400
+     * @tc.desc   验证悬浮窗设置阴影为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowShadowRadiusTYPE_FLOAT0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowShadowRadiusTYPE_FLOAT0";
@@ -712,12 +745,12 @@ export default function windowPropertiesTest2() {
 
     })
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowShadowRadius_0500
-     * @tc.name       : testSetWindowShadowRadiusTYPE_FLOAT4
-     * @tc.desc       : 验证悬浮窗设置阴影为4
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowShadowRadiusTYPE_FLOAT4
+     * @tc.number SUB_BASIC_WMS_setWindowShadowRadius_0500
+     * @tc.desc   验证悬浮窗设置阴影为4
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowShadowRadiusTYPE_FLOAT4', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowShadowRadiusTYPE_FLOAT4";
@@ -767,12 +800,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0100
-     * @tc.name       : test_setWindowCornerRadius_401
-     * @tc.desc       : test_setWindowCornerRadius_401
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_401
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0100
+     * @tc.desc   test_setWindowCornerRadius_401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_401', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_401";
@@ -803,12 +836,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0200
-     * @tc.name       : test_setWindowCornerRadius_negative1
-     * @tc.desc       : test_setWindowCornerRadius_-1
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_negative1
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0200
+     * @tc.desc   test_setWindowCornerRadius_-1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_negative1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_negative1";
@@ -839,12 +872,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0300
-     * @tc.name       : test_setWindowCornerRadius_1300002
-     * @tc.desc       : test_setWindowCornerRadius_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_1300002
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0300
+     * @tc.desc   test_setWindowCornerRadius_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_1300002";
@@ -874,12 +907,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0400
-     * @tc.name       : test_setWindowCornerRadius_1300004
-     * @tc.desc       : test_setWindowCornerRadius_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_1300004
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0400
+     * @tc.desc   test_setWindowCornerRadius_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_1300004";
@@ -917,12 +950,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0500
-     * @tc.name       : test_setWindowCornerRadius_dialog_1300004
-     * @tc.desc       : test_setWindowCornerRadius_dialog_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_dialog_1300004
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_ErrorCode_0500
+     * @tc.desc   test_setWindowCornerRadius_dialog_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_dialog_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_dialog_1300004";
@@ -969,12 +1002,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0100
-     * @tc.name       : test_setWindowCornerRadius_0100
-     * @tc.desc       : 验证子窗圆角值为0
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0100
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0100
+     * @tc.desc   验证子窗圆角值为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0100";
@@ -1015,12 +1048,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0200
-     * @tc.name       : test_setWindowCornerRadius_0200
-     * @tc.desc       : 验证子窗圆角值为5
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0200
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0200
+     * @tc.desc   验证子窗圆角值为5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0200";
@@ -1062,12 +1095,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0300
-     * @tc.name       : test_setWindowCornerRadius_0300
-     * @tc.desc       : 验证子窗圆角值为10000
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0300
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0300
+     * @tc.desc   验证子窗圆角值为10000
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0300";
@@ -1109,12 +1142,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0400
-     * @tc.name       : test_setWindowCornerRadius_0400
-     * @tc.desc       : 验证子窗圆角值为5.66666666
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0400
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0400
+     * @tc.desc   验证子窗圆角值为5.66666666
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0400";
@@ -1155,12 +1188,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number : SUB_BASIC_WMS_setWindowCornerRadius_0600
-     * @tc.name : testSetWindowCornerRadiusTYPE_FLOAT0
-     * @tc.desc : 验证悬浮窗圆角值为0
-     * @tc.size : MediumTest
-     * @tc.type : Function
-     * @tc.level : Level 3
+     * @tc.name   testSetWindowCornerRadiusTYPE_FLOAT0
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0600
+     * @tc.desc   验证悬浮窗圆角值为0
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowCornerRadiusTYPE_FLOAT0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowCornerRadiusTYPE_FLOAT0";
@@ -1211,12 +1244,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0700
-     * @tc.name       : testSetWindowCornerRadiusTYPE_FLOAT5
-     * @tc.desc       : 验证悬浮窗圆角值为5
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSetWindowCornerRadiusTYPE_FLOAT5
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0700
+     * @tc.desc   验证悬浮窗圆角值为5
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetWindowCornerRadiusTYPE_FLOAT5', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSetWindowCornerRadiusTYPE_FLOAT5";
@@ -1265,12 +1298,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_setWindowCornerRadius_0800
-     * @tc.name       : test_setWindowCornerRadius_0800
-     * @tc.desc       : 验证子窗多次设置圆角值
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_setWindowCornerRadius_0800
+     * @tc.number SUB_BASIC_WMS_setWindowCornerRadius_0800
+     * @tc.desc   验证子窗多次设置圆角值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_setWindowCornerRadius_0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_setWindowCornerRadius_0800";
@@ -1304,12 +1337,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0100
-     * @tc.name       : test_getWindowCornerRadius_1300002
-     * @tc.desc       : test_getWindowCornerRadius_1300002
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getWindowCornerRadius_1300002
+     * @tc.number SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0100
+     * @tc.desc   test_getWindowCornerRadius_1300002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getWindowCornerRadius_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getWindowCornerRadius_1300002";
@@ -1336,12 +1369,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0200
-     * @tc.name       : test_getWindowCornerRadius_1300004
-     * @tc.desc       : test_getWindowCornerRadius_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getWindowCornerRadius_1300004
+     * @tc.number SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0200
+     * @tc.desc   test_getWindowCornerRadius_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getWindowCornerRadius_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getWindowCornerRadius_1300004";
@@ -1365,12 +1398,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0300
-     * @tc.name       : test_getWindowCornerRadius_dialog_1300004
-     * @tc.desc       : test_getWindowCornerRadius_dialog_1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   test_getWindowCornerRadius_dialog_1300004
+     * @tc.number SUB_BASIC_WMS_getWindowCornerRadius_ErrorCode_0300
+     * @tc.desc   test_getWindowCornerRadius_dialog_1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('test_getWindowCornerRadius_dialog_1300004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "test_getWindowCornerRadius_dialog_1300004";
@@ -1407,12 +1440,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
-     * @tc.name       : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
-     * @tc.desc       : 测试非隐私主窗口竖屏截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
+     * @tc.number testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait
+     * @tc.desc   测试非隐私主窗口竖屏截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithNonPrivacyMainWindowPortrait";
@@ -1470,12 +1503,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithPrivacyMainWindow
-     * @tc.name       : testSnapshotIgnorePrivacyWithPrivacyMainWindow
-     * @tc.desc       : 测试隐私主窗口竖屏截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithPrivacyMainWindow
+     * @tc.number testSnapshotIgnorePrivacyWithPrivacyMainWindow
+     * @tc.desc   测试隐私主窗口竖屏截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithPrivacyMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithPrivacyMainWindow";
@@ -1533,12 +1566,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
-     * @tc.name       : testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
-     * @tc.desc       : 测试非隐私主窗口横屏
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
+     * @tc.number testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape
+     * @tc.desc   测试非隐私主窗口横屏
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithNonPrivacyMainWindowLandscape";
@@ -1596,12 +1629,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithPrivacySubWindow
-     * @tc.name       : testSnapshotIgnorePrivacyWithPrivacySubWindow
-     * @tc.desc       : 测试隐私子窗口截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithPrivacySubWindow
+     * @tc.number testSnapshotIgnorePrivacyWithPrivacySubWindow
+     * @tc.desc   测试隐私子窗口截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithPrivacySubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithPrivacySubWindow";
@@ -1665,12 +1698,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : testSnapshotIgnorePrivacyWithMinimizeWindow
-     * @tc.name       : testSnapshotIgnorePrivacyWithMinimizeWindow
-     * @tc.desc       : 测试主窗口minimize后截图
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testSnapshotIgnorePrivacyWithMinimizeWindow
+     * @tc.number testSnapshotIgnorePrivacyWithMinimizeWindow
+     * @tc.desc   测试主窗口minimize后截图
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSnapshotIgnorePrivacyWithMinimizeWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testSnapshotIgnorePrivacyWithMinimizeWindow";
@@ -1697,6 +1730,7 @@ export default function windowPropertiesTest2() {
                 expect(Math.abs(widthBefore-imageInfo.size.width)).assertLessOrEqual(1);
                 expect(Math.abs(heightBefore-imageInfo.size.height)).assertLessOrEqual(1);
                 pixelMap.release();
+                await windowClass.restore();
                 await terminateAbility(caseName);
                 await sleep(2000)
                 done();
@@ -1738,12 +1772,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0100
-     * @tc.name       : testOnScreenShotAppEventwithDestoryedSubWindow
-     * @tc.desc       : 验证子窗销毁后监听on_screenshotAppEvent返回1300002错误码
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOnScreenShotAppEventwithDestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0100
+     * @tc.desc   验证子窗销毁后监听on_screenshotAppEvent返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOnScreenShotAppEventwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOnScreenShotAppEventwithDestoryedSubWindow";
@@ -1768,12 +1802,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0200
-     * @tc.name       : testOffScreenShotAppEventwithDestoryedSubWindow
-     * @tc.desc       : 验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 3
+     * @tc.name   testOffScreenShotAppEventwithDestoryedSubWindow
+     * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0200
+     * @tc.desc   验证子窗销毁后取消监听off_screenshotAppEvent返回1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testOffScreenShotAppEventwithDestoryedSubWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = "testOffScreenShotAppEventwithDestoryedSubWindow";
@@ -1799,12 +1833,12 @@ export default function windowPropertiesTest2() {
 
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0500
-     * @tc.name       : testScreenshotEventType
-     * @tc.desc       : 验证ScreenshotEventType枚举值
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testScreenshotEventType
+     * @tc.number SUB_BASIC_WMS_ONSCREENSHOTAPPEVENT_0500
+     * @tc.desc   验证ScreenshotEventType枚举值
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testScreenshotEventType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testScreenshotEventType";
@@ -1826,12 +1860,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0100
-     * @tc.name       : testSetWindowShadowEnabledwithPermission
-     * @tc.desc       : 验证非2in1设备调用接口报801，2in1设备调用成功
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetWindowShadowEnabledwithPermission
+     * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0100
+     * @tc.desc   验证非2in1设备调用接口报801，2in1设备调用成功
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testSetWindowShadowEnabledwithPermission', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName = "testSetWindowShadowEnabledwithPermission";
@@ -1862,12 +1896,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0300
-     * @tc.name       : testSetWindowShadowEnabledwithUnsupportedSubwindow
-     * @tc.desc       : 验证子窗调用接口报1300004
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+     * @tc.name   testSetWindowShadowEnabledwithUnsupportedSubwindow
+     * @tc.number SUB_BASIC_WMS_SETWINDOWSHADOWENABLED_0300
+     * @tc.desc   验证子窗调用接口报1300004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowShadowEnabledwithUnsupportedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName = "testSetWindowShadowEnabledwithUnsupportedSubwindow";
@@ -1901,12 +1935,12 @@ export default function windowPropertiesTest2() {
     })
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0100
-     * @tc.name       : testCreateFloatWindowwithDefaultDensityEnabledTrue
-     * @tc.desc       : 创建float系统窗配置使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCreateFloatWindowwithDefaultDensityEnabledTrue
+     * @tc.number SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0100
+     * @tc.desc   创建float系统窗配置使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateFloatWindowwithDefaultDensityEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateFloatWindowwithDefaultDensityEnabledTrue";
@@ -1948,12 +1982,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0200
-     * @tc.name       : testCreateFloatWindowwithDefaultDensityEnabledFalse
-     * @tc.desc       : 创建float窗配置不使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.name   testCreateFloatWindowwithDefaultDensityEnabledFalse
+     * @tc.number SUB_BASIC_WMS_CREATE_FLOAT_WINDOW_DEFAULT_DENSITY_ENABLED_0200
+     * @tc.desc   创建float窗配置不使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateFloatWindowwithDefaultDensityEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateFloatWindowwithDefaultDensityEnabledFalse";
@@ -1995,12 +2029,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0100
-     * @tc.name       : testCreateDialogWindowwithDefaultDensityEnabledTrue
-     * @tc.desc       : 创建dialog系统窗配置使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCreateDialogWindowwithDefaultDensityEnabledTrue
+     * @tc.number SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0100
+     * @tc.desc   创建dialog系统窗配置使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateDialogWindowwithDefaultDensityEnabledTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateDialogWindowwithDefaultDensityEnabledTrue";
@@ -2042,12 +2076,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0200
-     * @tc.name       : testCreateDialogWindowwithDefaultDensityEnabledFalse
-     * @tc.desc       : 创建dialog窗配置不使用默认density
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testCreateDialogWindowwithDefaultDensityEnabledFalse
+     * @tc.number SUB_BASIC_WMS_CREATE_DIALOG_WINDOW_DEFAULT_DENSITY_ENABLED_0200
+     * @tc.desc   创建dialog窗配置不使用默认density
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCreateDialogWindowwithDefaultDensityEnabledFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testCreateDialogWindowwithDefaultDensityEnabledFalse";
@@ -2089,12 +2123,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_TRUE_0100
-     * @tc.name       : testSetCustomDensitywithSubwindowApplytoSubwindowTrue
-     * @tc.desc       : 主窗调用setcustomdensity修改显示大小同步子窗、系统窗
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetCustomDensitywithSubwindowApplytoSubwindowTrue
+     * @tc.number SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_TRUE_0100
+     * @tc.desc   主窗调用setcustomdensity修改显示大小同步子窗、系统窗
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCustomDensitywithSubwindowApplytoSubwindowTrue', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetCustomDensitywithSubwindowApplytoSubwindowTrue";
@@ -2170,12 +2204,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_FALSE_0100
-     * @tc.name       : testSetCustomDensitywithFloatwindowApplytoSubwindowFalse
-     * @tc.desc       : 主窗调用setcustomdensity修改显示大小不同步子窗、系统窗
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetCustomDensitywithFloatwindowApplytoSubwindowFalse
+     * @tc.number SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_FALSE_0100
+     * @tc.desc   主窗调用setcustomdensity修改显示大小不同步子窗、系统窗
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCustomDensitywithFloatwindowApplytoSubwindowFalse', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetCustomDensitywithFloatwindowApplytoSubwindowFalse";
@@ -2251,12 +2285,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number     : SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_UNDEFINED_0100
-     * @tc.name       : testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined
-     * @tc.desc       : 主窗调用setcustomdensity修改显示大小默认不同步子窗、系统窗
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 0
+     * @tc.name   testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined
+     * @tc.number SUB_BASIC_WMS_SET_CUSTOM_DENSITY_WITH_APPLYTO_SUBWINDOW_UNDEFINED_0100
+     * @tc.desc   主窗调用setcustomdensity修改显示大小默认不同步子窗、系统窗
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = "testSetCustomDensitywithFloatwindowApplytoSubwindowUndefined";
@@ -2332,12 +2366,12 @@ export default function windowPropertiesTest2() {
     });
     
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_SUBWINDOW
-     * @tc.name      : testSetWindowContainerColorwithUnsupportedSubwindow
-     * @tc.desc      : 验证不支持的子窗调用setwindowcontainercolor接口抛1300004错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetWindowContainerColorwithUnsupportedSubwindow
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_SUBWINDOW
+     * @tc.desc   验证不支持的子窗调用setwindowcontainercolor接口抛1300004错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowContainerColorwithUnsupportedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorwithUnsupportedSubwindow ';
@@ -2364,12 +2398,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW
-     * @tc.name      : testSetWindowContainerColorwithDestroyedMainWindow
-     * @tc.desc      : 验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetWindowContainerColorwithDestroyedMainWindow
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW
+     * @tc.desc   验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowContainerColorwithDestroyedMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorwithDestroyedMainWindow ';
@@ -2392,12 +2426,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITHOUT_LOADCONTENT
-     * @tc.name      : testSetWindowContainerColorwithoutLoadContent
-     * @tc.desc      : 验证主窗未loadcontent调用setwindowcontainercolor接口抛1300002错误码
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   testSetWindowContainerColorwithoutLoadContent
+     * @tc.number SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITHOUT_LOADCONTENT
+     * @tc.desc   验证主窗未loadcontent调用setwindowcontainercolor接口抛1300002错误码
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testSetWindowContainerColorwithoutLoadContent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'testSetWindowContainerColorwithoutLoadContent ';
@@ -2420,12 +2454,12 @@ export default function windowPropertiesTest2() {
     });
 
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0100
-     * @tc.name   : testgetColorSpace_default_promise
-     * @tc.desc   : testgetColorSpace_default_promise
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testgetColorSpace_default_promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0100
+     * @tc.desc   testgetColorSpace_default_promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetColorSpace_default_promise', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testgetColorSpace_default_promise';
@@ -2450,12 +2484,12 @@ export default function windowPropertiesTest2() {
       });
     })
     /**
-     * @tc.number : SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0200
-     * @tc.name   : testgetColorSpace_default_Callback
-     * @tc.desc   : testgetColorSpace_default_Callback
-     * @tc.size   : MediumTest
-     * @tc.type   : Function
-     * @tc.level  : Level 3
+     * @tc.name   testgetColorSpace_default_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GETCOLORSPACE_0200
+     * @tc.desc   testgetColorSpace_default_Callback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testgetColorSpace_default_Callback', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, (done: Function) => {
       let caseName = 'testgetColorSpace_default_Callback';
@@ -2486,6 +2520,887 @@ export default function windowPropertiesTest2() {
           done();
         }
       });
+    })
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0100
+     * @tc.name       testOnOcclusionStatewithDestoryedSubwindow
+     * @tc.desc       验证子窗销毁后注册OnOcclusionState返回1300002错误码验证
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testOnOcclusionStatewithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testOnOcclusionStatewithDestoryedSubwindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let subWindowClass = await windowStage.createSubWindow(caseName);
+      await subWindowClass.destroyWindow();
+      try {
+        const callback = (res: window.OcclusionState) => {
+          console.info(caseName + ' callback res: ' + JSON.stringify(res));
+        }
+        subWindowClass.on('occlusionStateChanged', callback);
+        console.log(caseName + 'success. ');
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300002);
+          expect(err.message!=null).assertTrue();
+          done();
+        } else {
+          expect(err.code).assertEqual(801);
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0200
+     * @tc.name       testOffOcclusionStatewithDestoryedSubwindow
+     * @tc.desc       验证子窗销毁后注册OffOcclusionState返回1300002错误码验证
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testOffOcclusionStatewithDestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testOffOcclusionStatewithDestoryedSubwindow ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let subWindowClass = await windowStage.createSubWindow(caseName);
+      await subWindowClass.destroyWindow();
+      try {
+        const callback = (res: window.OcclusionState) => {
+          console.info(caseName + ' callback res: ' + JSON.stringify(res));
+        }
+        subWindowClass.off('occlusionStateChanged', callback);
+        console.log(caseName + 'success. ');
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+        if (canIUseRes) {
+          expect(err.code).assertEqual(1300002);
+          expect(err.message!=null).assertTrue();
+          done();
+        } else {
+          expect(err.code).assertEqual(801);
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0300
+     * @tc.name       testOnOcclusionStateBeforeLoadcontent
+     * @tc.desc       验证子窗loadContent之前注册，首次打开loadContent查看是否有监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testOnOcclusionStateBeforeLoadcontent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnOcclusionStateBeforeLoadcontent ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let subWindowClass = await windowStage.createSubWindow(caseName);
+      try {
+        const callback = async (res: window.OcclusionState) => {
+          console.info(caseName + ' callback res: ' + JSON.stringify(res));
+          expect(res).assertEqual(window.OcclusionState.NO_OCCLUSION);
+          await subWindowClass.destroyWindow();
+          done();
+        }
+        subWindowClass.on('occlusionStateChanged', callback);
+        if (canIUseRes) {
+          await subWindowClass.loadContent('testability/pages/First/index2');
+          await subWindowClass.showWindow();
+        } else {
+          await subWindowClass.destroyWindow();
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass.destroyWindow();
+        if (err.code == 801) {
+          expect(true).assertTrue();
+          done();
+        } else {
+          expect().assertFail()
+          done();
+        }
+      }
+    });
+
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0400
+     * @tc.name       testOnOcclusionStateAfterLoadcontent
+     * @tc.desc       验证子窗loadContent之后showwindow之前注册，首次打开showwindow查看是否有监听
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testOnOcclusionStateAfterLoadcontent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnOcclusionStateAfterLoadcontent ';
+      console.log(caseName + 'begin');
+      let canIUseRes = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' canIUseRes SystemCapability.Window.SessionManager: ' + JSON.stringify(canIUseRes));
+      let subWindowClass = await windowStage.createSubWindow(caseName);
+      try {
+        const callback = async (res: window.OcclusionState) => {
+          console.info(caseName + ' callback res: ' + JSON.stringify(res));
+          expect(res).assertEqual(window.OcclusionState.NO_OCCLUSION);
+          await subWindowClass.destroyWindow();
+          done();
+        }
+        subWindowClass.on('occlusionStateChanged', callback);
+        await subWindowClass.loadContent('testability/pages/First/index2');
+        if (canIUseRes) {
+          await subWindowClass.showWindow();
+        } else {
+          await subWindowClass.destroyWindow();
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass.destroyWindow();
+        if (err.code == 801) {
+          expect(true).assertTrue();
+          done();
+        } else {
+          expect().assertFail()
+          done();
+        }
+      }
+    });
+
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0500
+     * @tc.name       testOnOcclusionStatewithMainWindowandSubwindow
+     * @tc.desc       验证主窗与子窗之间无遮挡、部分遮挡、完全遮挡
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testOnOcclusionStatewithMainWindowandSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnOcclusionStatewithMainWindowandSubwindow ';
+      console.log(caseName + 'begin');
+      let isSupported = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' isSupported SystemCapability.Window.SessionManager: ' + JSON.stringify(isSupported));
+      let subWindow: window.Window | undefined;
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let occlusionStates: number[] = [];
+        let callbackCalled = false;
+        const occlusionCallback = (data: window.OcclusionState) => {
+          console.info(caseName + 'occlusionStateChanged callback received, state: ' + data);
+          occlusionStates.push(data);
+          callbackCalled = true;
+        };
+        mainWindow.on('occlusionStateChanged', occlusionCallback);
+        await sleep(200);
+        occlusionStates = [];
+        callbackCalled = false;
+        const mainWindowProperties = await mainWindow.getWindowProperties();
+        const mainWindowRect = mainWindowProperties.windowRect;
+        subWindow = await windowStage.createSubWindow('testOnOcclusionStatewithMainWindowandSubwindow');
+        await subWindow.resize(mainWindowRect.width/2 , mainWindowRect.height/2);
+        await subWindow.moveWindowTo(mainWindowRect.left + mainWindowRect.width/3, mainWindowRect.top + mainWindowRect.height/3);
+        await subWindow.setUIContent('testability/pages/First/index2');
+        await subWindow.showWindow();
+        await sleep(1000);
+        expect(callbackCalled).assertTrue();
+        console.info(caseName + 'Step 3 - Occlusion states: ' + JSON.stringify(occlusionStates));
+        expect(occlusionStates.includes(window.OcclusionState.PARTIAL_OCCLUSION)).assertTrue(); // 部分可见
+        occlusionStates = [];
+        callbackCalled = false;
+        console.info(caseName + 'Step 4: Resize subwindow to fully occlude main window');
+        await subWindow.resize(mainWindowRect.width + 100, mainWindowRect.height + 100);
+        await subWindow.moveWindowTo(mainWindowRect.left - 50, mainWindowRect.top - 50);
+        await sleep(1000);
+        expect(callbackCalled).assertTrue();
+        console.info(caseName + 'Step 4 - Occlusion states: ' + JSON.stringify(occlusionStates));
+        expect(occlusionStates.includes(window.OcclusionState.FULL_OCCLUSION)).assertTrue(); // 完全不可见
+        occlusionStates = [];
+        callbackCalled = false;
+        console.info(caseName + 'Step 5: Move and resize subwindow to have no intersection with main window');
+        await subWindow.resize(200, 200);
+        await subWindow.moveWindowTo(mainWindowRect.left + mainWindowRect.width + 100,
+          mainWindowRect.top + mainWindowRect.height + 100);
+        await sleep(1000);
+        expect(callbackCalled).assertTrue();
+        console.info(caseName + 'Step 5 - Occlusion states: ' + JSON.stringify(occlusionStates));
+        expect(occlusionStates.includes(window.OcclusionState.NO_OCCLUSION)).assertTrue(); // 完全可见
+
+        console.info(caseName + 'Step 6: Unregister listener and repeat steps 3-5');
+        mainWindow.off('occlusionStateChanged', occlusionCallback);
+        console.info(caseName + 'Main window unregistered occlusionStateChanged listener');
+        occlusionStates = [];
+        callbackCalled = false;
+
+        console.info(caseName + 'Step 6.1: Repeat step 3 - partial occlusion');
+        await subWindow.resize(mainWindowRect.width/2 , mainWindowRect.height/2);
+        await subWindow.moveWindowTo(mainWindowRect.left + mainWindowRect.width/3, mainWindowRect.top + mainWindowRect.height/3);
+        await sleep(500);
+        expect(callbackCalled).assertFalse();
+        expect(occlusionStates.length).assertEqual(0);
+
+        console.info(caseName + 'Step 6.2: Repeat step 4 - full occlusion');
+        await subWindow.resize(mainWindowRect.width + 100, mainWindowRect.height + 100);
+        await subWindow.moveWindowTo(mainWindowRect.left - 50, mainWindowRect.top - 50);
+        await sleep(500);
+        expect(callbackCalled).assertFalse();
+        expect(occlusionStates.length).assertEqual(0);
+
+        console.info(caseName + 'Step 6.3: Repeat step 5 - no occlusion');
+        await subWindow.resize(200, 200);
+        await subWindow.moveWindowTo(mainWindowRect.left + mainWindowRect.width + 100,
+          mainWindowRect.top + mainWindowRect.height + 100);
+        await sleep(500);
+
+        expect(callbackCalled).assertFalse();
+        expect(occlusionStates.length).assertEqual(0);
+        console.info(caseName + 'Step 6 completed - No callbacks received after unregistering');
+        console.info(caseName + 'Step 7: Destroy subwindow');
+        await subWindow.destroyWindow();
+        console.info(caseName + 'Subwindow destroyed successfully');
+        done();
+      } catch (err) {
+        console.error(caseName + 'failed, error: ' + JSON.stringify(err));
+        await subWindow?.destroyWindow();
+        if (!isSupported) {
+          expect(err.code).assertEqual(801)
+          done()
+        } else {
+          expect().assertFail();
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_ON_OCCLUSIONSTATECHANGED_CHANGE_0600
+     * @tc.name       testOnOcclusionStatewithTwoSubwindow
+     * @tc.desc       验证2个子窗之间无遮挡、部分遮挡、完全遮挡
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testOnOcclusionStatewithTwoSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testOnOcclusionStatewithTwoSubwindow ';
+      console.log(caseName + 'begin');
+      let subWindow1: window.Window | undefined;
+      let subWindow2: window.Window | undefined;
+      // 用于记录回调状态
+      let occlusionStates: number[] = [];
+      let callbackCalled = false;
+
+      // 定义子窗1的遮挡状态变化回调
+      const occlusionCallback = (data: window.OcclusionState) => {
+        console.info(caseName + ' SubWindow1 occlusionStateChanged callback received, state: ' + data);
+        occlusionStates.push(data);
+        callbackCalled = true;
+      };
+      // 步骤1：检查SystemCapability.Window.SessionManager是否支持
+      const isSupported = canIUse("SystemCapability.Window.SessionManager");
+      console.info(caseName + ' SystemCapability.Window.SessionManager supported: ' + isSupported);
+
+      subWindow1 = await windowStage.createSubWindow('1testOnOcclusionStatewithTwoSubwindow');
+      subWindow2 = await windowStage.createSubWindow('2testOnOcclusionStatewithTwoSubwindow');
+
+      if (!isSupported) {
+        // 如果不支持，应该抛出801错误码
+        try {
+          // 步骤3：子窗1注册on('occlusionStateChanged')
+          subWindow1.on('occlusionStateChanged', occlusionCallback);
+          expect().assertFail();
+        } catch (err) {
+          console.info(caseName + ' Expected error caught: ' + JSON.stringify(err));
+          expect(err.code).assertEqual(801);
+          done();
+        }
+      } else {
+        try {
+          let windowLimits = subWindow1.getWindowLimits();
+          console.info(`${caseName} windowLimits: ${JSON.stringify(windowLimits)}`);
+          await subWindow1.setUIContent('testability/pages/First/index2');
+          await subWindow2.setUIContent('testability/pages/First/index2');
+          await sleep(100);
+
+          // 设置子窗口1的初始位置和大小
+          await subWindow1.resize(windowLimits.minWidth as number+100, windowLimits.minHeight as number+100);
+          await subWindow1.moveWindowTo(200, 200);
+          await subWindow1.showWindow();
+
+          // 设置子窗口2的初始位置和大小（先放在不相交的位置）
+          await subWindow2.resize(windowLimits.minWidth as number+600, windowLimits.minHeight as number+600);
+          await subWindow2.moveWindowTo(windowLimits.minWidth as number+800, windowLimits.minHeight as number+800);
+          await subWindow2.showWindow();
+          console.info(caseName + ' SubWindow2 shown at (1000, 1000) with size 300x250');
+
+          // 步骤3：子窗1注册on('occlusionStateChanged')监听
+          subWindow1.on('occlusionStateChanged', occlusionCallback);
+          console.info(caseName + ' SubWindow1 registered occlusionStateChanged listener');
+
+          // 等待初始状态稳定
+          await sleep(200);
+          occlusionStates = []; // 清空初始状态
+          callbackCalled = false;
+
+          // 移动子窗2，使得子窗2与子窗1有交集（部分遮挡）
+          console.info(caseName + ' Step 3: Move subWindow2 to partially occlude subWindow1');
+          await subWindow2.moveWindowTo(250, 250); // 与子窗1有交集
+
+          // 等待回调
+          await sleep(500);
+
+          // 验证：应该收到部分可见状态 (state=1)
+          expect(callbackCalled).assertTrue();
+          console.info(caseName + ' Step 3 - Occlusion states: ' + JSON.stringify(occlusionStates));
+          expect(occlusionStates.includes(1)).assertTrue(); // 部分可见
+
+          // 重置状态
+          occlusionStates = [];
+          callbackCalled = false;
+
+          // 步骤4：resize子窗2，使子窗2完全遮挡子窗1
+          console.info(caseName + ' Step 4: Resize subWindow2 to fully occlude subWindow1');
+          const subWindow1Properties = await subWindow1.getWindowProperties();
+          const subWindow1Rect = subWindow1Properties.windowRect;
+
+          console.info(caseName + ' 123.。。: ' );
+
+          // 子窗口2尺寸设置为比子窗口1更大，完全覆盖
+          await subWindow2.moveWindowTo(0, 0);
+
+          // 等待回调
+          await sleep(500);
+
+          // 验证：应该收到完全不可见状态 (state=2)
+          console.info(caseName + ' Step 4 - callbackCalled: ' + JSON.stringify(callbackCalled));
+          expect(callbackCalled).assertTrue();
+          console.info(caseName + ' Step 4 - Occlusion states: ' + JSON.stringify(occlusionStates));
+          expect(occlusionStates.includes(2)).assertTrue(); // 完全不可见
+
+          // 重置状态
+          occlusionStates = [];
+          callbackCalled = false;
+
+          // 步骤5：移动子窗2，使子窗2完全与子窗1没有交集
+          console.info(caseName + ' Step 5: Move subWindow2 to have no intersection with subWindow1');
+          await subWindow2.moveWindowTo(windowLimits.minWidth as number+1000, windowLimits.minHeight as number+1000);
+
+          // 等待回调
+          await sleep(500);
+
+          // 验证：应该收到完全可见状态 (state=0)
+          expect(callbackCalled).assertTrue();
+          console.info(caseName + ' Step 5 - Occlusion states: ' + JSON.stringify(occlusionStates));
+          expect(occlusionStates.includes(0)).assertTrue(); // 完全可见
+
+          // 步骤6：子窗1调用off('occlusionStateChanged')取消监听，重复3-5
+          console.info(caseName + ' Step 6: Unregister listener and repeat steps 3-5');
+          subWindow1.off('occlusionStateChanged', occlusionCallback);
+          console.info(caseName + ' SubWindow1 unregistered occlusionStateChanged listener');
+
+          // 重置状态
+          occlusionStates = [];
+          callbackCalled = false;
+
+          // 重复步骤3：部分遮挡
+          console.info(caseName + ' Step 6.1: Repeat step 3 - partial occlusion');
+          await subWindow2.moveWindowTo(250, 250); // 与子窗1有交集
+          await sleep(500);
+
+          // 验证：不应该有回调
+          expect(callbackCalled).assertFalse();
+          expect(occlusionStates.length).assertEqual(0);
+          console.info(caseName + ' Step 6.1 completed - No callback received');
+
+          // 重复步骤4：完全遮挡
+          console.info(caseName + ' Step 6.2: Repeat step 4 - full occlusion');
+          // await subWindow2.resize(subWindow1Rect.width + 100, subWindow1Rect.height + 100);
+          await subWindow2.moveWindowTo(0, 0);
+          await sleep(500);
+
+          // 验证：不应该有回调
+          expect(callbackCalled).assertFalse();
+          expect(occlusionStates.length).assertEqual(0);
+          console.info(caseName + ' Step 6.2 completed - No callback received');
+
+          // 重复步骤5：无遮挡
+          console.info(caseName + ' Step 6.3: Repeat step 5 - no occlusion');
+          await subWindow2.moveWindowTo(windowLimits.minWidth as number+800, windowLimits.minHeight as number+800);
+          await sleep(500);
+
+          // 验证：不应该有回调
+          expect(callbackCalled).assertFalse();
+          expect(occlusionStates.length).assertEqual(0);
+          console.info(caseName + ' Step 6 completed - No callbacks received after unregistering');
+
+          // 步骤7：销毁子窗1和子窗2
+          await subWindow1.destroyWindow();
+          await subWindow2.destroyWindow();
+          done();
+
+
+        } catch (err) {
+          console.error(caseName + ' failed, error: ' + JSON.stringify(err));
+          await subWindow1?.destroyWindow();
+          await subWindow2?.destroyWindow();
+          expect(false).assertTrue();
+          done();
+        }
+      }
+    });
+
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0100
+     * @tc.name       testIsInFreeWindowModewithdestoryedSubwindow
+     * @tc.desc       验证子窗口销毁后调用isInFreeWindowMode接口报1300002
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testIsInFreeWindowModewithdestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testIsInFreeWindowModewithdestoryedSubwindow ';
+      let subWindowClass = await windowStage.createSubWindow(caseName);
+      await subWindowClass.destroyWindow();
+      try {
+        subWindowClass.isInFreeWindowMode();
+        console.log(caseName + 'success. ');
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002);
+        expect(err.message != null).assertTrue();
+        done();
+      }
+    });
+    
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0200
+     * @tc.name       testIsInFreeWindowModewithDifferentWindowType
+     * @tc.desc       验证isInFreeWindowMode接口在主窗、子窗和系统窗都可以调用
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testIsInFreeWindowModewithDifferentWindowType', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testIsInFreeWindowModewithDifferentWindowType ';
+      let subWindowClass: window.Window | undefined;
+      let subWindowClass2: window.Window | undefined;
+      try {
+        let mainWindow = windowStage.getMainWindowSync();
+        let res1 = mainWindow.isInFreeWindowMode();
+        console.log(caseName + 'mainWindow isInFreeWindowMode: ' + res1);
+        subWindowClass = await windowStage.createSubWindow(caseName);
+        let res2 = subWindowClass.isInFreeWindowMode();
+        console.log(caseName + 'subWindow isInFreeWindowMode: ' + res2);
+        let config: window.Configuration = {
+          name: "systemWindow",
+          windowType: window.WindowType.TYPE_DIALOG,
+          ctx: context
+        };
+        let subWindowClass2 = await window.createWindow(config);
+        let res3 = subWindowClass2.isInFreeWindowMode();
+        console.log(caseName + 'subWindow isInFreeWindowMode: ' + res3);
+        if (res1) {
+          expect(res1).assertEqual(true)
+          expect(res2).assertEqual(true)
+          expect(res3).assertEqual(true)
+        } else {
+          expect(res1).assertEqual(false)
+          expect(res2).assertEqual(false)
+          expect(res3).assertEqual(false)
+        }
+        await subWindowClass.destroyWindow();
+        await subWindowClass2.destroyWindow();
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow();
+        await subWindowClass2?.destroyWindow();
+        expect().assertFail()
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_0300
+     * @tc.name       testOnOffFreeWindowModeChangewithdestoryedSubwindow
+     * @tc.desc       验证子窗口销毁后onFreeWindowModeChange和offFreeWindowModeChange监听接口抛1300002错误码
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 2
+     */
+    it('testOnOffFreeWindowModeChangewithdestoryedSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testOnOffFreeWindowModeChangewithdestoryedSubwindow ';
+      let subWindowClass: window.Window | undefined;
+      let subWindowClass2: window.Window | undefined;
+      subWindowClass = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow1');
+      subWindowClass2 = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
+      await subWindowClass.destroyWindow();
+      await subWindowClass2.destroyWindow();
+      try {
+        const callback = (res: boolean) => {
+          console.log(caseName + ' callback result: ' + res);
+        }
+        subWindowClass.on('freeWindowModeChange', callback)
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002);
+        // expect(err.message).assertEqual('This window state is abnormal.')
+      }
+      try {
+        const callback = (res: boolean) => {
+          console.log(caseName + ' callback result: ' + res);
+        }
+        subWindowClass.off('freeWindowModeChange', callback)
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        expect(err.code).assertEqual(1300002)
+        // expect(err.message).assertEqual('This window state is abnormal.')
+        done();
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0400
+     * @tc.name       testSetWindowContainerColorPermissionwithMainWindow
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口获焦时透明
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 0
+     */
+    it('testSetWindowContainerColorPermissionwithMainWindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorPermissionwithMainWindow ';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let windowStageStart = await startAbility3(caseName, context);
+      try {
+        let windowClass = windowStageStart.getMainWindowSync();
+        windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+        if (isSupport && isPCStatus != '') {
+          await terminateAbility3(caseName);
+          done();
+        } else {
+          await terminateAbility3(caseName);
+          expect().assertFail()
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        await terminateAbility3(caseName);
+        if (!isSupport || isPCStatus == '') {
+          expect(err.code).assertEqual(801)
+          done();
+        } else {
+          expect().assertFail()
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0500
+     * @tc.name       testSetWindowContainerColorPermissionwithInactiveTransparent
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口失焦时透明
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testSetWindowContainerColorPermissionwithInactiveTransparent', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveTransparent ';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let windowStageStart = await startAbility3(caseName, context);
+      try {
+        let windowClass = windowStageStart.getMainWindowSync();
+        windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+        if (isSupport && isPCStatus != '') {
+          await terminateAbility3(caseName);
+          done();
+        } else {
+          await terminateAbility3(caseName);
+          expect().assertFail()
+          done();
+        }
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        await terminateAbility3(caseName);
+        if (!isSupport || isPCStatus == '') {
+          expect(err.code).assertEqual(801)
+          done();
+        } else {
+          expect().assertFail()
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0600
+     * @tc.name       testSetWindowContainerColorPermissionwithSubwindow
+     * @tc.desc       验证普通应用配置权限时子窗口调用setWindowContainerColor
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testSetWindowContainerColorPermissionwithSubwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorPermissionwithSubwindow ';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let subWindowClass: window.Window | undefined;
+      try {
+        subWindowClass = await windowStage.createSubWindow('testSetWindowContainerColorPermissionwithSubwindow')
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow()
+        subWindowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+        await subWindowClass.destroyWindow()
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow()
+        if (isSupport && isPCStatus != '') {
+          expect(err.code).assertEqual(1300004)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0700
+     * @tc.name       testSetWindowContainerColorPermissionwithDialogwindow
+     * @tc.desc       验证普通应用配置权限时dialog窗调用setWindowContainerColor接口
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testSetWindowContainerColorPermissionwithDialogwindow', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorPermissionwithDialogwindow ';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let subWindowClass: window.Window | undefined;
+      let config: window.Configuration = {
+        name: "systemWindow",
+        windowType: window.WindowType.TYPE_DIALOG,
+        ctx: context
+      };
+      try {
+        subWindowClass = await window.createWindow(config);
+        await subWindowClass.setUIContent('testability/pages/First/index2');
+        await subWindowClass.showWindow()
+        subWindowClass.setWindowContainerColor('#00000000', '#FF00ff33');
+        await subWindowClass.destroyWindow()
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        await subWindowClass?.destroyWindow()
+        if (isSupport && isPCStatus != '') {
+          expect(err.code).assertEqual(1300004)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0800
+     * @tc.name       testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口，参数类型透明度alpha非FF开头
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveColorErrorParameterAlpha ';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let windowStageStart = await startAbility3(caseName, context);
+      try {
+        let windowClass = windowStageStart.getMainWindowSync();
+        windowClass.setWindowContainerColor('#00000000', '#fc007bff');
+        await terminateAbility3(caseName);
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        await terminateAbility3(caseName);
+        if (isSupport && isPCStatus != '') {
+          expect(err.code).assertEqual(401)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number     SUB_BASIC_WMS_SETWINDOWCONTAINERCOLOR_0900
+     * @tc.name       testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError
+     * @tc.desc       验证普通应用配置权限时主窗调用setWindowContainerColor接口，参数类型错误
+     * @tc.size       MediumTest
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testSetWindowContainerColorPermissionwithInactiveColorErrorParameterError ';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.log(caseName + ' isSupport: ' + isSupport);
+      let windowStageStart = await startAbility3(caseName, context);
+      try {
+        let windowClass = windowStageStart.getMainWindowSync();
+        windowClass.setWindowContainerColor('#00000000', '#mmm');
+        await terminateAbility3(caseName);
+        expect().assertFail()
+        done();
+      } catch (err) {
+        console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+        await terminateAbility3(caseName);
+        if (isSupport && isPCStatus != '') {
+          expect(err.code).assertEqual(401)
+          done();
+        } else {
+          expect(err.code).assertEqual(801)
+          done();
+        }
+      }
+    });
+
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0100
+     * @tc.name    testSetStartWindowBackgroundColor_0
+     * @tc.desc    setStartWindowBackgroundColor入参长度0
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetStartWindowBackgroundColor_0', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testSetStartWindowBackgroundColor_0';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      try {
+        let promise = window.setStartWindowBackgroundColor('', '', ColorMetrics.numeric(0xff000000));
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting the starting window color.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`caseName+ Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
+            done()
+          }else {
+            expect(err.code).assertEqual(1300003);
+            expect(err.message).assertEqual('This window manager service works abnormally.[window][setStartWindowBackgroundColor]');
+            done()
+
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0200
+     * @tc.name    testSetStartWindowBackgroundColor_200
+     * @tc.desc    setStartWindowBackgroundColor入参长度200
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetStartWindowBackgroundColor_200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testSetStartWindowBackgroundColor_200';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      try {
+        let promise = window.setStartWindowBackgroundColor('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          ColorMetrics.numeric(0xff000000));
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting the starting window color.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(`caseName+ Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
+            done()
+          }else {
+            expect(err.code).assertEqual(1300003);
+            expect(err.message).assertEqual('This window manager service works abnormally.[window][setStartWindowBackgroundColor]');
+            done()
+
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+    /**
+     * @tc.number  SUB_BASIC_WMS_FUNCTION_SET_START_BACKGROUND_COLOR_0300
+     * @tc.name    testSetStartWindowBackgroundColor_201
+     * @tc.desc    setStartWindowBackgroundColor入参长度201
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 3
+     */
+    it('testSetStartWindowBackgroundColor_201', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (done: Function) => {
+      let caseName = 'testSetStartWindowBackgroundColor_201';
+      let isSupport = canIUse('SystemCapability.Window.SessionManager')
+      console.info(caseName+ ' isSupport:'+isSupport);
+      try {
+        let promise = window.setStartWindowBackgroundColor('aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          'aaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaaa',
+          ColorMetrics.numeric(0xff000000));
+        promise.then(() => {
+          console.info(caseName+ ' Succeeded in setting the starting window color.');
+          expect(false).assertTrue();
+          done();
+        }).catch((err: BusinessError) => {
+          console.error(caseName+` Failed to set the starting window color. Cause code: ${err.code}, message: ${err.message}`);
+          if(!isSupport){
+            expect(err.code).assertEqual(801);
+            expect(err.message).assertEqual('Capability not supported. Failed to call the API due to limited device capabilities.[window][setStartWindowBackgroundColor]');
+            done()
+          }else {
+            expect(false).assertTrue();
+            done();
+          }
+        });
+      } catch(e) {
+        console.error( caseName+  `Failed. Cause:${e.code}, message:${e.message}`);
+        expect(e.code).assertEqual(1300016);
+        expect(e.message).assertEqual('Parameter validation error.[window][setStartWindowBackgroundColor]msg: Parameter moduleName exceeds the allowed length');
+        done();
+      }
     })
 
   })

@@ -58,12 +58,12 @@ export default function BuiltinsFloatLiteralTest() {
     })
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0100
-     * @tc.name      : testFloatLiteral
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFloatLiteral
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0100
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testFloatLiteral', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -92,12 +92,12 @@ export default function BuiltinsFloatLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0200
-     * @tc.name      : testParseFloat
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testParseFloat
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0200
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testParseFloat', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -127,12 +127,12 @@ export default function BuiltinsFloatLiteralTest() {
 
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0300
-     * @tc.name      : testScientific
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testScientific
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0300
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testScientific', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -161,12 +161,12 @@ export default function BuiltinsFloatLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0400
-     * @tc.name      : testUnderscore
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testUnderscore
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0400
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testUnderscore', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -195,12 +195,12 @@ export default function BuiltinsFloatLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0500
-     * @tc.name      : testArraySum
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testArraySum
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0500
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testArraySum', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -229,12 +229,12 @@ export default function BuiltinsFloatLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0600
-     * @tc.name      : testAdd
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testAdd
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0600
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testAdd', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -263,12 +263,12 @@ export default function BuiltinsFloatLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0700
-     * @tc.name      : testFloor
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testFloor
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0700
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testFloor', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -297,12 +297,12 @@ export default function BuiltinsFloatLiteralTest() {
       });
 
     /**
-     * @tc.number    : SUB_FLOAT_LITERAL_TEST_0800
-     * @tc.name      : testCompoundInterest
-     * @tc.desc      : Test
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   testCompoundInterest
+     * @tc.number SUB_FLOAT_LITERAL_TEST_0800
+     * @tc.desc   Test
+     * @tc.type   FUNCTION
+     * @tc.size   SMALLTEST
+     * @tc.level  LEVEL0
      */
     it('testCompoundInterest', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {

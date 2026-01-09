@@ -21,6 +21,7 @@ import {
   Component,
   CustomBuilderT,
   Entry,
+  NativeXComponentPointer,
   NodeContainer,
   OnPageBeginEvent,
   Row,
@@ -40,7 +41,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import webview from '@ohos.web.webview';
-import { BusinessError, Callback } from '@ohos.base';
+import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { BuilderNode, FrameNode, NodeController, NodeRenderType } from '@ohos.arkui.node';
 import Utils from '../../src/test/Util.test';
 import emitter from '@ohos.events.emitter';
@@ -110,22 +111,22 @@ class AVPlayerDemo {
   setAVPlayerCallback(avPlayer: media.AVPlayer, listener: AVPlayerListener) {
     this.listener = listener
   // seek操作结果回调函数
-  avPlayer.on('seekDone', (seekDoneTime: Int) => {
+  avPlayer.onSeekDone((seekDoneTime: Int) => {
     console.info('AVPlayer seek succeeded, seek time is ${seekDoneTime}');
   })
   // error回调监听函数，当avPlayer在操作过程中出现错误时调用reset接口触发重置流程
-  avPlayer.on('error', (err: BusinessError) => {
+  avPlayer.onError((err: BusinessError) => {
     console.error(`[BrowserShell] Invoke avPlayer failed, code is ${err.code}, message is ${err.message}`);
     listener?.onError();
     avPlayer.reset(); // 调用reset重置资源，触发idle状态
   })
   // volumeChange
-  avPlayer.on('volumeChange', (vol:Double) => {
+  avPlayer.onVolumeChange((vol:Double) => {
   console.info('volumeChange success,and new volume is :' + vol)
   listener?.onVolume && listener?.onVolume(vol);
   })
   // 状态机变化回调函数
-  avPlayer.on('stateChange', async (state: "idle"|"initialized"|"prepared"|"playing"|"paused"|"completed"|"stopped"|"released"|"error", reason: media.StateChangeReason): void => {
+  avPlayer.onStateChange(async (state: "idle"|"initialized"|"prepared"|"playing"|"paused"|"completed"|"stopped"|"released"|"error", reason: media.StateChangeReason): void => {
     switch (state) {
       case 'idle': // 成功调用reset接口后触发该状态机上报
         console.info('AVPlayer state idle called.');
@@ -165,28 +166,28 @@ class AVPlayerDemo {
         break;
     }
   })
-  avPlayer.on('durationUpdate', (duration: Int) => {
+  avPlayer.onDurationUpdate((duration: Int) => {
     console.info('AVPlayer state durationUpdate success,new duration is:' + duration)
     listener?.onDurationChanged(duration/1000);
   })
-  avPlayer.on('seekDone', (seekDoneTime: Int) => {
+  avPlayer.onSeekDone((seekDoneTime: Int) => {
     console.info('seekDone success,and seek time is:' + seekDoneTime)
     listener?.onSeekFinished(seekDoneTime);
   })
-  avPlayer.on('speedDone', (speed: Int) => {
+  avPlayer.onSpeedDone((speed: Int) => {
     console.info('AVPlayer state durationUpdate success,new speed is:' + speed)
     listener?.onPlaybackRateChanged(speed);
   })
-  avPlayer.on('timeUpdate', (time: Int) => {
+  avPlayer.onTimeUpdate((time: Int) => {
     listener?.onTimeUpdate(time/1000);
   })
-  avPlayer.on('bufferingUpdate', (infoType: media.BufferingInfoType, value: Int) => {
+  avPlayer.onBufferingUpdate((infoType: media.BufferingInfoType, value: Int) => {
     console.info('AVPlayer state bufferingUpdate success, and InfoType value is:' + infoType + ', value is :' + value)
     if (infoType == media.BufferingInfoType.BUFFERING_PERCENT) {
     }
     listener?.onBufferedTimeChanged(value);
   })
-  avPlayer.on('videoSizeChange', (width: Int, height: Int) => {
+  avPlayer.onVideoSizeChange((width: Int, height: Int) => {
     console.info('AVPlayer state onVideoSizeChange success, and width is:' + width + ', height is :' + height)
     listener?.onVideoSizeChanged(width, height);
   })
@@ -198,7 +199,7 @@ class AVPlayerDemo {
     // 创建avPlayer实例对象
     this.avPlayer = await media.createAVPlayer();
     // 创建状态机变化回调函数
-    this.setAVPlayerCallback(this?.avPlayer!, listener);
+    this.setAVPlayerCallback(this.avPlayer!, listener);
     this.isSeek = true; // 不支持seek操作
     let av_player = this.avPlayer
     if(av_player){
@@ -597,6 +598,7 @@ struct MyComponent {
         XComponent({
           id: 'video_player_id',
           type: XComponentType.SURFACE ,
+          nativeXComponentHandler: (ptr: NativeXComponentPointer) => {},
           controller: this.mXComponentController
         } as XComponentParameters )
           .onLoad(() : void => {
@@ -775,7 +777,7 @@ struct WebComponent {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data && data['ACTION'] != null) {
         console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);

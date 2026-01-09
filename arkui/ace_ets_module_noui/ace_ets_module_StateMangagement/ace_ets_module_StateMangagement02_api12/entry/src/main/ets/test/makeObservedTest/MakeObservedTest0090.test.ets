@@ -46,12 +46,12 @@ export default function MakeObservedTest0090() {
     });
 
     /**
-     * @tc.number    SUB_ACE_TS_STATUSMANAGER_MAKEOBSERVED_0090
-     * @tc.name      MakeObservedTest0090_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   MakeObservedTest0090_001
+     * @tc.number SUB_ACE_TS_STATUSMANAGER_MAKEOBSERVED_0090
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MakeObservedTest0090_001', Level.LEVEL0, async (done: Function) => {
       console.info('[MakeObservedTest0090_001] START');

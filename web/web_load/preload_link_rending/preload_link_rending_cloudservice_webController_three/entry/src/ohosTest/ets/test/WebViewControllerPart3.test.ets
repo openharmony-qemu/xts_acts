@@ -59,14 +59,14 @@ export default function webViewControllerPart3Test() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_WEB_WEBVIEWCONTROLLER_PREFETCHPAGE_0100
-    * @tc.name       : testPrefetchPage001
-    * @tc.desc       : test prefetchPage
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 0
-    */
+    /**
+     * @tc.name   testPrefetchPage001
+     * @tc.number SUB_WEB_WEBVIEWCONTROLLER_PREFETCHPAGE_0100
+     * @tc.desc   test prefetchPage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPrefetchPage001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent("testPrefetchPage001", EVENT_ID_SET_EMIT_KEY);
       let isReturn = false;

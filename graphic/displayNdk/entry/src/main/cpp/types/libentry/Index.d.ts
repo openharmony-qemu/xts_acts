@@ -58,3 +58,7 @@ export const unregisterDisplayAddListener_ErrCode140004: () => number;
 export const registerDisplayRemoveListener: () => number;
 export const unregisterDisplayRemoveListener: () => number;
 export const registerDisplayRemoveListener_ErrCode140004: () => number;
+
+export const testNativeDisplayManager_ErrorCode_enum: () => number;
+export const testNativeDisplayManager_FoldDisplayMode_enum: () => number;
+export const testNativeDisplayManager_SourceMode_enum: () => number;

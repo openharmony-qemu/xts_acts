@@ -46,12 +46,12 @@ export default function ParamTestJsunit() {
     });
 
     /**
-     * @tc.number    ParamTestJsunit_001
-     * @tc.name      ParamTestJsunit_001
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   ParamTestJsunit_001
+     * @tc.number ParamTestJsunit_001
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamTestJsunit_001', Level.LEVEL0, async (done: Function) => {
       console.info('[ParamTestJsunit_001] START');
@@ -75,12 +75,12 @@ export default function ParamTestJsunit() {
     });
 
     /**
-     * @tc.number    ParamTestJsunit_002
-     * @tc.name      ParamTestJsunit_002
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ParamTestJsunit_002
+     * @tc.number ParamTestJsunit_002
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamTestJsunit_002', Level.LEVEL0, async (done: Function) => {
       console.info('[ParamTestJsunit_002] START');
@@ -104,12 +104,12 @@ export default function ParamTestJsunit() {
     });
 
     /**
-     * @tc.number    ParamTestJsunit_003
-     * @tc.name      ParamTestJsunit_003
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ParamTestJsunit_003
+     * @tc.number ParamTestJsunit_003
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamTestJsunit_003', Level.LEVEL0, async (done: Function) => {
       console.info('[ParamTestJsunit_003] START');
@@ -133,12 +133,12 @@ export default function ParamTestJsunit() {
     });
 
     /**
-     * @tc.number    ParamTestJsunit_004
-     * @tc.name      ParamTestJsunit_004
-     * @tc.desc      Frequently updating and modifying the values of parent components
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   ParamTestJsunit_004
+     * @tc.number ParamTestJsunit_004
+     * @tc.desc   Frequently updating and modifying the values of parent components
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('ParamTestJsunit_004', Level.LEVEL0, async (done: Function) => {
       console.info('[ParamTestJsunit_004] START');

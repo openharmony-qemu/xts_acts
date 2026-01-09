@@ -45,12 +45,12 @@ export default function VOneToVTwoTest0010() {
     });
 
     /**
-     * @tc.number    VOneToVTwoTest0010
-     * @tc.name      VOneToVTwoTest0010_001
-     * @tc.desc      Persistently store UI related data
-     * @tc.level     Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   VOneToVTwoTest0010_001
+     * @tc.number VOneToVTwoTest0010
+     * @tc.desc   Persistently store UI related data
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('VOneToVTwoTest0010_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('[VOneToVTwoTest0010_001] START');

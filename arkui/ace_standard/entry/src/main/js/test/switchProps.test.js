@@ -79,9 +79,12 @@ export default function switchPropsJsTest() {
         })
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchIdProp
-         * @tc.desc      ACE
+         * @tc.name   testSwitchIdProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchIdProp', Level.LEVEL0, async function(done) {
             console.info('testSwitchIdProp START');
@@ -96,6 +99,14 @@ export default function switchPropsJsTest() {
             done();
         });
 
+        /**
+         * @tc.name   testSwitchClassProp
+         * @tc.number testSwitchClassProp
+         * @tc.desc   testSwitchClassProp
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('testSwitchClassProp', Level.LEVEL0, async function(done) {
             console.info('testSwitchClassProp START');
             console.info("[switchProps] get globalThis.value is: " + JSON.stringify(globalThis.value));
@@ -111,9 +122,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchClassPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchClassPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchClassPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchClassPropNone START');
@@ -131,9 +145,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchRefProp
-         * @tc.desc      ACE
+         * @tc.name   testSwitchRefProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchRefProp', Level.LEVEL0, async function(done) {
             console.info('testSwitchRefProp START');
@@ -150,9 +167,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchRefPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchRefPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchRefPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchRefPropNone START');
@@ -170,9 +190,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDisabledPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDisabledPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDisabledPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwitchDisabledPropTrue START');
@@ -189,9 +212,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDisabledPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDisabledPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDisabledPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwitchDisabledPropFalse START');
@@ -208,9 +234,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDisabledPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDisabledPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDisabledPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchDisabledPropNone START');
@@ -227,9 +256,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchFocusablePropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwitchFocusablePropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchFocusablePropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwitchFocusablePropTrue START');
@@ -246,9 +278,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchFocusablePropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwitchFocusablePropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchFocusablePropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwitchFocusablePropFalse START');
@@ -265,9 +300,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchFocusablePropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchFocusablePropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchFocusablePropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchFocusablePropNone START');
@@ -284,9 +322,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDataProp
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDataProp
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDataProp', Level.LEVEL0, async function(done) {
             console.info('testSwitchDataProp START');
@@ -304,9 +345,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDataPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDataPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDataPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchDataPropNone START');
@@ -324,9 +368,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchClickEffectPropSmall
-         * @tc.desc      ACE
+         * @tc.name   testSwitchClickEffectPropSmall
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchClickEffectPropSmall', Level.LEVEL0, async function(done) {
             console.info('testSwitchClickEffectPropSmall START');
@@ -343,9 +390,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchClickEffectPropMedium
-         * @tc.desc      ACE
+         * @tc.name   testSwitchClickEffectPropMedium
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchClickEffectPropMedium', Level.LEVEL0, async function(done) {
             console.info('testSwitchClickEffectPropMedium START');
@@ -362,9 +412,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchClickEffectPropLarge
-         * @tc.desc      ACE
+         * @tc.name   testSwitchClickEffectPropLarge
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchClickEffectPropLarge', Level.LEVEL0, async function(done) {
             console.info('testSwitchClickEffectPropLarge START');
@@ -381,9 +434,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchClickEffectPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchClickEffectPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchClickEffectPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchClickEffectPropNone START');
@@ -401,9 +457,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDirPropRtl
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDirPropRtl
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDirPropRtl', Level.LEVEL0, async function(done) {
             console.info('testSwitchDirPropRtl START');
@@ -420,9 +479,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDirPropLtr
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDirPropLtr
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDirPropLtr', Level.LEVEL0, async function(done) {
             console.info('testSwitchDirPropLtr START');
@@ -439,9 +501,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDirPropAuto
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDirPropAuto
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDirPropAuto', Level.LEVEL0, async function(done) {
             console.info('testSwitchDirPropAuto START');
@@ -458,9 +523,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchDirPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchDirPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchDirPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchDirPropNone START');
@@ -477,9 +545,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchForPropNull
-         * @tc.desc      ACE
+         * @tc.name   testSwitchForPropNull
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchForPropNull', Level.LEVEL0, async function(done) {
             console.info('testSwitchForPropNull START');
@@ -497,9 +568,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchForPropOne
-         * @tc.desc      ACE
+         * @tc.name   testSwitchForPropOne
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchForPropOne', Level.LEVEL0, async function(done) {
             console.info('testSwitchForPropOne START');
@@ -517,9 +591,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchForPropThree
-         * @tc.desc      ACE
+         * @tc.name   testSwitchForPropThree
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchForPropThree', Level.LEVEL0, async function(done) {
             console.info('testSwitchForPropThree START');
@@ -537,9 +614,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchIfPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwitchIfPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchIfPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwitchIfPropTrue START');
@@ -557,9 +637,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchShowPropTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwitchShowPropTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchShowPropTrue', Level.LEVEL0, async function(done) {
             console.info('testSwitchShowPropTrue START');
@@ -577,9 +660,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchShowPropFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwitchShowPropFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchShowPropFalse', Level.LEVEL0, async function(done) {
             console.info('testSwitchShowPropFalse START');
@@ -597,9 +683,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchShowPropNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchShowPropNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchShowPropNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchShowPropNone START');
@@ -619,9 +708,12 @@ export default function switchPropsJsTest() {
         //   特有属性
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchCheckedTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwitchCheckedTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchCheckedTrue', Level.LEVEL0, async function(done) {
             console.info('testSwitchCheckedTrue START');
@@ -639,9 +731,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchCheckedFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwitchCheckedFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchCheckedFalse', Level.LEVEL0, async function(done) {
             console.info('testSwitchCheckedFalse START');
@@ -659,9 +754,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchCheckedNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchCheckedNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchCheckedNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchCheckedNone START');
@@ -679,9 +777,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchShowTextTrue
-         * @tc.desc      ACE
+         * @tc.name   testSwitchShowTextTrue
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchShowTextTrue', Level.LEVEL0, async function(done) {
             console.info('testSwitchShowTextTrue START');
@@ -699,9 +800,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchShowTextFalse
-         * @tc.desc      ACE
+         * @tc.name   testSwitchShowTextFalse
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchShowTextFalse', Level.LEVEL0, async function(done) {
             console.info('testSwitchShowTextFalse START');
@@ -719,9 +823,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchShowTextNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchShowTextNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchShowTextNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchShowTextNone START');
@@ -739,9 +846,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchTextOn
-         * @tc.desc      ACE
+         * @tc.name   testSwitchTextOn
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchTextOn', Level.LEVEL0, async function(done) {
             console.info('testSwitchTextOn START');
@@ -759,9 +869,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchTextOnNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchTextOnNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchTextOnNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchTextOnNone START');
@@ -779,9 +892,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchTextOff
-         * @tc.desc      ACE
+         * @tc.name   testSwitchTextOff
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchTextOff', Level.LEVEL0, async function(done) {
             console.info('testSwitchTextOff START');
@@ -799,9 +915,12 @@ export default function switchPropsJsTest() {
         });
 
         /**
-         * @tc.number    SUB_ACE_BASIC_COMPONENT_JS_API_0100
-         * @tc.name      testSwitchTextOffNone
-         * @tc.desc      ACE
+         * @tc.name   testSwitchTextOffNone
+         * @tc.number SUB_ACE_BASIC_COMPONENT_JS_API_0100
+         * @tc.desc   ACE
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('testSwitchTextOffNone', Level.LEVEL0, async function(done) {
             console.info('testSwitchTextOffNone START');

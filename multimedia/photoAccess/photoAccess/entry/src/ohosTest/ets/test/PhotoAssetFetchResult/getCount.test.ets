@@ -14,10 +14,11 @@
  */
 
 import photoAccessHelper from '@ohos.file.photoAccessHelper'
+import dataSharePredicates from '@ohos.data.dataSharePredicates'
 import {
   fetchOption,
   photoType,
-  photoKeys, getPermission, driveFn, sleep
+  photoKeys, getPermission, driveFn, sleep, albumSubtype, albumType
 } from '../common'
 import common from '@ohos.app.ability.common';
 import { beforeAll, expect, Level } from '@ohos/hypium';
@@ -43,6 +44,22 @@ export default function assetGetCountTest () {
       }
     }
 
+    let getAlbum = async (testNum: string, type: photoAccessHelper.AlbumType, subtype: photoAccessHelper.AlbumSubtype, key: string = '', value: string | number = '') => {
+      let predicatesAlbum: dataSharePredicates.DataSharePredicates = new dataSharePredicates.DataSharePredicates();
+      if (key != '') {
+        predicatesAlbum.equalTo(key, value);
+      }
+      let fetchOptionsAlbum: photoAccessHelper.FetchOptions = {
+        fetchColumns: [],
+        predicates: predicatesAlbum
+      };
+      let albumFetchResult: photoAccessHelper.FetchResult<photoAccessHelper.Album> =
+      await helper.getAlbums(type, subtype, fetchOptionsAlbum);
+      console.info(testNum + ' album count is ' + albumFetchResult.getCount());
+      let album: photoAccessHelper.Album = await albumFetchResult.getLastObject();
+      return album;
+    }
+
     beforeAll(async () => {
       console.info('beforeAll case');
       await getPermission();
@@ -51,12 +68,12 @@ export default function assetGetCountTest () {
     });
     //image
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0000
-     * @tc.name      : getCount_callback_000
-     * @tc.desc      : getCount image
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getCount_callback_000
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0000
+     * @tc.desc   getCount image
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getCount_callback_000', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getCount_callback_000';
@@ -66,17 +83,145 @@ export default function assetGetCountTest () {
     
     //video
     /**
-     * @tc.number    : SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0100
-     * @tc.name      : getCount_callback_001
-     * @tc.desc      : getCount video
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.name   getCount_callback_001
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0100
+     * @tc.desc   getCount video
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('getCount_callback_001', Level.LEVEL0, async (done:Function)=> {
       const testNum = 'getCount_callback_001';
       const fetchOps:ESObject = fetchOption(testNum, photoKeys.PHOTO_TYPE, photoType.VIDEO);
       await getCountCallbackTest(done, testNum, fetchOps);
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0200
+     * @tc.name   getCount_callback_002
+     * @tc.desc   getCount with system album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getCount_callback_002', Level.LEVEL0, async (done:Function)=> {
+      const testNum = 'getCount_callback_002';
+      let subTypes: Array<photoAccessHelper.AlbumSubtype> = [
+        albumSubtype.VIDEO,
+        albumSubtype.FAVORITE,
+        albumSubtype.TRASH,
+        albumSubtype.CAMERA,
+        albumSubtype.IMAGE,
+        albumSubtype.SCREENSHOT,
+        albumSubtype.CLOUD_ENHANCEMENT,
+      ];
+      try {
+        for (let i = 0; i < subTypes.length; i++) {
+          let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SYSTEM, subTypes[i]);
+          const predicates = new dataSharePredicates.DataSharePredicates();
+          const ops: photoAccessHelper.FetchOptions = {
+            fetchColumns: [],
+            predicates: predicates
+          };
+          const fetchResult = await album.getAssets(ops);
+          console.info(`${testNum} asset count is: ${fetchResult.getCount()}`);
+          let count: number = fetchResult.getCount();
+          expect(count >= 0).assertTrue();
+        }
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0300
+     * @tc.name   getCount_callback_003
+     * @tc.desc   getCount with user album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getCount_callback_003', Level.LEVEL0, async (done:Function)=> {
+      const testNum: string = 'getCount_callback_003';
+      try {
+        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        const predicates = new dataSharePredicates.DataSharePredicates();
+        const ops: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        };
+        const fetchResult = await album.getAssets(ops);
+        console.info(`${testNum} asset count is: ${fetchResult.getCount()}`);
+        let count: number = fetchResult.getCount();
+        expect(count >= 0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0400
+     * @tc.name   getCount_callback_004
+     * @tc.desc   getCount with deleted user album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getCount_callback_004', Level.LEVEL0, async (done:Function)=> {
+      const testNum: string = 'getCount_callback_004';
+      try {
+        let album: photoAccessHelper.Album = await helper.createAlbum(testNum);
+        await photoAccessHelper.MediaAlbumChangeRequest.deleteAlbums(testContext, [album]);
+        const predicates = new dataSharePredicates.DataSharePredicates();
+        const ops: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        };
+        const fetchResult = await album.getAssets(ops);
+        console.info(`${testNum} asset count is: ${fetchResult.getCount()}`);
+        let count: number = fetchResult.getCount();
+        expect(count >= 0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number SUB_PHOTOACCESS_HELPER_CALLBACK_GET_COUNT_0500
+     * @tc.name   getCount_callback_005
+     * @tc.desc   getCount with source album assets
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
+     */
+    it('getCount_callback_005', Level.LEVEL0, async (done:Function)=> {
+      const testNum = 'getCount_callback_005';
+      try {
+        let album: photoAccessHelper.Album = await getAlbum(testNum, albumType.SOURCE, albumSubtype.SOURCE_GENERIC);
+        const predicates = new dataSharePredicates.DataSharePredicates();
+        const ops: photoAccessHelper.FetchOptions = {
+          fetchColumns: [],
+          predicates: predicates
+        };
+        const fetchResult = await album.getAssets(ops);
+        console.info(`${testNum} asset count is: ${fetchResult.getCount()}`);
+        let count: number = fetchResult.getCount();
+        expect(count >= 0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(`${testNum} failed; error: ${error.code} ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
     });
   })
 }

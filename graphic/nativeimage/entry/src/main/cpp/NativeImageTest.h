@@ -30,6 +30,7 @@
 #include <iostream>
 #include <map>
 #include <native_image/graphic_error_code.h>
+#include <common/native_common.h>
 
 #define SUCCESS 0
 #define FAIL (-1)
@@ -58,8 +59,27 @@
 #define NUMBER_5000 5000
 #define NUMBER_99999 99999
 #define NUMBER_100000 100000
-#define ERRCODE_40001000 40001000
-#define ERRCODE_40601000 40601000
+#define NUM_MAX 4294967295
+#define ERRORCODE_0 0
+#define ERRORCODE_30001000 30001000
+#define ERRORCODE_40001000 40001000
+#define ERRORCODE_40301000 40301000
+#define ERRORCODE_40601000 40601000
+#define ERRORCODE_41202000 41202000
+#define ERRORCODE_41203000 41203000
+#define ERRORCODE_41206000 41206000
+#define ERRORCODE_41207000 41207000
+#define ERRORCODE_41208000 41208000
+#define ERRORCODE_41209000 41209000
+#define ERRORCODE_41210000 41210000
+#define ERRORCODE_41211000 41211000
+#define ERRORCODE_41212000 41212000
+#define ERRORCODE_50102000 50102000
+#define ERRORCODE_50002000 50002000
+#define ERRORCODE_50007000 50007000
+#define ERRORCODE_50401000 50401000
+#define ERRORCODE_60001000 60001000
+#define ERRORCODE_60002000 60002000
 
 class InitNativeWindow {
 private:
@@ -229,4 +249,16 @@ napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal01(napi_env env, 
 napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal02(napi_env env, napi_callback_info info);
 napi_value OHNativeImageAcquireLatestNativeWindowBufferAbNormal03(napi_env env, napi_callback_info info);
 napi_value OHNativeImageAcquireLatestNativeWindowBufferCall(napi_env env, napi_callback_info info);
+napi_value OHNativeImageCreateWithSingleBufferModeChangeTextureTarget(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNull(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNull1(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNormal0(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedNormal1(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedNull(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedNormal(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedNormal1(napi_env env, napi_callback_info info);
+napi_value OHNativeImageIsReleasedCalls(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleasedCalls(napi_env env, napi_callback_info info);
+napi_value OHNativeImageReleaseAbnormal(napi_env env, napi_callback_info info);
+napi_value OHNativeErrorCodeCover(napi_env env, napi_callback_info info);
 #endif // NATIVEIMAGE_TEST_H

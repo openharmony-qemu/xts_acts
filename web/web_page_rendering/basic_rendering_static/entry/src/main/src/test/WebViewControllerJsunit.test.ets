@@ -18,7 +18,7 @@ import events_emitter from '@ohos.events.emitter';
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import UIAbility from '@ohos.app.ability.UIAbility';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import common from '@ohos.app.ability.common';
 import inspector from '@ohos.arkui.inspector';
 import { Driver, ON } from '@ohos.UiTest';
@@ -50,7 +50,7 @@ export default function webViewControllerJsunit() {
     afterEach(async () => {
       console.info('web afterEach start:'+emitKey);
       try {
-            let tempData: Record<string, Object> = {};
+            let tempData: Record<string, RecordData> = {};
             tempData['ACTION'] = emitKey;
             let backData: events_emitter.EventData = {
               data: tempData
@@ -68,10 +68,13 @@ export default function webViewControllerJsunit() {
       await Utils.msSleep(2000);
     })
 
-    /*
-     * @tc.number: SUB_ACE_BASIC_ETS_API_STATIC_0100
-     * @tc.name: testGetWebIdStatic
-     * @tc.desc: Get the WebId
+    /**
+     * @tc.name   testGetWebIdStatic
+     * @tc.number SUB_ACE_BASIC_ETS_API_STATIC_0100
+     * @tc.desc   Get the WebId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetWebIdStatic',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
       await Utils.msSleep(2000);
@@ -82,10 +85,13 @@ export default function webViewControllerJsunit() {
       done();
     })
 
-    /*
-     * @tc.number: SUB_ACE_BASIC_ETS_API_STATIC_0200
-     * @tc.name: emitonSwitchNextPage
-     * @tc.desc: PAGE_REDIRECT
+    /**
+     * @tc.name   emitonSwitchNextPage
+     * @tc.number SUB_ACE_BASIC_ETS_API_STATIC_0200
+     * @tc.desc   PAGE_REDIRECT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('emitonSwitchNextPage', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {

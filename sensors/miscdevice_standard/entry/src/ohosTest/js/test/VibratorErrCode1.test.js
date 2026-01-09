@@ -71,13 +71,13 @@ export default function VibratorTest() {
       // This API supports only one parameter: clear action function.
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_VibratorTest0100
-     * @tc.name:testVibratorTest_0100
-     * @tc.desc:stopVibrationSync(): void Device operation failed.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   VibratorTest_0100
+     * @tc.number SUB_SensorsSystem_VibratorTest0100
+     * @tc.desc   stopVibrationSync(): void Device operation failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('VibratorTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'VibratorTest_0100';
@@ -114,13 +114,13 @@ export default function VibratorTest() {
         });
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_VibratorTest0200
-     * @tc.name:testVibratorTest_0200
-     * @tc.desc:stopVibrationSync(): void Device operation failed.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   VibratorTest_0200
+     * @tc.number SUB_SensorsSystem_VibratorTest0200
+     * @tc.desc   stopVibrationSync(): void Device operation failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('VibratorTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'VibratorTest_0200';
@@ -157,13 +157,13 @@ export default function VibratorTest() {
         });
     })
 
-    /*
-     * @tc.number:SUB_SensorsSystem_VibratorTest0300
-     * @tc.name:testVibratorTest_0300
-     * @tc.desc:stopVibrationSync(): void Device operation failed.
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   VibratorTest_0300
+     * @tc.number SUB_SensorsSystem_VibratorTest0300
+     * @tc.desc   stopVibrationSync(): void Device operation failed.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('VibratorTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done) => {
       let TAG = 'VibratorTest_0300';

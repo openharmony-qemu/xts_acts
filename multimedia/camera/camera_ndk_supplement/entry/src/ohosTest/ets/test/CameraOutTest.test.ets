@@ -101,12 +101,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_RegisterCallbackInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_RegisterCallbackInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_RegisterCallbackInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_RegisterCallbackInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_RegisterCallbackInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.RegisterCallbackInvalidParm()
@@ -115,12 +115,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_UnregisterCallbackInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_UnregisterCallbackInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_UnregisterCallbackInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_UnregisterCallbackInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_UnregisterCallbackInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.UnregisterCallbackInvalidParm()
@@ -129,12 +129,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputStart_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputStart_0100
-     * @tc.desc     Test VideoOutputStart
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputStart_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputStart_0100
+     * @tc.desc   Test VideoOutputStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputStart_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -144,12 +144,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputStart_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputStart_0200
-     * @tc.desc     Test VideoOutputStart
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputStart_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputStart_0200
+     * @tc.desc   Test VideoOutputStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputStart_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -159,12 +159,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputStopInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputStopInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputStopInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputStopInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputStopInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.VideoOutputStopInvalidParm()
@@ -173,12 +173,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputReleaseInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputReleaseInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputReleaseInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputReleaseInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputReleaseInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.VideoOutputReleaseInvalidParm()
@@ -187,12 +187,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputIsMirrorSupportedInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputIsMirrorSupportedInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputIsMirrorSupportedInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputIsMirrorSupportedInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputIsMirrorSupportedInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.VideoOutputIsMirrorSupportedInvalidParm()
@@ -201,12 +201,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputEnableMirrorInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputEnableMirrorInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputEnableMirrorInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputEnableMirrorInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputEnableMirrorInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.VideoOutputEnableMirrorInvalidParm()
@@ -215,12 +215,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputGetVideoRotationInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputGetVideoRotationInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputGetVideoRotationInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputGetVideoRotationInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputGetVideoRotationInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.VideoOutputGetVideoRotationInvalidParm()
@@ -229,12 +229,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputRegisterCallbackInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputRegisterCallbackInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputRegisterCallbackInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputRegisterCallbackInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputRegisterCallbackInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PreviewOutputRegisterCallbackInvalidParm()
@@ -243,12 +243,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0100
-     * @tc.desc     Test PreviewOutputUnregisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0100
+     * @tc.desc   Test PreviewOutputUnregisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -258,12 +258,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0200
-     * @tc.desc     Test PreviewOutputUnregisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0200
+     * @tc.desc   Test PreviewOutputUnregisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputUnregisterCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -273,12 +273,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputStart_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputStart_0100
-     * @tc.desc     Test PreviewOutputStart
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputStart_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputStart_0100
+     * @tc.desc   Test PreviewOutputStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputStart_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -288,12 +288,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputStart_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputStart_0200
-     * @tc.desc     Test PreviewOutputStart
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputStart_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputStart_0200
+     * @tc.desc   Test PreviewOutputStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputStart_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -303,12 +303,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputStopInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputStopInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputStopInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputStopInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputStopInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PreviewOutputStopInvalidParm()
@@ -317,12 +317,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputReleaseInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputReleaseInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputReleaseInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputReleaseInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputReleaseInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PreviewOutputReleaseInvalidParm()
@@ -331,12 +331,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveProfile_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveProfile_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveProfile_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveProfile_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveProfile_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PreviewOutputGetActiveProfile()
@@ -344,13 +344,13 @@ export default function CameraOutTest() {
       done()
     })
 
-        /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputDeleteProfile_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputDeleteProfile_0100
-     * @tc.desc     Test PreviewOutputDeleteProfile
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+    /**
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputDeleteProfile_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputDeleteProfile_0100
+     * @tc.desc   Test PreviewOutputDeleteProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputDeleteProfile_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PreviewOutputDeleteProfile()
@@ -359,12 +359,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputGetPreviewRotationInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputGetPreviewRotationInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputGetPreviewRotationInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputGetPreviewRotationInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputGetPreviewRotationInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PreviewOutputGetPreviewRotationInvalidParm()
@@ -373,12 +373,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputSetPreviewRotationInvalidParm_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputSetPreviewRotationInvalidParm_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputSetPreviewRotationInvalidParm_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputSetPreviewRotationInvalidParm_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputSetPreviewRotationInvalidParm_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PreviewOutputSetPreviewRotationInvalidParm()
@@ -387,12 +387,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -402,12 +402,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200
-     * @tc.desc     Test CAMERA_INVALID_ARGUMENT
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200
+     * @tc.desc   Test CAMERA_INVALID_ARGUMENT
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputIsSupported_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -417,12 +417,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100
-     * @tc.desc     Test getPhotoReceiverSurface
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100
+     * @tc.desc   Test getPhotoReceiverSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -432,12 +432,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200
-     * @tc.desc     Test getPhotoReceiverSurface
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200
+     * @tc.desc   Test getPhotoReceiverSurface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputQuality_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -447,12 +447,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0100
-     * @tc.desc     Test CaptureSessionRegisterMacroStatusChangeCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0100
+     * @tc.desc   Test CaptureSessionRegisterMacroStatusChangeCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionRegisterMacroStatusChangeCallback(0)
@@ -461,12 +461,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0200
-     * @tc.desc     Test CaptureSessionRegisterMacroStatusChangeCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0200
+     * @tc.desc   Test CaptureSessionRegisterMacroStatusChangeCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionRegisterMacroStatusChangeCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionRegisterMacroStatusChangeCallback(1)
@@ -475,12 +475,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0100
-     * @tc.desc     Test CaptureSessionUnregisterMacroStatusChangeCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0100
+     * @tc.desc   Test CaptureSessionUnregisterMacroStatusChangeCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionUnregisterMacroStatusChangeCallback(0)
@@ -488,13 +488,13 @@ export default function CameraOutTest() {
       done()
     })
 
-        /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0200
-     * @tc.desc     Test CaptureSessionUnregisterMacroStatusChangeCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+    /**
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0200
+     * @tc.desc   Test CaptureSessionUnregisterMacroStatusChangeCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterMacroStatusChangeCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionUnregisterMacroStatusChangeCallback(1)
@@ -503,12 +503,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0100
-     * @tc.desc     Test MetadataOutputRegisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0100
+     * @tc.desc   Test MetadataOutputRegisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputRegisterCallback(0)
@@ -516,13 +516,13 @@ export default function CameraOutTest() {
       done()
     })
 
-        /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0200
-     * @tc.desc     Test MetadataOutputRegisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+    /**
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0200
+     * @tc.desc   Test MetadataOutputRegisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputRegisterCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputRegisterCallback(1)
@@ -531,12 +531,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0100
-     * @tc.desc     Test MetadataOutputUnregisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0100
+     * @tc.desc   Test MetadataOutputUnregisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputUnregisterCallback(0)
@@ -544,13 +544,13 @@ export default function CameraOutTest() {
       done()
     })
 
-        /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0200
-     * @tc.desc     Test MetadataOutputUnregisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+    /**
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0200
+     * @tc.desc   Test MetadataOutputUnregisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputUnregisterCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputUnregisterCallback(1)
@@ -559,12 +559,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputStart_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputStart_0100
-     * @tc.desc     Test MetadataOutputStart
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputStart_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputStart_0100
+     * @tc.desc   Test MetadataOutputStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputStart_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputStart(0)
@@ -573,12 +573,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputStart_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputStart_0200
-     * @tc.desc     Test MetadataOutputStart
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputStart_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputStart_0200
+     * @tc.desc   Test MetadataOutputStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputStart_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputStart(1)
@@ -587,12 +587,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputStart_0300
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputStart_0300
-     * @tc.desc     Test MetadataOutputStart
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputStart_0300
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputStart_0300
+     * @tc.desc   Test MetadataOutputStart
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputStart_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputStart(2)
@@ -601,12 +601,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputStop_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputStop_0100
-     * @tc.desc     Test MetadataOutputStop
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputStop_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputStop_0100
+     * @tc.desc   Test MetadataOutputStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputStop_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputStop(0)
@@ -615,12 +615,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputStop_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputStop_0200
-     * @tc.desc     Test MetadataOutputStop
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputStop_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputStop_0200
+     * @tc.desc   Test MetadataOutputStop
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputStop_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputStop(1)
@@ -629,12 +629,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0100
-     * @tc.desc     Test MetadataOutputRelease
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0100
+     * @tc.desc   Test MetadataOutputRelease
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputRelease(0)
@@ -643,12 +643,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0200
-     * @tc.desc     Test MetadataOutputRelease
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0200
+     * @tc.desc   Test MetadataOutputRelease
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_MetadataOutputRelease_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.MetadataOutputRelease(1);
@@ -657,12 +657,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0100
-     * @tc.desc     Test PhotoNativeGetMainImage
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0100
+     * @tc.desc   Test PhotoNativeGetMainImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoNativeGetMainImage(0)
@@ -671,12 +671,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0200
-     * @tc.desc     Test PhotoNativeGetMainImage
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0200
+     * @tc.desc   Test PhotoNativeGetMainImage
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoNativeGetMainImage_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoNativeGetMainImage(1,)
@@ -685,12 +685,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoNativeRelease_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoNativeRelease_0100
-     * @tc.desc     Test PhotoNativeRelease
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoNativeRelease_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoNativeRelease_0100
+     * @tc.desc   Test PhotoNativeRelease
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoNativeRelease_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoNativeRelease()
@@ -699,12 +699,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0100
-     * @tc.desc     Test PhotoOutputRegisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0100
+     * @tc.desc   Test PhotoOutputRegisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -714,12 +714,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0200
-     * @tc.desc     Test PhotoOutputRegisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0200
+     * @tc.desc   Test PhotoOutputRegisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -729,12 +729,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0100
-     * @tc.desc     Test PhotoOutputUnregisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0100
+     * @tc.desc   Test PhotoOutputUnregisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -744,12 +744,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0200
-     * @tc.desc     Test PhotoOutputUnregisterCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0200
+     * @tc.desc   Test PhotoOutputUnregisterCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -759,12 +759,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0100
-     * @tc.desc     Test PhotoOutputRegisterCaptureStartWithInfoCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0100
+     * @tc.desc   Test PhotoOutputRegisterCaptureStartWithInfoCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -774,12 +774,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0200
-     * @tc.desc     Test PhotoOutputRegisterCaptureStartWithInfoCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0200
+     * @tc.desc   Test PhotoOutputRegisterCaptureStartWithInfoCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureStartWithInfoCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -789,12 +789,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureStartWithInfoCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureStartWithInfoCallback_0100
-     * @tc.desc     Test PhotoOutputUnregisterCaptureStartWithInfoCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureStartWithInfoCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureStartWithInfoCallback_0100
+     * @tc.desc   Test PhotoOutputUnregisterCaptureStartWithInfoCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureStartWithInfoCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputUnregisterCaptureStartWithInfoCallback()
@@ -803,12 +803,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureEndCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureEndCallback_0100
-     * @tc.desc     Test PhotoOutputRegisterCaptureEndCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureEndCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureEndCallback_0100
+     * @tc.desc   Test PhotoOutputRegisterCaptureEndCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterCaptureEndCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputRegisterCaptureEndCallback()
@@ -817,12 +817,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureEndCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureEndCallback_0100
-     * @tc.desc     Test PhotoOutputUnregisterCaptureEndCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureEndCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureEndCallback_0100
+     * @tc.desc   Test PhotoOutputUnregisterCaptureEndCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterCaptureEndCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputUnregisterCaptureEndCallback()
@@ -831,12 +831,12 @@ export default function CameraOutTest() {
     })
     
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterFrameShutterEndCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterFrameShutterEndCallback_0100
-     * @tc.desc     Test PhotoOutputUnregisterCaptureEndCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterFrameShutterEndCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterFrameShutterEndCallback_0100
+     * @tc.desc   Test PhotoOutputUnregisterCaptureEndCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterFrameShutterEndCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputRegisterFrameShutterEndCallback()
@@ -845,12 +845,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputGetPhotoRotation_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputGetPhotoRotation_0100
-     * @tc.desc     Test PhotoOutputGetPhotoRotation
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputGetPhotoRotation_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputGetPhotoRotation_0100
+     * @tc.desc   Test PhotoOutputGetPhotoRotation
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputGetPhotoRotation_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputGetPhotoRotation()
@@ -859,12 +859,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterEstimatedCaptureDurationCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterEstimatedCaptureDurationCallback_0100
-     * @tc.desc     Test PhotoOutputRegisterEstimatedCaptureDurationCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterEstimatedCaptureDurationCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterEstimatedCaptureDurationCallback_0100
+     * @tc.desc   Test PhotoOutputRegisterEstimatedCaptureDurationCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterEstimatedCaptureDurationCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputRegisterEstimatedCaptureDurationCallback()
@@ -873,12 +873,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterEstimatedCaptureDurationCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterEstimatedCaptureDurationCallback_0100
-     * @tc.desc     Test PhotoOutputUnregisterEstimatedCaptureDurationCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterEstimatedCaptureDurationCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterEstimatedCaptureDurationCallback_0100
+     * @tc.desc   Test PhotoOutputUnregisterEstimatedCaptureDurationCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterEstimatedCaptureDurationCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputUnregisterEstimatedCaptureDurationCallback()
@@ -887,12 +887,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAvailableCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAvailableCallback_0100
-     * @tc.desc     Test PhotoOutputRegisterPhotoAvailableCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAvailableCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAvailableCallback_0100
+     * @tc.desc   Test PhotoOutputRegisterPhotoAvailableCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAvailableCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputRegisterPhotoAvailableCallback()
@@ -901,12 +901,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAvailableCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAvailableCallback_0100
-     * @tc.desc     Test PhotoOutputUnregisterPhotoAvailableCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAvailableCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAvailableCallback_0100
+     * @tc.desc   Test PhotoOutputUnregisterPhotoAvailableCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAvailableCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputUnregisterPhotoAvailableCallback()
@@ -915,12 +915,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAssetAvailableCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAssetAvailableCallback_0100
-     * @tc.desc     Test PhotoOutputRegisterPhotoAssetAvailableCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAssetAvailableCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAssetAvailableCallback_0100
+     * @tc.desc   Test PhotoOutputRegisterPhotoAssetAvailableCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRegisterPhotoAssetAvailableCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputRegisterPhotoAssetAvailableCallback()
@@ -929,12 +929,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAssetAvailableCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAssetAvailableCallback_0100
-     * @tc.desc     Test PhotoOutputUnregisterPhotoAssetAvailableCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAssetAvailableCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAssetAvailableCallback_0100
+     * @tc.desc   Test PhotoOutputUnregisterPhotoAssetAvailableCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputUnregisterPhotoAssetAvailableCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputUnregisterPhotoAssetAvailableCallback()
@@ -943,12 +943,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputRelease_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputRelease_0100
-     * @tc.desc     Test PhotoOutputRelease
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputRelease_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputRelease_0100
+     * @tc.desc   Test PhotoOutputRelease
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputRelease_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputRelease()
@@ -957,12 +957,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputIsMirrorSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputIsMirrorSupported_0100
-     * @tc.desc     Test PhotoOutputIsMirrorSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputIsMirrorSupported_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputIsMirrorSupported_0100
+     * @tc.desc   Test PhotoOutputIsMirrorSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputIsMirrorSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputIsMirrorSupported()
@@ -971,12 +971,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputEnableMirror_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputEnableMirror_0100
-     * @tc.desc     Test PhotoOutputEnableMirror
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputEnableMirror_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputEnableMirror_0100
+     * @tc.desc   Test PhotoOutputEnableMirror
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputEnableMirror_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.PhotoOutputEnableMirror()
@@ -985,12 +985,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputGetActiveProfile_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputGetActiveProfile_0100
-     * @tc.desc     Test VideoOutputGetActiveProfile
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputGetActiveProfile_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputGetActiveProfile_0100
+     * @tc.desc   Test VideoOutputGetActiveProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputGetActiveProfile_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1000,12 +1000,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputGetSupportedFrameRates_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputGetSupportedFrameRates_0100
-     * @tc.desc     Test VideoOutputGetSupportedFrameRates
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputGetSupportedFrameRates_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputGetSupportedFrameRates_0100
+     * @tc.desc   Test VideoOutputGetSupportedFrameRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputGetSupportedFrameRates_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1015,12 +1015,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_VideoOutputGetActiveFrameRate_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_VideoOutputGetActiveFrameRate_0100
-     * @tc.desc     Test VideoOutputGetActiveFrameRate
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_VideoOutputGetActiveFrameRate_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_VideoOutputGetActiveFrameRate_0100
+     * @tc.desc   Test VideoOutputGetActiveFrameRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_VideoOutputGetActiveFrameRate_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1030,12 +1030,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputCapture_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputCapture_0100
-     * @tc.desc     Test PhotoOutputCapture
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputCapture_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputCapture_0100
+     * @tc.desc   Test PhotoOutputCapture
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputCapture_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1045,12 +1045,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputCaptureWithCaptureSetting_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputCaptureWithCaptureSetting_0100
-     * @tc.desc     Test PhotoOutputCaptureWithCaptureSetting
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputCaptureWithCaptureSetting_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputCaptureWithCaptureSetting_0100
+     * @tc.desc   Test PhotoOutputCaptureWithCaptureSetting
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputCaptureWithCaptureSetting_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1060,12 +1060,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputGetActiveProfile_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputGetActiveProfile_0100
-     * @tc.desc     Test PhotoOutputGetActiveProfile
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputGetActiveProfile_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputGetActiveProfile_0100
+     * @tc.desc   Test PhotoOutputGetActiveProfile
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputGetActiveProfile_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1075,12 +1075,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputIsMovingPhotoSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputIsMovingPhotoSupported_0100
-     * @tc.desc     Test PhotoOutputIsMovingPhotoSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputIsMovingPhotoSupported_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputIsMovingPhotoSupported_0100
+     * @tc.desc   Test PhotoOutputIsMovingPhotoSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputIsMovingPhotoSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1090,12 +1090,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PhotoOutputEnableMovingPhoto_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PhotoOutputEnableMovingPhoto_0100
-     * @tc.desc     Test PhotoOutputEnableMovingPhoto
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PhotoOutputEnableMovingPhoto_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PhotoOutputEnableMovingPhoto_0100
+     * @tc.desc   Test PhotoOutputEnableMovingPhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PhotoOutputEnableMovingPhoto_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1105,12 +1105,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputGetSupportedFrameRates_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputGetSupportedFrameRates_0100  
-     * @tc.desc     Test PreviewOutputGetSupportedFrameRates
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputGetSupportedFrameRates_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputGetSupportedFrameRates_0100
+     * @tc.desc   Test PreviewOutputGetSupportedFrameRates
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputGetSupportedFrameRates_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1120,12 +1120,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveFrameRate_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveFrameRate_0100
-     * @tc.desc     Test PreviewOutputGetActiveFrameRate
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveFrameRate_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveFrameRate_0100
+     * @tc.desc   Test PreviewOutputGetActiveFrameRate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_PreviewOutputGetActiveFrameRate_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1135,12 +1135,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterAutoDeviceSwitchStatusCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionRegisterAutoDeviceSwitchStatusCallback_0100
-     * @tc.desc     Test CaptureSessionRegisterAutoDeviceSwitchStatusCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterAutoDeviceSwitchStatusCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionRegisterAutoDeviceSwitchStatusCallback_0100
+     * @tc.desc   Test CaptureSessionRegisterAutoDeviceSwitchStatusCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionRegisterAutoDeviceSwitchStatusCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1150,12 +1150,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0100
-     * @tc.desc     Test CaptureSessionUnregisterAutoDeviceSwitchStatusCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0100
+     * @tc.desc   Test CaptureSessionUnregisterAutoDeviceSwitchStatusCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionUnregisterAutoDeviceSwitchStatusCallback(0)
@@ -1164,12 +1164,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0200
-     * @tc.desc     Test CaptureSessionUnregisterAutoDeviceSwitchStatusCallback
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0200
+     * @tc.desc   Test CaptureSessionUnregisterAutoDeviceSwitchStatusCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterAutoDeviceSwitchStatusCallback_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionUnregisterAutoDeviceSwitchStatusCallback(1)
@@ -1178,12 +1178,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0100
-     * @tc.desc     Test CaptureSessionIsAutoDeviceSwitchSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0100
+     * @tc.desc   Test CaptureSessionIsAutoDeviceSwitchSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsAutoDeviceSwitchSupported(0)
@@ -1192,12 +1192,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0200
-     * @tc.desc     Test CaptureSessionIsAutoDeviceSwitchSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0200
+     * @tc.desc   Test CaptureSessionIsAutoDeviceSwitchSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsAutoDeviceSwitchSupported(1)
@@ -1206,12 +1206,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0300
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0300
-     * @tc.desc     Test CaptureSessionIsAutoDeviceSwitchSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0300
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0300
+     * @tc.desc   Test CaptureSessionIsAutoDeviceSwitchSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsAutoDeviceSwitchSupported_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsAutoDeviceSwitchSupported(2)
@@ -1220,12 +1220,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0100
-     * @tc.desc     Test CaptureSessionEnableAutoDeviceSwitch
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0100
+     * @tc.desc   Test CaptureSessionEnableAutoDeviceSwitch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionEnableAutoDeviceSwitch(0)
@@ -1234,12 +1234,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0200
-     * @tc.desc     Test CaptureSessionEnableAutoDeviceSwitch
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0200
+     * @tc.desc   Test CaptureSessionEnableAutoDeviceSwitch
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionEnableAutoDeviceSwitch_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionEnableAutoDeviceSwitch(1)
@@ -1248,12 +1248,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0100
-     * @tc.desc     Test CaptureSessionSetQualityPrioritization
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0100
+     * @tc.desc   Test CaptureSessionSetQualityPrioritization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionSetQualityPrioritization(0)
@@ -1262,12 +1262,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0200
-     * @tc.desc     Test CaptureSessionSetQualityPrioritization
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0200
+     * @tc.desc   Test CaptureSessionSetQualityPrioritization
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionSetQualityPrioritization_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionSetQualityPrioritization(1)
@@ -1276,12 +1276,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0100
-     * @tc.desc     Test CaptureSessionIsMacroSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0100
+     * @tc.desc   Test CaptureSessionIsMacroSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsMacroSupported(0)
@@ -1290,12 +1290,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0200
-     * @tc.desc     Test CaptureSessionIsMacroSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0200
+     * @tc.desc   Test CaptureSessionIsMacroSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsMacroSupported(1)
@@ -1304,12 +1304,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0300
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0300
-     * @tc.desc     Test CaptureSessionIsMacroSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0300
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0300
+     * @tc.desc   Test CaptureSessionIsMacroSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsMacroSupported_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsMacroSupported(2)
@@ -1318,12 +1318,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionEnableMacro_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionEnableMacro_0100
-     * @tc.desc     Test CaptureSessionEnableMacro
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionEnableMacro_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionEnableMacro_0100
+     * @tc.desc   Test CaptureSessionEnableMacro
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionEnableMacro_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionEnableMacro(1)
@@ -1332,12 +1332,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0100
-     * @tc.desc     Test CaptureSessionIsWhiteBalanceModeSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0100
+     * @tc.desc   Test CaptureSessionIsWhiteBalanceModeSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1347,12 +1347,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0200
-     * @tc.desc     Test CaptureSessionIsWhiteBalanceModeSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0200
+     * @tc.desc   Test CaptureSessionIsWhiteBalanceModeSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1362,12 +1362,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0300
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0300
-     * @tc.desc     Test CaptureSessionIsWhiteBalanceModeSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0300
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0300
+     * @tc.desc   Test CaptureSessionIsWhiteBalanceModeSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsWhiteBalanceModeSupported_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let surfaceid = await getPhotoReceiverSurface();
@@ -1377,12 +1377,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0100
-     * @tc.desc     Test CaptureSessionGetWhiteBalanceMode
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0100
+     * @tc.desc   Test CaptureSessionGetWhiteBalanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalanceMode(0)
@@ -1391,12 +1391,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0200
-     * @tc.desc     Test CaptureSessionGetWhiteBalanceMode
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0200
+     * @tc.desc   Test CaptureSessionGetWhiteBalanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalanceMode(1)
@@ -1405,12 +1405,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0300
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0300
-     * @tc.desc     Test CaptureSessionGetWhiteBalanceMode
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0300
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0300
+     * @tc.desc   Test CaptureSessionGetWhiteBalanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceMode_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalanceMode(1)
@@ -1419,12 +1419,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0100
-     * @tc.desc     Test CaptureSessionGetWhiteBalanceRange
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0100
+     * @tc.desc   Test CaptureSessionGetWhiteBalanceRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalanceRange(0)
@@ -1433,12 +1433,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0200
-     * @tc.desc     Test CaptureSessionGetWhiteBalanceRange
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0200
+     * @tc.desc   Test CaptureSessionGetWhiteBalanceRange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalanceRange_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalanceRange(1)
@@ -1447,12 +1447,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0100
-     * @tc.desc     Test CaptureSessionGetWhiteBalance
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0100
+     * @tc.desc   Test CaptureSessionGetWhiteBalance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalance(0)
@@ -1461,12 +1461,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0200
-     * @tc.desc     Test CaptureSessionGetWhiteBalance
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0200
+     * @tc.desc   Test CaptureSessionGetWhiteBalance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetWhiteBalance_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetWhiteBalance(1)
@@ -1475,12 +1475,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0100
-     * @tc.desc     Test CaptureSessionSetWhiteBalance
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0100
+     * @tc.desc   Test CaptureSessionSetWhiteBalance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionSetWhiteBalance(0)
@@ -1489,12 +1489,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0200
-     * @tc.desc     Test CaptureSessionSetWhiteBalance
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0200
+     * @tc.desc   Test CaptureSessionSetWhiteBalance
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalance_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionSetWhiteBalance(1)
@@ -1503,12 +1503,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0100
-     * @tc.desc     Test CaptureSessionSetWhiteBalanceMode
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0100
+     * @tc.desc   Test CaptureSessionSetWhiteBalanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionSetWhiteBalanceMode(0)
@@ -1517,12 +1517,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0200
-     * @tc.desc     Test CaptureSessionSetWhiteBalanceMode
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0200
+     * @tc.desc   Test CaptureSessionSetWhiteBalanceMode
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionSetWhiteBalanceMode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionSetWhiteBalanceMode(1)
@@ -1531,12 +1531,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterSystem_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionRegisterSystem_0100
-     * @tc.desc     Test CaptureSessionRegisterSystem
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterSystem_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionRegisterSystem_0100
+     * @tc.desc   Test CaptureSessionRegisterSystem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionRegisterSystem_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionRegisterSystem(1)
@@ -1545,12 +1545,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0100
-     * @tc.desc     Test CaptureSessionUnregisterSystem
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0100
+     * @tc.desc   Test CaptureSessionUnregisterSystem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionUnregisterSystem(0)
@@ -1559,12 +1559,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0200
-     * @tc.desc     Test CaptureSessionUnregisterSystem
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0200
+     * @tc.desc   Test CaptureSessionUnregisterSystem
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterSystem_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionUnregisterSystem(1)
@@ -1573,12 +1573,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0100
-     * @tc.desc     Test CaptureSessionIsControlCenterSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0100
+     * @tc.desc   Test CaptureSessionIsControlCenterSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsControlCenterSupported(0)
@@ -1587,12 +1587,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0200
-     * @tc.desc     Test CaptureSessionIsControlCenterSupported
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0200
+     * @tc.desc   Test CaptureSessionIsControlCenterSupported
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionIsControlCenterSupported_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionIsControlCenterSupported(1)
@@ -1601,12 +1601,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionGetSupportedEffectTypes_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionGetSupportedEffectTypes_0100
-     * @tc.desc     Test CaptureSessionGetSupportedEffectTypes
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionGetSupportedEffectTypes_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionGetSupportedEffectTypes_0100
+     * @tc.desc   Test CaptureSessionGetSupportedEffectTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionGetSupportedEffectTypes_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionGetSupportedEffectTypes(1)
@@ -1615,12 +1615,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionDeleteSupportedEffectTypes_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionDeleteSupportedEffectTypes_0100
-     * @tc.desc     Test CaptureSessionDeleteSupportedEffectTypes
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionDeleteSupportedEffectTypes_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionDeleteSupportedEffectTypes_0100
+     * @tc.desc   Test CaptureSessionDeleteSupportedEffectTypes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionDeleteSupportedEffectTypes_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionDeleteSupportedEffectTypes(1)
@@ -1629,12 +1629,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0100
-     * @tc.desc     Test CaptureSessionEnableControlCenter
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0100
+     * @tc.desc   Test CaptureSessionEnableControlCenter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionEnableControlCenter(0)
@@ -1643,12 +1643,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0200
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0200
-     * @tc.desc     Test CaptureSessionEnableControlCenter
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0200
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0200
+     * @tc.desc   Test CaptureSessionEnableControlCenter
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionEnableControlCenter_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionEnableControlCenter(1)
@@ -1657,12 +1657,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterControl_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionRegisterControl_0100
-     * @tc.desc     Test CaptureSessionRegisterControl
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionRegisterControl_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionRegisterControl_0100
+     * @tc.desc   Test CaptureSessionRegisterControl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionRegisterControl_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionRegisterControl(0)
@@ -1671,12 +1671,12 @@ export default function CameraOutTest() {
     })
 
     /**
-     * @tc.number   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterControl_0100
-     * @tc.name     SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterControl_0100
-     * @tc.desc     Test CaptureSessionUnregisterControl
-     * @tc.size     MediumTest
-     * @tc.type     Function
-     * @tc.level    Level 1
+     * @tc.name   SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterControl_0100
+     * @tc.number SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterControl_0100
+     * @tc.desc   Test CaptureSessionUnregisterControl
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it("SUB_MULTIMEIDA_Camera_CaptureSessionUnregisterControl_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let ret = CameraOut.CaptureSessionUnregisterControl(0)

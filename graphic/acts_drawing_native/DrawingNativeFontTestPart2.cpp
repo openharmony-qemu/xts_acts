@@ -68,13 +68,13 @@ class DrawingNativeFontPart2Test : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2000
- * @tc.name: testFontArgumentsCreateNormal
- * @tc.desc: Test for testFontArgumentsCreateNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontArgumentsCreateNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2000
+ * @tc.desc   Test for testFontArgumentsCreateNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsCreateNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -84,13 +84,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsCreateNormal, Function | S
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2100
- * @tc.name: testFontArgumentsAddVariationNormal
- * @tc.desc: test for testFontArgumentsAddVariationNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontArgumentsAddVariationNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2100
+ * @tc.desc   test for testFontArgumentsAddVariationNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -113,13 +113,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationNormal, Functi
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2101
- * @tc.name: testFontArgumentsAddVariationNull
- * @tc.desc: test for testFontArgumentsAddVariationNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontArgumentsAddVariationNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2101
+ * @tc.desc   test for testFontArgumentsAddVariationNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -135,13 +135,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationNull, Function
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2102
- * @tc.name: testFontArgumentsAddVariationAbnormal
- * @tc.desc: test for testFontArgumentsAddVariationAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontArgumentsAddVariationAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2102
+ * @tc.desc   test for testFontArgumentsAddVariationAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationAbnormal, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -157,13 +157,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationAbnormal, Func
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_ERROR_INVALID_PARAMETER);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2103
- * @tc.name: testFontArgumentsAddVariationMultipleCalls
- * @tc.desc: test for testFontArgumentsAddVariationMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontArgumentsAddVariationMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2103
+ * @tc.desc   test for testFontArgumentsAddVariationMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -183,13 +183,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsAddVariationMultipleCalls,
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2200
- * @tc.name: testFontArgumentsDestoryNormal
- * @tc.desc: test for testFontArgumentsDestoryNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontArgumentsDestoryNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2200
+ * @tc.desc   test for testFontArgumentsDestoryNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsDestoryNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -202,13 +202,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsDestoryNormal, Function | 
     EXPECT_EQ(drawingErrorCode, OH_DRAWING_SUCCESS);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2201
- * @tc.name: testFontArgumentsDestoryNull
- * @tc.desc: test for testFontArgumentsDestoryNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontArgumentsDestoryNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2201
+ * @tc.desc   test for testFontArgumentsDestoryNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsDestoryNull, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontArgumentsCreate
@@ -222,13 +222,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsDestoryNull, Function | Sm
     OH_Drawing_FontArgumentsDestroy(fontArguments);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2202
- * @tc.name: testFontArgumentsDestoryMultiplieCalls
- * @tc.desc: test for testFontArgumentsDestoryMultiplieCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontArgumentsDestoryMultiplieCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2202
+ * @tc.desc   test for testFontArgumentsDestoryMultiplieCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsDestoryMultiplieCalls, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -246,13 +246,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontArgumentsDestoryMultiplieCalls, Fun
         EXPECT_EQ(drawingErrorCode1, OH_DRAWING_SUCCESS);
     }
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2300
- * @tc.name: testFontSetThemeFontFollowedNormal
- * @tc.desc: test for testFontSetThemeFontFollowedNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontSetThemeFontFollowedNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2300
+ * @tc.desc   test for testFontSetThemeFontFollowedNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -267,13 +267,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedNormal, Functio
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2301
- * @tc.name: testFontSetThemeFontFollowedMuitipleCalls
- * @tc.desc: test for testFontSetThemeFontFollowedMuitipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontSetThemeFontFollowedMuitipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2301
+ * @tc.desc   test for testFontSetThemeFontFollowedMuitipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedMuitipleCalls, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -288,13 +288,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedMuitipleCalls, 
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2302
- * @tc.name: testFontSetThemeFontFollowedNull
- * @tc.desc: test for testFontSetThemeFontFollowedNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontSetThemeFontFollowedNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2302
+ * @tc.desc   test for testFontSetThemeFontFollowedNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedNull, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -307,13 +307,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontSetThemeFontFollowedNull, Function 
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2100
- * @tc.name: testFontIsThemeFontFollowedNormal
- * @tc.desc: test for testFontIsThemeFontFollowedNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontIsThemeFontFollowedNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2400
+ * @tc.desc   test for testFontIsThemeFontFollowedNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -339,15 +339,40 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNormal, Function
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2101
- * @tc.name: testFontIsThemeFontFollowedMultipleCalls
- * @tc.desc: test for testFontIsThemeFontFollowedMultipleCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+
+/**
+ * @tc.name   testFontIsThemeFontFollowedNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2401
+ * @tc.desc   test for testFontIsThemeFontFollowedNull.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
-HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, Function | SmallTest | Level0) {
+HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNull, Function | SmallTest | Level3) {
+    // 1. OH_Drawing_FontCreate
+    OH_Drawing_Font *font = OH_Drawing_FontCreate();
+    // add assert
+    EXPECT_NE(font, nullptr);
+    bool followed = true;
+    OH_Drawing_ErrorCode drawingErrorCode1 = OH_DRAWING_SUCCESS;
+    OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_SUCCESS;
+    drawingErrorCode1 = OH_Drawing_FontIsThemeFontFollowed(nullptr, &followed);
+    EXPECT_EQ(drawingErrorCode1, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, nullptr);
+    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    // 2. OH_Drawing_FontDestroy
+    OH_Drawing_FontDestroy(font);
+}
+
+/**
+ * @tc.name   testFontIsThemeFontFollowedMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2402
+ * @tc.desc   test for testFontIsThemeFontFollowedMultipleCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
+ */
+HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontCreate
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
     // add assert
@@ -366,37 +391,14 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedMultipleCalls, F
     // 2. OH_Drawing_FontDestroy
     OH_Drawing_FontDestroy(font);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2400
- * @tc.name: testFontIsThemeFontFollowedNull
- * @tc.desc: test for testFontIsThemeFontFollowedNull.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
- */
-HWTEST_F(DrawingNativeFontPart2Test, testFontIsThemeFontFollowedNull, Function | SmallTest | Level0) {
-    // 1. OH_Drawing_FontCreate
-    OH_Drawing_Font *font = OH_Drawing_FontCreate();
-    // add assert
-    EXPECT_NE(font, nullptr);
-    bool followed = true;
-    OH_Drawing_ErrorCode drawingErrorCode1 = OH_DRAWING_SUCCESS;
-    OH_Drawing_ErrorCode drawingErrorCode2 = OH_DRAWING_SUCCESS;
-    drawingErrorCode1 = OH_Drawing_FontIsThemeFontFollowed(nullptr, &followed);
-    EXPECT_EQ(drawingErrorCode1, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    drawingErrorCode2 = OH_Drawing_FontIsThemeFontFollowed(font, nullptr);
-    EXPECT_EQ(drawingErrorCode2, OH_DRAWING_ERROR_INVALID_PARAMETER);
-    // 2. OH_Drawing_FontDestroy
-    OH_Drawing_FontDestroy(font);
-}
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2500
- * @tc.name: testFontGetMetricsNormal
- * @tc.desc: test for testFontGetMetricsNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontGetMetricsNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2500
+ * @tc.desc   test for testFontGetMetricsNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetMetricsNormal, Function | SmallTest | Level0) {
     // 1. OH_Drawing_FontCreate
@@ -433,13 +435,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetMetricsNormal, Function | SmallT
     OH_Drawing_TypefaceDestroy(typeface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2501
- * @tc.name: testFontGetMetricsNull
- * @tc.desc: test for testFontGetMetricsNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGetMetricsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2501
+ * @tc.desc   test for testFontGetMetricsNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetMetricsNull, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontCreate
@@ -464,13 +466,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetMetricsNull, Function | SmallTes
     OH_Drawing_TypefaceDestroy(typeface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2502
- * @tc.name: testFontGetMetricsMultiplies
- * @tc.desc: test for testFontGetMetricsMultiplies
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGetMetricsMultiplies
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2502
+ * @tc.desc   test for testFontGetMetricsMultiplies
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetMetricsMultiplies, Function | SmallTest | Level3) {
     // 1. OH_Drawing_FontCreate
@@ -492,13 +494,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetMetricsMultiplies, Function | Sm
     OH_Drawing_TypefaceDestroy(typeface);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2600
- * @tc.name: testFontMeasureTextWithBrushOrPenNormal1
- * @tc.desc: test for testFontMeasureTextWithBrushOrPenNormal1
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontMeasureTextWithBrushOrPenNormal1
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2600
+ * @tc.desc   test for testFontMeasureTextWithBrushOrPenNormal1
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenNormal1, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -549,13 +551,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenNormal1, F
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2601
- * @tc.name: testFontMeasureTextWithBrushOrPenNormal2
- * @tc.desc: test for testFontMeasureTextWithBrushOrPenNormal2
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontMeasureTextWithBrushOrPenNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2601
+ * @tc.desc   test for testFontMeasureTextWithBrushOrPenNormal2
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenNormal2, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -595,13 +597,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenNormal2, F
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2602
- * @tc.name: testFontMeasureTextWithBrushOrPenNull
- * @tc.desc: test for testFontMeasureTextWithBrushOrPenNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontMeasureTextWithBrushOrPenNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2602
+ * @tc.desc   test for testFontMeasureTextWithBrushOrPenNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenNull, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -639,13 +641,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenNull, Func
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2603
- * @tc.name: testFontMeasureTextWithBrushOrPenAbnormal
- * @tc.desc: test for testFontMeasureTextWithBrushOrPenAbnormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontMeasureTextWithBrushOrPenAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2603
+ * @tc.desc   test for testFontMeasureTextWithBrushOrPenAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -667,13 +669,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenAbnormal, 
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2604
- * @tc.name: testFontMeasureTextWithBrushOrPenMultiCalls
- * @tc.desc: test for testFontMeasureTextWithBrushOrPenMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontMeasureTextWithBrushOrPenMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2604
+ * @tc.desc   test for testFontMeasureTextWithBrushOrPenMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenMultiCalls, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -695,13 +697,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureTextWithBrushOrPenMultiCalls
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2700
- * @tc.name: testFontGetWidthsBoundsNormal1
- * @tc.desc: test for testFontGetWidthsBoundsNormal1
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontGetWidthsBoundsNormal1
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2700
+ * @tc.desc   test for testFontGetWidthsBoundsNormal1
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsNormal1, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -738,13 +740,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsNormal1, Function | 
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2701
- * @tc.name: testFontGetWidthsBoundsNormal2
- * @tc.desc: test for testFontGetWidthsBoundsNormal2
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontGetWidthsBoundsNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2701
+ * @tc.desc   test for testFontGetWidthsBoundsNormal2
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsNormal2, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -798,13 +800,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsNormal2, Function | 
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2702
- * @tc.name: testFontGetWidthsBoundsNull
- * @tc.desc: test for testFontGetWidthsBoundsNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGetWidthsBoundsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2702
+ * @tc.desc   test for testFontGetWidthsBoundsNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsNull, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -844,13 +846,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsNull, Function | Sma
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2703
- * @tc.name: testFontGetWidthsBoundsAbnormal
- * @tc.desc: test for testFontGetWidthsBoundsAbnormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGetWidthsBoundsAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2703
+ * @tc.desc   test for testFontGetWidthsBoundsAbnormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -884,13 +886,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsAbnormal, Function |
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2704
- * @tc.name: testFontGetWidthsBoundsMultiCalls
- * @tc.desc: test for testFontGetWidthsBoundsMultiCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGetWidthsBoundsMultiCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2704
+ * @tc.desc   test for testFontGetWidthsBoundsMultiCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsMultiCalls, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -918,13 +920,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetWidthsBoundsMultiCalls, Function
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2800
- * @tc.name: testFontGePosNormal
- * @tc.desc: test for testFontGePosNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontGePosNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2800
+ * @tc.desc   test for testFontGePosNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGePosNormal, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -966,13 +968,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGePosNormal, Function | SmallTest |
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2801
- * @tc.name: testFontGetPosNormal1
- * @tc.desc: test for testFontGetPosNormal1
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontGetPosNormal1
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2801
+ * @tc.desc   test for testFontGetPosNormal1
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGetPosNormal1, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1017,13 +1019,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGetPosNormal1, Function | SmallTest
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2802
- * @tc.name: testFontGePosNormal2
- * @tc.desc: test for testFontGePosNormal2
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontGePosNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2802
+ * @tc.desc   test for testFontGePosNormal2
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGePosNormal2, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1068,13 +1070,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGePosNormal2, Function | SmallTest 
     }
     OH_Drawing_FontDestroy(font);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2803
- * @tc.name: testFontGePosNull
- * @tc.desc: test for testFontGePosNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGePosNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2803
+ * @tc.desc   test for testFontGePosNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGePosNull, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1101,13 +1103,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGePosNull, Function | SmallTest | L
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2804
- * @tc.name: testFontGePosMultiplieCalls
- * @tc.desc: test for testFontGePosMultiplieCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGePosMultiplieCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2804
+ * @tc.desc   test for testFontGePosMultiplieCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGePosMultiplieCalls, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1131,13 +1133,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGePosMultiplieCalls, Function | Sma
     }
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2805
- * @tc.name: testFontGePosAbnormal
- * @tc.desc: test for testFontGePosAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGePosAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2805
+ * @tc.desc   test for testFontGePosAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGePosAbnormal, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1159,13 +1161,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGePosAbnormal, Function | SmallTest
         delete[] points;
     }
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2900
- * @tc.name: testFontGeSpacingNormal
- * @tc.desc: test for testFontGeSpacingNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontGeSpacingNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2900
+ * @tc.desc   test for testFontGeSpacingNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGeSpacingNormal, Function | SmallTest | Level0) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1184,13 +1186,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGeSpacingNormal, Function | SmallTe
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2901
- * @tc.name: testFontGeSpacingMultiplieCalls
- * @tc.desc: test for testFontGeSpacingMultiplieCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGeSpacingMultiplieCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2901
+ * @tc.desc   test for testFontGeSpacingMultiplieCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGeSpacingMultiplieCalls, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1203,13 +1205,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGeSpacingMultiplieCalls, Function |
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2902
- * @tc.name: testFontGeSpacingNull
- * @tc.desc: test for testFontGeSpacingNull
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontGeSpacingNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_2902
+ * @tc.desc   test for testFontGeSpacingNull
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontGeSpacingNull, Function | SmallTest | Level3) {
     OH_Drawing_Font *font = OH_Drawing_FontCreate();
@@ -1220,13 +1222,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontGeSpacingNull, Function | SmallTest
     OH_Drawing_FontDestroy(font);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3000
- * @tc.name: testFontMeasureSingleChaWithFeaturesNormal
- * @tc.desc: test for testFontMeasureSingleChaWithFeaturesNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testFontMeasureSingleChaWithFeaturesNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3000
+ * @tc.desc   test for testFontMeasureSingleChaWithFeaturesNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleChaWithFeaturesNormal, Function | SmallTest | Level0) {
     const char *str = "H";
@@ -1273,13 +1275,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleChaWithFeaturesNormal,
     OH_Drawing_FontFeaturesDestroy(features);
     OH_Drawing_CanvasDestroy(canvas);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3001
- * @tc.name: testFontMeasureSingleChaWithFeaturesAbNormal
- * @tc.desc: test for testFontMeasureSingleChaWithFeaturesAbNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontMeasureSingleChaWithFeaturesAbNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3001
+ * @tc.desc   test for testFontMeasureSingleChaWithFeaturesAbNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleChaWithFeaturesAbNormal, Function | SmallTest | Level3) {
     const char *str = "（";
@@ -1307,13 +1309,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleChaWithFeaturesAbNorma
     OH_Drawing_FontFeaturesDestroy(features);
     OH_Drawing_CanvasDestroy(canvas);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3002
- * @tc.name: testFontMeasureSingleChaWithFeaturesCalls
- * @tc.desc: test for testFontMeasureSingleChaWithFeaturesCalls
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testFontMeasureSingleChaWithFeaturesCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3002
+ * @tc.desc   test for testFontMeasureSingleChaWithFeaturesCalls
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleChaWithFeaturesCalls, Function | SmallTest | Level2) {
     const char *str = "H";
@@ -1334,13 +1336,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontMeasureSingleChaWithFeaturesCalls, 
     OH_Drawing_FontFeaturesDestroy(features);
     OH_Drawing_CanvasDestroy(canvas);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3100
- * @tc.name: testFontFeaturesAddFeatureNormal
- * @tc.desc: test for testFontFeaturesAddFeatureNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testFontFeaturesAddFeatureNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3100
+ * @tc.desc   test for testFontFeaturesAddFeatureNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesAddFeatureNormal, Function | SmallTest | Level2) {
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
@@ -1357,13 +1359,13 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesAddFeatureNormal, Function 
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     OH_Drawing_FontFeaturesDestroy(features);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3101
- * @tc.name: testFontFeaturesAddFeatureAbNormal
- * @tc.desc: test for testFontFeaturesAddFeatureAbNormal
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontFeaturesAddFeatureAbNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3101
+ * @tc.desc   test for testFontFeaturesAddFeatureAbNormal
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesAddFeatureAbNormal, Function | SmallTest | Level3) {
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
@@ -1371,17 +1373,19 @@ HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesAddFeatureAbNormal, Functio
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
     code = OH_Drawing_FontFeaturesAddFeature(features, nullptr, 0.1f);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
+    code = OH_Drawing_FontFeaturesAddFeature(features, "", 0.0f);
+    EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     code = OH_Drawing_FontFeaturesAddFeature(features, "aaaa", 0.0f);
     EXPECT_EQ(code, OH_DRAWING_SUCCESS);
     OH_Drawing_FontFeaturesDestroy(features);
 }
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3200
- * @tc.name: testFontFeaturesandFeatureDestroyNULL
- * @tc.desc: test for testFontFeaturesandFeatureDestroyNULL
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testFontFeaturesandFeatureDestroyNULL
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_FONT_3200
+ * @tc.desc   test for testFontFeaturesandFeatureDestroyNULL
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativeFontPart2Test, testFontFeaturesandFeatureDestroyNULL, Function | SmallTest | Level3) {
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();

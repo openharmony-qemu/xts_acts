@@ -24,7 +24,7 @@ export default function BuiltinsToLocaleStringTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100);
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -40,12 +40,12 @@ export default function BuiltinsToLocaleStringTest() {
     })
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0100
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0100
-     * @tc.name BuiltinsToLocaleStringTest0100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0100';
@@ -61,12 +61,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0200
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0200
-     * @tc.name BuiltinsToLocaleStringTest0200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0200';
@@ -82,12 +82,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0300
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0300
-     * @tc.name BuiltinsToLocaleStringTest0300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0300';
@@ -105,12 +105,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0400
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0400
-     * @tc.name BuiltinsToLocaleStringTest0400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0400';
@@ -128,12 +128,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0500
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0500
-     * @tc.name BuiltinsToLocaleStringTest0500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0500';
@@ -151,12 +151,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0600
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0600
-     * @tc.name BuiltinsToLocaleStringTest0600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0600';
@@ -174,12 +174,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0700
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0700
-     * @tc.name BuiltinsToLocaleStringTest0700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0700';
@@ -197,12 +197,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0800
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0800
-     * @tc.name BuiltinsToLocaleStringTest0800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0800';
@@ -220,12 +220,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest0900
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_0900
-     * @tc.name BuiltinsToLocaleStringTest0900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest0900';
@@ -240,12 +240,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1000
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1000
-     * @tc.name BuiltinsToLocaleStringTest1000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1000';
@@ -261,12 +261,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1100
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1100
-     * @tc.name BuiltinsToLocaleStringTest1100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1100';
@@ -281,12 +281,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1200
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1200
-     * @tc.name BuiltinsToLocaleStringTest1200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1200';
@@ -302,12 +302,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1300
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1300
-     * @tc.name BuiltinsToLocaleStringTest1300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1300';
@@ -322,12 +322,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1400
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1400
-     * @tc.name BuiltinsToLocaleStringTest1400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1400';
@@ -353,12 +353,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1500
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1500
-     * @tc.name BuiltinsToLocaleStringTest1500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1500';
@@ -384,12 +384,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1600
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1600
-     * @tc.name BuiltinsToLocaleStringTest1600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1600';
@@ -415,12 +415,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1700
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1700
-     * @tc.name BuiltinsToLocaleStringTest1700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1700';
@@ -446,12 +446,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1800
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1800
-     * @tc.name BuiltinsToLocaleStringTest1800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1800';
@@ -477,12 +477,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest1900
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_1900
-     * @tc.name BuiltinsToLocaleStringTest1900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest1900';
@@ -508,12 +508,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2000
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2000
-     * @tc.name BuiltinsToLocaleStringTest2000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2000';
@@ -539,12 +539,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2100
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2100
-     * @tc.name BuiltinsToLocaleStringTest2100
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2100';
@@ -570,12 +570,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2200
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2200
-     * @tc.name BuiltinsToLocaleStringTest2200
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2200';
@@ -601,12 +601,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2300
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2300
-     * @tc.name BuiltinsToLocaleStringTest2300
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2300';
@@ -632,12 +632,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2400
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2400
-     * @tc.name BuiltinsToLocaleStringTest2400
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2400';
@@ -663,12 +663,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2500
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2500
-     * @tc.name BuiltinsToLocaleStringTest2500
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2500';
@@ -694,12 +694,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2600
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2600
-     * @tc.name BuiltinsToLocaleStringTest2600
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2600';
@@ -725,12 +725,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2700
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2700
-     * @tc.name BuiltinsToLocaleStringTest2700
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2700';
@@ -756,12 +756,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2800
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2800
-     * @tc.name BuiltinsToLocaleStringTest2800
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2800';
@@ -787,12 +787,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest2900
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_2900
-     * @tc.name BuiltinsToLocaleStringTest2900
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest2900';
@@ -818,12 +818,12 @@ export default function BuiltinsToLocaleStringTest() {
 
 
     /**
+     * @tc.name   BuiltinsToLocaleStringTest3000
      * @tc.number SUB_BUILTINS_TOLOCALESTRING_TEST_3000
-     * @tc.name BuiltinsToLocaleStringTest3000
-     * @tc.desc test
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsToLocaleStringTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsToLocaleStringTest3000';

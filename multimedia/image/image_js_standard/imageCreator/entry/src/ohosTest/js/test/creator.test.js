@@ -194,15 +194,13 @@ export default function ImageCreator() {
         }
     
         /**
-        * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0100
-        * @tc.name      : createImageCreator
-        * @tc.desc      : 1.set width,height,format,capacity
-        *                 2.create ImageCreator
-        *                 3.return ImageCreator not empty
-        * @tc.size      : MEDIUM 
-        * @tc.type      : Functional
-        * @tc.level     : Level 0
-        */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0100
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0100', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY);
             if (creator == undefined) {
@@ -220,126 +218,108 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0200
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0200
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0200', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0200', WIDTH, HEIGHT, FORMAT, 'hd!');
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0300
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0300
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0300', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0300', WIDTH, HEIGHT, null, CAPACITY);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0400
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0400
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0400', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0400', WIDTH, null, FORMAT, CAPACITY);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0500
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0500
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0500', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0500', null, HEIGHT, FORMAT, CAPACITY);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0600
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0600
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0600', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0600', WIDTH, HEIGHT, FORMAT, null);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0700
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0700
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0700
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0700', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0700', false, HEIGHT, FORMAT, CAPACITY);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0800
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0800
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0800
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0800', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0800', { a: 10 }, HEIGHT, FORMAT, CAPACITY);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0900
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0900
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0900
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0900', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_0900', WIDTH, false, FORMAT, CAPACITY);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_1000
-         * @tc.name      : createImageCreator
-         * @tc.desc      : 1.set width,height,format,capacity
-         *                 2.create ImageCreator
-         *                 3.return ImageCreator empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_1000
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_1000
+         * @tc.desc   1.set width,height,format,capacity
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_1000', Level.LEVEL0, async function (done) {
             createCreator(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_CREATEIMAGECREATOR_1000', WIDTH, HEIGHT, 'form.', CAPACITY);
@@ -347,14 +327,12 @@ export default function ImageCreator() {
     
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_0100
-         * @tc.name      : release-promise
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call release
-         *                 3.return empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_0100
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_PROMISE_0100', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY);
@@ -375,14 +353,12 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_0100
-         * @tc.name      : release-callback
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call release
-         *                 3.return empty
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_0100
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_RELEASE_CALLBACK_0100', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY);
@@ -406,14 +382,12 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_0100
-         * @tc.name      : dequeueImage-promise
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.return image
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_0100
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_PROMISE_0100', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY);
@@ -437,14 +411,12 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_0100
-         * @tc.name      : dequeueImage-callback
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.return image
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_0100
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_DEQUEUEIMAGE_CALLBACK_0100', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY);
@@ -470,15 +442,12 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0200
-         * @tc.name      : queueImage-promise
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.call queueImage
-         *                 4.return undefined
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0200
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0200', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY);
@@ -528,68 +497,62 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0300
-         * @tc.name      : queueImage-promise-1
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call queueImage
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0300
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0300', Level.LEVEL0, async function (done) {
             queueImageError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0300', 1);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0400
-         * @tc.name      : queueImage-promise-null
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call queueImage
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0400
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0400', Level.LEVEL0, async function (done) {
             queueImageError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0400', null);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0500
-         * @tc.name      : queueImage-promise-'a'
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call queueImage
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0500
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0500', Level.LEVEL0, async function (done) {
             queueImageError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0500', 'a');
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0600
-         * @tc.name      : on-{a : 1}
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call queueImage
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0600
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0600', Level.LEVEL0, async function (done) {
             queueImageError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_PROMISE_0600', { a: 1 });
         })
     
-        /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0200
-         * @tc.name      : queueImage-callback
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.call queueImage
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
-         */
     
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0200
+         * @tc.desc   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0200
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0200', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY);
             if (creator != undefined) {
@@ -640,75 +603,61 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0300
-         * @tc.name      : queueImage-callback
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.call queueImage
-         *                 4.return undefined
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0300
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0300', Level.LEVEL0, async function (done) {
             queueImageCbError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0300', 1);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0400
-         * @tc.name      : queueImage-callback
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.call queueImage
-         *                 4.return undefined
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0400
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0400', Level.LEVEL0, async function (done) {
             queueImageCbError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0400', null);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0500
-         * @tc.name      : queueImage-callback
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.call queueImage
-         *                 4.return undefined
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0500
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0500', Level.LEVEL0, async function (done) {
             queueImageCbError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0500', 'a');
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0600
-         * @tc.name      : queueImage-callback
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call dequeueImage
-         *                 3.call queueImage
-         *                 4.return undefined
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0600
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0600
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0600', Level.LEVEL0, async function (done) {
             queueImageCbError(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_QUEUEIMAGE_CALLBACK_0600', { a: 1 });
         })
     
         /**
-            * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0100
-            * @tc.name      : on
-            * @tc.desc      : 1.create ImageCreator
-            *                 2.call on
-            *                 3.return image
-            * @tc.size      : MEDIUM 
-            * @tc.type      : Functional
-            * @tc.level     : Level 0
-            */
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0100
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0100', Level.LEVEL0, async function (done) {
             var creator = image.createImageCreator(WIDTH, HEIGHT, FORMAT, CAPACITY)
             expect(creator != undefined).assertTrue();
@@ -766,67 +715,60 @@ export default function ImageCreator() {
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0200
-         * @tc.name      : on-1
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call on
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0200
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0200', Level.LEVEL0, async function (done) {
             onErr(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0200', 1);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0300
-         * @tc.name      : on-null
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call on
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0300
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0300', Level.LEVEL0, async function (done) {
             onErr(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0300', null);
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0400
-         * @tc.name      : on-{a : 1}
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call on
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0400
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0400', Level.LEVEL0, async function (done) {
             onErr(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0400', { a: 1 });
         })
     
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0500
-         * @tc.name      : on-'a'
-         * @tc.desc      : 1.create ImageCreator
-         *                 2.call on
-         * @tc.size      : MEDIUM 
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0500
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0500
+         * @tc.desc   1.create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0500', Level.LEVEL0, async function (done) {
             onErr(done, 'SUB_MULTIMEDIA_IMAGE_CREATOR_ON_0500', 'a');
         })
 
-                /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_0100
-         * @tc.name      : imageCreator-off-'imageRelease'
-         * @tc.desc      : 1.Create ImageCreator
-         *                 2.Close callback subscription (call creator.off (a))
-         *                 3.Pass in the correct parameter for a in off (a)
-         *                 4.View Image Creator callback subscription effect
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+        /**
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_0100
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_0100
+         * @tc.desc   1.Create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_0100', Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_SUCCESS_0100 start');
@@ -853,15 +795,12 @@ export default function ImageCreator() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_ERROR_0200
-         * @tc.name      : imageCreator-off-'a'
-         * @tc.desc      : 1.Create ImageCreator
-         *                 2.Close callback subscription (call creator.off (a))
-         *                 3.Wrong parameter passed in for a in off (a)
-         *                 4.View Image Creator callback subscription effect
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_ERROR_0200
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_ERROR_0200
+         * @tc.desc   1.Create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_ERROR_0200', Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_ERROR_0200 start');
@@ -888,16 +827,12 @@ export default function ImageCreator() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_ON_AND_OFF_0300
-         * @tc.name      : imageCreator-on-off
-         * @tc.desc      : 1.Create ImageCreator
-         *                 2.Image Creator enables callback subscription
-         *                  (calling creator.on ("imageRelease")): (Print image information in callback)
-         *                 3.Image Creator closes callback subscription (calling creator.off ("imageRelease"))
-         *                 4.View Image Creator callback subscription effect
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_ON_AND_OFF_0300
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_ON_AND_OFF_0300
+         * @tc.desc   1.Create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_AND_OFF_0300', Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_ON_AND_OFF_0300 start');
@@ -942,16 +877,12 @@ export default function ImageCreator() {
         })
 
         /**
-         * @tc.number    : SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_AND_ON_0400
-         * @tc.name      : imageCreator-off-on
-         * @tc.desc      : 1.Create ImageCreator
-         *                 2.Image Creator closes callback subscription (calling creator.off ("imageRelease"))
-         *                 3.Image Creator enables callback subscription
-         *                  (calling creator.on ("imageRelease")): (Print image information in callback)
-         *                 4.View Image Creator callback subscription effect
-         * @tc.size      : MEDIUM
-         * @tc.type      : Functional
-         * @tc.level     : Level 0
+         * @tc.name   SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_AND_ON_0400
+         * @tc.number SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_AND_ON_0400
+         * @tc.desc   1.Create ImageCreator
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
          */
         it('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_AND_ON_0400', Level.LEVEL0, async function (done) {
             console.info('SUB_MULTIMEDIA_IMAGE_CREATOR_OFF_AND_ON_0400 start');

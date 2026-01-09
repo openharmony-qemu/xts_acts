@@ -46,12 +46,12 @@ export default function datePickerLunarJsunit() {
     });
 
     /**
-     * @tc.number: SUB_ACE_BASIC_ETS_API_001
-     * @tc.name  : SUB_ACE_BASIC_ETS_API_001
-     * @tc.desc  : Tests the property of the datePicker,get the lunar of the datePicker
-     * @tc.level : Level 0
-     * @tc.type
-     * @tc.size
+     * @tc.name   testdatePickerLunar001
+     * @tc.number SUB_ACE_BASIC_ETS_API_001
+     * @tc.desc   Tests the property of the datePicker,get the lunar of the datePicker
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testdatePickerLunar001', Level.LEVEL1, async (done: Function) => {
       console.info('datePickerLunar testdatePickerLunar001 START');

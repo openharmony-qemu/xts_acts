@@ -26,12 +26,12 @@ interface Processor {
 export default function HiAppEventPamTest() {
   describe('HiAppEventPamTest', () => {
     /**
+     * @tc.name   testHiAppEventSetPam01
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0100
-     * @tc.name testHiAppEventSetPam01
-     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数,并通过onReceive回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam01', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam01 start');
@@ -187,12 +187,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam02
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0200
-     * @tc.name testHiAppEventSetPam02
-     * @tc.desc 验证setEventParam接口可设置事件关联自定义参数,并通过onTrigger回调获取
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口可设置事件关联自定义参数,并通过onTrigger回调获取
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam02', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam02 start');
@@ -206,7 +206,8 @@ export default function HiAppEventPamTest() {
             {domain: hiAppEvent.domain.OS,
               names: [hiAppEvent.event.APP_LAUNCH, hiAppEvent.event.SCROLL_JANK, hiAppEvent.event.CPU_USAGE_HIGH,
                 hiAppEvent.event.BATTERY_USAGE, hiAppEvent.event.RESOURCE_OVERLIMIT, hiAppEvent.event.ADDRESS_SANITIZER,
-                hiAppEvent.event.MAIN_THREAD_JANK, hiAppEvent.event.APP_HICOLLIE, hiAppEvent.event.AUDIO_JANK_FRAME]}
+                hiAppEvent.event.MAIN_THREAD_JANK, hiAppEvent.event.APP_HICOLLIE, hiAppEvent.event.AUDIO_JANK_FRAME,
+                hiAppEvent.event.SCROLL_ARKWEB_FLING_JANK]}
           ],
           onTrigger: (curRow, curSize, holder) => {
             expect(holder != null).assertTrue();
@@ -268,12 +269,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam03
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0300
-     * @tc.name testHiAppEventSetPam03
-     * @tc.desc 验证setEventParam接口domain下划线结尾,返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain下划线结尾,返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam03', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam03 start');
@@ -296,12 +297,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam031
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0301
-     * @tc.name testHiAppEventSetPam031
-     * @tc.desc 验证setEventParam接口在关闭打点功能后,返回错误码11100001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口在关闭打点功能后,返回错误码11100001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam031 start');
@@ -326,12 +327,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam04
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0400
-     * @tc.name testHiAppEventSetPam04
-     * @tc.desc 验证setEventParam接口domain包含特殊字符,返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain包含特殊字符,返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam04', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam04 start');
@@ -354,12 +355,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam05
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0500
-     * @tc.name testHiAppEventSetPam05
-     * @tc.desc 验证setEventParam接口domain以数字开头,返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain以数字开头,返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam05', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam05 start');
@@ -382,12 +383,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam06
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0600
-     * @tc.name testHiAppEventSetPam06
-     * @tc.desc 验证setEventParam接口domain为空,返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain为空,返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam06', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam06 start');
@@ -410,12 +411,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam07
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0700
-     * @tc.name testHiAppEventSetPam07
-     * @tc.desc 验证setEventParam接口domain为33字节,返回错误码11101001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain为33字节,返回错误码11101001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam07', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam07 start');
@@ -438,12 +439,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam08
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0800
-     * @tc.name testHiAppEventSetPam08
-     * @tc.desc 验证setEventParam接口domain为undefined,返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口domain为undefined,返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam08', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam08 start');
@@ -468,12 +469,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam09
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_0900
-     * @tc.name testHiAppEventSetPam09
-     * @tc.desc 验证setEventParam接口name下划线结尾,返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name下划线结尾,返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam09', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam09 start');
@@ -496,12 +497,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam10
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1000
-     * @tc.name testHiAppEventSetPam10
-     * @tc.desc 验证setEventParam接口name包含特殊字符,返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name包含特殊字符,返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam10', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam10 start');
@@ -524,12 +525,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam11
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1100
-     * @tc.name testHiAppEventSetPam11
-     * @tc.desc 验证setEventParam接口name以数字开头,返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name以数字开头,返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam11', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam11 start');
@@ -552,12 +553,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam12
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1200
-     * @tc.name testHiAppEventSetPam12
-     * @tc.desc 验证setEventParam接口name为空,返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name为空,返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam12', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam12 start');
@@ -582,12 +583,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam13
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1300
-     * @tc.name testHiAppEventSetPam13
-     * @tc.desc 验证setEventParam接口name49字节,返回错误码11101002
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name49字节,返回错误码11101002
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam13', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam13 start');
@@ -611,12 +612,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam14
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1400
-     * @tc.name testHiAppEventSetPam14
-     * @tc.desc 验证setEventParam接口name为undefined,返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口name为undefined,返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam14 start');
@@ -641,12 +642,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam15
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1500
-     * @tc.name testHiAppEventSetPam15
-     * @tc.desc 验证setEventParam接口paramname下划线结尾,返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname下划线结尾,返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam15', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam15 start');
@@ -669,12 +670,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam16
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1600
-     * @tc.name testHiAppEventSetPam16
-     * @tc.desc 验证setEventParam接口paramname包含特殊字符,返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname包含特殊字符,返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam16', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam16 start');
@@ -697,12 +698,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam17
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1700
-     * @tc.name testHiAppEventSetPam17
-     * @tc.desc 验证setEventParam接口paramname下划线结尾,返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname下划线结尾,返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam17', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam17 start');
@@ -725,12 +726,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam18
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1800
-     * @tc.name testHiAppEventSetPam18
-     * @tc.desc 验证setEventParam接口paramname为空,返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname为空,返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam18', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam18 start');
@@ -753,12 +754,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam19
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_1900
-     * @tc.name testHiAppEventSetPam19
-     * @tc.desc 验证setEventParam接口paramname为33字节,返回错误码11101005
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramname为33字节,返回错误码11101005
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam19', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam19 start');
@@ -781,12 +782,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam20
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2000
-     * @tc.name testHiAppEventSetPam20
-     * @tc.desc 验证setEventParam接口paramvalue为超长字符串,返回错误码11101004
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口paramvalue为超长字符串,返回错误码11101004
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam20', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam20 start');
@@ -813,12 +814,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSetPam21
      * @tc.number SUB_DFX_DFT_HiAppEvent_SetPam_2100
-     * @tc.name testHiAppEventSetPam21
-     * @tc.desc 验证setEventParam接口自定义参数设置65个,返回错误码11101007
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setEventParam接口自定义参数设置65个,返回错误码11101007
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSetPam21', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSetPam21 start');
@@ -842,12 +843,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub70
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7000
-     * @tc.name testHiAppEventSub70
-     * @tc.desc 验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSub70', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSub70 start');
@@ -908,12 +909,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub71
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7100
-     * @tc.name testHiAppEventSub71
-     * @tc.desc 验证hiappevent订阅setRow接口设置可取出的应用事件包的数据条数
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证hiappevent订阅setRow接口设置可取出的应用事件包的数据条数
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSub71', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSub71 start');
@@ -975,12 +976,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub72
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7200
-     * @tc.name testHiAppEventSub72
-     * @tc.desc 验证setRow接口设置条数为0,返回错误码11104001
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setRow接口设置条数为0,返回错误码11104001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSub72', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSub72 start');
@@ -1006,12 +1007,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub73
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_73
-     * @tc.name testHiAppEventSub73
-     * @tc.desc 验证setRow接口设置条数为0,返回错误码401
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证setRow接口设置条数为0,返回错误码401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testHiAppEventSub73',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('testHiAppEventSub73 start');
@@ -1037,12 +1038,12 @@ export default function HiAppEventPamTest() {
     })
 
     /**
+     * @tc.name   testHiAppEventSub74
      * @tc.number SUB_DFX_DFT_HiAppEvent_Sub_7400
-     * @tc.name testHiAppEventSub74
-     * @tc.desc 验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level3
+     * @tc.desc   验证hiappevent订阅setRow接口默认设置取出的应用事件包的数据条数为1
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testHiAppEventSub74', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('testHiAppEventSub74 start');
@@ -1104,13 +1105,13 @@ export default function HiAppEventPamTest() {
     })
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2900
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_2900
-    * @tc.desc 验证addProcessorFromConfig入参name正常，返回对应代理id
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_2900
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_2900
+     * @tc.desc   验证addProcessorFromConfig入参name正常，返回对应代理id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_2900 start');
         const targetPath = '/system/etc/hiappevent/processor.json';
@@ -1140,13 +1141,13 @@ export default function HiAppEventPamTest() {
       });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3000
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3000
-    * @tc.desc 验证addProcessorFromConfig入参name正常，返回对应代理id
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3000
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3000
+     * @tc.desc   验证addProcessorFromConfig入参name正常，返回对应代理id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3000 start');
         const targetPath = '/system/etc/hiappevent/processor.json';
@@ -1170,13 +1171,13 @@ export default function HiAppEventPamTest() {
       });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3001
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3001
-    * @tc.desc 验证addProcessorFromConfig入参name和configName正常，返回对应代理id
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3001
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3001
+     * @tc.desc   验证addProcessorFromConfig入参name和configName正常，返回对应代理id
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3001 start');
         const targetPath = '/system/etc/hiappevent/processor.json';
@@ -1201,13 +1202,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3002
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3002
-    * @tc.desc 验证addProcessorFromConfig入参configName为异常字符串，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3002
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3002
+     * @tc.desc   验证addProcessorFromConfig入参configName为异常字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3002 start');
         hiAppEvent.addProcessorFromConfig("ha_app_event", "undefined").then((processorId) => {
@@ -1222,13 +1223,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3003
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3003
-    * @tc.desc 验证addProcessorFromConfig入参configName为空常字符串，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3003
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3003
+     * @tc.desc   验证addProcessorFromConfig入参configName为空常字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3003 start');
         hiAppEvent.addProcessorFromConfig("ha_app_event", "").then((processorId) => {
@@ -1242,14 +1243,14 @@ export default function HiAppEventPamTest() {
         })
     });
 
-    /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3004
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3004
-    * @tc.desc 验证addProcessorFromConfig入参configName为null，返回值401
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     /**
+      * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3004
+      * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3004
+      * @tc.desc   验证addProcessorFromConfig入参configName为null，返回值401
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL0
+      */
      it('SUB_DFX_DFT_HiAppEvent_Js_3004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3004 start');
         try {
@@ -1270,13 +1271,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3005
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3005
-    * @tc.desc 验证addProcessorFromConfig入参configName为数字，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3005
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3005
+     * @tc.desc   验证addProcessorFromConfig入参configName为数字，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3005 start');
         hiAppEvent.addProcessorFromConfig("ha_app_event", "123_SDG").then((processorId) => {
@@ -1291,13 +1292,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3006
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3006
-    * @tc.desc 验证addProcessorFromConfig入参configName为257字节，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3006
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3006
+     * @tc.desc   验证addProcessorFromConfig入参configName为257字节，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3006 start');
         let configName = 'a'.repeat(256 +1);
@@ -1313,13 +1314,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3007
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3007
-    * @tc.desc 验证addProcessorFromConfig入参name为异常字符串，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3007
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3007
+     * @tc.desc   验证addProcessorFromConfig入参name为异常字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('SUB_DFX_DFT_HiAppEvent_Js_3007 start');
       hiAppEvent.addProcessorFromConfig("undefined").then((processorId) => {
@@ -1334,13 +1335,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3008
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3008
-    * @tc.desc 验证addProcessorFromConfig入参name为空字符串，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3008
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3008
+     * @tc.desc   验证addProcessorFromConfig入参name为空字符串，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3008 start');
         hiAppEvent.addProcessorFromConfig("").then((processorId) => {
@@ -1355,13 +1356,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3009
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3009
-    * @tc.desc 验证addProcessorFromConfig入参name为null，返回值401
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3009
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3009
+     * @tc.desc   验证addProcessorFromConfig入参name为null，返回值401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3009 start');
         try {
@@ -1382,13 +1383,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3010
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3010
-    * @tc.desc 验证addProcessorFromConfig入参name为数字，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3010
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3010
+     * @tc.desc   验证addProcessorFromConfig入参name为数字，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3010 start');
         hiAppEvent.addProcessorFromConfig("123_processor").then((processorId) => {
@@ -1403,13 +1404,13 @@ export default function HiAppEventPamTest() {
     });
 
     /**
-    * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3011
-    * @tc.name SUB_DFX_DFT_HiAppEvent_Js_3011
-    * @tc.desc 验证addProcessorFromConfig入参name为257字节，返回值11105001
-    * @tc.size MediumTest
-    * @tc.type Function
-    * @tc.level Level3
-    */
+     * @tc.name   SUB_DFX_DFT_HiAppEvent_Js_3011
+     * @tc.number SUB_DFX_DFT_HiAppEvent_Js_3011
+     * @tc.desc   验证addProcessorFromConfig入参name为257字节，返回值11105001
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('SUB_DFX_DFT_HiAppEvent_Js_3011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
         console.info('SUB_DFX_DFT_HiAppEvent_Js_3011 start');
         let processorName = 'a'.repeat(256 +1);

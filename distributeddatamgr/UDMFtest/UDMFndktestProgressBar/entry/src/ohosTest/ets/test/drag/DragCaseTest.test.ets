@@ -55,7 +55,6 @@ export default function DragTest(){
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   UDMFCaseTest001
      * @tc.number SUB_UDMFndk_CASE_001
      * @tc.desc   testing List lanes
@@ -79,7 +78,6 @@ export default function DragTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   UDMFCaseTest002
      * @tc.number SUB_UDMFndk_CASE_002
      * @tc.desc   testing List contentStartOffset And contentAndOffset
@@ -103,7 +101,6 @@ export default function DragTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   UDMFCaseTest003
      * @tc.number SUB_UDMFndk_CASE_003
      * @tc.desc   testing List maintainVisibleContentPosition
@@ -126,7 +123,6 @@ export default function DragTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_UDMFndk_CASE_004
      * @tc.number SUB_UDMFndk_CASE_004
      * @tc.desc   testing List maintainVisibleContentPosition
@@ -149,7 +145,6 @@ export default function DragTest(){
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_UDMFndk_CASE_005
      * @tc.number SUB_UDMFndk_CASE_005
      * @tc.desc   testing List maintainVisibleContentPosition
@@ -172,7 +167,6 @@ export default function DragTest(){
       done();
     })
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_UDMFndk_CASE_006
      * @tc.number SUB_UDMFndk_CASE_006
      * @tc.desc   testing List maintainVisibleContentPosition
@@ -196,7 +190,6 @@ export default function DragTest(){
     })
 
     /**
-     * @generated.time 2025-11-09 20:49:53
      * @tc.name   SUB_UDMFndk_CASE_007
      * @tc.number SUB_UDMFndk_CASE_007
      * @tc.desc   testing List contentStartOffset And contentAndOffset

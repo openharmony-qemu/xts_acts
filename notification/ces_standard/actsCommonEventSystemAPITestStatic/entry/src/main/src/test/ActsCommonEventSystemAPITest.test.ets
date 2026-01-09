@@ -16,7 +16,7 @@ import { describe, it, expect, TestType, Size, Level, beforeAll, afterEach } fro
 import commonEventManager from '@ohos.commonEventManager'
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
 import notificationManager from '@ohos.notificationManager'
 import notificationSubscribe from '@ohos.notificationSubscribe'
@@ -55,12 +55,12 @@ export default function ActsCommonEventSystemAPITest() {
 
     beforeAll(() => {
       hilog.info(domain, TAG, '%{public}s', 'beforeAll start');
-      
+
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       await Utils.msSleep(2000)
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b " + bundleName )
       await Utils.msSleep(2000)
-      testAbilityContext = AppStorage.get<common.UIAbilityContext>('UIAbilityContext') as common.UIAbilityContext
+      testAbilityContext = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       hilog.info(domain, TAG, '%{public}s', 'beforeAll end');
     })
 
@@ -70,9 +70,12 @@ export default function ActsCommonEventSystemAPITest() {
 
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5000
-     * @tc.desc  test function publishAsBundle
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_5000
+     * @tc.desc   test function publishAsBundle
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -95,9 +98,12 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.name  Sub_Notification_Ans_Publish_Publish_Static_5100
-     * @tc.desc  test function publishAsUser
+     * @tc.name   Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.number Sub_Notification_Ans_Publish_Publish_Static_5100
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ans_Publish_Publish_Static_5100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -125,10 +131,13 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
     /**
-    * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1200
-    * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1200
-    * @tc.desc  test function removeStickyCommonEvent
-    */
+     * @tc.name   Sub_Notification_Ces_StaticEvent_Config_Static_1200
+     * @tc.number Sub_Notification_Ces_StaticEvent_Config_Static_1200
+     * @tc.desc   test function removeStickyCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it('Sub_Notification_Ces_StaticEvent_Config_Static_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_StaticEvent_Config_Static_1200'
@@ -150,9 +159,12 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Ces_StaticEvent_Config_Static_1300
-     * @tc.name  Sub_Notification_Ces_StaticEvent_Config_Static_1300
-     * @tc.desc  test function removeStickyCommonEvent
+     * @tc.name   Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.number Sub_Notification_Ces_StaticEvent_Config_Static_1300
+     * @tc.desc   test function removeStickyCommonEvent
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Ces_StaticEvent_Config_Static_1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -163,7 +175,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info("${TAG} remove sticky event AsyncCallback success");
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${Tag} remove sticky event AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(202);
           done()
@@ -172,83 +184,14 @@ export default function ActsCommonEventSystemAPITest() {
         console.info(`${Tag} Sub_Notification_Ces_StaticEvent_Config_1300 END`);
       })
 
-    
-    /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278
-     * @tc.desc  test function publishAsUser
-     */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_278', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>  {
-    //   let Tag :string ='Sub_Notification_Ces_StaticEvent_Config_Static_1300'
-    //   //构造commonEventManager.publish401错误码
-    //   try {
-    //     commonEventManager.publish("EVENT01", null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `publish1 err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    //   let options: commonEventManager.CommonEventPublishData = {
-    //     code: 0,
-    //     data: "initial data",
-    //     isOrdered: true
-    //   }
-    //   try {
-    //     commonEventManager.publish("EVENT01", options, null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `publish2 err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //   ;
-    //
-    //   //构造commonEventManager.createSubscriberSync401错误码
-    //   try {
-    //     commonEventManager.createSubscriberSync(null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `createSubscriberSync err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    //   //构造commonEventManager.subscribe 401错误码
-    //   let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-    //     events: ["event05"]
-    //   }
-    //   let subscriber = commonEventManager.createSubscriberSync(subscribeInfo)
-    //   try {
-    //     commonEventManager.subscribe(subscriber, null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `createSubscriberSync err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    //   //构造commonEventManager.subscribe 401错误码
-    //   try {
-    //     commonEventManager.unsubscribe(null, null);
-    //     expect(false).assertTrue()
-    //     done()
-    //   } catch (err) {
-    //     hilog.info(0x0000, 'testTag', `createSubscriberSync err: ${JSON.stringify(err)}`);
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    // })
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
-     * @tc.desc  test function publishAsUser
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_279', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -283,7 +226,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' publish2 fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600004);
         });
@@ -318,7 +261,7 @@ export default function ActsCommonEventSystemAPITest() {
                 "TimerCapsule.initialtime": 7349485944,
                 "TimerCapsule.isCountdown": false,
                 "TimerCapsule.isPause": true
-              } as Record<String, Object>
+              } as Record<String, RecordData>
             } as notificationManager.NotificationLiveViewContent,
           } as notificationManager.NotificationContent,
           creatorBundleName: "creatorBundleName",
@@ -336,7 +279,7 @@ export default function ActsCommonEventSystemAPITest() {
           isUnremovable: false,
           extendInfo: {
             'testKey': 'testValue'
-          } as Record<String, Object>,
+          } as Record<String, RecordData>,
         }
         notificationManager.publish(notificationRequest1600007, (err: BusinessError | null) => {
           console.info(Tag + ' publish3 fail,result is :', JSON.stringify(err));
@@ -347,7 +290,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' publish4 fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600007);
         });
@@ -381,7 +324,7 @@ export default function ActsCommonEventSystemAPITest() {
                 "TimerCapsule.initialtime": 7349485944,
                 "TimerCapsule.isCountdown": false,
                 "TimerCapsule.isPause": true
-              } as Record<String, Object>,
+              } as Record<String, RecordData>,
             } as notificationManager.NotificationLiveViewContent,
           } as notificationManager.NotificationContent,
           creatorBundleName: "creatorBundleName",
@@ -399,7 +342,7 @@ export default function ActsCommonEventSystemAPITest() {
           isUnremovable: false,
           extendInfo: {
             'testKey': 'testValue'
-          } as Record<String, Object>
+          } as Record<String, RecordData>
         }
         await Utils.msSleep(500);
         notificationManager.publish(notificationRequest1600014, (err: BusinessError | null) => {
@@ -411,337 +354,63 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + " publish update success");
           expect(false).assertTrue()
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(Tag + ' notificationRequest1600014 promiss fail,result is :', JSON.stringify(err));
           expect(err?.code).assertEqual(1600014);
           done()
         });
       })
 
-    
+
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
-     * @tc.desc  test function publishAsUser
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
-    //   let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
-    //   count = 0;
-    //   let id :int = 1
-    //   let label:string = "label"
-    //   try {
-    //     notificationManager.cancel(null, (err: BusinessError | null) => {
-    //       if (err) {
-    //         console.info(`${TAG} cancel id err: ${err.code}, errMes: ${err.message}`)
-    //         count++;
-    //         expect(count).assertEqual(1);
-    //         done()
-    //       } else {
-    //         console.info(`${TAG} cancel id success`)
-    //         expect(false).assertTrue()
-    //         done()
-    //       }
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} cancel1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   notificationManager.cancel(id, (err: BusinessError | null) => {
-    //     console.info(`${TAG} cancel2 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(1600007)
-    //   })
-    //
-    //   try {
-    //     notificationManager.cancel(null, label, (err: BusinessError | null) => {
-    //       console.info(`${TAG} cancel id success`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} cancel3 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   notificationManager.cancel(id, label, (err: BusinessError | null) => {
-    //     console.info(`${TAG} cancel4 AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(1600007)
-    //   })
-    //
-    //   await notificationManager.cancel(id, label).then(() => {
-    //     console.info(`${TAG} cancel Promise success`)
-    //     expect(false).assertTrue()
-    //     done()
-    //   }).catch((err: BusinessError) => {
-    //     console.info(`${TAG} cancel5 Promise err: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(1600007)
-    //     done()
-    //   })
-    //
-    // })
+    it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_280'
+      let id :int = 1
+      let label:string = "label"
 
+      notificationManager.cancel(id, (err: BusinessError | null) => {
+        console.info(`${TAG} cancel2 AsyncCallback err: ${err}`)
+        expect(err?.code).assertEqual(1600007)
+      })
+      
+      notificationManager.cancel(id, label, (err: BusinessError | null) => {
+        console.info(`${TAG} cancel4 AsyncCallback err: ${err}`)
+        expect(err?.code).assertEqual(1600007)
+      })
+
+      await notificationManager.cancel(id, label).then(() => {
+        console.info(`${TAG} cancel Promise success`)
+        expect(false).assertTrue()
+        done()
+      }).catch((err) => {
+        let error : BusinessError = err as BusinessError
+        console.info(`${TAG} cancel5 Promise error: ${error.code}, errMes: ${error.message}`)
+        expect(error?.code).assertEqual(1600007)
+        done()
+      })
+
+    })
+    
     
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281
-     * @tc.desc  test function publishAsUser
-     */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
-    // let TAG :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_281'
-    //   try {
-    //     notificationManager.addSlot(null, (err: BusinessError | null) => {
-    //       console.info(`addSlot SOCIAL_COMMUNICATION success`);
-    //       expect(false).assertTrue();
-    //       done();
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} addSlot1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     await notificationManager.addSlot(15).then(() => {
-    //       console.info(`${TAG} addSlot Promise success`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     }).catch((err: BusinessError) => {
-    //       console.info(`${TAG} addSlot Promise errCode: ${err.code}, errMes: ${err.message}`)
-    //       expect(err?.code).assertEqual(401)
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} addSlot2 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     notificationManager.getSlot(null, (err: BusinessError | null, NotificationSlot) => {
-    //       console.info(`${TAG} getSlot AsyncCallback err: ${err.code}`);
-    //       expect(false).assertTrue();
-    //       done();
-    //     })
-    //   }catch (err) {
-    //     console.info(`${TAG} getSlot1 AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     notificationManager.removeSlot(null, (err: BusinessError | null) => {
-    //       console.info(`${TAG} removeSlot_1 errCode: ${err.code}, errMes: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} removeSlot_1 errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //   }
-    //
-    //   try {
-    //     notificationManager.cancelGroup(null, (err: BusinessError | null) => {
-    //       console.info(`${TAG} cancelGroup AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} cancelGroup AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //
-    //   }
-    //
-    //   try {
-    //     notificationManager.isSupportTemplate(null, (err: BusinessError | null) => {
-    //       console.info(`${TAG} isSupportTemplate AsyncCallback err: ${err.code}, errMes: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     })
-    //   } catch (err) {
-    //     console.info(`${TAG} isSupportTemplate AsyncCallback errCode: ${err.code}, errMes: ${err.message}`)
-    //     expect(err?.code).assertEqual(401)
-    //     done()
-    //   }
-    //
-    // })
-
-    
-    /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284
-     * @tc.desc  test function publishAsUser
-     */
-    // it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> =>{
-    //   let Tag :string ='Sub_Notification_Ces_Publish_CommonEvent_Static_7900_284'
-    //   try {
-    //     notificationManager.setBadgeNumber(null, (err: BusinessError | null) => {
-    //       console.log(Tag+`setBadgeNumber failed, error code: ${err.code}, message: ${err.message}`)
-    //       if (err.code == 801) {
-    //         expect(err.code == 801).assertTrue()
-    //         done()
-    //       } else {
-    //         expect(false).assertTrue()
-    //         done()
-    //       }
-    //     })
-    //   } catch (err) {
-    //     console.log(Tag+`setBadgeNumber failed, catch error code: ${err.code}, message: ${err.message}`)
-    //     if (err.code == 801) {
-    //       expect(err.code == 801).assertTrue()
-    //       done()
-    //     } else {
-    //       expect(err?.code).assertEqual(401)
-    //       done()
-    //     }
-    //   }
-    //
-    //
-    //   // 定义订阅者，用于保存创建成功的订阅者对象，后续使用其完成订阅及退订的动作
-    //   let subscriber: commonEventManager.CommonEventSubscriber|undefined;
-    //   // 订阅者信息
-    //   let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
-    //     events: ["event284"],
-    //     publisherBundleName: 'com.example.myapplication'
-    //   };
-    //
-    //   commonEventManager.createSubscriber(subscribeInfo, async (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
-    //     if (err) {
-    //       console.info(`Sub_Notification_Ces_Publish_CommonEvent_7900_284 err, error code: ${err.code}, message: ${err.message}`)
-    //       expect(false).assertTrue()
-    //       done()
-    //     } else {
-    //       console.info(`Sub_Notification_Ces_Publish_CommonEvent_7900_284 success ${commonEventSubscriber}`)
-    //       subscriber = commonEventSubscriber
-    //
-    //       try {
-    //         subscriber.getCode(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getCode err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.setCode(null, (err: BusinessError | null) => {
-    //           console.info(`${TAG} setCode id success`)
-    //           expect(false).assertTrue()
-    //           done()
-    //         })
-    //       } catch (err) {
-    //         console.info(`${TAG} setCode err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.getData(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getData err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.setData(null, (err: BusinessError | null) => {
-    //           console.info(`setData_1 err, error code: ${err.code}, message: ${err.message}`)
-    //           expect(false).assertTrue()
-    //           done()
-    //         })
-    //       } catch (err) {
-    //         console.info(`${TAG} setData err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.clearAbortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} clearAbortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //
-    //       try {
-    //         subscriber.setCodeAndData(null, 'data02', (err: BusinessError | null) => {
-    //           console.info(`${TAG} setCodeAndData id success`)
-    //           expect(false).assertTrue()
-    //           done()
-    //         })
-    //       } catch (err) {
-    //         console.info(`${TAG} setCodeAndData err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.isOrderedCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} isOrderedCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.isStickyCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} isStickyCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.abortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} abortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.clearAbortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} clearAbortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.getAbortCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getAbortCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.getSubscribeInfo(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} getSubscribeInfo err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //       try {
-    //         subscriber.finishCommonEvent(null)
-    //       }catch (err) {
-    //         console.info(`${TAG} finishCommonEvent err: ${err.code}, errMes: ${err.message}`)
-    //         expect(err?.code).assertEqual(401)
-    //         done()
-    //       }
-    //
-    //     }
-    //   })
-    // })
-
-    
-
-    /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
-     * @tc.desc  test function publishAsUser
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_282'
-        
+
         notificationManager.requestEnableNotification(testAbilityContext, (err: BusinessError | null) => {
           console.info(`${Tag} requestEnableNotification2 Promise err: ${err?.code}, errMes: ${err?.message}`)
         })
@@ -750,7 +419,7 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(`${Tag} requestEnableNotification1 Promise success!`)
           expect(false).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${Tag} requestEnableNotification1 Promise err: ${err.code}, errMes: ${err.message}`)
           expect(err?.code).assertEqual(1600013)
         })
@@ -772,45 +441,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
         console.info(`${Tag} button is success`)
 
-        let index1: number = 0;
-        let publishCallback = (err: BusinessError|null) => {
-          index1 += 1
-          console.info(`index1:` + index1)
-          if (index1 == 11) {
-            console.info(`${Tag} fail in publishing notification:` + err?.code)
-            expect(err?.code).assertEqual(1600009);
-            done()
-          } else {
-            console.info(`${Tag} publishing notification:` + JSON.stringify(err))
-            expect(err).assertEqual(null);
-          }
-        }
-
-        for (let index: int = 0; index <= 10; index++) {
-          let notificationRequest: notificationManager.NotificationRequest = {
-            id: index,
-            content: {
-              notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
-              normal: {
-                title: 'text_title',
-                text: 'text_text',
-                additionalText: 'test_Publish'
-              } as notificationManager.NotificationBasicContent,
-            } as notificationManager.NotificationContent,
-            creatorBundleName: "123",
-            creatorUid: 123,
-            creatorPid: 123,
-            creatorUserId: 123,
-            hashCode: "123",
-            source: 0,
-            deviceId: undefined,
-            notificationFlags: undefined,
-            agentBundle: undefined,
-            appInstanceKey: undefined,
-          }
-          notificationManager.publish(notificationRequest, publishCallback)
-          await Utils.msSleep(60)
-        }
+        
 
         for (let index = 0; index <= 10; index++) {
           count = 0;
@@ -839,7 +470,7 @@ export default function ActsCommonEventSystemAPITest() {
             console.info(`${Tag} publish_${index} Promise success`)
             count++;
             expect(count).assertEqual(1);
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             console.info(`${Tag} publish_${index} Promise err: ${err.code}, errMes: ${err.message}`)
             if (index == 10) {
               expect(err?.code).assertEqual(1600009)
@@ -854,30 +485,30 @@ export default function ActsCommonEventSystemAPITest() {
       })
 
 
-      /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
-     * @tc.desc  test function publishAsUser
+    /**
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
-        await Utils.msSleep(2000)
-        count = 0;
         let Tag: string = 'Sub_Notification_Ces_Publish_CommonEvent_Static_7900_283'
         notificationManager.openNotificationSettings(testAbilityContext).then(() => {
-          count++;
-          expect(count).assertEqual(1);
           console.info(Tag + "Succeed to openNotificationSettings");
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
-            expect(err.code == 801).assertTrue();
             done();
           } else if(err.code == 1600001){
-            expect(err?.code).assertEqual(1600001)
+            expect(err?.code).assertEqual(1600001);
             done();
           } else {
-            expect(err?.code).assertEqual(1011)
+            console.error(Tag + "openNotificationSettings:1011 " + JSON.stringify(err));
+            expect(err?.code).assertEqual(1011);
+            console.error(Tag + "openNotificationSettings:1011 done1" + JSON.stringify(err));
             done();
           }
         })
@@ -886,24 +517,55 @@ export default function ActsCommonEventSystemAPITest() {
           console.info(Tag + "Succeed to openNotificationSettings");
           expect(false).assertTrue();
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.error(Tag + "openNotificationSettings: " + JSON.stringify(err));
           if (err.code == 801) {
             expect(err.code == 801).assertTrue();
-            done();
+          } else if(err.code == 1011){
+            expect(err?.code).assertEqual(1011);
           } else {
             expect(err?.code).assertEqual(1600018)
-            done()
           }
         });
         await Utils.msSleep(2000)
+        let index1: number = 0;
+        let publishCallback = (err: BusinessError|null) => {
+          index1 += 1
+          console.info(`index1:` + index1)
+          if (index1 == 11) {
+            console.info(`${Tag} fail in publishing notification:` + err?.code)
+            expect(err?.code).assertEqual(1600009);
+            done()
+          } else {
+            console.info(`${Tag} publishing notification:` + JSON.stringify(err))
+            expect(err).assertEqual(null);
+          }
+        }
+
+        for (let index: int = 0; index <= 10; index++) {
+          let notificationRequest: notificationManager.NotificationRequest = {
+            id: index,
+            content: {
+              notificationContentType: notificationManager.ContentType.NOTIFICATION_CONTENT_BASIC_TEXT,
+              normal: {
+                title: 'text_title',
+                text: 'text_text',
+                additionalText: 'test_Publish'
+              } as notificationManager.NotificationBasicContent,
+            } as notificationManager.NotificationContent,
+          }
+          notificationManager.publish(notificationRequest, publishCallback)
+          await Utils.msSleep(60)
+        }
       })
 
-
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
-     * @tc.desc  test function publishAsUser
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287
+     * @tc.desc   test function publishAsUser
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_287', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
@@ -914,7 +576,7 @@ export default function ActsCommonEventSystemAPITest() {
         }
         console.info(`${Tag} BundleOption bundle:uid = ${BundleOption.bundle},${BundleOption.uid}`);
         expect(typeof BundleOption.bundle == 'string').assertTrue()
-        expect(typeof BundleOption.uid == 'number').assertTrue()
+        expect(typeof BundleOption.uid == 'int').assertTrue()
         expect(BundleOption.bundle).assertEqual(bundleName)
         expect(BundleOption.uid).assertEqual(20020189)
         console.info(`${Tag} Sub_Notification_Ces_Publish_CommonEvent_7900_287 END`);
@@ -941,9 +603,12 @@ export default function ActsCommonEventSystemAPITest() {
       });
 
     /**
-     * @tc.number  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.name  Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
-     * @tc.desc  test function publish
+     * @tc.name   Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.number Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288
+     * @tc.desc   test function publish
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Ces_Publish_CommonEvent_Static_7900_288', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {

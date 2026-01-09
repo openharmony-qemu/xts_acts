@@ -43,12 +43,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100
-     * @tc.name Test createAsyKeyGeneratorBySpec error params process is fail
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_512
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. AsyKeyGenerator with algName SM2_512
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0100: started.");
@@ -67,12 +67,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200
-     * @tc.name Test createAsyKeyGeneratorBySpec error type. process is fail
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_512
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   1. AsyKeyGenerator with algName SM2_512
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0200: started.");
@@ -91,13 +91,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300
-     * @tc.name Test keyGenerateBySpec sm2. process is success
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   2. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0300: started.");
@@ -114,13 +113,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400
-     * @tc.name Test keyGenerateBySpec sm2. process is success
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with AsyncCallback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   2. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0400: started.");
@@ -137,13 +135,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500
-     * @tc.name Test keyGenerateBySpec sm2. process is success
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   2. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0500: started.");
@@ -160,13 +157,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600
-     * @tc.name Test keyGenerateBySpec sm2. process is success
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with AsyncCallback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level2
+     * @tc.desc   2. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0600: started.");
@@ -183,13 +179,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700
-     * @tc.name Test priKeyGenerate By pub Spec sm2. process is success
-     * @tc.desc 1. AsyKeyGenerator with algName SM2
-     * @tc.desc 2. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   2. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0700: started.");
@@ -207,13 +202,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800
-     * @tc.name Test priKeyGenerate By pub Spec sm2. process is fail
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with AsyncCallback style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   2. Test interface with AsyncCallback style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_0800: started.");
@@ -231,13 +225,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000
      * @tc.number Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000
-     * @tc.name Test getAsyKeySpec sm2. process is success
-     * @tc.desc 1. AsyKeyGenerator with algName SM2_256
-     * @tc.desc 2. Test interface with Promise style
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   2. Test interface with Promise style
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.log("Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1000: started.");
@@ -264,12 +257,12 @@ export default function SecurityCryptoFwKeyGenerateSM2TestUnit() {
     });
 
     /**
+     * @tc.name   SUB_Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1200
      * @tc.number SUB_Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1200
-     * @tc.name Test getAsyKeySpec sm2. get format,algName. process success
-     * @tc.desc AsyKeyGenerator with spec
-     * @tc.size Medium
-     * @tc.type Func
-     * @tc.level Level3
+     * @tc.desc   AsyKeyGenerator with spec
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("SUB_Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let testNumber: string = "SUB_Security_CryptoFramework_AsyKeyGenerator_SM2_Func_1200";

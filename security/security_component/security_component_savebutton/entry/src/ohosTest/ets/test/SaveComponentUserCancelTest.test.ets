@@ -48,13 +48,12 @@ export default function saveComponentUserCancelTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveCancel_0100
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveCancel_0100
-     * @tc.name Test_Security_Button_SaveCancel_0100
-     * @tc.desc Test SaveComponent userCancelEvent is true and userCancel Save successfully.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 0
-     * @tc.require
+     * @tc.desc   Test SaveComponent userCancelEvent is true and userCancel Save successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("Test_Security_Button_SaveCancel_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveCancel_0100] START====');
@@ -151,13 +150,12 @@ export default function saveComponentUserCancelTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveCancel_0200
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveCancel_0200
-     * @tc.name Test_Security_Button_SaveCancel_0200
-     * @tc.desc Test SaveComponent userCancelEvent is true and Authorization is successfully after clicking Allow.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SaveComponent userCancelEvent is true and Authorization is successfully after clicking Allow.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Test_Security_Button_SaveCancel_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveCancel_0200] START====');
@@ -214,8 +212,31 @@ export default function saveComponentUserCancelTest() {
         await button.click();
         await Utils.sleep(1000);
         let allowBtn = await driver.findComponent(ON.text('允许'));
+        let titleTx = await driver.findComponent(ON.text('安全保存图片和视频'));
         console.info('====>[Test_Security_Button_SaveCancel_0200] allowBtn is:' + JSON.stringify(allowBtn));
+        console.info('====>[Test_Security_Button_SaveCancel_0200] titleTx is:' + JSON.stringify(titleTx));
         if(allowBtn !== null){
+          console.info('====>[Test_Security_Button_SaveCancel_0200] allowBtnClick START====');
+          await allowBtn.click();
+          console.info('====>[Test_Security_Button_SaveCancel_0200] reClick====');
+        }else if(titleTx !== null){
+          let start_x = 0;
+          let start_y = 0;
+          let end_x = 0;
+          let end_y = 0;
+          display.getAllDisplays((err, data) => {
+            console.info('====>[Test_Security_Button_SaveCancel_0200] the window data[0].width: ' + data[0].width);
+            console.info('====>[Test_Security_Button_SaveCancel_0200] the window data[0].height: ' + data[0].height);
+            start_x = end_x = Math.floor(data[0].width * (1/2));
+            start_y = Math.floor(data[0].height * (4/5));
+            end_y = Math.floor(data[0].height * (1/5));
+          });
+          for(let i = 0; i < 5; i++){
+            await driver.swipe(start_x, start_y, end_x, end_y);
+            await Utils.sleep(100);
+          }
+          let allowBtn = await driver.findComponent(ON.text('允许'));
+          console.info('====>[Test_Security_Button_SaveCancel_0200] allowBtn is:' + JSON.stringify(allowBtn));
           console.info('====>[Test_Security_Button_SaveCancel_0200] allowBtnClick START====');
           await allowBtn.click();
           console.info('====>[Test_Security_Button_SaveCancel_0200] reClick====');
@@ -231,13 +252,12 @@ export default function saveComponentUserCancelTest() {
     });
 
     /**
+     * @tc.name   Test_Security_Button_SaveCancel_0300
      * @tc.number SUB_SEC_AccCtl_Specialltem_XTS_Controls_SaveCancel_0300
-     * @tc.name Test_Security_Button_SaveCancel_0300
-     * @tc.desc Test SaveComponent userCancelEvent is false and Authorization is successfully.
-     * @tc.size MEDIUM
-     * @tc.type Function
-     * @tc.level Level 3
-     * @tc.require
+     * @tc.desc   Test SaveComponent userCancelEvent is false and Authorization is successfully.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("Test_Security_Button_SaveCancel_0300", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done:Function) => {
       console.info('====>[Test_Security_Button_SaveCancel_0300] START====');

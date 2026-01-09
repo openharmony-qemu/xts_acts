@@ -49,9 +49,12 @@ export default function flexAlign_SpaceAround_fixedChildParentMargin() {
     });
 
     /**
+     * @tc.name   testAlignSpaceAroundRowNoWrapMargin
      * @tc.number SUB_ACE_FLEX_JUSTIFYCONTENT_FLEXALIGN_SPACEAROUND_TEST_0500
-     * @tc.name testAlignSpaceAroundRowNoWrapMargin
-     * @tc.desc The child component is fixed, and the parent component is bound with margin attributes
+     * @tc.desc   The child component is fixed, and the parent component is bound with margin attributes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testAlignSpaceAroundRowNoWrapMargin',  Level.LEVEL0, async () => {
       console.info('new testAlignSpaceAroundRowNoWrapMargin START');

@@ -26,65 +26,65 @@ export default function imageRadialGradientTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0100
-     * @tc.name       : testImageRadialGradient001
-     * @tc.desc       : testing radialgradient for image with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRadialGradient001
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0100
+     * @tc.desc   testing radialgradient for image with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRadialGradient001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRadialGradient001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0200
-     * @tc.name       : testImageRadialGradient002
-     * @tc.desc       : testing radialgradient for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRadialGradient002
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0200
+     * @tc.desc   testing radialgradient for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRadialGradient002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRadialGradient002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0300
-     * @tc.name       : testImageRadialGradient003
-     * @tc.desc       : testing radialgradient for image with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRadialGradient003
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0300
+     * @tc.desc   testing radialgradient for image with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRadialGradient003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRadialGradient003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0400
-     * @tc.name       : testImageRadialGradient004
-     * @tc.desc       : testing radialgradient for image with abnormal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 2
+    /**
+     * @tc.name   testImageRadialGradient004
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0400
+     * @tc.desc   testing radialgradient for image with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRadialGradient004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRadialGradient004()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0500
-     * @tc.name       : testImageRadialGradient005
-     * @tc.desc       : testing radialgradient for image with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testImageRadialGradient005
+     * @tc.number SUB_ARKUI_CAPI_IMAGE_RADIALGRADIENT_0500
+     * @tc.desc   testing radialgradient for image with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testImageRadialGradient005', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testImageRadialGradient005()).assertEqual(0)

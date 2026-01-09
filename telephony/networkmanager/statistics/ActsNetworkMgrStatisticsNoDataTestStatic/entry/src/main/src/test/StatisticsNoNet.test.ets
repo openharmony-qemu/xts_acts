@@ -43,13 +43,13 @@ export default function statisticsNoNetTest() {
     describe("StatisticsNoNetTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        /* *
-         * @tc.number: SUB_NetworkMgr_Statistics_GetAllRxBytes_0500
-         * @tc.name  : testNetworkMgrStatisticsGetAllRxBytes_static_0500
-         * @tc.desc  : Obtain real-time downlink traffic of all network adapters without Ethernet access;callback.
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 0
+        /**
+         * @tc.name   testNetworkMgrStatisticsGetAllRxBytes_static_0500
+         * @tc.number SUB_NetworkMgr_Statistics_GetAllRxBytes_0500
+         * @tc.desc   Obtain real-time downlink traffic of all network adapters without Ethernet access;callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrStatisticsGetAllRxBytes_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrStatisticsGetAllRxBytes_static_0500';
@@ -76,13 +76,13 @@ export default function statisticsNoNetTest() {
             }
         })
 
-        /* *
-         * @tc.number: SUB_NetworkMgr_Statistics_GetAllRxBytes_0600
-         * @tc.name  : testNetworkMgrStatisticsGetAllRxBytes_static_0600
-         * @tc.desc  : Obtain real-time downlink traffic of all network adapters without Ethernet access;promise
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
+        /**
+         * @tc.name   testNetworkMgrStatisticsGetAllRxBytes_static_0600
+         * @tc.number SUB_NetworkMgr_Statistics_GetAllRxBytes_0600
+         * @tc.desc   Obtain real-time downlink traffic of all network adapters without Ethernet access;promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
          */
         it("testNetworkMgrStatisticsGetAllRxBytes_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrStatisticsGetAllRxBytes_static_0600';
@@ -108,14 +108,14 @@ export default function statisticsNoNetTest() {
             }
         })
 
-        /* *
-        * @tc.number: SUB_NetworkMgr_Statistics_GetAllTxBytes_0500
-        * @tc.name  : testNetworkMgrStatisticsGetAllTxBytes_static_0500
-        * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access;callback.
-        * @tc.size  : MediumTest
-        * @tc.type  : Function
-        * @tc.level : level 0
-        */
+        /**
+         * @tc.name   testNetworkMgrStatisticsGetAllTxBytes_static_0500
+         * @tc.number SUB_NetworkMgr_Statistics_GetAllTxBytes_0500
+         * @tc.desc   Obtain real-time upstream traffic of all nics without Ethernet access;callback.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL1
+         */
         it("testNetworkMgrStatisticsGetAllTxBytes_static_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrStatisticsGetAllTxBytes_static_0500';
             hilog.info(domain, tag, '%{public}s', caseName+ ' start');
@@ -141,13 +141,13 @@ export default function statisticsNoNetTest() {
             }
         })
 
-        /* *
-         * @tc.number: SUB_NetworkMgr_Statistics_GetAllTxBytes_0600
-         * @tc.name  : testNetworkMgrStatisticsGetAllTxBytes_static_0600
-         * @tc.desc  : Obtain real-time upstream traffic of all nics without Ethernet access ;promise
-         * @tc.size  : MediumTest
-         * @tc.type  : Function
-         * @tc.level : level 3
+        /**
+         * @tc.name   testNetworkMgrStatisticsGetAllTxBytes_static_0600
+         * @tc.number SUB_NetworkMgr_Statistics_GetAllTxBytes_0600
+         * @tc.desc   Obtain real-time upstream traffic of all nics without Ethernet access ;promise
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
          */
         it("testNetworkMgrStatisticsGetAllTxBytes_static_0600", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
             let caseName: string = 'testNetworkMgrStatisticsGetAllTxBytes_static_0600';

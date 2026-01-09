@@ -70,12 +70,12 @@ export default function ImageCreatePixelMapTest() {
     });
 
     /**
-     * @tc.number     createPixelMap_promise_001
-     * @tc.name       createPixelMap_promise_001
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_001
+     * @tc.number createPixelMap_promise_001
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_001', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_001';
@@ -88,12 +88,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_002
-     * @tc.name       createPixelMap_promise_002
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_002
+     * @tc.number createPixelMap_promise_002
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_002', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_002';
@@ -106,12 +106,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_003
-     * @tc.name       createPixelMap_promise_003
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_003
+     * @tc.number createPixelMap_promise_003
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_003', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_003';
@@ -124,12 +124,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_004
-     * @tc.name       createPixelMap_promise_004
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_004
+     * @tc.number createPixelMap_promise_004
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_004', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_004';
@@ -142,12 +142,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_005
-     * @tc.name       createPixelMap_promise_005
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_005
+     * @tc.number createPixelMap_promise_005
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_005', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_005';
@@ -160,12 +160,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_006
-     * @tc.name       createPixelMap_promise_006
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_006
+     * @tc.number createPixelMap_promise_006
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_006', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_006';
@@ -178,12 +178,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_007
-     * @tc.name       createPixelMap_callback_007
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_007
+     * @tc.number createPixelMap_callback_007
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_007', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_007';
@@ -196,12 +196,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_008
-     * @tc.name       createPixelMap_callback_008
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_008
+     * @tc.number createPixelMap_callback_008
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_008', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_008';
@@ -214,12 +214,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_009
-     * @tc.name       createPixelMap_callback_009
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_009
+     * @tc.number createPixelMap_callback_009
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_009', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_009';
@@ -232,12 +232,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_010
-     * @tc.name       createPixelMap_callback_010
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_010
+     * @tc.number createPixelMap_callback_010
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_010', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_010';
@@ -250,12 +250,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_011
-     * @tc.name       createPixelMap_callback_011
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_011
+     * @tc.number createPixelMap_callback_011
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_011', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_011';
@@ -268,12 +268,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_012
-     * @tc.name       createPixelMap_callback_012
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_012
+     * @tc.number createPixelMap_callback_012
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_012', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_012';
@@ -286,12 +286,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_013
-     * @tc.name       createPixelMap_promise_013
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_013
+     * @tc.number createPixelMap_promise_013
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_013', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_013';
@@ -304,12 +304,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_014
-     * @tc.name       createPixelMap_promise_014
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_014
+     * @tc.number createPixelMap_promise_014
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_014', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_014';
@@ -322,12 +322,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_015
-     * @tc.name       createPixelMap_promise_015
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_015
+     * @tc.number createPixelMap_promise_015
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_015', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_015';
@@ -340,12 +340,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_016
-     * @tc.name       createPixelMap_promise_016
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_016
+     * @tc.number createPixelMap_promise_016
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_016', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_016';
@@ -358,12 +358,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     IMAGE_CREATE_PIXEL_MAP_017
-     * @tc.name       createPixelMap_promise_017
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_017
+     * @tc.number IMAGE_CREATE_PIXEL_MAP_017
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_017', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_017';
@@ -376,12 +376,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_018
-     * @tc.name       createPixelMap_promise_018
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_018
+     * @tc.number createPixelMap_promise_018
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_018', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_018';
@@ -394,12 +394,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_019
-     * @tc.name       createPixelMap_promise_019
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_019
+     * @tc.number createPixelMap_promise_019
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_019', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_019';
@@ -412,12 +412,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_020
-     * @tc.name       createPixelMap_promise_020
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_020
+     * @tc.number createPixelMap_promise_020
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_020', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_020';
@@ -430,12 +430,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_021
-     * @tc.name       createPixelMap_promise_021
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_021
+     * @tc.number createPixelMap_promise_021
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_021', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_021';
@@ -448,12 +448,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_022
-     * @tc.name       createPixelMap_promise_022
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_022
+     * @tc.number createPixelMap_promise_022
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_022', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_022';
@@ -466,12 +466,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_023
-     * @tc.name       createPixelMap_promise_023
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_023
+     * @tc.number createPixelMap_promise_023
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_023', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_023';
@@ -484,12 +484,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_025
-     * @tc.name       createPixelMap_promise_025
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_025
+     * @tc.number createPixelMap_promise_025
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_025', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_025';
@@ -502,12 +502,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_promise_026
-     * @tc.name       createPixelMap_promise_026
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_promise_026
+     * @tc.number createPixelMap_promise_026
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_promise_026', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_promise_026';
@@ -521,12 +521,12 @@ export default function ImageCreatePixelMapTest() {
 
 
     /**
-     * @tc.number     createPixelMap_callback_027
-     * @tc.name       createPixelMap_callback_027
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_027
+     * @tc.number createPixelMap_callback_027
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_027', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_027';
@@ -539,12 +539,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_028
-     * @tc.name       createPixelMap_callback_028
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_028
+     * @tc.number createPixelMap_callback_028
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_028', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_028';
@@ -557,12 +557,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_029
-     * @tc.name       createPixelMap_callback_029
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_029
+     * @tc.number createPixelMap_callback_029
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_029', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_029';
@@ -575,12 +575,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_030
-     * @tc.name       createPixelMap_callback_030
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_030
+     * @tc.number createPixelMap_callback_030
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_030', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_030';
@@ -593,12 +593,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_031
-     * @tc.name       createPixelMap_callback_031
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_031
+     * @tc.number createPixelMap_callback_031
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_031', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_031';
@@ -611,12 +611,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_032
-     * @tc.name       createPixelMap_callback_032
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_032
+     * @tc.number createPixelMap_callback_032
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_032', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_032';
@@ -629,12 +629,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_033
-     * @tc.name       createPixelMap_callback_033
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_033
+     * @tc.number createPixelMap_callback_033
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_033', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_033';
@@ -647,12 +647,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_034
-     * @tc.name       createPixelMap_callback_034
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_034
+     * @tc.number createPixelMap_callback_034
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_034', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_034';
@@ -665,12 +665,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_035
-     * @tc.name       createPixelMap_callback_035
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_035
+     * @tc.number createPixelMap_callback_035
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_035', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_035';
@@ -683,12 +683,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_036
-     * @tc.name       createPixelMap_callback_036
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_036
+     * @tc.number createPixelMap_callback_036
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_036', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_036';
@@ -701,12 +701,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_037
-     * @tc.name       createPixelMap_callback_037
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_037
+     * @tc.number createPixelMap_callback_037
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_037', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_037';
@@ -720,12 +720,12 @@ export default function ImageCreatePixelMapTest() {
 
 
     /**
-     * @tc.number     createPixelMap_callback_038
-     * @tc.name       createPixelMap_callback_038
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_038
+     * @tc.number createPixelMap_callback_038
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_038', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_038';
@@ -738,12 +738,12 @@ export default function ImageCreatePixelMapTest() {
     })
 
     /**
-     * @tc.number     createPixelMap_callback_039
-     * @tc.name       createPixelMap_callback_039
-     * @tc.desc       createPixelMap
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   createPixelMap_callback_039
+     * @tc.number createPixelMap_callback_039
+     * @tc.desc   createPixelMap
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('createPixelMap_callback_039', Level.LEVEL0, async (done: Function) => {
       const testName = 'createPixelMap_callback_039';

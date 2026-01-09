@@ -41,12 +41,12 @@ export default function itemSpaceTest() {
     });
 
     /**
-     * @tc.number    itemSpaceTest_0100
-     * @tc.name      itemSpaceTest_0100
-     * @tc.desc      api
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   itemSpaceTest_0100
+     * @tc.number itemSpaceTest_0100
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('itemSpaceTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       console.info('itemSpaceTest_0100 item');

@@ -17,6 +17,7 @@ import CommonFunc from '../../MainAbility/common/Common';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import router from '@ohos.router';
 import { Component, Driver, UiWindow, ON, MatchPattern, DisplayRotation, ResizeDirection, WindowMode, PointerMatrix} from '@ohos.UiTest';
+import { SplitPolicy } from '@kit.ArkUI';
 
 export default function MultiNavigation32() {
   describe('MultiNavigation32', () => {
@@ -45,9 +46,12 @@ export default function MultiNavigation32() {
     });
 
     /**
+     * @tc.name   MultiNavigation32_0100
      * @tc.number MultiNavigation32_0100
-     * @tc.name testMultiNavigation
-     * @tc.desc
+     * @tc.desc   MultiNavigation32_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('MultiNavigation32_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('MultiNavigation32_0100 START');
@@ -70,6 +74,23 @@ export default function MultiNavigation32() {
       expect(String(JSON.parse(text1).$attrs.content)).assertEqual('PageDetail1');
 
       console.info('MultiNavigation32_0100 END');
+      done();
+    });
+
+    /**
+     * @tc.name   MultiNavigation32_0200
+     * @tc.number MultiNavigation32_0200
+     * @tc.desc   Test Enumerated value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('MultiNavigation32_0200',  Level.LEVEL0, async (done: Function) => {
+      console.info('MultiNavigation32_0200 START');
+      let driver = Driver.create();
+      await driver.delayMs(1000);
+      expect(SplitPolicy.FULL_PAGE).assertEqual(2);
+      console.log('[MultiNavigation32_0200] END');
       done();
     });
 

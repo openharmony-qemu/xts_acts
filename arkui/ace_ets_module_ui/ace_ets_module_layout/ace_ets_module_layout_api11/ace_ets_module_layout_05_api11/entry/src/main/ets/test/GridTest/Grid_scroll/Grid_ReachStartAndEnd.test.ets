@@ -57,9 +57,12 @@ export default function Grid_ReachStartAndEnd() {
 
 
     /**
+     * @tc.name   Grid_ReachStartAndEnd_0100
      * @tc.number SUB_ACE_Grid_ReachStartAndEnd_0100
-     * @tc.name testGrid
-     * @tc.desc Sliding the grid to the end position triggers the onReachEnd event, and sliding to the start position triggers the onReachStart event
+     * @tc.desc   Sliding the grid to the end position triggers the onReachEnd event, and sliding to the start position triggers the onReachStart event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ReachStartAndEnd_0100',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd_0100] START');
@@ -67,9 +70,9 @@ export default function Grid_ReachStartAndEnd() {
       let driver = Driver.create()
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.2 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
         1000);
       await CommonFunc.sleep(2000);
 
@@ -82,7 +85,7 @@ export default function Grid_ReachStartAndEnd() {
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
         Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
         1000);
       await CommonFunc.sleep(2000);
 
@@ -96,9 +99,12 @@ export default function Grid_ReachStartAndEnd() {
     });
 
     /**
+     * @tc.name   Grid_ReachStartAndEnd_0600
      * @tc.number SUB_ACE_Grid_ReachStartAndEnd_0600
-     * @tc.name testGrid
-     * @tc.desc Quickly sliding the grid to the end position triggers the onReachEnd event
+     * @tc.desc   Quickly sliding the grid to the end position triggers the onReachEnd event
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Grid_ReachStartAndEnd_0600',  Level.LEVEL0, async (done: Function) => {
       console.info('[Grid_ReachStartAndEnd_0600] START');
@@ -106,11 +112,11 @@ export default function Grid_ReachStartAndEnd() {
       let driver = Driver.create()
       await driver.fling({
         x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.5 + gridRect.top}`)
+        y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`)
       },
         {
           x: Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`)
+          y: Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`)
         }, 5, 4000);
       await CommonFunc.sleep(2000);
 

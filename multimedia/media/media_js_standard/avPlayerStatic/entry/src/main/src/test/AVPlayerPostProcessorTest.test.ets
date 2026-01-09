@@ -44,10 +44,10 @@ async function resetAndCallbackOff() {
   await avPlayer!!.reset().then(() => {
     console.info('case reset AVPlayer success');
   }).catch(mediaTestBase.catchCallback);
-  avPlayer!!.off('stateChange');
-  avPlayer!!.off('superResolutionChanged');
-  avPlayer!!.off('error');
-  avPlayer!!.off('endOfStream');
+  avPlayer!!.offStateChange();
+  avPlayer!!.offSuperResolutionChanged();
+  avPlayer!!.offError();
+  avPlayer!!.offEndOfStream();
   console.info('case now stopped, to release');
   await avPlayer!!.release().then(() => {
     console.info('case release AVPlayer success');
@@ -116,19 +116,19 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
     }
   }).catch(mediaTestBase.catchCallback);
 
-  avPlayer!!.on('stateChange', (state: media.AVPlayerState, reason: media.StateChangeReason) => {
+  avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
     await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp);
   });
-  avPlayer!!.on('error', (err: BusinessError) => {
+  avPlayer!!.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
   });
-  avPlayer!!.on('endOfStream', () => {
+  avPlayer!!.onEndOfStream(() => {
     if (extraOp) {
       extraOp();
     }
   });
-  avPlayer!!.on('superResolutionChanged', (enabled: boolean) => {
+  avPlayer!!.onSuperResolutionChanged((enabled: boolean) => {
     try {
       console.info('Received SEI message at playbackPosition: ' + enabled);
     } catch (error) {
@@ -169,13 +169,12 @@ export default function AVPlayerPostProcessorTest() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
-      * @tc.name    SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
-      * @tc.desc    test normal super resolution condition
-      *               : 001.test super resolution
-      * @tc.size    MediumTest
-      * @tc.type    () => void test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100
+     * @tc.desc   test normal super resolution condition
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let initializedOperation = async () => {
@@ -224,13 +223,12 @@ export default function AVPlayerPostProcessorTest() {
     });
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
-      * @tc.name    SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
-      * @tc.desc    test super resolution without enabling it
-      *               : 002.test super resolution
-      * @tc.size    MediumTest
-      * @tc.type    () => void test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200
+     * @tc.desc   test super resolution without enabling it
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let initializedOperation = async () => {
@@ -276,13 +274,12 @@ export default function AVPlayerPostProcessorTest() {
 
 
     /**
-      * @tc.number  SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
-      * @tc.name    SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
-      * @tc.desc    test super resolution invalid parameters
-      *               : 003.test super resolution
-      * @tc.size    MediumTest
-      * @tc.type    () => void test
-      * @tc.level   Level1
+     * @tc.name   SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
+     * @tc.number SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300
+     * @tc.desc   test super resolution invalid parameters
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVPLAYER_SUPER_RESOLUTION_static_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       let initializedOperation = async () => {

@@ -16,7 +16,7 @@
 import { Text, Builder, WebKeyboardController, WebKeyboardOptions, WebKeyboardCallbackInfo, WebLayoutMode, Entry, Component, Column, Row, Button, ClickEvent, Web } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement' // should be insert by ui-plugins
 import webView from '@ohos.web.webview'
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
 import { Utils } from '../../src/test/Util.test';
 import events_emitter from '@ohos.events.emitter';
 import { Callback } from '@ohos.base'
@@ -88,7 +88,7 @@ struct WebHitTestTypeEnumTest {
     console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
-      const data = eventData.data as Record<string, string | boolean | number | object | Int>;
+      const data = eventData.data as Record<string, RecordData>;
       if (data != null && data['ACTION'] != null) {
         let strValue: string = String(data['ACTION']);
         this.str = strValue;
@@ -98,7 +98,9 @@ struct WebHitTestTypeEnumTest {
 
   build() {
       Column() {
-        Text(this.rst).fontSize(20)
+        Text(this.rst)
+          .key('ResultShow')
+          .fontSize(20)
         Button('WebwebKeyboardControllerButton').key('WebwebKeyboardControllerButton')
           .onClick((e: ClickEvent) => {
             console.info('key==>' + this.str)

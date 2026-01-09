@@ -58,13 +58,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
     })
 
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_001
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_001
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_AV_PLAYBACK_AND_RECORD
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_001
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_001
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_AV_PLAYBACK_AND_RECORD
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -84,13 +84,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_001 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_002
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_002
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_SPECIAL_SCENARIO_PROCESSING
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_002
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_002
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskMode of MODE_SPECIAL_SCENARIO_PROCESSING
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -110,13 +110,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_002 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_003
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_003
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_003
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_003
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AUDIO_PLAYBACK_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -136,13 +136,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_003 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_004
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_004
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AVSESSION_AUDIO_PLAYBACK
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_004
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_004
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AVSESSION_AUDIO_PLAYBACK
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -162,13 +162,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_004 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_005
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_005
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_005
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_005
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_AUDIO_RECORD_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -188,13 +188,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_005 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_006
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_006
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_006
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_006
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_SCREEN_RECORD_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -214,13 +214,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_006 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_007
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_007
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_007
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_007
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_VOICE_CHAT_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -240,13 +240,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_007 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_008
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_008
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_008
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_008
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_MEDIA_PROCESS_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -266,13 +266,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_008 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_009
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_009
-     * @tc.desc:Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_009
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_009
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_VIDEO_BROADCAST_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -292,13 +292,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_009 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_010
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_010
-     * @tc.desc:Test that the backgroundTaskManager enum UserAuthResult of NOT_SUPPORTED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_010
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_010
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of NOT_SUPPORTED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -318,13 +318,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_010 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_011
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_011
-     * @tc.desc:Test that the backgroundTaskManager enum UserAuthResult of NOT_DETERMINED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_011
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_011
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of NOT_DETERMINED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -344,13 +344,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_011 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_012
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_012
-     * @tc.desc:Test that the backgroundTaskManager enum UserAuthResult of DENIED
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_012
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_012
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of DENIED
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -370,13 +370,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_012 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_013
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_013
-     * @tc.desc:Test that the backgroundTaskManager enum UserAuthResult of GRANTED_ONCE
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_013
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_013
+     * @tc.desc   Test that the backgroundTaskManager enum UserAuthResult of GRANTED_ONCE
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -396,13 +396,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_013 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_014
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_014
-     * @tc.desc:Test that the backgroundTaskManager enum GRANTED_ALWAYS of GRANTED_ALWAYS
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_014
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_014
+     * @tc.desc   Test that the backgroundTaskManager enum GRANTED_ALWAYS of GRANTED_ALWAYS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -422,13 +422,13 @@ export default function ActsApi22LongTimeTaskManagerTest() {
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_014 end---');
       })
 
-    /*
-     * @tc.number:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_015
-     * @tc.name:SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_015
-     * @tc.desc:Test that the backgroundTaskManager enum GRANTED_ALWAYS of GRANTED_ALWAYS
-     * @tc.level:Level 3
-     * @tc.type:Function
-     * @tc.size:MediumTest
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_015
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_015
+     * @tc.desc   Test that the backgroundTaskManager enum GRANTED_ALWAYS of GRANTED_ALWAYS
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: Function) => {
@@ -447,6 +447,32 @@ export default function ActsApi22LongTimeTaskManagerTest() {
 
         hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_015 end---');
       })
+
+    /**
+     * @tc.name   SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016
+     * @tc.number SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016
+     * @tc.desc   Test that the backgroundTaskManager enum BackgroundTaskSubmode of SUBMODE_WORK_OUT_NORMAL_NOTIFICATION
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+    async (done: Function) => {
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016 begin---');
+
+      try {
+        let type: number = backgroundTaskManager.BackgroundTaskSubmode.SUBMODE_WORK_OUT_NORMAL_NOTIFICATION;
+        console.info('SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016 backgroundTaskManager BackgroundTaskSubmode: ' +
+          type);
+        expect(type).assertEqual(11);
+        done();
+      } catch (error) {
+        let e: BusinessError = error as BusinessError;
+        hilog.info(DOMAIN, TAG, 'aa error: %{public}s', JSON.stringify(error));
+      }
+
+      hilog.info(DOMAIN, TAG, '%{public}s', '---SUB_RESOURCESCHEDULE_LONGTIME_API22_TASK_XTS_016 end---');
+    })
     
   })
 }

@@ -39,7 +39,6 @@ export default function preferencesHelperTest(){
       await dataPreferences.deletePreferences(context, NAME);
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testGetPreferencesHelper001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3000
      * @tc.desc   getPreferencesSync interface test
@@ -55,7 +54,6 @@ export default function preferencesHelperTest(){
       expect(value).assertEqual(2);
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testGetPreferencesHelper002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_2300
      * @tc.desc   getPreferences interface test
@@ -76,7 +74,6 @@ export default function preferencesHelperTest(){
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testRemovePreferencesFromCache001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_2100
      * @tc.desc   removePreferencesFromCache interface test
@@ -95,7 +92,6 @@ export default function preferencesHelperTest(){
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testDeletePreferencesHelper002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_2200
      * @tc.desc   deletePreferences interface test
@@ -114,7 +110,6 @@ export default function preferencesHelperTest(){
       done();
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesRegisterObserver001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_1000
      * @tc.desc   put interface test
@@ -136,7 +131,6 @@ export default function preferencesHelperTest(){
       await mPreferences.flush();
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesRegisterObserver002
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_1100
      * @tc.desc   repeat on interface test
@@ -159,7 +153,6 @@ export default function preferencesHelperTest(){
       await mPreferences.flush();
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testPreferencesUnRegisterObserver001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_0900
      * @tc.desc   off interface test
@@ -179,7 +172,6 @@ export default function preferencesHelperTest(){
       await mPreferences.flush();
     });
     /**
-     * @generated.time 2025-11-09 20:49:49
      * @tc.name   testGetPreferencesSyncinterface001
      * @tc.number SUB_DistributedData_Preference_SDK_PreferenceHelperEtsTest_3100
      * @tc.desc   getPreferencesSync interface test

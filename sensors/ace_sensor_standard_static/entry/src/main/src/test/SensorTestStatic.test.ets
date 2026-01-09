@@ -37,7 +37,7 @@ function callback(data: sensor.OrientationResponse) {
   expect(typeof(data.beta)).assertEqual("number");
   expect(typeof(data.gamma)).assertEqual("number");
   expect(typeof(data.alpha)).assertEqual("number");
-  expect(typeof (data.timestamp)).assertEqual("number");
+  expect(typeof (data.timestamp)).assertEqual("long");
 }
 
 function onSensorCallback(data: sensor.OrientationResponse) {
@@ -51,7 +51,7 @@ function onSensorCallback(data: sensor.OrientationResponse) {
   expect(typeof(data.beta)).assertEqual("number");
   expect(typeof(data.gamma)).assertEqual("number");
   expect(typeof(data.alpha)).assertEqual("number");
-  expect(typeof (data.timestamp)).assertEqual("number");
+  expect(typeof (data.timestamp)).assertEqual("long");
 }
 
 function onHallCallback(data: sensor.HallResponse) {
@@ -304,6 +304,10 @@ function onAccelerometerCallback(data: sensor.AccelerometerResponse) {
   expect(typeof(data.z)).assertEqual("number");
 }
 
+function onFusionPressureCallback(data: sensor.FusionPressureResponse) {
+  expect(typeof (data.fusionPressure)).assertEqual("number");
+}
+
 export default function SensorJsStaticTest() {
   describe("SensorJsStaticTest", ():void => {
     const PERMISSION_DENIED_CODE = 201;
@@ -351,9 +355,12 @@ export default function SensorJsStaticTest() {
     }
 
     /**
-     * @tc.name    orientating_SensorJsTest_static_005
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0050
+     * @tc.name   orientating_SensorJsTest_static_005
+     * @tc.number SUB_SensorsSystem_static_JsTest_0050
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("orientating_SensorJsTest_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -377,16 +384,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    orientating_SensorJsTest_static_006
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0060
+     * @tc.name   orientating_SensorJsTest_static_006
+     * @tc.number SUB_SensorsSystem_static_JsTest_0060
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("orientating_SensorJsTest_static_006", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -406,16 +416,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name     orientatingParamError_SensorJsTest_static_050
-     * @tc.desc     Verification results of the incorrect parameters of the test interface.
-     * @tc.number   SUB_SensorsSystem_static_JsTest_0500
+     * @tc.name   orientatingParamError_SensorJsTest_static_050
+     * @tc.number SUB_SensorsSystem_static_JsTest_0500
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("orientatingParamError_SensorJsTest_static_050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -428,20 +441,19 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `orientatingParamError_SensorJsTest_static_050 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           done();
         }
       })
 
     /**
-      * @tc.name   paramTest_SensorJsTest_static_073
-      * @tc.desc   Verification results of the incorrect parameters of the test interface.
-      * @tc.number SUB_SensorsSystem_static_JsTest_0730
-      */
+     * @tc.name   paramTest_SensorJsTest_static_073
+     * @tc.number SUB_SensorsSystem_static_JsTest_0730
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
     it("paramTest_SensorJsTest_static_073", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
         hilog.info(0x0000, 'testTag', '---------paramTest_SensorJsTest_static_073--------------');
@@ -469,8 +481,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   getRotationMatrix_SensorJsTest_static_001
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0010
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getRotationMatrix_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -501,8 +516,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   getRotationMatrix_SensorJsTest_static_002
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0020
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getRotationMatrix_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -528,8 +546,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   getOrientation_SensorJsTest_static_002
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0021
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getOrientation_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -550,8 +571,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   getOrientation_SensorJsTest_static_003
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0030
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getOrientation_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -571,8 +595,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   getRotationMatrixSync_SensorJsTest_static_003
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0031
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getRotationMatrixSync_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -592,9 +619,12 @@ export default function SensorJsStaticTest() {
       })
 
     /**
-     * @tc.name    getRotationMatrixSync_SensorJsTest_static_004
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0040
+     * @tc.name   getRotationMatrixSync_SensorJsTest_static_004
+     * @tc.number SUB_SensorsSystem_static_JsTest_0040
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getRotationMatrixSync_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -613,9 +643,12 @@ export default function SensorJsStaticTest() {
       })
 
     /**
-     * @tc.name    getSensorList_SensorJsTest_static_004
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0041
+     * @tc.name   getSensorList_SensorJsTest_static_004
+     * @tc.number SUB_SensorsSystem_static_JsTest_0041
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorList_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -634,9 +667,12 @@ export default function SensorJsStaticTest() {
       })
 
     /**
-     * @tc.name    getSensorList_SensorJsTest_static_005
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0051
+     * @tc.name   getSensorList_SensorJsTest_static_005
+     * @tc.number SUB_SensorsSystem_static_JsTest_0051
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("getSensorList_SensorJsTest_static_005", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -648,10 +684,10 @@ export default function SensorJsStaticTest() {
           expect(typeof (data[0].vendorName) == 'string').assertTrue();
           expect(typeof (data[0].firmwareVersion) == 'string').assertTrue();
           expect(typeof (data[0].hardwareVersion) == 'string').assertTrue();
-          expect(typeof (data[0].sensorId) == 'number').assertTrue();
+          expect(typeof (data[0].sensorId) == 'int').assertTrue();
           expect(typeof (data[0].maxRange) == 'number').assertTrue();
-          expect(typeof (data[0].minSamplePeriod) == 'number').assertTrue();
-          expect(typeof (data[0].maxSamplePeriod) == 'number').assertTrue();
+          expect(typeof (data[0].minSamplePeriod) == 'long').assertTrue();
+          expect(typeof (data[0].maxSamplePeriod) == 'long').assertTrue();
           expect(typeof (data[0].precision) == 'number').assertTrue();
           expect(typeof (data[0].power) == 'number').assertTrue();
           done();
@@ -664,8 +700,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   hall_SensorJsTest_static_007
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0070
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("hall_SensorJsTest_static_007", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -685,16 +724,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    ambientLight_SensorJsTest_static_008
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0080
+     * @tc.name   ambientLight_SensorJsTest_static_008
+     * @tc.number SUB_SensorsSystem_static_JsTest_0080
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ambientLight_SensorJsTest_static_008", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -714,16 +756,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    proximity_SensorJsTest_static_009
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0090
+     * @tc.name   proximity_SensorJsTest_static_009
+     * @tc.number SUB_SensorsSystem_static_JsTest_0090
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("proximity_SensorJsTest_static_009", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -743,16 +788,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    wearDetection_SensorJsTest_static_010
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0100
+     * @tc.name   wearDetection_SensorJsTest_static_010
+     * @tc.number SUB_SensorsSystem_static_JsTest_0100
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("wearDetection_SensorJsTest_static_010", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -772,7 +820,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -780,8 +828,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   significantMotion_SensorJsTest_static_011
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0110
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("significantMotion_SensorJsTest_static_011", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -801,7 +852,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -809,8 +860,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   rotationVector_SensorJsTest_static_012
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0120
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("rotationVector_SensorJsTest_static_012", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -830,16 +884,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    pedometerDetection_SensorJsTest_static_013
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0130
+     * @tc.name   pedometerDetection_SensorJsTest_static_013
+     * @tc.number SUB_SensorsSystem_static_JsTest_0130
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("pedometerDetection_SensorJsTest_static_013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -860,16 +917,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    pedometer_SensorJsTest_static_014
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0140
+     * @tc.name   pedometer_SensorJsTest_static_014
+     * @tc.number SUB_SensorsSystem_static_JsTest_0140
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("pedometer_SensorJsTest_static_014", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -890,7 +950,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -898,8 +958,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   magneticFieldUncalibrated_SensorJsTest_static_015
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0150
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("magneticFieldUncalibrated_SensorJsTest_static_015", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -919,7 +982,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -927,8 +990,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   magneticField_SensorJsTest_static_016
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0160
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("magneticField_SensorJsTest_static_016", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -948,16 +1014,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    linearAccelerometer_SensorJsTest_static_017
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0170
+     * @tc.name   linearAccelerometer_SensorJsTest_static_017
+     * @tc.number SUB_SensorsSystem_static_JsTest_0170
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("linearAccelerometer_SensorJsTest_static_017", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -978,7 +1047,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -986,8 +1055,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   humidity_SensorJsTest_static_018
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0180
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("humidity_SensorJsTest_static_018", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1007,7 +1079,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1015,8 +1087,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   heartRate_SensorJsTest_static_019
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0190
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("heartRate_SensorJsTest_static_019", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1037,7 +1112,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1045,8 +1120,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   gyroscopeUncalibrated_SensorJsTest_static_020
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0200
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gyroscopeUncalibrated_SensorJsTest_static_020", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1067,16 +1145,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    gyroscope_SensorJsTest_static_021
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0210
+     * @tc.name   gyroscope_SensorJsTest_static_021
+     * @tc.number SUB_SensorsSystem_static_JsTest_0210
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gyroscope_SensorJsTest_static_021", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1097,7 +1178,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1105,8 +1186,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   gravity_SensorJsTest_static_022
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0220
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gravity_SensorJsTest_static_022", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1126,7 +1210,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1134,8 +1218,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   barometer_SensorJsTest_static_023
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0230
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("barometer_SensorJsTest_static_023", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1155,16 +1242,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    ambientTemperature_SensorJsTest_static_024
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0240
+     * @tc.name   ambientTemperature_SensorJsTest_static_024
+     * @tc.number SUB_SensorsSystem_static_JsTest_0240
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ambientTemperature_SensorJsTest_static_024", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1184,7 +1274,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1192,8 +1282,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   accelerometerUncalibrated_SensorJsTest_static_025
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0250
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("accelerometerUncalibrated_SensorJsTest_static_025", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1214,16 +1307,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    accelerometer_SensorJsTest_static_026
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0260
+     * @tc.name   accelerometer_SensorJsTest_static_026
+     * @tc.number SUB_SensorsSystem_static_JsTest_0260
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("accelerometer_SensorJsTest_static_026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1244,16 +1340,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    orientatingOnce_SensorJsTest_static_029
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0290
+     * @tc.name   orientatingOnce_SensorJsTest_static_029
+     * @tc.number SUB_SensorsSystem_static_JsTest_0290
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("orientatingOnce_SensorJsTest_static_029", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1268,7 +1367,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1276,8 +1375,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   hallOnce_SensorJsTest_static_030
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0300
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("hallOnce_SensorJsTest_static_030", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1292,7 +1394,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1300,8 +1402,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   ambientLightOnce_SensorJsTest_static_031
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0310
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ambientLightOnce_SensorJsTest_static_031", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1316,7 +1421,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1324,8 +1429,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   proximityOnce_SensorJsTest_static_032
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0320
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("proximityOnce_SensorJsTest_static_032", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1340,7 +1448,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1348,8 +1456,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   wearDetectionOnce_SensorJsTest_static_033
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0330
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("wearDetectionOnce_SensorJsTest_static_033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1364,16 +1475,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    significantMotionOnce_SensorJsTest_static_034
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0340
+     * @tc.name   significantMotionOnce_SensorJsTest_static_034
+     * @tc.number SUB_SensorsSystem_static_JsTest_0340
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("significantMotionOnce_SensorJsTest_static_034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1388,7 +1502,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1396,8 +1510,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   rotationVectorOnce_SensorJsTest_static_035
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0350
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("rotationVectorOnce_SensorJsTest_static_035", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1412,7 +1529,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1420,8 +1537,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   pedometerDetectionOnce_SensorJsTest_static_036
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0360
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("pedometerDetectionOnce_SensorJsTest_static_036", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1437,7 +1557,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1445,8 +1565,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   pedometerOnce_SensorJsTest_static_037
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0370
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("pedometerOnce_SensorJsTest_static_037", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1462,16 +1585,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    magneticFieldUncalibratedOnce_SensorJsTest_static_038
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0380
+     * @tc.name   magneticFieldUncalibratedOnce_SensorJsTest_static_038
+     * @tc.number SUB_SensorsSystem_static_JsTest_0380
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("magneticFieldUncalibratedOnce_SensorJsTest_static_038", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1486,7 +1612,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1494,8 +1620,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   magneticFieldOnce_SensorJsTest_static_039
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0390
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("magneticFieldOnce_SensorJsTest_static_039", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1510,7 +1639,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1518,8 +1647,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   linearAccelerometerOnce_SensorJsTest_static_040
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0400
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("linearAccelerometerOnce_SensorJsTest_static_040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1535,7 +1667,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1543,8 +1675,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   humidityOnce_SensorJsTest_static_041
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0410
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("humidityOnce_SensorJsTest_static_041", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1559,7 +1694,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1567,8 +1702,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   heartRateOnce_SensorJsTest_static_042
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0420
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("heartRateOnce_SensorJsTest_static_042", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1584,7 +1722,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1592,8 +1730,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   gyroscopeUncalibratedOnce_SensorJsTest_static_043
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0430
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gyroscopeUncalibratedOnce_SensorJsTest_static_043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1609,7 +1750,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1617,8 +1758,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   gyroscopeOnce_SensorJsTest_static_044
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0440
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gyroscopeOnce_SensorJsTest_static_044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1634,7 +1778,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1642,8 +1786,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   gravityOnce_SensorJsTest_static_045
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0450
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gravityOnce_SensorJsTest_static_045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1658,7 +1805,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1666,8 +1813,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   barometerOnce_SensorJsTest_static_046
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0460
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("barometerOnce_SensorJsTest_static_046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1682,7 +1832,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1690,8 +1840,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   ambientTemperatureOnce_SensorJsTest_static_047
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0470
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ambientTemperatureOnce_SensorJsTest_static_047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1706,16 +1859,19 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
       })
 
     /**
-     * @tc.name    accelerometerUncalibratedOnce_SensorJsTest_static_048
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0480
+     * @tc.name   accelerometerUncalibratedOnce_SensorJsTest_static_048
+     * @tc.number SUB_SensorsSystem_static_JsTest_0480
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("accelerometerUncalibratedOnce_SensorJsTest_static_048", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1731,7 +1887,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1739,8 +1895,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   accelerometerOnce_SensorJsTest_static_049
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0490
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("accelerometerOnce_SensorJsTest_static_049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1756,7 +1915,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1764,8 +1923,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   hallParamError_SensorJsTest_static_051
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0510
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("hallParamError_SensorJsTest_static_051", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1778,11 +1940,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `hallParamError_SensorJsTest_static_051 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.HALL == sensor.SensorId.HALL).assertTrue();
           done();
         }
@@ -1790,8 +1948,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   ambientLightParamError_SensorJsTest_static_052
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0520
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ambientLightParamError_SensorJsTest_static_052", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1804,11 +1965,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientLightParamError_SensorJsTest_static_052 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.AMBIENT_LIGHT == sensor.SensorId.AMBIENT_LIGHT).assertTrue();
           done();
         }
@@ -1816,8 +1973,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   proximityParamError_SensorJsTest_static_053
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0530
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("proximityParamError_SensorJsTest_static_053", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1830,11 +1990,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `proximityParamError_SensorJsTest_static_053 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.PROXIMITY == sensor.SensorId.PROXIMITY).assertTrue();
           done();
         }
@@ -1842,8 +1998,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   wearDetectionParamError_SensorJsTest_static_054
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0540
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("wearDetectionParamError_SensorJsTest_static_054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1856,11 +2015,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `wearDetectionParamError_SensorJsTest_static_054 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.WEAR_DETECTION == sensor.SensorId.WEAR_DETECTION).assertTrue();
           done();
         }
@@ -1868,8 +2023,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   significantMotionParamError_SensorJsTest_static_055
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0550
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("significantMotionParamError_SensorJsTest_static_055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1881,11 +2039,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `significantMotionParamError_SensorJsTest_static_055 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.SIGNIFICANT_MOTION == sensor.SensorId.SIGNIFICANT_MOTION).assertTrue();
           done();
         }
@@ -1893,8 +2047,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   rotationVectorParamError_SensorJsTest_static_056
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0560
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("rotationVectorParamError_SensorJsTest_static_056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1907,11 +2064,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `rotationVectorParamError_SensorJsTest_static_056 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.ROTATION_VECTOR == sensor.SensorId.ROTATION_VECTOR).assertTrue();
           done();
         }
@@ -1919,8 +2072,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   pedometerDetectionParamError_SensorJsTest_static_057
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0570
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("pedometerDetectionParamError_SensorJsTest_static_057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1933,11 +2089,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerDetectionParamError_SensorJsTest_static_057 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.PEDOMETER_DETECTION == sensor.SensorId.PEDOMETER_DETECTION).assertTrue();
           done();
         }
@@ -1945,8 +2097,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   pedometerParamError_SensorJsTest_static_058
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0580
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("pedometerParamError_SensorJsTest_static_058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1959,11 +2114,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerParamError_SensorJsTest_static_058 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.PEDOMETER == sensor.SensorId.PEDOMETER).assertTrue();
           done();
         }
@@ -1971,8 +2122,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   magneticFieldUncalibratedParamError_SensorJsTest_static_059
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0590
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("magneticFieldUncalibratedParamError_SensorJsTest_static_059", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -1985,11 +2139,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldUncalibratedParamError_SensorJsTest_static_059 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED == sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED).assertTrue();
           done();
         }
@@ -1997,8 +2147,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   magneticFieldParamError_SensorJsTest_static_060
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0600
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("magneticFieldParamError_SensorJsTest_static_060", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2011,11 +2164,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldParamError_SensorJsTest_static_060 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.MAGNETIC_FIELD == sensor.SensorId.MAGNETIC_FIELD).assertTrue();
           done();
         }
@@ -2023,8 +2172,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   linearAccelerometerParamError_SensorJsTest_static_061
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0610
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("linearAccelerometerParamError_SensorJsTest_static_061", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2037,11 +2189,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `linearAccelerometerParamError_SensorJsTest_static_061 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.LINEAR_ACCELEROMETER == sensor.SensorId.LINEAR_ACCELEROMETER).assertTrue();
           done();
         }
@@ -2049,8 +2197,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   humidityParamError_SensorJsTest_static_062
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0620
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("humidityParamError_SensorJsTest_static_062", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2062,11 +2213,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `humidityParamError_SensorJsTest_static_062 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.HUMIDITY == sensor.SensorId.HUMIDITY).assertTrue();
           done();
         }
@@ -2074,8 +2221,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   heartRateParamError_SensorJsTest_static_063
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0630
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("heartRateParamError_SensorJsTest_static_063", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2087,11 +2237,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `heartRateParamError_SensorJsTest_static_063 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.HEART_RATE == sensor.SensorId.HEART_RATE).assertTrue();
           done();
         }
@@ -2099,8 +2245,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   gyroscopeUncalibratedParamError_SensorJsTest_static_064
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0640
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gyroscopeUncalibratedParamError_SensorJsTest_static_064", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2113,20 +2262,19 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeUncalibratedParamError_SensorJsTest_static_064 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.GYROSCOPE_UNCALIBRATED == sensor.SensorId.GYROSCOPE_UNCALIBRATED).assertTrue();
           done();
         }
       })
 
     /**
-     * @tc.name gyroscopeParamError_SensorJsTest_static_065
-     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.name   gyroscopeParamError_SensorJsTest_static_065
      * @tc.number SUB_SensorsSystem_static_JsTest_0650
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gyroscopeParamError_SensorJsTest_static_065", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2139,20 +2287,19 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeParamError_SensorJsTest_static_065 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.GYROSCOPE == sensor.SensorId.GYROSCOPE).assertTrue();
           done();
         }
       })
 
     /**
-     * @tc.name gravityParamError_SensorJsTest_static_066
-     * @tc.desc Verification results of the incorrect parameters of the test interface.
+     * @tc.name   gravityParamError_SensorJsTest_static_066
      * @tc.number SUB_SensorsSystem_static_JsTest_0660
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("gravityParamError_SensorJsTest_static_066", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2165,11 +2312,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gravityParamError_SensorJsTest_static_066 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.GRAVITY == sensor.SensorId.GRAVITY).assertTrue();
           done();
         }
@@ -2177,8 +2320,11 @@ export default function SensorJsStaticTest() {
 
     /**
      * @tc.name   barometerParamError_SensorJsTest_static_067
-     * @tc.desc   Verification results of the incorrect parameters of the test interface.
      * @tc.number SUB_SensorsSystem_static_JsTest_0670
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("barometerParamError_SensorJsTest_static_067", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2191,20 +2337,19 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `barometerParamError_SensorJsTest_static_067 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.BAROMETER == sensor.SensorId.BAROMETER).assertTrue();
           done();
         }
       })
 
     /**
-     * @tc.name  ambientTemperatureParamError_SensorJsTest_static_068
-     * @tc.desc  Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0680
+     * @tc.name   ambientTemperatureParamError_SensorJsTest_static_068
+     * @tc.number SUB_SensorsSystem_static_JsTest_0680
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("ambientTemperatureParamError_SensorJsTest_static_068", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2216,20 +2361,19 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientTemperatureParamError_SensorJsTest_static_068 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.AMBIENT_TEMPERATURE == sensor.SensorId.AMBIENT_TEMPERATURE).assertTrue();
           done();
         }
       })
 
     /**
-     * @tc.name    accelerometerUncalibratedParamError_SensorJsTest_static_069
-     * @tc.desc    Verification results of the incorrect parameters of the test interface.
-     * @tc.number  SUB_SensorsSystem_static_JsTest_0690
+     * @tc.name   accelerometerUncalibratedParamError_SensorJsTest_static_069
+     * @tc.number SUB_SensorsSystem_static_JsTest_0690
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("accelerometerUncalibratedParamError_SensorJsTest_static_069", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2242,23 +2386,19 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerUncalibratedParamError_SensorJsTest_static_069 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.ACCELEROMETER_UNCALIBRATED == sensor.SensorId.ACCELEROMETER_UNCALIBRATED).assertTrue();
           done();
         }
       })
 
     /**
-     * @tc.name        accelerometerParamError_SensorJsTest_static_070
-     * @tc.desc        Verification results of the incorrect parameters of the test interface.
-     * @tc.number      SUB_SensorsSystem_static_JsTest_0700
-     * @tc.size        MediumTest
-     * @tc.type        Function
-     * @tc.level       Level 3
+     * @tc.name   accelerometerParamError_SensorJsTest_static_070
+     * @tc.number SUB_SensorsSystem_static_JsTest_0700
+     * @tc.desc   Verification results of the incorrect parameters of the test interface.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it("accelerometerParamError_SensorJsTest_static_070", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
       async (done: () => void): Promise<void> => {
@@ -2270,11 +2410,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerParamError_SensorJsTest_static_070 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.ACCELEROMETER == sensor.SensorId.ACCELEROMETER).assertTrue();
           done();
         }
@@ -2282,12 +2418,68 @@ export default function SensorJsStaticTest() {
 
     /**
      *
-     * @tc.number     GetSensorListSync_SensorJsTest_static_001
-     * @tc.name       GetSensorListSync_SensorJsTest_static_001
-     * @tc.desc       test getSensorListSync
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.number     SUB_SensorsSystem_static_JsTest_0710
+     * @tc.name       fusion_pressure_SensorJsTest_static_071
+     * @tc.desc       Verification results of the incorrect parameters of the test interface.
+     */
+    it("fusion_pressure_SensorJsTest_static_071", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071--------------');
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
+        try {
+          sensor.onFusionPressureChange(onFusionPressureCallback, { 'interval': 100000000 });
+          setTimeout(() => {
+            hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off in--------------');
+            sensor.offFusionPressureChange();
+            hilog.info(0x0000, 'testTag', '---------fusion_pressure_SensorJsTest_static_071 off end--------------');
+            expect(sensor.SensorId.FUSION_PRESSURE == sensor.SensorId.FUSION_PRESSURE).assertTrue();
+            done();
+          }, 500);
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `fusion_pressure_SensorJsTest_static_071 failed error.code: ${e.code} , error.message: ${e.message}`);
+          if (Available) {
+            expect(false).assertTrue();
+          } else {
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
+          }
+          done();
+        }
+      })
+
+    /**
+     *
+     * @tc.number     SUB_SensorsSystem_static_JsTest_0720
+     * @tc.name       fusionPressureParamError_SensorJsTest_static_072
+     * @tc.desc       Verification results of the incorrect parameters of the test interface.
+     */
+    it("fusionPressureParamError_SensorJsTest_static_072", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        hilog.info(0x0000, 'testTag', '---------fusionPressureParamError_SensorJsTest_static_072--------------');
+        await isAvailable(sensor.SensorId.FUSION_PRESSURE);
+        try {
+          sensor.onFusionPressureChange(onFusionPressureCallback, { 'interval': -100000000 });
+          setTimeout(() => {
+            hilog.info(0x0000, 'testTag', '---------fusionPressureParamError_SensorJsTest_static_072 timer in--------------');
+            expect(false).assertTrue();
+            done();
+          }, 500);
+        } catch (error) {
+          let e: BusinessError = error as BusinessError;
+          hilog.info(0x0000, 'testTag', `fusionPressureParamError_SensorJsTest_static_072 failed error.code: ${e.code} , error.message: ${e.message}`);
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
+          expect(sensor.SensorId.FUSION_PRESSURE == sensor.SensorId.FUSION_PRESSURE).assertTrue();
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   GetSensorListSync_SensorJsTest_static_001
+     * @tc.number GetSensorListSync_SensorJsTest_static_001
+     * @tc.desc   test getSensorListSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSensorListSync_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSensorListSync_SensorJsTest_static_001";
@@ -2309,13 +2501,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetSensorListSync_SensorJsTest_static_002
-     * @tc.name       GetSensorListSync_SensorJsTest_static_002
-     * @tc.desc       test getSensorListSync
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetSensorListSync_SensorJsTest_static_002
+     * @tc.number GetSensorListSync_SensorJsTest_static_002
+     * @tc.desc   test getSensorListSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSensorListSync_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSensorListSync_SensorJsTest_static_002";
@@ -2346,13 +2537,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetSingleSensorSync_SensorJsTest_static_001
-     * @tc.name       GetSingleSensorSync_SensorJsTest_static_001
-     * @tc.desc       test getSensorListSync
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetSingleSensorSync_SensorJsTest_static_001
+     * @tc.number GetSingleSensorSync_SensorJsTest_static_001
+     * @tc.desc   test getSensorListSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSingleSensorSync_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSingleSensorSync_SensorJsTest_static_001";
@@ -2377,13 +2567,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetSingleSensorSync_SensorJsTest_static_002
-     * @tc.name       GetSingleSensorSync_SensorJsTest_static_002
-     * @tc.desc       test getSingleSensorSync
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetSingleSensorSync_SensorJsTest_static_002
+     * @tc.number GetSingleSensorSync_SensorJsTest_static_002
+     * @tc.desc   test getSingleSensorSync
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSingleSensorSync_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSingleSensorSync_SensorJsTest_static_002";
@@ -2417,13 +2606,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001
-     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001
-     * @tc.desc       test getGeomagneticInfo AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001
+     * @tc.number GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc   test getGeomagneticInfo AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_001";
@@ -2484,13 +2672,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002
-     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002
-     * @tc.desc       test getGeomagneticInfo AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002
+     * @tc.number GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc   test getGeomagneticInfo AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_002";
@@ -2560,13 +2747,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003
-     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003
-     * @tc.desc       test getGeomagneticInfo AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003
+     * @tc.number GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003
+     * @tc.desc   test getGeomagneticInfo AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_003";
@@ -2629,13 +2815,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004
-     * @tc.name       GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004
-     * @tc.desc       test getGeomagneticInfo AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004
+     * @tc.number GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004
+     * @tc.desc   test getGeomagneticInfo AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetGeomagneticInfo_AsyncCallback_SensorJsTest_static_004";
@@ -2685,13 +2870,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetGeomagneticInfo_Promise_SensorJsTest_static_001
-     * @tc.name       GetGeomagneticInfo_Promise_SensorJsTest_static_001
-     * @tc.desc       test getGeomagneticInfo Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetGeomagneticInfo_Promise_SensorJsTest_static_001
+     * @tc.number GetGeomagneticInfo_Promise_SensorJsTest_static_001
+     * @tc.desc   test getGeomagneticInfo Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetGeomagneticInfo_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetGeomagneticInfo_Promise_SensorJsTest_static_001";
@@ -2723,13 +2907,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetGeomagneticInfo_Promise_SensorJsTest_static_002
-     * @tc.name       GetGeomagneticInfo_Promise_SensorJsTest_static_002
-     * @tc.desc       test getGeomagneticInfo Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetGeomagneticInfo_Promise_SensorJsTest_static_002
+     * @tc.number GetGeomagneticInfo_Promise_SensorJsTest_static_002
+     * @tc.desc   test getGeomagneticInfo Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetGeomagneticInfo_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetGeomagneticInfo_Promise_SensorJsTest_static_002";
@@ -2761,13 +2944,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetGeomagneticInfo_Promise_SensorJsTest_static_003
-     * @tc.name       GetGeomagneticInfo_Promise_SensorJsTest_static_003
-     * @tc.desc       test getGeomagneticInfo Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetGeomagneticInfo_Promise_SensorJsTest_static_003
+     * @tc.number GetGeomagneticInfo_Promise_SensorJsTest_static_003
+     * @tc.desc   test getGeomagneticInfo Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetGeomagneticInfo_Promise_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetGeomagneticInfo_Promise_SensorJsTest_static_003";
@@ -2799,13 +2981,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetDeviceAltitude_Promise_SensorJsTest_static_001
-     * @tc.name       GetDeviceAltitude_Promise_SensorJsTest_static_001
-     * @tc.desc       test getDeviceAltitude Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetDeviceAltitude_Promise_SensorJsTest_static_001
+     * @tc.number GetDeviceAltitude_Promise_SensorJsTest_static_001
+     * @tc.desc   test getDeviceAltitude Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetDeviceAltitude_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetDeviceAltitude_Promise_SensorJsTest_static_001";
@@ -2827,13 +3008,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetDeviceAltitude_Promise_SensorJsTest_static_002
-     * @tc.name       GetDeviceAltitude_Promise_SensorJsTest_static_002
-     * @tc.desc       test getDeviceAltitude Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetDeviceAltitude_Promise_SensorJsTest_static_002
+     * @tc.number GetDeviceAltitude_Promise_SensorJsTest_static_002
+     * @tc.desc   test getDeviceAltitude Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetDeviceAltitude_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetDeviceAltitude_Promise_SensorJsTest_static_002";
@@ -2855,13 +3035,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001
-     * @tc.name       GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001
-     * @tc.desc       test getDeviceAltitude AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001
+     * @tc.number GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc   test getDeviceAltitude AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetDeviceAltitude_AsyncCallback_SensorJsTest_static_001";
@@ -2888,13 +3067,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002
-     * @tc.name       GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002
-     * @tc.desc       test getDeviceAltitude AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002
+     * @tc.number GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc   test getDeviceAltitude AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetDeviceAltitude_AsyncCallback_SensorJsTest_static_002";
@@ -2921,13 +3099,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetInclination_AsyncCallback_SensorJsTest_static_001
-     * @tc.name       GetInclination_AsyncCallback_SensorJsTest_static_001
-     * @tc.desc       test getInclination AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetInclination_AsyncCallback_SensorJsTest_static_001
+     * @tc.number GetInclination_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc   test getInclination AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetInclination_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetInclination_AsyncCallback_SensorJsTest_static_001";
@@ -2964,13 +3141,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetInclination_AsyncCallback_SensorJsTest_static_002
-     * @tc.name       GetInclination_AsyncCallback_SensorJsTest_static_002
-     * @tc.desc       test getInclination AsyncCallback:getDeviceAltitude failed, errCode: 401 ,msg:Get geomagnetic dip fail
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetInclination_AsyncCallback_SensorJsTest_static_002
+     * @tc.number GetInclination_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc   test getInclination AsyncCallback:getDeviceAltitude failed, errCode: 401 ,msg:Get geomagnetic dip fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetInclination_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetInclination_AsyncCallback_SensorJsTest_static_002";
@@ -2995,13 +3171,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetInclination_AsyncCallback_SensorJsTest_static_003
-     * @tc.name       GetInclination_AsyncCallback_SensorJsTest_static_003
-     * @tc.desc       test getInclination AsyncCallback getInclination error, 401
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetInclination_AsyncCallback_SensorJsTest_static_003
+     * @tc.number GetInclination_AsyncCallback_SensorJsTest_static_003
+     * @tc.desc   test getInclination AsyncCallback getInclination error, 401
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetInclination_AsyncCallback_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetInclination_AsyncCallback_SensorJsTest_static_003";
@@ -3024,13 +3199,12 @@ export default function SensorJsStaticTest() {
 
 
     /**
-     *
-     * @tc.number     GetInclination_Promise_SensorJsTest_static_001
-     * @tc.name       GetInclination_Promise_SensorJsTest_static_001
-     * @tc.desc       test getInclination Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetInclination_Promise_SensorJsTest_static_001
+     * @tc.number GetInclination_Promise_SensorJsTest_static_001
+     * @tc.desc   test getInclination Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetInclination_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetInclination_Promise_SensorJsTest_static_001";
@@ -3062,13 +3236,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetInclination_Promise_SensorJsTest_static_002
-     * @tc.name       GetInclination_Promise_SensorJsTest_static_002
-     * @tc.desc       test getInclination Promise:getDeviceAltitude success, errCode: 401 ,msg:Get geomagnetic dip fail
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetInclination_Promise_SensorJsTest_static_002
+     * @tc.number GetInclination_Promise_SensorJsTest_static_002
+     * @tc.desc   test getInclination Promise:getDeviceAltitude success, errCode: 401 ,msg:Get geomagnetic dip fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetInclination_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetInclination_Promise_SensorJsTest_static_002";
@@ -3095,13 +3268,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetInclination_Promise_SensorJsTest_static_003
-     * @tc.name       GetInclination_Promise_SensorJsTest_static_003
-     * @tc.desc       test getInclination Promise: getDeviceAltitude success, errCode: 401 ,msg:Get geomagnetic dip fail
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetInclination_Promise_SensorJsTest_static_003
+     * @tc.number GetInclination_Promise_SensorJsTest_static_003
+     * @tc.desc   test getInclination Promise: getDeviceAltitude success, errCode: 401 ,msg:Get geomagnetic dip fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetInclination_Promise_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetInclination_Promise_SensorJsTest_static_003";
@@ -3126,13 +3298,12 @@ export default function SensorJsStaticTest() {
     })
 
     /**
-     *
-     * @tc.number     GetAngleVariation_AsyncCallback_SensorJsTest_static_001
-     * @tc.name       GetAngleVariation_AsyncCallback_SensorJsTest_static_001
-     * @tc.desc       test getAngleVariation AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetAngleVariation_AsyncCallback_SensorJsTest_static_001
+     * @tc.number GetAngleVariation_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc   test getAngleVariation AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetAngleVariation_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetAngleVariation_AsyncCallback_SensorJsTest_static_001";
@@ -3192,13 +3363,12 @@ export default function SensorJsStaticTest() {
 
 
     /**
-     *
-     * @tc.number     GetAngleVariation_AsyncCallback_SensorJsTest_static_002
-     * @tc.name       GetAngleVariation_AsyncCallback_SensorJsTest_static_002
-     * @tc.desc       test getAngleVariation AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetAngleVariation_AsyncCallback_SensorJsTest_static_002
+     * @tc.number GetAngleVariation_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc   test getAngleVariation AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetAngleVariation_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetAngleVariation_AsyncCallback_SensorJsTest_static_002";
@@ -3256,13 +3426,12 @@ export default function SensorJsStaticTest() {
 
 
     /**
-     *
-     * @tc.number     GetAngleVariation_Promise_SensorJsTest_static_001
-     * @tc.name       GetAngleVariation_Promise_SensorJsTest_static_001
-     * @tc.desc       test getAngleVariation Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetAngleVariation_Promise_SensorJsTest_static_001
+     * @tc.number GetAngleVariation_Promise_SensorJsTest_static_001
+     * @tc.desc   test getAngleVariation Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetAngleVariation_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetAngleVariation_Promise_SensorJsTest_static_001";
@@ -3319,13 +3488,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetAngleVariation_Promise_SensorJsTest_static_002
-     * @tc.name       GetAngleVariation_Promise_SensorJsTest_static_002
-     * @tc.desc       test getAngleVariation Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetAngleVariation_Promise_SensorJsTest_static_002
+     * @tc.number GetAngleVariation_Promise_SensorJsTest_static_002
+     * @tc.desc   test getAngleVariation Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetAngleVariation_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetAngleVariation_Promise_SensorJsTest_static_002";
@@ -3380,13 +3548,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001
-     * @tc.name       TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001
-     * @tc.desc       test transformRotationMatrix AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001
+     * @tc.number TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc   test transformRotationMatrix AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "TransformRotationMatrix_AsyncCallback_SensorJsTest_static_001";
@@ -3421,14 +3588,13 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     *  @tc.number     TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002
-     *  @tc.name       TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002
-     *  @tc.desc       test transformRotationMatrix AsyncCallback
-     *  @tc.size       MediumTest
-     *  @tc.type       Function
-     *  @tc.level      Level 0
-     * */
+     * @tc.name   TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002
+     * @tc.number TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc   test transformRotationMatrix AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it("TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "TransformRotationMatrix_AsyncCallback_SensorJsTest_static_002";
       hilog.info(domain, tag, TAG + "----------start----------");
@@ -3461,13 +3627,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     TransformRotationMatrix_Promise_SensorJsTest_static_001
-     * @tc.name       TransformRotationMatrix_Promise_SensorJsTest_static_001
-     * @tc.desc       test transformRotationMatrix Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   TransformRotationMatrix_Promise_SensorJsTest_static_001
+     * @tc.number TransformRotationMatrix_Promise_SensorJsTest_static_001
+     * @tc.desc   test transformRotationMatrix Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("TransformRotationMatrix_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "TransformRotationMatrix_Promise_SensorJsTest_static_001";
@@ -3513,13 +3678,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     TransformRotationMatrix_Promise_SensorJsTest_static_002
-     * @tc.name       TransformRotationMatrix_Promise_SensorJsTest_static_002
-     * @tc.desc       test transformRotationMatrix Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   TransformRotationMatrix_Promise_SensorJsTest_static_002
+     * @tc.number TransformRotationMatrix_Promise_SensorJsTest_static_002
+     * @tc.desc   test transformRotationMatrix Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("TransformRotationMatrix_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "TransformRotationMatrix_Promise_SensorJsTest_static_002";
@@ -3565,13 +3729,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_001
-     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_001
-     * @tc.desc       test getQuaternion Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_Promise_SensorJsTest_static_001
+     * @tc.number GetQuaternion_Promise_SensorJsTest_static_001
+     * @tc.desc   test getQuaternion Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_Promise_SensorJsTest_static_001";
@@ -3619,13 +3782,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_002
-     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_002
-     * @tc.desc       test getQuaternion Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_Promise_SensorJsTest_static_002
+     * @tc.number GetQuaternion_Promise_SensorJsTest_static_002
+     * @tc.desc   test getQuaternion Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_Promise_SensorJsTest_static_002";
@@ -3671,13 +3833,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_003
-     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_003
-     * @tc.desc       test getQuaternion Promise：getQuaternion failed, error: 401, CreateQuaternion fail
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_Promise_SensorJsTest_static_003
+     * @tc.number GetQuaternion_Promise_SensorJsTest_static_003
+     * @tc.desc   test getQuaternion Promise：getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_Promise_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_Promise_SensorJsTest_static_003";
@@ -3708,13 +3869,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_Promise_SensorJsTest_static_004
-     * @tc.name       GetQuaternion_Promise_SensorJsTest_static_004
-     * @tc.desc       test getQuaternion Promise：getQuaternion failed, error: 401, CreateQuaternion fail
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_Promise_SensorJsTest_static_004
+     * @tc.number GetQuaternion_Promise_SensorJsTest_static_004
+     * @tc.desc   test getQuaternion Promise：getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_Promise_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_Promise_SensorJsTest_static_004";
@@ -3744,13 +3904,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_001
-     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_001
-     * @tc.desc       test getQuaternion AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_AsyncCallback_SensorJsTest_static_001
+     * @tc.number GetQuaternion_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc   test getQuaternion AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_001";
@@ -3797,13 +3956,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_002
-     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_002
-     * @tc.desc       test getQuaternion AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_AsyncCallback_SensorJsTest_static_002
+     * @tc.number GetQuaternion_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc   test getQuaternion AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_002";
@@ -3848,13 +4006,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_003
-     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_003
-     * @tc.desc       test getQuaternion AsyncCallback:getQuaternion failed, error: 401, CreateQuaternion fail
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_AsyncCallback_SensorJsTest_static_003
+     * @tc.number GetQuaternion_AsyncCallback_SensorJsTest_static_003
+     * @tc.desc   test getQuaternion AsyncCallback:getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_AsyncCallback_SensorJsTest_static_003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_002";
@@ -3879,13 +4036,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetQuaternion_AsyncCallback_SensorJsTest_static_004
-     * @tc.name       GetQuaternion_AsyncCallback_SensorJsTest_static_004
-     * @tc.desc       test getQuaternion AsyncCallback:getQuaternion failed, error: 401, CreateQuaternion fail
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetQuaternion_AsyncCallback_SensorJsTest_static_004
+     * @tc.number GetQuaternion_AsyncCallback_SensorJsTest_static_004
+     * @tc.desc   test getQuaternion AsyncCallback:getQuaternion failed, error: 401, CreateQuaternion fail
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetQuaternion_AsyncCallback_SensorJsTest_static_004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetQuaternion_AsyncCallback_SensorJsTest_static_004";
@@ -3909,13 +4065,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetSingleSensor_AsyncCallback_SensorJsTest_static_001
-     * @tc.name       GetSingleSensor_AsyncCallback_SensorJsTest_static_001
-     * @tc.desc       test getSingleSensor AsyncCallback
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetSingleSensor_AsyncCallback_SensorJsTest_static_001
+     * @tc.number GetSingleSensor_AsyncCallback_SensorJsTest_static_001
+     * @tc.desc   test getSingleSensor AsyncCallback
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSingleSensor_AsyncCallback_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSingleSensor_AsyncCallback_SensorJsTest_static_001";
@@ -3952,13 +4107,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetSingleSensor_AsyncCallback_SensorJsTest_static_002
-     * @tc.name       GetSingleSensor_AsyncCallback_SensorJsTest_static_002
-     * @tc.desc       test getSingleSensor AsyncCallback error: 14500102, The sensor is not supported by the device
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetSingleSensor_AsyncCallback_SensorJsTest_static_002
+     * @tc.number GetSingleSensor_AsyncCallback_SensorJsTest_static_002
+     * @tc.desc   test getSingleSensor AsyncCallback error: 14500102, The sensor is not supported by the device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSingleSensor_AsyncCallback_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSingleSensor_AsyncCallback_SensorJsTest_static_002";
@@ -3995,13 +4149,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetSingleSensor_Promise_SensorJsTest_static_001
-     * @tc.name       GetSingleSensor_Promise_SensorJsTest_static_001
-     * @tc.desc       test getSingleSensor Promise
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetSingleSensor_Promise_SensorJsTest_static_001
+     * @tc.number GetSingleSensor_Promise_SensorJsTest_static_001
+     * @tc.desc   test getSingleSensor Promise
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSingleSensor_Promise_SensorJsTest_static_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSingleSensor_Promise_SensorJsTest_static_001";
@@ -4014,10 +4167,10 @@ export default function SensorJsStaticTest() {
             expect(typeof (data.vendorName)).assertEqual("string");
             expect(typeof (data.firmwareVersion)).assertEqual("string");
             expect(typeof (data.hardwareVersion)).assertEqual("string");
-            expect(typeof (data.sensorId)).assertEqual("number");
+            expect(typeof (data.sensorId)).assertEqual("int");
             expect(typeof (data.maxRange)).assertEqual("number");
-            expect(typeof (data.minSamplePeriod)).assertEqual("number");
-            expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+            expect(typeof (data.minSamplePeriod)).assertEqual("long");
+            expect(typeof (data.maxSamplePeriod)).assertEqual("long");
             expect(typeof (data.precision)).assertEqual("number");
             expect(typeof (data.power)).assertEqual("number");
             hilog.info(domain, tag, TAG + ' getSingleSensor success: ');
@@ -4037,13 +4190,12 @@ export default function SensorJsStaticTest() {
     });
 
     /**
-     *
-     * @tc.number     GetSingleSensor_Promise_SensorJsTest_static_002
-     * @tc.name       GetSingleSensor_Promise_SensorJsTest_static_002
-     * @tc.desc       test getSingleSensor errCode: 14500102 ,msg:The sensor is not supported by the device
-     * @tc.size       MediumTest
-     * @tc.type       Function
-     * @tc.level      Level 0
+     * @tc.name   GetSingleSensor_Promise_SensorJsTest_static_002
+     * @tc.number GetSingleSensor_Promise_SensorJsTest_static_002
+     * @tc.desc   test getSingleSensor errCode: 14500102 ,msg:The sensor is not supported by the device
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("GetSingleSensor_Promise_SensorJsTest_static_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       TAG = "GetSingleSensor_Promise_SensorJsTest_static_002";
@@ -4055,10 +4207,10 @@ export default function SensorJsStaticTest() {
           expect(typeof (data.vendorName)).assertEqual("string");
           expect(typeof (data.firmwareVersion)).assertEqual("string");
           expect(typeof (data.hardwareVersion)).assertEqual("string");
-          expect(typeof (data.sensorId)).assertEqual("number");
+          expect(typeof (data.sensorId)).assertEqual("int");
           expect(typeof (data.maxRange)).assertEqual("number");
-          expect(typeof (data.minSamplePeriod)).assertEqual("number");
-          expect(typeof (data.maxSamplePeriod)).assertEqual("number");
+          expect(typeof (data.minSamplePeriod)).assertEqual("long");
+          expect(typeof (data.maxSamplePeriod)).assertEqual("long");
           expect(typeof (data.precision)).assertEqual("number");
           expect(typeof (data.power)).assertEqual("number");
           done()

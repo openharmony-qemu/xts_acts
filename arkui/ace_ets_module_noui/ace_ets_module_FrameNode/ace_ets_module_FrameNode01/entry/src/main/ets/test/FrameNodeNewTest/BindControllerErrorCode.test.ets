@@ -47,12 +47,12 @@ export default function BindControllerErrorCodeTest() {
     });
 
     /**
-     * @tc.number    BindControllerErrorCodeTest_0100
-     * @tc.name      BindControllerErrorCodeTest_0100
-     * @tc.desc      frameNode: test bindController error code
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BindControllerErrorCodeTest_0100
+     * @tc.number BindControllerErrorCodeTest_0100
+     * @tc.desc   frameNode: test bindController error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BindControllerErrorCodeTest_0100', Level.LEVEL2, async (done: Function) => {
       console.info('BindControllerErrorCodeTest_0100 START');
@@ -70,12 +70,12 @@ export default function BindControllerErrorCodeTest() {
     });
 
     /**
-     * @tc.number    BindControllerErrorCodeTest_0200
-     * @tc.name      BindControllerErrorCodeTest_0200
-     * @tc.desc      frameNode: test bindController error code
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   BindControllerErrorCodeTest_0200
+     * @tc.number BindControllerErrorCodeTest_0200
+     * @tc.desc   frameNode: test bindController error code
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('BindControllerErrorCodeTest_0200', Level.LEVEL2, async (done: Function) => {
       console.info('BindControllerErrorCodeTest_0200 START');

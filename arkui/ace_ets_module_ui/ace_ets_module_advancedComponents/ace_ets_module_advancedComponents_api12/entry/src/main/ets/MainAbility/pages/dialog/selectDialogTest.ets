@@ -14,10 +14,11 @@
  */
 
 import { SelectDialog } from '@ohos.arkui.advanced.Dialog';
-import { CustomColors, CustomTheme } from '@ohos.arkui.theme';
+import { CustomColors, CustomDarkColors, CustomTheme } from '@ohos.arkui.theme';
 
 class CustomThemeImpl implements CustomTheme {
   public colors?: CustomColors;
+  public darkColors?: CustomDarkColors;
 
   constructor(colors: CustomColors) {
     this.colors = colors;
@@ -45,15 +46,9 @@ struct SelectDialogTest {
       },
       radioContent: [
         {
-          title: '文本文本文本文本文本',
+          title: '文本1',
           action: () => {
             this.radioIndex = 0
-          }
-        },
-        {
-          title: '文本文本文本文本',
-          action: () => {
-            this.radioIndex = 1
           }
         }
       ],

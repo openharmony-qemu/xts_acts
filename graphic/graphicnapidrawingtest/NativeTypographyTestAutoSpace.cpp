@@ -89,10 +89,13 @@ void NativeTypographyTestAutoSpace::TearDown()
     }
 }
 
-/*
- * @tc.name: OH_Drawing_SetTypographyTextAutoSpaceTest001
- * @tc.desc: test for set auto space when paragraph with single run
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest001
+ * @tc.number OHDrawingSetTypographyTextAutoSpaceTest001
+ * @tc.desc   test for set auto space when paragraph with single run
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeTypographyTestAutoSpace, OHDrawingSetTypographyTextAutoSpaceTest001, Function | MediumTest | Level1)
 {
@@ -134,10 +137,13 @@ HWTEST_F(NativeTypographyTestAutoSpace, OHDrawingSetTypographyTextAutoSpaceTest0
     EXPECT_NEAR(line1True, line1False + DEFAULT_FONT_SIZE / 8 * 2, FLOAT_DATA_EPSILON);
 }
 
-/*
- * @tc.name: OH_Drawing_SetTypographyTextAutoSpaceTest002
- * @tc.desc: test for set auto space when paragraph with single run and the layout width is at the boundary value.
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest002
+ * @tc.number OHDrawingSetTypographyTextAutoSpaceTest002
+ * @tc.desc   test for set auto space when paragraph with single run and the layout width is at the boundary value.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeTypographyTestAutoSpace, OHDrawingSetTypographyTextAutoSpaceTest002, Function | MediumTest | Level1)
 {
@@ -190,10 +196,13 @@ HWTEST_F(NativeTypographyTestAutoSpace, OHDrawingSetTypographyTextAutoSpaceTest0
     EXPECT_EQ(lineCount, lineCount2 + 1);
 }
 
-/*
- * @tc.name: OH_Drawing_SetTypographyTextAutoSpaceTest003
- * @tc.desc: test for set auto space when paragraph with many lines
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest003
+ * @tc.number OHDrawingSetTypographyTextAutoSpaceTest003
+ * @tc.desc   test for set auto space when paragraph with many lines
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeTypographyTestAutoSpace, OHDrawingSetTypographyTextAutoSpaceTest003, Function | MediumTest | Level1)
 {
@@ -238,10 +247,13 @@ HWTEST_F(NativeTypographyTestAutoSpace, OHDrawingSetTypographyTextAutoSpaceTest0
     EXPECT_NEAR(line3True, line3False + DEFAULT_FONT_SIZE / 8 * 2, FLOAT_DATA_EPSILON);
 }
 
-/*
- * @tc.name: OH_Drawing_SetTypographyTextAutoSpaceTest004
- * @tc.desc: test for set auto space when paragraph is many lines and the layout width is at the boundary value.
- * @tc.type: FUNC
+/**
+ * @tc.name   OHDrawingSetTypographyTextAutoSpaceTest004
+ * @tc.number OHDrawingSetTypographyTextAutoSpaceTest004
+ * @tc.desc   test for set auto space when paragraph is many lines and the layout width is at the boundary value.
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL1
  */
 HWTEST_F(NativeTypographyTestAutoSpace, OHDrawingSetTypographyTextAutoSpaceTest004, Function | MediumTest | Level1)
 {

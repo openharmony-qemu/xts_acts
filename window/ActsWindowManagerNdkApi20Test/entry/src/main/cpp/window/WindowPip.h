@@ -98,6 +98,30 @@ napi_value WindowManagerErrorCodeIncorrectParam(napi_env env, napi_callback_info
 napi_value PictureInPicturePipStatePart1(napi_env env, napi_callback_info info);
 napi_value PictureInPicturePipStatePart2(napi_env env, napi_callback_info info);
 
+napi_value TestSetPipMainWindowIdBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestSetPipRectBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestSetPipControlGroupBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestDeletePipBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestStartPipBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestStopPipBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUpdatePipContentSizeBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUpdatePipControlStatusBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestSetPipControlEnabledBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestSetPipInitialSurfaceRectBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnsetPipInitialSurfaceRectBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestRegisterStartPipCallbackBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterStartPipCallbackBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterAllStartPipCallbacksBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestRegisterLifecycleListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterLifecycleListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterAllLifecycleListenersBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestRegisterControlEventListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterControlEventListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterAllControlEventListenersBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestRegisterResizeListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterResizeListenerBoundaryValue(napi_env env, napi_callback_info info);
+napi_value TestUnregisterAllResizeListenersBoundaryValue(napi_env env, napi_callback_info info);
+
 };
 
 #endif //ACTSWINDOWNDKAPI20TEST_WINDOWPIP_H

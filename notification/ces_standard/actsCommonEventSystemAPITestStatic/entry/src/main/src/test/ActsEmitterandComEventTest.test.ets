@@ -1,4 +1,4 @@
-/**
+/*
  * Copyright (c) 2024 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {BusinessError} from '@ohos.base';
+import {BusinessError, RecordData} from '@ohos.base';
 import commonEventManager from '@ohos.commonEventManager';
 import hilog from '@ohos.hilog';
 import emitter from '@ohos.events.emitter';
@@ -43,25 +43,25 @@ export default function ActsEmitterandComEventTest() {
   describe('actsEmitterandComEventTest', ():void => {
 
     /**
-     * @tc.number  Sub_NotificationAns_Emitter_Basic_Static_0001
-     * @tc.name    Sub_NotificationAns_Emitter_Basic_Static_0001
-     * @tc.desc    事件基本功能用例
-     * @tc.size    MediumTest
-     * @tc.type    Function test
-     * @tc.level   Level 0
+     * @tc.name   Sub_NotificationAns_Emitter_Basic_Static_0001
+     * @tc.number Sub_NotificationAns_Emitter_Basic_Static_0001
+     * @tc.desc   事件基本功能用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_Emitter_Basic_Static_0001', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_NotificationAns_Emitter_Basic_Static_0001==>'
       // 调用持续订阅指定事件接口
       let result : number = 0
       //调用发送指定事件接口
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
       let eventData: emitter.EventData = { data: myDate }
       let eventId01 :String = "eventId1"
-      emitter.on(eventId01, ():void => {
+      emitter.onEventData(eventId01, ():void => {
         console.info(`${Tag} callback success`+result); //第二个参数就是订阅回调的函数，回调成功才会打印
         result += 1
       });
@@ -82,17 +82,17 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number  Sub_NotificationAns_Emitter_Basic_Static_0002
-     * @tc.name    Sub_NotificationAns_Emitter_Basic_Static_0002
-     * @tc.desc    事件基本功能用例
-     * @tc.size    Medium-sized test
-     * @tc.type    Function test
-     * @tc.level   Level 0
+     * @tc.name   Sub_NotificationAns_Emitter_Basic_Static_0002
+     * @tc.number Sub_NotificationAns_Emitter_Basic_Static_0002
+     * @tc.desc   事件基本功能用例
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_Emitter_Basic_Static_0002',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_NotificationAns_Emitter_Basic_Static_0002==>'
 
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -100,7 +100,7 @@ export default function ActsEmitterandComEventTest() {
       let onConsume_number : number = 0
       let emit_number : number = 0
 
-      emitter.once("eventId2", () :void=> {
+      emitter.onceEventData("eventId2", () :void=> {
         console.info(Tag+'once callback success'+onConsume_number);
         onConsume_number += 1
         // return onConsume_number
@@ -123,12 +123,12 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number  Sub_NotificationAns_CommonEvent_Basic_Static_0001
-     * @tc.name    Sub_NotificationAns_CommonEvent_Basic_Static_0001
-     * @tc.desc    公共事件基础用例验证
-     * @tc.size    Medium-sized test
-     * @tc.type    Function test
-     * @tc.level   Level 0
+     * @tc.name   Sub_NotificationAns_CommonEvent_Basic_Static_0001
+     * @tc.number Sub_NotificationAns_CommonEvent_Basic_Static_0001
+     * @tc.desc   公共事件基础用例验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_CommonEvent_Basic_Static_0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -139,10 +139,10 @@ export default function ActsEmitterandComEventTest() {
         //调用commonEventManager.subscribe接口，以回调形式订阅公共事件
         //创建订阅者
         try {
-          commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          commonEventManager.createSubscriber(subscribeInfo, (err: BusinessError | null, commonEventSubscriber) => {
             if (!err) {
               console.info(Tag + " createSubscriber success");
-              if(commonEventSubscriber !== undefined){
+              if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                 subscriber = commonEventSubscriber
               }else{
                 expect(false).assertTrue()
@@ -221,12 +221,12 @@ export default function ActsEmitterandComEventTest() {
       })
 
     /**
-     * @tc.number  Sub_NotificationAns_CommonEvent_Basic_Static_0002
-     * @tc.name    Sub_NotificationAns_CommonEvent_Basic_Static_0002
-     * @tc.desc    公共事件基础用例验证
-     * @tc.size    Medium-sized test
-     * @tc.type    Function test
-     * @tc.level   Level 0
+     * @tc.name   Sub_NotificationAns_CommonEvent_Basic_Static_0002
+     * @tc.number Sub_NotificationAns_CommonEvent_Basic_Static_0002
+     * @tc.desc   公共事件基础用例验证
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_NotificationAns_CommonEvent_Basic_Static_0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
@@ -237,10 +237,10 @@ export default function ActsEmitterandComEventTest() {
           priority: 1
         };
         try {
-          commonEventManager.createSubscriber(subscribeInfo_a, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          commonEventManager.createSubscriber(subscribeInfo_a, (err: BusinessError | null, commonEventSubscriber) => {
             if (!err) {
               console.info(Tag + "订阅者a createSubscriber success");
-              if(commonEventSubscriber !== undefined){
+              if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                 subscriber_a = commonEventSubscriber
               }else{
                 expect(false).assertTrue()
@@ -326,10 +326,10 @@ export default function ActsEmitterandComEventTest() {
           priority: 2
         };
         try {
-          commonEventManager.createSubscriber(subscribeInfo_b, (err: BusinessError | null, commonEventSubscriber: commonEventManager.CommonEventSubscriber|undefined) => {
+          commonEventManager.createSubscriber(subscribeInfo_b, (err: BusinessError | null, commonEventSubscriber) => {
             if (!err) {
               console.info(Tag + "订阅者b createSubscriber success");
-              if(commonEventSubscriber !== undefined){
+              if(commonEventSubscriber !== undefined && commonEventSubscriber !== null){
                 subscriber_b = commonEventSubscriber
               }else{
                 expect(false).assertTrue()
@@ -399,18 +399,18 @@ export default function ActsEmitterandComEventTest() {
       })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0100
-     * @tc.name    Sub_Notification_Emitter_Publish_Emit_Static_0100
-     * @tc.desc    Function test
-     * @tc.size    Large-scale test
-     * @tc.type    Function test
-     * @tc.level   Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0100
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0100
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0100',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0100==>'
       // 调用持续订阅指定事件接口
       let result = 0
-      emitter.on("eventId1", () :void => {
+      emitter.onEventData("eventId1", () :void => {
         console.info(`${Tag}  callback success`+result); //第二个参数就是订阅回调的函数，回调成功才会打印
         result += 1
       });
@@ -418,7 +418,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.off("eventId2");
       console.info(`${Tag}  emitterOff success`);
       await Utils.msSleep(100)
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -431,24 +431,32 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
+      for(let i = 0 ; i < 15; i++ ) {
+        if(result === 5){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_0100 END`);
+          break;
+        }
+        await Utils.msSleep(1000)
+      }
       await Utils.msSleep(2000)
       expect(result).assertEqual(5)
-      console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_0100 END`);
-      done()
+      emitter.off("eventId1");
+      done();
     })
+
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0200
-     * @tc.name    Sub_Notification_Emitter_Publish_Emit_Static_0200
-     * @tc.desc    Function test
-     * @tc.size    Large-scale test
-     * @tc.type    Function test
-     * @tc.level   Level 3
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0200
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0200
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0200', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0200==>'
       // 调用持续订阅指定事件接口
       let result = 0
-      emitter.on("eventId3", ():void => {
+      emitter.onEventData("eventId3", ():void => {
         console.info(`${Tag} callback success`+result); //第二个参数就是订阅回调的函数，回调成功才会打印
         result += 1
       });
@@ -456,7 +464,7 @@ export default function ActsEmitterandComEventTest() {
       emitter.off("eventId3");
       console.info(`${Tag} emitterOff success`);
       await Utils.msSleep(100)
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": "1",
         "content": "c"
       }
@@ -466,34 +474,32 @@ export default function ActsEmitterandComEventTest() {
       emitter.emit("eventId1", eventData);
       emitter.emit("eventId1", eventData);
       emitter.emit("eventId1", eventData);
-      await Utils.msSleep(100)
       console.info(`${Tag} emitterEmit success`);
-      await Utils.msSleep(2000)
+      await Utils.msSleep(5000)
       expect(result).assertEqual(0)
-      done()
+      done();
     })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0300
-     * @tc.name    Sub_Notification_Emitter_Publish_Emit_Static_0300
-     * @tc.desc    Function test
-     * @tc.size    Large-scale test
-     * @tc.type    Function test
-     * @tc.level   Level 3
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0300
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0300
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0300', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0300==>'
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": 1,
         "content": "c"
       }
       let eventData: emitter.EventData = { data: myDate }
       let onConsume_number : number = 0
       let emit_number : number = 0
-      emitter.once("eventId5", ():void => {
+      emitter.onceEventData("eventId5", ():void => {
         console.info(Tag +'once callback success'+onConsume_number);
         onConsume_number += 1
-        // return onConsume_number
       });
       await Utils.msSleep(100)
       emitter.off("eventId6");
@@ -501,7 +507,7 @@ export default function ActsEmitterandComEventTest() {
       await Utils.msSleep(100)
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success'+emit_number);
-      await Utils.msSleep(100) //napi异步处理局限，极限情况下会出现订阅返回2次，加等待即可
+      await Utils.msSleep(100) //异步处理局限，极限情况下会出现订阅返回2次，加等待即可
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success');
       emitter.emit("eventId5", eventData);
@@ -512,28 +518,35 @@ export default function ActsEmitterandComEventTest() {
       console.info(Tag +'emitterEmit success');
       emitter.emit("eventId5", eventData);
       console.info(Tag +'emitterEmit success');
-      //调用取消订阅事件接口
-      await Utils.msSleep(3000)
+      for(let i = 0 ; i < 15; i++ ){
+        await Utils.msSleep(1000)
+        if(onConsume_number === 1){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Emit_Static_0300 END` + onConsume_number);
+          break;
+        } 
+      }
+      await Utils.msSleep(2000)
       expect(onConsume_number).assertEqual(1)
-      done()
+      done();
     })
+
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Emit_Static_0400
-     * @tc.name    Sub_Notification_Emitter_Publish_Emit_Static_0400
-     * @tc.desc    Function test
-     * @tc.size    Large-scale test
-     * @tc.type    Function test
-     * @tc.level   Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Emit_Static_0400
+     * @tc.number Sub_Notification_Emitter_Publish_Emit_Static_0400
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Emit_Static_0400', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Emit_Static_0400==>'
-      let myDate: Record<String, Object> = {
+      let myDate: Record<String, RecordData> = {
         "id": 1,
         "content": "c"
       }
       let eventData: emitter.EventData = { data: myDate }
       let onConsume_number : number = 0
-      emitter.once("eventId7", ():void => {
+      emitter.onceEventData("eventId7", ():void => {
         console.info(Tag +'once callback success'+onConsume_number);
         onConsume_number += 1
         // return onConsume_number
@@ -555,19 +568,18 @@ export default function ActsEmitterandComEventTest() {
       console.info(Tag +'emitterEmit success');
       emitter.emit("eventId7", eventData);
       console.info(Tag +'emitterEmit success');
-      //调用取消订阅事件接口
-      await Utils.msSleep(3000)
+      await Utils.msSleep(2000)
       expect(onConsume_number).assertEqual(0)
-      done()
+      done();
     })
     
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Sendable_Static_0001
-     * @tc.name    Sub_Notification_Emitter_Publish_Sendable_Static_0001
-     * @tc.desc    Function test
-     * @tc.size    Medium-sized test
-     * @tc.type    Function test
-     * @tc.level   Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0001
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0001
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0001',  TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0001==>'
@@ -578,9 +590,12 @@ export default function ActsEmitterandComEventTest() {
         let storage: Sample = eventData.data! as Sample;
         storage.printCount();
         console.info(Tag +' on GenericEventData' + result);
+        console.info(Tag +' on GenericEventData' + eventData);
+        let data: Sample = eventData?.data as Sample;
+        expect(data?.count).assertEqual(100);
         result += 1
       }
-      emitter.on<Sample>("eventId111", callback1);
+      emitter.onGenericEventData<Sample>("eventId111", callback1);
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};
       emitter.emit<Sample>("eventId", eventData);
@@ -594,26 +609,31 @@ export default function ActsEmitterandComEventTest() {
       await Utils.msSleep(1000)
       emitter.emit<Sample>("eventId111", eventData);
       console.info(Tag+ ' emitterEmit success 10分钟');
-      await Utils.msSleep(1000)
-      //调用取消订阅事件接口
-      emitter.off("eventId111");
+      for(let i = 0 ; i < 15; i++ ){
+        await Utils.msSleep(1000)
+        if(result === 3){
+          console.info(`${Tag} Sub_Notification_Emitter_Publish_Sendable_Static_0001` + result);
+          emitter.off("eventId111");
+          break;
+        }
+      }
       console.info(Tag+ ' emitterOff success');
       //继续发事件
       emitter.emit<Sample>("eventId111", eventData);
-      await Utils.msSleep(1000)
       console.info(Tag+ ' emitterEmit success 取消后');
+      await Utils.msSleep(5000)
       expect(result).assertEqual(3)
-      done()
+      done();
     })
 
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Sendable_Static_0002
-     * @tc.name    Sub_Notification_Emitter_Publish_Sendable_Static_0002
-     * @tc.desc    Function test
-     * @tc.size    Medium-sized test
-     * @tc.type    Function test
-     * @tc.level   Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0002
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0002
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0002', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0002==>'
@@ -624,36 +644,39 @@ export default function ActsEmitterandComEventTest() {
         storage.printCount();
         onConsume_number += 1
       }
-      emitter.once<Sample>("eventId222", callback);
+      emitter.onceGenericEventData<Sample>("eventId222", callback);
 
       //调用取消订阅事件接口
       await Utils.msSleep(2000)
-      emitter.off("eventId222",callback);
+      emitter.offGenericEventData("eventId222",callback);
       console.info(Tag +'emitterOff success');
-      await Utils.msSleep(100)
+      await Utils.msSleep(1000)
       expect(onConsume_number).assertEqual(0)
       done()
     })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Sendable_Static_0003
-     * @tc.name    Sub_Notification_Emitter_Publish_Sendable_Static_0003
-     * @tc.desc    Function test
-     * @tc.size    Medium-sized test
-     * @tc.type    Function test
-     * @tc.level   Level 2
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0003
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0003
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0003', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0003==>'
       let onConsume_number : number= 0
 
-      let callback = (eventData: emitter.GenericEventData<Sample>): void => {
+      let callback :Callback<emitter.GenericEventData<Sample>>= (eventData: emitter.GenericEventData<Sample>): void => {
         console.info(Tag +' on GenericEventData');
         let storage: Sample = eventData.data! as Sample;
         storage.printCount();
         onConsume_number += 1
+        console.info(Tag +' on GenericEventData' + eventData);
+        let data: Sample = eventData?.data as Sample;
+        expect(data?.count).assertEqual(100);
       }
-      emitter.once<Sample>("eventId333", callback);
+      emitter.onceGenericEventData<Sample>("eventId333", callback);
       await Utils.msSleep(100)
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};
@@ -668,12 +691,12 @@ export default function ActsEmitterandComEventTest() {
     })
 
     /**
-     * @tc.number  Sub_Notification_Emitter_Publish_Sendable_Static_0004
-     * @tc.name    Sub_Notification_Emitter_Publish_Sendable_Static_0004
-     * @tc.desc    Function test
-     * @tc.size    Medium-sized test
-     * @tc.type    Function test
-     * @tc.level   Level 0
+     * @tc.name   Sub_Notification_Emitter_Publish_Sendable_Static_0004
+     * @tc.number Sub_Notification_Emitter_Publish_Sendable_Static_0004
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('Sub_Notification_Emitter_Publish_Sendable_Static_0004', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, async (done: () => void): Promise<void> => {
       let Tag :string = 'Sub_Notification_Emitter_Publish_Sendable_Static_0004==>'
@@ -686,7 +709,7 @@ export default function ActsEmitterandComEventTest() {
         storage.printCount();
         onConsume_number += 1
       }
-      emitter.once<Sample>("eventId444", callback);
+      emitter.onceGenericEventData<Sample>("eventId444", callback);
       await Utils.msSleep(100)
       let a = new Sample();
       let eventData: emitter.GenericEventData<Sample> = {data:a};
@@ -696,7 +719,7 @@ export default function ActsEmitterandComEventTest() {
       emit_number += 1
       emitter.emit<Sample>("eventId444", eventData);
       console.info(Tag+'emitterEmit success'+emit_number);
-      await Utils.msSleep(100)
+      await Utils.msSleep(1000)
       expect(onConsume_number).assertEqual(1)
       done()
     })

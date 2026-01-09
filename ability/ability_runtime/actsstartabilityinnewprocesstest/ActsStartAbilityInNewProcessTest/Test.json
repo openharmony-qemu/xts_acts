@@ -25,7 +25,8 @@
                 "power-shell wakeup",
                 "param set persist.sys.abilityms.support.ecologicalrulemgrservice false",
                 "uinput -T -m 300 1279 280 200",
-                "uinput -T -d 1070 1070 -u 1070 1070",
+                "uinput -T -d 300 600 -m 300 600 300 100 -u 300 100",
+                "power-shell timeout -o 86400000",
                 "power-shell setmode 602",
                 "power-shell timeout -o 2147483647"
             ],
@@ -35,7 +36,8 @@
                 "power-shell wakeup",
                 "param set persist.sys.abilityms.support.ecologicalrulemgrservice true",
                 "uinput -T -m 300 1279 280 200",
-                "uinput -T -d 1070 1070 -u 1070 1070",
+                "uinput -T -d 300 600 -m 300 600 300 100 -u 300 100",
+                "power-shell timeout -o 86400000",
                 "power-shell setmode 602",
                 "power-shell timeout -o 2147483647"
             ]

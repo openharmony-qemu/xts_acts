@@ -22,9 +22,12 @@ export default function radioJsunit() {
     const SLOT_0 = 0;
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getPrimarySlotId_Async_0200
      * @tc.number Telephony_NetworkSearch_getPrimarySlotId_Async_0200
-     * @tc.name Test getPrimarySlotId(-1) to check the callback result
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_NetworkSearch_getPrimarySlotId_Async_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       radio.getPrimarySlotId((err, data) => {
@@ -41,9 +44,12 @@ export default function radioJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_getPrimarySlotId_Promise_0200
      * @tc.number Telephony_NetworkSearch_getPrimarySlotId_Async_0300
-     * @tc.name testGetPrimarySlotId_0300
-     * @tc.desc Test getPrimarySlotId api by promise.
+     * @tc.desc   Test getPrimarySlotId api by promise.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_NetworkSearch_getPrimarySlotId_Promise_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function) => {
       try {
@@ -59,9 +65,12 @@ export default function radioJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_isNrSupported_Promise_0400
      * @tc.number Telephony_NetworkSearch_isNrSupported_Promise_0400
-     * @tc.name Test The function setPrimarySlotId(0)
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_NetworkSearch_isNrSupported_Promise_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       let CaseName = "Telephony_NetworkSearch_isNrSupported_Promise_0400 ";
@@ -80,17 +89,32 @@ export default function radioJsunit() {
     });
 
     /**
+     * @tc.name   Telephony_NetworkSearch_isNRSupported_Async_0100
      * @tc.number Telephony_NetworkSearch_isNRSupported_Async_0100
-     * @tc.name Test The function isNRSupported(soltId)
-     * @tc.desc Function test
+     * @tc.desc   Function test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('Telephony_NetworkSearch_isNRSupported_Async_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done:Function)=> {
       let CaseName = "Telephony_NetworkSearch_isNRSupported_Async_0100 ";
       try {
         let result = radio.isNRSupported();
-        console.info("Result: " + result);
+        if (result) {
+            expect(result == true).assertTrue();
+            console.info('${CaseName} success, has NR ->${JSON.stringify(result)}');
+        } else {
+            expect(result == false).assertTrue();
+            console.info('${CaseName} success, dose not has NR ->${JSON.stringify(result)}');
+        }
         let result0 = radio.isNRSupported(SLOT_0);
-        console.info("Result0: " + result0);
+        if (result0) {
+            expect(result0 == true).assertTrue();
+            console.info('${CaseName} success, has NR ->${JSON.stringify(result0)}');
+        } else {
+            expect(result0 == false).assertTrue();
+            console.info('${CaseName} success, dose not has NR ->${JSON.stringify(result0)}');
+        }
         console.info(CaseName + "is complete!");
         done();
       } catch (err) {

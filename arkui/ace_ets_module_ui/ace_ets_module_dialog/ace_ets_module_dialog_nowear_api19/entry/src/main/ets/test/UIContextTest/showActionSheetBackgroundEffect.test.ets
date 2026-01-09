@@ -37,12 +37,12 @@ export default function showActionSheetBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showActionSheetBackgroundEffectTest_0100
-     * @tc.name      showActionSheetBackgroundEffectTest_0100
-     * @tc.desc      createShowActionSheetModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showActionSheetBackgroundEffectTest_0100
+     * @tc.number showActionSheetBackgroundEffectTest_0100
+     * @tc.desc   createShowActionSheetModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showActionSheetBackgroundEffectTest_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showActionSheetBackgroundEffectTest_0100';
@@ -85,12 +85,12 @@ export default function showActionSheetBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showActionSheetBackgroundEffectTest_0200
-     * @tc.name      showActionSheetBackgroundEffectTest_0200
-     * @tc.desc      createShowActionSheetModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showActionSheetBackgroundEffectTest_0200
+     * @tc.number showActionSheetBackgroundEffectTest_0200
+     * @tc.desc   createShowActionSheetModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showActionSheetBackgroundEffectTest_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showActionSheetBackgroundEffectTest_0200';
@@ -120,12 +120,12 @@ export default function showActionSheetBackgroundEffectTest() {
     });
 
     /**
-     * @tc.number    showActionSheetBackgroundEffectTest_0300
-     * @tc.name      showActionSheetBackgroundEffectTest_0300
-     * @tc.desc      createShowActionSheetModeToWindow
-     * @tc.level:    Level 2
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   showActionSheetBackgroundEffectTest_0300
+     * @tc.number showActionSheetBackgroundEffectTest_0300
+     * @tc.desc   createShowActionSheetModeToWindow
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('showActionSheetBackgroundEffectTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let tagName = 'showActionSheetBackgroundEffectTest_0300';

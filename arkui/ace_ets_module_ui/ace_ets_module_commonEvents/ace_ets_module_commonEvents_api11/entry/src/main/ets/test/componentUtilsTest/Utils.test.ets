@@ -48,12 +48,12 @@ export default function UtilsTest() {
     });
 
     /**
-     * @tc.number    UtilsTest_0010
-     * @tc.name      UtilsTest_0010
-     * @tc.desc      api for test translate,scale,rotate
-     * @tc.level:    Level 0
-     * @tc.type :
-     * @tc.size :
+     * @tc.name   UtilsTest_0010
+     * @tc.number UtilsTest_0010
+     * @tc.desc   api for test translate,scale,rotate
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('UtilsTest_0010', Level.LEVEL0, async (done: Function) => {
       console.info('Utils_0010 START');

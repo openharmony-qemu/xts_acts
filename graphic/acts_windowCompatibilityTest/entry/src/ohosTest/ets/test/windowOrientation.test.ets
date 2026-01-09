@@ -16,6 +16,7 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestT
 import window from '@ohos.window';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { UiDriver, BY, ON, PointerMatrix, Driver, Point } from '@ohos.UiTest'
 
 async function sleep(time: number) {
   let timeoutId: number = 0;
@@ -34,6 +35,18 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
     let tempWnd: window.Window | void;
     let subWin: window.Window | void;
 
+      beforeAll(async () => {
+        try {
+          let driver = Driver.create();
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          console.log('findComponent allowed: ' + JSON.stringify(allowed));
+          if(allowed){
+            await allowed.click();
+          }
+        } catch (err) {
+          console.error('findComponent allowed failed: ' + JSON.stringify(err));
+        }
+      });
     beforeEach(async ()=>{
       let msg = 'window_orientation_test';
       console.log(msg + ' beforeEach start!!!');
@@ -54,12 +67,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
       console.log(msg + ' beforeEach end!!!');
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0010
-     * @tc.name      : testSetPreferredOrientation_DialogWindow_Promise
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientation_DialogWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0010
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_DialogWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetPreferredOrientation_DialogWindow_Promise';
@@ -91,12 +104,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0020
-     * @tc.name      : testSetPreferredOrientation_DialogWindow_Callback
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientation_DialogWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0020
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_DialogWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetPreferredOrientation_DialogWindow_Callback';
@@ -137,12 +150,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0030
-     * @tc.name      : testSetPreferredOrientation_SubWindow_Promise
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientation_SubWindow_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0030
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_SubWindow_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetPreferredOrientation_SubWindow_Promise';
@@ -170,12 +183,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
       await (subWin as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0040
-     * @tc.name      : testSetPreferredOrientation_SubWindow_Callback
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientation_SubWindow_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0040
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_SubWindow_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetPreferredOrientation_SubWindow_Callback';
@@ -212,12 +225,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0050
-     * @tc.name      : testGetPreferredOrientation_DialogWindow
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetPreferredOrientation_DialogWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0050
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPreferredOrientation_DialogWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetPreferredOrientation_DialogWindow';
@@ -244,12 +257,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
       await (tempWnd as window.Window).destroyWindow();
     })
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0060
-     * @tc.name      : testGetPreferredOrientation_SubWindow
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetPreferredOrientation_SubWindow
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0060
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPreferredOrientation_SubWindow', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetPreferredOrientation_SubWindow';
@@ -273,12 +286,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0070
-     * @tc.name      : testSetPreferredOrientation_SubWindowWithOptions_Promise
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientation_SubWindowWithOptions_Promise
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0070
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_SubWindowWithOptions_Promise', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testSetPreferredOrientation_SubWindowWithOptions_Promise';
@@ -320,12 +333,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0080
-     * @tc.name      : testSetPreferredOrientation_SubWindowWithOptions_Callback
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testSetPreferredOrientation_SubWindowWithOptions_Callback
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0080
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testSetPreferredOrientation_SubWindowWithOptions_Callback', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async (done: Function) => {
       let caseName = 'testSetPreferredOrientation_SubWindowWithOptions_Callback';
@@ -377,12 +390,12 @@ export default function windowOrientationTest(context: common.UIAbilityContext, 
     })
 
     /**
-     * @tc.number    : SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0090
-     * @tc.name      : testGetPreferredOrientation_SubWindowWithOptions
-     * @tc.desc      : Verify the scenario of creating the application type window
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testGetPreferredOrientation_SubWindowWithOptions
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_WINDOWORIENTATION_JS_API_0090
+     * @tc.desc   Verify the scenario of creating the application type window
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testGetPreferredOrientation_SubWindowWithOptions', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, async () => {
       let caseName = 'testGetPreferredOrientation_SubWindowWithOptions';

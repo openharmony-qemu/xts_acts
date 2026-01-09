@@ -51,13 +51,13 @@ class DrawingNativePathPart2Test : public testing::Test {
         std::cout << "DrawingNativePathPart2Test errorCodeReset after each test case." << std::endl;
     }
 };
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1900
- * @tc.name: testPathAddArcNormal
- * @tc.desc: Test for adding an arc to a path with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddArcNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1900
+ * @tc.desc   Test for adding an arc to a path with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddArcNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -81,13 +81,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddArcNormal, Function | SmallTest 
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1901
- * @tc.name: testPathAddArcNull
- * @tc.desc: Test for adding an arc to a path with NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddArcNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1901
+ * @tc.desc   Test for adding an arc to a path with NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddArcNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -116,13 +116,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddArcNull, Function | SmallTest | 
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1902
- * @tc.name: testPathAddArcAbnormal
- * @tc.desc: Test for adding an arc to a path with abnormal data types as parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddArcAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1902
+ * @tc.desc   Test for adding an arc to a path with abnormal data types as parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddArcAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -147,13 +147,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddArcAbnormal, Function | SmallTes
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1903
- * @tc.name: testPathAddArcMaximal
- * @tc.desc: Test for adding an arc to a path with maximal values as parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddArcMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_1903
+ * @tc.desc   Test for adding an arc to a path with maximal values as parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddArcMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -179,13 +179,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddArcMaximal, Function | SmallTest
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2000
- * @tc.name: testPathAddPathNormal
- * @tc.desc: Test for adding a path to another path with normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddPathNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2000
+ * @tc.desc   Test for adding a path to another path with normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -210,13 +210,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathNormal, Function | SmallTest
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2001
- * @tc.name: testPathAddPathNull
- * @tc.desc: Test for adding a path to another path with NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPathNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2001
+ * @tc.desc   Test for adding a path to another path with NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -246,13 +246,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathNull, Function | SmallTest |
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2100
- * @tc.name: testPathAddPathWithMatrixAndModeNormal
- * @tc.desc: Test for adding a path to another path with matrix and mode transformations using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddPathWithMatrixAndModeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2100
+ * @tc.desc   Test for adding a path to another path with matrix and mode transformations using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithMatrixAndModeNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -287,14 +287,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithMatrixAndModeNormal, Fun
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2101
- * @tc.name: testPathAddPathWithMatrixAndModeNull
- * @tc.desc: Test for adding a path to another path with matrix and mode transformations using NULL or invalid
- * parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPathWithMatrixAndModeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2101
+ * @tc.desc   Test for adding a path to another path with matrix and mode transformations using NULL or invalid
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithMatrixAndModeNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -327,13 +326,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithMatrixAndModeNull, Funct
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2200
- * @tc.name: testPathAddPathWithModeNormal
- * @tc.desc: Test for adding a path to another path with mode transformations using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddPathWithModeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2200
+ * @tc.desc   Test for adding a path to another path with mode transformations using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithModeNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -362,13 +361,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithModeNormal, Function | S
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2201
- * @tc.name: testPathAddPathWithModeNull
- * @tc.desc: Test for adding a path to another path with mode transformations using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPathWithModeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2201
+ * @tc.desc   Test for adding a path to another path with mode transformations using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithModeNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -393,13 +392,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithModeNull, Function | Sma
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2300
- * @tc.name: testPathAddPathWithOffsetAndModeNormal
- * @tc.desc: Test for adding a path to another path with offset and mode transformations using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddPathWithOffsetAndModeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2300
+ * @tc.desc   Test for adding a path to another path with offset and mode transformations using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -429,14 +428,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeNormal, Fun
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2301
- * @tc.name: testPathAddPathWithOffsetAndModeNull
- * @tc.desc: Test for adding a path to another path with offset and mode transformations using NULL or invalid
- * parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPathWithOffsetAndModeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2301
+ * @tc.desc   Test for adding a path to another path with offset and mode transformations using NULL or invalid
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -467,13 +465,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeNull, Funct
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2302
- * @tc.name: testPathAddPathWithOffsetAndModeAbnormal
- * @tc.desc: Test for adding a path to another path with offset and mode transformations using abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPathWithOffsetAndModeAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2302
+ * @tc.desc   Test for adding a path to another path with offset and mode transformations using abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -500,13 +498,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeAbnormal, F
     OH_Drawing_PathDestroy(src);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2303
- * @tc.name: testPathAddPathWithOffsetAndModeMaximal
- * @tc.desc: Test for adding a path to another path with offset and mode transformations using maximal values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPathWithOffsetAndModeMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2303
+ * @tc.desc   Test for adding a path to another path with offset and mode transformations using maximal values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -530,13 +528,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPathWithOffsetAndModeMaximal, Fu
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2400
- * @tc.name: testPathAddOvalNormal
- * @tc.desc: Test for adding an oval to a path using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddOvalNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2400
+ * @tc.desc   Test for adding an oval to a path using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddOvalNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -565,13 +563,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddOvalNormal, Function | SmallTest
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2401
- * @tc.name: testPathAddOvalNull
- * @tc.desc: Test for adding an oval to a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddOvalNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2401
+ * @tc.desc   Test for adding an oval to a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddOvalNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -596,13 +594,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddOvalNull, Function | SmallTest |
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2500
- * @tc.name: testPathAddPolygonNormal
- * @tc.desc: Test for adding a polygon to a path with the fourth parameter set to true.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddPolygonNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2500
+ * @tc.desc   Test for adding a polygon to a path with the fourth parameter set to true.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -628,13 +626,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonNormal, Function | SmallT
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2501
- * @tc.name: testPathAddPolygonNormal2
- * @tc.desc: Test for adding a polygon to a path with the fourth parameter set to false.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddPolygonNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2501
+ * @tc.desc   Test for adding a polygon to a path with the fourth parameter set to false.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonNormal2, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -660,13 +658,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonNormal2, Function | Small
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2502
- * @tc.name: testPathAddPolygonNull
- * @tc.desc: Test for adding a polygon to a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPolygonNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2502
+ * @tc.desc   Test for adding a polygon to a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -696,13 +694,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonNull, Function | SmallTes
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2503
- * @tc.name: testPathAddPolygonAbnormal
- * @tc.desc: Test for adding a polygon to a path using abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPolygonAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2503
+ * @tc.desc   Test for adding a polygon to a path using abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -736,13 +734,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonAbnormal, Function | Smal
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2504
- * @tc.name: testPathAddPolygonMaximal
- * @tc.desc: Test for adding a polygon to a path using maximal values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddPolygonMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2504
+ * @tc.desc   Test for adding a polygon to a path using maximal values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -775,13 +773,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddPolygonMaximal, Function | Small
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2600
- * @tc.name: testPathAddCircleNormal
- * @tc.desc: Test for adding a circle to a path using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathAddCircleNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2600
+ * @tc.desc   Test for adding a circle to a path using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -803,13 +801,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleNormal, Function | SmallTe
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2601
- * @tc.name: testPathAddCircleNull
- * @tc.desc: Test for adding a circle to a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddCircleNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2601
+ * @tc.desc   Test for adding a circle to a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -832,13 +830,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleNull, Function | SmallTest
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2602
- * @tc.name: testPathAddCircleAbnormal
- * @tc.desc: Test for adding a circle to a path using abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddCircleAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2602
+ * @tc.desc   Test for adding a circle to a path using abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -865,13 +863,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleAbnormal, Function | Small
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2603
- * @tc.name: testPathAddCircleMaximal
- * @tc.desc: Test for adding a circle to a path using maximal values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathAddCircleMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2603
+ * @tc.desc   Test for adding a circle to a path using maximal values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -892,13 +890,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathAddCircleMaximal, Function | SmallT
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2700
- * @tc.name: testPathBuildFromSvgStringNormal
- * @tc.desc: Test for building a path from an SVG string using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathBuildFromSvgStringNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2700
+ * @tc.desc   Test for building a path from an SVG string using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathBuildFromSvgStringNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -920,13 +918,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathBuildFromSvgStringNormal, Function 
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2701
- * @tc.name: testPathBuildFromSvgStringNull
- * @tc.desc: Test for building a path from an SVG string using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathBuildFromSvgStringNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2701
+ * @tc.desc   Test for building a path from an SVG string using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathBuildFromSvgStringNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -935,24 +933,26 @@ HWTEST_F(DrawingNativePathPart2Test, testPathBuildFromSvgStringNull, Function | 
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathBuildFromSvgString with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathBuildFromSvgString(nullptr, "M 0 0 L 100 100");
+    bool svgResult = OH_Drawing_PathBuildFromSvgString(nullptr, "M 0 0 L 100 100");
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(svgResult, false);
     OH_Drawing_ErrorCodeReset();
     // 3. Call OH_Drawing_PathBuildFromSvgString with a nullptr as the second parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathBuildFromSvgString(path, nullptr);
+    svgResult = OH_Drawing_PathBuildFromSvgString(path, nullptr);
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(svgResult, false);
     // 4. Free the memory.
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2800
- * @tc.name: testPathContainsNormal
- * @tc.desc: Test for checking if a path contains a specified point using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathContainsNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2800
+ * @tc.desc   Test for checking if a path contains a specified point using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathContainsNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -977,13 +977,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathContainsNormal, Function | SmallTes
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2801
- * @tc.name: testPathContainsNull
- * @tc.desc: Test for checking if a path contains a specified point using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathContainsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2801
+ * @tc.desc   Test for checking if a path contains a specified point using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathContainsNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -992,24 +992,27 @@ HWTEST_F(DrawingNativePathPart2Test, testPathContainsNull, Function | SmallTest 
     EXPECT_NE(path, nullptr);
     // 2. Call OH_Drawing_PathContains with a nullptr as the first parameter, expecting
     // OH_DRAWING_ERROR_INVALID_PARAMETER error code.
-    OH_Drawing_PathContains(nullptr, 50, 50);
+    bool ret = OH_Drawing_PathContains(nullptr, 50, 50);
     // add assert
     EXPECT_EQ(OH_Drawing_ErrorCodeGet(), OH_Drawing_ErrorCode::OH_DRAWING_ERROR_INVALID_PARAMETER);
+    EXPECT_EQ(ret, false);
     // 3. Call OH_Drawing_PathContains with the second parameter as 0.00, the call fails without crashing.
-    OH_Drawing_PathContains(path, 0.0, 50);
+    ret = OH_Drawing_PathContains(path, 0.0, 50);
+    EXPECT_EQ(ret, false);
     // 4. Call OH_Drawing_PathContains with the third parameter as 0.00, the call fails without crashing.
-    OH_Drawing_PathContains(path, 50, 0.0);
+    ret = OH_Drawing_PathContains(path, 50, 0.0);
+    EXPECT_EQ(ret, false);
     // 5. Free the memory.
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2802
- * @tc.name: testPathContainsAbnormal
- * @tc.desc: Test for checking if a path contains a specified point using abnormal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathContainsAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2802
+ * @tc.desc   Test for checking if a path contains a specified point using abnormal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathContainsAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1027,20 +1030,22 @@ HWTEST_F(DrawingNativePathPart2Test, testPathContainsAbnormal, Function | SmallT
     // 6. Close the path using OH_Drawing_PathClose.
     OH_Drawing_PathClose(path);
     // 7. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains.
-    OH_Drawing_PathContains(path, 50, 50.0f);
+    bool ret = OH_Drawing_PathContains(path, 50, 50.0f);
+    EXPECT_EQ(ret, true);
     // 8. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains.
-    OH_Drawing_PathContains(path, 50.0f, 50);
+    ret = OH_Drawing_PathContains(path, 50.0f, 50);
+    EXPECT_EQ(ret, true);
     // 9. Free the memory.
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2803
- * @tc.name: testPathContainsMaximal
- * @tc.desc: Test for checking if a path contains a specified point using maximal values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathContainsMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2803
+ * @tc.desc   Test for checking if a path contains a specified point using maximal values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathContainsMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1059,21 +1064,23 @@ HWTEST_F(DrawingNativePathPart2Test, testPathContainsMaximal, Function | SmallTe
     OH_Drawing_PathClose(path);
     // 7. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains with the second
     // parameter as FLT_MAX + 1.
-    OH_Drawing_PathContains(path, FLT_MAX + 1, 50);
+    bool ret = OH_Drawing_PathContains(path, FLT_MAX + 1, 50);
+    EXPECT_EQ(ret, false);
     // 8. Check if the specified coordinates are contained in the path using OH_Drawing_PathContains with the third
     // parameter as FLT_MAX + 1.
-    OH_Drawing_PathContains(path, 50, FLT_MAX + 1);
+    ret = OH_Drawing_PathContains(path, 50, FLT_MAX + 1);
+    EXPECT_EQ(ret, false);
     // 9. Free the memory.
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2900
- * @tc.name: testPathTransformNormal
- * @tc.desc: Test for transforming a path using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathTransformNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2900
+ * @tc.desc   Test for transforming a path using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathTransformNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1098,13 +1105,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathTransformNormal, Function | SmallTe
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2901
- * @tc.name: testPathTransformNull
- * @tc.desc: Test for transforming a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathTransformNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_2901
+ * @tc.desc   Test for transforming a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathTransformNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1130,13 +1137,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathTransformNull, Function | SmallTest
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3000
- * @tc.name: testPathTransformWithPerspectiveClipNormal
- * @tc.desc: Test for transforming a path with perspective clip using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathTransformWithPerspectiveClipNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3000
+ * @tc.desc   Test for transforming a path with perspective clip using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathTransformWithPerspectiveClipNormal, Function | SmallTest | Level0) {
     // 1. Create a path object src using OH_Drawing_PathCreate.
@@ -1164,13 +1171,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathTransformWithPerspectiveClipNormal,
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3001
- * @tc.name: testPathTransformWithPerspectiveClipNormal2
- * @tc.desc: Test for transforming a path with perspective clip using normal parameters with false perspective clip.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathTransformWithPerspectiveClipNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3001
+ * @tc.desc   Test for transforming a path with perspective clip using normal parameters with false perspective clip.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathTransformWithPerspectiveClipNormal2, Function | SmallTest | Level0) {
     // 1. Create a path object src using OH_Drawing_PathCreate.
@@ -1199,13 +1206,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathTransformWithPerspectiveClipNormal2
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3002
- * @tc.name: testPathTransformWithPerspectiveClipNull
- * @tc.desc: Test for transforming a path with perspective clip using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathTransformWithPerspectiveClipNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3002
+ * @tc.desc   Test for transforming a path with perspective clip using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathTransformWithPerspectiveClipNull, Function | SmallTest | Level3) {
     // 1. Create a path object src using OH_Drawing_PathCreate.
@@ -1237,13 +1244,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathTransformWithPerspectiveClipNull, F
     OH_Drawing_MatrixDestroy(matrix);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3100
- * @tc.name: testPathSetFillTypeNormal
- * @tc.desc: Test for setting fill type of a path using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathSetFillTypeNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3100
+ * @tc.desc   Test for setting fill type of a path using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathSetFillTypeNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1278,13 +1285,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathSetFillTypeNormal, Function | Small
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3101
- * @tc.name: testPathSetFillTypeNull
- * @tc.desc: Test for setting fill type of a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathSetFillTypeNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3101
+ * @tc.desc   Test for setting fill type of a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathSetFillTypeNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1303,13 +1310,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathSetFillTypeNull, Function | SmallTe
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3102
- * @tc.name: testPathSetFillTypeMultipleCalls
- * @tc.desc: Test for setting fill type of a path with multiple calls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathSetFillTypeMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3102
+ * @tc.desc   Test for setting fill type of a path with multiple calls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathSetFillTypeMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1335,13 +1342,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathSetFillTypeMultipleCalls, Function 
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3200
- * @tc.name: testPathGetLengthNormal
- * @tc.desc: Test for getting the length of a path using normal parameters with detailed length.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetLengthNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3200
+ * @tc.desc   Test for getting the length of a path using normal parameters with detailed length.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathGetLengthNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1359,13 +1366,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathGetLengthNormal, Function | SmallTe
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3201
- * @tc.name: testPathGetLengthNormal2
- * @tc.desc: Test for getting the length of a path using normal parameters without detailed length.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetLengthNormal2
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3201
+ * @tc.desc   Test for getting the length of a path using normal parameters without detailed length.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathGetLengthNormal2, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1384,13 +1391,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathGetLengthNormal2, Function | SmallT
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3202
- * @tc.name: testPathGetLengthNull
- * @tc.desc: Test for getting the length of a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetLengthNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3202
+ * @tc.desc   Test for getting the length of a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathGetLengthNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1405,13 +1412,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathGetLengthNull, Function | SmallTest
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3300
- * @tc.name: testPathGetBoundsNormal
- * @tc.desc: Test for getting the bounds of a path using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathGetBoundsNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3300
+ * @tc.desc   Test for getting the bounds of a path using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathGetBoundsNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1435,13 +1442,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathGetBoundsNormal, Function | SmallTe
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3301
- * @tc.name: testPathGetBoundsNull
- * @tc.desc: Test for getting the bounds of a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathGetBoundsNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3301
+ * @tc.desc   Test for getting the bounds of a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathGetBoundsNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1466,13 +1473,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathGetBoundsNull, Function | SmallTest
     OH_Drawing_RectDestroy(rect);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3400
- * @tc.name: testPathCloseNormal
- * @tc.desc: test for testPathCloseNormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathCloseNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3400
+ * @tc.desc   test for testPathCloseNormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathCloseNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1493,13 +1500,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathCloseNormal, Function | SmallTest |
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3401
- * @tc.name: testPathCloseNull
- * @tc.desc: Test for closing a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathCloseNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3401
+ * @tc.desc   Test for closing a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathCloseNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1514,13 +1521,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathCloseNull, Function | SmallTest | L
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3500
- * @tc.name: testPathOffsetNormal
- * @tc.desc: Test for offsetting a path using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathOffsetNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3500
+ * @tc.desc   Test for offsetting a path using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathOffsetNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1549,13 +1556,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathOffsetNormal, Function | SmallTest 
     OH_Drawing_PathDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3501
- * @tc.name: testPathOffsetNull
- * @tc.desc: Test for offsetting a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathOffsetNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3501
+ * @tc.desc   Test for offsetting a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathOffsetNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1581,13 +1588,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathOffsetNull, Function | SmallTest | 
     OH_Drawing_PathDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3502
- * @tc.name: testPathOffsetAbnormal
- * @tc.desc: Test for offsetting a path with abnormal parameters (non-float values).
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathOffsetAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3502
+ * @tc.desc   Test for offsetting a path with abnormal parameters (non-float values).
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathOffsetAbnormal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1611,13 +1618,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathOffsetAbnormal, Function | SmallTes
     OH_Drawing_PathDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3503
- * @tc.name: testPathOffsetMaximal
- * @tc.desc: Test for offsetting a path with maximal values.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathOffsetMaximal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3503
+ * @tc.desc   Test for offsetting a path with maximal values.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathOffsetMaximal, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1641,13 +1648,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathOffsetMaximal, Function | SmallTest
     OH_Drawing_PathDestroy(dst);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3600
- * @tc.name: testPathResetNormal
- * @tc.desc: Test for resetting a path using normal parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 0
+/**
+ * @tc.name   testPathResetNormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3600
+ * @tc.desc   Test for resetting a path using normal parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL0
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathResetNormal, Function | SmallTest | Level0) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1670,13 +1677,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathResetNormal, Function | SmallTest |
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3601
- * @tc.name: testPathResetNull
- * @tc.desc: Test for resetting a path using NULL or invalid parameters.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathResetNull
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3601
+ * @tc.desc   Test for resetting a path using NULL or invalid parameters.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathResetNull, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.
@@ -1691,13 +1698,13 @@ HWTEST_F(DrawingNativePathPart2Test, testPathResetNull, Function | SmallTest | L
     OH_Drawing_PathDestroy(path);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3602
- * @tc.name: testPathResetMultipleCalls
- * @tc.desc: Test for resetting a path with multiple calls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testPathResetMultipleCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_PATH_3602
+ * @tc.desc   Test for resetting a path with multiple calls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingNativePathPart2Test, testPathResetMultipleCalls, Function | SmallTest | Level3) {
     // 1. Create a path object using OH_Drawing_PathCreate.

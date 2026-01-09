@@ -26,52 +26,52 @@ export default function customComponentRadialGradientTest() {
       done();
     });
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0100
-     * @tc.name       : testCustomComponentRadialGradient001
-     * @tc.desc       : testing radialGradient for button with default value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentRadialGradient001
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0100
+     * @tc.desc   testing radialGradient for button with default value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentRadialGradient001', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentRadialGradient001()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0200
-     * @tc.name       : testCustomComponentRadialGradient002
-     * @tc.desc       : testing radialGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentRadialGradient002
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0200
+     * @tc.desc   testing radialGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentRadialGradient002', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentRadialGradient002()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0300
-     * @tc.name       : testCustomComponentRadialGradient003
-     * @tc.desc       : testing radialGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentRadialGradient003
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0300
+     * @tc.desc   testing radialGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentRadialGradient003', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentRadialGradient003()).assertEqual(0)
       done()
     })
 
-    /*
-     * @tc.number     : SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0400
-     * @tc.name       : testCustomComponentRadialGradient004
-     * @tc.desc       : testing radialGradient for button with normal value
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+    /**
+     * @tc.name   testCustomComponentRadialGradient004
+     * @tc.number SUB_ARKUI_CAPI_CUSTOMCOMPONENT_RADIALGRADIENT_0400
+     * @tc.desc   testing radialGradient for button with normal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCustomComponentRadialGradient004', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testCustomComponentRadialGradient004()).assertEqual(0)

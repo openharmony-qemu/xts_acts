@@ -254,12 +254,12 @@ export default function cameraSessionCameraRotationTest() {
       console.info('afterAll case');
     });
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_001
-     * @tc.name      : Check capture session camera photo rotation get success or not
-     * @tc.desc      : Check capture session camera photo rotation get success or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_001
+     * @tc.desc   Check capture session camera photo rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_001--------------");
@@ -274,13 +274,36 @@ export default function cameraSessionCameraRotationTest() {
       }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_001 ends here");
     });
+
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_001
-     * @tc.name      : Check capture session camera video rotation get success or not
-     * @tc.desc      : Check capture session camera video rotation get success or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001
+     * @tc.desc   Check capture session camera photo rotation without deviceDegree get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001--------------");
+      let cameraPhotoRotation = cameraObj.sessionGetPhotoRotationWithoutDeviceDegree();
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001 finish");
+      if (cameraPhotoRotation != null) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001 PASSED with cameraPhotoRotation is: " + cameraPhotoRotation);
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001 FAILED with cameraPhotoRotation is: " + cameraPhotoRotation);
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PHOTO_ROTATION_WITHOUT_DEVICEDEGREE_001 ends here");
+    });
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_001
+     * @tc.desc   Check capture session camera video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_001--------------");
@@ -295,14 +318,37 @@ export default function cameraSessionCameraRotationTest() {
       }
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_001 ends here");
     });
+
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_001
-     * @tc.name      : Check capture session camera preview rotation get success or not
-     * @tc.desc      : Check capture session camera preview rotation get success or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001
+     * @tc.desc   Check capture session camera video rotation get success or not
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001--------------");
+      let cameraVideoRotation = cameraObj.sessionGetVideoRotationWithoutDeviceDegree();
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001 finish");
+      if (cameraVideoRotation != null) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001 PASSED with cameraVideoRotation is: " + cameraVideoRotation);
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001 FAILED with cameraVideoRotation is: " + cameraVideoRotation);
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_VIDEO_ROTATION_WITHOUT_DEVICEDEGREE_001 ends here");
+    });
+
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_001
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_001
+      * @tc.desc   Check capture session camera preview rotation get success or not
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_001', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_001--------------");
        let cameraPreviewRotation = cameraObj.sessionGetPreviewRotation(0);
@@ -319,13 +365,36 @@ export default function cameraSessionCameraRotationTest() {
     });
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_002
-     * @tc.name      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_0 success or not
-     * @tc.desc      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_0 success or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001
+      * @tc.desc   Check capture session camera preview rotation without deviceDegree get success or not
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
+     it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001', Level.LEVEL2, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001--------------");
+       let cameraPreviewRotation = cameraObj.sessionGetPreviewRotationWithoutDisplayRotation();
+      cameraObj.sessionSetPreviewRotation(cameraPreviewRotation, false);
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001 finish");
+      if (cameraPreviewRotation != null) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001 PASSED with cameraPreviewRotation is: " + cameraPreviewRotation);
+      }
+      else {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001 FAILED with cameraPreviewRotation is: " + cameraPreviewRotation);
+        expect().assertFail();
+      }
+      console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_WITHOUT_DISPLAYROTATION_001 ends here");
+    });
+
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_002
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_002
+      * @tc.desc   Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_0 success or not
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_002', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_002--------------");
       let ret = cameraObj.sessionSetPreviewRotation(Camera_ImageRotation.IMAGE_ROTATION_0, false);
@@ -333,14 +402,14 @@ export default function cameraSessionCameraRotationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_002 ends here");
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_003
-     * @tc.name      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_90 success or not
-     * @tc.desc      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_90 success or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_003
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_003
+      * @tc.desc   Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_90 success or not
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_003', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_003--------------");
       let ret = cameraObj.sessionSetPreviewRotation(Camera_ImageRotation.IMAGE_ROTATION_90, false);
@@ -348,14 +417,14 @@ export default function cameraSessionCameraRotationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_003 ends here");
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_004
-     * @tc.name      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_180 success or not
-     * @tc.desc      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_180 success or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_004
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_004
+      * @tc.desc   Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_180 success or not
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_004', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_004--------------");
       let ret = cameraObj.sessionSetPreviewRotation(Camera_ImageRotation.IMAGE_ROTATION_180, false);
@@ -363,14 +432,14 @@ export default function cameraSessionCameraRotationTest() {
       console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_004 ends here");
     });
 
-    /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_005
-     * @tc.name      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_270 success or not
-     * @tc.desc      : Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_270 success or not
-     * @tc.size      : MediumTest
-     * @tc.type      : Function
-     * @tc.level     : Level 2
-     */
+     /**
+      * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_005
+      * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_005
+      * @tc.desc   Check capture session camera preview rotation set CAMERA_IMAGE_ROTATION_270 success or not
+      * @tc.type   FUNCTION
+      * @tc.size   MEDIUMTEST
+      * @tc.level  LEVEL2
+      */
      it('SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_005', Level.LEVEL2, async () => {
       console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_CAMERA_PREVIEW_ROTATION_005--------------");
       let ret = cameraObj.sessionSetPreviewRotation(Camera_ImageRotation.IMAGE_ROTATION_270, false);

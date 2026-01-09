@@ -62,13 +62,13 @@ class DrawingRecordCmdUtilsBeginRecordingTest : public testing::Test {
     }
 };
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0102
- * @tc.name: testRecordCmdUtilsBeginRecordingAbnormal
- * @tc.desc: test for testRecordCmdUtilsBeginRecordingAbnormal.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 3
+/**
+ * @tc.name   testRecordCmdUtilsBeginRecordingAbnormal
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0102
+ * @tc.desc   test for testRecordCmdUtilsBeginRecordingAbnormal.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL3
  */
 HWTEST_F(DrawingRecordCmdUtilsBeginRecordingTest, testRecordCmdUtilsBeginRecordingAbnormal, Function | SmallTest | Level3) {
     // 1. The first and fourth parameters of the OH-Drawing-RecordCmdUtelsBeginRecording interface are not empty
@@ -86,13 +86,13 @@ HWTEST_F(DrawingRecordCmdUtilsBeginRecordingTest, testRecordCmdUtilsBeginRecordi
     OH_Drawing_CanvasDestroy (canvas);
 }
 
-/*
- * @tc.number: SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0103
- * @tc.name: testRecordCmdUtilsBeginRecordingCalls
- * @tc.desc: test for testRecordCmdUtilsBeginRecordingCalls.
- * @tc.size  : SmallTest
- * @tc.type  : Function
- * @tc.level : Level 2
+/**
+ * @tc.name   testRecordCmdUtilsBeginRecordingCalls
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_RECORDER_0103
+ * @tc.desc   test for testRecordCmdUtilsBeginRecordingCalls.
+ * @tc.type   FUNCTION
+ * @tc.size   SMALLTEST
+ * @tc.level  LEVEL2
  */
 HWTEST_F(DrawingRecordCmdUtilsBeginRecordingTest, testRecordCmdUtilsBeginRecordingCalls, Function | SmallTest | Level2) {
     // 1. Call OH-Drawing-RecordCmdUtelsBeginRecording 10 times

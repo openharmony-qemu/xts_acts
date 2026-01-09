@@ -42,6 +42,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageAniamtorJsunit_0100
+     * @tc.number imageAniamtorJsunit_0100
+     * @tc.desc   imageAniamtorJsunit_0100
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0100', Level.LEVEL1, async (done: Function) => {
       console.info('[imageAnimatorJsunit_0100] START');
       await CommonFunc.sleep(1000);
@@ -67,6 +75,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageAniamtorJsunit_0200
+     * @tc.number imageAniamtorJsunit_0200
+     * @tc.desc   imageAniamtorJsunit_0200
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0200', Level.LEVEL1, async (done: Function) => {
       console.info('[imageAniamtorJsunit_0200] START');
       // test the enum of state of animator
@@ -95,6 +111,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageAniamtorJsunit_0300
+     * @tc.number imageAniamtorJsunit_0300
+     * @tc.desc   imageAniamtorJsunit_0300
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0300', Level.LEVEL1, async (done: Function) => {
       console.info('imageAniamtorJsunit_0300 START');
       // test the illegal value of imageAnimator
@@ -108,6 +132,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageAniamtorJsunit_0400
+     * @tc.number imageAniamtorJsunit_0400
+     * @tc.desc   imageAniamtorJsunit_0400
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0400', Level.LEVEL1, async (done: Function) => {
       console.info('imageAniamtorJsunit_0400 START');
       // test the value of FillMode
@@ -135,6 +167,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageAniamtorJsunit_0500
+     * @tc.number imageAniamtorJsunit_0500
+     * @tc.desc   imageAniamtorJsunit_0500
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0500', Level.LEVEL1, async (done: Function) => {
       console.info('imageAniamtorJsunit_0500 START');
       // test the illegal value of imageAnimator
@@ -148,6 +188,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageAniamtorJsunit_0600
+     * @tc.number imageAniamtorJsunit_0600
+     * @tc.desc   imageAniamtorJsunit_0600
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0600', Level.LEVEL1, async (done: Function) => {
       console.info('[imageAniamtorJsunit_0600] START');
       // test the boolean attribute  of imageAnimator
@@ -172,6 +220,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
 
+    /**
+     * @tc.name   imageAniamtorJsunit_0700
+     * @tc.number imageAniamtorJsunit_0700
+     * @tc.desc   imageAniamtorJsunit_0700
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0700', Level.LEVEL1, async (done: Function) => {
       console.info('imageAniamtorJsunit_0700 START');
       // test the image event start and Finish
@@ -196,6 +252,14 @@ export default function imageAniamtorJsunit() {
       done();
     });
   
+    /**
+     * @tc.name   imageAniamtorJsunit_0800
+     * @tc.number imageAniamtorJsunit_0800
+     * @tc.desc   imageAniamtorJsunit_0800
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('imageAniamtorJsunit_0800', Level.LEVEL1, async (done: Function) => {
       console.info('imageAniamtorJsunit_0370 START');
       // test the image event of pause and repeat

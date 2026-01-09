@@ -95,6 +95,11 @@ static napi_value OHGetColorSpaceName001(napi_env env, napi_callback_info info)
     OH_NativeColorSpaceManager *nativeColorSpace = nullptr;
     ColorSpaceName colorSpaceName = ColorSpaceName::SRGB;
     nativeColorSpace = OH_NativeColorSpaceManager_CreateFromName(colorSpaceName);
+    if (nativeColorSpace != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     colorSpaceName = static_cast<ColorSpaceName>(OH_NativeColorSpaceManager_GetColorSpaceName(nativeColorSpace));
     if (colorSpaceName == ColorSpaceName::SRGB) {
         napi_create_int32(env, SUCCESS, &result);
@@ -125,6 +130,11 @@ static napi_value OHGetWhitePoint001(napi_env env, napi_callback_info info)
     ColorSpacePrimaries primaries = {RED_X, RED_Y, GREEN_X, GREEN_Y, BLUE_X, BLUE_Y, WHITE_X, WHITE_Y};
     float gamma = 1.f;
     nativeColorSpace = OH_NativeColorSpaceManager_CreateFromPrimariesAndGamma(primaries, gamma);
+    if (nativeColorSpace != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     WhitePointArray array = OH_NativeColorSpaceManager_GetWhitePoint(nativeColorSpace);
     if (array.arr[0] == WHITE_X || array.arr[1] == WHITE_Y) {
         napi_create_int32(env, SUCCESS, &result);
@@ -155,6 +165,11 @@ static napi_value OHGetGamma001(napi_env env, napi_callback_info info)
     ColorSpacePrimaries primaries = {RED_X, RED_Y, GREEN_X, GREEN_Y, BLUE_X, BLUE_Y, WHITE_X, WHITE_Y};
     float gamma = 1.f;
     nativeColorSpace = OH_NativeColorSpaceManager_CreateFromPrimariesAndGamma(primaries, gamma);
+    if (nativeColorSpace != nullptr) {
+        napi_create_int32(env, SUCCESS, &result);
+    } else {
+        napi_create_int32(env, FAIL, &result);
+    }
     if (OH_NativeColorSpaceManager_GetGamma(nativeColorSpace) == 1.f) {
         napi_create_int32(env, SUCCESS, &result);
     } else {

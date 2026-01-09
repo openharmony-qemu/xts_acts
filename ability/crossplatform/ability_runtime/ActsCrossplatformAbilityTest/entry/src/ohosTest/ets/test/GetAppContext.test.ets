@@ -14,16 +14,29 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
+import { Driver, ON } from '@kit.TestKit';
 
 export default function GetAppContextTest() {
+  beforeAll(async () => {
+    let driver = Driver.create();	
+    try {
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      if (allowed) {
+        await allowed.click();
+      }
+    } catch (err) {
+      console.error('findComponent failed: ' + JSON.stringify(err));
+    }
+  })
+
   describe("GetAppContextTest", () => {
     /**
-     * @tc.number: ACTS_GET_APP_CONTENT_0001
-     * @tc.name  : actsGetAppContextCallback0001
-     * @tc.desc  : Test the api "abilityDelegator.startAbility", return the result with callback function.
-     * @tc.size  : MediumTest
-     * @tc.type  : Method
-     * @tc.level : Level 2
+     * @tc.name   ACTS_GET_APP_CONTENT_0001
+     * @tc.number ACTS_GET_APP_CONTENT_0001
+     * @tc.desc   Test the api "abilityDelegator.startAbility", return the result with callback function.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it("ACTS_GET_APP_CONTENT_0001", Level.LEVEL0, async (done: Function) => {
       console.log("ACTS_GET_APP_CONTENT_0001 :start");

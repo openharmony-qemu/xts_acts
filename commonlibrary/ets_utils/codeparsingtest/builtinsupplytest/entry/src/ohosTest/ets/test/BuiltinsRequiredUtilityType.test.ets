@@ -23,7 +23,7 @@ export default function BuiltinsRequiredUtilityTypeTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(100)
+
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -39,12 +39,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0100
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0100
-     * @tc.name BuiltinsRequiredUtilityTypeTest0100
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -70,12 +70,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
       })
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0200
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0200
-     * @tc.name BuiltinsRequiredUtilityTypeTest0200
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -100,12 +100,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0300
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0300
-     * @tc.name BuiltinsRequiredUtilityTypeTest0300
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -131,12 +131,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
       })
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0400
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0400
-     * @tc.name BuiltinsRequiredUtilityTypeTest0400
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
       async (Done: Function) => {
@@ -163,12 +163,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0500
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0500
-     * @tc.name BuiltinsRequiredUtilityTypeTest0500
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
         const caseName = 'BuiltinsRequiredUtilityTypeTest0500';
@@ -188,12 +188,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0600
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0600
-     * @tc.name BuiltinsRequiredUtilityTypeTest0600
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest0600';
@@ -213,12 +213,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0700
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0700
-     * @tc.name BuiltinsRequiredUtilityTypeTest0700
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest0700';
@@ -238,12 +238,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0800
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0800
-     * @tc.name BuiltinsRequiredUtilityTypeTest0800
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest0800';
@@ -268,12 +268,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest0900
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_0900
-     * @tc.name BuiltinsRequiredUtilityTypeTest0900
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest0900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest0900';
@@ -293,12 +293,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1000
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1000
-     * @tc.name BuiltinsRequiredUtilityTypeTest1000
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1000';
@@ -318,12 +318,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1100
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1100
-     * @tc.name BuiltinsRequiredUtilityTypeTest1100
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1100';
@@ -343,12 +343,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1200
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1200
-     * @tc.name BuiltinsRequiredUtilityTypeTest1200
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1200';
@@ -375,12 +375,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1300
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1300
-     * @tc.name BuiltinsRequiredUtilityTypeTest1300
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1300';
@@ -400,12 +400,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1400
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1400
-     * @tc.name BuiltinsRequiredUtilityTypeTest1400
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1400';
@@ -426,12 +426,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1500
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1500
-     * @tc.name BuiltinsRequiredUtilityTypeTest1500
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1500';
@@ -451,12 +451,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1600
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1600
-     * @tc.name BuiltinsRequiredUtilityTypeTest1600
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1600';
@@ -480,12 +480,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1700
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1700
-     * @tc.name BuiltinsRequiredUtilityTypeTest1700
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1700';
@@ -506,12 +506,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1800
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1800
-     * @tc.name BuiltinsRequiredUtilityTypeTest1800
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1800';
@@ -532,12 +532,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest1900
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_1900
-     * @tc.name BuiltinsRequiredUtilityTypeTest1900
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest1900';
@@ -559,12 +559,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2000
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2000
-     * @tc.name BuiltinsRequiredUtilityTypeTest2000
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2000';
@@ -586,12 +586,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2100
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2100
-     * @tc.name BuiltinsRequiredUtilityTypeTest2100
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2100';
@@ -614,12 +614,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2200
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2200
-     * @tc.name BuiltinsRequiredUtilityTypeTest2200
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2200';
@@ -641,12 +641,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2300
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2300
-     * @tc.name BuiltinsRequiredUtilityTypeTest2300
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2300';
@@ -668,12 +668,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
     })
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2400
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2400
-     * @tc.name BuiltinsRequiredUtilityTypeTest2400
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2400';
@@ -696,12 +696,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2500
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2500
-     * @tc.name BuiltinsRequiredUtilityTypeTest2500
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2500';
@@ -724,12 +724,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2600
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2600
-     * @tc.name BuiltinsRequiredUtilityTypeTest2600
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2600';
@@ -753,12 +753,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2700
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2700
-     * @tc.name BuiltinsRequiredUtilityTypeTest2700
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2700';
@@ -782,12 +782,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2800
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2800
-     * @tc.name BuiltinsRequiredUtilityTypeTest2800
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2800';
@@ -812,12 +812,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest2900
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_2900
-     * @tc.name BuiltinsRequiredUtilityTypeTest2900
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest2900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest2900';
@@ -842,12 +842,12 @@ export default function BuiltinsRequiredUtilityTypeTest() {
 
 
     /**
+     * @tc.name   BuiltinsRequiredUtilityTypeTest3000
      * @tc.number SUB_BUILTINS_REQUIRED_UTILITY_TEST_3000
-     * @tc.name BuiltinsRequiredUtilityTypeTest3000
-     * @tc.desc Required Utility Type
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
+     * @tc.desc   Required Utility Type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('BuiltinsRequiredUtilityTypeTest3000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (Done: Function) => {
       const caseName = 'BuiltinsRequiredUtilityTypeTest3000';

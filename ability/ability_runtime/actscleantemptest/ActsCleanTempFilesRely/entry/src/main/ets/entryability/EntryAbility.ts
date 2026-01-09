@@ -43,6 +43,7 @@ let tempDir;
 let applicationContext;
 let applicationTempDir;
 let currentContext;
+let testNum: number = 0;
 
 function getListFile(dir): number {
   class ListFileOption {
@@ -234,6 +235,10 @@ export default class EntryAbility extends UIAbility {
   }
 
   onForeground(): void {
+    if (testNum !== 0) {
+      return;
+    }
+    testNum++;
     if (actionStr === 'Acts_CleanTempFiles_0101') {
       let file = fs.openSync(tempDir + '/test.txt', fs.OpenMode.READ_WRITE | fs.OpenMode.CREATE);
       let writeLen = fs.writeSync(file.fd, 'Try to write str.');

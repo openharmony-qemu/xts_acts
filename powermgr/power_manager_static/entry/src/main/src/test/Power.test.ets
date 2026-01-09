@@ -27,7 +27,6 @@ export default function PowerTest() {
   describe("PowerTest", (): void => {
     hilog.info(domain, tag, '%{public}s', 'describe start');
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0100
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0010
      * @tc.desc   Checks whether the screen of a device is on or off
@@ -53,7 +52,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0200
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0020
      * @tc.desc   Gets and sets the power mode
@@ -80,7 +78,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0300
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0030
      * @tc.desc   Device isStandby interface verification
@@ -107,7 +104,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0400
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0040
      * @tc.desc   Get device power mode MODE_NORMAL
@@ -132,7 +128,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0500
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0050
      * @tc.desc   Get device power mode MODE_POWER_SAVE
@@ -157,7 +152,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0600
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0060
      * @tc.desc   Get device power mode MODE_PERFORMANCE
@@ -182,7 +176,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0700
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0070
      * @tc.desc   Get device power mode MODE_EXTREME_POWER_SAVE
@@ -207,7 +200,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0710
      * @tc.number SUB_PowerSystem_PowerTest_ETSTest_0071
      * @tc.desc   Get device power mode MODE_CUSTOM_POWER_SAVE
@@ -232,7 +224,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0800
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0080
      * @tc.desc   Test the third-party application call shutdown will be blocked
@@ -254,7 +245,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_0900
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0090
      * @tc.desc   Test the third-party application call reboot will be blocked
@@ -276,7 +266,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1000
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0100
      * @tc.desc   Test the third-party application call wakeup will be blocked
@@ -298,7 +287,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1100
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0110
      * @tc.desc   Test the third-party application call suspend will be blocked
@@ -320,7 +308,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1200
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0120
      * @tc.desc   Test the third-party application call suspend will be blocked
@@ -342,7 +329,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1300
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0130
      * @tc.desc   Test the third-party application call suspend will be blocked
@@ -364,7 +350,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1400
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0140
      * @tc.desc   Test the third-party application call setPowerMode will be blocked
@@ -383,7 +368,7 @@ export default function PowerTest() {
               expect().assertFail();
               done();
             })
-            .catch((error: BusinessError): void => {
+            .catch((error: Error): void => {
               hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
               expect(error.code).assertEqual(202);
               done();
@@ -396,7 +381,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1500
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0150
      * @tc.desc   Test the third-party application call setPowerMode will be blocked
@@ -428,7 +412,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1600
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0160
      * @tc.desc   Test the third-party application call setScreenOffTime will be blocked
@@ -450,7 +433,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1700
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0170
      * @tc.desc   Test the third-party application call hibernate will be blocked
@@ -472,7 +454,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1800
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0180
      * @tc.desc   Test the third-party application call hibernate will be blocked
@@ -494,7 +475,6 @@ export default function PowerTest() {
       })
 
     /**
-     * @generated.time 2025-11-09 20:53:29
      * @tc.name   testPowerTest_static_1900
      * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0190
      * @tc.desc   Test the third-party application call refreshActivity will be blocked
@@ -514,5 +494,57 @@ export default function PowerTest() {
           done();
         }
       })
-  })
+
+    /**
+     * @tc.name   testPowerTest_static_2000
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0200
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2000';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          ohos_power.registerShutdownCallback((isReboot: boolean) => {
+            hilog.info(domain, tag, `${TAG} isReboot:${isReboot}`);
+          });
+          expect().assertFail();
+        } catch (error: BusinessError) {
+          hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   testPowerTest_static_2100
+     * @tc.number SUB_PowerSystem_ErrorCodeTest_ETSTest_0210
+     * @tc.desc   Test the third-party application call refreshActivity will be blocked
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("testPowerTest_static_2100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        let TAG: string = 'testPowerTest_static_2100';
+        hilog.info(domain, tag, `${TAG} start`);
+        try {
+          ohos_power.unregisterShutdownCallback(() => {
+            hilog.info(domain, tag, `${TAG} unregisterShutdownCallback`);
+          });
+          expect().assertFail();
+        } catch (error: BusinessError) {
+          hilog.error(domain, tag, `${TAG} error: ${JSON.stringify(error)}`);
+          expect(error.code).assertEqual(202);
+        } finally {
+          hilog.info(domain, tag, `${TAG} finally`);
+          done();
+        }
+      })
+  });
 }

@@ -55,14 +55,14 @@ export default function aaImplicitStartTest() {
       await cancelSuspendDelay();
     })
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0100
-    * @tc.name    check aa explicit start is okay
-    * @tc.desc    "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0100
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0100
+     * @tc.desc   "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility').then(data => {
@@ -75,14 +75,14 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0200
-    * @tc.name    check aa implicit start by URI and type
-    * @tc.desc    running "aa start -U "https:://uri.aacommandimplicitstarttest.home" -t uri-type" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0200
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0200
+     * @tc.desc   running "aa start -U "https:://uri.aacommandimplicitstarttest.home" -t uri-type" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0200', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -U "https://uri.aacommandimplicitstarttest.com" -t uri-type').then(data => {
@@ -95,14 +95,14 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0300
-    * @tc.name    check aa implicit start by action
-    * @tc.desc    running 'aa start -A "action.aacommandimplicitstarttest.home"' is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0300
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0300
+     * @tc.desc   running 'aa start -A "action.aacommandimplicitstarttest.home"' is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0300', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -A "action.aacommandimplicitstarttest.home"').then(data => {
@@ -115,14 +115,14 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0400
-    * @tc.name    check aa implicit start by entity
-    * @tc.desc    running 'aa start -e "entity.aacommandimplicitstarttest.home"' is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0400
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0400
+     * @tc.desc   running 'aa start -e "entity.aacommandimplicitstarttest.home"' is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0400', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -e "entity.aacommandimplicitstarttest.home"').then(data => {
@@ -135,14 +135,14 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0500
-    * @tc.name    check aa start -h
-    * @tc.desc    running "aa start -h" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   Level 1
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0500
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0500
+     * @tc.desc   running "aa start -h" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0500', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -h').then(data => {
@@ -163,13 +163,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0600
-     * @tc.name    check aa implicit start by URI with missing parameter
-     * @tc.desc    running "aa start -U" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0600
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0600
+     * @tc.desc   running "aa start -U" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0600', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -187,13 +187,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0700
-     * @tc.name    check aa implicit start by action with missing parameter
-     * @tc.desc    running "aa start -A" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0700
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0700
+     * @tc.desc   running "aa start -A" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0700', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -212,13 +212,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0800
-     * @tc.name    check aa implicit start by entity with missing parameter
-     * @tc.desc    running "aa start -e" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0800
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0800
+     * @tc.desc   running "aa start -e" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0800', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -237,13 +237,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0900
-     * @tc.name    check aa implicit start by type with missing parameter
-     * @tc.desc    running "aa start -t" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0900
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0900
+     * @tc.desc   running "aa start -t" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_0900', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -261,14 +261,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1000
-     * @tc.name    check aa start with parameters
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 13
-     * --pb kbool1 true --pb kbool2 f --ps kstring1 value1 --ps string2 value2 --psn knullstring1 --psn knullstring2" is successful
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1000
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1000
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 13
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1000', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -282,13 +281,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1100
-     * @tc.name    check aa start with missing parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1100
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1100
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -306,13 +305,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1200
-     * @tc.name    check aa start with missing parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger" is successful
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1200
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1200
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1200', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -331,13 +330,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1300
-     * @tc.name    check aa start with invalid parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger invalidnum" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1300
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1300
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger invalidnum" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1300', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -355,13 +354,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1400
-     * @tc.name    check aa start with missing parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1400
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1400
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1400', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -379,13 +378,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1500
-     * @tc.name    check aa start with missing parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool" wnds up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1500
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1500
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool" wnds up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1500', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -404,13 +403,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1600
-     * @tc.name    check aa start with invalid parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kbool invalidbool" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1600
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1600
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kbool invalidbool" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1600', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -429,13 +428,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1700
-     * @tc.name    check aa start with missing parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1700
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1700
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1700', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -454,13 +453,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1800
-     * @tc.name    check aa start with missing parameter
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1800
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1800
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1800', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -479,13 +478,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1900
-     * @tc.name    check aa start with invalid number of parameters
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring value1 value2" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1900
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1900
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --ps kstring value1 value2" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_1900', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -504,13 +503,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2000
-     * @tc.name    check aa start with invalid number of parameters
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --psn knullstring value" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2000
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2000
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --psn knullstring value" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2000', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -529,13 +528,13 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2100
-     * @tc.name    check aa start with invalid number of parameters
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 100 200" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2100
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2100
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pi kinteger 100 200" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -553,13 +552,13 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-     * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2200
-     * @tc.name    check aa start with invalid number of parameters
-     * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool true false" ends up with error
-     * @tc.size    MediumTest
-     * @tc.type    Function
-     * @tc.level   Level 1
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2200
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2200
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool true false" ends up with error
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2200', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
@@ -577,14 +576,14 @@ export default function aaImplicitStartTest() {
       done();
     })
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2300
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool True" is successful
-    * @tc.name    check --pb value case sense
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2300
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2300
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool True" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2300', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool TRUE')
@@ -600,14 +599,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2400
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool T" is successful
-    * @tc.name    check --pb value case sense
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2400
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2400
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool T" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2400', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool T')
@@ -622,14 +621,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2500
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool True" is successful
-    * @tc.name    check --pb value case sense
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2500
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2500
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool True" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2500', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool True')
@@ -644,14 +643,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2600
-    * @tc.name    check --pb value case sense
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool FALSE" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2600
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2600
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool FALSE" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2600', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool FALSE')
@@ -666,14 +665,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2700
-    * @tc.name    check --pb value case sense
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool False" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2700
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2700
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool False" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2700', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool False')
@@ -688,14 +687,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2800
-    * @tc.name    check --pb value case sense
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool false" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2800
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2800
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool false" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2800', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool false')
@@ -710,14 +709,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2900
-    * @tc.name    check --pb value case sense
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool F" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2900
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2900
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool F" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_2900', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool F')
@@ -732,14 +731,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3000
-    * @tc.name    check --pb value case sense
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool f" is successful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3000
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3000
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool f" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3000', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility --pb kbool f')
@@ -754,14 +753,14 @@ export default function aaImplicitStartTest() {
     })
 
 
-    /*
-    * @tc.number  SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3100
-    * @tc.name    check aa start unexported ability
-    * @tc.desc    running "aa start -b com.example.aacommandimplicitstarttest -a UnexportedAbility" is unsuccessful
-    * @tc.size    MediumTest
-    * @tc.type    Function
-    * @tc.level   3
-    */
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3100
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3100
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a UnexportedAbility" is unsuccessful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3100', Level.LEVEL1, async (done: Function) => {
       let res:string = "";
       await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a UnexportedAbility')
@@ -771,8 +770,28 @@ export default function aaImplicitStartTest() {
           hilog.info(0x0000, 'debuggabletest', '%{public}s',
             'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3100 err is: ' + JSON.stringify(err));
         });
-      expect(res).assertContain('error: failed to start ability.');
-      expect(res).assertContain('Failed to verify the visibility of the target ability.');
+      expect(res).assertContain('start ability successfully.');
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200
+     * @tc.number SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200
+     * @tc.desc   running "aa start -b com.example.aacommandimplicitstarttest -a EntryAbility -s timeout 3000" is successful
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200', Level.LEVEL0, async (done: Function) => {
+      let res:string = "";
+      await abilityDelegator.executeShellCommand('aa start -b com.example.aacommandimplicitstarttest -a EntryAbility -s timeout 3000')
+        .then(data => {
+          res = data.stdResult;
+        }).catch((err:BusinessError) => {
+          hilog.info(0x0000, 'debuggabletest', '%{public}s',
+            'SUB_Ability_AbilityTools_AACommand_AAImplicitStart_3200 err is: ' + JSON.stringify(err));
+        });
+      expect(res).assertContain('start ability successfully.');
       done();
     })
   })

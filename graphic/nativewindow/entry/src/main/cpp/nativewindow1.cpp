@@ -13,11 +13,6 @@
  * limitations under the License.
  */
 
-//
-// Created on 2024/8/6.
-//
-// Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
-// please include "napi/native_api.h".
 #include "napi/native_api.h"
 #include <IPCKit/ipc_cparcel.h>
 #include <bits/alltypes.h>
@@ -58,17 +53,17 @@
 
 #define CONSTANT_999999999 999999999
 #define CONSTANT_9999999999999999999 999999999999999999
-#define LOG_PRINT_DOMAIN 0xFFFF
+#undef LOG_DOMAIN
+#undef LOG_TAG
+#define LOG_DOMAIN 0x3200  // 全局domain宏，标识业务领域
+#define LOG_TAG "MY_TAG"
 
 napi_value testNativeWindowCreateNativeWindowNullptr(napi_env env, napi_callback_info info)
 {
     napi_value result = nullptr;
-    OHNativeWindow *p = OH_NativeWindow_CreateNativeWindow(nullptr);
-    if (p == nullptr) {
-        napi_create_int32(env, SUCCESS, &result);
-    } else {
-        napi_create_int32(env, FAIL, &result);
-    }
+    OHNativeWindow *nativeWindow = OH_NativeWindow_CreateNativeWindow(nullptr);
+    NAPI_ASSERT(env, nativeWindow == nullptr, "nativeWindow != nullptr");
+    napi_create_int32(env, SUCCESS, &result);
     return result;
 }
 
@@ -84,7 +79,7 @@ napi_value testNativeWindowGetSurfaceIdNullptr(napi_env env, napi_callback_info 
 {
     napi_value result = nullptr;
     int32_t r = OH_NativeWindow_GetSurfaceId(nullptr, 0);
-    if (CONSTANT_40001000 == r) {
+    if (NATIVE_ERROR_INVALID_ARGUMENTS == r) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
         napi_create_int32(env, FAIL, &result);
@@ -100,7 +95,7 @@ napi_value testNativeWindowCreateNativeWindowFromSurfaceIdNullptr(napi_env env, 
     // 设置OH_NativeWindow_CreateNativeWindowFromSurfaceId()的surfaceId=nullptr，其他参数正常调用该接口
     OHNativeWindow *nativeWindow = nullptr;
     int32_t flag = OH_NativeWindow_CreateNativeWindowFromSurfaceId(0, &nativeWindow);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
@@ -112,7 +107,7 @@ napi_value testNativeWindowCreateNativeWindowFromSurfaceIdNullptr(napi_env env, 
     OH_NativeWindow_GetSurfaceId(nativeWindow, &surfaceId);
     // 设置OH_NativeWindow_CreateNativeWindowFromSurfaceId()的window=nullptr,，其他参数正常调用该接口
     flag = OH_NativeWindow_CreateNativeWindowFromSurfaceId(surfaceId, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -225,6 +220,7 @@ napi_value testNativeWindowCreateNativeWindowBufferFromSurfaceBufferNullptr(napi
 {
     napi_value result = nullptr;
     OHNativeWindowBuffer *buffer = OH_NativeWindow_CreateNativeWindowBufferFromSurfaceBuffer(nullptr);
+    NAPI_ASSERT(env, buffer == nullptr, "buffer != nullptr");
     if (buffer == nullptr) {
         napi_create_int32(env, SUCCESS, &result);
     } else {
@@ -262,8 +258,8 @@ napi_value testNativeWindowCreateNativeWindowBufferFromNativeBufferNormal(napi_e
 
     // 0. 创建 native buffer 实例
     OH_NativeBuffer_Config config{
-        .width = 0x100,
-        .height = 0x100,
+        .width = 200,
+        .height = 200,
         .format = NATIVEBUFFER_PIXEL_FMT_RGBA_8888,
         .usage = NATIVEBUFFER_USAGE_CPU_READ | NATIVEBUFFER_USAGE_CPU_WRITE | NATIVEBUFFER_USAGE_MEM_DMA,
     };
@@ -286,7 +282,8 @@ napi_value testNativeWindowCreateNativeWindowBufferFromNativeBufferNormal(napi_e
     // 2.
     BufferHandle *bufferHandle1 = nullptr;
     bufferHandle1 = OH_NativeWindow_GetBufferHandleFromNative(nativeWindowBuffer);
-    if (bufferHandle1 == nullptr) {
+    if (bufferHandle1 == nullptr || bufferHandle1->format != config.format || bufferHandle1->height != config.height ||
+        bufferHandle1->width != config.width || bufferHandle1->usage != config.usage) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -343,11 +340,11 @@ napi_value testNativeWindowNativeWindowRequestBufferNullptr(napi_env env, napi_c
 {
     napi_value result = nullptr;
 
-    OHNativeWindowBuffer *oHNativeWindowBuffer;
+    OHNativeWindowBuffer *oHNativeWindowBuffer = nullptr;
     int fenceFd;
 
     int32_t flag = OH_NativeWindow_NativeWindowRequestBuffer(nullptr, &oHNativeWindowBuffer, &fenceFd);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -370,18 +367,18 @@ napi_value testNativeWindowNativeWindowAbortBufferNullptr(napi_env env, napi_cal
         return result;
     }
     OH_NativeImage *image = initNative->returnNativeImage();
-    OHNativeWindowBuffer *oHNativeWindowBuffer;
+    OHNativeWindowBuffer *oHNativeWindowBuffer = nullptr;
 
     // 1. window 为空指针
     int32_t flag = OH_NativeWindow_NativeWindowAbortBuffer(nullptr, oHNativeWindowBuffer);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
 
     // 2. buffer 为空指针
     flag = OH_NativeWindow_NativeWindowAbortBuffer(nativeWindow, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -650,14 +647,14 @@ napi_value testNativeWindowWriteToParcelErrptr(napi_env env, napi_callback_info 
 
     // 1.
     int32_t flag = OH_NativeWindow_WriteToParcel(nullptr, parcel);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
 
     // 2.
     flag = OH_NativeWindow_WriteToParcel(nativeWindow, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -677,14 +674,14 @@ napi_value testNativeWindowReadFromParcelErrptr(napi_env env, napi_callback_info
 
     // 1.
     int32_t flag = OH_NativeWindow_ReadFromParcel(parcel, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
 
     // 2.
     flag = OH_NativeWindow_ReadFromParcel(nullptr, &nativeWindow);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -710,13 +707,13 @@ napi_value testNativeWindowWRParcelNormal(napi_env env, napi_callback_info info)
     OHIPCParcel *parcel1 = OH_IPCParcel_Create();
 
     int32_t flag = OH_NativeWindow_WriteToParcel(nativeWindow1, parcel1);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
     OHNativeWindow *nativeWindow2;
     flag = OH_NativeWindow_ReadFromParcel(parcel1, &nativeWindow2);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -766,14 +763,14 @@ napi_value testNativeWindowReadFromParcelAbNormal(napi_env env, napi_callback_in
 
     // 1.
     int32_t flag = OH_NativeWindow_WriteToParcel(window1, parcel1);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
 
     // 2.
     flag = OH_NativeWindow_WriteToParcel(window1, parcel1);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -800,19 +797,19 @@ napi_value testNativeWindowWRParcelDifferent(napi_env env, napi_callback_info in
 
     // 1.
     int32_t flag = OH_NativeWindow_WriteToParcel(window1, parcel1);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
     // 2.
     flag = OH_NativeWindow_WriteToParcel(window1, parcel2);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
     // 3.
     flag = OH_NativeWindow_WriteToParcel(window2, parcel1);
-    if (flag != 0) {
+    if (flag != NATIVE_ERROR_OK) {
         napi_create_int32(env, CONSTANT_3, &result);
         return result;
     }
@@ -849,13 +846,13 @@ napi_value testNativeWindowNativeWindowFlushBufferNullptr(napi_env env, napi_cal
 
     // 1.
     int32_t flag = OH_NativeWindow_NativeWindowFlushBuffer(nullptr, nativeWindowBuffer, fenceFd, region);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, 1, &result);
         return result;
     }
     // 2.
     flag = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nullptr, fenceFd, region);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -898,7 +895,7 @@ napi_value testNativeWindowNativeWindowFlushBufferNormal(napi_env env, napi_call
 
     // 2.
     flag = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
-    if (flag != CONSTANT_41207000) {
+    if (flag != NATIVE_ERROR_BUFFER_STATE_INVALID) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -974,10 +971,10 @@ napi_value testNativeWindowNativeWindowFlushBufferErrorCode(napi_env env, napi_c
     };
     OH_NativeBuffer *newBuffer = OH_NativeBuffer_Alloc(&config);
     nativeWindowBuffer = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(newBuffer);
-
+    NAPI_ASSERT(env, nativeWindowBuffer != nullptr, "nativeWindowBuffer == nullptr");
     // 1.
     int32_t flag = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, -1, region);
-    if (flag != CONSTANT_41210000) {
+    if (flag != NATIVE_ERROR_BUFFER_NOT_IN_CACHE) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1004,15 +1001,19 @@ napi_value testNativeWindowGetLastFlushedBufferV2Nullptr(napi_env env, napi_call
     float matrix[16];
 
     // 1.
-    int32_t flag = OH_NativeWindow_GetLastFlushedBufferV2(nullptr, &nativeWindowBuffer, &fenceFd, matrix);
-    if (flag != CONSTANT_40001000) {
+    int32_t flag1 = OH_NativeWindow_GetLastFlushedBufferV2(nullptr, &nativeWindowBuffer, &fenceFd, matrix);
+    // 2.
+    int32_t flag2 = OH_NativeWindow_GetLastFlushedBufferV2(nativeWindow, nullptr, &fenceFd, matrix);
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
-    // 2.
-    flag = OH_NativeWindow_GetLastFlushedBufferV2(nativeWindow, nullptr, &fenceFd, matrix);
-    if (flag != CONSTANT_40001000) {
-        napi_create_int32(env, CONSTANT_2, &result);
+    // 3.
+    OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
+    OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, nativeWindowBuffer);
+    int32_t flag3 = OH_NativeWindow_GetLastFlushedBufferV2(nativeWindow, &nativeWindowBuffer, &fenceFd, matrix);
+    if (flag3 != NATIVE_ERROR_UNKNOWN) {
+        napi_create_int32(env, flag3, &result);
         return result;
     }
     delete initNative;
@@ -1037,17 +1038,14 @@ napi_value testNativeWindowGetLastFlushedBufferNullptr(napi_env env, napi_callba
     float matrix[16];
 
     // 1.
-    int32_t flag = OH_NativeWindow_GetLastFlushedBuffer(nullptr, &nativeWindowBuffer, &fenceFd, matrix);
-    if (flag != CONSTANT_40001000) {
-        napi_create_int32(env, 1, &result);
-        return result;
-    }
+    int32_t flag1 = OH_NativeWindow_GetLastFlushedBuffer(nullptr, &nativeWindowBuffer, &fenceFd, matrix);
     // 2.
-    flag = OH_NativeWindow_GetLastFlushedBuffer(nativeWindow, nullptr, &fenceFd, matrix);
-    if (flag != CONSTANT_40001000) {
-        napi_create_int32(env, CONSTANT_2, &result);
+    int32_t flag2 = OH_NativeWindow_GetLastFlushedBuffer(nativeWindow, nullptr, &fenceFd, matrix);
+    if (flag1 != NATIVE_ERROR_INVALID_ARGUMENTS && flag2 != NATIVE_ERROR_INVALID_ARGUMENTS) {
+        napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
+    
     delete initNative;
     napi_create_int32(env, SUCCESS, &result);
     return result;
@@ -1077,8 +1075,8 @@ napi_value testNativeWindowGetLastFlushedBufferV2Normal(napi_env env, napi_callb
     int32_t ret = OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
     ret = OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, nativeWindowBuffer, fenceFd, region);
     int32_t flag = OH_NativeWindow_GetLastFlushedBufferV2(nativeWindow, &nativeWindowBuffer, &fenceFd, matrix);
-    if (flag != 0) {
-        napi_create_int32(env, 1, &result);
+    if (flag != NATIVE_ERROR_OK) {
+        napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
     delete initNative;
@@ -1164,7 +1162,7 @@ napi_value testNativeWindowGetNativeObjectMagicNormal(napi_env env, napi_callbac
         return result;
     }
     OH_NativeImage *image = initNative->returnNativeImage();
-    OHNativeWindowBuffer *nativeWindowBuffer;
+    OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
     int fenceFd = -1;
     OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
 
@@ -1209,13 +1207,13 @@ napi_value testNativeWindowNativeObjectReferenceNullptr(napi_env env, napi_callb
     OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
 
     int32_t magicId = OH_NativeWindow_NativeObjectReference(nullptr);
-    if (magicId != CONSTANT_40001000) {
+    if (magicId != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
 
     magicId = OH_NativeWindow_NativeObjectReference(nativeWindowBuffer);
-    if (magicId != CONSTANT_40001000) {
+    if (magicId != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -1264,13 +1262,13 @@ napi_value testNativeWindowNativeObjectUnreferenceNullptr(napi_env env, napi_cal
     OHNativeWindowBuffer *nativeWindowBuffer = nullptr;
 
     int32_t magicId = OH_NativeWindow_NativeObjectUnreference(nullptr);
-    if (magicId != CONSTANT_40001000) {
+    if (magicId != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
 
     magicId = OH_NativeWindow_NativeObjectUnreference(nativeWindowBuffer);
-    if (magicId != CONSTANT_40001000) {
+    if (magicId != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -1329,13 +1327,13 @@ napi_value testNativeWindowNativeWindowAttachBufferNullptr(napi_env env, napi_ca
     OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
 
     int32_t flag = OH_NativeWindow_NativeWindowAttachBuffer(nullptr, nativeWindowBuffer);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
 
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -1361,13 +1359,13 @@ napi_value testNativeWindowNativeWindowDetachBufferNullptr(napi_env env, napi_ca
     OH_NativeWindow_NativeWindowRequestBuffer(nativeWindow, &nativeWindowBuffer, &fenceFd);
 
     int32_t flag = OH_NativeWindow_NativeWindowDetachBuffer(nullptr, nativeWindowBuffer);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
 
     flag = OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, nullptr);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -1404,7 +1402,7 @@ napi_value testNativeWindowNativeWindowDetachBufferNormal(napi_env env, napi_cal
     }
 
     flag = OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, nativeWindowBuffer);
-    if (flag != CONSTANT_41210000) {
+    if (flag != NATIVE_ERROR_BUFFER_NOT_IN_CACHE) {
         napi_create_int32(env, CONSTANT_2, &result);
         return result;
     }
@@ -1438,15 +1436,17 @@ napi_value testNativeWindowNativeWindowAttachBufferErrorCode(napi_env env, napi_
     OH_NativeBuffer *nativeBuffer = OH_NativeBuffer_Alloc(&config);
     OHNativeWindowBuffer **arr[] = {&nwb1, &nwb2, &nwb3, &nwb4};
     nwb1 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
+    NAPI_ASSERT(env, nwb1 != nullptr, "nwb1 == nullptr");
     nwb2 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
+    NAPI_ASSERT(env, nwb2 != nullptr, "nwb2 == nullptr");
     nwb3 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
+    NAPI_ASSERT(env, nwb3 != nullptr, "nwb3 == nullptr");
     nwb4 = OH_NativeWindow_CreateNativeWindowBufferFromNativeBuffer(nativeBuffer);
-
+    NAPI_ASSERT(env, nwb4 != nullptr, "nwb4 == nullptr");
     int32_t flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb1);
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb2);
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb3);
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nwb4);
-    
     delete initNative;
     OH_NativeBuffer_Unreference(nativeBuffer);
     napi_create_int32(env, SUCCESS, &result);
@@ -1475,7 +1475,7 @@ napi_value testNativeWindowNativeWindowAttachBufferNormal(napi_env env, napi_cal
     }
 
     flag = OH_NativeWindow_NativeWindowAttachBuffer(nativeWindow, nativeWindowBuffer);
-    if (flag != CONSTANT_41208000) {
+    if (flag != NATIVE_ERROR_BUFFER_IN_CACHE) {
         napi_create_int32(env, CONSTANT_1, &result);
         return result;
     }
@@ -1527,7 +1527,7 @@ napi_value testNativeWindowNativeWindowDetachBufferErrorCode(napi_env env, napi_
     }
     // 3.
     int32_t flag = OH_NativeWindow_NativeWindowDetachBuffer(nativeWindow, nativeWindowBuffer);
-    if (flag != CONSTANT_41207000) {
+    if (flag != NATIVE_ERROR_BUFFER_STATE_INVALID) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }
@@ -1704,7 +1704,7 @@ napi_value testNativeWindowNativeWindowHandleOptNullptr(napi_env env, napi_callb
 
     int code = SET_BUFFER_GEOMETRY;
     int32_t flag = OH_NativeWindow_NativeWindowHandleOpt(nullptr, code, 100, 100);
-    if (flag != CONSTANT_40001000) {
+    if (flag != NATIVE_ERROR_INVALID_ARGUMENTS) {
         napi_create_int32(env, FAIL, &result);
         return result;
     }

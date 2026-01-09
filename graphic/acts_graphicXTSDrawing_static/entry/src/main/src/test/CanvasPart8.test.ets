@@ -50,12 +50,12 @@ export default function drawingTsCanvasPart8Test() {
       // This API supports only one parameter: clear action function.
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5400
-     * @tc.name      : testCanvasDrawVerticesNormal1Static
-     * @tc.desc      : testCanvasDrawVerticesNormal1Static
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level0
+     * @tc.name   testCanvasDrawVerticesNormal1Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5400
+     * @tc.desc   testCanvasDrawVerticesNormal1Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
     it('testCanvasDrawVerticesNormal1Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, (): void => {
       const msg = 'testCanvasDrawVerticesNormal1Static';
@@ -74,7 +74,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs1);
       texsArray.push(texs2);
       texsArray.push(texs3);
-      const colors:Array<int> = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int> = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 3, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -102,12 +102,12 @@ export default function drawingTsCanvasPart8Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5401
-     * @tc.name      : testCanvasDrawVerticesNormal2Static
-     * @tc.desc      : testCanvasDrawVerticesNormal2Static
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testCanvasDrawVerticesNormal2Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5401
+     * @tc.desc   testCanvasDrawVerticesNormal2Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCanvasDrawVerticesNormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, (): void => {
       const msg = 'testCanvasDrawVerticesNormal2Static';
@@ -134,7 +134,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -170,12 +170,12 @@ export default function drawingTsCanvasPart8Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5402
-     * @tc.name      : testCanvasDrawVerticesNormal3Static
-     * @tc.desc      : testCanvasDrawVerticesNormal3Static
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level1
+     * @tc.name   testCanvasDrawVerticesNormal3Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5402
+     * @tc.desc   testCanvasDrawVerticesNormal3Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('testCanvasDrawVerticesNormal3Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, (): void => {
       const msg = 'testCanvasDrawVerticesNormal3Static';
@@ -202,7 +202,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2, 10, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors, 0, null,drawing.BlendMode.SRC);
@@ -230,12 +230,12 @@ export default function drawingTsCanvasPart8Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5403
-     * @tc.name      : testCanvasDrawVerticesNormal4Static
-     * @tc.desc      : testCanvasDrawVerticesNormal4Static
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level2
+     * @tc.name   testCanvasDrawVerticesNormal4Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5403
+     * @tc.desc   testCanvasDrawVerticesNormal4Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
      */
     it('testCanvasDrawVerticesNormal4Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL2, (): void => {
       const msg = 'testCanvasDrawVerticesNormal4Static';
@@ -262,7 +262,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2, 10, 2];
       let itemList: drawing.BlendMode[] = [
         drawing.BlendMode.CLEAR,
@@ -308,12 +308,12 @@ export default function drawingTsCanvasPart8Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5406
-     * @tc.name      : testCanvasDrawVerticesMultipleCallsStatic
-     * @tc.desc      : testCanvasDrawVerticesMultipleCallsStatic
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawVerticesMultipleCallsStatic
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5406
+     * @tc.desc   testCanvasDrawVerticesMultipleCallsStatic
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawVerticesMultipleCallsStatic', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesMultipleCallsStatic';
@@ -332,7 +332,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs1);
       texsArray.push(texs2);
       texsArray.push(texs3);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       let itemList: drawing.BlendMode[] = [
         drawing.BlendMode.CLEAR,
@@ -386,12 +386,12 @@ export default function drawingTsCanvasPart8Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5407
-     * @tc.name      : testCanvasDrawVerticesAbnormal1Static
-     * @tc.desc      : testCanvasDrawVerticesAbnormal1Static
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawVerticesAbnormal1Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5407
+     * @tc.desc   testCanvasDrawVerticesAbnormal1Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawVerticesAbnormal1Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesAbnormal1Static';
@@ -409,7 +409,7 @@ export default function drawingTsCanvasPart8Test() {
       const texs3: common2D.Point = { x: 0.5, y: 1.0 };
       texsArray.push(texs1);
       texsArray.push(texs2);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLES_VERTEXMODE, -1, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -451,12 +451,12 @@ export default function drawingTsCanvasPart8Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5408
-     * @tc.name      : testCanvasDrawVerticesAbnormal2Static
-     * @tc.desc      : testCanvasDrawVerticesAbnormal2Static
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawVerticesAbnormal2Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5408
+     * @tc.desc   testCanvasDrawVerticesAbnormal2Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawVerticesAbnormal2Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesAbnormal2Static';
@@ -482,7 +482,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs3);
       texsArray.push(texs4);
       texsArray.push(texs5);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1, 2];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors, 3, indices,drawing.BlendMode.SRC);
@@ -508,7 +508,7 @@ export default function drawingTsCanvasPart8Test() {
         console.info(msg + `drawVertices 2 errorCode is:  ${e.code} + errormsg is: ${e.message} `);
         expect(e.code).assertEqual(25900001);
       }
-      const colors1:Array<int> = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF, 0xFF00FF00];
+      const colors1:Array<int> = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt(), 0xFF00FF00.toInt()];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 5, pointsArray, texsArray, colors1, 3, indices,drawing.BlendMode.SRC);
         console.log(msg + "drawVertices 3 success ")
@@ -520,12 +520,12 @@ export default function drawingTsCanvasPart8Test() {
       }
     })
     /**
-     * @tc.number    : SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5409
-     * @tc.name      : testCanvasDrawVerticesAbnormal3Static
-     * @tc.desc      : testCanvasDrawVerticesAbnormal3Static
-     * @tc.size      : SmallTest
-     * @tc.type      : Function
-     * @tc.level     : Level3
+     * @tc.name   testCanvasDrawVerticesAbnormal3Static
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_STATIC_5409
+     * @tc.desc   testCanvasDrawVerticesAbnormal3Static
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
      */
     it('testCanvasDrawVerticesAbnormal3Static', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, (): void => {
       const msg = 'testCanvasDrawVerticesAbnormal3Static';
@@ -544,7 +544,7 @@ export default function drawingTsCanvasPart8Test() {
       texsArray.push(texs1);
       texsArray.push(texs2);
       texsArray.push(texs3);
-      const colors:Array<int>  = [0xFFFF0000, 0xFF00FF00, 0xFF0000FF];
+      const colors:Array<int>  = [0xFFFF0000.toInt(), 0xFF00FF00.toInt(), 0xFF0000FF.toInt()];
       const indices:Array<int> = [0, 1];
       try {
         canvas.drawVertices(drawing.VertexMode.TRIANGLESSTRIP_VERTEXMODE, 3, pointsArray, texsArray, colors, -1, null,drawing.BlendMode.SRC);

@@ -57,14 +57,14 @@ export default function FreezeV2Child() {
     });
 
     /**
+     * @tc.name   FreezeV2Child_01
      * @tc.number FreezeV2Child_01
-     * @tc.name FreezeV2Child_01
-     * @tc.desc api
-     * @tc.level: Level 0
-     * @tc.type :    FUNC
-     * @tc.size :    MEDIUM
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
      */
-    it('FreezeV2Child_01', Level.LEVEL0, async (done: Function) => {
+    it('FreezeV2Child_01', Level.LEVEL1, async (done: Function) => {
       await CommonFunc.sleep(1000)
       console.info('FreezeV2Child_01 START');
       let driver = await Driver.create()

@@ -19,9 +19,9 @@ import hilog from '@ohos.hilog';
 const distance = 500;
 const SLEEP_TIME = 1000;
 const SLEEP_TIME_2000 = 2000;
-const PARAMETER_ERROR_CODE = 401;
-const PARAMETER_ERROR_CODE_1 = 100023;
-const PARAMETER_ERROR_CODE_2 = 106203;
+const ARKUI_ERROR_CODE_PARAM_INVALID = 401;
+const ARKUI_ERROR_CODE_PARAM_ERROR = 100023;
+const ARKUI_ERROR_CODE_NODE_NOT_ON_MAIN_TREE = 106203;
 
 export default function SwipeErrorTest(){
 
@@ -32,13 +32,12 @@ export default function SwipeErrorTest(){
     })
 
     /**
-     * @tc.number    swipeActionErrorTest001
-     * @tc.name      swipeActionErrorTest001
-     * @tc.desc      test listItem0 is not on the Component tree,
-     *               return errorCode 106203
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionErrorTest001
+     * @tc.number swipeActionErrorTest001
+     * @tc.desc   test listItem0 is not on the Component tree,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionErrorTest001', Level.LEVEL1, async (done: Function) => {
       let PAGE_TAG = 'swipeErrorTest';
@@ -72,19 +71,18 @@ export default function SwipeErrorTest(){
       } catch (err) {
         hilog.error(0x0000, "Error expand item:",
           `listSwipeAction, code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(PARAMETER_ERROR_CODE_2);
+        expect(err.code).assertEqual(ARKUI_ERROR_CODE_NODE_NOT_ON_MAIN_TREE);
       };
       done();
     });
 
     /**
-     * @tc.number    swipeActionErrorTest002
-     * @tc.name      swipeActionErrorTest002
-     * @tc.desc      test ListItemSwipeActionManager node is nullptr,
-     *               return error code is 401
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionErrorTest002
+     * @tc.number swipeActionErrorTest002
+     * @tc.desc   test ListItemSwipeActionManager node is nullptr,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionErrorTest002', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('swipeActionErrorTest002 START');
@@ -100,19 +98,18 @@ export default function SwipeErrorTest(){
       } catch (err) {
         hilog.error(0x0000, "Error expand item:",
           `listSwipeAction, code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(PARAMETER_ERROR_CODE);
+        expect(err.code).assertEqual(ARKUI_ERROR_CODE_PARAM_INVALID);
       };
       done();
     });
 
     /**
-     * @tc.number    swipeActionErrorTest003
-     * @tc.name      swipeActionErrorTest003
-     * @tc.desc      test ListItemSwipeActionManager node is inCorrect node,
-     *               return error code is 100023
-     * @tc.level     Level 1
-     * @tc.type
-     * @tc.size
+     * @tc.name   swipeActionErrorTest003
+     * @tc.number swipeActionErrorTest003
+     * @tc.desc   test ListItemSwipeActionManager node is inCorrect node,
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
      */
     it('swipeActionErrorTest003', Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info('swipeActionErrorTest003 START');
@@ -128,7 +125,7 @@ export default function SwipeErrorTest(){
       } catch (err) {
         hilog.error(0x0000, "Error expand item:",
           `listSwipeAction, code is ${err.code}, message is ${err.message}`);
-        expect(err.code).assertEqual(PARAMETER_ERROR_CODE_1);
+        expect(err.code).assertEqual(ARKUI_ERROR_CODE_PARAM_ERROR);
       };
       done();
     });

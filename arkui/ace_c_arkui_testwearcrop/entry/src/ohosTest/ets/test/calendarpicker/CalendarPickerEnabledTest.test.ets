@@ -26,14 +26,14 @@ export default function calendarPickerEnabledTest() {
       await Utils.pushPage(`calendarpicker/${PAGE_TAG}`, done);
     });
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CALENDARPICKER_ENABLED_0100
-    * @tc.name       : testCalendarPickerEnabled001
-    * @tc.desc       : testing enabled event callback for calendarPicker with normal value (true)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCalendarPickerEnabled001
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_ENABLED_0100
+     * @tc.desc   testing enabled event callback for calendarPicker with normal value (true)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCalendarPickerEnabled001', Level.LEVEL1, async  (done: Function) => {
       await Utils.clickComponent('OnClickEnabledCalendarPicker')
       await Utils.sleep(1000)
@@ -54,14 +54,14 @@ export default function calendarPickerEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CALENDARPICKER_ENABLED_0200
-    * @tc.name       : testCalendarPickerEnabled002
-    * @tc.desc       : testing enabled event callback for calendarPicker with normal value (false)
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 1
-    */
+    /**
+     * @tc.name   testCalendarPickerEnabled002
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_ENABLED_0200
+     * @tc.desc   testing enabled event callback for calendarPicker with normal value (false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCalendarPickerEnabled002', Level.LEVEL1, async  (done: Function) => {
       await Utils.clickComponent('OnClickDisabledCalendarPicker')
       await Utils.sleep(1000)
@@ -80,14 +80,14 @@ export default function calendarPickerEnabledTest() {
       done();
     })
 
-    /*
-    * @tc.number     : SUB_ARKUI_CAPI_CALENDARPICKER_ENABLED_0300
-    * @tc.name       : testCalendarPickerEnabled003
-    * @tc.desc       : testing enabled event callback for calendarPicker with abnormal value
-    * @tc.size       : MediumTest
-    * @tc.type       : Function
-    * @tc.level      : Level 2
-    */
+    /**
+     * @tc.name   testCalendarPickerEnabled003
+     * @tc.number SUB_ARKUI_CAPI_CALENDARPICKER_ENABLED_0300
+     * @tc.desc   testing enabled event callback for calendarPicker with abnormal value
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
     it('testCalendarPickerEnabled003', Level.LEVEL1, async  (done: Function) => {
       await Utils.clickComponent('OnClickAbnormalCalendarPicker')
       await Utils.sleep(1000)

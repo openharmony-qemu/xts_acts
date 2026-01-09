@@ -19,6 +19,7 @@ import abilityAccessCtrl from '@ohos.abilityAccessCtrl';
 import { bundleManager } from '@kit.AbilityKit';
 import account from '@ohos.account.osAccount';
 import { BusinessError } from '@ohos.base';
+import { SavePhoto, GetUri } from './ContactTestUtil.test';
 
 function sleep (time:number):Promise<string>{
   return new Promise<string>((resolve)=>{
@@ -96,6 +97,10 @@ export default function ContactInterfaceStageTest() {
         done();
       }
     });
+
+    let fileName = 'contactstageTest.jpg';
+    SavePhoto(fileName);
+    let uri = GetUri(fileName);
     let contactData:contact.Contact = {
       id: 0,
       key: "0",
@@ -127,7 +132,7 @@ export default function ContactInterfaceStageTest() {
         phoneNumber: "13800000000", labelName: "自定义phoneNumbers", labelId: 4
       }],
       portrait: {
-        uri: "content://head/0"
+        uri: uri
       } ,
       postalAddresses: [{
         city: "南京",
@@ -187,7 +192,7 @@ export default function ContactInterfaceStageTest() {
     };
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryMyCard_test_0100
-     * @tc.name contact::queryMyCard
+     * @tc.name SUB_Telephony_ContactsApi_queryMyCard_test_0100
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -201,15 +206,17 @@ export default function ContactInterfaceStageTest() {
           expect(false).assertTrue();
           done();
           return;
+        } else{
+          console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0100  data = " + JSON.stringify(data));
+          expect(data === undefined).assertTrue();
+          done();
         }
-        console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0100  data = " + JSON.stringify(data));
-        done();
       });
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryMyCard_test_0200
-     * @tc.name contact::queryMyCard
+     * @tc.name SUB_Telephony_ContactsApi_queryMyCard_test_0200
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -223,15 +230,17 @@ export default function ContactInterfaceStageTest() {
           expect(false).assertTrue();
           done();
           return;
+        } else{
+          console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0200  data = " + JSON.stringify(data));
+          expect(data === undefined).assertTrue();
+          done();
         }
-        console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0200  data = " + JSON.stringify(data));
-        done();
       });
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryMyCard_test_0300
-     * @tc.name contact::queryMyCard
+     * @tc.name SUB_Telephony_ContactsApi_queryMyCard_test_0300
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -242,6 +251,7 @@ export default function ContactInterfaceStageTest() {
       let promise = contact.queryMyCard(context, attr);
       promise.then((data) => {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0300  data = " + JSON.stringify(data));
+        expect(data === undefined).assertTrue();
         done();
       }).catch((err:BusinessError) => {
         console.info("SUB_Telephony_ContactsApi_queryMyCard_test_0300  err = " + JSON.stringify(err));
@@ -253,7 +263,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_isMyCard_test_0100
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_isMyCard_test_0100
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -278,6 +288,7 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_isMyCard_test_0100  data = " + JSON.stringify(data));
+          expect(data === false).assertTrue();
           done();
         });
       });
@@ -285,7 +296,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_isMyCard_test_0200
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_isMyCard_test_0200
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -306,6 +317,7 @@ export default function ContactInterfaceStageTest() {
         let promise = contact.isMyCard(context, data);
         promise.then((data) => {
           console.info("SUB_Telephony_ContactsApi_isMyCard_test_0200  data = " + JSON.stringify(data));
+          expect(data === false).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_isMyCard_test_0200  err = " + JSON.stringify(err));
@@ -318,7 +330,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0100
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0100
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -400,7 +412,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0200
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0200
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -480,7 +492,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0300
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0300
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -559,7 +571,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_updateContact_test_0400
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_updateContact_test_0400
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -586,6 +598,7 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_updateContact_test_0400  data = " + JSON.stringify(data));
+          expect(data === true).assertTrue();
           done();
         });
       });
@@ -593,7 +606,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_isLocalContact_test_0200
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_isLocalContact_test_0200
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -615,6 +628,7 @@ export default function ContactInterfaceStageTest() {
         let promise = contact.isLocalContact(context, data);
         promise.then((data) => {
           console.info("SUB_Telephony_ContactsApi_isLocalContact_test_0200  data = " + JSON.stringify(data));
+          expect(data === true).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_isLocalContact_test_0200  err = " + JSON.stringify(err));
@@ -628,7 +642,7 @@ export default function ContactInterfaceStageTest() {
  
     /**
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0100
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0100
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -653,6 +667,7 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0100  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         });
       });
@@ -660,7 +675,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0200
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0200
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -679,6 +694,7 @@ export default function ContactInterfaceStageTest() {
         }
         contact.selectContacts().then((data) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0200  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0200  err = " + JSON.stringify(err));
@@ -691,7 +707,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0300
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0300
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -718,6 +734,7 @@ export default function ContactInterfaceStageTest() {
             return;
           }
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0300  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         });
       });
@@ -725,7 +742,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_selectContacts_test_0400
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_selectContacts_test_0400
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -746,6 +763,7 @@ export default function ContactInterfaceStageTest() {
           isMultiSelect: false
         }).then((data) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0400  data = " + JSON.stringify(data));
+          expect(data.length > 0).assertTrue();
           done();
         }).catch((err:BusinessError) => {
           console.info("SUB_Telephony_ContactsApi_selectContacts_test_0400  err = " + JSON.stringify(err));
@@ -758,7 +776,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_query_key_test_0100
-     * @tc.name contact:queryKey
+     * @tc.name SUB_Telephony_ContactsApi_query_key_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -777,13 +795,14 @@ export default function ContactInterfaceStageTest() {
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_key_test_0100 query error = " + error);
+        expect(false).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_query_key_test_0200
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_query_key_test_0200
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -818,7 +837,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_insert_test_0100
-     * @tc.name contact::addContact
+     * @tc.name SUB_Telephony_ContactsApi_insert_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -831,17 +850,18 @@ export default function ContactInterfaceStageTest() {
         sleep(500);
         let rawContactId = await contact.addContact(context, contactDataError);
         console.info("SUB_Telephony_ContactsApi_insert_test_0100 : rawContactId = " + rawContactId);
-        expect(rawContactId == -1).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_insert_test_0100 : raw_contact insert error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_query_contact_test_0300
-     * @tc.name contact::queryContact
+     * @tc.name SUB_Telephony_ContactsApi_query_contact_test_0300
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -863,13 +883,14 @@ export default function ContactInterfaceStageTest() {
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_contact_test_0300 query error = " + error);
+        expect(false).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_query_email_test_0400
-     * @tc.name contact::queryContactsByEmail
+     * @tc.name SUB_Telephony_ContactsApi_query_email_test_0400
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -882,17 +903,18 @@ export default function ContactInterfaceStageTest() {
         let resultSet = await contact.queryContactsByEmail(context, email);
         console.info("SUB_Telephony_ContactsApi_query_email_test_0400 : query resultSet = " +
         JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_email_test_0400 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_query_phoneNumber_test_0500
-     * @tc.name contact::queryContactsByPhoneNumber
+     * @tc.name SUB_Telephony_ContactsApi_query_phoneNumber_test_0500
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -905,17 +927,18 @@ export default function ContactInterfaceStageTest() {
         let resultSet = await contact.queryContactsByPhoneNumber(context, phoneNumber);
         console.info("SUB_Telephony_ContactsApi_query_phoneNumber_test_0500 : query resultSet = " +
         JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_phoneNumber_test_0500 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_query_key_test_0600
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_query_key_test_0600
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -927,17 +950,18 @@ export default function ContactInterfaceStageTest() {
       try {
         let resultSet = await contact.queryKey(context, idTest);
         console.info("SUB_Telephony_ContactsApi_query_key_test_0600 : query resultSet = " + JSON.stringify(resultSet));
-        expect(resultSet.length == 0).assertTrue();
+        expect(false).assertTrue();
         done();
       } catch (error) {
         console.info("SUB_Telephony_ContactsApi_query_key_test_0600 query error = " + error);
+        expect(error.code === 401).assertTrue();
         done();
       }
       sleep(500);
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_addContact_test_0100
-     * @tc.name contact::deleteContact
+     * @tc.name SUB_Telephony_ContactsApi_addContact_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -983,7 +1007,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_addContact_test_0200
-     * @tc.name contact::deleteContact
+     * @tc.name SUB_Telephony_ContactsApi_addContact_test_0200
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1028,7 +1052,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0100
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1077,7 +1101,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0200
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0200
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1113,6 +1137,7 @@ export default function ContactInterfaceStageTest() {
                 return;
               }
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0200  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             });
           }else {done()}
@@ -1122,7 +1147,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0300
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0300
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1168,7 +1193,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0400
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0400
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1204,6 +1229,7 @@ export default function ContactInterfaceStageTest() {
                 return;
               }
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0400  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             });
           }else {done()}
@@ -1213,7 +1239,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContact_test_0500
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryContact_test_0500
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1244,6 +1270,7 @@ export default function ContactInterfaceStageTest() {
             let promise = contact.queryContact(context, keyData, holder, attr);
             promise.then((data) => {
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0500  data = " + JSON.stringify(data));
+              expect(data != null).assertTrue();
               done();
             }).catch((err:BusinessError) => {
               console.info("SUB_Telephony_ContactsApi_queryContact_test_0500  err = " + JSON.stringify(err));
@@ -1258,7 +1285,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0100
-     * @tc.name contact::queryContacts
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1293,7 +1320,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0200
-     * @tc.name contact::queryContacts
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0200
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -1328,7 +1355,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0300
-     * @tc.name contact::queryContacts
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0300
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1363,7 +1390,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0400
-     * @tc.name contact::queryContacts
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0400
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1398,7 +1425,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContacts_test_0500
-     * @tc.name contact::queryContacts
+     * @tc.name SUB_Telephony_ContactsApi_queryContacts_test_0500
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1433,7 +1460,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0100
-     * @tc.name contact::queryContactsByPhoneNumber
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1470,7 +1497,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0200
-     * @tc.name contact::queryContactsByPhoneNumber
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0200
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -1507,7 +1534,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0300
-     * @tc.name contact::queryContactsByPhoneNumber
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0300
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1544,7 +1571,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0400
-     * @tc.name contact::queryContactsByPhoneNumber
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0400
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1581,7 +1608,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0500
-     * @tc.name contact::queryContactsByPhoneNumber
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByPhoneNumber_test_0500
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1617,7 +1644,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0100
-     * @tc.name contact::queryContactsByEmail
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1652,7 +1679,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0200
-     * @tc.name contact::queryContactsByEmail
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0200
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1687,7 +1714,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0300
-     * @tc.name contact::queryContactsByEmail
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0300
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1722,7 +1749,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0400
-     * @tc.name contact::queryContactsByEmail
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0400
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1757,7 +1784,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryContactsByEmail_test_0500
-     * @tc.name contact::queryContactsByEmail
+     * @tc.name SUB_Telephony_ContactsApi_queryContactsByEmail_test_0500
      * @tc.desc Function test
      * @tc.level 3
      * @tc.type: Function
@@ -1792,7 +1819,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryGroups_test_0100
-     * @tc.name contact::queryGroups
+     * @tc.name SUB_Telephony_ContactsApi_queryGroups_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1827,7 +1854,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryGroups_test_0200
-     * @tc.name contact::queryGroups
+     * @tc.name SUB_Telephony_ContactsApi_queryGroups_test_0200
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -1862,7 +1889,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryGroups_test_0300
-     * @tc.name contact::queryGroups
+     * @tc.name SUB_Telephony_ContactsApi_queryGroups_test_0300
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1897,7 +1924,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryHolders_test_0100
-     * @tc.name contact::queryHolders
+     * @tc.name SUB_Telephony_ContactsApi_queryHolders_test_0100
      * @tc.desc Function test
      * @tc.level 1
      * @tc.type: Function
@@ -1920,7 +1947,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryHolders_test_0200
-     * @tc.name contact::queryHolders
+     * @tc.name SUB_Telephony_ContactsApi_queryHolders_test_0200
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -1943,7 +1970,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryKey_test_0100
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryKey_test_0100
      * @tc.desc Function test
      * @tc.level 4
      * @tc.type: Function
@@ -1978,7 +2005,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryKey_test_0200
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryKey_test_0200
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
@@ -2013,7 +2040,7 @@ export default function ContactInterfaceStageTest() {
     });
     /**
      * @tc.number SUB_Telephony_ContactsApi_queryKey_test_0300
-     * @tc.name contact::queryKey
+     * @tc.name SUB_Telephony_ContactsApi_queryKey_test_0300
      * @tc.desc Function test
      * @tc.level 2
      * @tc.type: Function
