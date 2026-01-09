@@ -124,26 +124,6 @@ export default function queueTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_ADD_0500
-    //  * @tc.name       : testQueueAdd0005
-    //  * @tc.desc       : Testing Queue add by undefined or null or stirng index.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testQueueAdd0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testQueueAdd0005";
-    //   try {
-    //     let queue: Queue<object> = new Queue<object>();
-    //     let result = queue.add(undefined)
-    //     expect(result).assertEqual(true);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
     /**
      * @tc.name   testQueuePop0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_POP_0600
@@ -172,26 +152,6 @@ export default function queueTest1() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_QUEUE_POP_0700
-    //  * @tc.name       : testQueuePop0007
-    //  * @tc.desc       : Testing Queue pop by without.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testQueuePop0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testQueuePop0007";
-    //   try {
-    //     let queue: Queue<number | string | object> = new Queue<number | string | object>();
-    //     let result = queue.pop();
-    //     expect(result).assertEqual(undefined);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testQueueGetfirst0008
