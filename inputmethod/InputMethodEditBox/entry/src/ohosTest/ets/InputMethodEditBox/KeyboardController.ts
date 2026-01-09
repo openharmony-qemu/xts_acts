@@ -317,7 +317,7 @@ export class KeyboardController {
         clearTimeout(t);
         let mode = this.extraConfig;
         console.info(TAG + `====>Sub_InputMethod_extraConfig_0100 extraConfig : ${JSON.stringify(mode)}`);
-        if (JSON.stringify(mode.customSettings) != '{}') {
+        if (JSON.stringify(mode.customSettings) !== '{}') {
           commonEventPublishData = {
             data: 'SUCCESS'
           };
@@ -365,7 +365,7 @@ export class KeyboardController {
         clearTimeout(t);
         let mode = this.extraConfig;
         console.info(TAG + `====>Sub_InputMethod_extraConfig_0200 extraConfig : ${JSON.stringify(mode)}`);
-        if (JSON.stringify(mode.customSettings) != '{}') {
+        if (JSON.stringify(mode.customSettings) !== '{}') {
           commonEventPublishData = {
             data: 'SUCCESS'
           };
