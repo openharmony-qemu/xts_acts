@@ -50,28 +50,8 @@ export class ShadowOptions1 {
   type: string = '';
   fill: string = '';
 }
-export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
+export class RouterParams {
   view: PageConfig = new PageConfig()
-
-  constructor() {}
-
-  constructor(view: PageConfig) {
-    this.view = view
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "view": jsonx.JsonElement.createString(JSON.stringify(this.view))
-    }
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let info = JSON.parse<PageConfig>(jsonElem.getString("view"), Type.of(new String() as Object))
-    if (info) {
-      this.view = info!
-    }
-  }
 }
 
 export class TestValue {
@@ -158,8 +138,7 @@ export default class Utils {
     try {
       const router = AppStorage.get<Router>("router") as Router
       let pages = router.getState();
-      let pageParams: RouterParams = new RouterParams();
-      pageParams.fromJSON(router.getParams())
+      let pageParams: RouterParams = router.getParams() as RouterParams;
       console.info('get ' + obj.pageName + ' state pages: ' + JSON.stringify(pages));
       if (pageParams && pageParams.view && obj.targetView != pageParams.view.targetView) {
         console.info('get ' + obj.pageName + ' params: ' + JSON.stringify(pageParams));
@@ -173,7 +152,9 @@ export default class Utils {
         console.info('get ' + obj.pageName + ' state pages.name:' + JSON.stringify(pages.name));
         router.pushUrl({
           url: obj.pageUrl,
-          params: (new RouterParams(obj)).toJSON()
+          params: {
+            view: obj
+          } as RouterParams
         });
         await Utils.sleep(2000);
       }

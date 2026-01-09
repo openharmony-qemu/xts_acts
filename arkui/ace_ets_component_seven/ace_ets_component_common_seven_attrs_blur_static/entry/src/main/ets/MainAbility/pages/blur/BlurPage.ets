@@ -1148,8 +1148,7 @@ struct blurPage {
 
   onPageShow() {
     console.info('22222 blur page show called ')
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     this.blurButton = routerParamOptions.view.testValue.setValue
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey ?? ""

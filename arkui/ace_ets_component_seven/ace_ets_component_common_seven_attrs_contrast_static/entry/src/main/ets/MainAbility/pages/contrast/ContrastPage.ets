@@ -658,16 +658,14 @@ struct contrastPage {
 
   onPageShow() {
     console.info('22222 contrast page show called ')
-    let routerParamOptions = new RouterParams()
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-    this.targetView = routerParamOptions.view.targetView;
-    this.componentKey = routerParamOptions.view.componentKey as string;
-    this.parentWidth = routerParamOptions.view.parentWidth;
-    this.parentHeight = routerParamOptions.view.parentHeight;
-    this.columns = (routerParamOptions.view.columns as int)
-    this.gutter = (routerParamOptions.view.gutter as int)
-    this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-    this._contrastButttonMod.mContrast = routerParamOptions.view.testValue.setValue.contrast
+    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+    this._contrastButttonMod.mContrast = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.contrast
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('22222 [registerDataChange] ' + JSON.stringify(value.contrast))
       this._contrastAlphabetIndexerMod.mContrast = value.contrast

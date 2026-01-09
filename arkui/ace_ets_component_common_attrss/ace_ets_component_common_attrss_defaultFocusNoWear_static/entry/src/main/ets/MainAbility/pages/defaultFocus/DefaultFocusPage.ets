@@ -144,12 +144,12 @@ struct DefaultFocusPage {
 
   onPageShow() {
     console.info('[DefaultFocusPage] page show called ');
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     // AppStorage.setOrCreate<boolean>('_defaultFocus', routerParamOptions.view.testValue.setValue)
     this._defaultFocus = routerParamOptions.view.testValue.setValue
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.callback = '';
       this.referenceCallback = '';
       this.targetView = routerParamOptions.view.targetView

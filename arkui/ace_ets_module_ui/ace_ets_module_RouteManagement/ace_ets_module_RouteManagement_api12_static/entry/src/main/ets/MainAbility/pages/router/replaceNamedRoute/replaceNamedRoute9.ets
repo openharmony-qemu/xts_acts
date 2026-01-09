@@ -27,8 +27,15 @@ import {
   ClickEvent
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { routerParams } from '../../../common/Utils'
 initModule('./nameDetail9');
+
+class routerParams23 {
+  data1:string
+
+  constructor(str:string) {
+    this.data1 = str
+  }
+}
 
 
 @Entry
@@ -48,7 +55,7 @@ struct replaceNamedRoute9 {
           initModule('./nameDetail9');
           this.getUIContext().getRouter().replaceNamedRoute({
             name: 'nameDetail9',
-            params: (new routerParams('message')).toJSON()
+            params: new routerParams23('message')
           })
             .then(() => {
               console.log('replaceNamedRoute success');

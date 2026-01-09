@@ -26,8 +26,8 @@ import {
   Level
 } from '../../../../hypium/index';
 import router from '@ohos.router';
-import { UtilsTest, Data2, Param, Param1 } from '../Util.test';
-import { Utils } from '../../../ets/MainAbility/common/Utils';
+import { UtilsTest } from '../Util.test';
+import Utils from '../../../ets/MainAbility/common/Utils';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -36,7 +36,16 @@ import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { MessageManager, Callback } from '../../../ets/MainAbility/common/MessageManager';
 import events_emitter from '@ohos.events.emitter'
 import { BusinessError } from '@ohos.base';
-
+interface Data2 {
+  data3: int[]
+}
+interface Param {
+  data1: string,
+  data2: Data2
+}
+interface Param1 {
+  data1: string
+}
 export default function stageRouterTest() {
   describe('stageRouterTest', () => {
     beforeAll(() => {
@@ -85,7 +94,12 @@ it('testrouterstage0001_static', Level.LEVEL2, async (done: () => void): Promise
       let result: Promise<void>
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/Router/pushUrlasync',
-        params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as Param
       }
       try {
         result = routerPush.pushUrl(options)
@@ -112,7 +126,12 @@ it('testrouterstage0002_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.pushUrl({
           url: 'MainAbility/pages/Router/pushUrlasync',
-          params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
         }, (err: BusinessError | null) => {
           if (err) {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -141,7 +160,12 @@ it('testrouterstage0003_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         result = routerPush.pushUrl(({
           url: 'MainAbility/pages/Router/pushUrlasync',
-          params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
         } as router.RouterOptions), router.RouterMode.Standard)
           .then(() => {
           })
@@ -171,7 +195,12 @@ it('testrouterstage0004_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.pushUrl({
           url: 'MainAbility/pages/Router/pushUrlasync',
-          params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
         } as router.RouterOptions, router.RouterMode.Standard)
         // expect(result).assertUndefined();
         console.info("push button page success ");
@@ -196,7 +225,9 @@ it('testrouterstage0005_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         result = routerPush.replaceUrl({
           url: 'MainAbility/pages/Router/pushUrlasync',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.RouterOptions)
           .then(() => {
           })
@@ -226,7 +257,9 @@ it('testrouterstage0006_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.replaceUrl({
           url: 'MainAbility/pages/Router/pushUrlasync',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.RouterOptions, (err: BusinessError<void>|null): void => {
           if (err) {
             console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -257,7 +290,9 @@ it('testrouterstage0007_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         result = routerPush.replaceUrl({
           url: 'MainAbility/pages/Router/pushUrlasync',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.RouterOptions, router.RouterMode.Standard)
           .then(() => {
           })
@@ -287,7 +322,9 @@ it('testrouterstage0008_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.replaceUrl({
           url: 'MainAbility/pages/Router/pushUrlasync',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.RouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
           if (err) {
             console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -476,7 +513,12 @@ it('testrouterstage0016_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         result = routerPush.pushNamedRoute({
           name: 'pushUrl',
-          params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
         } as router.NamedRouterOptions)
           .then(() => {
           })
@@ -506,7 +548,12 @@ it('testrouterstage0017_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.pushNamedRoute({
           name: 'pushUrl',
-          params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
         } as router.NamedRouterOptions, (err: BusinessError<void>|null): void => {
           if (err) {
             console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -537,7 +584,12 @@ it('testrouterstage0018_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         result = routerPush.pushNamedRoute({
           name: 'pushUrl',
-          params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
         } as router.NamedRouterOptions, router.RouterMode.Standard)
           .then(() => {
           })
@@ -567,7 +619,12 @@ it('testrouterstage0019_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.pushNamedRoute({
           name: 'pushUrl',
-          params: (new Param('message', new Data2([123, 456, 789]))).toJSON()
+          params: {
+            data1: 'message',
+            data2: {
+              data3: [123, 456, 789]
+            }
+          } as Param
         } as router.NamedRouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
           if (err) {
             console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -598,7 +655,9 @@ it('testrouterstage0020_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         result = routerPush.replaceNamedRoute({
           name: 'pushUrl',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.NamedRouterOptions)
           .then(() => {
           })
@@ -628,7 +687,9 @@ it('testrouterstage0021_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.replaceNamedRoute({
           name: 'pushUrl',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.NamedRouterOptions, (err: BusinessError<void>|null): void => {
           if (err) {
             console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);
@@ -659,7 +720,9 @@ it('testrouterstage0022_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         result = routerPush.replaceNamedRoute({
           name: 'pushUrl',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.NamedRouterOptions, router.RouterMode.Standard)
           .then(() => {
           })
@@ -689,7 +752,9 @@ it('testrouterstage0023_static', Level.LEVEL2, async (done: () => void): Promise
       try {
         routerPush.replaceNamedRoute({
           name: 'pushUrl',
-          params: (new Param1('message')).toJSON()
+          params: {
+            data1: 'message'
+          } as Param1
         } as router.NamedRouterOptions, router.RouterMode.Standard, (err: BusinessError<void>|null): void => {
           if (err) {
             console.error(`replaceUrl failed, code is ${err.code}, message is ${err.message}`);

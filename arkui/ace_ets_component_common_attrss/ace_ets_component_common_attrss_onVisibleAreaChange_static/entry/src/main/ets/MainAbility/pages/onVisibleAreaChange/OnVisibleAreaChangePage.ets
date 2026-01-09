@@ -85,8 +85,7 @@ struct OnVisibleAreaChangePage {
     console.info('OnVisibleAreaChangePage show called ')
 
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.compareTextKey = routerParamOptions.view.compareTextKey
