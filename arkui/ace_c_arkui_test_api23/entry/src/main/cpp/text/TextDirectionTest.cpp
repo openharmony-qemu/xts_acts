@@ -60,8 +60,8 @@ static napi_value TextDirection_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(Text, ARKUI_NODE_TEXT);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "TextDirection_004 result=%{public}d", ARKUI_TEXT_ALIGNMENT_LEFT_TO_RIGHT);
-    ASSERT_EQ(ARKUI_TEXT_ALIGNMENT_LEFT_TO_RIGHT, PARAM_4);
+        "TextDirection_004 result=%{public}d", ARKUI_TEXT_DIRECTION_AUTO);
+    ASSERT_EQ(ARKUI_TEXT_DIRECTION_AUTO, PARAM_3);
     NAPI_END;
 }
 
@@ -69,7 +69,16 @@ static napi_value TextDirection_005(napi_env env, napi_callback_info info)
 {
     NAPI_START(Text, ARKUI_NODE_TEXT);
     OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
-        "TextDirection_005 result=%{public}d", ARKUI_TEXT_ALIGNMENT_RIGHT_TO_LEFT);
+        "TextDirection_005 result=%{public}d", ARKUI_TEXT_ALIGNMENT_LEFT_TO_RIGHT);
+    ASSERT_EQ(ARKUI_TEXT_ALIGNMENT_LEFT_TO_RIGHT, PARAM_4);
+    NAPI_END;
+}
+
+static napi_value TextDirection_006(napi_env env, napi_callback_info info)
+{
+    NAPI_START(Text, ARKUI_NODE_TEXT);
+    OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Manager",
+        "TextDirection_006 result=%{public}d", ARKUI_TEXT_ALIGNMENT_RIGHT_TO_LEFT);
     ASSERT_EQ(ARKUI_TEXT_ALIGNMENT_RIGHT_TO_LEFT, PARAM_5);
     NAPI_END;
 }
