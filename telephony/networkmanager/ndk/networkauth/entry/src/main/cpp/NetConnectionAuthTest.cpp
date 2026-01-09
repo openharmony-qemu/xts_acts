@@ -428,7 +428,7 @@ static napi_value OHQueryTraceRoute(napi_env env, napi_callback_info info)
     char pacUrl[1024] = {0};
     size_t sizeT1;
     napi_get_value_string_utf8(env, args[0], pacUrl, DEFAULT_HOST_LEN, &sizeT1);
-    NetConn_TraceRouteInfo traceRouteInfo = {1,"WWWW.baidu.com",{1000,1000,1000,1000}};
+    NetConn_TraceRouteInfo traceRouteInfo = {1, "WWWW.baidu.com", {1000,1000,1000,1000}};
     NetConn_TraceRouteOption traceoption = {30, NETCONN_PACKETS_UDP};
     int res = OH_NetConn_QueryTraceRoute(pacUrl, &traceoption, &traceRouteInfo);
     napi_value result = nullptr;
