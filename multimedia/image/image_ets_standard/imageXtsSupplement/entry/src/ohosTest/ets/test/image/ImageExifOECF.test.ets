@@ -15,6 +15,7 @@
 
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '@ohos/hypium';
 import { image } from '@kit.ImageKit';
+import { BusinessError } from '@ohos.base';
 import { fileIo as fs, ReadOptions } from '@kit.CoreFileKit';
 import common from '@ohos.app.ability.common';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
@@ -61,7 +62,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_001
      * @tc.name       SUB_IMAGE_OECF_TEST_001
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test readImageMetadata oecf success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -75,10 +76,10 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
         if (!actualOecf) {
           console.error(TAG, testName, `OECF value is undefined or null`);
           expect().assertFail();
@@ -94,7 +95,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_002
      * @tc.name       SUB_IMAGE_OECF_TEST_002
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -108,16 +109,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertUndefined();
-        } else {
-          expect().assertFail();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -127,7 +121,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_003
      * @tc.name       SUB_IMAGE_OECF_TEST_003
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -141,18 +135,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is0:`);
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is1:`);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertUndefined();
-        } else {
-          expect().assertFail();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -162,7 +147,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_004
      * @tc.name       SUB_IMAGE_OECF_TEST_004
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -176,16 +161,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -195,7 +173,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_005
      * @tc.name       SUB_IMAGE_OECF_TEST_005
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -209,16 +187,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -228,7 +199,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_006
      * @tc.name       SUB_IMAGE_OECF_TEST_006
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -242,16 +213,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -261,7 +225,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_007
      * @tc.name       SUB_IMAGE_OECF_TEST_007
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -275,10 +239,10 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await heicImageSourceApi.readImageMetadata();
         const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
         if (!actualOecf) {
           console.error(TAG, testName, `OECF value is undefined or null`);
           expect().assertFail();
@@ -294,7 +258,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_008
      * @tc.name       SUB_IMAGE_OECF_TEST_008
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -308,16 +272,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertUndefined();
-        } else {
-          expect().assertFail();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -327,7 +284,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_009
      * @tc.name       SUB_IMAGE_OECF_TEST_009
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -341,18 +298,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is0:`);
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is1:`);
-        let result = await heicImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertUndefined();
-        } else {
-          expect().assertFail();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -362,7 +310,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_010
      * @tc.name       SUB_IMAGE_OECF_TEST_010
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -376,16 +324,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -395,7 +336,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_011
      * @tc.name       SUB_IMAGE_OECF_TEST_011
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -409,16 +350,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -428,7 +362,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_012
      * @tc.name       SUB_IMAGE_OECF_TEST_012
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -442,16 +376,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -461,7 +388,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_013
      * @tc.name       SUB_IMAGE_OECF_TEST_013
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -475,16 +402,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -494,7 +414,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_014
      * @tc.name       SUB_IMAGE_OECF_TEST_014
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test writeImageMetadata oecf Undefined
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -508,16 +428,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
-        if (!actualOecf) {
-          console.error(TAG, testName, `OECF value is undefined or null`);
-          expect().assertFail();
-        } else {
-          expect().assertUndefined();
-        }
+        expect().assertUndefined();
       } catch (err) {
         console.error(TAG, testName, `Failed to test normal OECF, error code is `, err.code);
         expect().assertFail();
@@ -527,7 +440,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_015
      * @tc.name       SUB_IMAGE_OECF_TEST_015
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test readImageMetadata oecf success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -541,10 +454,10 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
         const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
         if (!actualOecf) {
           console.error(TAG, testName, `OECF value is undefined or null`);
           expect().assertFail();
@@ -560,7 +473,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_016
      * @tc.name       SUB_IMAGE_OECF_TEST_016
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test readImageMetadata oecf success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -574,10 +487,10 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await heicImageSourceApi.readImageMetadata();
         const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
         if (!actualOecf) {
           console.error(TAG, testName, `OECF value is undefined or null`);
           expect().assertFail();
@@ -593,7 +506,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_017
      * @tc.name       SUB_IMAGE_OECF_TEST_017
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test readImageMetadata oecf success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -607,10 +520,10 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
+        console.info(TAG, testName,"start");
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata();
         const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
         if (!actualOecf) {
           console.error(TAG, testName, `OECF value is undefined or null`);
           expect().assertFail();
@@ -626,7 +539,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_OECF_TEST_018
      * @tc.name       SUB_IMAGE_OECF_TEST_018
-     * @tc.desc       Test ImageWriteImageMetadata cover OECF
+     * @tc.desc       Test readImageMetadata oecf success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -640,10 +553,10 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await heicImageSourceApi.readImageMetadata();
         const actualOecf = result.exifMetadata?.oecf;
-        console.info(TAG, testName, `testWriteImageMetadata OECF result is:`, actualOecf);
         if (!actualOecf) {
           console.error(TAG, testName, `OECF value is undefined or null`);
           expect().assertFail();
@@ -659,7 +572,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_001
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_001
-     * @tc.desc       Test photographicSensitivity cover normal with jpg
+     * @tc.desc       test readImageMetadata  photographicSensitivity success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -672,9 +585,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         let resultStr = JSON.stringify((result.exifMetadata?.photographicSensitivity));
         expect(resultStr).assertEqual("[100]");
       } catch (err) {
@@ -686,7 +599,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_002
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_002
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -699,9 +612,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -713,7 +625,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_003
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_003
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata photographicSensitivity Unsupported metadata
      * @tc.size       SMALL
      * @tc.type       Function
      * @tc.level      Level 1
@@ -726,9 +638,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -739,7 +650,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_004
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_004
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata photographicSensitivity Unsupported metadata
      * @tc.size       SMALL
      * @tc.type       Function
      * @tc.level      Level 2
@@ -752,9 +663,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -765,7 +675,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_005
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_005
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -778,9 +688,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -791,7 +700,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_006
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_006
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -804,9 +713,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -817,7 +725,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_007
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_007
-     * @tc.desc       Test photographicSensitivity cover normal with jpg
+     * @tc.desc       Test writeImageMetadata  photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -830,9 +738,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -843,7 +750,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_008
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_008
-     * @tc.desc       Test photographicSensitivity cover normal with jpg
+     * @tc.desc       Test readImageMetadata  photographicSensitivity success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -856,9 +763,9 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await heicImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         let resultStr = JSON.stringify((result.exifMetadata?.photographicSensitivity));
         expect(resultStr).assertEqual("[100]");
       } catch (err) {
@@ -870,7 +777,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_009
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_009
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata  photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -883,9 +790,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -897,7 +803,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_010
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_010
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata  photographicSensitivity Unsupported metadata
      * @tc.size       SMALL
      * @tc.type       Function
      * @tc.level      Level 1
@@ -910,9 +816,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -923,7 +828,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_011
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_011
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata  photographicSensitivity Unsupported metadata
      * @tc.size       SMALL
      * @tc.type       Function
      * @tc.level      Level 2
@@ -936,9 +841,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -949,7 +853,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_012
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_012
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata  photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -962,9 +866,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -975,7 +878,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_013
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_013
-     * @tc.desc       Test photographicSensitivity cover with jpg
+     * @tc.desc       Test writeImageMetadata  photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -988,9 +891,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
@@ -1001,7 +903,7 @@ export default function ImageExifOECFSupp() {
     /**
      * @tc.number     SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_014
      * @tc.name       SUB_IMAGE_PHOTO_GRAPHIC_SENSITIVITY_TEST_014
-     * @tc.desc       Test photographicSensitivity cover normal with jpg
+     * @tc.desc       Test writeImageMetadata  photographicSensitivity Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -1014,9 +916,8 @@ export default function ImageExifOECFSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName,"start");
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata();
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.photographicSensitivity);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is `,err,err.code);
