@@ -1909,7 +1909,7 @@ export class KeyboardController {
           }
           that.InputClient.recvMessage()
         }
-      }
+      };
       this.InputClient.recvMessage(msgHandler);
       commonEventPublishData = {
         data: 'SUCCESS'
