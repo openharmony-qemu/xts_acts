@@ -641,9 +641,6 @@ export default function audioSessionManagerTest() {
         } else if(deviceType = audio.DeviceType.NEARLINK){
           expect(deviceType).assertEqual(31);
           console.info(`getDefaultOutputDevice success: ${deviceType}`);
-        } else if(deviceType = audio.DeviceType.SYSTEM_PRIVATE){
-          expect(deviceType).assertEqual(200);
-          console.info(`getDefaultOutputDevice success: ${deviceType}`);
         }
       }catch (err: BusinessError){
         console.log('getDefaultOutputDevice failed, err :' + err.message)

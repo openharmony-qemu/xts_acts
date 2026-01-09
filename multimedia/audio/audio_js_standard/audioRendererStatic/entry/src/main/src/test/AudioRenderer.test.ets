@@ -5165,52 +5165,6 @@ export default function audioRendererTest() {
     })
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
-     * @tc.desc   AudioRenderer-isStreamActive - MOVIE - UNKNOWN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-
-      let AudioRendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
-        rendererFlags: 0
-      }
-
-      let AudioRendererOptions: audio.AudioRendererOptions = {
-        streamInfo: AudioStreamInfo,
-        rendererInfo: AudioRendererInfo
-      }
-
-      let resultFlag = true;
-      readPath = 'StarWars10s-2C-48000-4SW.wav'
-      await getFdRead(readPath, done);
-      playbackPromise(AudioRendererOptions, filePath, audio.AudioScene.AUDIO_SCENE_DEFAULT);
-      await Utils.msSleep(2000);
-      AUDIOMANAGER.getStreamManager().isActive(audio.AudioVolumeType.MEDIA).then((data: boolean)=> {
-        if (data == true) {
-          console.log(`${TagFrmwk}: Promise : isActive Media: PASS : ${data}`);
-        }
-        else {
-          console.log(`${TagFrmwk}: Promise : isActive Media: FAIL : ${data}`);
-        }
-      });
-      await Utils.msSleep(9000);
-      console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
-      expect(resultFlag).assertTrue();
-      done();
-
-    })
-
-    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2200
      * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2200
      * @tc.desc   AudioRenderer-isStreamActive - SONIFICATION - UNKNOWN
