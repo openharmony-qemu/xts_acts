@@ -65,6 +65,11 @@ export default function PingTraceRouteNDKTest() {
      * @tc.level  LEVEL1
      */
     it("testNetworkManagerTraceRoute_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done:Function) => {
+      if (!canIUse("SystemCapability.Location.Location.Core")) {
+        console.log("skipping test");
+        done();
+        return;
+      }
       const caseName: string = 'testNetworkManagerTraceRoute_0100';
       console.info(`${caseName}---Start`);
       const pac: string = "www.baidu.com";
