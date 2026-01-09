@@ -48,7 +48,6 @@ import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let abilityContext=AppStorage.get<common.BaseContext>("abilityContext")
 
 export default function CustomPopupOptionsFalse() {
   describe('CustomPopupOptionsFalse', () => {
@@ -91,10 +90,11 @@ export default function CustomPopupOptionsFalse() {
      */
 it('CustomPopupOptionsFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('CustomPopupOptionsFalse_0100 START');
+      let abilityContext = AppStorage.get<common.BaseContext>("abilityContext")
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('CustomPopupOptionsFalse'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;

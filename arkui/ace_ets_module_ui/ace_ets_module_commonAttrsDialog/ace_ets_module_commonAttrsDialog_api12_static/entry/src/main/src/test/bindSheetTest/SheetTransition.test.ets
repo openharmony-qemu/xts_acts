@@ -84,7 +84,7 @@ it('SheetTransition_static_0100', Level.LEVEL0, async (done: () => void): Promis
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('SheetTransition'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson1 = inspector.getInspectorByKey('SheetTypeValue');

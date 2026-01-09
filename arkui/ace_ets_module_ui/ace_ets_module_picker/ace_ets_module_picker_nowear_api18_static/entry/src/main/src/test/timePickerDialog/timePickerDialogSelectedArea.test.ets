@@ -63,7 +63,7 @@ it('timePickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
       console.info('timePickerDialogSelectedAreaTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('showTimePickerDialog'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let timePickerDialog = await driver.findComponent(ON.id('colComponent'));
@@ -88,7 +88,7 @@ it('timePickerDialogSelectedAreaTest_static_001', Level.LEVEL0, async (done: () 
 
       let btn1 = await driver.findComponent(ON.text('确定'));
       await Utils.sleep(500);
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(500);
 
       let textStr = await driver.findComponent(ON.id('textFlag'));

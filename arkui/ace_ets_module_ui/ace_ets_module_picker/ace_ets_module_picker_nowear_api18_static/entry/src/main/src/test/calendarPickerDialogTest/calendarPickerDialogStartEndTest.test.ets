@@ -67,7 +67,7 @@ it('CalendarPickerDialog_StartEnd_static_001', Level.LEVEL1, async (done: () => 
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('CalendarPickerDialog01')) as Component;
       await CommonFunc.sleep(300);
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       await CommonFunc.sleep(2000);
@@ -78,7 +78,7 @@ it('CalendarPickerDialog_StartEnd_static_001', Level.LEVEL1, async (done: () => 
       expect(obj.getElement('$attrs').getString('end')).assertEqual('2024年4月5日星期五')
       let cancelButton: Component = await driver.findComponent(ON.text('取消')) as Component;
       await CommonFunc.sleep(300);
-      cancelButton?.click();
+      await (cancelButton?.click() as Promise<void>);
       console.info('CalendarPickerStartEndTest_static_001 END');
       done();
     });
@@ -97,7 +97,7 @@ it('CalendarPickerDialog_StartEnd_static_002', Level.LEVEL1, async (done: () => 
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('CalendarPickerDialog02')) as Component;
       await CommonFunc.sleep(300);
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let obj = obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0]
@@ -107,7 +107,7 @@ it('CalendarPickerDialog_StartEnd_static_002', Level.LEVEL1, async (done: () => 
       expect(obj.getElement('$attrs').getString('end')).assertEqual(undefined)
       let cancelButton: Component = await driver.findComponent(ON.text('取消')) as Component;
       await CommonFunc.sleep(300);
-      cancelButton?.click();
+      await (cancelButton?.click() as Promise<void>);
       console.info('CalendarPickerDialog_StartEnd_static_002 END');
       done();
     });
@@ -126,7 +126,7 @@ it('CalendarPickerDialog_StartEnd_static_003', Level.LEVEL1, async (done: () => 
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('CalendarPickerDialog03')) as Component;
       await CommonFunc.sleep(300);
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let obj = obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0]
@@ -136,7 +136,7 @@ it('CalendarPickerDialog_StartEnd_static_003', Level.LEVEL1, async (done: () => 
       expect(obj.getElement('$attrs').getString('end')).assertEqual(undefined)
       let cancelButton: Component = await driver.findComponent(ON.text('取消')) as Component;
       await CommonFunc.sleep(300);
-      cancelButton?.click();
+      await (cancelButton?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       console.info('CalendarPickerDialog_StartEnd_static_003 END');
       done();
@@ -156,7 +156,7 @@ it('CalendarPickerDialog_StartEnd_static_004', Level.LEVEL1, async (done: () => 
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('CalendarPickerDialog04')) as Component;
       await CommonFunc.sleep(300);
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let obj = obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0]
@@ -166,7 +166,7 @@ it('CalendarPickerDialog_StartEnd_static_004', Level.LEVEL1, async (done: () => 
       expect(obj.getElement('$attrs').getString('end')).assertEqual(undefined)
       let cancelButton: Component = await driver.findComponent(ON.text('取消')) as Component;
       await CommonFunc.sleep(300);
-      cancelButton?.click();
+      await (cancelButton?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       console.info('CalendarPickerDialog_StartEnd_static_004 END');
       done();
@@ -186,7 +186,7 @@ it('CalendarPickerDialog_StartEnd_static_005', Level.LEVEL1, async (done: () => 
       let driver: Driver = Driver.create();
       let button: Component = await driver.findComponent(ON.id('CalendarPickerDialog05')) as Component;
       await CommonFunc.sleep(300);
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       let obj1 = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let obj = obj1.getArray('$children')[1].getArray('$children')[0].getArray('$children')[0]
@@ -195,7 +195,7 @@ it('CalendarPickerDialog_StartEnd_static_005', Level.LEVEL1, async (done: () => 
       expect(obj.getElement('$attrs').getString('start')).assertEqual('2024年3月5日星期二')
       expect(obj.getElement('$attrs').getString('end')).assertEqual('2024年3月5日星期二')
       let cancelButton: Component = await driver.findComponent(ON.text('取消')) as Component;
-      cancelButton?.click();
+      await (cancelButton?.click() as Promise<void>);
       await CommonFunc.sleep(300);
       console.info('CalendarPickerDialog_StartEnd_static_005 END');
       done();

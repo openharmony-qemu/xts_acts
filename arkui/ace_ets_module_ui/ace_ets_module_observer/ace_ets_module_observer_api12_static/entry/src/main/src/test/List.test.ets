@@ -29,18 +29,18 @@ import uiScrollEvent from './observerTest/uiScrollEvent.test'
 import uiTabUpdate from './observerTest/uiTabUpdate.test'
 
 export default function testsuite() {
-  // observerScroll()  // SDK12.15 pass 1
-  // DensityInfo()  // SDK12.15 pass 1
-  // idScrollEvent()   // SDK11.25 2025112169406 1个
-  // ObserverApi1()  // SDK 11.25 2025111921736 1个
-  // tabContentState()   // SDK11.20 2025110729059 1个
-  // ObserverNavDestinationId()  // SDK12.15 pass 1
-  // ObserverNavDestinationState() // SDK11.20 2025110729059 1个
-  // ObserverPageId()  // SDK12.15 pass
-  onTabUpdate() // SDK12.15 0702表格31行 1个
-  // uiIdUpdate()  // SDK12.15 0702表格31行 1个
-  // uiTabUpdate() // SDK12.15 0702表格31行 1个
-  // indexTabs()   // SDK12.15 0702表格31行 1个
-  // observeTabJsunit() // SDK12.15 0702表格31行 1个
-  // uiScrollEvent()   // SDK12.15 0702表格31行 1个
+  observerScroll()
+  DensityInfo()
+  idScrollEvent()
+  ObserverApi1()
+  tabContentState()
+  ObserverNavDestinationId()
+  ObserverNavDestinationState()
+  ObserverPageId()
+  onTabUpdate()
+  uiIdUpdate()
+  uiTabUpdate()
+  indexTabs()
+  observeTabJsunit()
+  uiScrollEvent()
 }

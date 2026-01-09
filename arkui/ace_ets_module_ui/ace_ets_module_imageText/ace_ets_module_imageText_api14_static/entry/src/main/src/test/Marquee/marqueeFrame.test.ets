@@ -88,7 +88,7 @@ it('MarqueerequireDynamicSyncSceneTest_static_0010', Level.LEVEL2, async (done: 
       let driver = Driver.create();
       let button = await driver.findComponent(ON.id('MarqueegetGetFrameRateRange_id'));
       await CommonFunc.sleep(500);
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('MarqueerequireDynamicSyncScene_id');

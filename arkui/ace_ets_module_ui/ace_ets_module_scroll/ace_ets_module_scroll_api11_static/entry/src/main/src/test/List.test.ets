@@ -129,13 +129,12 @@ export default function testsuite() {
   scroll_ScrollFrictionTest();
   edgeEffectJsunit();
   listNewJsunit();
-
-  listJsunit(); // editMode废弃（注释）  3
+  listJsunit();
   ListDeleteTest();
   ListSwipeTest();
   ListReboundTest();
   ListScrollTest();
-  ListScrollToItemInGroup();  // stream=Error in ArkUI_List_Scroll_To_Item_In_Group_static_0001, expect 600 equals 551 1
+  ListScrollToItemInGroup();
   TabsApi();
   APIScrollflingSpeedLimitJsunit();
   APITabsBarBackgroundBlurStyleJsunit();
@@ -145,9 +144,9 @@ export default function testsuite() {
   tabsApi1();
   TouchTestStrategy();
   ScrollTest();
-  tabs();  // 很多
+  tabs();
   tabsSec();
-  tabsThird();  // 56
+  tabsThird();
   ActsAlphabetIndexerUxTest();
   RefreshTest();
   ScrollTest2();
@@ -162,8 +161,7 @@ export default function testsuite() {
   ActsGridTest();
   gridScrollbarUpdateTest();
   List07Test();
-  listUxTest();  // scrollSnapAlign 异常参数问题 1
-
+  listUxTest();
   tabsOnContentWillChangeJsunitTest();
   tabsOnContentWillChangeIndex3JsunitTest();
   tabsOnContentWillChangeIndex03JsunitTest();
@@ -177,7 +175,6 @@ export default function testsuite() {
   tabsOnContentWillChangeIndex13JsunitTest();
   tabsOnContentWillChangeIndex14JsunitTest();
   tabsOnContentWillChangeIndex15JsunitTest();
-
   GridTest();
   patternLock();
   ApiCommponentAddJsunit();
@@ -186,8 +183,8 @@ export default function testsuite() {
   tabsJsunit();
   gridJsunit();
   refreshJsunit();
-  listtestIdleJsunit();   // editMode废弃  1
-  list_item_groupJsunit();  // 有问题 header|footer 2
+  listtestIdleJsunit();
+  list_item_groupJsunit();
   refreshDragJsunit();
   alphabetIndexerOnSelectJsunit();
   gridMaxCountJsunit();
@@ -197,7 +194,7 @@ export default function testsuite() {
   stackAlignContentJsunit();
   tabsBarPositionJsunit();
   scrollBarJsunitt();
-  // listItemJsunit2(); // sticky | editMode 废弃  4
+  // listItemJsunit2();
   gridColTest();
   conSizeGroup1();
   conSizeGroup2();
