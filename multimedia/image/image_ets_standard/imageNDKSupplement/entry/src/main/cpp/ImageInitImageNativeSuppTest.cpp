@@ -263,7 +263,8 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
         returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_METADATA_TYPE, pvalue);
         break;
     case CASE_INDEX_5:
-        returnValue = OH_PixelmapNative_SetMetadata(pixelMap, HDR_DYNAMIC_METADATA, (OH_Pixelmap_HdrMetadataValue*)dValue);
+        returnValue =
+            OH_PixelmapNative_SetMetadata(pixelMap, HDR_DYNAMIC_METADATA, (OH_Pixelmap_HdrMetadataValue *)dValue);
         LOGI("OH_PixelmapNative_SetMetadata,%{public}d", returnValue);
         break;
     default:
