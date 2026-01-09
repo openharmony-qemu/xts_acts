@@ -1141,7 +1141,8 @@ static void RegisterRemainingProperties(napi_env env, napi_value exports)
         {"CertVerification", nullptr, CertVerification, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetCertificatesHost", nullptr, GetCertificatesHost, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Netconn_GetEnum", nullptr, Netconn_GetEnum, nullptr, nullptr, nullptr, napi_default, nullptr},
-        {"Netconn_GetEnumInternalError", nullptr, Netconn_GetEnumInternalError, nullptr, nullptr, nullptr, napi_default, nullptr}
+        {"Netconn_GetEnumInternalError", nullptr, Netconn_GetEnumInternalError, nullptr, nullptr, nullptr, 
+         napi_default, nullptr}
     };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
 }
