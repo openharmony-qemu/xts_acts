@@ -1256,8 +1256,8 @@ export default function MulticastSocket() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
-      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL0400';
+    it('testNetworkMgrSocketMulticastSocketSetMulticastTTL1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
+      let caseName: string = 'testNetworkMgrSocketMulticastSocketSetMulticastTTL1300';
       console.info(`${caseName} test start`);
       try {
         let multicast: socket.MulticastSocket = socket.constructMulticastSocketInstance();
