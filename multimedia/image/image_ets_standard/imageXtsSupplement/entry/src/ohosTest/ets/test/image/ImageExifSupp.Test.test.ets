@@ -4106,5 +4106,1465 @@ export default function ImageExifSuppTest() {
       }
       done();
     })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_001
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [116, 24, 14];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[116,24,14]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_002
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_003
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [180, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[180,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_004
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [-180, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsLongitude);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        expect(result.exifMetadata?.gpsLongitude).assertEqual(resultFir.exifMetadata?.gpsLongitude);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_005
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [0, 59, 59.999];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,59,59.999]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_006
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [116, 24, 14];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[116,24,14]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_007
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_007
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_007', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_007';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_008
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_008
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_008', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_008';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [180, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[180,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_009
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_009
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_009', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_009';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [-180, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsLongitude);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        expect(result.exifMetadata?.gpsLongitude).assertEqual(resultFir.exifMetadata?.gpsLongitude);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_0010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_0010
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_0010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_0010';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLongitude = [0, 59, 59.999];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLongitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,59,59.999]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_001
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[2,0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_002
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [1, 1, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[1,1,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_003
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [0, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_004
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2,5,5,2];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[2,5,5,2]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_005
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [-1, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_006
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [0,1,2,3];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,1,2,3]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_007
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_007
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_007', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_007';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_008
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_008
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_008', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_008';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2, 0, 0, 0, 1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_009
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_009
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_009', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_009';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0010
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0010';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2,5,6,0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[2,5,6,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0011
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0011
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0011', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0011';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = undefined;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0012
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0012
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0012', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0012';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[2,0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0013
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0013
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0013', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0013';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [1, 1, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[1,1,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0014
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0014
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0014', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0014';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [0, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0015
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0015
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0015', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0015';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2,5,5,2];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[2,5,5,2]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0016
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0016
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0016', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0016';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [-1, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0017
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0017
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0017', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0017';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [0,1,2,3];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,1,2,3]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0018
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0018
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0018', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0018';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0019
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0019
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0019', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0019';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2, 0, 0, 0, 1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0020
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0020
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0020', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0020';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0021
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0021
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0021', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0021';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = [2,5,6,0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsVersionID)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[2,5,6,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0022
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0022
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0022', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0022';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsVersionID = undefined;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
+        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_001
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [12, 30, 45];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[12,30,45]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_002
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsTimestamp);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsTimestamp);
+        expect(result.exifMetadata?.gpsTimestamp).assertEqual(resultFir.exifMetadata?.gpsTimestamp);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_003
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [23, 59, 59.999];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[23,59,59.999]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_004
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [23, 59, 59];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[23,59,59]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_005
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [12, 30, 61];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[12,30,61]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_006
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [12, 30, 45];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[12,30,45]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_007
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_007
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_007', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_007';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsTimestamp);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsTimestamp);
+        expect(result.exifMetadata?.gpsTimestamp).assertEqual(resultFir.exifMetadata?.gpsTimestamp);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_008
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_008
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_008', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_008';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [23, 59, 59.999];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[23,59,59.999]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_009
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_009
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_009', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_009';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [23, 59, 59];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[23,59,59]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_0010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_0010
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_0010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_0010';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsTimestamp = [12, 30, 61];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[12,30,61]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_001
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [39, 54, 26.76];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[39,54,26.76]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_002
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_003
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [90, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[90,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_004
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [30, 15.5, 20.25];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[30,15.5,20.25]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_005
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [89.999, 59.999, 59.999];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsLatitude);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsLatitude);
+        expect(result.exifMetadata?.gpsLatitude).assertEqual(resultFir.exifMetadata?.gpsLatitude);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_006
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [39, 54, 26.76];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[39,54,26.76]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_007
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_007
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_007', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_007';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[0,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_008
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_008
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_008', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_008';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [30, 15.5, 20.25];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[30,15.5,20.25]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_009
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_009
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_009', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_009';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [90, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLatitude);
+        let resultStr = JSON.stringify(result.exifMetadata?.gpsLatitude)
+        console.info(TAG,testName,'resultStr:',resultStr)
+        expect(resultStr).assertEqual('[90,0,0]');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_0010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_0010
+     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_0010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_0010';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.gpsLatitude = [89.999, 59.999, 59.999];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsLatitude);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsLatitude);
+        expect(result.exifMetadata?.gpsLatitude).assertEqual(resultFir.exifMetadata?.gpsLatitude);
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
   });
 }
