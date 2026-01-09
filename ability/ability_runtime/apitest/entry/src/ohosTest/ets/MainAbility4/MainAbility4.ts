@@ -14,41 +14,46 @@
 */
 import Ability from '@ohos.app.ability.UIAbility'
 import commonEvent from '@ohos.commonEvent'
+import commonEventManger from '@ohos.commonEventManager';
+
 function PublishCallBackOne() {
-    console.debug("====>Publish CallBack Event====>");
+    console.debug('====>Publish CallBack Event====>');
 }
 export default class MainAbility4 extends Ability {
     onCreate(want, launchParam) {
-        console.log("[Demo] MainAbility4 onCreate")
-        globalThis.abilityContext = this.context
-        setTimeout(()=> {
-            commonEvent.publish("ACTS_DoAbility_Event", PublishCallBackOne);
-        }, 500)
+        console.log('[Demo] MainAbility4 onCreate');
+        globalThis.abilityContext = this.context;
+        commonEvent.publish("ACTS_DoAbility_Event", PublishCallBackOne);
     }
 
-    onDestroy() {
-        console.log("[Demo] MainAbility4 onDestroy")
+    async onDestroy():Promise<void> {
+        console.log('[Demo] MainAbility4 onDestroy');
+        commonEventManger.publish('MainAbility4_onDestroy', (result) => {});
     }
 
     onWindowStageCreate(windowStage) {
         // Main window is created, set main page for this ability
-        console.log("[Demo] MainAbility4 onWindowStageCreate")
+        console.log('[Demo] MainAbility4 onWindowStageCreate');
 
-        windowStage.setUIContent(this.context, "pages/index", null)
+        windowStage.setUIContent(this.context, "pages/index", null);
     }
 
     onWindowStageDestroy() {
         // Main window is destroyed, release UI related resources
-        console.log("[Demo] MainAbility4 onWindowStageDestroy")
+        console.log('[Demo] MainAbility4 onWindowStageDestroy');
     }
 
     onForeground() {
         // Ability has brought to foreground
-        console.log("[Demo] MainAbility4 onForeground")
+        console.log('[Demo] MainAbility4 onForeground');
+        globalThis.mainAbility4State = 2;
+        commonEventManger.publish('MainAbility4_onForeground', (result) => {});
     }
 
     onBackground() {
         // Ability has back to background
-        console.log("[Demo] MainAbility4 onBackground")
+        console.log('[Demo] MainAbility4 onBackground');
+        globalThis.mainAbility4State = 3;
+        commonEventManger.publish('MainAbility4_onBackground', (result) => {});
     }
 };

@@ -20,34 +20,35 @@ import Want from '@ohos.app.ability.Want';
 import common from '@ohos.app.ability.common';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import window from '@ohos.window';
+import commonEventManger from '@ohos.commonEventManager';
 
 export default class TestAbility extends Ability {
     onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
-        console.log('TestAbility onCreate')
+        console.log('TestAbility onCreate');
         globalThis.abilityWant = want;
         globalThis.abilityWant.parameters.timeout = 15000;
-        let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
-        let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
-        console.info('start run testcase!!!')
-        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
+        let abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
+        let abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments();
+        console.info('start run testcase!!!');
+        Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite);
     }
 
     onDestroy() {
-        console.log('TestAbility onDestroy')
+        console.log('TestAbility onDestroy');
     }
 
     onWindowStageCreate(windowStage:window.WindowStage) {
-        console.log('TestAbility onWindowStageCreate')
+        console.log('TestAbility onWindowStageCreate');
         globalThis.onWindowStageActive = false;
         let count = 0;
-        windowStage.loadContent('MainAbility/pages/index', null)
+        windowStage.loadContent('MainAbility/pages/index', null);
         windowStage.on('windowStageEvent', (data) => {
           console.log(`ActsApiTest onWindwoStage is : ${JSON.stringify(data)}`)
           if (data == 2 ) {
             console.log(`ActsApiTest onWindwoStage count is : ${count}`)
             count++;
             if (count == 2) {
-              console.log(`ActsApiTest onWindwoStage count is : ${count}`)
+              console.log(`ActsApiTest onWindwoStage count is : ${count}`);
               globalThis.onWindowStageActive = true;
             }
           }
@@ -55,14 +56,18 @@ export default class TestAbility extends Ability {
     }
 
     onWindowStageDestroy() {
-        console.log('TestAbility onWindowStageDestroy')
+        console.log('TestAbility onWindowStageDestroy');
     }
 
     onForeground() {
-        console.log('TestAbility onForeground')
+      console.log('TestAbility onForeground');
+      globalThis.testAbilityState = 2;
+      commonEventManger.publish('TestAbility_onForeground', (result) => {});
     }
 
     onBackground() {
-        console.log('TestAbility onBackground')
+      console.log('TestAbility onBackground');
+      globalThis.testAbilityState = 3;
+      commonEventManger.publish('TestAbility_onBackground', (result) => {});
     }
 };

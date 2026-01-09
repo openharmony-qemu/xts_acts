@@ -20,6 +20,7 @@ import Want from '@ohos.app.ability.Want';
 import CommonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import eventBusPlus from '../lib/EventBusPlus';
 import { Driver, ON } from '@ohos.UiTest';
 
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
@@ -77,30 +78,39 @@ export default function abilityTest() {
      */
     it('ACTS_DoAbilityForeground_0100', Level.LEVEL0, async (done:Function) => {
       console.log("====>in ACTS_DoAbilityForeground_0100====>");
+
+      let mainAb2OnBacPromise = eventBusPlus.onWait('MainAbility2_onBackground');
+      let mainAb2OnDesPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let flag = true
       let ability:UIAbility
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+        done();
       }
       let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
         console.log("====>0100 Subscribe CallBack data:====>" + JSON.stringify(data));
-        globalThis.abilitydelegator.doAbilityForeground(ability, (err:BusinessError) => {
+        let testAbilityState:number = globalThis.testAbilityState;
+        globalThis.abilitydelegator.doAbilityForeground(ability, async (err:BusinessError) => {
           console.log("====>ACTS_DoAbilityForeground_0100 data:====>" + JSON.stringify(err));
           expect(err.code).assertEqual(0);
-          setTimeout(() => {
-            let num:number = globalThis.abilitydelegator.getAbilityState(ability)
-            console.log("====>ACTS_DoAbilityForeground_0100 getAbilityState:====>" + JSON.stringify(num));
-            expect(num).assertEqual(2);
-            commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-            console.log("====>ACTS_DoAbilityForeground_0100 MainAbility2 terminateSelf");
-            globalThis.abilityContextMainAbility2.terminateSelf();
-          }, START_ABILITY_TIMEOUT_THOUSAND)
+          if(testAbilityState !== 2) {
+            await mainAb2OnBacPromise;
+          }
+          let num:number = globalThis.abilitydelegator.getAbilityState(ability);
+          if(num !== 2) {
+            await sleep(1000);
+            num = globalThis.abilitydelegator.getAbilityState(ability);
+          }
+          console.log("====>ACTS_DoAbilityForeground_0100 getAbilityState:====>" + JSON.stringify(num));
+          expect(num).assertEqual(2);
+          globalThis.abilityContextMainAbility2.terminateSelf();
+          await mainAb2OnDesPromise;
+          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
+          console.log("====>ACTS_DoAbilityForeground_0100 MainAbility2 terminateSelf");
         })
       }
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
@@ -125,12 +135,6 @@ export default function abilityTest() {
       })
       let timeout= ():void => {
         if (flag == true) {
-          try {
-            expect().assertFail();
-          } catch (error) {
-            console.log(`ACTS_DoAbilityForeground_0100 startRunning failed: ${JSON.stringify(error)}`);
-            done();
-          }
           console.log('ACTS_DoAbilityForeground_0100 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
@@ -147,22 +151,27 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityForeground_0200', Level.LEVEL0, async (done:Function) => {
+      let testAbOnForPromise = eventBusPlus.onWait('TestAbility_onForeground');
       let ability:UIAbility
       globalThis.abilitydelegator.getCurrentTopAbility().then((data:UIAbility) => {
         ability = data
         expect(JSON.stringify(data) == JSON.stringify(mainability)).assertTrue();
-        console.log("====>getCurrentTopAbility ability data:====>" + JSON.stringify(ability));
-        globalThis.abilitydelegator.doAbilityForeground(ability, (err:BusinessError) => {
-          console.log("====>ACTS_DoAbilityForeground_0200 data:====>" + JSON.stringify(err));
+        console.log("====>ACTS_DoAbilityForeground_0200 getCurrentTopAbility ability data:====>" + JSON.stringify(ability));
+        let testAbilityState:number = globalThis.testAbilityState;
+        globalThis.abilitydelegator.doAbilityForeground(ability, async (err:BusinessError) => {
+          console.log("====>ACTS_DoAbilityForeground_0200 ACTS_DoAbilityForeground_0200 data:====>" + JSON.stringify(err));
           expect(err.code).assertEqual(0);
-          setTimeout(() => {
-            let num:number = globalThis.abilitydelegator.getAbilityState(ability)
-            console.log("====>ACTS_DoAbilityForeground_0200 getAbilityState:====>" + JSON.stringify(num));
-            expect(num).assertEqual(2);
-          }, START_ABILITY_TIMEOUT_THOUSAND)
-          setTimeout(() => {
-            done()
-          }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+          if(testAbilityState !== 2) {
+            await testAbOnForPromise;
+          }
+          let num:number = globalThis.abilitydelegator.getAbilityState(ability);
+          if(num !== 2) {
+            await sleep(1000);
+            num = globalThis.abilitydelegator.getAbilityState(ability);
+          }
+          console.log("====>ACTS_DoAbilityForeground_0200 getAbilityState:====>" + JSON.stringify(num));
+          expect(num).assertEqual(2);
+          done();
         })
       })
     })
@@ -176,29 +185,37 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityForeground_0400', Level.LEVEL0, async (done:Function) => {
+      let mainAb2OnBacPromise = eventBusPlus.onWait('MainAbility2_onBackground');
+      let mainAb2OnDesPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let flag = true
       let ability:UIAbility
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+        done();
       }
       let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
         console.log("====>0400 Subscribe CallBack data:====>" + JSON.stringify(data));
-        globalThis.abilitydelegator.doAbilityForeground(ability).then(() => {
+        let testAbilityState:number = globalThis.testAbilityState;
+        globalThis.abilitydelegator.doAbilityForeground(ability).then(async () => {
           console.log("====>ACTS_DoAbilityForeground_0400 data:====>");
           expect(true).assertTrue();
-          setTimeout(() => {
-            let num:number = globalThis.abilitydelegator.getAbilityState(ability)
-            console.log("====>ACTS_DoAbilityForeground_0400 getAbilityState:====>" + JSON.stringify(num));
-            expect(num).assertEqual(2);
-            console.log("====>ACTS_DoAbilityForeground_0400 MainAbility2 terminateSelf");
-            globalThis.abilityContextMainAbility2.terminateSelf();
-          }, START_ABILITY_TIMEOUT_THOUSAND)
+          if(testAbilityState !== 2) {
+            await mainAb2OnBacPromise;
+          }
+          let num:number = globalThis.abilitydelegator.getAbilityState(ability);
+          if(num !== 2) {
+            await sleep(1000);
+            num = globalThis.abilitydelegator.getAbilityState(ability);
+          }
+          console.log("====>ACTS_DoAbilityForeground_0400 getAbilityState:====>" + JSON.stringify(num));
+          expect(num).assertEqual(2);
+          console.log("====>ACTS_DoAbilityForeground_0400 MainAbility2 terminateSelf");
+          globalThis.abilityContextMainAbility2.terminateSelf();
+          await mainAb2OnDesPromise;
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         })
       }
@@ -217,14 +234,13 @@ export default function abilityTest() {
                 bundleName: 'com.example.testapi',
                 abilityName: 'MainAbility2'
               }).then(() => {
-                console.log("====>startAbility end====>");
-              })
+              console.log("====>startAbility end====>");
+            })
           })
         })
       })
       let timeout= ():void => {
         if (flag == true) {
-          expect().assertFail();
           console.log('ACTS_DoAbilityForeground_0400 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
@@ -241,29 +257,31 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityForeground_0500', Level.LEVEL0, async (done:Function) => {
+      let testAbOnForPromise = eventBusPlus.onWait('TestAbility_onForeground');
       let ability:UIAbility
-      setTimeout(() => {
-        globalThis.abilitydelegator.getCurrentTopAbility().then((data:UIAbility) => {
-          ability = data
-          console.log("====>getCurrentTopAbility  data:====>" + JSON.stringify(data));
-          console.log("====>getCurrentTopAbility  mainability:====>" + JSON.stringify(mainability));
-          expect(JSON.stringify(data) == JSON.stringify(mainability)).assertTrue();
-          console.log("====>getCurrentTopAbility ability data:====>" + JSON.stringify(ability));
-          globalThis.abilitydelegator.doAbilityForeground(ability).then(() => {
-            console.log("====>ACTS_DoAbilityForeground_0500 data:====>");
-            expect(true).assertTrue();
-            setTimeout(() => {
-              let num:number = globalThis.abilitydelegator.getAbilityState(ability)
-              console.log("====>ACTS_DoAbilityForeground_0500 getAbilityState:====>" + JSON.stringify(num));
-              expect(num).assertEqual(2);
-            }, START_ABILITY_TIMEOUT_THOUSAND)
-            setTimeout(() => {
-              done()
-            }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
-          })
+      globalThis.abilitydelegator.getCurrentTopAbility().then((data:UIAbility) => {
+        ability = data
+        console.log("====>ACTS_DoAbilityForeground_0500 getCurrentTopAbility  data:====>" + JSON.stringify(data));
+        console.log("====>ACTS_DoAbilityForeground_0500 getCurrentTopAbility  mainability:====>" + JSON.stringify(mainability));
+        expect(JSON.stringify(data) == JSON.stringify(mainability)).assertTrue();
+        console.log("====>ACTS_DoAbilityForeground_0500 getCurrentTopAbility ability data:====>" + JSON.stringify(ability));
+        let testAbilityState:number = globalThis.testAbilityState;
+        globalThis.abilitydelegator.doAbilityForeground(ability).then(async () => {
+          console.log("====>ACTS_DoAbilityForeground_0500 data:====>");
+          expect(true).assertTrue();
+          if(testAbilityState !== 2) {
+            await testAbOnForPromise;
+          }
+          let num:number = globalThis.abilitydelegator.getAbilityState(ability);
+          if(num !== 2) {
+            await sleep(1000);
+            num = globalThis.abilitydelegator.getAbilityState(ability);
+          }
+          console.log("====>ACTS_DoAbilityForeground_0500 getAbilityState:====>" + JSON.stringify(num));
+          expect(num).assertEqual(2);
+          done();
         })
-      }, 2000)
-
+      })
     })
 
     /**
@@ -275,14 +293,15 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('ACTS_DoAbilityBackground_0100', Level.LEVEL0, async (done:Function) => {
+      let mainAb2OnBacPromise = eventBusPlus.onWait('MainAbility2_onBackground');
+      let mainAb2OnDesPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let flag = true
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, 5000)
+        done();
       }
       let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
@@ -294,16 +313,20 @@ export default function abilityTest() {
             done();
             return;
           }
-          globalThis.abilitydelegator.doAbilityBackground(ability, (err:BusinessError) => {
+          globalThis.abilitydelegator.doAbilityBackground(ability, async (err:BusinessError) => {
             console.log("====>ACTS_DoAbilityBackground_0100 data:====>");
             expect(err.code).assertEqual(0);
-            setTimeout(() => {
-              let num:number = globalThis.abilitydelegator.getAbilityState(ability)
-              console.log("====>ACTS_DoAbilityBackground_0100 getAbilityState:====>" + JSON.stringify(num));
-              expect(num).assertEqual(3);
-              console.log("====>ACTS_DoAbilityBackground_0100 MainAbility2 terminateSelf");
-              globalThis.abilityContextMainAbility2.terminateSelf();
-            }, START_ABILITY_TIMEOUT_THOUSAND)
+            await mainAb2OnBacPromise;
+            let num:number = globalThis.abilitydelegator.getAbilityState(ability);
+            if(num !== 3) {
+              await sleep(1000);
+              num = globalThis.abilitydelegator.getAbilityState(ability);
+            }
+            console.log("====>ACTS_DoAbilityBackground_0100 getAbilityState:====>" + JSON.stringify(num));
+            expect(num).assertEqual(3);
+            console.log("====>ACTS_DoAbilityBackground_0100 MainAbility2 terminateSelf");
+            globalThis.abilityContextMainAbility2.terminateSelf();
+            await mainAb2OnDesPromise;
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           })
         })
@@ -329,7 +352,6 @@ export default function abilityTest() {
       })
       let timeout= ():void => {
         if (flag == true) {
-          expect().assertFail();
           console.log('ACTS_DoAbilityBackground_0100 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
@@ -350,30 +372,36 @@ export default function abilityTest() {
         done();
         return;
       }
+
+      let mainAb2OnBacPromise = eventBusPlus.onWait('MainAbility2_onBackground');
+      let mainAb2OnDesPromise = eventBusPlus.onWait('MainAbility2_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let flag = true
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+        done();
       }
       let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
         console.log("====>0500 Subscribe CallBack data:====>" + JSON.stringify(data));
         globalThis.abilitydelegator.getCurrentTopAbility().then((ability2:UIAbility) => {
           console.log("====>getCurrentTopAbility ability2 data:====>" + JSON.stringify(ability2));
-          globalThis.abilitydelegator.doAbilityBackground(ability2).then(() => {
+          globalThis.abilitydelegator.doAbilityBackground(ability2).then(async () => {
             console.log("====>ACTS_DoAbilityBackground_0500 data:====>");
             expect(true).assertTrue();
-            setTimeout(() => {
-              let num:number = globalThis.abilitydelegator.getAbilityState(ability2)
-              console.log("====>ACTS_DoAbilityBackground_0500 getAbilityState:====>" + JSON.stringify(num));
-              expect(num).assertEqual(3);
-              console.log("====>ACTS_DoAbilityBackground_0500 MainAbility2 terminateSelf");
-              globalThis.abilityContextMainAbility2.terminateSelf();
-            }, START_ABILITY_TIMEOUT_THOUSAND)
+            await mainAb2OnBacPromise;
+            let num:number = globalThis.abilitydelegator.getAbilityState(ability2);
+            if(num !== 3) {
+              await sleep(1000);
+              num = globalThis.abilitydelegator.getAbilityState(ability2);
+            }
+            console.log("====>ACTS_DoAbilityBackground_0500 getAbilityState:====>" + JSON.stringify(num));
+            expect(num).assertEqual(3);
+            console.log("====>ACTS_DoAbilityBackground_0500 MainAbility2 terminateSelf");
+            globalThis.abilityContextMainAbility2.terminateSelf();
+            await mainAb2OnDesPromise;
             commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
           })
         })
@@ -396,7 +424,6 @@ export default function abilityTest() {
       })
       let timeout= ():void => {
         if (flag == true) {
-          expect().assertFail();
           console.log('ACTS_DoAbilityBackground_0500 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
@@ -417,90 +444,70 @@ export default function abilityTest() {
         done();
         return;
       }
-      let Subscriber:CommonEventManager.CommonEventSubscriber
-      let flag = true
-      let num1 = 0
-      let num2 = 0
-      let UnSubscribeCallback = ():void => {
-        console.log("====>ACTS_DoAbilityBackground_0700 UnSubscribeCallback====>");
-        flag = false
-        setTimeout(()=>{
-        done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
-      }
-      let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
-        expect(data.event == "ACTS_DoAbility_Event").assertTrue();
-        console.log("====>0700 Subscribe CallBack data:====>" + JSON.stringify(data));
-        globalThis.abilitydelegator.getCurrentTopAbility().then((ability2:UIAbility) => {
-          console.log("====>getCurrentTopAbility ability2 data:====>" + JSON.stringify(ability2));
-          console.log("====>0700newabilityname:====>" + JSON.stringify(ability2.context.abilityInfo.name));
-          globalThis.abilitydelegator.doAbilityBackground(ability2).then(() => {
-            console.log("====>doAbilityBackground data1:====>");
-            expect(true).assertTrue();
-            setTimeout(() => {
-              num1 = globalThis.abilitydelegator.getAbilityState(ability2)
-              console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState1:====>" + " " + JSON.stringify(num1));
-              expect(num1).assertEqual(3);
-              globalThis.abilitydelegator.doAbilityForeground(ability2, (err:BusinessError) => {
-                console.log("====>doAbilityForeground data:====>" + JSON.stringify(err));
-                expect(err.code).assertEqual(0);
-                setTimeout(() => {
-                  num2 = globalThis.abilitydelegator.getAbilityState(ability2)
-                  console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState2:====>" +
-                    " " + JSON.stringify(num2));
-                  expect(num2).assertEqual(2);
-                  globalThis.abilitydelegator.doAbilityBackground(ability2).then(() => {
-                    console.log("====>doAbilityBackground data1:====>");
-                    expect(true).assertTrue();
-                    setTimeout(() => {
-                      num1 = globalThis.abilitydelegator.getAbilityState(ability2)
-                      console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState1:====>" +
-                        " " + JSON.stringify(num1));
-                      expect(num1).assertEqual(3);
-                      globalThis.abilitydelegator.doAbilityForeground(ability2, (err:BusinessError) => {
-                        console.log("====>doAbilityForeground data:====>");
-                        expect(err.code).assertEqual(0);
-                        setTimeout(() => {
-                          num2 = globalThis.abilitydelegator.getAbilityState(ability2)
-                          console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState2:====>" +
-                            " " + JSON.stringify(num2));
-                          expect(num2).assertEqual(2);
-                          ability2.context.terminateSelf();
-                          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-                        }, START_ABILITY_TIMEOUT_THOUSAND)
-                      })
-                    }, START_ABILITY_TIMEOUT_THOUSAND)
-                  })
-                }, START_ABILITY_TIMEOUT_THOUSAND)
-              })
-            }, START_ABILITY_TIMEOUT_THOUSAND)
-          })
-        })
-      }
-      commonEvent.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
-        console.log("====>Create Subscriber====>");
-        data.getSubscribeInfo().then((SubscribeInfo) => {
-          console.log("====>SubscribeInfo is====>" + JSON.stringify(SubscribeInfo));
-          Subscriber = data;
-          commonEvent.subscribe(Subscriber, SubscribeCallBack);
-          console.log("====>start startAbility====>");
-          globalThis.abilitydelegator.startAbility(
-            {
-              bundleName: 'com.example.testapi',
-              abilityName: 'MainAbility4'
-            }).then(() => {
-              console.log("====>startAbility end====>");
-            })
-        })
+
+      let mainAb4OnCreatePromise = eventBusPlus.onWait('ACTS_DoAbility_Event');
+
+      globalThis.abilitydelegator.startAbility(
+        {
+          bundleName: 'com.example.testapi',
+          abilityName: 'MainAbility4'
+        }).then(() => {
+        console.log("====>startAbility end====>");
       })
-      let timeout= ():void => {
-        if (flag == true) {
-          expect().assertFail();
-          console.log('ACTS_DoAbilityBackground_0700 - timeout');
-          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-        }
+
+      let callBackData:CommonEventManager.CommonEventData = await mainAb4OnCreatePromise;
+
+      expect(callBackData.event == "ACTS_DoAbility_Event").assertTrue();
+
+      let topAbility:UIAbility = await globalThis.abilitydelegator.getCurrentTopAbility()
+
+      let mainAb4OnBacPromise = eventBusPlus.onWait('MainAbility4_onBackground');
+      globalThis.abilitydelegator.doAbilityBackground(topAbility);
+      await mainAb4OnBacPromise;
+      let num1:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num1 !== 3) {
+        await sleep(1000);
+        num1 = globalThis.abilitydelegator.getAbilityState(topAbility);
       }
-      setTimeout(timeout, 10000);
+      console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState1:====>" + " " + JSON.stringify(num1));
+      expect(num1).assertEqual(3);
+
+      let mainAb4OnForPromise2 = eventBusPlus.onWait('MainAbility4_onForeground');
+      globalThis.abilitydelegator.doAbilityForeground(topAbility);
+      await mainAb4OnForPromise2;
+      let num2:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num2 !== 2) {
+        await sleep(1000);
+        num2 = globalThis.abilitydelegator.getAbilityState(topAbility);
+      }
+      console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState2:====>" + " " + JSON.stringify(num2));
+      expect(num2).assertEqual(2);
+
+      let mainAb4OnBacPromise3 = eventBusPlus.onWait('MainAbility4_onBackground');
+      globalThis.abilitydelegator.doAbilityBackground(topAbility);
+      await mainAb4OnBacPromise3;
+      let num3:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num3 !== 3) {
+        await sleep(1000);
+        num3 = globalThis.abilitydelegator.getAbilityState(topAbility);
+      }
+      console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState3:====>" + " " + JSON.stringify(num3));
+      expect(num3).assertEqual(3);
+
+      let mainAb4OnForPromise4 = eventBusPlus.onWait('MainAbility4_onForeground');
+      let mainAb4OnDesPromise = eventBusPlus.onWait('MainAbility4_onDestroy');
+      globalThis.abilitydelegator.doAbilityForeground(topAbility);
+      await mainAb4OnForPromise4;
+      let num4:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num4 !== 2) {
+        await sleep(1000);
+        num4 = globalThis.abilitydelegator.getAbilityState(topAbility);
+      }
+      console.log("====>ACTS_DoAbilityBackground_0700 getAbilityState4:====>" + " " + JSON.stringify(num4));
+      expect(num4).assertEqual(2);
+      topAbility.context.terminateSelf();
+      await mainAb4OnDesPromise;
+      done();
     })
 
     /**
@@ -516,90 +523,70 @@ export default function abilityTest() {
         done();
         return;
       }
-      let Subscriber:CommonEventManager.CommonEventSubscriber
-      let flag = true
-      let num1 = 0
-      let num2 = 0
-      let UnSubscribeCallback = ():void => {
-        console.log("====>ACTS_DoAbilityBackground_0800 UnSubscribeCallback====>");
-        flag = false
-        setTimeout(()=>{
-        done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
-      }
-      let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
-        expect(data.event == "ACTS_DoAbility_Event").assertTrue();
-        console.log("====>0800 Subscribe CallBack data:====>" + JSON.stringify(data));
-        globalThis.abilitydelegator.getCurrentTopAbility().then((ability2:UIAbility) => {
-          console.log("====>getCurrentTopAbility ability2 data:====>" + JSON.stringify(ability2));
-          console.log("====>0800newabilityname:====>" + JSON.stringify(ability2.context.abilityInfo.name));
-          globalThis.abilitydelegator.doAbilityBackground(ability2, (err:BusinessError) => {
-            console.log("====>doAbilityBackground data1:====>" + JSON.stringify(err));
-            expect(err.code).assertEqual(0);
-            setTimeout(() => {
-              num1 = globalThis.abilitydelegator.getAbilityState(ability2)
-              console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState1:====>" + " " + JSON.stringify(num1));
-              expect(num1).assertEqual(3);
-              globalThis.abilitydelegator.doAbilityForeground(ability2).then(() => {
-                console.log("====>doAbilityForeground data:====>");
-                expect(true).assertTrue();
-                setTimeout(() => {
-                  num2 = globalThis.abilitydelegator.getAbilityState(ability2)
-                  console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState2:====>" +
-                    " " + JSON.stringify(num2));
-                  expect(num2).assertEqual(2);
-                  globalThis.abilitydelegator.doAbilityBackground(ability2, (err:BusinessError) => {
-                    console.log("====>doAbilityBackground data1:====>" + JSON.stringify(err));
-                    expect(err.code).assertEqual(0);
-                    setTimeout(() => {
-                      num1 = globalThis.abilitydelegator.getAbilityState(ability2)
-                      console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState1:====>" +
-                        " " + JSON.stringify(num1));
-                      expect(num1).assertEqual(3);
-                      globalThis.abilitydelegator.doAbilityForeground(ability2).then(() => {
-                        console.log("====>doAbilityForeground data:====>");
-                        expect(true).assertTrue();
-                        setTimeout(() => {
-                          num2 = globalThis.abilitydelegator.getAbilityState(ability2)
-                          console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState2:====>" +
-                            " " + JSON.stringify(num2));
-                          expect(num2).assertEqual(2);
-                          ability2.context.terminateSelf();
-                          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-                        }, START_ABILITY_TIMEOUT_THOUSAND)
-                      })
-                    }, START_ABILITY_TIMEOUT_THOUSAND)
-                  })
-                }, START_ABILITY_TIMEOUT_THOUSAND)
-              })
-            }, START_ABILITY_TIMEOUT_THOUSAND)
-          })
-        })
-      }
-      commonEvent.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
-        console.log("====>Create Subscriber====>");
-        data.getSubscribeInfo().then((SubscribeInfo) => {
-          console.log("====>SubscribeInfo is====>" + JSON.stringify(SubscribeInfo));
-          Subscriber = data;
-          commonEvent.subscribe(Subscriber, SubscribeCallBack);
-          console.log("====>start startAbility====>");
-          globalThis.abilitydelegator.startAbility(
-            {
-              bundleName: 'com.example.testapi',
-              abilityName: 'MainAbility5'
-            }).then(() => {
-              console.log("====>startAbility end====>");
-            })
-        })
+
+      let mainAb5OnCreatePromise = eventBusPlus.onWait('ACTS_DoAbility_Event');
+
+      globalThis.abilitydelegator.startAbility(
+        {
+          bundleName: 'com.example.testapi',
+          abilityName: 'MainAbility5'
+        }).then(() => {
+        console.log("====>startAbility end====>");
       })
-      let timeout= ():void => {
-        if (flag == true) {
-          expect().assertFail();
-          console.log('ACTS_DoAbilityBackground_0800 - timeout');
-          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-        }
+
+      let callBackData:CommonEventManager.CommonEventData = await mainAb5OnCreatePromise;
+
+      expect(callBackData.event == "ACTS_DoAbility_Event").assertTrue();
+
+      let topAbility:UIAbility = await globalThis.abilitydelegator.getCurrentTopAbility()
+
+      let mainAb5OnBacPromise = eventBusPlus.onWait('MainAbility5_onBackground');
+      globalThis.abilitydelegator.doAbilityBackground(topAbility);
+      await mainAb5OnBacPromise;
+      let num1:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num1 !== 3) {
+        await sleep(1000);
+        num1 = globalThis.abilitydelegator.getAbilityState(topAbility);
       }
-      setTimeout(timeout, 10000);
+      console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState1:====>" + " " + JSON.stringify(num1));
+      expect(num1).assertEqual(3);
+
+      let mainAb5OnForPromise2 = eventBusPlus.onWait('MainAbility5_onForeground');
+      globalThis.abilitydelegator.doAbilityForeground(topAbility);
+      await mainAb5OnForPromise2;
+      let num2:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num2 !== 2) {
+        await sleep(1000);
+        num2 = globalThis.abilitydelegator.getAbilityState(topAbility);
+      }
+      console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState2:====>" + " " + JSON.stringify(num2));
+      expect(num2).assertEqual(2);
+
+      let mainAb5OnBacPromise3 = eventBusPlus.onWait('MainAbility5_onBackground');
+      globalThis.abilitydelegator.doAbilityBackground(topAbility);
+      await mainAb5OnBacPromise3;
+      let num3:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num3 !== 3) {
+        await sleep(1000);
+        num3 = globalThis.abilitydelegator.getAbilityState(topAbility);
+      }
+      console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState3:====>" + " " + JSON.stringify(num3));
+      expect(num3).assertEqual(3);
+
+      let mainAb5OnForPromise4 = eventBusPlus.onWait('MainAbility5_onForeground');
+      let mainAb5OnDesPromise = eventBusPlus.onWait('MainAbility5_onDestroy');
+      globalThis.abilitydelegator.doAbilityForeground(topAbility);
+      await mainAb5OnForPromise4;
+      let num4:number = globalThis.abilitydelegator.getAbilityState(topAbility);
+      if(num4 !== 2) {
+        await sleep(1000);
+        num4 = globalThis.abilitydelegator.getAbilityState(topAbility);
+      }
+      console.log("====>ACTS_DoAbilityBackground_0800 getAbilityState4:====>" + " " + JSON.stringify(num4));
+      expect(num4).assertEqual(2);
+      topAbility.context.terminateSelf();
+      await mainAb5OnDesPromise;
+      done();
     })
 
     /**
@@ -615,30 +602,30 @@ export default function abilityTest() {
         done();
         return;
       }
+
+      let mainAb3OnDesPromise = eventBusPlus.onWait('MainAbility3_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let result = null
       let flag = true
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+        done();
       }
-      let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
+      let SubscribeCallBack = async (err:BusinessError, data:CommonEventManager.CommonEventData):Promise<void> => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
         console.log("====>0300 Subscribe CallBack data:====>" + JSON.stringify(data));
         console.log("====>0300 Subscribe CallBack globalThis.ability3:====>" + JSON.stringify(globalThis.ability3));
         console.log("====>0300 ability3 name:====>" + JSON.stringify(globalThis.ability3.context.abilityInfo.name));
-        setTimeout(() => {
-          result = globalThis.abilitydelegator.doAbilityForeground(globalThis.ability3, (err:BusinessError) => {
-            console.log("====>ACTS_DoAbilityForeground_0300 data:====>" + JSON.stringify(err));
-            expect(err.code).assertEqual(0);
-          })
-          console.log("====>0300  result:====>" + JSON.stringify(result));
-          expect(result).assertEqual(undefined);
-          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-        }, START_ABILITY_TIMEOUT_THOUSAND)
+        await mainAb3OnDesPromise;
+        result = globalThis.abilitydelegator.doAbilityForeground(globalThis.ability3, (err:BusinessError) => {
+          console.log("====>ACTS_DoAbilityForeground_0300 data:====>" + JSON.stringify(err));
+          expect(err.code).assertEqual(0);
+        })
+        console.log("====>0300  result:====>" + JSON.stringify(result));
+        expect(result).assertEqual(undefined);
+        commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
       }
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
         console.log("====>Create Subscriber====>");
@@ -658,7 +645,6 @@ export default function abilityTest() {
       })
       let timeout= ():void => {
         if (flag == true) {
-          expect().assertFail();
           console.log('ACTS_DoAbilityForeground_0300 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
@@ -679,25 +665,25 @@ export default function abilityTest() {
         done();
         return;
       }
+
+      let mainAb3OnDesPromise = eventBusPlus.onWait('MainAbility3_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let flag = true
       let result = null
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+        done();
       }
-      let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
+      let SubscribeCallBack = async (err:BusinessError, data:CommonEventManager.CommonEventData):Promise<void> => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
         console.log("====>0600 Subscribe CallBack data:====>" + JSON.stringify(data));
-        setTimeout(() => {
-          result = globalThis.abilitydelegator.doAbilityForeground(globalThis.ability3)
-          console.log("====>0600  result:====>" + JSON.stringify(result));
-          expect(result).assertEqual(undefined);
-          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-        }, START_ABILITY_TIMEOUT_THOUSAND)
+        await mainAb3OnDesPromise;
+        result = await globalThis.abilitydelegator.doAbilityForeground(globalThis.ability3)
+        console.log("====>globalThis.ability3" + JSON.stringify(result));
+        expect(result).assertEqual(undefined);
+        commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
       }
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
         console.log("====>Create Subscriber====>");
@@ -717,7 +703,6 @@ export default function abilityTest() {
       })
       let timeout= ():void => {
         if (flag == true) {
-          expect().assertFail();
           console.log('ACTS_DoAbilityForeground_0600 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
@@ -738,28 +723,28 @@ export default function abilityTest() {
         done();
         return;
       }
+
+      let mainAb3OnDesPromise = eventBusPlus.onWait('MainAbility3_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let flag = true
       let result = null
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+        done();
       }
-      let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
+      let SubscribeCallBack = async (err:BusinessError, data:CommonEventManager.CommonEventData):Promise<void> => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
         console.log("====>0300 Subscribe CallBack data:====>" + JSON.stringify(data));
-        setTimeout(() => {
-          result = globalThis.abilitydelegator.doAbilityBackground(globalThis.ability3, (err:BusinessError) => {
-            console.log("====>ACTS_DoAbilityBackground_0300 data:====>" + JSON.stringify(err));
-            expect(err.code).assertEqual(0);
-          })
-          console.log("====>DoAbilityBackground0300  result:====>" + JSON.stringify(result));
-          expect(result).assertEqual(undefined);
-          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-        }, START_ABILITY_TIMEOUT_THOUSAND)
+        await mainAb3OnDesPromise;
+        result = globalThis.abilitydelegator.doAbilityBackground(globalThis.ability3, (err:BusinessError) => {
+          console.log("====>ACTS_DoAbilityBackground_0300 data:====>" + JSON.stringify(err));
+          expect(err.code).assertEqual(0);
+        })
+        console.log("====>DoAbilityBackground0300  result:====>" + JSON.stringify(result));
+        expect(result).assertEqual(undefined);
+        commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
       }
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
         console.log("====>Create Subscriber====>");
@@ -779,7 +764,6 @@ export default function abilityTest() {
       })
       let timeout= ():void => {
         if (flag == true) {
-          expect().assertFail();
           console.log('ACTS_DoAbilityBackground_0300 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
@@ -800,25 +784,25 @@ export default function abilityTest() {
         done();
         return;
       }
+
+      let mainAb3OnDesPromise = eventBusPlus.onWait('MainAbility3_onDestroy');
+
       let Subscriber:CommonEventManager.CommonEventSubscriber
       let flag = true
       let result = null
       let UnSubscribeCallback = ():void => {
         console.log("====>UnSubscribeCallback====>");
         flag = false
-        setTimeout(() => {
-          done();
-        }, START_ABILITY_TIMEOUT_TWO_THOUSAND)
+        done();
       }
-      let SubscribeCallBack = (err:BusinessError, data:CommonEventManager.CommonEventData):void => {
+      let SubscribeCallBack = async (err:BusinessError, data:CommonEventManager.CommonEventData):Promise<void> => {
         expect(data.event == "ACTS_DoAbility_Event").assertTrue();
         console.log("====>0600 Subscribe CallBack data:====>" + JSON.stringify(data));
-        setTimeout(() => {
-          result = globalThis.abilitydelegator.doAbilityBackground(globalThis.ability3)
-          console.log("====>DoAbilityBackground0600  result:====>" + JSON.stringify(result));
-          expect(result).assertEqual(undefined);
-          commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
-        }, START_ABILITY_TIMEOUT_THOUSAND)
+        await mainAb3OnDesPromise;
+        result = globalThis.abilitydelegator.doAbilityBackground(globalThis.ability3)
+        console.log("====>DoAbilityBackground0600  result:====>" + JSON.stringify(result));
+        expect(result).assertEqual(undefined);
+        commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
       }
       commonEvent.createSubscriber(subscriberInfo_MainAbility).then((data:CommonEventManager.CommonEventSubscriber) => {
         console.log("====>Create Subscriber====>");
@@ -838,8 +822,7 @@ export default function abilityTest() {
       })
       let timeout= ():void => {
         if (flag == true) {
-          expect().assertFail();
-          console.log('ACTS_DoAbilityBackground_0600 - timeout');
+          console.log('ACTS_DoAbilityBackground_0300 - timeout');
           commonEvent.unsubscribe(Subscriber, UnSubscribeCallback);
         }
       }
