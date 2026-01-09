@@ -370,4 +370,5 @@ export default class Utils {
     sendTouchEvent(upPoint)
     await Utils.sleep(500)
   }
+  
 }

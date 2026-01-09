@@ -87,3 +87,7 @@ export const LayoutManagerTest006: (a: string) => void;
 export const LayoutManagerTest007: (a: string) => void;
 
 export const LayoutManagerTest008: (a: string) => void;
+
+export const gridEditModeTest: (a: string) => void;
+
+export const gridDragTest: (a: string) => void;
