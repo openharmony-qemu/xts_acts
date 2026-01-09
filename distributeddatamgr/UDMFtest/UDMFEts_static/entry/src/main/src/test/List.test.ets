@@ -15,7 +15,11 @@
 
 import UDMFApiTest from "./UDMF.test";
 import UDMFApiDescriptorTest from "./UDMFApiDescriptor.test";
+import UDMFApiDataAllTest from "./UDMFApiDataAll.test";
+import UDMFApiUtdUdsTest from "./UDMFApiUtdUds.test";
 export default function testsuite() {
     UDMFApiTest();
     UDMFApiDescriptorTest();
+    UDMFApiDataAllTest();
+    UDMFApiUtdUdsTest();
 }
