@@ -2881,5 +2881,1051 @@ export default function ImageContrastTypeSupp() {
       }
       done();
     });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.imageUniqueId = 'a';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.imageUniqueId = '';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.imageUniqueId = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.imageUniqueId = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00005
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.imageUniqueId = 1 as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 0;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect(result.exifMetadata?.compositeImage).assertEqual(0);
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 1;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect(result.exifMetadata?.compositeImage).assertEqual(1);
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 2;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect(result.exifMetadata?.compositeImage).assertEqual(2);
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 3;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect(result.exifMetadata?.compositeImage).assertEqual(3);
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00005
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00006
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+
+        let resultFir = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 0;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 1;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 2;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 3;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00005
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00006
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 0;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 1;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 2;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = 3;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00005
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00005';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00006
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00006';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.compositeImage = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      const buffer = new ArrayBuffer(1024);
+      const view = new Uint8Array(buffer);
+      view[0] = 0;
+      testExifMetadata.deviceSettingDescription = buffer;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata();
+        const resultBuffer = result.exifMetadata?.deviceSettingDescription;
+        if (resultBuffer) {
+          const resultView = new Uint8Array(resultBuffer);
+          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(resultView[0]));
+          expect(resultView[0]).assertEqual(0);
+        } else {
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = 1 as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      const buffer = new ArrayBuffer(1024);
+      const view = new Uint8Array(buffer);
+      view[0] = 0;
+      testExifMetadata.deviceSettingDescription = buffer;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata();
+        const resultBuffer = result.exifMetadata?.deviceSettingDescription;
+        if (resultBuffer) {
+          const resultView = new Uint8Array(resultBuffer);
+          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(resultView[0]));
+          expect(resultView[0]).assertEqual(0);
+        } else {
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = 1 as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await pngImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00001
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00001';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      const buffer = new ArrayBuffer(1024);
+      const view = new Uint8Array(buffer);
+      view[0] = 0;
+      testExifMetadata.deviceSettingDescription = buffer;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata();
+        const resultBuffer = result.exifMetadata?.deviceSettingDescription;
+        if (resultBuffer) {
+          const resultView = new Uint8Array(resultBuffer);
+          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(resultView[0]));
+          expect(resultView[0]).assertEqual(0);
+        } else {
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00002
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00002';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = 1 as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00003
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00003';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00004
+     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00004';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.deviceSettingDescription = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`,
+          resultFir.exifMetadata?.deviceSettingDescription);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Test failed: ${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    });
   });
 }
