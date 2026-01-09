@@ -758,6 +758,15 @@ static napi_value SessionGetPhotoRotation(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value SessionGetPhotoRotationWithoutDeviceDegree(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    Camera_ErrorCode ret = ndkCamera_->SessionGetPhotoRotationWithoutDeviceDegree();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value SessionGetVideoRotation(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -773,6 +782,15 @@ static napi_value SessionGetVideoRotation(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value SessionGetVideoRotationWithoutDeviceDegree(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    Camera_ErrorCode ret = ndkCamera_->SessionGetVideoRotationWithoutDeviceDegree();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value SessionGetPreviewRotation(napi_env env, napi_callback_info info)
 {
     size_t argc = 2;
@@ -784,6 +802,15 @@ static napi_value SessionGetPreviewRotation(napi_env env, napi_callback_info inf
     int32_t rotation;
     napi_get_value_int32(env, args[0], &rotation);
     Camera_ErrorCode ret = ndkCamera_->SessionGetPreviewRotation(rotation);
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+static napi_value SessionGetPreviewRotationWithoutDisplayRotation(napi_env env, napi_callback_info info)
+{
+    napi_value result;
+
+    Camera_ErrorCode ret = ndkCamera_->SessionGetPreviewRotationWithoutDisplayRotation();
     napi_create_int32(env, ret, &result);
     return result;
 }
@@ -3167,10 +3194,16 @@ static napi_value Init(napi_env env, napi_value exports)
             napi_default, nullptr },
         { "sessionGetPhotoRotation", nullptr, SessionGetPhotoRotation, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "sessionGetPhotoRotationWithoutDeviceDegree", nullptr, SessionGetPhotoRotationWithoutDeviceDegree, nullptr,
+            nullptr, nullptr, napi_default, nullptr },
         { "sessionGetVideoRotation", nullptr, SessionGetVideoRotation, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "sessionGetVideoRotationWithoutDeviceDegree", nullptr, SessionGetVideoRotationWithoutDeviceDegree, nullptr,
+            nullptr, nullptr, napi_default, nullptr },
         { "sessionGetPreviewRotation", nullptr, SessionGetPreviewRotation, nullptr, nullptr, nullptr,
             napi_default, nullptr },
+        { "sessionGetPreviewRotationWithoutDisplayRotation", nullptr, SessionGetPreviewRotationWithoutDisplayRotation,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionSetPreviewRotation", nullptr, SessionSetPreviewRotation, nullptr, nullptr, nullptr,
             napi_default, nullptr },
         { "sessionIsAutoDeviceSwitchSupported", nullptr, SessionIsAutoDeviceSwitchSupported, nullptr, nullptr, nullptr,
