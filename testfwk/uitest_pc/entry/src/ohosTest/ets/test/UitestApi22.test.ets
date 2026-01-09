@@ -255,7 +255,7 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs*5)
                 let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
                 let bounds2 = await window3.getBounds()
-                expect(bounds1.RIGHT != bounds2.RIGHT).assertTrue()
+                expect(bounds1.right != bounds2.right).assertTrue()
             } catch (error) {
                 console.log('testWindowMinimize_split1 error is ' + error)
                 expect(error.code == WindowsErrorCode).assertTrue()
@@ -301,7 +301,7 @@ export default function UiTest() {
                 await driver.delayMs(waitUiReadyMs)
                 let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
                 let bounds2 = await window3.getBounds()
-                expect(bounds1.RIGHT != bounds2.RIGHT).assertTrue()
+                expect(bounds1.right != bounds2.right).assertTrue()
             } catch (error) {
                 console.log('testWindowMinimize_split1 error is ' + error)
                 expect(error.code == WindowsErrorCode).assertTrue()
