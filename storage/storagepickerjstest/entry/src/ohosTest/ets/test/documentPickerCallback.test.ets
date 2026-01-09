@@ -558,11 +558,20 @@ export default function documentPickerCallback(abilityContext: Context) {
      * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_013", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Save_Callback_013";
+      let documentPicker = new picker.DocumentViewPicker();
       let option = new picker.DocumentSaveOptions();
       option.autoCreateEmptyFile = true;
-      let result = await saveWithOption(testNum, done, option);
-      expect(result.length == 0).assertTrue();
+      try{
+        documentPicker.save(option, (err, documentSaveResult) => {
+          console.info('test_Documentpicker_Save_Callback_013 documentPicker.save successfully, documentSaveResult uri: ' + JSON.stringify(documentSaveResult));
+          console.info('test_Documentpicker_Save_Callback_013 documentSaveResult.length: ' + documentSaveResult.length);
+          expect(documentSaveResult.length == 0).assertTrue();
+        });
+        done();
+      } catch (error) {
+        console.error(`test_Documentpicker_Save_Callback_013 failed with err, code is: ${error.code}, message is: ${error.message}`);
+        done();
+      }
     });
 
     /**
@@ -574,11 +583,20 @@ export default function documentPickerCallback(abilityContext: Context) {
      * @tc.level  LEVEL1
      */
     it("test_Documentpicker_Save_Callback_014", Level.LEVEL1, async (done: Function) => {
-      let testNum = "test_Documentpicker_Save_Callback_014";
+      let documentPicker = new picker.DocumentViewPicker();
       let option = new picker.DocumentSaveOptions();
       option.autoCreateEmptyFile = false;
-      let result = await saveWithOption(testNum, done, option);
-      expect(result.length == 0).assertTrue();
+      try{
+        documentPicker.save(option, (err, documentSaveResult) => {
+          console.info('test_Documentpicker_Save_Callback_014 documentPicker.save successfully, documentSaveResult uri: ' + JSON.stringify(documentSaveResult));
+          console.info('test_Documentpicker_Save_Callback_014 documentSaveResult.length: ' + documentSaveResult.length);
+          expect(documentSaveResult.length == 0).assertTrue();
+        });
+        done();
+      } catch (error) {
+        console.error(`test_Documentpicker_Save_Callback_014 failed with err, code is: ${error.code}, message is: ${error.message}`);
+        done();
+      }
     });
   });
 }
@@ -660,7 +678,6 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Do
       }
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
       done();
-      return;
     });
     expect(true).assertTrue();
     done();

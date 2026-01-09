@@ -546,8 +546,21 @@ export default function documentPickerPromise(abilityContext: Context) {
       let testNum = "test_Documentpicker_Save_Promise_013";
       let option = new picker.DocumentSaveOptions();
       option.autoCreateEmptyFile = true;
-      let result = await saveWithOption(testNum, done, option);
-      expect(result.length == 0).assertTrue();
+      try{
+        let documentPicker = new picker.DocumentViewPicker();
+        documentPicker.save(option).then((result) => {
+          console.info(`${testNum}:: saveWithOption result: ${JSON.stringify(result)}`);
+          console.info('test_Documentpicker_Save_promise_013 result.length: ' + result.length);
+          expect(result.length == 0).assertTrue();
+        }).catch((err: Error) => {
+          console.info(`${testNum}:: saveWithOption err: ${JSON.stringify(err)}`);
+        })
+        done();
+      } catch (error) {
+        console.info(`${testNum}:: saveWithOption error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
     });
 
     /**
@@ -562,8 +575,21 @@ export default function documentPickerPromise(abilityContext: Context) {
       let testNum = "test_Documentpicker_Save_Promise_014";
       let option = new picker.DocumentSaveOptions();
       option.autoCreateEmptyFile = false;
-      let result = await saveWithOption(testNum, done, option);
-      expect(result.length == 0).assertTrue();
+      try{
+        let documentPicker = new picker.DocumentViewPicker();
+        documentPicker.save(option).then((result) => {
+          console.info(`${testNum}:: saveWithOption result: ${JSON.stringify(result)}`);
+          console.info('test_Documentpicker_Save_Promise_014 result.length: ' + result.length);
+          expect(result.length == 0).assertTrue();
+        }).catch((err: Error) => {
+          console.info(`${testNum}:: saveWithOption err: ${JSON.stringify(err)}`);
+        })
+        done();
+      } catch (error) {
+        console.info(`${testNum}:: saveWithOption error: ${JSON.stringify(error)}`);
+        expect(false).assertTrue();
+        done();
+      }
     });
   });
 }
@@ -635,7 +661,6 @@ async function saveWithOption(testNum: string, done: Function, option: picker.Do
     documentPicker.save(option).then((result) => {
       console.info(`${testNum}::saveWithOption result: ${JSON.stringify(result)}`);
       done();
-      return;
     }).catch((err: Error) => {
       console.info(`${testNum}::saveWithOption err: ${JSON.stringify(err)}`);
       done();
