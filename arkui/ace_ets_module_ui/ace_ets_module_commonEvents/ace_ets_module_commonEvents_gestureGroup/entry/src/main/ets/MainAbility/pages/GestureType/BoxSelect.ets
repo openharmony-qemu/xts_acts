@@ -57,7 +57,7 @@ struct ListItemExample {
             return undefined
           })
         }, (item: string) => item)
-      }.width('90%').height("90%")
+      }.width('90%').height('90%')
       .multiSelectable(true)
       .onGestureJudgeBegin((info, event)=>{
         if(info.type == GestureControl.GestureType.BOX_SELECT_GESTURE){

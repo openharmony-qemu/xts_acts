@@ -19,14 +19,14 @@ import { webview } from '@kit.ArkWeb';
 @Component
 struct WebComponent {
   controller: webview.WebviewController = new webview.WebviewController();
-  private iconStr: ResourceStr = $r("app.media.icon");
+  private iconStr: ResourceStr = $r('app.media.icon');
 
   @Builder
   MyMenu() {
     Menu() {
-      MenuItem({ startIcon: this.iconStr, content: "菜单选项" })
-      MenuItem({ startIcon: this.iconStr, content: "菜单选项" })
-      MenuItem({ startIcon: this.iconStr, content: "菜单选项" })
+      MenuItem({ startIcon: this.iconStr, content: '菜单选项' })
+      MenuItem({ startIcon: this.iconStr, content: '菜单选项' })
+      MenuItem({ startIcon: this.iconStr, content: '菜单选项' })
     }
   }
 
@@ -47,7 +47,6 @@ struct WebComponent {
         .id('web')
         .onGestureJudgeBegin((info, event)=>{
           if(info.type == GestureControl.GestureType.WEB_SCROLL_GESTURE){
-            console.log("aaaaaaaaa")
             AppStorage.setOrCreate('WEB_SCROLL_GESTURE',GestureControl.GestureType.WEB_SCROLL_GESTURE)
           }
           return undefined
@@ -56,7 +55,6 @@ struct WebComponent {
       TextInput()
         .onGestureJudgeBegin((info, event)=>{
           if(info.type == GestureControl.GestureType.TEXT_FIELD_SELECT_GESTURE){
-            console.log("aaaaaaaaa")
             AppStorage.setOrCreate('TEXT_FIELD_SELECT_GESTURE',GestureControl.GestureType.TEXT_FIELD_SELECT_GESTURE)
           }
           return undefined
@@ -81,7 +79,6 @@ struct WebComponent {
         })
         .onGestureJudgeBegin((info, event)=>{
           if(info.type == GestureControl.GestureType.CONTEXT_MENU_HOVER_GESTURE){
-            console.log("aaaaaaaaa")
             AppStorage.setOrCreate('CONTEXT_MENU_HOVER_GESTURE',GestureControl.GestureType.CONTEXT_MENU_HOVER_GESTURE)
           }
           return undefined
