@@ -1010,5 +1010,70 @@ export default function sceneTest() {
         done();
       }
     })
+    /**
+     * @tc.name   testCloneNode
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1012
+     * @tc.desc   Test cloneNode method to clone node from another scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCloneNode', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testCloneNode";
+      console.info(msg + ' begin ');
+      try {
+        // Load main scene
+        let mainScene = await Scene.load();
+        expect(mainScene != undefined).assertTrue();
+        console.info(msg + " main scene loaded successfully");
+
+        // Load external scene
+        let extScene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(extScene != undefined).assertTrue();
+        console.info(msg + " external scene loaded successfully");
+
+        // Get node from external scene
+        let extNode: scene3d.Node | null = extScene.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube");
+        expect(extNode != null).assertTrue();
+        console.info(msg + " external node retrieved successfully");
+
+        // Clone node to main scene
+        if (mainScene && extNode && mainScene.root) {
+          // Test cloning a regular node
+          let clonedCube = mainScene.cloneNode(extNode, mainScene.root, "clonedCube");
+          expect(clonedCube != null).assertTrue();
+          console.info(msg + " regular node cloned successfully");
+          expect(clonedCube?.name).assertEqual("clonedCube");
+          console.info(msg + " cloned node name is 'clonedCube'");
+
+          // Test cloning a Camera node
+          let extCamera: scene3d.Node | null = extScene.getNodeByPath("rootNode_/Unnamed Node 1/camera_Orientation");
+          if (extCamera != null) {
+            let clonedCamera = mainScene.cloneNode(extCamera, mainScene.root, "clonedCamera");
+            expect(clonedCamera != null).assertTrue();
+            console.info(msg + " camera node cloned successfully");
+            expect(clonedCamera?.nodeType).assertEqual(scene3d.NodeType.CAMERA);
+            console.info(msg + " cloned camera node type is CAMERA");
+          }
+
+          // Test cloning a Light node
+          let extLight: scene3d.Node | null = extScene.getNodeByPath("rootNode_/Unnamed Node 1/DirectionalLight");
+          if (extLight != null) {
+            let clonedLight = mainScene.cloneNode(extLight, mainScene.root, "clonedLight");
+            expect(clonedLight != null).assertTrue();
+            console.info(msg + " light node cloned successfully");
+            expect(clonedLight?.nodeType).assertEqual(scene3d.NodeType.LIGHT);
+            console.info(msg + " cloned light node type is LIGHT");
+          }
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testCloneNode " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
   })
 }
