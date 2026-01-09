@@ -104,6 +104,16 @@ async function getInputMethodPermission() {
         await permissionBtn3.click()
         await driver.delayMs(1000)
     }
+    let keyboardMenuBtnAreaBtn = await driver.findComponent(ON.id('keyboardMenuBtnArea'))
+    if (keyboardMenuBtnAreaBtn != null) {
+        await keyboardMenuBtnAreaBtn.click()
+        await driver.delayMs(1000)
+        let menuItemList = await driver.findComponents(ON.id('menuItem'))
+        if (menuItemList != null && menuItemList.length > 4) {
+            await menuItemList[3].click()
+            await driver.delayMs(1000)
+        }
+    }
     await stopApplication('com.uitestScene.acts')
 }
 
