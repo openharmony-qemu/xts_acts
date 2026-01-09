@@ -151,10 +151,13 @@ struct imageDownloadInfo {
             console.log("AceErrorInfo cacheDownload " + JSON.stringify(cacheDownload.getDownloadInfo(this.srcArray[this.index])))
           })
 
-        // 当前 URL 显示
-        Text("Current src: " + this.srcArray[this.index]).fontColor(Color.Black)
-          .fontSize(10)
-          .margin({ top: 15 })
+          Button('确认')
+          .margin(10)
+          .width('30%')
+          .height('6%')
+          .onClick(() => {
+            this.Vue = true;
+          })
       }
       .justifyContent(FlexAlign.Center)
       .height('80%')
