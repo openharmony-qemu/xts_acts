@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 HiHope Open Source Organization.
+ * Copyright (C) 2024-2025 HiHope Open Source Organization.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -19,6 +19,7 @@ import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { JSON } from '@kit.ArkTS';
 import { image } from '@kit.ImageKit';
 import { BusinessError, commonEventManager, deviceInfo } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 let testContext: common.UIAbilityContext;
 const DOMAIN = 0x0000;
@@ -43,6 +44,15 @@ export default function abilityTest() {
   describe('ActsAbilityTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(async (done: Function) => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       try {
         const ability = await abilityDelegatorRegistry.getAbilityDelegator().getCurrentTopAbility()
         testContext = ability.context;

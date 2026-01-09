@@ -19,6 +19,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import base from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import { UIAbility } from '@kit.AbilityKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator
 const SYSTEM_INNER_ERROR = 16000050
@@ -27,6 +28,17 @@ const ERR_NOT_TOP = 16000053
 let ability:UIAbility | null = null;
 
 export default function startAbilityTest() {
+  beforeAll(async () => {
+    let driver = Driver.create();	
+    try {
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      if (allowed) {
+        await allowed.click();
+      }
+    } catch (err) {
+      console.error('findComponent failed: ' + JSON.stringify(err));
+    }
+  })
 
   describe('startAbilityTest', ()=> {
     console.info("-------------Stage model--> startAbilityXTS Test start----------------")

@@ -1,5 +1,5 @@
 /*
-* Copyright (c) 2024 Huawei Device Co., Ltd.
+* Copyright (c) 2024-2025 Huawei Device Co., Ltd.
 * Licensed under the Apache License, Version 2.0 (the 'License');
 * you may not use this file except in compliance with the License.
 * You may obtain a copy of the License at
@@ -28,6 +28,7 @@ import { preferences, relationalStore } from '@kit.ArkData';
 import { resourceManager } from '@kit.LocalizationKit';
 import { display } from '@kit.ArkUI';
 import { JSON, worker } from '@kit.ArkTS';
+import { Driver, ON } from '@ohos.UiTest';
 
 
 const TAG: string = 'DisplayContextTest';
@@ -71,6 +72,15 @@ export default function abilityTest() {
 
   describe('ActsAbilityTest', () => {
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       display.getAllDisplays((err: BusinessError, data: Array<display.Display>) => {
         const errCode: number = err.code;
         if (errCode) {

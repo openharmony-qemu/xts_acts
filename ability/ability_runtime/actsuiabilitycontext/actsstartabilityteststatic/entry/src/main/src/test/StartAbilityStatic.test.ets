@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeEach } from "../../../hypium/index";
+import { describe, it, expect, TestType, Size, Level, beforeEach, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -26,6 +26,7 @@ import contextConstant from "@ohos.app.ability.contextConstant";
 import bundleManager from '@ohos.bundle.bundleManager';
 import fileIo from '@ohos.file.fs';
 import CompletionHandler from "@ohos.app.ability.CompletionHandler";
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -33,6 +34,17 @@ let context: common.UIAbilityContext
 
 export default function startAbilityTestStatic() {
   describe('ActsstartAbilityTestStatic', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
 
     beforeEach(() => {
       hilog.info(domain, tag, 'beforeAll start');
