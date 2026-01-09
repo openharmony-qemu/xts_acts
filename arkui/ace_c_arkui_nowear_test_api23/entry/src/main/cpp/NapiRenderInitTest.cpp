@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@
 #include "touchTestInfo/TouchTestInfoTest.h"
 #include "node/NodeAdoptedTest.h"
 #include "focusScope/FocusScopeTest.h"
+#include "accessibilityValue/AccessibilityValueTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -36,6 +37,50 @@ static napi_value Init(napi_env env, napi_value exports)
            nullptr, nullptr, nullptr, napi_default, nullptr},
         {"focusScopeTest", nullptr, FocusScopeTest::CreateNativeNode, nullptr, nullptr, nullptr,
             napi_default, nullptr},
+        {"AccessibilityValueTest_d10", nullptr, AccessibilityValueTest::AccessibilityValueTest_d10, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d101", nullptr, AccessibilityValueTest::AccessibilityValueTest_d101, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d11", nullptr, AccessibilityValueTest::AccessibilityValueTest_d11, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d111", nullptr, AccessibilityValueTest::AccessibilityValueTest_d111, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d12", nullptr, AccessibilityValueTest::AccessibilityValueTest_d12, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d121", nullptr, AccessibilityValueTest::AccessibilityValueTest_d121, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d13", nullptr, AccessibilityValueTest::AccessibilityValueTest_d13, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d131", nullptr, AccessibilityValueTest::AccessibilityValueTest_d131, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d14", nullptr, AccessibilityValueTest::AccessibilityValueTest_d14, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d141", nullptr, AccessibilityValueTest::AccessibilityValueTest_d141, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d15", nullptr, AccessibilityValueTest::AccessibilityValueTest_d15, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d151", nullptr, AccessibilityValueTest::AccessibilityValueTest_d151, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d16", nullptr, AccessibilityValueTest::AccessibilityValueTest_d16, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d161", nullptr, AccessibilityValueTest::AccessibilityValueTest_d161, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d17", nullptr, AccessibilityValueTest::AccessibilityValueTest_d17, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d171", nullptr, AccessibilityValueTest::AccessibilityValueTest_d171, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d18", nullptr, AccessibilityValueTest::AccessibilityValueTest_d18, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d181", nullptr, AccessibilityValueTest::AccessibilityValueTest_d181, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d19", nullptr, AccessibilityValueTest::AccessibilityValueTest_d19, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d191", nullptr, AccessibilityValueTest::AccessibilityValueTest_d191, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d20", nullptr, AccessibilityValueTest::AccessibilityValueTest_d20, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
+        {"AccessibilityValueTest_d201", nullptr, AccessibilityValueTest::AccessibilityValueTest_d201, nullptr,
+         nullptr, nullptr, napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");
