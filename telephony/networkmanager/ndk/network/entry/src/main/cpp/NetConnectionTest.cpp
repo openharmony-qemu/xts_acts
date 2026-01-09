@@ -107,7 +107,7 @@ napi_value NetConn_HasDefaultNet(napi_env env, napi_callback_info info)
 
 napi_value Netconn_GetEnum(napi_env env, napi_callback_info info)
 {
-    int32_t errorCode = NetConn_Error::NETCONN_OPERATTION_FAILED;
+    int32_t errorCode = NetConn_ErrorCode::NETCONN_OPERATION_FAILED;
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);
     return result;
@@ -115,7 +115,7 @@ napi_value Netconn_GetEnum(napi_env env, napi_callback_info info)
 
 napi_value Netconn_GetEnumInternalError(napi_env env, napi_callback_info info)
 {
-    int32_t errorCode = NetConn_Error::NETCONN_INTERNAK_ERROR;
+    int32_t errorCode = NetConn_ErrorCode::NETCONN_INTERNAL_ERROR;
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);
     return result;
