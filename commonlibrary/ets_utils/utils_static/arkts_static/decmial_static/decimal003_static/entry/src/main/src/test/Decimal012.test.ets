@@ -85,19 +85,19 @@ export default function DecimalTest012() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("Decimal_log2_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   Decimal.set ({
-    //     precision: 40,
-    //     rounding: 4,
-    //     toExpNeg: -9e15,
-    //     toExpPos: 9e15,
-    //     minE: -9e15,
-    //     maxE: 9e15
-    //   });
-    //   for ( let i = 0; i < 54; i++ ) {
-    //     test_log2_002(String(Math.pow(2, i)), String(i), 40, 4);
-    //   }
-    // });
+      it("Decimal_log2_Func_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+        Decimal.set ({
+          precision: 40,
+          rounding: 4,
+          toExpNeg: -9e15,
+          toExpPos: 9e15,
+          minE: -9e15,
+          maxE: 9e15
+        });
+        for ( let i = 0; i < 54; i++ ) {
+          test_log2_002(String(Math.pow(2, i)), String(i), 40, 4);
+        }
+      });
     /**
      * @tc.name   Decimal_log2_Func_003
      * @tc.number DECIMAL_TEST12_003
