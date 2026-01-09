@@ -21,6 +21,7 @@ import {
   Margin,
   Grid,
   GridItem,
+  FocusWrapMode,
   Scroller
 } from '@ohos.arkui.component'
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
@@ -88,7 +89,7 @@ struct focusWrapModeDefault {
       .width('90%')
       .height('50%')
       .columnsTemplate('1fr 1fr')
-      // .focusWrapMode(FocusWrapMode.DEFAULT)
+      .focusWrapMode(FocusWrapMode.DEFAULT)
       .columnsGap(10)
       .rowsGap(20)
       .backgroundColor(0xDCDCDC)
