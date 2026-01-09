@@ -4109,7 +4109,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_001
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4137,7 +4137,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_002
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4165,7 +4165,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_003
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4193,7 +4193,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_004
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageWriteImageMetadata gpsLongitude Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4206,12 +4206,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsLongitude);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
-        expect(result.exifMetadata?.gpsLongitude).assertEqual(resultFir.exifMetadata?.gpsLongitude);
+        expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4221,7 +4218,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_005
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4249,7 +4246,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_006
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4277,7 +4274,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_007
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4305,7 +4302,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_008
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4333,7 +4330,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_009
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageWriteImageMetadata gpsLongitude Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4346,12 +4343,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsLongitude);
+        console.info(TAG,testName,'start')
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsLongitude);
-        expect(result.exifMetadata?.gpsLongitude).assertEqual(resultFir.exifMetadata?.gpsLongitude);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4361,7 +4355,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_0010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LONGITUDE_0010
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLongitude
+     * @tc.desc       ImageReadImageMetadata gpsLongitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4390,7 +4384,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_001
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4418,7 +4412,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_002
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4446,7 +4440,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_003
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4474,7 +4468,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_004
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4502,7 +4496,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_005
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4515,12 +4509,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4530,7 +4521,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_006
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4558,7 +4549,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_007
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4571,12 +4562,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4586,7 +4574,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_008
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4599,12 +4587,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4614,7 +4599,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_009
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4627,12 +4612,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4642,7 +4624,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0010
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4670,7 +4652,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0011
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0011
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4683,12 +4665,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4698,7 +4677,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0012
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0012
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4726,7 +4705,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0013
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0013
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4754,7 +4733,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0014
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0014
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4782,7 +4761,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0015
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0015
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4810,7 +4789,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0016
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0016
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4823,12 +4802,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4838,7 +4814,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0017
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0017
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4866,7 +4842,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0018
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0018
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4879,12 +4855,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4894,7 +4867,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0019
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0019
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4907,12 +4880,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4922,7 +4892,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0020
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0020
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4935,12 +4905,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -4950,7 +4917,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0021
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0021
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageReadImageMetadata gpsVersionID success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4978,7 +4945,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0022
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_VERSION_ID_0022
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsVersionID
+     * @tc.desc       ImageWriteImageMetadata gpsVersionID Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -4991,12 +4958,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.gpsVersionID);
+        console.info(TAG,testName,'start')
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsVersionID);
-        expect(result.exifMetadata?.gpsVersionID).assertEqual(resultFir.exifMetadata?.gpsVersionID);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -5007,7 +4971,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_001
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5035,7 +4999,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_002
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageWriteImageMetadata gpsTimestamp Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5048,12 +5012,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsTimestamp);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsTimestamp);
-        expect(result.exifMetadata?.gpsTimestamp).assertEqual(resultFir.exifMetadata?.gpsTimestamp);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -5063,7 +5024,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_003
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5091,7 +5052,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_004
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5119,7 +5080,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_005
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5147,7 +5108,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_006
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5160,7 +5121,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG, testName, `testWriteImageMetadata result is:`);
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        console.info(TAG, testName, `testWriteImageMetadata result is:`);
         let result = await heicImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.gpsTimestamp);
         let resultStr = JSON.stringify(result.exifMetadata?.gpsTimestamp)
@@ -5175,7 +5138,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_007
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageWriteImageMetadata gpsTimestamp Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5188,12 +5151,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsTimestamp);
-        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsTimestamp);
-        expect(result.exifMetadata?.gpsTimestamp).assertEqual(resultFir.exifMetadata?.gpsTimestamp);
+        console.info(TAG,testName,'start')
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -5203,7 +5163,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_008
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5231,7 +5191,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_009
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5259,7 +5219,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_0010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_TIMESTAMP_0010
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsTimestamp success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5285,11 +5245,10 @@ export default function ImageExifSuppTest() {
       done();
     })
 
-
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_001
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5317,7 +5276,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_002
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5345,7 +5304,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_003
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsTimestamp
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5373,7 +5332,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_004
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5401,7 +5360,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_005
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageWriteImageMetadata gpsLatitude Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5414,12 +5373,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsLatitude);
+        console.info(TAG,testName,'start')
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsLatitude);
-        expect(result.exifMetadata?.gpsLatitude).assertEqual(resultFir.exifMetadata?.gpsLatitude);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -5429,7 +5385,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_006
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5457,7 +5413,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_007
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5485,7 +5441,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_008
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5513,7 +5469,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_009
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageReadImageMetadata gpsLatitude success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5541,7 +5497,7 @@ export default function ImageExifSuppTest() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_0010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_GPS_LATITUDE_0010
-     * @tc.desc       ImageWriteImageMetadata cover normal gpsLatitude
+     * @tc.desc       ImageWriteImageMetadata gpsLatitude Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -5554,12 +5510,9 @@ export default function ImageExifSuppTest() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.gpsLatitude);
-        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.gpsLatitude);
-        expect(result.exifMetadata?.gpsLatitude).assertEqual(resultFir.exifMetadata?.gpsLatitude);
+        console.info(TAG,testName,'start')
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail()
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
