@@ -42,12 +42,12 @@ import {
 } from '@ohos.arkui.component';
 import { AppStorage, State, LocalStorage } from '@ohos.arkui.stateManagement';
 
-let para: Record<string,string> = {
-  'onSurfaceCreated': 'Init',
-  'onSurfaceChanged': 'Init',
-  'onSurfaceDestroyed': 'Init',
-  } as Record<string,string>;
-let storage: LocalStorage = new LocalStorage(para);
+// let para: Record<string,string> = {
+//   'onSurfaceCreated': 'Init',
+//   'onSurfaceChanged': 'Init',
+//   'onSurfaceDestroyed': 'Init',
+//   } as Record<string,string>;
+// let storage: LocalStorage = new LocalStorage(para);
 
 
 class CustomXComponentController extends XComponentController {
