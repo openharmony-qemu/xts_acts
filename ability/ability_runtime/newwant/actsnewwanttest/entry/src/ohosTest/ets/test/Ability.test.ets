@@ -21,6 +21,7 @@ import {Driver, ON} from '@ohos.UiTest';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import common from '@ohos.app.ability.common';
+import eventBusPlus from '../lib/EventBusPlus';
 
 let driver = Driver.create();
 let deviceSupport = systemParameterEnhance.getSync('persist.sys.abilityms.move_ui_ability_to_background_api_enable');
@@ -49,7 +50,7 @@ export default function abilityTest() {
     let id:number | undefined = undefined;
 
     beforeEach(async (done:Function) => {
-      setTimeout(() => { done(); }, 100)
+      done();
     })
 
     beforeAll(async (done:Function) => {
@@ -90,6 +91,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapA_MainAbilityForeground_Promise = eventBusPlus.onWait('HapA_MainAbility_onForeground_Success');
       
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0100====>UnSubscribe CallBack====>");
@@ -140,9 +142,10 @@ export default function abilityTest() {
       await globalThis.mainAbilityContext.startAbility({
         bundleName: "com.example.newwanthap",
         abilityName: "com.example.newwanthapa.MainAbility"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0100 - startAbility start standard: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapA_MainAbilityForeground_Promise;  
       })
     })
 
@@ -161,6 +164,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapA_SecondAbilityForeground_Promise = eventBusPlus.onWait('HapA_SecondAbility_onForeground_Success');
 
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0200====>UnSubscribe CallBack====>");
@@ -212,9 +216,10 @@ export default function abilityTest() {
       await globalThis.mainAbilityContext.startAbility({
         bundleName: "com.example.newwanthap",
         abilityName: "com.example.newwanthapa.SecondAbility"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0200 - startAbility start singleton: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapA_SecondAbilityForeground_Promise;
       })
     })
 
@@ -237,6 +242,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapA_MainAbilityForeground_Promise = eventBusPlus.onWait('HapA_MainAbility_onForeground_Success');
 
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0300====>UnSubscribe CallBack====>");
@@ -290,9 +296,10 @@ export default function abilityTest() {
         bundleName: "com.example.newwanthap",
         abilityName: "com.example.newwanthapa.MainAbility",
         action: "startStandard0300"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0300 - startAbility start standard: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapA_MainAbilityForeground_Promise;
       })
     })
 
@@ -315,6 +322,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapA_SecondAbilityForeground_Promise = eventBusPlus.onWait('HapA_SecondAbility_onForeground_Success',1000);
 
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0400====>UnSubscribe CallBack====>");
@@ -369,9 +377,10 @@ export default function abilityTest() {
         bundleName: "com.example.newwanthap",
         abilityName: "com.example.newwanthapa.SecondAbility",
         action: "startSingleton0400"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0400 - startAbility start singleton: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapA_SecondAbilityForeground_Promise;
       })
     })
 
@@ -394,6 +403,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapB_MainAbilityForeground_Promise = eventBusPlus.onWait('HapB_MainAbility_onForeground_Success');
 
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0500====>UnSubscribe CallBack====>");
@@ -448,9 +458,10 @@ export default function abilityTest() {
         bundleName: "com.example.newwanthap",
         abilityName: "com.example.newwanthapb.MainAbility",
         action: "startHapB"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0500 - startAbility start HapB: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapB_MainAbilityForeground_Promise; 
       })
     })
 
@@ -473,6 +484,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapC_MainAbilityForeground_Promise = eventBusPlus.onWait('HapC_MainAbility_onForeground_Success');
 
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0600====>UnSubscribe CallBack====>");
@@ -527,9 +539,10 @@ export default function abilityTest() {
         bundleName: "com.example.newwanthapa",
         abilityName: "com.example.newwanthapc.MainAbility",
         action: "startHapC"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0600 - startAbility start HapC: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapC_MainAbilityForeground_Promise;
       })
     })
 
@@ -552,6 +565,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapA_SecondAbilityForeground_Promise = eventBusPlus.onWait('HapA_SecondAbility_onForeground_Success');
 
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0700====>UnSubscribe CallBack====>");
@@ -606,9 +620,10 @@ export default function abilityTest() {
         bundleName: "com.example.newwanthap",
         abilityName: "com.example.newwanthapa.SecondAbility",
         action: "startSecondAbility0700"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0700 - startAbility start SecondAbility: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapA_SecondAbilityForeground_Promise;
       })      
     })
 
@@ -631,6 +646,7 @@ export default function abilityTest() {
       let flagOnWindowStageCreate = 0;
       let flagOnForeground = 0;
       let flagOnNewWant = 0;
+      let HapA_MainAbilityForeground_Promise = eventBusPlus.onWait('HapA_MainAbility_onForeground_Success');
 
       let UnSubscribeCallback = ():void => {
         console.debug("ACTS_NewWant_Test_0800====>UnSubscribe CallBack====>");
@@ -684,9 +700,10 @@ export default function abilityTest() {
         bundleName: "com.example.newwanthap",
         abilityName: "com.example.newwanthapa.MainAbility",
         action: "startMainAbility0800"
-      }, (error:BusinessError, data:common.AbilityResult) => {
+      }, async (error:BusinessError, data:common.AbilityResult) => {
         console.log('ACTS_NewWant_Test_0800 - startAbility start SecondAbility: '
           + JSON.stringify(error) + ", " + JSON.stringify(data))
+        await HapA_MainAbilityForeground_Promise
       })
     })
   })
