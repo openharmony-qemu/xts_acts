@@ -823,7 +823,7 @@ export default function LightWeightMapTest1() {
       lightWeightMap.set("e", "E");
       lightWeightMap.increaseCapacityTo(10)
       let res = lightWeightMap.length;
-      expect(String(res)).assertEqual('10');
+      expect(res).assertEqual(5);
     });
 
 

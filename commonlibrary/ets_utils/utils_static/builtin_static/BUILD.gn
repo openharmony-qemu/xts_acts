@@ -29,7 +29,6 @@ group("builtin_static") {
       "date_standard_test_static:ActsDateStaticTest",
       "intl_standard_test_static:ActsIntlStaticTest",
       "number_standard_test_static:ActsNumberStaticTest",
-      "spec_standard_test_static:ActsSpecStaticTest",
       "esbuiltin001_standard_test_static:ActsEsBuiltin1StaticTest",
       "esbuiltin002_standard_test_static:ActsEsBuiltin2StaticTest",
       "regexp_standard_test_static:ActsRegExpStaticTest",

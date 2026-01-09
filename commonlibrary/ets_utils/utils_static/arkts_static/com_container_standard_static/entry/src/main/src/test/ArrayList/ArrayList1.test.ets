@@ -1108,10 +1108,8 @@ export default function ArraylistTest1() {
       arrayList.forEach((item: String, index) => {
         arr.push(item);
       });
-      let a: Array<String> = new Array<String>("c", "a", "b", "e", "d");
-      for (let i = 0; i < a.length; i++) {
-        expect(String(arr[i])).assertEqual(String(a[i]));
-      }
+      expect(JSON.stringify(arr)).assertEqual('["a","b","c","d","e"]');
+
     });
 
     /**

@@ -643,7 +643,6 @@ export default function LightWeightSetTest1() {
         lightWeightSet.increaseCapacityTo(3);
         expect(true).assertEqual(false);
       } catch (err) {
-        err = err as Error;
         expect(err.name).assertEqual("BusinessError");
         expect(err.code).assertEqual(10200001);
         expect(err.message)
@@ -668,7 +667,7 @@ export default function LightWeightSetTest1() {
       lightWeightSet.add(5);
       lightWeightSet.increaseCapacityTo(20);
       let res = lightWeightSet.length;
-      expect(String(res)).assertEqual('20');
+      expect(res).assertEqual(5);
     });
 
     /**
