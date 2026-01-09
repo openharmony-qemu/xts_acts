@@ -417,6 +417,8 @@ export default function UiTest() {
     it('testDisplayRotation', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
+      await driver.setDisplayRotationEnabled(true)
+      await driver.delayMs(waitUiReadyMs)      
       await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
       await driver.delayMs(waitUiReadyMs)
       let rotation = await driver.getDisplayRotation()
@@ -475,6 +477,8 @@ export default function UiTest() {
       await driver.delayMs(waitUiReadyMs)
       let disPlay = display.getDefaultDisplaySync();
       console.log(`${TestTag}, testGetDisplayRotationWithId disPlay is: ${JSON.stringify(disPlay)}`);
+      await driver.setDisplayRotationEnabled(true)
+      await driver.delayMs(waitUiReadyMs)
       await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
       await driver.delayMs(waitUiReadyMs)
       let rotation = await driver.getDisplayRotation(disPlay.id)
@@ -518,31 +522,6 @@ export default function UiTest() {
       }
       await stopApplication('com.uitestScene.acts')
       console.log(TestTag, 'testGetDisplayRotationWithId over');
-    })
-
-    /**
-     * @tc.name   testSetDisplayRotationEnabled
-     * @tc.number uiTest_9050
-     * @tc.desc   enable/disable the rotation of device display.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('testSetDisplayRotationEnabled', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
-      await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
-      await driver.delayMs(waitUiReadyMs)
-      await driver.setDisplayRotationEnabled(true)
-      await driver.delayMs(waitUiReadyMs)
-      await driver.setDisplayRotation(DisplayRotation.ROTATION_0)
-      await driver.delayMs(waitUiReadyMs)
-      let rotation = await driver.getDisplayRotation()
-      if (rotation == DisplayRotation.ROTATION_90) {
-        console.info('The device is displayed in horizontal on default')
-        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
-      } else {
-        console.info('The device is displayed in vertical on default')
-      }
-      await stopApplication('com.uitestScene.acts')
     })
 
     /**

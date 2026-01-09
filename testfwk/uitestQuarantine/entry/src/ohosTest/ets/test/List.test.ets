@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import UiTest from './uitest.test';
+import UiTest from './Uitest.test';
 import uiTestApi22Test from './UitestApi22.test';
 export default function testsuite() {
   uiTestApi22Test();
