@@ -15,6 +15,8 @@
         "MainAbility/pages/buttonType/maxFontScale",
         "MainAbility/pages/button/Button",
         "MainAbility/pages/button/ButtonApi1",
-        "MainAbility/pages/button/ButtonApi2"
+        "MainAbility/pages/button/ButtonApi2",
+        "MainAbility/pages/button/ButtonIndex1",
+        "MainAbility/pages/button/modifier"
     ]
 }
