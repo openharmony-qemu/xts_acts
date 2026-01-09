@@ -92,9 +92,9 @@ struct Index {
         .onWillAttachIME((client: IMEClient) => {
           console.info(`====> Vincent TextArea5 ${client.nodeId}`);
           console.info(`====> customSettings5: extraConfig undefined`);
-          client.setExtraConfig({
+          client.setExtraConfig(
             undefined
-          })
+          )
         })
       TextArea({
         text: '',
