@@ -1903,11 +1903,11 @@ export class KeyboardController {
             that.GetArrayBufferString(msgParam)?.length + ', ArrayBufferSize' + msgParam?.byteLength);
           if (msgId.length === 256 && msgParam?.byteLength === 131072) {
             console.info(TAG + '====>Sub_InputMethod_IME_Custom_0200 start sendMessage');
-            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('SUCCESS'))
+            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('SUCCESS'));
           } else {
-            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('FAILED'))
+            that.InputClient.sendMessage('Sub_InputMethod_IME_Custom_0200', that.newArrayBuffer('FAILED'));
           }
-          that.InputClient.recvMessage()
+          that.InputClient.recvMessage();
         }
       };
       this.InputClient.recvMessage(msgHandler);
