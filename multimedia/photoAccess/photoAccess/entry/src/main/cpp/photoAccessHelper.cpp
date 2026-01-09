@@ -21,7 +21,7 @@
 #include "hilog/log.h"
 #include "napi/native_api.h"
 
-NDKMediaLibrary::NDKMediaLibrary(): ret_(MEDIA_LIBRARY_OK)
+NDKMediaLibrary::NDKMediaLibrary() : ret_(MEDIA_LIBRARY_OK)
 {
     mediaAsset_ = nullptr;
     movingPhoto_ = nullptr;
