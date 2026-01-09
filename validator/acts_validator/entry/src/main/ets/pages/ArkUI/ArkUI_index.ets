@@ -154,6 +154,7 @@ struct IndexPage {
     { title: 'CapiSourceType', uri: 'pages/ArkUI/CapiSourceType' },
     { title: 'AccessiBilityStateDescription', uri: 'pages/ArkUI/AccessiBilityStateDescription' },
     { title: 'RadiusRenderStrategy', uri: 'pages/ArkUI/RadiusRenderStrategy' },
+    { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];
