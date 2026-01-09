@@ -31,19 +31,19 @@ static void OnEventReceive(ArkUI_NodeEvent *event)
             "OnEventReceive: event is null");
         return;
     }
+
     ArkUI_NumberValue background_color_value[] = {{.u32 = COLOR_GREEN}};
     ArkUI_AttributeItem background_color_item = {background_color_value,
         sizeof(background_color_value) / sizeof(ArkUI_NumberValue)};
     auto targetId = OH_ArkUI_NodeEvent_GetTargetId(event);
     auto node = OH_ArkUI_NodeEvent_GetNodeHandle(event);
     if (targetId == 0) {
-        
         int posX = 0;
         int posY = 0;
         ArkUI_IntOffset position1 = {posX, posY};
         ArkUI_IntOffset pos1;
         auto result1 = OH_ArkUI_NativeModule_ConvertPositionFromWindow(node, position1, &pos1);
-        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","zlk result1 is %{public}d", result1);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "zlk result1 is %{public}d", result1);
         OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "Manager",
                      "kkk  OH_ArkUI_NativeModule_ConvertPositionFromWindow: %{public}d-%{public}d", pos1.x, pos1.y);
         ArkUI_NumberValue background_color_value[] = {{.u32 = COLOR_GREEN}};
@@ -87,12 +87,12 @@ static ArkUI_NodeHandle CreateChildNode(ArkUI_NativeNodeAPI_1 *nodeAPI)
     ArkUI_IntOffset *pos3 = nullptr;
     ArkUI_IntOffset pos1;
     auto result1 = OH_ArkUI_NativeModule_ConvertPositionFromWindow(button1, position2, pos3);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","zlk result1 is %{public}d", result1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "zlk result1 is %{public}d", result1);
     if (result1 == ARKUI_ERROR_CODE_PARAM_INVALID) {
         nodeAPI->setAttribute(button1, NODE_BACKGROUND_COLOR, &background_color_item);
     }
     auto result9 = OH_ArkUI_NativeModule_ConvertPositionFromWindow(button9, position2, &pos1);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","zlk result9 is %{public}d", result9);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "zlk result9 is %{public}d", result9);
     if (result9 == ARKUI_ERROR_CODE_NODE_NOT_ON_MAIN_TREE) {
         nodeAPI->setAttribute(button9, NODE_BACKGROUND_COLOR, &background_color_item);
     }

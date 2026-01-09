@@ -39,8 +39,8 @@ static void OnEventReceive(ArkUI_NodeEvent *event)
     if (targetId == 0) {
         bool isOnRenderTree = false;
         auto result = OH_ArkUI_NativeModule_IsInRenderState(node, &isOnRenderTree);
-        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","wjh on render tree state is %{public}d", isOnRenderTree);
-        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","wjh on render tree state is %{public}d", result);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "wjh on render tree state is %{public}d", isOnRenderTree);
+        OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "wjh on render tree state is %{public}d", result);
         if (result == ARKUI_ERROR_CODE_NO_ERROR && isOnRenderTree == true) {
             nodeAPI->setAttribute(node, NODE_BACKGROUND_COLOR, &background_color_item);
         }

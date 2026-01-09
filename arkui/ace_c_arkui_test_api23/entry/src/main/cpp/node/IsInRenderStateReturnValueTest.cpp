@@ -26,7 +26,7 @@ static napi_value TestIsInRenderStateReturnValue001(napi_env env, napi_callback_
     ArkUI_NodeHandle textNode;
     bool isOnRenderTree = false;
     auto result = OH_ArkUI_NativeModule_IsInRenderState(textNode, &isOnRenderTree);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","wjh result 2 is %{public}d", result);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "wjh result 2 is %{public}d", result);
     ASSERT_EQ(result, ARKUI_ERROR_CODE_CAPI_INIT_ERROR);
     NAPI_END;
 }
@@ -38,13 +38,13 @@ static napi_value TestIsInRenderStateReturnValue002(napi_env env, napi_callback_
     bool isOnRenderTree = false;
     auto result = OH_ArkUI_NativeModule_IsInRenderState(text, &isOnRenderTree);
 
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","wjh on render tree state is %{public}d", isOnRenderTree);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","wjh on render tree state is %{public}d", result);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "wjh on render tree state is %{public}d", isOnRenderTree);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "wjh on render tree state is %{public}d", result);
     ASSERT_EQ(result, ARKUI_ERROR_CODE_NO_ERROR);
     ASSERT_EQ(isOnRenderTree, false);
 
     auto result1 = OH_ArkUI_NativeModule_IsInRenderState(nullptr, &isOnRenderTree);
-    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event","wjh on render tree state is %{public}d", result1);
+    OH_LOG_Print(LOG_APP, LOG_INFO, 1, "event", "wjh on render tree state is %{public}d", result1);
     ASSERT_EQ(result1, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
