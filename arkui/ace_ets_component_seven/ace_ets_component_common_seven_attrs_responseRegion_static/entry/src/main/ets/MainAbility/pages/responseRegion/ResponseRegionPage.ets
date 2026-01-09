@@ -1738,13 +1738,12 @@ struct ResponseRegionPage {
   } as Rectangle]
 
   onPageShow() {
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     console.info(' setValue112 : ' + JSON.stringify(routerParamOptions.view.testValue.setValue));
     AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion',
       routerParamOptions.view.testValue.setValue.responseRegion)
     console.info('responseRegion translate page show called ')
-    const viewElement = JSON.parseJsonElement(JSON.stringify(routerParamOptions))
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
       .getElement("view")
     this.targetView = viewElement.getString("targetView")
     this.componentKey = viewElement.getString("componentKey")

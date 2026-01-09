@@ -73,8 +73,7 @@ struct PaddingContainerPage_Length {
     // })
     AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', 0)
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       // AppStorage.setOrCreate<number|string|Padding|Resource>('_padding', routerParamOptions.view.testValue.setValue.padding as number|string|Padding|Resource)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey

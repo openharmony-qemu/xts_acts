@@ -16,7 +16,23 @@
 import router from '@ohos.router'
 import { Entry,Component,Column,Text, Button, ButtonType, ClickEvent, ColumnOptions } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { JsonObj4, JsonObj4Inner } from '../../common/Utils';
+class innerParams {
+  data3: number[]
+
+  constructor(tuple: number[]) {
+    this.data3 = tuple
+  }
+}
+
+class routerParams {
+  data1: string
+  data2: innerParams
+
+  constructor(str: string, tuple: number[]) {
+    this.data1 = str
+    this.data2 = new innerParams(tuple)
+  }
+}
 
 @Entry
 @Component
@@ -30,7 +46,7 @@ struct RouterUrlError {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'ERROR',
-            params: (new JsonObj4('message', new JsonObj4Inner([123, 456, 789]))).toJSON()
+            params: new routerParams('message', [123, 456, 789])
           })
         })
     }.width('100%').height('100%')

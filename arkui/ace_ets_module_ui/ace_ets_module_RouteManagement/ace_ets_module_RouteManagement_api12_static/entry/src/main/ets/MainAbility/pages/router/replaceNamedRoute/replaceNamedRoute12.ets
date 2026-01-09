@@ -17,8 +17,15 @@ import router from '@ohos.router'
 import { BusinessError } from '@ohos.base'
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { routerParams } from '../../../common/Utils'
 initModule('./nameDetail9');
+
+class routerParams26 {
+  data1:string
+
+  constructor(str:string) {
+    this.data1 = str
+  }
+}
 
 
 @Entry({ routeName: 'replaceNamedRoute12' })
@@ -53,7 +60,7 @@ struct replaceNamedRoute12 {
           initModule('./nameDetail9');
           this.getUIContext().getRouter().replaceUrl({
             url: 'replaceNamedRoute12',
-            params: (new routerParams('message')).toJSON()
+            params: new routerParams26('message')
           }, router.RouterMode.Single)
             .then(() => {
               console.log('replaceNamedRoute12 success');

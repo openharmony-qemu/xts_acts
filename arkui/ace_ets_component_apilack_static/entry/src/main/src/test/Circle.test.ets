@@ -36,74 +36,13 @@ import { UtilsTest } from './Util.test';
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 
-class DataParam implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data3: number[];
-
-  constructor() {
-    this.data3 = new Array<number>();
-  }
-
-  constructor(arr: number[]) {
-    this.data3 = arr;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    let arr = new Array<jsonx.JsonElement>();
-    for (let i = 0; i < this.data3.length; ++i) {
-      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
-    }
-    let arrJson = jsonx.JsonElement.createArray(arr);
-    root.set('data3', arrJson);
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let arrJson = jsonElem.tryAsArray();
-    if (!arrJson) {
-      this.data3 = new Array<number>();
-      return;
-    }
-    let arr = new Array<number>();
-    for (let i = 0; i < arrJson!.length; i++) {
-      let val = arrJson![i].tryAsDouble();
-      if (val) {
-        arr.push(val);
-      }
-    }
-    this.data3 = arr;
-  }
+interface MainData {
+  data1: string
+  data2: DataParam
 }
 
-class MainData implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data1: string;
-  data2: DataParam;
-
-  constructor() {
-    this.data1 = "";
-    this.data2 = new DataParam();
-  }
-
-  constructor(data1: string, data2: DataParam) {
-    this.data1 = data1;
-    this.data2 = data2;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    root.set('data1', jsonx.JsonElement.createString(this.data1))
-    root.set('data2', this.data2.toJSON());
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.tryGetString('data1');
-    let data2 = jsonElem.tryGetElement('data2');
-    if (data2) {
-      this.data2 = new DataParam();
-      this.data2.fromJSON(data2!);
-    }
-  }
+interface DataParam {
+  data3: number[]
 }
 
 export default function circleNewJsunit() {
@@ -238,7 +177,12 @@ it('ACE_pushUrl_callback_static_0100', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({
         url: 'MainAbility/pages/common',
-        params: (new MainData('message', new DataParam([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as DataParam
+        } as MainData
       }, (err) => {
         if (err) {
           console.error(`pushUrl failed, code is ${(err as BusinessError)?.code}, message is ${(err as Error)?.message}`);
@@ -264,7 +208,12 @@ it('ACE_pushUrl_callback_static_0200', Level.LEVEL0, async () => {
       const routerInstance = AppStorage.get<Router>("router") as Router
       routerInstance.pushUrl({
         url: 'MainAbility/pages/ellipse',
-        params: (new MainData('message', new DataParam([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          } as DataParam
+        } as MainData
       }).then(() => {
         expect(true).assertTrue();
       })

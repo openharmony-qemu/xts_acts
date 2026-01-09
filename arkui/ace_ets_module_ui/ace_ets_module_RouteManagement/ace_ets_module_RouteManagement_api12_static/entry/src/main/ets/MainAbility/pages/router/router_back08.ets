@@ -17,7 +17,9 @@ import router from '@ohos.router'
 import { BusinessError } from '@ohos.base'
 import { Entry, Component, Column, ColumnOptions, Text, Button, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
-import { AgeObj } from '../../common/Utils'
+class AgeObj {
+  age: number = 0
+}
 
 @Entry
 @Component
@@ -38,7 +40,7 @@ struct router_back08 {
             let code = (err as BusinessError).code
             console.error(`Invoke showAlertBeforeBackPage failed, code is ${code}, message is ${message}`);
           }
-          this.getUIContext().getRouter().back(2, (new AgeObj(18)).toJSON())
+          this.getUIContext().getRouter().back(2, { age: 18 } as AgeObj)
 
           console.info('backBtn1111111')
         })

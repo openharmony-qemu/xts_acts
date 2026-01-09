@@ -160,8 +160,7 @@ struct MarginPage {
       bottom: 0,
     } as Margin)
     try {
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       console.log('routerParamOptions==========================' + JSON.stringify(routerParamOptions))
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView

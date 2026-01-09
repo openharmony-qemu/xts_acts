@@ -58,8 +58,7 @@ struct ResponseRegionPage {
     // })
 
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Array<Rectangle>>('_responseRegion', routerParamOptions.view.testValue.setValue as Array<Rectangle>)
       AppStorage.setOrCreate<string>('eventCallBackStr', 'notOnClick')
       AppStorage.setOrCreate<string>('eventCallBackStr', '')

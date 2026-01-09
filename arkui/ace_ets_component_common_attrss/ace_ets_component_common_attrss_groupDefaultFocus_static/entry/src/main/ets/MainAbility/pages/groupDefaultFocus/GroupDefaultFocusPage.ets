@@ -115,8 +115,7 @@ struct GroupDefaultFocusPage {
 
   onPageShow() {
     console.info('[GroupDefaultFocusPage] page show called ');
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<boolean>('_groupDefaultFocus', routerParamOptions.view.testValue.setValue)
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey ?? ""

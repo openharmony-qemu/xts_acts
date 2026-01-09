@@ -60,8 +60,7 @@ struct AspectRatioHeightPage {
 
 
   onPageShow() {
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams());
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<number>('_aspectRatio',  routerParamOptions.view.testValue.setValue.aspectRatio)
     AppStorage.setOrCreate<number>('_height',  routerParamOptions.view.testValue.setValue.height as number)
     this.targetView = routerParamOptions.view.targetView

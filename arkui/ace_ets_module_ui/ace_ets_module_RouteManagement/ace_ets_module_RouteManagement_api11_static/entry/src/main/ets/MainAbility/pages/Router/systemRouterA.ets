@@ -17,7 +17,6 @@
 import router from '@ohos.router';
 import { Entry,Component,FlexDirection,ItemAlign, Button, FlexAlign, ClickEvent, Flex, FontWeight, Text, Margin } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
-import { JsonObj3 } from '../../common/Utils';
 
 @Entry
 @Component
@@ -35,7 +34,9 @@ struct SystemRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().pushUrl({
             url: 'MainAbility/pages/Router/systemRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj1
           });
         });
       Button('Replace')
@@ -46,11 +47,16 @@ struct SystemRouterA {
         .onClick((e: ClickEvent) => {
           this.getUIContext().getRouter().replaceUrl({
             url: 'MainAbility/pages/Router/systemRouterB',
-            params: (new JsonObj3('B Page')).toJSON()
+            params: {
+              data: 'B Page'
+            } as JsonObj1
           });
         });
     }
     .width('100%')
     .height('100%')
   }
+}
+class JsonObj1 {
+  data: string = '';
 }
