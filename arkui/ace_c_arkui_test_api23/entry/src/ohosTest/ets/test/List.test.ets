@@ -45,8 +45,8 @@ import ConvertPositionFromWindowTest from "./node/ConvertPositionFromWindowTest.
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
-  IsInRenderStateTest();
   ConvertPositionToWindowTest();
+  IsInRenderStateTest();
   ConvertPositionFromWindowTest();
   ContainerPickerCanLoop();
   ContainerPickerEnableHapticFeedback();
