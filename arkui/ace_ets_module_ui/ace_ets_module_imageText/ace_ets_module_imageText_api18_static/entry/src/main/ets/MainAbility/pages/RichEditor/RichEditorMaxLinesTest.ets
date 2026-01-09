@@ -50,9 +50,6 @@ struct RichEditorMaxLinesTest {
   build() {
     Column() {
       Row(){
-
-        Text('µ±Ç°Öµ£º' + (this.maxLineList[this.maxLineIndex])?.toInt())
-
         Button('setMaxLine1').onClick((e:ClickEvent)=>{
           this.maxLineIndex =1
         })

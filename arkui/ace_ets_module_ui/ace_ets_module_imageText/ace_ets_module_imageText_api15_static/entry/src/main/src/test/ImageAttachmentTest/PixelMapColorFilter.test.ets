@@ -81,8 +81,8 @@ export default function PixelMapColorFilterTest() {
       let strJson = inspector.getInspectorByKey('ColorFilter_content');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PixelMapColorFilterTest_static_0010] component obj is: " +
-      obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getElement('$attrs').getString('colorFilter'))
+      obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content'))
         .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
       console.info('[PixelMapColorFilterTest_static_0010] END');
       done();
@@ -109,8 +109,8 @@ export default function PixelMapColorFilterTest() {
       let strJson = inspector.getInspectorByKey('ColorFilter_content');
       let obj = JSON.parseJsonElement(strJson);
       console.info("[PixelMapColorFilterTest_static_0020] component obj is: " +
-      obj.getElement('$attrs').getString('colorFilter'));
-      expect(obj.getElement('$attrs').getString('colorFilter'))
+      obj.getElement('$attrs').getString('content'));
+      expect(obj.getElement('$attrs').getString('content'))
         .assertEqual('1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 0.000000 0.000000 0.000000 0.000000 1.000000 0.000000 ');
       console.info('[PixelMapColorFilterTest_static_0020] END');
       done();

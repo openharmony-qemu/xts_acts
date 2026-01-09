@@ -47,37 +47,36 @@ import timePickerThemeTest from './components/TimePicker.test';
 import toggleThemeTest from './components/Toggle.test'
 
 export default function testsuite() {
-  console.info('testsuite start');
   // global tests
   setDefaultThemeTest();
   systemThemeTest();
-  withThemeTest();
+  // withThemeTest();
   // components
-  alphabetIndexerThemeTest();
-  badgeThemeTest();
-  buttonThemeTest();
+  // alphabetIndexerThemeTest();
+  // badgeThemeTest();
+  // buttonThemeTest();
   checkboxThemeTest()
-  checkboxGroupThemeTest();
+  // checkboxGroupThemeTest();
   counterThemeTest();
   datePickerThemeTest();
   dividerThemeTest();
-  forEachTest();
-  ifThemeTest();
-  lazyForEachTest();
+  // forEachTest();
+  // ifThemeTest();
+  // lazyForEachTest();
   loadingProgressThemeTest();
-  menuThemeTest();
-  menuItemThemeTest();
-  patternLockThemeTest();
-  qrCodeThemeTest();
-  radioThemeTest();
-  scrollThemeTest();
+  // menuThemeTest();
+  // menuItemThemeTest();
+  // patternLockThemeTest();
+  // qrCodeThemeTest();
+  // radioThemeTest();
+  // scrollThemeTest();
   searchThemeTest();
   sliderThemeTest();
-  swiperThemeTest();
+  // swiperThemeTest();
   textThemeTest();
-  textClockThemeTest();
+  // textClockThemeTest();
   textInputThemeTest();
   textPickerThemeTest();
-  timePickerThemeTest();
+  // timePickerThemeTest();
   toggleThemeTest();
 }

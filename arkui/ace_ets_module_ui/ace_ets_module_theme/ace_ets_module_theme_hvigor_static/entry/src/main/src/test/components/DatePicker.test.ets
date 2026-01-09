@@ -56,7 +56,6 @@ export default function datePickerThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -68,27 +67,27 @@ export default function datePickerThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `DatePickerPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(datePickerThemeProperty);
-            themeSet = AppStorage.get<boolean>(datePickerThemeSetProperty)
+            localTheme = AppStorage.get<CustomTheme>(`datePickerThemeProperty`);
+            themeSet = AppStorage.get<boolean>(`datePickerThemeSetProperty`)
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
 
-      AppStorage.setOrCreate(datePickerThemeSetProperty, themeSet)
+      AppStorage.setOrCreate<boolean | undefined>(`datePickerThemeSetProperty`, themeSet)
       if (changeTheme) {
-        if ((AppStorage.get(datePickerThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+        if ((AppStorage.get<CustomTheme>(`datePickerThemeProperty`))?.colors?.fontEmphasize
           == redCustomTheme?.colors?.fontEmphasize) {
-          AppStorage.setOrCreate(datePickerThemeProperty, greenCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`datePickerThemeProperty`, greenCustomTheme);
         } else {
-          AppStorage.setOrCreate(datePickerThemeProperty, redCustomTheme);
+          AppStorage.setOrCreate<CustomTheme>(`datePickerThemeProperty`, redCustomTheme);
         }
       }
       localTheme =
-        AppStorage.get<boolean>(datePickerThemeSetProperty) ? AppStorage.get<CustomTheme>(datePickerThemeProperty) :
+        AppStorage.get<boolean>(`datePickerThemeSetProperty`) ? AppStorage.get<CustomTheme>(`datePickerThemeProperty`) :
           undefined
       changeTheme = false;
     });
@@ -182,7 +181,7 @@ it('ActsDatePickerThemeColors_static_0400', Level.LEVEL0, async (done: () => voi
         checkWithTheme(undefined, key, key.search(`CustomAttrs`) > 0, colorValues)
       })
       themeSet = true
-      AppStorage.setOrCreate(datePickerIsLunarProperty, true);
+      AppStorage.setOrCreate(`datePickerIsLunarProperty`, true);
       console.info(`${SUITE} ${CASE} END`);
 } catch (err) {
           expect().assertFail()
@@ -276,7 +275,7 @@ it('ActsDatePickerThemeColors_static_0800', Level.LEVEL0, async (done: () => voi
         checkWithTheme(undefined, key, key.search(`CustomAttrs`) > 0, colorValues)
       })
       themeSet = true
-      AppStorage.setOrCreate(datePickerIsLunarProperty, false);
+      AppStorage.setOrCreate<boolean>(`datePickerIsLunarProperty`, false);
       console.info(`${SUITE} ${CASE} END`);
 } catch (err) {
           expect().assertFail()
