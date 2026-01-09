@@ -426,9 +426,17 @@ export default function PhotoTest() {
      * @tc.level  LEVEL0
      */
     it('testOHPhotoOutputEnableMirror0100', Level.LEVEL0, () => {
-      let ret = cameras.oHPhotoOutputEnableMirror(0);
-      console.log(TAG+"testOHPhotoOutputEnableMirror0100:"+ret);
-      expect(ret).assertEqual(CAMERA_OK);
+      let isSupported: boolean = cameras.oHPhotoOutputgetMirrorSupported(0);
+      console.info(`testOHPhotoOutputEnableMirror0100 MirrorSupported is ${isSupported} ${typeof isSupported}`);
+      if (isSupported) {
+        console.info(`testOHPhotoOutputEnableMirror0100 Enter`);
+        let ret: number = cameras.oHPhotoOutputEnableMirror(0);
+        console.log(TAG+"testOHPhotoOutputEnableMirror0100:"+ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      } else {
+        console.info(`testOHPhotoOutputEnableMirror0100 no supported`);
+        expect(!isSupported).assertTrue();
+      }
     })
     /**
      * @tc.name   testOHPhotoOutputEnableMirror0200

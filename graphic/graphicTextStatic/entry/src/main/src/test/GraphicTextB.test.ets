@@ -28,7 +28,7 @@ async function loadFontByPromiseInvalidParameter(msg: string | null | undefined,
     console.info(msg + `loadFont by promise successfully`);
     expect(false).assertTrue();
     done();
-  }).catch((error: BusinessError | null): void => {
+  }).catch((error: Error): void => {
     console.error(msg + ` loadFont by promise failed, error: [${error?.code}, ${error?.message}]`);
     expect(error?.code).assertEqual(401);
     done();

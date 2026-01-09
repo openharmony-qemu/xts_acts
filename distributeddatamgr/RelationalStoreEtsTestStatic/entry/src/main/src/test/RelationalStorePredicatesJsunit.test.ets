@@ -24,7 +24,6 @@ import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import common from '@ohos.app.ability.common';
 import deviceInfo from '@ohos.deviceInfo';
-import { canIUse } from "@internal.full.global";
 
 
 let context: common.UIAbilityContext;

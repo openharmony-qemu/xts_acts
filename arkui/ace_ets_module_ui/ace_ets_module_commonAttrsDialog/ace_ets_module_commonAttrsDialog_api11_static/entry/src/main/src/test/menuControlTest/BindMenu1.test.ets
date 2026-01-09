@@ -47,7 +47,6 @@ import {UtilsTest} from '../Util.test'
 let domain: number = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-let abilityStage=AppStorage.get<common.BaseContext>("abilityContext")
 
 export default function bindMenu() {
   describe('bindMenu', () => {
@@ -86,10 +85,11 @@ export default function bindMenu() {
      */
 it('bindMenu_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('bindMenu_0100 START');
+      let abilityStage=AppStorage.get<common.BaseContext>("abilityContext")
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('bindMenu'));
-       button?.click();
+       await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;

@@ -129,5 +129,17 @@ export default function MotionPathOptionsTest(){
       done()
     })
     
+    /**
+     * @tc.name   MotionPathOptionsTest_0900
+     * @tc.number MotionPathOptionsTest_0900
+     * @tc.desc   Test MotionPath
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('MotionPathOptionsTest_0900', Level.LEVEL1, async (done: Function) => {
+      expect(nativeFunc.testMotionPathOptions009()).assertEqual(0)
+      done()
+    })
   })
 }

@@ -374,16 +374,24 @@ HWTEST_F(DrawingNativeImageFilterTest, testImageFilterCreateOffsetAbnormal, Func
     EXPECT_NE(imageFilter1, nullptr);
     // 2. The first parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to maximum value.
     OH_Drawing_ImageFilter *imageFilter2 =
-        OH_Drawing_ImageFilterCreateOffset(0xFFFFFFFF, 10, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(0x7FFFFFFF, 10, imageFilter1);
     EXPECT_NE(imageFilter2, nullptr);
     // 3. The second parameter of the interface OH_Drawing_ImageFilterCreateOffset passes to maximum value.
     OH_Drawing_ImageFilter *imageFilter3 =
-        OH_Drawing_ImageFilterCreateOffset(10, 0xFFFFFFFF, imageFilter1);
+        OH_Drawing_ImageFilterCreateOffset(10, 0x7FFFFFFF, imageFilter1);
     EXPECT_NE(imageFilter3, nullptr);
+    OH_Drawing_ImageFilter *imageFilter4 =
+        OH_Drawing_ImageFilterCreateOffset(0xFF7F0000, 10, imageFilter1);
+    EXPECT_NE(imageFilter4, nullptr);
+    OH_Drawing_ImageFilter *imageFilter5 =
+        OH_Drawing_ImageFilterCreateOffset(10, 0xFF7F0000, imageFilter1);
+    EXPECT_NE(imageFilter5, nullptr);
     // 4. Destroy objects.
     OH_Drawing_ImageFilterDestroy(imageFilter1);
     OH_Drawing_ImageFilterDestroy(imageFilter2);
     OH_Drawing_ImageFilterDestroy(imageFilter3);
+    OH_Drawing_ImageFilterDestroy(imageFilter4);
+    OH_Drawing_ImageFilterDestroy(imageFilter5);
 }
 
 /**

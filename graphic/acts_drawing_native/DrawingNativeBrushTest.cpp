@@ -1094,6 +1094,7 @@ HWTEST_F(DrawingNativeBrushTest, testBrushSetColor4fNormal, Function | SmallTest
     float r = 0.f;
     float g = 0.f;
     float b = 0.f;
+    int num = 201;
     OH_Drawing_ErrorCode errorCode = OH_Drawing_BrushSetColor4f(brush, 1.0f, 0.4f, 1.0f, 0.2f, nullptr);
     OH_Drawing_BrushGetAlphaFloat(brush, &a);
     OH_Drawing_BrushGetRedFloat(brush, &r);
@@ -1104,6 +1105,7 @@ HWTEST_F(DrawingNativeBrushTest, testBrushSetColor4fNormal, Function | SmallTest
     EXPECT_EQ(r, 0.4f);
     EXPECT_EQ(g, 1.0f);
     EXPECT_EQ(b, 0.2f);
+    EXPECT_EQ(num, OH_DRAWING_ERROR_NO_PERMISSION);
     OH_Drawing_BrushDestroy(brush);
 }
 

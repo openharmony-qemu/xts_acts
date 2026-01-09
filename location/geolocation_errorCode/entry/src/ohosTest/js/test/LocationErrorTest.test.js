@@ -522,20 +522,23 @@ export default function geolocationTest_LocErr(){
             if (!isAcessToken) {
                 console.info("The device does not support Geofence");
                 expect(isAcessToken).assertFalse();
-                done();
             } else {
                 let fenceId = -1
                 try {
                     await geolocationm.removeGnssGeofence(fenceId).then(() => {
                     }).catch((error) => {
                         console.info("[lbs_js] SUB_HSS_LOCATIONSYSTEM_GEOFENCE_0400 remove error=" + JSON.stringify(error));
-                        expect(error.code).assertEqual(3301602);
+                        if (error.code == 801) {
+                            expect(true).assertTrue();
+                        } else{
+                            expect(error.code).assertEqual(3301602);
+                        }
                     });
                 } catch(error) {
                     console.error("addGnssGeofence failed, err:" + JSON.stringify(error));
                 }
-                done();
             }
+            done();
         })
     })
 }

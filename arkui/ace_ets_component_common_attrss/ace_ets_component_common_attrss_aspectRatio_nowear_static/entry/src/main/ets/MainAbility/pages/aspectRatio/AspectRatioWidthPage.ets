@@ -60,7 +60,8 @@ struct AspectRatioWidthPage {
   private src: string = 'Running Marquee starts rolling A B C D E F G H I J'; //Use by Marquee QRCode
 
   onPageShow() {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     AppStorage.setOrCreate<number>('_aspectRatio',  routerParamOptions.view.testValue.setValue.aspectRatio)
     AppStorage.setOrCreate<number>('_width',  routerParamOptions.view.testValue.setValue.width as number)
     this.targetView = routerParamOptions.view.targetView

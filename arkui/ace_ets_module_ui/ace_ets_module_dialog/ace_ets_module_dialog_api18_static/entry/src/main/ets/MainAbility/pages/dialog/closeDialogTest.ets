@@ -91,7 +91,7 @@ struct closeDialogTest {
           } as promptAction.CustomDialogOptions).then((dialogId: int) => {
             this.customDialogComponentId = dialogId
           })
-            .catch((error: BusinessError): void => {
+            .catch((error: Error): void => {
               console.error(`openCustomDialog error code is ${error.code}, message is ${error.message}`)
             })
           setTimeout(() => {

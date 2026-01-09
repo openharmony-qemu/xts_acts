@@ -68,11 +68,11 @@ export default function customContentDialogTest() {
 it('customContentDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[customContentDialogTest_0100] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       // 点击打开CustomContentDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('CustomContentDialog'))
-      openAlertDialog!.click();
-      await driver.delayMs(1000);
+      await (openAlertDialog?.click() as Promise<void>);;
+      await CommonFunc.sleep(1000);
       // 点击打开CustomContentDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('标题'));
       let secondaryTitle = await driver.findComponent(ON.text('辅助文本'));
@@ -85,8 +85,8 @@ it('customContentDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
       expect(cancelButton !== null).assertTrue();
       expect(confirmButton !== null).assertTrue();
       // 关闭CustomContentDialog
-      cancelButton!.click();
-      await driver.delayMs(1000);
+      await (cancelButton?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       console.info('[customContentDialogTest_0100] END');
       done();
     });

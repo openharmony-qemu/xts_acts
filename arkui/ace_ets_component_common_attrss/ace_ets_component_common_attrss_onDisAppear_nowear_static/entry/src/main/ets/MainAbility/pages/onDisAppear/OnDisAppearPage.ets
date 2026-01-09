@@ -75,7 +75,8 @@ struct OnDisAppearPage {
     AppStorage.setOrCreate<boolean>('_isShow', true)
 
     try {
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     this.targetView = routerParamOptions.view.targetView
     this.targetGroupView = routerParamOptions.view.targetGroupView
     this.componentKey = routerParamOptions.view.componentKey

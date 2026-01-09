@@ -27,13 +27,9 @@ import { Callback, RecordData } from '@ohos.base'
 interface PageBeginParam {
   url: string
 }
-class StringFields {
-  private str: string = '';
-}
 @Entry
 @Component
 struct WebComponent {
-  stringObj: StringFields  = new StringFields ();
   controller: webview.WebviewController = new webview.WebviewController(undefined);
   @State showNativeMediaPlayer: boolean = false;
   @State nodeWidth : number = 300;
@@ -41,8 +37,6 @@ struct WebComponent {
   @State isShouldOverlay : boolean = true;
   @State isCallback : boolean = true;
   @State str : string = '';
-
-
   area?: Area
   @State emitKey: string = '';
 
@@ -54,13 +48,17 @@ struct WebComponent {
     events_emitter.on(valueChangeEvent, this.valueChangeCallBack)
   }
 
-  private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: events_emitter.EventData): void => {
+  private valueChangeCallBack: Callback<emitter.EventData> = (eventData: emitter.EventData): void => {
+    console.info('web page valueChangeCallBack');
     if (eventData != null) {
       console.info('valueChangeCallBack:' + JSON.stringify(eventData));
       const data = eventData.data as Record<string, RecordData>;
-      if (data != null && data['ACTION'] != null) {
+      if (data && data['ACTION'] != null) {
+        console.info('Received ACTION value: ' + data['ACTION']);
         let strValue: string = String(data['ACTION']);
-        this.stringObj.str = strValue;
+        console.info('strValue has been updated to: ' + strValue);
+        this.str = strValue;
+        console.info('this.str has been updated to: ' + this.str);
       }
     }
   }
@@ -69,11 +67,11 @@ struct WebComponent {
     Column() {
       Row() {
         Button('web click').key('webviewSetBackForwardCacheOptionsButton').onClick((): void => {
-          console.info('key==>' + this.stringObj.str)
+          console.info('key==>' + this.str)
           this.isShouldOverlay = true
           this.isCallback = false
 
-          switch (this.stringObj.str) {
+          switch (this.str) {
             case 'emitWebviewSetBackForwardCacheOptions': {
               try {
                 let options = new webview.BackForwardCacheOptions();

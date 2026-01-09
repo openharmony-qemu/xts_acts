@@ -84,3 +84,6 @@ export const testMotionPathOptions005: () => number;
 export const testMotionPathOptions006: () => number;
 export const testMotionPathOptions007: () => number;
 export const testMotionPathOptions008: () => number;
+export const testMotionPathOptions009: () => number;
+
+export const TestAtomicServiceMenuBarSetVisible01: () => number;

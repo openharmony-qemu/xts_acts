@@ -73,8 +73,28 @@ export class TestValue {
   exceptView:string=''
 }
 
-export class RouterParams {
+export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
   view: PageConfig = new PageConfig()
+
+  constructor() {}
+
+  constructor(view: PageConfig) {
+    this.view = view
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      "view": jsonx.JsonElement.createString(JSON.stringify(this.view))
+    }
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    let info = JSON.parse<PageConfig>(jsonElem.getString("view"), Type.of(new String() as Object))
+    if (info) {
+      this.view = info!
+    }
+  }
 }
 
 
@@ -153,9 +173,7 @@ static async pushPage(obj: PageConfig) {
       console.info('[wll]'+ obj.pageUrl )
       router.pushUrl({
         url: obj.pageUrl,
-        params: {
-          view: obj
-        } as RouterParams
+        params: (new RouterParams(obj)).toJSON()
       });
       await Utils.sleep(2000);
     }

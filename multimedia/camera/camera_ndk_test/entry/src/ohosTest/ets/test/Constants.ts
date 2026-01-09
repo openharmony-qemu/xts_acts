@@ -89,6 +89,7 @@ export class Camera_PreconfigType {
   static readonly PRECONFIG_1080P = 1;
   static readonly PRECONFIG_4K = 2;
   static readonly PRECONFIG_HIGH_QUALITY = 3;
+  static readonly PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020 = 4;
 }
 
 export class Camera_PreconfigRatio {

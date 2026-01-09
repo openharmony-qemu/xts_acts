@@ -59,8 +59,8 @@ export async function sleep(time: int): Promise<int> {
     });
 }
 
-let originalArray = [0, 1, -2, 4, -8, 16];
-let array = [0, 1, -2, 4, -8, 16];
+let originalArray: number[] = [0, 1, -2, 4, -8, 16];
+let array: number[] = [0, 1, -2, 4, -8, 16];
 let arrayIndex = -1;
 function mapFn(value: number, index: number): number {
     arrayIndex++;

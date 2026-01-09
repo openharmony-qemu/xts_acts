@@ -124,8 +124,8 @@ export default function abilityTest() {
             async (done: () => void): Promise<void> => {
             const COMMON_COMMAND_STRING = "AUDIO_GET_VOLUME";
             let extras: avSession.ExtraInfo = await controller.getExtrasWithEvent(COMMON_COMMAND_STRING);
-            console.info(`${TAG}: aduio get volume with ` + extras.toString());
-            if (extras.toString() == '' ||
+            console.info(`${TAG}: aduio get volume with ${JSON.stringify(extras)}`);
+            if (JSON.stringify(extras) == '{}' ||
                 (0 <= (extras[COMMON_COMMAND_STRING] as number) &&
                     (extras[COMMON_COMMAND_STRING] as number) <= 15)){
                 console.info(`${TAG}: aduio get volume with ${extras[COMMON_COMMAND_STRING]}`);

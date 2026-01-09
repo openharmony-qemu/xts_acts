@@ -1455,6 +1455,26 @@ export default function AVCodeTest3() {
           expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
         }
       });
+      
+    /**
+     * @tc.name   testAVCodeOHAVOutputFormat007
+     * @tc.number SUB_AVCode_OH_AVOutputFormat_007
+     * @tc.desc   Verify that EnumOHAVOutputFormat7 function correctly enumerates AV output format 7
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testAVCodeOHAVOutputFormat007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+        try {
+          let result: number = libavcode.EnumOHAVOutputFormat7();
+          expect(result).assertEqual(0);
+          done()
+        } catch (err) {
+          console.error("====>testAVCodeOHAVOutputFormat007 catch err: " + err);
+          expect(false).assertEqual(OS_ACCOUNT_ERR_OK);
+        }
+      });
 
     /**
      * @tc.name   testAVCodeColorPrimary001

@@ -98,7 +98,7 @@ export default function SimNoCardPublic() {
             ExpectFail();
             console.info(`${caseName} test end `);
             done();
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             if (err?.code === 8300004) {
               console.info(`${caseName} success Do not have sim card.1, promise: err->${JSON.stringify(err)}`);
               ExpectTrue(true);
@@ -207,7 +207,7 @@ export default function SimNoCardPublic() {
             ExpectFail();
             console.info(`${caseName} test end `);
             done();
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             if (err?.code === 8300004) {
               console.info(`${caseName} has not card1  callback: err->${JSON.stringify(err)}, data->${JSON.stringify(data)}`);
               ExpectTrue(true);

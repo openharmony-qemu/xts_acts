@@ -368,6 +368,7 @@ export default function cameraPreconfigTest() {
         camera.PreconfigType.PRECONFIG_1080P,
         camera.PreconfigType.PRECONFIG_4K,
         camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+        camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
       ];
       for (let type of types) {
         if (mCameraSession.canPreconfig(type)) {
@@ -414,6 +415,7 @@ export default function cameraPreconfigTest() {
         camera.PreconfigType.PRECONFIG_1080P,
         camera.PreconfigType.PRECONFIG_4K,
         camera.PreconfigType.PRECONFIG_HIGH_QUALITY,
+        camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020,
       ];
       for (let type of types) {
         if (mCameraSession.canPreconfig(type)) {

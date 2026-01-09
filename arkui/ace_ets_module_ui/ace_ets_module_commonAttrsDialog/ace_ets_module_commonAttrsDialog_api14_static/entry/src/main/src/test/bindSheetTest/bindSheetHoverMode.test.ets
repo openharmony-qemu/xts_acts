@@ -96,16 +96,16 @@ it('bindSheetHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Pro
         let height = await (col?.getBoundsCenter() as Promise<Point>)
         console.info('col is' + height.y)
         let btn1 = await driver.findComponent(ON.id('sheet'));
-        btn1?.click()
+        await (btn1?.click() as Promise<void>)
         let btn2 = await driver.findComponent(ON.id('changeEnableHoverMode'));
-        btn2?.click()
+        await (btn2?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         let rect = await (btn2?.getBounds() as Promise<Rect>)
         console.info(`rect is: ` + JSON.stringify(rect))
         expect(rect.top - height.y < 0).assertTrue();
         await CommonFunc.sleep(1000);
         let btn3 = await driver.findComponent(ON.id('close'));
-        btn3?.click()
+        await (btn3?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
       }
       console.info('[bindSheetHoverMode_0100] END');
@@ -129,16 +129,16 @@ it('bindSheetHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Pro
         let height = await (col?.getBoundsCenter() as Promise<Point>)
         console.info('col is' + height.y)
         let btn1 = await driver.findComponent(ON.id('sheet'));
-        btn1?.click()
+        await (btn1?.click() as Promise<void>)
         let btn2 = await driver.findComponent(ON.id('changeHoverModeArea'));
-        btn2?.click()
+        await (btn2?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         let rect = await (btn2?.getBounds() as Promise<Rect>)
         console.info(`rect is: ` + JSON.stringify(rect))
         expect(rect.top - height.y > 0).assertTrue();
         await CommonFunc.sleep(1000);
         let btn3 = await driver.findComponent(ON.id('close'));
-        btn3?.click()
+        await (btn3?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
       }
       console.info('[bindSheetHoverMode_0200] END');

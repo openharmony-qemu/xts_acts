@@ -986,7 +986,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         try {
           WantAgent.getWantAgent(wantAgentInfo).then((data:_WantAgent) => {
             wantAgent = data;
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
         } catch (err: BusinessError) {
@@ -1118,7 +1118,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         try {
           WantAgent.getWantAgent(wantAgentInfo).then((data:_WantAgent) => {
             wantAgent = data;
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
         } catch (err: BusinessError) {
@@ -1177,7 +1177,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         };
         notificationManager.isNotificationEnabled().then((data: boolean) => {
           // console.info("isNotificationEnabled success, data: " + JSON.stringify(data));
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           // console.error(`isNotificationEnabled fail: ${JSON.stringify(err)}`);
         });
         try {
@@ -1262,7 +1262,7 @@ export default function ActsNotificationSystemLiveViewTest() {
         try {
           WantAgent.getWantAgent(wantAgentInfo).then((data) => {
             wantAgent = data;
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             // console.error('getWantAgent failed! ${err.code} ${err.message}');
           });
         } catch (err: BusinessError) {

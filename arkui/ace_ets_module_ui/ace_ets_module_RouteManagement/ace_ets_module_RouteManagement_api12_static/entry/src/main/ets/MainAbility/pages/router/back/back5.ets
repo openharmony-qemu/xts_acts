@@ -18,8 +18,27 @@ import { BusinessError } from '@ohos.base'
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
-class InfoObj {
-  info: string = ''
+class InfoObj implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  info: string;
+
+  constructor() {
+    this.info = '';
+  }
+
+  constructor(info: string) {
+    this.info = info;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      'info': jsonx.JsonElement.createString(this.info)
+    };
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.info = jsonElem.tryGetString('info');
+  }
 }
 
 @Entry
@@ -35,7 +54,7 @@ struct back5 {
       Button('back')
         .id('back5_btn')
         .onClick((e:ClickEvent)=>{
-          this.getUIContext().getRouter().back(0, {info: 'Home'} as InfoObj);
+          this.getUIContext().getRouter().back(0, (new InfoObj('Home')).toJSON());
         })
 
     }.width('100%').height('100%')

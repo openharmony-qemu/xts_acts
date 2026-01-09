@@ -44,7 +44,7 @@ async function clickButtonDriver(){
   console.error(`come in Driver create`);
   let buttonOne = await driver.findComponent(ON.text('允许'));
   console.error(`buttonOne is ${JSON.stringify(buttonOne)}`);
-  if(buttonOne){
+  if(buttonOne!=null){
     await buttonOne.click();
   }
 

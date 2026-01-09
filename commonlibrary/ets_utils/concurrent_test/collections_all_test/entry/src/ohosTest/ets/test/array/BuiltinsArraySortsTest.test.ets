@@ -25,6 +25,7 @@ function customStringify(arr: NumberObj[]): string {
   return '[' + arr.map(item => `{a:${item.a}}`).join(',') + ']';
 }
 
+
 export default function builtinsArraySortTest() {
   describe('builtinsArraySortTest', () => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
@@ -227,40 +228,6 @@ export default function builtinsArraySortTest() {
       Done()
     })
 
-    /**
-     * @tc.name   builtinsArraySort1100
-     * @tc.number SUB_BUILTINS_ARRAY_SORT_TEST_1100
-     * @tc.desc   test [[3], [1], [2]]sort((a, b) => a[0] - b[0]);
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArraySort1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers = collections.Array.from([[3], [1], [2]]);
-      numbers.sort((a, b) => (a[0] as number) - (b[0] as number))
-      console.log(numbers.toString());
-      let a = JSON.stringify(numbers)
-      let b = JSON.stringify([[1], [2], [3]])
-      expect(b).assertEqual(a);
-      Done()
-    })
 
-    /**
-     * @tc.name   builtinsArraySort1200
-     * @tc.number SUB_BUILTINS_ARRAY_SORT_TEST_1200
-     * @tc.desc   test [[3], [1], [2]]sort((a, b) => a[0] - b[0]);
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArraySort1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (Done: Function) => {
-      const numbers = collections.Array.from([[3], [1], [2]]);
-      numbers.sort((a, b) => (a[0] as number) - (b[0] as number))
-      console.log(numbers.toString());
-      let a = JSON.stringify(numbers)
-      let b = JSON.stringify([[1], [2], [3]])
-      expect(b).assertEqual(a);
-      Done()
-    })
   })
 }

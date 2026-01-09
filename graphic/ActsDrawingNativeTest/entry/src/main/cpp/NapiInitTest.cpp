@@ -12,199 +12,12 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-#include <array>
-#include "include/DrawingCanvasDrawRecordCmdTest.h"
-#include "include/OhosCommonTest.h"
-#include "napi/native_api.h"
 
-
-// Common argument and result constants.
-static constexpr int ARG_INDEX = 0;
-static constexpr int DEFAULT_ARG = -1;
-
-// Handler count constants for std::array sizes (avoid magic numbers).
-static constexpr size_t TRAIN_EXPORT_MODEL_HANDLER_COUNT = 14;
-static constexpr size_t CONTEXT_CREATE_HANDLER_COUNT = 66;
-static constexpr size_t MODEL_CREATE_HANDLER_COUNT = 37;
-static constexpr size_t TENSOR_CREATE_HANDLER_COUNT = 50;
-static constexpr size_t HIAI_OFFLINEMODEL_HANDLER_COUNT = 15;
-static constexpr size_t OHOS_CONTEXT_CPU_HANDLER_COUNT = 20;
-static constexpr size_t OHOS_TENSOR_CREATE_HANDLER_COUNT = 16;
-static constexpr size_t CANVAS_DRAW_RECORD_CMD_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_DRAW_SINGLE_CHA_WITH_FEATURES_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_DESTROY_HANDLER_COUNT = 2;
-static constexpr size_t CANVAS_BIND_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_SAVE_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_SAVE_LAYER_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_RESTORE_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_RESTORE_TO_COUNT_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_DRAW_LINE_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_DRAW_PATH_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_ATTACH_HANDLER_COUNT = 10;
-static constexpr size_t CANVAS_DETACH_HANDLER_COUNT = 2;
-static constexpr size_t CANVAS_PART2_DRAW_PIXELMAP_RECT_HANDLER_COUNT = 7;
-static constexpr size_t CANVAS_PART2_DRAW_BACKGROUND_HANDLER_COUNT = 4;
-static constexpr size_t CANVAS_PART2_DRAW_REGION_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART2_DRAW_POINTS_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART2_DRAW_BITMAP_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART2_DRAW_BITMAP_RECT_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART2_DRAW_RECT_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART2_DRAW_CIRCLE_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART3_DRAW_OVAL_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART3_DRAW_ARC_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART3_DRAW_ROUND_RECT_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART3_DRAW_TEXT_BLOB_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART3_CLIP_RECT_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART3_CLIP_ROUND_RECT_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART3_CLIP_PATH_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART3_ROTATE_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART3_TRANSLATE_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART3_SCALE_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART4_SKEW_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART4_GET_WIDTH_HEIGHT_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART4_GET_LOCAL_CLIP_BOUNDS_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART4_CONCAT_MATRIX_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART4_DRAW_SHADOW_HANDLER_COUNT = 5;
-static constexpr size_t CANVAS_PART4_CLEAR_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART4_SET_MATRIX_HANDLER_COUNT = 4;
-static constexpr size_t CANVAS_PART4_RESET_MATRIX_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART4_DRAW_IMAGE_RECT_HANDLER_COUNT = 4;
-static constexpr size_t CANVAS_PART4_DRAW_VERTICES_HANDLER_COUNT = 4;
-static constexpr size_t CANVAS_PART4_READ_PIXELS_HANDLER_COUNT = 6;
-static constexpr size_t CANVAS_PART4_READ_PIXELS_TO_BITMAP_HANDLER_COUNT = 4;
-static constexpr size_t CANVAS_PART4_DRAW_SINGLE_CHARACTER_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART4_DRAW_POINT_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART4_DRAW_COLOR_HANDLER_COUNT = 4;
-static constexpr size_t CANVAS_PART4_IS_CLIP_EMPTY_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART4_GET_IMAGE_INFO_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART4_CLIP_REGION_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART5_QUICK_REJECT_PATH_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART5_QUICK_REJECT_RECT_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART5_DRAW_ARC_WITH_CENTER_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART5_DRAW_NESTED_ROUND_RECT_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART5_DRAW_PIXEL_MAP_NINE_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART5_CREATE_WITH_PIXEL_MAP_HANDLER_COUNT = 3;
-static constexpr size_t CANVAS_PART5_DRAW_PIXEL_MAP_RECT_CONSTRAINT_HANDLER_COUNT = 4;
-static constexpr size_t CANVAS_PART5_DRAW_PIXEL_MAP_MESH_HANDLER_COUNT = 11;
-static constexpr size_t BITMAP_HANDLER_COUNT = 22;
-static constexpr size_t COLOR_FILTER_CREATE_BLEND_MODE_HANDLER_COUNT = 5;
-static constexpr size_t COLOR_FILTER_CREATE_COMPOSE_HANDLER_COUNT = 3;
-static constexpr size_t COLOR_FILTER_CREATE_MATRIX_HANDLER_COUNT = 4;
-static constexpr size_t COLOR_FILTER_CREATE_LINEAR_TO_SRGB_GAMMA_HANDLER_COUNT = 2;
-static constexpr size_t COLOR_FILTER_CREATE_SRGB_GAMMA_TO_LINEAR_HANDLER_COUNT = 2;
-static constexpr size_t COLOR_FILTER_CREATE_LUMA_HANDLER_COUNT = 2;
-static constexpr size_t COLOR_FILTER_DESTROY_HANDLER_COUNT = 2;
-static constexpr size_t COLOR_FILTER_CREATE_LIGHTING_HANDLER_COUNT = 4;
-static constexpr size_t COLOR_SPACE_CREATE_SRGB_HANDLER_COUNT = 2;
-static constexpr size_t COLOR_SPACE_DESTROY_HANDLER_COUNT = 1;
-static constexpr size_t COLOR_SPACE_CREATE_SRGB_LINEAR_HANDLER_COUNT = 2;
-static constexpr size_t COLOR_SET_ARGB_HANDLER_COUNT = 5;
-static constexpr size_t BRUSH_CREATE_DESTROY_HANDLER_COUNT = 7;
-static constexpr size_t BRUSH_ANTI_ALIAS_HANDLER_COUNT = 4;
-static constexpr size_t BRUSH_COLOR_HANDLER_COUNT = 6;
-static constexpr size_t BRUSH_ALPHA_HANDLER_COUNT = 6;
-static constexpr size_t BRUSH_SHADER_EFFECT_HANDLER_COUNT = 2;
-static constexpr size_t BRUSH_SHADOW_LAYER_HANDLER_COUNT = 2;
-static constexpr size_t BRUSH_FILTER_HANDLER_COUNT = 4;
-static constexpr size_t BRUSH_BLEND_MODE_HANDLER_COUNT = 2;
-static constexpr size_t BRUSH_RESET_HANDLER_COUNT = 2;
-static constexpr size_t BRUSH_GET_FLOAT_HANDLER_COUNT = 8;
-static constexpr size_t BRUSH_SET_COLOR4F_HANDLER_COUNT = 3;
-
-using DrawingNativeFn = int (*)();
-
-// Case number constants to replace magic numbers in switch statements.
-enum CaseNum {
-    CASE_NUM_0 = 0,
-    CASE_NUM_1,
-    CASE_NUM_2,
-    CASE_NUM_3,
-    CASE_NUM_4,
-    CASE_NUM_5,
-    CASE_NUM_6,
-    CASE_NUM_7,
-    CASE_NUM_8,
-    CASE_NUM_9,
-    CASE_NUM_10,
-    CASE_NUM_11,
-    CASE_NUM_12,
-    CASE_NUM_13,
-    CASE_NUM_14,
-    CASE_NUM_15,
-    CASE_NUM_16,
-    CASE_NUM_17,
-    CASE_NUM_18,
-    CASE_NUM_19,
-    CASE_NUM_20,
-    CASE_NUM_21,
-    CASE_NUM_22,
-    CASE_NUM_23,
-    CASE_NUM_24,
-    CASE_NUM_25,
-    CASE_NUM_26,
-    CASE_NUM_27,
-    CASE_NUM_28,
-    CASE_NUM_29,
-    CASE_NUM_30,
-    CASE_NUM_31,
-    CASE_NUM_32,
-    CASE_NUM_33,
-    CASE_NUM_34,
-    CASE_NUM_35,
-    CASE_NUM_36,
-    CASE_NUM_37,
-    CASE_NUM_38,
-    CASE_NUM_39,
-    CASE_NUM_40,
-    CASE_NUM_41,
-    CASE_NUM_42,
-    CASE_NUM_43,
-    CASE_NUM_44,
-    CASE_NUM_45,
-    CASE_NUM_46,
-    CASE_NUM_47,
-    CASE_NUM_48,
-    CASE_NUM_49,
-    CASE_NUM_50,
-    CASE_NUM_51,
-    CASE_NUM_52,
-    CASE_NUM_53,
-    CASE_NUM_54,
-    CASE_NUM_55,
-    CASE_NUM_56,
-    CASE_NUM_57,
-    CASE_NUM_58,
-    CASE_NUM_59,
-    CASE_NUM_60,
-    CASE_NUM_61,
-    CASE_NUM_62,
-    CASE_NUM_63,
-    CASE_NUM_64,
-    CASE_NUM_65
-};
-
-template <size_t N> int DispatchByCaseNum(int caseNum, const std::array<DrawingNativeFn, N>& handlers)
-{
-    if (caseNum < CASE_NUM_0 || caseNum >= static_cast<int>(N) || handlers[caseNum] == nullptr) {
-        return RESULT_ERROR;
-    }
-    return handlers[caseNum]();
-}
-
-// Canvas DrawRecordCmd related functions
-static napi_value SUB_Drawing_CanvasDrawRecordCmd(napi_env env, napi_callback_info info)
-{
-    return NapiTry(env, [&]() -> napi_value {
-        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        static const std::array<DrawingNativeFn, CANVAS_DRAW_RECORD_CMD_HANDLER_COUNT> handlers = {
-            OHOS::Rosen::Drawing::TestCanvasDrawRecordCmdNormal
-        };
-        int result = DispatchByCaseNum(caseNum, handlers);
-        napi_value resultValue;
-        napi_create_int32(env, result, &resultValue);
-        return resultValue;
-    });
-}
+// Include the split implementation files
+#include "NapiInitPart1Test.cpp"
+#include "NapiInitPart2Test.cpp"
+#include "NapiInitPart3Test.cpp"
+#include "NapiInitPart4Test.cpp"
 
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 {
@@ -214,8 +27,187 @@ inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 #define DECL_NAPI_DESC(fn) /* NOLINT(G.PRE.02-CPP) */ MakeNapiDesc(#fn, fn)
 
 static const napi_property_descriptor g_drawingNativeDescriptors[] = {
-    DECL_NAPI_DESC(SUB_Drawing_CanvasDrawRecordCmd),
-};
+    DECL_NAPI_DESC(DrawingCanvasDrawRecordCmd),
+    DECL_NAPI_DESC(DrawingRecordCmdDestroy),
+    DECL_NAPI_DESC(DrawingRecordCmdUtilsBeginRecording),
+    DECL_NAPI_DESC(DrawingRecordCmdUtilsDestroy),
+    DECL_NAPI_DESC(DrawingRecordCmdUtilsFinishRecording),
+    DECL_NAPI_DESC(DrawingCanvasDrawSingleChaWithFeatures),
+    DECL_NAPI_DESC(DrawingMemoryStream),
+    DECL_NAPI_DESC(DrawingPointCreate),
+    DECL_NAPI_DESC(DrawingPointDestroy),
+    DECL_NAPI_DESC(DrawingPointGetSet),
+    DECL_NAPI_DESC(DrawingRegionBasicOperations),
+    DECL_NAPI_DESC(DrawingRegionQueryOperations),
+    DECL_NAPI_DESC(DrawingPathEffect),
+    DECL_NAPI_DESC(DrawingPathBasic),
+    DECL_NAPI_DESC(DrawingPathRelative),
+    DECL_NAPI_DESC(DrawingPathAddShape),
+    DECL_NAPI_DESC(DrawingPathPart2Add),
+    DECL_NAPI_DESC(DrawingPathPart2Transform),
+    DECL_NAPI_DESC(DrawingPathPart2GetSet),
+    DECL_NAPI_DESC(DrawingPathPart3Query),
+    DECL_NAPI_DESC(DrawingPathPart3Transform),
+    DECL_NAPI_DESC(DrawingPathPart3Advanced),
+    DECL_NAPI_DESC(DrawingCanvasDestroy),
+    DECL_NAPI_DESC(DrawingCanvasBind),
+    DECL_NAPI_DESC(DrawingCanvasSave),
+    DECL_NAPI_DESC(DrawingCanvasSaveLayer),
+    DECL_NAPI_DESC(DrawingCanvasRestore),
+    DECL_NAPI_DESC(DrawingCanvasRestoreToCount),
+    DECL_NAPI_DESC(DrawingCanvasDrawLine),
+    DECL_NAPI_DESC(DrawingCanvasDrawPath),
+    DECL_NAPI_DESC(DrawingCanvasAttach),
+    DECL_NAPI_DESC(DrawingCanvasDetach),
+    DECL_NAPI_DESC(DrawingCanvasDrawPixelMapRect),
+    DECL_NAPI_DESC(DrawingCanvasDrawBackground),
+    DECL_NAPI_DESC(DrawingCanvasDrawRegion),
+    DECL_NAPI_DESC(DrawingCanvasDrawPoints),
+    DECL_NAPI_DESC(DrawingCanvasDrawBitmap),
+    DECL_NAPI_DESC(DrawingCanvasDrawBitmapRect),
+    DECL_NAPI_DESC(DrawingCanvasDrawRect),
+    DECL_NAPI_DESC(DrawingCanvasDrawCircle),
+    DECL_NAPI_DESC(DrawingCanvasDrawOval),
+    DECL_NAPI_DESC(DrawingCanvasDrawArc),
+    DECL_NAPI_DESC(DrawingCanvasDrawRoundRect),
+    DECL_NAPI_DESC(DrawingCanvasDrawTextBlob),
+    DECL_NAPI_DESC(DrawingCanvasClipRect),
+    DECL_NAPI_DESC(DrawingCanvasClipRoundRect),
+    DECL_NAPI_DESC(DrawingCanvasClipPath),
+    DECL_NAPI_DESC(DrawingCanvasRotate),
+    DECL_NAPI_DESC(DrawingCanvasTranslate),
+    DECL_NAPI_DESC(DrawingCanvasScale),
+    DECL_NAPI_DESC(DrawingCanvasSkew),
+    DECL_NAPI_DESC(DrawingCanvasGetWidthHeight),
+    DECL_NAPI_DESC(DrawingCanvasGetLocalClipBounds),
+    DECL_NAPI_DESC(DrawingCanvasConcatMatrix),
+    DECL_NAPI_DESC(DrawingCanvasDrawShadow),
+    DECL_NAPI_DESC(DrawingCanvasClear),
+    DECL_NAPI_DESC(DrawingCanvasSetMatrix),
+    DECL_NAPI_DESC(DrawingCanvasResetMatrix),
+    DECL_NAPI_DESC(DrawingCanvasDrawImageRect),
+    DECL_NAPI_DESC(DrawingCanvasDrawVertices),
+    DECL_NAPI_DESC(DrawingCanvasReadPixels),
+    DECL_NAPI_DESC(DrawingCanvasReadPixelsToBitmap),
+    DECL_NAPI_DESC(DrawingCanvasDrawSingleCharacter),
+    DECL_NAPI_DESC(DrawingCanvasDrawPoint),
+    DECL_NAPI_DESC(DrawingCanvasDrawColor),
+    DECL_NAPI_DESC(DrawingCanvasIsClipEmpty),
+    DECL_NAPI_DESC(DrawingCanvasGetImageInfo),
+    DECL_NAPI_DESC(DrawingCanvasClipRegion),
+    DECL_NAPI_DESC(DrawingCanvasQuickRejectPath),
+    DECL_NAPI_DESC(DrawingCanvasQuickRejectRect),
+    DECL_NAPI_DESC(DrawingCanvasDrawArcWithCenter),
+    DECL_NAPI_DESC(DrawingCanvasDrawNestedRoundRect),
+    DECL_NAPI_DESC(DrawingCanvasDrawPixelMapNine),
+    DECL_NAPI_DESC(DrawingCanvasCreateWithPixelMap),
+    DECL_NAPI_DESC(DrawingCanvasDrawPixelMapRectConstraint),
+    DECL_NAPI_DESC(DrawingColorFilterCreateBlendMode),
+    DECL_NAPI_DESC(DrawingColorFilterCreateCompose),
+    DECL_NAPI_DESC(DrawingColorFilterCreateMatrix),
+    DECL_NAPI_DESC(DrawingColorFilterCreateLinearToSrgbGamma),
+    DECL_NAPI_DESC(DrawingColorFilterCreateSrgbGammaToLinear),
+    DECL_NAPI_DESC(DrawingColorFilterCreateLuma),
+    DECL_NAPI_DESC(DrawingColorFilterDestroy),
+    DECL_NAPI_DESC(DrawingColorFilterCreateLighting),
+    DECL_NAPI_DESC(DrawingColorSpaceCreateSrgb),
+    DECL_NAPI_DESC(DrawingColorSpaceDestroy),
+    DECL_NAPI_DESC(DrawingColorSpaceCreateSrgbLinear),
+    DECL_NAPI_DESC(DrawingColorSetArgb),
+    DECL_NAPI_DESC(DrawingFilterCreateDestroy),
+    DECL_NAPI_DESC(DrawingFilterSetImageFilter),
+    DECL_NAPI_DESC(DrawingFilterSetMaskFilter),
+    DECL_NAPI_DESC(DrawingFilterSetColorFilter),
+    DECL_NAPI_DESC(DrawingFontCreateDestroy),
+    DECL_NAPI_DESC(DrawingFontSetBaselineSnap),
+    DECL_NAPI_DESC(DrawingFontSetSubpixel),
+    DECL_NAPI_DESC(DrawingFontSetForceAutoHinting),
+    DECL_NAPI_DESC(DrawingFontSetTypeface),
+    DECL_NAPI_DESC(DrawingFontSetTextSize),
+    DECL_NAPI_DESC(DrawingFontCountText),
+    DECL_NAPI_DESC(DrawingFontTextToGlyphs),
+    DECL_NAPI_DESC(DrawingFontGetWidths),
+    DECL_NAPI_DESC(DrawingFontSetLinearText),
+    DECL_NAPI_DESC(DrawingFontSetTextSkewX),
+    DECL_NAPI_DESC(DrawingFontSetFakeBoldText),
+    DECL_NAPI_DESC(DrawingFontSetScaleX),
+    DECL_NAPI_DESC(DrawingFontSetHinting),
+    DECL_NAPI_DESC(DrawingFontSetEmbeddedBitmaps),
+    DECL_NAPI_DESC(DrawingFontSetEdging),
+    DECL_NAPI_DESC(DrawingFontMeasureSingleCharacter),
+    DECL_NAPI_DESC(DrawingFontMeasuretext),
+    DECL_NAPI_DESC(DrawingFontArgumentsCreate),
+    DECL_NAPI_DESC(DrawingFontArgumentsAddVariation),
+    DECL_NAPI_DESC(DrawingFontArgumentsDestroy),
+    DECL_NAPI_DESC(DrawingFontSetThemeFontFollowed),
+    DECL_NAPI_DESC(DrawingFontIsThemeFontFollowed),
+    DECL_NAPI_DESC(DrawingFontGetMetricsPart2),
+    DECL_NAPI_DESC(DrawingFontMeasureTextWithBrushOrPen),
+    DECL_NAPI_DESC(DrawingFontGetWidthsBounds),
+    DECL_NAPI_DESC(DrawingFontGetPos),
+    DECL_NAPI_DESC(DrawingFontGetSpacing),
+    DECL_NAPI_DESC(DrawingFontMeasureSingleChaWithFeatures),
+    DECL_NAPI_DESC(DrawingFontFeatures),
+    DECL_NAPI_DESC(DrawingGpuContext),
+    DECL_NAPI_DESC(DrawingImageFilter),
+    DECL_NAPI_DESC(DrawingImage),
+    DECL_NAPI_DESC(DrawingMaskFilter),
+    DECL_NAPI_DESC(DrawingMatrixCreate),
+    DECL_NAPI_DESC(DrawingMatrixTransform),
+    DECL_NAPI_DESC(DrawingMatrixOperation),
+    DECL_NAPI_DESC(DrawingMatrixPart2Transform),
+    DECL_NAPI_DESC(DrawingMatrixPart2MapQuery),
+    DECL_NAPI_DESC(DrawingMatrixPart2Set),
+    DECL_NAPI_DESC(DrawingBitmap),
+    DECL_NAPI_DESC(DrawingBrushCreateDestroy),
+    DECL_NAPI_DESC(DrawingBrushAntiAlias),
+    DECL_NAPI_DESC(DrawingBrushColor),
+    DECL_NAPI_DESC(DrawingBrushAlpha),
+    DECL_NAPI_DESC(DrawingBrushShaderEffect),
+    DECL_NAPI_DESC(DrawingBrushShadowLayer),
+    DECL_NAPI_DESC(DrawingBrushFilter),
+    DECL_NAPI_DESC(DrawingBrushBlendMode),
+    DECL_NAPI_DESC(DrawingBrushReset),
+    DECL_NAPI_DESC(DrawingBrushGetFloat),
+    DECL_NAPI_DESC(DrawingBrushSetColor4f),
+    DECL_NAPI_DESC(DrawingPenCreateDestroy),
+    DECL_NAPI_DESC(DrawingPenAntiAlias),
+    DECL_NAPI_DESC(DrawingPenColor),
+    DECL_NAPI_DESC(DrawingPenAlpha),
+    DECL_NAPI_DESC(DrawingPenWidth),
+    DECL_NAPI_DESC(DrawingPenMiterLimit),
+    DECL_NAPI_DESC(DrawingPenCap),
+    DECL_NAPI_DESC(DrawingPenJoin),
+    DECL_NAPI_DESC(DrawingPenEffects),
+    DECL_NAPI_DESC(DrawingPenFilter),
+    DECL_NAPI_DESC(DrawingPenBlendMode),
+    DECL_NAPI_DESC(DrawingPenGetFillPath),
+    DECL_NAPI_DESC(DrawingPenReset),
+    DECL_NAPI_DESC(DrawingPenGetFloat),
+    DECL_NAPI_DESC(DrawingPenSetColor4f),
+    DECL_NAPI_DESC(DrawingPixelMap),
+    DECL_NAPI_DESC(DrawingRectCreateDestroyIntersectJoin),
+    DECL_NAPI_DESC(DrawingRectSetGetLeftTopRightBottom),
+    DECL_NAPI_DESC(DrawingRectOtherOperations),
+    DECL_NAPI_DESC(DrawingRoundRect),
+    DECL_NAPI_DESC(DrawingSamplingOptions),
+    DECL_NAPI_DESC(DrawingShadowLayer),
+    DECL_NAPI_DESC(DrawingShaderEffectCreateGradient),
+    DECL_NAPI_DESC(DrawingShaderEffectCreateSpecial),
+    DECL_NAPI_DESC(DrawingShaderEffectDestroy),
+    DECL_NAPI_DESC(DrawingSurface),
+    DECL_NAPI_DESC(DrawingTextBlobBuilder),
+    DECL_NAPI_DESC(DrawingTextBlobCreate),
+    DECL_NAPI_DESC(DrawingTextBlobOther),
+    DECL_NAPI_DESC(DrawingTypefaceCreate),
+    DECL_NAPI_DESC(DrawingRegionAdvancedOperations),
+    DECL_NAPI_DESC(DrawingRegionPart2QueryOperations),
+    DECL_NAPI_DESC(DrawingPathPart4InverseFillType),
+    DECL_NAPI_DESC(DrawingCanvasDrawPixelMapMesh),
+    DECL_NAPI_DESC(DrawingRectPart2OtherOperations),
+    DECL_NAPI_DESC(DrawingTypefaceIsBoldItalic),
+    DECL_NAPI_DESC(DrawingMatrixPart3),
+    };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

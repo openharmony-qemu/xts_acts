@@ -65,9 +65,9 @@ class EntryAbility3 extends UIAbility {
             console.info('promote succeed');
             publishEvent(resultCode);
           })
-          .catch((err: BusinessError<void>): void => {
+          .catch((err: Error): void => {
             console.error(`promote failed, code is ${err.code}, message is ${err.message}`);
-            publishEvent(err);
+            publishEvent(err as BusinessError<void>);
           });
       } catch (error) {
         let code: number = (error as BusinessError).code;
@@ -85,9 +85,9 @@ class EntryAbility3 extends UIAbility {
             console.info('demote succeed');
             publishEvent(resultCode);
           })
-          .catch((err: BusinessError<void>): void => {
+          .catch((err: Error): void => {
             console.error(`demote failed, code is ${err.code}, message is ${err.message}`);
-            publishEvent(err);
+            publishEvent(err as BusinessError<void>);
           });
       } catch (error) {
         let code: number = (error as BusinessError).code;
@@ -104,11 +104,11 @@ class EntryAbility3 extends UIAbility {
             console.info('exit succeed');
             publishEvent(resultCode);
           })
-          .catch((err: BusinessError<void>): void => {
+          .catch((err: Error): void => {
             console.error(`demote failed, code is ${err.code}, message is ${err.message}`);
-            publishEvent(err);
-            publishEvent400(err);
-          });
+            publishEvent(err as BusinessError<void>);
+            publishEvent400(err as BusinessError<void>);
+          })
       } catch (error) {
         let code: number = (error as BusinessError).code;
         let message: string = (error as BusinessError).message;

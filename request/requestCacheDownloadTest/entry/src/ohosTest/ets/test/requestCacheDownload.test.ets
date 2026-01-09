@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2024 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -746,6 +746,66 @@ export default function requestCacheDownloadUnitTest() {
         expect(err.code).assertEqual(401);
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1200
+     * @tc.number SUB_Request_cacheDownload_maintenance_1200
+     * @tc.desc   get ip in downloadInfo.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1200', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1200 is starting-----------------------");
+      cacheDownload.setDownloadInfoListSize(1);
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/test_picture_1.jpg';
+      let downloadInfo1: cacheDownload.DownloadInfo | undefined;
+      let onSuccessCallback = () => {
+        try {
+          cacheDownload.offDownloadSuccess(url, onSuccessCallback);
+          downloadInfo1 = cacheDownload.getDownloadInfo(url);
+          console.info(`====>SUB_Request_cacheDownload_maintenance_1200 onSuccessCallback ${JSON.stringify(downloadInfo1)}`);
+          expect(typeof downloadInfo1?.network.ip === 'string').assertTrue();
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_cacheDownload_maintenance_1200 catch err: " + JSON.stringify(err));
+          done();
+        }
+      }
+      cacheDownload.download(url, {});
+      console.info(`====>SUB_Request_cacheDownload_maintenance_1200 download success`);
+      cacheDownload.onDownloadSuccess(url, onSuccessCallback);
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1300
+     * @tc.number SUB_Request_cacheDownload_maintenance_1300
+     * @tc.desc   error url get ip in downloadInfo.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1300', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1300 is starting-----------------------");
+      cacheDownload.setDownloadInfoListSize(1);
+      let url: string = 'https://gitee.com/murphy1984/download/releases/download/V1/testxxx001.jpg';
+      let downloadInfo1: cacheDownload.DownloadInfo | undefined;
+      let onErrorCallback = (err: cacheDownload.DownloadError) => {
+        try {
+          cacheDownload.offDownloadError(url, onErrorCallback);
+          downloadInfo1 = cacheDownload.getDownloadInfo(url);
+          console.info(`====>SUB_Request_cacheDownload_maintenance_1300 onErrorCallback ${JSON.stringify(downloadInfo1)}`);
+          expect(typeof downloadInfo1?.network.ip === 'string').assertTrue();
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_cacheDownload_maintenance_1300 catch err: " + JSON.stringify(err));
+          done();
+        }
+      }
+      cacheDownload.download(url, {});
+      console.info(`====>SUB_Request_cacheDownload_maintenance_1300 download success`);
+      cacheDownload.onDownloadError(url, onErrorCallback);
     });
 
   });

@@ -180,13 +180,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0310', Level.LEVEL0,
       console.info('29 0310 json' + Math.round(UIContext.resolveUIContext()!.px2vp(swipe_width)));
       
       expect(Math.abs(Math.round(Number(JSON.parseJsonElement(textSwipeOffset).getElement('$attrs').getString('content')))-Math.round(UIContext.resolveUIContext()!.px2vp(swipe_width)))<=1).assertTrue();
-      
-      driver.swipe(
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(2))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number + top + height/2)).toInt(),
-        (Math.round((AppStorage.get<number>('winLeft')) as number + left + UIContext.resolveUIContext()!.vp2px(230))).toInt(),
-        (Math.round((AppStorage.get<number>('winTop')) as number  + top + height/2)).toInt()
-      );
+
       await CommonFunc.sleep(1000);
       let buttonReset2 = await driver.findComponent(ON.id('btreset29'));
       await driver.delayMs(300);

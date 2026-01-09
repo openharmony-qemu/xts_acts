@@ -76,16 +76,11 @@ export default function SwiperNextPrevMarginAddJsunit() {
           console.info("ApiCommponentAddJsunit state success " + JSON.stringify(pages.name));
           ohosrouter.pushUrl({
             url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin',
-            params: {
-              data1: 'message',
-              data2: {
-                data3: [123, 456, 789]
-              } as Data2
-            } as RouterParams
+            params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
           }).then(() => {
             // success
           })
-            .catch((err: BusinessError): void => {
+            .catch((err: Error): void => {
               console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
             })
           await CommonFunc.sleep(2000);
@@ -623,16 +618,11 @@ it('SwiperNextPrevMarginAddJsunit_static_1500', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginDuplicate',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -670,16 +660,11 @@ it('SwiperNextPrevMarginAddJsunit_static_1600', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -717,16 +702,11 @@ it('SwiperNextPrevMarginAddJsunit_static_1700', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -773,16 +753,11 @@ it('SwiperNextPrevMarginAddJsunit_static_1800', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -830,16 +805,11 @@ it('SwiperNextPrevMarginAddJsunit_static_1900', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -887,16 +857,11 @@ it('SwiperNextPrevMarginAddJsunit_static_2000', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -944,16 +909,11 @@ it('SwiperNextPrevMarginAddJsunit_static_2100', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1001,16 +961,11 @@ it('SwiperNextPrevMarginAddJsunit_static_2200', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1058,16 +1013,11 @@ it('SwiperNextPrevMarginAddJsunit_static_2300', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1116,16 +1066,11 @@ it('SwiperNextPrevMarginAddJsunit_static_020', Level.LEVEL0, async (done: () => 
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginNoMargin',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1164,16 +1109,11 @@ it('SwiperNextPrevMarginAddJsunit_static_2500', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMarginString',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1221,16 +1161,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0076', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin76',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1273,16 +1208,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0078', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1324,16 +1254,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0077', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin78',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1384,16 +1309,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0081', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1437,16 +1357,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0080', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin81',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1497,16 +1412,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0079', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin79',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1552,16 +1462,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0082', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin82',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1606,16 +1511,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0083', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin83',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1661,16 +1561,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0084', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin84',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1712,16 +1607,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0085', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin85',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1763,16 +1653,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0063', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin63',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1816,16 +1701,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0062', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin62',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1870,16 +1750,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0061', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin61',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1922,16 +1797,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0060', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin60',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -1982,16 +1852,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0067', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin67',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2041,16 +1906,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0066', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin66',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2099,16 +1959,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0065', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin65',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2159,16 +2014,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0064', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin64',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2217,16 +2067,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0055', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin55',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2275,16 +2120,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0054', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin54',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2331,16 +2171,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0053', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin53',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2387,16 +2222,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0052', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin52',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2452,16 +2282,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0059', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin59',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2511,16 +2336,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0058', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin58',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2569,16 +2389,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0057', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin57',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2629,16 +2444,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0056', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin56',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2687,16 +2497,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0050', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2744,16 +2549,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0051', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2803,16 +2603,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0042', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2870,16 +2665,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0043', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -2937,16 +2727,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0044', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3004,16 +2789,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0045', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3071,16 +2851,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0046', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3152,16 +2927,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0047', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3223,16 +2993,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0048', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3295,16 +3060,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0049', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3366,16 +3126,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0072', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3441,16 +3196,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0073', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3515,16 +3265,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0074', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3589,16 +3334,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0075', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3664,16 +3404,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0068', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3740,16 +3475,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0069', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3816,16 +3546,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0070', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3892,16 +3617,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0071', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -3967,16 +3687,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0041', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);
@@ -4046,16 +3761,11 @@ it('SwiperNextPrevMarginAddJsunit_static_0040', Level.LEVEL0, async (done: () =>
       ohosrouter.clear();
       ohosrouter.pushUrl({
         url: 'MainAbility/pages/Swiper/swiperUI/swiperNextPrevMargin50',
-        params: {
-          data1: 'message',
-          data2: {
-            data3: [123, 456, 789]
-          } as Data2
-        } as RouterParams
+        params: (new RouterParams('message', new Data2([123, 456, 789]))).toJSON()
       }).then(() => {
         // success
       })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
         })
       await CommonFunc.sleep(1000);

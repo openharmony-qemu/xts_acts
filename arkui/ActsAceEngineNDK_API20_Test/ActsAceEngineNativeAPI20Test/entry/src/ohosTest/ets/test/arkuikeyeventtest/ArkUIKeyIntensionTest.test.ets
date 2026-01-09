@@ -181,29 +181,6 @@ export default function ArkUIKeyIntensionTest() {
       })
 
     /**
-     * @tc.name   testArkUIKeyIntensionEscape0100
-     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ESCAPE_0100
-     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_ESCAPE are working properly.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('testArkUIKeyIntensionEscape0100',
-      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
-        try {
-          console.info("====>testArkUIKeyIntensionEscape0100 start====");
-          await Utils.driver.triggerKey(2070);
-          let result: number = keyeventndk.GetKeyIntensionType(6);
-          console.info(`====>testArkUIKeyIntensionEscape0100 result====${result}`);
-          expect(1).assertEqual(result);
-          done()
-        } catch (err) {
-          console.error("====>testArkUIKeyIntensionEscape0100 catch err: " + err);
-          expect(false).assertEqual(err);
-        }
-      })
-
-    /**
      * @tc.name   testArkUIKeyIntensionBack0100
      * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_BACK_0100
      * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_BACK are working properly.
@@ -430,6 +407,29 @@ export default function ArkUIKeyIntensionTest() {
           done()
         } catch (err) {
           console.error("====>testArkUIKeyIntensionVolumeDown0100 catch err: " + err);
+          expect(false).assertEqual(err);
+        }
+      })
+
+    /**
+     * @tc.name   testArkUIKeyIntensionEscape0100
+     * @tc.number SUB_ARKUI_ACE_ENGINE_ARKUI_KEY_INTENSION_ESCAPE_0100
+     * @tc.desc   Test whether the key ARKUI_KEY_INTENSION_ESCAPE are working properly.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testArkUIKeyIntensionEscape0100',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        try {
+          console.info("====>testArkUIKeyIntensionEscape0100 start====");
+          await Utils.driver.triggerKey(2070);
+          let result: number = keyeventndk.GetKeyIntensionType(6);
+          console.info(`====>testArkUIKeyIntensionEscape0100 result====${result}`);
+          expect(1).assertEqual(result);
+          done()
+        } catch (err) {
+          console.error("====>testArkUIKeyIntensionEscape0100 catch err: " + err);
           expect(false).assertEqual(err);
         }
       })

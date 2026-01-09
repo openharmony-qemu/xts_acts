@@ -52,7 +52,7 @@ struct XtsFormObserver {
                     hilog.info(DOMAIN, TAG, `formObserverStaticTest001 callback success`);
                   }
                 });
-              } catch (error: BusinessError) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest001 catch error');
               }
             }
@@ -87,7 +87,7 @@ struct XtsFormObserver {
                     hilog.error(DOMAIN, TAG, `formObserverStaticTest002 promise error, code: ${code}`);
                   });
                   hilog.info(DOMAIN, TAG, 'formObserverStaticTest002 getRunningFormInfoById success');
-                } catch (error: BusinessError) {
+                } catch (error) {
                   hilog.error(DOMAIN, TAG, 'formObserverStaticTest002 catch error');
                 }
               }
@@ -114,7 +114,7 @@ struct XtsFormObserver {
                   hilog.error(DOMAIN, TAG, `formObserverStaticTest003 promise error, code: ${code}`);
                 });
                 hilog.info(DOMAIN, TAG, 'formObserverStaticTest003 getRunningFormInfoById success');
-              } catch (error: BusinessError) {
+              } catch (error) {
                 hilog.error(DOMAIN, TAG, 'formObserverStaticTest003 catch error');
               }
             }
@@ -151,7 +151,7 @@ struct XtsFormObserver {
                         hilog.info(DOMAIN, TAG, `formObserverStaticTest004 getRunningFormInfoById callback success`);
                       }
                     });
-                } catch (error: BusinessError) {
+                } catch (error) {
                   hilog.error(DOMAIN, TAG, 'formObserverStaticTest004 getRunningFormInfoById catch error');
                 }
               }
@@ -178,7 +178,7 @@ struct XtsFormObserver {
               let message = (error as BusinessError).message;
               hilog.error(DOMAIN, TAG, `formObserverStaticTest009 promise error, code: ${code}`);
             });
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.error(DOMAIN, TAG, 'formObserverStaticTest009 catch error');
           }
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest009 end');
@@ -199,7 +199,7 @@ struct XtsFormObserver {
               hilog.info(DOMAIN, TAG, `formObserverStaticTest010 callback success`);
             }
           });
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.error(DOMAIN, TAG, 'formObserverStaticTest010 catch error');
         }
         hilog.info(DOMAIN, TAG, 'formObserverStaticTest010 end');
@@ -217,7 +217,7 @@ struct XtsFormObserver {
             hilog.info(DOMAIN, TAG, 'formObserverStaticTest011 formObserver on success');
             formObserver.offCall(hostBundleName, observerCallback);
             hilog.info(DOMAIN, TAG, 'formObserverStaticTest011 formObserver off success');
-          } catch (error: BusinessError) {
+          } catch (error) {
             hilog.error(DOMAIN, TAG, `formObserverStaticTest011 catch error, code:${error.code}`);
           }
         })
@@ -233,7 +233,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest012 formObserver on success');
           formObserver.offCall(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest012 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           hilog.error(DOMAIN, TAG, `formObserverStaticTest012 catch error, code:${error.code}`);
         }
       })
@@ -251,7 +251,7 @@ struct XtsFormObserver {
             hilog.info(DOMAIN, TAG, 'formObserverStaticTest013 formObserver on success');
             formObserver.offMessage(hostBundleName, observerCallback);
             hilog.info(DOMAIN, TAG, 'formObserverStaticTest013 formObserver off success');
-          } catch (error: BusinessError) {
+          } catch (error) {
             let code = (error as BusinessError).code;
             let message = (error as BusinessError).message;
             hilog.error(DOMAIN, TAG, `formObserverStaticTest013 catch error, code: ${code}, message: ${message})`);
@@ -271,7 +271,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest014 formObserver on success');
           formObserver.offMessage(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest014 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest014 catch error, code: ${code}, message: ${message})`);
@@ -291,7 +291,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest015 formObserver on success');
           formObserver.offRouter(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest015 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest015 catch error, code: ${code}, message: ${message})`);
@@ -311,7 +311,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest016 formObserver on success');
           formObserver.offRouter(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest016 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest016 catch error, code: ${code}, message: ${message})`);
@@ -331,7 +331,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest017 formObserver on success');
           formObserver.offFormRemove(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest017 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest017 catch error, code: ${code}, message: ${message})`);
@@ -352,7 +352,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest018 formObserver on success');
           formObserver.offFormRemove(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest018 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest018 catch error, code: ${code}, message: ${message})`);
@@ -372,7 +372,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest019 formObserver on success');
           formObserver.offFormAdd(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest019 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest019 catch error, code: ${code}, message: ${message})`);
@@ -392,7 +392,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest020 formObserver on success');
           formObserver.offFormAdd(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest020 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest020 catch error, code: ${code}, message: ${message})`);
@@ -412,7 +412,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest021 formObserver on success');
           formObserver.offNotifyVisible(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest021 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest021 catch error, code: ${code}, message: ${message})`);
@@ -432,7 +432,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest022 formObserver on success');
           formObserver.offNotifyVisible(undefined, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest022 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest022 catch error, code: ${code}, message: ${message})`);
@@ -452,7 +452,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest023 formObserver on success');
           formObserver.offNotifyInvisible(undefined, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest023 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest023 catch error, code: ${code}, message: ${message})`);
@@ -472,7 +472,7 @@ struct XtsFormObserver {
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest024 formObserver on success');
           formObserver.offNotifyInvisible(hostBundleName, observerCallback);
           hilog.info(DOMAIN, TAG, 'formObserverStaticTest024 formObserver off success');
-        } catch (error: BusinessError) {
+        } catch (error) {
           let code = (error as BusinessError).code;
           let message = (error as BusinessError).message;
           hilog.error(DOMAIN, TAG, `formObserverStaticTest024 catch error, code: ${code}, message: ${message})`);

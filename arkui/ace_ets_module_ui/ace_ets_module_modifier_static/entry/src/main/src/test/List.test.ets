@@ -250,28 +250,7 @@ it('ListJsunit_static_0110', Level.LEVEL0, async (done: () => void): Promise<voi
       console.info('[ListJsunit_static_0110] END');
       done();
     });
-
-    //  废弃
-    // /**
-    //  * @tc.number   ListJsunit_static_0111
-    //  * @tc.name     ListJsunit_static_0111
-    //  * @tc.desc     ListJsunit_static_0111
-    //  * @tc.level    Level.LEVEL0
-    //  */
-
-    //it('ListJsunit_static_0111', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info('[ListJsunit_static_0111] START');
-    //   let strJson = inspector.getInspectorByKey('ListKey1');
-    //
-    //   console.info("[ListJsunit_static_0111] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson).getElement('$attrs')));
-    //
-    //   expect(JSON.parseJsonElement(strJson).getElement('$attrs').getBoolean('editMode')).assertEqual(true);
-    //   console.info('[ListJsunit_static_0111] END');
-    //   done();
-    // });
-
-    
-    
+        
     /**
      * @tc.number   ListJsunit_static_0112
      * @tc.name     ListJsunit_static_0112

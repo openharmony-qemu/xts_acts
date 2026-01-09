@@ -25,7 +25,7 @@ struct router_back1 {
       Button('back')
         .id('router_back_btn1')
         .onClick((e: ClickEvent) => {
-          this.getUIContext().getRouter().back({ url: 'pages/detail', params: 1 });
+          this.getUIContext().getRouter().back({ url: 'pages/detail', params: jsonx.JsonElement.createInteger(1) });
         })
 
       Text('back fail').key('router_back_text1')

@@ -16,6 +16,7 @@
 import router from '@ohos.router'
 import { Entry, Component, Column, ColumnOptions, Text, Button, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { AgeObj } from '../../common/Utils'
 
 @Entry
 @Component
@@ -37,7 +38,9 @@ struct router_getStateByIndex16b {
             let index = 'index=' + options.index
             let name = 'name=' + options.name
             let path = 'path=' + options.path
-            let params = 'params=' + JSON.stringify(options.params)
+            let param = new AgeObj()
+            param.fromJSON(options.params)
+            let params = 'params=' + JSON.stringify(param)
             this.str1 = index + ';' + name + ';' + path + ';' + params + ';'
           }
         })

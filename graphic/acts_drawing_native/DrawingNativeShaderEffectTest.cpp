@@ -1783,6 +1783,9 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithL
     OH_Drawing_ShaderEffect *shaderEffect4 = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
         centerPt, colors1, pos1, 3, OH_Drawing_TileMode::CLAMP, matrix);
     EXPECT_NE(shaderEffect4, nullptr);
+    OH_Drawing_ShaderEffect *shaderEffect5 = OH_Drawing_ShaderEffectCreateSweepGradientWithLocalMatrix(
+        centerPt, colors1, pos1, 256, OH_Drawing_TileMode::CLAMP, matrix);
+    EXPECT_NE(shaderEffect5, nullptr);
     // 5. Destroy objects.
     OH_Drawing_PointDestroy(centerPt);
     OH_Drawing_MatrixDestroy(matrix);
@@ -1790,6 +1793,7 @@ HWTEST_F(DrawingNativeShaderEffectTest, testShaderEffectCreateSweepGradientWithL
     OH_Drawing_ShaderEffectDestroy(shaderEffect2);
     OH_Drawing_ShaderEffectDestroy(shaderEffect3);
     OH_Drawing_ShaderEffectDestroy(shaderEffect4);
+    OH_Drawing_ShaderEffectDestroy(shaderEffect5);
 }
 
 /**

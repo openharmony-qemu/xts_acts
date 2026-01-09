@@ -38,17 +38,6 @@ function isIteratorEmpty<T>(iterator: Iterator<T>): boolean {
   return firstResult.done === true;
 }
 
-
-// function sleep(time: number) {
-//   return new Promise<void>((resolve, reject) => {
-//     setTimeout(() => {
-//       resolve()
-//     }, time)
-//   }).then(() => {
-//     console.info(`sleep ${time} over...`)
-//   })
-// }
-
 interface Options {
   type: string,
   endings: string,
@@ -552,24 +541,25 @@ export default function BufferTest1() {
       }
     });
 
-    // /*
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0300
-    //  * @tc.name  : testIsBuffer0003
-    //  * @tc.desc  : Testing isBuffer for buffer with value '[]'.
-    //  * @tc.size: MediumTest
-    //  * @tc.type  : Function
-    //  * @tc.level: Level 3
-    //  */
-    // it('testIsBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testIsBuffer0003";
-    //   try {
-    //     let flag = buffer.isBuffer([]);
-    //     expect(flag).assertEqual(false);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} is fail,err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_ISBUFFER_0300
+     * @tc.name testIsBuffer0003
+     * @tc.desc Testing isBuffer for buffer with value '[]'.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
+     */
+    it('testIsBuffer0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
+      TAG = "testIsBuffer0003";
+      try {
+        let src: Array<string> = []
+        let flag = buffer.isBuffer(src);
+        expect(flag).assertEqual(false);
+      } catch (err:BusinessError) {
+        console.error(`${TAG} is fail,err is ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testIsBuffer0004
@@ -4013,30 +4003,7 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_TOJSON_0100
-    //  * @tc.name: testToJSON0001
-    //  * @tc.desc: Test the toJSON interface source buffer of numerical string type.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testToJSON0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testToJSON0001";
-    //   try {
-    //     let buf = buffer.from("1236");
-    //     let obj = buf.toJSON();
-    //     let textTran :parse = JSON.parse<parse>({
-    //       "text":(JSON.stringify(obj))
-    //     })
-    //     expect(JSON.parse(JSON.stringify(obj)).data.join("")).assertEqual("49505154");
-    //     expect(JSON.stringify(obj)).assertEqual("49505154");
-    //     expect(textTran.data.join("")).assertEqual("49505154");
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+
     /**
      * @tc.name   testIndexOf0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_INDEXOF_0100
@@ -5278,21 +5245,13 @@ export default function BufferTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
-    //  * @tc.name: testFrom0013
-    //  * @tc.desc: Test the from interface by pass the parameter byteOffset is outside of the range.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
     /**
-     * @tc.name   testFrom0013
-     * @tc.number testFrom0013
-     * @tc.desc   testFrom0013
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_FROM_1300
+     * @tc.name testFrom0013
+     * @tc.desc Test the from interface by pass the parameter byteOffset is outside of the range.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 3
      */
     it("testFrom0013", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
       TAG = "testFrom0013";
@@ -5443,9 +5402,7 @@ export default function BufferTest1() {
             type: "new type", endings: "transparent"
           }
           let sources: string[] = ["a", "b", "c"];
-          //      let sources =  new Array<string>("a", "b", "c")
           let blob2 = new buffer.Blob(sources, option);
-          // let blob2 : buffer.Blob = new buffer.Blob(sources, option);
           let promise = blob2.text();
           await promise.then((value: string) => {
             try {
@@ -5460,106 +5417,6 @@ export default function BufferTest1() {
         }
         done();
       });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0200
-    //  * @tc.name: testBlobConstructor0002
-    //  * @tc.desc: Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobConstructor0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobConstructor0002";
-    //   try {
-    //     let arrBuf = new ArrayBuffer(3);
-    //     let uint8arr = new Uint8Array(arrBuf);
-    //     uint8arr[0] = 97;
-    //     uint8arr[1] = 98;
-    //     uint8arr[2] = 99;
-    //     let option: Options = {
-    //       type: "new type", endings: "transparent"
-    //     }
-    //     let blob2 = new buffer.Blob([arrBuf], option);
-    //     await blob2.text().then((value) => {
-    //       try {
-    //         expect(value).assertEqual("abc");
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0300
-    //  * @tc.name: testBlobConstructor0003
-    //  * @tc.desc: Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobConstructor0003", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobConstructor0003";
-    //   try {
-    //     let uint8arr = new Uint8Array(3);
-    //     uint8arr[0] = 97;
-    //     uint8arr[1] = 98;
-    //     uint8arr[2] = 99;
-    //     let option: Options = {
-    //       type: "new type", endings: "transparent"
-    //     };
-    //     let blob2 = new buffer.Blob([uint8arr], option);
-    //     await blob2.text().then((value) => {
-    //       try {
-    //         expect(value).assertEqual("979899");
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBCONSTRUCTOR_0400
-    //  * @tc.name: testBlobConstructor0004
-    //  * @tc.desc: Test the from interface by Creating a new Blob object containing a concatenation of the given sources.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobConstructor0004", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobConstructor0004";
-    //   try {
-    //     let arrBuf = new ArrayBuffer(3);
-    //     let uint8arr = new Uint8Array(arrBuf);
-    //     uint8arr[0] = 97;
-    //     uint8arr[1] = 98;
-    //     uint8arr[2] = 99;
-    //     let option: Options = {
-    //       type: "new type", endings: "transparent"
-    //     };
-    //     let view = new DataView(arrBuf);
-    //     let blob2 = new buffer.Blob([view], option);
-    //     await blob2.text().then((value) => {
-    //       try {
-    //         expect(value).assertEqual("abc");
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testBlobConstructor0005
@@ -5613,39 +5470,6 @@ export default function BufferTest1() {
         done()
       });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBARRAYBUFFER_0100
-    //  * @tc.name: testBlobArrayBuffer0100
-    //  * @tc.desc: Test the arrayBuffer interface by blob fulfills with an <ArrayBuffer> containing a copy of the Blob data.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobArrayBuffer0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobArrayBuffer0100";
-    //   try {
-    //     let option: buffer.BlobOptions = {
-    //       type: "new type", endings: "transparent"
-    //     };
-    //     let sources:string[] =  ["a", "b", "c"];
-    //     let blob = new buffer.Blob(sources, option);
-    //     await blob.arrayBuffer().then((value:string) => {
-    //       try {
-    //         let arr = new Uint8Array(value)
-    //         for (let i = 0, len = arr.length; i < len; i++) {
-    //           expect(String(arr[i])).assertEqual(String('97' + i));
-    //         }
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // });
-
     /**
      * @tc.name   testBlobText0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBTEXT_0100
@@ -5676,68 +5500,6 @@ export default function BufferTest1() {
       done();
     });
 
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0100
-    //  * @tc.name: testBlobSlice0001
-    //  * @tc.desc: Test the slice interface by passing the parameter start to 0,end to 1.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobSlice0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobSlice0001";
-    //   try {
-    //     let option: buffer.BlobOptions = {
-    //       type: "new type", endings: "transparent"
-    //     };
-    //     let sources:string[] =  ["a", "b", "c"];
-    //     let blob = new buffer.Blob(sources, option);
-    //     let blobSlice = blob.slice(0, 1);
-    //     await blobSlice.arrayBuffer().then((value:string) => {
-    //       try {
-    //         let arr = new Uint8Array(value);
-    //         expect(arr[0]).assertEqual(97);
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // });
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBSLICE_0200
-    //  * @tc.name: testBlobSlice0002
-    //  * @tc.desc: Test the slice interface by passing the parameter start to -1,end to 0.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobSlice0002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-    //   TAG = "testBlobSlice0002";
-    //   try {
-    //     let option: buffer.BlobOptions = {
-    //       type: "new type", endings: "transparent"
-    //     };
-    //     let sources:string[] =  ["a", "b", "c"];
-    //     let blob = new buffer.Blob(sources, option);
-    //     let blobSlice = blob.slice(-1, 0);
-    //     await blobSlice.arrayBuffer().then((value:string) => {
-    //       try {
-    //         let arr = new Uint8Array(value)
-    //         expect(arr[0]).assertEqual(99);
-    //       } catch (err:BusinessError) {
-    //         console.error(`${TAG} err is ${err}`);
-    //       }
-    //     });
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    //   done();
-    // });
     /**
      * @tc.name   testBlobSize0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BLOBSIZE_0100
@@ -5799,30 +5561,6 @@ export default function BufferTest1() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_UTIL_BASE_BLOBTYPE_0100
-    //  * @tc.name: testBlobType0001
-    //  * @tc.desc: Test the type interface by creating buffer which type is mine.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 3
-    //  */
-    // it("testBlobType0001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, (): void => {
-    //   TAG = "testBlobType0001";
-    //   try {
-    //     let option: Options = {
-    //       type: "mime", endings: "transparent"
-    //     };
-    //      let sources =  new Array<string>("a", "b", "c")
-    //     let blob = new buffer.Blob(sources, option);
-    //     let type = blob.type;
-    //     expect(type).assertEqual("mime");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} err is ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testBlobType0002

@@ -60,7 +60,7 @@ struct closeToastTest {
           }).then((toastId: int) => {
             this.toastId = toastId;
           })
-            .catch((error: BusinessError): void => {
+            .catch((error: Error): void => {
               console.error(`openToast error code is ${error.code}, message is ${error.message}`)
             })
           setTimeout(() => {

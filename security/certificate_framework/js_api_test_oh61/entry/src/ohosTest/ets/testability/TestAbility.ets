@@ -17,6 +17,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import hilog from '@ohos.hilog';
 import { Hypium } from '@ohos/hypium';
+import { HttpServer } from '../test/utils/http/http';
 import testsuite from '../test/List.test';
 import window from '@ohos.window';
 import Want from '@ohos.app.ability.Want'
@@ -31,6 +32,7 @@ export default class TestAbility extends UIAbility {
         abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
         let abilityDelegatorArguments: AbilityDelegatorRegistry.AbilityDelegatorArgs
         abilityDelegatorArguments = AbilityDelegatorRegistry.getArguments()
+        HttpServer(); // tcp-http
         hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
         Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
     }

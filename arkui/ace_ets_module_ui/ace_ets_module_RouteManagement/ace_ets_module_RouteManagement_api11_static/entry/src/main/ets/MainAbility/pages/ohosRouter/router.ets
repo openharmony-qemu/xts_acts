@@ -21,20 +21,54 @@ import { State } from '@ohos.arkui.stateManagement';
 import Log from '../../common/Log';
 
 const TAG = 'ets_apiLack_add';
-class JsonObject {
-  text: string = '';
-  data: int[] = [0];
+
+class JsonObject implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  text: string;
+  data: int[];
+
+  constructor() {
+    this.text = '';
+    this.data = [0];
+  }
+
+  constructor(a: string, b: Array<int>) {
+    this.text = a;
+    this.data = b;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('text', jsonx.JsonElement.createString(this.text));
+    let arr = new Array<jsonx.JsonElement>();
+    for (let i = 0; i < this.data.length; ++i) {
+      arr.push(jsonx.JsonElement.createInteger(this.data[i]));
+    }
+    let arrJson = jsonx.JsonElement.createArray(arr);
+    root.set('data', arrJson);
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.text = jsonElem.tryGetString('text');
+    let arr = new Array<int>();
+    let arrJson = jsonElem.tryGetArray('data');
+    for (let i = 0; i < arrJson!.length; i++) {
+      let val = arrJson![i].tryAsInteger();
+      if (val) {
+        arr.push(val);
+      }
+    }
+    this.data = arr;
+  }
 }
+
 @Entry
 @Component
 struct RouterStandard {
   async routePage() {
     let options: router.RouterOptions = {
       url: 'pages/ohosRouter/page1',
-      params: {
-        text: '这是第一页的值',
-        data: [12, 45, 78]
-      } as JsonObject
+      params: (new JsonObject('这是第一页的值', [12, 45, 78])).toJSON()
     }
     try {
       this.getUIContext().getRouter().pushUrl(options)
@@ -46,10 +80,7 @@ struct RouterStandard {
   async routeSinglePage() {
     let options: router.RouterOptions = {
       url: 'pages/ohosRouter/page2',
-      params: {
-        text: '这是第二页的值',
-        data: [13, 46, 79]
-      } as JsonObject
+      params: (new JsonObject('这是第二页的值', [13, 46, 79])).toJSON()
     }
     try {
       this.getUIContext().getRouter().pushUrl(options)

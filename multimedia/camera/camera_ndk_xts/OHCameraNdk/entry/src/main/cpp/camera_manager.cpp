@@ -1120,6 +1120,11 @@ Camera_ErrorCode NDKCamera::IsMirrorSupported(int useCaseCode)
     }
     return ret_;
 }
+bool NDKCamera::getMirrorSupported()
+{
+    ret_ = OH_PhotoOutput_IsMirrorSupported(photoOutput_, &isMirror_);
+    return isMirror_;
+}
 Camera_ErrorCode NDKCamera::EnableMirror(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {

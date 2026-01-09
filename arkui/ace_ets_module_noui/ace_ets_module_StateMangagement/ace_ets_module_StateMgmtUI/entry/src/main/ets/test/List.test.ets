@@ -43,6 +43,7 @@ import EntryParamsTest from './entryTest/EntryParamsTest.test';
 import Styles0010TestJsunit from './styles/Styles0010TestJsunit.test';
 import LifeCycleTest0510 from './lifecycle/LifeCycleTest0510.test';
 import LifeCycleTest0100 from './lifecycle/LifeCycleTest0100.test';
+import LifeCycleTest0300 from './lifecycle/LifeCycleTest0300.test';
 
 
 export default function testsuite() {
@@ -76,4 +77,5 @@ export default function testsuite() {
     Styles0010TestJsunit();
     LifeCycleTest0510();
     LifeCycleTest0100();
+    LifeCycleTest0300();
 }

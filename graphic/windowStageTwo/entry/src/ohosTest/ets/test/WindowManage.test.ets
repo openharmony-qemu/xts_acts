@@ -89,6 +89,7 @@ export default function windowManageTest() {
     let isPCStatus: string = '';
     let isAutoWindow: string = '';
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -109,6 +110,7 @@ export default function windowManageTest() {
       //isPCStatus == '1' PC设备状态栏dock未融合
       //isPCStatus == '0' PC设备状态栏dock融合
       console.info(`beforeAll isPCStatus: `+ isPCStatus);
+      driver = Driver.create();
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -520,7 +522,6 @@ export default function windowManageTest() {
       let caseName = 'TestOnWindowStageClose';
       try {
         if(isFreeWindowMode){
-          let driver: Driver = Driver.create();
           let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           let count = 0;
           windowStage.on('windowStageClose', () => {
@@ -561,7 +562,6 @@ export default function windowManageTest() {
       let caseName = 'TestOnWindowStageCloseRepeat';
       try {
         if(isFreeWindowMode){
-          let driver: Driver = Driver.create();
           let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           let count1 = 0;
           let count2 = 0;
@@ -611,7 +611,6 @@ export default function windowManageTest() {
       let caseName = 'TestOnWindowStageCloseOff';
       try {
         if(isFreeWindowMode){
-          let driver: Driver = Driver.create();
           let closeBtn = await driver.findComponent(ON.id('EnhanceCloseBtn'));
           let count1 = 0;
           let count2 = 0;

@@ -371,9 +371,9 @@ export default function imagepixelMapSupportYuv() {
       }
       newImageInfo = pixelMap.getImageInfoSync()
       hilog.info(0x0000, '${testNum}', '%{public}s', `${testNum}: compareImageInfo${JSON.stringify(newImageInfo)}`)
-      const widthCheck = oldMapImageInfo.size.width * scaleX === newImageInfo.size.width
-      const heightCheck = oldMapImageInfo.size.height * scaleY === newImageInfo.size.height
-      expect(widthCheck && heightCheck)
+      const widthCheck = Math.round(oldMapImageInfo.size.width * scaleX) === newImageInfo.size.width
+      const heightCheck = Math.round(oldMapImageInfo.size.height * scaleY) === newImageInfo.size.height
+      expect(widthCheck && heightCheck).assertTrue();
       done()
     }
 

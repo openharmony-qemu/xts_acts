@@ -124,7 +124,8 @@ export default function ProcessSupplementSecondTest() {
       const taskPromises: Promise<void>[] = [];
       for (let i = 0; i < totalTasks; i++) {
         const task = new taskpool.Task(taskpoolTestFunc2, TEST_UID);
-        const promise = taskpool.execute(task).then((result: number): void => {
+        const promise = taskpool.execute(task).then((value: Any): void => {
+          const result = value as Number;
           successCount += 1;
           completedTasks++;
           console.info(`${caseName}, task ${i} completed with ${result} successes`);
@@ -170,7 +171,8 @@ export default function ProcessSupplementSecondTest() {
       for (let i = 0; i < totalTasks; i++) {
         let args_param = 'PATH';
         const task = new taskpool.Task(taskpoolTestFunc5, args_param);
-        const promise = taskpool.execute(task).then((result: number): void => {
+        const promise = taskpool.execute(task).then((value: Any): void => {
+          const result = value as Number;
           successCount += 1;
           completedTasks++;
           console.info(`${caseName}, task ${i} completed with ${result} successes`);

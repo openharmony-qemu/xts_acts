@@ -18,6 +18,7 @@ import router from '@ohos.router';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { Entry,Component,Column,Margin,Text, Button, ButtonType, ClickEvent, Scroll, FontWeight } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
+import { JsonObject, JsonObject1 } from '../../common/Utils';
 
 @Entry
 @Component
@@ -52,12 +53,7 @@ struct RouterPushThree {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
-              params: {
-                data1: {
-                  data2: "message",
-                  data3: 12345
-                }
-              } as JsonObject
+              params: (new JsonObject(new JsonObject1("message", 12345))).toJSON()
             })
           })
 
@@ -70,11 +66,7 @@ struct RouterPushThree {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
-              params: {
-                data1: {
-                  data2: ["message", "message1"]
-                }
-              } as JsonObject
+              params: (new JsonObject(new JsonObject1(["message", "message1"]))).toJSON()
             })
           })
 
@@ -87,10 +79,7 @@ struct RouterPushThree {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
-              params: {
-                data1: "message",
-                data2: 12345
-              } as JsonObject2
+              params: (new JsonObject2("message", 12345)).toJSON()
             })
           })
 
@@ -103,10 +92,7 @@ struct RouterPushThree {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.replaceUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
-              params: {
-                data1: "message",
-                data2: [1, 2, 3, 4, 5]
-              } as JsonObject2
+              params: (new JsonObject2("message", [1, 2, 3, 4, 5])).toJSON()
             })
           })
 
@@ -119,12 +105,7 @@ struct RouterPushThree {
           .onClick((e: ClickEvent) => {
             AppStorage.get<Router>("router")!.pushUrl({
               url: 'MainAbility/pages/State/RouterPushOne',
-              params: {
-                data1: {
-                  data2: "message",
-                  data3: 12345
-                }
-              } as JsonObject
+              params: (new JsonObject(new JsonObject1("message", 12345))).toJSON()
             })
           })
 
@@ -144,14 +125,59 @@ struct RouterPushThree {
     }
   }
 }
-class JsonObject {
-  data1: JsonObject1 = new JsonObject1()
-}
-class JsonObject1 {
-  data2: string | string[] = '';
-  data3?: int = 0;
-}
-class JsonObject2 {
-  data1: string = '';
-  data2: int | int[] = 0;
+
+export class JsonObject2 implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  data1: string;
+  data2: int | int[];
+
+  constructor() {
+    this.data1 = '';
+    this.data2 = 0;
+  }
+
+  constructor(a: string, b: int) {
+    this.data1 = a;
+    this.data2 = b;
+  }
+
+  constructor(a: string, b: Array<int>) {
+    this.data1 = a;
+    this.data2 = b;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
+    root.set('data1', jsonx.JsonElement.createString(this.data1));
+    if (this.data2 instanceof int) {
+      root.set('data2', jsonx.JsonElement.createInteger(this.data2 as int));
+    } else {
+      let arr = new Array<jsonx.JsonElement>();
+      for (let i = 0; i < (this.data2 as Array<int>).length; ++i) {
+        arr.push(jsonx.JsonElement.createInteger((this.data2 as Array<int>)[i]));
+      }
+      let arrJson = jsonx.JsonElement.createArray(arr);
+      root.set('data2', arrJson);
+    }
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.data1 = jsonElem.tryGetString('data1');
+    let data2Json = jsonElem.tryGetElement('data2');
+    if (!data2Json) {
+      this.data2 = 0;
+    } else if (data2Json.jsonType == jsonx.JsonType.JsonNumber) {
+      this.data2 = jsonElem.tryGetInteger('data2');
+    } else {
+      let arr = new Array<int>();
+      let arrJson = jsonElem.tryGetArray('data2');
+      for (let i = 0; i < arrJson!.length; i++) {
+        let val = arrJson![i].tryAsInteger();
+        if (val) {
+          arr.push(val);
+        }
+      }
+      this.data2 = arr;
+    }
+  }
 }

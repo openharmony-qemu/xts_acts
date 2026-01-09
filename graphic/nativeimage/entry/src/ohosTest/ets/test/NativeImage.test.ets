@@ -1581,5 +1581,19 @@ export default function nativeImageTest() {
           expect(result).assertEqual(0);
           done();
         });
+      /**
+       * @tc.name   testNativeErrorCodeCover
+       * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_NATIVE_IMAGE_3900
+       * @tc.desc   test ErrorCode
+       * @tc.type   FUNCTION
+       * @tc.size   MEDIUMTEST
+       * @tc.level  LEVEL3
+       */
+      it('testNativeErrorCodeCover', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+        async (done: Function) => {
+          let result: number = nativeimage.oHNativeErrorCodeCover();
+          expect(result).assertEqual(0);
+          done();
+        });
   })
 }

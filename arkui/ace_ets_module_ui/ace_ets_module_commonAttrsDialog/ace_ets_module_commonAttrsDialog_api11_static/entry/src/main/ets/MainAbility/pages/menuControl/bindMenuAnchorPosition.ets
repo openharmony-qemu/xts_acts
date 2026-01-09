@@ -63,7 +63,7 @@ struct BindMenuAnchorPosition {
           this.textPosition1.y = newValue.globalPosition.y;
         })
         .bindMenu(this.MenuBuilder,
-          // { anchorPosition: { x: 10, y: 20 }, }
+          { anchorPosition: { x: 10, y: 20 }, }
         )
 
       Text('bindMenu2')
@@ -77,7 +77,7 @@ struct BindMenuAnchorPosition {
           this.textPosition2.y = newValue.globalPosition.y;
         })
         .bindMenu(this.MenuBuilder,
-          // { anchorPosition: { x: -10, y: -20 }, }
+          { anchorPosition: { x: -10, y: -20 }, }
         )
 
       Text('bindMenu3')
@@ -91,7 +91,7 @@ struct BindMenuAnchorPosition {
           this.textPosition3.y = newValue.globalPosition.y;
         })
         .bindMenu(this.MenuBuilder,
-          // { anchorPosition: { x: -20, y: 20 }, }
+          { anchorPosition: { x: -20, y: 20 }, }
         )
     }
     .alignItems(HorizontalAlign.Start)

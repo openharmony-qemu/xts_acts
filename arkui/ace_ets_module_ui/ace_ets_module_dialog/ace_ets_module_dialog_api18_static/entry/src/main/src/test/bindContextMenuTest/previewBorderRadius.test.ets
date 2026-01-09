@@ -77,7 +77,7 @@ it('BindContextMenu_previewBorderRadius_static_001', TestType.FUNCTION | Size.ME
       let strJson2 = inspector.getInspectorByKey('text1');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('20');
       let btn1 = await driver.findComponent(ON.text('菜单选项'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       console.info('[' + tagName + '] END============================');
       done();
     });
@@ -100,7 +100,7 @@ it('BindContextMenu_previewBorderRadius_static_002', TestType.FUNCTION | Size.ME
       let strJson2 = inspector.getInspectorByKey('text2');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('16');
       let btn1 = await driver.findComponent(ON.text('菜单选项'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       console.info('[' + tagName + '] END============================');
       done();
     });
@@ -123,7 +123,7 @@ it('BindContextMenu_previewBorderRadius_static_003', TestType.FUNCTION | Size.ME
       let strJson2 = inspector.getInspectorByKey('text3');
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('16');
       let btn1 = await driver.findComponent(ON.text('菜单选项'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       console.info('[' + tagName + '] END============================');
       done();
     });

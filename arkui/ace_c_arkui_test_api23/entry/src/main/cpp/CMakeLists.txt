@@ -34,6 +34,7 @@ add_library(nativerender SHARED
     distance/DistanceTest.cpp
     hoverEffect/HoverEffectTest.cpp
     monopolize/MonopolizeTest.cpp
+    textSelection/TextSelectionTest.cpp
 )
 
 add_library(nativefunc SHARED

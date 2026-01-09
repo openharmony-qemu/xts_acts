@@ -41,7 +41,7 @@ export default function SystemDateTimeJsunitStaticTest() {
         hilog.info(domain, tag, "SUB_systemDateTime_getTimezone_JS_API_Static_0100 data = " + data);
         expect(data != null).assertTrue();
         done();
-      }).catch((error: BusinessError): Promise<string> => {
+      }).catch((error: Error): Promise<string> => {
         expect().assertFail();
         done();
       });

@@ -27,13 +27,7 @@ import {
   ClickEvent
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-class routerParams22 {
-  data1:string
-
-  constructor(str:string) {
-    this.data1 = str
-  }
-}
+import { routerParams } from '../../../common/Utils'
 
 @Entry({ routeName: 'replaceNamedRoute8' })
 @Component
@@ -66,7 +60,7 @@ struct replaceNamedRoute8 {
         .onClick((e:ClickEvent)=>{
           this.getUIContext().getRouter().replaceNamedRoute({
             name: 'replaceNamedRoute8',
-            params: new routerParams22('message')
+            params: (new routerParams('message')).toJSON()
           })
             .then(() => {
               console.log('replaceNamedRoute success');

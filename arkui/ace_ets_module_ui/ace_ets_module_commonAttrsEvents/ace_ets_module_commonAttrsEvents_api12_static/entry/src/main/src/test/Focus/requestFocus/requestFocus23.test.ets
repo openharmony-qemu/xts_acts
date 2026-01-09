@@ -69,7 +69,6 @@ export default function requestFocus23() {
       console.info('requestFocus23_static_0100 START');
       await CommonFunc.sleep(1000);
 
-
       inspector.sendEventByKey('requestFocus23_btn1', 10, "")
       await CommonFunc.sleep(1000);
       console.info('Focus-textInput1 click after')

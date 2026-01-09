@@ -14,7 +14,7 @@
  */
 
 import {beforeAll, afterEach, describe, it, expect, TestType, Size, Level} from "../../../hypium/index";
-import { Driver, ON, UiDirection } from '@ohos.UiTest'
+import { Driver, ON, UiDirection, Component } from '@ohos.UiTest'
 import { PerfMetric, PerfTest, PerfTestStrategy, PerfMeasureResult } from '@ohos.test.PerfTest';
 import { BusinessError, Callback } from '@ohos.base';
 import hilog from '@ohos.hilog'
@@ -326,7 +326,7 @@ export default function perfTestTest() {
             let metrics: Array<PerfMetric> = [PerfMetric.DURATION, PerfMetric.APP_START_RESPONSE_TIME, PerfMetric.APP_START_COMPLETE_TIME]
             let actionCode = (finish: Callback<boolean>) => {
                 if (btn1 != null) {
-                    let point = await btn1.getBoundsCenter()
+                    let point = await (btn1 as Component).getBoundsCenter()
                     await driver.click(point.x , point.y - 50)
                     await driver.delayMs(1000)
                 }

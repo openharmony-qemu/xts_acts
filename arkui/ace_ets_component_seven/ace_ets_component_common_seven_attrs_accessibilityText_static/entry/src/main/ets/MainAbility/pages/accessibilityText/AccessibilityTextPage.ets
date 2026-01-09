@@ -924,7 +924,8 @@ struct accessibilityTextTestDropPage {
 
   onPageShow() {
     console.log('aboutToAppear routerParamOptions before' + this.targetView)
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     this.targetView = routerParamOptions.view.targetView
     this.componentKey = routerParamOptions.view.componentKey as string
     this.parentWidth = routerParamOptions.view.parentWidth

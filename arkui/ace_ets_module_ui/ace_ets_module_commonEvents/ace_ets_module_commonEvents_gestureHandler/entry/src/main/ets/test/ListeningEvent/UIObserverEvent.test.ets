@@ -88,6 +88,12 @@ export default function UIObserverEventTest() {
       let strJson = getInspectorByKey('observerEvent');
       let obj: ESObject = JSON.parse(strJson);
       expect(obj.$attrs.content).assertEqual('click');
+      let willClick = JSON.stringify(AppStorage.get('willClick'))
+      console.log('UIObserverEventTest_0200,willClick:',willClick)
+      expect(willClick).assertEqual('"click"')
+      let didClick = JSON.stringify(AppStorage.get('didClick'))
+      console.log('UIObserverEventTest_0200,didClick:',didClick)
+      expect(didClick).assertEqual('"click"')
       await CommonFunc.sleep(1000);
       console.info('[UIObserverEventTest_0200] END');
       done();
@@ -113,6 +119,40 @@ export default function UIObserverEventTest() {
       expect(obj.$attrs.content).assertEqual('cancel');
       await CommonFunc.sleep(1000);
       console.info('[UIObserverEventTest_0300] END');
+      done();
+    });
+
+    /**
+     * @tc.name   UIObserverEventTest_0400
+     * @tc.number UIObserverEventTest_0400
+     * @tc.desc   api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('UIObserverEventTest_0400', Level.LEVEL0, async (done: Function) => {
+      console.info('UIObserverEventTest_0400 START');
+      let driver = await Driver.create()
+      await CommonFunc.sleep(1000);
+      let Pan = await driver.findComponent(ON.id('Pan'));
+      let rect = await Pan.getBounds();
+      let rectCenter = await Pan.getBoundsCenter();
+      await driver.swipe(rect.right,rectCenter.y,rectCenter.x,rectCenter.y)
+      await CommonFunc.sleep(1000);
+      let beforePanStart = JSON.stringify(AppStorage.get('beforePanStart'))
+      console.log('UIObserverEventTest_0400,beforePanStart:',beforePanStart)
+      expect(beforePanStart).assertEqual('"Pan"')
+      let afterPanStart = JSON.stringify(AppStorage.get('afterPanStart'))
+      console.log('UIObserverEventTest_0400,afterPanStart:',afterPanStart)
+      expect(afterPanStart).assertEqual('"Pan"')
+      let beforePanEnd = JSON.stringify(AppStorage.get('beforePanEnd'))
+      console.log('UIObserverEventTest_0400,beforePanEnd:',beforePanEnd)
+      expect(beforePanEnd).assertEqual('"Pan"')
+      let afterPanEnd = JSON.stringify(AppStorage.get('afterPanEnd'))
+      console.log('UIObserverEventTest_0400,afterPanEnd:',afterPanEnd)
+      expect(afterPanEnd).assertEqual('"Pan"')
+      await CommonFunc.sleep(1000);
+      console.info('[UIObserverEventTest_0400] END');
       done();
     });
   })

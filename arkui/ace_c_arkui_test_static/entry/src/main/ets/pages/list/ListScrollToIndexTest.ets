@@ -21,15 +21,36 @@ import { CommonView } from '../componet/CommonView';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 
-class ListScrollToIndexData {
-  public pageTag: string;
-  public index: int;
-  public alignment: int;
+class ListScrollToIndexData implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
+  pageTag: string;
+  index: int;
+  alignment: int;
+
+  constructor() {
+    this.pageTag = "";
+    this.index = 0;
+    this.alignment = 0;
+  }
 
   constructor(pageTag: string, index: int, alignment: int) {
     this.pageTag = pageTag;
     this.index = index;
     this.alignment = alignment;
+  }
+
+  toJSON(): jsonx.JsonElement {
+    let root: Map<string, jsonx.JsonElement> = {
+      'pageTag': jsonx.JsonElement.createString(this.pageTag),
+      'index': jsonx.JsonElement.createInteger(this.index),
+      'alignment': jsonx.JsonElement.createInteger(this.alignment),
+    };
+    return jsonx.JsonElement.createObject(root)
+  }
+
+  fromJSON(jsonElem: jsonx.JsonElement) {
+    this.pageTag = jsonElem.tryGetString('pageTag');
+    this.index = jsonElem.tryGetInteger('index');
+    this.alignment = jsonElem.tryGetInteger('alignment');
   }
 }
 
@@ -44,9 +65,12 @@ struct ListScrollToIndexTest {
 
   aboutToAppear(){
     const routerInstance = AppStorage.get<Router>("this.routerInstance.getParams()") as Router
-    this.PAGE_TAG = (routerInstance.getParams() as ListScrollToIndexData).pageTag;
-    this.index = (routerInstance.getParams() as ListScrollToIndexData).index;
-    this.alignment = (routerInstance.getParams() as ListScrollToIndexData).alignment;
+    let params = routerInstance.getParams();
+    let data = new ListScrollToIndexData();
+    data.fromJSON(params);
+    this.PAGE_TAG = data.pageTag;
+    this.index = data.index;
+    this.alignment = data.alignment;
     this.libUtil.listScrollToIndexTest(this.rootSlot, this.index, this.alignment);
   }
 

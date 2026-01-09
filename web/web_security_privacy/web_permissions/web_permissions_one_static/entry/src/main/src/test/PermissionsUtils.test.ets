@@ -24,7 +24,7 @@ export default class PermissionsUtils {
       let grantStatus: Array<int> = data.authResults;
       console.info(`End request permissions from user. result is ${grantStatus[0] === 0}`);
       callBack(grantStatus[0] === 0);
-    }).catch<void>((err: BusinessError): void => {
+    }).catch<void>((err: Error): void => {
       console.error(`Failed to request permissions from user. Code is ${err.code}, message is ${err.message}`);
       callBack(false);
     })

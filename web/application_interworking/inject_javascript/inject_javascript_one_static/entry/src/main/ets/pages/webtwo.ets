@@ -37,7 +37,7 @@ import { UIContext, Router } from '@ohos.arkui.UIContext'
 import { Callback,RecordData } from '@ohos.base'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry
@@ -345,7 +345,7 @@ struct Index {
                 console.log("emitWebMessExtSetError Error0");
                 throw new ReferenceError("Error");
                 console.log("emitWebMessExtSetError Error1");
-              } catch (error:Error) {
+              } catch (error) {
                 console.log("URIError:" + error) ;
 
                 if (this.nativePort) {

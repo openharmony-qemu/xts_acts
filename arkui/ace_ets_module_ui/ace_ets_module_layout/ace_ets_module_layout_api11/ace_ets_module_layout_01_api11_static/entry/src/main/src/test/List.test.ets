@@ -15,7 +15,7 @@
  */
 import Stack_Text from './Stack_Text/Stack_Text.test';
 import grid_colSpanJsunit from './GridColTest/grid_col.test';
-import grid_rowOnBreakpointChangeJsunit from './GridRowTest/grid_row.test';  // 1.1 不跑测
+import grid_rowOnBreakpointChangeJsunit from './GridRowTest/grid_row.test';
 import inspectorJsunit from './inspectorTest/inspector.test'
 import Column_Space from './ColumnTest/spaceChanged/Column_Space.test.ets';
 import Column_Space_String from './ColumnTest/spaceChanged/Column_Space_String.test.ets';
@@ -69,7 +69,6 @@ import Stack_ZIndex from './Stack/StackItem_change/stack_zIndex.test';
 import StackJsunit from './Stack/StackJsunit.test';
 import StackAlignContentTest from './Stack/StackAlignContentTest.test.ets';
 
-// 124 all pass
 export default function testsuite() {
   Stack_ZIndex();
   StackJsunit()

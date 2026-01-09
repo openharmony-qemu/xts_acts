@@ -98,7 +98,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 1
      */
     it('ArraySomeTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [2, 5, 12, 8];
+      const arr: number[] = [2, 5, 12, 8];
       const callback = (num: number) => num > 10;
       const result = arr.some(callback);
 
@@ -115,7 +115,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 1
      */
     it('ArraySomeTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [2, 5, 8, 1];
+      const arr: number[] = [2, 5, 8, 1];
       const callback = (num: number) => num > 10;
       const result = arr.some(callback);
 
@@ -152,7 +152,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 1
      */
     it('ArraySomeTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [15];
+      const arr: number[] = [15];
       const callback = (num: number) => num > 10;
       const result = arr.some(callback);
 
@@ -168,7 +168,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 1
      */
     it('ArraySomeTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [5];
+      const arr: number[] = [5];
       const callback = (num: number) => num > 10;
       const result = arr.some(callback);
 
@@ -268,7 +268,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 2
      */
     it('ArraySomeTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      const arr = [15, 2, 8, 1];
+      const arr: number[] = [15, 2, 8, 1];
       let callCount = 0;
       const callback = (num: number) => {
         callCount++;
@@ -289,7 +289,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 2
      */
     it('ArraySomeTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      const arr = [2, 5, 12, 8, 1];
+      const arr: number[] = [2, 5, 12, 8, 1];
       let callCount = 0;
       const callback = (num: number) => {
         callCount++;
@@ -310,7 +310,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 2
      */
     it('ArraySomeTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      const arr = [2, 5, 8, 1];
+      const arr: number[] = [2, 5, 8, 1];
       let callCount = 0;
       const callback = (num: number) => {
         callCount++;
@@ -427,7 +427,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [2, 15, 8];
+      const arr: number[] = [2, 15, 8];
       let callCount = 0;
       let errorThrown = false;
 
@@ -625,7 +625,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest031', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [-5, -10, 3];
+      const arr: number[] = [-5, -10, 3];
       const callback = (num: number) => num < 0;
       const result = arr.some(callback);
 
@@ -641,7 +641,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest032', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [1, 0, 3];
+      const arr: number[] = [1, 0, 3];
       const callback = (num: number) => num === 0;
       const result = arr.some(callback);
 
@@ -1051,7 +1051,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest057', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [15];
+      const arr: number[] = [15];
       const callback = (num: number) => num > 10;
       const result = arr.some(callback);
 
@@ -1067,7 +1067,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest058', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [5];
+      const arr: number[] = [5];
       const callback = (num: number) => num > 10;
       const result = arr.some(callback);
 
@@ -1208,7 +1208,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest070', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [2, 5, 8];
+      const arr: number[] = [2, 5, 8];
       const callback = (num: number, index: Int, array: number[]) => {
         if (index === 0) {
           array[2] = 15;
@@ -1229,7 +1229,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest071', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [2, 5, 8];
+      const arr: number[] = [2, 5, 8];
       const callback = (num: number, index: Int, array: number[]) => {
         if (index === 0) {
           array.push(15);
@@ -1251,7 +1251,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest072', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [2, 15, 8];
+      const arr: number[] = [2, 15, 8];
       const callback = (num: number, index: Int, array: number[]) => {
         if (index === 0) {
           array.splice(1, 1);
@@ -1273,7 +1273,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest073', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [2, 5, 15];
+      const arr: number[] = [2, 5, 15];
       const callback = (num: number, index: Int, array: number[]) => {
         if (index === 0) {
           array.shift();
@@ -1294,7 +1294,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest074', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [2, 5, 8];
+      const arr: number[] = [2, 5, 8];
       const callback = (num: number, index: Int, array: number[]) => {
         if (index === 0) {
           array.unshift(15);
@@ -1315,7 +1315,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest075', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [2, 5, 8];
+      const arr: number[] = [2, 5, 8];
       let callCount = 0;
       const callback = (num: number) => {
         callCount++;
@@ -1522,7 +1522,7 @@ export default function ArraySomeTest() {
      * @tc.level Level 3
      */
     it('ArraySomeTest087', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [5, 15, 8];
+      const arr: number[] = [5, 15, 8];
       const callback = (num: number) => num > 10;
 
       const result = arr.some(callback);

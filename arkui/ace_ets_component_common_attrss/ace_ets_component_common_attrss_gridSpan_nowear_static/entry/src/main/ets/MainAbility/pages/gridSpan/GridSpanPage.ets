@@ -43,7 +43,8 @@ struct GridSpanPage {
   onPageShow() {
     console.info('gridSpan page show called ')
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       console.log('routerParamOptions==========' + JSON.stringify(routerParamOptions))
       AppStorage.setOrCreate<number>('_gridSpan', routerParamOptions.view.testValue.setValue)
       this.targetView = routerParamOptions.view.targetView

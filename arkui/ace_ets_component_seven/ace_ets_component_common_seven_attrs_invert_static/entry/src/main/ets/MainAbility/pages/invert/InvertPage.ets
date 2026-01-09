@@ -1151,7 +1151,8 @@ struct invertPage {
 
   onPageShow() {
     console.info('22222 invert page show called ')
-    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+    let routerParamOptions = new RouterParams();
+    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
     AppStorage.setOrCreate<number>('_invertAlphabetIndexer',routerParamOptions.view.testValue.setValue.invert)
     console.log(this.invertAlphabetIndexerInvert,'abc112233')
     const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))

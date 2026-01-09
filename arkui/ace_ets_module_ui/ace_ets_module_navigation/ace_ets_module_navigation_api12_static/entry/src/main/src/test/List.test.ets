@@ -205,189 +205,187 @@ import PushNameRouterTest from './UIObserver/PushNameRouterTest.test'
 import RouterPageUpdateTest from './UIObserver/RouterPageUpdateTest.test'
 
 export default function testsuite() {
-  NavigationApi3();  //SDK12.2 pass1
-  NavigationApi4();   //SDK12.2 pass1
-  NavigationBarStyle();  //SDK12.2  pass1
-  NavigationOnPop();   //SDK12.2 pass1
-  NavDestinationEvents();  //SDK12.2 pass1
-  NavDestinationRouterMap();  // SDK12.2  pass1
-  NavigationSymbolIcon();  // SDK12.2  pass1   补充log
-  NavPathStack1()  // pass
-  NavPathStack1_2()  // pass
-  NavPathStack1_3()  // pass
-  NavPathStack1_4()   // pass
-  NavPathStack1_5() // pass
-  NavPathStack1_6()   // pass
-  NavPathStack2_2()  // pass
-  NavPathStack2_3() // pass
-  NavPathStack3() // pass 2个用例
-  NavPathStack4() // pass 2个用例
-  NavPathStack5()  // pass 2个用例
-  NavPathStack7() // pass 1个
-  NavPathStack8() // SDK12.2  pass2
-  NavPathStack9() // SDK12.2  pass2
-  NavPathStack10() // pass 1个
-  NavPathStack11() // pass 1个
-  NavPathStack13() // pass 3个
-  NavPathStack14() // pass 1个
-  NavPathStack15() // pass 1个
-  NavPathStack17() // pass 1ge
-  NavPathStack18() // pass 1个
-  NavPathStack19() // pass
-  NavPathStack20() // pass 1
-  NavPathStack21()  // pass 1
-  NavPathStack22()  //SDK12.2  pass1
-  Navigation_SingleInstanceJump1()  //SDK12.2  pass1
-  Navigation_SingleInstanceJump2()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump3()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump4()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump5()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump6()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump8()  // SDK12.2  pass1  SDK12.15 补充log
-  Navigation_SingleInstanceJump9()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump10()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump11()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump12()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump13()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump14()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump15()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump17()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump18()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump19()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump20()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump21()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump22()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump23()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump25()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump26()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump27()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump28()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump29()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump30()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump31()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump32()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump33()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump35()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump36()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump37()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump38()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump39()  // SDK12.2  pass1
-  Navigation_SingleInstanceJump42()  //   SDK12.15 pass1 补充log
-  ignoreLayoutSafeArea();  //  pass1
-  ignoreLayoutSafeArea2();  // pass1
-  NavigationApi5()  // SDK12.2  pass1
-  NavigationLaunchMode(); // SDK12.2 pass1
-  NavigationTitleTest1();  // pass
-  removeByNavDestinationIdTest();  //  pass
-  navigation_add1_1()   // pass1
-  navigation_add1_2()   // pass1
-  navigation_add2_1()   // pass1
-  navigation_add2_2()   // pass1
-  navigation_add3_1()   // pass1
-  navigation_add3_2()   // pass1
-  queryNavigationInfoTest()  //  pass
-  Navigation_L0_1() // pass
-  Navigation_L0_2() // pass
-  Navigation_L0_3()  // pass
-  Navigation_L0_4()  //  pass
-  Navigation_L0_6()  // pass
-  Navigation_L0_7()  //  SDK12.2 pass1
-  Navigation_L0_8()  //  SDK12.2 pass1   SDK12.2 补充log
-  Navigation_L0_9()  //  SDK12.2 pass1   SDK12.2 补充log
-  Navigation_L0_10()  // SDK12.2 pass1
-  Navigation_L0_11()  //  SDK12.2 pass1
-  Navigation_L0_12()  // SDK12.2 pass1
-  Navigation_L0_13()  //  SDK12.2 pass1
-  Navigation_L0_14()  //  SDK12.2 pass1
-  Navigation_L0_15()  // SDK12.2 pass1
-  Navigation_L0_16()  // SDK12.2 pass1
-  Navigation_L0_17()  // SDK12.2 pass1
-  Navigation_L0_18()  // SDK12.2 pass1
-  Navigation_L0_19()  // SDK12.2 pass1
-  Navigation_L0_20()  // SDK12.2 pass1
-  NavigationLevelTest1();  // pass
-  NavigationLevelTest2();  //  SDK12.2 pass1
-  NavigationLevelTest3();  // pass
-  NavigationLevelTest4();  // pass
-  NavigationLevelTest5();  // pass
-  NavigationLevelTest6();  // pass
-  NavigationLevelTest7();  // pass
-  NavigationLevelTest10();  //  SDK12.2 0702表格146行  SDK12.15 pass1
-  NavigationLevelTest11();  // pass
-  NavigationLevelTest12();  // pass
-  NavigationLevelTest13();  // SDK12.2 pass1
-  NavigationLevelTest14();  // pass
-  NavigationLevelTest15();  // SDK12.2 pass1
-  NavigationLevelTest16();  // SDK12.2 pass1
-  NavigationLevelTest17();  // pass
-  NavigationLevelTest18();  //  SDK12.2 pass1
-  NavigationLevelTest19();  // pass
-  NavigationLevelTest20();  // pass
-  NavigationLevelTest21();  // pass
-  NavigationLevelTest22();  //SDK12.2 pass1 3500ms
-  NavigationLevelTest23();  // pass
-  GetStateByIndexTest()  // pass
-  Navigation_SingleInstanceJump7()  // SDK12.2  pass1   SDK12.2 补充log
-  Navigation_SingleInstanceJump16()  // SDK12.2  pass1   SDK12.2 补充log
-  Navigation_SingleInstanceJump24()  // SDK12.2  pass1  SDK12.2 补充log
-  Navigation_SingleInstanceJump34()  // SDK12.2  pass1  SDK12.2 补充log
-  NavPathStack12()  // pass 1个  SDK12.9 补充log
-  NavPathStack16() // pass 1个  SDK12.9 补充log
-
-  MultiNavigation1()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation2()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation3()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation4()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation5()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation6()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation7()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation8()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation9()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation10()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation11()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation12()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation13()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation14()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation15()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation16()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation17()  // SDK12.2 0702表格 138行   SDK12.15 pass 已发邮件
-  MultiNavigation18()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation19()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation20()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation21()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation22()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation23()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation24()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation25()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation26()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation27()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation28()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation29()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation30()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation31()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  MultiNavigation32()  // SDK12.2 0702表格 138行   SDK12.15 fail 1 已发邮件
-  UIObserverObserver4Test()  // appDied SDK12.2 2025110729059 1ge   SDK12.15 fail 1 已发邮件
-  UIObserverContext2Test()  // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1  已发邮件
-  UIObserverContext3Test()  // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1  已发邮件
-  UIObserverUpdateContextTest()  // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1 已发邮件
-  RouterPageUpdateTest()  // // appDied  SDK12.2 2025110729059 1ge   SDK12.15 fail 1  已发邮件
-
-  NavigationApi1();  // SDK12.2 0702表格 129行   SDK12.15 fail 1
-  NavigationApi2();  //  SDK12.2 0702表格 129行   SDK12.15 fail 1
-  NavigationLevelTest8();  // SDK12.2 0702表格 144行   SDK12.15 fail 1
-  NavPathStack24() // SDK12.15 0702表格135行 1 SDK12.15 fail 1
-  navigation_add4_1()   // pass1   SDK12.15 fail 1
-  Navigation_L0_5_1()   // SDK12.15 0702表格140行 1  expect  equals 100006 SDK12.15 fail 1
-  Navigation_L0_5_2()    // SDK12.15 0702表格140行 1 expect  equals 100006 SDK12.15 fail 1
-  Navigation_L0_21_1()  //SDK12.2 expect  equals 100006  (page45)pushDestination接口有问题  SDK12.15 fail 1
-  Navigation_L0_21_2() //SDK12.2 expect  equals 100005 (page46)pushDestination接口有问题   SDK12.15 fail 1
-  NavigationLevelTest9();  //  SDK12.2 0702表格146行   SDK12.15 fail 1
-  NavPathInfoIsEntry(); //SDK12.2 0702表格151  SDK12.15 fail 1
-  PushNameRouterTest()   // SDK12.2 0702表格153  SDK12.15 fail 1
-  Navigation_SingleInstanceJump40()  // SDK12.2  pass1  SDK12.15 fail 1
-  Navigation_SingleInstanceJump41()  // SDK12.2  pass1   SDK12.15 fail 1
-  NavPathStack2() // pass  SDK12.15 fail 1
-  NavPathStack2_4()   // pass SDK12.15 fail 1
-  NavPathStack6() // pass 1个 SDK12.15 fail 1
-  NavPathStack23() // pass  SDK12.15 fail 1
+  NavigationApi3();
+  NavigationApi4();
+  NavigationBarStyle();
+  NavigationOnPop();
+  NavDestinationEvents();
+  NavDestinationRouterMap();
+  NavigationSymbolIcon();
+  NavPathStack1();
+  NavPathStack1_2();
+  NavPathStack1_3();
+  NavPathStack1_4();
+  NavPathStack1_5();
+  NavPathStack1_6();
+  NavPathStack2_2();
+  NavPathStack2_3();
+  NavPathStack3();
+  NavPathStack4();
+  NavPathStack5();
+  NavPathStack7();
+  NavPathStack8();
+  NavPathStack9();
+  NavPathStack10();
+  NavPathStack11();
+  NavPathStack13();
+  NavPathStack14();
+  NavPathStack15();
+  NavPathStack17();
+  NavPathStack18();
+  NavPathStack19();
+  NavPathStack20();
+  NavPathStack21();
+  NavPathStack22();
+  Navigation_SingleInstanceJump1();
+  Navigation_SingleInstanceJump2();
+  Navigation_SingleInstanceJump3();
+  Navigation_SingleInstanceJump4();
+  Navigation_SingleInstanceJump5();
+  Navigation_SingleInstanceJump6();
+  Navigation_SingleInstanceJump8();
+  Navigation_SingleInstanceJump9();
+  Navigation_SingleInstanceJump10();
+  Navigation_SingleInstanceJump11();
+  Navigation_SingleInstanceJump12();
+  Navigation_SingleInstanceJump13();
+  Navigation_SingleInstanceJump14();
+  Navigation_SingleInstanceJump15();
+  Navigation_SingleInstanceJump17();
+  Navigation_SingleInstanceJump18();
+  Navigation_SingleInstanceJump19();
+  Navigation_SingleInstanceJump20();
+  Navigation_SingleInstanceJump21();
+  Navigation_SingleInstanceJump22();
+  Navigation_SingleInstanceJump23();
+  Navigation_SingleInstanceJump25();
+  Navigation_SingleInstanceJump26();
+  Navigation_SingleInstanceJump27();
+  Navigation_SingleInstanceJump28();
+  Navigation_SingleInstanceJump29();
+  Navigation_SingleInstanceJump30();
+  Navigation_SingleInstanceJump31();
+  Navigation_SingleInstanceJump32();
+  Navigation_SingleInstanceJump33();
+  Navigation_SingleInstanceJump35();
+  Navigation_SingleInstanceJump36();
+  Navigation_SingleInstanceJump37();
+  Navigation_SingleInstanceJump38();
+  Navigation_SingleInstanceJump39();
+  Navigation_SingleInstanceJump42();
+  ignoreLayoutSafeArea();
+  ignoreLayoutSafeArea2();
+  NavigationApi5();
+  NavigationLaunchMode();
+  NavigationTitleTest1();
+  removeByNavDestinationIdTest();
+  navigation_add1_1();
+  navigation_add1_2();
+  navigation_add2_1();
+  navigation_add2_2();
+  navigation_add3_1();
+  navigation_add3_2();
+  queryNavigationInfoTest();
+  Navigation_L0_1();
+  Navigation_L0_2();
+  Navigation_L0_3();
+  Navigation_L0_4();
+  Navigation_L0_6();
+  Navigation_L0_7();
+  Navigation_L0_8();
+  Navigation_L0_9();
+  Navigation_L0_10();
+  Navigation_L0_11();
+  Navigation_L0_12();
+  Navigation_L0_13();
+  Navigation_L0_14();
+  Navigation_L0_15();
+  Navigation_L0_16();
+  Navigation_L0_17();
+  Navigation_L0_18();
+  Navigation_L0_19();
+  Navigation_L0_20();
+  NavigationLevelTest1();
+  NavigationLevelTest2();
+  NavigationLevelTest3();
+  NavigationLevelTest4();
+  NavigationLevelTest5();
+  NavigationLevelTest6();
+  NavigationLevelTest7();
+  NavigationLevelTest10();
+  NavigationLevelTest11();
+  NavigationLevelTest12();
+  NavigationLevelTest13();
+  NavigationLevelTest14();
+  NavigationLevelTest15();
+  NavigationLevelTest16();
+  NavigationLevelTest17();
+  NavigationLevelTest18();
+  NavigationLevelTest19();
+  NavigationLevelTest20();
+  NavigationLevelTest21();
+  NavigationLevelTest22();
+  NavigationLevelTest23();
+  GetStateByIndexTest();
+  Navigation_SingleInstanceJump7();
+  Navigation_SingleInstanceJump16();
+  Navigation_SingleInstanceJump24();
+  Navigation_SingleInstanceJump34();
+  NavPathStack12();
+  NavPathStack16();
+  MultiNavigation1();
+  MultiNavigation2();
+  MultiNavigation3();
+  MultiNavigation4();
+  MultiNavigation5();
+  MultiNavigation6();
+  MultiNavigation7();
+  MultiNavigation8();
+  MultiNavigation9();
+  MultiNavigation10();
+  MultiNavigation11();
+  MultiNavigation12();
+  MultiNavigation13();
+  MultiNavigation14();
+  MultiNavigation15();
+  MultiNavigation16();
+  MultiNavigation17();
+  MultiNavigation18();
+  MultiNavigation19();
+  MultiNavigation20();
+  MultiNavigation21();
+  MultiNavigation22();
+  MultiNavigation23();
+  MultiNavigation24();
+  MultiNavigation25();
+  MultiNavigation26();
+  MultiNavigation27();
+  MultiNavigation28();
+  MultiNavigation29();
+  MultiNavigation30();
+  MultiNavigation31();
+  MultiNavigation32();
+  UIObserverObserver4Test();
+  UIObserverContext2Test();
+  UIObserverContext3Test();
+  UIObserverUpdateContextTest();
+  RouterPageUpdateTest();
+  NavigationApi1();
+  NavigationApi2();
+  NavigationLevelTest8();
+  NavPathStack24();
+  navigation_add4_1();
+  Navigation_L0_5_1();
+  Navigation_L0_5_2();
+  Navigation_L0_21_1();
+  Navigation_L0_21_2();
+  NavigationLevelTest9();
+  NavPathInfoIsEntry();
+  PushNameRouterTest();
+  Navigation_SingleInstanceJump40();
+  Navigation_SingleInstanceJump41();
+  NavPathStack2();
+  NavPathStack2_4();
+  NavPathStack6();
+  NavPathStack23();
 }

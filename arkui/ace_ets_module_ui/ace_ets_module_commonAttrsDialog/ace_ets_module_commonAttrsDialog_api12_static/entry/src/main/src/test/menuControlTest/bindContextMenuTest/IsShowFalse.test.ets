@@ -80,7 +80,7 @@ it('IsShowFalse_static_0100', Level.LEVEL0, async (done: () => void): Promise<vo
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('IsShowFalse'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       driver?.click(200, 200);
@@ -108,7 +108,7 @@ it('IsShowFalse_0200', Level.LEVEL0, async (done: () => void): Promise<void> => 
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('IsShowFalse'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;
@@ -133,7 +133,7 @@ it('IsShowFalse_0300', Level.LEVEL0, async (done: () => void): Promise<void> => 
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('IsShowFalse'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;

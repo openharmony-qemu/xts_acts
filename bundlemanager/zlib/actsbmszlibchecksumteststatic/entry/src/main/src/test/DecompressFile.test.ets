@@ -57,7 +57,7 @@ export default function decompressFileTest() {
             'acts_zlibDecompressFile_static_0100 decompressFile success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(Domain, TAG,
             `acts_zlibDecompressFile_static_0100 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err.code).assertEqual(900001);
@@ -97,7 +97,7 @@ export default function decompressFileTest() {
             'acts_zlibDecompressFile_static_0200 decompressFile success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(Domain, TAG,
             `acts_zlibDecompressFile_static_0200 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err.code).assertEqual(900002);
@@ -136,7 +136,7 @@ export default function decompressFileTest() {
         hilog.info(Domain, TAG,
           'acts_zlibDecompressFile_static_0300 write data to file succeed and size is:' + number);
         expect(number).assertEqual(12);
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(Domain, TAG,
           'acts_zlibDecompressFile_static_0300 write data to file failed with error:' + err);
         expect(err).assertFail();
@@ -147,7 +147,7 @@ export default function decompressFileTest() {
             'acts_zlibDecompressFile_static_0300 decompressFile success.');
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(Domain, TAG,
             `acts_zlibDecompressFile_static_0300 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err.code).assertEqual(900003);
@@ -186,7 +186,7 @@ export default function decompressFileTest() {
         hilog.info(Domain, TAG,
           'acts_zlibDecompressFile_static_0400 write data to file succeed and size is:' + number);
         expect(number).assertEqual(294);
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(Domain, TAG,
           'acts_zlibDecompressFile_static_0400 write data to file failed with error:' + err);
         expect(err).assertFail();
@@ -213,7 +213,7 @@ export default function decompressFileTest() {
             `acts_zlibDecompressFile_static_0400 compressFile failed errData is errCode:${code}  message:${message}`);
           expect(error).assertFail();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(Domain, TAG,
           `acts_zlibDecompressFile_static_0400 compressFile failed errData is errCode:${err.code}  message:${err.message}`);
         expect(err).assertFail();
@@ -232,7 +232,7 @@ export default function decompressFileTest() {
             expect().assertFail();
             done();
           }
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(Domain, TAG,
             `acts_zlibDecompressFile_static_0400 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err).assertFail();
@@ -272,7 +272,7 @@ export default function decompressFileTest() {
         hilog.info(Domain, TAG,
           'acts_zlibDecompressFile_static_0400 write data to file succeed and size is:' + number);
         expect(number).assertEqual(294);
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(Domain, TAG,
           'acts_zlibDecompressFile_static_0400 write data to file failed with error:' + err);
         expect(err).assertFail();
@@ -299,7 +299,7 @@ export default function decompressFileTest() {
             `acts_zlibDecompressFile_static_0500 compressFile failed errData is errCode:${code}  message:${message}`);
           expect(error).assertFail();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(Domain, TAG,
           `acts_zlibDecompressFile_static_0500 compressFile failed errData is errCode:${err.code}  message:${err.message}`);
         expect(err).assertFail();
@@ -357,7 +357,7 @@ export default function decompressFileTest() {
         hilog.info(Domain, TAG,
           'acts_zlibDecompressFile_static_0600 write data to file succeed and size is:' + number);
         expect(number).assertEqual(294);
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(Domain, TAG,
           'acts_zlibDecompressFile_static_0600 write data to file failed with error:' + err);
         expect(err).assertFail();
@@ -384,7 +384,7 @@ export default function decompressFileTest() {
             `acts_zlibDecompressFile_static_0600 compressFile failed errData is errCode:${code}  message:${message}`);
           expect(error).assertFail();
         }
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(Domain, TAG,
           `acts_zlibDecompressFile_static_0600 compressFile errData is errCode:${err.code}  message:${err.message}`);
         expect(err).assertFail();
@@ -403,7 +403,7 @@ export default function decompressFileTest() {
             expect().assertFail();
             done();
           }
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.error(Domain, TAG,
             `acts_zlibDecompressFile_static_0600 decompressFile failed errData is errCode:${err.code}  message:${err.message}`);
           expect(err).assertFail();

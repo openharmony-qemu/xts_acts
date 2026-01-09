@@ -13,24 +13,29 @@
  * limitations under the License.
  */
 
-// 构造单例对象
+class GlobalContextImpl {
+  private _objects: Map<string, Object> = new Map<string, Object>();
+
+  setObject(key: string, value: Object): void {
+    this._objects.set(key, value);
+  }
+
+  getObject(key: string): Object | undefined {
+    return this._objects.get(key);
+  }
+}
+
+let inst: GlobalContextImpl | undefined = undefined;
+
 export class GlobalContext {
   private constructor() {}
-  private static instance: GlobalContext = new GlobalContext();
-  private _objects = new Map<string, Object>();
 
-  public static getContext(): GlobalContext {
-    if (!GlobalContext.instance) {
-      GlobalContext.instance = new GlobalContext();
+  public static getContext(): GlobalContextImpl {
+    let ctx = inst;
+    if (ctx === undefined) {
+      ctx = new GlobalContextImpl();
+      inst = ctx;
     }
-    return GlobalContext.instance;
-  }
-
-  getObject(value: string): Object | undefined {
-    return this._objects.get(value);
-  }
-
-  setObject(key: string, objectClass: Object): void {
-    this._objects.set(key, objectClass);
+    return ctx;
   }
 }

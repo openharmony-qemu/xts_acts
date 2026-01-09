@@ -203,7 +203,7 @@ export default function certManagerPubCertJsAPIFunctionTestUnit() {
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0010[Promise] cmResult.appUidList: " + cmResult.appUidList);
         hilog.info(domain, tag, '%{public}s', "SUB_Security_CertManager_GetPriCertJsApi_Func_static_0010[Promise] cmResult.outData: " + cmResult.outData);
         keyUri = cmResult.uri;
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, '%{public}s', "[Promise] installPrivateCertificate err: " + err.code);
         expect(null).assertFail();
       });

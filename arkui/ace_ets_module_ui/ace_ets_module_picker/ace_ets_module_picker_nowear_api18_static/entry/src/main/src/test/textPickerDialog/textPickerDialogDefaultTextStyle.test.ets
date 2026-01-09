@@ -63,7 +63,7 @@ it('textPickerDialogDefaultTextStyleTest_static_001', Level.LEVEL0, async (done:
       console.info('textPickerDialogDefaultTextStyleTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn1'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -77,7 +77,7 @@ it('textPickerDialogDefaultTextStyleTest_static_001', Level.LEVEL0, async (done:
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('28.00fp');
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_001] END');
       done();
@@ -95,7 +95,7 @@ it('textPickerDialogDefaultTextStyleTest_static_002', Level.LEVEL0, async (done:
       console.info('textPickerDialogDefaultTextStyleTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn2'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -109,7 +109,7 @@ it('textPickerDialogDefaultTextStyleTest_static_002', Level.LEVEL0, async (done:
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('18.00fp');
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Ellipsis');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_002] END');
       done();
@@ -127,7 +127,7 @@ it('textPickerDialogDefaultTextStyleTest_static_003', Level.LEVEL0, async (done:
       console.info('textPickerDialogDefaultTextStyleTest_static_003 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn3'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -141,7 +141,7 @@ it('textPickerDialogDefaultTextStyleTest_static_003', Level.LEVEL0, async (done:
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('0.00px');
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Clip');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_003] END');
       done();
@@ -159,7 +159,7 @@ it('textPickerDialogDefaultTextStyleTest_static_004', Level.LEVEL0, async (done:
       console.info('textPickerDialogDefaultTextStyleTest_static_004 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn4'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -173,7 +173,7 @@ it('textPickerDialogDefaultTextStyleTest_static_004', Level.LEVEL0, async (done:
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('maxFontSize')).assertEqual('0.00px');
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getElement('defaultTextStyle').getString('overflow')).assertEqual('TextOverflow.Clip');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDefaultTextStyleTest_static_004] END');
       done();

@@ -22,13 +22,25 @@ import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityManager from "@ohos.app.ability.abilityManager"
 import { ShellCmdResult } from "application.shellCmdResult"
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function abilityManagerStaticTest() {
   describe('abilityManagerStaticTest', () => {
-
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+    
     /**
      * @tc.name   System_API_Test_Ability_Manager_Static_0400
      * @tc.number System_API_Test_Ability_Manager_Static_0400
@@ -54,7 +66,7 @@ export default function abilityManagerStaticTest() {
           expect(data[0].startTime).assertLarger(0);
           done();
         })
-        .catch((err: BusinessError): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, ' err:' + JSON.stringify(err));
           expect().assertFail();
           done();

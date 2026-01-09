@@ -3164,7 +3164,7 @@ export default function Decimal1Test() {
         let a: Decimal = new Decimal(randomNumber);
         let b: Decimal = a.toDecimalPlaces(0);
         console.info(`${TAG} Decimal :  ${b.toString()}`);
-        let alist = [1, 2, 3, 4, 5, 6]
+        let alist: number[] = [1, 2, 3, 4, 5, 6]
         expect(alist.includes(b.toNumber())).assertTrue()
       } catch (err) {
         console.error(`${TAG} failed, error: ${err}`);

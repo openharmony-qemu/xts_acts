@@ -158,7 +158,8 @@ struct HitTestBehaviorPage {
   onPageShow() {
     console.info('Margin page show called ')
     try {
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
+      let routerParamOptions = new RouterParams()
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       AppStorage.setOrCreate<HitTestMode>('_hitTestBehavior', routerParamOptions.view.testValue.setValue.HitTestMode)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey

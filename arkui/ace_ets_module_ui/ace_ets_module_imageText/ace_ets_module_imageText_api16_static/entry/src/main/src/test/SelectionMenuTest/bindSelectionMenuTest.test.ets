@@ -123,7 +123,7 @@ it('bindSelectionMenuTest_static_0002', Level.LEVEL1, async (done: () => void): 
           await CommonFunc.sleep(1000);
           let Text = await driver.findComponent(ON.id('text'))
           await CommonFunc.sleep(500);
-          Text?.click();
+          await (Text?.click() as Promise<void>);
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('自定义菜单'));
           console.info("[bindSelectionMenuTest0002] end");

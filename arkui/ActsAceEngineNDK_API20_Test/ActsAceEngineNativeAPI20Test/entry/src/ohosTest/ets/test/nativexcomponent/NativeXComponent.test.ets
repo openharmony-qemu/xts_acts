@@ -892,9 +892,9 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(0);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0100 start<====`);
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
-                                                                                       globalThis.winHeight / 2 });
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft + globalThis.winWidth / 2), y: Math.round(globalThis.winTop +
+          globalThis.winHeight / 2) });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft), y: Math.round(globalThis.winTop) });
         let Result: number = nativexcomponent.GetExtraMouseEventInfo001();
         expect(ARKUI_ERROR_CODE_NO_ERROR).assertEqual(Result);
         done()
@@ -917,9 +917,9 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(1);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETEXTRAMOUSEEVENTINFO_0200 start<====`);
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
-                                                                                       globalThis.winHeight / 2 });
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft + globalThis.winWidth / 2), y: Math.round(globalThis.winTop +
+          globalThis.winHeight / 2) });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft), y: Math.round(globalThis.winTop) });
         let Result: number = nativexcomponent.GetExtraMouseEventInfo002();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()
@@ -942,9 +942,9 @@ export default function NativeXComponent() {
       try {
         nativexcomponent.ChooseTestFunction(1);
         console.info(`====>SUB_ARKUI_ACE_ENGINE_OH_NATIVEXCOMPONENT_GETMOUSEEVENTMODIFIERKEYSTATES_0200 start<====`);
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft + globalThis.winWidth / 2, y: globalThis.winTop +
-                                                                                       globalThis.winHeight / 2 });
-        await Utils.driver.mouseMoveTo({ x: globalThis.winLeft, y: globalThis.winTop });
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft + globalThis.winWidth / 2), y: Math.round(globalThis.winTop +
+          globalThis.winHeight / 2 )});
+        await Utils.driver.mouseMoveTo({ x: Math.round(globalThis.winLeft), y: Math.round(globalThis.winTop) });
         let Result: number = nativexcomponent.GetMouseEventModifierKeyStates002();
         expect(ARKUI_ERROR_CODE_PARAM_INVALID).assertEqual(Result);
         done()

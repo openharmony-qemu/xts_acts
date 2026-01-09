@@ -33,13 +33,13 @@ import webJsunit from './webTest/WebJsunitApi9.test'
 import webViewPageattrLackJsunit from './webTest/webviewPageLackattr.test'
 
 export default function testsuite() {
-   AppStorageJsunit();  // SDK11.19 pass
-   basicJsunit();  //SDK11.19 pass
-   globalJsunit1(); // SDK11.22  Pass: 3
-   ResourceColor();  //SDK11.28 pass 2
-   ResourceFloat();  //SDK11.28 pass 2
-   ResourceInteger();  //SDK11.28 pass 2
-   ResourcePlural();  //SDK11.28 pass 2
-   ResourceStrarray(); //SDK11.28 pass 2
-  ResourceString(); //SDK11.28 pass 2
+   AppStorageJsunit();
+   basicJsunit();
+   globalJsunit1();
+   ResourceColor();
+   ResourceFloat();
+   ResourceInteger();
+   ResourcePlural();
+   ResourceStrarray();
+  ResourceString();
 }

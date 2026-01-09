@@ -33,6 +33,14 @@ group("WebDFXTest") {
       "log_point_thirteen:ActsAceWebInternetLogsEventsBreakpointTraceThirteenTest",
       "log_point_three:ActsAceWebInternetLogsEventsBreakpointTraceThreeTest",
       "log_point_twelve:ActsAceWebInternetLogsEventsBreakpointTraceTwelveTest",
+      "log_point_twenty:ActsAceWebInternetLogsEventsBreakpointTraceTwentyTest",
+      "log_point_twenty_five:ActsAceWebInternetLogsEventsBreakpointTraceTwentyFiveTest",
+      "log_point_twenty_four:ActsAceWebInternetLogsEventsBreakpointTraceTwentyFourTest",
+      "log_point_twenty_one:ActsAceWebInternetLogsEventsBreakpointTraceTwentyOneTest",
+      "log_point_twenty_seven:ActsAceWebInternetLogsEventsBreakpointTraceTwentySevenTest",
+      "log_point_twenty_six:ActsAceWebInternetLogsEventsBreakpointTraceTwentySixTest",
+      "log_point_twenty_three:ActsAceWebInternetLogsEventsBreakpointTraceTwentyThreeTest",
+      "log_point_twenty_two:ActsAceWebInternetLogsEventsBreakpointTraceTwentyTwoTest",
       "log_point_two:ActsAceWebInternetLogsEventsBreakpointTraceTwoTest",
     ]
   }

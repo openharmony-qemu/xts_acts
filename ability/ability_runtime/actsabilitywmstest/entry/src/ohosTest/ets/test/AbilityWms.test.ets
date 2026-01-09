@@ -18,13 +18,23 @@ import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level
 import { common } from '@kit.AbilityKit';
 import { appManager } from '@kit.AbilityKit';
 import { BusinessError } from '@kit.BasicServicesKit';
+import { Driver, ON } from '@ohos.UiTest';
 
 let context = getContext(this) as common.UIAbilityContext;
 
 export default function abilityWMSTest() {
   describe('abilityWMSTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       context = globalThis.context;
     })
     beforeEach(() => {

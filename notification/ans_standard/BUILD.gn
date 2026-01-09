@@ -26,15 +26,16 @@ group("ans_standard") {
       "actsNotificationBadgeTest:ActsNotificationBadgeTest",
       "actsNotificationBadgeTestStatic:ActsNotificationBadgeStaticTest",
       "actsNotificationClassEmitterTest:ActsNotificationClassEmitterTest",
-      "actsNotificationClassEmitterTestStatic:ActsNotificationClassEmitterTestStatic",
+      "actsNotificationClassEmitterTestStatic:ActsNotificationClassEmitterStaticTest",
       "actsNotificationDistributedTest:ActsNotificationDistributedTest",
       "actsNotificationDistributedTestStatic:ActsNotificationDistributedStaticTest",
       "actsNotificationEmitterNewTest:ActsNotificationEmitterNewTest",
       "actsNotificationEmitterNewTestStatic:ActsNotificationEmitterNewStaticTest",
       "actsNotificationEmitterTest:ActsNotificationEmitterTest",
       "actsNotificationEmitterTestStatic:ActsNotificationEmitterStaticTest",
+      "actsNotificationGeofenceLiveViewTest:ActsNotificationGeofenceLiveViewTest",
       "actsNotificationInterfaceChangeTest:ActsNotificationInterfaceChangeTest",
-      "actsNotificationInterfaceChangeTestStatic:ActsNotificationInterfaceChangeTestStatic",
+      "actsNotificationInterfaceChangeTestStatic:ActsNotificationInterfaceChangeStaticTest",
       "actsNotificationManagerSlotTest:ActsNotificationManagerSlotTest",
       "actsNotificationManagerSlotTestStatic:ActsNotificationManagerSlotStaticTest",
       "actsNotificationNDKEnableTest:ActsNotificationNDKEnableTest",
@@ -51,14 +52,13 @@ group("ans_standard") {
       "actsNotificationSystemAPITestStatic:ActsNotificationSystemAPIStaticTest",
       "actsNotificationSystemLiveViewTest:ActsNotificationSystemLiveViewTest",
       "actsNotificationSystemLiveViewTestStatic:ActsNotificationSystemLiveViewStaticTest",
+      "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest",
       "actsNotificationVibrationSoundTest:ActsNotificationVibrationSoundTest",
       "actsNotificationVibrationSoundTestStatic:ActsNotificationVibrationSoundStaticTest",
       "actsNotificationWantUriTest:ActsNotificationWantUriTest",
-      "actsNotificationWantUriTestStatic:ActsNotificationWantUriTestStatic",
+      "actsNotificationWantUriTestStatic:ActsNotificationWantUriStaticTest",
       "notificationManager:notificationManager",
-      "notificationManagerStatic:NotificationManagerStaticTest",
-      "actsNotificationThirdPartyWatchTestStatic:actsNotificationThirdPartyWatchStaticTest",
-      "actsNotificationGeofenceLiveViewTest:ActsNotificationGeofenceLiveViewTest"
+      "notificationManagerStatic:NotificationManagerStaticTest"
     ]
   }
 }

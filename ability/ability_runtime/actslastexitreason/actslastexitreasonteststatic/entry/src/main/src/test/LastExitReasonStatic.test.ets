@@ -19,6 +19,7 @@ import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import Utils from './Util.test';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -26,7 +27,16 @@ let tag: string = 'testTag';
 export default function lastExitReasonStaticTest() {
   describe('ActsLastExitReasonStaticTest', () => {
 
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       let abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.lastexitreasontest.static")
       await Utils.msSleep(2000)

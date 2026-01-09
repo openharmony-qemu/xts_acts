@@ -24,7 +24,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 const delegator = AbilityDelegatorRegistry.getAbilityDelegator();
 const context = delegator.getAppContext().getApplicationContext();
 const VALUE_TEST_STRING_ELEMENT = 'a'.repeat(1*1024*1024*2);
-const VALUE_TEST_STRING_ELEMENT_BIG = 'a'.repeat(1*1024*1024*50);
+const VALUE_TEST_STRING_ELEMENT_BIG = 'a'.repeat(1*1024*1024*25);
 let filePath: string = context.filesDir + '/src';
 
 let TAG = "ttt"

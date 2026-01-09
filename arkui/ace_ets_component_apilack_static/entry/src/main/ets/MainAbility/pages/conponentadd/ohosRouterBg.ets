@@ -83,12 +83,12 @@ struct OhosRouterB {
     const routerInstance = AppStorage.get<Router>("router") as Router
     let params = routerInstance.getParams();
     if (params) {
-      console.info("[OhosRouterB] getParams result: " + params);
+      console.info("[OhosRouterB] getParams result: " + JSON.stringifyJsonElement(params));
       this.getRouterParams(params);
     }
   }
 
-  getRouterParams(params: Object) {
+  getRouterParams(params: jsonx.JsonElement) {
     try {
       let paramsData: events_emitter.EventData = {
         data: {

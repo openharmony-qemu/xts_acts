@@ -214,4 +214,25 @@ static napi_value GetPathBufferSizeError(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
+static napi_value MotionPathNode(napi_env env, napi_callback_info info)
+{
+    OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "MotionPathNode", "MotionPathNode start");
+
+    ArkUI_NativeNodeAPI_1 *nodeAPI = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    auto motionPathButton = nodeAPI->createNode(ARKUI_NODE_BUTTON);
+
+    ArkUI_MotionPathOptions *pathOptions = OH_ArkUI_MotionPathOptions_Create();
+    ArkUI_AttributeItem pathItem = {.object = pathOptions};
+    nodeAPI->setAttribute(motionPathButton, NODE_MOTION_PATH, &pathItem);
+
+    ASSERT_NOTNULL(pathOptions);
+    if (pathOptions) {
+        OH_ArkUI_MotionPathOptions_Dispose(pathOptions);
+        OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init",
+                        "OH_ArkUI_MotionPathOptions_Dispose  success!");
+    }
+    NAPI_END;
+}
+
 } // namespace ArkUICapiTest

@@ -53,7 +53,7 @@ export default function ErrcodeTest() {
           console.info(TAG + 'getBundleNameByUidPromise17700021 successfully: ' + JSON.stringify(data));
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(TAG + 'getBundleNameByUidPromise17700021 failed: ' + err.message);
           expect(err.code).assertEqual(17700021);
           done();
@@ -102,7 +102,7 @@ export default function ErrcodeTest() {
           console.info(TAG + 'getAppCloneIdentity17700021 successfully: ' + JSON.stringify(res));
           expect().assertFail();
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           let message = (err as BusinessError).message;
           console.info(TAG +'getAppCloneIdentity17700021 getBundleInfo catch failed: ' + message);
           expect(err.code).assertEqual(17700021);

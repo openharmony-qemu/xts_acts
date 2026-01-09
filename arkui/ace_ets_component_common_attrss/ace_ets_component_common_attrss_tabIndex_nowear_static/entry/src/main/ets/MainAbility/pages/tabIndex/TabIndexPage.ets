@@ -50,7 +50,8 @@ struct TabIndexPage {
     console.info('[TabIndexPage] page show called ');
     try {
       console.info('[TabIndexPage] start router ');
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       AppStorage.setOrCreate<number>('_tabIndex', routerParamOptions.view.testValue.setValue)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey

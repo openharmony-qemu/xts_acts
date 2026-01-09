@@ -24,7 +24,7 @@ import { BusinessError } from '@ohos.base';
 import buffer from '@ohos.buffer'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry

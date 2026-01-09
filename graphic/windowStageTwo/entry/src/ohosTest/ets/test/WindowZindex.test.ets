@@ -29,6 +29,7 @@ export default function windowZindexTest() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
+    let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -48,6 +49,7 @@ export default function windowZindexTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      driver = Driver.create();
     });
     beforeEach(() => {
     });
@@ -354,7 +356,6 @@ export default function windowZindexTest() {
       console.log(msgStr + 'begin');
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       let windowClass = windowStage.getMainWindowSync();
       let storage: LocalStorage = new LocalStorage();
       try {
@@ -446,7 +447,6 @@ export default function windowZindexTest() {
       console.log(msgStr + 'begin');
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       let windowClass = windowStage.getMainWindowSync();
       let storage: LocalStorage = new LocalStorage();
       try {
@@ -537,7 +537,6 @@ export default function windowZindexTest() {
       let caseName: string = 'test_setRaiseByClickEnabled_Two_subWindow_RaiseBy_raiseToAppTop';
       let msgStr: string = 'jsUnittest ' + caseName + ' ';
       console.log(msgStr + 'begin');
-      let driver: Driver = Driver.create();
       let windowClass = windowStage.getMainWindowSync();
       let storage: LocalStorage = new LocalStorage();
       try {
@@ -974,7 +973,6 @@ export default function windowZindexTest() {
       console.log(caseName + 'begin');
       if(isFreeWindowMode == true){
         let mainWindow = windowStage.getMainWindowSync();
-      let driver = Driver.create();
       try{
         let options : window.SubWindowOptions = {
           title: 'test_shiftAppWindowPointerEvent_subWindow_to_mainwindow',
@@ -1046,7 +1044,6 @@ export default function windowZindexTest() {
       console.log(caseName + 'begin');
       if(isFreeWindowMode == true){
         let mainWindow = windowStage.getMainWindowSync();
-      let driver = Driver.create();
       try{
         let options : window.SubWindowOptions = {
           title: 'test_shiftAppWindowPointerEvent_mainwindow_to_subWindow',
@@ -1266,7 +1263,6 @@ export default function windowZindexTest() {
       console.log(caseName + 'begin');
       let minWidth = 0;
       let minHeight = 0;
-      let driver: Driver = Driver.create();
       try{
         let windowClass1 = await windowStage.createSubWindow('test_SubWindowZLevel_0100_1');
         await windowClass1.setSubWindowZLevel(10);
@@ -1804,7 +1800,6 @@ export default function windowZindexTest() {
               console.info(`${message} Succeeded in setting the function of disabling the resize by drag window.`);
               let windowPoint = subWindowClass.getWindowProperties().windowRect
               console.info(`${message} windowPoint = ${JSON.stringify(windowPoint)}`)
-              let driver = Driver.create()
               await driver.mouseMoveTo({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 5})
               await sleep(1000)
               await driver.mouseDrag({x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 5}, {x: windowPoint.left + Math.ceil(windowPoint.width / 2), y: windowPoint.top + 100})

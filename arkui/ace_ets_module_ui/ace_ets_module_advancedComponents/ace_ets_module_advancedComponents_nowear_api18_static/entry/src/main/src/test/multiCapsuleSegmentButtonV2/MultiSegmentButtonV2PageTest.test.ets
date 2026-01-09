@@ -74,7 +74,7 @@ it('MultiSegmentButtonV2PageTest_static_001', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_001] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId001'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');
@@ -98,7 +98,7 @@ it('MultiSegmentButtonV2PageTest_static_002', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_002] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId002'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');
@@ -122,7 +122,7 @@ it('MultiSegmentButtonV2PageTest_static_003', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_003] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId003'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');
@@ -146,7 +146,7 @@ it('MultiSegmentButtonV2PageTest_static_004', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_004] START");
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('SelectedIndexesId004'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');
@@ -155,7 +155,7 @@ it('MultiSegmentButtonV2PageTest_static_004', Level.LEVEL0, async (done: () => v
       expect(text.getElement('$attrs').getString('content')).assertEqual('3');
 
       const button5 = await driver.findComponent(ON.id('SelectedIndexesId005'));
-      button5?.click();
+      await (button5?.click() as Promise<void>);
       await driver.delayMs(1000);
       console.log("[MultiSegmentButtonV2PageTest_static_004] END");
       done();
@@ -174,7 +174,7 @@ it('MultiSegmentButtonV2PageTest_static_005', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_005] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("a"));
-      segmentItem?.click();
+      await (segmentItem?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');
@@ -198,7 +198,7 @@ it('MultiSegmentButtonV2PageTest_static_006', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_006] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("b"));
-      segmentItem?.click();
+      await (segmentItem?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');
@@ -222,7 +222,7 @@ it('MultiSegmentButtonV2PageTest_static_007', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_007] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("c"));
-      segmentItem?.click();
+      await (segmentItem?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');
@@ -246,7 +246,7 @@ it('MultiSegmentButtonV2PageTest_static_008', Level.LEVEL0, async (done: () => v
       console.log("[MultiSegmentButtonV2PageTest_static_008] START");
       const driver = Driver.create();
       let segmentItem = await driver.findComponent(ON.text("d"));
-      segmentItem?.click();
+      await (segmentItem?.click() as Promise<void>);
       await driver.delayMs(1000);
 
       let textJ = inspector.getInspectorByKey('selectedIndexesTest001');

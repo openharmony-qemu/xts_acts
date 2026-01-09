@@ -151,7 +151,8 @@ struct WidthPage {
     console.info('width page show called ')
     try {
       console.info('[TabIndexPage] start router ');
-      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+      let routerParamOptions = new RouterParams();
+      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
       AppStorage.setOrCreate<Length>('_width', routerParamOptions.view.testValue.setValue.width)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey

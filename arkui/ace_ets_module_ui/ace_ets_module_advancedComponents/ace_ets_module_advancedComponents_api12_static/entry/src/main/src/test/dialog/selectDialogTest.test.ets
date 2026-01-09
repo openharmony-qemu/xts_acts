@@ -77,11 +77,11 @@ export default function selectDialogTest() {
       async (done: () => void): Promise<void> => {
         console.info('[selectDialogTest_static_0100] START');
         let driver = Driver.create();
-        await driver.delayMs(2000);
+        await CommonFunc.sleep(2000);
         // 点击打开SelectDialog
         let openAlertDialog = await driver.findComponent(ON.type('Button').text('SelectDialog'))
-        openAlertDialog!.click();
-        await driver.delayMs(1000);
+        await (openAlertDialog?.click() as Promise<void>);;
+        await CommonFunc.sleep(1000);
         // 点击打开SelectDialog是否存在以下入口。
         let primaryTitle = await driver.findComponent(ON.text('文本标题'));
         let content = await driver.findComponent(ON.text('内容内容'));
@@ -92,8 +92,8 @@ export default function selectDialogTest() {
         expect(radioContent !== null).assertTrue();
         expect(cancelButton !== null).assertTrue();
         // 关闭SelectDialog
-        cancelButton!.click();
-        await driver.delayMs(1000);
+        await (cancelButton?.click() as Promise<void>);
+        await CommonFunc.sleep(1000);
         console.info('[selectDialogTest_static_0100] END');
         done();
       });

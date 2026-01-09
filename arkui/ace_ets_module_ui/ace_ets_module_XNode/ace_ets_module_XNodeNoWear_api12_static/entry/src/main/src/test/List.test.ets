@@ -16,5 +16,5 @@
 import APINodeContentTest from './FrameNodeTest/APINodeContentTest.test';
 
 export default function testsuite() {
-  APINodeContentTest(); // SDK12.1 Pass2 SDK12.9 失败一个
+  APINodeContentTest();
 }

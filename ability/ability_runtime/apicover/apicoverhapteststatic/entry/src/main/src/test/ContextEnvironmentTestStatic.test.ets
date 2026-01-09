@@ -24,7 +24,7 @@ import { Configuration } from '@ohos.app.ability.Configuration';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import { BusinessError } from '@ohos.base';
-
+import { Driver, ON } from '@ohos.UiTest';
 
 const domain: int = 0x0000;
 const tag = 'testTag'
@@ -49,6 +49,15 @@ export default function ContextEnvironmentStaticTest() {
     let applicationContext: common.ApplicationContext;
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -95,7 +104,7 @@ export default function ContextEnvironmentStaticTest() {
             expect(`${code}`).assertEqual('0');
             callNum++;
           }
-        } catch (err: BusinessError) {
+        } catch (err) {
           expect().assertFail();
           hilog.info(domain, tag, `${itName} err: code ${err.code}, message ${err.message}`);
         }
@@ -123,7 +132,7 @@ export default function ContextEnvironmentStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
           expect().assertFail();
           done();
@@ -151,7 +160,7 @@ export default function ContextEnvironmentStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
           expect().assertFail();
           done();
@@ -185,7 +194,7 @@ export default function ContextEnvironmentStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
           expect().assertFail();
           done();
@@ -219,7 +228,7 @@ export default function ContextEnvironmentStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
           expect().assertFail();
           done();
@@ -255,7 +264,7 @@ export default function ContextEnvironmentStaticTest() {
         await applicationContext.offEnvironment(callbackId);
         hilog.info(domain, tag, `${itName} reset color mode`);
         applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
       }
@@ -291,7 +300,7 @@ export default function ContextEnvironmentStaticTest() {
         await applicationContext.offEnvironment(callbackId);
         hilog.info(domain, tag, `${itName} reset color mode`);
         applicationContext.setColorMode(ConfigurationConstant.ColorMode.COLOR_MODE_NOT_SET);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
       }
@@ -325,7 +334,7 @@ export default function ContextEnvironmentStaticTest() {
 
         hilog.info(domain, tag, `${itName} off environment`);
         await applicationContext.offEnvironment(callbackId);
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
       }
@@ -368,7 +377,7 @@ export default function ContextEnvironmentStaticTest() {
           done();
           hilog.info(domain, tag, `${itName} end`);
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
         done();
@@ -413,7 +422,7 @@ export default function ContextEnvironmentStaticTest() {
           done();
           hilog.info(domain, tag, `${itName} end`);
         })
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain, tag, `${itName} err: code ${err?.code}, message ${err?.message}`);
         expect().assertFail();
         done();

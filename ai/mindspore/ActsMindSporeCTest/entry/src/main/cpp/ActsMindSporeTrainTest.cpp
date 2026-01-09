@@ -304,7 +304,7 @@ void RunStepErrorCodeTest()
     ASSERT_NE(model01, nullptr);
     OHPrintf("==========Build model==========\n");
     OH_AI_Status ret = OH_AI_ModelBuildFromFile(
-        model01, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context01);
+        model01, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context01);
     OHPrintf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     auto status01 = OH_AI_RunStep(model01, nullptr, nullptr);
@@ -472,7 +472,7 @@ void SetupVirtualBatchErrorCodeTest()
     OH_AI_ModelHandle model = OH_AI_ModelCreate();
     ASSERT_NE(model, nullptr);
     printf("==========Build model==========\n");
-    OH_AI_Status ret = OH_AI_ModelBuildFromFile(model, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context);
+    OH_AI_Status ret = OH_AI_ModelBuildFromFile(model, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context);
     printf("==========build model return code:%d\n", ret);
     ASSERT_EQ(ret, OH_AI_STATUS_SUCCESS);
     auto status = OH_AI_ModelSetupVirtualBatch(
@@ -841,7 +841,7 @@ int SUBAIMindSporeTrainModelBuild0002()
     OHPrintf("==========Build model by graphBuf==========\n");
     size_t size;
     size_t *ptrSize = &size;
-    char *graphBuf = ReadFile("/data/test/lenet_train.ms", ptrSize);
+    char *graphBuf = ReadFile(FilePath("lenet_train.ms").c_str(), ptrSize);
     auto status01 = OH_AI_TrainModelBuild(model, nullptr, 0, OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_EQ(status01, OH_AI_STATUS_LITE_NULLPTR);
     auto status02 = OH_AI_TrainModelBuild(model, graphBuf, 0, OH_AI_MODELTYPE_MINDIR, context, trainCfg);
@@ -906,7 +906,7 @@ int SUBAIMindSporeTrainModelBuild0004()
     auto status02 = OH_AI_TrainModelBuildFromFile(model, nullptr, OH_AI_MODELTYPE_MINDIR, context, trainCfg);
     ASSERT_EQ(status02, OH_AI_STATUS_LITE_NULLPTR);
     auto status03 = OH_AI_TrainModelBuildFromFile(
-        model, "/data/test/lenet_train.ms", OH_AI_MODELTYPE_INVALID, context, trainCfg);
+        model, FilePath("lenet_train.ms").c_str(), OH_AI_MODELTYPE_INVALID, context, trainCfg);
     ASSERT_EQ(status03, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);
     OH_AI_ModelDestroy(&model);
@@ -1435,7 +1435,7 @@ int SUBAIMindSporeTrainExportModel0013()
     ASSERT_NE(model01, nullptr);
     OHPrintf("==========Build model==========\n");
     OH_AI_Status ret01 = OH_AI_ModelBuildFromFile(
-        model01, "/data/test/ml_face_isface.ms", OH_AI_MODELTYPE_MINDIR, context01);
+        model01, FilePath("ml_face_isface.ms").c_str(), OH_AI_MODELTYPE_MINDIR, context01);
     OHPrintf("==========build model return code:%d\n", ret01);
     ASSERT_EQ(ret01, OH_AI_STATUS_SUCCESS);
     auto status02 = OH_AI_ModelSetTrainMode(model01, true);
@@ -1907,7 +1907,7 @@ int SUBAIMindSporeTrainExportWeights0006()
         false, true, setChangebleWeightsName, changebleWeightsName.size());
     ASSERT_EQ(status, OH_AI_STATUS_LITE_NOT_SUPPORT);
     auto status01 = OH_AI_ExportWeightsCollaborateWithMicro(
-        model, OH_AI_MODELTYPE_MINDIR, FilePath("xiaoyi_train_codegen_net1.bin").c_str(),
+        nullptr, OH_AI_MODELTYPE_MINDIR, FilePath("xiaoyi_train_codegen_net1.bin").c_str(),
         false, true, setChangebleWeightsName, changebleWeightsName.size());
     ASSERT_EQ(status01, OH_AI_STATUS_LITE_PARAM_INVALID);
     OH_AI_ContextDestroy(&context);

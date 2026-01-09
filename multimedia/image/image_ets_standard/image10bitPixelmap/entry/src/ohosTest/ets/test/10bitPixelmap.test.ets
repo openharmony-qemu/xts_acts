@@ -446,6 +446,7 @@ export default function image10bitPixelMap() {
     }
 
     const opacityTest = async (done: Function, testNum: string, type: string, fileName: string) => {
+      let result = true
       let logger = new Logger(testNum)
       try {
         let pixelMap = await testCreatePixelMap(fileName, RGBA_1010102);
@@ -456,18 +457,21 @@ export default function image10bitPixelMap() {
           expect(imageInfo.pixelFormat == RGBA_1010102).assertTrue();
           if (type == 'callback') {
             pixelMap.opacity(0.8, (err) => {
-              if (err != undefined) {
-                expect(false).assertTrue();
-                logger.log('set alpha failed');
-              } else {
+              result = (err == undefined)
+              if (result) {
                 logger.log('set alpha success');
+                
+              } else {
+                logger.log('set alpha failed');
               }
+              expect(result).assertTrue();
               done();
             })
           } else if (type == 'promise') {
             try {
               await pixelMap.opacity(0.8);
               logger.log('set alpha success.');
+              expect(result).assertTrue();
               done();
             } catch (error) {
               logger.log('set alpha failed. error: ' + error);
@@ -478,6 +482,7 @@ export default function image10bitPixelMap() {
             try {
               pixelMap.opacitySync(0.8)
               logger.log('set alpha success.');
+              expect(result).assertTrue();
               done();
             } catch (error) {
               logger.log('set alpha failed. error: ' + error);
@@ -934,6 +939,7 @@ export default function image10bitPixelMap() {
     }
 
     const testRelease = async (done: Function, testNum: string, fileName: string, format: image.PixelMapFormat, interfaceType: string) => {
+      let result = true
       let logger = new Logger(testNum);
       try {
         let pixelMap = await testCreatePixelMap(fileName, format);
@@ -942,10 +948,12 @@ export default function image10bitPixelMap() {
           if (interfaceType == "promise") {
             await pixelMap.release();
             logger.log('PixelMap release success')
+            expect(result).assertTrue();
             done();
           } else {
             pixelMap.release(() => {
               logger.log('PixelMap release success')
+              expect(result).assertTrue();
               done();
             });
           }

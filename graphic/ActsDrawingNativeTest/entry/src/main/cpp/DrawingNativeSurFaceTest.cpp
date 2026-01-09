@@ -120,7 +120,7 @@ void DrawingNativeSurFaceTestTearDown()
 
 /**
  * @tc.name   testSurfaceCreateFromGpuContextNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0100
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0100
  * @tc.desc   test for testSurfaceCreateFromGpuContextNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -155,7 +155,7 @@ int TestSurfaceCreateFromGpuContextNormal()
 
 /**
  * @tc.name   testSurfaceCreateFromGpuContextNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0101
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0200
  * @tc.desc   test for testSurfaceCreateFromGpuContextNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -189,7 +189,7 @@ int TestSurfaceCreateFromGpuContextNull()
 
 /**
  * @tc.name   testSurfaceCreateFromGpuContextBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0102
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0300
  * @tc.desc   test for testSurfaceCreateFromGpuContextBoundary.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -220,7 +220,7 @@ int TestSurfaceCreateFromGpuContextBoundary()
 
 /**
  * @tc.name   testSurfaceDestroyNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0200
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0400
  * @tc.desc   test for testSurfaceDestroyNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -248,7 +248,7 @@ int TestSurfaceDestroyNormal()
 
 /**
  * @tc.name   testSurfaceDestroyNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0201
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0500
  * @tc.desc   test for testSurfaceDestroyNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -270,7 +270,7 @@ int TestSurfaceDestroyNull()
 
 /**
  * @tc.name   testSurfaceGetCanvasNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0300
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0600
  * @tc.desc   test for testSurfaceGetCanvasNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -306,7 +306,7 @@ int TestSurfaceGetCanvasNormal()
 
 /**
  * @tc.name   testSurfaceGetCanvasNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0301
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0700
  * @tc.desc   test for testSurfaceGetCanvasNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -338,7 +338,7 @@ int TestSurfaceGetCanvasNull()
 
 /**
  * @tc.name   testSurfaceGetCanvasBoundary
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0302
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0800
  * @tc.desc   test for testSurfaceGetCanvasBoundary.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -372,7 +372,7 @@ int TestSurfaceGetCanvasBoundary()
 
 /**
  * @tc.name   testSurfaceCreateOnScreenNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0400
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_0900
  * @tc.desc   test for testSurfaceCreateOnScreenNormal.window
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -402,7 +402,7 @@ int TestSurfaceCreateOnScreenNormal()
 
 /**
  * @tc.name   testSurfaceCreateOnScreenNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0401
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01000
  * @tc.desc   test for testSurfaceCreateOnScreenNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -428,7 +428,7 @@ int TestSurfaceCreateOnScreenNull()
 
 /**
  * @tc.name   testSurfaceCreateOnScreenMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0402
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01100
  * @tc.desc   test for testSurfaceCreateOnScreenMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -476,7 +476,7 @@ int TestSurfaceCreateOnScreenMultipleCalls()
 
 /**
  * @tc.name   testSurfaceFlushNormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0500
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01200
  * @tc.desc   test for testSurfaceFlushNormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -508,7 +508,7 @@ int TestSurfaceFlushNormal()
 
 /**
  * @tc.name   testSurfaceFlushNull
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0501
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01300
  * @tc.desc   test for testSurfaceFlushNull.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -528,7 +528,7 @@ int TestSurfaceFlushNull()
 
 /**
  * @tc.name   testSurfaceFlushAbnormal
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0502
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01400
  * @tc.desc   test for testSurfaceFlushAbnormal.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -561,7 +561,7 @@ int TestSurfaceFlushAbnormal()
 
 /**
  * @tc.name   testSurfaceFlushMultipleCalls
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0503
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_01500
  * @tc.desc   test for testSurfaceFlushMultipleCalls.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST
@@ -632,7 +632,7 @@ int TestSurfaceFlushMultipleCalls()
 
 /**
  * @tc.name   testSurfaceFlushTiming
- * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_C_DRAWING_SURFACE_0504
+ * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_NATIVE_DRAWING_SURFACE_1600
  * @tc.desc   test for testSurfaceFlushTiming.
  * @tc.type   FUNCTION
  * @tc.size   SMALLTEST

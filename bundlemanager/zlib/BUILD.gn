@@ -30,7 +30,7 @@ group("zlib") {
       "actsgzipdecompressionteststatic:ActsGzipDecompressionStaticTest",
       "actszlibinterfaceteststatic:ActsZlibInterfaceStaticTest",
       "actszipfileandunzipfileteststatic:ActsZipFileAndUnzipFileStaticTest",
-      "ActsZlibTest:ActsZlibHapTest",
+      "ActsZlibHapTest:ActsZlibHapTest",
     ]
   }
 }

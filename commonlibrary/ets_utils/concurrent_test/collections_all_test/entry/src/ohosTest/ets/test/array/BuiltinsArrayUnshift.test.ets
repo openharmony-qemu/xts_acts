@@ -116,9 +116,9 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0300';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([1]);
-        let array = collections.Array.from([]);
-        let newValue = array.unshift();
+        let exp = collections.Array.from<number>([1]);
+        let array = collections.Array.from<number>([]);
+        let newValue = array.unshift(1);
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
         expect(newValue).assertEqual(1);
@@ -239,14 +239,11 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0700';
       console.info(`${caseName} test start`);
       try {
-        let array = collections.Array.from<number | TestA | Function>([1, 2, 3]);
-        let newValue = array.unshift({
-          a: 1
-        }, () => {
-        });
+        let array = collections.Array.from([1, 2, 3]);
+        let newValue = array.unshift(...Array(1000).fill(0));
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(5);
+        expect(newValue).assertEqual(1003);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
@@ -267,11 +264,13 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0800';
       console.info(`${caseName} test start`);
       try {
-        let array = collections.Array.from([1, 2, 3]);
-        let newValue = array.unshift(...Array(1000).fill(0));
+        let exp = collections.Array.from([null, undefined, 1, 2, 3]);
+        let array = collections.Array.from<number|null|undefined>([1, 2, 3]);
+        let newValue = array.unshift(null, undefined);
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(1003);
+        expect(newValue).assertEqual(5);
+        expect(array).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
@@ -292,11 +291,11 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest0900';
       console.info(`${caseName} test start`);
       try {
-        let array = collections.Array.from<number|number[][]>([1, 2, 3]);
-        let newValue = array.unshift([[4, 5], [6, 7]]);
+        let array = collections.Array.from([1, 2, 3]);
+        let newValue = array.unshift(Infinity, NaN);
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(4);
+        expect(newValue).assertEqual(5);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
         expect().assertFail();
@@ -317,9 +316,9 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest1000';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from([null, undefined, 1, 2, 3]);
-        let array = collections.Array.from<number|null|undefined>([1, 2, 3]);
-        let newValue = array.unshift(null, undefined);
+        let exp = collections.Array.from(['a', 'b', 1, 2, 3]);
+        let array= collections.Array.from<number|string>([1, 2, 3]);
+        let newValue = array.unshift('a', 'b');
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
         expect(newValue).assertEqual(5);
@@ -344,95 +343,12 @@ export default function builtinsArrayUnshiftTest() {
       const caseName = 'builtinsArrayUnshiftTest1100';
       console.info(`${caseName} test start`);
       try {
-        let array = collections.Array.from([1, 2, 3]);
-        let newValue = array.unshift(Infinity, NaN);
-        console.info(caseName + 'newValue is: ' + newValue);
-        console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(5);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayUnshiftTest1200
-     * @tc.number SUB_BUILTINS_ARRAY_UNSHIFT_TEST_1200
-     * @tc.desc   Testing unshift
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayUnshiftTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayUnshiftTest1200';
-      console.info(`${caseName} test start`);
-      try {
-        let exp = collections.Array.from(['a', 'b', 1, 2, 3]);
-        let array= collections.Array.from<number|string>([1, 2, 3]);
-        let newValue = array.unshift('a', 'b');
-        console.info(caseName + 'newValue is: ' + newValue);
-        console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(5);
-        expect(array).assertDeepEquals(exp);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayUnshiftTest1300
-     * @tc.number SUB_BUILTINS_ARRAY_UNSHIFT_TEST_1300
-     * @tc.desc   Testing unshift
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayUnshiftTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayUnshiftTest1300';
-      console.info(`${caseName} test start`);
-      try {
         let exp = collections.Array.from([true, false, 1, 2, 3]);
         let array = collections.Array.from<number|boolean>([1, 2, 3]);
         let newValue = array.unshift(true, false);
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
         expect(newValue).assertEqual(5);
-        expect(array).assertDeepEquals(exp);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayUnshiftTest1400
-     * @tc.number SUB_BUILTINS_ARRAY_UNSHIFT_TEST_1400
-     * @tc.desc   Testing unshift
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayUnshiftTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayUnshiftTest1400';
-      console.info(`${caseName} test start`);
-      try {
-        let exp = collections.Array.from<number|TestA>([{
-          a: 1
-        }, 1, 2, 3]);
-        let array = collections.Array.from<number|TestA>([1, 2, 3]);
-        let newValue = array.unshift({
-          a: 1
-        });
-        console.info(caseName + 'newValue is: ' + newValue);
-        console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(4);
         expect(array).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);

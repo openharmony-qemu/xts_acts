@@ -1620,7 +1620,8 @@ struct LinearGradientPage {
 
 	onPageShow() {
 		console.info('linearGradient translate page show called ')
-		let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+		let routerParamOptions = new RouterParams();
+		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
 		this.linearGradientButton = routerParamOptions.view.testValue.setValue
 		this._linearGradientButtonModifier.mLinearGradient = routerParamOptions.view.testValue.setValue.linearGradient
 		const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))

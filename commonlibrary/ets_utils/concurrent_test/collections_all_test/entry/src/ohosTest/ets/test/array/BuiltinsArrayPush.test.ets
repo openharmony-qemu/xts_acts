@@ -14,7 +14,6 @@
 */
 
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level, TestType, Size } from '@ohos/hypium';
-import { TestA } from '../../testability/pages/InterfaceDefined';
 import { sleep } from '../../testability/pages/Utils';
 import { collections } from '@kit.ArkTS'
 
@@ -207,7 +206,7 @@ export default function builtinsArrayPushTest() {
      * @tc.name   builtinsArrayPushTest0700
      * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_0700
      * @tc.desc   Testing push
-     * @tc.type   FUNCTION
+     * @tc.type   FUNCTIO。
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
@@ -215,20 +214,12 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0700';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from<TestA|number>([1, {
-          a: 1
-        }, {
-          a: 1
-        }, 3, 4, 5]);
-        let array = collections.Array.from<TestA|number>([1, {
-          a: 1
-        }, {
-          a: 1
-        }, 3, 4]);
-        let newValue = array.push(5);
+        let exp = collections.Array.from(['apple', 'banana', 'cherry', 'abc']);
+        let array = collections.Array.from(['apple', 'banana', 'cherry']);
+        let newValue = array.push('abc');
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(6);
+        expect(newValue).assertEqual(4);
         expect(array).assertDeepEquals(exp);
       } catch (err) {
         console.error(`${caseName} failed, error: ${err.message}`);
@@ -250,8 +241,8 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0800';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['apple', 'banana', 'cherry', 'abc']);
-        let array = collections.Array.from(['apple', 'banana', 'cherry']);
+        let exp = collections.Array.from(['apple', '', 'cherry', 'abc']);
+        let array = collections.Array.from(['apple', '', 'cherry']);
         let newValue = array.push('abc');
         console.info(caseName + 'newValue is: ' + newValue);
         console.info(caseName + 'array length is:' + array.length);
@@ -277,33 +268,6 @@ export default function builtinsArrayPushTest() {
       const caseName = 'builtinsArrayPushTest0900';
       console.info(`${caseName} test start`);
       try {
-        let exp = collections.Array.from(['apple', '', 'cherry', 'abc']);
-        let array = collections.Array.from(['apple', '', 'cherry']);
-        let newValue = array.push('abc');
-        console.info(caseName + 'newValue is: ' + newValue);
-        console.info(caseName + 'array length is:' + array.length);
-        expect(newValue).assertEqual(4);
-        expect(array).assertDeepEquals(exp);
-      } catch (err) {
-        console.error(`${caseName} failed, error: ${err.message}`);
-        expect().assertFail();
-      }
-      done();
-      console.info(`${caseName} test end`);
-    })
-
-    /**
-     * @tc.name   builtinsArrayPushTest1000
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1000
-     * @tc.desc   Testing push
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('builtinsArrayPushTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1000';
-      console.info(`${caseName} test start`);
-      try {
         let array = collections.Array.from<undefined|null|number>([]);
         let newValue = array.push(undefined, null, NaN);
         console.info(caseName + 'newValue is: ' + newValue);
@@ -321,15 +285,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1100
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1100
+     * @tc.name   builtinsArrayPushTest1000
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1000
      * @tc.desc   Testing push  特殊字符!"#$%&'()*+,-./:;<=>?@[\]^_`{|}~
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1100';
+    it('builtinsArrayPushTest1000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1000';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from(['!"#$%&\'()*+,-./:;<=>?@[\\]^_`{|}~']);
@@ -349,15 +313,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1200
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1200
+     * @tc.name   builtinsArrayPushTest1100
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1100
      * @tc.desc   Testing push  'undefined'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1200';
+    it('builtinsArrayPushTest1100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1100';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from(['undefined']);
@@ -377,15 +341,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1300
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1300
+     * @tc.name   builtinsArrayPushTest1200
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1200
      * @tc.desc   Testing push  'null'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1300';
+    it('builtinsArrayPushTest1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1200';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from(['null']);
@@ -405,15 +369,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1400
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1400
+     * @tc.name   builtinsArrayPushTest1300
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1300
      * @tc.desc   Testing push  ''
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1400';
+    it('builtinsArrayPushTest1300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1300';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from(['']);
@@ -433,15 +397,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1500
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1500
+     * @tc.name   builtinsArrayPushTest1400
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1400
      * @tc.desc   Testing push  Unicode编码
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1500';
+    it('builtinsArrayPushTest1400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1400';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from(['\u7b11']);
@@ -461,15 +425,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1600
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1600
+     * @tc.name   builtinsArrayPushTest1500
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1500
      * @tc.desc   Testing push  非法Unicode编码
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1600';
+    it('builtinsArrayPushTest1500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1500';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from(['\uFFFD']);
@@ -489,15 +453,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1700
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1700
+     * @tc.name   builtinsArrayPushTest1600
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1600
      * @tc.desc   Testing push  Math.floor(1.5),0,-0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1700';
+    it('builtinsArrayPushTest1600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1600';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from([Math.floor(1.5), 0, -0]);
@@ -519,15 +483,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1800
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1800
+     * @tc.name   builtinsArrayPushTest1700
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1700
      * @tc.desc   Testing push  Number.EPSILON,Number.MIN_VALUE,Number.MAX_VALUE,-Infinity,Infinity
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1800';
+    it('builtinsArrayPushTest1700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1700';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from([Number.EPSILON, Number.MIN_VALUE, Number.MAX_VALUE, -Infinity, Infinity]);
@@ -551,15 +515,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest1900
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1900
+     * @tc.name   builtinsArrayPushTest1800
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1800
      * @tc.desc   Testing push  123.456,0xcafebabe,0x0102，0x01020304,0x3
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest1900';
+    it('builtinsArrayPushTest1800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1800';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from([123.456, 0xcafebabe, 0x0102, 0x01020304, 0x3]);
@@ -583,15 +547,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest2000
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_2000
+     * @tc.name   builtinsArrayPushTest1900
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_1900
      * @tc.desc   Testing push  true/false
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest2000';
+    it('builtinsArrayPushTest1900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest1900';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from([true, false]);
@@ -612,15 +576,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest2100
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_2100
+     * @tc.name   builtinsArrayPushTest2000
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_2000
      * @tc.desc   Testing push  !'s'
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest2100';
+    it('builtinsArrayPushTest2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest2000';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from([!'s']);
@@ -640,15 +604,15 @@ export default function builtinsArrayPushTest() {
     })
 
     /**
-     * @tc.name   builtinsArrayPushTest2200
-     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_2200
+     * @tc.name   builtinsArrayPushTest2100
+     * @tc.number SUB_BUILTINS_ARRAY_PUSH_TEST_2100
      * @tc.desc   Testing push  !0
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('builtinsArrayPushTest2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
-      const caseName = 'builtinsArrayPushTest2200';
+    it('builtinsArrayPushTest2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (done: Function) => {
+      const caseName = 'builtinsArrayPushTest2100';
       console.info(`${caseName} test start`);
       try {
         let exp = collections.Array.from([!0]);

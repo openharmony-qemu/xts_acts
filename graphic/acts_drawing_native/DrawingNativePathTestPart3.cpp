@@ -1334,11 +1334,11 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateNormal, Function | Small
     EXPECT_NE(interpolatePath, nullptr);
     bool result = false;
     // 10. Call the interface OH_Drawing_PathInterpolate to verify the straight line and the straight line.
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other1, 0.5, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other1, 1.0, &result, interpolatePath);
     EXPECT_EQ(result, true);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 11. Call the interface OH_Drawing_PathInterpolate to verify straight line and arc.
-    errorCode = OH_Drawing_PathInterpolate(path, other2, 0.5, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, other2, 1.0, &result, interpolatePath);
     EXPECT_EQ(result, false);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_SUCCESS);
     // 9. Free the memory.
@@ -1427,10 +1427,10 @@ HWTEST_F(DrawingNativePathPart3Test, testPathInterpolateAbnormal, Function | Sma
     EXPECT_NE(interpolatePath, nullptr);
     // 8. The third parameter of the verification interface is passed as a negative number.
     bool result = false;
-    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, -0.5, &result, interpolatePath);
+    OH_Drawing_ErrorCode errorCode = OH_Drawing_PathInterpolate(path, other, -1.0, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 9. The third parameter of the verification interface is passed as a number greater than 1.
-    errorCode = OH_Drawing_PathInterpolate(path, other, 1.5, &result, interpolatePath);
+    errorCode = OH_Drawing_PathInterpolate(path, other, 2.0, &result, interpolatePath);
     EXPECT_EQ(errorCode, OH_Drawing_ErrorCode::OH_DRAWING_ERROR_PARAMETER_OUT_OF_RANGE);
     // 10. Free the memory.
     OH_Drawing_PathDestroy(path);

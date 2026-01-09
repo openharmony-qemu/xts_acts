@@ -88,7 +88,7 @@ export default function telephonyRadioPublicTest() {
         console.info(`${caseName} success, promise: data->${JSON.stringify(data)}`);
         ExpectTrue(true);
         done()
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         console.info(`${caseName} failed, promise: err->${JSON.stringify(err)}`);
         ExpectFail();
         console.info(`${caseName} test end`);

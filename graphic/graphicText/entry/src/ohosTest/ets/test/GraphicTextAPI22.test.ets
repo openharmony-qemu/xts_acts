@@ -136,7 +136,7 @@ export default function GraphicTextAPI22() {
           console.info("localPostscriptName:" + fontDescriptors[index].localPostscriptName +
             "\localFullName:" + fontDescriptors[index].localFullName +
             "\localFamilyName:" + fontDescriptors[index].localFamilyName +
-            "\localFamilyName:" + fontDescriptors[index].localFamilyName +
+            "\localSubFamilyName:" + fontDescriptors[index].localSubFamilyName +
             "\version:" + fontDescriptors[index].version +
             "\manufacture:" + fontDescriptors[index].manufacture +
             "\copyright:" + fontDescriptors[index].copyright +
@@ -149,6 +149,7 @@ export default function GraphicTextAPI22() {
         expect(fontDescriptors[0].localFullName).assertEqual('HarmonyOS Sans');
         expect(fontDescriptors[0].localFamilyName).assertEqual('HarmonyOS Sans');
         expect(fontDescriptors[0].localFamilyName).assertEqual('HarmonyOS Sans');
+        expect(fontDescriptors[0].localSubFamilyName).assertEqual('Regular');
         expect(fontDescriptors[0].index).assertEqual(0);
       })
       done();
