@@ -118,6 +118,30 @@ export class KeyboardController {
           console.info(TAG + '====>Sub_InputMethod_extraConfig_1000 event:' + data.event);
           that.Sub_InputMethod_extraConfig_1000();
           break;
+        case 50:
+          console.info(TAG + '====>Sub_InputMethod_extraConfig_0500 event:' + data.event);
+          that.Sub_InputMethod_extraConfig_0500();
+          break;
+        case 60:
+          console.info(TAG + '====>Sub_InputMethod_extraConfig_0600 event:' + data.event);
+          that.Sub_InputMethod_extraConfig_0600();
+          break;
+        case 70:
+          console.info(TAG + '====>Sub_InputMethod_extraConfig_0100 event:' + data.event);
+          that.Sub_InputMethod_extraConfig_0100();
+          break;
+        case 80:
+          console.info(TAG + '====>Sub_InputMethod_extraConfig_0300 event:' + data.event);
+          that.Sub_InputMethod_extraConfig_0300();
+          break;
+        case 90:
+          console.info(TAG + '====>Sub_InputMethod_extraConfig_0200 event:' + data.event);
+          that.Sub_InputMethod_extraConfig_0200();
+          break;
+        case 100:
+          console.info(TAG + '====>Sub_InputMethod_extraConfig_0400 event:' + data.event);
+          that.Sub_InputMethod_extraConfig_0400();
+          break;
       }
     }
 
@@ -232,6 +256,150 @@ export class KeyboardController {
     } catch (err) {
       console.info(TAG + `====>Sub_InputMethod_extraConfig_1000 cathch err.code: ${err.code},err.message: ${err.message} `);
       commoneventmanager.publish('Sub_InputMethod_extraConfig_1000', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_extraConfig_0500(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_extraConfig_0500 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.extraConfig;
+        console.info(TAG + `====>Sub_InputMethod_extraConfig_0500 extraConfig : ${JSON.stringify(mode)}`);
+        if (JSON.stringify(mode.customSettings) === '{}') {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_extraConfig_0500 success ');
+        commoneventmanager.publish('Sub_InputMethod_extraConfig_0500', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_extraConfig_0500 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_extraConfig_0500', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_extraConfig_0600(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_extraConfig_0600 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.extraConfig;
+        console.info(TAG + `====>Sub_InputMethod_extraConfig_0600 extraConfig : ${JSON.stringify(mode)}`);
+        if (JSON.stringify(mode.customSettings) === '{}') {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_extraConfig_0600 success ');
+        commoneventmanager.publish('Sub_InputMethod_extraConfig_0600', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_extraConfig_0600 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_extraConfig_0600', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_extraConfig_0100(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_extraConfig_0100 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.extraConfig;
+        console.info(TAG + `====>Sub_InputMethod_extraConfig_0100 extraConfig : ${JSON.stringify(mode)}`);
+        if (JSON.stringify(mode.customSettings) != '{}') {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_extraConfig_0100 success ');
+        commoneventmanager.publish('Sub_InputMethod_extraConfig_0100', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_extraConfig_0100 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_extraConfig_0100', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_extraConfig_0300(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_extraConfig_0300 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.extraConfig;
+        console.info(TAG + `====>Sub_InputMethod_extraConfig_0300 extraConfig : ${JSON.stringify(mode)}`);
+        if (JSON.stringify(mode.customSettings) === '{}') {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_extraConfig_0300 success ');
+        commoneventmanager.publish('Sub_InputMethod_extraConfig_0300', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_extraConfig_0300 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_extraConfig_0300', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_extraConfig_0200(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_extraConfig_0200 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.extraConfig;
+        console.info(TAG + `====>Sub_InputMethod_extraConfig_0200 extraConfig : ${JSON.stringify(mode)}`);
+        if (JSON.stringify(mode.customSettings) != '{}') {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_extraConfig_0200 success ');
+        commoneventmanager.publish('Sub_InputMethod_extraConfig_0200', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_extraConfig_0200 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_extraConfig_0200', commonEventPublishData, this.publishCallback);
+    }
+  }
+
+  private async Sub_InputMethod_extraConfig_0400(): Promise<void> {
+    console.info(TAG + '====>receive Sub_InputMethod_extraConfig_0400 data');
+    let commonEventPublishData = {
+        data: 'FAILED'
+    };
+    try {
+      let t = setTimeout(() => {
+        clearTimeout(t);
+        let mode = this.extraConfig;
+        console.info(TAG + `====>Sub_InputMethod_extraConfig_0400 extraConfig : ${JSON.stringify(mode)}`);
+        if (JSON.stringify(mode.customSettings) === '{}') {
+          commonEventPublishData = {
+            data: 'SUCCESS'
+          };
+        };
+        console.info(TAG + '====>Sub_InputMethod_extraConfig_0400 success ');
+        commoneventmanager.publish('Sub_InputMethod_extraConfig_0400', commonEventPublishData, this.publishCallback);
+      }, 500);
+    } catch (err) {
+      console.info(TAG + `====>Sub_InputMethod_extraConfig_0400 cathch err.code: ${err.code},err.message: ${err.message} `);
+      commoneventmanager.publish('Sub_InputMethod_extraConfig_0400', commonEventPublishData, this.publishCallback);
     }
   }
 
