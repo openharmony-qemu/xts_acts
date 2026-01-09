@@ -33,6 +33,9 @@
 #include "hoverEffect/HoverEffectTest.h"
 #include "monopolize/MonopolizeTest.h"
 #include "textSelection/TextSelectionTest.h"
+#include "node/ConvertPositionToWindowTest.h"
+#include "node/IsInRenderStateTest.h"
+#include "node/ConvertPositionFromWindowTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
