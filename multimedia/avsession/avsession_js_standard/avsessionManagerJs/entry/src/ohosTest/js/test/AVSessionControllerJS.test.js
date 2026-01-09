@@ -792,7 +792,7 @@ export default function AVSessionControllerJsTest() {
 
   /**
    * @tc.name   SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0200
-   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0100
+   * @tc.number SUB_MULTIMEDIA_AVSESSION_ONQUEUETITLECHANGE_0200
    * @tc.desc   Testing on queueTitleChange callback
    * @tc.type   FUNCTION
    * @tc.size   MEDIUMTEST

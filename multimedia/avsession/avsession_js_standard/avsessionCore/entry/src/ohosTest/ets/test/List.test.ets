@@ -13,11 +13,11 @@
  * limitations under the License.
  */
 
-import AVSessionCore from './avSessionCore.test'
-import AVSessionMetadata from './avSessionMetadata.test'
-import AVSessionController from './avSessionController.test'
-import AVSessionEnum from './avSessionEnum.test'
-import AVSessionERRCode from './avSessionERRCode.test'
+import AVSessionCore from './AVSessionCore.test'
+import AVSessionMetadata from './AVSessionMetadata.test'
+import AVSessionController from './AVSessionController.test'
+import AVSessionEnum from './AVSessionEnum.test'
+import AVSessionERRCode from './AVSessionERRCode.test'
 
 
 export default function testsuite() {
@@ -30,9 +30,9 @@ export default function testsuite() {
 
 /**
  * This test suite is arranged as below: (allocated level by level)
- *    if the testcase is about ENUM                                 -> avSessionEnum.test.ets
- *    if the testcase covers AVMetadata or other related interface  -> avSessionMetadata.test.ets
- *    if the testcase is about the controller interface             -> avSessionController.test.ets
- *    if the testcase is about 6600xxx error code                   -> avSessionERRCode.test.ets
- *    others(such as interface logic functions and 401 err)         -> avSessionCore.test.ets
+ *    if the testcase is about ENUM                                 -> AVSessionEnum.test.ets
+ *    if the testcase covers AVMetadata or other related interface  -> AVSessionMetadata.test.ets
+ *    if the testcase is about the controller interface             -> AVSessionController.test.ets
+ *    if the testcase is about 6600xxx error code                   -> AVSessionERRCode.test.ets
+ *    others(such as interface logic functions and 401 err)         -> AVSessionCore.test.ets
  */

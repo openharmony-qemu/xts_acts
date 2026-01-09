@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import AVSessionExtendedDisplayCast from './avSessionExtendedDisplayCast.test'
+import AVSessionExtendedDisplayCast from './AVSessionExtendedDisplayCast.test'
 
 export default function testsuite() {
   AVSessionExtendedDisplayCast()

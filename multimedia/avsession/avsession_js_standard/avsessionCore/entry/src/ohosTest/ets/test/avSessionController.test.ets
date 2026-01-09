@@ -977,7 +977,6 @@ export default function abilityTest() {
         }).catch((err: BusinessError) => {
             if (err.message == 'expect true, actualValue is false' || err.code == 6600105){
                 console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
-                expect(true).assertTrue();
             } else {
                 console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
                 expect(false).assertTrue();
@@ -1001,7 +1000,6 @@ export default function abilityTest() {
         console.info(`${TAG}: aduio get volume with ${JSON.stringify(extras)}`);
         if (JSON.stringify(extras) == '{}' || 0 <= extras[COMMON_COMMAND_STRING] && extras[COMMON_COMMAND_STRING] <= 15){
           console.info(`${TAG}: aduio get volume with ${extras[COMMON_COMMAND_STRING]}`);
-          expect(true).assertTrue();
         } else {
           expect(false).assertTrue();
         }           
@@ -1021,7 +1019,6 @@ export default function abilityTest() {
         const COMMON_COMMAND_STRING = "AUDIO_GET_AVAILABLE_DEVICES";
         controller.getExtrasWithEvent(COMMON_COMMAND_STRING).then((extras: avSession.ExtraInfo) => {
             console.info(` AUDIO_GET_AVAILABLE_DEVICES ${extras[COMMON_COMMAND_STRING]}`);
-            expect(true).assertTrue();
         }).catch((err: BusinessError) => {
             console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
             expect(false).assertTrue();
@@ -1042,7 +1039,6 @@ export default function abilityTest() {
         const COMMON_COMMAND_STRING = "AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO";
         controller.getExtrasWithEvent(COMMON_COMMAND_STRING).then((extras: avSession.ExtraInfo) => {
             console.info(` AUDIO_GET_PREFERRED_OUTPUT_DEVICE_FOR_RENDERER_INFO ${extras[COMMON_COMMAND_STRING]}`);
-            expect(true).assertTrue();
         }).catch((err: BusinessError) => {
             console.info(`${TAG}: getExtrasWithEvent failed with err: ${err.code}, ${err.message}`);
             expect(false).assertTrue();

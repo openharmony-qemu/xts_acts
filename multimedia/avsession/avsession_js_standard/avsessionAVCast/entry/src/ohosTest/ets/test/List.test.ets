@@ -12,10 +12,10 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import AVSessionAVCast from './avSessionAVCast.test'
-import AVSessionERRCode from './avSessionERRCode.test'
-import AVSessionEnum from './avSessionEnum.test'
-import AVCastController from './avCastController.test'
+import AVSessionAVCast from './AVSessionAVCast.test'
+import AVSessionERRCode from './AVSessionERRCode.test'
+import AVSessionEnum from './AVSessionEnum.test'
+import AVCastController from './AVCastController.test'
 
 
 export default function testsuite() {

@@ -133,13 +133,12 @@ export default function abilityTest() {
       });
 
       await controller.getAVMetadata().then((data: avSession.AVMetadata) => {
-        if (data.bundleIcon ) {
+        if (data.bundleIcon) {
           console.info(`${data.bundleIcon} TestLog: Get bundleIcon Successfully`);
-          expect(true).assertTrue();
         } else {
           console.info('TestLog: Get bundleIcon failed');
           console.info(`TestLog: bundleIcon is: ${data.bundleIcon}`);
-          expect(true).assertTrue();
+          expect(false).assertTrue();
         }
       }).catch((err: BusinessError) => {
         console.info(`TestLog: Get assetId error: code: ${err.code}, message: ${err.message}`);
@@ -159,13 +158,8 @@ export default function abilityTest() {
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         session.on('setTargetLoopMode', (callback: number) => {
-            if (callback === 1) {
-                console.info('TestLog: Set TargetLoopMode command callback registration successful');
-                expect(true).assertTrue();
-            } else {
-                console.error(`TestLog: Set TargetLoopMode command callback registration error`);
-                expect(false).assertTrue();
-            };
+            expect(callback).assertEqual(1);
+            console.info('TestLog: Set TargetLoopMode command callback registration');
         });
 
         try {
@@ -242,7 +236,7 @@ export default function abilityTest() {
             console.info('TestLog: Controller send command successfully');
         } catch(err) {
             console.info(`TestLog: Controller send command error: code: ${err.code}, message: ${err.message}`);
-            expect(true).assertTrue();
+            expect(false).assertTrue();
         };
         await sleep(500);
         done();
@@ -329,13 +323,18 @@ export default function abilityTest() {
         volume: 3,
         extras: {extras: 'any'}
       };
-      session.setAVPlaybackState(PlaybackState).then(() => {
+      await session.setAVPlaybackState(PlaybackState).then(() => {
         console.info('SetAVPlaybackState successfully');
-        expect(true).assertTrue();
-        done()
       }).catch((err: BusinessError) => {
         console.error(`SetAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
       });
+      await controller.getAVPlaybackState().then((state: avSession.AVPlaybackState) => {
+        console.info('getAVPlaybackState : SUCCESS');
+        expect(state.state).assertEqual(PlaybackState.state)
+      }).catch((err: BusinessError) => {
+        console.error(`getAVPlaybackState BusinessError: code: ${err.code}, message: ${err.message}`);
+        expect(false).assertTrue();
+      })
       done();
     })
 
@@ -357,7 +356,7 @@ export default function abilityTest() {
             if (deviceInfo && deviceInfo.castCategory !== undefined && 
                 deviceInfo.deviceId !== undefined && deviceInfo.deviceName !== undefined && 
                 deviceInfo.deviceType !== undefined && deviceInfo.audioCapabilities?.streamInfos !== undefined) {
-                expect(true).assertTrue();
+                console.info('getOutputDevice value success.')
             } else {
                 console.info('getOutputDevice value error.')
                 expect(false).assertTrue();
@@ -398,7 +397,7 @@ export default function abilityTest() {
           if (deviceInfo && deviceInfo.castCategory !== undefined && deviceInfo.deviceId !== undefined &&
               deviceInfo.deviceName !== undefined && deviceInfo.deviceType !== undefined && 
               deviceInfo.audioCapabilities?.streamInfos !== undefined) {
-              expect(true).assertTrue();
+              console.info('getOutputDevice value success.')
           } else {
               console.info('getOutputDevice value error.')
               expect(false).assertTrue();
@@ -1126,14 +1125,14 @@ export default function abilityTest() {
 
 
     /**
-     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_0100
+     * @tc.name   SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_REVENT_0100
      * @tc.number SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_REVENT_0100
      * @tc.desc   Testing on setTargetLoopMode callback
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+    it('SUB_MULTIMEDIA_AVSESSION_ON_SETTARGETLOOPMODE_REVENT_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
         await session.on('setTargetLoopMode', (mode: number) => {
             if(mode == 1){
                 expect(mode).assertEqual(avSession.LoopMode.LOOP_MODE_SINGLE)

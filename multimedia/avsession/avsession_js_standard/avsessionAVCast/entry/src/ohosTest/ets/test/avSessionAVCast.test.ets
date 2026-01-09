@@ -134,7 +134,7 @@ export default function abilityTest() {
       avCastPicker.on('pickerStateChange',(state: AVCastPickerState) => {
         console.info(`${TAG}: pickerStateChange received picker state change: ${state}`);
         if (state == AVCastPickerState.STATE_APPEARING || state == AVCastPickerState.STATE_DISAPPEARING) {
-          expect(true).assertTrue();
+          console.info('${TAG}: AVCastPickerState: ${state}');
         } else {
           expect(false).assertTrue();
         }
@@ -551,14 +551,14 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = false;
       await session.on('customDataChange',(data: Record<string,string>) => {
         console.info(`session on_customDataChange Successfully ${data}`)
-        session.off('customDataChange');
-        expect(true).assertTrue();
-        done();
+        flag = true;
       })    
       await session.sendCustomData(customdata);
       await sleep(300);
+      expect(flag).assertTrue();
       done();
     })
 
@@ -595,14 +595,15 @@ export default function abilityTest() {
      * @tc.level  LEVEL0
      */
     it('SUB_MULTIMEDIA_AVSESSION_ON_CUSTOMDATACHANGE_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let flag = false;
       await controller.on('customDataChange',(data: Record<string,string>) => {
         console.info(`session on_customDataChange Successfully ${data}`)
+        flag = true;
         controller.off('customDataChange');
-        expect(true).assertTrue();
-        done();
       })    
       await controller.sendCustomData(customdata);
       await sleep(300);
+      expect(flag).assertTrue();
       done();
     })
 
@@ -750,7 +751,6 @@ export default function abilityTest() {
                   console.info(`stopCasting BusinessError: code: ${err.code}, message: ${err.message}`);
               } else {
                   console.info(`stopCasting successfully`);
-                  expect(true).assertTrue();
               };
           });
         } catch (error) {

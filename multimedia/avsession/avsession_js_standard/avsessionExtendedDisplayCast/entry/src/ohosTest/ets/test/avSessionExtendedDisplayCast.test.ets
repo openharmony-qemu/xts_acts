@@ -150,8 +150,8 @@ export default function abilityTest() {
         await session.destroy()
         await sleep(500)
         session.getAllCastDisplays().then((data: Array< avSession.CastDisplayInfo >) => {
-          console.info(`getAllCastDisplays success: ${JSON.stringify(data)}`);
-          expect(true).assertTrue();
+          console.info(`getAllCastDisplays success with session destroyed: ${JSON.stringify(data)}`);
+          expect(false).assertTrue();
         }).catch((err: BusinessError) => {
           console.info(`getAllCastDisplays successfully: ${err.code}, message: ${err.message}`)
           expect(err.code).assertEqual(6600102);
