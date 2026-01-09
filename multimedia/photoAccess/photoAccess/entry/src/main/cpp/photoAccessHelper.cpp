@@ -394,6 +394,27 @@ MediaLibrary_ErrorCode NDKMediaLibrary::ChangeRequestSaveCameraVideo(int useCase
     return ret_;
 }
 
+MediaLibrary_ErrorCode NDKMediaLibrary::ChangeRequestSaveCameraImageHeif(int useCaseCode)
+{
+    if (useCaseCode == TEST_PARAMETER_OK) {
+        ret_ = OH_MediaAssetChangeRequest_SaveCameraPhoto(changeRequest_,
+            MediaLibrary_ImageFileType::MEDIA_LIBRARY_IMAGE_HEIF);
+    } else if (useCaseCode == TEST_FIRST_PARAMETER_ERROR) {
+        ret_ = OH_MediaAssetChangeRequest_SaveCameraPhoto(nullptr,
+            MediaLibrary_ImageFileType::MEDIA_LIBRARY_IMAGE_HEIF);
+    } else if (useCaseCode == TEST_SECOND_PARAMETER_ERROR) {
+        ret_ = OH_MediaAssetChangeRequest_SaveCameraPhoto(changeRequest_,
+            static_cast<MediaLibrary_ImageFileType>(-1));
+    }
+
+    if (ret_== MEDIA_LIBRARY_OK) {
+        LOG("ChangeRequestSaveCameraImageHeif success");
+        ret_ = OH_MediaAccessHelper_ApplyChanges(changeRequest_);
+    }
+
+    return ret_;
+}
+
 MediaLibrary_ErrorCode NDKMediaLibrary::ChangeRequestDiscardCameraPhoto(int useCaseCode)
 {
     if (useCaseCode == TEST_PARAMETER_OK) {
