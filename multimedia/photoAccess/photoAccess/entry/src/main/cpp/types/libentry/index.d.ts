@@ -52,8 +52,6 @@ export const testManagerRequestImage: (a: number) => ESObject;
 
 export const testManagerQuickRequestImage: (a: number) => ESObject;
 
-export const testManagerQuickRequestImage: (a: number) => ESObject;
-
 export const testMediaAccessHelperApplyChanges: (a: number) => ESObject;
 
 export const testMediaAssetGetMediaType: (a: number) => ESObject;
