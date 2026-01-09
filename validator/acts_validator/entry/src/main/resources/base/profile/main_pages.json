@@ -178,6 +178,7 @@
     "pages/ArkUI/AccessibilityActionOptionsScrollStep",
     "pages/ArkUI/CapiSourceType",
     "pages/ArkUI/AccessiBilityStateDescription",
-    "pages/ArkUI/Magnifier"
+    "pages/ArkUI/Magnifier",
+    "pages/ArkUI/ImageDownloadInfo"
   ]
 }
