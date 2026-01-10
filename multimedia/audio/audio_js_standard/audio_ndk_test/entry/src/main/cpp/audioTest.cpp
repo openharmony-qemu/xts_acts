@@ -8516,19 +8516,19 @@ static napi_value AudioSuiteRendererGetLatency_0700(napi_env env, napi_callback_
     int32_t hdLatency = 2;
     if (AUDIOSTREAM_LATENCY_TYPE_ALL != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE0 fail, result is: %{public}d"
+        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE0 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_ALL);
         return res;
     }
     if (AUDIOSTREAM_LATENCY_TYPE_SOFTWARE != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE1 fail, result is: %{public}d"
+        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE1 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_SOFTWARE);
         return res;
     }
     if (AUDIOSTREAM_LATENCY_TYPE_HARDWARE != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE2 fail, result is: %{public}d"
+        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE2 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_HARDWARE);
         return res;
     }
