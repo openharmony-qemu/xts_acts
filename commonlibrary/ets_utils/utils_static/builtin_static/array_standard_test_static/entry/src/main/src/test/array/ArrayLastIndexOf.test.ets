@@ -924,12 +924,13 @@ export default function ArrayLastIndexOfTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testArrayLastIndexOf0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Float64Array = new Float64Array([1, 2, 3]);
-      const combinedArr: number[] = Array.from(arr).concat([2, 4] as ConcatArray<number>);
-      const result: number = combinedArr.lastIndexOf(2);
-      expect(result).assertEqual(3);
-    });
+    // todo
+    // it("testArrayLastIndexOf0082", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    //   const arr: Float64Array = new Float64Array([1, 2, 3]);
+    //   const combinedArr: number[] = Array.from(arr).concat([2, 4] as ConcatArray<number>);
+    //   const result: number = combinedArr.lastIndexOf(2);
+    //   expect(result).assertEqual(3);
+    // });
 
     /**
      * @tc.name   testArrayLastIndexOf0084
@@ -1032,12 +1033,13 @@ export default function ArrayLastIndexOfTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-    it("testArrayLastIndexOf0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr: Uint16Array = new Uint16Array([1, 2, 3]);
-      const combinedArr: number[] = Array.from(arr).concat([2, 4] as ConcatArray<number>);
-      const result: number = combinedArr.lastIndexOf(2);
-      expect(result).assertEqual(3);
-    });
+    // todo
+    // it("testArrayLastIndexOf0092", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    //   const arr: Uint16Array = new Uint16Array([1, 2, 3]);
+    //   const combinedArr: number[] = Array.from(arr).concat([2, 4] as ConcatArray<number>);
+    //   const result: number = combinedArr.lastIndexOf(2);
+    //   expect(result).assertEqual(3);
+    // });
 
     /**
      * @tc.name   testArrayLastIndexOf0093

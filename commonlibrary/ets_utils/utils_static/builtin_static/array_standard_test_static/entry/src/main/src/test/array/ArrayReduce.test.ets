@@ -632,8 +632,8 @@ export default function ArrayReduceTest() {
      * @tc.level  LEVEL3
      */
     it('ArrayReduceTest033', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [0, -0, 5];
-      const callback = (acc: int, curr: int) => acc + curr;
+      const arr: Array<number> = [0, -0, 5];
+      const callback = (acc: number, curr: number) => acc + curr;
       const result = arr.reduce(callback);
 
       expect(result).assertEqual(5);
@@ -1049,9 +1049,9 @@ export default function ArrayReduceTest() {
      * @tc.level  LEVEL4
      */
     it('ArrayReduceTest078', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL4, async () => {
-      const arr = [1, 2, 3];
-      const initialValue = Number.MAX_SAFE_INTEGER as int;
-      const callback = (acc: int, curr: int) => acc + curr;
+      const arr: Array<number> = [1, 2, 3];
+      const initialValue = Number.MAX_SAFE_INTEGER;
+      const callback = (acc: number, curr: number) => acc + curr;
       const result = arr.reduce(callback, initialValue);
 
       expect(result).assertEqual(9007199254740991 + 6);

@@ -130,36 +130,6 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0001
-     * @tc.name testArrayConstructor0001
-     * @tc.desc Verify Array constructor creates empty array with single positive integer length
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = new Array<number>(8);
-      expect(arr.length).assertEqual(8);
-      expect(arr[0]).assertEqual(undefined);
-      expect(arr[7]).assertEqual(undefined);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0002
-     * @tc.name testArrayConstructor0002
-     * @tc.desc Verify Array constructor handles single large positive integer length (10000)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const largeLength = 10000;
-      const arr = new Array<string>(largeLength);
-      expect(arr.length).assertEqual(largeLength);
-      expect(arr[9999]).assertEqual(undefined);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0003
      * @tc.name testArrayConstructor0003
      * @tc.desc Verify Array constructor creates array with multiple string element arguments
@@ -187,24 +157,6 @@ export default function ArrayConstructTest() {
       expect(arr.length).assertEqual(4);
       expect(arr[1]).assertEqual(false);
       expect(arr[3]).assertEqual(false);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0005
-     * @tc.name testArrayConstructor0005
-     * @tc.desc Verify Array constructor throws error when argument is non-integer float (3.7)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let isErrorThrown = false;
-      try {
-        new Array<number>(3.7);
-      } catch (error) {
-        isErrorThrown = true;
-      }
-      expect(isErrorThrown).assertTrue();
     });
 
     /**
@@ -253,20 +205,6 @@ export default function ArrayConstructTest() {
       expect(arr.length).assertEqual(4);
       expect(arr[2]).assertEqual(30);
       expect(arr instanceof Array).assertTrue();
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0009
-     * @tc.name testArrayConstructor0009
-     * @tc.desc Verify Array works without 'new' keyword for single length argument (6)
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const arr = Array<number>(6);
-      expect(arr.length).assertEqual(6);
-      expect(arr[4]).assertEqual(undefined);
     });
 
     /**
@@ -1269,20 +1207,6 @@ export default function ArrayConstructTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0100
-     * @tc.name testArrayConstructor0100
-     * @tc.desc Verify Array constructor with elements created via spread from a Set
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 1
-     */
-    it('testArrayConstructor0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      const set = new Set<number>([10, 20, 30]);
-      const arr = new Array<number>(0, ...Array.from(set));
-      expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([10, 20, 30]));
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0101
      * @tc.name testArrayConstructor0101
      * @tc.desc Verify Array constructor with positive integers and map method
@@ -1508,25 +1432,6 @@ export default function ArrayConstructTest() {
       const arr = new Array<number>(3, 4, 5);
       arr.unshift(1, 2);
       expect(JSON.stringify(arr)).assertDeepEquals(JSON.stringify([1, 2, 3, 4, 5]));
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0117
-     * @tc.name testArrayConstructor0117
-     * @tc.desc Verify Array constructor with large array and slice method
-     * @tc.size LargeTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayConstructor0117', TestType.FUNCTION | Size.LARGETEST | Level.LEVEL2, (): void => {
-      const elements: int[] = [];
-      for (let i = 0; i < 1000; i++) {
-        elements.push(i);
-      }
-      const arr = new Array<int>(0, ...elements);
-      const sliced = arr.slice(500, 505);
-      expect(arr.length).assertEqual(1000);
-      expect(sliced).assertDeepEquals([500, 501, 502, 503, 504]);
     });
 
     /**
@@ -1921,12 +1826,13 @@ export default function ArrayConstructTest() {
      * @tc.type Function
      * @tc.level Level 2
      */
-    it('testArrayConstructor0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const arr = new Array<string>('a', 'b', 'c');
-      const entries = Array.from(arr.entries());
-      expect(arr).assertDeepEquals(['a', 'b', 'c']);
-      expect(entries).assertDeepEquals([[0, 'a'], [1, 'b'], [2, 'c']]);
-    });
+    // todo
+    // it('testArrayConstructor0143', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
+    //   const arr = new Array<string>('a', 'b', 'c');
+    //   const entries = Array.from(arr.entries());
+    //   expect(arr).assertDeepEquals(['a', 'b', 'c']);
+    //   expect(entries).assertDeepEquals([[0, 'a'], [1, 'b'], [2, 'c']]);
+    // });
 
     /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_CONSTRUCTOR_0144

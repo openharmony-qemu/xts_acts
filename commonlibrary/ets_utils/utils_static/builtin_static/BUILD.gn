@@ -35,6 +35,7 @@ group("builtin_static") {
       "typeArray_standard_test_static:ActsTypeArrayStaticTest",
       "base_standard_test_static:ActsBaseStaticTest",
       "dataview_standard_test_static:ActsDataviewStaticTest",
+      "builtinsupply_standard_test_static:ActsBuiltinsupplyStaticTest",
     ]
   }
 }
