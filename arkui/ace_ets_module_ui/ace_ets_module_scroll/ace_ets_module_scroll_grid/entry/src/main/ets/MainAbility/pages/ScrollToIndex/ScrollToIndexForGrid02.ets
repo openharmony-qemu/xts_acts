@@ -174,20 +174,6 @@ struct ScrollToIndexForGrid02 {
           top: 20,
           bottom: 20
         })
-        Column(){
-          Flex({justifyContent:FlexAlign.SpaceBetween}){
-            Button('next page', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(150).height(30)
-              .onClick(() => {
-                router.pushUrl({url:'pages/GridDome01'})
-              })
-            Button('go back', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(150).height(30)
-              .onClick(() => {
-                router.back()
-              })
-          }
-        }
 
       }
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding(20)
