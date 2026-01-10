@@ -1819,12 +1819,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0200
-     * @tc.name       : testUrlParams9Keys9Escape0002
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \f (form feed)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0200
+     * @tc.name testUrlParams9Keys9Escape0002
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \f (form feed)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0002";
@@ -1839,12 +1839,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0300
-     * @tc.name       : testUrlParams9Keys9Escape0003
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \n (newline)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0300
+     * @tc.name testUrlParams9Keys9Escape0003
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \n (newline)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0003";
@@ -1859,12 +1859,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0400
-     * @tc.name       : testUrlParams9Keys9Escape0004
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \r (carriage return)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0400
+     * @tc.name testUrlParams9Keys9Escape0004
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \r (carriage return)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0004";
@@ -1879,12 +1879,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0500
-     * @tc.name       : testUrlParams9Keys9Escape0005
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \t (tab)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0500
+     * @tc.name testUrlParams9Keys9Escape0005
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \t (tab)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0005";
@@ -1899,12 +1899,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0106
-     * @tc.name       : testUrlParams9Keys9Escape0006
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \v (vertical tab)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0106
+     * @tc.name testUrlParams9Keys9Escape0006
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \v (vertical tab)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0006";
@@ -1919,12 +1919,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0700
-     * @tc.name       : testUrlParams9Keys9Escape0007
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \x24 (hexadecimal for dollar sign)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0700
+     * @tc.name testUrlParams9Keys9Escape0007
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \x24 (hexadecimal for dollar sign)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0007";
@@ -1939,12 +1939,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0108
-     * @tc.name       : testUrlParams9Keys9Escape0008
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \开
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0108
+     * @tc.name testUrlParams9Keys9Escape0008
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \开
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0008";
@@ -1959,12 +1959,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0900
-     * @tc.name       : testUrlParams9Keys9Escape0009
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \😊 (emoji)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0900
+     * @tc.name testUrlParams9Keys9Escape0009
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \😊 (emoji)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0009";
@@ -1979,12 +1979,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1000
-     * @tc.name       : testUrlParams9Keys9Escape0010
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \0 (null character)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1000
+     * @tc.name testUrlParams9Keys9Escape0010
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \0 (null character)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0010";
@@ -1999,12 +1999,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1100
-     * @tc.name       : testUrlParams9Keys9Escape0011
-     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \\b (backslash followed by b)
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1100
+     * @tc.name testUrlParams9Keys9Escape0011
+     * @tc.desc Testing the Url interface Params9Keys9 with input escape \\b (backslash followed by b)
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlParams9Keys9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlParams9Keys9Escape0011";
@@ -2019,12 +2019,12 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0100
-     * @tc.name       : testUrlValues9Escape0001
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0100
+     * @tc.name testUrlValues9Escape0001
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \b.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0001";
@@ -2039,12 +2039,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0200
-     * @tc.name       : testUrlValues9Escape0002
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \f.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0200
+     * @tc.name testUrlValues9Escape0002
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \f.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0002";
@@ -2059,12 +2059,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0300
-     * @tc.name       : testUrlValues9Escape0003
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \n.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0300
+     * @tc.name testUrlValues9Escape0003
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \n.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0003";
@@ -2079,12 +2079,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0400
-     * @tc.name       : testUrlValues9Escape0004
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \r.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0400
+     * @tc.name testUrlValues9Escape0004
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \r.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0004";
@@ -2099,12 +2099,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0500
-     * @tc.name       : testUrlValues9Escape0005
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \t.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0500
+     * @tc.name testUrlValues9Escape0005
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \t.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0005";
@@ -2119,12 +2119,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0600
-     * @tc.name       : testUrlValues9Escape0006
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \v.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0600
+     * @tc.name testUrlValues9Escape0006
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \v.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0006";
@@ -2139,12 +2139,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0700
-     * @tc.name       : testUrlValues9Escape0007
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \x24.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0700
+     * @tc.name testUrlValues9Escape0007
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \x24.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0007";
@@ -2159,12 +2159,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0800
-     * @tc.name       : testUrlValues9Escape0008
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \开.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0800
+     * @tc.name testUrlValues9Escape0008
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \开.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0008";
@@ -2179,12 +2179,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0900
-     * @tc.name       : testUrlValues9Escape0009
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \😊.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0900
+     * @tc.name testUrlValues9Escape0009
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \😊.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0009";
@@ -2198,12 +2198,12 @@ export default function Escape_Url() {
       }
     })
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1000
-     * @tc.name       : testUrlValues9Escape0010
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \0.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1000
+     * @tc.name testUrlValues9Escape0010
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \0.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0010";
@@ -2218,12 +2218,12 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1100
-     * @tc.name       : testUrlValues9Escape0011
-     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \\b.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1100
+     * @tc.name testUrlValues9Escape0011
+     * @tc.desc Test the BUILINTS interface Values9 with input escape \\b.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlValues9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testUrlValues9Escape0011";

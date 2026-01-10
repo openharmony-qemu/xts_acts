@@ -451,27 +451,6 @@ export default function urlTest2() {
       expect(arr[0]).assertEqual("bar foo true");
     })
 
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_03200
-     * @tc.name: testParamsForEach007
-     * @tc.desc: Callback functions are used to traverse key-value pairs on the URLParams instance obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testParamsForEach007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = new Url.URLParams("key1=value1&key2=value2")
-      let arr: string[] = [];
-      let i = 0;
-      let func: Url.UrlCbFn = (value: string, key: string, searchParams: Url.URLParams) => {
-        arr[i] = value + " " + key + " " + (params === searchParams);
-        i++;
-      }
-      params.forEach(func);
-      expect(arr[0]).assertEqual("value1 key1 true");
-    })
-
     /**
      * @tc.name   testParamsGet001
      * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_03300
@@ -1118,12 +1097,12 @@ export default function urlTest2() {
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08000
-    //  * @tc.name: testParamsConstruction002
-    //  * @tc.desc: A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08000
+    //  * @tc.name testParamsConstruction002
+    //  * @tc.desc A parameterized constructor used to create an URLParams instance.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     //   it('testParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //  class c1 {
@@ -1157,12 +1136,12 @@ export default function urlTest2() {
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08200
-    //  * @tc.name: testParamsConstruction004
-    //  * @tc.desc: A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08200
+    //  * @tc.name testParamsConstruction004
+    //  * @tc.desc A parameterized constructor used to create an URLParams instance.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testParamsConstruction004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let map: Map<string, string> = new Map<string, string>();
@@ -1208,12 +1187,12 @@ export default function urlTest2() {
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_08800
-    //  * @tc.name: testNewURLSearchParams001
-    //  * @tc.desc: The input parameter for New URLParams is undefined or null.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_08800
+    //  * @tc.name testNewURLSearchParams001
+    //  * @tc.desc The input parameter for New URLParams is undefined or null.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testNewURLSearchParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams(undefined);
@@ -2324,12 +2303,12 @@ export default function urlTest2() {
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16000
-    //  * @tc.name: testUrlSearchParamsConstruction002
-    //  * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16000
+    //  * @tc.name testUrlSearchParamsConstruction002
+    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testUrlSearchParamsConstruction002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   let params = new Url.URLParams({
@@ -2359,12 +2338,12 @@ export default function urlTest2() {
     })
 
     // /**
-    //  * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_16300
-    //  * @tc.name: testUrlSearchParamsConstruction005
-    //  * @tc.desc:  A parameterized constructor used to create an URLParams instance.
-    //  * @tc.size: MediumTest
-    //  * @tc.type: Function
-    //  * @tc.level: Level 1
+    //  * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_16300
+    //  * @tc.name testUrlSearchParamsConstruction005
+    //  * @tc.desc  A parameterized constructor used to create an URLParams instance.
+    //  * @tc.size MediumTest
+    //  * @tc.type Function
+    //  * @tc.level Level 1
     //  */
     // it('testUrlSearchParamsConstruction005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
     //   const getQueryPairs = () => [
@@ -3341,12 +3320,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23700
-     * @tc.name: testUrlURLParams001
-     * @tc.desc: Gets the SearchParams portion of the URL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23700
+     * @tc.name testUrlURLParams001
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlURLParams001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const that = Url.URL.parseURL('http://username:password@host:8080/directory/file?foo=1&bar=2');
@@ -3356,12 +3335,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23800
-     * @tc.name: testUrlURLParams002
-     * @tc.desc: Gets the SearchParams portion of the URL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23800
+     * @tc.name testUrlURLParams002
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlURLParams002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -3372,12 +3351,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_23900
-     * @tc.name: testUrlURLParams003
-     * @tc.desc: Gets the SearchParams portion of the URL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_23900
+     * @tc.name testUrlURLParams003
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlURLParams003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?d=value1&c=value2&b=大&4=key4')
@@ -3387,12 +3366,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24000
-     * @tc.name: testUrlURLParams004
-     * @tc.desc: Gets the SearchParams portion of the URL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24000
+     * @tc.name testUrlURLParams004
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlURLParams004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('https://example.com?foo=1&bar=2')
@@ -3403,12 +3382,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_24100
-     * @tc.name: testUrlURLParams005
-     * @tc.desc: Gets the SearchParams portion of the URL
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_24100
+     * @tc.name testUrlURLParams005
+     * @tc.desc Gets the SearchParams portion of the URL
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlURLParams005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let that = Url.URL.parseURL('http://username:password@host:8080/directory/file?你好=china#qwer=da')
@@ -3756,310 +3735,6 @@ export default function urlTest2() {
       expect(result).assertEqual('htt1p://www.0902zy.cn/path?abc=123&def=456#yyyy')
     })
 
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26700
-     * @tc.name: testUrlparseURL001
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('https://developer.mozilla.org',)
-      const result = params2.href
-      expect(result).assertEqual('https://developer.mozilla.org/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26800
-     * @tc.name: testUrlparseURL002
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('https://developer.mozilla.org', 'flie:/developer.mozilla.org')
-      const result = params2.href
-      expect(result).assertEqual('https://developer.mozilla.org/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_26900
-     * @tc.name: testUrlparseURL003
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('https://developer.mozilla.org', 'ftp://www.example.com')
-      const result = params2.href
-      expect(result).assertEqual('https://developer.mozilla.org/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27000
-     * @tc.name: testUrlparseURL004
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL(' ', 'http://www.example.com')
-      const result = params2.href
-      expect(result).assertEqual('http://www.example.com/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27100
-     * @tc.name: testUrlparseURL005
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('.', 'http://www.example.com')
-      const result = params2.href
-      expect(result).assertEqual('http://www.example.com/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27200
-     * @tc.name: testUrlparseURL006
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('../h:', 'http://www.example.com')
-      const result = params2.href
-      expect(result).assertEqual('http://www.example.com/h:')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27600
-     * @tc.name: testUrlparseURL0010
-     * @tc.desc: URL constructor, BusinessError: Parameter error.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      try {
-        let params = Url.URL.parseURL('')
-        expect(params != null).assertTrue()
-        const a = '666666';
-        const b = "666666";
-        Url.URL.parseURL(a, b)
-        expect(0).assertEqual(1)
-      } catch (err: BusinessError) {
-        expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-        expect(err.code).assertEqual(10200002)
-        expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-      }
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27700
-     * @tc.name: testUrlparseURL0011
-     * @tc.desc: The second parameter of parseURL is undefined or null.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    // it('testUrlparseURL0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let params = Url.URL.parseURL('')
-    //   expect(params != null).assertTrue()
-    //   let params1 = Url.URL.parseURL('https://developer.mozilla.org', undefined)
-    //   let result = params1.href
-    //   expect(result).assertEqual('https://developer.mozilla.org/')
-    //   let params2 = Url.URL.parseURL('https://developer.mozilla.org', null)
-    //   let result1 = params2.href
-    //   expect(result1).assertEqual('https://developer.mozilla.org/')
-    // })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27800
-     * @tc.name: testUrlparseURL0012
-     * @tc.desc: The second parameter of parseURL is undefined or null.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0012', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168')
-      const result = params2.href
-      expect(result).assertEqual('http://0.0.0.168/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_27900
-     * @tc.name: testUrlparseURL0013
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.')
-      const result = params2.href
-      expect(result).assertEqual('http://0.0.0.168/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28000
-     * @tc.name: testUrlparseURL0014
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.1')
-      const result = params2.href
-      expect(result).assertEqual('http://168.0.0.1/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28100
-     * @tc.name: testUrlparseURL0015
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0015', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.1.')
-      const result = params2.href
-      expect(result).assertEqual('http://168.0.0.1/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28200
-     * @tc.name: testUrlparseURL0016
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.1.1')
-      const result = params2.href
-      expect(result).assertEqual('http://168.1.0.1/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28300
-     * @tc.name: testUrlparseURL0017
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0017', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.60.114.105')
-      const result = params2.href
-      expect(result).assertEqual('http://168.60.114.105/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28400
-     * @tc.name: testUrlparseURL0018
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0018', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.1.399')
-      const result = params2.href
-      expect(result).assertEqual('http://168.1.1.143/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28500
-     * @tc.name: testUrlparseURL0019
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0019', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.3.0XFF')
-      const result = params2.href
-      expect(result).assertEqual('http://168.3.0.255/')
-    })
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_28600
-     * @tc.name: testUrlparseURL0020
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0020', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      let params = Url.URL.parseURL('')
-      expect(params != null).assertTrue()
-      let params2 = Url.URL.parseURL('http://168.3.65535')
-      const result = params2.href
-      expect(result).assertEqual('http://168.3.255.255/')
-    })
-
-
-    /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_29100
-     * @tc.name: testUrlparseURL0025
-     * @tc.desc: URL constructor, throw BusinessError: Syntax Error. Invalid Url string.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
-     */
-    it('testUrlparseURL0025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-      try {
-        let params = Url.URL.parseURL("")
-        expect(params != null).assertTrue()
-        const a = 'http://www.host.name:655348899994';
-        Url.URL.parseURL(a)
-        expect(0).assertEqual(1)
-      } catch (err: BusinessError) {
-        expect(err.toString()).assertEqual(`BusinessError: Syntax Error. Invalid Url string`)
-        expect(err.code).assertEqual(10200002)
-        expect(err.message).assertEqual(`Syntax Error. Invalid Url string`);
-      }
-    })
 
     /**
      * @tc.name   testUrlparseURL0026
@@ -4348,12 +4023,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30700
-     * @tc.name: testUrlparseURL0041
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30700
+     * @tc.name testUrlparseURL0041
+     * @tc.desc URL constructor, which is used to instantiate a URL obj.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlparseURL0041', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86`)
@@ -4363,12 +4038,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_30800
-     * @tc.name: testUrlparseURL0042
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_30800
+     * @tc.name testUrlparseURL0042
+     * @tc.desc URL constructor, which is used to instantiate a URL obj.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlparseURL0042', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const u2 = Url.URL.parseURL(`https://a.cn?phone=%2B86+9`)
@@ -4719,12 +4394,12 @@ export default function urlTest2() {
     })
 
     /**
-     * @tc.number: SUB_COMMONLIBRARY_ETSUTILS_URL_33000
-     * @tc.name: testUrlparseURL0064
-     * @tc.desc: URL constructor, which is used to instantiate a URL obj.
-     * @tc.size: MediumTest
-     * @tc.type: Function
-     * @tc.level: Level 1
+     * @tc.number SUB_COMMONLIBRARY_ETSUTILS_URL_33000
+     * @tc.name testUrlparseURL0064
+     * @tc.desc URL constructor, which is used to instantiate a URL obj.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testUrlparseURL0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const obj = new Url.URLParams('')
