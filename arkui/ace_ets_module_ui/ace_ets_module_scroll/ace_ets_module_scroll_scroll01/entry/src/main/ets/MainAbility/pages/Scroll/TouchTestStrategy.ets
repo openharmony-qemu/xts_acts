@@ -66,7 +66,7 @@ struct TouchStrategyExample {
       .scrollable(ScrollDirection.Vertical)
       .scrollBar(BarState.Auto)
       .width('100%')
-      .height('50%')
+      .height('40%')
       .key('list_TouchStrategy')
       .backgroundColor(Color.Gray)
 
