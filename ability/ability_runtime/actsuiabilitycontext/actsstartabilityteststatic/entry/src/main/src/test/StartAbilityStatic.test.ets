@@ -78,10 +78,12 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
-          expect().assertFail();
-          done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
+            expect().assertFail();
+            done();
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
@@ -110,10 +112,12 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
-          expect(err.code).assertEqual(16000001);
-          done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
+            expect(err.code).assertEqual(16000001);
+            done();
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
@@ -199,10 +203,12 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect(true).assertTrue()
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
-          expect().assertFail();
-          done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
+            expect().assertFail();
+            done();
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
@@ -234,10 +240,12 @@ export default function startAbilityTestStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
-          expect(err.code).assertEqual(16000001);
-          done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
+            expect(err.code).assertEqual(16000001);
+            done();
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, `startAbility fail: ` + err);
@@ -273,10 +281,12 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       }
     })
 
@@ -307,10 +317,12 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       }
     })
 
@@ -344,10 +356,12 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       }
     })
 
@@ -381,10 +395,12 @@ export default function startAbilityTestStatic() {
             done();
           }
         });
-      } catch (err: BusinessError) {
-        hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
-        expect().assertFail();
-        done();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, tag, `startAbility fail: ` + JSON.stringify(err));
+          expect().assertFail();
+          done();
+        }
       }
     })
   })
