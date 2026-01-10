@@ -4,7 +4,7 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.HiviewDFX.Hiview.Faultlogger"
+                    "SystemCapability.HiviewDFX.Hiview.FaultLogger"
                 ]
             }
         ]
