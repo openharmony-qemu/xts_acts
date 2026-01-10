@@ -8311,7 +8311,7 @@ static napi_value AudioSuiteRendererGetLatency_0100(napi_env env, napi_callback_
     OH_AudioStream_Usage usage = OH_AudioStream_Usage::AUDIOSTREAM_USAGE_MOVIE;
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
-    OH_AudioRenderer_Callbacks rendererCallbacks;
+    OH_AudioRenderer_Callbacks rendererCallBacks;
     memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
@@ -8349,7 +8349,7 @@ static napi_value AudioSuiteRendererGetLatency_0200(napi_env env, napi_callback_
     OH_AudioStream_Usage usage = OH_AudioStream_Usage::AUDIOSTREAM_USAGE_MOVIE;
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
-    OH_AudioRenderer_Callbacks rendererCallbacks;
+    OH_AudioRenderer_Callbacks rendererCallBacks;
     memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
@@ -8387,7 +8387,7 @@ static napi_value AudioSuiteRendererGetLatency_0300(napi_env env, napi_callback_
     OH_AudioStream_Usage usage = OH_AudioStream_Usage::AUDIOSTREAM_USAGE_MOVIE;
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
-    OH_AudioRenderer_Callbacks rendererCallbacks;
+    OH_AudioRenderer_Callbacks rendererCallBacks;
     memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
@@ -8439,7 +8439,7 @@ static napi_value AudioSuiteRendererGetLatency_0500(napi_env env, napi_callback_
     OH_AudioStream_Usage usage = OH_AudioStream_Usage::AUDIOSTREAM_USAGE_MOVIE;
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
-    OH_AudioRenderer_Callbacks rendererCallbacks;
+    OH_AudioRenderer_Callbacks rendererCallBacks;
     memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
@@ -8475,7 +8475,7 @@ static napi_value AudioSuiteRendererGetLatency_0600(napi_env env, napi_callback_
     OH_AudioStream_Usage usage = OH_AudioStream_Usage::AUDIOSTREAM_USAGE_MOVIE;
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
-    OH_AudioRenderer_Callbacks rendererCallbacks;
+    OH_AudioRenderer_Callbacks rendererCallBacks;
     memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
