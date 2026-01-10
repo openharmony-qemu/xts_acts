@@ -13,6 +13,8 @@
  * limitations under the License.
  */
 import ArcButtonClick from './ArcButton/ArcButtonClick.test.ets'
+import arcButtonProgressTest from './ArcButton/arcButtonProgressTest.test'
 export default function testsuite() {
   ArcButtonClick()
+  arcButtonProgressTest()
 }
