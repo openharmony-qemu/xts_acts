@@ -2059,7 +2059,7 @@ export default function Escape_Url() {
     })
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0300
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE1_0300
      * @tc.name testUrlValues9Escape0003
      * @tc.desc Test the BUILINTS interface Values9 with input escape \n.
      * @tc.size MediumTest
@@ -2305,7 +2305,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlToString9Escape0004
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0400
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE1_0400
      * @tc.desc   Test the BUILINTS interface toString9 with input escape \r.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2415,7 +2415,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlToString9Escape0009
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0900
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE1_0900
      * @tc.desc   Test the BUILINTS interface toString9 with input escape \😊.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -2459,7 +2459,7 @@ export default function Escape_Url() {
 
     /**
      * @tc.name   testUrlToString9Escape0011
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1100
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE1_1100
      * @tc.desc   Test the BUILINTS interface toString9 with input escape \\b.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST

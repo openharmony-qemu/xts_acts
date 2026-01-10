@@ -1177,7 +1177,6 @@ export default function ConsoleTest() {
     //   const TAG = 'testTime0006';
     //   try {
     //     console.time(null)
-    //     expect(true).assertTrue();
     //   } catch (err) {
     //     if (err instanceof BusinessError) {
     //       console.error(`${TAG} failed, error: ${err.message}`);
@@ -1693,7 +1692,6 @@ export default function ConsoleTest() {
     //   try {
     //     console.time(null);
     //     console.timeEnd(null);
-    //     expect(true).assertTrue();
     //   } catch (err) {
     //     if (err instanceof BusinessError) {
     //     console.error(`${TAG} failed, error: ${err.message}`);
@@ -2246,7 +2244,6 @@ export default function ConsoleTest() {
     //     console.time(str);
     //     console.timeLog(str);
     //     console.timeEnd(str);
-    //     expect(true).assertTrue();
     //   } catch (err) {
     //     if (err instanceof BusinessError) {
     //       console.error(`${TAG} failed, error: ${err.message}`);
@@ -2752,7 +2749,6 @@ export default function ConsoleTest() {
         console.time(str);
         console.timeLog(str, TestLog);
         console.timeEnd(str);
-        expect(true).assertTrue();
       } catch (err) {
         if (err instanceof BusinessError) {
         console.error(`${TAG} failed, error: ${err.message}`);
