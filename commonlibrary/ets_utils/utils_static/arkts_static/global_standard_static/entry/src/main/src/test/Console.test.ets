@@ -423,7 +423,7 @@ export default function ConsoleTest() {
         console.dirxml(number1.toString());
         console.dirxml(str);
         console.dirxml('count: %d');
-        // console.dirxml();
+        //console.dirxml();
       } catch (e) {
         if (e instanceof BusinessError) {
           expect().assertFail();
@@ -500,19 +500,19 @@ export default function ConsoleTest() {
       }
     });
 
-    /**
-     * @tc.name   testConsole057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE_5700
-     * @tc.desc   Test Console.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+    // /**
+    //  * @tc.name   testConsole057
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_CONSOLE_5700
+    //  * @tc.desc   Test Console.
+    //  * @tc.type   FUNCTION
+    //  * @tc.size   MEDIUMTEST
+    //  * @tc.level  LEVEL1
+    //  */
     //  it('testConsole057', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //    try {
     //      console.traceHybridStack();
     // } catch (e) {
-    //     if (e instanceof BusinessError) { 
+    //     if (e instanceof BusinessError) {
     //       expect().assertFail();
     //     }
     //    }
@@ -1165,14 +1165,14 @@ export default function ConsoleTest() {
         }
       }
     });
-    /**
-     * @tc.name   testTime0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3200
-     * @tc.desc   Test the function of the interface Time.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+    // /**
+    //  * @tc.name   testTime0006
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_3200
+    //  * @tc.desc   Test the function of the interface Time.
+    //  * @tc.type   FUNCTION
+    //  * @tc.size   MEDIUMTEST
+    //  * @tc.level  LEVEL1
+    //  */
     // it('testTime0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //   const TAG = 'testTime0006';
     //   try {
@@ -1680,14 +1680,14 @@ export default function ConsoleTest() {
         }
       }
     });
-    /**
-     * @tc.name   testTimeEnd0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
-     * @tc.desc   Test the function of the interface TimeEnd.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+    // /**
+    //  * @tc.name   testTimeEnd0006
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_5700
+    //  * @tc.desc   Test the function of the interface TimeEnd.
+    //  * @tc.type   FUNCTION
+    //  * @tc.size   MEDIUMTEST
+    //  * @tc.level  LEVEL1
+    //  */
     // it('testTimeEnd0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //   const TAG = 'testTimeEnd0006';
     //   try {
@@ -1777,7 +1777,6 @@ export default function ConsoleTest() {
     it('testTimeEnd0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testTimeEnd0010';
       try {
-        // const str = \a;
         console.time('\a');
         console.timeEnd('\a');
 
@@ -2232,14 +2231,14 @@ export default function ConsoleTest() {
         }
       }
     });
-    /**
-     * @tc.name   testTimeLog0006
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8000
-     * @tc.desc   Test the function of the interface TimeLog.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
+    // /**
+    //  * @tc.name   testTimeLog0006
+    //  * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_8000
+    //  * @tc.desc   Test the function of the interface TimeLog.
+    //  * @tc.type   FUNCTION
+    //  * @tc.size   MEDIUMTEST
+    //  * @tc.level  LEVEL1
+    //  */
     // it('testTimeLog0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
     //   const TAG = 'testTimeLog0006';
     //   try {
@@ -2704,7 +2703,7 @@ export default function ConsoleTest() {
         let TestLog: bar = new bar();
         const str = '太好了';
         console.time(str);
-        // console.timeLog(str, TestLog);
+         console.timeLog(str, TestLog);
         console.timeEnd(str);
 
       } catch (err) {
@@ -2728,7 +2727,7 @@ export default function ConsoleTest() {
         let TestLog: ArrayBuffer = new ArrayBuffer(10);
         const str = '太好了';
         console.time(str);
-        // console.timeLog(str, TestLog);
+         console.timeLog(str, TestLog);
         console.timeEnd(str);
       } catch (err) {
         if (err instanceof BusinessError) {
@@ -2745,22 +2744,22 @@ export default function ConsoleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testTimeLog0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const TAG = 'testTimeLog0028';
-    //   try {
-    //     let TestLog: ArrayList<string> = new ArrayList<string>();
-    //     const str = '太好了';
-    //     console.time(str);
-    //     console.timeLog(str, TestLog);
-    //     console.timeEnd(str);
-    //     expect(true).assertTrue();
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect().assertFail();
-    //     }
-    //   }
-    // });
+    it('testTimeLog0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testTimeLog0028';
+      try {
+        let TestLog: ArrayList<string> = new ArrayList<string>();
+        const str = '太好了';
+        console.time(str);
+        console.timeLog(str, TestLog);
+        console.timeEnd(str);
+        expect(true).assertTrue();
+      } catch (err) {
+        if (err instanceof BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        }
+      }
+    });
     /**
      * @tc.name   testTimeLog0029
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1040
@@ -2769,21 +2768,21 @@ export default function ConsoleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testTimeLog0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const TAG = 'testTimeLog0029';
-    //   try {
-    //     let TestLog: number = 1;
-    //     const str = '太好了';
-    //     console.time(str);
-    //     console.timeLog(str, TestLog);
-    //     console.timeEnd(str);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect().assertFail();
-    //     }
-    //   }
-    // });
+    it('testTimeLog0029', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testTimeLog0029';
+      try {
+        let TestLog: number = 1;
+        const str = '太好了';
+        console.time(str);
+        console.timeLog(str, TestLog);
+        console.timeEnd(str);
+      } catch (err) {
+        if (err instanceof BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        }
+      }
+    });
     /**
      * @tc.name   testTimeLog0030
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_CONSOLE_1050
@@ -2792,20 +2791,20 @@ export default function ConsoleTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testTimeLog0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
-    //   const TAG = 'testTimeLog0030';
-    //   try {
-    //     let TestLog: string = '陈隆庭！';
-    //     const str = '加油';
-    //     console.time(str);
-    //     console.timeLog(str, TestLog);
-    //     console.timeEnd(str);
-    //   } catch (err) {
-    //     if (err instanceof BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect().assertFail();
-    //     }
-    //   }
-    // });
+    it('testTimeLog0030', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+      const TAG = 'testTimeLog0030';
+      try {
+        let TestLog: string = '陈隆庭！';
+        const str = '加油';
+        console.time(str);
+        console.timeLog(str, TestLog);
+        console.timeEnd(str);
+      } catch (err) {
+        if (err instanceof BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect().assertFail();
+        }
+      }
+    });
   })
 }

@@ -362,26 +362,18 @@ export default function TimerTest() {
       done();
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0300
-    //  * @tc.name       : testTimer003
-    //  * @tc.desc       : Test clearTimeout.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
     /**
-     * @tc.name   testTimer003
-     * @tc.number testTimer003
-     * @tc.desc   testTimer003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0300
+     * @tc.name       : testTimer003
+     * @tc.desc       : Test clearTimeout.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
      */
-    // it('testTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   clearTimeout();
-    //   done();
-    // });
+    it('testTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      clearTimeout();
+      done();
+    });
 
     /**
      * @tc.name   testTimer004
@@ -391,10 +383,10 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   clearInterval();
-    //   done();
-    // });
+    it('testTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      clearInterval();
+      done();
+    });
 
   })
 }

@@ -762,259 +762,6 @@ export default function Escape_Url() {
     });
 
     /**
-     * @tc.name   testUrlParams9Entries9Escape0001
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0100
-     * @tc.desc   Testing the Url interface Params9Entries9 with input escape \b
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testUrlParams9Entries9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0001";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\b&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \b; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0200
-    //  * @tc.name       : testUrlParams9Entries9Escape0002
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \f
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0002";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\f&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \f; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0300
-    //  * @tc.name       : testUrlParams9Entries9Escape0003
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \n
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0003";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\n&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \n; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0400
-    //  * @tc.name       : testUrlParams9Entries9Escape0004
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \r
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0004";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\r&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \r; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0500
-    //  * @tc.name       : testUrlParams9Entries9Escape0005
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \t
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0005";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\t&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \t; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0600
-    //  * @tc.name       : testUrlParams9Entries9Escape0006
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \v
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0006";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\v&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \v; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0700
-    //  * @tc.name       : testUrlParams9Entries9Escape0007
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \x24
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0007";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\x24&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \$; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0800
-    //  * @tc.name       : testUrlParams9Entries9Escape0008
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \开
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0008";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\\开&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \\开; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0900
-    //  * @tc.name       : testUrlParams9Entries9Escape0009
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \😊
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0009";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\\😊&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \\😊; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1000
-    //  * @tc.name       : testUrlParams9Entries9Escape0010
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \0
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0010";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\0&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \0; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1100
-    //  * @tc.name       : testUrlParams9Entries9Escape0011
-    //  * @tc.desc       : Testing the Url interface Params9Entries9 with input escape \\b
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Entries9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Entries9Escape0011";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("keyName1=\\b&keyName2=valueName2");
-    //     let pair: Iterable<Object[]> = searchParamsObject.entries();
-    //     let arrayValue = Array.from(pair);
-    //     let resultString = arrayValue.map(pair => `${pair[0]}, ${pair[1]}`).join("; ");
-    //     let expectedString = "keyName1, \\b; keyName2, valueName2";
-    //     expect(resultString).assertEqual(expectedString);
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-
-    /**
      * @tc.name   testUrlParams9ForEach9Escape0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0100
      * @tc.desc   Testing the Url interface Params9ForEach9 with input escape \b
@@ -2059,436 +1806,436 @@ export default function Escape_Url() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testUrlParams9Keys9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0001";
-    //   try {
-    //     let searchParamsObject= new Url.URLParams("\b=backspace&key1=value1");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\b,key1");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    it('testUrlParams9Keys9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0001";
+      try {
+        let searchParamsObject= new Url.URLParams("\b=backspace&key1=value1");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\b,key1");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0200
-    //  * @tc.name       : testUrlParams9Keys9Escape0002
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \f (form feed)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0002";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\f=formFeed&key2=value2");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\f,key2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0300
-    //  * @tc.name       : testUrlParams9Keys9Escape0003
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \n (newline)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0003";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\n=newline&key3=value3");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\n,key3");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0400
-    //  * @tc.name       : testUrlParams9Keys9Escape0004
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \r (carriage return)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0004";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\r=carriageReturn&key4=value4");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\r,key4");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0500
-    //  * @tc.name       : testUrlParams9Keys9Escape0005
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \t (tab)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0005";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\t=tab&key5=value5");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\t,key5");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0106
-    //  * @tc.name       : testUrlParams9Keys9Escape0006
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \v (vertical tab)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0006";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\v=verticalTab&key6=value6");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\v,key6");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0700
-    //  * @tc.name       : testUrlParams9Keys9Escape0007
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \x24 (hexadecimal for dollar sign)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0007";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\x24=dollarSign&key7=value7");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\x24,key7");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0108
-    //  * @tc.name       : testUrlParams9Keys9Escape0008
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \开
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0008";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\开=escapeOpen&key8=value8");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\开,key8");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0900
-    //  * @tc.name       : testUrlParams9Keys9Escape0009
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \😊 (emoji)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0009";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\😊=emoji&key9=value9");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\😊,key9");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1000
-    //  * @tc.name       : testUrlParams9Keys9Escape0010
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \0 (null character)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0010";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\0=nullChar&key10=value10");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\0,key10");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1100
-    //  * @tc.name       : testUrlParams9Keys9Escape0011
-    //  * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \\b (backslash followed by b)
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlParams9Keys9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlParams9Keys9Escape0011";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("\\b=backslashB&key11=value11");
-    //     let keys = Array.from(searchParamsObject.keys());
-    //     expect(keys.toString()).assertEqual("\\b,key11");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0100
-    //  * @tc.name       : testUrlValues9Escape0001
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \b.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0001";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\b&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\b,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0200
-    //  * @tc.name       : testUrlValues9Escape0002
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \f.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0002";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\f&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\f,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0300
-    //  * @tc.name       : testUrlValues9Escape0003
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \n.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0003";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\n&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\n,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0400
-    //  * @tc.name       : testUrlValues9Escape0004
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \r.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0004";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\r&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\r,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0500
-    //  * @tc.name       : testUrlValues9Escape0005
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \t.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0005";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\t&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\t,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0600
-    //  * @tc.name       : testUrlValues9Escape0006
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \v.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0006";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\v&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\v,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0700
-    //  * @tc.name       : testUrlValues9Escape0007
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \x24.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0007";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\x24&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\x24,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0800
-    //  * @tc.name       : testUrlValues9Escape0008
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \开.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0008";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\开&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\开,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0900
-    //  * @tc.name       : testUrlValues9Escape0009
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \😊.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0009";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\😊&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\😊,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1000
-    //  * @tc.name       : testUrlValues9Escape0010
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \0.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0010";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\0&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\0,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1100
-    //  * @tc.name       : testUrlValues9Escape0011
-    //  * @tc.desc       : Test the BUILINTS interface Values9 with input escape \\b.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testUrlValues9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testUrlValues9Escape0011";
-    //   try {
-    //     let searchParams = new Url.URLParams("key1=\\b&key2=value2");
-    //     let values = Array.from(searchParams.values());
-    //     expect(values.toString()).assertEqual("\\b,value2");
-    //   } catch (err:BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err.message}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0200
+     * @tc.name       : testUrlParams9Keys9Escape0002
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \f (form feed)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0002";
+      try {
+        let searchParamsObject = new Url.URLParams("\f=formFeed&key2=value2");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\f,key2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0300
+     * @tc.name       : testUrlParams9Keys9Escape0003
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \n (newline)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0003";
+      try {
+        let searchParamsObject = new Url.URLParams("\n=newline&key3=value3");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\n,key3");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0400
+     * @tc.name       : testUrlParams9Keys9Escape0004
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \r (carriage return)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0004";
+      try {
+        let searchParamsObject = new Url.URLParams("\r=carriageReturn&key4=value4");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\r,key4");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0500
+     * @tc.name       : testUrlParams9Keys9Escape0005
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \t (tab)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0005";
+      try {
+        let searchParamsObject = new Url.URLParams("\t=tab&key5=value5");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\t,key5");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0106
+     * @tc.name       : testUrlParams9Keys9Escape0006
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \v (vertical tab)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0006";
+      try {
+        let searchParamsObject = new Url.URLParams("\v=verticalTab&key6=value6");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\v,key6");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0700
+     * @tc.name       : testUrlParams9Keys9Escape0007
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \x24 (hexadecimal for dollar sign)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0007";
+      try {
+        let searchParamsObject = new Url.URLParams("\x24=dollarSign&key7=value7");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\x24,key7");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0108
+     * @tc.name       : testUrlParams9Keys9Escape0008
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \开
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0008";
+      try {
+        let searchParamsObject = new Url.URLParams("\开=escapeOpen&key8=value8");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\开,key8");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_0900
+     * @tc.name       : testUrlParams9Keys9Escape0009
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \😊 (emoji)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0009";
+      try {
+        let searchParamsObject = new Url.URLParams("\😊=emoji&key9=value9");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\😊,key9");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1000
+     * @tc.name       : testUrlParams9Keys9Escape0010
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \0 (null character)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0010";
+      try {
+        let searchParamsObject = new Url.URLParams("\0=nullChar&key10=value10");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\0,key10");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_Url_ESCAPE_1100
+     * @tc.name       : testUrlParams9Keys9Escape0011
+     * @tc.desc       : Testing the Url interface Params9Keys9 with input escape \\b (backslash followed by b)
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlParams9Keys9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlParams9Keys9Escape0011";
+      try {
+        let searchParamsObject = new Url.URLParams("\\b=backslashB&key11=value11");
+        let keys = Array.from(searchParamsObject.keys());
+        expect(keys.toString()).assertEqual("\\b,key11");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0100
+     * @tc.name       : testUrlValues9Escape0001
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \b.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0001";
+      try {
+        let searchParams = new Url.URLParams("key1=\b&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\b,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0200
+     * @tc.name       : testUrlValues9Escape0002
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \f.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0002";
+      try {
+        let searchParams = new Url.URLParams("key1=\f&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\f,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0300
+     * @tc.name       : testUrlValues9Escape0003
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \n.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0003";
+      try {
+        let searchParams = new Url.URLParams("key1=\n&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\n,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0400
+     * @tc.name       : testUrlValues9Escape0004
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \r.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0004";
+      try {
+        let searchParams = new Url.URLParams("key1=\r&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\r,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0500
+     * @tc.name       : testUrlValues9Escape0005
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \t.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0005";
+      try {
+        let searchParams = new Url.URLParams("key1=\t&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\t,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0600
+     * @tc.name       : testUrlValues9Escape0006
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \v.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0006";
+      try {
+        let searchParams = new Url.URLParams("key1=\v&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\v,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0700
+     * @tc.name       : testUrlValues9Escape0007
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \x24.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0007";
+      try {
+        let searchParams = new Url.URLParams("key1=\x24&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\x24,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0800
+     * @tc.name       : testUrlValues9Escape0008
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \开.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0008";
+      try {
+        let searchParams = new Url.URLParams("key1=\开&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\开,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_0900
+     * @tc.name       : testUrlValues9Escape0009
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \😊.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0009";
+      try {
+        let searchParams = new Url.URLParams("key1=\😊&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\😊,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1000
+     * @tc.name       : testUrlValues9Escape0010
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \0.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0010";
+      try {
+        let searchParams = new Url.URLParams("key1=\0&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\0,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
+
+    /**
+     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_BUILINTS_ESCAPE_1100
+     * @tc.name       : testUrlValues9Escape0011
+     * @tc.desc       : Test the BUILINTS interface Values9 with input escape \\b.
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 1
+     */
+    it('testUrlValues9Escape0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testUrlValues9Escape0011";
+      try {
+        let searchParams = new Url.URLParams("key1=\\b&key2=value2");
+        let values = Array.from(searchParams.values());
+        expect(values.toString()).assertEqual("\\b,value2");
+      } catch (err:BusinessError) {
+        console.error(`${TAG} failed, error: ${err.message}`);
+        expect(false).assertFail();
+      }
+    })
 
     /**
      * @tc.name   testUrlToString9Escape0001
