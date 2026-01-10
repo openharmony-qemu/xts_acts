@@ -86,7 +86,6 @@ export struct syncLoadPageGrid {
         .columnsTemplate('1fr 1fr 1fr')
         .columnsGap(10)
         .rowsGap(10)
-        .margin(10)
         .height('60%')
         .width('90%')
         .backgroundColor(0xFAEEE0)

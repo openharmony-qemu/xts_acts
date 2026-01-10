@@ -34,8 +34,7 @@ struct TouchStrategyExample {
         Column() {
           Text('Test Text Visible Change')
             .fontSize(20)
-            .height(40)
-            .margin(5)
+            .height('15%')
             .backgroundColor(Color.Green)
               // 通过设置ratios为[0.0, 1.0]，实现当组件完全显示或完全消失在屏幕中时触发回调
             .onVisibleAreaChange([0.0, 1.0], (isVisible: boolean, currentRatio: number) => {
@@ -51,11 +50,11 @@ struct TouchStrategyExample {
               }
             })
 
-          List({ space: 20, initialIndex: 0 }) {
+          List({ initialIndex: 0 }) {
             ForEach(this.arr, (item: number) => {
               ListItem() {
                 Text('' + item)
-                  .width('100%').height(100).fontSize(16)
+                  .width('100%').height('20%').fontSize(16)
                   .textAlign(TextAlign.Center).borderRadius(10).backgroundColor(0xFFFFFF)
               }
             }, (item: string) => item)
@@ -73,7 +72,7 @@ struct TouchStrategyExample {
 
       Text().key('border_TouchStrategy')
         .width(300).height(300)
-        .borderWidth(1).margin(10)
+        .borderWidth(1).margin(2)
 
     }
     .width('100%').height('100%')

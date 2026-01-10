@@ -62,7 +62,7 @@ struct listScrollerPage {
                   .textAlign(TextAlign.Center)
               }
               ListItem() {
-                List({ space: 5, scroller: this.listScroller }) {
+                List({ scroller: this.listScroller }) {
                   ForEach(this.arr, (item: number, index: number) => {
                     ListItem() {
                       Text('item' + item + index)
@@ -70,7 +70,7 @@ struct listScrollerPage {
                     }
                     .backgroundColor(Color.White)
                     .width('100%')
-                    .height(72)
+                    .height('20%')
                     .borderRadius(12)
                     .visibility(index % 2 == 0 ? this.mvisiblity : Visibility.Visible)
                   }, (item: string) => item)
@@ -154,7 +154,7 @@ struct listScrollerPage {
         })
 
         ScrollBar({ scroller: this.listScroller, state: BarState.On }) {
-          Text().backgroundColor(Color.Red).height(150).width(50)
+          Text().backgroundColor(Color.Red).height('60%').width(50)
         }
         .id('scroller_list_scrollbar')
         .position({ right: 0 })
