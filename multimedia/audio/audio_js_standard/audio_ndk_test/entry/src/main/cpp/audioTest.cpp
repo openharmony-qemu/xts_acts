@@ -8312,7 +8312,7 @@ static napi_value AudioSuiteRendererGetLatency_0100(napi_env env, napi_callback_
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
     OH_AudioRenderer_Callbacks rendererCallBacks;
-    memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
+    OH_AudioRenderer_Callbacks rendererCallbacks = {0};
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
     rendererCallBacks.OH_AudioRenderer_OnInterruptEvent = OnInterruptEvent;
@@ -8325,13 +8325,14 @@ static napi_value AudioSuiteRendererGetLatency_0100(napi_env env, napi_callback_
     OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
     
     int32_t latency = -1;
-    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_HARDWARE, &latency);
+    OH_AudioStream_Result result =
+        OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_HARDWARE, &latency);
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
-    if(result == AUDIOSTREAM_SUCCESS){
+    if (result == AUDIOSTREAM_SUCCESS) {
         napi_create_int32(env, TEST_PASS, &res);
-        LOG("AudioSuiteRendererGetlatency_0100 pass, result is: %{pubilc}d",AUDIOSTREAM_SUCCESS);
+        LOG("AudioSuiteRendererGetlatency_0100 pass, result is: %{public}d", AUDIOSTREAM_SUCCESS);
         return res;
     }
     napi_create_int32(env, TEST_FAIL, &res);
@@ -8350,7 +8351,7 @@ static napi_value AudioSuiteRendererGetLatency_0200(napi_env env, napi_callback_
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
     OH_AudioRenderer_Callbacks rendererCallBacks;
-    memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
+    OH_AudioRenderer_Callbacks rendererCallbacks = {0};
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
     rendererCallBacks.OH_AudioRenderer_OnInterruptEvent = OnInterruptEvent;
@@ -8363,13 +8364,14 @@ static napi_value AudioSuiteRendererGetLatency_0200(napi_env env, napi_callback_
     OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
     
     int32_t latency = -1;
-    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
+    OH_AudioStream_Result result =
+        OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
-    if(result == AUDIOSTREAM_SUCCESS){
+    if (result == AUDIOSTREAM_SUCCESS) {
         napi_create_int32(env, TEST_PASS, &res);
-        LOG("AudioSuiteRendererGetlatency_0200 pass, result is: %{pubilc}d",AUDIOSTREAM_SUCCESS);
+        LOG("AudioSuiteRendererGetlatency_0200 pass, result is: %{public}d", AUDIOSTREAM_SUCCESS);
         return res;
     }
     napi_create_int32(env, TEST_FAIL, &res);
@@ -8388,7 +8390,7 @@ static napi_value AudioSuiteRendererGetLatency_0300(napi_env env, napi_callback_
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
     OH_AudioRenderer_Callbacks rendererCallBacks;
-    memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
+    OH_AudioRenderer_Callbacks rendererCallbacks = {0};
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
     rendererCallBacks.OH_AudioRenderer_OnInterruptEvent = OnInterruptEvent;
@@ -8401,13 +8403,14 @@ static napi_value AudioSuiteRendererGetLatency_0300(napi_env env, napi_callback_
     OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
     
     int32_t latency = -1;
-    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_SOFTWARE, &latency);
+    OH_AudioStream_Result result =
+        OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_SOFTWARE, &latency);
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
-    if(result == AUDIOSTREAM_SUCCESS){
+    if (result == AUDIOSTREAM_SUCCESS) {
         napi_create_int32(env, TEST_PASS, &res);
-        LOG("AudioSuiteRendererGetlatency_0300 pass, result is: %{pubilc}d",AUDIOSTREAM_SUCCESS);
+        LOG("AudioSuiteRendererGetlatency_0300 pass, result is: %{public}d", AUDIOSTREAM_SUCCESS);
         return res;
     }
     napi_create_int32(env, TEST_FAIL, &res);
@@ -8418,10 +8421,11 @@ static napi_value AudioSuiteRendererGetLatency_0400(napi_env env, napi_callback_
 {
     napi_value res;
     int32_t latency = -1;
-    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(nullptr, AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
-    if(result == AUDIOSTREAM_ERROR_INVALID_PARAM){
+    OH_AudioStream_Result result =
+        OH_AudioRenderer_GetLatency(nullptr, AUDIOSTREAM_LATENCY_TYPE_ALL, &latency);
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
         napi_create_int32(env, TEST_PASS, &res);
-        LOG("AudioSuiteRendererGetlatency_0400 pass, result is: %{pubilc}d",AUDIOSTREAM_ERROR_INVALID_PARAM);
+        LOG("AudioSuiteRendererGetlatency_0400 pass, result is: %{public}d", AUDIOSTREAM_ERROR_INVALID_PARAM);
         return res;
     }
     napi_create_int32(env, TEST_FAIL, &res);
@@ -8440,7 +8444,7 @@ static napi_value AudioSuiteRendererGetLatency_0500(napi_env env, napi_callback_
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
     OH_AudioRenderer_Callbacks rendererCallBacks;
-    memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
+    OH_AudioRenderer_Callbacks rendererCallbacks = {0};
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
     rendererCallBacks.OH_AudioRenderer_OnInterruptEvent = OnInterruptEvent;
@@ -8452,12 +8456,13 @@ static napi_value AudioSuiteRendererGetLatency_0500(napi_env env, napi_callback_
     OH_AudioRenderer *audioRenderer;
     OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
     
-    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_SOFTWARE, nullptr);
+    OH_AudioStream_Result result =
+        OH_AudioRenderer_GetLatency(audioRenderer, AUDIOSTREAM_LATENCY_TYPE_SOFTWARE, nullptr);
     OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
-    if(result == AUDIOSTREAM_ERROR_INVALID_PARAM){
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
         napi_create_int32(env, TEST_PASS, &res);
-        LOG("AudioSuiteRendererGetlatency_0500 pass, result is: %{pubilc}d",AUDIOSTREAM_ERROR_INVALID_PARAM);
+        LOG("AudioSuiteRendererGetlatency_0500 pass, result is: %{public}d", AUDIOSTREAM_ERROR_INVALID_PARAM);
         return res;
     }
     napi_create_int32(env, TEST_FAIL, &res);
@@ -8476,7 +8481,7 @@ static napi_value AudioSuiteRendererGetLatency_0600(napi_env env, napi_callback_
     OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
 
     OH_AudioRenderer_Callbacks rendererCallBacks;
-    memset(&rendererCallBacks, 0, sizeof(OH_AudioRenderer_Callbacks));
+    OH_AudioRenderer_Callbacks rendererCallbacks = {0};
 
     rendererCallBacks.OH_AudioRenderer_OnStreamEvent = OnStreamEvent;
     rendererCallBacks.OH_AudioRenderer_OnInterruptEvent = OnInterruptEvent;
@@ -8490,12 +8495,13 @@ static napi_value AudioSuiteRendererGetLatency_0600(napi_env env, napi_callback_
     
     int32_t latency = 0;
     OH_AudioStream_LatencyType invaildType = static_cast<OH_AudioStream_LatencyType>(3);
-    OH_AudioStream_Result result = OH_AudioRenderer_GetLatency(audioRenderer, invaildType, &latency);
+    OH_AudioStream_Result result =
+        OH_AudioRenderer_GetLatency(audioRenderer, invaildType, &latency);
     OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
-    if(result == AUDIOSTREAM_ERROR_INVALID_PARAM){
+    if (result == AUDIOSTREAM_ERROR_INVALID_PARAM) {
         napi_create_int32(env, TEST_PASS, &res);
-        LOG("AudioSuiteRendererGetlatency_0600 pass, result is: %{pubilc}d",AUDIOSTREAM_ERROR_INVALID_PARAM);
+        LOG("AudioSuiteRendererGetlatency_0600 pass, result is: %{public}d", AUDIOSTREAM_ERROR_INVALID_PARAM);
         return res;
     }
     napi_create_int32(env, TEST_FAIL, &res);
@@ -8508,19 +8514,19 @@ static napi_value AudioSuiteRendererGetLatency_0700(napi_env env, napi_callback_
     int32_t allLatency = 0;
     int32_t swLatency = 1;
     int32_t hdLatency = 2;
-    if(AUDIOSTREAM_LATENCY_TYPE_ALL != allLatency){
+    if (AUDIOSTREAM_LATENCY_TYPE_ALL != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE0 fail, result is: %{public}d"
         AUDIOSTREAM_LATENCY_TYPE_ALL);
         return res;
     }
-    if(AUDIOSTREAM_LATENCY_TYPE_SOFTWARE != allLatency){
+    if (AUDIOSTREAM_LATENCY_TYPE_SOFTWARE != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE1 fail, result is: %{public}d"
         AUDIOSTREAM_LATENCY_TYPE_SOFTWARE);
         return res;
     }
-    if(AUDIOSTREAM_LATENCY_TYPE_HARDWARE != allLatency){
+    if (AUDIOSTREAM_LATENCY_TYPE_HARDWARE != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
         LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE2 fail, result is: %{public}d"
         AUDIOSTREAM_LATENCY_TYPE_HARDWARE);
