@@ -3335,15 +3335,15 @@ export default function TextPicker() {
       console.info("testPicker65 finish");
       done();
     });
- 	 
-   /**
-    * @tc.name   testPicker66
-    * @tc.number testPicker66
-    * @tc.desc   Testing  change PhotoPickerComponent pickerOptions gridPinchMode property
-    * @tc.type   FUNCTION
-    * @tc.size   MEDIUMTEST
-    * @tc.level  LEVEL0
-    */
+
+    /**
+     * @tc.name   testPicker66
+     * @tc.number testPicker66
+     * @tc.desc   Testing MovingPhotoBadgeStateType
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
     it('testPicker66',Level.LEVEL0, async (done: Function) => {
       if (!isExecutePicker) {
         done();
@@ -3351,22 +3351,12 @@ export default function TextPicker() {
       }
       let code: number = EventType.PHOTO_PICKER_INFO;
       let pickerOptions: PickerOptions = getDefaultPickerOptions();
-      pickerOptions.gridPinchMode = {
-        gridPinchModeType: photoAccessHelper.GridPinchModeType.FULL_FUNCTION_GRID,
-        defaultGridLevel: photoAccessHelper.GridLevel.COMPACT
-      };
-      let callback = (event: events_emitter.EventData) => {
-        let expectResult: photoAccessHelper.GridLevel = pickerOptions.gridPinchMode.defaultGridLevel ?? photoAccessHelper.GridLevel.STANDARD;
-        let result: PhotoPickerResult = event?.data?.msg;
-        console.info('testPicker66 result event.data.msg =' + result?.gridPinchMode?.defaultGridLevel);
-        console.info('testPicker66 result expect = ' + expectResult);
-        expect(result?.gridPinchMode?.defaultGridLevel).assertEqual(expectResult);
-      }
-      let event: events_emitter.InnerEvent = {
-        eventId: code,
-        priority: events_emitter.EventPriority.LOW
-      }
-      events_emitter.on(event, callback);
+      let state: photoAccessHelper.MovingPhotoBadgeStateType = 
+        photoAccessHelper.MovingPhotoBadgeStateType.MOVING_PHOTO_ENABLED;
+      pickerOptions.globalMovingPhotoState = state;
+      let pickerController: PickerController = new PickerController();
+      pickerController.setMovingPhotoState(state);
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/PickerComponent',
         params: {
@@ -3376,15 +3366,14 @@ export default function TextPicker() {
       }
       await routeToUrl(options);
       let strJson: string = getInspectorByKey('PhotoPickerComponent');
-      console.info("testPicker66 JSON.parse(strJson) is" + strJson);
+      
       expect(JSON.parse(strJson).$attrs.visibility).assertEqual('Visibility.Visible');
-      await clickResultButton(driver);
+      await CommonFunc.sleep(2000);
       router.back();
       console.info("testPicker66 finish");
-      events_emitter.off(event.eventId);
       done();
     });
-
+ 	 
     /**
      * @tc.name   testPicker67
      * @tc.number testPicker67

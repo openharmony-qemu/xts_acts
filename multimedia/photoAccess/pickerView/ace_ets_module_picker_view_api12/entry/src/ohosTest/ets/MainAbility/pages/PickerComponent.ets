@@ -21,6 +21,7 @@ import {
   PreselectedInfo,
   UpdatablePickerConfigs,
   MovingPhotoBadgeStateChangedCallback,
+  PickerError
 } from '@ohos.file.PhotoPickerComponent';
 import { AlbumPickerComponent, AlbumPickerOptions, AlbumInfo } from '@ohos.file.AlbumPickerComponent';
 import photoAccessHelper from '@ohos.file.photoAccessHelper';
@@ -220,6 +221,18 @@ struct PickerComponent {
     console.info('onDeselect' + JSON.stringify(this.selectedUris));
   }
 
+  private onPhotoBrowserChangeStart(itemInfo: BaseItemInfo): void {
+ 	  console.info('onPhotoBrowserChangeStart, itemInfo=' + JSON.stringify(itemInfo));
+  }
+
+  private onError(pickerError: PickerError): void {
+    let functionName = pickerError?.functionName;
+    let errorCode = pickerError?.errorCode;
+    let message = pickerError?.message;
+    console.info(`onError, functionName=${functionName}, errorCode=${errorCode}, message=${message}`);
+  }
+ 	 
+
   private onItemClicked(itemInfo: ItemInfo, clickType: ClickType): boolean {
     if (!itemInfo) {
       return false;
@@ -365,6 +378,8 @@ struct PickerComponent {
         onMovingPhotoBadgeStateChanged: this.onMovingPhotoBadgeStateChangedCallback,
         pickerController: this.pickerController,
         onPinchGridSwitched: (gridLevel: photoAccessHelper.GridLevel): void => this.onPinchGridSwitched(gridLevel),
+        onPhotoBrowserChangeStart: (iemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
+ 	      onError: (pickerError: PickerError): void => this.onError(pickerError),
       })
         .height('70%')
         .width('100%')
