@@ -84,7 +84,7 @@ struct MultiNavigation32 {
       }).id('MultiNavigation32_btn3')
 
       Button('moveIndexToTop 10000000000000').onClick((e: ClickEvent) => {
-       this.pageStack.moveIndexToTop(10000000000000)
+       this.pageStack.moveIndexToTop(10000000000000 as int)
       }).id('MultiNavigation32_btn4')
 
 
