@@ -568,13 +568,13 @@ export default function urlTest1() {
       }
     });
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0100
-     * @tc.name       : testParseAndIterateParams0001
-     * @tc.desc       : Testing URLParams parsing and iteration with an empty string to ensure correct
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0100
+     * @tc.name testParseAndIterateParams0001
+     * @tc.desc Testing URLParams parsing and iteration with an empty string to ensure correct
      *                  handling of empty parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParseAndIterateParams0001";
@@ -590,13 +590,13 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0200
-     * @tc.name       : testParseAndIterateParams0002
-     * @tc.desc       : Testing URLParams parsing and iteration for multiple identical sets of parameters to
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0200
+     * @tc.name testParseAndIterateParams0002
+     * @tc.desc Testing URLParams parsing and iteration for multiple identical sets of parameters to
      *                  ensure correct parsing and retrieval of all values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParseAndIterateParams0002";
@@ -611,12 +611,12 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0300
-     * @tc.name       : testParseAndIterateParams0003
-     * @tc.desc       : Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0300
+     * @tc.name testParseAndIterateParams0003
+     * @tc.desc Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParseAndIterateParams0003";
@@ -642,13 +642,13 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0100
-     * @tc.name       : testParseAndForeachParams0001
-     * @tc.desc       : Testing URLParams parsing and iteration with an empty string to ensure correct
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0100
+     * @tc.name testParseAndForeachParams0001
+     * @tc.desc Testing URLParams parsing and iteration with an empty string to ensure correct
      *                  handling of empty parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndForeachParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParseAndForeachParams0001";
@@ -666,13 +666,13 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0200
-     * @tc.name       : testParseAndForeachParams0002
-     * @tc.desc       : Testing URLParams parsing and iteration for multiple identical sets of parameters to
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0200
+     * @tc.name testParseAndForeachParams0002
+     * @tc.desc Testing URLParams parsing and iteration for multiple identical sets of parameters to
      *                  ensure correct parsing and retrieval of all values.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndForeachParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParseAndForeachParams0002";
@@ -696,12 +696,12 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0300
-     * @tc.name       : testParseAndForeachParams0003
-     * @tc.desc       : Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0300
+     * @tc.name testParseAndForeachParams0003
+     * @tc.desc Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndForeachParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParseAndForeachParams0003";
@@ -724,13 +724,13 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0100
-     * @tc.name       : testParseAndIterateParamsSymbol0001
-     * @tc.desc       : Testing URLParams [Symbol.iterator]() method with an empty string to ensure correct
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0100
+     * @tc.name testParseAndIterateParamsSymbol0001
+     * @tc.desc Testing URLParams [Symbol.iterator]() method with an empty string to ensure correct
      *                  handling of empty parameters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testParseAndIterateParamsSymbol0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testParseAndIterateParamsSymbol0001";
@@ -1523,12 +1523,12 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0200
-     * @tc.name       : testKeysIterableIterator0002
-     * @tc.desc       : Testing URLParams keys() method with keys containing special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0200
+     * @tc.name testKeysIterableIterator0002
+     * @tc.desc Testing URLParams keys() method with keys containing special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testKeysIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testKeysIterableIterator0002";
@@ -1551,12 +1551,12 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0300
-     * @tc.name       : testKeysIterableIterator0003
-     * @tc.desc       : Testing URLParams keys() method with add, query, delete, and query operations.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0300
+     * @tc.name testKeysIterableIterator0003
+     * @tc.desc Testing URLParams keys() method with add, query, delete, and query operations.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testKeysIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testKeysIterableIterator0003";
@@ -1582,12 +1582,12 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0200
-     * @tc.name       : testValuesIterableIterator0002
-     * @tc.desc       : Testing URLParams values() method with values containing special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0200
+     * @tc.name testValuesIterableIterator0002
+     * @tc.desc Testing URLParams values() method with values containing special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testValuesIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testValuesIterableIterator0002";
@@ -1610,12 +1610,12 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0300
-     * @tc.name       : testValuesIterableIterator0003
-     * @tc.desc       : Testing URLParams values() method with add, query, delete, and query operations.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0300
+     * @tc.name testValuesIterableIterator0003
+     * @tc.desc Testing URLParams values() method with add, query, delete, and query operations.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testValuesIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testValuesIterableIterator0003";
@@ -1873,12 +1873,12 @@ export default function urlTest1() {
     });
 
     /**
-     * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1000
-     * @tc.name       : testSpecial0010
-     * @tc.desc       : Testing getting values using keys with special characters.
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1000
+     * @tc.name testSpecial0010
+     * @tc.desc Testing getting values using keys with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
     it('testSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const TAG = "testSpecial0010";
