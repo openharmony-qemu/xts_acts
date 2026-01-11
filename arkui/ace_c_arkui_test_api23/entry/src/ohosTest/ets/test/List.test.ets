@@ -37,6 +37,7 @@ import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
 import monopolizeTest from './monopolize/MonopolizeTest.test'
 import MotionPathOptionsTest from './MotionPath/MotionPathOptionsTest.test'
 import AtomicServiceMenuBarSetVisibleTest from './publicCapacity/AtomicServiceMenuBarSetVisibleTest.test'
+import TextDirectionTest from './text/TextDirection.test'
 import TextSelectionTest from './textSelection/textSelectionTest.test'
 import IsInRenderStateReturnValueTest from "./node/IsInRenderStateReturnValueTest.test";
 import ConvertPositionToWindowTest from "./node/ConvertPositionToWindowTest.test";
@@ -73,5 +74,6 @@ export default function testsuite() {
   monopolizeTest();
   MotionPathOptionsTest();
   AtomicServiceMenuBarSetVisibleTest();
+  TextDirectionTest();
   TextSelectionTest();
 }
