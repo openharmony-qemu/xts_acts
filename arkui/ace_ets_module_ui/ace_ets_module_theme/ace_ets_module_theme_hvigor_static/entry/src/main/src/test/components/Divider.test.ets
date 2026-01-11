@@ -42,7 +42,6 @@ export default function dividerThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     })
 
     beforeEach(() => {
@@ -54,12 +53,12 @@ export default function dividerThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `DividerPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(dividerThemeProperty);
-            redTheme = AppStorage.get<CustomTheme>(dividerThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
+            redTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -67,14 +66,14 @@ export default function dividerThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(dividerThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>(`DividerThemeProperty`))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(dividerThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate(`DividerThemeProperty`, greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(dividerThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate(`DividerThemeProperty`, redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(dividerThemeProperty);
-      redTheme = AppStorage.get<CustomTheme>(dividerThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
+      redTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
       changeTheme = false;
     });
 

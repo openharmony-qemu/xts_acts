@@ -42,7 +42,6 @@ export default function SearchThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -54,11 +53,11 @@ export default function SearchThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `SearchPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(searchThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>(`SearchThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
@@ -66,13 +65,13 @@ export default function SearchThemeTest() {
       if (!changeTheme) {
         return;
       }
-      if ((AppStorage.get(searchThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>(`SearchThemeProperty`))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(searchThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`SearchThemeProperty`, greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(searchThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>(`SearchThemeProperty`, redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(searchThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>(`SearchThemeProperty`);
       changeTheme = false;
     });
 

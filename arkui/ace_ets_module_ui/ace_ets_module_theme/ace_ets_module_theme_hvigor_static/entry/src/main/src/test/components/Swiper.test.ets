@@ -45,7 +45,6 @@ export default function swiperThemeTest() {
     beforeAll(async () => {
       console.info("SwiperPage beforeAll start");
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -57,7 +56,7 @@ export default function swiperThemeTest() {
         let pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `SwiperPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(swiperThemeProperty);
+            localTheme = AppStorage.get<CustomTheme>('SwiperThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           })
         }
@@ -69,13 +68,13 @@ export default function swiperThemeTest() {
       if (!changeTheme) {
         return
       }
-      if ((AppStorage.get(swiperThemeProperty) as CustomTheme | undefined)?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>('SwiperThemeProperty'))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
-        AppStorage.setOrCreate(swiperThemeProperty, greenCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('SwiperThemeProperty', greenCustomTheme);
       } else {
-        AppStorage.setOrCreate(swiperThemeProperty, redCustomTheme);
+        AppStorage.setOrCreate<CustomTheme>('SwiperThemeProperty', redCustomTheme);
       }
-      localTheme = AppStorage.get<CustomTheme>(swiperThemeProperty);
+      localTheme = AppStorage.get<CustomTheme>('SwiperThemeProperty');
       changeTheme = false;
     });
 
@@ -95,12 +94,11 @@ it('ActsSwiperThemeColors_static_0100', Level.LEVEL2, async (done: () => void): 
         const indicatorColor =
           JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
         const indicatorSelectedColor =
-          JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
+          JSON.parseJsonElement(indicatorJson).tryGetString('selectedColor').toUpperCase()
             ?? EMPTY_ATTR;
         const arrowColor = JSON.parseJsonElement(json)
           .getElement('$attrs')
-          .getString('selectedColor')
-          .toString()
+          .tryGetString('selectedColor')
           .toUpperCase() ?? EMPTY_ATTR;
         const arrowBackgroundColor = JSON.parseJsonElement(json)
           .getElement('$attrs')
@@ -159,12 +157,11 @@ it('ActsSwiperThemeColors_static_0200', Level.LEVEL2, async (done: () => void): 
         const indicatorColor =
           JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
         const indicatorSelectedColor =
-          JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
+          JSON.parseJsonElement(indicatorJson).tryGetString('selectedColor').toUpperCase()
             ?? EMPTY_ATTR;
         const arrowColor = JSON.parseJsonElement(json)
           .getElement('$attrs')
-          .getString('selectedColor')
-          .toString()
+          .tryGetString('selectedColor')
           .toUpperCase() ?? EMPTY_ATTR;
         const arrowBackgroundColor = JSON.parseJsonElement(json)
           .getElement('$attrs')
@@ -226,17 +223,15 @@ it('ActsSwiperThemeColors_static_0300', Level.LEVEL0, async (done: () => void): 
         const indicatorColor =
           JSON.parseJsonElement(indicatorJson).getString('color').toString().toUpperCase() ?? EMPTY_ATTR;
         const indicatorSelectedColor =
-          JSON.parseJsonElement(indicatorJson).getString('selectedColor').toString().toUpperCase()
+          JSON.parseJsonElement(indicatorJson).tryGetString('selectedColor').toUpperCase()
             ?? EMPTY_ATTR;
         const arrowColor = JSON.parseJsonElement(json)
           .getElement('$attrs')
-          .getString('selectedColor')
-          .toString()
+          .tryGetString('selectedColor')
           .toUpperCase() ?? EMPTY_ATTR;
         const arrowBackgroundColor = JSON.parseJsonElement(json)
           .getElement('$attrs')
           .getString('arrowBackgroundColor')
-          .toString()
           .toUpperCase()
           ?? EMPTY_ATTR;
 

@@ -70,10 +70,10 @@ struct ForEachPage {
       this.dataSystemGroup.push({ title: 'Item_System_Group_' + i });
       this.dataWithThemeGroup.push({ title: 'Item_WithTheme_Group_' + i });
     }
-    AppStorage.setOrCreate(dataSystemKey, this.dataSystem);
-    AppStorage.setOrCreate(dataWithThemeKey, this.dataWithTheme);
-    AppStorage.setOrCreate(dataSystemGroupKey, this.dataSystemGroup);
-    AppStorage.setOrCreate(dataWithThemeGroupKey, this.dataWithThemeGroup);
+    AppStorage.setOrCreate<Array<DataForeach>>(dataSystemKey, this.dataSystem);
+    AppStorage.setOrCreate<Array<DataForeach>>(dataWithThemeKey, this.dataWithTheme);
+    AppStorage.setOrCreate<Array<DataForeach>>(dataSystemGroupKey, this.dataSystemGroup);
+    AppStorage.setOrCreate<Array<DataForeach>>(dataWithThemeGroupKey, this.dataWithThemeGroup);
   }
 
   build() {

@@ -85,12 +85,17 @@ export default function SelectionMenuOptions() {
         console.info('SelectionMenuOptions SelectionMenuOptions0001 START2222');
         await CommonFunc.sleep(500);
         let richEditor = await driver.findComponent(ON.id('richEditor'))
+        console.info('SelectionMenuOptions SelectionMenuOptions0001 START333');
         await CommonFunc.sleep(500);
         let point: Point = await (richEditor?.getBoundsCenter() as Promise<Point>)
+        console.info('SelectionMenuOptions SelectionMenuOptions0001 START444');
         await CommonFunc.sleep(500);
         await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
+        console.info('SelectionMenuOptions SelectionMenuOptions0001 START555');
         await CommonFunc.sleep(500);
+        console.info('SelectionMenuOptions SelectionMenuOptions0001 START666');
         await driver.assertComponentExist(ON.text('自定义菜单'));
+        console.info('SelectionMenuOptions SelectionMenuOptions0001 START777');
         console.info("[SelectionMenuOptions0001] end");
         done();
       } catch (error) {
