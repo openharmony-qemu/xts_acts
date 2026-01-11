@@ -55,9 +55,10 @@ export default function loadingProgressThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `LoadingProgressPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>('LoadingProgressThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>('LoadingProgressThemeProperty');
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {

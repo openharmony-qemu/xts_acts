@@ -53,9 +53,10 @@ export default function textThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `TextPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>('TextThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>('TextThemeProperty');
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues')
       } catch (err) {

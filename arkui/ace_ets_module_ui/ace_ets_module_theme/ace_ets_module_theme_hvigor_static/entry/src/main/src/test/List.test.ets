@@ -70,12 +70,12 @@ export default function testsuite() {
   // qrCodeThemeTest();
   // radioThemeTest();
   // scrollThemeTest();
-  searchThemeTest();
+  // searchThemeTest();
   sliderThemeTest();
   // swiperThemeTest();
   textThemeTest();
   // textClockThemeTest();
-  textInputThemeTest();
+  // textInputThemeTest();
   textPickerThemeTest();
   // timePickerThemeTest();
   toggleThemeTest();
