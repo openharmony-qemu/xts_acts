@@ -46,7 +46,7 @@ export default function createDragAction() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get createDragAction state pages: " + JSON.stringify(pages));
-        if (!("MainAbility/pages/DragController/createDragAction" == pages.name)) {
+        if (!("createDragAction" == pages.name)) {
           console.info("get createDragAction state pages.name: " + JSON.stringify(pages.name));
           // let result = await routerInstance.pushUrl(options);
           routerInstance.pushUrl(options);
@@ -74,7 +74,7 @@ it('createDragAction_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let button: Component|null = await driver.findComponent(ON.id('dragParent'));
       let text: Component|null = await driver.findComponent(ON.id('createDrag_id'));
       await CommonFunc.sleep(1000);
-      button?.dragTo(text!);
+      await(button?.dragTo(text!) as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('createDrag_id');
       let obj = JSON.parseJsonElement(strJson);
@@ -100,7 +100,7 @@ it('createDragAction_static_0200', Level.LEVEL0, async (done: () => void): Promi
       let button: Component|null = await driver.findComponent(ON.id('dragParent'));
       let text: Component|null = await driver.findComponent(ON.id('createDrag_id'));
       await CommonFunc.sleep(1000);
-      button?.dragTo(text!);
+      await(button?.dragTo(text!) as Promise<void>);
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('start_id');
       let obj = JSON.parseJsonElement(strJson);
@@ -126,7 +126,7 @@ it('createDragAction_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let button: Component|null = await driver.findComponent(ON.id('dragParent'));
       let text: Component|null = await driver.findComponent(ON.id('createDrag_id'));
       await CommonFunc.sleep(1000);
-      button?.dragTo(text!);
+      await(button?.dragTo(text!) as Promise<void>);
       await CommonFunc.sleep(3000);
       let strJson = inspector.getInspectorByKey('end_id');
       let obj = JSON.parseJsonElement(strJson);

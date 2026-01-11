@@ -100,7 +100,7 @@ it('StateUndefinedTest0010_static_001', Level.LEVEL0, async (done: () => void): 
       await CommonFunc.sleep(1000);
       let obj2 = JSON.parseJsonElement(inspector.getInspectorByKey('tvPropValue'));
       console.info("[StateSet0010TestJsunit] component obj2 content is: " + JSON.stringify(obj2.getElement('$attrs').getString('content')));
-      expect(obj2.getElement('$attrs').getString('content')).assertEqual('propValue:null');
+      expect(obj2.getElement('$attrs').getString('content')).assertEqual('propValue:undefined');
       await CommonFunc.sleep(1000);
       let obj3 = JSON.parseJsonElement(inspector.getInspectorByKey('tvLinkValue'));
       console.info("[StateSet0010TestJsunit] component obj3 content is: " + JSON.stringify(obj3.getElement('$attrs').getString('content')));
