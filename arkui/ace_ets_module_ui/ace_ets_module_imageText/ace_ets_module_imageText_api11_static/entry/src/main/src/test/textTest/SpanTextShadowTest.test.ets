@@ -52,7 +52,7 @@ export default function SpanTextShadowTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get SpanTextShadowTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SpanTextShadowTest" == pages.name)) {
           console.info("get SpanTextShadowTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
