@@ -309,15 +309,15 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         let data: audio.AudioRingMode = audioVolumeGroupManager.getRingerModeSync();
-        if (data == auido.AudioRingMode.RINGER_MODE_SILENT) {
+        if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(data).assertEqual(auido.AudioRingMode.RINGER_MODE_SILENT);     
-        } else if (data == auido.AudioRingMode.AudioRingMode.RINGER_MODE_VIBRATE) {
+          expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);     
+        } else if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(data).assertEqual(auido.AudioRingMode.RINGER_MODE_VIBRATE);
-        } else if (data == auido.AudioRingMode.AudioRingMode.RINGER_MODE_NORMAL) {
+          expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(data).assertEqual(auido.AudioRingMode.RINGER_MODE_NORMAL);
+          expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
           expect(false).assertTrue();          
@@ -454,8 +454,8 @@ export default function audioFramework() {
             console.info('ON Triggered successfully');
           }
         };
-        await audioCapturer?.onPeriodReach(1000, periodReachCallback);
-        await audioCapturer?.offPeriodReach();
+        audioCapturer?.onPeriodReach(1000, periodReachCallback);
+        audioCapturer?.offPeriodReach();
 
         let stateChangeCallback = (state: audio.AudioState) => {
           if (state == 1) {
@@ -465,25 +465,18 @@ export default function audioFramework() {
             console.info('audio renderer state is: STATE_RUNNING');
           }
         };
-        await audioCapturer?.onStateChange(stateChangeCallback);
-        await audioCapturer?.offStateChange();
+        audioCapturer?.onStateChange(stateChangeCallback);
+        audioCapturer?.offStateChange();
 
         let readDataCallback = (value: ArrayBuffer) => {
           console.info(`read valus: ${value}`);
         };
-        await audioCapturer?.onReadData(readDataCallback);
+        audioCapturer?.onReadData(readDataCallback);
         console.info('Capturer readData on success.');
-        await audioCapturer?.offReadData();
+        audioCapturer?.offReadData();
         console.info('Capturer readData of success.');
         
-        await audioCapturer?.release().then(() => {
-          console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
-          console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
-          console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer?.state}`);
-        }).catch(async(err: BusinessError) => {
-          console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
-          expect(true).assertFalse();
-        });
+        await audioCapturer?.release();
       } catch (err: BusinessError) {
         console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
         expect(true).assertFalse();
