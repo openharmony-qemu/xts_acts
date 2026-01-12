@@ -62,10 +62,7 @@ export default function webViewNativeMediaUpdateRect() {
     it('testWebViewNativeMediaUpdateRect', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       emitKey = "emitWebViewNativeMediaUpdateRect"
       Utils.emitEvent(emitKey, EVENT_ID_SET_EMIT_KEY);
-      Utils.registerBaseEvent("emitWebViewNativeMediaUpdateRect", true, 363010, done,
-        (backData: events_emitter.EventData, expected: Object) => {
-          expect(backData?.data?.ACTION).assertEqual(expected);
-        });
+      Utils.registerEvent("emitWebViewNativeMediaUpdateRect", true, 363010, done);
       let StartModel = await driver.findComponent(ON.id("webViewNativeMediaUpdateRect"));
       await StartModel.click();
     })
