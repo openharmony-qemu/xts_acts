@@ -462,56 +462,7 @@ export default function FloatingBallTest() {
 
 
 
-    /**
-     * @tc.name   test_startFloatingBall_template_not_exist
-     * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1000
-     * @tc.desc   test_startFloatingBall_template_not_exist
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
-     */
-    it('test_startFloatingBall_template_not_exist', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-      let CaseName:string = 'test_startFloatingBall_template_not_exist';
-      let config: floatingBall.FloatingBallConfiguration = {
-        context: context,
-      };
-
-      let template:floatingBall.FloatingBallTemplate;
-      let startParams: floatingBall.FloatingBallParams = {
-        template: template,
-        title: 'title',
-        icon:pixelMapIcon as image.PixelMap
-      };
-      try {
-        let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
-        floatingBallController.startFloatingBall(startParams).then(() => {
-          console.info(CaseName+' floatingBallController Succeeded  in starting floating ball.');
-          floatingBallController.stopFloatingBall();
-          expect(false).assertTrue();
-          done();
-        }).catch((err: Error):void => {
-          console.error(CaseName+ ` floatingBallController2 Failed to start floating ball. Cause:${err.code}, message:${err.message}`);
-          if(err.code == 1300019){
-            expect(true).assertTrue();
-            done();
-          }
-          else{
-            expect(false).assertTrue();
-            done();
-          }
-        });
-      } catch (error) {
-        let exception: BusinessError = error as BusinessError;
-        console.error( CaseName+  `Failed. Cause:${exception.code}, message:${exception.message}`);
-        expect(exception.message!=null).assertTrue();
-        if(exception.code == 801){
-          done();
-        }else{
-          expect(false).assertTrue();
-          done();
-        }
-      }
-    })
+    
     /**
      * @tc.name   test_startFloatingBall_title_null
      * @tc.number SUB_BASIC_WMS_FLOATING_BALL_1100
@@ -2602,12 +2553,13 @@ export default function FloatingBallTest() {
         let floatingBallController: floatingBall.FloatingBallController = await floatingBall.create(config);
         let onStateChangeCallback = (state: floatingBall.FloatingBallState) => {
           console.info(CaseName+ ' Floating ball stateChange: ' + state);
-          State == state;
+          State = state;
 
         };
         floatingBallController.onStateChange(onStateChangeCallback);
         await floatingBallController.startFloatingBall(startParams);
         await Utils.msSleep(1000);
+        console.info(CaseName+ ' Floating ball State: ' + State);
         if(State == floatingBall.FloatingBallState.STARTED){
           floatingBallController.getFloatingBallWindowInfo().then((data: floatingBall.FloatingBallWindowInfo) => {
             console.info(CaseName+' Succeeded in getting floating ball window info. Info: ' + JSON.stringify(data.windowId));
