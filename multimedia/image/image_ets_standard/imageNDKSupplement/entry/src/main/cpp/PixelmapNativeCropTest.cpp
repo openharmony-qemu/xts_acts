@@ -4,7 +4,7 @@
 // Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
 // please include "napi/native_api.h".
 
-#include "PixelmapNativeCrop.h"
+#include "PixelmapNativeCropTest.h"
 #include <cstdlib>
 #include <hilog/log.h>
 #include <js_native_api.h>
@@ -65,6 +65,8 @@ napi_value PixelmapNativeCropTest(napi_env env, napi_callback_info info)
         code = OH_PixelmapNative_Crop(pixelmap, &region);
         LOGI("OH_PixelmapNative_Crop %{public}d", code);
         break;
+    default:
+        break;          
     }
     napi_value result = nullptr;
     napi_create_int32(env, code, &result);
@@ -100,8 +102,8 @@ napi_value ConvertAlphaFormatTest(napi_env env, napi_callback_info info)
     OH_PixelmapNative_CreatePixelmap(data, dataSize, options, &pixelmap);
     OH_Pixelmap_InitializationOptions *dstOptions = nullptr;
     OH_PixelmapInitializationOptions_Create(&dstOptions);
-    OH_PixelmapInitializationOptions_SetWidth(dstOptions, 200);
-    OH_PixelmapInitializationOptions_SetHeight(dstOptions, 300);
+    OH_PixelmapInitializationOptions_SetWidth(dstOptions, PARAM_200);
+    OH_PixelmapInitializationOptions_SetHeight(dstOptions, PARAM_300);
     OH_PixelmapInitializationOptions_SetPixelFormat(dstOptions, PIXEL_FORMAT_BGRA_8888);
     OH_PixelmapInitializationOptions_SetAlphaType(dstOptions, PIXELMAP_ALPHA_TYPE_UNPREMULTIPLIED);
     OH_PixelmapNative_CreateEmptyPixelmap(dstOptions, &dstPixelmap);
@@ -112,6 +114,8 @@ napi_value ConvertAlphaFormatTest(napi_env env, napi_callback_info info)
         code = OH_PixelmapNative_ConvertAlphaFormat(pixelmap, dstPixelmap, isPremul);
         LOGI("OH_PixelmapNative_ConvertAlphaFormat %{public}d", code);
         break;
+    default:
+        break;    
     }
     napi_value result = nullptr;
     napi_create_int32(env, code, &result);

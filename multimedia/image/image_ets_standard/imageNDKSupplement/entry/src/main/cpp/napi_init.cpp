@@ -15,9 +15,9 @@
 
 #include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
-#include "ImagePackerNative.h"
+#include "ImagePackerNativeTest.h"
 #include "ImagePixelMapTest.h"
-#include "PixelmapNativeCrop.h"
+#include "PixelmapNativeCropTest.h"
 #include "napi/native_api.h"
 #include "ImageReceiverNativeReadTest.h"
 #include "ImageReceiverNativeTest.h"

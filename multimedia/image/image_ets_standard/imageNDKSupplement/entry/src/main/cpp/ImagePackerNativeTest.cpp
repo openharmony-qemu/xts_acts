@@ -4,7 +4,7 @@
 // Node APIs are not fully supported. To solve the compilation error of the interface cannot be found,
 // please include "napi/native_api.h".
 
-#include "ImagePackerNative.h"
+#include "ImagePackerNativeTest.h"
 #include <cstdlib>
 #include <cstring>
 #include <hilog/log.h>
@@ -49,6 +49,8 @@ napi_value DecodingOptionsReleaseTest(napi_env env, napi_callback_info info)
         errorCode = OH_DecodingOptions_Release(nullptr);
         LOGI("OH_DecodingOptions_Release %{public}d", errorCode);
         break;
+    default:
+        break;          
     }
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);
@@ -77,26 +79,28 @@ napi_value CreatePixelmapFromSurfaceWithTransformationTest(napi_env env, napi_ca
     OH_PixelmapNative* pixelmap = nullptr;
     Image_ErrorCode errorCode = IMAGE_SUCCESS;
     switch (index) {
-        case CASE_INDEX_1:
-            errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId, length, true, &pixelmap);
-            LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
-            break;
-        case CASE_INDEX_2:
-            errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId, length, false, &pixelmap);
-            LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
-            break;
-        case CASE_INDEX_3:
-            errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(nullptr, length, false, &pixelmap);
-            LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
-            break;
-        case CASE_INDEX_4:
-            errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(nullptr, -1, false, &pixelmap);
-            LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
-            break;
-        case CASE_INDEX_5:
-            errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId, length, false, nullptr);
-            LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
-            break;
+    case CASE_INDEX_1:
+        errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId, length, true, &pixelmap);
+        LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
+        break;
+    case CASE_INDEX_2:
+        errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId, length, false, &pixelmap);
+        LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
+        break;
+    case CASE_INDEX_3:
+        errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(nullptr, length, false, &pixelmap);
+        LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
+        break;
+    case CASE_INDEX_4:
+        errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(nullptr, -1, false, &pixelmap);
+        LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
+        break;
+    case CASE_INDEX_5:
+        errorCode = OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation(surfaceId, length, false, nullptr);
+        LOGI("OH_PixelmapNative_CreatePixelmapFromSurfaceWithTransformation returned: %{public}d", errorCode);
+        break;
+    default:
+        break;
     }
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);
