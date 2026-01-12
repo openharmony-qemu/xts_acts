@@ -48,12 +48,10 @@ struct ignoreLayoutSafeAreaTest1 {
     Navigation(this.pageInfos){
       Column({space:5}){
         Text(this.text1)
-
         Button('push')
           .onClick(()=>{
             this.pageInfos.pushPathByName('pageOne',null)
           })
-          .margin({top:'200vp'})
           .id('ignoreLayoutSafeAreaTest1_push')
 
       }.width('100%').height('100%').backgroundColor(Color.Yellow)
@@ -66,6 +64,7 @@ struct ignoreLayoutSafeAreaTest1 {
     .navDestination(this.PageMap)
     .backgroundColor(Color.Pink)
     .systemBarStyle({statusBarContentColor:'#FF0000FF'})
+    .titleMode(NavigationTitleMode.Mini)
     .ignoreLayoutSafeArea([LayoutSafeAreaType.SYSTEM],[LayoutSafeAreaEdge.TOP, LayoutSafeAreaEdge.BOTTOM])
   }
 }
