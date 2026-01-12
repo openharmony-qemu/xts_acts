@@ -14,13 +14,12 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, TestType, Size, Level } from '@ohos/hypium';
 import { BusinessError } from '@ohos.base';
-import text from "@ohos.graphics.text";
 import common2D from '@ohos.graphics.common2D';
 import drawing from '@ohos.graphics.drawing';
 
-export default function PathIterator() {
+export default function PathIteratorTest() {
 
-  describe('PathIterator', () => {
+  describe('DrawingTsPathIteratorTest', () => {
     beforeAll(() => {
     })
 
@@ -89,7 +88,65 @@ export default function PathIterator() {
           done()
         }
       })
-
+    /**
+     * @tc.name   testPathIteratorNextAbnormal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0800
+     * @tc.desc   testPathIteratorNextAbnormal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('testPathIteratorNextAbnormal', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
+        let msg = "testPathIteratorNextAbnormal"
+        let path: drawing.Path = new drawing.Path();
+        path.moveTo(10, 20);
+        let iter: drawing.PathIterator = new drawing.PathIterator(path);
+        let verbStr: Array<string> = ["MOVE", "LINE", "QUAD", "CONIC", "CUBIC", "CLOSE", "DONE"];
+        let pointCount: Array<number> = [1, 2, 3, 4, 4, 0, 0]; //1,2,3,3.5,4,0,0
+        let offset = 0;
+        try {
+          let points: Array<common2D.Point> = [];
+          let verb = iter.next(points, offset);
+          console.info(msg + ' [] iter.next(points, offset): ' + JSON.stringify(verb));
+          expect().assertFail();
+        } catch (err) {
+          console.log(msg + " [] Failed in PathIterator.next " + JSON.stringify(err))
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let verb = iter.next(undefined, offset);
+          console.info(msg + ' 1 undefined iter.next(points, offset): ' + JSON.stringify(verb));
+          expect().assertFail();
+        } catch (err) {
+          console.log(msg + " 1 undefined Failed in PathIterator.next " + JSON.stringify(err))
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let verb = iter.next(null, offset);
+          console.info(msg + ' 1 null iter.next(points, offset): ' + JSON.stringify(verb));
+          expect().assertFail();
+        } catch (err) {
+          console.log(msg + " 1 null Failed in PathIterator.next " + JSON.stringify(err))
+          expect(err.code).assertEqual(401);
+        }
+        let points: Array<common2D.Point> = [{ x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }, { x: 0, y: 0 }];
+        try {
+          let verb = iter.next(points, undefined);
+          console.info(msg + ' 2 undefined iter.next(points, offset): ' + JSON.stringify(verb));
+          expect().assertFail();
+        } catch (err) {
+          console.log(msg + " 2 undefined Failed in PathIterator.next " + JSON.stringify(err))
+          expect(err.code).assertEqual(401);
+        }
+        try {
+          let verb = iter.next(points, null);
+          console.info(msg + ' 2 null iter.next(points, offset): ' + JSON.stringify(verb));
+          expect().assertFail();
+        } catch (err) {
+          console.log(msg + " 2 null Failed in PathIterator.next " + JSON.stringify(err))
+          expect(err.code).assertEqual(401);
+        }
+      })
     /**
      * @tc.name   SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0300
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_ITERATOR_0300
@@ -154,6 +211,7 @@ export default function PathIterator() {
         try {
           let path: drawing.Path = new drawing.Path();
           let iter = path.getPathIterator();
+          expect(iter !== null  || iter !== undefined).assertTrue();
           console.info(msg + ' iter.getPathIterator(): ' + iter);
           console.info(msg + ' iter.getPathIterator(): ' + JSON.stringify(iter));
           done()
