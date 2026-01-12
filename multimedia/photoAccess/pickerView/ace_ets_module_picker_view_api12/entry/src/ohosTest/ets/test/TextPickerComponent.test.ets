@@ -3388,6 +3388,7 @@ export default function TextPicker() {
         done();
         return;
       }
+      let uris = ['file://media/photo/test.jpg'];
       let phAccessHelper: photoAccessHelper.PhotoAccessHelper = photoAccessHelper.getPhotoAccessHelper(getContext());
       try {
         phAccessHelper.requestPhotoUrisReadPermissionEx(uris).then((result) => {

@@ -378,7 +378,7 @@ struct PickerComponent {
         onMovingPhotoBadgeStateChanged: this.onMovingPhotoBadgeStateChangedCallback,
         pickerController: this.pickerController,
         onPinchGridSwitched: (gridLevel: photoAccessHelper.GridLevel): void => this.onPinchGridSwitched(gridLevel),
-        onPhotoBrowserChangeStart: (iemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
+        onPhotoBrowserChangeStart: (itemInfo: BaseItemInfo): void => this.onPhotoBrowserChangeStart(itemInfo),
  	      onError: (pickerError: PickerError): void => this.onError(pickerError),
       })
         .height('70%')
