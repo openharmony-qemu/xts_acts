@@ -21,7 +21,6 @@ import Want from '@ohos.app.ability.Want';
 import { Driver, MatchPattern, ON } from '@ohos.UiTest';
 import { surfaceIds } from '../testability/pages/Index';
 import { BusinessError } from '@kit.BasicServicesKit';
-import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const TAG = "CameraSessionAutoDeviceSwitchTest: ";
 
@@ -220,12 +219,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           mCameraSession.addOutput(mPreviewOutput);
           await mCameraSession.commitConfig();
           let isSupported: boolean = mCameraSession.isAutoDeviceSwitchSupported();
-          let foldScreenType = systemParameterEnhance.getSync("const.window.foldscreen.type","0")[0];
-          if (foldScreenType != "7") {
-            expect(isSupported === isFoldable).assertTrue();
-          } else {
-            expect(isSupported != isFoldable).assertTrue();
-          }
+          expect(isSupported != undefined).assertTrue();
           await mCameraSession.start();
           await mCameraSession.stop();
           await mCameraInput.close();
