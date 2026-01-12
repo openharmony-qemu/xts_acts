@@ -41,6 +41,15 @@ export default class EntryAbility extends UIAbility {
 
     globalThis.windowStage = windowStage
     globalThis.abilityContext = this.context
+
+    // 用例getWindowId测试 start
+    AppStorage.SetOrCreate('getWindowIdUndefined', UIContext.resolveUIContext().getWindowId());
+    console.log('wjh getWindowId before loadContent'+ UIContext.resolveUIContext().getWindowId());
+
+    AppStorage.SetOrCreate('getWindowIdValue', UIContext.createUIContextWithoutWindow(this.context)?.getWindowId());
+    console.log('wjh getWindowId id is '+ UIContext.createUIContextWithoutWindow(this.context)?.getWindowId());
+    // 用例getWindowId测试 end
+
     windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError, data) => {
       if (err.code) {
         hilog.error(0x0000, 'testTag', 'Failed to load the content. Cause: %{public}s', JSON.stringify(err) ?? '');
