@@ -61,7 +61,7 @@ export default function webViewNativeMediaPlayerHandler3() {
       })
       console.info("web beforeEach start");
       let options: router.RouterOptions = {
-        url: 'testability/pages/webViewNativeMediaPlayerHandler3',
+        url: 'testability/pages/WebViewNativeMediaPlayerHandler3',
       }
       await router.replaceUrl(options);
       done();
