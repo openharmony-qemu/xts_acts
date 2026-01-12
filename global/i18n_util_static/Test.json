@@ -4,13 +4,13 @@
         "type": "OHJSUnitTest",
         "test-timeout": "180000",
         "shell-timeout": "180000",
-        "bundle-name": "com.example.global_stage.static",
+        "bundle-name": "com.example.i18n_util.static",
         "module-name": "entry"
     },
     "kits": [
         {
             "test-file-name": [
-                "ActsGlobalStageStaticTest.hap"
+                "ActsI18nStageStaticTest.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
