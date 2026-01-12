@@ -54,7 +54,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -75,7 +75,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -96,7 +96,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -117,7 +117,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -138,7 +138,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -161,7 +161,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -186,7 +186,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -211,7 +211,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -238,7 +238,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -265,7 +265,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -289,7 +289,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -314,7 +314,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -340,7 +340,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -367,7 +367,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -394,7 +394,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -417,7 +417,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -441,7 +441,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -465,7 +465,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -490,7 +490,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -514,7 +514,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -539,7 +539,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -565,7 +565,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -590,7 +590,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -615,7 +615,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -640,7 +640,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -664,7 +664,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -688,7 +688,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -712,7 +712,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -734,7 +734,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -759,7 +759,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -784,7 +784,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -809,7 +809,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -834,7 +834,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -862,7 +862,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -890,7 +890,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -914,7 +914,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -938,7 +938,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -960,7 +960,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -982,7 +982,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1006,7 +1006,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1028,7 +1028,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1050,7 +1050,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1074,7 +1074,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1098,7 +1098,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1122,7 +1122,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1144,7 +1144,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1166,7 +1166,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1190,7 +1190,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1214,7 +1214,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
@@ -1238,7 +1238,7 @@ export default function xmlTest1() {
       let view = new Uint8Array(arrayBuffer);
       let view1 = "";
       for (let i = 0; i < result.length; ++i) {
-        view1 = view1 + String.fromCodePoint(view[i]);
+        view1 = view1 + String.fromCodePoint(view[i].toInt());
       }
       expect(view1).assertEqual(result);
     })
