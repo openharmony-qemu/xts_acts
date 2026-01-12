@@ -139,44 +139,31 @@ value: 'Secondary Button',
   })
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button("Test primaryTitle")
+    Column({ space: 4 } as ColumnOptions) {
+      Button('主标题')
         .id('btnCustomContentDialog1')
-        .width(300)
-        .height(50)
-        .onClick(() => {
-          this.dialogController1.open()
-        })
-      Button("Test secondaryTitle")
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '16%' }).fontSize(11)
+        .onClick(() => { this.dialogController1.open() })
+      Button('副标题')
         .id('btnCustomContentDialog2')
-        .width(300)
-        .height(50)
-        .onClick(() => {
-          this.dialogController2.open()
-        })
-      Button("Test contentBuilder")
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '16%' }).fontSize(11)
+        .onClick(() => { this.dialogController2.open() })
+      Button('构建区')
         .id('btnCustomContentDialog3')
-        .width(300)
-        .height(50)
-        .onClick(() => {
-          this.dialogController3.open()
-        })
-      Button("Test contentAreaPadding")
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '16%' }).fontSize(11)
+        .onClick(() => { this.dialogController3.open() })
+      Button('内边距')
         .id('btnCustomContentDialog4')
-        .width(300)
-        .height(50)
-        .onClick(() => {
-          this.dialogController4.open()
-        })
-      Button("Test buttons")
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '16%' }).fontSize(11)
+        .onClick(() => { this.dialogController4.open() })
+      Button('按钮组')
         .id('btnCustomContentDialog5')
-        .width(300)
-        .height(50)
-        .onClick(() => {
-          this.dialogController5.open()
-        })
-    }.margin(20)
-    .width('100%').height('100%')
-    .justifyContent(FlexAlign.Center)
+        .width('100%').layoutWeight(1).constraintSize({ minHeight: 0, maxHeight: '16%' }).fontSize(11)
+        .onClick(() => { this.dialogController5.open() })
+    }
+    .width('100%')
+    .height('100%')
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

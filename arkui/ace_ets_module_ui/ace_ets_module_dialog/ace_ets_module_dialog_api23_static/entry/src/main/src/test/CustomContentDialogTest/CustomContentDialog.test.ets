@@ -52,7 +52,7 @@ export default function CustomContentDialogTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] CustomContentDialogTest beforeEach start");
-      
+
       // Ensure any open dialogs are closed before starting new test
       try {
         const driver = Driver.create();
@@ -64,7 +64,7 @@ export default function CustomContentDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/customContentDialog/customContentDialog',
       };
@@ -118,7 +118,7 @@ export default function CustomContentDialogTest() {
       if (AppStorage.get<boolean>('customContentDialogSecondaryButtonActionCalled') != undefined) {
         AppStorage.delete('customContentDialogSecondaryButtonActionCalled');
       }
-      
+
       // Ensure any open dialogs are closed after test
       try {
         const driver = Driver.create();
@@ -135,7 +135,7 @@ export default function CustomContentDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       await Utils.sleep(SLEEP_TIME);
       console.info("[ARKUI_NEW] CustomContentDialogTest after each called");
     });
@@ -293,7 +293,10 @@ export default function CustomContentDialogTest() {
         await Utils.sleep(1000);
 
         // Test primaryButton
-        const primaryButton = await driver.findComponent(ON.text('主按钮', MatchPattern.EQUALS));
+        let primaryButton = await driver.findComponent(ON.text('Primary Button', MatchPattern.EQUALS));
+        if (!primaryButton) {
+          primaryButton = await driver.findComponent(ON.text('主按钮', MatchPattern.EQUALS));
+        }
         expect(!!primaryButton).assertTrue();
         await (primaryButton?.click() as Promise<void>);
         await Utils.sleep(500);
@@ -305,7 +308,10 @@ export default function CustomContentDialogTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const secondaryButton = await driver.findComponent(ON.text('Secondary Button', MatchPattern.EQUALS));
+        let secondaryButton = await driver.findComponent(ON.text('Secondary Button', MatchPattern.EQUALS));
+        if (!secondaryButton) {
+          secondaryButton = await driver.findComponent(ON.text('次按钮', MatchPattern.EQUALS));
+        }
         expect(!!secondaryButton).assertTrue();
         await (secondaryButton?.click() as Promise<void>);
         await Utils.sleep(500);

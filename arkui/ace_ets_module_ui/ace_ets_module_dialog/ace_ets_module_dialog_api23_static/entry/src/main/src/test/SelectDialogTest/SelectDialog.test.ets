@@ -38,7 +38,7 @@ export default function SelectDialogTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] SelectDialogTest beforeEach start");
-      
+
       // Ensure any open dialogs are closed before starting new test
       try {
         const driver = Driver.create();
@@ -50,7 +50,7 @@ export default function SelectDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/selectDialog/selectDialog',
       };
@@ -95,7 +95,7 @@ export default function SelectDialogTest() {
       if (AppStorage.get<number>('selectDialogThemeColorMode') != undefined) {
         AppStorage.delete('selectDialogThemeColorMode');
       }
-      
+
       // Ensure any open dialogs are closed after test
       try {
         const driver = Driver.create();
@@ -112,7 +112,7 @@ export default function SelectDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       await Utils.sleep(SLEEP_TIME);
       console.info("[ARKUI_NEW] SelectDialogTest after each called");
     });

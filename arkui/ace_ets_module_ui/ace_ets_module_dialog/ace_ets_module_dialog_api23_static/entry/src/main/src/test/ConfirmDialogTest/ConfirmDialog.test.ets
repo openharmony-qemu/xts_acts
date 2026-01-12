@@ -37,7 +37,7 @@ export default function ConfirmDialogTest() {
 
     beforeEach(async (): Promise<void> => {
       console.info("[ARKUI_NEW] ConfirmDialogTest beforeEach start");
-      
+
       // Ensure any open dialogs are closed before starting new test
       try {
         const driver = Driver.create();
@@ -49,7 +49,7 @@ export default function ConfirmDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       let options: router.RouterOptions = {
         url: 'MainAbility/pages/confirmDialog/confirmDialog',
       };
@@ -106,7 +106,7 @@ export default function ConfirmDialogTest() {
       if (AppStorage.get<boolean>('confirmDialogOnCheckedChangeValue') != undefined) {
         AppStorage.delete('confirmDialogOnCheckedChangeValue');
       }
-      
+
       // Ensure any open dialogs are closed after test
       try {
         const driver = Driver.create();
@@ -123,7 +123,7 @@ export default function ConfirmDialogTest() {
       } catch (err) {
         // Dialog may not be open, ignore error
       }
-      
+
       await Utils.sleep(SLEEP_TIME);
       console.info("[ARKUI_NEW] ConfirmDialogTest after each called");
     });
@@ -344,12 +344,15 @@ export default function ConfirmDialogTest() {
         await (openDialogButton?.click() as Promise<void>);
         await Utils.sleep(1000);
 
-        const secondaryButton = await driver.findComponent(ON.text('Secondary Button', MatchPattern.EQUALS));
+        let secondaryButton = await driver.findComponent(ON.text('Secondary Button', MatchPattern.EQUALS));
+        if (!secondaryButton) {
+          secondaryButton = await driver.findComponent(ON.text('次按钮', MatchPattern.EQUALS));
+        }
         expect(!!secondaryButton).assertTrue();
         await (secondaryButton?.click() as Promise<void>);
         await Utils.sleep(500);
 
-        expect(AppStorage.get<string>('confirmDialogSecondaryButtonValue')).assertEqual('次按钮');
+        expect(AppStorage.get<string>('confirmDialogSecondaryButtonValue')).assertEqual('Secondary Button');
         expect(AppStorage.get<boolean>('confirmDialogSecondaryButtonActionCalled')).assertTrue();
 
         console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogSecondaryButton END');

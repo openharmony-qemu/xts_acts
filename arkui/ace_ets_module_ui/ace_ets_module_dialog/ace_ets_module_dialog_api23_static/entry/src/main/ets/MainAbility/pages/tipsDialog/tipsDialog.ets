@@ -58,7 +58,7 @@ class CustomThemeImpl implements CustomTheme {
   }
 }
 
-// 自定义内容文字及图标主题颜色
+// Custom content text and icon theme colors
 class CustomThemeColors implements CustomColors {
   public fontPrimary?: string = '#ffd0a300';
   public iconSecondary?: string = '#ffd000cd';
@@ -80,16 +80,16 @@ struct tipsDialog {
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
       imageSize: { width: 100, height: 100 },
-      title: '测试标题',
-      content: '测试内容',
+      title: 'Test Title',
+      content: 'Test Content',
       primaryButton: {
-        value: '确认',
+        value: 'Confirm',
         action: () => {
           AppStorage.setOrCreate<string>('tipsDialogImageRes', 'sys.media.ohos_ic_public_voice');
           AppStorage.setOrCreate<number>('tipsDialogImageSizeWidth', 100);
           AppStorage.setOrCreate<number>('tipsDialogImageSizeHeight', 100);
-          AppStorage.setOrCreate<string>('tipsDialogTitle', '测试标题');
-          AppStorage.setOrCreate<string>('tipsDialogContent', '测试内容');
+          AppStorage.setOrCreate<string>('tipsDialogTitle', 'Test Title');
+          AppStorage.setOrCreate<string>('tipsDialogContent', 'Test Content');
         },
       },
     }),
@@ -111,7 +111,7 @@ struct tipsDialog {
         value: 'Confirm',
         action: () => {
           // Store initial state when dialog opens
-          AppStorage.setOrCreate<string>('tipsDialogCheckTips', 'Do not show again');
+          AppStorage.setOrCreate<string>('tipsDialogCheckTips', '禁止后不再提示');
           AppStorage.setOrCreate<boolean>('tipsDialogInitialIsChecked', this.isChecked2);
         },
       },
@@ -124,7 +124,7 @@ struct tipsDialog {
     autoCancel: false,
   })
 
-  // Dialog 3: 测试 isChecked (false)
+  // Dialog 3: Test isChecked (false)
   dialogController3: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
@@ -135,7 +135,7 @@ struct tipsDialog {
         this.isChecked3 = isChecked;
       },
       primaryButton: {
-        value: '确认',
+        value: 'Confirm',
         action: () => {
           // Store initial state when dialog opens
           AppStorage.setOrCreate<boolean>('tipsDialogInitialIsChecked', this.isChecked3);
@@ -145,7 +145,7 @@ struct tipsDialog {
     autoCancel: false,
   })
 
-  // Dialog 4: 测试 themeColorMode - SYSTEM
+  // Dialog 4: Test themeColorMode - SYSTEM
   dialogController4: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
@@ -162,7 +162,7 @@ struct tipsDialog {
     autoCancel: false,
   })
 
-  // Dialog 5: 测试 themeColorMode - LIGHT
+  // Dialog 5: Test themeColorMode - LIGHT
   dialogController5: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
@@ -196,7 +196,7 @@ struct tipsDialog {
     autoCancel: false,
   })
 
-  // Dialog 7: 测试 theme (CustomTheme)
+  // Dialog 7: Test theme (CustomTheme)
   dialogController7: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
@@ -217,7 +217,7 @@ struct tipsDialog {
   dialogController8: CustomDialogController = new CustomDialogController({
     builder: TipsDialog({
       imageRes: $r('sys.media.ohos_ic_public_voice'),
-      content: '测试按钮',
+      content: 'Test buttons',
       primaryButton: {
         value: '主按钮',
         action: () => {
@@ -226,9 +226,9 @@ struct tipsDialog {
         },
       },
       secondaryButton: {
-        value: '次按钮',
+        value: 'Secondary Button',
         action: () => {
-          AppStorage.setOrCreate<string>('tipsDialogSecondaryButtonValue', '次按钮');
+          AppStorage.setOrCreate<string>('tipsDialogSecondaryButtonValue', 'Secondary Button');
           AppStorage.setOrCreate<boolean>('tipsDialogSecondaryButtonActionCalled', true);
         },
       },
@@ -236,65 +236,83 @@ struct tipsDialog {
   })
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test imageRes/imageSize/title/content')
+    Column({ space: 2 } as ColumnOptions) {
+      Button('图/标题/内容')
         .id('btnTipsDialog1')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController1.open()
         })
-      Button('Test checkTips/isChecked(true)/checkAction/onCheckedChange')
+      Button('勾选·true')
         .id('btnTipsDialog2')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController2.open()
         })
-      Button('Test isChecked(false)')
+      Button('勾选·false')
         .id('btnTipsDialog3')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController3.open()
         })
-      Button('Test themeColorMode SYSTEM')
+      Button('主题·系统')
         .id('btnTipsDialog4')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController4.open();
         })
-      Button('测试 themeColorMode LIGHT')
+      Button('主题·浅色')
         .id('btnTipsDialog5')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController5.open();
         })
-      Button('Test themeColorMode DARK')
+      Button('主题·深色')
         .id('btnTipsDialog6')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController6.open();
         })
-      Button('测试 theme CustomTheme')
+      Button('自定义主题')
         .id('btnTipsDialog7')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController7.open()
         })
-      Button('Test primaryButton/secondaryButton')
+      Button('主/次键')
         .id('btnTipsDialog8')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '9.5%' })
+        .fontSize(10)
         .onClick(() => {
           this.dialogController8.open()
         })
-    }.margin(20)
-    .width('100%').height('100%')
-    .justifyContent(FlexAlign.Center)
+    }
+    .width('100%')
+    .height('100%')
+    .padding({ left: '3%', right: '3%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

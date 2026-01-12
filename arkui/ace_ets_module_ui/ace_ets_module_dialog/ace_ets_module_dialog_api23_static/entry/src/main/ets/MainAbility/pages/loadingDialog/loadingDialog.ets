@@ -111,49 +111,61 @@ struct loadingDialog {
   })
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test content')
+    Column({ space: 3 } as ColumnOptions) {
+      Button('内容')
         .id('btnLoadingDialog1')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '16%' })
+        .fontSize(11)
         .onClick(() => {
           AppStorage.setOrCreate<string>('loadingDialogContent', 'Loading...');
           this.dialogController1.open()
         })
-      Button('Test theme')
+      Button('主题')
         .id('btnLoadingDialog2')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '16%' })
+        .fontSize(11)
         .onClick(() => {
           AppStorage.setOrCreate<boolean>('loadingDialogThemeSet', true);
           this.dialogController2.open()
         })
-      Button('Test themeColorMode SYSTEM')
+      Button('主题·系统')
         .id('btnLoadingDialog3')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '16%' })
+        .fontSize(11)
         .onClick(() => {
           AppStorage.setOrCreate<number>('loadingDialogThemeColorMode', ThemeColorMode.SYSTEM);
           this.dialogController3.open()
         })
-      Button('Test themeColorMode LIGHT')
+      Button('主题·浅色')
         .id('btnLoadingDialog4')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '16%' })
+        .fontSize(11)
         .onClick(() => {
           AppStorage.setOrCreate<number>('loadingDialogThemeColorMode', ThemeColorMode.LIGHT);
           this.dialogController4.open()
         })
-      Button('Test themeColorMode DARK')
+      Button('主题·深色')
         .id('btnLoadingDialog5')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '16%' })
+        .fontSize(11)
         .onClick(() => {
           AppStorage.setOrCreate<number>('loadingDialogThemeColorMode', ThemeColorMode.DARK);
           this.dialogController5.open()
         })
-    }.margin(20)
-    .width('100%').height('100%')
-    .justifyContent(FlexAlign.Center)
+    }
+    .width('100%')
+    .height('100%')
+    .padding({ left: '3%', right: '3%', top: '2%', bottom: '2%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }

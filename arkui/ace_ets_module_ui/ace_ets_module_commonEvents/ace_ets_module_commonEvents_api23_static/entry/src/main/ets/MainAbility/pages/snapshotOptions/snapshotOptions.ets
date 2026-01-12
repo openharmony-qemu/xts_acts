@@ -24,7 +24,8 @@ import {
   Component,
   Image,
   $r,
-  ClickEvent
+  ClickEvent,
+  FlexAlign
 } from '@ohos.arkui.component';
 import componentSnapshot from '@ohos.arkui.componentSnapshot';
 import { DynamicRangeMode } from '@ohos.arkui.component';
@@ -53,11 +54,13 @@ struct snapshotOptions {
   }
 
   build() {
-    Column({ space: 15 } as ColumnOptions) {
-      Button('Test SnapshotOptions - colorMode isAuto true')
+    Column({ space: 1 } as ColumnOptions) {
+      Button('快照·色·T')
         .id('btnSnapshotColorModeIsAutoTrue')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '12%' })
+        .fontSize(9)
         .onClick(() => {
           // Test colorMode - isAuto true
           let colorModeOptions: componentSnapshot.ColorModeOptions = {
@@ -70,10 +73,12 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsColorModeIsAutoTrue', snapshotOptions);
         })
 
-      Button('Test SnapshotOptions - colorMode isAuto false')
+      Button('快照·色·F')
         .id('btnSnapshotColorModeIsAutoFalse')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '12%' })
+        .fontSize(9)
         .onClick(() => {
           // Test colorMode - isAuto false
           let colorModeOptions: componentSnapshot.ColorModeOptions = {
@@ -86,10 +91,12 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsColorModeIsAutoFalse', snapshotOptions);
         })
 
-      Button('Test SnapshotOptions - dynamicRangeMode HIGH')
+      Button('快照·DR·H')
         .id('btnSnapshotDynamicRangeModeHigh')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '12%' })
+        .fontSize(9)
         .onClick(() => {
           // Test dynamicRangeMode - HIGH
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
@@ -102,10 +109,12 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeHigh', snapshotOptions);
         })
 
-      Button('Test SnapshotOptions - dynamicRangeMode CONSTRAINT')
+      Button('快照·DR·C')
         .id('btnSnapshotDynamicRangeModeConstraint')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '12%' })
+        .fontSize(9)
         .onClick(() => {
           // Test dynamicRangeMode - CONSTRAINT
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
@@ -118,10 +127,12 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeConstraint', snapshotOptions);
         })
 
-      Button('Test SnapshotOptions - dynamicRangeMode STANDARD')
+      Button('快照·DR·S')
         .id('btnSnapshotDynamicRangeModeStandard')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '12%' })
+        .fontSize(9)
         .onClick(() => {
           // Test dynamicRangeMode - STANDARD
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
@@ -134,10 +145,12 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeStandard', snapshotOptions);
         })
 
-      Button('Test SnapshotOptions - dynamicRangeMode isAuto true')
+      Button('快照·DR·T')
         .id('btnSnapshotDynamicRangeModeIsAutoTrue')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '12%' })
+        .fontSize(9)
         .onClick(() => {
           // Test dynamicRangeMode - isAuto true
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
@@ -150,10 +163,12 @@ struct snapshotOptions {
           AppStorage.setOrCreate<componentSnapshot.SnapshotOptions>('snapshotOptionsDynamicRangeModeIsAutoTrue', snapshotOptions);
         })
 
-      Button('Test SnapshotOptions - dynamicRangeMode isAuto false')
+      Button('快照·DR·F')
         .id('btnSnapshotDynamicRangeModeIsAutoFalse')
-        .width(300)
-        .height(50)
+        .width('100%')
+        .layoutWeight(1)
+        .constraintSize({ minHeight: 0, maxHeight: '12%' })
+        .fontSize(9)
         .onClick(() => {
           // Test dynamicRangeMode - isAuto false
           let dynamicRangeModeOptions: componentSnapshot.DynamicRangeModeOptions = {
@@ -168,6 +183,7 @@ struct snapshotOptions {
     }
     .width('100%')
     .height('100%')
-    .padding(20)
+    .padding({ left: '3%', right: '3%', top: '1%', bottom: '1%' })
+    .justifyContent(FlexAlign.SpaceEvenly)
   }
 }
