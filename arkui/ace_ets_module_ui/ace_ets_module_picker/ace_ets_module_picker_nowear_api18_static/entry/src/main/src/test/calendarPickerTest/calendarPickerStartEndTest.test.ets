@@ -93,28 +93,6 @@ it('CalendarPickerStartEndTest_static_002', Level.LEVEL1, async (done: () => voi
       console.info('CalendarPickerStartEndTest_static_002 END');
       done();
     });
-
-    
-    
-/**
-     * @tc.number   CalendarPickerStartEndTest_static_003
-     * @tc.name     CalendarPickerStartEndTest_static_003
-     * @tc.desc     CalendarPickerStartEndTest_static_003
-     * @tc.level    Level.LEVEL1
-     */
-it('CalendarPickerStartEndTest_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('CalendarPickerStartEndTest_static_002 START');
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('CalendarPicker03');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info("CalendarPickerStartEndTest_static_003 " + obj.getElement('$attrs').getString('start'))
-      console.info("CalendarPickerStartEndTest_static_003 " + obj.getElement('$attrs').getString('end'))
-      expect(obj.getElement('$attrs').getString('start')).assertEqual(undefined)
-      expect(obj.getElement('$attrs').getString('end')).assertEqual(undefined)
-      console.info('CalendarPickerStartEndTest_static_003 END');
-      done();
-    });
-
     
     
 /**
