@@ -30,6 +30,7 @@ group("graphic") {
 	  "acts_graphicXTSDrawingPathEffect_static:ActsDrawingPathEffectTsStaticTest",
 	  "acts_graphicXTSDrawingPen_static:ActsDrawingPenTsStaticTest",
 	  "acts_graphicXTSDrawingRegion_static:ActsDrawingRegionTsStaticTest",
+	  "acts_graphicXTSDrawingTextBlob_static:ActsDrawingTextBlobTsStaticTest",
       "acts_pipwindow:ActsPipWindowTest",
       "acts_windowCompatibilityTest:ActsWindowCompatibilityTest",
       "component3D:ActsComponent3DTest",
