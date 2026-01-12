@@ -13,10 +13,11 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, it, beforeAll, expect, TestType, Size, Level } from "../../../hypium/index";
 import { BusinessError } from '@ohos.base';
 import hilog from '@ohos.hilog'
 import appManager from "@ohos.app.ability.appManager"
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -60,7 +61,18 @@ class CustomApplicationStateObserver implements appManager.ApplicationStateObser
 
 export default function appManagerStaticTest() {
   describe('appManagerStaticTest', () => {
-
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+    
     /**
      * @tc.name   System_API_Test_App_Manager_Static_1700
      * @tc.number System_API_Test_App_Manager_Static_1700

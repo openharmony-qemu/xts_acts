@@ -32,21 +32,21 @@ import ScrollSizeMode_APITest from './CommonTest/BindSheetTest/BindSheet_APITest
 import sliderInteractionModeTest from './slider/sliderInteractionModeTest.test'
 
 export default function testsuite() {
-  aboutToAppearFalse();//11.20 failed:1 DTS bindsheetMenu
-  aboutToDisappearFalse();//11.20SDK：pass 1
-  CloseContextMenu();//11.20SDK：pass 1
-  CloseEsc();//11.20SDK：pass 1
-  CloseFalse();//11.20 failed:1 DTS bindsheetMenu
-  CloseMask(); //11.20SDK：pass 1
-  CloseMenu(); //11.20SDK：pass 1
-  IsShowFalse();// 11.20SDK：pass 3
-  preview();   //11.20SDK：pass 1
-  SheetMode() //11.20 failed:1 DTS detents导致白屏
-  springBack() //11.20SDK：pass 1
-  DetentsChange();//11.20 failed:1 DTS detents导致白屏
-  SheetTransition();//11.20SDK：pass 1
-  symbolIcon();//11.20 failed:1 app died
-  HoverScale_APITest();   //11.20SDK：pass 1
-  ScrollSizeMode_APITest(); //11.20SDK：pass 2
-  sliderInteractionModeTest() //11.20SDK: pass:3
+  aboutToAppearFalse();
+  aboutToDisappearFalse();
+  CloseContextMenu();
+  CloseEsc();
+  CloseFalse();
+  CloseMask();
+  CloseMenu();
+  IsShowFalse();
+  preview();
+  SheetMode();
+  springBack();
+  DetentsChange();
+  SheetTransition();
+  symbolIcon();
+  HoverScale_APITest();
+  ScrollSizeMode_APITest();
+  sliderInteractionModeTest();
 }

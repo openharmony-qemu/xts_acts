@@ -277,7 +277,7 @@ export default function sendableClassStaticTest() {
     it('testSendableStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticClass0009';
       try {
-        expect(typeof SendableStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableStaticClass.myEnum).assertEqual('number');
         expect(SendableStaticClass.myEnum).assertEqual(0);
         SendableStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableStaticClass.myEnum).assertEqual(1);
@@ -612,7 +612,7 @@ export default function sendableClassStaticTest() {
     it('testSendableStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableStaticClass0026';
       try {
-        expect(typeof SendableStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableStaticClass.mySendableUnionArray).assertEqual(1);
         SendableStaticClass.mySendableUnionArray = 2;
         expect(SendableStaticClass.mySendableUnionArray).assertEqual(2);
@@ -790,7 +790,7 @@ export default function sendableClassStaticTest() {
     it('testSendableFuncStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableFuncStaticClass0009';
       try {
-        expect(typeof SendableFuncStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableFuncStaticClass.myEnum).assertEqual('number');
         expect(SendableFuncStaticClass.myEnum).assertEqual(0);
         SendableFuncStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableFuncStaticClass.myEnum).assertEqual(1);
@@ -1125,7 +1125,7 @@ export default function sendableClassStaticTest() {
     it('testSendableFuncStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableFuncStaticClass0026';
       try {
-        expect(typeof SendableFuncStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableFuncStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableFuncStaticClass.mySendableUnionArray).assertEqual(1);
         SendableFuncStaticClass.mySendableUnionArray = 2;
         expect(SendableFuncStaticClass.mySendableUnionArray).assertEqual(2);
@@ -1304,7 +1304,7 @@ export default function sendableClassStaticTest() {
     it('testSendableArrowStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowStaticClass0009';
       try {
-        expect(typeof SendableArrowStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableArrowStaticClass.myEnum).assertEqual('number');
         expect(SendableArrowStaticClass.myEnum).assertEqual(0);
         SendableArrowStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableArrowStaticClass.myEnum).assertEqual(1);
@@ -1639,7 +1639,7 @@ export default function sendableClassStaticTest() {
     it('testSendableArrowStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowStaticClass0026';
       try {
-        expect(typeof SendableArrowStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableArrowStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableArrowStaticClass.mySendableUnionArray).assertEqual(1);
         SendableArrowStaticClass.mySendableUnionArray = 2;
         expect(SendableArrowStaticClass.mySendableUnionArray).assertEqual(2);
@@ -1819,7 +1819,7 @@ export default function sendableClassStaticTest() {
     it('testSendableArrowOutStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowOutStaticClass0009';
       try {
-        expect(typeof SendableArrowOutStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableArrowOutStaticClass.myEnum).assertEqual('number');
         expect(SendableArrowOutStaticClass.myEnum).assertEqual(0);
         SendableArrowOutStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableArrowOutStaticClass.myEnum).assertEqual(1);
@@ -2154,7 +2154,7 @@ export default function sendableClassStaticTest() {
     it('testSendableArrowOutStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowOutStaticClass0026';
       try {
-        expect(typeof SendableArrowOutStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableArrowOutStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableArrowOutStaticClass.mySendableUnionArray).assertEqual(1);
         SendableArrowOutStaticClass.mySendableUnionArray = 2;
         expect(SendableArrowOutStaticClass.mySendableUnionArray).assertEqual(2);
@@ -2333,7 +2333,7 @@ export default function sendableClassStaticTest() {
     it('testSendableFuncInStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableFuncInStaticClass0009';
       try {
-        expect(typeof SendableFuncInStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableFuncInStaticClass.myEnum).assertEqual('number');
         expect(SendableFuncInStaticClass.myEnum).assertEqual(0);
         SendableFuncInStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableFuncInStaticClass.myEnum).assertEqual(1);
@@ -2668,7 +2668,7 @@ export default function sendableClassStaticTest() {
     it('testSendableFuncInStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableFuncInStaticClass0026';
       try {
-        expect(typeof SendableFuncInStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableFuncInStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableFuncInStaticClass.mySendableUnionArray).assertEqual(1);
         SendableFuncInStaticClass.mySendableUnionArray = 2;
         expect(SendableFuncInStaticClass.mySendableUnionArray).assertEqual(2);
@@ -2851,7 +2851,7 @@ export default function sendableClassStaticTest() {
     it('testSendableNonParameterFuncStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonParameterFuncStaticClass0009';
       try {
-        expect(typeof SendableNonParameterFuncStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableNonParameterFuncStaticClass.myEnum).assertEqual('number');
         expect(SendableNonParameterFuncStaticClass.myEnum).assertEqual(0);
         SendableNonParameterFuncStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableNonParameterFuncStaticClass.myEnum).assertEqual(1);
@@ -3186,7 +3186,7 @@ export default function sendableClassStaticTest() {
     it('testSendableNonParameterFuncStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonParameterFuncStaticClass0026';
       try {
-        expect(typeof SendableNonParameterFuncStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableNonParameterFuncStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableNonParameterFuncStaticClass.mySendableUnionArray).assertEqual(1);
         SendableNonParameterFuncStaticClass.mySendableUnionArray = 2;
         expect(SendableNonParameterFuncStaticClass.mySendableUnionArray).assertEqual(2);
@@ -3366,7 +3366,7 @@ export default function sendableClassStaticTest() {
     it('testSendableOutArrowStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableOutArrowStaticClass0009';
       try {
-        expect(typeof SendableOutArrowStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableOutArrowStaticClass.myEnum).assertEqual('number');
         expect(SendableOutArrowStaticClass.myEnum).assertEqual(0);
         SendableOutArrowStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableOutArrowStaticClass.myEnum).assertEqual(1);
@@ -3701,7 +3701,7 @@ export default function sendableClassStaticTest() {
     it('testSendableOutArrowStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableOutArrowStaticClass0026';
       try {
-        expect(typeof SendableOutArrowStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableOutArrowStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableOutArrowStaticClass.mySendableUnionArray).assertEqual(1);
         SendableOutArrowStaticClass.mySendableUnionArray = 2;
         expect(SendableOutArrowStaticClass.mySendableUnionArray).assertEqual(2);
@@ -3881,7 +3881,7 @@ export default function sendableClassStaticTest() {
     it('testSendableNonFuncStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticClass0009';
       try {
-        expect(typeof SendableNonFuncStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableNonFuncStaticClass.myEnum).assertEqual('number');
         expect(SendableNonFuncStaticClass.myEnum).assertEqual(0);
         SendableNonFuncStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableNonFuncStaticClass.myEnum).assertEqual(1);
@@ -4216,7 +4216,7 @@ export default function sendableClassStaticTest() {
     it('testSendableNonFuncStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableNonFuncStaticClass0026';
       try {
-        expect(typeof SendableNonFuncStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableNonFuncStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableNonFuncStaticClass.mySendableUnionArray).assertEqual(1);
         SendableNonFuncStaticClass.mySendableUnionArray = 2;
         expect(SendableNonFuncStaticClass.mySendableUnionArray).assertEqual(2);
@@ -4396,7 +4396,7 @@ export default function sendableClassStaticTest() {
     it('testSendableParameterFuncStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableParameterFuncStaticClass0009';
       try {
-        expect(typeof SendableParameterFuncStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableParameterFuncStaticClass.myEnum).assertEqual('number');
         expect(SendableParameterFuncStaticClass.myEnum).assertEqual(0);
         SendableParameterFuncStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableParameterFuncStaticClass.myEnum).assertEqual(1);
@@ -4731,7 +4731,7 @@ export default function sendableClassStaticTest() {
     it('testSendableParameterFuncStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableParameterFuncStaticClass0026';
       try {
-        expect(typeof SendableParameterFuncStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableParameterFuncStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableParameterFuncStaticClass.mySendableUnionArray).assertEqual(1);
         SendableParameterFuncStaticClass.mySendableUnionArray = 2;
         expect(SendableParameterFuncStaticClass.mySendableUnionArray).assertEqual(2);
@@ -4911,7 +4911,7 @@ export default function sendableClassStaticTest() {
     it('testSendableArrowNewStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticClass0009';
       try {
-        expect(typeof SendableArrowNewStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableArrowNewStaticClass.myEnum).assertEqual('number');
         expect(SendableArrowNewStaticClass.myEnum).assertEqual(0);
         SendableArrowNewStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableArrowNewStaticClass.myEnum).assertEqual(1);
@@ -5246,7 +5246,7 @@ export default function sendableClassStaticTest() {
     it('testSendableArrowNewStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableArrowNewStaticClass0026';
       try {
-        expect(typeof SendableArrowNewStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableArrowNewStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableArrowNewStaticClass.mySendableUnionArray).assertEqual(1);
         SendableArrowNewStaticClass.mySendableUnionArray = 2;
         expect(SendableArrowNewStaticClass.mySendableUnionArray).assertEqual(2);
@@ -5438,7 +5438,7 @@ export default function sendableClassStaticTest() {
       () => {
         const TAG = 'testSendableExpressionArrowOutStaticClass0009';
         try {
-          expect(typeof SendableExpressionArrowOutStaticClass.myEnum).assertEqual('int');
+          expect(typeof SendableExpressionArrowOutStaticClass.myEnum).assertEqual('number');
           expect(SendableExpressionArrowOutStaticClass.myEnum).assertEqual(0);
           SendableExpressionArrowOutStaticClass.myEnum = SendableConstEnum.OPTION_2;
           expect(SendableExpressionArrowOutStaticClass.myEnum).assertEqual(1);
@@ -5793,7 +5793,7 @@ export default function sendableClassStaticTest() {
       () => {
         const TAG = 'testSendableExpressionArrowOutStaticClass0026';
         try {
-          expect(typeof SendableExpressionArrowOutStaticClass.mySendableUnionArray).assertEqual('int');
+          expect(typeof SendableExpressionArrowOutStaticClass.mySendableUnionArray).assertEqual('number');
           expect(SendableExpressionArrowOutStaticClass.mySendableUnionArray).assertEqual(1);
           SendableExpressionArrowOutStaticClass.mySendableUnionArray = 2;
           expect(SendableExpressionArrowOutStaticClass.mySendableUnionArray).assertEqual(2);
@@ -5973,7 +5973,7 @@ export default function sendableClassStaticTest() {
     it('testSendableExpressionOutStaticClass0009', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableExpressionOutStaticClass0009';
       try {
-        expect(typeof SendableExpressionOutStaticClass.myEnum).assertEqual('int');
+        expect(typeof SendableExpressionOutStaticClass.myEnum).assertEqual('number');
         expect(SendableExpressionOutStaticClass.myEnum).assertEqual(0);
         SendableExpressionOutStaticClass.myEnum = SendableConstEnum.OPTION_2;
         expect(SendableExpressionOutStaticClass.myEnum).assertEqual(1);
@@ -6308,7 +6308,7 @@ export default function sendableClassStaticTest() {
     it('testSendableExpressionOutStaticClass0026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const TAG = 'testSendableExpressionOutStaticClass0026';
       try {
-        expect(typeof SendableExpressionOutStaticClass.mySendableUnionArray).assertEqual('int');
+        expect(typeof SendableExpressionOutStaticClass.mySendableUnionArray).assertEqual('number');
         expect(SendableExpressionOutStaticClass.mySendableUnionArray).assertEqual(1);
         SendableExpressionOutStaticClass.mySendableUnionArray = 2;
         expect(SendableExpressionOutStaticClass.mySendableUnionArray).assertEqual(2);
@@ -6500,7 +6500,7 @@ export default function sendableClassStaticTest() {
       () => {
         const TAG = 'testSendableExpressionOutArrowStaticClass0009';
         try {
-          expect(typeof SendableExpressionOutArrowStaticClass.myEnum).assertEqual('int');
+          expect(typeof SendableExpressionOutArrowStaticClass.myEnum).assertEqual('number');
           expect(SendableExpressionOutArrowStaticClass.myEnum).assertEqual(0);
           SendableExpressionOutArrowStaticClass.myEnum = SendableConstEnum.OPTION_2;
           expect(SendableExpressionOutArrowStaticClass.myEnum).assertEqual(1);
@@ -6855,7 +6855,7 @@ export default function sendableClassStaticTest() {
       () => {
         const TAG = 'testSendableExpressionOutArrowStaticClass0026';
         try {
-          expect(typeof SendableExpressionOutArrowStaticClass.mySendableUnionArray).assertEqual('int');
+          expect(typeof SendableExpressionOutArrowStaticClass.mySendableUnionArray).assertEqual('number');
           expect(SendableExpressionOutArrowStaticClass.mySendableUnionArray).assertEqual(1);
           SendableExpressionOutArrowStaticClass.mySendableUnionArray = 2;
           expect(SendableExpressionOutArrowStaticClass.mySendableUnionArray).assertEqual(2);

@@ -13,20 +13,32 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level } from "../../../hypium/index";
 import hilog from '@ohos.hilog'
 import Utils from './Util.test';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 
 export default function moveAbilityToBackgroundTestStatic() {
   describe('ActsMoveAbilityToBackgroundTestStatic', () => {
-
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
+    
     /**
      * @tc.name   SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
      * @tc.number SUB_Ability_AbilityRuntime_MoveAbilityToBackground_static_0100
@@ -52,13 +64,15 @@ export default function moveAbilityToBackgroundTestStatic() {
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-          if(JSON.stringify(err?.code) == '16000061'){
-            done();
-          }else{
-            expect().assertFail()
-            done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(JSON.stringify(err?.code) == '16000061'){
+              done();
+            }else{
+              expect().assertFail()
+              done();
+            }
           }
         });
       } catch (err) {
@@ -91,13 +105,15 @@ export default function moveAbilityToBackgroundTestStatic() {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-          if(JSON.stringify(err?.code) == '16000061'){
-            done();
-          }else{
-            expect().assertFail()
-            done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(JSON.stringify(err?.code) == '16000061'){
+              done();
+            }else{
+              expect().assertFail()
+              done();
+            }
           }
         });
         await Utils.msSleep(2000);
@@ -105,10 +121,12 @@ export default function moveAbilityToBackgroundTestStatic() {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           expect().assertFail();
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-          expect(err.code).assertEqual(16000065);
-          done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            expect(err.code).assertEqual(16000065);
+            done();
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, `moveAbilityToBackground fail: ` + err);

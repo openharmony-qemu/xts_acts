@@ -25,15 +25,15 @@ import RectResourceTest from './Rect/RectResourceTest';
 import ShapeResourceTest from './Shape/ShapeResourceTest';
 
 export default function testsuite() {
-  // RoundRectTest(); // SDK12.10 pass
-  // StartImageAnalyzerErrorCodeTest();  // 外领域 11.22SDK 吴东升startImageAnalyzer在0702不实现
-  // CircleResourceTest(); //SDK12.10 问题记录在表格第9行
-  // EllipseResourceTest(); //SDK12.10 问题记录在表格第9行
-  LineResourceTest(); //SDK12.10 问题记录在表格第9行
-  // PathResourceTest(); //SDK12.10 问题记录在表格第9行
-  // PolygonResourceTest();//SDK12.10 问题记录在表格第9行
-  // PolylineResourceTest();///SDK12.10 问题记录在表格第9行
-  // RectResourceTest();//SDK12.10 问题记录在表格第9行
-  // ShapeResourceTest();//SDK12.10 问题记录在表格第9行
+  RoundRectTest();
+  StartImageAnalyzerErrorCodeTest();
+  CircleResourceTest();
+  EllipseResourceTest();
+  LineResourceTest();
+  PathResourceTest();
+  PolygonResourceTest();
+  PolylineResourceTest();
+  RectResourceTest();
+  ShapeResourceTest();
 
 }

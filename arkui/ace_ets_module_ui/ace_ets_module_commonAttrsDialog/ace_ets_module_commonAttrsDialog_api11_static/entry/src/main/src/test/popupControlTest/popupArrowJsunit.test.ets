@@ -92,7 +92,7 @@ it('popupArrowJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('popup_arrow'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('popup_arrow');
       console.info("[popupArrowJsunit_0100] JSON.parseJsonElement(strJson) is: " + JSON.stringify(JSON.parseJsonElement(strJson)));

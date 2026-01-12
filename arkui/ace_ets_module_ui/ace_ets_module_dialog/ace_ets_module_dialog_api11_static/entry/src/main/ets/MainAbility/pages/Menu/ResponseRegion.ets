@@ -33,7 +33,8 @@ import {
   TouchEvent,
   Rectangle,
   ToggleType,
-  TouchType
+  TouchType,
+  HitTestMode
 } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 import { ClickEvent } from '@ohos.arkui.component';
@@ -57,8 +58,9 @@ struct ResponseRegionExample {
     console.info("[ResponseRegion] ChangCallBack stateChangCallBack");
     if (eventData != null) {
       console.info("[ResponseRegion] ChangCallBack state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as  ESObject)?.getProperty('touchable') != null) {
-        this.touchableValue = ((eventData.data) as  ESObject).getProperty('touchable').toBoolean() as boolean;
+      const data = eventData.data as Record<String,undefined|null|Object>;
+      if (data['touchable'] != null) {
+        this.touchableValue = data['touchable'] as boolean;
       }
     }
   }
@@ -82,7 +84,7 @@ struct ResponseRegionExample {
     .height('100%')
     .margin({ top: 5 } as Margin)
     .key('region')
-    // .touchable(this.touchableValue)   // 如果使用 hitTestBehavior 替代，参数发生变化，代码逻辑需要重写
+    // .touchable(this.touchableValue)   // touchable 废弃
     .onTouch((event: TouchEvent) => {
       this.isTouched = true
       if (event.type === TouchType.Down) {

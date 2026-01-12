@@ -27,16 +27,16 @@ import curvesJsunit from './CurvesJsunit.test';
 import WorkerUseCurvesTest from './WorkerUseCurves.test';
 
 export default function testsuite() {
-  animateToTest(); // 23 pass 23 1117sdk
-  animationCurveTest(); // 5 pass 5 1117sdk
-  geometryTransition() // 1 pass 1 1117sdk
-  geometryTransitionJsunit() // 1 pass 1 1117sdk
-  animatorOnframeJsunit() // 12 pass 9 3用例自动化app died 1117sdk App died
-  remoteWindowJsunit() // 9 pass 9 1117sdk
-  AnimationJsunit(); // 7 pass 7  1117sdk
-  animateJsunit(); // 20 pass 20 1117sdk
-  animationStatusJsunit(); // 4 pass 4 1117sdk
-  // curvesJsunit(); // 0 1117sdk
-  // WorkerUseCurvesTest(); // 1 worker 接口问题
-  pageTransitionJsunit(); // 1 pass 1 Navigator替换为Navigation 1117sdk
+  animateToTest();
+  animationCurveTest();
+  geometryTransition();
+  geometryTransitionJsunit();
+  animatorOnframeJsunit();
+  remoteWindowJsunit();
+  AnimationJsunit();
+  animateJsunit();
+  animationStatusJsunit();
+  curvesJsunit();
+  WorkerUseCurvesTest();
+  pageTransitionJsunit();
 }

@@ -30,7 +30,7 @@ import { UtilsTest } from '../Util.test';
 import { systemTheme } from '../../../ets/MainAbility/pages/themeTokensPages/SystemThemeTestPage';
 import { frameTime, sleep } from '../Utils.test'
 import { colorValuesKey } from '../../../ets/MainAbility/pages/index/index';
-import { checkColorTokens } from '../../../ets/MainAbility/themes/checkSystemTokens/CheckColorTokens.ets';
+import { checkColorTokens, ColorsValues } from '../../../ets/MainAbility/themes/checkSystemTokens/CheckColorTokens.ets';
 import { colorTheme } from '../../../ets/MainAbility/pages/customComponents/CustomColorList';
 import { CustomTheme, Theme } from '@ohos.arkui.theme';
 import { fillMap } from '../Utils.test';
@@ -43,7 +43,6 @@ export default function systemThemeTest() {
   describe('ActsSystemTest', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -56,11 +55,12 @@ export default function systemThemeTest() {
         if (pages?.name !== "SystemThemeTestPage") {
           routerInstance.pushUrl(options).then(() => {
             themeLocal = systemTheme;
-            console.info(`${SUITE} router.pushUrl success`);
+            console.info(`${SUITE} SystemThemeTestPage router.pushUrl success`);
           })
+          await UtilsTest.msSleep(2000)
         }
-        colorValues = AppStorage.get<Map<string, string> | undefined>(colorValuesKey)
-        
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues')
+        console.log('test colorValues test' + colorValues)
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }

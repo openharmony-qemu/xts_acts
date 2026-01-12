@@ -22,6 +22,8 @@ import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import CommonEventManager from '@ohos.commonEventManager';
+import { Driver, ON } from '@ohos.UiTest';
+
 let Subscriber:CommonEventManager.CommonEventSubscriber;
 let subscriberInfo_MainAbility:CommonEventManager.CommonEventSubscribeInfo = {
   events: ['RELY_ABILITY_RESTART_SUCCESS']
@@ -34,6 +36,15 @@ let testAbilityContext: common.UIAbilityContext;
 export default function abilityDelegatorStage() {
   describe('abilityDelegatorStage', () => {
     beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start');
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(0x0000, tag, '%{public}s', 'beforeAll start1');

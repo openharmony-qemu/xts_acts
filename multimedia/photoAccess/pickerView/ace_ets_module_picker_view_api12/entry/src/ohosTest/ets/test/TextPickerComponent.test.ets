@@ -2515,7 +2515,7 @@ export default function TextPicker() {
       await CommonFunc.sleep(1000);
       let chooostModeButton: Component = await driver.findComponent(ON.text('TEXT_DONE'));
       let button: Component = await driver.findComponent(ON.id('btnSelectPhoto'));
-      if (button !== undefined && chooostModeButton !== undefined) {
+      if (button !== undefined  && chooostModeButton !== undefined) {
         await chooostModeButton.click();
         await button.click();
       } else {
@@ -2524,7 +2524,7 @@ export default function TextPicker() {
       }
 
       const checkbox = await driver.waitForComponent(ON.type('Checkbox'), 3000);
-      if (checkbox !== undefined) {
+      if (checkbox !== undefined && checkbox !== null) {
         await checkbox.click();
         await CommonFunc.sleep(1000);
         const finishBtn: Component = await driver.findComponent(ON.id('Complete'));

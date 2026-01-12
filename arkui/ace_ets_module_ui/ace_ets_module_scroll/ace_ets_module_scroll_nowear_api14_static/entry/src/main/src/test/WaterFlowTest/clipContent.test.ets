@@ -95,7 +95,7 @@ it('clipContent_static_0200', Level.LEVEL1, (done: () => void): Promise<void> =>
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn2: Component | null = await driver.findComponent(ON.id('clipContent_water_boundary'));
-      btn2?.click();
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson2 = inspector.getInspectorByKey('common_clipContent_water');
       console.info("[clipContent_static_0200] component obj2 is: " + JSON.parseJsonElement(strJson2));
@@ -119,7 +119,7 @@ it('clipContent_static_0300', Level.LEVEL1, (done: () => void): Promise<void> =>
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn3: Component | null = await driver.findComponent(ON.id('clipContent_water_safearea'));
-      btn3?.click();
+      await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson3 = inspector.getInspectorByKey('common_clipContent_water');
       console.info("[clipContent_static_0300] component obj3 is: " + JSON.parseJsonElement(strJson3));

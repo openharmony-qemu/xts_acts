@@ -61,7 +61,7 @@ export default function updatePopupTest() {
         updatePopupTesttions.clear();
         let pages: router.RouterState = updatePopupTesttions.getState();
         console.info("get updatePopupTesttions state pages: " + JSON.stringify(pages));
-        if (!("updatePopupTest" == pages.name)) {
+        if (!("updatePopup" == pages.name)) {
           console.info("get updatePopupTesttions state pages.name: " + JSON.stringify(pages.name));
           // let result = await updatePopupTesttions.pushUrl(options);
           updatePopupTesttions.pushUrl(options);

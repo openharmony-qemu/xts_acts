@@ -15,7 +15,7 @@
  */
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, Level } from '../../../../hypium/index'
 import router from '@ohos.router';
-import { Component, Driver, On, ON, MouseButton, Rect } from '@kit.TestKit';
+import { Component, Driver, On, ON, MouseButton, Rect } from '@ohos.UiTest';
 import { Router } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'

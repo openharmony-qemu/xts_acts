@@ -85,11 +85,11 @@ export default function dialogDialogDisableDateRangeAndMarkTodayTest() {
       let driver = Driver.create();
       let rangebtn = await driver.findComponent(ON.id('normal-2025-01-09-2025-01-10'));
       console.info('[DialogDialogDisableDateRangeAndMarkToday_001] attrs1:' + JSON.stringify(rangebtn));
-      rangebtn?.click();
+      await (rangebtn?.click() as Promise<void>);
       await Utils.sleep(1000);
       let markTodybtn = await driver.findComponent(ON.id('Today-true'));
       console.info('[DialogDialogDisableDateRangeAndMarkToday_001] attrs1:' + JSON.stringify(markTodybtn));
-      markTodybtn?.click();
+      await (markTodybtn?.click() as Promise<void>);
       console.log('DialogDialogDisableDateRangeAndMarkToday_001afterclck=================')
       await Utils.sleep(1000);
       inspector.sendEventByKey('calendarPickerDialog', 10, '')

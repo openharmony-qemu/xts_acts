@@ -28,6 +28,7 @@ import Want from '@ohos.app.ability.Want';
 import { ElementName } from 'bundleManager.ElementName';
 import rpc from '@ohos.rpc';
 import { BusinessError } from '@ohos.base';
+import { Driver, ON } from '@ohos.UiTest';
 
 class ConnectOptions implements common.ConnectOptions {
   public isConnect: boolean = false;
@@ -63,6 +64,15 @@ export default function ApiCoverStaticTest() {
     const BUNDLE_NAME = 'com.example.apicoverhaptest.static';
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');

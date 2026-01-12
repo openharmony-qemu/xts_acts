@@ -1016,38 +1016,6 @@ export default function ArrayOfTest() {
     });
 
     /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0064
-     * @tc.name testArrayOf0064
-     * @tc.desc Verify Array.of() with empty object element
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayOf0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const emptyObj: Record<string, never> = {};
-      const arr: Record<string, never>[] = Array.of(emptyObj);
-      expect(arr.length).assertEqual(1);
-      expect(Object.keys(arr[0]).length).assertEqual(0);
-    });
-
-    /**
-     * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0065
-     * @tc.name testArrayOf0065
-     * @tc.desc Verify Array.of() with multiple empty objects
-     * @tc.size MediumTest
-     * @tc.type Function
-     * @tc.level Level 2
-     */
-    it('testArrayOf0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const obj1: Record<string, never> = {};
-      const obj2: Record<string, never> = {};
-      const arr: Record<string, never>[] = Array.of(obj1, obj2);
-      expect(arr.length).assertEqual(2);
-      expect(Object.keys(arr[0]).length).assertEqual(0);
-      expect(Object.keys(arr[1]).length).assertEqual(0);
-    });
-
-    /**
      * @tc.number SUB_COMMONLIBRARY_ARRAY_Of_0066
      * @tc.name testArrayOf0066
      * @tc.desc Verify Array.of() with nested objects

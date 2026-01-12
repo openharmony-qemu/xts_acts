@@ -25,7 +25,7 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import deviceInfo from "@ohos.deviceInfo";
 import { image } from '@kit.ImageKit';
 import application from '@ohos.app.ability.application';
-
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -41,7 +41,16 @@ let disable = false;
 export default function UIAbilityContextStatic() {
   describe('ActsUIAbilityContextStatic', () => {
 
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.startabilityforresulttest.static")
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');

@@ -89,10 +89,10 @@ it('showDialogHoverMode_0100', Level.LEVEL0, async (done: () => void): Promise<v
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('showDialog1'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.text('button1'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[showDialogHoverMode_0100] showDialogHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -121,13 +121,13 @@ it('showDialogHoverMode_0200', Level.LEVEL0, async (done: () => void): Promise<v
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('changeEnableHoverMode'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('showDialog1'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.text('button1'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[showDialogHoverMode_0200] showDialogHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -157,13 +157,13 @@ it('showDialogHoverMode_0300', Level.LEVEL0, async (done: () => void): Promise<v
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('init'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('showDialog'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.text('button1'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showDialogHoverMode_0300] showDialogHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -193,16 +193,16 @@ it('showDialogHoverMode_0400', Level.LEVEL0, async (done: () => void): Promise<v
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('init'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('changeEnableHoverMode'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.id('showDialog'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn3 = await driver.findComponent(ON.text('button1'));
-      btn3?.click()
+      await (btn3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showDialogHoverMode_0400] showDialogHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -231,19 +231,19 @@ it('showDialogHoverMode_0500', Level.LEVEL0, async (done: () => void): Promise<v
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('init'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('changeEnableHoverMode'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.id('changeHoverModeArea'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn3 = await driver.findComponent(ON.id('showDialog'));
-      btn3?.click()
+      await (btn3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn4 = await driver.findComponent(ON.text('button1'));
-      btn4?.click()
+      await (btn4?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showDialogHoverMode_0500] showDialogHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -272,16 +272,16 @@ it('showDialogHoverMode_0600', Level.LEVEL0, async (done: () => void): Promise<v
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('init'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.id('changeHoverModeArea'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn3 = await driver.findComponent(ON.id('showDialog'));
-      btn3?.click()
+      await (btn3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn4 = await driver.findComponent(ON.text('button1'));
-      btn4?.click()
+      await (btn4?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showDialogHoverMode_0600] showDialogHoverMode JSON.parseJsonElement(strJson) is: " +

@@ -1,4 +1,4 @@
-import { describe, it, expect, afterEach, Level } from '@ohos/hypium';
+import { describe, it, beforeAll, expect, afterEach, Level } from '@ohos/hypium';
 import { Driver, ON } from '@kit.TestKit';
 import commonEventManager from '@ohos.commonEventManager';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
@@ -29,6 +29,17 @@ export function getContextEntry(): common.UIAbilityContext {
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
+    })
 
     afterEach(async (done: Function) => {
       commonEventManager.unsubscribe(subscriber, () => {

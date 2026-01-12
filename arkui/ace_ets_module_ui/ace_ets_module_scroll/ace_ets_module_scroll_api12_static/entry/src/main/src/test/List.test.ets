@@ -129,11 +129,11 @@ import UIComponentScrollSwiperAnimated0260
   from './SwiperTest/UIComponentScrollSwiperAnimatedTest/UIComponentScrollSwiperAnimated0260.test';
 
 export default function testsuite() {
-  ListScrollTest1()
-  PopupAlphaTest()
-  ListMainChildrenTest()
-  ListLevel1Test()  // 问题1： List组件的divider属性设置startMargin为“30%”，应该取值为默认值0，实际取值为“30%”。 1     问题2：List设置contentStartOffs 1
-  ListLevel1HorizontalTest()
+  ListScrollTest1();
+  PopupAlphaTest();
+  ListMainChildrenTest();
+  ListLevel1Test();
+  ListLevel1HorizontalTest();
   refreshOffsetJsunit();
   refreshOffsetChangeJsunit();
   refreshResourceTest();
@@ -143,77 +143,77 @@ export default function testsuite() {
   swiperCustomJsunit();
   tabIconJsunit();
   listSwipeActionApi12Test();
-  scrollSourceDrag()
-  ScrollSourceOther()
+  scrollSourceDrag();
+  ScrollSourceOther();
   ScrollSource();
-  ScrollSourceBar()
-  alignItemsGrid()
+  ScrollSourceBar();
+  alignItemsGrid();
   chainAnimationList();
   listItemGroupNone();
-  nestedScrollSwiper()
-  offsetRemain()
-  finishTransSwiper()
-  preloadErrorTabs()  // preloadItems引起APP Died （注释）  1
-  childrenSizeError()
-  flingError()        // this.scroller.fling(undefined) 注释 异常值 1
-  symbolTabs()   // 使用BottomTabBarStyle，tabs不显示 1
-  TabsAp1()
-  ScrollApi1()
+  nestedScrollSwiper();
+  offsetRemain();
+  finishTransSwiper();
+  preloadErrorTabs();
+  childrenSizeError();
+  flingError();
+  symbolTabs();
+  TabsAp1();
+  ScrollApi1();
   scrollXOffsetJsunit();
-  SwiperApi()
-  tabsAnimationMode()
-  tabsAnimationDuration()
+  SwiperApi();
+  tabsAnimationMode();
+  tabsAnimationDuration();
   setTest();
   getTest();
-  alphabetEnableJsunit()
-  alphabetBorderRadiusTest()  // BorderRadius 取值问题   2
-  swiperCountJsunit() // 新问题
-  ListAddApi()
-  listOffsetJsunit()
-  swiperSyncType()  // 新问题
-  SwiperAttribute_1()
-  SwiperAttribute_2()
-  SwiperAttribute_3()
-  SwiperAttribute_4()
-  SwiperAttribute_5()
-  SwiperAttribute_6()
-  SwiperAttribute_7()
-  SwiperAttribute_8()
-  SwiperAttribute_9()
-  SwiperMargin_1()
-  SwiperMargin_2()
-  SwiperMargin_3()
-  SwiperMargin_4()
-  SwiperAutoPlay_1()
-  SwiperAutoPlay_2()
-  SwiperDisplayCount()
-  SwiperLoopFalse()
-  RefreshingContent()
-  listVisibleContent()
-  listDidJsunit()
-  scrollDidJsunit()
-  scrollReachJsunit()
-  alphabetAlignStyle()
-  outliersAlphabet()
-  valueAlphabet()  // itemBorderRadius 默认8 取值 0   1
-  tabsCallBack1()  //  tabs: onWillShow1-onContentWillChange-onTabBarClick-onWillShow2-onWillHide1-onChange- 1  有单
-  tabsCallBack2()  // 新问题
-  tabsCallBack3()  // 新问题
-  tabsCallBack4()  // 新问题
-  tabsCallBack5()
-  tabsCallBack6()
-  tabsCallBack7() // 新问题
-  tabsCallBack8() //  onContentWillChange-onTabBarClick-onAnimationStart-onChange-onAnimationEnd 1  有单同上
-  tabsCallBack9()
-  verticalTrue()  // 新问题
-  tabsTransition() // 新问题
-  swiperLoops()
+  alphabetEnableJsunit();
+  alphabetBorderRadiusTest();
+  swiperCountJsunit();
+  ListAddApi();
+  listOffsetJsunit();
+  swiperSyncType();
+  SwiperAttribute_1();
+  SwiperAttribute_2();
+  SwiperAttribute_3();
+  SwiperAttribute_4();
+  SwiperAttribute_5();
+  SwiperAttribute_6();
+  SwiperAttribute_7();
+  SwiperAttribute_8();
+  SwiperAttribute_9();
+  SwiperMargin_1();
+  SwiperMargin_2();
+  SwiperMargin_3();
+  SwiperMargin_4();
+  SwiperAutoPlay_1();
+  SwiperAutoPlay_2();
+  SwiperDisplayCount();
+  SwiperLoopFalse();
+  RefreshingContent();
+  listVisibleContent();
+  listDidJsunit();
+  scrollDidJsunit();
+  scrollReachJsunit();
+  alphabetAlignStyle();
+  outliersAlphabet();
+  valueAlphabet();
+  tabsCallBack1();
+  tabsCallBack2();
+  tabsCallBack3();
+  tabsCallBack4();
+  tabsCallBack5();
+  tabsCallBack6();
+  tabsCallBack7();
+  tabsCallBack8();
+  tabsCallBack9();
+  verticalTrue();
+  tabsTransition();
+  swiperLoops();
   GridFlingCallback();
   ListFlingCallback();
   ScrollFlingCallback();
-  GridScrollEdgeCallbackJsunit()
-  ScrollScrollEdgeCallbackJsunit()
-  ListScrollEdgeCallbackJsunit()
+  GridScrollEdgeCallbackJsunit();
+  ScrollScrollEdgeCallbackJsunit();
+  ListScrollEdgeCallbackJsunit();
   SwiperImplicitanimation0050();
   SwiperImplicitanimation0010();
   SwiperImplicitanimation0020();

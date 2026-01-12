@@ -24,11 +24,9 @@ struct Fourth
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text(`${this.content}`)
-        .fontSize(50)
         .fontWeight(FontWeight.Bold)
       Button() {
         Text('longClick')
-          .fontSize(20)
           .fontWeight(FontWeight.Bold)
       }.type(ButtonType.Capsule)
       .margin({

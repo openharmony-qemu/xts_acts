@@ -36,11 +36,11 @@ struct SelectionMenuOptionsDemo {
       RichEditor(this.optionsR)
         .id('richEditor')
         .onReady(():void => {
-          // this.controllerR.addTextSpan('测试文本', {
-          //   style: {
-          //     fontSize: '15vp'
-          //   }
-          // });
+          this.controllerR.addTextSpan('测试文本', {
+            style: {
+              fontSize: '15vp'
+            }
+          });
           
         })
         .bindSelectionMenu(RichEditorSpanType.DEFAULT, this.panel, RichEditorResponseType.DEFAULT, {
@@ -102,11 +102,11 @@ struct SelectionMenuOptionsDemo {
       RichEditor(this.optionsR3)
         .id('mixed')
         .onReady(():void => {
-          // this.controllerR3.addTextSpan('测试文本', {
-          //   style: {
-          //     fontSize: '15vp'
-          //   }
-          // });
+          this.controllerR3.addTextSpan('测试文本', {
+            style: {
+              fontSize: '15vp'
+            }
+          });
           this.controllerR3.addImageSpan($r("app.media.icon"),
             {
               imageStyle:

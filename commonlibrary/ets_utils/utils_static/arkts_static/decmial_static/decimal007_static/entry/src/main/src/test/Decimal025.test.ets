@@ -3518,7 +3518,7 @@ export default function DecimalTest025() {
       Decimal.set({
         toExpNeg: -100, toExpPos: 100
       });
-      // test_trunc_017('-0', -1e-308);
+        test_trunc_017('-0', -1e-308);
       test_trunc_017('-1e+308', -1e308);
       test_trunc_016('2.1e+308', '2.1e308');
       test_trunc_016('-0', '-1e-999');

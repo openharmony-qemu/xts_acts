@@ -75,11 +75,11 @@ it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('but1'));
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('but2'));
       await CommonFunc.sleep(1000);
-      button2?.click()
+      await (button2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       let obj = JSON.parseJsonElement(strJson);
@@ -105,7 +105,7 @@ it('StyledString_static_0200', Level.LEVEL2, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('but3'));
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       let obj = JSON.parseJsonElement(strJson);

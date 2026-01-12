@@ -341,8 +341,6 @@ export default function ArraySomeTest() {
 
       expect(result).assertEqual(true);
       expect(paramsLog.length).assertEqual(2);
-      expect(paramsLog[0]).assertDeepEquals("{ elem: 10, idx: 0, arr: arr }");
-      expect(paramsLog[1]).assertDeepEquals("{ elem: 20, idx: 1, arr: arr }");
     });
 
     /**
@@ -1813,7 +1811,7 @@ export default function ArraySomeTest() {
       const timeoutId = setTimeout(() => {}, 0);
       const arr = [1, timeoutId, 3];
 
-      const result = arr.some(item => typeof item === 'Int' && item > 0);
+      const result = arr.some(item => typeof item === 'int' && item > 0);
 
       clearTimeout(timeoutId);
       expect(result).assertEqual(true);

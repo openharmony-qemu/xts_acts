@@ -72,7 +72,7 @@ struct requestFocus22 {
       Column({space: 5} as ColumnOptions) {
 
         Button('pushTwo').onClick((e: ClickEvent) => {
-          const pathInfo = new NavPathInfo('pageOne', null);
+          const pathInfo = new NavPathInfo('pageTwo', null);
           this.pageInfos.pushPath(pathInfo);
         }).id('requestFocus22_btn1')
       }
