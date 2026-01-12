@@ -25,6 +25,11 @@ namespace OHOS {
 namespace Rosen {
 
 namespace Drawing {
+namespace {
+constexpr uint8_t COLOR_ALPHA_FF = 0xFF;
+constexpr uint8_t COLOR_RGB_00 = 0x00;
+constexpr double DECORATION_THICKNESS_DOUBLE = 2.0;
+} // namespace
 
 /**
  * @tc.name   OHDrawingTypographyUpdate001
@@ -36,9 +41,10 @@ namespace Drawing {
  */
 int OHDrawingTypographyUpdate001()
 {
-    OH_Drawing_TypographyUpdateFontColor(nullptr, OH_Drawing_ColorSetArgb(0xFF, 0x00, 0xFF, 0xFF));
+    OH_Drawing_TypographyUpdateFontColor(
+        nullptr, OH_Drawing_ColorSetArgb(COLOR_ALPHA_FF, COLOR_RGB_00, COLOR_ALPHA_FF, COLOR_ALPHA_FF));
     OH_Drawing_TypographyUpdateDecoration(nullptr, TEXT_DECORATION_LINE_THROUGH);
-    OH_Drawing_TypographyUpdateDecorationThicknessScale(nullptr, 2.0);
+    OH_Drawing_TypographyUpdateDecorationThicknessScale(nullptr, DECORATION_THICKNESS_DOUBLE);
     OH_Drawing_TypographyUpdateDecorationStyle(nullptr, TEXT_DECORATION_STYLE_DOTTED);
     return TEST_SUCCESS_CODE;
 }

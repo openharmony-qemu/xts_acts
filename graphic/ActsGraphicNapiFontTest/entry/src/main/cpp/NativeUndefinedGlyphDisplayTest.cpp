@@ -35,7 +35,9 @@ namespace Drawing {
 namespace {
 bool ExistNotdef()
 {
-    std::ifstream file("/system/fonts/HarmonyOS_Sans_Notdef.ttf");
+    std::string EXISTFONTPATHSTR = std::string("/system/fonts/") + GetSystemDefaultFont(true) + "_Notdef.ttf";
+    const char* EXISTFONTPATH = EXISTFONTPATHSTR.c_str();
+    std::ifstream file(EXISTFONTPATH);
     return file.is_open();
 }
 

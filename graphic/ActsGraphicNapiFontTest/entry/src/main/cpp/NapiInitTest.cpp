@@ -687,278 +687,122 @@ static napi_value OHDrawingSetTypographyVerticalAlignment(napi_env env, napi_cal
     });
 }
 
+// OHDrawingTypographyTest helper functions
+static int ExecuteOHDrawingTypographyTestCasePart1(int32_t caseNum)
+{
+    static constexpr std::array<NapiFn, 30> handlers = {
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest001,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest002,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest003,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest004,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest005,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest006,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest007,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest008,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest009,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest010,
+        nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest012,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest013,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest014,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest015,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest016,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest017,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest018,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest019,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest020,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest021,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest022,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest023,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest024,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest025,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest026,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest027,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest028,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest029,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest030,
+    };
+    return DispatchByCaseNum(caseNum, handlers);
+}
+
+static int ExecuteOHDrawingTypographyTestCasePart2(int32_t caseNum)
+{
+    static constexpr std::array<NapiFn, 30> handlers = {
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest031, OHOS::Rosen::Drawing::OHDrawingTypographyTest032,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest033, OHOS::Rosen::Drawing::OHDrawingTypographyTest034,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest035, OHOS::Rosen::Drawing::OHDrawingTypographyTest036,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest037, OHOS::Rosen::Drawing::OHDrawingTypographyTest038,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest039, OHOS::Rosen::Drawing::OHDrawingTypographyTest040,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest041, OHOS::Rosen::Drawing::OHDrawingTypographyTest042,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest043, OHOS::Rosen::Drawing::OHDrawingTypographyTest044,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest045, OHOS::Rosen::Drawing::OHDrawingTypographyTest046,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest047, OHOS::Rosen::Drawing::OHDrawingTypographyTest048,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest049, OHOS::Rosen::Drawing::OHDrawingTypographyTest050,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest051, nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest053, OHOS::Rosen::Drawing::OHDrawingTypographyTest054,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest055, OHOS::Rosen::Drawing::OHDrawingTypographyTest056,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest057, OHOS::Rosen::Drawing::OHDrawingTypographyTest058,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest059, OHOS::Rosen::Drawing::OHDrawingTypographyTest060,
+    };
+    return DispatchByCaseNum(caseNum - 30, handlers);
+}
+
+static int ExecuteOHDrawingTypographyTestCasePart3(int32_t caseNum)
+{
+    static constexpr std::array<NapiFn, 31> handlers = {
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest061,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest062,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest063,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest064,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest065,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest066,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest067,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest068,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest069,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest070,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest071,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest072,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest073,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest074,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest075,
+        nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest077,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest078,
+        nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest080,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest081,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest082,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest083,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest084,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest085,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest086,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest102,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest103,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest104,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest105,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTestWithIndent,
+    };
+    return DispatchByCaseNum(caseNum - 60, handlers);
+}
+
+static int ExecuteOHDrawingTypographyTestCase(int32_t caseNum)
+{
+    if (caseNum >= CASE_NUM_0 && caseNum < CASE_NUM_30) {
+        return ExecuteOHDrawingTypographyTestCasePart1(caseNum);
+    } else if (caseNum >= CASE_NUM_30 && caseNum < CASE_NUM_60) {
+        return ExecuteOHDrawingTypographyTestCasePart2(caseNum);
+    } else if (caseNum >= CASE_NUM_60 && caseNum <= CASE_NUM_90) {
+        return ExecuteOHDrawingTypographyTestCasePart3(caseNum);
+    }
+    return RESULT_ERROR;
+}
+
 // OHDrawingTypographyTest functions (91 functions)
 static napi_value OHDrawingTypographyTest(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-        int result;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest001();
-                break;
-            case CASE_NUM_1:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest002();
-                break;
-            case CASE_NUM_2:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest003();
-                break;
-            case CASE_NUM_3:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest004();
-                break;
-            case CASE_NUM_4:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest005();
-                break;
-            case CASE_NUM_5:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest006();
-                break;
-            case CASE_NUM_6:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest007();
-                break;
-            case CASE_NUM_7:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest008();
-                break;
-            case CASE_NUM_8:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest009();
-                break;
-            case CASE_NUM_9:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest010();
-                break;
-            case CASE_NUM_11:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest012();
-                break;
-            case CASE_NUM_12:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest013();
-                break;
-            case CASE_NUM_13:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest014();
-                break;
-            case CASE_NUM_14:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest015();
-                break;
-            case CASE_NUM_15:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest016();
-                break;
-            case CASE_NUM_16:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest017();
-                break;
-            case CASE_NUM_17:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest018();
-                break;
-            case CASE_NUM_18:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest019();
-                break;
-            case CASE_NUM_19:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest020();
-                break;
-            case CASE_NUM_20:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest021();
-                break;
-            case CASE_NUM_21:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest022();
-                break;
-            case CASE_NUM_22:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest023();
-                break;
-            case CASE_NUM_23:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest024();
-                break;
-            case CASE_NUM_24:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest025();
-                break;
-            case CASE_NUM_25:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest026();
-                break;
-            case CASE_NUM_26:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest027();
-                break;
-            case CASE_NUM_27:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest028();
-                break;
-            case CASE_NUM_28:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest029();
-                break;
-            case CASE_NUM_29:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest030();
-                break;
-            case CASE_NUM_30:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest031();
-                break;
-            case CASE_NUM_31:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest032();
-                break;
-            case CASE_NUM_32:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest033();
-                break;
-            case CASE_NUM_33:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest034();
-                break;
-            case CASE_NUM_34:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest035();
-                break;
-            case CASE_NUM_35:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest036();
-                break;
-            case CASE_NUM_36:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest037();
-                break;
-            case CASE_NUM_37:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest038();
-                break;
-            case CASE_NUM_38:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest039();
-                break;
-            case CASE_NUM_39:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest040();
-                break;
-            case CASE_NUM_40:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest041();
-                break;
-            case CASE_NUM_41:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest042();
-                break;
-            case CASE_NUM_42:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest043();
-                break;
-            case CASE_NUM_43:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest044();
-                break;
-            case CASE_NUM_44:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest045();
-                break;
-            case CASE_NUM_45:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest046();
-                break;
-            case CASE_NUM_46:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest047();
-                break;
-            case CASE_NUM_47:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest048();
-                break;
-            case CASE_NUM_48:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest049();
-                break;
-            case CASE_NUM_49:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest050();
-                break;
-            case CASE_NUM_50:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest051();
-                break;
-            case CASE_NUM_52:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest053();
-                break;
-            case CASE_NUM_53:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest054();
-                break;
-            case CASE_NUM_54:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest055();
-                break;
-            case CASE_NUM_55:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest056();
-                break;
-            case CASE_NUM_56:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest057();
-                break;
-            case CASE_NUM_57:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest058();
-                break;
-            case CASE_NUM_58:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest059();
-                break;
-            case CASE_NUM_59:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest060();
-                break;
-            case CASE_NUM_60:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest061();
-                break;
-            case CASE_NUM_61:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest062();
-                break;
-            case CASE_NUM_62:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest063();
-                break;
-            case CASE_NUM_63:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest064();
-                break;
-            case CASE_NUM_64:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest065();
-                break;
-            case CASE_NUM_65:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest066();
-                break;
-            case CASE_NUM_66:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest067();
-                break;
-            case CASE_NUM_67:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest068();
-                break;
-            case CASE_NUM_68:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest069();
-                break;
-            case CASE_NUM_69:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest070();
-                break;
-            case CASE_NUM_70:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest071();
-                break;
-            case CASE_NUM_71:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest072();
-                break;
-            case CASE_NUM_72:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest073();
-                break;
-            case CASE_NUM_73:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest074();
-                break;
-            case CASE_NUM_74:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest075();
-                break;
-            case CASE_NUM_76:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest077();
-                break;
-            case CASE_NUM_77:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest078();
-                break;
-            case CASE_NUM_79:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest080();
-                break;
-            case CASE_NUM_80:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest081();
-                break;
-            case CASE_NUM_81:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest082();
-                break;
-            case CASE_NUM_82:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest083();
-                break;
-            case CASE_NUM_83:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest084();
-                break;
-            case CASE_NUM_84:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest085();
-                break;
-            case CASE_NUM_85:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest086();
-                break;
-            case CASE_NUM_86:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest102();
-                break;
-            case CASE_NUM_87:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest103();
-                break;
-            case CASE_NUM_88:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest104();
-                break;
-            case CASE_NUM_89:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTest105();
-                break;
-            case CASE_NUM_90:
-                result = OHOS::Rosen::Drawing::OHDrawingTypographyTestWithIndent();
-                break;
-            default:
-                result = RESULT_ERROR;
-                break;
-        }
+        int result = ExecuteOHDrawingTypographyTestCase(caseNum);
         napi_value resultValue;
         napi_create_int32(env, result, &resultValue);
         return resultValue;
