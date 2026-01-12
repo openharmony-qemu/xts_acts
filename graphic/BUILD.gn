@@ -27,6 +27,7 @@ group("graphic") {
 	  "acts_graphicXTSDrawingFont_static:ActsDrawingFontTsStaticTest",
 	  "acts_graphicXTSDrawingMatrix_static:ActsDrawingMatrixTsStaticTest",
 	  "acts_graphicXTSDrawingPath_static:ActsDrawingPathTsStaticTest",
+	  "acts_graphicXTSDrawingPathEffect_static:ActsDrawingPathEffectTsStaticTest",
       "acts_pipwindow:ActsPipWindowTest",
       "acts_windowCompatibilityTest:ActsWindowCompatibilityTest",
       "component3D:ActsComponent3DTest",
