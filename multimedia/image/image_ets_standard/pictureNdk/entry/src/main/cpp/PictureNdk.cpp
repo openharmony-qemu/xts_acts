@@ -89,6 +89,8 @@ static const char *AUX_INFO_ROW_STRIDE = "rowStride";
 static const char *AUX_INFO_PIXEL_FORMAT = "pixelFormat";
 static const char *INFO_WIDTH = "width";
 static const char *INFO_HEIGHT = "height";
+static const char *INFO_PIXELFORMAT = "pixelFormat";
+static const char *INFO_ISHDR = "isHdr";
 static std::string exifPropertyKeyList[MAX_EXIF_KEY_SIZE] = {};
 static std::string fragmentPropertyKeyList[] = {
     "XInOriginal", "YInOriginal", "FragmentImageWidth", "FragmentImageHeight"};
@@ -3301,6 +3303,284 @@ namespace GifTestFunction {
     }
 } // namespace GifTestFunction
 
+static bool GetPixelMapImageInfo(napi_env env, OH_PixelmapNative *pixelMap, napi_value &result)
+{
+    OH_Pixelmap_ImageInfo *imageInfo = nullptr;
+    if(OH_PixelmapImageInfo_Create(&imageInfo) != IMAGE_SUCCESS){
+        return false;
+    }
+
+    if(OH_PixelmapNative_GetImageInfo(pixelMap, imageInfo) != IMAGE_SUCCESS){
+        OH_PixelmapImageInfo_Release(imageInfo);
+        return false;
+    }
+
+    uint32_t width;
+    uint32_t height;
+    int32_t pixelFormat;
+    bool isHdr = false;
+    OH_PixelmapImageInfo_GetWidth(imageInfo, &width);
+    OH_PixelmapImageInfo_GetHeight(imageInfo, &height);
+    OH_PixelmapImageInfo_GetPixelFormat(imageInfo, &pixelFormat);
+    OH_PixelmapImageInfo_GetDynamicRange(imageInfo, &isHdr);
+
+    napi_create_object(env, &result);
+    SetUint32NamedProperty(env, result, INFO_WIDTH, width);
+    SetUint32NamedProperty(env, result, INFO_HEIGHT, height);
+    SetUint32NamedProperty(env, result, INFO_PIXELFORMAT, pixelFormat);
+    napi_value isHdrValue = nullptr;
+    napi_get_boolean(env, isHdr, &isHdrValue);
+    napi_set_named_property(env, result, INFO_ISHDR, isHdrValue);
+
+    OH_PixelmapImageInfo_Release(imageInfo);
+    return true;
+}
+
+static bool CompareFlip(napi_env env, napi_value oldImageInfo, napi_value newImageInfo)
+{
+    uint32_t width0 = GetUint32NamedProperty(env, oldImageInfo, "width");
+    uint32_t height0 = GetUint32NamedProperty(env, oldImageInfo, "height");
+    int32_t pixelFormat0 = GetUint32NamedProperty(env, oldImageInfo, "pixelFormat");
+    uint32_t width1 = GetUint32NamedProperty(env, oldImageInfo, "width");
+    uint32_t height1 = GetUint32NamedProperty(env, oldImageInfo, "height");
+    int32_t pixelFormat1 = GetUint32NamedProperty(env, oldImageInfo, "pixelFormat");
+    return width0 == width1 && height0 == height1 &&  pixelFormat0 == pixelFormat1;
+}
+
+static napi_value CreatePictureByImageSourceWithOptions(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_value resultNapi = nullptr;
+
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1)
+    {
+        OH_LOG_ERROR(LOG_APP, "CreateTestPixelmapByImageSource: failed to get input arguments!");
+        return result;
+    }
+
+    void *srcPtr = nullptr;
+    napi_get_value_external(env, argValue[NUM_0], &srcPtr);
+    OH_ImageSourceNative *imageSource = reinterpret_cast<OH_ImageSourceNative *>(srcPtr);
+    if (imageSource == nullptr)
+    {
+        OH_LOG_ERROR(LOG_APP, "imageSource is nullptr!");
+        napi_create_int32(env, IMAGE_BAD_PARAMETER, &resultNapi);
+        return resultNapi;
+    }
+
+    OH_DecodingOptionsForPicture *options = nullptr;
+    Image_ErrorCode errCode = OH_DecodingOptionsForPicture_Create(&options);
+    if (options == nullptr || errCode != IMAGE_SUCCESS)
+    {
+        OH_LOG_ERROR(LOG_APP, "options is nullptr! errorCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+
+    OH_PictureNative *picture = nullptr;
+    errCode = OH_ImageSourceNative_CreatePicture(imageSource, options, &picture);
+    OH_DecodingOptionsForPicture_Release(options);
+    if (errCode != IMAGE_SUCCESS)
+    {
+        OH_LOG_ERROR(LOG_APP, "OH_ImageSourceNative_CreatePicture failed, errCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+
+    napi_status status = napi_create_external(env, reinterpret_cast<void *>(picture), nullptr, nullptr, &result);
+    if (status != napi_ok)
+    {
+        OH_LOG_ERROR(LOG_APP, "Failed to create external object!");
+        return nullptr;
+    }
+    return result;
+}
+
+static napi_value GetHdrComposedPixelmapWithOptions(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_2] = {0};
+    size_t argCount = NUM_2;
+    napi_value resultNapi = nullptr;
+
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_2)
+    {
+        OH_LOG_ERROR(LOG_APP, "GetHdrComposedPixelmapWithOptions: failed to get input arguments!");
+        return result;
+    }
+
+    // 获取picture 指针
+    void *ptr = nullptr;
+    napi_get_value_external(env, argValue[NUM_0], &ptr);
+    OH_PictureNative *picture = reinterpret_cast<OH_PictureNative *>(ptr);
+    IMG_NAPI_CHECK_NULL_PTR(picture, result);
+
+    // 获取 desiredPixelFormat
+    uint32_t temp = 0;
+    napi_get_value_uint32(env, argValue[NUM_0], &temp);
+    PIXEL_FORMAT desiredPixelFormat = static_cast<PIXEL_FORMAT>(temp);
+
+    // 创建并设置 ComposeOptions
+    OH_ComposeOptions *options = nullptr;
+    Image_ErrorCode errCode = OH_ComposeOptions_Create(&options);
+    if(errCode != IMAGE_SUCCESS || options == nullptr)
+    {
+        OH_LOG_ERROR(LOG_APP, "OH_ComposeOptions_Create failed, errCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+    errCode = OH_ComposeOptions_SetDesiredPixelFormat(options, desiredPixelFormat);
+    if(errCode != IMAGE_SUCCESS){
+        OH_ComposeOptions_Release(options);
+        OH_LOG_ERROR(LOG_APP, "OH_ComposeOptions_SetDesiredPixelFormat failed, errCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+
+    // 获取HDR Pixelmap
+    OH_PixelmapNative *hdrPixelmap = nullptr;
+    errCode = OH_PictureNative_GetHdrComposedPixelmapWithOptions(picture, options, &hdrPixelmap);
+    OH_ComposeOptions_Release(options);
+    if (errCode != IMAGE_SUCCESS || hdrPixelmap == nullptr){
+        OH_LOG_ERROR(LOG_APP, "OH_PictureNative_GetHdrComposedPixelmapWithOptions failed, errCode: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+
+    GetPixelMapImageInfo(env, hdrPixelmap, result);
+    IMG_NAPI_RELEASE_PTR(hdrPixelmap, OH_PixelmapNative_Release(hdrPixelmap));
+    return result;
+}
+
+static napi_value GetHdrComposedPixelmapWithOptionsError(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_2] = {0};
+    size_t argCount = NUM_2;
+    napi_value resultNapi = nullptr;
+
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_2)
+    {
+        OH_LOG_ERROR(LOG_APP, "GetHdrComposedPixelmapWithOptionsError: failed to get input arguments!");
+        return result;
+    }
+
+    // 获取picture 指针
+    void *ptr = nullptr;
+    napi_get_value_external(env, argValue[NUM_0], &ptr);
+    OH_PictureNative *picture = reinterpret_cast<OH_PictureNative *>(ptr);
+    IMG_NAPI_CHECK_NULL_PTR(picture, result);
+
+    // 获取 desiredPixelFormat
+    uint32_t temp = 0;
+    napi_get_value_uint32(env, argValue[NUM_0], &temp);
+    PIXEL_FORMAT desiredPixelFormat = static_cast<PIXEL_FORMAT>(temp);
+
+    // 创建并设置 ComposeOptions
+    OH_ComposeOptions *options = nullptr;
+    Image_ErrorCode errCode = OH_ComposeOptions_Create(&options);
+    if(errCode != IMAGE_SUCCESS || options == nullptr)
+    {
+        OH_LOG_ERROR(LOG_APP, "OH_ComposeOptions_Create failed, errCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+    errCode = OH_ComposeOptions_SetDesiredPixelFormat(options, desiredPixelFormat);
+    if(errCode != IMAGE_SUCCESS)
+    {
+        OH_ComposeOptions_Release(options);
+        OH_LOG_ERROR(LOG_APP, "OH_ComposeOptions_SetDesiredPixelFormat failed, errCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+
+    // 获取HDR Pixelmap
+    OH_PixelmapNative *hdrPixelmap = nullptr;
+    errCode = OH_PictureNative_GetHdrComposedPixelmapWithOptions(picture, options, &hdrPixelmap);
+    napi_create_int32(env, errCode, &resultNapi);
+    OH_ComposeOptions_Release(options);
+    return result;
+}
+
+static napi_value GetHdrComposedPixelmapAndPixelMapTest(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    napi_value argValue[NUM_1] = {0};
+    size_t argCount = NUM_1;
+    napi_value resultNapi = nullptr;
+
+    napi_get_undefined(env, &result);
+    if (napi_get_cb_info(env, info, &argCount, argValue, nullptr, nullptr) != napi_ok || argCount < NUM_1)
+    {
+        OH_LOG_ERROR(LOG_APP, "GetHdrComposedPixelmapWithOptionsError: failed to get input arguments!");
+        return result;
+    }
+
+    // 获取picture 指针
+    void *ptr = nullptr;
+    napi_get_value_external(env, argValue[NUM_0], &ptr);
+    OH_PictureNative *picture = reinterpret_cast<OH_PictureNative *>(ptr);
+    IMG_NAPI_CHECK_NULL_PTR(picture, result);
+
+    // 指定 desiredPixelFormat
+    PIXEL_FORMAT desiredPixelFormat = PIXEL_FORMAT::PIXEL_FORMAT_YCBCR_P010;
+
+    // 创建并设置 ComposeOptions
+    OH_ComposeOptions *options = nullptr;
+    Image_ErrorCode errCode = OH_ComposeOptions_Create(&options);
+    if(errCode != IMAGE_SUCCESS || options == nullptr)
+    {
+        OH_LOG_ERROR(LOG_APP, "OH_ComposeOptions_Create failed, errCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+    errCode = OH_ComposeOptions_SetDesiredPixelFormat(options, desiredPixelFormat);
+    if(errCode != IMAGE_SUCCESS)
+    {
+        OH_ComposeOptions_Release(options);
+        OH_LOG_ERROR(LOG_APP, "OH_ComposeOptions_SetDesiredPixelFormat failed, errCode is: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+
+    // 获取HDR Pixelmap
+    OH_PixelmapNative *hdrPixelmap = nullptr;
+    errCode = OH_PictureNative_GetHdrComposedPixelmapWithOptions(picture, options, &hdrPixelmap);
+    OH_ComposeOptions_Release(options);
+    if (errCode != IMAGE_SUCCESS || hdrPixelmap == nullptr)
+    {
+        OH_LOG_ERROR(LOG_APP, "OH_PictureNative_GetHdrComposedPixelmapWithOptions failed, errCode: %{public}d!", errCode);
+        napi_create_int32(env, errCode, &resultNapi);
+        return resultNapi;
+    }
+
+    napi_value oldImageInfo = nullptr;
+    napi_value newImageInfo = nullptr;
+    
+    GetPixelMapImageInfo(env, hdrPixelmap, oldImageInfo);
+    OH_PixelmapNative_Flip(hdrPixelmap, true, true);
+    GetPixelMapImageInfo(env, hdrPixelmap, newImageInfo);
+
+    bool rs = CompareFlip(env, oldImageInfo, newImageInfo);
+    if(!rs){
+        const std::string string = "compare flip error";
+        Image_String format;
+        format.data = strdup(string.c_str());
+        format.size = strlen(format.data);
+        napi_create_string_utf8(env, (const char *)format.data, format.size, &result);
+        return result;
+    }
+
+    IMG_NAPI_RELEASE_PTR(hdrPixelmap, OH_PixelmapNative_Release(hdrPixelmap));
+    napi_create_int32(env, 0, &resultNapi);
+    return result;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -3468,8 +3748,16 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, nullptr, napi_default, nullptr},
         {"ImageSourceRelease", nullptr, GifTestFunction::ImageSourceRelease, nullptr, nullptr, nullptr, napi_default,
             nullptr},
-        {"PictureRelease", nullptr, GifTestFunction::PictureRelease, nullptr, nullptr, nullptr, napi_default, nullptr}
-    };
+        {"PictureRelease", nullptr, GifTestFunction::PictureRelease, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"CreatePictureByImageSourceWithOptions", nullptr, CreatePictureByImageSourceWithOptions, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"GetHdrComposedPixelmapWithOptions", nullptr, GetHdrComposedPixelmapWithOptions, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"GetHdrComposedPixelmapWithOptionsError", nullptr, GetHdrComposedPixelmapWithOptionsError, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"GetHdrComposedPixelmapAndPixelMapTest", nullptr, GetHdrComposedPixelmapAndPixelMapTest,
+            nullptr, nullptr, nullptr, napi_default, nullptr}
+        };
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);
     return exports;
 }
