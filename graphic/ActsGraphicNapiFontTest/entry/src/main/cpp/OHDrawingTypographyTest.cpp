@@ -99,8 +99,8 @@ constexpr int LINE_NUM_0 = 0;
 constexpr size_t FROM_10 = 10;
 } // namespace
 
-static std::string EXIST_FONT_PATH_STR = std::string("/system/fonts/") + GetSystemDefaultFont(true) + ".ttf";
-const char* EXIST_FONT_PATH = EXIST_FONT_PATH_STR.c_str();
+static std::string g_existFontPathStr = std::string("/system/fonts/") + GetSystemDefaultFont(true) + ".ttf";
+const char* EXIST_FONT_PATH = g_existFontPathStr.c_str();
 const char* OHOS_THEME_FONT = "OhosThemeFont";
 
 enum class FontWeight {
@@ -881,11 +881,9 @@ int OHDrawingTypographyTest026()
     EXPECT_TRUE(handler != nullptr);
     OH_Drawing_SetTextStyleColor(txtStyle,
                                  OH_Drawing_ColorSetArgb(COLOR_ALPHA_FF, COLOR_RGB_00, COLOR_RGB_00, COLOR_RGB_00));
-    double fontSize = DEFAULT_FONT_SIZE;
-    OH_Drawing_SetTextStyleFontSize(txtStyle, fontSize);
+    OH_Drawing_SetTextStyleFontSize(txtStyle, DEFAULT_FONT_SIZE);
     OH_Drawing_SetTextStyleFontWeight(txtStyle, FONT_WEIGHT_400);
-    bool halfLeading = true;
-    OH_Drawing_SetTextStyleHalfLeading(txtStyle, halfLeading);
+    OH_Drawing_SetTextStyleHalfLeading(txtStyle, true);
     const char* fontFamilies[] = { "Roboto" };
     OH_Drawing_SetTextStyleFontFamilies(txtStyle, ARRAY_SIZE_1, fontFamilies);
     OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
@@ -901,9 +899,7 @@ int OHDrawingTypographyTest026()
     double position[2] = { POSITION_X, POSITION_Y };
     OH_Drawing_Bitmap* cBitmap = OH_Drawing_BitmapCreate();
     OH_Drawing_BitmapFormat cFormat{ COLOR_FORMAT_RGBA_8888, ALPHA_FORMAT_OPAQUE };
-    uint32_t width = BITMAP_WIDTH;
-    uint32_t height = BITMAP_HEIGHT;
-    OH_Drawing_BitmapBuild(cBitmap, width, height, &cFormat);
+    OH_Drawing_BitmapBuild(cBitmap, BITMAP_WIDTH, BITMAP_HEIGHT, &cFormat);
     OH_Drawing_Canvas* cCanvas = OH_Drawing_CanvasCreate();
     OH_Drawing_CanvasBind(cCanvas, cBitmap);
     OH_Drawing_CanvasClear(cCanvas,
@@ -1372,8 +1368,7 @@ int OHDrawingTypographyTest043()
     const char* fontFamilies[] = { "Roboto" };
     OH_Drawing_SetTextStyleFontFamilies(txtStyle, ARRAY_SIZE_1, fontFamilies);
     OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
-    const char* text = "OpenHarmony\n";
-    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_TypographyHandlerAddText(handler, "OpenHarmony\n");
     OH_Drawing_TypographyHandlerPopTextStyle(handler);
     OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
     double maxWidth = DEFAULT_MAX_WIDTH;
@@ -1395,8 +1390,8 @@ int OHDrawingTypographyTest043()
     OH_Drawing_DisableFontCollectionFallback(OH_Drawing_CreateFontCollection());
     OH_Drawing_DisableFontCollectionFallback(nullptr);
     OH_Drawing_DisableFontCollectionSystemFont(OH_Drawing_CreateFontCollection());
-    OH_Drawing_SetTypographyTextEllipsis(typoStyle, text);
-    OH_Drawing_SetTypographyTextLocale(typoStyle, text);
+    OH_Drawing_SetTypographyTextEllipsis(typoStyle, "OpenHarmony\n");
+    OH_Drawing_SetTypographyTextLocale(typoStyle, "OpenHarmony\n");
     OH_Drawing_SetTypographyTextSplitRatio(typoStyle, fontSize);
     OH_Drawing_TypographyGetTextStyle(typoStyle);
     EXPECT_EQ(OH_Drawing_TypographyGetEffectiveAlignment(typoStyle) >= 0, true);

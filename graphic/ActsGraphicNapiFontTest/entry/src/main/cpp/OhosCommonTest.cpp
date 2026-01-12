@@ -215,8 +215,9 @@ const char* GetSystemDefaultFont(bool replaceUnderline)
         cachedFont = InitSystemDefaultFont();
         size_t len = strlen(cachedFont);
         char* buf = nullptr;
-        if (len + 1 > 0) {
-            buf = (char*)malloc(len + 1);
+        const int mallocLen = len + 1;
+        if (mallocLen > 0) {
+            buf = (char*)malloc(mallocLen);
         }
         for (size_t i = 0; i < len; ++i) {
             buf[i] = (cachedFont[i] == '-') ? '_' : cachedFont[i];
