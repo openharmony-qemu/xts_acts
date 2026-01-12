@@ -206,15 +206,18 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
 
 const char* GetSystemDefaultFont(bool replaceUnderline)
 {
-    //HarmonyOS-Sans
+    // xxOS-Sans
     static const char* cachedFont = nullptr;
-    //HarmonyOS_Sans
+    // xxOS_Sans
     static const char* cachedFontWithDash = nullptr;
     static std::once_flag initFlag;
     std::call_once(initFlag, []() {
         cachedFont = InitSystemDefaultFont();
         size_t len = strlen(cachedFont);
-        char* buf = (char*)malloc(len + 1);
+        char* buf = nullptr;
+        if (len + 1 > 0) {
+            buf = (char*)malloc(len + 1);
+        }
         for (size_t i = 0; i < len; ++i) {
             buf[i] = (cachedFont[i] == '-') ? '_' : cachedFont[i];
         }

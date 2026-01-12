@@ -22,7 +22,7 @@
 #include "include/OhosCommonTest.h"
 
 struct NativeTypographyAutoSpaceTestContext {
-    const double DEFAULT_FONT_SIZE = 40;
+    const double defaultFontSize = 40;
 
     OH_Drawing_FontCollection* fontCollection_{ nullptr };
     OH_Drawing_TextStyle* txtStyle_{ nullptr };
@@ -87,7 +87,7 @@ struct NativeTypographyAutoSpaceTestContext {
         ASSERT_NE(txtStyle_, nullptr);
         fontCollection_ = OH_Drawing_CreateSharedFontCollection();
         ASSERT_NE(fontCollection_, nullptr);
-        OH_Drawing_SetTextStyleFontSize(txtStyle_, DEFAULT_FONT_SIZE);
+        OH_Drawing_SetTextStyleFontSize(txtStyle_, defaultFontSize);
     }
 };
 

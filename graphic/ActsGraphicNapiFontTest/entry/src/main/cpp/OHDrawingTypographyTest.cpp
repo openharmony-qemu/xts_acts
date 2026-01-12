@@ -99,8 +99,8 @@ constexpr int LINE_NUM_0 = 0;
 constexpr size_t FROM_10 = 10;
 } // namespace
 
-static std::string EXISTFONTPATHSTR = std::string("/system/fonts/") + GetSystemDefaultFont(true) + ".ttf";
-const char* EXISTFONTPATH = EXISTFONTPATHSTR.c_str();
+static std::string EXIST_FONT_PATH_STR = std::string("/system/fonts/") + GetSystemDefaultFont(true) + ".ttf";
+const char* EXIST_FONT_PATH = EXIST_FONT_PATH_STR.c_str();
 const char* OHOS_THEME_FONT = "OhosThemeFont";
 
 enum class FontWeight {
@@ -297,7 +297,7 @@ struct TypographyStyle {
     char pad5[7];
 
     // TextTab tab
-    char tab_blob[32];
+    char tabBlob[32];
 
     // std::bitset<...>
     char relayoutChangeBitmapBlob[32]; // 依模板参数
@@ -889,8 +889,7 @@ int OHDrawingTypographyTest026()
     const char* fontFamilies[] = { "Roboto" };
     OH_Drawing_SetTextStyleFontFamilies(txtStyle, ARRAY_SIZE_1, fontFamilies);
     OH_Drawing_TypographyHandlerPushTextStyle(handler, txtStyle);
-    const char* text = "OpenHarmony\n";
-    OH_Drawing_TypographyHandlerAddText(handler, text);
+    OH_Drawing_TypographyHandlerAddText(handler, "OpenHarmony\n");
     OH_Drawing_PlaceholderSpan placeholderSpan = {
         PLACEHOLDER_WIDTH, PLACEHOLDER_HEIGHT, ALIGNMENT_OFFSET_AT_BASELINE, TEXT_BASELINE_ALPHABETIC, SPACING_10
     };
@@ -1787,7 +1786,7 @@ int OHDrawingTypographyTest051()
     OH_Drawing_TextStyleSetBaselineShift(nullptr, lineShift);
     EXPECT_EQ(OH_Drawing_TextStyleGetBaselineShift(nullptr), 0.0);
     OH_Drawing_TextStyleSetBaselineShift(txtStyle, lineShift);
-    EXPECT_EQ(OH_Drawing_TextStyleGetBaselineShift(txtStyle), 1.5);
+    EXPECT_EQ(OH_Drawing_TextStyleGetBaselineShift(txtStyle), lineShift);
     return TEST_SUCCESS_CODE;
 }
 
@@ -2547,7 +2546,7 @@ int OHDrawingTypographyTest084()
     OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
     // {1.2, 3.4} for unit test
     const float indents[] = { 1.2, 3.4 };
-    OH_Drawing_TypographySetIndents(typography, 2, indents);
+    OH_Drawing_TypographySetIndents(typography, ARRAY_SIZE_2, indents);
     // 300.0 for unit test
     double maxWidth = 300.0;
     OH_Drawing_TypographyLayout(typography, maxWidth);
@@ -2577,7 +2576,7 @@ int OHDrawingTypographyTest085()
     OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
     // {1.2, 3.4} for unit test
     const float indents[] = { 1.2, 3.4 };
-    OH_Drawing_TypographySetIndents(typography, 2, indents);
+    OH_Drawing_TypographySetIndents(typography, ARRAY_SIZE_2, indents);
     // 300.0 for unit test
     double maxWidth = 300.0;
     OH_Drawing_TypographyLayout(typography, maxWidth);
@@ -2607,7 +2606,7 @@ int OHDrawingTypographyTest086()
     OH_Drawing_Typography* typography = OH_Drawing_CreateTypography(handler);
     // {1.2, 3.4} for unit test
     const float indents[] = { 1.2, 3.4 };
-    OH_Drawing_TypographySetIndents(typography, 2, indents);
+    OH_Drawing_TypographySetIndents(typography, ARRAY_SIZE_2, indents);
     // 300.0 for unit test
     double maxWidth = 300.0;
     OH_Drawing_TypographyLayout(typography, maxWidth);
@@ -2626,8 +2625,8 @@ int OHDrawingTypographyTest086()
 int OHDrawingTypographyTest102()
 {
     OH_Drawing_FontParser* parser = OH_Drawing_CreateFontParser();
-    static const std::string FILE_NAME = "/system/fonts/visibility_list.json";
-    std::ifstream fileStream(FILE_NAME.c_str());
+    static const std::string fileName = "/system/fonts/visibility_list.json";
+    std::ifstream fileStream(fileName.c_str());
     if (fileStream.is_open()) {
         size_t fontNum;
         char** list = OH_Drawing_FontParserGetSystemFontList(parser, &fontNum);
@@ -2889,7 +2888,8 @@ int OHDrawingTextLineEnumerateCaretOffsets001()
     ctx.PrepareCreateTextLine("\n\n\n");
     OH_Drawing_Array* textLines = OH_Drawing_TypographyGetTextLines(ctx.typography_);
     size_t size = OH_Drawing_GetDrawingArraySize(textLines);
-    EXPECT_EQ(size, 4);
+    const int expectResult = 4;
+    EXPECT_EQ(size, expectResult);
 
     for (size_t index = 0; index < size; index++) {
         OH_Drawing_TextLine* textLine = OH_Drawing_GetTextLineByIndex(textLines, index);
@@ -2917,9 +2917,9 @@ int OHDrawingTextLineEnumerateCaretOffsets001()
 int TestOHDrawingUnregisterFont001()
 {
     OH_Drawing_FontCollection* fontCollection = OH_Drawing_CreateFontCollection();
-    uint32_t result = OH_Drawing_RegisterFont(fontCollection, "test1", EXISTFONTPATH);
+    uint32_t result = OH_Drawing_RegisterFont(fontCollection, "test1", EXIST_FONT_PATH);
     EXPECT_EQ(result, 0);
-    result = OH_Drawing_RegisterFont(fontCollection, "test2", EXISTFONTPATH);
+    result = OH_Drawing_RegisterFont(fontCollection, "test2", EXIST_FONT_PATH);
     EXPECT_EQ(result, 0);
     EXPECT_EQ(OH_Drawing_UnregisterFont(fontCollection, "test1"), 0);
     EXPECT_EQ(OH_Drawing_UnregisterFont(fontCollection, "test2"), 0);

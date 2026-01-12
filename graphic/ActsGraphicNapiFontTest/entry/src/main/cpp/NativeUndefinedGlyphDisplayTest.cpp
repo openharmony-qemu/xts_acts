@@ -35,9 +35,9 @@ namespace Drawing {
 namespace {
 bool ExistNotdef()
 {
-    std::string EXISTFONTPATHSTR = std::string("/system/fonts/") + GetSystemDefaultFont(true) + "_Notdef.ttf";
-    const char* EXISTFONTPATH = EXISTFONTPATHSTR.c_str();
-    std::ifstream file(EXISTFONTPATH);
+    std::string existFontPathStr = std::string("/system/fonts/") + GetSystemDefaultFont(true) + "_Notdef.ttf";
+    const char* existFontPath = existFontPathStr.c_str();
+    std::ifstream file(existFontPath);
     return file.is_open();
 }
 

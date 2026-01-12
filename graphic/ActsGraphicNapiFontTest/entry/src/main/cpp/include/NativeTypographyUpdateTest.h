@@ -23,31 +23,33 @@
 
 namespace OHOS {
 
-namespace {
-const double DEFAULT_FONT_SIZE = 50;
-const char* DEFAULT_TEXT = "text";
-} // namespace
-
 struct NativeTypographyUpdateTestContext {
+    const int defaultFontSize = 50;
+    const char* defaultText = "text";
+
     OH_Drawing_TypographyCreate* fHandler{ nullptr };
     OH_Drawing_Typography* fTypography{ nullptr };
     OH_Drawing_TypographyStyle* fTypoStyle{ nullptr };
     OH_Drawing_TextStyle* fTxtStyle{ nullptr };
-    int fLayoutWidth{ 50 };
+    int fLayoutWidth{ defaultFontSize };
 
     NativeTypographyUpdateTestContext()
-        : fHandler(nullptr), fTypography(nullptr), fTypoStyle(nullptr), fTxtStyle(nullptr), fLayoutWidth(50)
+        : fHandler(nullptr),
+          fTypography(nullptr),
+          fTypoStyle(nullptr),
+          fTxtStyle(nullptr),
+          fLayoutWidth(defaultFontSize)
     {
         fTypoStyle = OH_Drawing_CreateTypographyStyle();
         ASSERT_NE(fTypoStyle, nullptr);
-        OH_Drawing_SetTypographyTextFontSize(fTypoStyle, DEFAULT_FONT_SIZE);
+        OH_Drawing_SetTypographyTextFontSize(fTypoStyle, defaultFontSize);
         fHandler = OH_Drawing_CreateTypographyHandler(fTypoStyle, OH_Drawing_CreateFontCollection());
         ASSERT_NE(fHandler, nullptr);
         fTxtStyle = OH_Drawing_CreateTextStyle();
         ASSERT_NE(fTxtStyle, nullptr);
-        OH_Drawing_SetTextStyleFontSize(fTxtStyle, DEFAULT_FONT_SIZE);
+        OH_Drawing_SetTextStyleFontSize(fTxtStyle, defaultFontSize);
         OH_Drawing_TypographyHandlerPushTextStyle(fHandler, fTxtStyle);
-        OH_Drawing_TypographyHandlerAddText(fHandler, DEFAULT_TEXT);
+        OH_Drawing_TypographyHandlerAddText(fHandler, defaultText);
         fTypography = OH_Drawing_CreateTypography(fHandler);
         ASSERT_NE(fTypography, nullptr);
         OH_Drawing_TypographyLayout(fTypography, fLayoutWidth);
@@ -79,9 +81,9 @@ struct NativeTypographyUpdateTestContext {
         ASSERT_NE(fHandler, nullptr);
         fTxtStyle = OH_Drawing_CreateTextStyle();
         ASSERT_NE(fTxtStyle, nullptr);
-        OH_Drawing_SetTextStyleFontSize(fTxtStyle, DEFAULT_FONT_SIZE);
+        OH_Drawing_SetTextStyleFontSize(fTxtStyle, defaultFontSize);
         OH_Drawing_TypographyHandlerPushTextStyle(fHandler, fTxtStyle);
-        OH_Drawing_TypographyHandlerAddText(fHandler, DEFAULT_TEXT);
+        OH_Drawing_TypographyHandlerAddText(fHandler, defaultText);
         fTypography = OH_Drawing_CreateTypography(fHandler);
         ASSERT_NE(fTypography, nullptr);
         OH_Drawing_TypographyLayout(fTypography, fLayoutWidth);

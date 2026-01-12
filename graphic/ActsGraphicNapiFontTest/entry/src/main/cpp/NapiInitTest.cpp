@@ -744,7 +744,7 @@ static int ExecuteOHDrawingTypographyTestCasePart2(int32_t caseNum)
         OHOS::Rosen::Drawing::OHDrawingTypographyTest057, OHOS::Rosen::Drawing::OHDrawingTypographyTest058,
         OHOS::Rosen::Drawing::OHDrawingTypographyTest059, OHOS::Rosen::Drawing::OHDrawingTypographyTest060,
     };
-    return DispatchByCaseNum(caseNum - 30, handlers);
+    return DispatchByCaseNum(caseNum - CASE_NUM_30, handlers);
 }
 
 static int ExecuteOHDrawingTypographyTestCasePart3(int32_t caseNum)
@@ -782,7 +782,7 @@ static int ExecuteOHDrawingTypographyTestCasePart3(int32_t caseNum)
         OHOS::Rosen::Drawing::OHDrawingTypographyTest105,
         OHOS::Rosen::Drawing::OHDrawingTypographyTestWithIndent,
     };
-    return DispatchByCaseNum(caseNum - 60, handlers);
+    return DispatchByCaseNum(caseNum - CASE_NUM_60, handlers);
 }
 
 static int ExecuteOHDrawingTypographyTestCase(int32_t caseNum)
