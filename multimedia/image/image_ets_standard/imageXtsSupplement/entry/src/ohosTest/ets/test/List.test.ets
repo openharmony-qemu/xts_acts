@@ -199,6 +199,9 @@ import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
 import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
+import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
+import ImageGPSDest from './image/ImageGPSDest.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -382,4 +385,7 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  ImageBodySerialNumber();
+  ImageCameraOwnerName();
+  ImageGPSDest();
 }
