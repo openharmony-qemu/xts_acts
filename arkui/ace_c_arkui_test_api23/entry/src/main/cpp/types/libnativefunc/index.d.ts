@@ -76,6 +76,28 @@ export const TestContainerPickerSubComponent003: () => number;
 
 export const TestContainerPickerSubComponent004: () => number;
 
+export const TextEnumTest_001: () => number;
+export const TextEnumTest_002: () => number;
+export const TextEnumTest_003: () => number;
+export const TextEnumTest_004: () => number;
+export const TextEnumTest_005: () => number;
+export const TextEnumTest_006: () => number;
+export const TextEnumTest_007: () => number;
+export const TextEnumTest_008: () => number;
+export const TextEnumTest_009: () => number;
+export const TextEnumTest_010: () => number;
+export const TextEnumTest_011: () => number;
+export const TextEnumTest_012: () => number;
+export const TextEnumTest_013: () => number;
+export const TextEnumTest_014: () => number;
+export const TextEnumTest_015: () => number;
+export const TextEnumTest_016: () => number;
+export const TextEnumTest_017: () => number;
+export const TextEnumTest_018: () => number;
+export const TextEnumTest_019: () => number;
+export const TextEnumTest_020: () => number;
+export const TextEnumTest_021: () => number;
+
 export const testMotionPathOptions001: () => number;
 export const testMotionPathOptions002: () => number;
 export const testMotionPathOptions003: () => number;
