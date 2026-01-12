@@ -14,7 +14,7 @@
  */
 import { AbilityConstant, UIAbility, Want } from '@kit.AbilityKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
-import { window } from '@kit.ArkUI';
+import { window, UIContext } from '@kit.ArkUI';
 import { BusinessError } from '@ohos.base';
 import abilityAccessCtrl from '@ohos.abilityAccessCtrl'
 
