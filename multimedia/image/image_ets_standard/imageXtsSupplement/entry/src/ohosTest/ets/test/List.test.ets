@@ -384,6 +384,6 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
-  ImageLensSerialNumberSupp();
   ImageLensSpecificationSupp();
+  ImageLensSerialNumberSupp();
 }

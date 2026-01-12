@@ -69,7 +69,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_001
-     * @tc.desc       ImageWriteImageMetadata cover normal jpg "lensSpecification"
+     * @tc.desc       ImageReadImageMetadata lensSpecification SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -97,7 +97,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_002
-     * @tc.desc       ImageWriteImageMetadata cover  normal jpg "lensSpecification"
+     * @tc.desc       ImageReadImageMetadata lensSpecification SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -125,7 +125,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_003
-     * @tc.desc       ImageWriteImageMetadata cover normal jpg "lensSpecification"
+     * @tc.desc       ImageReadImageMetadata lensSpecification SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -153,7 +153,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_004
-     * @tc.desc       ImageWriteImageMetadata cover abnormal jpg "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -166,11 +166,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -181,7 +178,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_005
-     * @tc.desc       ImageWriteImageMetadata cover abnormal jpg "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -194,11 +191,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -209,7 +203,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_006
-     * @tc.desc       ImageWriteImageMetadata cover normal png "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -222,11 +216,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -237,7 +228,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_007
-     * @tc.desc       ImageWriteImageMetadata cover  normal png "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -250,11 +241,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -265,7 +253,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_008
-     * @tc.desc       ImageWriteImageMetadata cover normal png "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -278,11 +266,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -293,7 +278,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_009
-     * @tc.desc       ImageWriteImageMetadata cover abnormal png "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -306,11 +291,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -321,7 +303,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0010
-     * @tc.desc       ImageWriteImageMetadata cover abnormal png "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -334,11 +316,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -349,7 +328,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0011
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0011
-     * @tc.desc       ImageWriteImageMetadata cover normal heic "lensSpecification"
+     * @tc.desc       ImageReadImageMetadata lensSpecification-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -377,7 +356,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0012
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0012
-     * @tc.desc       ImageWriteImageMetadata cover  normal heic "lensSpecification"
+     * @tc.desc       ImageReadImageMetadata lensSpecification-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -405,7 +384,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0013
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0013
-     * @tc.desc       ImageWriteImageMetadata cover normal heic "lensSpecification"
+     * @tc.desc       ImageReadImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -433,7 +412,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0014
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0014
-     * @tc.desc       ImageWriteImageMetadata cover abnormal heic "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -446,11 +425,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -461,7 +437,7 @@ export default function ImageLensSpecificationSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0015
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0015
-     * @tc.desc       ImageWriteImageMetadata cover abnormal heic "lensSpecification"
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -474,11 +450,8 @@ export default function ImageLensSpecificationSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSpecification);
-        let resultStr = JSON.stringify(result.exifMetadata?.lensSpecification);
-        console.info(TAG,testName,`resultStr: ` , resultStr)
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);

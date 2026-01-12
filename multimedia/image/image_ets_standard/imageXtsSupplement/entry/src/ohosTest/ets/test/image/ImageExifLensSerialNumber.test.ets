@@ -69,7 +69,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_001
-     * @tc.desc       ImageWriteImageMetadata cover normal jpg "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -95,7 +95,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_002
-     * @tc.desc       ImageWriteImageMetadata cover max normal jpg "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -121,7 +121,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_003
-     * @tc.desc       ImageWriteImageMetadata cover normal jpg "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -147,7 +147,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_004
-     * @tc.desc       ImageWriteImageMetadata cover abnormal jpg "LensSerialNumber"
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -160,11 +160,8 @@ export default function ImageLensSerialNumberSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.lensSerialNumber);
+        console.info(TAG,testName,`start:`);
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -175,7 +172,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_005
-     * @tc.desc       ImageWriteImageMetadata cover normal jpg "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -203,7 +200,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_006
-     * @tc.desc       ImageWriteImageMetadata cover normal png "LensSerialNumber"
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -216,9 +213,8 @@ export default function ImageLensSerialNumberSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -229,7 +225,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_007
-     * @tc.desc       ImageWriteImageMetadata cover max normal png "LensSerialNumber"
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -242,9 +238,8 @@ export default function ImageLensSerialNumberSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -255,7 +250,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_008
-     * @tc.desc       ImageWriteImageMetadata cover normal png "LensSerialNumber"
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -268,9 +263,8 @@ export default function ImageLensSerialNumberSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -281,7 +275,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_009
-     * @tc.desc       ImageWriteImageMetadata cover abnormal png "LensSerialNumber"
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -294,9 +288,8 @@ export default function ImageLensSerialNumberSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -307,7 +300,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010
-     * @tc.desc       ImageWriteImageMetadata cover normal png "LensSerialNumber"
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -320,9 +313,8 @@ export default function ImageLensSerialNumberSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,`start:`);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -333,7 +325,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011
-     * @tc.desc       ImageWriteImageMetadata cover normal heic "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -359,7 +351,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0012
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0012
-     * @tc.desc       ImageWriteImageMetadata cover max normal heic "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -385,7 +377,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0013
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0013
-     * @tc.desc       ImageWriteImageMetadata cover normal heic "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -411,7 +403,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0014
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0014
-     * @tc.desc       ImageWriteImageMetadata cover abnormal jpg "LensSerialNumber"
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -424,11 +416,8 @@ export default function ImageLensSerialNumberSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata resultFir is:`,resultFir.exifMetadata?.lensSerialNumber);
+        console.info(TAG,testName,`start:`);
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await heicImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -439,7 +428,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015
-     * @tc.desc       ImageWriteImageMetadata cover normal jpg "LensSerialNumber"
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
