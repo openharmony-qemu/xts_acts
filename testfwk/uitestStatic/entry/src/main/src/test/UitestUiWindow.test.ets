@@ -75,9 +75,9 @@ async function maxUiWindow(driver: Driver, window: UiWindow | null) {
   if (window != null) {
     try {
       let windowMode = await window.getWindowMode();
-      if (windowMode != WindowMode.FLOATING) {
-        await window.resume();
-        await driver.delayMs(8000);
+      if (windowMode == WindowMode.FULLSCREEN) {
+        console.log(`${tag}, maxUiWindow FULLSCREEN`);
+        return;
       }
       await window.maximize();
     } catch (error) {
