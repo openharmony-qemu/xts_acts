@@ -1263,6 +1263,12 @@ void SessionStateChangedCallback(OH_AudioSession_StateChangedEvent event)
     } else if (event.stateChangeHint == AUDIO_SESSION_STATE_CHANGE_HINT_UNDUCK) {
         OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "OSMedia", "SessionStateChangedCallback  status:%{public}d",
                      event.stateChangeHint);
+    } else if (event.stateChangeHint == AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "OSMedia", "SessionStateChangedCallback  status:%{public}d",
+                     event.stateChangeHint);
+    } else if (event.stateChangeHint == AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION) {
+        OH_LOG_Print(LOG_APP, LOG_INFO, 0xFF00, "OSMedia", "SessionStateChangedCallback  status:%{public}d",
+                     event.stateChangeHint);
     }
 };
 
@@ -1342,6 +1348,36 @@ napi_value AudioSessionStateChangeHintDuckCode(napi_env env, napi_callback_info 
 }
 
 napi_value AudioSessionStateChangeHintUnduckCode(napi_env env, napi_callback_info info)
+{
+    OH_AudioCommon_Result result;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    OH_AudioSession_StateChangedCallback callback = SessionStateChangedCallback;
+    result = OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, callback);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioSessionStateChangeHintMuteSuggestionCode(napi_env env, napi_callback_info info)
+{
+    OH_AudioCommon_Result result;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    OH_AudioSession_StateChangedCallback callback = SessionStateChangedCallback;
+    result = OH_AudioSessionManager_RegisterStateChangeCallback(audioSessionManager, callback);
+    if (result == AUDIOCOMMON_RESULT_SUCCESS) {
+        napi_value res;
+        napi_create_int32(env, result, &res);
+        return res;
+    }
+    return nullptr;
+}
+
+napi_value AudioSessionStateChangeHintUnmuteSuggestionCode(napi_env env, napi_callback_info info)
 {
     OH_AudioCommon_Result result;
     OH_AudioSessionManager *audioSessionManager = nullptr;

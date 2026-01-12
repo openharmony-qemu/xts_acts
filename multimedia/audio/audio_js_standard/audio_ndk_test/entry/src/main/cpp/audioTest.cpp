@@ -8534,6 +8534,132 @@ static napi_value AudioSuiteRendererGetLatency_0700(napi_env env, napi_callback_
     }
     return res;
 }
+
+static napi_value AudioSessionManagerMuteSuggestion_001(napi_env env, napi_callback_info info)
+{
+    napi_value value;
+    OH_AudioCommon_Result result = AUDIOCOMMON_RESULT_SUCCESS;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS || audioSessionManager == nullptr) {
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    if (OH_AudioSessionManager_IsAudioSessionActivated(audioSessionManager)) {
+        OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);
+    }
+    result = OH_AudioSessionManager_SetScene(audioSessionManager, AUDIO_SESSION_SCENE_MEDIA);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioSessionManager_SetScene fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    result = OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(audioSessionManager, true);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    napi_create_int32(env, TEST_PASS, &value);
+    return value;
+}
+
+static napi_value AudioSessionManagerMuteSuggestion_002(napi_env env, napi_callback_info info)
+{
+    napi_value value;
+    OH_AudioCommon_Result result = AUDIOCOMMON_RESULT_SUCCESS;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS || audioSessionManager == nullptr) {
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    if (OH_AudioSessionManager_IsAudioSessionActivated(audioSessionManager)) {
+        OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);
+    }
+    result = OH_AudioSessionManager_SetScene(audioSessionManager, AUDIO_SESSION_SCENE_MEDIA);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioSessionManager_SetScene fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    result = OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(audioSessionManager, false);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    napi_create_int32(env, TEST_PASS, &value);
+    return value;
+}
+
+static napi_value AudioSessionManagerMuteSuggestion_003(napi_env env, napi_callback_info info)
+{
+    napi_value value;
+    OH_AudioCommon_Result result = AUDIOCOMMON_RESULT_SUCCESS;
+    result = OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(nullptr, true);
+    if (result != AUDIOCOMMON_RESULT_ERROR_INVALID_PARAM) {
+        LOG("OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    napi_create_int32(env, TEST_PASS, &value);
+    return value;
+}
+
+static napi_value AudioSessionManagerMuteSuggestion_004(napi_env env, napi_callback_info info)
+{
+    napi_value value;
+    OH_AudioCommon_Result result = AUDIOCOMMON_RESULT_SUCCESS;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS || audioSessionManager == nullptr) {
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);
+    result = OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(audioSessionManager, false);
+    if (result != AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        LOG("OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    napi_create_int32(env, TEST_PASS, &value);
+    return value;
+}
+
+static napi_value AudioSessionManagerMuteSuggestion_005(napi_env env, napi_callback_info info)
+{
+    napi_value value;
+    OH_AudioCommon_Result result = AUDIOCOMMON_RESULT_SUCCESS;
+    OH_AudioSessionManager *audioSessionManager = nullptr;
+    result = OH_AudioManager_GetAudioSessionManager(&audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS || audioSessionManager == nullptr) {
+        LOG("OH_AudioManager_GetAudioSessionManager fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    OH_AudioSession_Strategy strategy {};
+    result = OH_AudioSessionManager_ActivateAudioSession(audioSessionManager, &strategy);
+    if (result != AUDIOCOMMON_RESULT_SUCCESS) {
+        LOG("OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    result = OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers(audioSessionManager, true);
+    OH_AudioSessionManager_DeactivateAudioSession(audioSessionManager);
+    if (result != AUDIOCOMMON_RESULT_ERROR_ILLEGAL_STATE) {
+        LOG("OH_AudioSessionManager_EnableMuteSuggestionWhenMixWithOthers fail, result is: %{public}d", result);
+        napi_create_int32(env, TEST_FAIL, &value);
+        return value;
+    }
+    napi_create_int32(env, TEST_PASS, &value);
+    return value;
+}
+
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
     {"audioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
@@ -9127,6 +9253,16 @@ napi_property_descriptor desc3[] = {
         AudioStreamBuilderSetRendererFastStatusChangeCallback_001, nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioStreamBuilderSetRendererFastStatusChangeCallback_002", nullptr,
         AudioStreamBuilderSetRendererFastStatusChangeCallback_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerMuteSuggestion_001", nullptr,
+        AudioSessionManagerMuteSuggestion_001, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerMuteSuggestion_002", nullptr,
+        AudioSessionManagerMuteSuggestion_002, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerMuteSuggestion_003", nullptr,
+        AudioSessionManagerMuteSuggestion_003, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerMuteSuggestion_004", nullptr,
+        AudioSessionManagerMuteSuggestion_004, nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"audioSessionManagerMuteSuggestion_005", nullptr,
+        AudioSessionManagerMuteSuggestion_005, nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 static napi_value Init(napi_env env, napi_value exports)
 {
