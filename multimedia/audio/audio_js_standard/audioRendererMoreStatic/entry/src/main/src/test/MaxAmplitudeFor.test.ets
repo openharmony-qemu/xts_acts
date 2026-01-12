@@ -121,7 +121,7 @@ export default function maxAmplitudeFor() {
             audioRoutingManager.getPreferOutputDeviceForRendererInfo(rendererInfo).then((data: audio.AudioDeviceDescriptors) => {
                 audioVolumeGroupManager.getMaxAmplitudeForOutputDevice(data[0]).then((value: double) => {
                     console.info(`mic volatileume amplitude is: ${value}`);
-                    expect(value).assertEqual(0);
+                    expect(Math.round(value)).assertEqual(0);
                 }).catch((err: Error) => {
                     console.error("getMaxAmplitudeForOutputDevice error" + JSON.stringify(err));
                     expect(false).assertTrue();

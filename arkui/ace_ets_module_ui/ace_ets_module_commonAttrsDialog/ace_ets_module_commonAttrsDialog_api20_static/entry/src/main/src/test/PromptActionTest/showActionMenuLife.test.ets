@@ -81,7 +81,7 @@ export default function ShowActionMenuLife() {
         let driver = Driver.create();
         await CommonFunc.sleep(SLEEP_TIME_1000);
         let button = await driver.findComponent(ON.id('showActionMenu'));
-        button?.click();
+        await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_1000);
 
         let strJson = inspector.getInspectorByKey('actionMenuText');
@@ -94,7 +94,7 @@ export default function ShowActionMenuLife() {
         expect(disappContent).assertEqual('');
 
         let buttons = await driver.findComponent(ON.text('取消'));
-        buttons?.click();
+        await (buttons?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_1000);
         disappStrJson = inspector.getInspectorByKey('disappearMenuText');
         disappContent = JSON.parseJsonElement(disappStrJson).getElement('$attrs').getString('content');

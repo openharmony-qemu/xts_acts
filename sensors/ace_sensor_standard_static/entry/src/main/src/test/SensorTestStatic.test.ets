@@ -384,7 +384,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -416,7 +416,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -441,11 +441,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `orientatingParamError_SensorJsTest_static_050 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           done();
         }
       })
@@ -728,7 +724,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -760,7 +756,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -792,7 +788,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -824,7 +820,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -856,7 +852,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -888,7 +884,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -921,7 +917,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -954,7 +950,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -986,7 +982,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1018,7 +1014,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1051,7 +1047,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1083,7 +1079,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1116,7 +1112,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1149,7 +1145,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1182,7 +1178,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1214,7 +1210,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1246,7 +1242,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1278,7 +1274,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1311,7 +1307,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1344,7 +1340,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1371,7 +1367,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1398,7 +1394,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1425,7 +1421,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1452,7 +1448,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1479,7 +1475,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1506,7 +1502,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1533,7 +1529,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1561,7 +1557,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1589,7 +1585,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1616,7 +1612,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1643,7 +1639,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1671,7 +1667,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1698,7 +1694,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1726,7 +1722,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1754,7 +1750,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1782,7 +1778,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1809,7 +1805,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1836,7 +1832,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1863,7 +1859,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1891,7 +1887,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1919,7 +1915,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(e.code == 201).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -1944,11 +1940,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `hallParamError_SensorJsTest_static_051 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.HALL == sensor.SensorId.HALL).assertTrue();
           done();
         }
@@ -1973,11 +1965,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientLightParamError_SensorJsTest_static_052 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.AMBIENT_LIGHT == sensor.SensorId.AMBIENT_LIGHT).assertTrue();
           done();
         }
@@ -2002,11 +1990,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `proximityParamError_SensorJsTest_static_053 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.PROXIMITY == sensor.SensorId.PROXIMITY).assertTrue();
           done();
         }
@@ -2031,11 +2015,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `wearDetectionParamError_SensorJsTest_static_054 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.WEAR_DETECTION == sensor.SensorId.WEAR_DETECTION).assertTrue();
           done();
         }
@@ -2059,11 +2039,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `significantMotionParamError_SensorJsTest_static_055 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.SIGNIFICANT_MOTION == sensor.SensorId.SIGNIFICANT_MOTION).assertTrue();
           done();
         }
@@ -2088,11 +2064,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `rotationVectorParamError_SensorJsTest_static_056 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.ROTATION_VECTOR == sensor.SensorId.ROTATION_VECTOR).assertTrue();
           done();
         }
@@ -2117,11 +2089,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerDetectionParamError_SensorJsTest_static_057 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.PEDOMETER_DETECTION == sensor.SensorId.PEDOMETER_DETECTION).assertTrue();
           done();
         }
@@ -2146,11 +2114,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `pedometerParamError_SensorJsTest_static_058 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.PEDOMETER == sensor.SensorId.PEDOMETER).assertTrue();
           done();
         }
@@ -2175,11 +2139,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldUncalibratedParamError_SensorJsTest_static_059 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED == sensor.SensorId.MAGNETIC_FIELD_UNCALIBRATED).assertTrue();
           done();
         }
@@ -2204,11 +2164,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `magneticFieldParamError_SensorJsTest_static_060 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.MAGNETIC_FIELD == sensor.SensorId.MAGNETIC_FIELD).assertTrue();
           done();
         }
@@ -2233,11 +2189,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `linearAccelerometerParamError_SensorJsTest_static_061 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.LINEAR_ACCELEROMETER == sensor.SensorId.LINEAR_ACCELEROMETER).assertTrue();
           done();
         }
@@ -2261,11 +2213,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `humidityParamError_SensorJsTest_static_062 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.HUMIDITY == sensor.SensorId.HUMIDITY).assertTrue();
           done();
         }
@@ -2289,11 +2237,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `heartRateParamError_SensorJsTest_static_063 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.HEART_RATE == sensor.SensorId.HEART_RATE).assertTrue();
           done();
         }
@@ -2318,11 +2262,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeUncalibratedParamError_SensorJsTest_static_064 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.GYROSCOPE_UNCALIBRATED == sensor.SensorId.GYROSCOPE_UNCALIBRATED).assertTrue();
           done();
         }
@@ -2347,11 +2287,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gyroscopeParamError_SensorJsTest_static_065 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.GYROSCOPE == sensor.SensorId.GYROSCOPE).assertTrue();
           done();
         }
@@ -2376,11 +2312,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `gravityParamError_SensorJsTest_static_066 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.GRAVITY == sensor.SensorId.GRAVITY).assertTrue();
           done();
         }
@@ -2405,11 +2337,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `barometerParamError_SensorJsTest_static_067 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.BAROMETER == sensor.SensorId.BAROMETER).assertTrue();
           done();
         }
@@ -2433,11 +2361,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `ambientTemperatureParamError_SensorJsTest_static_068 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.AMBIENT_TEMPERATURE == sensor.SensorId.AMBIENT_TEMPERATURE).assertTrue();
           done();
         }
@@ -2462,11 +2386,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerUncalibratedParamError_SensorJsTest_static_069 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.ACCELEROMETER_UNCALIBRATED == sensor.SensorId.ACCELEROMETER_UNCALIBRATED).assertTrue();
           done();
         }
@@ -2490,11 +2410,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `accelerometerParamError_SensorJsTest_static_070 failed error.code: ${e.code} , error.message: ${e.message}`);
-          if (Available) {
-            expect(e.code == 14500101).assertTrue();
-          } else {
-            expect(e.code == 401).assertTrue();
-          }
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.ACCELEROMETER == sensor.SensorId.ACCELEROMETER).assertTrue();
           done();
         }
@@ -2525,7 +2441,7 @@ export default function SensorJsStaticTest() {
           if (Available) {
             expect(false).assertTrue();
           } else {
-            expect(e.code == 401).assertTrue();
+            expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           }
           done();
         }
@@ -2551,7 +2467,7 @@ export default function SensorJsStaticTest() {
         } catch (error) {
           let e: BusinessError = error as BusinessError;
           hilog.info(0x0000, 'testTag', `fusionPressureParamError_SensorJsTest_static_072 failed error.code: ${e.code} , error.message: ${e.message}`);
-          expect(e.code == 401).assertTrue();
+          expect(e.code == SERVICE_EXCEPTION_CODE).assertTrue();
           expect(sensor.SensorId.FUSION_PRESSURE == sensor.SensorId.FUSION_PRESSURE).assertTrue();
           done();
         }

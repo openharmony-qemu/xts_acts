@@ -47,3 +47,11 @@ export const distanceTest: (a: string) => void;
 export const hoverEffectTest: (a: string) => void;
 
 export const monopolizeTest: (a: string) => void;
+
+export const textSelectionTest: (a: string) => void;
+
+export const TestConvertPositionToWindow001: (a: string) => void;
+
+export const TestIsInRenderState001: (a: string) => void;
+
+export const TestConvertPositionFromWindow001: (a: string) => void;

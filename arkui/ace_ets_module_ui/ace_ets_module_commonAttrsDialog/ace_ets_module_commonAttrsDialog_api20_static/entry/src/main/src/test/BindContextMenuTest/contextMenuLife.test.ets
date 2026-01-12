@@ -82,7 +82,7 @@ export default function ContextMenuLife() {
         let driver = Driver.create();
         await CommonFunc.sleep(SLEEP_TIME_1000);
         let button = await driver.findComponent(ON.id('showID'));
-        button?.click();
+        await (button?.click() as Promise<void>);
         await CommonFunc.sleep(SLEEP_TIME_1000);
 
         let strJson = inspector.getInspectorByKey('appearText1');

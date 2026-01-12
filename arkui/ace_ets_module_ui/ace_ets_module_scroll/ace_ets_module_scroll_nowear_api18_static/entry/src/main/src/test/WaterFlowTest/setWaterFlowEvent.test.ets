@@ -67,7 +67,7 @@ it('setWaterFlowEvent_static_0100', Level.LEVEL0, async (done: () => void): Prom
       console.info('[setWaterFlowEvent_static_0100] START');
       let driver = Driver.create()
       let btnEvent = await driver.findComponent(ON.id('WaterFlow_addCommonEvent_04'));
-      btnEvent?.click();
+      await (btnEvent?.click() as Promise<void>);
       await CommonFunc.sleep(1500)
 
       let swipeScroll = CommonFunc.getComponentRectOnScreen('key_WaterFlow_set');
@@ -81,25 +81,25 @@ it('setWaterFlowEvent_static_0100', Level.LEVEL0, async (done: () => void): Prom
       await driver.swipe(Math.round(left + width/2) as int, Math.round(top + height*0.8) as int, Math.round(left + width/2) as int, Math.round(top + height*0.2) as int);
       await CommonFunc.sleep(2000);
       let btn = await driver.findComponent(ON.id('WaterFlow_setOnReach_04'));
-      btn?.click();
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
 
       let btn1 = await driver.findComponent(ON.id('WaterFlow_setOnWill_04'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       let strJson1 = inspector.getInspectorByKey('WaterFlow_setOnWill_04');
       console.info("[setWaterFlowEvent_static_0100] content1: " + JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson1).getElement('$attrs').getString('content')).assertEqual('setOnWillScroll_setOnDidScroll');
 
       let btn2 = await driver.findComponent(ON.id('WaterFlow_setOnScroll_04'));
-      btn2?.click();
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       let strJson2 = inspector.getInspectorByKey('WaterFlow_setOnScroll_04');
       console.info("[setWaterFlowEvent_static_0100] content3: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content'));
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('setOnScrollStart_setOnScrollStop');
 
       let btn3 = await driver.findComponent(ON.id('WaterFlow_setOnScrollIndex_04'));
-      btn3?.click();
+      await (btn3?.click() as Promise<void>);
       await CommonFunc.sleep(1500);
       let strJson3 = inspector.getInspectorByKey('WaterFlow_setOnScrollIndex_04');
       console.info("[setWaterFlowEvent_static_0100] content4: " + JSON.parseJsonElement(strJson3).getElement('$attrs').getString('content'));

@@ -91,7 +91,7 @@ it('StyledString_static_0100', Level.LEVEL2, async (done: () => void): Promise<v
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('searchStyle'));
-      button1?.click();
+      await (button1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let text = inspector.getInspectorByKey('urlId');

@@ -6697,7 +6697,7 @@ export default function dateTest() {
       const TAG = "testDateValueOf0002";
       try {
         const x1 = new Date();
-        await sleep(1);
+        await sleep(3);
         const x2 = new Date();
         const value1 = x1.valueOf();
         const value2 = x2.valueOf();

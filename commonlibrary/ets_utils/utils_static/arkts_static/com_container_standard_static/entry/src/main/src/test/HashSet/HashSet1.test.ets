@@ -165,8 +165,6 @@ export default function HashSetTest1() {
       hashSet.add(5);
       let res = hashSet.has(1);
       expect(String(res)).assertEqual('true');
-      // let res1 = hashSet.has("A");
-      // expect(String(res1)).assertEqual('false');
     });
 
     /**
@@ -659,111 +657,6 @@ export default function HashSetTest1() {
         expect(arr[i]).assertEqual(arr1[i]);
       }
     });
-
-    /**
-     * @tc.name   testHashSet0033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0330
-     * @tc.desc   Test the function By HashSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testHashSet0033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let hashSet = new HashSet<number>();
-    //   hashSet.add(4);
-    //   hashSet.add(1);
-    //   hashSet.add(3);
-    //   hashSet.add(2);
-    //   hashSet.add(5);
-    //   try {
-    //     hashSet.has.bind({}, "a")();
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The has method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHashSet0034
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0340
-     * @tc.desc   Test the function By HashSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testHashSet0034", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let hashSet = new HashSet<string>();
-    //   try {
-    //     hashSet.add.bind({}, "a")();
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The add method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHashSet0035
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0350
-     * @tc.desc   Test the function By HashSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHashSet0035', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let  hashSet = new HashSet();
-    //   try {
-    //     hashSet.isEmpty.bind({}, "a")();
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The isEmpty method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHashSet0036
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0360
-     * @tc.desc   Test the function By HashSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHashSet0036', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let  hashSet = new HashSet<string>();
-    //   try {
-    //     hashSet.forEach.bind({}, "a")();
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(10200011);
-    //     expect(err.message).assertEqual(`The forEach method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testHashSet0037
-     * @tc.number SUB_COMMONLIBRARY_UTIL_HASHSET_0370
-     * @tc.desc   Test the function By HashSet.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testHashSet0037', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let  hashSet = new HashSet<number>();
-    //   try {
-    //     hashSet.forEach(11);
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "callbackfn" must be callable. Received value is: 11`);
-    //   }
-    // });
 
     /**
      * @tc.name   testHashSet0038

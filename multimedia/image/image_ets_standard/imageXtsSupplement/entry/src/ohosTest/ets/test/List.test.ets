@@ -202,6 +202,7 @@ import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test'
 import ImageBodySerialNumber from './image/ImageBodySerialNumber.test';
 import ImageCameraOwnerName from './image/ImageCameraOwnerName.test';
 import ImageGPSDest from './image/ImageGPSDest.test';
+import ImageExifOECFSupp from './image/ImageExifOECF.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -388,4 +389,5 @@ export default function testsuite() {
   ImageBodySerialNumber();
   ImageCameraOwnerName();
   ImageGPSDest();
+  ImageExifOECFSupp();
 }

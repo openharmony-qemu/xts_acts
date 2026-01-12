@@ -17,7 +17,7 @@
 #include "NapiInitPart1Test.cpp"
 #include "NapiInitPart2Test.cpp"
 #include "NapiInitPart3Test.cpp"
-
+#include "NapiInitPart4Test.cpp"
 
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 {
@@ -200,16 +200,14 @@ static const napi_property_descriptor g_drawingNativeDescriptors[] = {
     DECL_NAPI_DESC(DrawingTextBlobCreate),
     DECL_NAPI_DESC(DrawingTextBlobOther),
     DECL_NAPI_DESC(DrawingTypefaceCreate),
-//    DECL_NAPI_DESC(DrawingRegionAdvancedOperations),
-//  DECL_NAPI_DESC(DrawingRegionPart2QueryOperations),
-//  DECL_NAPI_DESC(DrawingPathIterator),
-//  DECL_NAPI_DESC(DrawingPathPart4InverseFillType),
-//  DECL_NAPI_DESC(DrawingCanvasDrawPixelMapMesh),
-//  DECL_NAPI_DESC(DrawingLattice),
-//  DECL_NAPI_DESC(DrawingRectPart2OtherOperations),
-//  DECL_NAPI_DESC(DrawingTypefaceIsBoldItalic),
-//  DECL_NAPI_DESC(DrawingMatrixPart3),
-};
+    DECL_NAPI_DESC(DrawingRegionAdvancedOperations),
+    DECL_NAPI_DESC(DrawingRegionPart2QueryOperations),
+    DECL_NAPI_DESC(DrawingPathPart4InverseFillType),
+    DECL_NAPI_DESC(DrawingCanvasDrawPixelMapMesh),
+    DECL_NAPI_DESC(DrawingRectPart2OtherOperations),
+    DECL_NAPI_DESC(DrawingTypefaceIsBoldItalic),
+    DECL_NAPI_DESC(DrawingMatrixPart3),
+    };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

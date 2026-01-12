@@ -825,6 +825,20 @@ napi_value EnumOHAVOutputFormat6(napi_env env, napi_callback_info info)
     return retValue;
 }
 
+napi_value EnumOHAVOutputFormat7(napi_env env, napi_callback_info info)
+{
+    int32_t fd = 1;
+    OH_AVOutputFormat format = AV_OUTPUT_FORMAT_OGG;
+    OH_AVMuxer *avmuxer = OH_AVMuxer_Create(fd, format);
+    napi_value retValue;
+    if (avmuxer != nullptr) {
+        napi_create_int32(env, 0, &retValue);
+    } else {
+        napi_create_int32(env, 1, &retValue);
+    }
+    return retValue;
+}
+
 napi_value EnumOHAVColorPrimary1(napi_env env, napi_callback_info info)
 {
     const char *videoMime = OH_AVCODEC_MIMETYPE_VIDEO_AVC;

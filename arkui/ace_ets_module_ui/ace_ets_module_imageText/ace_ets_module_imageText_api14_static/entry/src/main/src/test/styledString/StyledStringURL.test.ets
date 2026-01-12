@@ -73,7 +73,7 @@ it('StyledStringURL_static_0100', Level.LEVEL2, async (done: () => void): Promis
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('but'));
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       let obj = JSON.parseJsonElement(strJson);

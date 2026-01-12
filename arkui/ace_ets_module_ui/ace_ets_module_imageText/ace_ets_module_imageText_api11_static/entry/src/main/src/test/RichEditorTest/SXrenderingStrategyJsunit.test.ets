@@ -44,7 +44,7 @@ export default function SXrenderingStrategyJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get SXrenderingStrategyJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("SXrenderingStrategy" == pages.name)) {
           console.info("get SXrenderingStrategyJsunit pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

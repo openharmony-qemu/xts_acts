@@ -26,6 +26,7 @@ import MarqueeNodeTest from './MarqueeTest/MarqueeNode.test';
 import MarqueeOptionsTest1 from './MarqueeTest/MarqueeOptions1.test';
 import MarqueeOptionsTest2 from './MarqueeTest/MarqueeOptions2.test';
 import MarqueeUIJsunit from './MarqueeTest/MarqueeUIJsunit.test';
+import MarqueeUpdatePolicyTest from './MarqueeTest/MarqueeUpdatePolicy.test';
 
 import BounceSymbolEffectTest from './SymbolGlyphTest/BounceSymbolEffect.test';
 import EffectFillStyle from './SymbolGlyphTest/EffectFillStyle.test';
@@ -57,6 +58,7 @@ export default function testsuite() {
   MarqueeOptionsTest1()
   MarqueeOptionsTest2()
   MarqueeUIJsunit()
+  MarqueeUpdatePolicyTest()
   //SymbolGlyphTest
   BounceSymbolEffectTest()
   EffectFillStyle()

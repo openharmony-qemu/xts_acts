@@ -24,6 +24,7 @@ import { abilityAccessCtrl, PermissionRequestResult, Permissions } from '@kit.Ab
 import { BusinessError } from '@kit.BasicServicesKit';
 import { Driver, ON, MatchPattern } from '@ohos.UiTest';
 import { GlobalThis } from './Constants';
+import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const TAG = "CameraXts CameraSessionAutoDeviceSwitchTest: ";
 const CAMERA_OK = 0;
@@ -268,10 +269,17 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     it('testOHSessionIsAutoDeviceSwitchSupportedTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionIsAutoDeviceSwitchSupportedTest100--------------");
       let isFoldable = display.isFoldable();
-      console.info(TAG + "testOHSessionIsAutoDeviceSwitchSupportedTest100 isFoldable:" + isFoldable);
+      let tagTemp = "testOHSessionIsAutoDeviceSwitchSupportedTest100";
+      console.info(tagTemp + " isFoldable:" + isFoldable);
       let autoSwitchSupportInfo = cameraObj.sessionIsAutoDeviceSwitchSupported();
-      if (autoSwitchSupportInfo.isSupported != isFoldable || autoSwitchSupportInfo.errorCode != 0) {
-        expect().assertFail();
+      console.info(tagTemp + " errorCode:" + autoSwitchSupportInfo.errorCode + " isSupported:" + autoSwitchSupportInfo.isSupported);
+      expect(autoSwitchSupportInfo.errorCode === 0).assertTrue();
+      let foldScreenType = systemParameterEnhance.getSync("const.window.foldscreen.type","0")[0];
+      console.info(tagTemp + " foldScreenType:" + foldScreenType);
+      if (foldScreenType != "7") {
+        expect(autoSwitchSupportInfo.isSupported === isFoldable).assertTrue();
+      } else {
+        expect(autoSwitchSupportInfo.isSupported != isFoldable).assertTrue();
       }
       console.info(TAG + "Entering testOHSessionIsAutoDeviceSwitchSupportedTest100 ends here");
     })

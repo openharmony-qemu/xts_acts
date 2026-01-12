@@ -22,11 +22,9 @@ struct Third{
   build() {
     Flex({ direction: FlexDirection.Column, alignItems: ItemAlign.Center, justifyContent: FlexAlign.Center }) {
       Text(`${this.content}`)
-        .fontSize(50)
         .fontWeight(FontWeight.Bold)
       Button() {
         Text('doubleClick')
-          .fontSize(20)
           .fontWeight(FontWeight.Bold)
       }.type(ButtonType.Capsule)
       .margin({

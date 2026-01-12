@@ -32,12 +32,24 @@ import rowReverseTest from './row/RowReverseTest.test'
 import TextCompressLeadingPunctuationTest from "./text/TextCompressLeadingPunctuationTest.test";
 import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressLeadingPunctuationTest.test";
 import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
+import TextEnumTest from "./text/TextEnum.test";
 import distanceTest from './distance/DistanceTest.test'
 import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
 import monopolizeTest from './monopolize/MonopolizeTest.test'
 import MotionPathOptionsTest from './MotionPath/MotionPathOptionsTest.test'
+import AtomicServiceMenuBarSetVisibleTest from './publicCapacity/AtomicServiceMenuBarSetVisibleTest.test'
+import TextDirectionTest from './text/TextDirection.test'
+import TextSelectionTest from './textSelection/textSelectionTest.test'
+import IsInRenderStateReturnValueTest from "./node/IsInRenderStateReturnValueTest.test";
+import ConvertPositionToWindowTest from "./node/ConvertPositionToWindowTest.test";
+import IsInRenderStateTest from "./node/IsInRenderStateTest.test";
+import ConvertPositionFromWindowTest from "./node/ConvertPositionFromWindowTest.test";
 
 export default function testsuite() {
+  IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
+  ConvertPositionToWindowTest();
+  IsInRenderStateTest();
+  ConvertPositionFromWindowTest();
   ContainerPickerCanLoop();
   ContainerPickerEnableHapticFeedback();
   ContainerPickerOnChangeTest();
@@ -58,8 +70,12 @@ export default function testsuite() {
   TextCompressLeadingPunctuationTest();
   TextAreaCompressLeadingPunctuationTest();
   TextInputCompressLeadingPunctuationTest();
+  TextEnumTest();
   hoverEffectTest();
   distanceTest();
   monopolizeTest();
   MotionPathOptionsTest();
+  AtomicServiceMenuBarSetVisibleTest();
+  TextDirectionTest();
+  TextSelectionTest();
 }

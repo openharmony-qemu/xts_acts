@@ -75,7 +75,7 @@ struct NavDestinationUIObserver {
       console.log('++++++++navDestinationSwitchCallbackWithUIContext1 22222')
       if (info.context) {
         console.log('++++++++navDestinationSwitchCallbackWithUIContext1 33333')
-        AppStorage.setOrCreate('showText', 'on');
+        AppStorage.setOrCreate<String>('showText', 'on');
         console.log(`testTag navDestinationSwitchCallbackWithUIContext1, info: \"from\":${typeof info.from === 'string' ? ('"' + info.from + '"') : JSON.stringify(info.from)},\"to\":${typeof info.to === 'string' ? ('"' + info.to + '"') : JSON.stringify(info.to)}`);
       }
     }
@@ -83,9 +83,9 @@ struct NavDestinationUIObserver {
 
   navDesUpdateCallback1(info: NavDestinationInfo) {
     console.log('++++++++navDesUpdateCallback1 11111')
-    AppStorage.setOrCreate('showUpdateText', 'on');
+    AppStorage.setOrCreate<String>('showUpdateText', 'on');
     console.log('++++++++navDesUpdateCallback1 2222222')
-    console.log(`testTag navDesUpdateCallback1, info: ${AppStorage.get('showUpdateText')! as string}`);
+    console.log(`testTag navDesUpdateCallback1, info: ${AppStorage.get<String>('showUpdateText')! as string}`);
   }
 
   aboutToAppear(): void {
@@ -98,9 +98,9 @@ struct NavDestinationUIObserver {
   }
 
   contextObserverOff(){
-    AppStorage.setOrCreate('showText', 'off');
-    AppStorage.setOrCreate('showUpdateText', 'off');
-    console.log(`testTag navDesUpdateCallback1, info: ${AppStorage.get('showUpdateText')! as string}`);
+    AppStorage.setOrCreate<String>('showText', 'off');
+    AppStorage.setOrCreate<String>('showUpdateText', 'off');
+    console.log(`testTag navDesUpdateCallback1, info: ${AppStorage.get<String>('showUpdateText')! as string}`);
     this.obs?.offNavDestinationSwitch( this.navDestinationSwitchCallbackWithUIContext1);
     this.obs?.offNavDestinationUpdate( this.navDesUpdateCallback1);
   }

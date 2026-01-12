@@ -33,7 +33,7 @@ import panGestureDistanceTest from './PanGesture/panGestureDistance.test';
 import panGestureOnOffTest from './PanGesture/panGestureOnOff.test';
 
 export default function testsuite() {
-  onVisiable(); // 1 pass 1
+  onVisiable();
   PreDrag();
   enableEdgeAutoScroll_false();
   enableEdgeAutoScroll_true();

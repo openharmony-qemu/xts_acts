@@ -77,9 +77,9 @@ it('UnmarshallingErrorCodeTest_static_0010', Level.LEVEL0, async (done: () => vo
       let driver = Driver.create();
       await CommonFunc.sleep(500);
       let Button = await driver.findComponent(ON.id('Unmarshalling_button'));
-      Button?.click()
+      await (Button?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      Button?.click()
+      await (Button?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       console.info('[UnmarshallingErrorCodeTest_0010] click succ');
       let strJson = inspector.getInspectorByKey('Unmarshalling_GetCode401');

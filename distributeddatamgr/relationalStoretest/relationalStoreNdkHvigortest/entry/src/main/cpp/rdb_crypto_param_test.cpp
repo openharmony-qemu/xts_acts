@@ -75,6 +75,12 @@ static napi_value OH_Rdb_CreateCryptoParam0300(napi_env env, napi_callback_info)
     int64_t iteration2 = 0;
     ret = OH_Crypto_SetIteration(obj, iteration2);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetIteration3 is fail.");
+    int64_t iteration3 = 9223372036854775807;
+    ret = OH_Crypto_SetIteration(obj, iteration3);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetIteration4 is fail.");
+    int64_t iteration4 = 9223372036854775808;
+    ret = OH_Crypto_SetIteration(obj, iteration4);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetIteration5 is fail.");
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     
@@ -175,6 +181,12 @@ static napi_value OH_Rdb_CreateCryptoParam0700(napi_env env, napi_callback_info)
     int64_t pageSize4 = 4096;
     ret = OH_Crypto_SetCryptoPageSize(obj, pageSize4);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetCryptoPageSize5 is fail.");
+    int64_t pageSize5 = 65536;
+    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize5);
+    NAPI_ASSERT(env, ret == RDB_OK, "OH_Crypto_SetCryptoPageSize6 is fail.");
+    int64_t pageSize6 = 65537;
+    ret = OH_Crypto_SetCryptoPageSize(obj, pageSize6);
+    NAPI_ASSERT(env, ret == RDB_E_INVALID_ARGS, "OH_Crypto_SetCryptoPageSize7 is fail.");
     ret = OH_Rdb_DestroyCryptoParam(obj);
     NAPI_ASSERT(env, ret == RDB_OK, "OH_Rdb_DestroyCryptoParam is fail.");
     

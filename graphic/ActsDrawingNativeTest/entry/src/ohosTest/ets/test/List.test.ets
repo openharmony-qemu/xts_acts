@@ -21,6 +21,8 @@ import ActsNewDrawingNativeTestPart6 from './DrawingNativePart6.test';
 import ActsNewDrawingNativeTestPart7 from './DrawingNativePart7.test';
 import ActsNewDrawingNativeTestPart8 from './DrawingNativePart8.test';
 import ActsNewDrawingNativeTestPart9 from './DrawingNativePart9.test';
+import ActsNewDrawingNativeTestPart10 from './DrawingNativePart10.test';
+import ActsNewDrawingNativeTestPart11 from './DrawingNativePart11.test';
 
 export default function testsuite() {
   ActsNewDrawingNativeTestPart1();
@@ -32,4 +34,6 @@ export default function testsuite() {
   ActsNewDrawingNativeTestPart7();
   ActsNewDrawingNativeTestPart8();
   ActsNewDrawingNativeTestPart9();
+  ActsNewDrawingNativeTestPart10();
+  ActsNewDrawingNativeTestPart11();
 }

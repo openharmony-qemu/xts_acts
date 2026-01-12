@@ -81,6 +81,7 @@ constexpr float MATRIX_VALUE_32_0 = 32.0f;
 constexpr float MATRIX_VALUE_40_0 = 40.0f;
 constexpr float MATRIX_VALUE_38_0 = 38.0f;
 constexpr float MATRIX_VALUE_14_0 = 14.0f;
+constexpr float MATRIX_VALUE_12_0 = 12.0f;
 
 constexpr int MATRIX_INT_1 = 1;
 constexpr int MATRIX_INT_2 = 2;

@@ -1068,6 +1068,18 @@ Camera_ErrorCode NDKCamera::SessionGetPhotoRotation(int rotation)
     return ret;
 }
 
+Camera_ErrorCode NDKCamera::SessionGetPhotoRotationWithoutDeviceDegree()
+{
+    LOG("GetPhotoRotationWithoutDeviceDegree begin.");
+    Camera_ErrorCode ret = OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree(photoOutput_, &imageRotation_);
+    if (ret == CAMERA_OK) {
+        LOG("OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree success.");
+    } else {
+        LOG("OH_PhotoOutput_GetPhotoRotationWithoutDeviceDegree failed. %d ", ret);
+    }
+    return ret;
+}
+
 Camera_ErrorCode NDKCamera::SessionGetVideoRotation(int rotation)
 {
     LOG("GetVideoRotation begin.");
@@ -1082,6 +1094,18 @@ Camera_ErrorCode NDKCamera::SessionGetVideoRotation(int rotation)
     return ret;
 }
 
+Camera_ErrorCode NDKCamera::SessionGetVideoRotationWithoutDeviceDegree()
+{
+    LOG("GetVideoRotationWithoutDeviceDegree begin.");
+    Camera_ErrorCode ret = OH_VideoOutput_GetVideoRotationWithoutDeviceDegree(videoOutput_, &imageRotation_);
+    if (ret == CAMERA_OK) {
+        LOG("OH_VideoOutput_GetVideoRotationWithoutDeviceDegree success.");
+    } else {
+        LOG("OH_VideoOutput_GetVideoRotationWithoutDeviceDegree failed. %d ", ret);
+    }
+    return ret;
+}
+
 Camera_ErrorCode NDKCamera::SessionGetPreviewRotation(int rotation)
 {
     LOG("GetPreviewRotation begin.");
@@ -1092,6 +1116,18 @@ Camera_ErrorCode NDKCamera::SessionGetPreviewRotation(int rotation)
         LOG("OH_PreviewOutput_GetPreviewRotation success.");
     } else {
         LOG("OH_PreviewOutput_GetPreviewRotation failed. %d ", ret);
+    }
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::SessionGetPreviewRotationWithoutDisplayRotation()
+{
+    LOG("GetPreviewRotationWithoutDisplayRotation begin.");
+    Camera_ErrorCode ret = OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation(previewOutput_, &imageRotation_);
+    if (ret == CAMERA_OK) {
+        LOG("OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation success.");
+    } else {
+        LOG("OH_PreviewOutput_GetPreviewRotationWithoutDisplayRotation failed. %d ", ret);
     }
     return ret;
 }
@@ -1558,6 +1594,47 @@ Camera_ErrorCode NDKCamera::CameraInputUnRegisterCallback(void)
     ret_ = OH_CameraInput_UnregisterCallback(cameraInput_, GetCameraInputListener());
     if (ret_ != CAMERA_OK) {
         LOG("OH_CameraInput_UnregisterCallback failed.");
+    }
+    return ret_;
+}
+
+void OcclusionDetectionCallback(const Camera_Input* cameraInput,
+    Camera_OcclusionDetectionResult occlusionDetectionResult)
+{
+    if (occlusionDetectionResult.isCameraOccluded) {
+        LOG("isCameraOccluded true");
+    }
+    if (occlusionDetectionResult.isCameraLensDirty) {
+        LOG("isCameraLensDirty true");
+    }
+}
+
+Camera_ErrorCode NDKCamera::CameraInputRegisterOcclusionDetectionCallback(void)
+{
+    LOG("CameraOcclusionDetectChangeTest begin.");
+    if (cameraInput_ == nullptr) {
+        LOG("ndkXTS CameraInput is nullptr");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    ret_ = OH_CameraInput_RegisterOcclusionDetectionCallback(
+        cameraInput_, OcclusionDetectionCallback);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_RegisterOcclusionDetectionCallback failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CameraInputUnRegisterOcclusionDetectionCallback(void)
+{
+    LOG("CameraOcclusionDetectChangeTest begin.");
+    if (cameraInput_ == nullptr) {
+        LOG("ndkXTS CameraInput is nullptr");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    ret_ = OH_CameraInput_UnregisterOcclusionDetectionCallback(
+        cameraInput_, OcclusionDetectionCallback);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_UnregisterOcclusionDetectionCallback failed.");
     }
     return ret_;
 }

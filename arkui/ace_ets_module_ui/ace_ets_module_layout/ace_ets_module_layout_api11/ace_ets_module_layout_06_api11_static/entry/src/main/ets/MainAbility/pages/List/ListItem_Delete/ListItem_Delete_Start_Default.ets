@@ -93,6 +93,7 @@ struct ListItem_Delete_Start_Default {
             start: {
               onAction: () => {
                 this.getUIContext().animateTo({ duration: 1000 }, () => {
+                  console.info('[ListItem_Delete_Start_Default] onAction start!');
                   let index = this.arr.indexOf(item)
                   this.arr.splice(index, 1)
                 })

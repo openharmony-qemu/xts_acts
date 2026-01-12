@@ -49,7 +49,7 @@ import { colorsForCheck } from '../../../ets/MainAbility/pages/themeTokensPages/
 
 export default function withThemeTest() {
   const SUITE: string = 'WithTheme';
-  let themeLocal: CustomTheme | undefined;
+  let themeLocal: Theme | undefined;
   let themeLocalNested: Theme | undefined;
   let themeLocalSystem: Theme | undefined;
   let themeLocalLight: Theme | undefined;
@@ -96,7 +96,7 @@ export default function withThemeTest() {
     });
 
     afterAll(() => {
-      // ThemeControl.setDefaultTheme(undefined);
+      ThemeControl.setDefaultTheme(undefined);
       const router = AppStorage.get<Router>("router") as Router
       router.back()
     });

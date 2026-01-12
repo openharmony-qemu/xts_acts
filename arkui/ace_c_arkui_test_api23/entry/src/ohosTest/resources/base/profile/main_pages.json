@@ -19,6 +19,10 @@
     "MainAbility/pages/textInput/TextInputCompressLeadingPunctuationTest",
     "MainAbility/pages/distance/DistanceTest",
     "MainAbility/pages/hoverEffect/HoverEffectTest",
-    "MainAbility/pages/monopolize/MonopolizeTest"
+    "MainAbility/pages/monopolize/MonopolizeTest",
+    "MainAbility/pages/textSelection/textSelectionTest",
+    "MainAbility/pages/node/ConvertPositionToWindowTest",
+    "MainAbility/pages/node/IsInRenderStateTest",
+    "MainAbility/pages/node/ConvertPositionFromWindowTest"
   ]
 }

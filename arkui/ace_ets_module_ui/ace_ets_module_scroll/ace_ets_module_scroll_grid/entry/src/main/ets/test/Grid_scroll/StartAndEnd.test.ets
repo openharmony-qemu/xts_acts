@@ -69,7 +69,7 @@ export default function StartAndEnd() {
 
       await driver.swipe(
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
-        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.1 + gridRect.top}`),
+        Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.3 + gridRect.top}`),
         Number.parseInt(`${(gridRect.right - gridRect.left) * 0.5 + gridRect.left}`),
         Number.parseInt(`${(gridRect.bottom - gridRect.top) * 0.9 + gridRect.top}`),
         1000);

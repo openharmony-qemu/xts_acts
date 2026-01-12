@@ -157,29 +157,39 @@ export default function drawingTsPath3Test() {
      */
     it('testPathGetBoundsNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
       const msg = 'testPathGetBoundsNormal';
-
       try {
         let rect: common2D.Rect = {
           left: 0, top: 0, right: 0, bottom: 0
         };
-
         const path = new drawing.Path();
         path.lineTo(50, 40)
         rect = path.getBounds();
-
+        console.info(msg + " 1 test rect.left: " + rect.left);
+        console.info(msg + " 1 test rect.top: " + rect.top);
+        console.info(msg + " 1 test rect.right: " + rect.right);
+        console.info(msg + " 1 test rect.bottom: " + rect.bottom);
+        expect(rect.left == 0).assertTrue();
+        expect(rect.top == 0).assertTrue();
+        expect(rect.right == 50).assertTrue();
+        expect(rect.bottom == 40).assertTrue();
         path.addRect({
           left: 10, right: 400, top: 100, bottom: 300
         }, drawing.PathDirection.CLOCKWISE);
         rect = path.getBounds();
-
+        console.info(msg + " 2 test rect.left: " + rect.left);
+        console.info(msg + " 2 test rect.top: " + rect.top);
+        console.info(msg + " 2 test rect.right: " + rect.right);
+        console.info(msg + " 2 test rect.bottom: " + rect.bottom);
+        expect(rect.left == 0).assertTrue();
+        expect(rect.top == 0).assertTrue();
+        expect(rect.right == 400).assertTrue();
+        expect(rect.bottom == 300).assertTrue();
         console.info(msg + 'test successes');
       } catch (e) {
         console.info(msg + `test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail()
       }
     })
-
-
     /**
      * @tc.name   testPathGetBoundsMultipleCalls
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_1701
@@ -190,7 +200,6 @@ export default function drawingTsPath3Test() {
      */
     it('testPathGetBoundsMultipleCalls', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
       const msg = 'testPathGetBoundsMultipleCalls';
-
       try {
         const path = new drawing.Path();
         for (let i = 0; i < 20; i += 1) {
@@ -202,8 +211,6 @@ export default function drawingTsPath3Test() {
         expect().assertFail()
       }
     })
-
-
     /**
      * @tc.name   testPathGetLengthNormal
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_PATH_1800
@@ -717,12 +724,30 @@ export default function drawingTsPath3Test() {
         expect().assertFail();
       }
       try {
+        let result: boolean;
+        result = path.getSegment(false, 10.0, 20.0, true, dstPath)
+        console.info(msg + " 1 getSegment-----result:  "+ result);
+        expect(result).assertEqual(true);
+      } catch (e) {
+        console.info(msg + `1 test getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
         let result2: boolean;
         result2 = path.getSegment(true, 20.0, 10.0, true, dstPath)
         console.info(msg + " getSegment 2 -----result2:  "+ result2);
         expect(result2).assertEqual(false);
       } catch (e) {
         console.info(msg + `test getSegment 2. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
+        let result3: boolean;
+        result3 = path.getSegment(true, 20.0, 10.0, false, dstPath)
+        console.info(msg + " getSegment 3 -----result2:  "+ result3);
+        expect(result3).assertEqual(false);
+      } catch (e) {
+        console.info(msg + `test getSegment 3. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect().assertFail();
       }
     })
@@ -753,6 +778,46 @@ export default function drawingTsPath3Test() {
         expect().assertFail()
       } catch (e) {
         console.info(msg + `test getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(true, 10.0, 20.0, true, null)
+        console.info(msg + `test 1 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 1 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(true, undefined, 20.0, true, dstPath)
+        console.info(msg + `test 2 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 2 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(true, null, 20.0, true, dstPath)
+        console.info(msg + `test 3 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 3 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(true, 10.0, null, true, dstPath)
+        console.info(msg + `test 4 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 4 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        path.getSegment(true, 10.0, undefined, true, dstPath)
+        console.info(msg + `test 5 getSegment error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `test 5 getSegment . errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
     })

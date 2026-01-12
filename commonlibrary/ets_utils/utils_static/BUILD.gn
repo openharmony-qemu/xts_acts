@@ -20,6 +20,7 @@ group("utils_static") {
       "arkts_static:arkts_static",
       "builtin_static:builtin_static",
       "concurrency_static:concurrency_static",
+      "spec_static:spec_static",
     ]
   }
 }

@@ -468,7 +468,7 @@ export default function WindowTitleTest() {
                 hilog.info(domain, tag,`${msgStr} setDecorButtonStyle success.`);
             } catch (error) {
                 error = error as BusinessError;
-                hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
+                hilog.error(domain, tag,msgStr + ' Failed. Cause:'+JSON.stringify(error.code) + JSON.stringify(error));
                 if (error.code == 801) {
                     done();
                 } else {
@@ -477,6 +477,7 @@ export default function WindowTitleTest() {
                     hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
                     expect(result.buttonIconSize).assertEqual(20);
                     done();
+                       
                 }
             }
         })
@@ -500,7 +501,7 @@ export default function WindowTitleTest() {
                 hilog.error(domain, tag,`${msgStr} setDecorButtonStyle success.`);
             } catch (error) {
                 error = error as BusinessError;
-                hilog.error(domain, tag,msgStr + ' Failed. Cause:' + JSON.stringify(error));
+                hilog.error(domain, tag,msgStr + ' Failed. Cause:'+JSON.stringify(error.code) + JSON.stringify(error));
                 if (error.code == 801) {
                     done();
                 } else {
@@ -509,6 +510,7 @@ export default function WindowTitleTest() {
                     hilog.info(domain, tag,`${msgStr} getDecorButtonStyle result: ${JSON.stringify(result)}`);
                     expect(result.buttonBackgroundCornerRadius).assertEqual(4);
                     done();
+                    
                 }
             }
         })
@@ -793,9 +795,11 @@ export default function WindowTitleTest() {
             try {
                 (tempWnd! as window.Window).getDecorButtonStyle();
                 console.error(msgStr + 'Succeeded in calling getDecorButtonStyle.');
+                await tempWnd.destroyWindow();
             } catch (exception) {
                 exception = exception as BusinessError;
                 console.error(msgStr + 'Failed to set the call getDecorButtonStyle. Cause:' + JSON.stringify(exception.code));
+                await tempWnd.destroyWindow();
                 if (exception.code == 801) {
                     done();
                 } else if (exception.code == 1300004) {

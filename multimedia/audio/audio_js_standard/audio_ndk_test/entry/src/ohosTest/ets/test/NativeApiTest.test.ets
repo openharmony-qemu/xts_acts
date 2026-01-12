@@ -4710,6 +4710,117 @@ export default function audioNDK() {
       console.info(`Tag: SUB_MULTIMEDIA_AUDIOCOMMON_RESULT_001 : ${result}`);
       expect(result).assertEqual(TEST_PASS);
       done();
-    })    
+    })
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100
+     * @tc.desc   GetLatency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      let result = myaudioNdk.AudioSuiteRendererGetLatency_0100();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0100 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200
+     * @tc.desc   GetLatency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      let result = myaudioNdk.AudioSuiteRendererGetLatency_0200();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0200 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300
+     * @tc.desc   GetLatency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      let result = myaudioNdk.AudioSuiteRendererGetLatency_0300();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0300 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400
+     * @tc.desc   GetLatency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      let result = myaudioNdk.AudioSuiteRendererGetLatency_0400();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0400 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500
+     * @tc.desc   GetLatency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      let result = myaudioNdk.AudioSuiteRendererGetLatency_0500();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0500 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0600
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0600
+     * @tc.desc   GetLatency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      let result = myaudioNdk.AudioSuiteRendererGetLatency_0600();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0600 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0700
+     * @tc.number SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0700
+     * @tc.desc   GetLatency
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: Function) => {
+      let result = myaudioNdk.AudioSuiteRendererGetLatency_0700();
+      console.info(`Tag: SUB_MULTIMEDIA_AUDIO_OH_AudioRenderer_GetLatency_0700 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
   })
 }

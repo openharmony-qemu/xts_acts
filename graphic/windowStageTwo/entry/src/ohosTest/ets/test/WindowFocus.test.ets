@@ -60,6 +60,7 @@ export default function windowFocusTest() {
     let windowStage: ohosWindow.WindowStage;
     let windowClass: window.Window;
     let isAutoWindow:string = '';
+    let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -79,8 +80,8 @@ export default function windowFocusTest() {
       let topWindow = await window.getLastWindow(context);
       let topWindowId = topWindow.getWindowProperties().id;
       console.info(`beforeall topWindowId: ${topWindowId}`);
+      driver = Driver.create();
       try {
-          let driver = Driver.create();
           let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
           console.log('findComponent allowed: ' + JSON.stringify(allowed));
           if(allowed){
@@ -910,7 +911,6 @@ export default function windowFocusTest() {
     it(" test_mainWindow_on_noInteractionDetected_Not_triggered", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let msgStr = " test_mainWindow_on_noInteractionDetected_Not_triggered";
       console.log(msgStr + "begin");
-      let driver: Driver = Driver.create();
       let flag = false;
       let windowClass = await windowStage.getMainWindow();
       try {

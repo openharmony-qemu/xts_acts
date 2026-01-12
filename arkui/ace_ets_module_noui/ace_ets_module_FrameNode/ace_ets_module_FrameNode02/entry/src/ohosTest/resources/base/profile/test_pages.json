@@ -11,6 +11,7 @@
         "MainAbility/pages/frameNode/nodeList",
         "MainAbility/pages/frameNode/nodeListItemGroup",
 		"MainAbility/pages/frameNode/IsOnMainTreeMethodPage",
+        "MainAbility/pages/frameNode/isInRenderStateTest",
         "MainAbility/pages/nodeAdapter/NodeAdapter001"
     ]
 }

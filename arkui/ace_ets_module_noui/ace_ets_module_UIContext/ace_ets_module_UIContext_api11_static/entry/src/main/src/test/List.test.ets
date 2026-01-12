@@ -20,8 +20,8 @@ import getUIObserver from './UIContext/getUIObserver.test'
 import mediaQueryOffJsunit from './mediaqueryTest/mediaQuery.test'
 
 export default function testsuite() {
-  getDragController(); //  SDK12.3 pass1
-  mediaQueryOffJsunit(); // SDK12.2 Pass: 11
+  getDragController();
+  mediaQueryOffJsunit();
   atomicServiceBarTest();  
-  getUIObserver(); // master22 已解决
+  getUIObserver();
 }

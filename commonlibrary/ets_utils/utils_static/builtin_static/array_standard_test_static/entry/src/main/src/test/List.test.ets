@@ -21,6 +21,18 @@ import ArrayPushTest from './array/ArrayPush.test';
 import ArraySliceTest from './array/ArraySlice.test';
 import ArraySomeTest from './array/ArraySome.test';
 import ArraySpliceTest from './array/ArraySplice.test';
+import ArrayConstructTest from './array/ArrayConstruct.test';
+import ArrayFillTest from './array/ArrayFill.test';
+import ArrayFilterTest from './array/ArrayFilter.test';
+import ArrayFindTest from './array/ArrayFind.test';
+import ArrayFindIndexTest from './array/ArrayFindIndex.test';
+import ArrayFlatTest from './array/ArrayFlat.test';
+import ArrayForEachTest from './array/ArrayForEach.test';
+import ArrayFromTest from './array/ArrayFrom.test';
+import ArrayIsArrayTest from './array/ArrayIsArray.test';
+import ArrayLastIndexOfTest from './array/ArrayLastIndexOf.test';
+import ArrayMapTest from './array/ArrayMap.test';
+import ArrayReduceTest from './array/ArrayReduce.test';
 
 export default function testsuite() {
     ArrayEveryTest();
@@ -31,4 +43,16 @@ export default function testsuite() {
     ArraySliceTest();
     ArraySomeTest();
     ArraySpliceTest();
+    ArrayConstructTest();
+    ArrayFillTest();
+    ArrayFilterTest();
+    ArrayFindTest();
+    ArrayFindIndexTest();
+    ArrayFlatTest();
+    ArrayForEachTest();
+    ArrayFromTest();
+    ArrayIsArrayTest();
+    ArrayLastIndexOfTest();
+    ArrayMapTest();
+    ArrayReduceTest();
 }

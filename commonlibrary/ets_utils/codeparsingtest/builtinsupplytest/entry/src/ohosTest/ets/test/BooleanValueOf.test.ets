@@ -21,7 +21,6 @@ export default function builtinsBooleanValueOfTest() {
     beforeAll(() => {
     })
     beforeEach(async () => {
-      await sleep(100);
     })
     afterEach(() => {
     })

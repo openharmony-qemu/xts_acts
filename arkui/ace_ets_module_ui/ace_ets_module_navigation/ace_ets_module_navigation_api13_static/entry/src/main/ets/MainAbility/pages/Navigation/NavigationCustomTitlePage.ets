@@ -37,7 +37,7 @@ struct NavigationCustomTitlePage {
     }
     .margin({left: '10%', top: '10'} as Margin)
     .onClick((e: ClickEvent) => {
-       AppStorage.setOrCreate('customTitle', 14);
+       AppStorage.setOrCreate<Double>('customTitle', 14);
     })
   }
 
@@ -68,7 +68,7 @@ struct PageNavDestination {
     .margin({left: '10%', top: '10'} as Margin)
     .onClick((e: ClickEvent) => {
        this.num = 15;
-       AppStorage.setOrCreate('customNavTitle', 15);
+       AppStorage.setOrCreate<Double>('customNavTitle', 15);
     })
   }
 

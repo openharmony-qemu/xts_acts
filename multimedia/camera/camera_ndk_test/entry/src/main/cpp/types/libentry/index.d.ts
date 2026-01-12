@@ -234,6 +234,8 @@ export const cameraInputClose: () => number;
 
 export const cameraInputRelease: () => number;
 
+export const cameraInputOcclusionDetection: () => number;
+
 export const previewOutputStart: () => number;
 
 export const previewOutputStop: () => number;
@@ -334,9 +336,15 @@ export const sessionUnregisterControlCenterEffectStatusChange: (index:number) =>
 
 export const sessionGetPhotoRotation: (a: number) => number;
 
+export const sessionGetPhotoRotationWithoutDeviceDegree: () => number;
+
 export const sessionGetVideoRotation: (a: number) => number;
 
+export const sessionGetVideoRotationWithoutDeviceDegree: () => number;
+
 export const sessionGetPreviewRotation: (a: number) => number;
+
+export const sessionGetPreviewRotationWithoutDisplayRotation: () => number;
 
 export const sessionGetImageRotation: (a: number) => number;
 

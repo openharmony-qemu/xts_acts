@@ -477,6 +477,38 @@ static napi_value OHCameraInputUnregisterCallback(napi_env env, napi_callback_in
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHCameraInputRegisterOcclusionDetectionCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = g_ndkCamera->CameraInputRegisterOcclusionDetectionCallback(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value OHCameraInputUnRegisterOcclusionDetectionCallback(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = g_ndkCamera->CameraInputUnRegisterOcclusionDetectionCallback(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
 static napi_value OHCaptureSessionBeginConfig(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -1581,6 +1613,10 @@ napi_property_descriptor desc1[] = {
      napi_default, nullptr},
     {"oHCameraInputRegisterCallback", nullptr, OHCameraInputRegisterCallback, nullptr, nullptr, nullptr,
      napi_default, nullptr},
+    {"oHCameraInputRegisterOcclusionDetectionCallback", nullptr, OHCameraInputRegisterOcclusionDetectionCallback,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHCameraInputUnRegisterOcclusionDetectionCallback", nullptr, OHCameraInputUnRegisterOcclusionDetectionCallback,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHCaptureSessionBeginConfig", nullptr, OHCaptureSessionBeginConfig, nullptr, nullptr, nullptr,
      napi_default, nullptr},
     {"oHCaptureSessionCommitConfig", nullptr, OHCaptureSessionCommitConfig, nullptr, nullptr, nullptr,

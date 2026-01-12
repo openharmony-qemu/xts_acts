@@ -81,7 +81,7 @@ it('textAreaInputTest_static_0001', Level.LEVEL0, async () => {
         await CommonFunc.sleep(500);
         let textArea2 = await driver.findComponent(ON.id('textArea2'));
         await CommonFunc.sleep(500);
-        textArea2?.click()
+        await (textArea2?.click() as Promise<void>)
         await CommonFunc.sleep(500);
         await driver.triggerKey(2070);
         await CommonFunc.sleep(1000);

@@ -550,6 +550,70 @@ export default function NetExtAttributeHasNetTest() {
      }
    });
 
+      /**
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0600
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0600
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+      it("testNetworkMgrConnectionSetNetExtAttribute0600", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,async (done: Function) => {
+        let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0600";
+        console.info(`${caseName}---Start`);
+        try{
+          let netHandle = connection.getDefaultNetSync();
+          netHandle.netId = 22;
+          connection.setNetExtAttribute(netHandle, undefined).then(() => {
+            console.info(`${caseName} setNetExtAttributeSync success `);
+            ExpectFail();
+            done();
+          }).catch((err: BusinessError)=>{
+            console.info(`${caseName} setNetExtAttributeSync failed err is `+JSON.stringify(err));
+            ExpectTrue(err.code == 201 || err.code == 2100001);
+            done();
+          })
+        }catch (err){
+          console.info(`${caseName} catch err is `+JSON.stringify(err));
+          console.info(`${caseName} is not pc device `+JSON.stringify(err));
+          ExpectTrue(err.code == 201 || err.code == 2100001);
+          console.info(`${caseName}---End`);
+          done();
+        }
+      });
+
+         /**
+    * @tc.name   testNetworkMgrConnectionSetNetExtAttribute0700
+    * @tc.number SUB_NetworkMgr_Connection_SetNetExtAttribute_0700
+    * @tc.desc   To test the extended network attribute function
+    * @tc.type   FUNCTION
+    * @tc.size   SMALLTEST
+    * @tc.level  LEVEL3
+    */
+   it("testNetworkMgrConnectionSetNetExtAttribute0700", TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3,async (done: Function) => {
+    let caseName: string = "testNetworkMgrConnectionSetNetExtAttribute0700";
+    console.info(`${caseName}---Start`);
+    try{
+      let netHandle = connection.getDefaultNetSync();
+      netHandle.netId = 0;
+      connection.setNetExtAttribute(netHandle, undefined).then(() => {
+        console.info(`${caseName} setNetExtAttributeSync success `);
+        ExpectFail();
+        done();
+      }).catch((err: BusinessError)=>{
+        console.info(`${caseName} setNetExtAttributeSync failed err is `+JSON.stringify(err));
+        ExpectTrue(err.code == 201 || err.code == 2100001);
+        done();
+      })
+    }catch (err){
+      console.info(`${caseName} catch err is `+JSON.stringify(err));
+      console.info(`${caseName} is not pc device `+JSON.stringify(err));
+      ExpectTrue(err.code == 201 || err.code == 2100001);
+      console.info(`${caseName}---End`);
+      done();
+    }
+  });
+
   });
 }
 

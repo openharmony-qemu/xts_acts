@@ -18,6 +18,9 @@
     "MainAbility/pages/UIContext/IdTest",
     "MainAbility/pages/getUIContext/GetUIContextMethodTest",
     "MainAbility/pages/CacheMaxCount/CacheMaxCountForHSPParamTest",
-    "MainAbility/pages/getUIContext/WidthBreakpointEnumsTest"
+    "MainAbility/pages/getUIContext/WidthBreakpointEnumsTest",
+    "MainAbility/pages/getUIContext/GetWindowIdTest",
+    "MainAbility/pages/getUIContext/UIContextOnFrameTest",
+    "MainAbility/pages/getUIContext/UIContextOnIdleTest"
   ]
 }

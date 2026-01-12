@@ -207,5 +207,31 @@ export default function audioRendererTest() {
       expect(errorCode).assertEqual(errStatus);
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0500
+     * @tc.desc   AudioRenderer-Latency types check.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_AUDIO_RENDERER_GET_LATENCY_0500', TestType.Function | Size.MEDIUMTEST | Level.LEVEL1,
+    async (done: Function) => {
+      let allLatency = 0;
+      let swLatency = 1;
+      let hdLatency = 2;
+      try {
+        expect(audio.AudioLatencyType.LATENCY_TYPE_ALL).assertEqual(allLatency);
+        console.info('allLatency type match the expect type. ${audio.AudioLatencyType.LATENCY_TYPE_ALL}');
+        expect(audio.AudioLatencyType.LATENCY_TYPE_SOFTWARE).assertEqual(swLatency);
+        console.info('allLatency type match the expect type. ${audio.AudioLatencyType.LATENCY_TYPE_SOFTWARE}');
+        expect(audio.AudioLatencyType.LATENCY_TYPE_HARDWARE).assertEqual(hdLatency);
+        console.info('allLatency type match the expect type. ${audio.AudioLatencyType.LATENCY_TYPE_HARDWARE}');
+      } catch (error) {
+        console.info("obtained delay type does not match the enumeration value.");
+      }
+      done();
+    })
   })
 }

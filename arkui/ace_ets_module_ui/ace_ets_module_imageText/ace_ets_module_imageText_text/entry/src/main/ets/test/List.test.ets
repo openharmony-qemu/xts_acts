@@ -104,6 +104,7 @@ import TextCompressLeadingPunctuation from './TextTest/TextCompressLeadingPunctu
 import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadingPunctuationModifier.test';
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test';
 import TextFontWeightTest from './TextTest/TextFontWeightTest.test';
+import TextDirectionTest from './TextTest/TextDirection.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -198,4 +199,5 @@ export default function testsuite() {
   TextCompressLeadingPunctuationModifier();
   TextMenuItemIdTest();
   TextFontWeightTest();
+  TextDirectionTest();
 }

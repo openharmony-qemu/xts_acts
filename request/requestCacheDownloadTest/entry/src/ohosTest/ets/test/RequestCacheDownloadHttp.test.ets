@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -252,6 +252,41 @@ export default function requestCacheDownloadHttpUnitTest() {
         expect().assertFail();
         done();
       }
+    });
+
+    /**
+     * @tc.name   SUB_Request_cacheDownload_maintenance_1500
+     * @tc.number SUB_Request_cacheDownload_maintenance_1500
+     * @tc.desc   get local ip in downloadInfo.
+     * @tc.size   MediumTest
+     * @tc.type   Function
+     * @tc.level  Level 3
+     */
+    it('SUB_Request_cacheDownload_maintenance_1500', Level.LEVEL3, async (done: Function) => {
+      console.info("====>-----------------------SUB_Request_cacheDownload_maintenance_1500 is starting-----------------------");
+      class cacheDownloadOptions implements cacheDownload.CacheDownloadOptions {
+        headers?: Record<string, string>;
+      }
+      cacheDownload.setDownloadInfoListSize(1);
+      let url: string = 'http://127.0.0.1:8080';
+      let downloadInfo1: cacheDownload.DownloadInfo | undefined;
+      let downloadOptions = new cacheDownloadOptions();
+      let onSuccessCallback = () => {
+        try {
+          cacheDownload.offDownloadSuccess(url, onSuccessCallback);
+          downloadInfo1 = cacheDownload.getDownloadInfo(url);
+          console.info(`====>SUB_Request_cacheDownload_maintenance_1500 onSuccessCallback ${JSON.stringify(downloadInfo1)}}`);
+          expect(downloadInfo1?.network.ip === '127.0.0.1').assertTrue();
+          done();
+        } catch (err) {
+          console.info("====>SUB_Request_cacheDownload_maintenance_1500 catch err: " + JSON.stringify(err));
+          done();
+        }
+      }
+      downloadOptions.headers = {'test6': 'cacheDownloadMaintenance1500'};
+      cacheDownload.download(url, downloadOptions);
+      console.info(`====>SUB_Request_cacheDownload_maintenance_1500 download success`);
+      cacheDownload.onDownloadSuccess(url, onSuccessCallback);
     });
 
   });

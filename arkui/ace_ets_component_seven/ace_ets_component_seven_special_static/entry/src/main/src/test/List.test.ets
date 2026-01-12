@@ -39,10 +39,8 @@ export default function list() {
         console.info("get list state pages: " + JSON.stringify(pages));
         if (!("list" == pages.name)) {
           console.info("get list state pages.name: " + JSON.stringify(pages.name));
-          // let result = await routerInstance.pushUrl(options);
-          routerInstance.pushUrl(options);;
+          routerInstance.pushUrl(options);
           await Utils.sleep(2000);
-          // console.info("push list page result: " + JSON.stringify(result));
         }
       } catch (err) {
         console.error("push list page error: " + err);
