@@ -92,22 +92,25 @@ async function getInputMethodPermission(driver: Driver) {
   }
 }
 
-async function maxUiWindow(driver: Driver, window: UiWindow | null) {
+async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
   if (window != null) {
     try {
       let windowMode = await window.getWindowMode();
       if (windowMode == WindowMode.FULLSCREEN) {
         console.log(`${tag}, maxUiWindow FULLSCREEN`);
-        return;
+        return true;
       }
       await window.maximize();
+      await driver.delayMs(3000);
+      return true;
     } catch (error) {
       console.log(`${tag}, maxUiWindow error,${JSON.stringify(error)}`);
+      return false;
     }
   } else {
     console.log(`${tag}, maxUiWindow null`);
+    return false;
   }
-  await driver.delayMs(3000);
 }
 
 export {
