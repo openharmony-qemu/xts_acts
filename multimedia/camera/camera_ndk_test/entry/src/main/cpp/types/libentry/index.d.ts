@@ -234,6 +234,8 @@ export const cameraInputClose: () => number;
 
 export const cameraInputRelease: () => number;
 
+export const cameraInputOcclusionDetection: () => number;
+
 export const previewOutputStart: () => number;
 
 export const previewOutputStop: () => number;
