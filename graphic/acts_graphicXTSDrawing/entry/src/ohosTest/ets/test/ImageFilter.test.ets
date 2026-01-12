@@ -150,6 +150,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(null, 10, uiEffect.TileMode.CLAMP, null);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -157,6 +158,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(undefined, 10, uiEffect.TileMode.CLAMP, null);
         console.info(msg + ' createBlurImageFilter(undefined) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(undefined) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -165,6 +167,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, null, uiEffect.TileMode.CLAMP, null);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -172,6 +175,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, undefined, uiEffect.TileMode.CLAMP, null);
         console.info(msg + ' 2 undefined createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` 2 undefined createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -180,6 +184,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, null, null);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -188,6 +193,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(null, 10, uiEffect.TileMode.CLAMP, null);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -196,6 +202,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, null, uiEffect.TileMode.CLAMP, null);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -204,6 +211,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(5, 10, null, null);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -212,6 +220,7 @@ export default function imageFilterTest() {
       try {
         let imgFilter = drawing.ImageFilter.createBlurImageFilter(10, 10, uiEffect.TileMode.CLAMP, undefined);
         console.info(msg + ' createBlurImageFilter(null) succeeded');
+        expect().assertFail();
       } catch (e) {
         console.info(msg + ` createBlurImageFilter(null) errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
@@ -1217,7 +1226,7 @@ export default function imageFilterTest() {
         console.info(msg + ' createOffsetImageFilter 4 successed');
       } catch( e ) {
         console.info(msg + ` createOffsetImageFilter 4 errorCode is:  ${ e.code } + errormsg is: ${ e.message }`);
-        expect(e.code).assertEqual(401);
+        expect().assertFail();
       }
       try {
         let offsetFilter3 = drawing.ImageFilter.createOffsetImageFilter(200, 200, undefined);
