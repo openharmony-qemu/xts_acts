@@ -2711,7 +2711,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2724,11 +2724,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2740,7 +2737,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2753,11 +2750,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2769,7 +2763,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2782,11 +2776,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2798,7 +2789,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2811,11 +2802,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2827,7 +2815,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2840,11 +2828,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2856,7 +2841,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2869,11 +2854,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.focalLengthIn35mmFilm);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.focalLengthIn35mmFilm);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2885,7 +2867,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata imageUniqueId Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2898,11 +2880,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2914,7 +2893,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata imageUniqueId Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2927,11 +2906,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2943,7 +2919,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata imageUniqueId Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2956,11 +2932,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -2972,7 +2945,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata imageUniqueId Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2985,11 +2958,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3001,7 +2971,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_IMAGE_UNIQUE_ID_PNG_00005
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata imageUniqueId Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3014,11 +2984,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.imageUniqueId);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.imageUniqueId);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3030,7 +2997,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageReadImageMetadata compositeImage Success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3043,8 +3010,7 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
@@ -3059,7 +3025,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageReadImageMetadata compositeImage Success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3072,8 +3038,7 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
@@ -3088,7 +3053,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageReadImageMetadata compositeImage Success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3101,8 +3066,7 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
@@ -3117,7 +3081,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageReadImageMetadata compositeImage Success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3130,8 +3094,7 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
@@ -3146,7 +3109,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00005
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3159,11 +3122,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3175,7 +3135,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_JPG_00006
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3188,12 +3148,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-
-        let resultFir = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3205,7 +3161,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3218,11 +3174,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3234,7 +3187,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3247,11 +3200,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3263,7 +3213,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3276,11 +3226,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3292,7 +3239,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3305,11 +3252,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3321,7 +3265,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00005
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3334,11 +3278,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3350,7 +3291,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_PNG_00006
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3363,11 +3304,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3379,7 +3317,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3392,11 +3330,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3408,7 +3343,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3421,11 +3356,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3437,7 +3369,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3450,11 +3382,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3466,7 +3395,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3479,11 +3408,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3495,7 +3421,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00005
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3508,11 +3434,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3524,7 +3447,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_COMPOSITE_IMAGE_WEBP_00006
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata compositeImage Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3537,11 +3460,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, resultFir.exifMetadata?.compositeImage);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.compositeImage);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3553,7 +3473,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageReadImageMetadata deviceSettingDescription success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3574,7 +3494,7 @@ export default function ImageContrastTypeSupp() {
         const resultBuffer = result.exifMetadata?.deviceSettingDescription;
         if (resultBuffer) {
           const resultView = new Uint8Array(resultBuffer);
-          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(resultView[0]));
+          console.info(TAG, testName, `testReadImageMetadata result is:`, JSON.stringify(resultView[0]));
           expect(resultView[0]).assertEqual(0);
         } else {
           expect().assertFail();
@@ -3587,99 +3507,9 @@ export default function ImageContrastTypeSupp() {
     });
 
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00002';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.deviceSettingDescription = 1 as ESObject;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
-        await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
-        expect().assertFail();
-      } catch (err) {
-        console.error(TAG, testName, `Test failed: ${err.code}`);
-        expect(err.code).assertEqual('7700202');
-      }
-      done();
-    });
-
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00003';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.deviceSettingDescription = null as ESObject;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
-        await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
-        expect().assertFail();
-      } catch (err) {
-        console.error(TAG, testName, `Test failed: ${err.code}`);
-        expect(err.code).assertEqual('7700202');
-      }
-      done();
-    });
-
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_JPG_00004';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.deviceSettingDescription = undefined as ESObject;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
-        await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
-        expect().assertFail();
-      } catch (err) {
-        console.error(TAG, testName, `Test failed: ${err.code}`);
-        expect(err.code).assertEqual('7700202');
-      }
-      done();
-    });
-
-    /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3695,16 +3525,9 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata();
-        const resultBuffer = result.exifMetadata?.deviceSettingDescription;
-        if (resultBuffer) {
-          const resultView = new Uint8Array(resultBuffer);
-          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(resultView[0]));
-          expect(resultView[0]).assertEqual(0);
-        } else {
-          expect().assertFail();
-        }
+        expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -3715,7 +3538,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3728,12 +3551,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3745,7 +3564,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3758,12 +3577,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3775,7 +3590,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_PNG_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3788,12 +3603,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
+        console.info(TAG,testName,'start');
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3805,7 +3616,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00001
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3821,16 +3632,9 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata();
-        const resultBuffer = result.exifMetadata?.deviceSettingDescription;
-        if (resultBuffer) {
-          const resultView = new Uint8Array(resultBuffer);
-          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(resultView[0]));
-          expect(resultView[0]).assertEqual(0);
-        } else {
-          expect().assertFail();
-        }
+        expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
         expect(err.code).assertEqual('7700202');
@@ -3841,7 +3645,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00002
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3854,12 +3658,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3871,7 +3671,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00003
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3884,12 +3684,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
@@ -3901,7 +3697,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_DEVICE_SETTING_DESCRIPTION_WEBP_00004
-     * @tc.desc       ImageWriteImageMetadata cover normal
+     * @tc.desc       ImageWriteImageMetadata deviceSettingDescription Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3914,12 +3710,8 @@ export default function ImageContrastTypeSupp() {
         exifMetadata: testExifMetadata
       };
       try {
-        let resultFir = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`,
-          resultFir.exifMetadata?.deviceSettingDescription);
+        console.info(TAG,testName,'start');
         await webpImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await webpImageSourceApi.readImageMetadata()
-        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.deviceSettingDescription);
         expect().assertFail();
       } catch (err) {
         console.error(TAG, testName, `Test failed: ${err.code}`);
