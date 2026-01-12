@@ -443,11 +443,9 @@ export default function audioFramework() {
           capturerInfo: audioCapturerInfo
         };
   
-        let audioCapturer: audio.AudioCapturer | null = null;
+        let audioCapturer: audio.AudioCapturer | null;
   
-        let data = await audio.createAudioCapturer(audioCapturerOptions);
-
-        audioCapturer = data;
+        audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
           
         let periodReachCallback = (position: long) => {
           if (position == 1000) {
@@ -476,7 +474,7 @@ export default function audioFramework() {
         audioCapturer?.offReadData();
         console.info('Capturer readData of success.');
         
-        await audioCapturer?.release();
+        await audioCapturer!.release();
       } catch (err: BusinessError) {
         console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
         expect(true).assertFalse();
