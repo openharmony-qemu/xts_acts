@@ -1,0 +1,195 @@
+multimedia/camera/camera_ndk_test/entry/src/main/cpp/camera_manager.cpp
+
+Camera_ErrorCode NDKCamera::MetadataOutputRemoveMetadataObjectTypes()
+{
+    LOG("ndkXTS MetadataOutputRemoveMetadataObjectTypes begin.");
+    uint32_t size = 1;
+    Camera_MetadataObjectType* types = new Camera_MetadataObjectType[size];
+    types[0] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY;
+    Camera_ErrorCode ret = OH_MetadataOutput_RemoveMetadataObjectTypes(metadataOutput_, types, size);
+    if (ret == CAMERA_OK) {
+        LOG("ndkXTS OH_MetadataOutput_RemoveMetadataObjectTypes success.");
+    } else {
+        LOG("ndkXTS OH_MetadataOutput_RemoveMetadataObjectTypes failed. %d ", ret);
+    }
+    return ret;
+}
+ 
+Camera_ErrorCode NDKCamera::MetadataOutputAddMetadataObjectTypes()
+{
+    LOG("ndkXTS MetadataOutputAddMetadataObjectTypes begin.");
+    uint32_t size = 1;
+    Camera_MetadataObjectType* types = new Camera_MetadataObjectType[size];
+    types[0] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY;
+    Camera_ErrorCode ret = OH_MetadataOutput_AddMetadataObjectTypes(metadataOutput_, types, size);
+    if (ret == CAMERA_OK) {
+        LOG("ndkXTS OH_MetadataOutput_AddMetadataObjectTypes success.");
+    } else {
+        LOG("ndkXTS OH_MetadataOutput_AddMetadataObjectTypes failed. %d ", ret);
+    }
+    return ret;
+}
+ 
+Camera_ErrorCode NDKCamera::CreateMetadataOutputWithObjectTypes()
+{
+    uint32_t size = 2;
+    Camera_MetadataObjectType* types = new Camera_MetadataObjectType[size];
+    types[0] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY;
+    types[1] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION;
+    ret_ = OH_CameraManager_CreateMetadataOutputWithObjectTypes(cameraManager_, types, size, &metadataOutput_);
+    if (metadataOutput_ == nullptr || ret_ != CAMERA_OK) {
+        LOG("ndkXTS CreateMetadataOutputWithMetadataObjectTypes failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    return ret_;
+}
+
+multimedia/camera/camera_ndk_test/entry/src/main/cpp/camera_manager_ndk.h
+    Camera_ErrorCode CreateMetadataOutput(void);
+    Camera_ErrorCode CreateMetadataOutputWithObjectTypes();
+    Camera_ErrorCode IsCameraMuted(void);
+    Camera_ErrorCode PreviewOutputStop(void);
+    Camera_ErrorCode PreviewOutputRelease(void);
+    Camera_ErrorCode MetadataOutputStart(void);
+    Camera_ErrorCode MetadataOutputStop(void);
+    Camera_ErrorCode MetadataOutputRelease(void);
+    Camera_ErrorCode MetadataOutputRemoveMetadataObjectTypes();
+    Camera_ErrorCode MetadataOutputAddMetadataObjectTypes();
+
+multimedia/camera/camera_ndk_test/entry/src/main/cpp/main.cpp
+
+static napi_value CreateMetadataOutputWithObjectTypes(napi_env env, napi_callback_info info)
+{
+    size_t argc;
+    napi_value result = nullptr;
+    Camera_ErrorCode ret = ndkCamera_->CreateMetadataOutputWithObjectTypes();
+
+static napi_value MetadataOutputRemoveMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    Camera_ErrorCode code = ndkCamera_->MetadataOutputRemoveMetadataObjectTypes();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value MetadataOutputAddMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    Camera_ErrorCode code = ndkCamera_->MetadataOutputAddMetadataObjectTypes();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+        { "CreateMetadataOutputWithObjectTypes", nullptr, CreateMetadataOutputWithObjectTypes, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "createSession", nullptr, CreateSession, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "isCameraMuted", nullptr, IsCameraMuted, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "cameraInputOpen", nullptr, CameraInputOpen, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "metadataOutputStart", nullptr, MetadataOutputStart, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "metadataOutputStop", nullptr, MetadataOutputStop, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "metadataOutputRelease", nullptr, MetadataOutputRelease, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "MetadataOutputAddMetadataObjectTypes", nullptr, MetadataOutputAddMetadataObjectTypes, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "MetadataOutputRemoveMetadataObjectTypes", nullptr, MetadataOutputRemoveMetadataObjectTypes, nullptr, nullptr, nullptr, napi_default, nullptr },
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
+
+multimedia/camera/camera_ndk_test/entry/src/main/cpp/types/libentry/index.d.ts
+export const MetadataOutputRemoveMetadataObjectTypes: () => number; 
+ 
+export const MetadataOutputAddMetadataObjectTypes: () => number; 
+ 
+export const CreateMetadataOutputWithObjectTypes: () => number; 
+
+
+
+multimedia/camera/camera_ndk_test/entry/src/ohosTest/ets/test/CameraJSUnitOutput.test.ets
+
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200
+     * @tc.desc   MetadataOutputAddMetadataObjectTypes metadataOutput aync api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200', Level.LEVEL1, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200--------------");
+      try {
+          cameraObj.initCamera(GlobalThis.getInstance().getValue());
+          cameraObj.getSupportedCameras();
+          cameraObj.getSupportedOutputCapability();
+          cameraObj.createSession();
+          let result = cameraObj.createMetadataOutput();
+          result = cameraObj.createCameraInput();
+          result = cameraObj.cameraInputOpen();
+          cameraObj.sessionBegin();
+          result = cameraObj.sessionAddInput();
+          result = cameraObj.sessionAddMetadataOutput();
+          result = cameraObj.sessionCommitConfig();
+          result = cameraObj.sessionStart();
+          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
+          expect(result).assertEqual(0);
+      } catch (error) {
+          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_ADD_METADATA_TYPES_PROMISE_0200 FAILED");
+          console.info(TAG + "ERRORCODE: " + error.code);
+          expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200
+     * @tc.desc   MetadataOutputRemoveMetadataObjectTypes metadataOutput aync api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200', Level.LEVEL1, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200--------------");
+      try {
+          cameraObj.initCamera(GlobalThis.getInstance().getValue());
+          cameraObj.getSupportedCameras();
+          cameraObj.getSupportedOutputCapability();
+          cameraObj.createSession();
+          let result = cameraObj.createMetadataOutput();
+          result = cameraObj.createCameraInput();
+          result = cameraObj.cameraInputOpen();
+          cameraObj.sessionBegin();
+          result = cameraObj.sessionAddInput();
+          result = cameraObj.sessionAddMetadataOutput();
+          result = cameraObj.sessionCommitConfig();
+          result = cameraObj.sessionStart();
+          result = await cameraObj.MetadataOutputAddMetadataObjectTypes();
+          result = await cameraObj.MetadataOutputRemoveMetadataObjectTypes();
+          expect(result).assertEqual(0);
+      } catch (error) {
+          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_NDK_REMOVE_METADATA_TYPES_PROMISE_0200 FAILED");
+          console.info(TAG + "ERRORCODE: " + error.code);
+          expect().assertFail();
+      }
+    });
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100
+     * @tc.desc   CreateMetadataOutputWithObjectTypes metadataOutput aync api
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100', Level.LEVEL1, async () => {
+      console.info(TAG + "--------------SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100--------------");
+      try {
+          cameraObj.initCamera(GlobalThis.getInstance().getValue());
+          cameraObj.getSupportedCameras();
+          cameraObj.getSupportedOutputCapability();
+          cameraObj.createSession();
+          cameraObj.sessionBegin();
+          let result = cameraObj.CreateMetadataOutputWithObjectTypes();
+          expect(result).assertEqual(0);
+      } catch (error) {
+          console.info(TAG + "SUB_MULTIMEDIA_CAMERA_CREATEMETADATAOUTPUTWITHOBJECTTYPES_PROMISE_0100 FAILED");
+          console.info(TAG + "ERRORCODE: " + error.code);
+          expect().assertFail();
+      }
+    });
