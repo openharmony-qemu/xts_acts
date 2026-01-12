@@ -22,6 +22,8 @@ import { common } from '@kit.AbilityKit';
 
 let logTag = "[IpcClient_log:]";
 let gIRemoteObject: rpc.IRemoteObject;
+let testFlag: boolean = true;
+let strlen: number = 40960;
 
 function checkResult(num:number, str:string) {
   console.info(logTag + "checkResult is success");
@@ -163,6 +165,42 @@ class MyregisterDeathRecipient implements rpc.DeathRecipient {
   }
 }
 
+class TestCallerInfo extends rpc.RemoteObject {
+  constructor(descriptor: string) {
+    super(descriptor);
+  }
+
+  onRemoteMessageRequest(code: number, data: rpc.MessageSequence, reply: rpc.MessageSequence, option: rpc.MessageOption,
+    callingInfo?: rpc.CallingInfo): boolean {
+    console.info(logTag + "TestCallerInfo onRemoteMessageRequest in code is: " + code);
+    if (code === 1) {
+      try {
+        let callingPid = rpc.IPCSkeleton.getCallingPid();
+        expect(callingPid).assertEqual(callingInfo?.callerPid);
+        let callingUid = rpc.IPCSkeleton.getCallingUid();
+        expect(callingUid).assertEqual(callingInfo?.callerUid);
+        let callingTokenId = rpc.IPCSkeleton.getCallingTokenId();
+        expect(callingTokenId).assertEqual(callingInfo?.callerTokenId);
+        let remoteDeviceId = rpc.IPCSkeleton.getCallingDeviceID();
+        expect(remoteDeviceId).assertEqual(callingInfo?.remoteDeviceId);
+        let localDeviceId = rpc.IPCSkeleton.getLocalDeviceID();
+        expect(localDeviceId).assertEqual(callingInfo?.localDeviceId);
+        let isLocalCalling = rpc.IPCSkeleton.isLocalCalling();
+        expect(isLocalCalling).assertEqual(callingInfo?.isLocalCalling);
+      } catch (error) {
+        error = error as BusinessError;
+        console.info(logTag + "TestCallerInfo onRemoteMessageRequest error is:" + error);
+        testFlag = false;
+        return false;
+      }
+      return true;
+    } else {
+     console.info(logTag + "unknown code: " + code);
+      return false;
+    }
+  }
+}
+
 export default function ActsRpcClientEtsTest() {
   describe('ActsRpcClientEtsTest', () => {
     console.info("-----------------------SUB_DSoftbus_IPC_API_Stage_MessageSequence_Test is starting-----------------------");
@@ -201,6 +239,7 @@ export default function ActsRpcClientEtsTest() {
     const CODE_WRITE_REMOTEOBJECTARRAY_2 = 31;
     const CODE_FILESDIR = 32;
     const CODE_WRITE_ARRAYBUFFER = 33;
+    const CODE_TESTCALLERINFO = 100;
     const CODE_MAX = 16777215;
     const CODE_MIN = 0;
 
@@ -7387,7 +7426,7 @@ export default function ActsRpcClientEtsTest() {
       let data: rpc.MessageSequence = rpc.MessageSequence.create();
       try {
         let input ='';
-        const targetLength = 40960;
+        const targetLength = strlen;
         for (let i = 0; i < targetLength; i++) {
           input += 'a';
         }
@@ -7421,7 +7460,7 @@ export default function ActsRpcClientEtsTest() {
       let data: rpc.MessageSequence = rpc.MessageSequence.create();
       try {
         let input ='';
-        const targetLength = 40960 - 1;
+        const targetLength = strlen - 1;
         for (let i = 0; i < targetLength; i++) {
           input += 'a';
         }
@@ -9726,6 +9765,238 @@ export default function ActsRpcClientEtsTest() {
             data.reclaim();
         }
         console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_Ashmem_0380---------------------------");
+    });
+
+    /**
+     * @tc.name   SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500
+     * @tc.number SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500
+     * @tc.desc   [G-DISTRIBUTED-0212]禁止修改IPC中定义的数据结构和接口，并提供对应完整实现
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+      console.info("---------------------start SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500---------------------------");
+      let data: rpc.MessageSequence = rpc.MessageSequence.create();
+      let reply: rpc.MessageSequence = rpc.MessageSequence.create();
+      let option: rpc.MessageOption = new rpc.MessageOption();
+      try {
+        let TestCallerInfoObject = new TestCallerInfo("TestCallerInfo")
+        data.writeRemoteObject(TestCallerInfoObject)
+        await gIRemoteObject.sendMessageRequest(CODE_TESTCALLERINFO, data, reply, option)
+          .then((result) => {
+            expect(result.errCode).assertEqual(0);
+          }).catch((err: Error) => {
+           console.info('SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500 err in catch is: ' + err);
+            expect(err != null).assertTrue();
+          }).finally(() => {
+            data.reclaim();
+            reply.reclaim();
+            console.info('SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500 reclaim done');
+          })
+      } catch (error) {
+        error = error as BusinessError;
+        console.info("SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500 error is:" + error);
+        expect(error).assertEqual(null);
+      } finally {
+        console.info("SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500 done");
+        expect(testFlag).assertTrue();
+      }
+      console.info("---------------------end SUB_DSoftbus_IPC_API_Stage_onRemoteMessageRequest_0500---------------------------");
+    });
+
+    /**
+     * @tc.name      SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100
+     * @tc.number    SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100
+     * @tc.desc      test getLocalInterface
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async () => {
+      console.info('-------------------- start SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100 --------------------');
+      try {
+        let des = '';
+        const targetLength = strlen;
+        for (let i = 0; i < targetLength; i++) {
+          des += 'a';
+        }
+        let testObject = new TestListener('testObject', checkResult);
+        testObject.modifyLocalInterface(testObject.getLocalInterface('testObject'), 'testObject')
+        let res = testObject.getLocalInterface(des);
+        expect(res).assertEqual(des);
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100 error is: ' + err);
+        console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100 error code is: ' + err.code);
+        expect(err.code == 401).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100 reclaim done');
+      }
+      console.info('-------------------- end SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0100 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200
+     * @tc.number    SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200
+     * @tc.desc      test getLocalInterface
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async () => {
+      console.info('-------------------- start SUB_IPC_RmoSUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200teProxy_getLocalInterface_ErrorCode_0200 --------------------');
+      try {
+        let des = '';
+        const targetLength = strlen + 1;
+        for (let i = 0; i < targetLength; i++) {
+          des += 'a';
+        }
+        let testObject = new TestListener('testObject', checkResult);
+        testObject.modifyLocalInterface(testObject.getLocalInterface('testObject'), 'testObject')
+        let res = testObject.getLocalInterface(des);
+        expect(res).assertEqual(des);
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200 error is: ' + err);
+        console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200 error code is: ' + err.code);
+        expect(err.code == 401).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info('SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200 reclaim done');
+      }
+      console.info('-------------------- end SUB_DSoftbus_IPC_API_Stage_getLocalInterface_ErrorCode_0200 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100
+     * @tc.number    SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100
+     * @tc.desc      test modifyLocalInterface ErrorCode
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async () => {
+      console.info('-------------------- start SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100 --------------------');
+      try {
+        let des ='';
+        const targetLength = strlen + 1;
+        for (let i = 0; i < targetLength; i++) {
+          des += 'a';
+        }
+        let testObject = new TestListener('testObject', checkResult);
+        testObject.modifyLocalInterface(testObject.getLocalInterface('testObject'), des)
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info('SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100 error is: ' + err);
+        console.info('SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100 error code is: ' + err.code);
+        expect(err.code == 401).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info('SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100 reclaim done');
+      }
+      console.info('-------------------- end SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0100 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200
+     * @tc.number    SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200
+     * @tc.desc      test modifyLocalInterface ErrorCode
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,async () => {
+      console.info('-------------------- start SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200 --------------------');
+      try {
+        let des = '';
+        const targetLength = strlen;
+        for (let i = 0; i < targetLength; i++) {
+          des += 'a';
+        }
+        let testObject = new TestListener('testObject', checkResult);
+        testObject.modifyLocalInterface(testObject.getLocalInterface('testObject'), des)
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info( 'SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200 error is: ' + err);
+        console.info( 'SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200 error code is: ' + err.code);
+        expect(err.code == 401).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info( 'SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200 reclaim done');
+      }
+      console.info('-------------------- end SUB_DSoftbus_IPC_API_Stage_modifyLocalInterface_ErrorCode_0200 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100
+     * @tc.number    SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100
+     * @tc.desc      test restoreCallingIdentity
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async () => {
+      console.info('-------------------- start SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 --------------------');
+      try {
+        let des ='';
+        const targetLength = strlen + 1;
+        for (let i = 0; i < targetLength; i++) {
+          des += 'a';
+        }
+        rpc.IPCSkeleton.restoreCallingIdentity(des);
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 error is: ' + err);
+        console.info('SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 error code is: ' + err.code);
+        expect(err.code == 401).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info( 'SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 reclaim done');
+      }
+      console.info('-------------------- end SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0100 --------------------');
+    });
+
+    /**
+     * @tc.name      SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200
+     * @tc.number    SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200
+     * @tc.desc      test restoreCallingIdentity
+     * @tc.type     FUNCTION
+     * @tc.size     MEDIUMTEST
+     * @tc.level    LEVEL1
+     */
+    it("SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,async () => {
+      console.info('-------------------- start SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200 --------------------');
+      try {
+        let des = '';
+        const targetLength = strlen;
+        for (let i = 0; i < targetLength; i++) {
+          des += 'a';
+        }
+        rpc.IPCSkeleton.restoreCallingIdentity(des);
+      } catch (err) {
+        err = err as BusinessError;
+        testFlag = false;
+        console.info( 'SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200 error is: ' + err);
+        console.info( 'SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200 error code is: ' + err.code);
+        expect(err.code == 401).assertTrue();
+        expect(err.message != null).assertTrue();
+      } finally {
+        expect(testFlag).assertFalse();
+        console.info( 'SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200 reclaim done');
+      }
+      console.info('-------------------- end SUB_DSoftbus_IPC_API_Stage_restoreCallingIdentity_ErrorCode_0200 --------------------');
     });
     console.info("-----------------------SUB_DSoftbus_IPC_API_Stage_MessageSequence_Test is end-----------------------");
   })
