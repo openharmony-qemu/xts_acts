@@ -554,15 +554,15 @@ export default function ImagePropertyKeyArrayTest() {
       done();
     })
     /**
-     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_020
-     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_020
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_070
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_070
      * @tc.desc       ImageReadImageMetadata -Software - Success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_020', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_020';
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_070', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_070';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.software = 'NA';
       const imageMetadata: image.ImageMetadata = {
@@ -584,15 +584,15 @@ export default function ImagePropertyKeyArrayTest() {
       done();
     })
     /**
-     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_021
-     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_021
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_069
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_069
      * @tc.desc       ImageWriteImageMetadata - Software - Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_021', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_021';
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_069', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_069';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.software = 'NA';
       const imageMetadata: image.ImageMetadata = {
@@ -609,15 +609,15 @@ export default function ImagePropertyKeyArrayTest() {
       done();
     })
     /**
-     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_022
-     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_022
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_072
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_072
      * @tc.desc       ImageWriteImageMetadata - Software - Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_022', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_022';
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_072', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_072';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.software = 'NA';
       const imageMetadata: image.ImageMetadata = {
@@ -634,15 +634,15 @@ export default function ImagePropertyKeyArrayTest() {
       done();
     })
     /**
-     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_023
-     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_023
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_068
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_068
      * @tc.desc       ImageReadImageMetadata - Software - Success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_023', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_023';
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_068', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_068';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.software = 'error';
       const imageMetadata: image.ImageMetadata = {
@@ -664,15 +664,15 @@ export default function ImagePropertyKeyArrayTest() {
       done();
     })
     /**
-     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_024
-     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_024
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_071
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_071
      * @tc.desc       ImageWriteImageMetadata - Software - Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_024', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_024';
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_071', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_SOFTWARE_071';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.software = 'error';
       const imageMetadata: image.ImageMetadata = {
@@ -1743,6 +1743,312 @@ export default function ImagePropertyKeyArrayTest() {
       const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRCOEFFICIENTS_067';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.yCbCrCoefficients = [-1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_068
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_068
+     * @tc.desc       ImageReadImageMetadata - YCbCrSubSampling - Success
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_068', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_068';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [2,2];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.yCbCrSubSampling);
+        let resultStr = JSON.stringify(result.exifMetadata?.yCbCrSubSampling);
+        console.info(TAG, testName, `resultStr:`, resultStr);
+        expect(resultStr).assertEqual('[2,2]');
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_069
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_069
+     * @tc.desc       ImageReadImageMetadata - YCbCrSubSampling - Success
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_069', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_069';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [1,1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG, testName, `testWriteImageMetadata result is:`, result.exifMetadata?.yCbCrSubSampling);
+        let resultStr = JSON.stringify(result.exifMetadata?.yCbCrSubSampling);
+        console.info(TAG, testName, `resultStr:`, resultStr);
+        expect(resultStr).assertEqual('[1,1]');
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_070
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_070
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_070', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_070';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [ ];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_071
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_071
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_071', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_071';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [-1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_072
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_072
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_072', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_072';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [2,2];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_073
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_073
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_073', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_073';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [1,1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_074
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_074
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_074', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_074';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [ ];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_075
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_075
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_075', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_075';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [-1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_076
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_076
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_076', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_076';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [2,2];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_077
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_077
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_077', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_077';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [1,1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_078
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_078
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_078', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_078';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [ ];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG, testName, `start`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_079
+     * @tc.name       SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_079
+     * @tc.desc       ImageWriteImageMetadata - YCbCrSubSampling - Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_079', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_IMAGE_SOURCE_PROPERTY_KEY_YCBCRSUBSAMPLING_079';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.yCbCrSubSampling = [-1];
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
