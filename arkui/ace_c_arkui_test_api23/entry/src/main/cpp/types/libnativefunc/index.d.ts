@@ -76,16 +76,6 @@ export const TestContainerPickerSubComponent003: () => number;
 
 export const TestContainerPickerSubComponent004: () => number;
 
-export const testMotionPathOptions001: () => number;
-export const testMotionPathOptions002: () => number;
-export const testMotionPathOptions003: () => number;
-export const testMotionPathOptions004: () => number;
-export const testMotionPathOptions005: () => number;
-export const testMotionPathOptions006: () => number;
-export const testMotionPathOptions007: () => number;
-export const testMotionPathOptions008: () => number;
-export const testMotionPathOptions009: () => number;
-
 export const TextEnumTest_001: () => number;
 export const TextEnumTest_002: () => number;
 export const TextEnumTest_003: () => number;
@@ -107,6 +97,23 @@ export const TextEnumTest_018: () => number;
 export const TextEnumTest_019: () => number;
 export const TextEnumTest_020: () => number;
 export const TextEnumTest_021: () => number;
+
+export const testMotionPathOptions001: () => number;
+export const testMotionPathOptions002: () => number;
+export const testMotionPathOptions003: () => number;
+export const testMotionPathOptions004: () => number;
+export const testMotionPathOptions005: () => number;
+export const testMotionPathOptions006: () => number;
+export const testMotionPathOptions007: () => number;
+export const testMotionPathOptions008: () => number;
+export const testMotionPathOptions009: () => number;
+
+export const TextDirection_001: () => number;
+export const TextDirection_002: () => number;
+export const TextDirection_003: () => number;
+export const TextDirection_004: () => number;
+export const TextDirection_005: () => number;
+export const TextDirection_006: () => number;
 
 export const TestAtomicServiceMenuBarSetVisible01: () => number;
 

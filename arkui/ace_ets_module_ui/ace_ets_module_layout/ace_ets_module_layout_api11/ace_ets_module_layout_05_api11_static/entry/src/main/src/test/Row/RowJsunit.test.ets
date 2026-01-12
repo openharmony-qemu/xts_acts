@@ -93,8 +93,6 @@ it('rowTest001_static_01', Level.LEVEL0, async (done: () => void): Promise<void>
      console.info("get inspector value is: " + JSON.stringify(obj));
      console.log(JSON.stringify(obj.getString('$type')))
      expect(obj.getString('$type')).assertEqual('Row')
-     console.log('Row‘s useAlign is ' + JSON.stringify(obj.getElement('$attrs').getString('useAlign')))
-    console.log('Row‘s space is ' + JSON.stringify(obj.getElement('$attrs').getString('space')))
      console.log('Row‘s alignItems is ' + JSON.stringify(obj.getElement('$attrs').getString('alignItems')))
      expect(obj.getElement('$attrs').getString('alignItems')).assertEqual('VerticalAlign.Top')
       console.info('++++++++++++++++ rowTest001_static_01 End ++++++++++++++++');

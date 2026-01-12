@@ -30,9 +30,9 @@ import {UtilsTest, startAbility, stopApplication} from "../Util.test"
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
-export default function abilityTest() {
+export default function segmentbutton() {
   const SUITE = 'SegmentButton'
-  describe('ActsAceSegmentButtonTest', () => {
+  describe('segmentbutton', () => {
     beforeAll(() => {
       console.info("ActsAceSegmentButtonTest beforeEach start");
 

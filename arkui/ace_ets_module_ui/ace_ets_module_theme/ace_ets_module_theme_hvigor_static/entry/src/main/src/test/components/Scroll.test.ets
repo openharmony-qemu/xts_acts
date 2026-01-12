@@ -73,7 +73,6 @@ export default function scrollThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     })
 
     beforeEach(() => {
@@ -85,27 +84,27 @@ export default function scrollThemeTest() {
         const pages: router.RouterState = routerInstance.getState()
         if (pages?.name !== `ScrollPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(scrollThemeProperty)
+            localTheme = AppStorage.get<CustomTheme>('ScrollThemeProperty')
             console.info(`${SUITE} router.pushUrl success`)
           })
         }
-        colorValues = AppStorage.get(colorValuesKey);
+        colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err))
       }
 
-      AppStorage.setOrCreate(scrollThemeSetProperty, themeSet)
+      AppStorage.setOrCreate<boolean | undefined>('ScrollThemeSetProperty', themeSet)
       if (changeTheme) {
-        if ((AppStorage.get(scrollThemeProperty) as CustomTheme | undefined)?.colors?.fontPrimary
+        if ((AppStorage.get<CustomTheme>('ScrollThemeProperty'))?.colors?.fontPrimary
           == redCustomTheme?.colors?.fontPrimary) {
-          AppStorage.setOrCreate(scrollThemeProperty, greenCustomTheme)
+          AppStorage.setOrCreate<CustomTheme>('ScrollThemeProperty', greenCustomTheme)
         } else {
-          AppStorage.setOrCreate(scrollThemeProperty, redCustomTheme)
+          AppStorage.setOrCreate<CustomTheme>('ScrollThemeProperty', redCustomTheme)
         }
         changeTheme = false
       }
       localTheme =
-        AppStorage.get<boolean>(scrollThemeSetProperty) ? AppStorage.get<CustomTheme>(scrollThemeProperty) : undefined
+        AppStorage.get<boolean>('ScrollThemeSetProperty') ? AppStorage.get<CustomTheme>('ScrollThemeProperty') : undefined
     })
 
     
@@ -240,7 +239,7 @@ function checkTextWithTheme(key: string, localTheme: CustomTheme | undefined,
   colorValues: Map<string, string> | undefined) {
   const textJSON = inspector.getInspectorByKey(key)
   const attrsText = JSON.parseJsonElement(textJSON).getElement('$attrs')
-  const fontColor: ResourceColor = attrsText.getString('fontColor').toString().toUpperCase() ?? EMPTY_ATTR;
+  const fontColor: ResourceColor = attrsText.getString('fontColor').toUpperCase() ?? EMPTY_ATTR;
   const checkFontColor = (localTheme?.colors?.fontPrimary
     ?? colorValues?.get(`fontPrimary`))?.toString().toUpperCase()
     ?? EMPTY_CHECK

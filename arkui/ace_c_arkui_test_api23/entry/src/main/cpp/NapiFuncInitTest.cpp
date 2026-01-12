@@ -19,6 +19,7 @@
 #include "containerPicker/ContainerPickerSelectedIndexTest.cpp"
 #include "containerPicker/ContainerPickerSelectionIndicatorTest.cpp"
 #include "containerPicker/ContainerPickerSubComponentTest.cpp"
+#include "text/TextDirectionTest.cpp"
 #include "MotionPath/MotionPathOptionsTest.cpp"
 #include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
 #include "node/IsInRenderStateReturnValueTest.cpp"
@@ -97,6 +98,18 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSubComponent003, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent004", nullptr,
          TestContainerPickerSubComponent004, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TextDirection_001", nullptr, TextDirection_001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_002", nullptr, TextDirection_002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_003", nullptr, TextDirection_003, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_004", nullptr, TextDirection_004, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_005", nullptr, TextDirection_005, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"TextDirection_006", nullptr, TextDirection_006, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"testMotionPathOptions001", nullptr, MotionPathOptionsCreate, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"testMotionPathOptions002", nullptr, MotionPathOptionsPath, nullptr, nullptr, nullptr,

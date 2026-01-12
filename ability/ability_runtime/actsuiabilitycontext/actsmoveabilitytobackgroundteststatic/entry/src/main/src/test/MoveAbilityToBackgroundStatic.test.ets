@@ -64,13 +64,15 @@ export default function moveAbilityToBackgroundTestStatic() {
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-          if(JSON.stringify(err?.code) == '16000061'){
-            done();
-          }else{
-            expect().assertFail()
-            done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(JSON.stringify(err?.code) == '16000061'){
+              done();
+            }else{
+              expect().assertFail()
+              done();
+            }
           }
         });
       } catch (err) {
@@ -103,13 +105,15 @@ export default function moveAbilityToBackgroundTestStatic() {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           let result = AppStorage.get<string>("onBackground")
           expect(result + '').assertEqual('SUCCESS');
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-          if(JSON.stringify(err?.code) == '16000061'){
-            done();
-          }else{
-            expect().assertFail()
-            done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            if(JSON.stringify(err?.code) == '16000061'){
+              done();
+            }else{
+              expect().assertFail()
+              done();
+            }
           }
         });
         await Utils.msSleep(2000);
@@ -117,10 +121,12 @@ export default function moveAbilityToBackgroundTestStatic() {
           hilog.info(domain, tag, `moveAbilityToBackground success.`);
           expect().assertFail();
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-          expect(err.code).assertEqual(16000065);
-          done();
+        }).catch((err): void => {
+          if (err instanceof BusinessError) {
+            hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+            expect(err.code).assertEqual(16000065);
+            done();
+          }
         });
       } catch (err) {
         hilog.info(domain, tag, `moveAbilityToBackground fail: ` + err);

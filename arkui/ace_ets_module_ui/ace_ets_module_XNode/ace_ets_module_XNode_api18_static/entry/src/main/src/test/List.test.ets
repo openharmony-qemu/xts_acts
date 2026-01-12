@@ -17,6 +17,6 @@ import UIContextWithoutWindowTest from './ContextTest/UIContextWithoutWindow.tes
 import UIContextGetOpacityTest from './ContextTest/UIContextGetOpacity.test';
 
 export default function testsuite() {
-  UIContextWithoutWindowTest();
+  // UIContextWithoutWindowTest(); api22
   UIContextGetOpacityTest();
 }

@@ -114,6 +114,7 @@ it('testalertDialogCenterStart0001_static', Level.LEVEL2, async (done: () => voi
       } catch (err) {
         console.info("testalertDialogCenterStart0001_static on emitter err : " + JSON.stringify(err));
       }
+      await Utils.sleep(1000);
       let button = await driver.findComponent(ON.text('button'));
       await (button?.click() as Promise<void>);
       await Utils.sleep(1000);
@@ -148,9 +149,9 @@ it('testMeasureText0001_static', Level.LEVEL2, async (done: () => void): Promise
         expect().assertFail();
         done();
       }
-      // let button = await driver.findComponent(ON.text('button'));
-      // await (button?.click() as Promise<void>);
-      // await Utils.sleep(1000);
+      let button = await driver.findComponent(ON.text('button'));
+      await (button?.click() as Promise<void>);
+      await Utils.sleep(1000);
     });
 
   })

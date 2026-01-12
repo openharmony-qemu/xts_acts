@@ -52,7 +52,7 @@ export const postfixDark = 'Dark';
 @Component
 struct WithThemeTestPage {
   @State message: string = 'Custom Component Theme Test';
-  @StorageLink(withThemeProperty) localTheme: CustomTheme | undefined
+  @StorageLink(withThemeProperty) localTheme: CustomTheme | undefined = greenCustomTheme;
 
   build() {
     WithTheme({ theme: this.localTheme }) {
