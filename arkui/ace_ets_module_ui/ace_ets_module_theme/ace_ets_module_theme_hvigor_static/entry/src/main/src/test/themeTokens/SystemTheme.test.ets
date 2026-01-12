@@ -43,7 +43,6 @@ export default function systemThemeTest() {
   describe('ActsSystemTest', () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {

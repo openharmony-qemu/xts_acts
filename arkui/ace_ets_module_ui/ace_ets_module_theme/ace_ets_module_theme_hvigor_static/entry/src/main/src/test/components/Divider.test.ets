@@ -53,16 +53,16 @@ export default function dividerThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `DividerPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
-            redTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
+          redTheme = AppStorage.get<CustomTheme>(`DividerThemeProperty`);
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
-
       if (!changeTheme) {
         return;
       }

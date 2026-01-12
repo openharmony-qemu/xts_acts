@@ -54,9 +54,10 @@ export default function checkboxGroupThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `CheckboxPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>('CheckBoxThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           });
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>('CheckBoxThemeProperty');
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {

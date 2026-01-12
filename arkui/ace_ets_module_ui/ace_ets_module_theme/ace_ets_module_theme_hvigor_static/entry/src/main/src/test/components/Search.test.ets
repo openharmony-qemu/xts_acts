@@ -53,9 +53,10 @@ export default function SearchThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `SearchPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(`SearchThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>(`SearchThemeProperty`);
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
@@ -132,8 +133,7 @@ it('ActsSearchThemeColors_static_0200', Level.LEVEL2, async (done: () => void): 
       expect(placeholderColor).assertEqual(checkPlaceholderColor);
       const iconOption = attrsSearch.getElement('searchIcon')
       const iconColor: string =
-        iconOption.getString('color')?.toString().toUpperCase().replace('[', '').replace(',]', '')
-          ?? EMPTY_ATTR;
+        iconOption.getString('color')?.toString().toUpperCase().replace('[', '').replace(',]', '') ?? EMPTY_ATTR;
       const checkIconColor: string = localTheme?.colors?.fontSecondary?.toString().toUpperCase() ?? EMPTY_CHECK;
       expect(iconColor).assertEqual(checkIconColor);
       changeTheme = true;
