@@ -2789,7 +2789,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00004
-     * @tc.desc       ImageReadImageMetadata focalLengthIn35mmFilm Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2815,7 +2815,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00005
-     * @tc.desc       ImageReadImageMetadata focalLengthIn35mmFilm Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -2841,7 +2841,7 @@ export default function ImageContrastTypeSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_TEST_FOCAL_LENGTH_IN_35_MM_FILM_WEBP_00006
-     * @tc.desc       ImageReadImageMetadata focalLengthIn35mmFilm Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata focalLengthIn35mmFilm Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -3494,7 +3494,7 @@ export default function ImageContrastTypeSupp() {
         const resultBuffer = result.exifMetadata?.deviceSettingDescription;
         if (resultBuffer) {
           const resultView = new Uint8Array(resultBuffer);
-          console.info(TAG, testName, `testWriteImageMetadata result is:`, JSON.stringify(resultView[0]));
+          console.info(TAG, testName, `testReadImageMetadata result is:`, JSON.stringify(resultView[0]));
           expect(resultView[0]).assertEqual(0);
         } else {
           expect().assertFail();
