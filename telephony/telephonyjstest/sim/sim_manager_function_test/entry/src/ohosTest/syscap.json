@@ -4,7 +4,8 @@
         "custom": [
             {
                 "xts": [
-                    "SystemCapability.Telephony.CoreService"                ]
+                    "SystemCapability.Telephony.CoreService"               
+                 ]
             }
         ]
     }
