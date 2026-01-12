@@ -200,3 +200,7 @@ export const OH_PixelmapNative_ConvertAlphaFormatTest:(a: number) => number;
 export const ImageSourceCreatSuccessTest:(a: number) => number;
 export const PixelmapNativeGetNativeBufferNotExist:(a: number) => number;
 export const ImageSourceCreate:(a: number, b:string) => number;
+export const PixelmapNativeCropTest:(a: number) => number;
+export const ConvertAlphaFormatTest:(a: number) => number;
+export const DecodingOptionsReleaseTest:(a: number) => number;
+export const CreatePixelmapFromSurfaceWithTransformationTest:(a: number,b: string) => number;
