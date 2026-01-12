@@ -273,7 +273,7 @@ export default function CameraSessionAutoDeviceSwitchTest() {
       let autoSwitchSupportInfo = cameraObj.sessionIsAutoDeviceSwitchSupported();
       console.info(tagTemp + " errorCode:" + autoSwitchSupportInfo.errorCode + " isSupported:" + autoSwitchSupportInfo.isSupported);
       expect(autoSwitchSupportInfo.errorCode === 0).assertTrue();
-      expect(isSupported != undefined).assertTrue();
+      expect(autoSwitchSupportInfo.isSupported != undefined).assertTrue();
       console.info(TAG + "Entering testOHSessionIsAutoDeviceSwitchSupportedTest100 ends here");
     })
 
