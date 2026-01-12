@@ -46,38 +46,38 @@ struct ObserverApiTest {
   build() {
     Column({ space: 5 }){
 
-      Text(this.text1).id('ObserverApi_text1')
-      Text(this.text2).id('ObserverApi_text2')
+      Text(this.text1).id('ObserverApi_text1').height('5%')
+      Text(this.text2).id('ObserverApi_text2').height('5%')
 
-      Button('getText1')
+      Button('getText1').height('5%')
         .fontSize(14)
         .onClick(()=>{
           this.text1 = (AppStorage.get('Observer_DISAPPEAR') as string) + ''
         })
         .id('ObserverApi_getText1')
 
-      Button('getText2')
+      Button('getText2').height('5%')
         .fontSize(14)
         .onClick(()=>{
           this.text2 = (AppStorage.get('Observer_BACK') as string) + ''
         })
         .id('ObserverApi_getText2')
 
-      Button('ObserverOn')
+      Button('ObserverOn').height('5%')
         .fontSize(14)
         .onClick(()=>{
           uiObserver.on('routerPageUpdate', this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOn')
 
-      Button('ObserverOff')
+      Button('ObserverOff').height('5%')
         .fontSize(14)
         .onClick(()=>{
           uiObserver.off('routerPageUpdate', this.context, this.testFunc)
         })
         .id('ObserverApi_ObserverOff')
 
-      Button('pushToPageTwo')
+      Button('pushToPageTwo').height('5%')
         .fontSize(14)
         .onClick(()=>{
          router.pushUrl({url: "MainAbility/pages/observer/ObserverApi2"})
@@ -85,6 +85,6 @@ struct ObserverApiTest {
         .id('ObserverApi_pushToPageTwo')
 
 
-    }.width('100%')
+    }.width('100%').height('100%')
   }
 }
