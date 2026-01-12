@@ -3257,6 +3257,7 @@ export default function TextPicker() {
        console.info('testPicker63 showSingleAssetCreationDialogEx success');	 
        console.info('testPicker63 success');	 
        expect(true).assertTrue();
+    });
 
     /**
      * @tc.name   testPicker64
@@ -3278,7 +3279,7 @@ export default function TextPicker() {
         defaultGridLevel: photoAccessHelper.GridLevel.COMPACT
       };
       let callback = (event: events_emitter.EventData) => {
-        let expectResult: photoAccessHelper.GridLevel = pickerOptions.gridPinchMode.defaultGridLevel ?? photoAccessHelper.GridLevel.STANDARD;
+        let expectResult: photoAccessHelper.GridLevel = pickerOptions.gridPinchMode?.defaultGridLevel ?? photoAccessHelper.GridLevel.STANDARD;
         let result: PhotoPickerResult = event?.data?.msg;
         console.info('testPicker64 result event.data.msg =' + result?.gridPinchMode?.defaultGridLevel);
         console.info('testPicker64 result expect = ' + expectResult);
