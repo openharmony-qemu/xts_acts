@@ -18,6 +18,7 @@ import wantConstant from '@ohos.ability.wantConstant'
 import ability from '@ohos.ability.ability';
 import base from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
+import { Driver, ON } from '@ohos.UiTest';
 
 function sleep(time:number):Promise<void> {
   return new Promise((resolve) => setTimeout(resolve, time))
@@ -28,6 +29,15 @@ export default function StartAbilityForResult() {
 
   describe('StartAbilityForResult', ()=> {
     beforeAll(async (done:Function) => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       console.info("StartAbilityForResult before all called");
       let cmd = "bm install -p data/test/MockService.hap";
       console.info("cmd : "+cmd)

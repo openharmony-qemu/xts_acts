@@ -74,7 +74,7 @@ it('waterFlowAniTrue_static_0100', Level.LEVEL1, (done: () => void): Promise<voi
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn: Component | null = await driver.findComponent(ON.id('waterFlow_animation_true'));
-      btn?.click();
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('waterFlow_true_onText');
       console.info("[waterFlowAniTrue_static_0100] component obj is: " + strJson);

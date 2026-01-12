@@ -14,8 +14,21 @@
  */
 import { afterAll, afterEach, beforeAll, beforeEach, describe, expect, it, Level } from '@ohos/hypium';
 import AbilityDelegatorRegistry from "@ohos.app.ability.abilityDelegatorRegistry";
+import { Driver, ON } from '@kit.TestKit';
 
 export default function GetAppContextTest() {
+  beforeAll(async () => {
+    let driver = Driver.create();	
+    try {
+      let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+      if (allowed) {
+        await allowed.click();
+      }
+    } catch (err) {
+      console.error('findComponent failed: ' + JSON.stringify(err));
+    }
+  })
+
   describe("GetAppContextTest", () => {
     /**
      * @tc.name   ACTS_GET_APP_CONTENT_0001

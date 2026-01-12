@@ -54,7 +54,7 @@ async function resetAndCallbackOff() {
   }).catch(mediaTestBase.catchCallback);
 }
 
-async function handleState(state: string, initializedOp: AsyncVoidCallback, preparedOp: AsyncVoidCallback, playedOp: AsyncVoidCallback, stoppedOp: AsyncVoidCallback) {
+async function handleState(state: string, initializedOp: AsyncVoidCallback, preparedOp: AsyncVoidCallback, playedOp: AsyncVoidCallback, stoppedOp: AsyncVoidCallback, done: () => void) {
   switch (state) {
     case INITIALIZED:
       expect(avPlayer!!.state).assertEqual(INITIALIZED);
@@ -62,9 +62,7 @@ async function handleState(state: string, initializedOp: AsyncVoidCallback, prep
       avPlayer!!.surfaceId = surfaceID;
       console.info(`case avPlayer.surfaceId is ${avPlayer!!.surfaceId}`);
       await initializedOp();
-      await avPlayer!!.prepare().then(() => {
-        console.info('case prepare called');
-      }).catch(mediaTestBase.catchCallback);
+      done();
       break;
     case PREPARED:
       expect(avPlayer!!.state).assertEqual(PREPARED);
@@ -118,7 +116,7 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
 
   avPlayer!!.onStateChange((state: media.AVPlayerState, reason: media.StateChangeReason) => {
     console.info(`case stateChange called, state is ${state}, reason is ${reason}`);
-    await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp);
+    await handleState(state.toString(), initializedOp, preparedOp, playedOp, stoppedOp, done);
   });
   avPlayer!!.onError((err: BusinessError) => {
     console.error(`case error called, errMessage is ${err.message}`);
@@ -136,7 +134,8 @@ async function testPostProcessor(fd: media.AVFileDescriptor, initializedOp: Asyn
       expect().assertFail();
     }
   });
-  setSource(avPlayer!, fd);
+  console.info('case fdsrc test');
+  avPlayer!!.fdSrc = fd;
 }
 
 function openFileFailed() {
@@ -183,6 +182,7 @@ export default function AVPlayerPostProcessorTest() {
           console.error(`setPlaybackStrategy failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect().assertFail();
         })
+        await mediaTestBase.msleepAsync(200);
         avPlayer!!.setSuperResolution(true).catch((error: Error) => {
           console.error(`setSuperResolution failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect().assertFail();
@@ -236,6 +236,7 @@ export default function AVPlayerPostProcessorTest() {
           console.error(`setSuperResolution failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect((error as BusinessError).code == media.AVErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED).assertTrue()
         })
+        await mediaTestBase.msleepAsync(200);
         avPlayer!!.setVideoWindowSize(1080, 720).catch((error: Error) => {
           console.error(`setVideoWindowSize failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect((error as BusinessError).code == media.AVErrorCode.AVERR_SUPER_RESOLUTION_NOT_ENABLED).assertTrue()
@@ -288,6 +289,7 @@ export default function AVPlayerPostProcessorTest() {
           console.error(`setPlaybackStrategy failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect().assertFail();
         })
+        await mediaTestBase.msleepAsync(200);
         avPlayer!!.setVideoWindowSize(100, 100).catch((error: Error) => {
           console.error(`setVideoWindowSize failed, err code ${(error as BusinessError).code} msg ${error.message}`)
           expect((error as BusinessError).code == media.AVErrorCode.AVERR_INVALID_PARAMETER).assertTrue()

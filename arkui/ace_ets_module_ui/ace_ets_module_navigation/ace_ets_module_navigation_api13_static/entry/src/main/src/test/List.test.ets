@@ -24,12 +24,12 @@ import TitleOptionsToolOptions from './Navigation/TitleOptionsToolOptions.test'
 
 
 export default function testsuite() {
-  BarStylePage()  // pass 35000ms SDK11.25 1个用例
-  NavigationTitleTextModifier()  //  SDK11.25 SDK11.25 问题提到0702表格265行
-  EntryOptionPage() // pass 1个用例
-  EntryOptionPage2() // pass 1个用例
-  NavigationCustomTitlePage() //  问题提到0702表格104行
-  NavDestinationUIObserver() //并发问题  2025110729059
-  HideToolBarNavPage()   // master22 pass 1
-  TitleOptionsToolOptions() // master22 The key 'backgroundBlurStyle' was not found in the JSON object.
+  BarStylePage();
+  NavigationTitleTextModifier();
+  EntryOptionPage();
+  EntryOptionPage2();
+  NavigationCustomTitlePage();
+  NavDestinationUIObserver();
+  HideToolBarNavPage();
+  TitleOptionsToolOptions();
 }

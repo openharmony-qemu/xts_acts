@@ -70,7 +70,7 @@ import gestureDefine10 from './GestureRecognizer/GestureRecognizerIsValid.test'
 
 
 export default function testsuite() {
-  APIPreDragStatusTest(); // 6 pass 6 //expect start equals PREVIEW_LIFT_FINISHED
+  APIPreDragStatusTest();
   APIshouldBuiltInRecognizerParallelWith();
   addGestureApplyGesture();
   ShortcutKeyTABTest();
@@ -101,7 +101,7 @@ export default function testsuite() {
   RotationGestureBasic02Test();
   PinchGestureBasic01Test();
   PinchGestureBasic02Test();
-  TapGestureTemplateTest(); // 1 expect true, actualValue is false TapGesture //expect true, actualValue is false
+  TapGestureTemplateTest();
   PanGestureExampleTemplateTest();
   LongPressGestureTemplateTest();
   onAttachTest(); 

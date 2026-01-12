@@ -16,6 +16,6 @@
 import EnableSwipeBackPage from './Navigation/EnableSwipeBackPage.test'
 import EnableSwipeBackRouter from './router/EnableSwipeBackRouter.test'
 export default function testsuite() {
-  EnableSwipeBackPage()  // SDK11.25 2025102045282(2) 12.29.黄晓林确认是问题 master代码已合入，需在master验证
-  // EnableSwipeBackRouter()   // SDK11.25 2025102045282(2) 12.29.黄晓林确认是问题  master代码已合入，需在master验证
+  EnableSwipeBackPage();
+  EnableSwipeBackRouter();
 }

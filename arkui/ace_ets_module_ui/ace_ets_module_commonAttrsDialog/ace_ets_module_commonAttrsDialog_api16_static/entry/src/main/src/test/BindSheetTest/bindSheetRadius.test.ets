@@ -114,7 +114,7 @@ it('bindSheetTest_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
       let btn2 = await driver.findComponent(ON.id('close1'));
-      btn2?.click();
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
     });
@@ -147,7 +147,7 @@ it('bindSheetTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<
       expect(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight')).assertEqual("0.00vp");
       console.info('[' + tagName + '] END ===========================');
       let btn2 = await driver.findComponent(ON.id('close2'));
-      btn2?.click();
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
     });
@@ -185,7 +185,7 @@ it('bindSheetTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
       let btn2 = await driver.findComponent(ON.id('close3'));
-      btn2?.click();
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
     });
@@ -222,7 +222,7 @@ it('bindSheetTest_static_0400', Level.LEVEL0, async (done: () => void): Promise<
       expect(Math.trunc(uiContext.vp2px(parseInt(obj1.getElement('$children')[1].getElement('$children')[0].getElement('$attrs').getElement('borderRadius').getString('topRight'))))).assertEqual(parseInt(radius));
       console.info('[' + tagName + '] END ===========================');
       let btn2 = await driver.findComponent(ON.id('close4'));
-      btn2?.click();
+      await (btn2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       done();
     });

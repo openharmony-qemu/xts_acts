@@ -82,7 +82,7 @@ export default function VerticalAlignTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[VerticalAlignTest_0010] component obj is: " +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":4,"#ordinal":0}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('4');
       console.info('[VerticalAlignTest_0010] END');
       done();
     });
@@ -111,7 +111,7 @@ export default function VerticalAlignTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[VerticalAlignTest_0020] component obj is: " +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":1,"#ordinal":3}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('1');
       console.info('[VerticalAlignTest_0020] END');
       done();
     });
@@ -140,7 +140,7 @@ export default function VerticalAlignTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[VerticalAlignTest_0030] component obj is: " +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":2,"#ordinal":2}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('2');
       console.info('[VerticalAlignTest_0030] END');
       done();
     });
@@ -169,7 +169,7 @@ export default function VerticalAlignTest() {
       let obj = JSON.parseJsonElement(strJson);
       console.info("[VerticalAlignTest_0040] component obj is: " +
       JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('{"value":3,"#ordinal":1}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
       console.info('[VerticalAlignTest_0040] END');
       done();
     });

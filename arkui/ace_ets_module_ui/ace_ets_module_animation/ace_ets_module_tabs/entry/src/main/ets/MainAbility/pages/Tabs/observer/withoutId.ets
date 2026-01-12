@@ -194,24 +194,37 @@ struct TabsAnimationExample1 {
   @State textLastIndex:string = '111';
   build() {
     Column() {
-      Text(this.textIndex)
-        .id('textIndex')
-      Text(this.textTabContentId)
-        .id('textTabContentId')
-      Text(this.textTabContentUniqueId)
-        .id('textTabContentUniqueId')
-      Text(this.textState)
-        .id('textState')
-      Text(this.textId)
-        .id('textId')
-      Text(this.textUniqueId)
-        .id('textUniqueId')
-      Text(this.textLastIndex)
-        .id('textLastIndex')
-
+      Row() {
+        Text(this.textIndex)
+          .height('5%')
+          .id('textIndex')
+        Text(this.textTabContentId)
+          .id('textTabContentId')
+          .height('5%')
+      }
+      Row() {
+        Text(this.textTabContentUniqueId)
+          .id('textTabContentUniqueId')
+          .height('5%')
+        Text(this.textState)
+          .id('textState')
+          .height('5%')
+      }
+      Row() {
+        Text(this.textId)
+          .id('textId')
+          .height('5%')
+        Text(this.textUniqueId)
+          .id('textUniqueId')
+          .height('5%')
+        Text(this.textLastIndex)
+          .id('textLastIndex')
+          .height('5%')
+      }
       Row() {
         Button('get')
           .id('idGet')
+          .height('5%')
           .onClick(() => {
             this.textIndex = (AppStorage.get('Index') as string) + '';
             this.textTabContentId = (AppStorage.get('tabContentId') as string) + '';
@@ -222,6 +235,7 @@ struct TabsAnimationExample1 {
             this.textLastIndex = (AppStorage.get('lastIndex') as string) + '';
           })
         Button('off')
+          .height('5%')
           .id('idOff')
           .onClick(() => {
             let observer = this.getUIContext().getUIObserver();
@@ -235,13 +249,14 @@ struct TabsAnimationExample1 {
           .onClick(() => {
             this.changeIndex(this.currentIndex + 1)
           })
+          .height('5%')
         Button('减')
           .id('reduce')
           .onClick(() => {
             this.changeIndex(this.currentIndex - 1)
           })
+          .height('5%')
       }
-      
       Tabs({ controller: this.controller }) {
         ForEach(this.data1, (item: itemType, index: number) => {
           TabContent() {

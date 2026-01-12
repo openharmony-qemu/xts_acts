@@ -115,6 +115,7 @@
         "label": "$string:app_name",
         "type": "service",
         "launchType": "standard",
+        "srcLanguage": "js",
         "srcPath": "MainAbilityC"
       },
       {
@@ -138,6 +139,7 @@
         "label": "$string:app_name",
         "type": "service",
         "launchType": "standard",
+        "srcLanguage": "js",
         "srcPath": "MainAbilityD"
       },
       {
@@ -161,6 +163,7 @@
         "label": "$string:app_name",
         "type": "service",
         "launchType": "standard",
+        "srcLanguage": "js",
         "srcPath": "MainAbilityE"
       },
       {
@@ -184,6 +187,7 @@
         "label": "$string:app_name",
         "type": "service",
         "launchType": "standard",
+        "srcLanguage": "js",
         "srcPath": "MainAbilityF"
       },
       {
@@ -207,6 +211,7 @@
         "label": "$string:app_name",
         "type": "service",
         "launchType": "standard",
+        "srcLanguage": "js",
         "srcPath": "MainAbilityG"
       },
       {
@@ -230,6 +235,7 @@
         "label": "$string:app_name",
         "type": "service",
         "launchType": "standard",
+        "srcLanguage": "js",
         "srcPath": "MainAbilityH"
       }
 
@@ -249,7 +255,7 @@
         "pages": [
           "pages/index/index"
         ],
-        "name": "com.example.third2.MainAbility"
+        "name": ".MainAbility"
       },
       {
         "pages": [

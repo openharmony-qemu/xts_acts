@@ -131,7 +131,7 @@ export default function Date1Test() {
         const date4 = new Date("1620000000000");
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -147,7 +147,7 @@ export default function Date1Test() {
         const date = new Date("20240520");
         expect().assertFail();
       }catch(e){
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
     /**
@@ -424,8 +424,12 @@ export default function Date1Test() {
      * @tc.level Level 2
      */
     it('Date1Test_031', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, () => {
-      const date11 = new Date("1622505600000");
-      expect(date11.getMonth()).assertEqual(5);
+      try {
+        const date11 = new Date("1622505600000");
+        expect().assertFail();
+      } catch (e) {
+        expect(e instanceof FormatError).assertEqual(true);
+      }
     });
     /**
      * @tc.number SUB_BUILTINS_DATE1_TEST_3200
@@ -1254,7 +1258,7 @@ export default function Date1Test() {
         const date153 = new Date("0151777000000000");
         expect(date153.toISOString()).assertEqual('2021-06-01T00:00:00.000Z');
       } catch (e) {
-        expect(e instanceof RangeError).assertEqual(true);
+        expect(e instanceof FormatError).assertEqual(true);
       }
     });
 

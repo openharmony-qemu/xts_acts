@@ -73,7 +73,7 @@ import onMeasureSize3 from './MeasureSizeTest/onMeasureSize3.test';
 import onPlaceChildren1 from './PlaceChildrenTest/onPlaceChildren1.test';
 
 export default function testsuite() {
-  BackgroundJsunit(); // 3 pass 3
+  BackgroundJsunit();
   comSizeAbilityTest_01();
   comSizeAbilityTest_02();
   comSizeAbilityTest_03();

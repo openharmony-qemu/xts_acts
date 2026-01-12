@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -32,6 +32,18 @@ namespace ArkUICapiTest {
 #define PARAM_0_POINT_6 0.6
 #define PARAM_0_POINT_8 0.8
 #define PARAM_1_POINT_1 1.1
+#define C_FOCUS_AXIS_EVENT_ID 6
+#define DEFAULT_ABS_RX_VALUE 1.9
+#define DEFAULT_ABS_RY_VALUE 2.0
+#define DEFAULT_ABS_THROTTLE_VALUE 2.1
+#define DEFAULT_ABS_RUDDER_VALUE 2.2
+#define DEFAULT_ABS_WHEEL_VALUE 2.3
+#define DEFAULT_ABS_HAT1X_VALUE 2.4
+#define DEFAULT_ABS_HAT1Y_VALUE 2.5
+#define DEFAULT_ABS_HAT2X_VALUE 2.6
+#define DEFAULT_ABS_HAT2Y_VALUE 2.7
+#define DEFAULT_ABS_HAT3X_VALUE 2.8
+#define DEFAULT_ABS_HAT3Y_VALUE 2.9
 #define PARAM_NEGATIVE_0_POINT_1 (-0.1)
 #define PARAM_NEGATIVE_0_POINT_8 (-0.8)
 #define PARAM_0 0

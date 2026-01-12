@@ -27,7 +27,16 @@ function sleep(ms: number) {
 
 export default function abilityTest() {
   describe('ActsAbilityTest', () => {
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       context = globalThis.context;
     })
     beforeEach(() => {

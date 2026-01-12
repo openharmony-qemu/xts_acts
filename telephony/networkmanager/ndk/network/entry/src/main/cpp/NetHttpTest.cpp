@@ -96,14 +96,19 @@ napi_value Http_GetHeaderValue(napi_env env, napi_callback_info info)
     int32_t index = GetInt(env, info, 0);
     int32_t returnValue = 0;
     Http_Headers *header = OH_Http_CreateHeaders();
+    int setValue = OH_Http_SetHeaderValue(header, "key", "value");
     if (index == CASE_INDEX_1) {
         Http_HeaderValue *headValue = OH_Http_GetHeaderValue(header, nullptr);
+        returnValue = headValue == nullptr ? 0 : -1;
     } else if (index == CASE_INDEX_2) {
         Http_HeaderValue *headValue = OH_Http_GetHeaderValue(header, "key");
+        returnValue = headValue == nullptr ? -1 : 0;
     } else if (index == CASE_INDEX_3) {
         Http_HeaderValue *headValue = OH_Http_GetHeaderValue(nullptr, nullptr);
+        returnValue = headValue == nullptr ? 0 : -1;
     } else if (index == CASE_INDEX_4) {
         Http_HeaderValue *headValue = OH_Http_GetHeaderValue(nullptr, "key");
+        returnValue = headValue == nullptr ? 0 : -1;
     }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -117,9 +122,9 @@ napi_value Http_GetHeaderEntries(napi_env env, napi_callback_info info)
     if (index == CASE_INDEX_1) {
         Http_Headers *header = OH_Http_CreateHeaders();
         OH_Http_SetHeaderValue(header, "key", "val");
-        returnValue = OH_Http_GetHeaderEntries(header) ? 0 : -1;
+        returnValue = OH_Http_GetHeaderEntries(header) == nullptr ? -1 : 0;
     } else {
-        returnValue = OH_Http_GetHeaderEntries(nullptr) ? -1 : 0;
+        returnValue = OH_Http_GetHeaderEntries(nullptr) == nullptr ? 0 : -1;
     }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));
@@ -149,8 +154,10 @@ napi_value Http_CreateRequest(napi_env env, napi_callback_info info)
     int32_t returnValue = 0;
     if (url.empty()) {
         Http_Request *request = OH_Http_CreateRequest(nullptr);
+        returnValue = request == nullptr ? 0 : -1;
     } else {
         Http_Request *request = OH_Http_CreateRequest(url.c_str());
+        returnValue = request == nullptr ? -1 : 0;
     }
     napi_value result = nullptr;
     NAPI_CALL(env, napi_create_int32(env, returnValue, &result));

@@ -29,7 +29,6 @@ struct WearList {
             Button('' + item)
               .height(100)
               .width('100%')
-              .fontSize(16)
               .onClick(() => {})
           }
         }, (item: string) => item)

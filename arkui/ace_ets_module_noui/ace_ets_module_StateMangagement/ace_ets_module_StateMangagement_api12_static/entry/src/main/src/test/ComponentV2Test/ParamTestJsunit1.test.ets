@@ -65,13 +65,13 @@ export default function ParamTestJsunit1() {
       }
       try {
         const routerInstance = AppStorage.get<Router>("router") as Router
-        // routerInstance.clear();
+        routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get ParamTestJsunit1 state pages:" + JSON.stringify(pages));
         if (!("ParamTest1" == pages.name)) {
           console.info("get ParamTestJsunit1 pages.name:" + JSON.stringify(pages.name));
 
-          routerInstance.pushUrl(options);
+          routerInstance.replaceUrl(options);
           await CommonFunc.sleep(2000);
 
         }

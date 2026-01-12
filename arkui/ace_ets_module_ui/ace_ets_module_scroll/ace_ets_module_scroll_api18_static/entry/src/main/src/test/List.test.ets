@@ -29,14 +29,14 @@ import LazyVGridLayout from './LazyVGridLayout/LazyVGridLayout.test';
 export default function testsuite() {
   iconTabs()
   onSelectedTabs()
-  preloadSwiper() // preloadItems 捕获错误码 1
+  preloadSwiper()
   selectedSwiper()
   SwiperIndicatorDistanceTest()
-  // setGridEvent()  // UIGridEvent尚未支持  1
-  // setListEvent()  // UIListEvent尚未支持  1
-  // setScrollEvent()  // UIScrollEvent尚未支持 1
+  setGridEvent()
+  setListEvent()
+  setScrollEvent()
   listDividerOptions()
   stackFromEndList()
   LazyVGridLayout()
-  barBackground()  // 2
+  barBackground()
 }

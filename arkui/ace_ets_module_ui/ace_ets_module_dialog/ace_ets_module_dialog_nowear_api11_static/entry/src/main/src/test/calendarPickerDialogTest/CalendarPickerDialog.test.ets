@@ -74,7 +74,7 @@ it('CalendarPickerDialog_static_0100', Level.LEVEL2, async (done: () => void): P
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('CalendarPickerDialog'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let windowClass: window.Window | undefined = undefined;

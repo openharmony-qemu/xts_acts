@@ -77,11 +77,11 @@ it('symbolIcon_static_0100', Level.LEVEL0, async (done: () => void): Promise<voi
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let Column = await driver.findComponent(ON.id('symbolIcon'));
-       Column?.click();
+       await (Column?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let Column1 = await driver.findComponent(ON.text('Menu1'));
-       Column1?.click();
+       await (Column1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('symbolIconValue');

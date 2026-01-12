@@ -13,7 +13,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import { CustomColors, CustomTheme } from '@ohos.arkui.theme';
+import { CustomColors, CustomTheme, CustomDarkColors } from '@ohos.arkui.theme';
 import { brownThemeColors } from './customTheme/BrownCustomThemeColor';
 import { greenThemeColors } from './customTheme/GreenCustomThemeColor';
 import { redThemeColors } from './customTheme/RedCustomThemeColor';
@@ -21,16 +21,20 @@ import { systemColors } from './systemTheme/SystemColors';
 
 export class CustomThemeImpl implements CustomTheme {
   public colors?: CustomColors;
+  public darkColors?: CustomDarkColors;
 
-  constructor(colors: CustomColors) {
+  constructor(colors: CustomColors, darkColors: CustomDarkColors) {
     this.colors = colors;
+    this.darkColors = darkColors;
   }
 }
 
-export const brownCustomTheme: CustomTheme = new CustomThemeImpl(brownThemeColors);
+export const brownCustomTheme: CustomTheme =
+  new CustomThemeImpl(brownThemeColors, brownThemeColors as CustomDarkColors);
 
-export const greenCustomTheme: CustomTheme = new CustomThemeImpl(greenThemeColors);
+export const greenCustomTheme: CustomTheme =
+  new CustomThemeImpl(greenThemeColors, greenThemeColors as CustomDarkColors);
 
-export const redCustomTheme: CustomTheme = new CustomThemeImpl(redThemeColors);
+export const redCustomTheme: CustomTheme = new CustomThemeImpl(redThemeColors, redThemeColors as CustomDarkColors);
 
-export const systemDefaultTheme: CustomTheme = new CustomThemeImpl(systemColors);
+export const systemDefaultTheme: CustomTheme = new CustomThemeImpl(systemColors, greenThemeColors as CustomDarkColors);

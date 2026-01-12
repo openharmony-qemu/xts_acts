@@ -35,6 +35,9 @@ add_library(nativerender SHARED
     hoverEffect/HoverEffectTest.cpp
     monopolize/MonopolizeTest.cpp
     textSelection/TextSelectionTest.cpp
+    node/ConvertPositionToWindowTest.cpp
+    node/IsInRenderStateTest.cpp
+    node/ConvertPositionFromWindowTest.cpp
 )
 
 add_library(nativefunc SHARED

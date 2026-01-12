@@ -133,6 +133,21 @@ export default function ImageInitImageNativeSuppTest() {
       expect(result).assertEqual(IMAGE_BAD_PARAMETER)
     })
     /**
+     * @tc.number  SUB_PIXELMAP_NATIVE_GET_METADATA_SUPP_003
+     * @tc.name    SUB_PIXELMAP_NATIVE_GET_METADATA_SUPP_003
+     * @tc.desc    OH_PixelmapNative_GetMetadata-IMAGE_COPY_FAILED
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_PIXELMAP_NATIVE_GET_METADATA_SUPP_003', Level.LEVEL1, () => {
+      const testName ='SUB_PIXELMAP_NATIVE_GET_METADATA_SUPP_003'
+      console.info(TAG,'Start',);
+      let result:number = testNapi.OHPixelmapNativeGetMetadataSupp(CASE_INDEX_3)
+      console.info(TAG,testName,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_COPY_FAILED)
+    })
+    /**
      * @tc.number  SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_001
      * @tc.name    SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_001
      * @tc.desc    OH_PixelmapNative_SetMetadata-IMAGE_SUCCESS
@@ -178,19 +193,19 @@ export default function ImageInitImageNativeSuppTest() {
       expect(result).assertEqual(IMAGE_DMA_NOT_EXIST)
     })
     /**
-     * @tc.number  SUB_PIXELMAP_NATIVE_GET_NATIVE_BUFFER_SUPP_004
-     * @tc.name    SUB_PIXELMAP_NATIVE_GET_NATIVE_BUFFER_SUPP_004
-     * @tc.desc    OH_PixelmapNative_GetNativeBuffer-IMAGE_DMA_NOT_EXIST
+     * @tc.number  SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_005
+     * @tc.name    SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_005
+     * @tc.desc    OH_PixelmapNative_SetMetadata-IMAGE_COPY_FAILED
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
      */
-    it('SUB_PIXELMAP_NATIVE_GET_NATIVE_BUFFER_SUPP_004', Level.LEVEL1, () => {
-      const testName ='SUB_PIXELMAP_NATIVE_GET_NATIVE_BUFFER_SUPP_004'
+    it('SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_005', Level.LEVEL1, () => {
+      const testName ='SUB_PIXELMAP_NATIVE_SET_METADATA_SUPP_005'
       console.info(TAG,'Start',);
-      let result:number = testNapi.OHPixelmapNativeSetMetadataSupp(CASE_INDEX_4)
+      let result:number = testNapi.OHPixelmapNativeSetMetadataSupp(CASE_INDEX_5)
       console.info(TAG,testName,'Success',JSON.stringify(result));
-      expect(result).assertEqual(IMAGE_DMA_NOT_EXIST)
+      expect(result).assertEqual(IMAGE_COPY_FAILED)
     })
     /**
      * @tc.number  SUB_CONVERT_PIXELMAP_NATIVE_FROM_NAPI_SUPP_001

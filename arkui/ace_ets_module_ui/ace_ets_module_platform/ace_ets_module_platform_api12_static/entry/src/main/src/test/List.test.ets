@@ -40,29 +40,26 @@ import onTerminated from './EmbeddedComponentTest/onTerminated.test.ets';
 import inputMethodListTest from './InputMethodList/inputMethodListTest.test';
 
 export default function testsuite() {
-  onSurfaceCreatedJsunit(); // app died this.createText = AppStorage.get<string>('onSurfaceCreated')!
-
-  stopImageAnalyzerJsunit(); //全pass 注释
-  VideoTest1(); //全pass 注释
-  VideoTest2(); //全pass 注释
-  VideoReset1(); //全pass 注释
-  VideoReset2(); //全pass 注释
-  VideoReset3(); //全pass 注释
-  VideoReset4(); //全pass 注释
-  VideoReset5(); //全pass 注释
-  VideoReset6(); //全pass 注释
-  VideoReset7(); //全pass 注释
-  VideoReset8(); //全pass 注释
-  VideoReset9(); //全pass 注释1
-  VideoReset10(); //全pass 注释1
-  VideoReset11(); //全pass 注释1
-  VideoReset12(); //全pass 注释1
-  VideoReset13(); //全pass 注释1
-  // 17 pass 17
-
-  VideoReset14(); // 1 pass 1 需联网
-  inputMethodListTest(); // 1 pass 1
-  SurfaceRotationOptionsLockTest(); // 1 pass 1
-  getXComponentSurfaceRectJsunit(); //expect null equals {"offsetX":20,"offsetY":20,"surfaceWidth":500,"surfaceHeight":500}
-  setXComponentSurfaceRotationJsunit(); // JSON.stringify()
+  onSurfaceCreatedJsunit();
+  stopImageAnalyzerJsunit();
+  VideoTest1();
+  VideoTest2();
+  VideoReset1();
+  VideoReset2();
+  VideoReset3();
+  VideoReset4();
+  VideoReset5();
+  VideoReset6();
+  VideoReset7();
+  VideoReset8();
+  VideoReset9();
+  VideoReset10();
+  VideoReset11();
+  VideoReset12();
+  VideoReset13();
+  VideoReset14();
+  inputMethodListTest();
+  SurfaceRotationOptionsLockTest();
+  getXComponentSurfaceRectJsunit();
+  setXComponentSurfaceRotationJsunit();
 }

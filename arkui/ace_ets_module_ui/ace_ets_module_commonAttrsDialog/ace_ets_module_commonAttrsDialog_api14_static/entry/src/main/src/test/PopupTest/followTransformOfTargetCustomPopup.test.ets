@@ -90,10 +90,10 @@ it('followTransformOfTargetCustomPopup_static0010', Level.LEVEL0, async (done: (
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button = await driver.findComponent(ON.id('popup'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('animationBtn'));
-      button2?.click()
+      await (button2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('followTransformOfTarget');
       console.info("[followTransformOfTargetCustomPopup_0010] attrs is: " +
@@ -103,7 +103,7 @@ it('followTransformOfTargetCustomPopup_static0010', Level.LEVEL0, async (done: (
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('followTransformOfTarget: false');
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       console.info('[followTransformOfTargetCustomPopup_0010] END');
       done();
@@ -123,13 +123,13 @@ it('followTransformOfTargetCustomPopup_static0020', Level.LEVEL0, async (done: (
       let driver = Driver.create()
       await CommonFunc.sleep(500);
       let button0 = await driver.findComponent(ON.id('followId'));
-      button0?.click();
+      await (button0?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('popup'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let button2 = await driver.findComponent(ON.id('animationBtn'));
-      button2?.click()
+      await (button2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('followTransformOfTarget');
       console.info("[followTransformOfTargetCustomPopup_0020] attrs is: " +
@@ -139,7 +139,7 @@ it('followTransformOfTargetCustomPopup_static0020', Level.LEVEL0, async (done: (
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content'))
         .assertEqual('followTransformOfTarget: true');
       await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       console.info('[followTransformOfTargetCustomPopup_0020] END');
       done();

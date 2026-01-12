@@ -77,7 +77,7 @@ it('SegmentButtonV2Test0010_static_001', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(500);
       let textClick = await driver.findComponent(ON.text("share"));
       await CommonFunc.sleep(500);
-      textClick?.click();
+      await (textClick?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvIndex0'));
       console.info("[SegmentButtonV2Test0010] select index is: " + JSON.stringify(obj));
@@ -209,7 +209,7 @@ it('SegmentButtonV2Test0010_static_002', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(500);
       let textClick = await driver.findComponent(ON.text("close3"));
       await CommonFunc.sleep(500);
-      textClick?.click();
+      await (textClick?.click() as Promise<void>);
       await CommonFunc.sleep(500);
       let obj = JSON.parseJsonElement(inspector.getInspectorByKey('tvIndex1'));
       console.info("[SegmentButtonV2Test0010] select index is: " + JSON.stringify(obj.getElement('$attrs').getString('content')));

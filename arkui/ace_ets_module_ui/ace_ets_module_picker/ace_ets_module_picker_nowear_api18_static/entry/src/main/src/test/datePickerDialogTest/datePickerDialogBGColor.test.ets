@@ -65,7 +65,7 @@ export default function DatePickerDialogBGColorTest() {
 it('DatePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ColorWhiteID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -73,7 +73,7 @@ it('DatePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => vo
       let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
       expect(backgroundColor).assertEqual('#FFFFFFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -87,7 +87,7 @@ it('DatePickerDialogBGColorTest_static_001', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('rgb(255, 100, 255)ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -95,7 +95,7 @@ it('DatePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => vo
       let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
       expect(backgroundColor).assertEqual('#FFFF64FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -109,7 +109,7 @@ it('DatePickerDialogBGColorTest_static_002', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('0x008080ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -117,7 +117,7 @@ it('DatePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => vo
       let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
       expect(backgroundColor).assertEqual('#FF008080');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -131,7 +131,7 @@ it('DatePickerDialogBGColorTest_static_003', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('00FFFFID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -139,7 +139,7 @@ it('DatePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => vo
       let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
       expect(backgroundColor).assertEqual('#FF00FFFF');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -153,7 +153,7 @@ it('DatePickerDialogBGColorTest_static_004', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('colorBlueID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -161,7 +161,7 @@ it('DatePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => vo
       let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
       expect(backgroundColor).assertEqual('#FF0000FF');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -175,7 +175,7 @@ it('DatePickerDialogBGColorTest_static_005', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('nullID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -188,7 +188,7 @@ it('DatePickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => vo
         expect(backgroundColor).assertEqual('#00FFFFFF');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -202,7 +202,7 @@ it('DatePickerDialogBGColorTest_static_006', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -215,7 +215,7 @@ it('DatePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => vo
         expect(backgroundColor).assertEqual('#00FFFFFF');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -229,7 +229,7 @@ it('DatePickerDialogBGColorTest_static_007', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('xxxID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -242,7 +242,7 @@ it('DatePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => vo
         expect(backgroundColor).assertEqual('#00FFFFFF');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -256,7 +256,7 @@ it('DatePickerDialogBGColorTest_static_008', Level.LEVEL0, async (done: () => vo
 it('DatePickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('-100ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -264,7 +264,7 @@ it('DatePickerDialogBGColorTest_static_009', Level.LEVEL0, async (done: () => vo
       let backgroundColor: string = column.getElement('$attrs').getString('backgroundColor');
       expect(backgroundColor).assertEqual('#FFFFFF9C');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
   })
