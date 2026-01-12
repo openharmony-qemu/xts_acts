@@ -38,14 +38,14 @@ struct OnIdleIndex {
         .height('10%')
         .width('100%')
         .onClick(() => {
-          new MyFrameCallback("normTask")?.onIdle(0);
+          new MyFrameCallback('normTask')?.onIdle(0);
         })
       Button('点击触发onIdle -1')
         .id('btn_FrameCallbackOnIdle_n1')
         .height('10%')
         .width('100%')
         .onClick(() => {
-          new MyFrameCallback("normTask")?.onIdle(-1);
+          new MyFrameCallback('normTask')?.onIdle(-1);
         })
     }
     .height('100%')
