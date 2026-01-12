@@ -146,7 +146,7 @@ export default function taskPoolErrorSuccessTest() {
         });
       }
 
-      while (count < 1) {
+      while (count < 1 || count2 < 1) {
         await sleep(100)
       }
       expect(String(1)).assertEqual(String(count))
@@ -184,7 +184,7 @@ export default function taskPoolErrorSuccessTest() {
 
       }
 
-      while (count < 1) {
+      while (count < 1 || count2 < 1) {
         await sleep(100)
       }
 
@@ -226,7 +226,7 @@ export default function taskPoolErrorSuccessTest() {
         })
       }
 
-      while (count < 1) {
+      while (count < 1 || count2 < 1) {
         await sleep(100)
       }
 
@@ -266,7 +266,7 @@ export default function taskPoolErrorSuccessTest() {
         })
       }
 
-      while (count < 1) {
+      while (count < 1 || count2 < 1) {
         await sleep(100)
       }
 
@@ -354,7 +354,7 @@ export default function taskPoolErrorSuccessTest() {
         });
       }
 
-      while (Count1.count < 1) {
+      while (Count1.count < 1 || count2 < 1 || count < 1) {
         await sleep(100)
       }
       expect(String(1)).assertEqual(String(count))

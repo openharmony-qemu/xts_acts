@@ -58,7 +58,7 @@ export default function setDefaultThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== "SetDefaultThemeTestPage") {
           routerInstance.pushUrl(options).then(() => {
-            themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
+            themeLocal = AppStorage.get<CustomTheme>('DefaultThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           });
           await UtilsTest.msSleep(4000)
@@ -67,13 +67,13 @@ export default function setDefaultThemeTest() {
         console.error(`${SUITE} beforeAll error:` + JSON.stringify(err));
       }
       if (!changeTheme) return;
-      if ((AppStorage.get<CustomTheme>(defaultThemeProperty as string))?.colors?.fontEmphasize
+      if ((AppStorage.get<CustomTheme>('DefaultThemeProperty'))?.colors?.fontEmphasize
         == redCustomTheme?.colors?.fontEmphasize) {
         ThemeControl.setDefaultTheme(greenCustomTheme);
       } else {
         ThemeControl.setDefaultTheme(redCustomTheme);
       }
-      themeLocal = AppStorage.get<CustomTheme>(defaultThemeProperty);
+      themeLocal = AppStorage.get<CustomTheme>('DefaultThemeProperty');
       changeTheme = false;
     })
 

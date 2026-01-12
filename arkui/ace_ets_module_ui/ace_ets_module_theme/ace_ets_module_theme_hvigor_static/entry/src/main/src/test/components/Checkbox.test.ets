@@ -42,7 +42,6 @@ export default function checkboxThemeTest() {
   describe(SUITE, () => {
     beforeAll(async () => {
       await UtilsTest.startAbility("com.open.harmony.acetest.static", "EntryAbility")
-      
     });
 
     beforeEach(() => {
@@ -54,7 +53,6 @@ export default function checkboxThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `CheckboxPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>('CheckBoxThemeProperty');
             console.info(`${SUITE} router.pushUrl success`);
           });
         }
@@ -73,6 +71,7 @@ export default function checkboxThemeTest() {
         localTheme = AppStorage.get<CustomTheme>('CheckBoxThemeProperty');
         changeTheme = false;
       }
+      localTheme = AppStorage.get<CustomTheme>('CheckBoxThemeProperty');
     });
 
 
@@ -112,8 +111,10 @@ it('ActsCheckBoxThemeColors_static_0200', Level.LEVEL2, async (done: () => void)
       const CASE: string = `ActsCheckBoxThemeColors_static_0200`;
       console.info(`${SUITE} ${CASE} START`);
       const checkboxJSON = inspector.getInspectorByKey(CheckBoxKeys.checkboxWithTheme);
+      console.log('ActsCheckBoxThemeColors_static_0200 checkboxJSON: ' + checkboxJSON);
       const attrsCheckBox = JSON.parseJsonElement(checkboxJSON).getElement('$attrs');
       const selectedColor = attrsCheckBox.getString('selectedColor').toString().toUpperCase();
+      console.log('ActsCheckBoxThemeColors_static_0200 selectedColor: ' + selectedColor)
       const checkSelectedColor = localTheme?.colors?.compBackgroundEmphasize;
       expect(selectedColor).assertEqual(checkSelectedColor);
       const unselectedColor: string = attrsCheckBox.getString('unselectedColor').toString().toUpperCase() ?? emptyAttr;

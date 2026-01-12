@@ -32,6 +32,7 @@ import rowReverseTest from './row/RowReverseTest.test'
 import TextCompressLeadingPunctuationTest from "./text/TextCompressLeadingPunctuationTest.test";
 import TextAreaCompressLeadingPunctuationTest from "./textArea/TextAreaCompressLeadingPunctuationTest.test";
 import TextInputCompressLeadingPunctuationTest from "./textInput/TextInputCompressLeadingPunctuationTest.test";
+import TextEnumTest from "./text/TextEnum.test";
 import distanceTest from './distance/DistanceTest.test'
 import hoverEffectTest from './hoverEffect/HoverEffectTest.test'
 import monopolizeTest from './monopolize/MonopolizeTest.test'
@@ -69,6 +70,7 @@ export default function testsuite() {
   TextCompressLeadingPunctuationTest();
   TextAreaCompressLeadingPunctuationTest();
   TextInputCompressLeadingPunctuationTest();
+  TextEnumTest();
   hoverEffectTest();
   distanceTest();
   monopolizeTest();

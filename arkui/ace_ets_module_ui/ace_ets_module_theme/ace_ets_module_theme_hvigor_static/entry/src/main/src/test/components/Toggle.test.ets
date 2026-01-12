@@ -61,9 +61,10 @@ export default function toggleThemeTest() {
         const pages: router.RouterState = routerInstance.getState();
         if (pages?.name !== `TogglePage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(`toggleThemeProperty`);
             console.info(`${SUITE} router.pushUrl success`);
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>(`toggleThemeProperty`);
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {

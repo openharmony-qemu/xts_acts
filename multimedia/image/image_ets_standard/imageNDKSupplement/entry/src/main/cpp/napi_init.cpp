@@ -215,8 +215,6 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
     DESCRIPTOR("ImageResultIRNdkErrCodeTest", ImageResultIRNdkErrCodeTest),
     DESCRIPTOR("MediaLibraryErrorCode", MediaLibraryErrorCode),
-    DESCRIPTOR("ImageProcessingErrorCode", ImageProcessingErrorCode),
-    DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
     DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
     DESCRIPTOR("ImageReceiverNativeReadLatestImageSuccessTest", ImageReceiverNativeReadLatestImageSuccessTest),
     DESCRIPTOR("ImagePackerNativeCreateTest", ImagePackerNativeCreateTest),

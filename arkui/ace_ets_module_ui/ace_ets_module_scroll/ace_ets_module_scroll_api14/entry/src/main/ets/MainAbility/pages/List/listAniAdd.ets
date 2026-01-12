@@ -55,7 +55,7 @@ struct animationListAddExample {
 
         }
       }
-      List({ space: 10, scroller: this.scroller }) {
+      List({ scroller: this.scroller }) {
         ForEach(this.arr, (item: number) => {
           ListItem() {
             Text('item-' + item)

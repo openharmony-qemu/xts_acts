@@ -465,65 +465,79 @@ export default function drawingTsCanvasPart5Test() {
         left: 10, top: 100, right: 200, bottom: 300
       };
       let roundRectOne = new drawing.RoundRect(rectOne, 10, 10);
-
-
       try {
         canvas.clipRoundRect(null, drawing.ClipOp.DIFFERENCE, false);
-        console.info(msg + `test error`);
+        console.info(msg + ` 1 test error`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + ` 1 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
+      try {
+        canvas.clipRoundRect(undefined, drawing.ClipOp.DIFFERENCE, false);
+        console.info(msg + ` 2 test error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + ` 2 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
       try {
         canvas.clipRoundRect(roundRectOne, null, false);
-        console.info(msg + `test error`);
+        console.info(msg + ` 3 test error`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + ` 3 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
+      try {
+        canvas.clipRoundRect(roundRectOne, undefined, false);
+        console.info(msg + ` 4 test error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + ` 4 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
       try {
         canvas.clipRoundRect(roundRectOne, drawing.ClipOp.DIFFERENCE, null);
-        console.info(msg + `test error`);
+        console.info(msg + ` 5 test error`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + ` 5 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
       try {
         canvas.clipRoundRect(null, drawing.ClipOp.DIFFERENCE, false);
-        console.info(msg + `test error`);
+        console.info(msg + ` 6 test error`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + ` 6 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
       try {
         canvas.clipRoundRect(roundRectOne, null, false);
-        console.info(msg + `test error`);
+        console.info(msg + ` 7 test error`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + ` 7 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
       try {
         canvas.clipRoundRect(roundRectOne, drawing.ClipOp.DIFFERENCE, null);
-        console.info(msg + `test error`);
+        console.info(msg + ` 8 test error`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + ` 8 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
+      try {
+        canvas.clipRoundRect(roundRectOne, drawing.ClipOp.DIFFERENCE, undefined);
+        console.info(msg + ` 9 test error`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + ` 9 test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
     })
-
-
     /**
      * @tc.name   testCanvasClipRoundRectAbnormal
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_3804
@@ -1298,15 +1312,15 @@ export default function drawingTsCanvasPart5Test() {
     })
 
     /**
-     * @tc.name   testCanvasDrawShadowNormal
-     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4500
-     * @tc.desc   testCanvasDrawShadowNormal
+     * @tc.name   testCanvasDrawShadowNormal2
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4505
+     * @tc.desc   testCanvasDrawShadowNormal2
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testCanvasDrawShadowNormal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
-      const msg = 'testCanvasDrawShadowNormal';
+    it('testCanvasDrawShadowNormal2', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawShadowNormal2';
       const canvas = new drawing.Canvas(pixel);
       const path = new drawing.Path();
       try {

@@ -71,10 +71,11 @@ export default function textInputThemeTest() {
         const pages: router.RouterState = routerInstance.getState()
         if (pages?.name !== `TextInputPage`) {
           routerInstance.pushUrl(options).then(() => {
-            localTheme = AppStorage.get<CustomTheme>(`TextInputThemeProperty`)
-            themeSet = AppStorage.get<boolean>(`TextInputThemeSetProperty`)
             console.info(`${SUITE} router.pushUrl success`)
           })
+          await UtilsTest.msSleep(1000)
+          localTheme = AppStorage.get<CustomTheme>(`TextInputThemeProperty`)
+          themeSet = AppStorage.get<boolean>(`TextInputThemeSetProperty`)
         }
         colorValues = AppStorage.get<Map<string, string> | undefined>('ColorValues');
       } catch (err) {
