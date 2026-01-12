@@ -121,6 +121,30 @@ export default function audioSpatializationManager() {
     })
 
     /**
+     * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002
+     * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002
+     * @tc.desc   off(spatializationEnabledChangeForCurrentDevice)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it("SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      let audioManager = audio.getAudioManager();
+      let audioSpatializationManager = audioManager.getSpatializationManager();
+      let ret = audioSpatializationManager.isSpatializationEnabledForCurrentDevice();
+      try {
+        audioSpatializationManager.offSpatializationEnabledChangeForCurrentDevice();
+        console.info(`SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002 SUCCESS.`);
+        expect(false == ret).assertTrue();
+        done();
+      } catch (err: BusinessError) {
+        console.error(`${TAG} SUB_AUDIO_SPATIALIZATION_MANAGER_OFF_SPATIALIZATION_ENABLED_CHANGE_FOR_CURRENT_DEVICE_STATIC_002 ERROR: ${err.message}`);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_STATIC_001
      * @tc.number SUB_AUDIO_SPATIALIZATION_MANAGER_ISSPATIALIZATIONENABLEDFORCURRENTDEVICE_TEST_STATIC_001
      * @tc.desc   isSpatializationEnabledForCurrentDevice
