@@ -46,7 +46,7 @@ export default function textAreaMinFontSize() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaMinFontSize state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaMinFontSize" == pages.name)) {
           console.info("get textAreaMinFontSize pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

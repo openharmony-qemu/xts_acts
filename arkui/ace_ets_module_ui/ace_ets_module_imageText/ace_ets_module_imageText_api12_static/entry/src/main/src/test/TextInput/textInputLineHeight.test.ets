@@ -48,7 +48,7 @@ export default function textInputLineHeight() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputLineHeight state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputLineHeight" == pages.name)) {
           console.info("get textInputLineHeight pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

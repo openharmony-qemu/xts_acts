@@ -46,7 +46,7 @@ export default function textAreaLineHeight() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaLineHeight state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaLineHeight" == pages.name)) {
           console.info("get textAreaLineHeight pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

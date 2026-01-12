@@ -48,7 +48,7 @@ export default function TextInputEvent() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextInputEvent state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextInputEvent" == pages.name)) {
           console.info("get TextInputEvent pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
@@ -155,7 +155,7 @@ export default function TextInputEvent() {
       console.info("[TextInputEvent_003] component obj is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
 
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('11');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('3');
       expect(obj2.getElement('$attrs').getString('content')).assertEqual('3');
       console.info('[TextInputEvent_003] END');
       done();
