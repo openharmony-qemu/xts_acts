@@ -38,14 +38,14 @@ struct OnFrameIndex {
         .height('10%')
         .width('100%')
         .onClick(() => {
-          new MyFrameCallback("normTask")?.onFrame(0);
+          new MyFrameCallback('normTask')?.onFrame(0);
         })
       Button('点击触发postFrameCallback -1')
         .id('btn_postFrameCallback_n1')
         .height('10%')
         .width('100%')
         .onClick(() => {
-          new MyFrameCallback("normTask")?.onFrame(-1);
+          new MyFrameCallback('normTask')?.onFrame(-1);
         })
     }
     .height('100%')
