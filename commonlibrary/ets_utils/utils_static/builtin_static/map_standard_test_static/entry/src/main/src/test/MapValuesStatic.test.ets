@@ -314,7 +314,7 @@ export default function MapValueTest() {
      */
     it('MapValuesTest016',TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, () => {
       const arr = [1, 2, 3];
-      const map = new Map<number, number[]>([[1, arr]]);
+      const map = new Map<int, int[]>([[1, arr]]);
       const values = Array.from(map.values());
       expect(values[0]).assertEqual(arr);
       expect(values[0].length).assertEqual(3);

@@ -205,7 +205,7 @@ export default function MapDeleteTest() {
      */
     it('MapDeleteTest014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let arr = [1, 2];
-      let map = new Map<Array<number>, string>([[arr, 'a']]);
+      let map = new Map<Array<int>, string>([[arr, 'a']]);
       let result = map.delete(arr);
       expect(result).assertEqual(true);
     });
@@ -1120,7 +1120,7 @@ export default function MapDeleteTest() {
      */
     it('MapDeleteTest099', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       let key = [1, 2, 3];
-      let map = new Map<Array<number>, string>([[key, 'val']]);
+      let map = new Map<Array<int>, string>([[key, 'val']]);
       let result = map.delete(key);
       expect(result).assertEqual(true);
     });

@@ -297,7 +297,7 @@ export default function MapHasTest() {
      */
     it('MapHasTest027', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
-      const map = new Map<Array<number>, string>([[arr, 'array']]);
+      const map = new Map<Array<int>, string>([[arr, 'array']]);
       expect(map.has(arr)).assertEqual(true);
       expect(map.has([1, 2, 3])).assertEqual(false);
     });
@@ -312,7 +312,7 @@ export default function MapHasTest() {
      */
     it('MapHasTest028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async () => {
       const arr = [1, 2, 3];
-      const map = new Map<Array<number>, string>([[arr, 'array']]);
+      const map = new Map<Array<int>, string>([[arr, 'array']]);
       arr.push(4); // Modify array content
       expect(map.has(arr)).assertEqual(true);
     });

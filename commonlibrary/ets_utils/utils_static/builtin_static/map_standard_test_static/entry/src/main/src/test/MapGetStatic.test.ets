@@ -326,7 +326,7 @@ export default function MapGetTest() {
      */
     it('testMapGet0022', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
       const arrKey = [1, 2, 3];
-      const map = new Map<number[], string>();
+      const map = new Map<int[], string>();
       map.set(arrKey, 'array value');
       expect(map.get(arrKey)).assertEqual('array value');
     });
@@ -790,7 +790,7 @@ export default function MapGetTest() {
      * @tc.level Level 2
      */
     it('testMapGet0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-      const map = new Map<string, number[]>();
+      const map = new Map<string, int[]>();
       const arr = [1, 2, 3];
       map.set('array', arr);
       expect(map.get('array')).assertEqual(arr);
