@@ -66,5 +66,33 @@ export default function editModeGrid() {
       console.info('[editModeGrid_0100] END');
       done();
     });
+
+    /**
+     * @tc.name   editModeGrid_0200
+     * @tc.number editModeGrid_0200
+     * @tc.desc   Disable the collapse animation through the editModeOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('editModeGrid_0200', Level.LEVEL3, async (done: Function) => {
+      console.info('[editModeGrid_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create()
+      let btnFalse: Component = await driver.findComponent(ON.id('grid_editMode_false'));
+      await btnFalse.click();
+      await CommonFunc.sleep(1500);
+      let btn: Component = await driver.findComponent(ON.id('grid_editMode_2'));
+      await btn.longClick();
+      await CommonFunc.sleep(2000);
+      let strJson = getInspectorByKey('grid_editMode');
+      console.info("[editModeGrid_0200] type: " + JSON.stringify(JSON.parse(strJson).$type));
+      expect(JSON.parse(strJson).$type).assertEqual("Grid");
+      let btnMenu: Component = await driver.findComponent(ON.id('grid_editMode_menu'));
+      await btnMenu.click();
+      await CommonFunc.sleep(1500);
+      console.info('[editModeGrid_0200] END');
+      done();
+    });
   })
 }

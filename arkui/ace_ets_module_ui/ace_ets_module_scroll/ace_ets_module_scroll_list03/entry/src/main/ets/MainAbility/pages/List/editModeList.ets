@@ -16,6 +16,7 @@
 @Component
 struct editModeOptionsListExample {
   @State arr: number[] = []
+  @State enable:boolean = true
 
   aboutToAppear() {
     for (let i = 1; i <= 20; i++) {
@@ -41,7 +42,11 @@ struct editModeOptionsListExample {
 
   build() {
     Column() {
-      Text('List editModeOptions')
+      Button('editModeOptions')
+        .id('list_editMode_false')
+        .onClick(() => {
+          this.enable = false
+        })
       List({space: 5}) {
         ForEach(this.arr, (day: string) => {
           ListItem() {
@@ -59,8 +64,8 @@ struct editModeOptionsListExample {
         }, (day: string) => day)
       }
       .id('list_editMode')
-      .editModeOptions({ enableGatherSelectedItemsAnimation: true })
-      .width('90%')
+      .editModeOptions({ enableGatherSelectedItemsAnimation: this.enable })
+      .width('70%')
       .backgroundColor(0xFAEEE0)
       .height('60%')
     }

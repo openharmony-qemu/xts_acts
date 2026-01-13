@@ -16,6 +16,7 @@
 @Component
 struct editModeOptionsGridExample {
   @State arr: number[] = []
+  @State enable: boolean = true
 
   aboutToAppear() {
     for (let i = 1; i <= 20; i++) {
@@ -41,7 +42,11 @@ struct editModeOptionsGridExample {
 
   build() {
     Column() {
-      Text('Grid editModeOptions')
+      Button('editModeOptions')
+        .id('grid_editMode_false')
+        .onClick(() => {
+          this.enable = false
+        })
       Grid() {
         ForEach(this.arr, (day: string) => {
           GridItem() {
@@ -59,7 +64,7 @@ struct editModeOptionsGridExample {
         }, (day: string) => day)
       }
       .id('grid_editMode')
-      .editModeOptions({ enableGatherSelectedItemsAnimation: true })
+      .editModeOptions({ enableGatherSelectedItemsAnimation: this.enable })
       .columnsTemplate('1fr 1fr 1fr')
       .rowsTemplate('1fr 1fr 1fr')
       .columnsGap(10)

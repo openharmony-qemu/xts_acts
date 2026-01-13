@@ -66,5 +66,33 @@ export default function editModeList() {
       console.info('[editModeList_0100] END');
       done();
     });
+
+    /**
+     * @tc.name   editModeList_0200
+     * @tc.number editModeList_0200
+     * @tc.desc   Disable the collapse animation through the editModeOptions.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('editModeList_0200', Level.LEVEL3, async (done: Function) => {
+      console.info('[editModeList_0200] START');
+      await CommonFunc.sleep(1000);
+      let driver = await Driver.create()
+      let btnFalse: Component = await driver.findComponent(ON.id('list_editMode_false'));
+      await btnFalse.click();
+      await CommonFunc.sleep(1500);
+      let btn: Component = await driver.findComponent(ON.id('list_editMode_1'));
+      await btn.longClick();
+      await CommonFunc.sleep(2000);
+      let strJson = getInspectorByKey('list_editMode');
+      console.info("[editModeList_0200] type: " + JSON.stringify(JSON.parse(strJson).$type));
+      expect(JSON.parse(strJson).$type).assertEqual("List");
+      let btnMenu: Component = await driver.findComponent(ON.id('list_editMode_menu'));
+      await btnMenu.click();
+      await CommonFunc.sleep(1500);
+      console.info('[editModeList_0200] END');
+      done();
+    });
   })
 }
