@@ -50,7 +50,7 @@ class MyNodeController extends NodeController {
 
     const rootRenderNode = this.rootNode!.getRenderNode();
     if (rootRenderNode !== null) {
-      rootRenderNode.size = { width: 200, height: 200 };
+      rootRenderNode.size = { width: 200, height: 150 };
       rootRenderNode.backgroundColor = 0xff00ff00;
       rootRenderNode.appendChild(this.builderNode!.getFrameNode()!.getRenderNode());
     }
@@ -76,10 +76,11 @@ struct AddComponentContentTest {
 
   build() {
     Column() {
-      NodeContainer(this.myNodeController)
-      Text(`${this.errorStr}`).id('error_str_id')
+      NodeContainer(this.myNodeController).height('80%')
+      Text(`${this.errorStr}`).id('error_str_id').height('10%')
       Button('checkError in BuilderNode')
         .id('check_error_id')
+        .height('10%')
         .onClick(() => {
           this.errorStr = this.myNodeController.builderNodeAppendChild();
         })
