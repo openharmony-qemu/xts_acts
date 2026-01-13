@@ -44,7 +44,7 @@ struct PickerIndicatorPage {
   build() {
     Column() {
       Row() {
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -64,7 +64,7 @@ struct PickerIndicatorPage {
           endMargin: LengthMetrics.vp(2)
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -84,7 +84,7 @@ struct PickerIndicatorPage {
           endMargin: LengthMetrics.vp(-1)
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -105,7 +105,7 @@ struct PickerIndicatorPage {
           }
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -123,7 +123,7 @@ struct PickerIndicatorPage {
           borderRadius: LengthMetrics.vp(2)
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -143,7 +143,7 @@ struct PickerIndicatorPage {
       }
 
       Row() {
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -164,7 +164,7 @@ struct PickerIndicatorPage {
           }
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -182,7 +182,7 @@ struct PickerIndicatorPage {
           borderRadius: LengthMetrics.vp(-1)
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -197,7 +197,7 @@ struct PickerIndicatorPage {
         .selectionIndicator(
           { type: PickerIndicatorType.BACKGROUND, backgroundColor: Color.Blue, borderRadius: this.startBorderStyle1 })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -211,7 +211,7 @@ struct PickerIndicatorPage {
         .id('picker9')
         .selectionIndicator(undefined)
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -227,7 +227,7 @@ struct PickerIndicatorPage {
       }
 
       Row() {
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -241,7 +241,7 @@ struct PickerIndicatorPage {
         .id('picker11')
         .selectionIndicator({ type: undefined })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -259,7 +259,7 @@ struct PickerIndicatorPage {
           borderRadius: this.startBorderStyle1
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -277,7 +277,7 @@ struct PickerIndicatorPage {
           borderRadius: this.startBorderStyle1
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -297,7 +297,7 @@ struct PickerIndicatorPage {
           endMargin: LengthMetrics.vp(-1)
         })
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
