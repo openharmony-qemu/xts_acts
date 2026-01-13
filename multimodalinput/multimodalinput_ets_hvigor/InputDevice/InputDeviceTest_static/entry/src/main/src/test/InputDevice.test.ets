@@ -133,57 +133,57 @@ export default function InputDeviceTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL2
      */
-     it("SUB_MMI_Input_Api_InputDevice_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
- 	       async (done: () => void): Promise<void> => {
- 	         let caseName = "SUB_MMI_Input_Api_InputDevice_0400";
- 	         hilog.info(domain, tag, `${caseName} enter`);
- 	         try {
- 	           await inputDevice.getDeviceList().then((ids: Array<Int>) => {
- 	             hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
- 	             expect(ids).assertInstanceOf('Array');
- 	             if(ids.length > 0) {
- 	               await inputDevice.getDeviceInfo(ids[0]).then((deviceData: inputDevice.InputDeviceData) => {
- 	                 hilog.info(domain, tag, `${caseName} Device info: ${JSON.stringify(deviceData)}`);
- 	                 expect(deviceData.id).assertInstanceOf('Int');
- 	                 expect(deviceData.name).assertInstanceOf('String');
- 	                 expect(deviceData.sources).assertInstanceOf('Array');
- 	                 expect(deviceData.axisRanges).assertInstanceOf('Array');
- 	                 expect(deviceData.bus).assertInstanceOf('Int');
- 	                 expect(deviceData.product).assertInstanceOf('Int');
- 	                 expect(deviceData.vendor).assertInstanceOf('Int');
- 	                 expect(deviceData.version).assertInstanceOf('Int');
- 	                 expect(deviceData.phys).assertInstanceOf('String');
- 	                 expect(deviceData.uniq).assertInstanceOf('String');
- 	                 expect(deviceData).assertInstanceOf('Object');
- 	                 for (let j = 0; j < deviceData.axisRanges.length; j++) {
- 	                   ExpectTrue(deviceData.axisRanges[j].source == 'keyboard' || deviceData.axisRanges[j].source == 'mouse'
- 	                     || deviceData.axisRanges[j].source == 'touchpad' || deviceData.axisRanges[j].source == 'touchscreen'
- 	                     || deviceData.axisRanges[j].source == 'joystick' || deviceData.axisRanges[j].source == 'trackball');
- 	                   ExpectTrue(deviceData.axisRanges[j].axis == 'touchmajor' || deviceData.axisRanges[j].axis == 'touchminor'
- 	                     || deviceData.axisRanges[j].axis == 'orientation' || deviceData.axisRanges[j].axis == 'x'
- 	                     || deviceData.axisRanges[j].axis == 'y' || deviceData.axisRanges[j].axis == 'pressure'
- 	                     || deviceData.axisRanges[j].axis == 'toolminor' || deviceData.axisRanges[j].axis == 'toolmajor'
- 	                     || deviceData.axisRanges[j].axis == 'null');
- 	                   expect(deviceData.axisRanges[j].max).assertInstanceOf('Int');
- 	                   expect(deviceData.axisRanges[j]).assertInstanceOf('Object');
- 	                   expect(deviceData.axisRanges[j].min).assertInstanceOf('Int');
- 	                   expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('Int');
- 	                   expect(deviceData.axisRanges[j].flat).assertInstanceOf('Int');
- 	                   expect(deviceData.axisRanges[j].resolution).assertInstanceOf('Int');
- 	                 }
- 	                 done();
- 	               });
- 	             }
- 	             done();
- 	           });
- 	         } catch (error: BusinessError) {
- 	           hilog.info(domain, tag,
- 	             `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
- 	           ExpectFalse(error.code == 401 || true);
- 	           done();
- 	         }
- 	         hilog.info(domain, tag, `${caseName} leave`);
- 	       });
+    it("SUB_MMI_Input_Api_InputDevice_0400", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        let caseName = "SUB_MMI_Input_Api_InputDevice_0400";
+        hilog.info(domain, tag, `${caseName} enter`);
+        try {
+          await inputDevice.getDeviceList().then((ids: Array<Int>) => {
+            hilog.info(domain, tag, `${caseName} Device id list: ${JSON.stringify(ids)}`);
+            expect(ids).assertInstanceOf('Array');
+            if(ids.length > 0) {
+              await inputDevice.getDeviceInfo(ids[0]).then((deviceData: inputDevice.InputDeviceData) => {
+                hilog.info(domain, tag, `${caseName} Device info: ${JSON.stringify(deviceData)}`);
+                expect(deviceData.id).assertInstanceOf('Int');
+                expect(deviceData.name).assertInstanceOf('String');
+                expect(deviceData.sources).assertInstanceOf('Array');
+                expect(deviceData.axisRanges).assertInstanceOf('Array');
+                expect(deviceData.bus).assertInstanceOf('Int');
+                expect(deviceData.product).assertInstanceOf('Int');
+                expect(deviceData.vendor).assertInstanceOf('Int');
+                expect(deviceData.version).assertInstanceOf('Int');
+                expect(deviceData.phys).assertInstanceOf('String');
+                expect(deviceData.uniq).assertInstanceOf('String');
+                expect(deviceData).assertInstanceOf('Object');
+                for (let j = 0; j < deviceData.axisRanges.length; j++) {
+                  ExpectTrue(deviceData.axisRanges[j].source == 'keyboard' || deviceData.axisRanges[j].source == 'mouse'
+                    || deviceData.axisRanges[j].source == 'touchpad' || deviceData.axisRanges[j].source == 'touchscreen'
+                    || deviceData.axisRanges[j].source == 'joystick' || deviceData.axisRanges[j].source == 'trackball');
+                  ExpectTrue(deviceData.axisRanges[j].axis == 'touchmajor' || deviceData.axisRanges[j].axis == 'touchminor'
+                    || deviceData.axisRanges[j].axis == 'orientation' || deviceData.axisRanges[j].axis == 'x'
+                    || deviceData.axisRanges[j].axis == 'y' || deviceData.axisRanges[j].axis == 'pressure'
+                    || deviceData.axisRanges[j].axis == 'toolminor' || deviceData.axisRanges[j].axis == 'toolmajor'
+                    || deviceData.axisRanges[j].axis == 'null');
+                  expect(deviceData.axisRanges[j].max).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j]).assertInstanceOf('Object');
+                  expect(deviceData.axisRanges[j].min).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j].fuzz).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j].flat).assertInstanceOf('Int');
+                  expect(deviceData.axisRanges[j].resolution).assertInstanceOf('Int');
+                }
+                done();
+              });
+            }
+            done();
+          });
+        } catch (error: BusinessError) {
+          hilog.info(domain, tag,
+            `${caseName} Failed to get device info, error: ${JSON.stringify(error, [`code`, `message`])}`);
+          ExpectFalse(error.code == 401 || true);
+          done();
+        }
+        hilog.info(domain, tag, `${caseName} leave`);
+      });
 
     /**
      * @tc.name   SUB_MMI_Input_Api_InputDevice_0500
