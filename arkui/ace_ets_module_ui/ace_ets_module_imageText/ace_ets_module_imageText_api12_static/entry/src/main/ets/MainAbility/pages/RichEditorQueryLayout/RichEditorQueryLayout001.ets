@@ -66,7 +66,7 @@ build() {
          start: 0,
          end: 3
        })!.forEach((item: RichEditorImageSpanResult|RichEditorTextSpanResult) => {
-         if ((item as RichEditorImageSpanResult)!.imageStyle) {
+         if (item instanceof RichEditorImageSpanResult) {
            this.content += (item as RichEditorImageSpanResult)!.valueResourceStr;
            if ((item as RichEditorImageSpanResult)!.imageStyle!.layoutStyle) {
              console.log('get content get imageStyle');

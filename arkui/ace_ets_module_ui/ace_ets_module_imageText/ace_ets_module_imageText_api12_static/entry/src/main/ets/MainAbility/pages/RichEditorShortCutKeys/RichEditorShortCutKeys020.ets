@@ -92,7 +92,7 @@ build() {
           start: 0,
           end: 6
         })!.forEach(item => {
-          if ((item as RichEditorTextSpanResult)?.textStyle) {
+          if (item instanceof RichEditorTextSpanResult){
             let span = item as RichEditorTextSpanResult
             let spanPosition = JSON.stringify(span?.spanPosition);
             let value = JSON.stringify(span?.value);
