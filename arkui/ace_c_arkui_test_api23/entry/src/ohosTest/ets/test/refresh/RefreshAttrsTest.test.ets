@@ -26,36 +26,36 @@ export default function refreshAttrsTest() {
     });
 
   /**
-   * @tc.number     : testPullUpToCancelRefresh01
-   * @tc.name       : testPullUpToCancelRefresh01
-   * @tc.desc       : Test the pullUptoCancelRefresh with normal values(false)
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
+   * @tc.number      testPullUpToCancelRefresh01
+   * @tc.name        testPullUpToCancelRefresh01
+   * @tc.desc        Test the pullUptoCancelRefresh with normal values(false)
+   * @tc.size        MediumTest
+   * @tc.type        Function
+   * @tc.level       Level 1
    */
     it('testPullUpToCancelRefresh01', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testPullUpToCancelRefresh01()).assertEqual(0);
       done();
     });
   /**
-   * @tc.number     : testPullUpToCancelRefresh02
-   * @tc.name       : testPullUpToCancelRefresh02
-   * @tc.desc       : Test the pullUptoCancelRefresh with normal values(true)
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
+   * @tc.number      testPullUpToCancelRefresh02
+   * @tc.name        testPullUpToCancelRefresh02
+   * @tc.desc        Test the pullUptoCancelRefresh with normal values(true)
+   * @tc.size        MediumTest
+   * @tc.type        Function
+   * @tc.level       Level 1
    */
     it('testPullUpToCancelRefresh02', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testPullUpToCancelRefresh02()).assertEqual(0);
       done();
     });
   /**
-   * @tc.number     : testPullUpToCancelRefreshError
-   * @tc.name       : testPullUpToCancelRefreshError
-   * @tc.desc       : Test the pullUptoCancelRefresh with Error values(-1)
-   * @tc.size       : MediumTest
-   * @tc.type       : Function
-   * @tc.level      : Level 1
+   * @tc.number      testPullUpToCancelRefreshError
+   * @tc.name        testPullUpToCancelRefreshError
+   * @tc.desc        Test the pullUptoCancelRefresh with Error values(-1)
+   * @tc.size        MediumTest
+   * @tc.type        Function
+   * @tc.level       Level 1
    */
     it('testPullUpToCancelRefreshError', Level.LEVEL1, async (done: Function) => {
       expect(nativeFunc.testPullUpToCancelRefreshError()).assertEqual(0);
