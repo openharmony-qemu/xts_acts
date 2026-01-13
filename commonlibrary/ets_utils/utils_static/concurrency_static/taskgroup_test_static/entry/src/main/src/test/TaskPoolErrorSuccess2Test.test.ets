@@ -75,10 +75,9 @@ export default function taskPoolErrorSuccess2Test() {
          taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: Any) => {
-          // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
+        }).catch((e: Error) => {
           count2 ++
-          console.info('======2', count2, (e as BusinessError).message)
+          console.info('======2', count2, e.message)
         })
       }
 
@@ -116,10 +115,9 @@ export default function taskPoolErrorSuccess2Test() {
          taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: Any) => {
-          // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
+        }).catch((e: Error) => {
           count2 ++
-          console.info('======2', count2, (e as BusinessError).message)
+          console.info('======2', count2, e.message)
         })
       }
 
@@ -157,10 +155,9 @@ export default function taskPoolErrorSuccess2Test() {
          taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: Any) => {
-          // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
+        }).catch((e: Error) => {
           count2 ++
-          console.info('======2', count2, (e as BusinessError).message)
+          console.info('======2', count2, e.message)
         })
       }
 
@@ -198,10 +195,9 @@ export default function taskPoolErrorSuccess2Test() {
          taskpool.execute(taskGroup).then((e: Array<Any>) => {
           console.info('======1')
           count ++
-        }).catch((e: Any) => {
-          // expect((e as BusinessError).message).assertContain('Cannot read property split of undefined')
+        }).catch((e: Error) => {
           count2 ++
-          console.info('======2', count2, (e as BusinessError).message)
+          console.info('======2', count2, e.message)
         })
       }
 
