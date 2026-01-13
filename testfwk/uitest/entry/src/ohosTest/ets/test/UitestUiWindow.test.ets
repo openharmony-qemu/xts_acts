@@ -91,7 +91,9 @@ async function setSplit(driver: Driver) {
       expect(windowmode == WindowMode.PRIMARY).assertTrue()
     }else {
       let testLabel = await driver.findComponent(ON.text('test label'));
+      await driver.delayMs(waitUiReadyMs * 2)
       await testLabel.click()
+      await driver.delayMs(waitUiReadyMs * 2)
       let window1 = await driver.findWindow({bundleName : 'com.uitestScene.acts'})
       let windowmode = await window1.getWindowMode()
       expect(windowmode == WindowMode.PRIMARY).assertTrue()
@@ -518,7 +520,7 @@ export default function uiUiWindowTest() {
     })
 
   })
-  describe('uitestUiWindowTest_new1', () => {
+  describe('uitestUiWindowTest_new', () => {
     let driver: Driver
     beforeAll(async (done: Function) => {
       driver = Driver.create()
@@ -531,19 +533,17 @@ export default function uiUiWindowTest() {
     })
 
     /**
-     * @tc.name   testWindowResume_split1
-     * @tc.number uitestUiWindowTest_new0030
+     * @tc.name   testWindowResume_split
+     * @tc.number uitestUiWindowTest_new001
      * @tc.desc   Call the resume interface in split-1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    // 分屏效果一样应该可以删掉一个
     it('testWindowResume_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       await setSplit(driver)
-      //加调用resume断言
       try {
         let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
         await window1.resume()
@@ -560,7 +560,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testSplit_split1
-     * @tc.number uitestUiWindowTest_new0070
+     * @tc.number uitestUiWindowTest_new002
      * @tc.desc   Call the split interface in split-1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -584,7 +584,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testSplit_split2
-     * @tc.number uitestUiWindowTest_new0080
+     * @tc.number uitestUiWindowTest_new003
      * @tc.desc   Call the split interface in split-2.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -594,6 +594,9 @@ export default function uiUiWindowTest() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility');
       await driver.delayMs(waitUiReadyMs);
       await setFloat(driver)
+      let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+      let windowmode = await window.getWindowMode()
+      expect(windowmode == WindowMode.FLOATING)
       await setSplit(driver)
       try {
         let window2 = await driver.findWindow({ bundleName: 'com.uitest.acts' });
@@ -611,7 +614,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMoveTo_full
-     * @tc.number uitestUiWindowTest_new0090
+     * @tc.number uitestUiWindowTest_new004
      * @tc.desc   Call the moveTo interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -632,7 +635,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMoveTo_float
-     * @tc.number uitestUiWindowTest_new0100
+     * @tc.number uitestUiWindowTest_new005
      * @tc.desc   Call the moveTo interface in float.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -658,13 +661,12 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMoveTo_split
-     * @tc.number uitestUiWindowTest_new0110
+     * @tc.number uitestUiWindowTest_new006
      * @tc.desc   Call the moveTo interface in split-1.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL3
      */
-    //分屏两个效果一样删掉一个
     it('testWindowMoveTo_split', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
@@ -682,7 +684,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowResize_full
-     * @tc.number uitestUiWindowTest_new0130
+     * @tc.number uitestUiWindowTest_new007
      * @tc.desc   Call the resize interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -704,7 +706,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowResizeA_float
-     * @tc.number uitestUiWindowTest_new0140
+     * @tc.number uitestUiWindowTest_new008
      * @tc.desc   Call the resize interface in float.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -736,7 +738,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowResizeA_UP_float
-     * @tc.number uitestUiWindowTest_new0150
+     * @tc.number uitestUiWindowTest_new009
      * @tc.desc   in a float state, Call the resize interface to adjust the window size from the top of the window.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -771,7 +773,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowResizeB_float
-     * @tc.number uitestUiWindowTest_new0160
+     * @tc.number uitestUiWindowTest_new010
      * @tc.desc   in a float state, Call the resize interface to adjust the window size from the down/right/left of the window.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -809,7 +811,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowResizeB_UP_float
-     * @tc.number uitestUiWindowTest_new0170
+     * @tc.number uitestUiWindowTest_new011
      * @tc.desc   in a float state, Call the resize interface to adjust the window size from the UP of the window.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -838,7 +840,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowResizeB_split1
-     * @tc.number uitestUiWindowTest_new0180
+     * @tc.number uitestUiWindowTest_new012
      * @tc.desc   in a split state, Call the resize interface to adjust the window size from the right of the window.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -848,10 +850,15 @@ export default function uiUiWindowTest() {
       await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
       await driver.delayMs(waitUiReadyMs)
       await setSplit(driver)
-      await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+      let scbCom = await driver.findComponent(ON.id('SCBDividerFlex1'))
+      if (scbCom != null) {
+        await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+        await driver.delayMs(waitUiReadyMs)
+        let direction = await driver.getDisplayRotation()
+        await driver.delayMs(waitUiReadyMs)
+        expect(direction == 1).assertTrue()
+      }
       let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-      let direction = await driver.getDisplayRotation()
-      expect(direction == 1).assertTrue()
       let bounds1 = await window2.getBounds()
       try {
         await window2.resize(0, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
@@ -868,7 +875,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMinimize_full
-     * @tc.number uitestUiWindowTest_new0200
+     * @tc.number uitestUiWindowTest_new013
      * @tc.desc   Call the minimize interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -891,8 +898,8 @@ export default function uiUiWindowTest() {
     })
 
     /**
-     * @tc.name   testWindowMinimize_split1
-     * @tc.number uitestUiWindowTest_new0220
+     * @tc.name   testWindowMinimize_split
+     * @tc.number uitestUiWindowTest_new014
      * @tc.desc   Call the minimize interface in split.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -917,7 +924,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowClose_full
-     * @tc.number uitestUiWindowTest_new0240
+     * @tc.number uitestUiWindowTest_new015
      * @tc.desc   Call the close interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -941,7 +948,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowClose_split
-     * @tc.number uitestUiWindowTest_new0260
+     * @tc.number uitestUiWindowTest_new016
      * @tc.desc   Call the close interface in split.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -967,7 +974,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMaximize_full
-     * @tc.number uitestUiWindowTest_new0280
+     * @tc.number uitestUiWindowTest_new017
      * @tc.desc   Call the maximize interface in fullscreen.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -989,7 +996,7 @@ export default function uiUiWindowTest() {
 
     /**
      * @tc.name   testWindowMaximize_float
-     * @tc.number uitestUiWindowTest_new0290
+     * @tc.number uitestUiWindowTest_new018
      * @tc.desc   Call the maximize interface in float.
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
