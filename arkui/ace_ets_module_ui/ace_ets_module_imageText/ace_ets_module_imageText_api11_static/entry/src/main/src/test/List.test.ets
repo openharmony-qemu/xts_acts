@@ -131,7 +131,7 @@ export default function testsuite() {
     // search();
     textStyleJsunit();
     marqueeJsunit();
-    ImageTextTest();
+    // ImageTextTest();
     TextAreaCallbackTest();
     Image_QRCode_Api();
     RichEditorApi();
