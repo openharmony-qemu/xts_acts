@@ -81,7 +81,13 @@ struct webViewController {
                 await Utils.waitForReleaseDriver(this.str, driver)
                 Utils.emitEvent(this.getSuggestedName, 20260105);
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-                await buttonTwo.click()
+                if(buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
+                
                 break;
             }
 
@@ -95,7 +101,12 @@ struct webViewController {
                 await Utils.waitForReleaseDriver(this.str, driver)
                 Utils.emitEvent(this.getDefaultPath, 20260106);
                 let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-                await buttonTwo.click()
+                if(buttonTwo) {
+                  await buttonTwo.click()
+                } else {
+                  let buttonThree = await driver.findComponent(ON.text('取消'));
+                  await buttonThree.click()
+                }
                 break;
             }
 
@@ -109,7 +120,12 @@ struct webViewController {
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.getDescriptions, 20260107);
               let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              await buttonTwo.click()
+              if(buttonTwo) {
+                await buttonTwo.click()
+              } else {
+                let buttonThree = await driver.findComponent(ON.text('取消'));
+                await buttonThree.click()
+              }
               break;
             }
             case "emitOnShowFileSelector04": {
@@ -122,7 +138,12 @@ struct webViewController {
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.isAcceptAllOptionExcluded, 20260108);
               let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              await buttonTwo.click()
+              if(buttonTwo) {
+                await buttonTwo.click()
+              } else {
+                let buttonThree = await driver.findComponent(ON.text('取消'));
+                await buttonThree.click()
+              }
               break;
             }
 
@@ -136,7 +157,12 @@ struct webViewController {
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.mimeType, 20260109);
               let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              await buttonTwo.click()
+              if(buttonTwo) {
+                await buttonTwo.click()
+              } else {
+                let buttonThree = await driver.findComponent(ON.text('取消'));
+                await buttonThree.click()
+              }
               break;
             }
 
@@ -150,7 +176,12 @@ struct webViewController {
               await Utils.waitForReleaseDriver(this.str, driver)
               Utils.emitEvent(this.acceptableType, 20260110);
               let buttonTwo = await driver.findComponent(ON.text('重置内容'));
-              await buttonTwo.click()
+              if(buttonTwo) {
+                await buttonTwo.click()
+              } else {
+                let buttonThree = await driver.findComponent(ON.text('取消'));
+                await buttonThree.click()
+              }
               break;
             }
 
