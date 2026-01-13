@@ -68,6 +68,8 @@ export const TestContainerPickerSelectionIndicator015: () => number;
 
 export const TestContainerPickerSelectionIndicator016: () => number;
 
+export const TestContainerPickerSelectionIndicator017: () => number;
+
 export const TestContainerPickerSubComponent001: () => number;
 
 export const TestContainerPickerSubComponent002: () => number;
@@ -75,6 +77,8 @@ export const TestContainerPickerSubComponent002: () => number;
 export const TestContainerPickerSubComponent003: () => number;
 
 export const TestContainerPickerSubComponent004: () => number;
+
+export const TestContainerPickerSubComponent005: () => number;
 
 export const TextEnumTest_001: () => number;
 export const TextEnumTest_002: () => number;
@@ -124,3 +128,13 @@ export const TestIsInRenderStateReturnValue002: () => number;
 export const testPullUpToCancelRefresh01: () => number;
 export const testPullUpToCancelRefresh02: () => number;
 export const testPullUpToCancelRefreshError: () => number;
+
+export const testImageAntialiased001: () => number;
+
+export const testImageAntialiased002: () => number;
+
+export const testImageAntialiased003: () => number;
+
+export const testImageAntialiased004: () => number;
+
+export const testImageAntialiased005: () => number;

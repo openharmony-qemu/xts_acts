@@ -45,6 +45,7 @@ import ConvertPositionToWindowTest from "./node/ConvertPositionToWindowTest.test
 import IsInRenderStateTest from "./node/IsInRenderStateTest.test";
 import ConvertPositionFromWindowTest from "./node/ConvertPositionFromWindowTest.test";
 import refreshAttrsTest from './refresh/RefreshAttrsTest.test'
+import ImageAntialiasedTest from './imageTest/ImageAntialiasedTest.test'
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
@@ -80,4 +81,5 @@ export default function testsuite() {
   TextDirectionTest();
   TextSelectionTest();
   refreshAttrsTest();
+  ImageAntialiasedTest();
 }
