@@ -79,6 +79,7 @@ import V1PropObservedTest from './uiutilsTest/PropObserved.test';
 import V1ProvideConsumTest from './uiutilsTest/ProvideConsum.test';
 import V1StateObservedTest from './uiutilsTest/StateObserved.test';
 import V2ObservedTest from './uiutilsTest/V2Observed.test';
+import DecoratorInfoTest from './uiutilsTest/DecoratorInfo.test';
 
 export default function testsuite() {
     V1LinkObservedTest();
@@ -148,4 +149,5 @@ export default function testsuite() {
     useSharedStorageTest();
     persistStorageATest();
     Enum001();
+    DecoratorInfoTest();
 }
