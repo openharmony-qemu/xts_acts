@@ -49,7 +49,6 @@ export default function MapConstructorTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // cpp crush!!??
     it('MapConstructorTest001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map: Map<number, number> = new Map<number, number>();
       expect(map.size).assertEqual(0);
@@ -63,7 +62,6 @@ export default function MapConstructorTest() {
      * @tc.type Function
      * @tc.level Level 1
      */
-    // cpp crush!!??
     it('MapConstructorTest002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const map = new Map<string, int>([['a', 1], ['b', 2]]);
       expect(map.size).assertEqual(2);
