@@ -65,7 +65,7 @@ let isSupportHdr: Boolean;
 const READ_FAILED = 7700202;
 const UNSUPPORTED_IMAGE_FORMATS = 7700102;
 const PROPERTY_NOT_EXIST = 7700204;
-const INVALID_PARAMETER = 7700206;
+const INVALID_PARAMETER = 7600206;
 
 function handleError(testTag: string, err: GenericError | Array<GenericError>, expectedErrorCode: number): boolean {
   if (Array.isArray(err)) {
