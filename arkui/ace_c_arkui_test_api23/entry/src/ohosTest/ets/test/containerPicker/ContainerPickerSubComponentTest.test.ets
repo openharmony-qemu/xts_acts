@@ -81,12 +81,12 @@ export default function ContainerPickerSubComponent(){
     });
 
     /**
-     * @tc.number     : TestContainerPickerSubComponent005
-     * @tc.name       : TestContainerPickerSubComponent005
-     * @tc.desc       : testing ContainerPicker ARKUI_NODE_PICKER = 1018
-     * @tc.size       : MediumTest
-     * @tc.type       : Function
-     * @tc.level      : Level 1
+     * @tc.number      TestContainerPickerSubComponent005
+     * @tc.name        TestContainerPickerSubComponent005
+     * @tc.desc        testing ContainerPicker ARKUI_NODE_PICKER = 1018
+     * @tc.size        MediumTest
+     * @tc.type        Function
+     * @tc.level       Level 1
      */
     it('TestContainerPickerSubComponent005', Level.LEVEL1, async (done: Function) => {
       try {
