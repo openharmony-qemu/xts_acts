@@ -48,6 +48,7 @@ add_library(nativefunc SHARED
     containerPicker/ContainerPickerSelectedIndexTest.cpp
     containerPicker/ContainerPickerSelectionIndicatorTest.cpp
     containerPicker/ContainerPickerSubComponentTest.cpp
+    image/ImageAntialiasedTest.cpp
 )
 
 find_library(

@@ -120,3 +120,13 @@ export const TestAtomicServiceMenuBarSetVisible01: () => number;
 export const TestIsInRenderStateReturnValue001: () => number;
 
 export const TestIsInRenderStateReturnValue002: () => number;
+
+export const testImageAntialiased001: () => number;
+
+export const testImageAntialiased002: () => number;
+
+export const testImageAntialiased003: () => number;
+
+export const testImageAntialiased004: () => number;
+
+export const testImageAntialiased005: () => number;
