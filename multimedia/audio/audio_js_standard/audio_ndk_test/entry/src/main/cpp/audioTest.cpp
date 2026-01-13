@@ -8532,6 +8532,7 @@ static napi_value AudioSuiteRendererGetLatency_0700(napi_env env, napi_callback_
         AUDIOSTREAM_LATENCY_TYPE_HARDWARE);
         return res;
     }
+    napi_create_int32(env, TEST_PASS, &res);
     return res;
 }
 EXTERN_C_START
