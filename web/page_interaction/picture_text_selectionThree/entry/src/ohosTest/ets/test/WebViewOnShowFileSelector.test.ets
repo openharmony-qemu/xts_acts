@@ -117,7 +117,7 @@ export default function WebViewOnShowFileSelectorType() {
 
     /**
      * @tc.name   testOnShowFileSelector05
-     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_0200
+     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_0500
      * @tc.desc   test onShowFileSelector
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
@@ -131,7 +131,7 @@ export default function WebViewOnShowFileSelectorType() {
 
     /**
      * @tc.name   testOnShowFileSelector06
-     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_0200
+     * @tc.number SUB_WEB_TESTONSHOWFILESELECTOR_0600
      * @tc.desc   test onShowFileSelector
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
