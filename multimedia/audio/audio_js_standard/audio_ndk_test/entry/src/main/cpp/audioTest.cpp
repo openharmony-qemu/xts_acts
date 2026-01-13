@@ -8514,24 +8514,25 @@ static napi_value AudioSuiteRendererGetLatency_0700(napi_env env, napi_callback_
     int32_t allLatency = 0;
     int32_t swLatency = 1;
     int32_t hdLatency = 2;
-    if (AUDIOSTREAM_LATENCY_TYPE_ALL != allLatency) {
+    if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_ALL != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE0 fail, result is: %{public}d",
+        LOG("AudioSuiteRendererGetLatency_0700,AUDIOSTREAM_LATENCY_TYPE0 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_ALL);
         return res;
     }
-    if (AUDIOSTREAM_LATENCY_TYPE_SOFTWARE != allLatency) {
+    if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_SOFTWARE != swLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE1 fail, result is: %{public}d",
+        LOG("AudioSuiteRendererGetLatency_0700,AUDIOSTREAM_LATENCY_TYPE1 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_SOFTWARE);
         return res;
     }
-    if (AUDIOSTREAM_LATENCY_TYPE_HARDWARE != allLatency) {
+    if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_HARDWARE != hdLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE2 fail, result is: %{public}d",
+        LOG("AudioSuiteRendererGetLatency_0700,AUDIOSTREAM_LATENCY_TYPE2 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_HARDWARE);
         return res;
     }
+    napi_create_int32(env, TEST_PASS, &res);
     return res;
 }
 
@@ -8662,19 +8663,19 @@ static napi_value AudioSessionManagerMuteSuggestion_005(napi_env env, napi_callb
 
 EXTERN_C_START
 napi_property_descriptor desc1[] = {
-    {"audioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
+    {"AudioSuiteRendererGetLatency_0100", nullptr, AudioSuiteRendererGetLatency_0100,
     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"audioSuiteRendererGetLatency_0200", nullptr, AudioSuiteRendererGetLatency_0200,
+    {"AudioSuiteRendererGetLatency_0200", nullptr, AudioSuiteRendererGetLatency_0200,
     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"audioSuiteRendererGetLatency_0300", nullptr, AudioSuiteRendererGetLatency_0300,
+    {"AudioSuiteRendererGetLatency_0300", nullptr, AudioSuiteRendererGetLatency_0300,
     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"audioSuiteRendererGetLatency_0400", nullptr, AudioSuiteRendererGetLatency_0400,
+    {"AudioSuiteRendererGetLatency_0400", nullptr, AudioSuiteRendererGetLatency_0400,
     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"audioSuiteRendererGetLatency_0500", nullptr, AudioSuiteRendererGetLatency_0500,
+    {"AudioSuiteRendererGetLatency_0500", nullptr, AudioSuiteRendererGetLatency_0500,
     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"audioSuiteRendererGetLatency_0600", nullptr, AudioSuiteRendererGetLatency_0600,
+    {"AudioSuiteRendererGetLatency_0600", nullptr, AudioSuiteRendererGetLatency_0600,
     nullptr, nullptr, nullptr, napi_default, nullptr},
-    {"audioSuiteRendererGetLatency_0700", nullptr, AudioSuiteRendererGetLatency_0700,
+    {"AudioSuiteRendererGetLatency_0700", nullptr, AudioSuiteRendererGetLatency_0700,
     nullptr, nullptr, nullptr, napi_default, nullptr},
     {"audioManagerGetAudioStreamManagerTest_001", nullptr, AudioManagerGetAudioStreamManagerTest_001,
     nullptr, nullptr, nullptr, napi_default, nullptr},
