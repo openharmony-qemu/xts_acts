@@ -25,6 +25,7 @@ const YCBCR_P010: image.PixelMapFormat = image.PixelMapFormat.YCBCR_P010;
 const YCRCB_P010: image.PixelMapFormat = image.PixelMapFormat.YCRCB_P010;
 const RGBA_8888: image.PixelMapFormat = image.PixelMapFormat.RGBA_8888;
 const NV21: image.PixelMapFormat = image.PixelMapFormat.NV21;
+const RGB_565: image.PixelMapFormat = image.PixelMapFormat.RGB_565;
 
 export default function getHdrComposedPixelmapWithOption() {
   let filesDir: string|undefined;
@@ -120,7 +121,7 @@ export default function getHdrComposedPixelmapWithOption() {
             expect().assertFail();
           }else{
             imageInfo = await hdrPixelMap.getImageInfoSync();
-            console.info("imageInfo: " + JSON.stringify(imageinfo));
+            console.info("imageInfo: " + JSON.stringify(imageInfo));
             console.info('imageInfo.pixelFormat is: ' + imageInfo?.pixelFormat + 'desiredFormat is: ' + desiredFormat);
             expect(imageInfo?.pixelFormat == desiredFormat).assertTrue();
           }
@@ -236,8 +237,8 @@ export default function getHdrComposedPixelmapWithOption() {
                 console.info('succeeded in crop');
                 let newImageInfo = hdrPixelMap?.getImageInfoSync()
                 console.info('newImageInfo width: ' + newImageInfo?.size?.width + ' , height: ' + newImageInfo?.size?.height)
-                const widthCheck = newImageInfo?.size?.width === Region.size.width
-                const heightCheck = newImageInfo?.size?.height === Region.size.height
+                const widthCheck = newImageInfo?.size?.width === region.size.width
+                const heightCheck = newImageInfo?.size?.height === region.size.height
                 expect(widthCheck && heightCheck).assertTrue()
               }).catch((error: BusinessError) => {
                 console.info(JSON.stringify(error) + ", Failed to crop, error code: " + error.code);
