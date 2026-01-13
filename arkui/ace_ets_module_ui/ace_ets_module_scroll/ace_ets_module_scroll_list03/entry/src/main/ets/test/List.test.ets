@@ -60,6 +60,7 @@ import listRepeatTrue from './emptyBranch/listRepeatTrue.test';
 import listRepeatFalse from './emptyBranch/listRepeatFalse.test';
 import listRepeatUn from './emptyBranch/listRepeatUn.test';
 import listRepeatNull from './emptyBranch/listRepeatNull.test';
+import editModeList from './List/editModeList.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -109,4 +110,5 @@ export default function testsuite() {
   listRepeatFalse()
   listRepeatUn()
   listRepeatNull()
+  editModeList()
 }

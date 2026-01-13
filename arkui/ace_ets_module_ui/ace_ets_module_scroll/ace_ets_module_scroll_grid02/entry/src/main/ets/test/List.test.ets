@@ -50,6 +50,7 @@ import gridRepeatTrue from './emptyBranch/gridRepeatTrue.test';
 import gridRepeatFalse from './emptyBranch/gridRepeatFalse.test';
 import gridRepeatUn from './emptyBranch/gridRepeatUn.test';
 import gridRepeatNull from './emptyBranch/gridRepeatNull.test';
+import editModeGrid from './Grid/editModeGrid.test';
 
 export default function testsuite() {
   GridReboundTest()
@@ -89,4 +90,5 @@ export default function testsuite() {
   gridRepeatFalse()
   gridRepeatUn()
   gridRepeatNull()
+  editModeGrid()
 }
