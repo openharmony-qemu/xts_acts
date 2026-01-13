@@ -3007,12 +3007,12 @@ export default function WindowLifecycle() {
       }
     });
     /**
-    * @tc.name testStartAbilityNeedAnimation_true
+    * @tc.name   testStartAbilityNeedAnimation_true
     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_NEED_ANIMATION_0100
-    * @tc.desc Test the needAnimation true
-    * @tc.type FUNCTION
-    * @tc.size MEDIUMTEST
-    * @tc.level LEVEL1
+    * @tc.desc   Test the needAnimation true
+    * @tc.type   FUNCTION
+    * @tc.size   MEDIUMTEST
+    * @tc.level  LEVEL1
     */
     it('testStartAbilityNeedAnimation_true', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testStartAbilityNeedAnimation_true';
@@ -3052,12 +3052,12 @@ export default function WindowLifecycle() {
       }
     })
     /*
-    * @tc.name testStartAbilityNeedAnimation_false
-    * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_NEED_ANIMATION_0200
-    * @tc.desc Test the needAnimation false
-    * @tc.type FUNCTION
-    * @tc.size MEDIUMTEST
-    * @tc.level LEVEL1
+    * @tc.name    testStartAbilityNeedAnimation_false
+    * @tc.number  SUB_BASIC_WMS_SPCIAL_XTS_NEED_ANIMATION_0200
+    * @tc.desc    Test the needAnimation false
+    * @tc.type    FUNCTION
+    * @tc.size    MEDIUMTEST
+    * @tc.level   LEVEL1
     */
     it('testStartAbilityNeedAnimation_false', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
       let caseName = 'testStartAbilityNeedAnimation_false';

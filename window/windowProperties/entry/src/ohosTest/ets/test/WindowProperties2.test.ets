@@ -3278,7 +3278,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (isSupport && (deviceType == '2in1'||deviceType =='tablet')) {
+        if (isSupport && isPCStatus != '') {
           expect(err.code).assertEqual(401)
           done();
         } else {

@@ -3830,12 +3830,12 @@ export default function windowPCTest() {
     })
 
     /*
-    * @tc.name test_getWindowStateSnapshot_1300002
-    * @tc.number SUB_BASIC_WMS_GET_WINDOW_STATE_SNAPSHOT_0100
-    * @tc.desc test_sgetWindowStateSnapshot_subWindow_Destroy
-    * @tc.type FUNCTION
-    * @tc.size MEDIUMTEST
-    * @tc.level LEVEL3
+    * @tc.name    test_getWindowStateSnapshot_1300002
+    * @tc.number  SUB_BASIC_WMS_GET_WINDOW_STATE_SNAPSHOT_0100
+    * @tc.desc    test_sgetWindowStateSnapshot_subWindow_Destroy
+    * @tc.type    FUNCTION
+    * @tc.size    MEDIUMTEST
+    * @tc.level   LEVEL3
     */
     it('test_getWindowStateSnapshot_1300002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName: string = 'test_getWindowStateSnapshot_1300002';
