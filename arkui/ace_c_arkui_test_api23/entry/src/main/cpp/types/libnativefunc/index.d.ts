@@ -78,6 +78,8 @@ export const TestContainerPickerSubComponent003: () => number;
 
 export const TestContainerPickerSubComponent004: () => number;
 
+export const TestContainerPickerSubComponent005: () => number;
+
 export const TextEnumTest_001: () => number;
 export const TextEnumTest_002: () => number;
 export const TextEnumTest_003: () => number;
