@@ -439,4 +439,13 @@ static napi_value TestContainerPickerSelectionIndicator016(napi_env env, napi_ca
     ASSERT_EQ(ret, ARKUI_ERROR_CODE_PARAM_INVALID);
     NAPI_END;
 }
+
+static napi_value TestContainerPickerSelectionIndicator017(napi_env env, napi_callback_info info)
+{
+    ArkUI_NativeNodeAPI_1* nodeAPI = nullptr;
+    OH_ArkUI_GetModuleInterface(ARKUI_NATIVE_NODE, ArkUI_NativeNodeAPI_1, nodeAPI);
+    ArkUI_PickerIndicatorStyle* Style = OH_ArkUI_PickerIndicatorStyle_Create(static_cast<ArkUI_PickerIndicatorType>(5));
+    ASSERT_EQ((uint64_t)Style, 0);
+    NAPI_END;
+}
 } // namespace ArkUICapiTest

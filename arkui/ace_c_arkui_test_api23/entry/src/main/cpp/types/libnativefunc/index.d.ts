@@ -68,6 +68,8 @@ export const TestContainerPickerSelectionIndicator015: () => number;
 
 export const TestContainerPickerSelectionIndicator016: () => number;
 
+export const TestContainerPickerSelectionIndicator017: () => number;
+
 export const TestContainerPickerSubComponent001: () => number;
 
 export const TestContainerPickerSubComponent002: () => number;

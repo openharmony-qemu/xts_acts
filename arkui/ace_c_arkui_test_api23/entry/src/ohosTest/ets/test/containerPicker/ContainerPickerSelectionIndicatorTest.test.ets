@@ -233,6 +233,17 @@ export default function ContainerPickerSelectionIndicator(){
       done();
     });
 
-
+    /** 
+     * @tc.number     : SUB_ARKUI_CAPI_PICKER_SELECTION_INDICATOR_1700
+     * @tc.name       : TestContainerPickerSelectionIndicator017
+     * @tc.desc       : testing ContainerPicker SelectionIndicator nullptr
+     * @tc.size       : MediumTest
+     * @tc.type       : Function
+     * @tc.level      : Level 2
+     */
+    it('TestContainerPickerSelectionIndicator017', Level.LEVEL2, async (done: Function) => {
+      expect(nativeFunc.TestContainerPickerSelectionIndicator017()).assertEqual(0)
+      done();
+    });
   })
 }

@@ -90,6 +90,8 @@ static napi_value Init(napi_env env, napi_value exports)
          TestContainerPickerSelectionIndicator015, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSelectionIndicator016", nullptr,
          TestContainerPickerSelectionIndicator016, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"TestContainerPickerSelectionIndicator017", nullptr,
+         TestContainerPickerSelectionIndicator017, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent001", nullptr,
          TestContainerPickerSubComponent001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestContainerPickerSubComponent002", nullptr,
