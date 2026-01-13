@@ -23,6 +23,7 @@
 #include "MotionPath/MotionPathOptionsTest.cpp"
 #include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
 #include "node/IsInRenderStateReturnValueTest.cpp"
+#include "image/ImageAntialiasedTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
