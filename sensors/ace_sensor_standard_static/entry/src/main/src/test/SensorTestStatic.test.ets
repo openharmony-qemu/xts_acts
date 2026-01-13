@@ -4224,5 +4224,433 @@ export default function SensorJsStaticTest() {
       }
       hilog.info(domain, tag, TAG + "----------end----------");
     });
+
+    const CODEARR = [14500101, 14500102]
+    /**
+     * @tc.name   SensorSyncTest_001
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0020
+     * @tc.desc   verify sensor sync func interface (getSingleSensorSyncFunc)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SensorSyncTest_001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info('----------------------SensorSyncTest_001---------------------------');
+      TAG = 'SensorSyncTest_001';
+      try {
+        let ret = sensor.getSingleSensorSync(sensor.SensorId.ACCELEROMETER);
+        console.info(TAG + ' getSingleSensorSyncFunc: ' + JSON.stringify(ret));
+        done();
+      } catch (error ) {
+        const sensorError = error as BusinessError;
+        console.info(TAG + ' fail, errCode:' + sensorError.code + ' ,msg:' + sensorError.message);
+        let isIncluded = CODEARR.includes(sensorError.code);
+        expect(isIncluded).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   SensorSyncTest_002
+     * @tc.number SUB_SensorsSystem_NEWSENSORSYNC_JSTest_0050
+     * @tc.desc   verify sensor sync interface
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it("SensorSyncTest_002", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
+      console.info('----------------------SensorSyncTest_002---------------------------');
+      TAG = 'SensorSyncTest_002';
+      try {
+        let ret = sensor.getSensorListSync();
+        for (let i = 0; i < ret.length; i++) {
+          console.info(TAG + ' Succeeded in getting sensor: ' + JSON.stringify(ret[i]));
+        }
+        expect(true).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        let isIncluded = CODEARR.includes(error.code)
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testOnOffSensorStatusChange001
+     * @tc.number SUB_SENSORS_Sensor_OnOff_JSTest_001
+     * @tc.desc   test stop listening on device status changes
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testOnOffSensorStatusChange001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      TAG = 'testOnOffSensorStatusChange001'
+      console.info(TAG + ' in');
+      const onCallback = (event: sensor.SensorStatusEvent)=> {
+        console.info(TAG + ' Callback should not be triggered!');
+        console.info(TAG + " event.timestamp:" + event.timestamp);
+        console.info(TAG + " event.sensorId:" + event.sensorId);
+        console.info(TAG + " event.sensorIndex:" + event.sensorIndex);
+        console.info(TAG + " event.isSensorOnline:" + event.isSensorOnline);
+        console.info(TAG + " event.deviceId:" + event.deviceId);
+        console.info(TAG + " event.deviceName:" + event.deviceName);
+      };
+      try {
+        sensor.onSensorStatusChange(onCallback);
+        setTimeout(() => {
+          sensor.offSensorStatusChange(onCallback);
+          console.info(TAG + ' Successfully stopped listening');
+          done();
+        }, 1000);
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(false).assertTrue();
+        done();
+      }
+      console.info(TAG + ' end');
+    })
+
+    /**
+     * @tc.name   GetSingleSensorByDeviceSync_JSTest_001
+     * @tc.number SUB_SensorsSystem_GetSingleSensorByDeviceSync_JSTest_001
+     * @tc.desc   Test getSingleSensorByDeviceSync with valid type and deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSingleSensorByDeviceSync_JSTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSingleSensorByDeviceSync_JSTest_001-------------------------");
+      const TAG = 'GetSingleSensorByDeviceSync_JSTest_001'
+      try {
+        const type = sensor.SensorId.ACCELEROMETER;
+        const deviceId = 1;
+        const result = sensor.getSingleSensorByDeviceSync(type, deviceId);
+        console.info(TAG + ' Callback in!' + JSON.stringify(result));
+        if (result.length === 0) {
+          console.info('No sensors found, Test case will return true.');
+          done();
+        } else {
+          const sensorInfo = result[0];
+          const callback = (data: sensor.AccelerometerResponse) => {
+            console.info('Accelerometer data received: ' + JSON.stringify(data));
+          };
+          let sensorInfoParam = {
+            deviceId: 1,
+            sensorIndex: 0
+          } as sensor.SensorInfoParam;
+          const options = {
+            interval: 100000000
+          } as sensor.Options;
+          sensor.onAccelerometerChange(callback, options);
+          console.info(TAG + ' Successfully registered sensor listener');
+          setTimeout(() => {
+            sensor.offAccelerometerChange(sensorInfoParam, callback);
+            console.info(TAG + ' Successfully unregistered sensor listener');
+            done();
+          }, 2000);
+        }
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(SERVICE_EXCEPTION_CODE);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSingleSensorByDeviceSync_JSTest_002
+     * @tc.number SUB_SensorsSystem_GetSingleSensorByDeviceSync_JSTest_002
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSingleSensorByDeviceSync_JSTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSingleSensorByDeviceSync_JSTest_002-------------------------");
+      const TAG = 'GetSingleSensorByDeviceSync_JSTest_002'
+      try {
+        const invalidType = -1 as sensor.SensorId;
+        const deviceId = 1;
+        const result = sensor.getSingleSensorByDeviceSync(invalidType, deviceId);
+        if (Array.isArray(result) && result.length === 0) {
+          console.info('No sensors found, Test case will return true.');
+        } else {
+          console.info('Expected empty result but got non - empty result.');
+          expect(false).assertTrue();
+        }
+        done();
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSingleSensorByDeviceSync_JSTest_003
+     * @tc.number SUB_SensorsSystem_GetSingleSensorByDeviceSync_JSTest_003
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSingleSensorByDeviceSync_JSTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSingleSensorByDeviceSync_JSTest_003-------------------------");
+      const TAG = 'GetSingleSensorByDeviceSync_JSTest_003';
+      try {
+        const type = sensor.SensorId.ACCELEROMETER;
+        const loopCount = 1000;
+        let failCount = 0;
+        let testNullDeviceId = -2;
+        for (let i = 0; i < loopCount; i++) {
+          const result = sensor.getSingleSensorByDeviceSync(type, testNullDeviceId);
+          if (Array.isArray(result) && result.length === 0) {
+            console.info(` No sensors found, Test case will return true.`);
+          } else {
+            console.info(` Expected empty result but got non-empty result.`);
+            ++failCount;
+            expect(failCount).assertEqual(0);
+          }
+        }
+        expect(failCount).assertEqual(0);
+        done();
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message)
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSingleSensorByDeviceSync_JSTest_004
+     * @tc.number SUB_SensorsSystem_GetSingleSensorByDeviceSync_JSTest_004
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSingleSensorByDeviceSync_JSTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSingleSensorByDeviceSync_JSTest_004-------------------------");
+      const TAG = '====>GetSingleSensorByDeviceSync_JSTest_004';
+      try {
+        const type = sensor.SensorId.ACCELEROMETER;
+        const deviceId = 10000;
+        const result = sensor.getSingleSensorByDeviceSync(type, deviceId);
+        console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
+        expect(result.length === 0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSingleSensorByDeviceSync_JSTest_005
+     * @tc.number SUB_SensorsSystem_GetSingleSensorByDeviceSync_JSTest_005
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSingleSensorByDeviceSync_JSTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSingleSensorByDeviceSync_JSTest_005-------------------------");
+      const TAG = '====>GetSingleSensorByDeviceSync_JSTest_005'
+      try {
+        const type = sensor.SensorId.ACCELEROMETER;
+        const deviceId = -1;
+        const result = sensor.getSingleSensorByDeviceSync(type, deviceId);
+        console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
+        if (result.length === 0) {
+          console.info(TAG + '====> No sensors found, Test case will return true.');
+        } else {
+          expect(result.length > 0).assertTrue();
+        }
+        done();
+      } catch (error) {
+        console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSensorListByDeviceSync_JSTest_001
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0010
+     * @tc.desc   Test getSensorListByDeviceSync with valid deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSensorListByDeviceSync_JSTest_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSensorListByDeviceSync_JSTest_001-------------------------");
+      const TAG = 'GetSensorListByDeviceSync_JSTest_001'
+      try {
+        const deviceId = -1 as int;
+        const result = sensor.getSensorListByDeviceSync(deviceId);
+        console.info(TAG + ' Callback in!' + JSON.stringify(result));
+        if (result.length === 0) {
+          console.info('No local sensors found. Test case will return true.');
+          done();
+        } else {
+          const sensorInfo = result[0];
+          //expect(result[0].deviceId >= -1).assertEqual(true);
+          console.info(TAG + " getSensorListByDeviceSync sensorName:" + result[0].sensorName);
+          console.info(TAG + " getSensorListByDeviceSync vendorName:" + result[0].vendorName);
+          console.info(TAG + " getSensorListByDeviceSync firmwareVersion:" + result[0].firmwareVersion);
+          console.info(TAG + " getSensorListByDeviceSync hardwareVersion:" + result[0].hardwareVersion);
+          console.info(TAG + " getSensorListByDeviceSync sensorId:" + result[0].sensorId);
+          console.info(TAG + " getSensorListByDeviceSync maxRange:" + result[0].maxRange);
+          console.info(TAG + " getSensorListByDeviceSync minSamplePeriod:" + result[0].minSamplePeriod);
+          console.info(TAG + " getSensorListByDeviceSync maxSamplePeriod:" + result[0].maxSamplePeriod);
+          console.info(TAG + " getSensorListByDeviceSync precision:" + result[0].precision);
+          console.info(TAG + " getSensorListByDeviceSync power:" + result[0].power);
+          const freshResultData = sensor.getSensorListByDeviceSync(deviceId);
+          const onSensorCallback = (data: sensor.AccelerometerResponse) => {
+            console.info('Accelerometer data received: ' + JSON.stringify(data));
+          };
+          let sensorInfoParam = {
+            deviceId: 1,
+            sensorIndex: 0
+          } as sensor.SensorInfoParam;
+          const options = {
+            interval: 100000000
+          } as sensor.Options;
+          sensor.onAccelerometerChange(onSensorCallback, options);
+          setTimeout(() => {
+            sensor.offAccelerometerChange(sensorInfoParam, onSensorCallback);
+            done();
+          }, 500);
+        }
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(error.code == 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSensorListByDeviceSync_JSTest_002
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0020
+     * @tc.desc   Test getSensorListByDeviceSync without deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSensorListByDeviceSync_JSTest_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSensorListByDeviceSync_JSTest_002-------------------------");
+      const TAG = 'GetSensorListByDeviceSync_JSTest_002'
+      try {
+        const result = sensor.getSensorListByDeviceSync();
+        console.info(TAG + ' Callback in!' + JSON.stringify(result));
+        if (result.length === 0) {
+          console.info('No local sensors found. Test case will return true.');
+          done();
+        } else {
+          const sensorInfo = result[0];
+          const onSensorCallback = (data: sensor.AccelerometerResponse) => {
+            console.info('Accelerometer data received: ' + JSON.stringify(data));
+          };
+          let sensorInfoParam = {
+            deviceId: 1,
+            sensorIndex: 0
+          } as sensor.SensorInfoParam;
+
+          const options = {
+            interval: 100000000
+          } as sensor.Options;
+
+          sensor.onAccelerometerChange(onSensorCallback, options);
+          setTimeout(() => {
+            sensor.offAccelerometerChange(sensorInfoParam, onSensorCallback);
+            done();
+          }, 500);
+        }
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(error.code == 201).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSensorListByDeviceSync_JSTest_003
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_0030
+     * @tc.desc   Test getSensorListByDeviceSync with invalid deviceId
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSensorListByDeviceSync_JSTest_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSensorListByDeviceSync_JSTest_003-------------------------");
+      const TAG = 'GetSensorListByDeviceSync_JSTest_003'
+      let testNullDeviceId = -2;
+      try {
+        const result = sensor.getSensorListByDeviceSync(testNullDeviceId);
+        console.info(TAG + ' Callback in!' + JSON.stringify(result));
+        if (result.length === 0) {
+          console.info('No local sensors found. Test case will return true.');
+        } else {
+          console.info('Expected empty array but got non - empty array.');
+          expect(false).assertTrue();
+        }
+        done();
+      } catch (error) {
+        console.info(TAG + ' fail, errCode:' + error.code + ' ,msg:' + error.message);
+        expect(error.code).assertEqual(SENSOR_NO_SUPPORT_CODE);
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSensorListByDeviceSync_JSTest_004
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_004
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSensorListByDeviceSync_JSTest_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSensorListByDeviceSync_JSTest_004-------------------------");
+      const TAG = '====>GetSensorListByDeviceSync_JSTest_004';
+      try {
+        const deviceId = 10000;
+        const result = sensor.getSensorListByDeviceSync(deviceId);
+        console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
+        expect(result.length === 0).assertTrue();
+        done();
+      } catch (error) {
+        console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   GetSensorListByDeviceSync_JSTest_005
+     * @tc.number SUB_SensorsSystem_GetSensorListByDeviceSync_JSTest_005
+     * @tc.desc   Test getSingleSensorByDeviceSync with invalid type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('GetSensorListByDeviceSync_JSTest_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+      console.info("------------------GetSensorListByDeviceSync_JSTest_005-------------------------");
+      const TAG = '====>GetSensorListByDeviceSync_JSTest_005'
+      try {
+        const deviceId = -1;
+        const result = sensor.getSensorListByDeviceSync(deviceId);
+        console.info(TAG + ` success result.length: ${result.length}  ,result: ${JSON.stringify(result)}`);
+        if (result.length === 0) {
+          console.info(TAG + '====> No sensors found, Test case will return true.');
+        } else {
+          expect(result.length > 0).assertTrue();
+        }
+        done();
+      } catch (error) {
+        console.info(TAG + ` fail, errCode: ${error.code}  ,msg: ${error.message}`);
+        expect(false).assertTrue();
+        done();
+      }
+    })
   })
 }
