@@ -16,10 +16,12 @@ import RouterPageSizeChange from './UIobserver/Router/RouterPageSizeChange.test'
 import QueryNavDestinationSize from './UIobserver/Navigation/QueryNavDestinationSize.test';
 import NavDestinationSizeUnique from './UIobserver/Navigation/NavDestinationSizeUnique.test';
 import GetStackSize from './Router/GetStackSize.test';
+import NavigationDivider from './Navigation/NavigationDivider.test';
 
 export default function testsuite() {
   GetStackSize()
   RouterPageSizeChange()
   QueryNavDestinationSize()
   NavDestinationSizeUnique()
+  NavigationDivider()
 }
