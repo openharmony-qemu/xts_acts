@@ -19,6 +19,7 @@ import events_emitter from '@ohos.events.emitter';
 import {waitForAssert, waitForExist} from '../../test/WaitTest.test';
 import { Driver, ON } from '@kit.TestKit';
 
+let driver = Driver.create();
 @Entry
 @Component
 struct webOnBeforeUnload {
@@ -63,12 +64,10 @@ struct webOnBeforeUnload {
             console.info('key==>' + this.emitKey);
             this.isReceive = -1;
             this.isReload = -1;
-            let driver = Driver.create();
             switch (this.emitKey) {
               case 'emitOnBeforeUnloadIsReloadTrue': {
                 try {
-                  await Utils.clickComponent('onBeforeUnloadWebView');
-                  await driver.waitForComponent(ON.id('onBeforeUnloadWebView'),10000);
+                  await Utils.waitAndClickComponent('onBeforeUnloadWebView',driver);
                   this.controller.runJavaScript('myRefresh()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
@@ -91,8 +90,7 @@ struct webOnBeforeUnload {
               }
               case 'emitOnBeforeUnloadIsReloadFalse': {
                 try {
-                  await Utils.clickComponent('onBeforeUnloadWebView');
-                  await driver.waitForComponent(ON.id('onBeforeUnloadWebView'),10000);
+                  await Utils.waitAndClickComponent('onBeforeUnloadWebView',driver);
                   this.controller.runJavaScript('myNewPage()', (error, result) => {
                     if (error) {
                       console.error(`runJavaScript ErrorCode: ${error.code},  Message: ${error.message}`);
