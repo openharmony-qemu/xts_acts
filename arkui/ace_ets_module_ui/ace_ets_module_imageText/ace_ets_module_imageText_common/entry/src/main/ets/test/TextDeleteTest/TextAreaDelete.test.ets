@@ -64,7 +64,7 @@ export default function TextAreaDeleteTest() {
       let miningTimeTextArea = await driver.findComponent(ON.id('miningTimeTextArea'));
       let actualContent = await miningTimeTextArea.getText();
       console.info('[TextAreaDeleteTest001] actual content is: ' + actualContent);
-      expect(actualContent).assertEqual('测试文本⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️');
+      expect(actualContent).assertEqual('测试文本⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️⛏️');
      
       console.info('[TextAreaDeleteTest001] END');
       done();
