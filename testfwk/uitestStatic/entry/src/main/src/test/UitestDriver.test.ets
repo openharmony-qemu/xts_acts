@@ -1928,7 +1928,7 @@ export default function uitestDriverTest() {
         if (text1 != null) {
           let inputText = await text1.getText();
           hilog.info(domain, tag, `testDriverInputText_static inputText success, ${ JSON.stringify(inputText) }`);
-          expect(inputText).assertEqual('Hello W123orld');
+          expect(inputText).assertEqual('Hello 123World');
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputText_static error, ${ JSON.stringify(error) }`);
@@ -2083,7 +2083,7 @@ export default function uitestDriverTest() {
           if (text1 != null) {
             let msg = await text1.getText();
             hilog.info(domain, tag, `testDriverInputTextMode_static msg, ${ JSON.stringify(msg) }`);
-            expect(msg == 'Hello W123orld').assertTrue()
+            expect(msg == 'Hello 123World').assertTrue()
           }
         }
       } catch(error) {
@@ -2136,7 +2136,7 @@ export default function uitestDriverTest() {
         if (text2 != null) {
           let msg = await text2.getText();
           hilog.info(domain, tag, `testDriverInputTextMode1_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== 'Hello W长贵儿orld').assertTrue()
+          expect(msg== 'Hello 长贵儿World').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode1_static error, ${ JSON.stringify(error) }`);
@@ -2187,7 +2187,7 @@ export default function uitestDriverTest() {
         if (text1 != null) {
           let msg = await text1.getText();
           hilog.info(domain, tag, `testDriverInputTextMode2_static msg, ${ JSON.stringify(msg) }`);
-          expect(msg== 'Hello W123orld').assertTrue()
+          expect(msg== 'Hello 123World').assertTrue()
         }
       } catch(error) {
         hilog.info(domain, tag, `testDriverInputTextMode2_static error, ${ JSON.stringify(error) }`);
