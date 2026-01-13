@@ -272,6 +272,7 @@ export default function startAbilityForResultTestStatic() {
       };
       try {
         context.startAbilityForResult(want, options, (err: BusinessError<void> | null) => {
+        hilog.info(domain, tag,`startAbilityForResult start`);
           if (err && err.code !== 0) {
             hilog.info(domain, tag,`startAbilityForResult failed, code is ${err?.code}, message is ${err?.message}`);
             expect().assertFail();
@@ -287,6 +288,7 @@ export default function startAbilityForResultTestStatic() {
         expect().assertFail();
         done();
       }
+      hilog.info(domain, tag,`startAbilityForResult end`);
     })
 
     /**
