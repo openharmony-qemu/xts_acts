@@ -46,7 +46,7 @@ export default function textAreaHeightAdaptivePolicyTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaHeightAdaptivePolicyTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaHeightAdaptivePolicy" == pages.name)) {
           console.info("get textAreaHeightAdaptivePolicyTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);
