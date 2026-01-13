@@ -18,10 +18,12 @@ import WebViewGetMimeTypes from './WebViewGetMimeTypes.test'
 import WebViewGetAcceptType from './WebViewGetAcceptType.test'
 import WebViewGetMode from './WebViewGetMode.test'
 import WebViewContextMenuMediaType from './WebViewContextMenuMediaType.test'
+import WebViewOnShowFileSelector from './WebViewOnShowFileSelector.test'
 export default function testsuite() {
   WebViewIsCapture()
   WebViewGetMimeTypes()
   WebViewGetAcceptType()
   WebViewGetMode()
   WebViewContextMenuMediaType()
+  WebViewOnShowFileSelector()
 }
