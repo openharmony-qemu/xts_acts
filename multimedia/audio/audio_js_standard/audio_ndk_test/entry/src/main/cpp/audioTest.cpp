@@ -8516,19 +8516,19 @@ static napi_value AudioSuiteRendererGetLatency_0700(napi_env env, napi_callback_
     int32_t hdLatency = 2;
     if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_ALL != allLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE0 fail, result is: %{public}d",
+        LOG("AudioSuiteRendererGetLatency_0700,AUDIOSTREAM_LATENCY_TYPE0 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_ALL);
         return res;
     }
-    if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_SOFTWARE != allLatency) {
+    if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_SOFTWARE != swLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE1 fail, result is: %{public}d",
+        LOG("AudioSuiteRendererGetLatency_0700,AUDIOSTREAM_LATENCY_TYPE1 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_SOFTWARE);
         return res;
     }
-    if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_HARDWARE != allLatency) {
+    if (OH_AudioStream_LatencyType::AUDIOSTREAM_LATENCY_TYPE_HARDWARE != hdLatency) {
         napi_create_int32(env, TEST_FAIL, &res);
-        LOG("AudioSuiteRendererGetlatency_0700,AUDIOSTREAM_LATENCY_TYPE2 fail, result is: %{public}d",
+        LOG("AudioSuiteRendererGetLatency_0700,AUDIOSTREAM_LATENCY_TYPE2 fail, result is: %{public}d",
         AUDIOSTREAM_LATENCY_TYPE_HARDWARE);
         return res;
     }
