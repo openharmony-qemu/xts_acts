@@ -4,7 +4,8 @@
     "testability/pages/WebViewGetMimeTypes",
     "testability/pages/WebViewGetAcceptType",
     "testability/pages/WebViewGetMode",
-    "testability/pages/WebViewContextMenuMediaType"
+    "testability/pages/WebViewContextMenuMediaType",
+    "testability/pages/WebViewOnShowFileSelector"
   ]
 }
 
