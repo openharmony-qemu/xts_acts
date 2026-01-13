@@ -60,6 +60,9 @@ napi_value DecodingOptionsReleaseTest(napi_env env, napi_callback_info info)
     default:
         break;
     }
+    if (options != nullptr) {
+        OH_DecodingOptions_Release(options);
+    }
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);
     return result;
@@ -109,6 +112,9 @@ napi_value CreatePixelmapFromSurfaceWithTransformationTest(napi_env env, napi_ca
         break;
     default:
         break;
+    }
+    if (pixelmap != nullptr) {
+        OH_PixelmapNative_Release(pixelmap);
     }
     napi_value result = nullptr;
     napi_create_int32(env, errorCode, &result);

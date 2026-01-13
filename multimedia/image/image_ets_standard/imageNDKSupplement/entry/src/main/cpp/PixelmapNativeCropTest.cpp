@@ -77,6 +77,9 @@ napi_value PixelmapNativeCropTest(napi_env env, napi_callback_info info)
     default:
         break;
     }
+    if (pixelmap != nullptr) {
+        OH_PixelmapNative_Release(pixelmap);
+    }
     napi_value result = nullptr;
     napi_create_int32(env, code, &result);
     return result;
@@ -125,6 +128,12 @@ napi_value ConvertAlphaFormatTest(napi_env env, napi_callback_info info)
         break;
     default:
         break;
+    }
+    if (pixelmap != nullptr) {
+        OH_PixelmapNative_Release(pixelmap);
+    }
+    if (dstPixelmap != nullptr) {
+        OH_PixelmapNative_Release(dstPixelmap);
     }
     napi_value result = nullptr;
     napi_create_int32(env, code, &result);
