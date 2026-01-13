@@ -62,7 +62,7 @@ export default function RichEditorFontFeatureJsunit() {
         defaultRouter.clear();
         let pages:router.RouterState = defaultRouter.getState();
         console.info("get RichEditorFontFeatureJsunit state pages:" + JSON.stringify(pages));
-        if (!("RichEditorFontFeatureJsunit" == pages.name)) {
+        if (!("RichEditorFontFeature" == pages.name)) {
           console.info("get RichEditorFontFeatureJsunit pages.name:" + JSON.stringify(pages.name));
           defaultRouter.pushUrl(options);
           let driver = Driver.create();

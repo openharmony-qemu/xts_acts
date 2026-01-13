@@ -50,7 +50,7 @@ export default function styledStringAddApi() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get styledStringAddApi state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("styledStringAddApi" == pages.name)) {
           console.info("get styledStringAddApi pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

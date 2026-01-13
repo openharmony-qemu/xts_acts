@@ -13,11 +13,11 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_js_app_static_suite("ActsTelephonyEsimStaticWithoutPermissionTest") {
+ohos_js_app_static_suite("ActsTelephonyEsimWithoutPermissionStaticTest") {
   #test_hap = true
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
-  hap_name = "ActsTelephonyEsimStaticWithoutPermissionTest"
+  hap_name = "ActsTelephonyEsimWithoutPermissionStaticTest"
   part_name = "core_service"
   subsystem_name = "telephony"
 }

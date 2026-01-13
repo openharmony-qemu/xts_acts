@@ -12,7 +12,18 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import {describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level} from "../../../hypium/index";
+import {
+  afterAll,
+  afterEach,
+  beforeAll,
+  beforeEach,
+  describe,
+  expect,
+  it,
+  Level,
+  Size,
+  TestType
+} from '../../../hypium/index';
 
 let count = 0;
 let flag = 'a';
@@ -44,7 +55,7 @@ function init(size: number): string {
 }
 
 export default function TimerTest() {
-  describe('TimerTest', () : void => {
+  describe('TimerTest', (): void => {
     // Defines a test suite. Two parameters are supported: test suite name and test suite function.
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -72,7 +83,7 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetTimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,  async (done: () => void) => {
+    it('testSetTimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void) => {
       setTimeout(() => {
         add();
       }, 1000);
@@ -89,17 +100,18 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetTimer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      count = 0;
-      setTimeout(() => {
-        expect(count).assertEqual(0);
-        add();
+    it('testSetTimer002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        count = 0;
+        setTimeout(() => {
+          expect(count).assertEqual(0);
+          add();
+          expect(count).assertEqual(1);
+        },);
+        await waitForSeconds(1000);
         expect(count).assertEqual(1);
-      },);
-      await waitForSeconds(1000);
-      expect(count).assertEqual(1);
-      done();
-    });
+        done();
+      });
 
     /**
      * @tc.name   testSetTimer003
@@ -109,22 +121,23 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      count = 0;
-      let result1 = setTimeout(() => {
-        add();
-      },);
-      let result2 = setTimeout(() => {
-        add();
-        add();
-        add();
-      },);
-      await waitForSeconds(3000);
-      expect(new Number(result1) === undefined).assertFalse();
-      expect(new Number(result2) === undefined).assertFalse();
-      expect(count).assertEqual(4);
-      done();
-    });
+    it('testSetTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        count = 0;
+        let result1 = setTimeout(() => {
+          add();
+        },);
+        let result2 = setTimeout(() => {
+          add();
+          add();
+          add();
+        },);
+        await waitForSeconds(3000);
+        expect(new Number(result1) === undefined).assertFalse();
+        expect(new Number(result2) === undefined).assertFalse();
+        expect(count).assertEqual(4);
+        done();
+      });
 
     /**
      * @tc.name   testSetTimer004
@@ -134,15 +147,16 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      flag = 'a';
-      let result1 = setTimeout(() => {
-        flag = 'b';
-      },);
-      await waitForSeconds(1000);
-      expect(new Number(result1) === undefined).assertFalse();
-      done();
-    });
+    it('testSetTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        flag = 'a';
+        let result1 = setTimeout(() => {
+          flag = 'b';
+        },);
+        await waitForSeconds(1000);
+        expect(new Number(result1) === undefined).assertFalse();
+        done();
+      });
 
     /**
      * @tc.name   testSetTimer005
@@ -152,22 +166,23 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
      */
-    it('testSetTimer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
-      flag = 'a';
-      let result1 = setTimeout(() => {
-        flag = 'b';
-      },);
-      await waitForSeconds(1000);
-      expect(flag).assertEqual('b');
-      let result2 = setTimeout(() => {
-        flag = 'c';
-      }, 2500);
-      await waitForSeconds(4000);
-      expect(flag).assertEqual('c');
-      expect(new Number(result1) === undefined).assertFalse();
-      expect(new Number(result2) === undefined).assertFalse();
-      done();
-    });
+    it('testSetTimer005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        flag = 'a';
+        let result1 = setTimeout(() => {
+          flag = 'b';
+        },);
+        await waitForSeconds(1000);
+        expect(flag).assertEqual('b');
+        let result2 = setTimeout(() => {
+          flag = 'c';
+        }, 2500);
+        await waitForSeconds(4000);
+        expect(flag).assertEqual('c');
+        expect(new Number(result1) === undefined).assertFalse();
+        expect(new Number(result2) === undefined).assertFalse();
+        done();
+      });
 
     /**
      * @tc.name   testClearTimer001
@@ -177,18 +192,19 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testClearTimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let result1 = setTimeout(() => {
-      },);
-      let result2 = setTimeout(() => {
-      },);
-      await waitForSeconds(1000);
-      expect(new Number(result1) === undefined).assertFalse();
-      expect(new Number(result2) === undefined).assertFalse();
-      clearTimeout(result1);
-      clearTimeout(result2);
-      done();
-    });
+    it('testClearTimer001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let result1 = setTimeout(() => {
+        },);
+        let result2 = setTimeout(() => {
+        },);
+        await waitForSeconds(1000);
+        expect(new Number(result1) === undefined).assertFalse();
+        expect(new Number(result2) === undefined).assertFalse();
+        clearTimeout(result1);
+        clearTimeout(result2);
+        done();
+      });
 
 
     /**
@@ -199,16 +215,17 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      count = 0;
-      let result1 = setInterval(() => {
-        add();
-      }, 1500);
-      await waitForSeconds(2000);
-      clearInterval(result1);
-      expect(count).assertEqual(1);
-      done();
-    });
+    it('testSetInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        count = 0;
+        let result1 = setInterval(() => {
+          add();
+        }, 1500);
+        await waitForSeconds(2000);
+        clearInterval(result1);
+        expect(count).assertEqual(1);
+        done();
+      });
 
     /**
      * @tc.name   testSetInterval002
@@ -218,16 +235,17 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetInterval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      count = 0;
-      let result1 = setInterval(() => {
-        add();
-      }, 900);
-      await waitForSeconds(3000);
-      clearInterval(result1);
-      expect(count).assertEqual(3);
-      done();
-    });
+    it('testSetInterval002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        count = 0;
+        let result1 = setInterval(() => {
+          add();
+        }, 900);
+        await waitForSeconds(3000);
+        clearInterval(result1);
+        expect(count).assertEqual(3);
+        done();
+      });
 
     /**
      * @tc.name   testSetInterval003
@@ -237,24 +255,25 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetInterval003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      count = 0;
-      let result1 = setInterval(() => {
-        add();
-      }, 900);
-      let result2 = setInterval(() => {
-        add();
-        add();
-        add();
-      }, 900);
-      await waitForSeconds(3000);
-      expect(new Number(result1) === undefined).assertFalse();
-      expect(new Number(result2) === undefined).assertFalse();
-      clearInterval(result1);
-      clearInterval(result2);
-      expect(count).assertEqual(12);
-      done();
-    });
+    it('testSetInterval003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        count = 0;
+        let result1 = setInterval(() => {
+          add();
+        }, 900);
+        let result2 = setInterval(() => {
+          add();
+          add();
+          add();
+        }, 900);
+        await waitForSeconds(3000);
+        expect(new Number(result1) === undefined).assertFalse();
+        expect(new Number(result2) === undefined).assertFalse();
+        clearInterval(result1);
+        clearInterval(result2);
+        expect(count).assertEqual(12);
+        done();
+      });
 
     /**
      * @tc.name   testSetInterval004
@@ -264,17 +283,18 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetInterval004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      flag = 'a';
-      let result1 = setInterval(() => {
-        flag = 'b';
-      }, 700);
-      await waitForSeconds(1000);
-      clearInterval(result1);
-      expect(new Number(result1) === undefined).assertFalse();
-      expect(flag).assertEqual('b');
-      done();
-    });
+    it('testSetInterval004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        flag = 'a';
+        let result1 = setInterval(() => {
+          flag = 'b';
+        }, 700);
+        await waitForSeconds(1000);
+        clearInterval(result1);
+        expect(new Number(result1) === undefined).assertFalse();
+        expect(flag).assertEqual('b');
+        done();
+      });
 
     /**
      * @tc.name   testSetInterval005
@@ -284,24 +304,25 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testSetInterval005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      flag = 'a';
-      let result1 = setInterval(() => {
-        flag = 'b';
-      }, 700);
-      await waitForSeconds(1000);
-      clearInterval(result1);
-      expect(flag).assertEqual('b');
-      let result2 = setInterval(() => {
-        flag = 'c';
-      }, 2500);
-      await waitForSeconds(4000);
-      expect(new Number(result1) === undefined).assertFalse();
-      expect(new Number(result2) === undefined).assertFalse();
-      clearInterval(result2);
-      expect(flag).assertEqual('c');
-      done();
-    });
+    it('testSetInterval005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        flag = 'a';
+        let result1 = setInterval(() => {
+          flag = 'b';
+        }, 700);
+        await waitForSeconds(1000);
+        clearInterval(result1);
+        expect(flag).assertEqual('b');
+        let result2 = setInterval(() => {
+          flag = 'c';
+        }, 2500);
+        await waitForSeconds(4000);
+        expect(new Number(result1) === undefined).assertFalse();
+        expect(new Number(result2) === undefined).assertFalse();
+        clearInterval(result2);
+        expect(flag).assertEqual('c');
+        done();
+      });
 
 
     /**
@@ -312,18 +333,19 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    it('testClearInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-      let result1 = setInterval(() => {
-      }, 1000);
-      let result2 = setInterval(() => {
-      }, 1000);
-      await waitForSeconds(1000);
-      expect(new Number(result1) === undefined).assertFalse();
-      expect(new Number(result2) === undefined).assertFalse();
-      clearInterval(result1);
-      clearInterval(result2);
-      done();
-    });
+    it('testClearInterval001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1,
+      async (done: () => void): Promise<void> => {
+        let result1 = setInterval(() => {
+        }, 1000);
+        let result2 = setInterval(() => {
+        }, 1000);
+        await waitForSeconds(1000);
+        expect(new Number(result1) === undefined).assertFalse();
+        expect(new Number(result2) === undefined).assertFalse();
+        clearInterval(result1);
+        clearInterval(result2);
+        done();
+      });
 
     /**
      * @tc.name   testTimer001
@@ -362,26 +384,22 @@ export default function TimerTest() {
       done();
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0300
-    //  * @tc.name       : testTimer003
-    //  * @tc.desc       : Test clearTimeout.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
     /**
-     * @tc.name   testTimer003
-     * @tc.number testTimer003
-     * @tc.desc   testTimer003
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_TIMER_0300
+     * @tc.name testTimer003
+     * @tc.desc Test clearTimeout.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
      */
-    // it('testTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   clearTimeout();
-    //   done();
-    // });
+    it('testTimer003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        clearTimeout();
+      } catch (e) {
+        expect().assertFail();
+      }
+      done();
+    });
 
     /**
      * @tc.name   testTimer004
@@ -391,10 +409,14 @@ export default function TimerTest() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it('testTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
-    //   clearInterval();
-    //   done();
-    // });
+    it('testTimer004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      try {
+        clearInterval();
+      } catch (e) {
+        expect().assertFail();
+      }
+      done();
+    });
 
   })
 }

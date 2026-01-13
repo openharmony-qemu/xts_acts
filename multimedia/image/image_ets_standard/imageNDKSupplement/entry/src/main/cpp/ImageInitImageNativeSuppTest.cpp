@@ -219,7 +219,9 @@ napi_value OHPixelmapNativeGetMetadataSupp(napi_env env, napi_callback_info info
     default:
         break;
     }
-    OH_PixelmapNative_Release(pixelMap);
+    if (pixelMap != nullptr) {
+        OH_PixelmapNative_Release(pixelMap);
+    }
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
@@ -270,7 +272,9 @@ napi_value OHPixelmapNativeSetMetadataSupp(napi_env env, napi_callback_info info
     default:
         break;
     }
-    OH_PixelmapNative_Release(pixelMap);
+    if (pixelMap != nullptr) {
+        OH_PixelmapNative_Release(pixelMap);
+    }
     napi_value result = nullptr;
     napi_create_int32(env, returnValue, &result);
     return result;
@@ -357,7 +361,9 @@ napi_value OHPictureNativeGetMetadataSupp(napi_env env, napi_callback_info info)
     default:
         break;
     }
-    OH_PictureNative_Release(picture);
+    if (picture != nullptr) {
+        OH_PictureNative_Release(picture);
+    }
     napi_create_int32(env, errCode, &result);
     return result;
 }
@@ -403,7 +409,9 @@ napi_value OHPictureNativeSetMetadataSupp(napi_env env, napi_callback_info info)
     default:
         break;
     }
-    OH_PictureNative_Release(picture);
+    if (picture != nullptr) {
+        OH_PictureNative_Release(picture);
+    }
     napi_create_int32(env, errCode, &result);
     return result;
 }
@@ -438,7 +446,9 @@ napi_value OHAuxiliaryPictureNativeSetMetadataSupp(napi_env env, napi_callback_i
     default:
         break;
     }
-    OH_AuxiliaryPictureNative_Release(auxiliaryPicture);
+    if (auxiliaryPicture != nullptr) {
+        OH_AuxiliaryPictureNative_Release(auxiliaryPicture);
+    }
     napi_value result = nullptr;
     napi_create_int32(env, errCode, &result);
     return result;

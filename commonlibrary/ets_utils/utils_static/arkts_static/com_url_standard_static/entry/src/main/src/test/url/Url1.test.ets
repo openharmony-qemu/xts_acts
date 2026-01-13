@@ -567,246 +567,186 @@ export default function urlTest1() {
         expect(false).assertFail();
       }
     });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0100
-    //  * @tc.name       : testParseAndIterateParams0001
-    //  * @tc.desc       : Testing URLParams parsing and iteration with an empty string to ensure correct
-    //  *                  handling of empty parameters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndIterateParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndIterateParams0001";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("");
-    //     // let newArrayValue: Array<[String, String]> = Array.from<[string, string]>(searchParamsObject.entries());//TypeError: No matching call signature for from(EntryIterator) [Url.test.ets:543:54]
-    //     let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
-    //     expect(newArrayValue.toString()).assertEqual('');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0100
+     * @tc.name testParseAndIterateParams0001
+     * @tc.desc Testing URLParams parsing and iteration with an empty string to ensure correct
+     *                  handling of empty parameters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseAndIterateParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testParseAndIterateParams0001";
+      try {
+        let searchParamsObject = new Url.URLParams("");
+        // let newArrayValue: Array<[String, String]> = Array.from<[string, string]>(searchParamsObject.entries());//TypeError: No matching call signature for from(EntryIterator) [Url.test.ets:543:54]
+        let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
+        expect(newArrayValue.toString()).assertEqual('');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0200
-    //  * @tc.name       : testParseAndIterateParams0002
-    //  * @tc.desc       : Testing URLParams parsing and iteration for multiple identical sets of parameters to
-    //  *                  ensure correct parsing and retrieval of all values.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndIterateParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndIterateParams0002";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4");
-    //     let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
-    //     expect(newArrayValue.toString()).assertEqual('a,1,cc,2,ac,3,b,4,a,1,cc,2,ac,3,b,4,a,1,cc,2,ac,3,b,4');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0200
+     * @tc.name testParseAndIterateParams0002
+     * @tc.desc Testing URLParams parsing and iteration for multiple identical sets of parameters to
+     *                  ensure correct parsing and retrieval of all values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseAndIterateParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testParseAndIterateParams0002";
+      try {
+        let searchParamsObject = new Url.URLParams("a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4");
+        let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
+        expect(newArrayValue.toString()).assertEqual('a,1,cc,2,ac,3,b,4,a,1,cc,2,ac,3,b,4,a,1,cc,2,ac,3,b,4');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0300
-    //  * @tc.name       : testParseAndIterateParams0003
-    //  * @tc.desc       : Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndIterateParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndIterateParams0003";
-    //   try {
-    //     let searchParamsObject = new Url.URLParams("a=1&cc=2&ac=3&b=4");
-    //     searchParamsObject.append("d", "5");
-    //     expect(searchParamsObject.get("d")).assertEqual("5");
-    //     let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
-    //     let expectedPairs: [string, string][] = [
-    //       ['a', '1'], ['cc', '2'], ['ac', '3'], ['b', '4'],
-    //       ['d', '5']
-    //     ];
-    //     expect(String(newArrayValue.length)).assertEqual(String(expectedPairs.length));
-    //     for (let i = 0; i < newArrayValue.length; i++) {
-    //       expect(String(newArrayValue[i][0])).assertEqual(String(expectedPairs[i][0]));
-    //       expect(String(newArrayValue[i][1])).assertEqual(String(expectedPairs[i][1]));
-    //     }
-    //     expect(newArrayValue.toString()).assertEqual('a,1,cc,2,ac,3,b,4,d,5');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATE_0300
+     * @tc.name testParseAndIterateParams0003
+     * @tc.desc Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseAndIterateParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testParseAndIterateParams0003";
+      try {
+        let searchParamsObject = new Url.URLParams("a=1&cc=2&ac=3&b=4");
+        searchParamsObject.append("d", "5");
+        expect(searchParamsObject.get("d")).assertEqual("5");
+        let newArrayValue: [string, string][] = Array.from(searchParamsObject.entries());
+        let expectedPairs: [string, string][] = [
+          ['a', '1'], ['cc', '2'], ['ac', '3'], ['b', '4'],
+          ['d', '5']
+        ];
+        expect(String(newArrayValue.length)).assertEqual(String(expectedPairs.length));
+        for (let i = 0; i < newArrayValue.length; i++) {
+          expect(String(newArrayValue[i][0])).assertEqual(String(expectedPairs[i][0]));
+          expect(String(newArrayValue[i][1])).assertEqual(String(expectedPairs[i][1]));
+        }
+        expect(newArrayValue.toString()).assertEqual('a,1,cc,2,ac,3,b,4,d,5');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0100
-    //  * @tc.name       : testParseAndForeachParams0001
-    //  * @tc.desc       : Testing URLParams parsing and iteration with an empty string to ensure correct
-    //  *                  handling of empty parameters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndForeachParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndForeachParams0001";
-    //   try {
-    //     const myURLObject = Url.URL.parseURL('https://developer.exampleUrl/?');
-    //     let entriesArray: Array<EntryArrayElement> = new Array<EntryArrayElement>();
-    //     myURLObject.params.forEach((value: string, name: string, searchParams) => {
-    //       entriesArray.push([name, value, myURLObject.params === searchParams]);
-    //     });
-    //     expect(String(entriesArray.length)).assertEqual('0');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0200
-    //  * @tc.name       : testParseAndForeachParams0002
-    //  * @tc.desc       : Testing URLParams parsing and iteration for multiple identical sets of parameters to
-    //  *                  ensure correct parsing and retrieval of all values.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndForeachParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndForeachParams0002";
-    //   try {
-    //     const myURLObject =
-    //       Url.URL.parseURL('https://developer.exampleUrl/?a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4');
-    //     let entriesArray: EntryArrayElement[] = [];
-    //     myURLObject.params.forEach((value: string, name: string, searchParams) => {
-    //       entriesArray.push([name, value, myURLObject.params === searchParams]);
-    //     });
-    //     let expectedArray: EntryArrayElement[] = [
-    //       ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true],
-    //       ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true],
-    //       ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true]
-    //     ];
-    //     expect(entriesArray.toString()).assertEqual(expectedArray.toString());
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0300
-    //  * @tc.name       : testParseAndForeachParams0003
-    //  * @tc.desc       : Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndForeachParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndForeachParams0003";
-    //   try {
-    //     const myURLObject = Url.URL.parseURL('https://developer.exampleUrl/?a=1&cc=2&ac=3&b=4');
-    //     myURLObject.params.append("d", "5");
-    //     expect(myURLObject.params.get("d")).assertEqual("5");
-    //     let entriesArray: EntryArrayElement[] = [];
-    //     myURLObject.params.forEach((value: string, name: string, searchParams) => {
-    //       entriesArray.push([name, value, myURLObject.params === searchParams]);
-    //     });
-    //     let expectedArray: EntryArrayElement[] = [
-    //       ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true], ['d', '5', true]
-    //     ];
-    //     expect(entriesArray.toString()).assertEqual(expectedArray.toString());
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0100
+     * @tc.name testParseAndForeachParams0001
+     * @tc.desc Testing URLParams parsing and iteration with an empty string to ensure correct
+     *                  handling of empty parameters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseAndForeachParams0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testParseAndForeachParams0001";
+      try {
+        const myURLObject = Url.URL.parseURL('https://developer.exampleUrl/?');
+        let entriesArray: Array<EntryArrayElement> = new Array<EntryArrayElement>();
+        myURLObject.params.forEach((value: string, name: string, searchParams) => {
+          entriesArray.push([name, value, myURLObject.params === searchParams]);
+        });
+        expect(String(entriesArray.length)).assertEqual('0');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0100
-    //  * @tc.name       : testParseAndIterateParamsSymbol0001
-    //  * @tc.desc       : Testing URLParams [Symbol.iterator]() method with an empty string to ensure correct
-    //  *                  handling of empty parameters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndIterateParamsSymbol0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndIterateParamsSymbol0001";
-    //   try {
-    //     const paramsObject = new Url.URLParams('');
-    //     let pairs = new Array<[string, string]>();
-    //     for (const entry of paramsObject) {
-    //       pairs.push(entry);
-    //     }
-    //     expect(String(pairs.length)).assertEqual('0');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0200
-    //  * @tc.name       : testParseAndIterateParamsSymbol0002
-    //  * @tc.desc       : Testing URLParams [Symbol.iterator]() method to ensure it handles multiple identical
-    //  *                  sets of parameters correctly.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndIterateParamsSymbol0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndIterateParamsSymbol0002";
-    //   try {
-    //     const paramsObject = new Url.URLParams('a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4');
-    //     let iter: Iterable<Object[]> = paramsObject[Symbol.iterator]();
-    //     let pairs = Array.from(iter);
-    //     let expectedPairs: [string, string][] = [
-    //       ['a', '1'], ['cc', '2'], ['ac', '3'], ['b', '4'],
-    //       ['a', '1'], ['cc', '2'], ['ac', '3'], ['b', '4'],
-    //       ['a', '1'], ['cc', '2'], ['ac', '3'], ['b', '4']
-    //     ];
-    //     expect(String(pairs.length)).assertEqual(String(expectedPairs.length));
-    //     for (let i = 0; i < pairs.length; i++) {
-    //       expect(String(pairs[i][0])).assertEqual(String(expectedPairs[i][0]));
-    //       expect(String(pairs[i][1])).assertEqual(String(expectedPairs[i][1]));
-    //     }
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0300
-    //  * @tc.name       : testParseAndIterateParamsSymbol0003
-    //  * @tc.desc       : Testing URLParams [Symbol.iterator]() method to ensure values are correctly appended
-    //  *                  and retrieved.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testParseAndIterateParamsSymbol0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testParseAndIterateParamsSymbol0003";
-    //   try {
-    //     const paramsObject = new Url.URLParams('a=1&cc=2&ac=3&b=4');
-    //     paramsObject.append("d", "5");
-    //     let iter: Iterable<Object[]> = paramsObject[Symbol.iterator]();
-    //     let pairs = Array.from(iter);
-    //     let expectedPairs: [string, string][] = [
-    //       ['a', '1'], ['cc', '2'], ['ac', '3'], ['b', '4'], ['d', '5']
-    //     ];
-    //     expect(String(pairs.length)).assertEqual(String(expectedPairs.length));
-    //     for (let i = 0; i < pairs.length; i++) {
-    //       expect(String(pairs[i][0])).assertEqual(String(expectedPairs[i][0]));
-    //       expect(String(pairs[i][1])).assertEqual(String(expectedPairs[i][1]));
-    //     }
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0200
+     * @tc.name testParseAndForeachParams0002
+     * @tc.desc Testing URLParams parsing and iteration for multiple identical sets of parameters to
+     *                  ensure correct parsing and retrieval of all values.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseAndForeachParams0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testParseAndForeachParams0002";
+      try {
+        const myURLObject =
+          Url.URL.parseURL('https://developer.exampleUrl/?a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4&a=1&cc=2&ac=3&b=4');
+        let entriesArray: EntryArrayElement[] = [];
+        myURLObject.params.forEach((value: string, name: string, searchParams) => {
+          entriesArray.push([name, value, myURLObject.params === searchParams]);
+        });
+        let expectedArray: EntryArrayElement[] = [
+          ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true],
+          ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true],
+          ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true]
+        ];
+        expect(entriesArray.toString()).assertEqual(expectedArray.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDFOREACH_0300
+     * @tc.name testParseAndForeachParams0003
+     * @tc.desc Testing URLParams parsing and iteration to ensure values are correctly appended and retrieved.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseAndForeachParams0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testParseAndForeachParams0003";
+      try {
+        const myURLObject = Url.URL.parseURL('https://developer.exampleUrl/?a=1&cc=2&ac=3&b=4');
+        myURLObject.params.append("d", "5");
+        expect(myURLObject.params.get("d")).assertEqual("5");
+        let entriesArray: EntryArrayElement[] = [];
+        myURLObject.params.forEach((value: string, name: string, searchParams) => {
+          entriesArray.push([name, value, myURLObject.params === searchParams]);
+        });
+        let expectedArray: EntryArrayElement[] = [
+          ['a', '1', true], ['cc', '2', true], ['ac', '3', true], ['b', '4', true], ['d', '5', true]
+        ];
+        expect(entriesArray.toString()).assertEqual(expectedArray.toString());
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_PARAMSPARSEANDITERATESYMBOL_0100
+     * @tc.name testParseAndIterateParamsSymbol0001
+     * @tc.desc Testing URLParams [Symbol.iterator]() method with an empty string to ensure correct
+     *                  handling of empty parameters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testParseAndIterateParamsSymbol0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testParseAndIterateParamsSymbol0001";
+      try {
+        const paramsObject = new Url.URLParams('');
+        let pairs = new Array<[string, string]>();
+        for (const entry of paramsObject) {
+          pairs.push(entry);
+        }
+        expect(String(pairs.length)).assertEqual('0');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
     /**
      * @tc.name   testGetAllValuesForKey0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_GETALLVALUESFORKEY_0100
@@ -1581,184 +1521,124 @@ export default function urlTest1() {
         expect(false).assertFail();
       }
     });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0100
-    //  * @tc.name       : testKeysIterableIterator0001
-    //  * @tc.desc       : Testing URLParams keys() method with mixed string types: numbers and characters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testKeysIterableIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testKeysIterableIterator0001";
-    //   try {
-    //     const paramsObject = new Url.URLParams('1=value1&5=value2&a=value3');
-    //     const keyValuePairs: Array<[string, string]> = new Array();
-    //     keyValuePairs.push(["ad", "value4"]);
-    //     keyValuePairs.push(["ab", "value5"]);
-    //     keyValuePairs.push(["b", "value6"]);
-    //     keyValuePairs.push(["ca", "value7"]);
-    //     for (let i = 0; i < keyValuePairs.length; i++) {
-    //       const pair = keyValuePairs[i];
-    //       paramsObject.append(pair[0], pair[1]);
-    //     }
-    //     const keysArray: Array<string> = new Array();
-    //     const keysIterator = paramsObject.keys();
-    //     let next = keysIterator.next();
-    //
-    //     while (!next.done) {
-    //       keysArray.push(next.value);
-    //       next = keysIterator.next();
-    //     }
-    //     expect(keysArray.toString()).assertEqual('1,5,a,ad,ab,b,ca');
-    //   }  catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0200
-    //  * @tc.name       : testKeysIterableIterator0002
-    //  * @tc.desc       : Testing URLParams keys() method with keys containing special characters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testKeysIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testKeysIterableIterator0002";
-    //   try {
-    //     let paramsObject = new Url.URLParams('key@1=value1&key#2=value2&key*3=value3');
-    //     const keyValuePairs = [
-    //       ["key(4)", "value4"],
-    //       ["key$5", "value5"],
-    //       ["key&6", "value6"],
-    //       ["key%7", "value7"],
-    //     ];
-    //     keyValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
-    //     const keysIterator = paramsObject.keys();
-    //     const keysArray = Array.from(keysIterator);
-    //     expect(keysArray.toString()).assertEqual('key@1,key#2,key*3,key(4),key$5,key&6,key%7');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0300
-    //  * @tc.name       : testKeysIterableIterator0003
-    //  * @tc.desc       : Testing URLParams keys() method with add, query, delete, and query operations.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testKeysIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testKeysIterableIterator0003";
-    //   try {
-    //     let paramsObject = new Url.URLParams();
-    //     const keyValuePairs = [
-    //       ["key1", "value1"],
-    //       ["key2", "value2"],
-    //       ["key3", "value3"]
-    //     ];
-    //     keyValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
-    //     let keysIterator = paramsObject.keys();
-    //     let keysArray = Array.from(keysIterator);
-    //     expect(keysArray.toString()).assertEqual('key1,key2,key3');
-    //     paramsObject.delete("key2");
-    //     keysIterator = paramsObject.keys();
-    //     keysArray = Array.from(keysIterator);
-    //     expect(keysArray.toString()).assertEqual('key1,key3');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0100
-    //  * @tc.name       : testValuesIterableIterator0001
-    //  * @tc.desc       : Testing URLParams values() method with mixed key formats (numbers and characters).
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testValuesIterableIterator0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testValuesIterableIterator0001";
-    //   try {
-    //     let paramsObject = new Url.URLParams('key1=1&key2=5&key3=a&key4=ad&key6=ab&key5=c');
-    //     const valuesArray: string[] = [];
-    //     const iterator = paramsObject.values();
-    //     let next = iterator.next();
-    //     while (!next.done) {
-    //       valuesArray.push(next.value);
-    //       next = iterator.next();
-    //     }
-    //     expect(valuesArray.toString()).assertEqual('1,5,a,ad,ab,c');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0200
-    //  * @tc.name       : testValuesIterableIterator0002
-    //  * @tc.desc       : Testing URLParams values() method with values containing special characters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testValuesIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testValuesIterableIterator0002";
-    //   try {
-    //     let paramsObject = new Url.URLParams('key1=value@#1&key2=value*2&key3=value(3)');
-    //     const specialValuePairs = [
-    //       ["key4", "value$4"],
-    //       ["key5", "value&5"],
-    //       ["key6", "value%6"],
-    //       ["key7", "value^7"],
-    //     ];
-    //     specialValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
-    //     const valuesIterator = paramsObject.values();
-    //     const valuesArray = Array.from(valuesIterator);
-    //     expect(valuesArray.toString()).assertEqual('value@#1,value*2,value(3),value$4,value&5,value%6,value^7');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
-    //
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0300
-    //  * @tc.name       : testValuesIterableIterator0003
-    //  * @tc.desc       : Testing URLParams values() method with add, query, delete, and query operations.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testValuesIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testValuesIterableIterator0003";
-    //   try {
-    //     let paramsObject = new Url.URLParams();
-    //     const keyValuePairs = [
-    //       ["key1", "value1"],
-    //       ["key2", "value2"],
-    //       ["key3", "value3"]
-    //     ];
-    //     keyValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
-    //     let valuesIterator = paramsObject.values();
-    //     let valuesArray = Array.from(valuesIterator);
-    //     expect(valuesArray.toString()).assertEqual('value1,value2,value3');
-    //     paramsObject.delete("key2");
-    //     valuesIterator = paramsObject.values();
-    //     valuesArray = Array.from(valuesIterator);
-    //     expect(valuesArray.toString()).assertEqual('value1,value3');
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0200
+     * @tc.name testKeysIterableIterator0002
+     * @tc.desc Testing URLParams keys() method with keys containing special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testKeysIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testKeysIterableIterator0002";
+      try {
+        let paramsObject = new Url.URLParams('key@1=value1&key#2=value2&key*3=value3');
+        const keyValuePairs = [
+          ["key(4)", "value4"],
+          ["key$5", "value5"],
+          ["key&6", "value6"],
+          ["key%7", "value7"],
+        ];
+        keyValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
+        const keysIterator = paramsObject.keys();
+        const keysArray = Array.from(keysIterator);
+        expect(keysArray.toString()).assertEqual('key@1,key#2,key*3,key(4),key$5,key&6,key%7');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_KEYS_ITERATOR_0300
+     * @tc.name testKeysIterableIterator0003
+     * @tc.desc Testing URLParams keys() method with add, query, delete, and query operations.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testKeysIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testKeysIterableIterator0003";
+      try {
+        let paramsObject = new Url.URLParams();
+        const keyValuePairs = [
+          ["key1", "value1"],
+          ["key2", "value2"],
+          ["key3", "value3"]
+        ];
+        keyValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
+        let keysIterator = paramsObject.keys();
+        let keysArray = Array.from(keysIterator);
+        expect(keysArray.toString()).assertEqual('key1,key2,key3');
+        paramsObject.delete("key2");
+        keysIterator = paramsObject.keys();
+        keysArray = Array.from(keysIterator);
+        expect(keysArray.toString()).assertEqual('key1,key3');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0200
+     * @tc.name testValuesIterableIterator0002
+     * @tc.desc Testing URLParams values() method with values containing special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testValuesIterableIterator0002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testValuesIterableIterator0002";
+      try {
+        let paramsObject = new Url.URLParams('key1=value@#1&key2=value*2&key3=value(3)');
+        const specialValuePairs = [
+          ["key4", "value$4"],
+          ["key5", "value&5"],
+          ["key6", "value%6"],
+          ["key7", "value^7"],
+        ];
+        specialValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
+        const valuesIterator = paramsObject.values();
+        const valuesArray = Array.from(valuesIterator);
+        expect(valuesArray.toString()).assertEqual('value@#1,value*2,value(3),value$4,value&5,value%6,value^7');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
+
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_VALUES_ITERATOR_0300
+     * @tc.name testValuesIterableIterator0003
+     * @tc.desc Testing URLParams values() method with add, query, delete, and query operations.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testValuesIterableIterator0003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testValuesIterableIterator0003";
+      try {
+        let paramsObject = new Url.URLParams();
+        const keyValuePairs = [
+          ["key1", "value1"],
+          ["key2", "value2"],
+          ["key3", "value3"]
+        ];
+        keyValuePairs.forEach(pair => paramsObject.append(pair[0], pair[1]));
+        let valuesIterator = paramsObject.values();
+        let valuesArray = Array.from(valuesIterator);
+        expect(valuesArray.toString()).assertEqual('value1,value2,value3');
+        paramsObject.delete("key2");
+        valuesIterator = paramsObject.values();
+        valuesArray = Array.from(valuesIterator);
+        expect(valuesArray.toString()).assertEqual('value1,value3');
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
     /**
      * @tc.name   testSpecial0001
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0100
@@ -1897,46 +1777,6 @@ export default function urlTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_0600
-    //  * @tc.name       : testSpecial0006
-    //  * @tc.desc       : Testing entries for handling keys and values with special characters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testSpecial0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testSpecial0006";
-    //   try {
-    //     let Params1 = new Url.URLParams('nan=po&fod=!!""##' +
-    //       '$$%%\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~&bard=2');
-    //     let Params2 = new Url.URLParams('nan=po&fod=!!%22%' +
-    //       '22%23%23%24%24%25%25%26%26\'\'(())**%2B%2B%2C%2C--..%2F%2F%3A%3A%3B%3B%3C%3C' +
-    //       '%3D%3D%3E%3E%3F%3F%40%40%5B%5B%5C%5C%5D%5D%5E%5E__%60%60%7B%7B%7C%7C%7D%7D~~' +
-    //       '&bard=2');
-    //     let Params3 = new Url.URLParams('nan=po&fod=%21%21%' +
-    //       '22%22%23%23%24%24%25%25%26%26%27%27%28%28%2A%2A%2B%2B%2C%2C%2D%2D%2E%2E%2F%2F' +
-    //       '%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40%40%5B%5B%5C%5C%5D%5D%5E%5E%5F%5F%60%6' +
-    //       '0%7B%7B%7C%7C%7D%7D%7E%7E&bard=2');
-    //     let arrayValue1 = Object.entries(Params1);//TypeError: No matching call signature for from(EntryIterator) [Url.test.ets:1872:27]
-    // TypeError: No matching call signature for from(EntryIterator) [Url.test.ets:1874:27]
-    //     let pair2 = Params2.entries();
-    //     let arrayValue2 = Array.from(pair2);
-    //     let pair3 = Params3.entries();
-    //     let arrayValue3 = Array.from(pair3);
-    //     let expectedValues = [
-    //       '!!""##$$%%\'\'(())**  ,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~',
-    //       '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~',
-    //       '!!""##$$%%&&\'\'((**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~'
-    //     ];
-    //     expect(arrayValue1[1][1]).assertEqual(expectedValues[0]);
-    //     expect(arrayValue2[1][1]).assertEqual(expectedValues[1]);
-    //     expect(arrayValue3[1][1]).assertEqual(expectedValues[2]);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // })
 
     /**
      * @tc.name   testSpecial0007
@@ -2032,36 +1872,36 @@ export default function urlTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1000
-    //  * @tc.name       : testSpecial0010
-    //  * @tc.desc       : Testing getting values using keys with special characters.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testSpecial0010";
-    //   try {
-    //     let params1 = new Url.URLParams('key1=value1&!!""##$$%%=value');
-    //     let params2 = new Url.URLParams('key1=value1&!!""##$$%%\'\'(())' +
-    //       '**  ,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~=value');
-    //     let params3 = new Url.URLParams('key1=value1&!!%22%22%23%23%24%' +
-    //       '24%25%25%26%26(())**%2B%2B%2C%2C--..%2F%2F%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40%40%5B%5' +
-    //       'B%5C%5C%5D%5D%5E%5E__%60%60%7B%7B%7C%7C%7D%7D~~=value');
-    //     let key1 = Array.from(params1.keys())
-    //     let key2 = Array.from(params2.keys())
-    //     let key3 = Array.from(params3.keys())
-    //     expect(key1.toString()).assertEqual("key1,!!\"\"##$$%%")
-    //     expect(key2.toString()).assertEqual("key1,!!\"\"##$$%%'" +
-    //       "'(())**  ,,--..//::;;<<")
-    //     expect(key3.toString()).assertEqual("key1,!!\"\"##$$%%&&" +
-    //       "(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~")
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
+    /**
+     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1000
+     * @tc.name testSpecial0010
+     * @tc.desc Testing getting values using keys with special characters.
+     * @tc.size MediumTest
+     * @tc.type Function
+     * @tc.level Level 1
+     */
+    it('testSpecial0010', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      const TAG = "testSpecial0010";
+      try {
+        let params1 = new Url.URLParams('key1=value1&!!""##$$%%=value');
+        let params2 = new Url.URLParams('key1=value1&!!""##$$%%\'\'(())' +
+          '**  ,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~=value');
+        let params3 = new Url.URLParams('key1=value1&!!%22%22%23%23%24%' +
+          '24%25%25%26%26(())**%2B%2B%2C%2C--..%2F%2F%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40%40%5B%5' +
+          'B%5C%5C%5D%5D%5E%5E__%60%60%7B%7B%7C%7C%7D%7D~~=value');
+        let key1 = Array.from(params1.keys())
+        let key2 = Array.from(params2.keys())
+        let key3 = Array.from(params3.keys())
+        expect(key1.toString()).assertEqual("key1,!!\"\"##$$%%")
+        expect(key2.toString()).assertEqual("key1,!!\"\"##$$%%'" +
+          "'(())**  ,,--..//::;;<<")
+        expect(key3.toString()).assertEqual("key1,!!\"\"##$$%%&&" +
+          "(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~")
+      } catch (err: BusinessError) {
+        console.error(`${TAG} failed, error: ${err}`);
+        expect(false).assertFail();
+      }
+    });
 
     /**
      * @tc.name   testSpecial0011
@@ -2129,48 +1969,6 @@ export default function urlTest1() {
         expect(false).assertFail();
       }
     });
-
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_URLPARAMS_SPECIAL_1300
-    //  * @tc.name       : testSpecial0013
-    //  * @tc.desc       : Testing URLSearchParams for special characters extraction.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testSpecial0013', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testSpecial0013";
-    //   try {
-    //     let str1 = '!!""##$$%%\'\'(())**  ,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
-    //     let str2 = '!!""##$$%%&&\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
-    //     let str3 = '!!""##$$%%&&\'\'((**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~';
-    //     let Params1 = new Url.URLParams('https://developer.mozilla.org/?nan=po&fod=!!""##' +
-    //       '$$%%\'\'(())**++,,--..//::;;<<==>>??@@[[\\\\]]^^__``{{||}}~~&bard=2');
-    //     let Params2 = new Url.URLParams('https://developer.mozilla.org/?nan=po&fod=!!%22%' +
-    //       '22%23%23%24%24%25%25%26%26\'\'(())**%2B%2B%2C%2C--..%2F%2F%3A%3A%3B%3B%3C%3C' +
-    //       '%3D%3D%3E%3E%3F%3F%40%40%5B%5B%5C%5C%5D%5D%5E%5E__%60%60%7B%7B%7C%7C%7D%7D~~' +
-    //       '&bard=2');
-    //     let Params3 = new Url.URLParams('https://developer.mozilla.org/?nan=po&fod=%21%21' +
-    //       '%22%22%23%23%24%24%25%25%26%26%27%27%28%28%2A%2A%2B%2B%2C%2C%2D%2D%2E%2E%2F%' +
-    //       '2F%3A%3A%3B%3B%3C%3C%3D%3D%3E%3E%3F%3F%40%40%5B%5B%5C%5C%5D%5D%5E%5E%5F%5F%6' +
-    //       '0%60%7B%7B%7C%7C%7D%7D%7E%7E&bard=2');
-    //     let iter1 = Params1[Symbol.iterator]();
-    //     let arrayValue1 = Array.from(iter1);
-    //     let res1 = arrayValue1[1][1];
-    //     let iter2 = Params2[Symbol.iterator]();
-    //     let arrayValue2 = Array.from(iter2);
-    //     let res2 = arrayValue2[1][1];
-    //     let iter3 = Params3[Symbol.iterator]();
-    //     let arrayValue3 = Array.from(iter3);
-    //     let res3 = arrayValue3[1][1];
-    //     expect(res1).assertEqual(str1);
-    //     expect(res2).assertEqual(str2);
-    //     expect(res3).assertEqual(str3);
-    //   } catch (err: BusinessError) {
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail();
-    //   }
-    // });
 
     /**
      * @tc.name   testSpecial0014

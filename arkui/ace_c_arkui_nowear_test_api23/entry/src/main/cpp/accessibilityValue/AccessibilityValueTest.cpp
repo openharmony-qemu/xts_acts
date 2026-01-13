@@ -100,7 +100,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d10(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 1.9;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 8);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_RX);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d10", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -112,7 +112,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d101(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d101", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 8);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_RX);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d101", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -143,7 +143,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d11(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.0;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 9);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_RY);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d11", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -155,7 +155,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d111(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d111", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 9);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_RY);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d111", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -186,7 +186,8 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d12(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.1;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 10);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node,
+                                                      UI_FOCUS_AXIS_EVENT_ABS_THROTTLE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d12", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -198,7 +199,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d121(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d121", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 10);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_THROTTLE);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d121", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -229,7 +230,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d13(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.2;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 11);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_RUDDER);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d13", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -241,7 +242,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d131(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d131", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 11);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_RUDDER);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d131", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -272,7 +273,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d14(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.3;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 12);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_WHEEL);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d14", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -284,7 +285,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d141(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d141", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 12);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_WHEEL);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d141", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -315,7 +316,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d15(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.4;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 13);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_HAT1X);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d15", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -327,7 +328,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d151(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d151", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 13);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_HAT1X);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d151", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -358,7 +359,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d16(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.5;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 14);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_HAT1Y);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d16", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -370,7 +371,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d161(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d161", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 14);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_HAT1Y);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d161", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -401,7 +402,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d17(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.6;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 15);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_HAT2X);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d17", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -413,7 +414,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d171(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d171", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 15);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_HAT2X);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d171", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -444,7 +445,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d18(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.7;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 16);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_HAT2Y);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d18", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -456,7 +457,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d181(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d181", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 16);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_HAT2Y);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d181", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -487,7 +488,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d19(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.8;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 17);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_HAT3X);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d19", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -499,7 +500,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d191(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d191", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 17);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_HAT3X);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d191", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);
@@ -530,7 +531,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d20(napi_env env, napi
     
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
     double val = 2.9;
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, 18);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue((const ArkUI_UIInputEvent*)node, UI_FOCUS_AXIS_EVENT_ABS_HAT3Y);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d20", "GetRangeCurrent  %{public}f", ret);
     ASSERT_EQ(ret, val);
@@ -542,7 +543,7 @@ napi_value AccessibilityValueTest::AccessibilityValueTest_d201(napi_env env, nap
 {
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN, "AccessibilityValueTest_d201", "CreateNativeNode");
     NAPI_START(customSpan, ARKUI_NODE_CUSTOM_SPAN);
-    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, 18);
+    double ret = OH_ArkUI_FocusAxisEvent_GetAxisValue(nullptr, UI_FOCUS_AXIS_EVENT_ABS_HAT3Y);
     OH_LOG_Print(LOG_APP, LOG_INFO, LOG_PRINT_DOMAIN,
                  "AccessibilityValueTest_d201", "absRxValue nullptr = %{public}f", ret);
     ASSERT_EQ(ret, 0.0);

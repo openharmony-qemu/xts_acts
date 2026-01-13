@@ -23,16 +23,16 @@ struct ObserverApi2Test {
   build() {
     Column({ space: 5 }){
 
-      Text(this.text1).id('ObserverApi2_text')
+      Text(this.text1).id('ObserverApi2_text').height('5%')
 
-      Button('getText')
+      Button('getText').height('5%')
         .fontSize(14)
         .onClick(()=>{
           this.text1 = AppStorage.get('Observer_HIDE') as string + AppStorage.get('Observer_APPEAR') as string + AppStorage.get('Observer_SHOW') as string + ''
         })
         .id('ObserverApi2_getText')
 
-      Button('backToPageOne')
+      Button('backToPageOne').height('5%')
         .fontSize(14)
         .onClick(()=>{
           router.back({url: "MainAbility/pages/observer/ObserverApi"})
@@ -40,6 +40,6 @@ struct ObserverApi2Test {
         .id('ObserverApi2_backToPageOne')
 
 
-    }.width('100%')
+    }.width('100%').height('100%')
   }
 }

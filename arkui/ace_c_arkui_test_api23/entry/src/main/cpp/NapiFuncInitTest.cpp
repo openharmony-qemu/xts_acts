@@ -23,6 +23,7 @@
 #include "MotionPath/MotionPathOptionsTest.cpp"
 #include "publicCapacity/AtomicServiceMenuBarSetVisibleTest.cpp"
 #include "node/IsInRenderStateReturnValueTest.cpp"
+#include "refresh/RefreshAttrsTest.cpp"
 #include "image/ImageAntialiasedTest.cpp"
 
 namespace ArkUICapiTest {
@@ -183,6 +184,12 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestIsInRenderStateReturnValue002", nullptr, TestIsInRenderStateReturnValue002,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testPullUpToCancelRefresh01", nullptr, TestPullUpToCancelRefresh01, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testPullUpToCancelRefresh02", nullptr, TestPullUpToCancelRefresh02, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testPullUpToCancelRefreshError", nullptr, TestPullUpToCancelRefreshError, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
         {"testImageAntialiased001", nullptr,
          TestImageAntialiased001, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"testImageAntialiased002", nullptr,

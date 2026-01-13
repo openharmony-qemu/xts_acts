@@ -125,6 +125,10 @@ export const TestIsInRenderStateReturnValue001: () => number;
 
 export const TestIsInRenderStateReturnValue002: () => number;
 
+export const testPullUpToCancelRefresh01: () => number;
+export const testPullUpToCancelRefresh02: () => number;
+export const testPullUpToCancelRefreshError: () => number;
+
 export const testImageAntialiased001: () => number;
 
 export const testImageAntialiased002: () => number;
