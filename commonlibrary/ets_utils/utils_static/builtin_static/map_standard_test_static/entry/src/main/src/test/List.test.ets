@@ -22,10 +22,8 @@ import MapForeachTest from "./MapForeachStatic.test";
 import MapGetTest from "./MapGetStatic.test";
 import MapHasTest from "./MapHasStatic.test";
 import MapValueTest from "./MapValuesStatic.test";
-import EsTempTest from "./template.test";
 
 export default function testsuite() {
-  // EsTempTest();
   MapConstructorTest();
   MapClearTest();
   MapDeleteTest();
