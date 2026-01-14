@@ -1718,6 +1718,7 @@ export default function windowPropertiesTest2() {
       // 2、被拉起的主窗监听on(windowStageEvent)
       try {
         const callback = async (res: window.WindowStageEventType) => {
+          console.info(msgStr + 'callback:'+res);
           // 4、在on(windowStageEvent)返回值为INACTIVE，HIDDEN状态下分别调用snapshotIgnorePrivacy截图
           // 5、断言截图大小与窗口大小误差不超过1
           // 6、销毁被拉起的主窗
