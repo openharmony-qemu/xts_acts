@@ -148,7 +148,7 @@ export default function abilityTest() {
     let event:KeyEvent = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:2, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
     let event1: string = 'aaa'
     let customdata: Record<string,string> = {'customData': 'appdata'}
-    let eventName = 'dynamic_lyric'；
+    let eventName = 'dynamic_lyric';
     let assetId: string = 'assetIdTest';
     let assetId1: string = '';
     let assetId2: string = '';

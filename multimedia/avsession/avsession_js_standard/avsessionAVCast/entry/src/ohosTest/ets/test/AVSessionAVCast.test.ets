@@ -39,6 +39,7 @@ export default function abilityTest() {
     let session: avSession.AVSession | ESObject;
     let controller: avSession.AVSessionController | ESObject;
     let tag: string = 'AVCastXTS';
+    let customdata: Record<string,string> = {'customData': 'appdata'}
     
      beforeAll(() => {
       context = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
