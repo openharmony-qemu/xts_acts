@@ -1816,7 +1816,7 @@ export default function windowNdk() {
         console.info(`${caseName} sub windowId: ${windowId}`);
         let Result: number = windowNdkTest.testLockCursorandUnLockCursor1(windowId);
         console.info(`${caseName} Result testLockCursorandUnLockCursor1: ${Result}`);
-        if(result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED){
+        if(Result == WINDOW_MANAGER_ERRORCODE_DEVICE_NOT_SUPPORTED){
           await subWindowClass.destroyWindow();
           done();
         }else{
