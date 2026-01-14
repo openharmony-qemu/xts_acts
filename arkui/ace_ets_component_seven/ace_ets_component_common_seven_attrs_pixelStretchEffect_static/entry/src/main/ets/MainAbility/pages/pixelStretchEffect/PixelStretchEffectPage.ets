@@ -1817,13 +1817,12 @@ struct pixelStretchEffectPage {
   @State parentComponentKey: string = '';
 
   onPageShow() {
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<PixelStretchEffectOptions>('_pixelStretchEffect',
       routerParamOptions.view.testValue.setValue.pixelStretchEffect)
     console.info('xyb: pixelStretchEffect page show called ' +
     routerParamOptions.view.testValue.setValue.pixelStretchEffect.top)
-    const viewElement = JSON.parseJsonElement(JSON.stringify(routerParamOptions))
+    const viewElement = JSON.parseJsonElement(JSON.stringify(this.getUIContext().getRouter().getParams()))
       .getElement("view")
     this.targetView = viewElement.getString("targetView")
     this.componentKey = viewElement.getString("componentKey")

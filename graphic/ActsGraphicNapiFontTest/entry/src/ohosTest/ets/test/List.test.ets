@@ -18,6 +18,9 @@ import NativeFontTest from './NativeFontTest.test';
 import NativeTextLineTest from './NativeTextLineTest.test';
 import NativeTextRunTest from './NativeTextRunTest.test';
 import NativeTypographyAutoSpaceTest from './NativeTypographyAutoSpaceTest.test';
+import NativeTypographyUpdateTest from './NativeTypographyUpdateTest.test';
+import NativeUndefinedGlyphDisplayTest from './NativeUndefinedGlyphDisplayTest.test';
+import OHDrawingTypographyTest from './OHDrawingTypographyTest.test';
 
 export default function testsuite() {
   NativeCopyStyleTest();
@@ -26,4 +29,7 @@ export default function testsuite() {
   NativeTextLineTest();
   NativeTextRunTest();
   NativeTypographyAutoSpaceTest();
+  NativeTypographyUpdateTest();
+  NativeUndefinedGlyphDisplayTest();
+  OHDrawingTypographyTest();
 }

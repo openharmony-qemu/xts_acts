@@ -19,6 +19,7 @@
 #include "include/NativeTextLineTest.h"
 #include "include/NativeTextRunTest.h"
 #include "include/NativeTypographyAutoSpaceTest.h"
+#include "include/NativeTypographyUpdateTest.h"
 #include "include/NativeUndefinedGlyphDisplayTest.h"
 #include "include/OHDrawingTypographyTest.h"
 #include "include/OhosCommonTest.h"
@@ -594,6 +595,283 @@ static napi_value OHDrawingSetTypographyTextAutoSpaceTest(napi_env env, napi_cal
     });
 }
 
+// OHDrawingSetTextUndefinedGlyphDisplay functions
+static napi_value OHDrawingSetTextUndefinedGlyphDisplay(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = OHOS::Rosen::Drawing::OHDrawingSetTextUndefinedGlyphDisplay001();
+                break;
+            case CASE_NUM_1:
+                result = OHOS::Rosen::Drawing::OHDrawingSetTextUndefinedGlyphDisplay002();
+                break;
+            case CASE_NUM_2:
+                result = OHOS::Rosen::Drawing::OHDrawingSetTextUndefinedGlyphDisplay003();
+                break;
+            case CASE_NUM_3:
+                result = OHOS::Rosen::Drawing::OHDrawingSetTextUndefinedGlyphDisplay004();
+                break;
+            case CASE_NUM_4:
+                result = OHOS::Rosen::Drawing::OHDrawingSetTextUndefinedGlyphDisplay005();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHDrawingTypographyUpdate functions
+static napi_value OHDrawingTypographyUpdate(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = OHOS::Rosen::Drawing::OHDrawingTypographyUpdate001();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHDrawingSetTypographyTextTrailingSpaceOptimized functions
+static napi_value OHDrawingSetTypographyTextTrailingSpaceOptimized(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = OHOS::Rosen::Drawing::OHDrawingSetTypographyTextTrailingSpaceOptimized001();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHDrawingSetTypographyVerticalAlignment functions
+static napi_value OHDrawingSetTypographyVerticalAlignment(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = OHOS::Rosen::Drawing::OHDrawingSetTypographyVerticalAlignment001();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHDrawingTypographyTest helper functions
+static int ExecuteOHDrawingTypographyTestCasePart1(int32_t caseNum)
+{
+    static constexpr std::array<NapiFn, 30> handlers = {
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest001,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest002,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest003,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest004,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest005,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest006,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest007,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest008,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest009,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest010,
+        nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest012,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest013,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest014,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest015,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest016,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest017,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest018,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest019,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest020,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest021,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest022,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest023,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest024,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest025,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest026,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest027,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest028,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest029,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest030,
+    };
+    return DispatchByCaseNum(caseNum, handlers);
+}
+
+static int ExecuteOHDrawingTypographyTestCasePart2(int32_t caseNum)
+{
+    static constexpr std::array<NapiFn, 30> handlers = {
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest031, OHOS::Rosen::Drawing::OHDrawingTypographyTest032,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest033, OHOS::Rosen::Drawing::OHDrawingTypographyTest034,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest035, OHOS::Rosen::Drawing::OHDrawingTypographyTest036,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest037, OHOS::Rosen::Drawing::OHDrawingTypographyTest038,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest039, OHOS::Rosen::Drawing::OHDrawingTypographyTest040,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest041, OHOS::Rosen::Drawing::OHDrawingTypographyTest042,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest043, OHOS::Rosen::Drawing::OHDrawingTypographyTest044,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest045, OHOS::Rosen::Drawing::OHDrawingTypographyTest046,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest047, OHOS::Rosen::Drawing::OHDrawingTypographyTest048,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest049, OHOS::Rosen::Drawing::OHDrawingTypographyTest050,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest051, nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest053, OHOS::Rosen::Drawing::OHDrawingTypographyTest054,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest055, OHOS::Rosen::Drawing::OHDrawingTypographyTest056,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest057, OHOS::Rosen::Drawing::OHDrawingTypographyTest058,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest059, OHOS::Rosen::Drawing::OHDrawingTypographyTest060,
+    };
+    return DispatchByCaseNum(caseNum - CASE_NUM_30, handlers);
+}
+
+static int ExecuteOHDrawingTypographyTestCasePart3(int32_t caseNum)
+{
+    static constexpr std::array<NapiFn, 31> handlers = {
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest061,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest062,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest063,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest064,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest065,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest066,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest067,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest068,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest069,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest070,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest071,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest072,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest073,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest074,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest075,
+        nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest077,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest078,
+        nullptr,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest080,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest081,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest082,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest083,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest084,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest085,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest086,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest102,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest103,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest104,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTest105,
+        OHOS::Rosen::Drawing::OHDrawingTypographyTestWithIndent,
+    };
+    return DispatchByCaseNum(caseNum - CASE_NUM_60, handlers);
+}
+
+static int ExecuteOHDrawingTypographyTestCase(int32_t caseNum)
+{
+    if (caseNum >= CASE_NUM_0 && caseNum < CASE_NUM_30) {
+        return ExecuteOHDrawingTypographyTestCasePart1(caseNum);
+    } else if (caseNum >= CASE_NUM_30 && caseNum < CASE_NUM_60) {
+        return ExecuteOHDrawingTypographyTestCasePart2(caseNum);
+    } else if (caseNum >= CASE_NUM_60 && caseNum <= CASE_NUM_90) {
+        return ExecuteOHDrawingTypographyTestCasePart3(caseNum);
+    }
+    return RESULT_ERROR;
+}
+
+// OHDrawingTypographyTest functions (91 functions)
+static napi_value OHDrawingTypographyTest(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result = ExecuteOHDrawingTypographyTestCase(caseNum);
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHDrawingAddTextStyleDecoration functions
+static napi_value OHDrawingAddTextStyleDecoration(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = OHOS::Rosen::Drawing::OHDrawingAddTextStyleDecoration001();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// OHDrawingTextLineEnumerateCaretOffsets functions
+static napi_value OHDrawingTextLineEnumerateCaretOffsets(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = OHOS::Rosen::Drawing::OHDrawingTextLineEnumerateCaretOffsets001();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
+// testOHDrawingUnregisterFont functions
+static napi_value testOHDrawingUnregisterFont(napi_env env, napi_callback_info info)
+{
+    return NapiTry(env, [&]() -> napi_value {
+        int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
+        int result;
+        switch (caseNum) {
+            case CASE_NUM_0:
+                result = OHOS::Rosen::Drawing::TestOHDrawingUnregisterFont001();
+                break;
+            case CASE_NUM_1:
+                result = OHOS::Rosen::Drawing::TestOHDrawingUnregisterFont002();
+                break;
+            default:
+                result = RESULT_ERROR;
+                break;
+        }
+        napi_value resultValue;
+        napi_create_int32(env, result, &resultValue);
+        return resultValue;
+    });
+}
+
 inline napi_property_descriptor MakeNapiDesc(const char* name, napi_callback cb)
 {
     return { name, nullptr, cb, nullptr, nullptr, nullptr, napi_default, nullptr };
@@ -618,6 +896,14 @@ static const napi_property_descriptor g_graphicDescriptors[] = {
     DECL_NAPI_DESC(TextLineTest),
     DECL_NAPI_DESC(RunTest),
     DECL_NAPI_DESC(OHDrawingSetTypographyTextAutoSpaceTest),
+    DECL_NAPI_DESC(OHDrawingSetTextUndefinedGlyphDisplay),
+    DECL_NAPI_DESC(OHDrawingTypographyUpdate),
+    DECL_NAPI_DESC(OHDrawingSetTypographyTextTrailingSpaceOptimized),
+    DECL_NAPI_DESC(OHDrawingSetTypographyVerticalAlignment),
+    DECL_NAPI_DESC(OHDrawingTypographyTest),
+    DECL_NAPI_DESC(OHDrawingAddTextStyleDecoration),
+    DECL_NAPI_DESC(OHDrawingTextLineEnumerateCaretOffsets),
+    DECL_NAPI_DESC(testOHDrawingUnregisterFont),
 };
 
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)

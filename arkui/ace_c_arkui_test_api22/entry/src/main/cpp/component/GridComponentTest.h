@@ -38,11 +38,24 @@ using OnDidScroll = std::function<void(float, int32_t)>;
 using OnScrollFrameBegin = std::function<void(float, int32_t)>;
 using OnScrollIndex = std::function<void(int32_t, int32_t)>;
 using OnScrollBarUpdate = std::function<void()>;
+using OnItemDragStart = std::function<void(float, float, int32_t)>;
+using OnItemDragEnter = std::function<void(float, float)>;
+using OnItemDragMove = std::function<void(float, float, int32_t, int32_t)>;
+using OnItemDragLeave = std::function<void(float, float, int32_t)>;
+using OnItemDrop = std::function<void(float, float, int32_t, int32_t, bool)>;
+using OnItemSelect = std::function<void(bool)>;
 
 class GridItemComponent : public Component {
 public:
     GridItemComponent() : Component(ARKUI_NODE_GRID_ITEM) {}
     explicit GridItemComponent(ArkUI_NodeHandle handle) : Component(handle) {}
+    int32_t SetGridItemSelectable(int32_t enable);
+    int32_t GetGridItemSelectable();
+    void ResetGridItemSelectable();
+    int32_t SetGridItemSelected(int32_t selected);
+    int32_t GetGridItemSelected();
+    void ResetGridItemSelected();
+    void SetGridItemOnSelect(OnItemSelect);
 };
 
 class GridComponent : public Component {
@@ -131,8 +144,27 @@ public:
     void SetGridLayoutOptions(ArkUI_GridLayoutOptions* option);
     ArkUI_GridLayoutOptions* GetGridLayoutOptions();
     void ResetGridLayoutOptions();
+    int32_t SetGridEditMode(int32_t enable);
+    int32_t GetGridEditMode();
+    void ResetGridEditMode();
+    int32_t SetGridMultiSelectable(int32_t enable);
+    int32_t GetGridMultiSelectable();
+    void ResetGridMultiSelectable();
+    int32_t SetGridDragAnimation(int32_t enable);
+    int32_t GetGridDragAnimation();
+    void ResetGridDragAnimation();
+    
+    void SetOnItemDragStart(OnItemDragStart onItemDragStart);
+    void SetOnItemDragEnter(OnItemDragEnter onItemDragEnter);
+    void SetOnItemDragMove(OnItemDragMove onItemDragMove);
+    void SetOnItemDragLeave(OnItemDragLeave onItemDragLeave);
+    void SetOnItemDrop(OnItemDrop onItemDrop);
+    
+    void SetDragStartReturnValue(int32_t value);
+    int32_t GetDragStartReturnValue();
 private:
     std::shared_ptr<ItemAdapter<GridItemComponent>> adapter_;
+    int32_t dragStartValue_;
 };
 
 } // namespace ArkUICapiTest

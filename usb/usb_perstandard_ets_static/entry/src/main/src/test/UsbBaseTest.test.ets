@@ -555,14 +555,14 @@ export default function UsbBaseTest() {
     it("USBRequestTargetType001", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
       async (done: () => void): Promise<void> => {
       hilog.info(domain, tag, '%{public}s', '----------------------USBRequestTargetType001---------------------------');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE)).assertEqual('number');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE)).assertEqual('number');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT)).assertEqual('number');
-      hilog.info(domain, tag, `USB_REQUEST_DIR_TO_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER}`);
-      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER)).assertEqual('number');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_DEVICE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_DEVICE)).assertEqual('int');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_INTERFACE: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_INTERFACE)).assertEqual('int');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_ENDPOINT: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_ENDPOINT)).assertEqual('int');
+      hilog.info(domain, tag, `USB_REQUEST_TARGET_OTHER: ${UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER}`);
+      expect(typeof(UsbMgr.USBRequestTargetType.USB_REQUEST_TARGET_OTHER)).assertEqual('int');
       done();
       hilog.info(domain, tag, '%{public}s', 'USBRequestTargetType001 end');
     })

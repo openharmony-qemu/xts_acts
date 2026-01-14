@@ -768,16 +768,28 @@ export default function windowManageTest() {
     it('testSetWindowMaximizeButtonVisible', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) =>  {
       let caseName = 'TestSetWindowMaximizeButtonVisible';
       try {
+        let count:boolean = false;
         windowClass.setWindowTitleButtonVisible(false, false);
         console.info(`${caseName} Succeeded in setting false to display the maximize buttons of main window.`);
         await sleep(1000);
         windowClass.on('windowTitleButtonRectChange', (titleButtonRect) => {
           console.info(`${caseName} Succeeded in enabling the listener for window title buttons area changes. Data: ` + JSON.stringify(titleButtonRect));
-          windowClass.off('windowTitleButtonRectChange');
-          done();
+          count = true;
+          console.info(`${caseName} windowTitleButtonRectChange count: `+ count);
         });
         windowClass.setWindowTitleButtonVisible(true, true);
         console.info(`${caseName} Succeeded in setting true to display the maximize buttons of main window.`);
+        await sleep(1000);
+        console.info(`${caseName}  count: `+ count);
+        if(isFreeWindowMode){
+          expect(count).assertEqual(true);
+          windowClass.off('windowTitleButtonRectChange');
+          done();
+        }else{
+          expect(count).assertEqual(false);
+          windowClass.off('windowTitleButtonRectChange');
+          done();
+        }
       } catch (exception) {
         if (exception.code === 801) {
           console.info(`${caseName} The current device type does not support to set whether to display the maximize buttons of main window.`);

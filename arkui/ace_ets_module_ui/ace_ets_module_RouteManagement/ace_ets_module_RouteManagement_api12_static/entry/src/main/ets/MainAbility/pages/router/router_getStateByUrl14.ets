@@ -17,7 +17,9 @@ import router from '@ohos.router'
 import { Entry, Component, Column, ColumnOptions, Text, Button, ClickEvent } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
 
-import { AgeObj } from '../../common/Utils'
+class AgeObj {
+  age: number = 0
+}
 
 @Entry
 @Component
@@ -31,7 +33,7 @@ struct router_getStateByUrl14 {
       Button('go to next page')
         .id('router_getStateByUrl14_btn')
         .onClick((e:ClickEvent) => {
-          this.getUIContext().getRouter().pushUrl({ url: 'MainAbility/pages/router/router_getStateByUrl14a', params: (new AgeObj(18)).toJSON() })
+          this.getUIContext().getRouter().pushUrl({ url: 'MainAbility/pages/router/router_getStateByUrl14a', params: { age: 18 } as AgeObj })
         })
 
 

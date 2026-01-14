@@ -48,7 +48,7 @@ export default function APIContentTypeTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get APIContentTypeTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("APIContentType" == pages.name)) {
           console.info("get APIContentTypeTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

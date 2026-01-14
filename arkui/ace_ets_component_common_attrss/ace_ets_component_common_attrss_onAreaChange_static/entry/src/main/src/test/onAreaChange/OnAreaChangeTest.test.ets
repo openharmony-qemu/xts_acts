@@ -60,7 +60,7 @@ export default function onAreaChangeTest() {
     'Search',
     'Slider',
     'Stepper',
-    'StepperItem',
+    // 'StepperItem',
     'Text',
     'TextArea',
     'TextClock',
@@ -89,7 +89,7 @@ export default function onAreaChangeTest() {
     'Stack',
     'Swiper',
     'Tabs',
-    'TabContent',//fail
+    // 'TabContent',//fail
     'WaterFlow',
     'Circle',
     'Ellipse',

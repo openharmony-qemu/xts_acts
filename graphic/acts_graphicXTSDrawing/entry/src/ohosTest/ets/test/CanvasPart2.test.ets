@@ -307,7 +307,37 @@ export default function drawingTsCanvasPart2Test() {
         expect(e.code).assertEqual(401);
       }
     })
-
+    /**
+     * @tc.name   testCanvasAttachPenNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_1106
+     * @tc.desc   testCanvasAttachPenNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasAttachPenNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasAttachPenNull';
+      const canvas = new drawing.Canvas(pixel);
+      const pen = new drawing.Pen();
+      pen.setStrokeWidth(5);
+      pen.setColor({alpha: 255, red: 255, green: 0, blue: 0});
+      try {
+        canvas.attachPen(null);
+        console.info(msg + 'attachPen 1 successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `attachPen 1 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.attachPen(undefined);
+        console.info(msg + 'attachPen 2 successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `attachPen 2 errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+    })
     /**
      * @tc.name   testCanvasDttachPenOly
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_1105

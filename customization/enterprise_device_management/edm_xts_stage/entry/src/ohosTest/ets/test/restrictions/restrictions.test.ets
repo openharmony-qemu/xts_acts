@@ -67,6 +67,7 @@ const LABEL_UNMUTE_DEVICE = "unmuteDevice";
 const LABEL_HDC_REMOTE = "hdcRemote";
 const LABEL_VIRTUAL_SERVICE = "virtualService";
 const LABEL_MODIFY_WALLPAPER = "modifyWallpaper";
+const LABEL_USB_SERIAL = "usbSerial";
 
 export default function restrictionsTest() {
   describe('restrictions_test', () => {
@@ -1735,6 +1736,72 @@ function testSetDisallowedPolicy() {
     }
     done();
   });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_0179
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0179
+   * @tc.desc   test restrictions setDisallowedPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_0179", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL, true);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL)).assertTrue();
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL, false);
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_0180
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0180
+   * @tc.desc   test restrictions setDisallowedPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_0180", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL, false);
+      expect(restrictions.getDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL)).assertFalse();
+    } catch (error) {
+      expect(false).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_set_disallowed_policy_0181
+   * @tc.number SUB_CUSTOMIZATION_EDM_SET_DISALLOWED_POLICY_JS_0181
+   * @tc.desc   test restrictions setDisallowedPolicy
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_set_disallowed_policy_0181", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB, true);
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL, true);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 9200010).assertTrue();
+    } finally {
+      restrictions.setDisallowedPolicy(SELFWANT, LABEL_USB, false);
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
 }
 
 function testGetDisallowedPolicy() {
@@ -2190,6 +2257,68 @@ function testGetDisallowedPolicy() {
       expect(false).assertTrue();
     } catch (error) {
       console.info('test_get_disallowed_policy_0115 error 9200002 is expected, actually catch: ' + error.code);
+      expect(error.code == 9200002).assertTrue();
+    } finally {
+      await adminManager.disableAdmin(SELFWANT);
+    }
+    done();
+  });
+
+    /**
+   * @tc.name   test_get_disallowed_policy_0122
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0122
+   * @tc.desc   test restrictions getDisallowedPolicy with invalid admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_0122", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      restrictions.getDisallowedPolicy(INVALID_WANT, LABEL_USB_SERIAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_0123
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0123
+   * @tc.desc   test restrictions getDisallowedPolicy without enable admin
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_0123", Level.LEVEL2, async (done: Function) => {
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_disallowed_policy_0123 error 9200001 is expected, actually catch: ' + error.code);
+      expect(error.code == 9200001).assertTrue();
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_disallowed_policy_0124
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_DISALLOWED_POLICY_JS_0124
+   * @tc.desc   test restrictions getDisallowedPolicy with bad admin type
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_disallowed_policy_0124", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_BYOD);
+    try {
+      restrictions.getDisallowedPolicy(SELFWANT, LABEL_USB_SERIAL);
+      expect(false).assertTrue();
+    } catch (error) {
+      console.info('test_get_disallowed_policy_0124 error 9200002 is expected, actually catch: ' + error.code);
       expect(error.code == 9200002).assertTrue();
     } finally {
       await adminManager.disableAdmin(SELFWANT);

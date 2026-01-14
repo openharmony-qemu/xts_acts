@@ -48,7 +48,7 @@ struct ScrollToIndexForGrid02 {
               .onClick(() => {
                 this.isSmooth = false
                 this.scrollerForGrid.scrollToIndex(66, true, ScrollAlign.CENTER)
-              }).margin(5)
+              })
             Button('item-66-true-start', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -63,7 +63,7 @@ struct ScrollToIndexForGrid02 {
                   this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                   console.info(this.isSmooth + 'isSmooth')
                 },1000)
-              }).margin(5)
+              })
             Button('item-99-false-start', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -71,7 +71,7 @@ struct ScrollToIndexForGrid02 {
               .onClick(() => {
                 this.isSmooth = false
                 this.scrollerItemForGrid.scrollToIndex(99, false, ScrollAlign.START)
-              }).margin(5)
+              })
             Button('item-178-true-start', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -86,7 +86,7 @@ struct ScrollToIndexForGrid02 {
                   this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                   console.info(this.isSmooth + 'isSmooth')
                 },1000)
-              }).margin(5)
+              })
             Button('item-22-true-end', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -94,7 +94,7 @@ struct ScrollToIndexForGrid02 {
               .onClick(() => {
                 this.isSmooth = false
                 this.scrollerItemForGrid.scrollToIndex(22, true, ScrollAlign.END)
-              }).margin(5)
+              })
             Button('item-108-false-end', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -102,7 +102,7 @@ struct ScrollToIndexForGrid02 {
               .onClick(() => {
                 this.isSmooth = false
                 this.scrollerItemForGrid.scrollToIndex(108, false, ScrollAlign.END)
-              }).margin(5)
+              })
             Button('item-100-false-center', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -110,7 +110,7 @@ struct ScrollToIndexForGrid02 {
               .onClick(() => {
                 this.isSmooth = false
                 this.scrollerItemForGrid.scrollToIndex(100, false, ScrollAlign.CENTER)
-              }).margin(5)
+              })
             Button('moreColumns', { type: ButtonType.Normal, stateEffect: true })
               .width('30%')
               .height('5%')
@@ -119,7 +119,7 @@ struct ScrollToIndexForGrid02 {
                 this.isSmooth = false
                 this.scrollerItemForGrid.scrollToIndex(0, false)
                 this.moreItem = !this.moreItem
-              }).margin(5)
+              })
           }
         }
 
@@ -158,7 +158,7 @@ struct ScrollToIndexForGrid02 {
                   .fontSize(16)
                   .backgroundColor(0xF9CF93)
                   .width('95%')
-                  .height(120)
+                  .height('20%')
                   .textAlign(TextAlign.Center)
               }
             }
@@ -174,20 +174,6 @@ struct ScrollToIndexForGrid02 {
           top: 20,
           bottom: 20
         })
-        Column(){
-          Flex({justifyContent:FlexAlign.SpaceBetween}){
-            Button('next page', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(150).height(30)
-              .onClick(() => {
-                router.pushUrl({url:'pages/GridDome01'})
-              })
-            Button('go back', { type: ButtonType.Normal, stateEffect: true })
-              .borderRadius(8).backgroundColor(0x317aff).width(150).height(30)
-              .onClick(() => {
-                router.back()
-              })
-          }
-        }
 
       }
     }.width('100%').height('100%').backgroundColor(0xDCDCDC).padding(20)

@@ -47,7 +47,7 @@ export default function Text_lineSpacingTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get Text_lineSpacingTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("lineSpacing" == pages.name)) {
           console.info("get Text_lineSpacingTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

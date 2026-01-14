@@ -99,17 +99,9 @@ napi_value OHImageSourceNativeCreateFromUriSupp(napi_env env, napi_callback_info
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
     napi_get_undefined(env, &result);
-
-    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 1) {
-        return result;
-    }
-    const size_t maxUrlLen = MAX_BUFFER_SIZE;
-    char url[maxUrlLen];
     size_t urlSize = 0;
-    napi_get_value_string_utf8(env, args[0], url, maxUrlLen, &urlSize);
     OH_ImageSourceNative *imageSource = nullptr;
     Image_ErrorCode errCode;
-
     switch (index) {
     case CASE_INDEX_2:
         errCode = OH_ImageSourceNative_CreateFromUri(nullptr, 0, &imageSource);
@@ -117,7 +109,6 @@ napi_value OHImageSourceNativeCreateFromUriSupp(napi_env env, napi_callback_info
     case CASE_INDEX_3:
         errCode = OH_ImageSourceNative_CreateFromUri(IMAGE_NULLSTRING, urlSize, &imageSource);
         break;
-
     default:
         break;
     }
@@ -133,7 +124,6 @@ napi_value OHImageSourceNativeCreateFromFdSupp(napi_env env, napi_callback_info 
     napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
     int32_t index;
     napi_get_value_int32(env, args[0], &index);
-
     OH_ImageSourceNative *imageSource = nullptr;
     Image_ErrorCode errCode;
     int32_t fd;
@@ -148,7 +138,6 @@ napi_value OHImageSourceNativeCreateFromFdSupp(napi_env env, napi_callback_info 
         break;
     }
     OH_ImageSourceNative_Release(imageSource);
-
     napi_value ret;
     napi_create_int32(env, errCode, &ret);
     return ret;

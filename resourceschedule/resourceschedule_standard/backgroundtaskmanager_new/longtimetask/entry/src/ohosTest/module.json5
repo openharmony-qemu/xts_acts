@@ -47,7 +47,8 @@
           "location",
           "bluetoothInteraction",
           "audioRecording",
-          "dataTransfer"
+          "dataTransfer",
+          "specialScenarioProcessing"
         ]
       }
     ],

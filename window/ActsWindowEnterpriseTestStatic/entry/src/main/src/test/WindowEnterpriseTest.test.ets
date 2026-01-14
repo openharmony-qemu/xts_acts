@@ -166,23 +166,24 @@ export default function WindowEnterpriseTest() {
                     await terminateAbility(caseName);
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
-                    hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
+                    hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
                     await terminateAbility(caseName);
-                    expect(false).assertTrue();
-                    done();
+                    expect(err.message!=null).assertTrue();
+                    if (err.code === 801) {
+                        hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);
+                        done()
+                    } else {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    
                 });
             } catch (err) {
                 err = err as BusinessError;
                 await terminateAbility(caseName);
                 hilog.info(domain, tag,`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-                expect(err.message!=null).assertTrue();
-                if (err.code === 801) {
-                    hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);
-                    done()
-                } else {
-                    expect(false).assertTrue();
-                    done();
-                }
+                expect(false).assertTrue();
+                done();
             }
         });
         

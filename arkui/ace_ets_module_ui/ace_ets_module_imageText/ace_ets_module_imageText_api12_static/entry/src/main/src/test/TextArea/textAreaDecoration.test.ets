@@ -46,7 +46,7 @@ export default function textAreaDecoration() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaDecoration state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaDecoration" == pages.name)) {
           console.info("get textAreaDecoration pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

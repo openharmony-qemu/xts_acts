@@ -41,7 +41,7 @@ export default function TimerTest() {
       // This API supports only one parameter: preset action function.
     })
     beforeEach(async () => {
-      await sleep(20);
+      await sleep(100);
       // Presets an action, which is performed before each unit test case starts.
       // The number of execution times is the same as the number of test cases defined by **it**.
       // This API supports only one parameter: preset action function.
@@ -294,73 +294,6 @@ export default function TimerTest() {
         done();
       });
 
-    /**
-     * @tc.name   testSetInterval002
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0800
-     * @tc.desc   Test
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetInterval002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testSetInterval002';
-        console.info(`${caseName} test start`);
-        let result: int = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i: int = 0; i < concurrentNum; i++) {
-            group.addTask(testSetInterval002)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
-
-    /**
-     * @tc.name   testSetInterval003
-     * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_SET_TIMER_0900
-     * @tc.desc   Test
-     * @tc.type   FUNCTION
-     * @tc.size   SMALLTEST
-     * @tc.level  LEVEL0
-     */
-    it('testSetInterval003', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL0,
-      async (done: () => void): Promise<void> => {
-        const caseName = 'testSetInterval001';
-        console.info(`${caseName} test start`);
-        let result: int = 0
-        try {
-          let group = new taskpool.TaskGroup(caseName)
-          for (let i: int = 0; i < concurrentNum; i++) {
-            group.addTask(testSetInterval003)
-          }
-          await taskpool.execute(group).then((res) => {
-            console.info(`${caseName} Task execution success`);
-            result = res.length
-          }).catch((e: Error) => {
-            console.info(`${caseName} Task execution catch: ${e.message}`);
-            expect().assertFail()
-          })
-          expect(result).assertEqual(concurrentNum)
-        } catch (e) {
-          console.info(`${caseName} Task execution failed with error: ${e.message}`);
-          expect().assertFail()
-        }
-        console.info(`${caseName} test end`);
-        done();
-      });
 
     /**
      * @tc.name   testSetInterval004

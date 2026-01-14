@@ -158,8 +158,7 @@ struct HitTestBehaviorPage {
   onPageShow() {
     console.info('Margin page show called ')
     try {
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       AppStorage.setOrCreate<HitTestMode>('_hitTestBehavior', routerParamOptions.view.testValue.setValue.HitTestMode)
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
@@ -225,9 +224,9 @@ struct HitTestBehaviorPage {
         Blank().backgroundColor(Color.Yellow).applyStyles(this.commonStyle)
       }
     } else if (this.targetView == 'Text') {
-      Text('text1') {
-        Span('span').applyStyles(this.onChildTouchStyle)
-      }.applyStyles(this.commonStyle)
+      // Text('text1') {
+      //   Span('span').applyStyles(this.onChildTouchStyle)
+      // }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Checkbox') {
       Checkbox({ name: 'checkbox1', group: 'checkboxGroup' }).applyStyles(this.commonStyle)
     } else if (this.targetView == 'CheckboxGroup') {

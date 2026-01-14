@@ -61,8 +61,7 @@ struct FlexShrinkPage {
 
   onPageShow() {
     console.info('[FlexShrink] page show called ')
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     AppStorage.setOrCreate<number>('_flexShrink', routerParamOptions.view.testValue.setValue.flexShrink ?? 0)
     AppStorage.setOrCreate<number>('_parentWidth', routerParamOptions.view.testValue.setValue.parentWidth)
     AppStorage.setOrCreate<number>('_parentHeight',  routerParamOptions.view.testValue.setValue.parentHeight)

@@ -13,9 +13,8 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import events_emitter from '@ohos.events.emitter'
+import events_emitter from '@ohos.events.emitter';
 import { RouterParams } from '../../common/Utils';
-import Router from '@system.router'
 import {
   DataReloadOperation,Flex,GridRow,Grid,List,Polyline,Badge,GridRowDirection,GridCol,GridItem,ListItem,ListItemGroup,DataOperationType,Ellipse,Line,Polygon,Path,Rect,Shape,Shape,ColumnSplit,Counter,Refresh,RelativeContainer,AlignRuleOption,Entry,Select,Select,Stepper,TextArea,TextClock,TextInput,TextPicker,
   Toggle,
@@ -929,8 +928,7 @@ struct ZIndexPage {
     console.info('zIndex translate page show called ')
     try {
       console.log('aboutToAppear routerParamOptions before' + this.targetView)
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth

@@ -88,23 +88,28 @@ struct commonEventTest1 {
       Text(this.str1).id('commonEventTest1_text1')
       Text(this.str2).id('commonEventTest1_text2')
 
-      Button('getOnMouse')
-        .onClick(()=>{
-          this.str1 = this.myNodeController.text1
-        })
-        .id('commonEventTest1_getOnMouse')
+      Row() {
+        Button('getOnMouse')
+          .onClick(()=>{
+            this.str1 = this.myNodeController.text1
+          })
+          .id('commonEventTest1_getOnMouse')
+          .width('30%')
 
-      Button('getOnSizeChange')
-        .onClick(()=>{
-          this.str2 = this.myNodeController.text2
-        })
-        .id('commonEventTest1_getOnSizeChange')
+        Button('getOnSizeChange')
+          .onClick(()=>{
+            this.str2 = this.myNodeController.text2
+          })
+          .id('commonEventTest1_getOnSizeChange')
+          .width('30%')
 
-      Button('changeSize')
-        .onClick(()=>{
-          this.myNodeController.changeNode()
-        })
-        .id('commonEventTest1_changeSize')
+        Button('changeSize')
+          .onClick(()=>{
+            this.myNodeController.changeNode()
+          })
+          .id('commonEventTest1_changeSize')
+          .width('30%')
+      }
 
       NodeContainer(this.myNodeController)
         .id('commonEventTest1_node')

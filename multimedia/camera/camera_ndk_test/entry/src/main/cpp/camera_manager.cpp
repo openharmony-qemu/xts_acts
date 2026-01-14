@@ -1598,6 +1598,47 @@ Camera_ErrorCode NDKCamera::CameraInputUnRegisterCallback(void)
     return ret_;
 }
 
+void OcclusionDetectionCallback(const Camera_Input* cameraInput,
+    Camera_OcclusionDetectionResult occlusionDetectionResult)
+{
+    if (occlusionDetectionResult.isCameraOccluded) {
+        LOG("isCameraOccluded true");
+    }
+    if (occlusionDetectionResult.isCameraLensDirty) {
+        LOG("isCameraLensDirty true");
+    }
+}
+
+Camera_ErrorCode NDKCamera::CameraInputRegisterOcclusionDetectionCallback(void)
+{
+    LOG("CameraOcclusionDetectChangeTest begin.");
+    if (cameraInput_ == nullptr) {
+        LOG("ndkXTS CameraInput is nullptr");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    ret_ = OH_CameraInput_RegisterOcclusionDetectionCallback(
+        cameraInput_, OcclusionDetectionCallback);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_RegisterOcclusionDetectionCallback failed.");
+    }
+    return ret_;
+}
+
+Camera_ErrorCode NDKCamera::CameraInputUnRegisterOcclusionDetectionCallback(void)
+{
+    LOG("CameraOcclusionDetectChangeTest begin.");
+    if (cameraInput_ == nullptr) {
+        LOG("ndkXTS CameraInput is nullptr");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    ret_ = OH_CameraInput_UnregisterOcclusionDetectionCallback(
+        cameraInput_, OcclusionDetectionCallback);
+    if (ret_ != CAMERA_OK) {
+        LOG("OH_CameraInput_UnregisterOcclusionDetectionCallback failed.");
+    }
+    return ret_;
+}
+
 // PreviewOutput Callback
 void PreviewOutputOnFrameStart(Camera_PreviewOutput *previewOutput)
 {

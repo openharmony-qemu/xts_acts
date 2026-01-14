@@ -201,6 +201,9 @@ import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfigu
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
 import ImageLensSerialNumberSupp from './image/ImageExifLensSerialNumber.test';
 import ImageLensSpecificationSupp from './image/ImageExifLensSpecification.test';
+import ImageExifOECFSupp from './image/ImageExifOECF.test';
+import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripOffsets.test';
+import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -386,4 +389,7 @@ export default function testsuite() {
   ImageDescriptionSupp();
   ImageLensSpecificationSupp();
   ImageLensSerialNumberSupp();
+  ImageExifOECFSupp();
+  ImageBitsPerSampleStripOffsetsSupp();
+  ImageSourceMetadataSupp();
 }

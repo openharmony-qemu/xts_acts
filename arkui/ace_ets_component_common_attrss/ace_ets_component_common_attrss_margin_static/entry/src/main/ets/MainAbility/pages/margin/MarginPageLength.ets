@@ -157,9 +157,9 @@ struct MarginPageLength {
   onPageShow() {
     console.info('Margin page show called ')
     AppStorage.setOrCreate<number | string | Margin>('_margin', 0.0)
+    this.getUIContext().getRouter().getParams() as RouterParams
     try {
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       console.log('routerParamOptions==========================' + JSON.stringify(routerParamOptions))
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView

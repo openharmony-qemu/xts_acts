@@ -52,8 +52,7 @@ struct StateStylesPageTwo {
   onPageShow() {
     console.info('StateStylesPageTwo show called ')
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
     } catch (error: Error) {

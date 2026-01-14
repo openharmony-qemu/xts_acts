@@ -104,6 +104,13 @@ export default function colorFilterTest() {
         console.info(msg + ` createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect().assertFail();
       }
+      try {
+        drawing.ColorFilter.createBlendModeColorFilter(0xffff0000, drawing.BlendMode.SRC);
+        console.info(msg + ' 0xffff0000 createBlendModeColorFilter successed');
+      } catch (e) {
+        console.info(msg + ` 0xffff0000 createBlendModeColorFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
     });
 
     /**

@@ -50,7 +50,7 @@ export default function underlineColor() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get underlineColor state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("underlineColor" == pages.name)) {
           console.info("get underlineColor pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

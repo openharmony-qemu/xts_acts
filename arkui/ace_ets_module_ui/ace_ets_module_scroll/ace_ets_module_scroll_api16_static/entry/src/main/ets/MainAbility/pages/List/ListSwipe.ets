@@ -148,7 +148,7 @@ struct ListSwipe {
         .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           end: {
-            //builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
             // without onAction, no deleteArea
           },
           edgeEffect: SwipeEdgeEffect.Spring,
@@ -182,7 +182,7 @@ struct ListSwipe {
         .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           start: {
-            //builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemStart)),
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemStart)),
             actionAreaDistance: 5,
             onStateChange: (state: SwipeActionState) => {
               if (state == SwipeActionState.COLLAPSED) {
@@ -223,7 +223,7 @@ struct ListSwipe {
         .transition(TransitionEffect.OPACITY.animation({ duration: 2000, curve: Curve.Ease }))
         .swipeAction({
           start: {
-            //builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
+            builderComponent: new ComponentContent(this.uiContext, wrapBuilder<CustomBuilder>(itemEnd)),
             actionAreaDistance: 5,
             // with onAction
             onAction: () => {

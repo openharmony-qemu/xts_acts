@@ -488,14 +488,13 @@ export default function GraphicTextAPI23() {
      * @tc.level  LEVEL0
      */
     it('GetFontUnicodeSet_API23_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let promise = text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans.ttf", 0)
-      promise.then((unicodeSet) => {
+      text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans.ttf", 0).then((unicodeSet) => {
         for (let index = 0; index < unicodeSet.length; index++) {
           console.info(unicodeSet[index].toString())
         }
         expect(unicodeSet.length).assertLarger(0);
+        done();
       })
-      done();
     })
 
     /**
@@ -507,8 +506,7 @@ export default function GraphicTextAPI23() {
      * @tc.level  LEVEL0
      */
     it('GetFontUnicodeSet_API23_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let promise = text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans.ttf", 1)
-      promise.then((unicodeSet) => {
+      text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans.ttf", 1).then((unicodeSet) => {
         expect(unicodeSet.length).assertEqual(0);
         done();
       })
@@ -523,8 +521,7 @@ export default function GraphicTextAPI23() {
      * @tc.level  LEVEL0
      */
     it('GetFontUnicodeSet_API23_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let promise = text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans123.ttf", 0)
-      promise.then((unicodeSet) => {
+      text.getFontUnicodeSet("file:///system/fonts/HarmonyOS_Sans123.ttf", 0).then((unicodeSet) => {
         expect(unicodeSet.length).assertEqual(0);
         done();
       })
@@ -539,8 +536,7 @@ export default function GraphicTextAPI23() {
      * @tc.level  LEVEL0
      */
     it('GetFontUnicodeSet_API23_0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let promise = text.getFontUnicodeSet("file:///system/fonts/NotoSansCJK-Regular.ttc", 1)
-      promise.then((unicodeSet) => {
+      text.getFontUnicodeSet("file:///system/fonts/NotoSansCJK-Regular.ttc", 1).then((unicodeSet) => {
         expect(unicodeSet.length).assertLarger(0);
         done();
       })
@@ -555,8 +551,7 @@ export default function GraphicTextAPI23() {
      * @tc.level  LEVEL0
      */
     it('GetFontUnicodeSet_API23_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let promise = text.getFontUnicodeSet("file:///system/fonts/NotoSansCJK-Regular.ttc", 0)
-      promise.then((unicodeSet) => {
+      text.getFontUnicodeSet("file:///system/fonts/NotoSansCJK-Regular.ttc", 0).then((unicodeSet) => {
         expect(unicodeSet.length).assertLarger(0);
         done();
       })
@@ -571,8 +566,7 @@ export default function GraphicTextAPI23() {
      * @tc.level  LEVEL0
      */
     it('GetFontUnicodeSet_API23_0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
-      let promise = text.getFontUnicodeSet($rawfile('HarmonyOS_Sans.ttf'), 0)
-      promise.then((unicodeSet) => {
+      text.getFontUnicodeSet($rawfile('HarmonyOS_Sans.ttf'), 0).then((unicodeSet) => {
         expect(unicodeSet.length).assertLarger(0);
         done();
       })
@@ -664,5 +658,49 @@ export default function GraphicTextAPI23() {
       done();
     })
 
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_2100
+     * @tc.number testLoadFontSyncWithCheck_2100
+     * @tc.desc   text loadFontWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      await fontCollection.loadFontWithCheck(fontFamily, 'file:///dev/tun', 0)
+        .then((data) => {
+          console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          expect().assertFail();
+        }).catch((error: BusinessError) => {
+          console.error(`www data Failed to do loadFontWithCheck, error: ${JSON.stringify(error)} message: ${error.message}`);
+          expect(Number(error.code) == 25900003).assertTrue();
+        });
+      done();
+    })
+
+    /**
+     * @tc.name   testLoadFontSyncWithCheck_2200
+     * @tc.number testLoadFontSyncWithCheck_2200
+     * @tc.desc   text loadFontSyncWithCheck
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testLoadFontSyncWithCheck_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
+      let fontFamily: string = 'family';
+      try {
+        fontCollection.loadFontSyncWithCheck(fontFamily, $rawfile('empty.ttf'), 0);
+        console.info('www data success to do loadFontSyncWithCheck');
+        expect().assertFail();
+      } catch (e) {
+        console.error(`www data Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
+        expect(Number(e.code) == 25900007).assertTrue();
+      }
+      done();
+    })
+    
   })
 }

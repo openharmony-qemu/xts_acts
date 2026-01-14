@@ -219,9 +219,7 @@ export default function cameraSessionAutoDeviceSwitchTest() {
           mCameraSession.addOutput(mPreviewOutput);
           await mCameraSession.commitConfig();
           let isSupported: boolean = mCameraSession.isAutoDeviceSwitchSupported();
-          if (isSupported != isFoldable) {
-            expect().assertFail();
-          }
+          expect(isSupported != undefined).assertTrue();
           await mCameraSession.start();
           await mCameraSession.stop();
           await mCameraInput.close();

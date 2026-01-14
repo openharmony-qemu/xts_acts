@@ -45,74 +45,13 @@ let tag: string = 'testTag';
 let testAbilityContext: common.UIAbilityContext;
 const waitUiReadyMs = 1000;
 
-class DataObj implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data3: number[];
-
-  constructor() {
-    this.data3 = [0];
-  }
-
-  constructor(arr: number[]) {
-    this.data3 = arr;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    let arr = new Array<jsonx.JsonElement>();
-    for (let i = 0; i < this.data3.length; ++i) {
-      arr.push(jsonx.JsonElement.createDouble(this.data3[i]));
-    }
-    let arrJson = jsonx.JsonElement.createArray(arr);
-    root.set('data3', arrJson);
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    let arrJson = jsonElem.tryAsArray();
-    if (!arrJson) {
-      this.data3 = new Array<number>();
-      return;
-    }
-    let arr = new Array<number>();
-    for (let i = 0; i < arrJson!.length; i++) {
-      let val = arrJson![i].tryAsDouble();
-      if (val) {
-        arr.push(val);
-      }
-    }
-    this.data3 = arr;
-  }
+class MyParams {
+  data1: string = '';
+  data2: DataObj = {};
 }
 
-class MyParams implements jsonx.JsonElementDeserializable, jsonx.JsonElementSerializable {
-  data1: string;
-  data2: DataObj;
-
-  constructor() {
-    this.data1 = "";
-    this.data2 = new DataObj();
-  }
-
-  constructor(data1: string, data2: DataObj) {
-    this.data1 = data1;
-    this.data2 = data2;
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = new Map<string, jsonx.JsonElement>();
-    root.set('data1', jsonx.JsonElement.createString(this.data1))
-    root.set('data2', this.data2.toJSON());
-    return jsonx.JsonElement.createObject(root)
-  }
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.tryGetString('data1');
-    let data2 = jsonElem.tryGetElement('data2');
-    if (data2) {
-      this.data2 = new DataObj();
-      this.data2.fromJSON(data2!);
-    }
-  }
+class DataObj {
+  data3: Array<number> = [0];
 }
 
 export default function ApiCommponentAddJsunit() {
@@ -135,7 +74,12 @@ export default function ApiCommponentAddJsunit() {
           console.info("ApiCommponentAddJsunit state success " + JSON.stringify(pages.name));
           routerAlp.pushUrl({
             url: 'MainAbility/pages/Scroll/loadingprogrees_add',
-            params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+            params: {
+              data1: 'message',
+              data2: {
+                data3: [123, 456, 789]
+              }
+            } as MyParams
           }).then(() => {
             // success
           })
@@ -164,7 +108,12 @@ it('apiCommponentAddJsunit_static_0100', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/loadingprogrees_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       })
@@ -194,7 +143,12 @@ it('apiCommponentAddJsunit_static_0200', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/list_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -237,7 +191,12 @@ it('apiCommponentAddJsunit_static_0300', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/grid_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -270,7 +229,12 @@ it('apiCommponentAddJsunit_static_0400', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/scroll_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -303,7 +267,12 @@ it('apiCommponentAddJsunit_static_0500', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/search_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -331,7 +300,12 @@ it('apiCommponentAddJsunit_static_0600', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/swipe_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -361,7 +335,12 @@ it('apiCommponentAddJsunit_static_0700', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/textArea_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -389,7 +368,12 @@ it('apiCommponentAddJsunit_static_0800', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/textinput_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -418,7 +402,12 @@ it('apiCommponentAddJsunit_static_1000', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/navigation_add',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -446,7 +435,12 @@ it('apiCommponentAddJsunit_static_1100', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/messureSize',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -495,7 +489,12 @@ it('apiCommponentAddJsunit_static_1300', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/scroll_addattrs',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -529,7 +528,12 @@ it('apiCommponentAddJsunit_static_1400', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/listItemAddgroup',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -557,7 +561,12 @@ it('apiCommponentAddJsunit_static_1500', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/navrouteradd',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -585,7 +594,12 @@ it('apiCommponentAddJsunit_static_1600', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/animateAdd',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -614,7 +628,12 @@ it('apiCommponentAddJsunit_static_1700', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/bindConver',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -643,7 +662,12 @@ it('apiCommponentAddJsunit_static_1800', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/common_ets_api',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -672,7 +696,12 @@ it('apiCommponentAddJsunit_static_1900', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/commonAdd',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -701,7 +730,12 @@ it('apiCommponentAddJsunit_static_2000', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/createBuilderadd',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -729,7 +763,12 @@ it('apiCommponentAddJsunit_static_2100', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/dragAdd',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -758,7 +797,12 @@ it('apiCommponentAddJsunit_static_2200', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/TouchAdd',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -787,7 +831,12 @@ it('apiCommponentAddJsunit_static_2300', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/navition3',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -824,7 +873,12 @@ it('apiCommponentAddJsunit_static_2400', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/richEditor',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -852,7 +906,12 @@ it('apiCommponentAddJsunit_static_2500', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/richEditorCustomKeyBoard',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {
@@ -898,7 +957,12 @@ it('apiCommponentAddJsunit_static_2700', Level.LEVEL0, async (done: () => void):
       routerAlp.clear();
       routerAlp.pushUrl({
         url: 'MainAbility/pages/Scroll/lifecycle',
-        params: (new MyParams('message', new DataObj([123, 456, 789]))).toJSON()
+        params: {
+          data1: 'message',
+          data2: {
+            data3: [123, 456, 789]
+          }
+        } as MyParams
       }).then(() => {
         // success
       }).catch((err: Error) => {

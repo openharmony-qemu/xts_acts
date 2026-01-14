@@ -56,6 +56,7 @@ import getUIContextApi05 from './ImageGetUIContext/getUIContextApi05.test';
 import getUIContextApi06 from './ImageGetUIContext/getUIContextApi06.test';
 import getUIContextApi07 from './ImageGetUIContext/getUIContextApi07.test';
 import blendNodeTest from './BlendModeTest/blendNodeTest.test';
+import ImageAntialiasedTest from './ImageAntialiasedTest/ImageAntialiased.test';
 
 export default function testsuite() {
   getUIContextApi01();
@@ -102,4 +103,5 @@ export default function testsuite() {
   ImageLoaderTest();
   BorderImageTest();
   blendNodeTest();
+  ImageAntialiasedTest();
 }

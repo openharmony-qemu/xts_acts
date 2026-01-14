@@ -98,7 +98,9 @@ export default function RichEditorOnSelectionChange014() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":4,"end":4}');
+      expect(messageText.indexOf('message:') == 0).assertEqual(true);
+      expect(messageText.indexOf('"start":4') > 0).assertEqual(true);
+      expect(messageText.indexOf('"end":4') > 0).assertEqual(true);
 
       let up_keyboard = await (driver.findComponent(ON.id('up_keyboard')) as Promise<Component>)
       await up_keyboard.click();

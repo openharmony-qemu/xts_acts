@@ -62,7 +62,7 @@ struct ScrollToIndexForGrid03 {
                 this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                 console.info(this.isSmooth + 'isSmooth')
               },1000)
-            }).margin(10)
+            })
           Button('98-true-Start', { type: ButtonType.Normal, stateEffect: true })
             .width('35%')
             .height('5%')
@@ -77,7 +77,7 @@ struct ScrollToIndexForGrid03 {
                 this.isSmooth = (yOffsetStart == yOffsetEnd) ? false : true;
                 console.info(this.isSmooth + 'isSmooth')
               },1000)
-            }).margin(10)
+            })
           Button('128-true-end', { type: ButtonType.Normal, stateEffect: true })
             .width('35%')
             .height('5%')
@@ -93,7 +93,7 @@ struct ScrollToIndexForGrid03 {
                 console.info(this.isSmooth + 'isSmooth')
               },1000)
 
-            }).margin(10)
+            })
           Button('22-false-center', { type: ButtonType.Normal, stateEffect: true })
             .width('35%')
             .height('5%')
@@ -101,7 +101,7 @@ struct ScrollToIndexForGrid03 {
             .onClick(() => {
               this.isSmooth = false
               this.scrollerForGrid.scrollToIndex(22, false, ScrollAlign.CENTER)
-            }).margin(10)
+            })
         }
       }
       Text('scroll').fontColor(0xCCCCCC).fontSize(9).width('90%')

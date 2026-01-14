@@ -48,7 +48,7 @@ export default function textInputMaxFontSize() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputMaxFontSize state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputMaxFontSize" == pages.name)) {
           console.info("get textInputMaxFontSize pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

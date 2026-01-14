@@ -66,9 +66,11 @@ export default function AbilityDelegatorStageStaticTest() {
           await Utils.msSleep(2000);
 
           expect(isAbilityCreated).assertTrue();
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          expect().assertFail();
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+          }
         }
         done();
         hilog.info(domain, tag, `${itName} end`);
@@ -121,10 +123,12 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} moveAbilityToBackground`);
             const context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
             await context.moveAbilityToBackground()
-              .catch((err: Error): void => {
-                hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
-                if(err?.code == 16000061) {
-                  done();
+              .catch((err): void => {
+                if(err instanceof BusinessError){
+                    hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
+                    if(err?.code == 16000061) {
+                      done();
+                    }
                 }
               });
             await Utils.msSleep(2000);
@@ -133,11 +137,13 @@ export default function AbilityDelegatorStageStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          expect().assertFail();
-          done();
-          hilog.info(domain, tag, `${itName} end`);
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+          }
         }
       })
 
@@ -187,26 +193,29 @@ export default function AbilityDelegatorStageStaticTest() {
 
             done();
             hilog.info(domain, tag, `${itName} end`);
-          }).catch((e: Error) => {
-            const err = e as BusinessError;
-            hilog.info(domain, tag, `${itName} removeAbilityMonitor promise fail error code: ${err?.code} msg: ${err?.message}`);
-            if(err?.code == 16000061) {
-              done();
-            } else {
-              expect().assertFail();
-              done();
+          }).catch((e) => {
+            if (e instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} removeAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
+                if(e?.code == 16000061) {
+                  done();
+                } else {
+                  expect().assertFail();
+                  done();
+                }
+                hilog.info(domain, tag, `${itName} end`);
             }
-            hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          if(err?.code == 16000061) {
-            done();
-          } else {
-            expect().assertFail();
-            done();
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              if(err?.code == 16000061) {
+                done();
+              } else {
+                expect().assertFail();
+                done();
+              }
+              hilog.info(domain, tag, `${itName} end`);
           }
-          hilog.info(domain, tag, `${itName} end`);
         }
       })
 
@@ -254,7 +263,7 @@ export default function AbilityDelegatorStageStaticTest() {
           await Utils.msSleep(2000);
 
           expect(isOnBackground).assertFalse();
-        } catch (err: BusinessError) {
+        } catch (err) {
           hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
           if(err?.code == 16000061) {
             done();
@@ -319,7 +328,7 @@ export default function AbilityDelegatorStageStaticTest() {
             expect(isOnBackground).assertTrue();
             done();
             hilog.info(domain, tag, `${itName} end`);
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
             expect().assertFail();
             done();
@@ -380,7 +389,7 @@ export default function AbilityDelegatorStageStaticTest() {
             expect(isOnBackground).assertTrue();
             done();
             hilog.info(domain, tag, `${itName} end`);
-          } catch (err: BusinessError) {
+          } catch (err) {
             hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
             expect().assertFail();
             done();
@@ -420,13 +429,14 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
             abilityDelegator.waitAbilityMonitor(monitor, 10000).then(() => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
-            }).catch((e: Error) => {
-              const err = e as BusinessError;
-              hilog.info(domain, tag,
-                `${itName} waitAbilityMonitor promise fail error code: ${err?.code} msg: ${err?.message}`);
-              expect().assertFail();
-              done();
-              hilog.info(domain, tag, `${itName} end`);
+            }).catch((e) => {
+              if (e instanceof BusinessError){
+                  hilog.info(domain, tag,
+                    `${itName} waitAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
+                  expect().assertFail();
+                  done();
+                  hilog.info(domain, tag, `${itName} end`);
+              }
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
@@ -442,11 +452,13 @@ export default function AbilityDelegatorStageStaticTest() {
 
             done();
             hilog.info(domain, tag, `${itName} end`);
-          } catch (err: BusinessError) {
-            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
           }
         }
       })
@@ -482,13 +494,14 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} waitAbilityMonitor`);
             abilityDelegator.waitAbilityMonitor(monitor).then(() => {
               hilog.info(domain, tag, `${itName} waitAbilityMonitor promise success`);
-            }).catch((e: Error) => {
-              const err = e as BusinessError;
-              hilog.info(domain, tag,
-                `${itName} waitAbilityMonitor promise fail error code: ${err?.code} msg: ${err?.message}`);
-              expect().assertFail();
-              done();
-              hilog.info(domain, tag, `${itName} end`);
+            }).catch((e) => {
+              if(e instanceof BusinessError){
+                  hilog.info(domain, tag,
+                    `${itName} waitAbilityMonitor promise fail error code: ${e?.code} msg: ${e?.message}`);
+                  expect().assertFail();
+                  done();
+                  hilog.info(domain, tag, `${itName} end`);
+              }
             })
 
             hilog.info(domain, tag, `${itName} start ${monitorAbilityName}`);
@@ -503,11 +516,13 @@ export default function AbilityDelegatorStageStaticTest() {
             expect(isOnBackground).assertTrue();
             done();
             hilog.info(domain, tag, `${itName} end`);
-          } catch (err: BusinessError) {
-            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
           }
         }
       })
@@ -548,11 +563,13 @@ export default function AbilityDelegatorStageStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          expect().assertFail();
-          done();
-          hilog.info(domain, tag, `${itName} end`);
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+          }
         }
       })
 
@@ -608,9 +625,11 @@ export default function AbilityDelegatorStageStaticTest() {
             expect(isOnBackground).assertTrue();
             done();
             hilog.info(domain, tag, `${itName} end`);
-          } catch (err: BusinessError) {
-            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+            }
           }
         }
       })
@@ -658,18 +677,21 @@ export default function AbilityDelegatorStageStaticTest() {
               expect(isOnBackground).assertTrue();
               done();
               hilog.info(domain, tag, `${itName} end`);
-            }).catch((e: Error) => {
-              const err = e as BusinessError;
-              hilog.info(domain, tag,
-                `${itName} doAbilityForeground fail error code: ${err?.code} msg: ${err?.message}`);
-              expect().assertFail();
-              hilog.info(domain, tag, `${itName} end`);
+            }).catch((e) => {
+              if(e instanceof BusinessError){
+                  hilog.info(domain, tag,
+                    `${itName} doAbilityForeground fail error code: ${e?.code} msg: ${e?.message}`);
+                  expect().assertFail();
+                  hilog.info(domain, tag, `${itName} end`);
+              }
             })
-          } catch (err: BusinessError) {
-            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
           }
         }
       })
@@ -713,17 +735,20 @@ export default function AbilityDelegatorStageStaticTest() {
 
               done();
               hilog.info(domain, tag, `${itName} end`);
-            }).catch((e: Error) => {
-              const err = e as BusinessError;
-              hilog.info(domain, tag, `${itName} doAbilityBackground fail error code: ${err?.code} msg: ${err?.message}`);
-              expect().assertFail();
-              hilog.info(domain, tag, `${itName} end`);
+            }).catch((e) => {
+              if(e instanceof BusinessError){
+                  hilog.info(domain, tag, `${itName} doAbilityBackground fail error code: ${e?.code} msg: ${e?.message}`);
+                  expect().assertFail();
+                  hilog.info(domain, tag, `${itName} end`);
+              }
             })
-          } catch (err: BusinessError) {
-            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+          } catch (err) {
+            if(err instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
           }
         }
       })
@@ -773,10 +798,11 @@ export default function AbilityDelegatorStageStaticTest() {
 
             const isOnBackground = AppStorage.get<boolean>('onBackground') as boolean;
             expect(isOnBackground).assertTrue();
-          } catch (e: Error) {
-            const err = e as BusinessError;
-            hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
+          } catch (e) {
+            if(e instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} error code: ${e?.code} msg: ${e?.message}`);
+                expect().assertFail();
+            }
           }
           done();
           hilog.info(domain, tag, `${itName} end`);
@@ -803,18 +829,22 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} print success`);
             done();
             hilog.info(domain, tag, `${itName} end`);
-          }).catch((e: Error) => {
-            const err = e as BusinessError;
-            hilog.info(domain, tag, `${itName} print success fail error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+          }).catch((e) => {
+            if(e instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} print success fail error code: ${e?.code} msg: ${e?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+
+            }
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          expect().assertFail();
-          done();
-          hilog.info(domain, tag, `${itName} end`);
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+          }
         }
       })
 
@@ -848,16 +878,19 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} print success`);
             done();
             hilog.info(domain, tag, `${itName} end`);
-          }).catch((e: Error) => {
-            const err = e as BusinessError;
-            hilog.info(domain, tag, `${itName} print success fail error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+          }).catch((e) => {
+            if(e instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} print success fail error code: ${e?.code} msg: ${e?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
           })
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          expect().assertFail();
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+          }
         }
         done();
         hilog.info(domain, tag, `${itName} end`);
@@ -893,17 +926,20 @@ export default function AbilityDelegatorStageStaticTest() {
             hilog.info(domain, tag, `${itName} print success`);
             done();
             hilog.info(domain, tag, `${itName} end`);
-          }).catch((e: Error) => {
-            const err = e as BusinessError;
-            hilog.info(domain, tag, `${itName} print success fail error code: ${err?.code} msg: ${err?.message}`);
-            expect().assertFail();
-            done();
-            hilog.info(domain, tag, `${itName} end`);
+          }).catch((e) => {
+            if(e instanceof BusinessError){
+                hilog.info(domain, tag, `${itName} print success fail error code: ${e?.code} msg: ${e?.message}`);
+                expect().assertFail();
+                done();
+                hilog.info(domain, tag, `${itName} end`);
+            }
           })
           hilog.info(domain, tag, `${itName} print success`);
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          expect().assertFail();
+        } catch (err) {
+          if(err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+          }
         }
         done();
         hilog.info(domain, tag, `${itName} end`);
@@ -938,11 +974,13 @@ export default function AbilityDelegatorStageStaticTest() {
             done();
             hilog.info(domain, tag, `${itName} end`);
           });
-        } catch (err: BusinessError) {
-          hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
-          expect().assertFail();
-          done();
-          hilog.info(domain, tag, `${itName} end`);
+        } catch (err) {
+          if (err instanceof BusinessError){
+              hilog.info(domain, tag, `${itName} error code: ${err?.code} msg: ${err?.message}`);
+              expect().assertFail();
+              done();
+              hilog.info(domain, tag, `${itName} end`);
+          }
         }
       })
   })

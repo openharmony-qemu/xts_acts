@@ -15,8 +15,10 @@
 
 import motionTest from "./MotionTestStatic.test";
 import deviceStatusTest from "./DeviceStatusStatic.test";
+import metadataBindingTest from "./MetadataBindingStatic.test";
 
 export default function testsuite() {
   motionTest();
   deviceStatusTest();
+  metadataBindingTest();
 }
