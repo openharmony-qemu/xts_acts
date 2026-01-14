@@ -37,7 +37,7 @@ export default function preferencesNdkEtsTest() {
     })
 
     /**
-     * @tc.name     OH_PreferencesOption_Create_0100
+     * @tc.name     OH_Preferences_Delete_Value0100
      * @tc.number   SUB_DistributedData_OH_Preferences_SDK_Ndk_APITest_0100
      * @tc.desc     OH_Preferences_DeletePreferences with null and invalid parameters
      * @tc.type     FUNCTION
@@ -52,7 +52,7 @@ export default function preferencesNdkEtsTest() {
     });
 
     /**
-     * @tc.name     OH_PreferencesOption_Create_0100
+     * @tc.name     OH_Preferences_Delete_Value0200
      * @tc.number   SUB_DistributedData_OH_Preferences_SDK_Ndk_APITest_0200
      * @tc.desc     OH_Preferences_DeletePreferences with valid parameters
      * @tc.type     FUNCTION
@@ -61,7 +61,7 @@ export default function preferencesNdkEtsTest() {
      */
     it('OH_Preferences_Delete_Value0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let res = PreferenceNdk.OH_Preferences_Delete_Value0200();
-      console.info(TAG + "OH_PreferencesOption_Create_0100 res=" + res );
+      console.info(TAG + "OH_Preferences_Delete_Value0200 res=" + res );
       expect(res).assertEqual(0);
       done();
     });
