@@ -5,7 +5,8 @@
     "testability/pages/WebViewGetAcceptType",
     "testability/pages/WebViewGetMode",
     "testability/pages/WebViewContextMenuMediaType",
-    "testability/pages/WebViewOnShowFileSelector"
+    "testability/pages/WebViewOnShowFileSelector",
+    "testability/pages/WebViewRequestPasswordAutoFill"
   ]
 }
 
