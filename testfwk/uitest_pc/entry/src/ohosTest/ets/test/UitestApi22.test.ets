@@ -221,5 +221,96 @@ export default function UiTest() {
             expect(isCallBack).assertTrue();
             console.log(`${TestTag}, testWindowChangeResizeOptionsMonitor end`);
         })
+
+        /**
+         * @tc.name   testWindowResizeB_split1
+         * @tc.number UiTest_Uiwindow0180
+         * @tc.desc   resize this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testWindowResizeB_split1', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            await window1.split()
+            await driver.delayMs(waitUiReadyMs*2)
+            let scbCom = await driver.findComponent(ON.id('scb_block_cover'))
+            await driver.delayMs(waitUiReadyMs);
+            if (scbCom != null) {
+                await startAbility('com.uitest.acts', 'EntryAbility')
+                await driver.delayMs(waitUiReadyMs)
+            }else {
+                let testLabel = await driver.findComponent(ON.text('test label'));
+                await driver.delayMs(waitUiReadyMs);
+                await testLabel.click()
+                await driver.delayMs(waitUiReadyMs)
+            }
+            await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+            let window2 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            let bounds1 = await window2.getBounds()
+            try {
+                await window2.resize(600, bounds1.bottom - bounds1.top, ResizeDirection.RIGHT)
+                await driver.delayMs(waitUiReadyMs*5)
+                let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+                let bounds2 = await window3.getBounds()
+                expect(bounds1.right != bounds2.right).assertTrue()
+            } catch (error) {
+                console.log('testWindowMinimize_split1 error is ' + error)
+                expect(error.code == WindowsErrorCode).assertTrue()
+            }
+            await stopApplication('com.uitestScene.acts')
+            let resumeWindow = await driver.findWindow({ bundleName: 'com.uitest.acts' })
+            if (resumeWindow != null) {
+                await resumeWindow.resume()
+            }
+        })
+
+        /**
+         * @tc.name   testWindowResizeB_split2
+         * @tc.number UiTest_Uiwindow0190
+         * @tc.desc   resize this UiWindow.
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testWindowResizeB_split2', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async () => {
+            await startAbility('com.uitestScene.acts', 'com.uitestScene.acts.MainAbility')
+            await driver.delayMs(waitUiReadyMs)
+            let window1 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+            await window1.split()
+            await driver.delayMs(waitUiReadyMs*2)
+            let scbCom = await driver.findComponent(ON.id('scb_block_cover'))
+            await driver.delayMs(waitUiReadyMs);
+            if (scbCom != null) {
+                await startAbility('com.uitest.acts', 'EntryAbility')
+                await driver.delayMs(waitUiReadyMs*2)
+                await driver.setDisplayRotation(DisplayRotation.ROTATION_90)
+                await driver.delayMs(waitUiReadyMs*2)
+            }else {
+                let testLabel = await driver.findComponent(ON.text('test label'));
+                await driver.delayMs(waitUiReadyMs);
+                await testLabel.click()
+                await driver.delayMs(waitUiReadyMs)
+            }
+            let window2 = await driver.findWindow({ bundleName: 'com.uitest.acts' })
+            let bounds1 = await window2.getBounds()
+            try {
+                await window2.resize(600, bounds1.bottom - bounds1.top, ResizeDirection.LEFT)
+                await driver.delayMs(waitUiReadyMs)
+                let window3 = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
+                let bounds2 = await window3.getBounds()
+                expect(bounds1.right != bounds2.right).assertTrue()
+            } catch (error) {
+                console.log('testWindowMinimize_split1 error is ' + error)
+                expect(error.code == WindowsErrorCode).assertTrue()
+            }
+            await stopApplication('com.uitestScene.acts')
+            let resumeWindow = await driver.findWindow({ bundleName: 'com.uitest.acts' })
+            if (resumeWindow != null) {
+                await resumeWindow.resume()
+            }
+        })
     })
 }
