@@ -58,6 +58,7 @@ import TextControllerTest from './TextControllerTest/TextControllerTest.test';
 import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
 
 export default function testsuite() {
+  TextControllerTest();
   InputPresetTest() 
   // FontTest 
   APIgetUIFontConfigJsunit() 
@@ -98,6 +99,5 @@ export default function testsuite() {
   SearchDeleteTest();
   TextAreaDeleteTest();
   TextInputDelete();
-  TextControllerTest();
   SelectedDragPreviewStyleTest()
 }
