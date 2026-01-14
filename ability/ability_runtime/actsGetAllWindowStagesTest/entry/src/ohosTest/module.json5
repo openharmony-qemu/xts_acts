@@ -66,7 +66,7 @@
       },
       {
         "name": "TestAbility2",
-        "srcEntry": "./ets/testability1/TestAbility.ets",
+        "srcEntry": "./ets/testability2/TestAbility.ets",
         "description": "$string:TestAbility_desc",
         "icon": "$media:icon",
         "label": "$string:TestAbility_label",
@@ -78,22 +78,6 @@
         "process": ":kkk"
       }
     ],
-    "extensionAbilities": [
-      {
-        "name": "ServiceExtAbility",
-        "srcEntry": "./ets/serviceextability/ServiceExtAbility.ts",
-        "description": "$string:ServiceExtAbility_desc",
-        "type": "service",
-        "label": "$string:ServiceExtAbility_label"
-      },
-      {
-        "name": "UIExtensionAbility",
-        "srcEntry": "./ets/uiextensionability/UIExtensionAbility.ets",
-        "description": "$string:UIExtensionAbility_desc",
-        "label": "$string:UIExtensionAbility_label",
-        "type": "sys/commonUI",
-        "extensionProcessMode": "bundle"
-      }
-    ]
+    "extensionAbilities": []
   }
 }
