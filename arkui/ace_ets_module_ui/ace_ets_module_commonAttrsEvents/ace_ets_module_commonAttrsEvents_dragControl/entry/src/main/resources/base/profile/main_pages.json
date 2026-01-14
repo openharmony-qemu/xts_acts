@@ -23,7 +23,6 @@
         "MainAbility/pages/DragInteractionOptions/enableEdgeAutoScroll_false",
         "MainAbility/pages/DragInteractionOptions/enableEdgeAutoScroll_true",
         "MainAbility/pages/DragInteractionOptions/enableEdgeAutoScroll",
-        "MainAbility/pages/Drag/notifyDragStartRequest",
-        "MainAbility/pages/DragController/DragEventUI"
+        "MainAbility/pages/Drag/notifyDragStartRequest"
     ]
 }
