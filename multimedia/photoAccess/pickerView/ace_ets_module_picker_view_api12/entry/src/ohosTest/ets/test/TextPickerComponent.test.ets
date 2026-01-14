@@ -3257,6 +3257,7 @@ export default function TextPicker() {
        console.info('testPicker63 showSingleAssetCreationDialogEx success');	 
        console.info('testPicker63 success');	 
        expect(true).assertTrue();
+       done();
     });
 
     /**
