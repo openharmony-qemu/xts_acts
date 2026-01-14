@@ -3829,7 +3829,7 @@ export default function windowPCTest() {
       }
     })
 
-    /*
+    /**
     * @tc.name    test_getWindowStateSnapshot_1300002
     * @tc.number  SUB_BASIC_WMS_GET_WINDOW_STATE_SNAPSHOT_0100
     * @tc.desc    test_sgetWindowStateSnapshot_subWindow_Destroy

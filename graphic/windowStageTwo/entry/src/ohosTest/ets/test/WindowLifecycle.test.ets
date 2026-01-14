@@ -3020,7 +3020,7 @@ export default function WindowLifecycle() {
       console.log(msgStr + 'begin');
       let wantInfo: Want = {
         bundleName: AppStorage.get('bundleName'),
-        abilityName: 'StartAbility'
+        abilityName: 'StartTestAbility'
       };
       let animation_param: window.StartAnimationParams = {
         type: window.AnimationType.FADE_IN_OUT
@@ -3051,7 +3051,7 @@ export default function WindowLifecycle() {
         done();
       }
     })
-    /*
+    /**
     * @tc.name    testStartAbilityNeedAnimation_false
     * @tc.number  SUB_BASIC_WMS_SPCIAL_XTS_NEED_ANIMATION_0200
     * @tc.desc    Test the needAnimation false
@@ -3065,7 +3065,7 @@ export default function WindowLifecycle() {
       console.log(msgStr + 'begin');
       let wantInfo: Want = {
         bundleName:AppStorage.get('bundleName'),
-        abilityName: 'StartAbility'
+        abilityName: 'StartTestAbility'
       };
       let animation_param: window.StartAnimationParams = {
         type: window.AnimationType.FADE_IN_OUT
