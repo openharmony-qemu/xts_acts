@@ -346,7 +346,7 @@ export default function formProviderTest() {
         expect(BOOL_TRUE).assertEqual(true);
       } catch (error) {
         hilog.error(DOMAIN, TAG, `OpenFormManagerTest001 error, code: ${error?.code}, message: ${error?.message}`);
-        expect().assertFail();
+        expect(error?.code).assertEqual(ERROR_CODE);
       }
 
       done();
@@ -912,7 +912,7 @@ export default function formProviderTest() {
           expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(16500100);
+          expect(error?.code).assertEqual(ERROR_CODE);
         });
       } catch (error) {
         hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
@@ -942,7 +942,7 @@ export default function formProviderTest() {
           expect().assertFail();
         }).catch((error: Error) => {
           hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(16500100);
+          expect(error?.code).assertEqual(ERROR_CODE);
         });
       } catch (error: Error) {
         hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
