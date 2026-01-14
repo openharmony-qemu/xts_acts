@@ -51,7 +51,7 @@ private:
         auto input = std::vector<std::shared_ptr<Component>>();
         auto adapter = std::make_shared<ItemAdapter<GridItemComponent>>(input);
         grid->SetWidth(PARAM_325);
-        grid->SetHeight(SIZE_200);
+        grid->SetHeight(SIZE_120);
         grid->SetBackgroundColor(COLOR_GRAY);
         grid->SetBorderWidth(PARAM_1, PARAM_1, PARAM_1, PARAM_1);
         grid->SetGridColumnsTemplate("1fr 1fr 1fr");
