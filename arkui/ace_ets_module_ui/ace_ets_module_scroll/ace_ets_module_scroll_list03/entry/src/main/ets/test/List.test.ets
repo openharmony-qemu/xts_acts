@@ -23,6 +23,7 @@ import listAniAdd from './List/listAniAdd.test';
 import listAniDel from './List/listAniDel.test';
 import listAnVisible from './List/listAnVisible.test';
 import listHeight from './List/listHeight.test';
+import listScrollerBar from './List/listScrollerBar.test';
 import groupAnVisible from './ListItemGroup/groupAnVisible.test';
 import groupHeight from './ListItemGroup/groupHeight.test';
 import cachedListMin from './List/cachedListMin.test';
@@ -59,6 +60,7 @@ import listRepeatTrue from './emptyBranch/listRepeatTrue.test';
 import listRepeatFalse from './emptyBranch/listRepeatFalse.test';
 import listRepeatUn from './emptyBranch/listRepeatUn.test';
 import listRepeatNull from './emptyBranch/listRepeatNull.test';
+import editModeList from './List/editModeList.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -71,6 +73,7 @@ export default function testsuite() {
   listAniDel()
   listAnVisible()
   listHeight()
+  listScrollerBar()
   groupAnVisible()
   groupHeight()
   cachedListMin()
@@ -107,4 +110,5 @@ export default function testsuite() {
   listRepeatFalse()
   listRepeatUn()
   listRepeatNull()
+  editModeList()
 }

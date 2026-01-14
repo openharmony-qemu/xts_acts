@@ -16,7 +16,7 @@
 
 import { MeasureUtils, UIContext } from '@ohos.arkui.UIContext';
 import MeasureText  from '@ohos.measure';
-import { Entry, Component, Column, Row, Text, Button, ClickEvent, Margin, Color, SizeOptions } from '@ohos.arkui.component'
+import { Entry, Component, Column, Row, Text, Button, ClickEvent, Margin, Color, SizeOptions,$r } from '@ohos.arkui.component'
 import { State,AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
 @Entry
@@ -65,28 +65,29 @@ struct TextCommonTextComputing0050 {
           Button('conWidth_200vp')
             .id('conWidth_200vp').margin(20)
             .onClick((e:ClickEvent) => {
+              let context = AppStorage.get<UIContext>('uiContext')!.getHostContext()
               this.message = 'this message is test for measure constraintWidth 200vp';
-              // let size = AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('app.float.text_con_width'));
-              // console.log('size = ' + size);
+              let size = context?.resourceManager.getDouble($r('app.float.text_con_width').id);
+              console.log('size = ' + size);
               this.textComputing0050_1 = this.measure!.measureText({
                 textContent: this.message,
                 maxLines: 2,
-                // constraintWidth: AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('app.float.text_con_width'))
+                constraintWidth: context?.resourceManager.getDouble($r('app.float.text_con_width').id)
               })
               this.textComputing0050_2 = this.measure!.measureTextSize({
                 textContent: this.message,
                 maxLines: 2,
-                // constraintWidth: AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('app.float.text_con_width'))
+                constraintWidth: context?.resourceManager.getDouble($r('app.float.text_con_width').id)
               })
               this.textComputing0050_12 = this.measure!.measureText({
                 textContent: this.message,
                 maxLines: 2,
-                // constraintWidth: AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('app.float.text_con_width'))
+                constraintWidth: context?.resourceManager.getDouble($r('app.float.text_con_width').id)
               })
               this.textComputing0050_22 = this.measure!.measureTextSize({
                 textContent: this.message,
                 maxLines: 2,
-                // constraintWidth: AppStorage.get<common.Context>('applicationContext')?.resourceManager.getNumber($r('app.float.text_con_width'))
+                constraintWidth: context?.resourceManager.getDouble($r('app.float.text_con_width').id)
               })
             })
           Button('conWidth_calc')

@@ -31,7 +31,7 @@ struct NavigationApi3 {
 
         Button('Next')
           .width('80%')
-          .height(40)
+          .height('10%')
           .onClick(() => {
             this.pageInfos.pushPath({name:'pageTwo', })
           })
@@ -61,7 +61,7 @@ struct NavigationApi3 {
 
       Button('Next')
         .width('80%')
-        .height(40)
+        .height('10%')
         .onClick(() => {
           this.pageInfos.pushPath({name:'pageThree', })
         })
@@ -117,25 +117,25 @@ struct NavigationApi3 {
   }
 
   build() {
-    Column({space:20}){
+    Column(){
       Column({space:10}){
-        Text(this.text1).id('NavigationApi3_text1')
-        Text(this.text2).id('NavigationApi3_text2')
-        Text(this.text3).id('NavigationApi3_text3')
+        Text(this.text1).id('NavigationApi3_text1').height('10%')
+        Text(this.text2).id('NavigationApi3_text2').height('10%')
+        Text(this.text3).id('NavigationApi3_text3').height('10%')
       }.width('80%').borderWidth(1).margin({top:20})
 
       Navigation(this.pageInfos) {
         Column() {
           Button('pushPath', { stateEffect: true, type: ButtonType.Capsule })
             .width('80%')
-            .height(40)
+            .height('10%')
             .onClick(() => {
               this.pageInfos.pushPath({ name: 'pageOne' })
             })
             .id('NavigationApi3_pushPathPageOne')
         }
       }.title('NavIndex').navDestination(this.PageMap)
+       .titleMode(NavigationTitleMode.Mini)
     }.width('100%')
-
   }
 }

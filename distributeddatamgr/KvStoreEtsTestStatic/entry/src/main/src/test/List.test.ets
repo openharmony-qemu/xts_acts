@@ -32,6 +32,7 @@ import SingleKvStoreErrCodeEtsTestStatic from "./SingleKvStoreErrCodeEtsTest.tes
 import SingleKvStoreKVCallbackEtsTestStatic from "./SingleKvStoreKVCallbackEtsTest.test";
 import SingleKvStoreKVPromiseEtsTestStatic from "./SingleKvStoreKVPromiseEtsTest.test";
 import SingleKvStoreReturnValueStatic from "./SingleKvStoreReturnValue.test";
+import KVManagerPromiseTest from "./KVManagerPromiseTest.test.ets";
 
 export default function testsuite() {
   DeviceKvStoreReturnValueStatic();
@@ -53,4 +54,5 @@ export default function testsuite() {
   SingleKvStoreReturnValueStatic();
   SingleKvStoreErrCodeEtsTestStatic();
   KvStoreEtsTestStatic();
+  KVManagerPromiseTest();
 }

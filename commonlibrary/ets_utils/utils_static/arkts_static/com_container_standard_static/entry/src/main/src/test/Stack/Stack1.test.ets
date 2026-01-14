@@ -135,28 +135,6 @@ export default function StackTest1() {
       }
     });
 
-    // /**
-    //  * @tc.number     : SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0500
-    //  * @tc.name       : testStackpop0005
-    //  * @tc.desc       : Testing Stack pop by without.
-    //  * @tc.size       : MediumTest
-    //  * @tc.type       : Function
-    //  * @tc.level      : Level 1
-    //  */
-    // it('testStackpop0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   const TAG = "testStackpop0005";
-    //   try {
-    //     let stack: Stack<number | string | object> = new Stack<number | string | object>();
-    //     stack.push(undefined)
-    //     let result = stack.pop()
-    //     expect(result).assertEqual(undefined);
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     console.error(`${TAG} failed, error: ${err}`);
-    //     expect(false).assertFail()
-    //   }
-    // });
-
     /**
      * @tc.name   testStackpop0006
      * @tc.number SUB_COMMONLIBRARY_UTIL_BASE_STACK_POP_0600

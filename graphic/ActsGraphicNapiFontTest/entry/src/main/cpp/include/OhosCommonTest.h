@@ -65,7 +65,7 @@ void OHPrintf(const char* fmt, ...);
 
 int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len);
 
-const char* GetSystemDefaultFont();
+const char* GetSystemDefaultFont(bool replaceUnderline = false);
 
 // 自定义断言，如果失败，直接throw runtime_error，最小化逻辑变动
 #ifndef CUSTOM_ASSERT

@@ -21,7 +21,6 @@ struct PinchTest {
   build() {
     Column() {
       Text('VerticalScroll')
-        .fontSize(25)
         .fontWeight(FontWeight.Bold)
       Scroll(this.scroller) {
         Column() {
@@ -30,7 +29,6 @@ struct PinchTest {
               .width('90%')
               .height('40%')
               .backgroundColor(0xDCDCDC)
-              .fontSize(80)
               .textAlign(TextAlign.Center)
               .margin({ top: 10 })
           }, (item: string) => item)
@@ -46,7 +44,6 @@ struct PinchTest {
 
 
       Text('HorizontalScroll')
-        .fontSize(25)
         .fontWeight(FontWeight.Bold)
       Stack({ alignContent: Alignment.Center }) {
         Scroll(this.scroller) {
@@ -56,7 +53,6 @@ struct PinchTest {
                 .width('20%')
                 .height('90%')
                 .backgroundColor(0xDCDCDC)
-                .fontSize(80)
                 .textAlign(TextAlign.Center)
                 .margin({ top: 10 })
             }, (item: string) => item)
@@ -71,7 +67,6 @@ struct PinchTest {
         .scrollBarWidth(30)
 
         Text('Offset Start')
-          .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .width('20%')
           .height('100%')
@@ -79,7 +74,6 @@ struct PinchTest {
           .backgroundColor(Color.Gray)
 
         Text('Offset End')
-          .fontSize(10)
           .fontWeight(FontWeight.Bold)
           .width('20%')
           .height('100%')

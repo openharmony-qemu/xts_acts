@@ -135,11 +135,12 @@ struct Index {
       Column() {
         NodeContainer(this.textNodeController)
           .width('100%')
-          .height(200)
+          .height('80%')
           .backgroundColor('#FFF0F0F0')
         Text(this.message)
           .id('updateConfigurationNode')
-        Button('Update').id('Update')
+          .height('10%')
+        Button('Update').id('Update').height('10%')
           .onClick(() => {
             this.count += 1;
             const message = 'Update ' + this.count.toString();

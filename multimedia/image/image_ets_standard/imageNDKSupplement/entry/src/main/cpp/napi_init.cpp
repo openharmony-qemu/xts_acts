@@ -15,7 +15,9 @@
 
 #include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
+#include "ImagePackerNativeTest.h"
 #include "ImagePixelMapTest.h"
+#include "PixelmapNativeCropTest.h"
 #include "napi/native_api.h"
 #include "ImageReceiverNativeReadTest.h"
 #include "ImageReceiverNativeTest.h"
@@ -213,8 +215,6 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
     DESCRIPTOR("ImageResultIRNdkErrCodeTest", ImageResultIRNdkErrCodeTest),
     DESCRIPTOR("MediaLibraryErrorCode", MediaLibraryErrorCode),
-    DESCRIPTOR("ImageProcessingErrorCode", ImageProcessingErrorCode),
-    DESCRIPTOR("ImageDetailEnhancerQualityLevel", ImageDetailEnhancerQualityLevel),
     DESCRIPTOR("OHIRNdkErrCodeTestSupp", OHIRNdkErrCodeTestSupp),
     DESCRIPTOR("ImageReceiverNativeReadLatestImageSuccessTest", ImageReceiverNativeReadLatestImageSuccessTest),
     DESCRIPTOR("ImagePackerNativeCreateTest", ImagePackerNativeCreateTest),
@@ -224,6 +224,10 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelmapNativeGetNativeBufferNotExist", PixelmapNativeGetNativeBufferNotExist),
     DESCRIPTOR("ImageSourceCreatSuccessTest", ImageSourceCreatSuccessTest),
     DESCRIPTOR("ImageSourceCreate", ImageSourceCreate),
+    DESCRIPTOR("PixelmapNativeCropTest", PixelmapNativeCropTest),
+    DESCRIPTOR("ConvertAlphaFormatTest", ConvertAlphaFormatTest),
+    DESCRIPTOR("DecodingOptionsReleaseTest", DecodingOptionsReleaseTest),
+    DESCRIPTOR("CreatePixelmapFromSurfaceWithTransformationTest", CreatePixelmapFromSurfaceWithTransformationTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

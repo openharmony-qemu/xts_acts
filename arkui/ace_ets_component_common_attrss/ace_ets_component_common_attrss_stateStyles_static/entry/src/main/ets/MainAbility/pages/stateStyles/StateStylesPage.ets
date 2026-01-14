@@ -55,8 +55,7 @@ struct StateStylesPage {
     console.info('StateStylesPage show called ')
     AppStorage.setOrCreate<boolean>('_isEnable', true)
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
     } catch (error: Error) {

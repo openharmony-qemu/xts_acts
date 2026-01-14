@@ -51,7 +51,7 @@ export default function colorEnumJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get colorEnumJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("color" == pages.name)) {
           console.info("get colorEnumJsunit pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

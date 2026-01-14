@@ -50,7 +50,7 @@ export default function TextfieldOtherTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get TextfieldOtherTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextfieldOther" == pages.name)) {
           console.info("get TextfieldOtherTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);

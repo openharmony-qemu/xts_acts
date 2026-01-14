@@ -51,8 +51,7 @@ struct sizePage {
 
     AppStorage.setOrCreate<SizeOptions>('_size', { width: 0, height: 0 });
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey
       this.parentWidth = routerParamOptions.view.parentWidth

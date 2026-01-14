@@ -48,7 +48,7 @@ export default function textInputHeightAdaptivePolicy() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputHeightAdaptivePolicy state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputHeightAdaptivePolicy" == pages.name)) {
           console.info("get textInputHeightAdaptivePolicy pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

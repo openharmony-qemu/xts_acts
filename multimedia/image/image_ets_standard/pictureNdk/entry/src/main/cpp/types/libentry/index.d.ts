@@ -29,6 +29,13 @@ interface InfoSize {
   height: number;
 }
 
+interface IImageInfo {
+  width: number;
+  height: number;
+  pixelFormat: image.PixelMapFormat;
+  isHdr: boolean;
+}
+
 // For test
 export const releaseTestContext: () => void;
 export const createTestImagePacker: () => void;
@@ -152,3 +159,9 @@ export const GifGetMainPixelmapInfo: (picture: image.Picture) => InfoSize;
 export const CreatePictureAtIndexByImageSourceError: (imageSource: image.ImageSource, flag: boolean) => number;
 export const ImageSourceRelease: (imageSource: image.ImageSource) => number;
 export const PictureRelease: (pciture: image.Picture) => number;
+
+// test hdr compose with options
+export const CreatePictureByImageSourceWithOptions: (imageSource: image.ImageSource) => image.Picture;
+export const GetHdrComposedPixelmapWithOptions: (picture: image.Picture, pixelFormat: image.PixelMapFormat) => IImageInfo;
+export const GetHdrComposedPixelmapWithOptionsError: (picture: image.Picture, pixelFormat: image.PixelMapFormat) => number;
+export const GetHdrComposedPixelmapAndPixelMapTest: (picture: image.Picture) => number | string;

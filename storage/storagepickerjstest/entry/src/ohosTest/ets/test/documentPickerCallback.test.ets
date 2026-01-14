@@ -548,6 +548,56 @@ export default function documentPickerCallback(abilityContext: Context) {
         done();
       }
     });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_013
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1300
+     * @tc.desc   save autoCreateEmptyFile=true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Callback_013", Level.LEVEL1, async (done: Function) => {
+      let documentPicker = new picker.DocumentViewPicker();
+      let option = new picker.DocumentSaveOptions();
+      option.autoCreateEmptyFile = true;
+      try{
+        documentPicker.save(option, (err, documentSaveResult) => {
+          console.info('test_Documentpicker_Save_Callback_013 documentPicker.save successfully, documentSaveResult uri: ' + JSON.stringify(documentSaveResult));
+          console.info('test_Documentpicker_Save_Callback_013 documentSaveResult.length: ' + documentSaveResult.length);
+          expect(documentSaveResult.length == 0).assertTrue();
+        });
+        done();
+      } catch (error) {
+        console.error(`test_Documentpicker_Save_Callback_013 failed with err, code is: ${error.code}, message is: ${error.message}`);
+        done();
+      }
+    });
+
+    /**
+     * @tc.name   test_Documentpicker_Save_Callback_014
+     * @tc.number SUB_STORAGE_DOCUMENTPICKER_SAVE_CALLBACK_1400
+     * @tc.desc   save autoCreateEmptyFile=false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("test_Documentpicker_Save_Callback_014", Level.LEVEL1, async (done: Function) => {
+      let documentPicker = new picker.DocumentViewPicker();
+      let option = new picker.DocumentSaveOptions();
+      option.autoCreateEmptyFile = false;
+      try{
+        documentPicker.save(option, (err, documentSaveResult) => {
+          console.info('test_Documentpicker_Save_Callback_014 documentPicker.save successfully, documentSaveResult uri: ' + JSON.stringify(documentSaveResult));
+          console.info('test_Documentpicker_Save_Callback_014 documentSaveResult.length: ' + documentSaveResult.length);
+          expect(documentSaveResult.length == 0).assertTrue();
+        });
+        done();
+      } catch (error) {
+        console.error(`test_Documentpicker_Save_Callback_014 failed with err, code is: ${error.code}, message is: ${error.message}`);
+        done();
+      }
+    });
   });
 }
 

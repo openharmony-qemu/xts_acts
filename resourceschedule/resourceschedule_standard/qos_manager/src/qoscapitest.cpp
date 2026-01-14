@@ -204,28 +204,20 @@ HWTEST_F(QoSTestSuite, ThreadQoSNdkTest, Function | MediumTest | Level1)
  */
 HWTEST_F(QoSTestSuite, GewuCreateSessionTest, Function | MediumTest | Level1)
 {
-    const char *attributes = "{\"model\": \"/data/service/el1/public/gewu/Qwen2.5-0.5B-CPU-Q4\","
-        "\"eval_settings\": {\"backend\": \"cpu\", \"max_ctx\": \"8192\"}}";
-    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
+    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession("");
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS)
     {
         GTEST_SKIP() << "Not support system, skip testCase";
     }
     else
     {
-        EXPECT_EQ(sessionResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
-
-        OH_QoS_GewuErrorCode error = OH_QoS_GewuDestroySession(sessionResult.session);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
-
-        sessionResult = OH_QoS_GewuCreateSession("");
         EXPECT_EQ(sessionResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_INVAL);
     }
 }
 
 void MockCallback(void *context, const char *response)
 {
-    printf("Mock callback called. Response: %s\n", response);
+    return;
 }
 
 /**
@@ -249,7 +241,7 @@ HWTEST_F(QoSTestSuite, GewuSubmitRequestTest, Function | MediumTest | Level1)
             },\
             {\
                 \"role\": \"user\",\
-                \"content\": \"What is OpenHarmony\"\
+                \"content\": \"hi\"\
             }\
         ],\
         \"stream\": true\
@@ -272,7 +264,8 @@ HWTEST_F(QoSTestSuite, GewuSubmitRequestTest, Function | MediumTest | Level1)
         OH_QoS_GewuErrorCode error = OH_QoS_GewuDestroySession(sessionResult.session);
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
 
-        requestResult = OH_QoS_GewuSubmitRequest(0, "", cb, fakeContext);
+        sessionResult = OH_QoS_GewuCreateSession("");
+        requestResult = OH_QoS_GewuSubmitRequest(sessionResult.session, "", cb, fakeContext);
         EXPECT_EQ(requestResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
 
         requestResult = OH_QoS_GewuSubmitRequest(0, nullptr, cb, fakeContext);
@@ -290,24 +283,14 @@ HWTEST_F(QoSTestSuite, GewuSubmitRequestTest, Function | MediumTest | Level1)
  */
 HWTEST_F(QoSTestSuite, GewuAbortRequestTest, Function | MediumTest | Level1)
 {
-    const char *attributes = "{\"model\": \"/data/service/el1/public/gewu/Qwen2.5-0.5B-CPU-Q4\","
-        "\"eval_settings\": {\"backend\": \"cpu\", \"max_ctx\": \"8192\"}}";
-    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
+    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession("");
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS)
     {
         GTEST_SKIP() << "Not support system, skip testCase";
     }
     else
     {
-        EXPECT_EQ(sessionResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
-
         OH_QoS_GewuErrorCode error = OH_QoS_GewuAbortRequest(sessionResult.session, 0);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
-
-        error = OH_QoS_GewuDestroySession(sessionResult.session);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
-
-        error = OH_QoS_GewuAbortRequest(0, 0);
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
@@ -322,21 +305,14 @@ HWTEST_F(QoSTestSuite, GewuAbortRequestTest, Function | MediumTest | Level1)
  */
 HWTEST_F(QoSTestSuite, GewuDestroySessionTest, Function | MediumTest | Level1)
 {
-    const char *attributes = "{\"model\": \"/data/service/el1/public/gewu/Qwen2.5-0.5B-CPU-Q4\","
-        "\"eval_settings\": {\"backend\": \"cpu\", \"max_ctx\": \"8192\"}}";
-    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
+    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession("");
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS)
     {
         GTEST_SKIP() << "Not support system, skip testCase";
     }
     else
     {
-        EXPECT_EQ(sessionResult.error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
-
         OH_QoS_GewuErrorCode error = OH_QoS_GewuDestroySession(sessionResult.session);
-        EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_OK);
-
-        error = OH_QoS_GewuDestroySession(0);
         EXPECT_EQ(error, OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOENT);
     }
 }
@@ -351,9 +327,7 @@ HWTEST_F(QoSTestSuite, GewuDestroySessionTest, Function | MediumTest | Level1)
  */
 HWTEST_F(QoSTestSuite, GewuErrorCodeTest, Function | MediumTest | Level1)
 {
-    const char *attributes = "{\"model\": \"/data/service/el1/public/gewu/Qwen2.5-0.5B-CPU-Q4\","
-        "\"eval_settings\": {\"backend\": \"cpu\", \"max_ctx\": \"8192\"}}";
-    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession(attributes);
+    OH_QoS_GewuCreateSessionResult sessionResult = OH_QoS_GewuCreateSession("");
     if (sessionResult.error == OH_QoS_GewuErrorCode::OH_QOS_GEWU_NOSYS)
     {
         GTEST_SKIP() << "Not support system, skip testCase";

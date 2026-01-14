@@ -135,8 +135,7 @@ struct AlignSelfPage {
   onPageShow() {
     console.info('AlignSelf page show called ')
 
-    let routerParamOptions = new RouterParams();
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams() )
+    let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
     const value = routerParamOptions.view.testValue.setValue;
     const defaultValue = value.defaultAlignItems;
 

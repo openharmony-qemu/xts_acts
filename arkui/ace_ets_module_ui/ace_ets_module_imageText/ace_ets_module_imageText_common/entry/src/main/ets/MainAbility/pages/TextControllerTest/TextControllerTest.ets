@@ -28,10 +28,10 @@ struct JS {
   controller1: TextController = new TextController
   controller2: TextController = new TextController
   build() {
-    Scroll(){
       Column(){
-        Text(this.selectedText) .id('selectedText')
+        Text(this.selectedText) .id('selectedText').height('5%')
         Text(this.text,{controller:this.controller})
+          .height('5%')
           .copyOption(CopyOptions.InApp)
           .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
             if (selectionStart !== -1 && selectionEnd !== -1) {
@@ -39,16 +39,18 @@ struct JS {
             }
           })
         Button('TextSelection')
+          .height('5%')
           .id('selectedTest')
           .onClick(() => {
             this.controller.setTextSelection(1,3,{menuPolicy:MenuPolicy.HIDE})
           })
 
-        Text(this.selectedText1) .id('selectedText1')
+        Text(this.selectedText1) .id('selectedText1').height('5%')
         Text(this.text1, { controller: this.controller1 }) {
           Span(this.text1)
           Span('In Line')
         }
+        .height('5%')
         .copyOption(CopyOptions.InApp)
         .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
           if (selectionStart !== -1 && selectionEnd !== -1) {
@@ -60,14 +62,15 @@ struct JS {
           .onClick(() => {
             this.controller1.setTextSelection(2,4,{menuPolicy:MenuPolicy.HIDE})
           })
-
-        Text(this.selectedText2) .id('selectedText2')
+          .height('5%')
+        Text(this.selectedText2) .id('selectedText2').height('5%')
         Text(this.text2, { controller: this.controller2 }) {
           Span(this.text2)
           ImageSpan($r('app.media.icon'))
             .width('20')
             .height('20')
         }
+        .height('5%')
         .copyOption(CopyOptions.InApp)
         .onTextSelectionChange((selectionStart: number, selectionEnd: number) => {
           if (selectionStart !== -1 && selectionEnd !== -1) {
@@ -75,11 +78,13 @@ struct JS {
           }
         })
         Button('ImageSpan')
+          .height('5%')
           .id('selectedTest2')
           .onClick(() => {
             this.controller2.setTextSelection(5,8,{menuPolicy:MenuPolicy.HIDE})
           })
       }
-    }
+      .width('100%')
+      .height('100%')
   }
 }

@@ -18,24 +18,8 @@ import { BusinessError } from '@ohos.base'
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
 
-export class RouterParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
+export class RouterParams {
   age: int
-
-  constructor(age: int) {
-    this.age = age;
-  }
-  constructor() {}
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.age = jsonElem.getInteger("age");
-  }
-
-  toJSON(): jsonx.JsonElement {
-     let root: Map<string, jsonx.JsonElement> = {
-      "age": jsonx.JsonElement.createInteger(this.age)
-    }
-    return jsonx.JsonElement.createObject(root)
-  }
 }
 
 @Entry
@@ -51,7 +35,7 @@ struct getState1 {
       Button('go to second')
         .id('getState1_btn')
         .onClick((e:ClickEvent)=>{
-          this.getUIContext().getRouter().pushUrl({url:'MainAbility/pages/router/getState/getState01', params:(new RouterParams(18).toJSON())})
+          this.getUIContext().getRouter().pushUrl({url:'MainAbility/pages/router/getState/getState01', params:{age:18} as RouterParams})
         })
 
 

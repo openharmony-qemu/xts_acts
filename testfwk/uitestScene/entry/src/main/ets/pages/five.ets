@@ -14,6 +14,8 @@
  */
 
 import { uniformTypeDescriptor } from '@kit.ArkData';
+import deviceInfo from '@ohos.deviceInfo'
+
 @Entry
 @Component
 struct Five {
@@ -26,7 +28,7 @@ struct Five {
   @State inSetValueOne: number = 0;
   @State inSetValueTwo: number = 40;
   private arr: number[] = [1, 2, 3, 4, 5, 6, 7, 8, 9, 10, 11, 12, 13, 14, 15, 16, 17, 18, 19, 20];
-  scroller: Scroller = new Scroller()
+  scroller: Scroller = new Scroller();
 
   build() {
     Column() {
@@ -34,19 +36,20 @@ struct Five {
         if (this.isShowLongEventCom) {
           Text('ShowLongEventText')
             .id('ShowLongEventText')
+            .fontSize(10)
         }
-        Button('longClick')
-        .id('longClickBtn')
-        .margin({left: 10})
-        .type(ButtonType.Capsule)
-        .gesture(LongPressGesture({repeat: true}).onAction((event: GestureEvent) => {
-          if (event && event.repeat) {
-            this.isShowLongEventCom = true;
-            this.longClickEvent = 'longClickEvent'
-          }
-        }).onActionEnd((event: GestureEvent) => {
-          this.isShowLongEventCom = false;
-        }))
+        Text('longClick')
+          .id('longClickBtn')
+          .fontSize(10)
+          .margin({ left: 10 })
+          .gesture(LongPressGesture({ repeat: true }).onAction((event: GestureEvent) => {
+            if (event && event.repeat) {
+              this.isShowLongEventCom = true;
+              this.longClickEvent = 'longClickEvent'
+            }
+          }).onActionEnd((event: GestureEvent) => {
+            this.isShowLongEventCom = false;
+          }))
         Text(this.longClickEvent)
           .margin({
             left: 10
@@ -55,17 +58,17 @@ struct Five {
           .id('longClickTextResult')
       }
       .backgroundColor(Color.Red)
-      .alignItems(VerticalAlign.Center)
-      .justifyContent(FlexAlign.Center)
+        .alignItems(VerticalAlign.Center)
+        .justifyContent(FlexAlign.Center)
+
       Row() {
         Column() {
-          Column() {
-            Text('this is abstract')
-              .fontSize(20)
-              .width('100%')
-          }.margin({ left: 40, top: 20 })
-          .width('100%')
-          .height(100)
+          Text('this is abstract')
+            .fontSize(10)
+        }
+        .margin({ left: 5, top: 5 })
+          .id('dragCol')
+          .width('30%')
           .onDragEnd((event) => {
             this.isShowDragEventCom = false;
             this.targetText = 'drag end';
@@ -78,52 +81,51 @@ struct Five {
           .onPreDrag((status: PreDragStatus) => {
           })
           .backgroundColor(this.backGroundColor)
-        }
-        .id('dragCol')
-        .width(150)
-        .height(150)
 
         if (this.isShowDragEventCom) {
           Text('ShowDragEventText')
             .id('ShowDragEventText')
+            .width('30%')
+            .fontSize(10)
         }
         Column() {
           Text(this.targetText)
             .id('dragResultText')
-            .width('100%')
-            .height(100)
+            .fontSize(10)
             .border({ color: Color.Black, width: 1 })
-            .margin(15)
+            .margin(5)
             .allowDrop([uniformTypeDescriptor.UniformDataType.PLAIN_TEXT])
         }
-        .width(150)
-        .height(150)
-        .margin({ left: 20 })
-
+        .width('30%')
       }
-      .margin({top: 20})
+      .width('100%')
+        .backgroundColor(Color.Red)
+        .margin({ top: 10 })
+
       Text('HorizontalScroll')
-        .fontSize(25)
+        .fontSize(10)
         .fontWeight(FontWeight.Bold)
       Scroll(this.scroller) {
-          Row() {
-            ForEach(this.arr, (item: number) => {
-              Text(item + '_hor')
-                .backgroundColor(0xDCDCDC)
-                .fontSize(40)
-                .padding(20)
-                .textAlign(TextAlign.Center)
-                .margin({ top: 10 })
-            }, (item: string) => item)
-          }
+        Row() {
+          ForEach(this.arr, (item: number) => {
+            Text(item + '_hor')
+              .backgroundColor(0xDCDCDC)
+              .fontSize(10)
+              .padding(10)
+              .width('100%')
+              .height('100%')
+              .textAlign(TextAlign.Center)
+              .margin({ top: 10 })
+          }, (item: string) => item)
         }
+      }
         .id('horizontalScroll')
-      .width('80%')
-      .height('40%')
+        .width('80%')
+        .height('100%')
         .scrollable(ScrollDirection.Horizontal)
         .scrollBar(BarState.On)
         .scrollBarColor(Color.Gray)
-        .scrollBarWidth(30)
+        .scrollBarWidth(5)
     }
     .justifyContent(FlexAlign.Center)
   }

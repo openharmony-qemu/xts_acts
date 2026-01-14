@@ -657,16 +657,14 @@ struct borderColorPage {
 
   onPageShow() {
     console.info('borderColor page show called ')
-    let routerParamOptions = new RouterParams()
-    routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-    this.targetView = routerParamOptions.view.targetView;
-    this.componentKey = routerParamOptions.view.componentKey as string;
-    this.parentWidth = routerParamOptions.view.parentWidth;
-    this.parentHeight = routerParamOptions.view.parentHeight;
-    this.columns = (routerParamOptions.view.columns as int)
-    this.gutter = (routerParamOptions.view.gutter as int)
-    this.parentComponentKey = routerParamOptions.view.parentComponentKey;
-    this._borderColorButtonMod.mborderColor = routerParamOptions.view.testValue.setValue.borderColor
+    this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+    this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+    this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+    this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+    this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+    this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+    this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey;
+    this._borderColorButtonMod.mborderColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.borderColor
     attrsManager.registerDataChange((value: SetValue) => {
       console.info('[registerDataChange] ' + JSON.stringify(value.borderColor))
       this._borderColorAlphabetIndexerMod.mborderColor = value.borderColor

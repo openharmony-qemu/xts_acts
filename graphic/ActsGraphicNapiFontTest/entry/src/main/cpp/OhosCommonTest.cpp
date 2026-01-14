@@ -94,13 +94,11 @@ const char* InitSystemDefaultFont()
     size_t len = std::strlen(systemFont) + 1;
     char* buf = new char[len];
     SafeMemcpy(buf, len, systemFont, len);
-
     for (char* p = buf; *p; ++p) {
         if (*p == ' ') {
             *p = '-';
         }
     }
-
     return buf; // intentionally leaked (process lifetime)
 }
 } // namespace
@@ -206,10 +204,26 @@ int SafeMemcpy(void* dst, size_t dstSize, const void* src, size_t len)
     return SUCCESS_CODE;
 }
 
-const char* GetSystemDefaultFont()
+const char* GetSystemDefaultFont(bool replaceUnderline)
 {
+    // xxOS-Sans
     static const char* cachedFont = nullptr;
+    // xxOS_Sans
+    static const char* cachedFontWithDash = nullptr;
     static std::once_flag initFlag;
-    std::call_once(initFlag, []() { cachedFont = InitSystemDefaultFont(); });
-    return cachedFont;
+    std::call_once(initFlag, []() {
+        cachedFont = InitSystemDefaultFont();
+        size_t len = strlen(cachedFont);
+        char* buf = nullptr;
+        const int mallocLen = len + 1;
+        if (mallocLen > 0) {
+            buf = (char*)malloc(mallocLen);
+        }
+        for (size_t i = 0; i < len; ++i) {
+            buf[i] = (cachedFont[i] == '-') ? '_' : cachedFont[i];
+        }
+        buf[len] = '\0';
+        cachedFontWithDash = buf;
+    });
+    return replaceUnderline ? cachedFontWithDash : cachedFont;
 }

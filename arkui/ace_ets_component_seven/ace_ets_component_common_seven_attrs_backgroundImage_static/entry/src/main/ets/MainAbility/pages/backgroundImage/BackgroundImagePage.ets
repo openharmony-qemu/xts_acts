@@ -802,17 +802,15 @@ struct BackgroundImagePage {
 
 	onPageShow() {
 		console.info('backgroundImage translate page show called ')
-		let routerParamOptions = new RouterParams()
-		routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
-		this.targetView = routerParamOptions.view.targetView;
-		this.componentKey = routerParamOptions.view.componentKey as string;
-		this.parentWidth = routerParamOptions.view.parentWidth;
-		this.parentHeight = routerParamOptions.view.parentHeight;
-		this.columns = (routerParamOptions.view.columns as int)
-		this.gutter = (routerParamOptions.view.gutter as int)
-		this.parentBackGroundColor = routerParamOptions.view.parentBackGroundColor
-		this.parentComponentKey = routerParamOptions.view.parentComponentKey
-		this._backgroundImageButtonModifier.mBackgroundImage = routerParamOptions.view.testValue.setValue.backgroundImage
+		this.targetView = (this.getUIContext().getRouter().getParams() as RouterParams).view.targetView;
+		this.componentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.componentKey as string;
+		this.parentWidth = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentWidth;
+		this.parentHeight = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentHeight;
+		this.columns = ((this.getUIContext().getRouter().getParams() as RouterParams).view.columns as int)
+		this.gutter = ((this.getUIContext().getRouter().getParams() as RouterParams).view.gutter as int)
+		this.parentBackGroundColor = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentBackGroundColor
+		this.parentComponentKey = (this.getUIContext().getRouter().getParams() as RouterParams).view.parentComponentKey
+		this._backgroundImageButtonModifier.mBackgroundImage = (this.getUIContext().getRouter().getParams() as RouterParams).view.testValue.setValue.backgroundImage
     attrsManager.registerDataChange((value: SetValue) => {
 			console.info('backgroundImage [registerDataChange] ' + JSON.stringify(value.backgroundImage))
 			this._backgroundImageAlphabetIndexerModifier.mBackgroundImage = value.backgroundImage

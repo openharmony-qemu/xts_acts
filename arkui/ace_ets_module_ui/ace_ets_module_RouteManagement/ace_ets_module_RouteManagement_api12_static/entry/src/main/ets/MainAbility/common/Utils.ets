@@ -33,7 +33,7 @@ import inspector from '@ohos.arkui.inspector';
 import { sendTouchEvent } from '@ohos.arkui.Test';
 import common from '@ohos.app.ability.common';
 
-export class Utils {
+export default class Utils {
   static rect_left: number = 0;
   static rect_top: number = 0;
   static rect_right: number = 0;
@@ -131,48 +131,6 @@ export class Utils {
     console.info('up touch started: ' + JSON.stringify(upPoint))
     sendTouchEvent(upPoint)
     Utils.sleep(500)
-  }
-}
-
-export class AgeObj implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable {
-  age: int = 0
-
-  constructor(age: int) {
-    this.age = age;
-  }
-
-  constructor() {}
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.age = jsonElem.getInteger("age");
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "age": jsonx.JsonElement.createInteger(this.age)
-    }
-    return jsonx.JsonElement.createObject(root)
-  }
-}
-
-export class routerParams implements jsonx.JsonElementDeserializable,jsonx.JsonElementSerializable{
-  data1:string = ""
-
-  constructor(str:string) {
-    this.data1 = str
-  }
-
-  constructor() {}
-
-  fromJSON(jsonElem: jsonx.JsonElement) {
-    this.data1 = jsonElem.getString("data1")
-  }
-
-  toJSON(): jsonx.JsonElement {
-    let root: Map<string, jsonx.JsonElement> = {
-      "data1": jsonx.JsonElement.createString(this.data1)
-    }
-    return jsonx.JsonElement.createObject(root)
   }
 }
 

@@ -280,6 +280,13 @@ export default function typefaceTest() {
         expect(e.code).assertEqual(401)
       }
       try {
+        typeFaceArgument.addVariation('', 100);
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + ` addVariation '' errorCode is:  ${e.code}, errorMessage is: ${e.message}`);
+        expect(e.code).assertEqual(25900001)
+      }
+      try {
         typeFaceArgument.addVariation('wght', null);
         expect().assertFail();
       } catch (e) {

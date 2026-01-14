@@ -27,6 +27,7 @@ import buttonMaxFontScaleTest from './buttonType/maxFontScale.test'
 import ButtonJsunit2 from './buttonTest/ButtonJsunit2.test';
 import ButtonApi1 from './button/ButtonApi1.test';
 import ButtonApi2 from './button/ButtonApi2.test';
+import ButtonTextTest from './buttonTest/ButtonText.test';
 
 export default function testsuite() {
   buttonControlTest();
@@ -44,4 +45,5 @@ export default function testsuite() {
   ButtonJsunit2()
   ButtonApi1();
   ButtonApi2();
+  ButtonTextTest();
 }

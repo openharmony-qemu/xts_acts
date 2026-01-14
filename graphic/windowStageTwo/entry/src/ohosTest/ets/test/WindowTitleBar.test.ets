@@ -81,6 +81,7 @@ export default function windowTitleBarTest() {
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
     let deviceType:string = deviceInfo.deviceType;
+    console.log('deviceType : ' + deviceType);
     let driver: Driver;
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -1164,6 +1165,7 @@ export default function windowTitleBarTest() {
           windowClass.off('windowTitleButtonRectChange');
           done();
         });
+        windowClass.off('windowTitleButtonRectChange');
         done();
       } catch (exception) {
         console.error(msgStr+ `Failed to set the style of button. Cause code: ${exception.code}, message: ${exception.message}`);

@@ -99,7 +99,7 @@ export default class Utils {
     await component.click();
   }
 
-  static async pushPageByParams(pageTag: string, params: jsonx.JsonElement, done?: () => void) {
+  static async pushPageByParams(pageTag: string, params: object, done?: () => void) {
     let options: router.RouterOptions = {
       url: `MainAbility/pages/${pageTag}`,
       params: params

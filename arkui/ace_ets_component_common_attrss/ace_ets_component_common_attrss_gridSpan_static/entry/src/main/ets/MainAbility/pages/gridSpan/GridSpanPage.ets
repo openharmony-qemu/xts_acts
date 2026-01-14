@@ -44,8 +44,7 @@ struct GridSpanPage {
     console.info('gridSpan page show called ')
     AppStorage.setOrCreate<int>('_gridSpan', 1)
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       console.log('routerParamOptions==========' + JSON.stringify(routerParamOptions))
       let routerParamOptionsSetValue = routerParamOptions.view.testValue.setValue as int;
       AppStorage.setOrCreate<int>('_gridSpan', routerParamOptionsSetValue)

@@ -88,13 +88,13 @@ export default function Bgde_InactiveColor_APITest() {
 it('Bgde_InactiveColor_APITest_static_0100', Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('Bgde_InactiveColor_APITest_0100 START');
       await CommonFunc.sleep(1000);
-      let bgde_inactiveColor = inspector.getInspectorByKey('inactiveColor');
+      let bgde_inactiveColor = inspector.getInspectorByKey('bgde_inactiveColor');
       await CommonFunc.sleep(2000);
       console.info("[Bgde_InactiveColor_APITest_0100] Tabs bgde_inactiveColor attrs is: " +
-      JSON.stringify(JSON.parseJsonElement(bgde_inactiveColor).getElement('$attrs')));
+      JSON.stringifyJsonElement(JSON.parseJsonElement(bgde_inactiveColor).getElement('$attrs')));
       expect(JSON.parseJsonElement(bgde_inactiveColor)
         .getElement('$attrs')
-        .getElement('backgroundBlurStyle')
+        .getElement('backgroundEffect')
         .getElement('options')
         .getString('inactiveColor')).assertEqual('#FF21A1DD');
       console.info('[Bgde_InactiveColor_APITest_0100] END');

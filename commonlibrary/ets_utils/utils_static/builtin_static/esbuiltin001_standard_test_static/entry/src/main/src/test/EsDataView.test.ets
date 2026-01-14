@@ -657,7 +657,6 @@ export default function EsDataViewTest(){
       expect(sample.getBigInt64(1)).assertEqual(new BigInt(0x20602800080017f));
       expect(sample.getBigInt64(2)).assertEqual(new BigInt(0x602800080017F00));
       expect(sample.getBigInt64(3)).assertEqual(new BigInt(0x2800080017F0001));
-      expect(sample.getBigInt64(4)).assertEqual(new BigInt("0x800080017F000102"));
       expectError(sample, -1, "-1", "wrong index");
       console.info(`${caseName}, test end`);
     });

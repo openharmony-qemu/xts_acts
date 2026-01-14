@@ -48,7 +48,7 @@ export default function StyledString() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get StyledString state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("StyledString" == pages.name)) {
           console.info("get StyledString pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

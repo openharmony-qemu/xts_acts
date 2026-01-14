@@ -197,9 +197,9 @@ struct AnimatorOnframe {
       Button('Play')
         .onClick((e: ClickEvent) => {
           console.log('test click start ')
-          // this.test003Animator?.play()
-          // this.test004Animator?.play()
-          // this.test005Animator?.play()
+          this.test003Animator?.play()
+          this.test004Animator?.play()
+          this.test005Animator?.play()
         })
         .height('5%')
         .key('Play')

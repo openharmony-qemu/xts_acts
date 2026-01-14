@@ -74,15 +74,17 @@ export default function BackWithResultStaticTest() {
           hilog.info(domain, tag, 'backToCallerAbilityWithResult succeed');
           expect().assertFail();
           done();
-        }).catch((err: Error): void => {
-          hilog.info(domain, tag, `backToCallerAbilityWithResult1 failed, code is ${JSON.stringify(err)}`);
+        }).catch((err): void => {
+          hilog.info(domain, tag, `backToCallerAbilityWithResult1 failed, code is ${err.code}`);
           expect(err.code).assertEqual(16000074);
           done();
         });
-      } catch (error: BusinessError) {
-        hilog.info(domain, tag, `getGroupDir faile, err: ${error}`);
-        expect().assertFail();
-        done();
+      } catch (error) {
+        if (error instanceof BusinessError) {
+          hilog.info(domain, tag, `getGroupDir faile, err: ${error}`);
+          expect().assertFail();
+          done();
+        }
       }
     })
   })

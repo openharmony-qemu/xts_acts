@@ -104,5 +104,77 @@ export default function HttpCreateHttpResponseCacheTest() {
       }
       console.info(`${caseName}---End `);
     });
+
+    /**
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0400
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0400
+     * @tc.desc   Create a default object to store the response of HTTP access requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrHttpCreateHttpResponseCache0400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0400';
+      console.info(`${caseName}---Start`);
+      try {
+        let cacheSize: number = -1;
+        let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
+        ExpectTrue(typeof httpResponseCache == 'object');
+        done();
+      } catch (err) {
+        console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0500
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0500
+     * @tc.desc   Create a default object to store the response of HTTP access requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrHttpCreateHttpResponseCache0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0500';
+      console.info(`${caseName}---Start`);
+      try {
+        let cacheSize: number = 0;
+        let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
+        ExpectTrue(typeof httpResponseCache == 'object');
+        done();
+      } catch (err) {
+        console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
+
+    /**
+     * @tc.name   testNetworkMgrHttpCreateHttpResponseCache0600
+     * @tc.number SUB_NetworkMgr_Http_CreateHttpResponseCache_0600
+     * @tc.desc   Create a default object to store the response of HTTP access requests.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testNetworkMgrHttpCreateHttpResponseCache0600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      const caseName: string = 'testNetworkMgrHttpCreateHttpResponseCache0600';
+      console.info(`${caseName}---Start`);
+      try {
+        let cacheSize: number = 10485761;
+        let httpResponseCache: http.HttpResponseCache = http.createHttpResponseCache(cacheSize);
+        ExpectTrue(typeof httpResponseCache == 'object');
+        done();
+      } catch (err) {
+        console.info(`${caseName} try...catch err: ${JSON.stringify(err)}`);
+        ExpectFail();
+        done();
+      }
+      console.info(`${caseName}---End `);
+    });
   });
 }

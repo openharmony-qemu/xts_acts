@@ -260,6 +260,28 @@ export default function AudioRoutingManagerTest() {
       }
     });
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0500
+     * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0500
+     * @tc.desc   on - off - availableDeviceChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_ON_AVAILABLEDEVICECHANGE_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
+      try {
+        audioRoutingManager.onAvailableDeviceChange(audio.DeviceUsage.MEDIA_OUTPUT_DEVICES, (data: audio.DeviceChangeAction) => {
+          console.info(`${Tag}:  on_availableDeviceChange: SUCCESS`);
+        });
+        audioRoutingManager.offAvailableDeviceChange();
+        expect(true).assertTrue();
+        done();
+      } catch (error: BusinessError) {
+        console.error(`${Tag}:  on_availableDeviceChange ERROR: ${error.message}, ${error.code}`);
+        expect(false).assertTrue();
+        done();
+      }
+    });
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0100
      * @tc.desc   on -off- micBlockStatusChanged
@@ -270,6 +292,9 @@ export default function AudioRoutingManagerTest() {
     it('SUB_MULTIMEDIA_AUDIO_ROUTING_MANAGER_MICBLOCKSTATUSCHANGE_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (done: () => void): void => {
       try {
         let blockMic: boolean = await audioRoutingManager.isMicBlockDetectionSupported()
+        let micBlockStatusCallback = (micBlockStatusChanged: audio.DeviceBlockStatusInfo) => {
+          console.info(`block status : ${micBlockStatusChanged.blockStatus} `);
+        };
         if (blockMic == true) {
           audioRoutingManager.onMicBlockStatusChanged((deviceBlockStatusInfo: audio.DeviceBlockStatusInfo) =>{
             if (deviceBlockStatusInfo.blockStatus == audio.DeviceBlockStatus.BLOCKED ||
@@ -281,7 +306,7 @@ export default function AudioRoutingManagerTest() {
               expect(false).assertTrue();
             }
           })
-          audioRoutingManager.offMicBlockStatusChanged()
+          audioRoutingManager.offMicBlockStatusChanged(micBlockStatusCallback)
         }
         expect(true).assertTrue();
       } catch (error: BusinessError) {

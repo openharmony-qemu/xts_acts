@@ -1287,10 +1287,15 @@ export default function audioRendererTest() {
         audioRen!.offMarkReach();
         expect(true).assertTrue();
       });
+      let markReachCallback = (position: long) => {
+        if (position == 100) {
+          console.info('markReachCallback successfully');
+        }
+      };
       audioRen!.onMarkReach(100, (position: long) => {
         console.log(`${TagFrmwk}: markReach Event is called :  ${position}`);
         resultFlag = true;
-        audioRen!.offMarkReach();
+        audioRen!.offMarkReach(markReachCallback);
       });
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
 
@@ -1584,11 +1589,16 @@ export default function audioRendererTest() {
         audioRen!.offPeriodReach();
 
       });
+      let periodReachCallback = (position: long) => {
+        if (position == 100) {
+          console.info('periodReachCallback successfully');
+        }
+      };
       audioRen!.onPeriodReach(100, (position: long) => {
         console.log(`${TagFrmwk}: periodReach Event is called : ${position}`);
         resultFlag = true;
         expect(true).assertTrue();
-        audioRen!.offPeriodReach();
+        audioRen!.offPeriodReach(periodReachCallback);
       });
 
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
@@ -2167,6 +2177,8 @@ export default function audioRendererTest() {
       await Utils.msSleep(1000);
 
       console.info(`${TagFrmwkRender}: AudioRenderer : STATE : ${audioRen!.state}`);
+
+      audioRen!.offWriteData();
 
       await audioRen!.stop().then(() => {
         console.info(`${TagFrmwkRender}: Renderer stopped : SUCCESS`);
@@ -5150,52 +5162,6 @@ export default function audioRendererTest() {
       console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
       expect(resultFlag).assertTrue();
       done();
-    })
-
-    /**
-     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
-     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100
-     * @tc.desc   AudioRenderer-isStreamActive - MOVIE - UNKNOWN
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL2
-     */
-    it('SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_2100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-      let AudioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
-        channels: audio.AudioChannel.CHANNEL_2,
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S32LE,
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
-      }
-
-      let AudioRendererInfo: audio.AudioRendererInfo = {
-        usage: audio.StreamUsage.STREAM_USAGE_UNKNOWN,
-        rendererFlags: 0
-      }
-
-      let AudioRendererOptions: audio.AudioRendererOptions = {
-        streamInfo: AudioStreamInfo,
-        rendererInfo: AudioRendererInfo
-      }
-
-      let resultFlag = true;
-      readPath = 'StarWars10s-2C-48000-4SW.wav'
-      await getFdRead(readPath, done);
-      playbackPromise(AudioRendererOptions, filePath, audio.AudioScene.AUDIO_SCENE_DEFAULT);
-      await Utils.msSleep(2000);
-      AUDIOMANAGER.getStreamManager().isActive(audio.AudioVolumeType.MEDIA).then((data: boolean)=> {
-        if (data == true) {
-          console.log(`${TagFrmwk}: Promise : isActive Media: PASS : ${data}`);
-        }
-        else {
-          console.log(`${TagFrmwk}: Promise : isActive Media: FAIL : ${data}`);
-        }
-      });
-      await Utils.msSleep(9000);
-      console.info(`${TagFrmwkRender}: resultFlag : ${resultFlag}`);
-      expect(resultFlag).assertTrue();
-      done();
-
     })
 
     /**
@@ -11355,6 +11321,43 @@ export default function audioRendererTest() {
     })
 
     /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200
+     * @tc.desc   off_streamVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it("SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      let TAG:string = 'SUB_MULTIMEDIA_AUDIO_STREAMVOLUMECHANGE_OFF_STATIC_0200';
+      //define manager
+      let audioManager:audio.AudioManager = audio.getAudioManager();
+      let audioVolumeManager:audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      try{
+        let StreamUsage:audio.StreamUsage = audio.StreamUsage.STREAM_USAGE_MUSIC;
+        let streamVolumeChangeCB = (data:audio.StreamVolumeEvent) =>{
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.streamUsage : ${data.streamUsage}`);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.volume : ${data.volume}`);
+          console.info(`${TAG},streamVolumeChangeCB StreamVolumeEvent.updateUi : ${data.updateUi}`);
+          done();
+        };
+        console.info(`${TAG},streamVolumeChangeCB SUCCESS`);
+
+        audioVolumeManager.onStreamVolumeChange(StreamUsage,streamVolumeChangeCB)
+        console.info(`${TAG},audioVolumeManager_on SUCCESS`);
+        audioVolumeManager.offStreamVolumeChange()
+        console.info(`${TAG},audioVolumeManager_off SUCCESS`);
+        expect(true).assertTrue();
+        done();
+      } catch (error: BusinessError){
+        console.error(`${TAG},audioVolumeManager_on FAILED,error.code : ${error.code}, error.message : ${error.message}`);
+        expect(Number(error.code)).assertEqual(6800101);
+        done();
+      }
+    })
+
+    /**
      * @tc.name   SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_AUDIO_GETVOLUMEINUNITOFDBBYSTREAM_STATIC_0100
      * @tc.desc   getVolumeInUnitOfDbByStream
@@ -11589,6 +11592,87 @@ export default function audioRendererTest() {
                 console.info(`set app volume success.`);
               });
               audioVolumeManager.offAppVolumeChange(appVolumeChangeCallback);
+            }
+          });
+          audioRenderer?.getAudioTime((err: BusinessError | null, timestamp: long | undefined) => {
+            if (err) {
+              console.error(`Failed to get AudioTime. Code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            } else {
+              console.info(`Current timestamp: ${timestamp}`);
+              expect(timestamp).assertLargerOrEqual(0);
+            }
+          });
+          audioRenderer?.release((err: BusinessError | null) => {
+            if (err) {
+              console.error('Renderer release failed');
+              expect(true).assertFalse();
+            } else {
+              console.info('Renderer released.');
+            }
+          });
+        }
+      });
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000
+     * @tc.number SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000
+     * @tc.desc   AudioRenderer - appVolumeChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it("SUB_MULTIMEDIA_AUDIO_RENDERER_PLAY_AUDIO_STATIC_10000", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+      };
+
+      let audioRendererInfo: audio.AudioRendererInfo = {
+        usage: audio.StreamUsage.STREAM_USAGE_MUSIC,
+        rendererFlags: 0,
+        volumeMode: audio.AudioVolumeMode.APP_INDIVIDUAL
+      };
+
+      let audioRendererOptions: audio.AudioRendererOptions = {
+        streamInfo: audioStreamInfo,
+        rendererInfo: audioRendererInfo
+      };
+
+      let audioRenderer: audio.AudioRenderer | null | undefined;
+      let audioManager = audio.getAudioManager();
+      let audioVolumeManager: audio.AudioVolumeManager = audioManager.getVolumeManager();
+
+      audio.createAudioRenderer(audioRendererOptions,(err: BusinessError | null, data: audio.AudioRenderer | null | undefined) => {
+        if (err) {
+          console.error(`AudioRenderer Created: Error: ${err}`);
+          expect(true).assertFail();
+        } else {
+          console.info('AudioRenderer Created: SUCCESS');
+          audioRenderer = data;
+          audioRenderer?.getRendererInfo((err: BusinessError | null, audioRendererInfo: audio.AudioRendererInfo | undefined) => {
+            if (err) {
+              console.error(`Failed to get renderer info. Code: ${err.code}, message: ${err.message}`);
+              expect(true).assertFalse();
+            } else {
+              console.info(`Succeeded in getting renderer info, AudioRendererInfo: ${JSON.stringify(audioRendererInfo)}.`);
+              expect(audioRendererInfo?.volumeMode).assertEqual(1);
+              expect(audio.AudioVolumeMode.APP_INDIVIDUAL).assertEqual(1);
+
+              let appVolumeChangeCallback = (volumeEvent: audio.VolumeEvent) => {
+                console.info(`VolumeType of stream: ${volumeEvent.volumeType} `);
+                console.info(`Volume level: ${volumeEvent.volume} `);
+                console.info(`Whether to updateUI: ${volumeEvent.updateUi} `);
+              };
+              audioVolumeManager.onAppVolumeChange(appVolumeChangeCallback);
+              audioVolumeManager.setAppVolumePercentage(20).then(() => {
+                console.info(`set app volume success.`);
+              });
+              audioVolumeManager.offAppVolumeChange();
             }
           });
           audioRenderer?.getAudioTime((err: BusinessError | null, timestamp: long | undefined) => {

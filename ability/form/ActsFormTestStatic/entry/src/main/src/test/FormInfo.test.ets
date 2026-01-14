@@ -107,6 +107,7 @@ export default function formInfoTest() {
             expect(5).assertEqual(formInfo.FormLocation.FORM_MANAGER_NEGATIVE_SCREEN as int);
             expect(6).assertEqual(formInfo.FormLocation.SCREEN_LOCK as int);
             expect(7).assertEqual(formInfo.FormLocation.AI_SUGGESTION as int);
+            expect(8).assertEqual(formInfo.FormLocation.STANDBY as int);
 
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest001 end');

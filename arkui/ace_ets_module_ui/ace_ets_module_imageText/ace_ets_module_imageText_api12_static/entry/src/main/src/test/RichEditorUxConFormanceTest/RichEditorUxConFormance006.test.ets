@@ -95,8 +95,11 @@ export default function RichEditorUxConFormance006() {
       let paragraphStyleInfo = await (driver.findComponent(ON.id('paragraphStyleInfo')) as Promise<Component>);
       let paragraphStyleInfoText = await paragraphStyleInfo.getText();
       await CommonFunc.sleep(500);
-      let str = '"style":{"textAlign":0,"wordBreak":2,"lineBreakStrategy":0,"leadingMargin":{"size":["0.00px","0.00px"]}}';
-      expect(paragraphStyleInfoText.indexOf(str) > 0).assertEqual(true);
+      expect(paragraphStyleInfoText).assertContain('"textAlign":0');
+      expect(paragraphStyleInfoText).assertContain('"wordBreak":2');
+      expect(paragraphStyleInfoText).assertContain('"lineBreakStrategy":0');
+      expect(paragraphStyleInfoText).assertContain('"leadingMargin":{"size":["0.00px","0.00px"]}');
+      expect(paragraphStyleInfoText).assertContain('"textDirection":2');
       done();
     });
 

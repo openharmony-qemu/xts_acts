@@ -17,8 +17,15 @@ import router from '@ohos.router'
 import { BusinessError } from '@ohos.base'
 import { Entry, Column, Component,Button,Text,Row,Color,ColumnOptions,ClickEvent } from '@ohos.arkui.component';
 import { State, AppStorage } from '@ohos.arkui.stateManagement';
-import { routerParams } from '../../../common/Utils'
 initModule('./nameDetail5');
+
+class routerParams19 {
+  data1:string
+
+  constructor(str:string) {
+    this.data1 = str
+  }
+}
 
 @Entry
 @Component
@@ -36,7 +43,7 @@ struct replaceNamedRoute5 {
           initModule('./nameDetail5');
           this.getUIContext().getRouter().replaceNamedRoute({
             name: 'nameDetail5',
-            params: (new routerParams('message')).toJSON()
+            params: new routerParams19('message')
           })
             .then(() => {
             })

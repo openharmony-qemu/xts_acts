@@ -83,8 +83,7 @@ struct PositionPage {
     //   this._position = value
     // })
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams());
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
       AppStorage.setOrCreate<Position>('_position', (routerParamOptions.view.testValue as TestValue).setValue as Position)
       this._position =  (routerParamOptions.view.testValue as TestValue).setValue as Position
       this.targetView = routerParamOptions.view.targetView

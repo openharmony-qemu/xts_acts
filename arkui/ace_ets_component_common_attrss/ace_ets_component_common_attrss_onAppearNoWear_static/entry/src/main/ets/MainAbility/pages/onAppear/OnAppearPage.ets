@@ -47,8 +47,8 @@ struct OnAppearPage {
   onPageShow() {
     console.info('OnAppearPage show called ')
     try {
-      let routerParamOptions = new RouterParams();
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams;
+
       this.targetView = routerParamOptions.view.targetView
       this.targetGroupView = routerParamOptions.view.targetGroupView
       this.componentKey = routerParamOptions.view.componentKey

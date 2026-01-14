@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -154,6 +154,8 @@ struct IndexPage {
     { title: 'CapiSourceType', uri: 'pages/ArkUI/CapiSourceType' },
     { title: 'AccessiBilityStateDescription', uri: 'pages/ArkUI/AccessiBilityStateDescription' },
     { title: 'RadiusRenderStrategy', uri: 'pages/ArkUI/RadiusRenderStrategy' },
+    { title: 'ImageDownloadInfo', uri: 'pages/ArkUI/ImageDownloadInfo' },
+    { title: 'GameAddTest', uri: 'pages/ArkUI/GameAddTest' },
   ]
   @State ColorObject: Object[] = letColor;
   @State ColorTrue: number[] = [];

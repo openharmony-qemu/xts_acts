@@ -152,8 +152,7 @@ struct FlexGrowPage {
     AppStorage.setOrCreate<number>('_parentHeight',  500)
     AppStorage.setOrCreate<number>('_compareFlexGrow',  1)
     try {
-      let routerParamOptions = new RouterParams()
-      routerParamOptions.fromJSON(this.getUIContext().getRouter().getParams())
+      let routerParamOptions = this.getUIContext().getRouter().getParams() as RouterParams
       this.targetView = routerParamOptions.view.targetView
       this.componentKey = routerParamOptions.view.componentKey ?? ''
       this.containerView = routerParamOptions.view.containerView ?? ''
@@ -216,16 +215,6 @@ struct FlexGrowPage {
     }
     else if (this.targetView == 'Navigation') {
       Navigation().applyStyles(this.commonStyle)
-    } else if (this.targetView == 'NavRouter') {
-      // NavRouter() {
-      //   Row() {
-      //     Image($r('app.media.icon'))
-      //   }
-      //
-      //   NavDestination() {
-      //     Text('NavDestination').fontSize(10)
-      //   }
-      // }.applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Progress') {
       Progress({ value: 50, type: ProgressType.Linear }).applyStyles(this.commonStyle)
@@ -340,15 +329,6 @@ struct FlexGrowPage {
       }.applyStyles(this.commonStyle)
     } else if (this.targetView == 'Row') {
       Row().applyStyles(this.commonStyle)
-    } 
-    else if (this.targetView == 'Panel') {
-      // Panel(true) {
-      //   Column() {
-      //     Text('Panel')
-      //   }
-      // }
-      // .mode(PanelMode.Half)
-      // .applyStyles(this.commonStyle)
     }
     else if (this.targetView == 'Refresh') {
       Refresh({ refreshing: true }) {

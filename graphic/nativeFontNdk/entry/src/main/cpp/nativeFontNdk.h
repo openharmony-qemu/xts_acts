@@ -130,4 +130,7 @@ napi_value OHDrawingSetTextStyleAttributeDouble003(napi_env env, napi_callback_i
 napi_value OHDrawingSetTextStyleAttributeDouble004(napi_env env, napi_callback_info info);
 napi_value OHDrawingSetTextStyleAttributeInt001(napi_env env, napi_callback_info info);
 napi_value OHDrawingGetFontFullDescriptorsFromPath001(napi_env env, napi_callback_info info);
+napi_value OHDrawingSetTextStyleAttributeInt004(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyDidExceedMaxLines004(napi_env env, napi_callback_info info);
+napi_value OHDrawingTypographyStyleGetEffectiveAlignment003(napi_env env, napi_callback_info info);
 #endif // NATIVEFONTNDK_USELESS_H

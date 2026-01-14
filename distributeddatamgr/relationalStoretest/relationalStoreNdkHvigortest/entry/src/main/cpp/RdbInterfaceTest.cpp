@@ -427,7 +427,150 @@ static napi_value OH_Rdb_ColumnType_0100(napi_env env, napi_callback_info)
     napi_create_int32(env, errCode, &result);
     return result;
 }
+static napi_value OH_Rdb_ErrCode_0100(napi_env env, napi_callback_info)
+{
+    int errCode = 14800002;
+    NAPI_ASSERT(env, errCode == RDB_E_CANNOT_UPDATE_READONLY, "RDB_E_CANNOT_UPDATE_READONLY is fail.");
 
+    int errCode1 = 14800003;
+    NAPI_ASSERT(env, errCode1 == RDB_E_REMOVE_FILE, "RDB_E_REMOVE_FILE is fail.");
+
+    int errCode2 = 14800006;
+    NAPI_ASSERT(env, errCode2 == RDB_E_EMPTY_VALUES_BUCKET, "RDB_E_EMPTY_VALUES_BUCKET is fail.");
+
+    int errCode3 = 14800007;
+    NAPI_ASSERT(env, errCode3 == RDB_E_EXECUTE_IN_STEP_QUERY, "RDB_E_EXECUTE_IN_STEP_QUERY is fail.");
+
+    int errCode4 = 14800010;
+    NAPI_ASSERT(env, errCode4 == RDB_E_EMPTY_FILE_NAME, "RDB_E_EMPTY_FILE_NAME is fail.");
+
+    int errCode5 = 14800011;
+    NAPI_ASSERT(env, errCode5 == RDB_E_INVALID_FILE_PATH, "RDB_E_INVALID_FILE_PATH is fail.");
+
+    int errCode6 = 14800012;
+    NAPI_ASSERT(env, errCode6 == RDB_E_TRANSACTION_IN_EXECUTE, "RDB_E_TRANSACTION_IN_EXECUTE is fail.");
+
+    int errCode7 = 14800013;
+    NAPI_ASSERT(env, errCode7 == RDB_E_INVALID_STATEMENT, "RDB_E_INVALID_STATEMENT is fail.");
+
+    int errCode8 = 14800014;
+    NAPI_ASSERT(env, errCode8 == RDB_E_EXECUTE_WRITE_IN_READ_CONNECTION, "RDB_E_EXECUTE_WRITE_IN_READ_CONNECTION is fail.");
+
+    int errCode9 = 14800015;
+    NAPI_ASSERT(env, errCode9 == RDB_E_BEGIN_TRANSACTION_IN_READ_CONNECTION, "RDB_E_BEGIN_TRANSACTION_IN_READ_CONNECTION is fail.");
+
+    int errCodeValue = 14800017;
+    NAPI_ASSERT(env, errCodeValue == RDB_E_MORE_STEP_QUERY_IN_ONE_SESSION, "RDB_E_MORE_STEP_QUERY_IN_ONE_SESSION is fail.");
+
+    int errCodeValue1 = 14800019;
+    NAPI_ASSERT(env, errCodeValue1 == RDB_E_INVALID_BIND_ARGS_COUNT, "RDB_E_INVALID_BIND_ARGS_COUNT is fail.");
+
+    int errCodeValue2 = 14800021;
+    NAPI_ASSERT(env, errCodeValue2 == RDB_E_INVALID_CONFLICT_FLAG, "RDB_E_INVALID_CONFLICT_FLAG is fail.");
+
+    int errCodeValue3 = 14800022;
+    NAPI_ASSERT(env, errCodeValue3 == RDB_E_HAVING_CLAUSE_NOT_IN_GROUP_BY, "RDB_E_HAVING_CLAUSE_NOT_IN_GROUP_BY is fail.");
+
+    int errCodeValue4 = 14800023;
+    NAPI_ASSERT(env, errCodeValue4 == RDB_E_NOT_SUPPORTED_BY_STEP_RESULT_SET, "RDB_E_NOT_SUPPORTED_BY_STEP_RESULT_SET is fail.");
+
+    int errCodeValue5 = 14800024;
+    NAPI_ASSERT(env, errCodeValue5 == RDB_E_STEP_RESULT_SET_CROSS_THREADS, "RDB_E_STEP_RESULT_SET_CROSS_THREADS is fail.");
+
+    int errCodeValue6 = 14800025;
+    NAPI_ASSERT(env, errCodeValue6 == RDB_E_STEP_RESULT_QUERY_NOT_EXECUTED, "RDB_E_STEP_RESULT_QUERY_NOT_EXECUTED is fail.");
+
+    int errCodeValue7 = 14800027;
+    NAPI_ASSERT(env, errCodeValue7 == RDB_E_STEP_RESULT_QUERY_EXCEEDED, "RDB_E_STEP_RESULT_QUERY_EXCEEDED is fail.");
+
+    int errCodeValue8 = 14800028;
+    NAPI_ASSERT(env, errCodeValue8 == RDB_E_STATEMENT_NOT_PREPARED, "RDB_E_STATEMENT_NOT_PREPARED is fail.");
+
+    int errCodeValue9 = 14800029;
+    NAPI_ASSERT(env, errCodeValue9 == RDB_E_EXECUTE_RESULT_INCORRECT, "RDB_E_EXECUTE_RESULT_INCORRECT is fail.");
+
+    int errCodeVal = 14800031;
+    NAPI_ASSERT(env, errCodeVal == RDB_E_RELATIVE_PATH, "RDB_E_RELATIVE_PATH is fail.");
+
+    int errCodeVal1 = 14800032;
+    NAPI_ASSERT(env, errCodeVal1 == RDB_E_EMPTY_NEW_ENCRYPT_KEY, "RDB_E_EMPTY_NEW_ENCRYPT_KEY is fail.");
+
+    int errCodeVal2 = 14800033;
+    NAPI_ASSERT(env, errCodeVal2 == RDB_E_CHANGE_UNENCRYPTED_TO_ENCRYPTED, "RDB_E_CHANGE_UNENCRYPTED_TO_ENCRYPTED is fail.");
+
+    int errCodeVal3 = 14800034;
+    NAPI_ASSERT(env, errCodeVal3 == RDB_E_CHANGE_ENCRYPT_KEY_IN_BUSY, "RDB_E_CHANGE_ENCRYPT_KEY_IN_BUSY is fail.");
+
+    int errCodeVal4 = 14800035;
+    NAPI_ASSERT(env, errCodeVal4 == RDB_E_STEP_STATEMENT_NOT_INIT, "RDB_E_STEP_STATEMENT_NOT_INIT is fail.");
+
+    int errCodeVal5 = 14800038;
+    NAPI_ASSERT(env, errCodeVal5 == RDB_E_SQLITE_SQL_BUILDER_NORMALIZE_FAIL, "RDB_E_SQLITE_SQL_BUILDER_NORMALIZE_FAIL is fail.");
+
+    int errCodeVal6 = 14800039;
+    NAPI_ASSERT(env, errCodeVal6 == RDB_E_STORE_SESSION_NOT_GIVE_CONNECTION_TEMPORARILY, "RDB_E_STORE_SESSION_NOT_GIVE_CONNECTION_TEMPORARILY is fail.");
+
+    int errCodeVal7 = 14800040;
+    NAPI_ASSERT(env, errCodeVal7 == RDB_E_STORE_SESSION_NO_CURRENT_TRANSACTION, "RDB_E_STORE_SESSION_NO_CURRENT_TRANSACTION is fail.");
+
+    int errCodeVal8 = 14800041;
+    NAPI_ASSERT(env, errCodeVal8 == RDB_E_NOT_SUPPORT, "RDB_E_NOT_SUPPORT is fail.");
+
+    int errCodeVal9 = 14800042;
+    NAPI_ASSERT(env, errCodeVal9 == RDB_E_INVALID_PARCEL, "RDB_E_INVALID_PARCEL is fail.");
+
+    int errCodeVa = 14800043;
+    NAPI_ASSERT(env, errCodeVa == RDB_E_QUERY_IN_EXECUTE, "RDB_E_QUERY_IN_EXECUTE is fail.");
+
+    int errCodeVa1 = 14800044;
+    NAPI_ASSERT(env, errCodeVa1 == RDB_E_SET_PERSIST_WAL, "RDB_E_SET_PERSIST_WAL is fail.");
+
+    int errCodeVa2 = 14800045;
+    NAPI_ASSERT(env, errCodeVa2 == RDB_E_DB_NOT_EXIST, "RDB_E_DB_NOT_EXIST is fail.");
+
+    int errCodeVa3 = 14800046; 
+    NAPI_ASSERT(env, errCodeVa3 == RDB_E_ARGS_READ_CON_OVERLOAD, "RDB_E_ARGS_READ_CON_OVERLOAD is fail.");
+
+    int errCodeVa4 = 14800047;
+    NAPI_ASSERT(env, errCodeVa4 == RDB_E_WAL_SIZE_OVER_LIMIT, "RDB_E_WAL_SIZE_OVER_LIMIT is fail.");
+
+    int errCodeVa5 = 14800048;
+    NAPI_ASSERT(env, errCodeVa5 == RDB_E_CON_OVER_LIMIT, "RDB_E_CON_OVER_LIMIT is fail.");
+
+    int errCodeVa6 = 14800053;
+    NAPI_ASSERT(env, errCodeVa6 == RDB_E_SQLITE_PERM, "RDB_E_SQLITE_PERM is fail.");
+
+    int errCodeVa7 = 14800055;
+    NAPI_ASSERT(env, errCodeVa7 == RDB_E_SQLITE_LOCKED, "RDB_E_SQLITE_LOCKED is fail.");
+
+    int errCodeVa8 = 14800056;
+    NAPI_ASSERT(env, errCodeVa8 == RDB_E_SQLITE_NOMEM, "RDB_E_SQLITE_NOMEM is fail.");
+
+    int errCodeVa9 = 14800057;
+    NAPI_ASSERT(env, errCodeVa9 == RDB_E_SQLITE_READONLY, "RDB_E_SQLITE_READONLY is fail.");
+
+    int errCodeVb = 14800058;
+    NAPI_ASSERT(env, errCodeVb == RDB_E_SQLITE_IOERR, "RDB_E_SQLITE_IOERR is fail.");
+
+    int errCodeVb1 = 14800059;
+    NAPI_ASSERT(env, errCodeVb1 == RDB_E_SQLITE_FULL, "RDB_E_SQLITE_FULL is fail.");
+
+    int errCodeVb2 = 14800060;
+    NAPI_ASSERT(env, errCodeVb2 == RDB_E_SQLITE_CANT_OPEN, "RDB_E_SQLITE_CANT_OPEN is fail.");
+
+    int errCodeVb3 = 14800061;
+    NAPI_ASSERT(env, errCodeVb3 == RDB_E_SQLITE_TOO_BIG, "RDB_E_SQLITE_TOO_BIG is fail.");
+
+    int errCodeVb4 = 14800062;
+    NAPI_ASSERT(env, errCodeVb4 == RDB_E_SQLITE_MISMATCH, "RDB_E_SQLITE_MISMATCH is fail.");
+
+    int errCodeVb5 = 14800066;
+    NAPI_ASSERT(env, errCodeVb5 == RDB_E_SUB_LIMIT_REACHED, "RDB_E_SUB_LIMIT_REACHED is fail.");
+
+    napi_value result;
+    napi_create_int32(env, 0, &result);
+    return result;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -446,6 +589,7 @@ static napi_value Init(napi_env env, napi_value exports)
         { "OH_Rdb_CreateTransaction_0100", nullptr, OH_Rdb_CreateTransaction_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_NotSupport0100", nullptr, OH_Rdb_NotSupport0100, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "OH_Rdb_ColumnType_0100", nullptr, OH_Rdb_ColumnType_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "OH_Rdb_ErrCode_0100", nullptr, OH_Rdb_ErrCode_0100, nullptr, nullptr, nullptr, napi_default, nullptr },
     };
     
     napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc);

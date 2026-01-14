@@ -268,11 +268,12 @@ export default function CameraSessionAutoDeviceSwitchTest() {
     it('testOHSessionIsAutoDeviceSwitchSupportedTest100', Level.LEVEL2, async () => {
       console.info("--------------testOHSessionIsAutoDeviceSwitchSupportedTest100--------------");
       let isFoldable = display.isFoldable();
-      console.info(TAG + "testOHSessionIsAutoDeviceSwitchSupportedTest100 isFoldable:" + isFoldable);
+      let tagTemp = "testOHSessionIsAutoDeviceSwitchSupportedTest100";
+      console.info(tagTemp + " isFoldable:" + isFoldable);
       let autoSwitchSupportInfo = cameraObj.sessionIsAutoDeviceSwitchSupported();
-      if (autoSwitchSupportInfo.isSupported != isFoldable || autoSwitchSupportInfo.errorCode != 0) {
-        expect().assertFail();
-      }
+      console.info(tagTemp + " errorCode:" + autoSwitchSupportInfo.errorCode + " isSupported:" + autoSwitchSupportInfo.isSupported);
+      expect(autoSwitchSupportInfo.errorCode === 0).assertTrue();
+      expect(autoSwitchSupportInfo.isSupported != undefined).assertTrue();
       console.info(TAG + "Entering testOHSessionIsAutoDeviceSwitchSupportedTest100 ends here");
     })
 

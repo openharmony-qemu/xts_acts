@@ -166,7 +166,7 @@ export default function motionTest() {
           expect(motion.OperatingHandStatus.UNKNOWN_STATUS == 0).assertTrue();
           expect(motion.OperatingHandStatus.LEFT_HAND_OPERATED == 1).assertTrue();
           expect(motion.OperatingHandStatus.RIGHT_HAND_OPERATED == 2).assertTrue();
-          hilog.info(domain, tag, `${caseName} onOperatingHandChanged success`);
+          hilog.info(domain, tag, `${caseName} getRecentOperatingHandStatus success`);
           done();
         } catch (error: BusinessError) {
           let e: BusinessError = error as BusinessError;
