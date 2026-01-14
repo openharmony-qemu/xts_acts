@@ -22,7 +22,7 @@ import {
 
 @Entry
 @Component
-struct arcSwiperEventTest {
+struct arcSwiperEventTest1 {
   @State itemSimpleColor: Color | number | string = ''
   @State selectedItemSimpleColor: Color | number | string = ''
   private arcSwiperController: ArcSwiperController = new ArcSwiperController()
