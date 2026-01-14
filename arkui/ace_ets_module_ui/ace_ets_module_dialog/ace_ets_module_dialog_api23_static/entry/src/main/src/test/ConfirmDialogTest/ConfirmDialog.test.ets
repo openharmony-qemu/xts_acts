@@ -259,5 +259,295 @@ export default function ConfirmDialogTest() {
         done();
       }
     });
+
+    /**
+     * @tc.number ConfirmDialogTest_005
+     * @tc.name confirmDialogIsCheckedFalse
+     * @tc.desc Test ConfirmDialog property: isChecked(false)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogIsCheckedFalse', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogIsCheckedFalse START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog5'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1000);
+
+        const dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        expect(!!dialogButton).assertTrue();
+        await (dialogButton?.click() as Promise<void>);
+        await Utils.sleep(500);
+
+        expect(AppStorage.get<boolean>('confirmDialogInitialIsChecked')).assertFalse();
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogIsCheckedFalse END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogIsCheckedFalse error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number ConfirmDialogTest_006
+     * @tc.name confirmDialogPrimaryButton
+     * @tc.desc Test ConfirmDialog property: primaryButton
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogPrimaryButton', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogPrimaryButton START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog6'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1000);
+
+        const primaryButton = await driver.findComponent(ON.text('Primary Button', MatchPattern.EQUALS));
+        expect(!!primaryButton).assertTrue();
+        await (primaryButton?.click() as Promise<void>);
+        await Utils.sleep(500);
+
+        expect(AppStorage.get<string>('confirmDialogPrimaryButtonValue')).assertEqual('Primary Button');
+        expect(AppStorage.get<boolean>('confirmDialogPrimaryButtonActionCalled')).assertTrue();
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogPrimaryButton END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogPrimaryButton error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number ConfirmDialogTest_007
+     * @tc.name confirmDialogSecondaryButton
+     * @tc.desc Test ConfirmDialog property: secondaryButton
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogSecondaryButton', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogSecondaryButton START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog7'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1000);
+
+        const secondaryButton = await driver.findComponent(ON.text('Secondary Button', MatchPattern.EQUALS));
+        expect(!!secondaryButton).assertTrue();
+        await (secondaryButton?.click() as Promise<void>);
+        await Utils.sleep(500);
+
+        expect(AppStorage.get<string>('confirmDialogSecondaryButtonValue')).assertEqual('次按钮');
+        expect(AppStorage.get<boolean>('confirmDialogSecondaryButtonActionCalled')).assertTrue();
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogSecondaryButton END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogSecondaryButton error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number ConfirmDialogTest_008
+     * @tc.name confirmDialogTheme
+     * @tc.desc Test ConfirmDialog property: theme
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogTheme', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogTheme START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog8'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1500);
+
+        const dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        expect(!!dialogButton).assertTrue();
+        await (dialogButton?.click() as Promise<void>);
+        await Utils.sleep(1500);
+
+        const themeSet = AppStorage.get<boolean>('confirmDialogThemeSet');
+        console.info('[ARKUI_NEW] ConfirmDialogTest: confirmDialogTheme - themeSet from AppStorage: ' + themeSet);
+        if (themeSet === undefined || themeSet === null) {
+          console.error('[ARKUI_NEW] ConfirmDialogTest: themeSet is undefined/null, action callback may not have been called');
+          expect().assertFail();
+        } else {
+          expect(themeSet).assertTrue();
+        }
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogTheme END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogTheme error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number ConfirmDialogTest_009
+     * @tc.name confirmDialogThemeColorModeSystem
+     * @tc.desc Test ConfirmDialog property: themeColorMode(SYSTEM)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogThemeColorModeSystem', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeSystem START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog9'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1000);
+
+        const dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        expect(!!dialogButton).assertTrue();
+        await (dialogButton?.click() as Promise<void>);
+        await Utils.sleep(500);
+
+        const themeColorMode = AppStorage.get<number>('confirmDialogThemeColorMode');
+        console.info('[ARKUI_NEW] ConfirmDialogTest: confirmDialogThemeColorModeSystem - themeColorMode from AppStorage: ' + themeColorMode);
+        expect(themeColorMode).assertEqual(ThemeColorMode.SYSTEM);
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeSystem END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeSystem error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number ConfirmDialogTest_010
+     * @tc.name confirmDialogThemeColorModeLight
+     * @tc.desc Test ConfirmDialog property: themeColorMode(LIGHT)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogThemeColorModeLight', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeLight START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog10'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1000);
+
+        const dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        expect(!!dialogButton).assertTrue();
+        await (dialogButton?.click() as Promise<void>);
+        await Utils.sleep(500);
+
+        const themeColorMode = AppStorage.get<number>('confirmDialogThemeColorMode');
+        console.info('[ARKUI_NEW] ConfirmDialogTest: confirmDialogThemeColorModeLight - themeColorMode from AppStorage: ' + themeColorMode);
+        expect(themeColorMode).assertEqual(ThemeColorMode.LIGHT);
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeLight END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeLight error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number ConfirmDialogTest_011
+     * @tc.name confirmDialogThemeColorModeDark
+     * @tc.desc Test ConfirmDialog property: themeColorMode(DARK)
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogThemeColorModeDark', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeDark START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog11'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1000);
+
+        const dialogButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        expect(!!dialogButton).assertTrue();
+        await (dialogButton?.click() as Promise<void>);
+        await Utils.sleep(500);
+
+        const themeColorMode = AppStorage.get<number>('confirmDialogThemeColorMode');
+        console.info('[ARKUI_NEW] ConfirmDialogTest: confirmDialogThemeColorModeDark - themeColorMode from AppStorage: ' + themeColorMode);
+        expect(themeColorMode).assertEqual(ThemeColorMode.DARK);
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeDark END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogThemeColorModeDark error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
+
+    /**
+     * @tc.number ConfirmDialogTest_012
+     * @tc.name confirmDialogOnCheckedChange
+     * @tc.desc Test ConfirmDialog property: onCheckedChange
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('confirmDialogOnCheckedChange', Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogOnCheckedChange START');
+      try {
+        const driver = Driver.create();
+        const openDialogButton = await driver.findComponent(ON.id('btnConfirmDialog12'));
+        expect(!!openDialogButton).assertEqual(true);
+        await (openDialogButton?.click() as Promise<void>);
+        await Utils.sleep(1000);
+
+        // Click checkbox to trigger onCheckedChange
+        const checkTipsText = await driver.findComponent(ON.text('Do not show again', MatchPattern.EQUALS));
+        expect(!!checkTipsText).assertTrue();
+        await (checkTipsText?.click() as Promise<void>);
+        await Utils.sleep(500);
+
+        // Verify onCheckedChange was called
+        expect(AppStorage.get<boolean>('confirmDialogOnCheckedChangeCalled')).assertTrue();
+        expect(AppStorage.get<boolean>('confirmDialogOnCheckedChangeValue')).assertFalse();
+
+        // Ensure dialog is closed before test ends
+        const confirmButton = await driver.findComponent(ON.text('Confirm', MatchPattern.EQUALS));
+        if (confirmButton) {
+          await (confirmButton?.click() as Promise<void>);
+          await Utils.sleep(500);
+          console.info('[ARKUI_NEW] ConfirmDialogTest: Dialog closed');
+        }
+
+        console.info('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogOnCheckedChange END');
+        done();
+      } catch (error) {
+        console.error('[ARKUI_NEW] ConfirmDialogTest execute: confirmDialogOnCheckedChange error:' + error);
+        expect().assertFail();
+        done();
+      }
+    });
   });
 }
