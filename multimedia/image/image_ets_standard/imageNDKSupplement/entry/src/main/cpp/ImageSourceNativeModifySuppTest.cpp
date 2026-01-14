@@ -79,6 +79,7 @@ static constexpr uint32_t NUM_0 = 0;
 static constexpr uint32_t NUM_1 = 1;
 static constexpr uint32_t NUM_2 = 2;
 static constexpr uint32_t NUM_3 = 3;
+static constexpr uint32_t NUM_4 = 4;
 static constexpr uint32_t MAKER_NOTE_SIZE_MAX = 64 * 1024;
 
 
@@ -179,7 +180,7 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleSupp(napi_env env, napi_c
     napi_value args[3] = {nullptr};
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 3) {
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < NUM_3) {
         return result;
     }
     int32_t index;
@@ -202,31 +203,23 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleSupp(napi_env env, napi_c
     case CASE_INDEX_1:
         propertyValue = 1.0;
         errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(nullptr, &key, propertyValue);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDouble,%{public}d,%{public}d,%{public}f,%{public}d", imageSource,
-             key, propertyValue, errCode);
         break;
     case CASE_INDEX_2:
         propertyValue = 'sss';
         errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(imageSource, &key, propertyValue);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDouble,%{public}d,%{public}d,%{public}f,%{public}d", imageSource,
-             key, propertyValue, errCode);
         break;
     case CASE_INDEX_3:
-        propertyValue = 2;
+        propertyValue = 2.0;
         errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(imageSource, &key, propertyValue);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDouble,%{public}d,%{public}d,%{public}f,%{public}d", imageSource,
-             key, propertyValue, errCode);
         break;
     case CASE_INDEX_4:
         propertyValue = 0.0;
         errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(imageSource, &key, propertyValue);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDouble,%{public}d,%{public}d,%{public}f,%{public}d", imageSource,
-             key, propertyValue, errCode);
         break;
     default:
         break;
     }
-    if(imageSource != nullptr){
+    if (imageSource != nullptr) {
         OH_ImageSourceNative_Release(imageSource);
         }
     napi_value ret;
@@ -239,7 +232,7 @@ napi_value OHImageSourceNativeModifyImagePropertyIntArraySupp(napi_env env, napi
     napi_value args[4] = {nullptr};
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 4) {
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < NUM_4) {
         return result;
     }
     int32_t index;
@@ -250,7 +243,6 @@ napi_value OHImageSourceNativeModifyImagePropertyIntArraySupp(napi_env env, napi
     OH_ImageSourceNative *imageSource = nullptr;
     errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
     LOGI("OH_ImageSourceNative_CreateFromUri, errCode: %{public}d", errCode);
-
     if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
         LOGE("Create ImageSource failed, errCode: %d", errCode);
         napi_value ret;
@@ -262,28 +254,16 @@ napi_value OHImageSourceNativeModifyImagePropertyIntArraySupp(napi_env env, napi
     int32_t *valueArray = ParseIntArrayFromArg(env, args[3], &arrayLength);
     switch (index) {
     case CASE_INDEX_1:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(nullptr,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyIntArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(nullptr, &key, valueArray, arrayLength);
         break;
     case CASE_INDEX_2:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyIntArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, valueArray, arrayLength);
         break;
     case CASE_INDEX_3:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyIntArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, valueArray, arrayLength);
         break;
     case CASE_INDEX_4:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyIntArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, valueArray, arrayLength);
         break;
     default:
         break;
@@ -301,7 +281,7 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleArraySupp(napi_env env, n
     napi_value args[4] = {nullptr};
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 4) {
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < NUM_4) {
         return result;
     }
     int32_t index;
@@ -323,28 +303,16 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleArraySupp(napi_env env, n
     double *valueArray = ParseDoubleArrayFromArg(env, args[3], &arrayLength);
     switch (index) {
     case CASE_INDEX_1:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource, &key, valueArray, arrayLength);
         break;
     case CASE_INDEX_2:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(nullptr,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(nullptr, &key, valueArray, arrayLength);
         break;
     case CASE_INDEX_3:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource, &key, valueArray, arrayLength);
         break;
     case CASE_INDEX_4:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource,&key,valueArray,arrayLength);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, arrayLength, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource, &key, valueArray, arrayLength);
         break;
     default:
         break;
@@ -362,7 +330,7 @@ napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_cal
     napi_value args[4] = {nullptr};
     napi_value result = nullptr;
     napi_get_undefined(env, &result);
-    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < 4) {
+    if (napi_get_cb_info(env, info, &argc, args, nullptr, nullptr) != napi_ok || argc < NUM_4) {
         return result;
     }
     int32_t index;
@@ -385,32 +353,20 @@ napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_cal
     void *bufferData = ParseArrayBufferFromArg(env, args[3], &bufferSize);
     switch (index) {
     case CASE_INDEX_1:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource,&key,bufferData,bufferSize);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, bufferSize, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
         break;
     case CASE_INDEX_2:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(nullptr,&key,bufferData,bufferSize);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, bufferSize, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(nullptr, &key, bufferData, bufferSize);
         break;
     case CASE_INDEX_3:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource,&key,bufferData,bufferSize);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, value: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, bufferSize, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
         break;
     case CASE_INDEX_4:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource,&key,bufferData,bufferSize);
-        LOGI("OH_ImageSourceNative_ModifyImagePropertyDoubleArray | "
-             "source: %{public}p, key: %{public}s, size: %{public}zu, errCode: %{public}d",
-             imageSource, key.data, bufferSize, errCode);
+        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
         break;
     default:
         break;
-    }if(imageSource != nullptr){
+    }if (imageSource != nullptr) {
         OH_ImageSourceNative_Release(imageSource);
     }
     napi_value ret;
