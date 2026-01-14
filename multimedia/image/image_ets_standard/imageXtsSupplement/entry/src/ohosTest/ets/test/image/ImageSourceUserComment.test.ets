@@ -1,5 +1,5 @@
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -43,6 +43,7 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
 
 let jpgImageSourceApi:image.ImageSource;
 let pngImageSourceApi:image.ImageSource;
+let webpImageSourceApi:image.ImageSource;
 
 export default function ImageSourceUserCommentSupp() {
   describe('ImageSourceUserCommentSupp', () => {
@@ -50,6 +51,7 @@ export default function ImageSourceUserCommentSupp() {
       console.info('beforeAll case');
       jpgImageSourceApi = await getImageSource('test_exif_v2.jpg');
       pngImageSourceApi = await getImageSource('test_exif_v2.png');
+      webpImageSourceApi = await getImageSource('test_exif_v2.webp');
     });
     beforeEach(async () => {
       console.info('beforeEach case');
@@ -61,11 +63,12 @@ export default function ImageSourceUserCommentSupp() {
       console.info('afterAll case');
       await jpgImageSourceApi.release();
       await pngImageSourceApi.release();
+      await webpImageSourceApi.release();
     });
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_001
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageReadImageMetadata-userComment-success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -91,7 +94,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_002
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -105,8 +108,6 @@ export default function ImageSourceUserCommentSupp() {
       };
       try {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -117,7 +118,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_003
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageReadImageMetadata-userComment-success
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -146,7 +147,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_004
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -162,8 +163,6 @@ export default function ImageSourceUserCommentSupp() {
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -175,7 +174,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_005
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -191,8 +190,6 @@ export default function ImageSourceUserCommentSupp() {
         let resultFir = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await jpgImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -204,7 +201,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_006
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -218,8 +215,6 @@ export default function ImageSourceUserCommentSupp() {
       };
       try {
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -230,7 +225,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_007
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -244,8 +239,6 @@ export default function ImageSourceUserCommentSupp() {
       };
       try {
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -256,7 +249,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_008
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -272,8 +265,6 @@ export default function ImageSourceUserCommentSupp() {
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -285,7 +276,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_009
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -301,8 +292,6 @@ export default function ImageSourceUserCommentSupp() {
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -314,7 +303,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_010
-     * @tc.desc       ImageWriteImageMetadata cover normal userComment
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -330,8 +319,6 @@ export default function ImageSourceUserCommentSupp() {
         let resultFir = await pngImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
         await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        let result = await pngImageSourceApi.readImageMetadata()
-        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -340,6 +327,133 @@ export default function ImageSourceUserCommentSupp() {
       done();
     })
 
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_011
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_011
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_011', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_011';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = 'place for user comments';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_012
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_012
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_012', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_012';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = 'abc';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_013
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_013
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_013', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_013';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = '';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
 
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_014
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_014
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_014', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_014';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_015
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_015
+     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_015', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_015';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await webpImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual('7700202');
+      }
+      done();
+    })
   });
 }

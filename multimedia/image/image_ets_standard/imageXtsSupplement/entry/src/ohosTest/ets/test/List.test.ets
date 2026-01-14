@@ -199,6 +199,8 @@ import ImageExifDateTimeSupp from './image/ImageExifDateTime.test';
 import ImageExifVersionSupp from './image/ImageExifVersion.test';
 import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfiguration.test';
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
+import ImageSourceLensModelSupp from './image/ImageSourceLensModel.test';
+import ImageSourceLensMakeSupp from './image/ImageSourceLensMake.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -382,4 +384,6 @@ export default function testsuite() {
   ImageSourceRelatedSoundFileSupp();
   ImageWidthLengthSupp();
   ImageDescriptionSupp();
+  ImageSourceLensMakeSupp();
+  ImageSourceLensModelSupp()
 }
