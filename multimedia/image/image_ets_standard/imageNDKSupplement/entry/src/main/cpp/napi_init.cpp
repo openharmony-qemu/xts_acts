@@ -55,7 +55,7 @@
 #include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
 #include "OHImageNdkFrameworkTest.h"
-
+#include "ImageSourceNativeModifySuppTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -224,6 +224,11 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelmapNativeGetNativeBufferNotExist", PixelmapNativeGetNativeBufferNotExist),
     DESCRIPTOR("ImageSourceCreatSuccessTest", ImageSourceCreatSuccessTest),
     DESCRIPTOR("ImageSourceCreate", ImageSourceCreate),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyDoubleSupp", OHImageSourceNativeModifyImagePropertyDoubleSupp),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyIntArraySupp", OHImageSourceNativeModifyImagePropertyIntArraySupp),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyDoubleArraySupp", OHImageSourceNativeModifyImagePropertyDoubleArraySupp),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyBlobSupp", OHImageSourceNativeModifyImagePropertyBlobSupp),
+    
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

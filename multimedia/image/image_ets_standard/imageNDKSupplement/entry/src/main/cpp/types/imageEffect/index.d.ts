@@ -200,3 +200,7 @@ export const OH_PixelmapNative_ConvertAlphaFormatTest:(a: number) => number;
 export const ImageSourceCreatSuccessTest:(a: number) => number;
 export const PixelmapNativeGetNativeBufferNotExist:(a: number) => number;
 export const ImageSourceCreate:(a: number, b:string) => number;
+export const OHImageSourceNativeModifyImagePropertyDoubleSupp:(a: number,b:number,c:string) => number;
+export const OHImageSourceNativeModifyImagePropertyIntArraySupp:(a: number,b:number,c:string,d:number[]) => number;
+export const OHImageSourceNativeModifyImagePropertyDoubleArraySupp:(a: number,b:number,c:string,d:number[]) => number;
+export const OHImageSourceNativeModifyImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
