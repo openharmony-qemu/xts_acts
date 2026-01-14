@@ -40,10 +40,11 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
   console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
   return imageSourceApi;
 }
-
+let IMAGE_SOURCE_UNSUPPORTED_METADATA = '7700202';
 let jpgImageSourceApi:image.ImageSource;
 let pngImageSourceApi:image.ImageSource;
 let webpImageSourceApi:image.ImageSource;
+let heicImageSourceApi:image.ImageSource;
 
 export default function ImageSourceSubsecTimeOriginalSupp() {
   describe('ImageSourceSubsecTimeOriginalSupp', () => {
@@ -52,6 +53,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
       jpgImageSourceApi = await getImageSource('test_exif_v2.jpg');
       pngImageSourceApi = await getImageSource('test_exif_v2.png');
       webpImageSourceApi = await getImageSource('test_exif_v2.webp');
+      heicImageSourceApi = await getImageSource('test_exif_v2.heic');
     });
     beforeEach(async () => {
       console.info('beforeEach case');
@@ -64,11 +66,12 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
       await jpgImageSourceApi.release();
       await pngImageSourceApi.release();
       await webpImageSourceApi.release();
+      await heicImageSourceApi.release();
     });
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_001
-     * @tc.desc       ImageReadImageMetadata-subsecTimeOriginal-success
+     * @tc.desc       ImageReadImageMetadata-subsecTimeOriginal-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -94,7 +97,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_002
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -113,14 +116,14 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_003
-     * @tc.desc       ImageReadImageMetadata-subsecTimeOriginal-success
+     * @tc.desc       ImageReadImageMetadata-subsecTimeOriginal-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -149,7 +152,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_004
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -168,7 +171,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -176,7 +179,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_005
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -195,7 +198,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -203,7 +206,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_006
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -220,14 +223,14 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_007
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -244,14 +247,14 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_008
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -270,7 +273,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -278,7 +281,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_009
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -297,7 +300,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -305,7 +308,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_010
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -324,7 +327,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -332,7 +335,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_011
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_011
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -349,14 +352,14 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_012
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_012
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -373,14 +376,14 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_013
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_013
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -399,7 +402,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -407,7 +410,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_014
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_014
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -426,7 +429,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -434,7 +437,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_015
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_015
-     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -453,7 +456,142 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_016
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_016
+     * @tc.desc       ImageReadImageMetadata-subsecTimeOriginal-SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_016', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_016';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.subsecTimeOriginal = '123456';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.subsecTimeOriginal);
+        expect(result.exifMetadata?.subsecTimeOriginal).assertContain('123456');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_017
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_017
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_017', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_017';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.subsecTimeOriginal = '';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.subsecTimeOriginal);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_018
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_018
+     * @tc.desc       ImageReadImageMetadata-subsecTimeOriginal-SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_018', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_018';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.subsecTimeOriginal = 'abc';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.subsecTimeOriginal);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.subsecTimeOriginal);
+        expect(result.exifMetadata?.subsecTimeOriginal).assertContain('abc');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_019
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_019
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_019', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_019';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.subsecTimeOriginal = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.subsecTimeOriginal);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_020
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_020
+     * @tc.desc       ImageWriteImageMetadata-subsecTimeOriginal-UNSUPPORTED_METADATA
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_020', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_020';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.subsecTimeOriginal = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.subsecTimeOriginal);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })

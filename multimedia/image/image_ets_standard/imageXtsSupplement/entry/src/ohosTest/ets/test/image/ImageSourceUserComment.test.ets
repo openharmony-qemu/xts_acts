@@ -40,10 +40,12 @@ async function getImageSource(path: string): Promise<image.ImageSource> {
   console.info(TAG, "createImageSource: " + JSON.stringify(imageSourceApi.getImageInfoSync()));
   return imageSourceApi;
 }
-
+let IMAGE_SOURCE_UNSUPPORTED_METADATA = '7700202';
 let jpgImageSourceApi:image.ImageSource;
 let pngImageSourceApi:image.ImageSource;
 let webpImageSourceApi:image.ImageSource;
+let heicImageSourceApi:image.ImageSource;
+
 
 export default function ImageSourceUserCommentSupp() {
   describe('ImageSourceUserCommentSupp', () => {
@@ -52,6 +54,7 @@ export default function ImageSourceUserCommentSupp() {
       jpgImageSourceApi = await getImageSource('test_exif_v2.jpg');
       pngImageSourceApi = await getImageSource('test_exif_v2.png');
       webpImageSourceApi = await getImageSource('test_exif_v2.webp');
+      heicImageSourceApi = await getImageSource('test_exif_v2.heic');
     });
     beforeEach(async () => {
       console.info('beforeEach case');
@@ -64,11 +67,12 @@ export default function ImageSourceUserCommentSupp() {
       await jpgImageSourceApi.release();
       await pngImageSourceApi.release();
       await webpImageSourceApi.release();
+      await heicImageSourceApi.release();
     });
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_001
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_001
-     * @tc.desc       ImageReadImageMetadata-userComment-success
+     * @tc.desc       ImageReadImageMetadata-userComment-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -94,7 +98,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_002
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_002
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -111,14 +115,14 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_003
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_003
-     * @tc.desc       ImageReadImageMetadata-userComment-success
+     * @tc.desc       ImageReadImageMetadata-userComment-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -147,7 +151,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_004
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_004
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -166,7 +170,7 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -174,7 +178,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_005
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -193,7 +197,7 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -201,7 +205,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_006
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_006
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -218,14 +222,14 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_007
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_007
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -242,14 +246,14 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_008
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_008
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -268,7 +272,7 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -276,7 +280,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_009
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -295,7 +299,7 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -303,7 +307,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_010
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_010
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -322,7 +326,7 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -330,7 +334,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_011
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_011
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -347,14 +351,14 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_012
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_012
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -371,14 +375,14 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_013
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_013
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -397,7 +401,7 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -405,7 +409,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_014
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_014
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -424,7 +428,7 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -432,7 +436,7 @@ export default function ImageSourceUserCommentSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_015
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_015
-     * @tc.desc       ImageWriteImageMetadata-userComment-Unsupported metadata
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -451,7 +455,140 @@ export default function ImageSourceUserCommentSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_016
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_016
+     * @tc.desc       ImageReadImageMetadata-userComment-SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_016', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_016';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = 'place for user comments';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
+        expect(result.exifMetadata?.userComment).assertContain('place for user comments');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_017
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_017
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_017', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_017';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = '';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_018
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_018
+     * @tc.desc       ImageReadImageMetadata-userComment-SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_018', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_018';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = 'abc';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.userComment);
+        expect(result.exifMetadata?.userComment).assertContain('abc');
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_019
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_019
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_019', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_019';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = undefined as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_020
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_020
+     * @tc.desc       ImageWriteImageMetadata-userComment-UNSUPPORTED_METADATA
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_020', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_USER_COMMENT_020';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.userComment = null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        let resultFir = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,resultFir.exifMetadata?.userComment);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
