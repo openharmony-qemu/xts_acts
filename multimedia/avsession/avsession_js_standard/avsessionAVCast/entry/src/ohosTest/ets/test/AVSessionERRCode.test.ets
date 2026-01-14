@@ -15,6 +15,23 @@
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import avSession from '@ohos.multimedia.avsession';
+import featureAbility from '@ohos.ability.featureAbility';
+import image from '@ohos.multimedia.image';
+import common from '@ohos.app.ability.common';
+import { BusinessError } from '@ohos.base';
+import { Key, KeyEvent } from '@kit.InputKit';
+import { AVCastPickerState, AVCastPickerStyle } from '@ohos.multimedia.avCastPickerParam';
+
+let sleep = (ms: number): Promise<string> => {
+  return new Promise((resolve) => {
+    setTimeout(() => {
+      resolve('');
+    }, ms)
+  })
+}
+
+let context: common.UIAbilityContext;
+
 
 export default function abilityTest() {
   describe('AVSessionERRCode', () => {

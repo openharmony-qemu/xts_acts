@@ -15,6 +15,7 @@
 import hilog from '@ohos.hilog';
 import { describe, beforeAll, beforeEach, afterEach, afterAll, it, expect, TestType, Size, Level } from '@ohos/hypium';
 import avSession from '@ohos.multimedia.avsession';
+import common from '@ohos.app.ability.common';
 
 
 let sleep = (ms: number): Promise<string> => {

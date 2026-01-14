@@ -21,6 +21,49 @@ import { BusinessError } from '@ohos.base';
 import { Key, KeyEvent } from '@kit.InputKit';
 
 
+let changedata: avSession.AVMetadata = {
+  assetId : '9526',
+  title: "lose yourself",
+  artist: "Eminem",
+  author: "ST",
+  avQueueName: "session queuename",
+  avQueueId: "session queueid",
+  avQueueImage: "session queueimage",
+  album: "Slim shady",
+  writer: "ST",
+  composer: "ST",
+  duration: 2222,
+  mediaImage: "https://www.example.com/example.jpg",
+  publishDate: new Date(1994,1,1,1),
+  subtitle: "8 Mile",
+  description: "Rap",
+  lyric: "lrc格式歌词内容",
+  singleLyricText: "单条歌词内容",
+  previousAssetId: "121277",
+  nextAssetId: "121279",
+  filter: 2,
+  drmSchemes: ['123123','456456'],
+  skipIntervals: 10,
+  displayTags: 1
+};
+
+let playbackstate: avSession.AVPlaybackState = {
+  state:avSession.PlaybackState.PLAYBACK_STATE_PLAY,
+  speed: 1.0,
+  position: {elapsedTime:10, updateTime:(new Date()).getTime()},
+  bufferedTime: 1000,
+  loopMode: avSession.LoopMode.LOOP_MODE_SINGLE,
+  isFavorite: true,
+  activeItemId: 123456,
+  volume: 4,
+  maxVolume: 15,
+  muted: true,
+  duration: 123,
+  videoWidth: 30,
+  videoHeight: 20,
+  extras: {'EX': 'this is session ex'}
+};
+
 let sleep = (ms: number): Promise<string> => {
   return new Promise((resolve) => {
     setTimeout(() => {
@@ -28,6 +71,69 @@ let sleep = (ms: number): Promise<string> => {
     }, ms)
   })
 }
+
+interface Size_Pixel {
+  height: number,
+  width: number
+}
+
+interface Opts {
+  editable: boolean,
+  pixelFormat: number,
+  size: Size_Pixel,
+  AlphaType: number
+};
+
+interface callMetadata0 {
+  name: string,
+  phoneNumber: string,
+  avatar?: ESObject
+};
+
+interface callMetadata1 {
+  name: number
+};
+
+interface callMetadata2 {
+  phoneNumber: number
+};
+
+interface callMetadata3 {
+  avatar: number
+};
+
+interface callMetadata5 {
+  name: string,
+  phoneNumber: string
+};
+
+interface callMetadata6 {
+  name: string
+};
+
+interface callMetadata7 {
+  phoneNumber: string
+};
+
+interface callMetadataOne {
+  name: string,
+  phoneNumber: string
+};
+
+interface avCallState {
+  state?: number | string,
+  muted?: boolean | string,
+};
+
+interface callMetadata {
+  name: string,
+  phoneNumber: string
+};
+
+interface AVCallState {
+  state: number,
+  muted: boolean
+};
 
 let context: common.UIAbilityContext;
 
@@ -42,7 +148,13 @@ export default function abilityTest() {
     let event:KeyEvent = {id:1, deviceId:0, actionTime:1, screenId:1, windowId:1, action:2, key:keyItem, unicodeChar:0, keys:[keyItem], ctrlKey:false, altKey:false, shiftKey:false, logoKey:false, fnKey:false, capsLock:false, numLock:false, scrollLock:false};
     let event1: string = 'aaa'
     let customdata: Record<string,string> = {'customData': 'appdata'}
-    let eventName = 'dynamic_lyric'
+    let eventName = 'dynamic_lyric'；
+    let assetId: string = 'assetIdTest';
+    let assetId1: string = '';
+    let assetId2: string = '';
+    let assetId3: string = '~!@#$%^&*()_+{}:">?,./123456789'+'a'.repeat(40928);
+    let assetId4: string = 'a'.repeat(40960)
+    let assetId5: number = 123
 
 
     let invalidSession = async (validFunc:Function) => {
@@ -54,6 +166,16 @@ export default function abilityTest() {
         console.info(`TestLog: session destroy error: code: ${err.code}, message: ${err.message}`);
         expect().assertFail();
       })
+    }
+
+    let playWithAssetIdCallback1 = (data: string) => {
+      console.info(`${TAG}: playWithAssetIdCallback1 received ${data}`);
+      assetId1 = data;
+    }
+
+    let playWithAssetIdCallback2 = (data: string) => {
+      console.info(`${TAG}: playWithAssetIdCallback2 received ${data}`);
+      assetId2 = data;
     }
 
     beforeAll(() => {
@@ -1687,7 +1809,7 @@ export default function abilityTest() {
     it('SUB_MULTIMEDIA_AVSESSION_OFF_PLAYWITHASSETID_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let command: avSession.AVControlCommand = {
         command: 'playWithAssetId',
-        parameter: assetId
+        parameter: 'assetIdTest'
       }
       try {
         session.on('playWithAssetId', playWithAssetIdCallback1);

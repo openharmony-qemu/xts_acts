@@ -55,7 +55,7 @@ export default function abilityTest() {
      */
      it('SUB_MULTIMEDIA_AVSESSION_ENUM_ERR_CODE_ENUM_ALL_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0 , async (done: Function) => {
       console.info(`TestLog: ERR_CODE_CAST_CONTROL_UNSPECIFIED is ${avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_UNSPECIFIED}`);
-      expect(avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_UNSPECIFIED).assertEqual(6611000 as avSession.CallerType);
+      expect(avSession.AVSessionErrorCode.ERR_CODE_CAST_CONTROL_UNSPECIFIED).assertEqual(6611000 as avSession.AVSessionErrorCode);
 
       done();
     })

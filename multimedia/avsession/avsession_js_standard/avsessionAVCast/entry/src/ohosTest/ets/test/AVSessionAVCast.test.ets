@@ -19,6 +19,7 @@ import image from '@ohos.multimedia.image';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { Key, KeyEvent } from '@kit.InputKit';
+import { AVCastPickerState, AVCastPickerStyle } from '@ohos.multimedia.avCastPickerParam';
 
 
 let sleep = (ms: number): Promise<string> => {

@@ -154,7 +154,7 @@ export default function abilityTest() {
     let controller: avSession.AVSessionController | ESObject;
     let receivedCallback1: boolean = false;
     let receivedCallback2: boolean = false;
-    let tag: string = 'VoiceCallXTS';
+    let tag: string = 'MetadataXTS';
     let assetId: string = 'assetIdTest';
     let assetId1: string = '';
     let assetId2: string = '';
@@ -765,7 +765,7 @@ export default function abilityTest() {
             console.info(`${TAG}: setCallMetadataCallback set phoneNumber successfully`);
             controller.getCallMetadata().then((data: ESObject) => {
               console.info(`${TAG}: getCallMetadata get phoneNumber is: ${data.name}`);
-              expect(data.phoneNumber).assertEqual();
+              expect(data.phoneNumber).assertEqual(callMetadata7.phoneNumber);
             }).catch((err: BusinessError) => {
               console.info(`${TAG}: getCallMetadata get phoneNumber error: code: ${err.code}, message: ${err.message}`);
               expect(false).assertTrue();
@@ -2007,7 +2007,7 @@ export default function abilityTest() {
         });
       } catch (error) {
         console.info(`${TAG}: on callMetadataChange with error metadata, error: code: ${error.code}, message: ${error.message}`);
-        expect(err.code).assertEqual(401);
+        expect(error.code).assertEqual(401);
       }
       done();
     })
