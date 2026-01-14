@@ -817,11 +817,12 @@ export default function abilityTest() {
                 pixMap.readPixelsToBuffer(readBuffer);
                 let bufferArr2 = new Uint8Array(readBuffer);
                 for (let i = 0; i < bufferArr2.length; i++) {
-                  expect(bufferArr0[i]).assertEqual(bufferArr2[i]); 
+                  expect(bufferArr0[i]).assertEqual(bufferArr2[i]);
                 }
-              })
+              }
+            })
           }
-        });
+        })
       } catch (error) {
         console.info(`${TAG}: catch error, error: [${error.code}, ${error.message}]`);
         expect(false).assertTrue();
@@ -3988,7 +3989,7 @@ export default function abilityTest() {
           '测试~·！@#￥%……&amp;*（）——-{【}】|、：；“”’‘《，》。？、' +
           '〒※→①' +
           'ё !№ % : ? * () _' +
-          '(ü)[{]}[})()[]{}(_)(-).echoの⊙◇--__(paddinggg' +
+          '(ü)[{]}()[]{}(_)(-).echoの⊙◇--__(paddinggg' +
           'lgt' +
           '&lt;测试&gt;&lt;/测试&gt;'+
           'ç´іѳѣѵѷѕѯѱѡѫѧѭѩㅏㅑㅓㅕㅗㅛㅜㅠㅡㅣㄱ가갸거겨고교구규그기㉠㉡㉢㉣㉤㉥㉦㉧㉨㉩㉪㉫㉬㉭㉮㉯㉰㉱㉲㉳㉴㉵㉶㉷㉸㉹㉺㉻㈀㈁㈂㈃㈄㈅㈆㈇㈈㈉㈊㈋㈌㈍㈎㈏㈐'+
@@ -3999,28 +4000,23 @@ export default function abilityTest() {
           if (err) {
             console.info(`TestLog: Set singleLyricText error: code: ${err.code}, message: ${err.message}`);
             expect(false).assertTrue();
+          }
+        })
+        await controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
+          if (err) {
+            console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
+            expect(false).assertTrue();
           } else {
-            controller.getAVMetadata((err:BusinessError, data:avSession.AVMetadata) => {
-              if (err) {
-                console.info(`TestLog: Get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-                expect(false).assertTrue();
-              } else if (data) {
-                console.info('TestLog: Get singleLyricText Successfully');
-                expect(data.assetId).assertEqual(metadata.assetId);
-                expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
-              } else {
-                console.info(`TestLog: Get singleLyricText failed:${data}`);
-                expect(false).assertTrue();
-              }
-              done();
-            })
+            console.info(`TestLog: Get singleLyricText data ${data.singleLyricText}`);
+            expect(data.assetId).assertEqual(metadata.assetId);
+            expect(data.singleLyricText).assertEqual(metadata.singleLyricText);
           }
         })
       } catch (err) {
         console.info(`TestLog: set & get singleLyricText error: code: ${err.code}, message: ${err.message}`);
-        expect().assertFail();
-        done();
+        expect(false).assertTrue();
       }
+      done();
     })
 
 

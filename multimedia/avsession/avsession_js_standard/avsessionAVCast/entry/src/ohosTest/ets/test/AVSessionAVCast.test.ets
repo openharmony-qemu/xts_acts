@@ -756,10 +756,7 @@ export default function abilityTest() {
         } catch (error) {
             console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
             expect(error.code).assertEqual(6600109);
-            if (error.message == "Cannot read property catch of undefined") {
-                console.info(`stopCasting callback successfully`);
-                expect(true).assertTrue()
-            }
+            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })
@@ -781,10 +778,8 @@ export default function abilityTest() {
             });
         } catch (error) {
             console.info(`stopCasting BusinessError2: code: ${error.code}, message: ${error.message}`);
-            if (error.message == "Cannot read property catch of undefined" || error.code == 6600109) {
-                console.info(`stopCasting callback successfully`);
-                expect(true).assertTrue()
-            }
+            expect(error.code).assertEqual(6600109);
+            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })
@@ -812,10 +807,8 @@ export default function abilityTest() {
             });
         } catch (error) {
             console.info(`getAVCastController failed: code: ${error.code}, message: ${error.message}`);
-            if (error.message == "Cannot read property then of undefined" || error.code == 6600109 ) {
-                console.info(`getAVCastController callback successfully`);
-                expect(true).assertTrue()
-            }
+            expect(error.code).assertEqual(6600109);
+            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })
@@ -846,10 +839,7 @@ export default function abilityTest() {
         } catch (error) {
             console.error(`getAVCastController BusinessError: code: ${error.code}, message: ${error.message}`);
             expect(error.code).assertEqual(6600109);
-            if (error.message == "Cannot read property catch of undefined") {
-                console.info(`getAVCastController promise successfully`);
-                expect(true).assertTrue()
-            }
+            expect(error.message).assertEqual("Cannot read property catch of undefined");
         }
         done();
     })
