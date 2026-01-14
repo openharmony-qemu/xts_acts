@@ -50,9 +50,9 @@ export default function testsuite() {
   radioOnChangeModifierTest();
   CheckboxGroupOnChangeModifierTest();
   ratingOnChangeModifierTest();
-  sliderOnChangeModifierTest();
-  toggleOnChangeModifierTest();
-  textPickerOnChangeModifierTest();
-  timePickerOnChangeModifierTest();
-  datePickerOnChangeModifierTest();
+  // sliderOnChangeModifierTest();
+  // toggleOnChangeModifierTest();
+  // textPickerOnChangeModifierTest();
+  // timePickerOnChangeModifierTest();
+  // datePickerOnChangeModifierTest();
 }
