@@ -80,6 +80,8 @@ static constexpr uint32_t NUM_1 = 1;
 static constexpr uint32_t NUM_2 = 2;
 static constexpr uint32_t NUM_3 = 3;
 static constexpr uint32_t NUM_4 = 4;
+static constexpr uint32_t NUM_5 = 2.0;
+
 static constexpr uint32_t MAKER_NOTE_SIZE_MAX = 64 * 1024;
 
 
@@ -190,9 +192,7 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleSupp(napi_env env, napi_c
     napi_get_value_int32(env, args[1], &fd);
     OH_ImageSourceNative *imageSource = nullptr;
     errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
-    LOGI("OH_ImageSourceNative_CreateFromUri,%{public}d", errCode);
     if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
-        LOGE("Create ImageSource failed, errCode: %d", errCode);
         napi_value ret;
         napi_create_int32(env, errCode, &ret);
         return ret;
@@ -209,7 +209,7 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleSupp(napi_env env, napi_c
         errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(imageSource, &key, propertyValue);
         break;
     case CASE_INDEX_3:
-        propertyValue = 2.0;
+        propertyValue = NUM_5;
         errCode = OH_ImageSourceNative_ModifyImagePropertyDouble(imageSource, &key, propertyValue);
         break;
     case CASE_INDEX_4:
@@ -226,7 +226,7 @@ napi_value OHImageSourceNativeModifyImagePropertyDoubleSupp(napi_env env, napi_c
     napi_create_int32(env, errCode, &ret);
     return ret;
 }
-napi_value OHImageSourceNativeModifyImagePropertyIntArraySupp(napi_env env, napi_callback_info info)
+napi_value ImageModifyImagePropertyIntArraySupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 4;
     napi_value args[4] = {nullptr};
@@ -275,7 +275,7 @@ napi_value OHImageSourceNativeModifyImagePropertyIntArraySupp(napi_env env, napi
     napi_create_int32(env, errCode, &ret);
     return ret;
 }
-napi_value OHImageSourceNativeModifyImagePropertyDoubleArraySupp(napi_env env, napi_callback_info info)
+napi_value ImageModifyImagePropertyDoubleArraySupp(napi_env env, napi_callback_info info)
 {
     size_t argc = 4;
     napi_value args[4] = {nullptr};
@@ -339,7 +339,7 @@ napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_cal
     napi_get_value_int32(env, args[1], &fd);
     Image_ErrorCode errCode;
     OH_ImageSourceNative *imageSource = nullptr;
-    errCode = OH_ImageSourceNative_CreateFromFd(fd,&imageSource);
+    errCode = OH_ImageSourceNative_CreateFromFd(fd, &imageSource);
     LOGI("OH_ImageSourceNative_CreateFromUri, errCode: %{public}d", errCode);
 
     if (errCode != IMAGE_SUCCESS || imageSource == nullptr) {
@@ -366,7 +366,8 @@ napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_cal
         break;
     default:
         break;
-    }if (imageSource != nullptr) {
+    }
+    if (imageSource != nullptr) {
         OH_ImageSourceNative_Release(imageSource);
     }
     napi_value ret;

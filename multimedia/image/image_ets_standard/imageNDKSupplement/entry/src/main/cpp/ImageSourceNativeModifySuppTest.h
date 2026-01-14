@@ -21,8 +21,8 @@
 extern "C" {
 #endif
 napi_value OHImageSourceNativeModifyImagePropertyDoubleSupp(napi_env env, napi_callback_info info);
-napi_value OHImageSourceNativeModifyImagePropertyIntArraySupp(napi_env env, napi_callback_info info);
-napi_value OHImageSourceNativeModifyImagePropertyDoubleArraySupp(napi_env env, napi_callback_info info);
+napi_value ImageModifyImagePropertyIntArraySupp(napi_env env, napi_callback_info info);
+napi_value ImageModifyImagePropertyDoubleArraySupp(napi_env env, napi_callback_info info);
 napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_callback_info info);
 
 

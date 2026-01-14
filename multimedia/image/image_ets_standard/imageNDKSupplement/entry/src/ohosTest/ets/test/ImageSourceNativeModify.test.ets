@@ -153,7 +153,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyIntArraySupp(CASE_INDEX_1,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_1,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_INVALID_PARAMETER);
     })
@@ -175,7 +175,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyIntArraySupp(CASE_INDEX_2,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_2,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
     })
@@ -197,7 +197,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyIntArraySupp(CASE_INDEX_3,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_3,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE);
     })
@@ -219,7 +219,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyIntArraySupp(CASE_INDEX_4,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_4,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SUCCESS);
     })
@@ -241,7 +241,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyDoubleArraySupp(CASE_INDEX_1,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_1,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE);
     })
@@ -263,7 +263,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyDoubleArraySupp(CASE_INDEX_2,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_2,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_INVALID_PARAMETER);
     })
@@ -285,7 +285,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyDoubleArraySupp(CASE_INDEX_3,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_3,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
     })
@@ -307,7 +307,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyDoubleArraySupp(CASE_INDEX_4,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_4,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SUCCESS);
     })
