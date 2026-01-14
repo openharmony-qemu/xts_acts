@@ -34,9 +34,11 @@ async function getFd(fileName: string) {
   const fileInfo = await fs.open(filePath);
   fdNumber = fileInfo.fd
 }
+let IMAGE_SOURCE_UNSUPPORTED_METADATA ='7700202';
 let jpgImageSourceApi:image.ImageSource;
 let pngImageSourceApi:image.ImageSource;
 let heicImageSourceApi:image.ImageSource;
+let webpImageSourceApi:image.ImageSource;
 
 
 async function getImageSource(path: string): Promise<image.ImageSource> {
@@ -51,8 +53,9 @@ export default function ImageLensSpecificationSupp() {
     beforeAll(async () => {
       console.info('beforeAll case');
       jpgImageSourceApi = await getImageSource('test_exif_v2.jpg');
-      pngImageSourceApi = await getImageSource('test_exif.png');
-      heicImageSourceApi = await getImageSource('test_exif_v3.heic');
+      pngImageSourceApi = await getImageSource('test_exif_v2.png');
+      heicImageSourceApi = await getImageSource('test_exif_v2.heic');
+      webpImageSourceApi = await getImageSource('test_exif_v2.webp');
     });
     beforeEach(async () => {
       console.info('beforeEach case');
@@ -65,6 +68,7 @@ export default function ImageLensSpecificationSupp() {
       await jpgImageSourceApi.release();
       await pngImageSourceApi.release();
       await heicImageSourceApi.release();
+      await webpImageSourceApi.release();
     });
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_001
@@ -171,7 +175,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -196,7 +200,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -221,7 +225,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -246,7 +250,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -271,7 +275,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -296,7 +300,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -321,7 +325,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -430,7 +434,7 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
@@ -455,7 +459,132 @@ export default function ImageLensSpecificationSupp() {
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual('7700202');
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0016
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0016
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0016', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0016';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSpecification= [18, 55, 3.5, 5.6];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0017
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0017
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0017', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0017';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSpecification= [0, 0, 0, 0];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0018
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0018
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0018', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0018';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSpecification= [1000, 1000, 1000, 1000];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0019
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0019
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0019', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0019';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSpecification= [];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0020
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0020
+     * @tc.desc       ImageWriteImageMetadata lensSpecification-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0020', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SPECIFICATION_0020';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSpecification= [-1];
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
       }
       done();
     })
