@@ -30,6 +30,8 @@ struct TextAreaTest {
           .fallbackLineSpacing(this.fallback)
           .id('TextAreaTest')
           .lineHeight(10)
+          .width('80%')
+          .height('10%')
 
         Button('1')
           .onClick(()=>{
@@ -50,6 +52,8 @@ struct TextAreaTest {
           })
           .id('TextAreaTestundefined')
       }
+      .width('100%')
     }
+    .height('100%')
   }
 }
