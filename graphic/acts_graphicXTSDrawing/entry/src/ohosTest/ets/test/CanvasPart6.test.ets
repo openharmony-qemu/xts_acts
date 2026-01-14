@@ -120,8 +120,64 @@ export default function drawingTsCanvasPart6Test() {
         expect().assertFail();
       }
     })
+    /**
+     * @tc.name   testCanvasDrawShadow2Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4506
+     * @tc.desc   testCanvasDrawShadow2Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasDrawShadow2Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawShadow2Normal';
+      const canvas = new drawing.Canvas(pixel);
+      const path = new drawing.Path();
 
-
+      try {
+        canvas.drawShadow(path, {
+          x: 100.1, y: 80.1, z: 80.1
+        }, {
+          x: 200.1, y: 10.1, z: 40.1
+        }, 30.1, 100, 100, drawing.ShadowFlag.ALL);
+        console.info(msg + '1 test successes');
+      } catch (e) {
+        console.info(msg + `1 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, -1, 500, 100, drawing.ShadowFlag.NONE);
+        console.info(msg + '2 test successes');
+      } catch (e) {
+        console.info(msg + `2 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, -1, 0xFF0000FF, 0xFFFF0000, drawing.ShadowFlag.TRANSPARENT_OCCLUDER);
+        console.info(msg + '3 test successes');
+      } catch (e) {
+        console.info(msg + `3 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, -1, 0xFF0000FF, 0xFFFF0000, drawing.ShadowFlag.GEOMETRIC_ONLY);
+        console.info(msg + '4 test successes');
+      } catch (e) {
+        console.info(msg + `4 test errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
     /**
      * @tc.name   testCanvasDrawShadowMultipleCalls
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4501
@@ -168,7 +224,7 @@ export default function drawingTsCanvasPart6Test() {
       const msg = 'testCanvasDrawShadowToNull';
       const canvas = new drawing.Canvas(pixel);
       const path = new drawing.Path();
-      const shadowFlag = 0
+      const shadowFlag = drawing.ShadowFlag.NONE;
 
       try {
         canvas.drawShadow(null, {
@@ -180,10 +236,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
+        console.info(msg + `1 test successes`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `1 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
 
@@ -195,11 +251,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `2 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `2 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
       }
 
       try {
@@ -210,11 +265,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `3 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `3 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
       }
 
       try {
@@ -227,10 +281,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `4 test successes`);
+        expect().assertFail();
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `4 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
 
@@ -242,11 +296,10 @@ export default function drawingTsCanvasPart6Test() {
         }, 30, null, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `5 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `5 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail()
       }
 
       try {
@@ -257,11 +310,10 @@ export default function drawingTsCanvasPart6Test() {
         }, 30, {
           alpha: 0xFF, red: 0, green: 0, blue: 0xFF
         }, null, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `6 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `6 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -274,13 +326,12 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, null);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `7 test successes`);
+        expect().assertFail();
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `7 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
       try {
         canvas.drawShadow(undefined, {
           x: 100, y: 80, z: 80
@@ -291,10 +342,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `8 test successes`);
+        expect().assertFail();
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `8 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
 
@@ -306,11 +357,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `9 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `9 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -321,11 +371,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `10 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `10 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -338,10 +387,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `11 test successes`);
+        expect().assertFail();
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `11 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
 
@@ -353,11 +402,10 @@ export default function drawingTsCanvasPart6Test() {
         }, 30, undefined, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `12 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `12 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -368,11 +416,10 @@ export default function drawingTsCanvasPart6Test() {
         }, 30, {
           alpha: 0xFF, red: 0, green: 0, blue: 0xFF
         }, undefined, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `13 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `13 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -385,76 +432,158 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, undefined);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `14 test successes`);
+        expect().assertFail();
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `14 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         canvas.drawShadow(path, {
           x: 100, y: 80, z: 80
-        }, 100, 30, {
+        }, {
+          x: 100, y: 80, z: 80
+        }, 30, {
           alpha: null, red: 0, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `15 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `15 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
         canvas.drawShadow(path, {
           x: 100, y: 80, z: 80
-        }, 100, 30, {
+        }, {
+          x: 100, y: 80, z: 80
+        }, 30, {
           alpha: 0xFF, red: undefined, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `16 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `16 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
         canvas.drawShadow(path, {
           x: 100, y: 80, z: 80
-        }, 100, 30, {
+        }, {
+          x: 100, y: 80, z: 80
+        }, 30, {
           alpha: 0xFF, red: 0, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0xFF, green: null, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `17 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `17 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
         canvas.drawShadow(path, {
           x: 100, y: 80, z: 80
-        }, 100, 30, {
+        }, {
+          x: 100, y: 80, z: 80
+        }, 30, {
           alpha: 0xFF, red: 0, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: undefined
         }, shadowFlag);
-        console.info(msg + `test error`);
+        console.info(msg + `18 test successes`);
+      } catch (e) {
+        console.info(msg + `16 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.name   testCanvasDrawShadow2ToNull
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4507
+     * @tc.desc   testCanvasDrawShadow2ToNull
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawShadow2ToNull', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawShadow2ToNull';
+      const canvas = new drawing.Canvas(pixel);
+      const path = new drawing.Path();
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, null, 100, 100, drawing.ShadowFlag.ALL);
+        console.info(msg + `1 test successes`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `1 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, undefined, 100, 100, drawing.ShadowFlag.ALL);
+        console.info(msg + `2 test successes`);
+        expect().assertFail()
+      } catch (e) {
+        console.info(msg + `2 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, 30, undefined, 100, drawing.ShadowFlag.ALL);
+        console.info(msg + `3 test successes`);
+      } catch (e) {
+        console.info(msg + `3 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, 30, null, 100, drawing.ShadowFlag.NONE);
+        console.info(msg + `4 test successes`);
+      } catch (e) {
+        console.info(msg + `4 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, 30, 100, null, drawing.ShadowFlag.TRANSPARENT_OCCLUDER);
+        console.info(msg + `5 test successes`);
+      } catch (e) {
+        console.info(msg + `5 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
+      try {
+        canvas.drawShadow(path, {
+          x: 100, y: 80, z: 80
+        }, {
+          x: 200, y: 10, z: 40
+        }, 30, 100, undefined, drawing.ShadowFlag.TRANSPARENT_OCCLUDER);
+        console.info(msg + `6 test successes`);
+      } catch (e) {
+        console.info(msg + `6 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
+      }
     })
-
-
     /**
      * @tc.name   testCanvasDrawShadowAbnormal
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4504
@@ -467,8 +596,7 @@ export default function drawingTsCanvasPart6Test() {
       const msg = 'testCanvasDrawShadowAbnormal';
       const canvas = new drawing.Canvas(pixel);
       const path = new drawing.Path();
-      const shadowFlag = 0;
-
+      const shadowFlag = drawing.ShadowFlag.NONE;
       try {
         canvas.drawShadow(path, {
           x: 100, y: 80, z: 80
@@ -479,14 +607,12 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, 10);
-        console.info(msg + `test error`);
+        console.info(msg + `1 test successes`);
         expect().assertFail()
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        console.info(msg + `1 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
         expect(e.code).assertEqual(401);
       }
-
-
       try {
         canvas.drawShadow(path, {
           x: 100, y: 80, z: 80
@@ -497,11 +623,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `2 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `2 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -514,11 +639,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `3 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `3 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -531,11 +655,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `4 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `4 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -548,11 +671,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `5 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `5 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -565,11 +687,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `6 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `6 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -582,11 +703,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `7 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `7 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -599,11 +719,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `8 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `8 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -616,11 +735,10 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           alpha: 0xFF, red: 0xFF, green: 0, blue: 0
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `9 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `9 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -629,15 +747,14 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: -1, red: 0, green: 0, blue: 0xFF
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `10 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `10 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -646,15 +763,14 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: -1, green: 0, blue: 0xFF
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `11 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `11 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -663,15 +779,14 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0, green: -1, blue: 0xFF
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `12 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `12 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -680,15 +795,14 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0, green: 0, blue: -1
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `13 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `13 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -697,15 +811,14 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: 256, red: 0, green: 0, blue: 0xFF
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `14 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `14 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -714,15 +827,14 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 256, green: 0, blue: 0xFF
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `15 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `15 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -731,15 +843,14 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0, green: 256, blue: 0xFF
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `16 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `16 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
 
       try {
@@ -748,20 +859,16 @@ export default function drawingTsCanvasPart6Test() {
         }, {
           x: 200, y: 10, z: 40
         }, 30, {
-          alpha: 0xFF, red: 0xFF, green: 0
+          alpha: 0xFF, red: 0xFF, green: 0, blue: 0xFF
         }, {
           alpha: 0xFF, red: 0, green: 0, blue: 256
         }, shadowFlag);
-        console.info(msg + `test error`);
-        expect().assertFail()
+        console.info(msg + `17 test successes`);
       } catch (e) {
-        console.info(msg + `test successes. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
-        expect(e.code).assertEqual(401);
+        console.info(msg + `17 test error. errorCode is: ${e.code} + errormsg is: ${e.message}}`);
+        expect().assertFail();
       }
-
     })
-
-
     /**
      * @tc.name   testCanvasDrawBackgroundNormal
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_4600

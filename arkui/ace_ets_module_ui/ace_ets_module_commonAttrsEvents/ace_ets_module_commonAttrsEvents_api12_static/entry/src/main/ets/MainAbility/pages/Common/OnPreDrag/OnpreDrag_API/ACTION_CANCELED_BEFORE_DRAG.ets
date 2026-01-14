@@ -17,7 +17,7 @@
 import { AppStorage, State } from '@ohos.arkui.stateManagement'
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import router from '@ohos.router';
-import { Color, Column, Component, DragEvent, Entry, FontWeight, PreDragStatus, Row, Text,RowOptions,ColumnOptions } from '@ohos.arkui.component'
+import { Color, Column, Component, DragEvent, Entry, FontWeight, PreDragStatus, Row, Text,RowOptions,ColumnOptions,DragItemInfo } from '@ohos.arkui.component'
 
 @Entry
 @Component
@@ -44,6 +44,9 @@ struct ACTION_CANCELED_BEFORE_DRAG_test {
           })
           .fontWeight(FontWeight.Bold)
           .draggable(true)
+          .onDragStart(() => {
+            return {} as DragItemInfo;
+          })
       }
       .width('100%')
     }

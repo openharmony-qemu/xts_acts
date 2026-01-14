@@ -245,11 +245,11 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       let right = grid2.right
       let driver = Driver.create()
 
-      driver.swipe((Math.round((right - left) / 2)).toInt(),
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
-      driver.swipe((Math.round((right - left) / 2)).toInt(),
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
@@ -259,11 +259,11 @@ it('GridJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promise<voi
       expect(text1).assertEqual('onScrollIndex:2');
       await CommonFunc.sleep(1000);
 
-      driver.swipe((Math.round((right - left) / 2)).toInt(),
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());
-      driver.swipe((Math.round((right - left) / 2)).toInt(),
+      await driver.swipe((Math.round((right - left) / 2)).toInt(),
         (Math.round(bottom - UIContext.resolveUIContext()!.vp2px(10))).toInt(),
         (Math.round((right - left) / 2)).toInt(),
         (Math.round(top + UIContext.resolveUIContext()!.vp2px(10))).toInt());

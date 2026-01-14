@@ -19,6 +19,7 @@ import { BusinessError, commonEventManager, systemParameterEnhance } from '@kit.
 import { common } from '@kit.AbilityKit';
 import App from '@system.app';
 import { Driver, ON, Component, MatchPattern } from '@kit.TestKit';
+
 let buttonClicked:boolean = false;
 let driver = Driver.create();
 const DOMAIN = 0x0000;
@@ -51,7 +52,16 @@ function sleep(ms: number) {
 
 export default function SetFontSizeTest() {
   describe('SetFontSizeTest', () => {
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       uiAbilityContext = AppStorage.get<Context>('uiAbilityContext') as common.UIAbilityContext;
       try {
         mpEnable = systemParameterEnhance.getSync('persist.sys.abilityms.multi_process_model');

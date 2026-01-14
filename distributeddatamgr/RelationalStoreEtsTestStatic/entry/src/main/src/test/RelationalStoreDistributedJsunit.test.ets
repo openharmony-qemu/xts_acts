@@ -786,23 +786,25 @@ export default function relationalStoreDistributedTest() {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025 start *************');
         try {
           rdbStore!.setDistributedTables(['employee'], data_Rdb.DistributedType.DISTRIBUTED_DEVICE,
             (err: BusinessError | null, ret: Array<[String, Int]> | undefined) => {
               if (err) {
                 console.error(TAG + `SetDistributedTables failed, code is ${err.code},message is ${err.message}`);
                 expect(null).assertFail();
+                console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025 end *************');
                 done();
               }
               console.info(TAG + `SetDistributedTables successfully.`);
               expect(err == undefined).assertTrue();
+              console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_025 end *************');
               done();
             })
         } catch (err) {
           console.info(TAG + "set employee to be distributed table failed");
           expect(null).assertFail();
         }
-        done();
       })
 
     /**
@@ -815,23 +817,25 @@ export default function relationalStoreDistributedTest() {
      */
     it('SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
       async (done: () => void): Promise<void> => {
+        console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026 start *************');
         try {
           rdbStore!.setDistributedTables(['test'], data_Rdb.DistributedType.DISTRIBUTED_CLOUD,
             (err: BusinessError | null, ret: Array<[String, Int]> | undefined) => {
               if (err) {
                 console.error(TAG + `SetDistributedTables failed, code is ${err.code},message is ${err.message}`);
                 expect(null).assertFail();
+                console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026 end *************');
                 done();
               }
               console.info(TAG + `SetDistributedTables successfully.`);
               expect(err == undefined).assertTrue();
+              console.log(TAG + '************* SUB_DDM_AppDataFWK_JSRelationalStore_Distributed_026 end *************');
               done();
             })
         } catch (err) {
           console.info(TAG + "set employee and product to be distributed table failed");
           expect(null).assertFail();
         }
-        done();
       })
 
     /**

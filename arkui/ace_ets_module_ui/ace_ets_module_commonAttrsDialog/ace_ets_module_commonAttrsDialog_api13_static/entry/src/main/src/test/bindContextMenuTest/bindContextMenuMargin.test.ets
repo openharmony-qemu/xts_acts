@@ -75,7 +75,7 @@ it('bindContextMenuMargin_Static_0100', Level.LEVEL0, async (done: () => void): 
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('bindContextMenuMargin'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('bindContextMenuMargin');
       console.info("[bindContextMenuMargin_0100] bindContextMenuMargin JSON.parse(strJson) is: " + JSON.stringify(strJson));
@@ -84,7 +84,7 @@ it('bindContextMenuMargin_Static_0100', Level.LEVEL0, async (done: () => void): 
       expect(JSON.parseJsonElement(strJson).getElement('$attrs').getString('content')).assertEqual('bindContextMenuMargin');
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('menu'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       console.info('[bindContextMenuMargin_0100] END');
       done();

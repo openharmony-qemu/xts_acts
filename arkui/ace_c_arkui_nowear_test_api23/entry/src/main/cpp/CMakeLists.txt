@@ -16,6 +16,7 @@ add_library(nativerender SHARED
     touchTestInfo/TouchTestInfoTest.cpp
     node/NodeAdoptedTest.cpp
     focusScope/FocusScopeTest.cpp
+    accessibilityValue/AccessibilityValueTest.cpp
 )
 
 add_library(nativefunc SHARED

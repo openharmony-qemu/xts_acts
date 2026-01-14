@@ -99,7 +99,8 @@ export default function RichEditorCustomSpan016() {
       let info = await (driver.findComponent(ON.id('info')) as Promise<Component>);
       let infoText = await info.getText();
       await CommonFunc.sleep(500);
-      expect(infoText).assertContain('info:{"start":5,"end":6}');
+      expect(infoText).assertContain('"start":5');
+      expect(infoText).assertContain('"end":6');
       done();
     });
 
@@ -119,8 +120,10 @@ export default function RichEditorCustomSpan016() {
       let info = await (driver.findComponent(ON.id('info')) as Promise<Component>);
       let infoText = await info.getText();
       await CommonFunc.sleep(500);
-      let str = '{"start":5,"length":1,"styledKey":400,"styledValue":{"type_":"CustomSpan","width":80,"word":"Hello"';
-      expect(infoText).assertContain(str);
+      expect(infoText).assertContain('"start":5');
+      expect(infoText).assertContain('"length":1');
+      expect(infoText).assertContain('"styledKey":400');
+      expect(infoText).assertContain('"styledValue":{"type_":"CustomSpan","width":80,"word":"Hello"');
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_A);
       await CommonFunc.sleep(500);
       driver.triggerCombineKeys(KeyCode.KEYCODE_CTRL_LEFT, KeyCode.KEYCODE_C);

@@ -17,7 +17,6 @@ import backgroundBlurStyleTest from './background/backgroundBlurStyle.test';
 import backgroundEffectTest from './background/backgroundEffect.test';
 
 export default function testsuite() {
-  console.log('test start list')
   backgroundBlurStyleTest();
-  backgroundEffectTest(); // backgroundEffect
+  backgroundEffectTest();
 }

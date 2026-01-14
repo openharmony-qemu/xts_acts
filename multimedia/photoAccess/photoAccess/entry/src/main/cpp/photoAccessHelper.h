@@ -74,6 +74,7 @@ public:
     MediaLibrary_ErrorCode ChangeRequestSaveCameraVideo(int useCaseCode);
     MediaLibrary_ErrorCode ChangeRequestDiscardCameraPhoto(int useCaseCode);
     MediaLibrary_ErrorCode ChangeRequestRelease(int useCaseCode);
+    MediaLibrary_ErrorCode ChangeRequestSaveCameraImageHeif(int useCaseCode);
 
     //mediaAssetManager
     MediaLibrary_ErrorCode ManagerRequestImage(int useCaseCode);

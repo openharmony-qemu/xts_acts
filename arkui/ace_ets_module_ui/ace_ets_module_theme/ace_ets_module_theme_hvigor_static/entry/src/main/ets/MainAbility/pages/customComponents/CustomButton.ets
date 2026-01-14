@@ -32,14 +32,15 @@ import {
 import { PropRef, State } from '@ohos.arkui.stateManagement'
 import { CustomTheme, Theme } from '@ohos.arkui.theme';
 
-export let customButtonTheme: CustomTheme | undefined;
+export let customButtonTheme: Theme | undefined;
 
 @Component
 export struct CustomButton {
-  @PropRef btnText: string = '';
+  @PropRef btnText: string;
 
-  onWillApplyTheme(theme: CustomTheme) {
+  onWillApplyTheme(theme: Theme) {
     customButtonTheme = theme;
+    console.log('CustomButton onWillApplyTheme')
   }
 
   build() {

@@ -24,7 +24,7 @@ import { Configuration } from '@ohos.app.ability.Configuration';
 import AbilityConstant from '@ohos.app.ability.AbilityConstant';
 import ConfigurationConstant from '@ohos.app.ability.ConfigurationConstant';
 import { BusinessError } from '@ohos.base';
-
+import { Driver, ON } from '@ohos.UiTest';
 
 const domain: int = 0x0000;
 const tag = 'testTag'
@@ -49,6 +49,15 @@ export default function ContextEnvironmentStaticTest() {
     let applicationContext: common.ApplicationContext;
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');

@@ -85,13 +85,13 @@ it('ScrollSizeMode_APITest_static_0100', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn'));
-      btn?.click();
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let change1 = await driver.findComponent(ON.id('change1'));
-      change1?.click();
+      await (change1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let close = await driver.findComponent(ON.id('close'));
-      close?.click();
+      await (close?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let ScrollSizeMode_1 = inspector.getInspectorByKey('ScrollSizeMode_1');
       console.info("[ScrollSizeMode_APITest_0100] Tabs animationMode attrs is: " +
@@ -114,16 +114,16 @@ it('ScrollSizeMode_APITest_static_0200', Level.LEVEL0, async (done: () => void):
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('btn'));
-      btn?.click();
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let change = await driver.findComponent(ON.id('change'));
-      change?.click();
+      await (change?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let change2 = await driver.findComponent(ON.id('change2'));
-      change2?.click();
+      await (change2?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let close = await driver.findComponent(ON.id('close'));
-      close?.click();
+      await (close?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let ScrollSizeMode_1 = inspector.getInspectorByKey('ScrollSizeMode_1');
       console.info("[ScrollSizeMode_APITest_0200] Tabs animationMode attrs is: " +

@@ -411,6 +411,8 @@ export default function cameraEnumTest() {
       console.info(`${TAG} PreconfigType.PRECONFIG_4K:${camera.PreconfigType.PRECONFIG_4K}`);
       expect(camera.PreconfigType.PRECONFIG_HIGH_QUALITY == 3).assertTrue();
       console.info(`${TAG} PreconfigType.PRECONFIG_HIGH_QUALITY:${camera.PreconfigType.PRECONFIG_HIGH_QUALITY}`);
+      expect(camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020 == 4).assertTrue();
+      console.info(`${TAG} PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020:${camera.PreconfigType.PRECONFIG_HIGH_QUALITY_PHOTOSESSION_BT2020}`);
       done();
     })
 

@@ -24,12 +24,12 @@ import sidebarTypeTest from './SideBarContainerTest/sidebarType.test';
 import sideBarShowSideBarJsunit from './SideBarContainerTest/sideBar.test';
 
 export default function testsuite() {
-  // waterFlow_WaterFlowFrictionTest()
-  // ScrollToIndexForWaterFlowJsunit01();
-  // ScrollToIndexForWaterFlowJsunit02();
-  // ApiCommponentAdd02Jsunit();
-  // tabsOnContentWillChangeIndex10JsunitTest()
-  // tabsOnContentWillChangeIndex11JsunitTest()
+  waterFlow_WaterFlowFrictionTest()
+  ScrollToIndexForWaterFlowJsunit01();
+  ScrollToIndexForWaterFlowJsunit02();
+  ApiCommponentAdd02Jsunit();
+  tabsOnContentWillChangeIndex10JsunitTest()
+  tabsOnContentWillChangeIndex11JsunitTest()
   sidebarTypeTest();
-  // sideBarShowSideBarJsunit()
+  sideBarShowSideBarJsunit()
 }

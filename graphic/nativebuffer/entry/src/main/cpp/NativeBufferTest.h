@@ -18,7 +18,7 @@
 
 #include "napi/native_api.h"
 #include <native_buffer/native_buffer.h>
-#include <native_window/graphic_error_code.h>
+#include <native_buffer/graphic_error_code.h>
 #include <common/log_common.h>
 #include <common/native_common.h>
 

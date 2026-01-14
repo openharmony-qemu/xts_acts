@@ -92,7 +92,7 @@ it('NavigationCustomTitlePage_static_0100', Level.LEVEL0, async (done: () => voi
       console.info('[NavigationCustomTitlePage_0100] btn1 click');
       await CommonFunc.sleep(3000);
 
-      let customTitle:number = AppStorage.get('customTitle')! as number
+      let customTitle:Double = AppStorage.get<Double>('customTitle')! as Double
       expect(customTitle).assertEqual(14);
       AppStorage.delete('customTitle');
 
@@ -126,7 +126,7 @@ it('NavigationCustomTitlePage_static_0200', Level.LEVEL0, async (done: () => voi
       console.info('[NavigationCustomTitlePage_0200] btn1 click');
       await CommonFunc.sleep(5000);
 
-      let customNavTitle:number = AppStorage.get('customNavTitle')! as number;
+      let customNavTitle:Double = AppStorage.get<Double>('customNavTitle')! as Double;
       expect(customNavTitle).assertEqual(15);
       AppStorage.delete('customNavTitle');
 

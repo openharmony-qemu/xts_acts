@@ -1583,6 +1583,54 @@ export default function AudioEnumTest() {
       })
 
     /**
+     * @tc.name   AudioSessionStateChangeHintMuteSuggestionCode
+     * @tc.number AudioSessionStateChangeHintMuteSuggestionCode
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_MUTE_SUGGESTION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioSessionStateChangeHintMuteSuggestionCode',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const LOG_NAME = `AudioSessionStateChangeHintMuteSuggestionCode`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.audioSessionStateChangeHintMuteSuggestionCode();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
+     * @tc.name   AudioSessionStateChangeHintUnmuteSuggestionCode
+     * @tc.number AudioSessionStateChangeHintUnmuteSuggestionCode
+     * @tc.desc   Test AUDIO_SESSION_STATE_CHANGE_HINT_UNMUTE_SUGGESTION.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioSessionStateChangeHintUnmuteSuggestionCode',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+        const LOG_NAME = `AudioSessionStateChangeHintUnmuteSuggestionCode`;
+        try {
+          console.info(`====>${LOG_NAME} start====`);
+          let result: number = AudioKitTest.audioSessionStateChangeHintUnmuteSuggestionCode();
+          expect(0).assertEqual(result);
+          console.info(`====>${LOG_NAME} result: ` + result);
+          done();
+        } catch (err) {
+          console.error(`====>${LOG_NAME} catch err: ` + err);
+          expect(false).assertEqual(ABILITY_ERR_OK);
+          done();
+        }
+      })
+
+    /**
      * @tc.name   testMultimediaDeviceChangeRecommendToContinue0100
      * @tc.number SUB_MULTIMEDIA_DEVICE_CHANGE_RECOMMEND_TO_CONTINUE_0100
      * @tc.desc   Test DEVICE_CHANGE_RECOMMEND_TO_CONTINUE.

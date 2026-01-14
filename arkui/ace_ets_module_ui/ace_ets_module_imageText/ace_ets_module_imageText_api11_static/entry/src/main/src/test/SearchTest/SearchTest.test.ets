@@ -74,15 +74,6 @@ export default function search() {
       }
     });
 
-    afterEach(async (): Promise<void> => {
-      const routerInstance = AppStorage.get<Router>("router") as Router
-      let pages:router.RouterState = routerInstance.getState();
-      console.info("get Search state pages afterEach:" + JSON.stringify(pages));
-      if(pages.name !== "index"){
-        routerInstance.back();
-        await CommonFunc.sleep(1000);
-      }
-    })
 
     
     /**

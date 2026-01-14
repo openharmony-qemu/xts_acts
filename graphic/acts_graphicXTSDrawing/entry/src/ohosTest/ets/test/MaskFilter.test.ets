@@ -83,33 +83,47 @@ export default function maskFilterTest() {
 
       try {
         drawing.MaskFilter.createBlurMaskFilter(undefined, 10);
-        console.info(msg + ' createBlurMaskFilter(undefined, 10) successed');
+        console.info(msg + ' 1 createBlurMaskFilter(undefined, 10) successed');
       } catch (e) {
-        console.info(msg + ` createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 1 createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, undefined);
-        console.info(msg + ' createBlurMaskFilter(drawing.BlurType.OUTER, undefined) successed');
+        console.info(msg + ' 2 createBlurMaskFilter(drawing.BlurType.OUTER, undefined) successed');
       } catch (e) {
-        console.info(msg + ` createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 2 createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         drawing.MaskFilter.createBlurMaskFilter(undefined, 10);
-        console.info(msg + ' createBlurMaskFilter(undefined, 10) successed');
+        console.info(msg + ' 3 createBlurMaskFilter(undefined, 10) successed');
       } catch (e) {
-        console.info(msg + ` createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 3 createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
 
       try {
         drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, undefined);
-        console.info(msg + ' createBlurMaskFilter(drawing.BlurType.OUTER, undefined) successed');
+        console.info(msg + ' 4 createBlurMaskFilter(drawing.BlurType.OUTER, undefined) successed');
       } catch (e) {
-        console.info(msg + ` createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 4 createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.MaskFilter.createBlurMaskFilter(drawing.BlurType.OUTER, null);
+        console.info(msg + ' 5 createBlurMaskFilter(drawing.BlurType.OUTER, undefined) successed');
+      } catch (e) {
+        console.info(msg + ` 5 createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        drawing.MaskFilter.createBlurMaskFilter(null, 10);
+        console.info(msg + ' 6 createBlurMaskFilter(undefined, 10) successed');
+      } catch (e) {
+        console.info(msg + ` 6 createBlurMaskFilter errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
     });

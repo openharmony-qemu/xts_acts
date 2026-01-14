@@ -51,7 +51,7 @@ export default function TextfieldMultiTest() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get TextfieldMultiTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextfieldMulti" == pages.name)) {
           console.info("get TextfieldMultiTest pages.name:" + '');
 
           routerInstance.pushUrl(options);

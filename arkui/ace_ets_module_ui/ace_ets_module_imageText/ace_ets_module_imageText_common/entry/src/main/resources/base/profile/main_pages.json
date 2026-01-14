@@ -2,7 +2,7 @@
     "src": [
         "MainAbility/pages/index/index",
 		"MainAbility/pages/Preset/InputPreset",
-
+        "MainAbility/pages/TextControllerTest/TextControllerTest",
         "MainAbility/pages/Font/APIgetUIFontConfig",
         "MainAbility/pages/Font/Font",
         "MainAbility/pages/Font/FontJsunit",
@@ -45,6 +45,7 @@
         "MainAbility/pages/Text/Search",
         "MainAbility/pages/TextDelete/SearchDelete",
         "MainAbility/pages/TextDelete/TextInputDelete",
-        "MainAbility/pages/TextDelete/TextAreaDelete"
+        "MainAbility/pages/TextDelete/TextAreaDelete",
+        "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest"
     ]
 }

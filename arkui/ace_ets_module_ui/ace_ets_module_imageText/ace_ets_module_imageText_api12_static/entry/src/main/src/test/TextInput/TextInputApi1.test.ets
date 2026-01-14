@@ -48,7 +48,7 @@ export default function TextInputApi1() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextInputApi1 state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextInputApi1" == pages.name)) {
           console.info("get TextInputApi1 pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

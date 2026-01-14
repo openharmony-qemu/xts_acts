@@ -131,9 +131,9 @@ struct ImageAnimatorAutoPauseTest {
       .scrollBarWidth(10) 
       .friction(0.6)
       .edgeEffect(EdgeEffect.None)
-      // .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState) => {
-      //   console.info(xOffset + ' ' + yOffset)
-      // })
+      .onWillScroll((xOffset: number, yOffset: number, scrollState: ScrollState) => {
+        console.info(xOffset + ' ' + yOffset);
+      })
       .onScrollEdge((side: Edge) => {
         console.info('To the edge')
       })
@@ -151,9 +151,9 @@ struct ImageAnimatorAutoPauseTest {
         Button('UNDEFINED').id('undefinedFlag').padding({ left: 0, right: 0, top: 2, bottom: 2 } as Padding).width('20%').fontSize(8).onClick((e: ClickEvent) => {
           this.monitorInvisibleArea = undefined
         })
-        // Button('NULL').id('nullFlag').padding({ left: 0, right: 0, top: 2, bottom: 2 } as Padding).width('20%').fontSize(8).onClick((e: ClickEvent) => {
-        //   this.monitorInvisibleArea = null
-        // })
+        Button('NULL').id('nullFlag').padding({ left: 0, right: 0, top: 2, bottom: 2 } as Padding).width('20%').fontSize(8).onClick((e: ClickEvent) => {
+          // this.monitorInvisibleArea = null
+        })
       }.backgroundColor(Color.Pink)
     }.width('100%').height('100%').backgroundColor(0xDCDCDC)
   }

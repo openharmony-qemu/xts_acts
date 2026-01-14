@@ -53,12 +53,16 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
             });
         }
         await Utils.msSleep(1000)
+        hilog.info(domain, tag, `${caseName}  get windowStageStart start .`);
         let windowStageStart:window.WindowStage = AppStorage.get<window.WindowStage>('windowStageStart') as window.WindowStage;
+        hilog.info(domain, tag, `${caseName} Succeeded in get windowStageStart.`+windowStageStart);
         resolve(windowStageStart);
     })
 }
 async function terminateAbility(caseName: string) {
+    hilog.info(domain, tag,`${caseName} terminateSelf start..`);
     let pageContext:common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>('pageContext') as common.UIAbilityContext
+    hilog.info(domain, tag,`${caseName} pageContext :${pageContext}`);
     try {
         if (pageContext !== null && pageContext !== undefined) {
             hilog.info(domain, tag,`${caseName} terminateSelf begin`);
@@ -105,6 +109,96 @@ export default function WindowPropertiesTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             //hilog.info(domain, tag,`beforeAll isPCStatus: `+ isPCStatus);
+        })
+        /**
+         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0300
+         * @tc.name       test_testSetCustomDensity_1300002_static
+         * @tc.desc       test_testSetCustomDensity_1300002_static
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('test_testSetCustomDensity_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'test_testSetCustomDensity_1300002_static';
+            hilog.info(domain, tag,caseName + 'begin');
+            let msgStr :string = 'jsunittest ' + caseName + ' ';
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            hilog.info(domain, tag,msgStr + 'startAbility success... ' );
+            await Utils.msSleep(300);
+            await terminateAbility(caseName);
+            hilog.info(domain, tag,msgStr + 'terminateAbility success... ' );
+            try {
+                windowStageStart.setCustomDensity(-1);
+                hilog.info(domain, tag,msgStr + 'setWindowRectAutoSave success. ' );
+                expect(false).assertTrue();
+                done();
+            } catch (exception) {
+                exception = exception as BusinessError;
+                hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
+                expect(exception.code).assertEqual(1300002);
+                done()
+            }
+        });
+        /**
+         * @tc.number     SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW_Static
+         * @tc.name       testSetWindowContainerColorwithDestroyedMainWindow_Static
+         * @tc.desc       验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('testSetWindowContainerColorwithDestroyedMainWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testSetWindowContainerColorwithDestroyedMainWindow_Static ';
+            hilog.info(domain, tag,caseName + 'begin');
+            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
+            await Utils.msSleep(200)
+            let windowClass:window.Window = windowStageStart.getMainWindowSync();
+            await terminateAbility(caseName)
+            try {
+                windowClass.setWindowContainerColor("#0099FF","#00000000");
+                hilog.info(domain, tag,caseName + 'success. ');
+                expect(false).assertTrue()
+                done();
+            } catch (err: BusinessError) {
+                hilog.error(domain, tag,`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300002);
+                expect(err.message!=null).assertTrue();
+                done();
+            }
+        });
+        /**
+         * @tc.number      testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.name        testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.desc        testSetDefaultDensityEnabledErrCode1300002_0100
+         * @tc.size        MediumTest
+         * @tc.type        Function
+         * @tc.level       Level 3
+         */
+        it('testSetDefaultDensityEnabledErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName = "testSetDefaultDensityEnabledErrCode1300002_0100";
+            let msgStr = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let windowStageStart = await startAbility(caseName, context);
+            await terminateAbility(caseName);
+            try {
+                const callback = () => {
+                };
+                windowStageStart.setDefaultDensityEnabled(true);
+                console.error(msgStr + 'Succeeded in calling on setDefaultDensityEnabled.');
+                expect(false).assertTrue();
+                done()
+            } catch (e) {
+                e = e as BusinessError;
+                console.log(msgStr + 'Failed to call on setDefaultDensityEnabled. Cause:' + JSON.stringify(e));
+                if (e.code == 801) {
+                    expect(e.code).assertEqual(801);
+                } else if (e.code == 1300002) {
+                    expect(e.code).assertEqual(1300002);
+                } else {
+                    expect(false).assertTrue();
+                }
+                done()
+            }
         })
 
         /**
@@ -2382,32 +2476,7 @@ export default function WindowPropertiesTest() {
                 }
             }
         });
-        /**
-         * @tc.number     SUB_BASIC_WMS_SPCIAL_XTS_GET_DENSITYINFO_JS_API_static_0300
-         * @tc.name       test_testSetCustomDensity_1300002_static
-         * @tc.desc       test_testSetCustomDensity_1300002_static
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level 2
-         */
-        it('test_testSetCustomDensity_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName: string = 'test_testSetCustomDensity_1300002_static';
-            hilog.info(domain, tag,caseName + 'begin');
-            let msgStr :string = 'jsunittest ' + caseName + ' ';
-            let windowStageStart :window.WindowStage = await startAbility(caseName, context);
-            await terminateAbility(caseName);
-            try {
-                windowStageStart.setCustomDensity(-1);
-                hilog.info(domain, tag,msgStr + 'setWindowRectAutoSave success. ' );
-                expect(false).assertTrue();
-                done();
-            } catch (exception) {
-                exception = exception as BusinessError;
-                hilog.error(domain, tag,msgStr + 'Failed to set the call setWindowRectAutoSave. Cause:' + JSON.stringify(exception));
-                expect(exception.code).assertEqual(1300002);
-                done()
-            }
-        });
+        
         /**
          * @tc.number     test_mainWindow_setWindowMask_ErrorCode1300002_0100
          * @tc.name       test_mainWindow_setWindowMask_ErrorCode1300002_0100
@@ -2597,43 +2666,6 @@ export default function WindowPropertiesTest() {
                 done()
             }
 
-        })
-
-
-
-/**
-         * @tc.number      testSetDefaultDensityEnabledErrCode1300002_0100
-         * @tc.name        testSetDefaultDensityEnabledErrCode1300002_0100
-         * @tc.desc        testSetDefaultDensityEnabledErrCode1300002_0100
-         * @tc.size        MediumTest
-         * @tc.type        Function
-         * @tc.level       Level 3
-         */
-        it('testSetDefaultDensityEnabledErrCode1300002_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
-            let caseName = "testSetDefaultDensityEnabledErrCode1300002_0100";
-            let msgStr = 'jsunittest ' + caseName + ' ';
-            console.log(msgStr + 'begin.');
-            let windowStageStart = await startAbility(caseName, context);
-            await terminateAbility(caseName);
-            try {
-                const callback = () => {
-                };
-                windowStageStart.setDefaultDensityEnabled(true);
-                console.error(msgStr + 'Succeeded in calling on setDefaultDensityEnabled.');
-                expect(false).assertTrue();
-                done()
-            } catch (e) {
-                e = e as BusinessError;
-                console.log(msgStr + 'Failed to call on setDefaultDensityEnabled. Cause:' + JSON.stringify(e));
-                if (e.code == 801) {
-                    expect(e.code).assertEqual(801);
-                } else if (e.code == 1300002) {
-                    expect(e.code).assertEqual(1300002);
-                } else {
-                    expect(false).assertTrue();
-                }
-                done()
-            }
         })
 
         /**
@@ -2845,33 +2877,7 @@ export default function WindowPropertiesTest() {
             }
         });
 
-        /**
-         * @tc.number     SUB_BASIC_WMS_SET_WINDOW_CONTAINER_COLOR_WITH_DESTROYED_MAINWINDOW_Static
-         * @tc.name       testSetWindowContainerColorwithDestroyedMainWindow_Static
-         * @tc.desc       验证销毁后的主窗调用setwindowcontainercolor接口抛1300002错误码
-         * @tc.size       MediumTest
-         * @tc.type       Function
-         * @tc.level      Level 2
-         */
-        it('testSetWindowContainerColorwithDestroyedMainWindow_Static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
-            let caseName: string = 'testSetWindowContainerColorwithDestroyedMainWindow_Static ';
-            hilog.info(domain, tag,caseName + 'begin');
-            let windowStageStart:window.WindowStage = await startAbility(caseName, context);
-            await Utils.msSleep(200)
-            let windowClass:window.Window = windowStageStart.getMainWindowSync();
-            await terminateAbility(caseName)
-            try {
-                windowClass.setWindowContainerColor("#0099FF","#00000000");
-                hilog.info(domain, tag,caseName + 'success. ');
-                expect(false).assertTrue()
-                done();
-            } catch (err: BusinessError) {
-                hilog.error(domain, tag,`${caseName}  Failed. Cause code: ${err.code}, message: ${err.message}`);
-                expect(err.code).assertEqual(1300002);
-                expect(err.message!=null).assertTrue();
-                done();
-            }
-        });
+        
 
 
     })

@@ -22,7 +22,8 @@ group("connection") {
       "connectiontest:ActsNetworkMgrConnectionTest",
 "ActsNetworkMgrConnectionNoAnyPTestStatic:ActsNetworkMgrConnectionNopStaticTest",
 "ActsNetworkMgrConnectionNoNetTestStatic:ActsNetworkMgrConnectionNoNetStaticTest",
-"ActsNetworkMgrConnectionTestStatic:ActsNetworkMgrConnectionStaticTest"
+"ActsNetworkMgrConnectionTestStatic:ActsNetworkMgrConnectionStaticTest",
+"ActsMgrConnectionRegisterHasNetTestStatic:ActsMgrConnectionRegisterHasNetStaticTest"
     ]
   }
 }

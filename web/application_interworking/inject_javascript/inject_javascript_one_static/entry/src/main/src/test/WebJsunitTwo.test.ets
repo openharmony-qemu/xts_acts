@@ -211,7 +211,7 @@ export default function webJsunitTwo() {
         emitKey = "emitWebMessExtGetNumber";
         Utils.emitEvent(emitKey, 10);
         await Utils.msSleep(2000);
-        Utils.registerEvent("WebMessExtGetNumber", "result type:number0", 508, done);
+        Utils.registerEvent("WebMessExtGetNumber", "result type:long0", 508, done);
         await Utils.msSleep(2000);
         inspector.sendEventByKey('webcomponent', 10, '');
         await Utils.msSleep(12000);

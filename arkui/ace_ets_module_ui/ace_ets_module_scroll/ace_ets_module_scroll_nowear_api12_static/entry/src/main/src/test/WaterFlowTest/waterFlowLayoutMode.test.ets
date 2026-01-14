@@ -67,7 +67,7 @@ it('waterFlowLayoutMode_static_001', Level.LEVEL1, async (done: () => void): Pro
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('layout_scroll'));
       console.info("[waterFlowLayoutMode_static_001] component btn is: " + btn);
-      btn?.click();
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('layoutMode_yOffset');
@@ -92,11 +92,11 @@ it('waterFlowLayoutMode_static_002', Level.LEVEL1, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
       let driver: Driver = Driver.create();
       let btn = await driver.findComponent(ON.id('layoutMode_2'));
-      btn?.click();
+      await (btn?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let btnScroll = await driver.findComponent(ON.id('layout_scroll'));
-      btnScroll?.click();
+      await (btnScroll?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('layoutMode_yOffset');

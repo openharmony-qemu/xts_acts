@@ -1934,14 +1934,20 @@ export default function DisplayTest() {
                     done();
                 }).catch((err: Error):PromiseLike<void>|undefined => {
                      hilog.info(domain, tag,caseName + 'failed to setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                     expect(false).assertTrue();
+                     expect(err.code == 401).assertTrue();
                      done();
                  })
             } catch (err) {
                 err = err as BusinessError;
                 hilog.info(domain, tag,caseName + 'error in setVirtualScreenSurface, err : ' + JSON.stringify(err));
-                expect(err.code == 401 || err.code == 801).assertTrue();
-                done();
+                if(err.code == 801){
+                    expect(err.code == 801).assertTrue();
+                    done();
+                }else{
+                    expect(false).assertTrue();
+                    done();
+                }
+                
             }
         });
         /**

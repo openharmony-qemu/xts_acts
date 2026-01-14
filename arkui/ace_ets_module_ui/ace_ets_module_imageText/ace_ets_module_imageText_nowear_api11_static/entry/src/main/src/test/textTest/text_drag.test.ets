@@ -80,7 +80,7 @@ it('SUB_ACE_UI_TEXT_DRAG_static_0100', Level.LEVEL1, async (done: ()=>void) => {
   await CommonFunc.sleep(2000);
   console.info('[text_drag_001] longClick success');
   let selectAllButton = await (driver.findComponent(ON.text('全选')) as Promise<Component>);
-  selectAllButton?.click();
+  await (selectAllButton?.click() as Promise<void>);
   await CommonFunc.sleep(300);
   let strJson1 = inspector.getInspectorByKey('DraggedText');
   console.info(`[text_drag_001] DraggedText strJson1 is:${strJson1}`);

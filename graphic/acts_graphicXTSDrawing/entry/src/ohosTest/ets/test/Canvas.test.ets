@@ -307,7 +307,130 @@ export default function drawingTsCanvasTest() {
         expect(e.code).assertEqual(401);
       }
     })
-
+    /**
+     * @tc.name   testCanvasDrawRect2Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_0204
+     * @tc.desc   testCanvasDrawRect2Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawRect2Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawRect2Null';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(null, 0, 10, 10);
+        canvas.detachPen();
+        console.info(msg + '1 drawRect successed');
+      } catch (e) {
+        console.info(msg + `1 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(undefined, 0, 10, 10);
+        canvas.detachPen();
+        console.info(msg + '2 drawRect successed');
+      } catch (e) {
+        console.info(msg + `2 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(0, null, 10, 10);
+        canvas.detachPen();
+        console.info(msg + '3 drawRect successed');
+      } catch (e) {
+        console.info(msg + `3 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(0, undefined, 10, 10);
+        canvas.detachPen();
+        console.info(msg + '4 drawRect successed');
+      } catch (e) {
+        console.info(msg + `4 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(0, 0, null, 10);
+        canvas.detachPen();
+        console.info(msg + '5 drawRect successed');
+      } catch (e) {
+        console.info(msg + `5 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(0, 0, undefined, 10);
+        canvas.detachPen();
+        console.info(msg + '6 drawRect successed');
+      } catch (e) {
+        console.info(msg + `6 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(0, 0, 10, null);
+        canvas.detachPen();
+        console.info(msg + '7 drawRect successed');
+      } catch (e) {
+        console.info(msg + `7 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const pen = new drawing.Pen();
+        pen.setStrokeWidth(5);
+        pen.setColor({
+          alpha: 255, red: 255, green: 0, blue: 0
+        });
+        canvas.attachPen(pen);
+        canvas.drawRect(0, 0, 10, undefined);
+        canvas.detachPen();
+        console.info(msg + '8 drawRect successed');
+      } catch (e) {
+        console.info(msg + `8 drawRect errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+    })
     /**
      * @tc.name   testCanvasDrawRectMultipleCalls
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_0203
@@ -660,7 +783,147 @@ export default function drawingTsCanvasTest() {
         expect().assertFail();
       }
     })
-
+    /**
+     * @tc.name   testCanvasDrawColor2Normal
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_0505
+     * @tc.desc   testCanvasDrawColor2Normal
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCanvasDrawColor2Normal', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0, () => {
+      const msg = 'testCanvasDrawColor2Normal';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        canvas.drawColor(255, 255, 10, 100, drawing.BlendMode.CLEAR);
+        canvas.drawColor(255, 254, 10, 255, drawing.BlendMode.CLEAR);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.CLEAR);
+        canvas.drawColor(255, 0, 10, 255, drawing.BlendMode.SRC);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.DST);
+        canvas.drawColor(255, 100, 10, 10, drawing.BlendMode.SRC_OVER);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.DST_OVER);
+        canvas.drawColor(255, 0, 10, 255, drawing.BlendMode.SRC_IN);
+        canvas.drawColor(255, 255, 10, 10, drawing.BlendMode.DST_IN);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.SRC_OUT);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.DST_OUT);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.SRC_ATOP);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.DST_ATOP);
+        canvas.drawColor(255, 20, 100, 255, drawing.BlendMode.XOR);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.PLUS);
+        canvas.drawColor(255, 0, 10, 255, drawing.BlendMode.MODULATE);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.SCREEN);
+        canvas.drawColor(255, 10, 100, 255, drawing.BlendMode.OVERLAY);
+        canvas.drawColor(255, 10, 10, 10, drawing.BlendMode.DARKEN);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.LIGHTEN);
+        canvas.drawColor(255, 0, 100, 10, drawing.BlendMode.COLOR_DODGE);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.COLOR_BURN);
+        canvas.drawColor(255, 0, 100, 10, drawing.BlendMode.HARD_LIGHT);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.SOFT_LIGHT);
+        canvas.drawColor(255, 0, 255, 10, drawing.BlendMode.DIFFERENCE);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.EXCLUSION);
+        canvas.drawColor(255, 255, 10, 10, drawing.BlendMode.MULTIPLY);
+        canvas.drawColor(255, 0, 10, 10, drawing.BlendMode.HUE);
+        canvas.drawColor(255, 255, 10, 10, drawing.BlendMode.SATURATION);
+        canvas.drawColor(255, 255, 10, 10, drawing.BlendMode.COLOR);
+        canvas.drawColor(255, 255, 10, 10, drawing.BlendMode.LUMINOSITY);
+        console.info(msg + 'drawColor successed');
+      } catch (e) {
+        console.info(msg + `drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect().assertFail();
+      }
+    })
+    /**
+     * @tc.name   testCanvasDrawColor2Null
+     * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_0506
+     * @tc.desc   testCanvasDrawColor2Null
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('testCanvasDrawColor2Null', TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL3, () => {
+      const msg = 'testCanvasDrawColor2Null';
+      let canvas = new drawing.Canvas(pixel);
+      try {
+        canvas.drawColor(null, 255, 10, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + '1 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `1 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(undefined, 255, 10, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + '2 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `2 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, null, 10, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + '3 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `3 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, undefined, 10, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + '4 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `4 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, 10, null, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + '5 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `5 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, 10, undefined, 10, drawing.BlendMode.CLEAR);
+        console.info(msg + '6 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `6 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, 10, 10, null, drawing.BlendMode.CLEAR);
+        console.info(msg + '7 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `7 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, 10, 10, undefined, drawing.BlendMode.CLEAR);
+        console.info(msg + '8 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `8 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, 10, 10, 10, null);
+        console.info(msg + '9 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `9 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        canvas.drawColor(255, 10, 10, 10, undefined);
+        console.info(msg + '10 drawColor successed');
+        expect().assertFail();
+      } catch (e) {
+        console.info(msg + `10 drawColor errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+    })
     /**
      * @tc.name   testCanvasDrawColorNull
      * @tc.number SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_CANVAS_0501
@@ -833,9 +1096,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(null, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 1 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 1 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -843,9 +1106,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, null, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 2 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 2 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -853,9 +1116,19 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, null, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 3 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 3 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        expect(e.code).assertEqual(401);
+      }
+      try {
+        const brush = new drawing.Brush();
+        canvas.attachBrush(brush);
+        canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, undefined, 0);
+        canvas.detachBrush();
+        console.info(msg + ' 4 drawPixelMapMesh successed');
+      } catch (e) {
+        console.info(msg + ` 4 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -863,9 +1136,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, null, 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 5 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 5 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -873,9 +1146,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], null, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 6 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 6 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -883,9 +1156,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, null);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 7 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 7 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -893,9 +1166,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(undefined, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 8 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 8 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -903,9 +1176,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, undefined, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 9 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 9 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -913,9 +1186,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, undefined, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 10 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 10 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -923,9 +1196,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, undefined, 0, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 11 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 11 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -933,9 +1206,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], undefined, null, 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 12 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 12 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -943,9 +1216,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, null, undefined);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 13 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 13 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -953,9 +1226,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, [], 0, [0xFFFFFFFF,0xFFEFFFFF,0xFFFFEFFF,0xFFFFFFEF,0xFFFFFF00,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF,0xFFEFFFF], 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 14 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 14 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
       try {
@@ -963,9 +1236,9 @@ export default function drawingTsCanvasTest() {
         canvas.attachBrush(brush);
         canvas.drawPixelMapMesh(pixel, 2, 2, [0, 0, 50, 0, 410, 0, 0, 180, 50, 180, 410, 180, 0, 360, 50, 360, 410, 360], 0, [], 0);
         canvas.detachBrush();
-        console.info(msg + 'drawPixelMapMesh successed');
+        console.info(msg + ' 15 drawPixelMapMesh successed');
       } catch (e) {
-        console.info(msg + `drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
+        console.info(msg + ` 15 drawPixelMapMesh errorCode is:  ${e.code} + errormsg is: ${e.message}`);
         expect(e.code).assertEqual(401);
       }
     })

@@ -164,13 +164,13 @@ export default function searchTest() {
       let button: Component | null = await driver.findComponent(ON.id('searchTestBt2'));
       let text: Component | null = await driver.findComponent(ON.id('searchTest1'));
       let text2: Component | null = await driver.findComponent(ON.id('searchTest2'));
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       text?.longClick();
       await CommonFunc.sleep(2000);
       let text1 = await driver.findComponent(ON.text('全选'));
       await CommonFunc.sleep(1000);
-      text1?.click();
+      await (text1?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       text?.dragTo(text2!);

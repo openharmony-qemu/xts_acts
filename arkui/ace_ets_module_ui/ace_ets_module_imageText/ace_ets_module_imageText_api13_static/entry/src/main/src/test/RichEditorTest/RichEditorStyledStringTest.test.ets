@@ -83,7 +83,7 @@ it('RichEditorStyledStringTest_static_0100', Level.LEVEL2, async (done: () => vo
       let driver = Driver.create();
       await CommonFunc.sleep(1000);
       let button1 = await driver.findComponent(ON.id('searchStyle'));
-      button1?.click()
+      await (button1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       let text1 =inspector.getInspectorByKey('gestureId');

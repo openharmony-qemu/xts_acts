@@ -89,10 +89,10 @@ it('popoverDialogTest_static_0100', Level.LEVEL0, async (done: () => void): Prom
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('btn'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await driver.findComponent(ON.text('确认'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[popoverDialogTest_0100] popoverDialogTest JSON.parseJsonElement(strJson) is: " + JSON.stringify(strJson));

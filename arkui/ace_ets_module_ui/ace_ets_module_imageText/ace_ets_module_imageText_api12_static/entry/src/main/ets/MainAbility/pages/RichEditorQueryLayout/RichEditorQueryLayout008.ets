@@ -66,7 +66,7 @@ build() {
           })!.forEach(item => {
             console.log('ClickEventClickEventClickEventClickEvent2222',JSON.stringify(item))
             console.log('ClickEventClickEventClickEventClickEvent2222',(item as RichEditorImageSpanResult)!.imageStyle)
-            if ((item as RichEditorImageSpanResult)!.imageStyle) {
+            if (item instanceof RichEditorImageSpanResult) {
               this.style += (item as RichEditorImageSpanResult)!.valueResourceStr;
               if (((item as RichEditorImageSpanResult)!.imageStyle as RichEditorImageSpanStyleResult)!.layoutStyle) {
             

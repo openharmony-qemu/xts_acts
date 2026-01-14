@@ -46,8 +46,8 @@ export let systemTheme: Theme | undefined;
 @Component
 struct SystemThemeTestPage {
   onWillApplyTheme(theme: Theme) {
-    console.log('xyb111')
     systemTheme = theme;
+    console.log('SystemThemeTestPage test  ' + JSON.stringify(theme.colors)) // {"id":10003}
   }
 
   build() {
@@ -58,6 +58,5 @@ struct SystemThemeTestPage {
       .width('100%')
     }
     .height('100%')
-    .width('100%')
   }
 }

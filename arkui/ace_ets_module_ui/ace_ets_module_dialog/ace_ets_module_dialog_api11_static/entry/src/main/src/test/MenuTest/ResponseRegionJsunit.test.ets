@@ -163,8 +163,9 @@ it('testResponseRegion02_static', Level.LEVEL2, async (done: () => void): Promis
       }
       let callbackTwo = (eventData: emitter.EventData) => {
         console.info("[testResponseRegion02_static] get event state result is: " + JSON.stringify(eventData));
-        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['ACTION']).assertEqual(true)
-        expect(((eventData.data) as Record<String,undefined|null|Object>)?.['EVENT_TYPE']).assertEqual('Down')
+        const data = eventData.data as Record<String,undefined|null|Object>;
+        expect(data['ACTION']).assertEqual(true)
+        expect(data['EVENT_TYPE']).assertEqual('Down')
         done();
       }
       let innerEventTwo: emitter.InnerEvent = {

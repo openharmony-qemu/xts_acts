@@ -19,6 +19,16 @@
 namespace OHOS {
 namespace Rosen {
 namespace Drawing {
+
+// Path circle constants
+constexpr float PATH_CIRCLE_X_200 = 200.0f;
+constexpr float PATH_CIRCLE_Y_200 = 200.0f;
+constexpr float PATH_CIRCLE_X_300 = 300.0f;
+constexpr float PATH_CIRCLE_Y_300 = 300.0f;
+constexpr float PATH_CIRCLE_X_600 = 600.0f;
+constexpr float PATH_CIRCLE_X_700 = 700.0f;
+constexpr float PATH_CIRCLE_RADIUS_100 = 100.0f;
+
 // Path related functions
 int TestPathCreateNormal();
 int TestPathCopyNormal();

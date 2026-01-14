@@ -51,6 +51,8 @@ import TextEnumTest from "./TextTest/enum.test";
 import BindSelectionMenuTest from './BindSelectionMenu/BindSelectionMenuTest.test'
 import LayoutManagerTest from './LayoutManager/LayoutManagerTest.test'
 import TextEditMenuOptionsTest from './TextEditMenuOptions/TextEditMenuOptionsTest.test'
+import gridAbilityTest from "./grid/GridAbilityTest.test";
+import gridDragTest from "./grid/GridDragTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -92,4 +94,6 @@ export default function testsuite() {
   BindSelectionMenuTest();
   LayoutManagerTest();
   TextEditMenuOptionsTest();
+  gridAbilityTest();
+  gridDragTest();
 }

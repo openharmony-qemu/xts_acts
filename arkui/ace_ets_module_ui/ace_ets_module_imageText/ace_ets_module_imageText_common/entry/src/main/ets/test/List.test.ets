@@ -54,31 +54,33 @@ import SearchTest from './TextTest/SearchTest.test';
 import SearchDeleteTest from './TextDeleteTest/SearchDelete.test';
 import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
 import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
+import TextControllerTest from './TextControllerTest/TextControllerTest.test';
+import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
 
 export default function testsuite() {
-  InputPresetTest()
-  // FontTest
-  APIgetUIFontConfigJsunit()
-  FontJsunit()
-  StageFontTest()
-  UIFontAliasInfo()
-  UIfontTest()
-  // MeasureTest
-  ContextGetMeasureUtils()
-  GetLayoutTest()
-  MeasureJsunitTest()
-  MeasureOptionsTest()
-  TextCommonTextComputing1()
-  TextCommonTextComputing2()
-  TextCommonTextComputing3()
-  TextCommonTextComputing4()
-  TextCommonTextComputing5()
-  TextCommonTextComputing6()
-  TextCommonTextComputing7()
-  TextCommonTextComputing8()
-  TextCommonTextComputing9()
+  TextControllerTest();
+  InputPresetTest() 
+  // FontTest 
+  APIgetUIFontConfigJsunit() 
+  FontJsunit() 
+  StageFontTest() 
+  UIFontAliasInfo() 
+  UIfontTest() 
+  // MeasureTest 
+  ContextGetMeasureUtils() 
+  GetLayoutTest() 
+  MeasureJsunitTest() 
+  MeasureOptionsTest() 
+  TextCommonTextComputing1() 
+  TextCommonTextComputing2() 
+  TextCommonTextComputing3() 
+  TextCommonTextComputing4() 
+  TextCommonTextComputing5() 
+  TextCommonTextComputing6() 
+  TextCommonTextComputing7() 
+  TextCommonTextComputing8() 
+  TextCommonTextComputing9() 
   TextGetParagraphsTest()
-
   BindSelectionMenuTest()
   KeyboardAvoidModeTest()
   ResourceModifierTest()
@@ -97,4 +99,5 @@ export default function testsuite() {
   SearchDeleteTest();
   TextAreaDeleteTest();
   TextInputDelete();
+  SelectedDragPreviewStyleTest()
 }

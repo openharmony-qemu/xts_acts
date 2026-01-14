@@ -68,11 +68,11 @@ export default function alertDialogTest() {
 it('alertDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[alertDialogTest_0100] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       // 点击打开AlertDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('AlertDialog'))
-      openAlertDialog?.click();
-      await driver.delayMs(1000);
+      await (openAlertDialog?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       // 点击打开AlertDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('弹框一级标题'));
       let secondaryTitle = await driver.findComponent(ON.text('弹框二级标题'));
@@ -85,8 +85,8 @@ it('alertDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LE
       expect(cancelButton !== null).assertTrue();
       expect(confirmButton !== null).assertTrue();
       // 关闭AlertDialog
-       cancelButton?.click();
-      await driver.delayMs(1000);
+       await (cancelButton?.click() as Promise<void>);
+      await CommonFunc.sleep(1000);
       console.info('[alertDialogTest_0100] END');
       done();
     });

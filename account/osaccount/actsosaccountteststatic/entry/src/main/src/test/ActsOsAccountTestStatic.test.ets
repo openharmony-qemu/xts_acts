@@ -55,13 +55,21 @@ export default function ActsOsAccountTestStatic() {
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.osaccounttest.static");
       await Utils.msSleep(2000);
-      let configArray = await osAccount.DomainServerConfigManager.getAllServerConfigs();
-      hilog.info(0x0000, tag, "getAllServerConfigs configArray: " + JSON.stringify(configArray));
-      for (let i = 0; i < configArray.length; i++) {
-        hilog.info(0x0000, tag, "start configArray: " + JSON.stringify(configArray[i].id));
-        await osAccount.DomainServerConfigManager.removeServerConfig(configArray[i].id);
+      try {
+        let configArray = await osAccount.DomainServerConfigManager.getAllServerConfigs();
+        hilog.info(0x0000, tag, "getAllServerConfigs configArray: " + JSON.stringify(configArray));
+        for (let i = 0; i < configArray.length; i++) {
+          hilog.info(0x0000, tag, "start configArray: " + JSON.stringify(configArray[i].id));
+          await osAccount.DomainServerConfigManager.removeServerConfig(configArray[i].id);
+        }
+        hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
+      } catch (err) {
+        err = err as BusinessError;
+        hilog.info(0x0000, tag, "catch err: " + JSON.stringify(err));
+        if (err.code == 801) {
+          hilog.info(0x0000, tag, "Current device not support API: getAllServerConfigs");
+        }
       }
-      hilog.info(0x0000, tag, '%{public}s', 'beforeAll end');
       done();
     });
 
@@ -660,6 +668,7 @@ export default function ActsOsAccountTestStatic() {
             hilog.info(0x0000, tag, logTag + "addServerConfig success, but should not succeed");
             expect().assertFail();
           } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
             expect(err.code).assertEqual(12300213);
           }
@@ -669,6 +678,7 @@ export default function ActsOsAccountTestStatic() {
             hilog.info(0x0000, tag, logTag + "updateServerConfig success, but should not succeed");
             expect().assertFail();
           } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
             expect(err.code).assertEqual(12300002);
           }
@@ -680,6 +690,7 @@ export default function ActsOsAccountTestStatic() {
             hilog.info(0x0000, tag, logTag + "updateServerConfig success, but should not succeed");
             expect().assertFail();
           } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
             expect(err.code).assertEqual(12300211);
           }
@@ -688,6 +699,7 @@ export default function ActsOsAccountTestStatic() {
             await osAccount.DomainServerConfigManager.updateServerConfig(configArrays[0].id, configParams);
             hilog.info(0x0000, tag, logTag + "updateServerConfig success");
           } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
             expect().assertFail();
           }
@@ -699,6 +711,7 @@ export default function ActsOsAccountTestStatic() {
             hilog.info(0x0000, tag, logTag + "updateServerConfig success, but should not succeed");
             expect().assertFail();
           } catch (err) {
+            err = err as BusinessError;
             hilog.info(0x0000, tag, logTag + "catch err: " + JSON.stringify(err));
             expect(err.code).assertEqual(12300213);
           }

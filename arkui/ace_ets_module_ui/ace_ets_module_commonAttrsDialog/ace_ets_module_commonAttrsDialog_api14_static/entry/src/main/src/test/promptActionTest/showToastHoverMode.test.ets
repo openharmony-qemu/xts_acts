@@ -90,7 +90,7 @@ it('showToastHoverMode_static_0100', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('showToast1'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[showToastHoverMode_0100] showToastHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -120,10 +120,10 @@ it('showToastHoverMode_static_0200', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let btn = await scrollBar.scrollSearch(ON.id('changeEnableHoverMode'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await scrollBar.scrollSearch(ON.id('showToast1'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text');
       console.info("[showToastHoverMode_0200] showToastHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -153,10 +153,10 @@ it('showToastHoverMode_static_0300', Level.LEVEL0, async (done: () => void): Pro
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn = await driver.findComponent(ON.id('init'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('showToast'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showToastHoverMode_0300] showToastHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -186,13 +186,13 @@ it('showToastHoverMode_static_0400', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let btn = await scrollBar.scrollSearch(ON.id('init'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await scrollBar.scrollSearch(ON.id('changeEnableHoverMode'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await scrollBar.scrollSearch(ON.id('showToast'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showToastHoverMode_0400] showToastHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -224,17 +224,17 @@ it('showToastHoverMode_static_0500', Level.LEVEL0, async (done: () => void): Pro
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let btn = await scrollBar.scrollSearch(ON.id('init'));
 
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn1 = await scrollBar.scrollSearch(ON.id('changeEnableHoverMode'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await scrollBar.scrollSearch(ON.id('changeHoverModeArea'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
 
       let btn3 = await scrollBar.scrollSearch(ON.id('showToast'));
-      btn3?.click()
+      await (btn3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showToastHoverMode_0500] showToastHoverMode JSON.parseJsonElement(strJson) is: " +
@@ -264,13 +264,13 @@ it('showToastHoverMode_static_0600', Level.LEVEL0, async (done: () => void): Pro
       await CommonFunc.sleep(1000);
       let scrollBar: Component = await driver.findComponent(ON.type('Scroll')) as Component;
       let btn = await scrollBar.scrollSearch(ON.id('init'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn2 = await scrollBar.scrollSearch(ON.id('changeHoverModeArea'));
-      btn2?.click()
+      await (btn2?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let btn3 = await scrollBar.scrollSearch(ON.id('showToast'));
-      btn3?.click()
+      await (btn3?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('text2');
       console.info("[showToastHoverMode_0600] showToastHoverMode JSON.parseJsonElement(strJson) is: " +

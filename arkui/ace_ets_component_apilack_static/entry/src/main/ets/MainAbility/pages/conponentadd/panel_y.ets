@@ -120,7 +120,7 @@ struct PanelBackgroundMask {
         .bindSheet(this.sheet_show, this.SheetBuilder, {
           dragBar: false,
           detents: [500, 650, 800] as TripleLengthDetents,
-          onHeightDidChange: (value: number) => {
+          onHeightDidChange: (value: int) => {
             Log.showInfo(TAG, 'onHeightChange: ' + value)
             try {
               let backData: events_emitter.EventData = {

@@ -81,14 +81,14 @@ it('bindSheetType_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       let driver =  Driver.create()
       await CommonFunc.sleep(1000);
       let button = await driver.findComponent(ON.id('btn'));
-       button?.click()
+       await (button?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let col = await driver.findComponent(ON.id('col'));
       let rect = await (col?.getBounds() as Promise<Rect>);
       console.info(`rect is: ` + JSON.stringify(rect))
       let colWidth = rect.right - rect.left
       let button1 = await driver.findComponent(ON.id('changeType'));
-       button1?.click()
+       await (button1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let strJson = inspector.getInspectorByKey('sheetTypeValue');
       let obj = JSON.parseJsonElement(strJson);
@@ -97,7 +97,7 @@ it('bindSheetType_static_0100', Level.LEVEL0, async (done: () => void): Promise<
       if (UIContext.resolveUIContext()!.px2vp(colWidth) - 840 >= 0) {
         expect(obj.getElement('$attrs').getString('content')).assertEqual("value SheetType:2");
         let button2 = await driver.findComponent(ON.id('close'));
-         button2?.click()
+         await (button2?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         console.info('[bindSheetType_0100] END');
         done();
@@ -105,14 +105,14 @@ it('bindSheetType_static_0100', Level.LEVEL0, async (done: () => void): Promise<
         (display.getFoldStatus() == 3 || display.getFoldStatus() == 1)) {
         expect(obj.getElement('$attrs').getString('content')).assertEqual("value SheetType:2");
         let button2 = await driver.findComponent(ON.id('close'));
-         button2?.click()
+         await (button2?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         console.info('[bindSheetType_0100] END');
         done();
       } else {
         expect(obj.getElement('$attrs').getString('content')).assertEqual("value SheetType:0");
         let button2 = await driver.findComponent(ON.id('close'));
-         button2?.click()
+         await (button2?.click() as Promise<void>)
         await CommonFunc.sleep(1000);
         console.info('[bindSheetType_0100] END');
         done();

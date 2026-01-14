@@ -148,8 +148,6 @@ export const PixelmapNativeWritePixelsToArea: (a: number) => number;
 export const OHImageEffectErrorCodeSupp: (a: number) => number;
 export const OHIRNdkErrorCodeTestSupp: (a: number) => number;
 export const MediaLibraryErrorCode: (a: number) => number;
-export const ImageProcessingErrorCode: (a: number) => number;
-export const ImageDetailEnhancerQualityLevel: (a: number) => number;
 export const OHPixelMapTranslateSupplementTest: (a: number) => number;
 export const OHPixelMapRotateSupplementTest: (a: number) => number;
 export const OHPixelmapNativeSetColorSpaceNativeSuppTest: (a: number) => number;
@@ -204,3 +202,7 @@ export const OHImageSourceNativeModifyImagePropertyDoubleSupp:(a: number,b:numbe
 export const OHImageSourceNativeModifyImagePropertyIntArraySupp:(a: number,b:number,c:string,d:number[]) => number;
 export const OHImageSourceNativeModifyImagePropertyDoubleArraySupp:(a: number,b:number,c:string,d:number[]) => number;
 export const OHImageSourceNativeModifyImagePropertyBlobSupp:(a: number,b:number,c:string,d:ArrayBufferLike) => number;
+export const PixelmapNativeCropTest:(a: number) => number;
+export const ConvertAlphaFormatTest:(a: number) => number;
+export const DecodingOptionsReleaseTest:(a: number) => number;
+export const CreatePixelmapFromSurfaceWithTransformationTest:(a: number,b: string) => number;

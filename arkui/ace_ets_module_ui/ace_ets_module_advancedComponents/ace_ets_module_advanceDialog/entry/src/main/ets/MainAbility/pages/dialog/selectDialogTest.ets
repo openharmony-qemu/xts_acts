@@ -46,15 +46,9 @@ struct SelectDialogTest {
       },
       radioContent: [
         {
-          title: '文本文本文本文本文本',
+          title: '文本1',
           action: () => {
             this.radioIndex = 0
-          }
-        },
-        {
-          title: '文本文本文本文本',
-          action: () => {
-            this.radioIndex = 1
           }
         }
       ],

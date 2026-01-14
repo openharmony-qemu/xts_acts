@@ -64,7 +64,7 @@ it('DatePickerDialogJsunit_static_0100', Level.LEVEL2, async (done: () => void):
       console.info('DatePickerDialogJsunit_0100 START');
 	    let driver = Driver.create()
       let button = await driver.findComponent(ON.id('DatePickerDialog'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       let strJson = inspector.getInspectorByKey('DatePickerDialog');

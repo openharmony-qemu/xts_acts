@@ -118,7 +118,8 @@ it('testPromptActionShowToast001_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast001_static get event state result is: " + JSON.stringify(eventData));
-          expect(((eventData.data) as Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,undefined|null|Object>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -154,7 +155,8 @@ it('testPromptActionShowToast002_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast002_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,undefined|null|Object>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -189,7 +191,8 @@ it('testPromptActionShowToast003_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast003_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,undefined|null|Object>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -224,7 +227,8 @@ it('testPromptActionShowToast004_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast004_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,undefined|null|Object>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {
@@ -259,7 +263,8 @@ it('testPromptActionShowToast005_static', Level.LEVEL2, async (done: () => void)
         }
         let callback1 = (eventData: emitter.EventData) => {
           console.info("testPromptActionShowToast005_static get event state result is: " + JSON.stringify(eventData));
-          // expect(((eventData.data) as  Record<String,undefined|null|Object>)?.["STATUS"]).assertEqual(true);
+          const data = eventData.data as Record<String,undefined|null|Object>;
+          expect(data["STATUS"]).assertEqual(true);
           done();
         }
         try {

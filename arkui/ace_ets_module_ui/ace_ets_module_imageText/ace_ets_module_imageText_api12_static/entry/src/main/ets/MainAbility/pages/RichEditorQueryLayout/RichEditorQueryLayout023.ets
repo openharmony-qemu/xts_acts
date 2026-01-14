@@ -66,7 +66,7 @@ build() {
           start: 0,
           end: 7
         })!.forEach(item => {
-          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+          if (item instanceof RichEditorImageSpanResult) {
             if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
               this.layoutStyle =
                 JSON.stringify(((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)

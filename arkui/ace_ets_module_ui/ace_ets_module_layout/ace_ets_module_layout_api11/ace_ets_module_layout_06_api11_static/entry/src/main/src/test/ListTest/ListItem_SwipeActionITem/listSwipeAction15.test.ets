@@ -163,21 +163,14 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0160', Level.LEVEL0,
       done();
     });
 
-
-    
-    
-    
-
-
-
 /**
-     * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170
-     * @tc.name     SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170
-     * @tc.desc     SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170
+     * @tc.number   SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170
+     * @tc.name     SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170
+     * @tc.desc     SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170
      * @tc.level    Level.LEVEL0
      */
-it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
-      console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170 START');
+it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170 START');
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       await CommonFunc.sleep(500);
@@ -191,8 +184,8 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170', Level.LEVEL0, async 
       let bottom: number = ListItem_00.bottom;
       let width = right - left;
       let height = bottom -top;
-      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170 value is" + left + " --" + right + "--" + top + "--" + bottom);
-      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
+      console.info("SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170 value is" + left + " --" + right + "--" + top + "--" + bottom);
+      console.info("[SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170] current component obj is: " + JSON.stringify(JSON.parseJsonElement(strJson)));
       
       driver.swipe(
         (Math.round((AppStorage.get<number>('winLeft')) as number + left + width/2)).toInt(),
@@ -204,7 +197,7 @@ it('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170', Level.LEVEL0, async 
       
       let textSwipeState = inspector.getInspectorByKey('swipe15State');
 
-      console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_0170 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs')));
+      console.info('SUB_ACE_UI_COMPONENT_LISTANDGRID_LIST_STATECHAGE_static_0170 json is ' + JSON.stringify(JSON.parseJsonElement(textSwipeState).getElement('$attrs')));
       expect(JSON.parseJsonElement(textSwipeState).getElement('$attrs').getString('content')).assertEqual('2');
       done();
     });

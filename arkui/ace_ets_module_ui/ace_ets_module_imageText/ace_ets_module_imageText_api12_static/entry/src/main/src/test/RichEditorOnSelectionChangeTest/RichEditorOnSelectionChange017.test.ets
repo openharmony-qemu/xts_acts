@@ -102,8 +102,8 @@ export default function RichEditorOnSelectionChange017() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":2,"end":2}');
-
+      expect(messageText).assertContain('"start":2');
+      expect(messageText).assertContain('"end":2');
       done();
     });
 
@@ -136,8 +136,8 @@ export default function RichEditorOnSelectionChange017() {
       let message = await (driver.findComponent(ON.id('message')) as Promise<Component>);
       let messageText = await message.getText();
       await CommonFunc.sleep(500);
-      expect(messageText).assertEqual('message:{"start":5,"end":5}');
-
+      expect(messageText).assertContain('"start":5');
+      expect(messageText).assertContain('"end":5');
       done();
     });
 

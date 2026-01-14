@@ -52,7 +52,7 @@ export default function textAreaAutoFillTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textAreaAutoFillTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textAreaAutoFill" == pages.name)) {
           console.info("get textAreaAutoFillTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

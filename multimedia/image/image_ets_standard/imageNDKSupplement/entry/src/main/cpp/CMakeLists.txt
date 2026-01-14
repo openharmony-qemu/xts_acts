@@ -58,7 +58,9 @@ add_library(imageEffect SHARED
     ImageNdkErrCodeTest.cpp
     ImageReceiverNativeReadTest.cpp
     OHImageNdkFrameworkTest.cpp
-    ImageSourceNativeModifySuppTest.cpp)
+    ImageSourceNativeModifySuppTest.cpp
+    PixelmapNativeCropTest.cpp
+    ImagePackerNativeTest.cpp)
 
 
 find_library(
@@ -80,7 +82,6 @@ find_library(
 
 target_link_libraries(imageEffect PUBLIC
     libnative_color_space_manager.so
-    libimage_processing.so
     libimage_ndk.z.so
     libimage_receiver_ndk.z.so
     libhilog_ndk.z.so

@@ -30,6 +30,8 @@ struct Index1 {
           .fallbackLineSpacing(this.fallback)
           .id('TextInputTest')
           .lineHeight(10)
+          .width('80%')
+          .height('10%')
 
         Button('1')
           .onClick(()=>{
@@ -50,6 +52,8 @@ struct Index1 {
           })
           .id('TextInputTestundefined')
       }
+      .width('100%')
     }
+    .height('100%')
   }
 }

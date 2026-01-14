@@ -49,7 +49,7 @@ export default function typeNodeTextDecorationStyleTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get typeNodeTextDecorationStyleTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextDecorationStyle" == pages.name)) {
           console.info("get typeNodeTextDecorationStyleTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

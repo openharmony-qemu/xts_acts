@@ -72,11 +72,11 @@ export default function editableTitleBarSymbolTest() {
 it('editableTitleBarSymbolPage_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[editableTitleBarSymbolPage_static_0100] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       // 点击打开editableTitleBar是否存在以下入口。
       let title = await driver.findComponent(ON.text('主标题'));
       expect(title !== null).assertTrue();
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       console.info('[editableTitleBarSymbolPage_static_0100] END');
       done();
     });

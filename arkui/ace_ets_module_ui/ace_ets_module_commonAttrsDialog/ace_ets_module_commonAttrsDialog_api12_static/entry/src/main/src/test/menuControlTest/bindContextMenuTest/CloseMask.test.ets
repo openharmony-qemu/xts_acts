@@ -77,7 +77,7 @@ it('CloseMask_static_0100', Level.LEVEL0, async (done: () => void): Promise<void
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let Button = await driver.findComponent(ON.id('CloseMask'));
-      Button?.click();
+      await (Button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
 
       await driver.click(200, 200);

@@ -20,5 +20,8 @@ add_library(graphicdrawing SHARED
     NativeTextLineTest.cpp
     NativeTextRunTest.cpp
     NativeTypographyAutoSpaceTest.cpp
+    NativeTypographyUpdateTest.cpp
+    NativeUndefinedGlyphDisplayTest.cpp
+    OHDrawingTypographyTest.cpp
 )
 target_link_libraries(graphicdrawing PUBLIC libace_napi.z.so libnative_drawing.so libhilog_ndk.z.so)

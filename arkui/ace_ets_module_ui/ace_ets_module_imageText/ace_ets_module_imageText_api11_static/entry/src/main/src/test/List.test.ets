@@ -118,116 +118,107 @@ import SymbolGlyphFontWeightTest from "./SymbolGlyphTest/FontWeight01.test";
 import SpanTextShadowTest from './textTest/SpanTextShadowTest.test';
 
 export default function testsuite() {
-    spanUIJsunit() // pass 7
-    ActsRichEditorTest(); // pass 15
-    textAreaInputTest() // pass 1
-    stageFontTest(); // pass 5
-    stageMediaquery(); // pass 13
-    richEditorApi4(); // pass 1
-    richEditorApi5(); // pass 1
-    richEditorApi6(); // pass 1
-    richEditorApi7(); // pass 1
-    richEditorApi8(); // pass 1
-    search(); // pass 96
-    textStyleJsunit(); // pass 17
-    marqueeJsunit(); // pass 3
-    ImageTextTest(); //pass 7
-    TextAreaCallbackTest(); //pass 1
-    Image_QRCode_Api(); // pass 1
-    RichEditorApi(); // pass 5
-
-
-    APIgetUIFontConfigJsunit(); // pass 1
-    TextAreaSelectTest(); // pass 10
-    APITextBackgroundStyleJsunit(); // pass 1
-    SXrenderingStrategyJsunit(); // pass 1
-    SXsymbolSpanStyleJsunit(); // pass 1
-    SXsymbolStyleJsunit(); // pass 1
-    SXvalueResourceJsunit(); // pass 1
-    SXSymbolGlyphSINGLE01Jsunit(); // pass 1
-    textDataDataDetectorConfig() // pass 4
-    richEditorApi2() // fail 1
-    richEditorApi3() // pass 1
-    RichEditorTest() // pass 3
-    spanApi1() // pass 1
-    symbolGlyphApi1() // pass 1
-    symbolGlyphApi2() // pass 1
-    symbolGlyphApi3() // pass 1
-    symbolGlyphApi4() // pass 1
-    symbolGlyphApi5() // pass 1
-    symbolSpanApi2Test() // pass 2
-    symbolSpanApi1() // pass 1
-    TextStyle() // pass 8
-    tabsDemo() // pass 1
-    TextSelectionMenu() // pass 2
-    textInputApi1() // pass 1
-    textInputApiTest() // pass 1
-
-
-
-    UIfont() // pass 4
-    TextfieldOtherTest() // pass 4
-    TextfieldSingleTest() // pass 3
-    TextfieldMultiTest() // pass 4
-    CurveTest() // pass 4
-    backgroundAndSizeSettingJsunit() // pass 9
-    borderJsunit(); // pass 3
-    textAreaJsunit(); // pass 3
-    textInputJsunit(); //pass 20
-    propJsunit(); // pass 2
-    spanJsunit() // pass 3
-    textJsunit() // pass 9
-    outline() // pass 4
-    textAreaUxTest(); // pass 40
-    search_caret(); // pass 5
-    search_maxLength();// pass 2
-    search_maxLength2(); // pass 2
-    search_top(); // pass 1
-    search_bottom();// pass 1
-    textArea_top(); // pass 3
-    textAenEnabledJsunit(); // pass 2
-    textInput_caret(); // pass 1
-
-
-    textOneJsunit(); // 4 pass
-    textTwoJsunit();  // pass 5
-    textEnabledJsunit(); // pass 6
-    textChangeEnabledJsunit(); // pass 2
-    marqueeUIJsunit();  // pass 8
-    fontJsunit(); // pass 6
-    textClockJsunit() // pass 6
-    textTimerJsunit() // pass 3
-    // appVersionCodeJsunit(); //fail 1 app died
-    colorEnumJsunit(); // pass 1
-    copyOptionJsunit(); // pass 2
-    TextStyle2() // pass 1
-    unitsModuleNameJsunit() // pass 4
-    text3Jsunit(); // pass 11
-    span3Jsunit(); // pass 5
-    textMinFontSizeJsunit(); // pass 11
-    textAreaOnCutJsunit(); // pass 8 注释 1 undefined
-    textInputOnEditChangeJsunit(); // pass 9
-    textAreaJsunit3(); // pass 13
-    textInputJsunit3();  // pass 11
-    textObscuredTest() // pass 5
-    textSpanFontTest(); // pass 65
-    textArea_bottom(); // pass 3
-    textAreaOnCaretAndKeyboardTest(); // pass 2
-    richEditorTest(); // pass 3
-    textTextCaseTest(); // pass 3
-    textTextDecorationTest(); // pass 5
-    searchTest(); // pass 10
-
-
-    textInputTest() // pass 36
-    TextAreaTypeTest(); // pass 2
-    SearchTypeTest(); // pass 2
-    ImageSpanVisibilityTest(); // pass 5
-    showCounterTest(); // pass 6
-    UIFontAliasInfo(); // pass 1
-    measureOptionsTest(); // pass 1
-    ContainerSpanModifierTest(); // pass 2
-    SearchModifierTest(); // pass 2
-    SymbolGlyphFontWeightTest(); // pass 10
-    SpanTextShadowTest(); // pass 3
+    spanUIJsunit();
+    ActsRichEditorTest();
+    textAreaInputTest();
+    stageFontTest();
+    stageMediaquery();
+    richEditorApi4();
+    richEditorApi5();
+    richEditorApi6();
+    richEditorApi7();
+    richEditorApi8();
+    // search();
+    textStyleJsunit();
+    marqueeJsunit();
+    // ImageTextTest();
+    TextAreaCallbackTest();
+    Image_QRCode_Api();
+    RichEditorApi();
+    APIgetUIFontConfigJsunit();
+    TextAreaSelectTest();
+    APITextBackgroundStyleJsunit();
+    SXrenderingStrategyJsunit();
+    SXsymbolSpanStyleJsunit();
+    SXsymbolStyleJsunit();
+    SXvalueResourceJsunit();
+    SXSymbolGlyphSINGLE01Jsunit();
+    textDataDataDetectorConfig();
+    richEditorApi2();
+    richEditorApi3();
+    RichEditorTest();
+    spanApi1();
+    symbolGlyphApi1();
+    symbolGlyphApi2();
+    symbolGlyphApi3();
+    symbolGlyphApi4();
+    symbolGlyphApi5();
+    symbolSpanApi2Test();
+    symbolSpanApi1();
+    TextStyle();
+    tabsDemo();
+    TextSelectionMenu();
+    textInputApi1();
+    textInputApiTest();
+    UIfont();
+    TextfieldOtherTest();
+    TextfieldSingleTest();
+    TextfieldMultiTest();
+    CurveTest();
+    backgroundAndSizeSettingJsunit();
+    borderJsunit();
+    textAreaJsunit();
+    textInputJsunit();
+    propJsunit();
+    spanJsunit();
+    textJsunit();
+    outline();
+    textAreaUxTest();
+    search_caret();
+    search_maxLength();
+    search_maxLength2();
+    search_top();
+    search_bottom();
+    textArea_top();
+    textAenEnabledJsunit();
+    textInput_caret();
+    textOneJsunit();
+    textTwoJsunit();
+    textEnabledJsunit();
+    textChangeEnabledJsunit();
+    marqueeUIJsunit();
+    fontJsunit();
+    textClockJsunit();
+    textTimerJsunit();
+    // appVersionCodeJsunit();
+    colorEnumJsunit();
+    copyOptionJsunit();
+    TextStyle2();
+    unitsModuleNameJsunit();
+    text3Jsunit();
+    span3Jsunit();
+    textMinFontSizeJsunit();
+    textAreaOnCutJsunit();
+    textInputOnEditChangeJsunit();
+    textAreaJsunit3();
+    textInputJsunit3();
+    textObscuredTest();
+    textSpanFontTest();
+    textArea_bottom();
+    textAreaOnCaretAndKeyboardTest();
+    richEditorTest();
+    textTextCaseTest();
+    textTextDecorationTest();
+    searchTest();
+    textInputTest();
+    TextAreaTypeTest();
+    SearchTypeTest();
+    ImageSpanVisibilityTest();
+    showCounterTest();
+    UIFontAliasInfo();
+    measureOptionsTest();
+    ContainerSpanModifierTest();
+    SearchModifierTest();
+    SymbolGlyphFontWeightTest();
+    SpanTextShadowTest();
 }

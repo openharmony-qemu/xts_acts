@@ -21,7 +21,7 @@ import common from '@ohos.app.ability.common';
 import commonEventManager from '@ohos.commonEventManager';
 import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
-import { UiDriver, BY, Driver} from '@ohos.UiTest';
+import { UiDriver, BY, Driver, ON } from '@ohos.UiTest';
 import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 
 let INVALID_PARAM = 401;
@@ -37,6 +37,10 @@ export default function verificationTest() {
     beforeAll(async()=>{
       try{
         driver1 = await Driver.create();
+        let allowed = await driver1.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
       }catch{
         console.info("VerificationTestTest beforeAll create driver error" );
       }

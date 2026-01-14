@@ -110,15 +110,13 @@ export default function TaskGroupAbilityTest2() {
 
         Count1.count = 0;
         Count2.count = 0;
-        await sleep(100)
-        taskpool.execute(taskGroup).then((num: Array<Any>) => {
+        await taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
         })
       }
 
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;
@@ -165,7 +163,6 @@ export default function TaskGroupAbilityTest2() {
         }
       }
       await Promise.all(promises);
-      await sleep(1000);
       while (count < 1) {
         await sleep(100)
       }
@@ -198,15 +195,13 @@ export default function TaskGroupAbilityTest2() {
 
         Count1.count = 0;
         Count2.count = 0;
-        await sleep(100)
-        taskpool.execute(taskGroup).then((num: Array<Any>) => {
+        await taskpool.execute(taskGroup).then((num: Array<Any>) => {
           Count1.count++;
           Count2.count++;
           console.info('======', Count1.count, Count2.count)
         })
       }
 
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;
@@ -251,7 +246,6 @@ export default function TaskGroupAbilityTest2() {
         }
       }
       await Promise.all(promises);
-      await sleep(1000);
       while (count < 1) {
         await sleep(100)
       }
@@ -288,8 +282,7 @@ export default function TaskGroupAbilityTest2() {
         //task2.setTransferList([])
         taskGroup.addTask(task1);
         taskGroup.addTask(task2);
-        await sleep(100)
-        taskpool.execute(taskGroup).then((result: Array<Any>) => {
+        await taskpool.execute(taskGroup).then((result: Array<Any>) => {
           console.info("+++++" + result)
           Count1.count++;
           Count2.count++;
@@ -297,7 +290,6 @@ export default function TaskGroupAbilityTest2() {
         })
       }
 
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;
@@ -349,7 +341,6 @@ export default function TaskGroupAbilityTest2() {
         }
       }
       await Promise.all(promises);
-      await sleep(1000);
       while (count < 1) {
         await sleep(100)
       }
@@ -382,8 +373,7 @@ export default function TaskGroupAbilityTest2() {
 
         Count1.count = 0;
         Count2.count = 0;
-        await sleep(100)
-        taskpool.execute(taskGroup).then((result: Array<Any>) => {
+        await taskpool.execute(taskGroup).then((result: Array<Any>) => {
           console.info("+++++" + result)
           Count1.count++;
           Count2.count++;
@@ -391,7 +381,6 @@ export default function TaskGroupAbilityTest2() {
         })
       }
 
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;
@@ -439,7 +428,6 @@ export default function TaskGroupAbilityTest2() {
         }
       }
       await Promise.all(promises);
-      await sleep(1000);
       while (count < 1) {
         await sleep(100)
       }
@@ -475,8 +463,7 @@ export default function TaskGroupAbilityTest2() {
 
         Count1.count = 0;
         Count2.count = 0;
-        await sleep(100)
-        taskpool.execute(taskGroup).then((result: Array<Any>) => {
+        await taskpool.execute(taskGroup).then((result: Array<Any>) => {
           console.info("+++++" + result)
           Count1.count++;
           Count2.count++;
@@ -484,7 +471,6 @@ export default function TaskGroupAbilityTest2() {
         })
       }
 
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;
@@ -532,7 +518,6 @@ export default function TaskGroupAbilityTest2() {
         }
       }
       await Promise.all(promises);
-      await sleep(1000);
       while (count < 1) {
         await sleep(100)
       }
@@ -564,8 +549,7 @@ export default function TaskGroupAbilityTest2() {
 
         Count1.count = 0;
         Count2.count = 0;
-        await sleep(100)
-        taskpool.execute(taskGroup).then((result: Array<Any>) => {
+        await taskpool.execute(taskGroup).then((result: Array<Any>) => {
           console.info("+++++" + result)
           Count1.count++;
           Count2.count++;
@@ -573,7 +557,6 @@ export default function TaskGroupAbilityTest2() {
         })
       }
 
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;
@@ -617,7 +600,6 @@ export default function TaskGroupAbilityTest2() {
         }
       }
       await Promise.all(promises);
-      await sleep(1000);
       while (count < 1) {
         await sleep(100)
       }
@@ -671,7 +653,6 @@ export default function TaskGroupAbilityTest2() {
         }
       }
       await Promise.all(promises);
-      await sleep(1000);
       while (count < 1) {
         await sleep(100)
       }
@@ -705,7 +686,7 @@ export default function TaskGroupAbilityTest2() {
 
         taskGroup.addTask(printMyClass1, myClass1);
         taskGroup.addTask(printMyClass2, myClass2);
-         taskpool.execute(taskGroup).then((result: Array<Any>) => {
+        await  taskpool.execute(taskGroup).then((result: Array<Any>) => {
           console.log(`Execution1 ${i + 1}: ${result}`);
           console.log(`Task Result (${i + 1}): ${result.toString()}`);
           console.log(`Task Method Call: ${result}`);
@@ -713,7 +694,6 @@ export default function TaskGroupAbilityTest2() {
         Count1.count++
         Count2.count++
       }
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;
@@ -757,7 +737,6 @@ export default function TaskGroupAbilityTest2() {
           console.error(`第 ${i + 1} 次执行任务组时出错:`, error);
         }
       }
-      await sleep(1000)
       expect(String(1)).assertEqual(String(Count1.count))
       expect(String(1)).assertEqual(String(Count2.count))
       Count1.count = 0;

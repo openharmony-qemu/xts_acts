@@ -30,7 +30,7 @@ struct PickerEnableHapticFeedbackPage {
 
   build() {
     Row() {
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -50,7 +50,7 @@ struct PickerEnableHapticFeedbackPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -70,7 +70,7 @@ struct PickerEnableHapticFeedbackPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -90,7 +90,7 @@ struct PickerEnableHapticFeedbackPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {
@@ -110,7 +110,7 @@ struct PickerEnableHapticFeedbackPage {
         }
       })
 
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {

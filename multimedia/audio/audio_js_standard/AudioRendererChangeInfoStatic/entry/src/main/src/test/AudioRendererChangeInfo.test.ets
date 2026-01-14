@@ -361,14 +361,14 @@ export default function audioCapturerChange() {
 
       try {
         await audioRen!.start();
-        console.info(`${Tag} : renderInstant started :SUCCESS }`);
+        console.info(`${Tag} : renderInstant started :SUCCESS `);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
       }
 
       try {
         await audioRen!.stop();
-        console.info(`${Tag} : Renderer stopped : SUCCESS}`);
+        console.info(`${Tag} : Renderer stopped : SUCCESS`);
       } catch (err: BusinessError) {
         console.info(`${Tag} : Renderer stop:ERROR :  ${err.message}`);
       }
@@ -377,7 +377,7 @@ export default function audioCapturerChange() {
 
       audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
-          console.info(`${Tag} : ## RendererChange on is called for ${i}  ##}`);
+          console.info(`${Tag} : ## RendererChange on is called for ${i}  ##`);
           // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -446,7 +446,7 @@ export default function audioCapturerChange() {
 
       try {
         await audioRen!.start();
-        console.info(`${Tag} : renderInstant started :SUCCESS }`);
+        console.info(`${Tag} : renderInstant started :SUCCESS `);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant start :ERROR :  ${err.message}`);
       }
@@ -455,7 +455,7 @@ export default function audioCapturerChange() {
 
       audioStreamManager.onAudioRendererChange((AudioRendererChangeInfoArray) => {
         for (let i = 0; i < AudioRendererChangeInfoArray.length; i++) {
-          console.info(`${Tag} : ## RendererChange on is called for ${i}  ##}`);
+          console.info(`${Tag} : ## RendererChange on is called for ${i}  ##`);
           // console.info(`${Tag} : AudioRendererChangeInfo for ${i}  is:  ${JSON.stringify(AudioRendererChangeInfoArray[i])}`);
           let devDescriptor = AudioRendererChangeInfoArray[i].deviceDescriptors;
           for (let j = 0; j < AudioRendererChangeInfoArray[i].deviceDescriptors.length; j++) {
@@ -472,7 +472,7 @@ export default function audioCapturerChange() {
 
       try {
         await audioRen!.pause();
-        console.info(`${Tag} : renderInstant paused :SUCCESS }`);
+        console.info(`${Tag} : renderInstant paused :SUCCESS `);
       } catch (err: BusinessError) {
         console.info(`${Tag} : renderInstant pause :ERROR :   ${err.message}`);
       }
@@ -2477,8 +2477,10 @@ export default function audioCapturerChange() {
       });
 
       await Utils.msSleep(1000);
-
-      audioStreamManager.offAudioRendererChange();
+      let audioRendererChangeCallback = (audioRendererChangeInfoArray: audio.AudioRendererChangeInfoArray) => {
+        console.info(`Succeeded in using on or off function, AudioRendererChangeInfoArray: ${JSON.stringify(audioRendererChangeInfoArray)}.`);
+      };
+      audioStreamManager.offAudioRendererChange(audioRendererChangeCallback);
       await Utils.msSleep(100);
       console.info(`${Tag} : [GET_RENDERER_DD_CALLBACK] ######### RendererChange Off is called #########`);
 

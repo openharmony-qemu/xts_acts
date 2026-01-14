@@ -14,19 +14,15 @@
  * limitations under the License.
  */
 import lazyForEachTest from './FrameNodeTest/lazyForEachTest.test';
-import ApplyNormalAttributeTest from './AttributeUpdaterTest/ApplyNormalAttribute.test';  // 阻塞
+import ApplyNormalAttributeTest from './AttributeUpdaterTest/ApplyNormalAttribute.test';
 import UIObserverDensityUpdateTest from './ObserverTest/UIObserverDensityUpdate.test';
 import UIObserverWillDrawTest from './ObserverTest/UIObserverWillDraw.test';
 import UIObserverDidLayoutTest from './ObserverTest/UIObserverDidLayout.test';
 
 export default function testsuite() {
-  // ApplyNormalAttributeTest(); //11.20SDK pass
-  // UIObserverDensityUpdateTest(); // 11.20SDK pass
-  // UIObserverWillDrawTest(); // 11.20SDK pass
-  // UIObserverDidLayoutTest(); // 11.20SDK pass
-  // ApplyNormalAttributeTest(); //11.20SDK pass
-  // UIObserverDensityUpdateTest(); // 11.20SDK pass
-  // UIObserverWillDrawTest(); // 11.20SDK pass
-  // UIObserverDidLayoutTest(); // 11.20SDK pass
-  lazyForEachTest();  // SR20250717371939  8用例
+  ApplyNormalAttributeTest();
+  UIObserverDensityUpdateTest();
+  UIObserverWillDrawTest();
+  UIObserverDidLayoutTest();
+  lazyForEachTest();
 }

@@ -27,15 +27,15 @@ import SystemTransition2 from './Navigation/SystemTransition2.test'
 
 
 export default function testsuite() {
-  SafeAreaPadding()   // SDK12.2 pass1
-  NavigationEnableDragBar() // SDK12.2 pass1
-  Recoverable()   // pass 4
-  RouterRecoverable() // pass1
-  RouterRecoverable2()  // pass 1ge
-  SystemTransition() //SDK12.2 pass1
-  SystemTransition2() //SDK12.2 pass2
-  NavigationBindToScrollable()  // SDK12.2 pass
-  MultiNavigationTest()  //SDK12.2 0702表格 105行 2025091107964 可发邮件
-  MultiEntry()   // SDK12.2  0702表格 105行 2025091107964 可发邮件
-  NavigationBindToNestedScrollable()  //SDK 12.2 0702表格 107行 vp2px 基础框架可发邮件
+  SafeAreaPadding();
+  NavigationEnableDragBar();
+  Recoverable();
+  RouterRecoverable();
+  RouterRecoverable2();
+  SystemTransition();
+  SystemTransition2();
+  NavigationBindToScrollable();
+  MultiNavigationTest();
+  MultiEntry();
+  NavigationBindToNestedScrollable();
 }

@@ -419,6 +419,69 @@ let isEmpty08 = (data: BusinessError) => {
       }
     });
 
+    let occlusionDetectChange = (err: BusinessError | null, result: cameraObj.CameraOcclusionDetectionResult | undefined) => {
+      if (err) {
+        console.info(TAG, 'cameraOcclusionDetection err.');
+      }
+      if (!result) {
+        console.info(TAG, 'cameraOcclusionDetection: undefined');
+        return;
+      }
+      if (result.isCameraOccluded) {
+        console.info(TAG, `onCameraOcclusionDetection isCameraOccluded: ${result.isCameraOccluded}`);
+      }
+      if (result.isCameraLensDirty) {
+        console.info(TAG, `onCameraOcclusionDetection isCameraLensDirty: ${result.isCameraLensDirty}`);
+      }
+    }
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100
+     * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100
+     * @tc.desc   camera status callback on CameraInput async api for cameraOcclusionDetection
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100--------------");
+   
+      if (mCameraNum == 0) {
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 FAILED with NoCamera");
+        expect().assertFail();
+        done();
+      } else {
+        let camerasArray = mCameraDevicesArray;
+        for (let i = 0; i < mCameraNum; i++) {
+          console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 start for camera[" + i + "]");
+          let cameraInput = mCameraManager.createCameraInput(camerasArray[i]);
+          try {
+            cameraInput.onCameraOcclusionDetection(occlusionDetectChange);
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 onCameraOcclusionDetection SUCCESSFUL");
+            done();
+          } catch (error:BusinessError) {
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 onCameraOcclusionDetection FAILED!");
+            console.info(TAG + 'ERRORCODE: ' + error.code)
+            expect().assertFail()
+            done();
+          }
+ 
+          try {
+            cameraInput.offCameraOcclusionDetection(occlusionDetectChange);
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 offCameraOcclusionDetectChange SUCCESSFUL");
+            done();
+          } catch (error:BusinessError) {
+            console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 offCameraOcclusionDetectChange FAILED!");
+            console.info(TAG + 'ERRORCODE: ' + error.code)
+            expect().assertFail()
+            done();
+          }
+        }
+        console.info(TAG + "Entering SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_CAMERAOCCLUSIONDETECTION_0100 PASSED");
+        done();
+      }
+    });
+
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_CAMERA_INPUT_OPEN_CLOSE_CALLBACK_STATIC_0100

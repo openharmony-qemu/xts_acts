@@ -50,9 +50,10 @@ export default function DeviceStatusMetadataBindingTest() {
       try {
         metadataBinding.submitMetadata('123')
         console.log('metadataBinding.submitMetadata is success')
+        expect().assertFail()
       } catch (error) {
         console.log('metadataBinding.submitMetadata is failed' + JSON.stringify(error))
-        expect().assertFail()
+        expect(error.code == 32100001).assertTrue()
       }
       console.info("---------------SUB_MSDP_DeviceStatus_API_MetadataBinding_0100 is end---------------")
       done();

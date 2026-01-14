@@ -84,12 +84,12 @@ it('preventDefault_static_0001', Level.LEVEL0, async () => {
           await CommonFunc.sleep(1000);
           let hyperlink1 = await driver.findComponent(ON.id('hyperlink1'));
           await CommonFunc.sleep(500);
-          hyperlink1?.click()
+          await (hyperlink1?.click() as Promise<void>)
           await CommonFunc.sleep(500);
 
           let hyperlink3 = await driver.findComponent(ON.id('hyperlink3'));
           await CommonFunc.sleep(500);
-          hyperlink3?.click()
+          await (hyperlink3?.click() as Promise<void>)
           await CommonFunc.sleep(500);
           driver.assertComponentExist(ON.text('禁掉onclick'));
           console.info("[preventDefault0001] end");
