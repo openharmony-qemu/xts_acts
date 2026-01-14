@@ -13,15 +13,13 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType,  } from '@ohos/hypium';
-import { common , application, UIAbility, AbilityLifecycleCallback, contextConstant,
-  StartOptions } from '@kit.AbilityKit';
+import { beforeAll, describe, expect, it, Level, Size, TestType,  } from '@ohos/hypium';
+import { common , application, UIAbility, AbilityLifecycleCallback, contextConstant, StartOptions } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 import Utils from '../common/Utils';
 import { Context } from '@ohos.arkui.UIContext';
 
 let context: common.UIAbilityContext;
-
 
 export default function ActsGetAllWindowStagesTest() {
   describe('ActsGetAllWindowStagesTest', () => {
