@@ -22,7 +22,7 @@ import {
 
 @Entry
 @Component
-struct arcSwiperEventTest1 {
+struct arcSwiperEventTest {
   @State itemSimpleColor: Color | number | string = ''
   @State selectedItemSimpleColor: Color | number | string = ''
   private arcSwiperController: ArcSwiperController = new ArcSwiperController()
@@ -55,15 +55,15 @@ struct arcSwiperEventTest1 {
   build() {
     Column() {
       Text(this.message1).id('arcSwiper_onGestureSwipe')
-        .margin({top:10})
-      Text('onChange: ' + this.onChangeIndex1).id('arcSwiper_onChange')
-      Text('onAnimationStart: ' + this.onAnimationStartIndex1).id('arcSwiper_onAnimationStart')
-      Text('onAnimationEnd: ' + this.onAnimationEndIndex1).id('arcSwiper_onAnimationEnd')
-      Text('finishText: ' + this.finishText1).id('arcSwiper_finishAnimation')
+        .margin({top:10}).height('5%')
+      Text('onChange: ' + this.onChangeIndex1).id('arcSwiper_onChange').height('5%')
+      Text('onAnimationStart: ' + this.onAnimationStartIndex1).id('arcSwiper_onAnimationStart').height('5%')
+      Text('onAnimationEnd: ' + this.onAnimationEndIndex1).id('arcSwiper_onAnimationEnd').height('5%')
+      Text('finishText: ' + this.finishText1).id('arcSwiper_finishAnimation').height('5%')
       Button('disableSwipe').id('arcSwiper_disableSwipe')
         .onClick(() => {
           this.disableSwipe1 = false
-        })
+        }).height('5%')
       ArcSwiper(this.arcSwiperController) {
         ForEach(this.arr, (item: string, index: number) => {
           Text(index.toString())
@@ -74,8 +74,8 @@ struct arcSwiperEventTest1 {
             .fontSize(30)
         })
       }.id('arcSwiper_eventChange')
-      .width(233)
-      .height(233)
+      .width('80%')
+      .height('50%')
       .index(this.index)
       .duration(400)
       .vertical(false)
