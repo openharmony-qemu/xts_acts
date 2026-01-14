@@ -446,6 +446,139 @@ export default function CameraManagerTest() {
       expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
     })
     /**
+     * @tc.name   testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0100
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0100
+     * @tc.desc   Test OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode in photo scene condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0100', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+        Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0100:" + ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.name   testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0200
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0200
+     * @tc.desc   Test OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode in video scene condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0200', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+      setSceneMode(Camera_SceneMode.NORMAL_VIDEO);
+      let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+        Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0200:" + ret);
+      expect(ret).assertEqual(CAMERA_OK);
+    })
+    /**
+     * @tc.name   testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0300
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0300
+     * @tc.desc   Test OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode in secure photo scene condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0300', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      let supportedSceneModes = getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+      console.info(TAG + "getSupportedSceneModesSize is called. size is " + supportedSceneModes.sceneModesSize);
+      if (!supportedSceneModes.isSecurePhoto) {
+        console.error(TAG + "SECURE_PHOTO is not supported");
+        expect(supportedSceneModes.isSecurePhoto).assertEqual(false);
+      } else {
+        setSceneMode(Camera_SceneMode.SECURE_PHOTO);
+        let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+          Parameter_Setting.ALL_PARAMETER_OK);
+        console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0300:" + ret);
+        expect(ret).assertEqual(CAMERA_OK);
+      }
+      console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0300 end");
+    })
+    /**
+     * @tc.name   testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0400
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0400
+     * @tc.desc   Test OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode in first parameter error condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0400', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+        Parameter_Setting.FIRST_PARAMETER_ERROR);
+      console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0400:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0500
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0500
+     * @tc.desc   Test OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode in second parameter error condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0500', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+        Parameter_Setting.SECOND_PARAMETER_ERROR);
+      console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0500:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0600
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0600
+     * @tc.desc   Test OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode in third parameter error condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0600', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+        Parameter_Setting.THIRD_PARAMETER_ERROR);
+      console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0600:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
+     * @tc.name   testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0700
+     * @tc.number SUB_MULTIMEIDA_OHCAMERANDK_OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0700
+     * @tc.desc   Test OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode in forth parameter error condition.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0700', Level.LEVEL0, () => {
+      getCameraManagerInstance();
+      getSupportedCamerasInstance();
+      getSupportedSceneModes(Parameter_Setting.ALL_PARAMETER_OK);
+      setSceneMode(Camera_SceneMode.NORMAL_PHOTO);
+      let ret = cameraObj.oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(
+        Parameter_Setting.FOURTH_PARAMETER_ERROR);
+      console.info(TAG + "testOHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode0700:" + ret);
+      expect(ret).assertEqual(CAMERA_INVALID_ARGUMENT);
+    })
+    /**
      * @tc.name   testOHCameraManagerIsTorchSupported0100
      * @tc.number SUB_MULTIMEIDA_OHCAMWEANDK_OHCameraManagerIsTorchSupported0100
      * @tc.desc   Test OH_CameraManager_IsTorchSupported in normal condition.
