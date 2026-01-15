@@ -920,11 +920,11 @@ export default function UiTest() {
             await getInputMethodPermission()
             done()
         })
-
+      
         beforeEach(async () => {
             await stopApplication('com.uitestScene.acts');
         })
-
+      
         /**
          * @tc.name   testDriverLongClickAt
          * @tc.number uiTest_20001
@@ -948,7 +948,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(`${TestTag}, testDriverLongClickAt end`);
         })
-
+      
         /**
          * @tc.name   testNewMouseLongClick
          * @tc.number uiTest_20002
@@ -970,7 +970,7 @@ export default function UiTest() {
             expect(text == 'longClick').assertTrue()
             console.log(TestTag, 'testNewMouseLongClick over');
         })
-
+      
         /**
          * @tc.name   testDriverInputText
          * @tc.number uiTest_20003
@@ -990,13 +990,6 @@ export default function UiTest() {
             }
             let center = await text.getBoundsCenter()
             await driver.delayMs(2000);
-            text = await driver.findComponent(ON.type('TextInput'))
-            if (text == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                text = await scorll.scrollSearch(ON.type('TextInput'))
-            }
-            await driver.delayMs(1000);
-            center = await text.getBoundsCenter()
             await driver.inputText(center, '123', { paste: false, addition: false })
             await exitInputMethod();
             await driver.delayMs(2000);
@@ -1009,7 +1002,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText over');
         })
-
+      
         /**
          * @tc.name   testDriverInputText1
          * @tc.number uiTest_20004
@@ -1042,7 +1035,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText1 over');
         })
-
+      
         /**
          * @tc.name   testDriverInputText2
          * @tc.number uiTest_20005
@@ -1075,7 +1068,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText2 over');
         })
-
+      
         /**
          * @tc.name   testDriverInputText3
          * @tc.number uiTest_20006
@@ -1094,6 +1087,7 @@ export default function UiTest() {
                 text = await scorll.scrollSearch(ON.type('TextInput'))
             }
             let center = await text.getBoundsCenter()
+            await driver.delayMs(2000)
             await driver.inputText(center, '123', { paste: false, addition: true })
             await driver.delayMs(2000)
             await exitInputMethod()
@@ -1107,7 +1101,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText3 over');
         })
-
+      
         /**
          * @tc.name   testDriverInputText4
          * @tc.number uiTest_20007
@@ -1126,6 +1120,7 @@ export default function UiTest() {
                 text = await scorll.scrollSearch(ON.type('TextInput'))
             }
             let center = await text.getBoundsCenter()
+            await driver.delayMs(2000)
             await driver.inputText(center, '123', { paste: true, addition: true })
             await driver.delayMs(2000)
             await exitInputMethod()
@@ -1139,7 +1134,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText4 over');
         })
-
+      
         /**
          * @tc.name   testComponentInputText
          * @tc.number uiTest_20008
@@ -1170,7 +1165,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testComponentInputText over');
         })
-
+      
         /**
          * @tc.name   testComponentInputText1
          * @tc.number uiTest_20009
@@ -1188,15 +1183,7 @@ export default function UiTest() {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
                 text = await scorll.scrollSearch(ON.type('TextInput'))
             }
-            await text.clearText()
             await driver.delayMs(2000)
-            await exitInputMethod()
-            await driver.delayMs(2000)
-            text = await driver.findComponent(ON.type('TextInput'))
-            if (text == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                text = await scorll.scrollSearch(ON.type('TextInput'))
-            }
             await text.inputText('长贵儿', { paste: false, addition: false })
             await driver.delayMs(2000)
             await exitInputMethod()
@@ -1210,7 +1197,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testComponentInputText1 over');
         })
-
+      
         /**
          * @tc.name   testComponentInputText2
          * @tc.number uiTest_20010
@@ -1242,7 +1229,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testComponentInputText2 over');
         })
-
+      
         /**
          * @tc.name   testComponentInputText3
          * @tc.number uiTest_20011
@@ -1273,7 +1260,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testComponentInputText3 over');
         })
-
+      
         /**
          * @tc.name   testComponentInputText4
          * @tc.number uiTest_20012
@@ -1304,7 +1291,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testComponentInputText4 over');
         })
-
+      
         /**
          * @tc.name   testCrownRotate
          * @tc.number uiTest_20013
@@ -1344,7 +1331,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testCrownRotate over');
         })
-
+      
         /**
          * @tc.name   testCrownRotateSpeed
          * @tc.number uiTest_20014
@@ -1384,7 +1371,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testCrownRotateSpeed over');
         })
-
+      
         /**
          * @tc.name   testBelongingDisplay
          * @tc.number uiTest_20015
@@ -1411,7 +1398,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testBelongingDisplay over');
         })
-
+      
         /**
          * @tc.name   testGetDisplayId
          * @tc.number uiTest_20016
@@ -1438,7 +1425,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testGetDisplayId over');
         })
-
+      
         /**
          * @tc.name   testPressBackWithId
          * @tc.number uiTest_20017
@@ -1463,7 +1450,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testPressBackWithId over');
         })
-
+      
         /**
          * @tc.name   testTriggerKeyWithId
          * @tc.number uiTest_20018
@@ -1490,7 +1477,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testTriggerKeyWithId over');
         })
-
+      
         /**
          * @tc.name   testScreenCapWithId
          * @tc.number uiTest_20019
@@ -1512,7 +1499,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testScreenCapWithId over');
         })
-
+      
         /**
          * @tc.name   testGetDisplaySizeWithId
          * @tc.number uiTest_20020
@@ -1533,7 +1520,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testScreenCapWithId over');
         })
-
+      
         /**
          * @tc.name   testGetDisplayDensityWithId
          * @tc.number uiTest_20021
@@ -1554,8 +1541,8 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testGetDisplayDensityWithId over');
         })
-
-
+      
+      
         /**
          * @tc.name   testClickAt
          * @tc.number uiTest_20022
@@ -1578,7 +1565,7 @@ export default function UiTest() {
             await newButton.click()
             console.log(TestTag, 'testClickAt over');
         })
-
+      
         /**
          * @tc.name   testDoubleClickAt
          * @tc.number uiTest_20023
@@ -1606,7 +1593,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDoubleClickAt over');
         })
-
+      
         /**
          * @tc.name   test_swipeBetween
          * @tc.number uiTest_20024
@@ -1635,7 +1622,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
         })
-
+      
         /**
          * @tc.name   test_swipeBetweenspeednull
          * @tc.number uiTest_20025
@@ -1664,7 +1651,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
         })
-
+      
         /**
          * @tc.name   test_swipeBetweenspeedundefined
          * @tc.number uiTest_20026
@@ -1693,7 +1680,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
         })
-
+      
         /**
          * @tc.name   test_swipeBetweenspeed199
          * @tc.number uiTest_20027
@@ -1722,7 +1709,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
         })
-
+      
         /**
          * @tc.name   test_swipeBetweenspeed40001
          * @tc.number uiTest_20028
@@ -1751,7 +1738,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
         })
-
+      
         /**
          * @tc.name   test_swipeBetweenspeed1000
          * @tc.number uiTest_20029
@@ -1780,7 +1767,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_swipeBetween over');
         })
-
+      
         /**
          * @tc.name   testFlingWithId
          * @tc.number uiTest_20030
@@ -1834,7 +1821,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testFlingWithId over');
         })
-
+      
         /**
          * @tc.name   testTriggerCombineKeysWithId
          * @tc.number uiTest_20032
@@ -1897,7 +1884,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testTriggerCombineKeysWithId over');
         })
-
+      
         /**
          * @tc.name   test_origin
          * @tc.number uiTest_20033
@@ -1923,7 +1910,7 @@ export default function UiTest() {
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'test_origin end');
         })
-
+      
         /**
          * @tc.name   testWindowAttrWithId
          * @tc.number uiTest_20034
@@ -1944,7 +1931,7 @@ export default function UiTest() {
             expect(isActive == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
-
+      
         /**
          * @tc.name   testScreenCaptureWithId
          * @tc.number uiTest_20035
@@ -1963,7 +1950,7 @@ export default function UiTest() {
             expect(success == true).assertTrue()
             await stopApplication('com.uitestScene.acts')
         })
-    })
+      })
     describe('UiTest_API16', () => {
         let driver: Driver
         beforeAll(async (done: Function) => {
