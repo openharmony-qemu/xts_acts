@@ -3421,7 +3421,7 @@ static napi_value GetHdrComposedPixelmapWithOptions(napi_env env, napi_callback_
 
     // 获取 desiredPixelFormat
     uint32_t temp = 0;
-    napi_get_value_uint32(env, argValue[NUM_0], &temp);
+    napi_get_value_uint32(env, argValue[NUM_1], &temp);
     PIXEL_FORMAT desiredPixelFormat = static_cast<PIXEL_FORMAT>(temp);
 
     // 创建并设置 ComposeOptions
@@ -3478,7 +3478,7 @@ static napi_value GetHdrComposedPixelmapWithOptionsError(napi_env env, napi_call
 
     // 获取 desiredPixelFormat
     uint32_t temp = 0;
-    napi_get_value_uint32(env, argValue[NUM_0], &temp);
+    napi_get_value_uint32(env, argValue[NUM_1], &temp);
     PIXEL_FORMAT desiredPixelFormat = static_cast<PIXEL_FORMAT>(temp);
 
     // 创建并设置 ComposeOptions
@@ -3502,7 +3502,7 @@ static napi_value GetHdrComposedPixelmapWithOptionsError(napi_env env, napi_call
     // 获取HDR Pixelmap
     OH_PixelmapNative *hdrPixelmap = nullptr;
     errCode = OH_PictureNative_GetHdrComposedPixelmapWithOptions(picture, options, &hdrPixelmap);
-    napi_create_int32(env, errCode, &resultNapi);
+    napi_create_int32(env, errCode, &result);
     OH_ComposeOptions_Release(options);
     return result;
 }
@@ -3577,7 +3577,7 @@ static napi_value GetHdrComposedPixelmapAndPixelMapTest(napi_env env, napi_callb
     }
 
     IMG_NAPI_RELEASE_PTR(hdrPixelmap, OH_PixelmapNative_Release(hdrPixelmap));
-    napi_create_int32(env, 0, &resultNapi);
+    napi_create_int32(env, 0, &result);
     return result;
 }
 
