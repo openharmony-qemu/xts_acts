@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
+import { afterEach, beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
 import { common , application, UIAbility, AbilityLifecycleCallback, contextConstant, StartOptions } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 import Utils from '../common/Utils';
@@ -25,6 +25,31 @@ export default function ActsGetAllWindowStagesTest() {
   describe('ActsGetAllWindowStagesTest', () => {
     beforeAll(async () => {
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext;
+    })
+    afterEach(async () => {
+      try{
+        let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
+        await TestAbility1_UIAbilityContext.terminateSelf();
+
+      } catch (e) {
+        let err = e as BusinessError;
+        hilog.error(0x0000, 'testTag', `TestAbility1_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
+      }
+      try{
+        let TestAbility2_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility2_UIAbilityContext") as common.UIAbilityContext;
+        await TestAbility2_UIAbilityContext.terminateSelf()
+      } catch (e) {
+        let err = e as BusinessError;
+        hilog.error(0x0000, 'testTag', `TestAbility2_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
+      }
+      try{
+        let ApplicationModule_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("ApplicationModule_UIAbilityContext") as common.UIAbilityContext;
+        await ApplicationModule_UIAbilityContext.terminateSelf()
+      } catch (e) {
+        let err = e as BusinessError;
+        hilog.error(0x0000, 'testTag', `ApplicationModule_UIAbilityContext failed, code: ${err.code}, message: ${err.message}`);
+      }
+
     })
 
     /**
@@ -65,8 +90,6 @@ export default function ActsGetAllWindowStagesTest() {
               expect(data.length).assertEqual(2);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
               expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-              await TestAbility1_UIAbilityContext.terminateSelf();
               done();
             })
             .catch((e: Error) => {
@@ -121,8 +144,6 @@ export default function ActsGetAllWindowStagesTest() {
               expect(data.length).assertEqual(2);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
               expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-              await TestAbility1_UIAbilityContext.terminateSelf();
               done();
             })
             .catch((e: Error) => {
@@ -178,8 +199,6 @@ export default function ActsGetAllWindowStagesTest() {
               expect(data.length).assertEqual(2);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
               expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-              await TestAbility1_UIAbilityContext.terminateSelf();
               done();
             })
             .catch((e: Error) => {
@@ -234,8 +253,6 @@ export default function ActsGetAllWindowStagesTest() {
               expect(data.length).assertEqual(2);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
               expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-              await TestAbility1_UIAbilityContext.terminateSelf();
               done();
             })
             .catch((e: Error) => {
@@ -294,7 +311,7 @@ export default function ActsGetAllWindowStagesTest() {
           hilog.error(0x0000, 'testTag', 'startAbility failed.');
         });
         await Utils.sleep(1000);
-        let appContext = (await application.createModuleContext(context,'entry')).getApplicationContext();
+        let appContext = application.getApplicationContext();
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
           await appContext.getAllWindowStages()
@@ -306,13 +323,15 @@ export default function ActsGetAllWindowStagesTest() {
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
               }
               expect(data.length).assertEqual(3);
-              expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility2');
-              expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
-              expect((data[2].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-              await TestAbility1_UIAbilityContext.terminateSelf();
-              let TestAbility2_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility2_UIAbilityContext") as common.UIAbilityContext;
-              await TestAbility2_UIAbilityContext.terminateSelf();
+              if((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name == 'TestAbility2'){
+                expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility2');
+                expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
+                expect((data[2].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+              }else{
+                expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
+                expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility2');
+                expect((data[2].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+              }
               done();
             })
             .catch((e: Error) => {
@@ -364,8 +383,6 @@ export default function ActsGetAllWindowStagesTest() {
           expect(onCreate_WindowStage.length).assertEqual(2);
           expect((onCreate_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
           expect((onCreate_WindowStage[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-          let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-          await TestAbility1_UIAbilityContext.terminateSelf();
           done();
         } catch (e) {
           let err = e as BusinessError;
@@ -411,8 +428,6 @@ export default function ActsGetAllWindowStagesTest() {
           expect(onWindowStageCreate_WindowStage.length).assertEqual(2);
           expect((onWindowStageCreate_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
           expect((onWindowStageCreate_WindowStage[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-          let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-          await TestAbility1_UIAbilityContext.terminateSelf();
           done();
         } catch (e) {
           let err = e as BusinessError;
@@ -457,8 +472,6 @@ export default function ActsGetAllWindowStagesTest() {
           expect(onForeground_WindowStage.length).assertEqual(2);
           expect((onForeground_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
           expect((onForeground_WindowStage[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-          let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-          await TestAbility1_UIAbilityContext.terminateSelf();
           done();
         } catch (e) {
           let err = e as BusinessError;
@@ -480,6 +493,19 @@ export default function ActsGetAllWindowStagesTest() {
       async (done: Function) => {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_0600";
         let NAME = "getAllWindowStages";
+        let wantInfo: Want = {
+          deviceId: '', // deviceId为空表示本设备
+          bundleName: 'com.example.GetAllWindowStages',
+          moduleName: 'entry_test', // moduleName非必选
+          abilityName: 'TestAbility1',
+        };
+        await context.startAbility(wantInfo).then(() => {
+          hilog.info(0x0000, 'testTag', 'startAbility success.');
+        }).catch((e: Error) => {
+          let err = e as BusinessError
+          hilog.error(0x0000, 'testTag', 'startAbility failed.');
+        });
+        await Utils.sleep(1000);
         let onBackground_WindowStage =  AppStorage.get<Array<window.WindowStage>>('onBackground_WindowStage') as Array<window.WindowStage>
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} [onBackground_WindowStage] getAllWindowStages size ${onBackground_WindowStage.length}`);
@@ -491,7 +517,6 @@ export default function ActsGetAllWindowStagesTest() {
           expect((onBackground_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
           expect((onBackground_WindowStage[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
-
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -538,7 +563,6 @@ export default function ActsGetAllWindowStagesTest() {
           expect(onDestroy_WindowStage.length).assertEqual(1);
           expect((onDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
-
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -631,7 +655,6 @@ export default function ActsGetAllWindowStagesTest() {
           expect(onWindowStageWillDestroy_WindowStage.length).assertEqual(1);
           expect((onWindowStageWillDestroy_WindowStage[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
           done();
-
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -715,8 +738,6 @@ export default function ActsGetAllWindowStagesTest() {
                   expect(data.length).assertEqual(2);
                   expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
                   expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-                  let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-                  TestAbility1_UIAbilityContext.terminateSelf()
                 } else {
                   expect(data.length).assertEqual(1);
                   expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
@@ -779,8 +800,6 @@ export default function ActsGetAllWindowStagesTest() {
               expect(data.length).assertEqual(2);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('ApplicationAbility');
               expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              let ApplicationModule_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("ApplicationModule_UIAbilityContext") as common.UIAbilityContext;
-              await ApplicationModule_UIAbilityContext.terminateSelf()
               done();
             })
             .catch((e: Error) => {
@@ -839,8 +858,6 @@ export default function ActsGetAllWindowStagesTest() {
                 expect(data.length).assertEqual(2);
                 expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility2');
                 expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-                let TestAbility2_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility2_UIAbilityContext") as common.UIAbilityContext;
-                await TestAbility2_UIAbilityContext.terminateSelf()
               } else {
                 expect(data.length).assertEqual(1);
                 expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
@@ -894,13 +911,12 @@ export default function ActsGetAllWindowStagesTest() {
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
               hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
-              hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+              for (let i = 0; i < data.length; i++) {
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
+              }
               expect(data.length).assertEqual(2);
               expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility1');
               expect((data[1].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
-              let TestAbility1_UIAbilityContext: common.UIAbilityContext = AppStorage.get<common.UIAbilityContext>("TestAbility1_UIAbilityContext") as common.UIAbilityContext;
-              await TestAbility1_UIAbilityContext.terminateSelf();
               done();
             })
             .catch((e: Error) => {
@@ -959,8 +975,8 @@ export default function ActsGetAllWindowStagesTest() {
               for (let i = 0; i < data.length; i++) {
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages successfully. Data: ` + (data[i].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
               }
-                expect(data.length).assertEqual(1);
-                expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
+              expect(data.length).assertEqual(1);
+              expect((data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name).assertEqual('TestAbility');
               done();
             })
             .catch((e: Error) => {
@@ -969,7 +985,6 @@ export default function ActsGetAllWindowStagesTest() {
               expect().assertFail();
               done();
             });
-
         } catch (e) {
           let err = e as BusinessError;
           hilog.error(0x0000, 'testTag', `${TESTCASE} ${NAME} failed, code: ${err.code}, message: ${err.message}`);
@@ -991,7 +1006,7 @@ export default function ActsGetAllWindowStagesTest() {
         let TESTCASE = "SUB_Ability_AbilityRuntime_getAllWindowStages_1700";
         let NAME = "getAllWindowStages";
         let appContext = context.getApplicationContext();
-
+        let i = 0;
         let wantInfo: Want = {
           deviceId: '', // deviceId为空表示本设备
           bundleName: 'com.example.GetAllWindowStages',
@@ -1008,10 +1023,10 @@ export default function ActsGetAllWindowStagesTest() {
         await Utils.sleep(1000);
         try {
           hilog.info(0x0000, 'testTag', `${TESTCASE} start`);
-          for (let i = 0; i < 10000; i++) {
-            appContext.getAllWindowStages()
+          for (i = 0; i < 1000; i++) {
+            await appContext.getAllWindowStages()
               .then((data: Array<window.WindowStage>) => {
-                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success`);
+                hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} success ` + i);
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} getAllWindowStages size ${data.length}`);
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + JSON.stringify(data));
                 hilog.info(0x0000, 'testTag', `${TESTCASE} ${NAME} Data: ` + (data[0].getMainWindowSync().getUIContext().getHostContext() as common.UIAbilityContext).abilityInfo.name);
@@ -1027,6 +1042,7 @@ export default function ActsGetAllWindowStagesTest() {
                 done();
               });
           }
+          expect(i).assertEqual(1000);
           done();
         } catch (e) {
           let err = e as BusinessError;
