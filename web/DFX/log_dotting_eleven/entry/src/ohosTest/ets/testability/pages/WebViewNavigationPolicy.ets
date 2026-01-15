@@ -111,9 +111,8 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("https://www.example.com/")
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  Utils.sleep(500);
+                  await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260113)
                   },4000)
@@ -143,9 +142,8 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("https://www.example.com/")
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  Utils.sleep(500);
+                  await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260114)
                   },4000)
@@ -172,9 +170,8 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("https://www.example.com/")
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  Utils.sleep(500);
+                  await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260115)
                   },4000)
@@ -203,9 +200,8 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("https://www.example.com/")
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  Utils.sleep(500);
+                  await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260116)
                   },4000)
@@ -234,9 +230,8 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  this.isPageEnd = -1;
-                  this.controller.loadUrl("https://www.example.com/")
-                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
+                  Utils.sleep(500);
+                  await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260117)
                   },4000)
