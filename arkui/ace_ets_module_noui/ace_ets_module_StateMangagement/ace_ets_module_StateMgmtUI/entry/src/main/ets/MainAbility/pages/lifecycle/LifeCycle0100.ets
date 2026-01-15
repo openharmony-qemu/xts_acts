@@ -78,16 +78,6 @@ export class MyObserver0100 implements CustomComponentLifecycleObserver {
       AppStorage.get('onDidBuild') === undefined ? 1 : AppStorage.get<number>('onDidBuild')! + 1)
   }
 
-  aboutToAttach() {
-    AppStorage.setOrCreate<number>('aboutToAttach',
-      AppStorage.get('aboutToAttach') === undefined ? 1 : AppStorage.get<number>('aboutToAttach')! + 1)
-  }
-
-  aboutToDetach() {
-    AppStorage.setOrCreate<number>('aboutToDetach',
-      AppStorage.get('aboutToDetach') === undefined ? 1 : AppStorage.get<number>('aboutToDetach')! + 1)
-  }
-
   aboutToReuse(param?: ESObject) {
     AppStorage.setOrCreate<number>('aboutToReuse',
       AppStorage.get('aboutToReuse') === undefined ? 1 : AppStorage.get<number>('aboutToReuse')! + 1)
