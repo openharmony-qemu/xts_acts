@@ -21,7 +21,7 @@ const DOMAIN = 0x0000;
 export default class ApplicationAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
     hilog.info(DOMAIN, 'testTag', '%{public}s', 'Ability onCreate');
-    AppStorage.setOrCreate<common.UIAbilityContext>("ApplicationModule_UIAbilityContext", this.context)
+    AppStorage.setOrCreate<common.UIAbilityContext>('ApplicationModule_UIAbilityContext', this.context)
   }
 
   onDestroy(): void {

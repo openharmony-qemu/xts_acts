@@ -255,7 +255,7 @@ export default function ActsGetAllWindowStagesTest() {
     /**
      * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_0800
      * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_0800
-     * @tc.desc       createModuleContext.getApplicationContext
+     * @tc.desc       Acquire WindowStages by launching multiple Abilities in other launch modes.
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
@@ -981,7 +981,7 @@ export default function ActsGetAllWindowStagesTest() {
     /**
      * @tc.number     SUB_Ability_AbilityRuntime_getAllWindowStages_1700
      * @tc.name       SUB_Ability_AbilityRuntime_getAllWindowStages_1700
-     * @tc.desc       apppcation.getApplicationContext
+     * @tc.desc       Pressure Test
      * @tc.size       MEDIUMTEST
      * @tc.type       Function
      * @tc.level      LEVEL3
