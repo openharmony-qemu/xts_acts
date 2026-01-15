@@ -21,6 +21,14 @@ export default function localUnitTest() {
       // Presets a clear action, which is performed after all test cases of the test suite end.
       // This API supports only one parameter: clear action function.
     });
+    /**
+     * @tc.name   assertContain
+     * @tc.number assertContain
+     * @tc.desc   测试断言方法，验证字符串包含和相等功能
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.Level  LEVEL0
+     */
     it('assertContain', 0, () => {
       // Defines a test case. This API supports three parameters: test case name, filter parameter, and test case function.
       let a = 'abc';
