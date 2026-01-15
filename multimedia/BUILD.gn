@@ -213,6 +213,7 @@ group("multimedia") {
       "videoProcess/moduletest/image:ActsVpeImageNativModuleTest",
       "videoProcess/moduletest/video:ActsVpeVideoNativModuleTest",
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
+      "audio_ndk/ActsOhAudioRenderTest:ActsOhAudioRenderHapTest",
     ]
   } else {
     deps += [
