@@ -18,9 +18,7 @@
     "type": "feature",
     "description": "$string:module_desc",
     "mainElement": "ApplicationAbility",
-    "deviceTypes": [
-      "default"
-    ],
+    "deviceTypes": [],
     "deliveryWithInstall": true,
     "installationFree": false,
     "pages": "$profile:main_pages",
