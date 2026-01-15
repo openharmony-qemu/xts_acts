@@ -60,12 +60,14 @@ export default function DecoratorInfoTest() {
       await btn.click();
       await CommonFunc.sleep(1000);
       let res1 = AppStorage.get<ObservedResult>('ObservedResultRes');
-      if (res1) {
         let res = res1 as ObservedResult;
         console.info("[DecoratorInfoTest_0010] component res is: " + JSON.stringify(res));
         expect(res.isObserved+'').assertEqual('true');
         console.info("[DecoratorInfoTest_0020]");
         expect(res.reason+'').assertEqual('The object data is decorated with V2 @ObservedV2 and @Trace');
+
+        expect(res.decoratorInfo !== undefined).assertTrue();
+        expect(res.decoratorInfo.length > 0).assertTrue();
         console.info("[DecoratorInfoTest_0030]");
         expect(res.decoratorInfo[0].decoratorName+'').assertEqual('@Trace');
         console.info("[DecoratorInfoTest_0040]");
@@ -75,12 +77,14 @@ export default function DecoratorInfoTest() {
         console.info("[DecoratorInfoTest_0060]");
         expect(res.decoratorInfo[0].owningComponentId+'').assertEqual('-1');
         console.info("[DecoratorInfoTest_0070]");
+
+        expect(res.decoratorInfo.dependentInfo !== undefined).assertTrue();
+        expect(res.decoratorInfo.dependentInfo.length > 0).assertTrue();
+
         expect(res.decoratorInfo[0].dependentInfo[0].elementId != -1).assertTrue();
         console.info("[DecoratorInfoTest_0080]");
         expect(res.decoratorInfo[0].dependentInfo[0]?.elementName+'').assertEqual('Text');
         console.info("[DecoratorInfoTest_0090]");
-      }
-      console.info("[DecoratorInfoTest_0010] component appstorage.clear: " + JSON.stringify(AppStorage.clear()));
       console.info('[DecoratorInfoTest_0010] END');
       done();
     });

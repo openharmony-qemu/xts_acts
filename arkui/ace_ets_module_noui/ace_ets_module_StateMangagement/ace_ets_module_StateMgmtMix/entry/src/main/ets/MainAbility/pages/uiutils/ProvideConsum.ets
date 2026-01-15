@@ -48,17 +48,15 @@ struct V1ObjectLink {
   @State resultText: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 20 }) {
+    Column() {
       Text(this.resultText)
         .id('ProvideConsumeText')
-        .fontSize(16)
+        .height('5%')
         .textAlign(TextAlign.Center)
-        .width('80%')
 
       Button('testV1')
         .id('ProvideConsumeTest')
-        .fontSize(20)
-        .margin(10)
+        .height('5%')
         .onClick(() => {
           this.resultText = '';
           this.resultText = this.resultText + text(this.a3)
@@ -79,13 +77,12 @@ export struct Child01 {
   @State resultText1: string | undefined = 'this is null'
 
   build() {
-    Column({ space: 10 }) {
+    Column() {
       Text(this.resultText1)
         .id('textV102')
       Button('@link')
         .id('ButtonTextV102')
-        .fontSize(20)
-        .margin(10)
+        .height('5%')
         .onClick(() => {
           this.resultText1 = '';
           this.resultText1 = this.resultText1 + text(this.a)
