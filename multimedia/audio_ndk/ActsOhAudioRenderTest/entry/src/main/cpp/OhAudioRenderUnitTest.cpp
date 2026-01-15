@@ -45,6 +45,8 @@ constexpr int32_t DURATIONMS = 40;
 constexpr int32_t DELAY_TIME_SECONDS = 2;
 constexpr float DEFAULT_VOLUME = -0.5f;
 constexpr float MUTE_VOLUME = -1.5f;
+constexpr float VALID_TEST_VOLUME = 0.5f;
+constexpr float OUT_OF_RANGE_VOLUME = 1.5f;
 uint32_t g_flag = 0;
 } // namespace
 
@@ -95,14 +97,12 @@ static int32_t AudioRendererOnWriteDataMock(OH_AudioRenderer* renderer, void* us
     return 0;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCallbackWithValidData(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCallbackWithValidData(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     return AUDIO_DATA_CALLBACK_RESULT_VALID;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCallbackWithInvalidData(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCallbackWithInvalidData(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     return AUDIO_DATA_CALLBACK_RESULT_INVALID;
 }
@@ -118,16 +118,14 @@ static int32_t OnWriteDataCbMock(OH_AudioRenderer* renderer, void* userData, voi
     return 0;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCbWithValidDataMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCbWithValidDataMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     UserData* u = static_cast<UserData*>(userData);
     u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
     return AUDIO_DATA_CALLBACK_RESULT_VALID;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCbWithInvalidDataMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCbWithInvalidDataMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     UserData* u = static_cast<UserData*>(userData);
     u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
@@ -640,7 +638,7 @@ int OhAudioRenderGetVolume003()
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
     OH_AudioRenderer* audioRenderer;
     OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
-    float volumeSet = 0.5;
+    float volumeSet = VALID_TEST_VOLUME;
     result = OH_AudioRenderer_SetVolume(audioRenderer, volumeSet);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
@@ -650,7 +648,7 @@ int OhAudioRenderGetVolume003()
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
-    if (volumeGet != 0.5) {
+    if (volumeGet != VALID_TEST_VOLUME) {
         return -1;
     }
     OH_AudioStreamBuilder_Destroy(builder);
@@ -662,12 +660,12 @@ int OhAudioRenderGetVolume004()
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
     OH_AudioRenderer* audioRenderer;
     OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
-    float volumeSet = 0.5;
+    float volumeSet = VALID_TEST_VOLUME;
     result = OH_AudioRenderer_SetVolume(audioRenderer, volumeSet);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
-    volumeSet = 1.5;
+    volumeSet = OUT_OF_RANGE_VOLUME;
     result = OH_AudioRenderer_SetVolume(audioRenderer, volumeSet);
     if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
         return -1;
@@ -677,7 +675,7 @@ int OhAudioRenderGetVolume004()
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
-    if (volumeGet != 0.5) {
+    if (volumeGet != VALID_TEST_VOLUME) {
         return -1;
     }
     OH_AudioStreamBuilder_Destroy(builder);
@@ -687,7 +685,7 @@ int OhAudioRenderGetVolume004()
 int OhAudioRenderSetVolume001()
 {
     OH_AudioRenderer* audioRenderer = nullptr;
-    float volumeSet = 0.5;
+    float volumeSet = VALID_TEST_VOLUME;
     OH_AudioStream_Result result = OH_AudioRenderer_SetVolume(audioRenderer, volumeSet);
     if (result != AUDIOSTREAM_ERROR_INVALID_PARAM) {
         return -1;
@@ -700,7 +698,7 @@ int OhAudioRenderSetVolume002()
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
     OH_AudioRenderer* audioRenderer;
     OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
-    float volumeSet = 0.5;
+    float volumeSet = VALID_TEST_VOLUME;
     result = OH_AudioRenderer_SetVolume(audioRenderer, volumeSet);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
@@ -939,7 +937,6 @@ int OhAudioRenderCancelMark003()
     return 0;
 }
 
-// Category 6: Underflow Detection Tests (5)
 int OhAudioRendererGetUnderflowCount001()
 {
     OH_AudioStreamBuilder* builder = CreateRenderBuilder();
@@ -995,26 +992,31 @@ int OhAudioRendererGetUnderflowCount001()
     return 0;
 }
 
-int OhAudioRendererGetUnderflowCount002()
+static int CreateGameUsageRendererWithCallback(OH_AudioStreamBuilder** builder, OH_AudioRenderer** audioRenderer,
+    OHAudioRendererWriteCallbackMock* writeCallbackMock)
 {
-    OH_AudioStreamBuilder* builder = CreateRenderBuilder();
-    OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
-    OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
+    *builder = CreateRenderBuilder();
+    OH_AudioStreamBuilder_SetSamplingRate(*builder, SAMPLE_RATE_48000);
+    OH_AudioStreamBuilder_SetChannelCount(*builder, CHANNEL_2);
     OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_GAME;
-    OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
-    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    OH_AudioStreamBuilder_SetRendererInfo(*builder, usage);
     OH_AudioRenderer_Callbacks callbacks;
     callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteDataMock;
-    OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
-    OH_AudioRenderer* audioRenderer;
-    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
+    OH_AudioStreamBuilder_SetRendererCallback(*builder, callbacks, writeCallbackMock);
+    OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(*builder, audioRenderer);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
+    return 0;
+}
+
+static int InstallDelayedWriteCallback(OH_AudioRenderer* audioRenderer,
+    OHAudioRendererWriteCallbackMock* writeCallbackMock)
+{
     std::mutex mutex;
     std::condition_variable cv;
     int32_t count = 0;
-    writeCallbackMock.Install(
+    writeCallbackMock->Install(
         [&count, &mutex, &cv](OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen) {
             std::lock_guard<std::mutex> lock(mutex);
             cv.notify_one();
@@ -1023,15 +1025,20 @@ int OhAudioRendererGetUnderflowCount002()
             }
             count++;
         });
-    result = OH_AudioRenderer_Start(audioRenderer);
+    OH_AudioStream_Result result = OH_AudioRenderer_Start(audioRenderer);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
     std::unique_lock<std::mutex> lock(mutex);
     cv.wait_for(lock, 1s, [&count] { return count > 1; });
     lock.unlock();
+    return 0;
+}
+
+static int ValidateUnderflowCountResult(OH_AudioRenderer* audioRenderer)
+{
     uint32_t underFlowCount;
-    result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
+    OH_AudioStream_Result result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
@@ -1044,10 +1051,27 @@ int OhAudioRendererGetUnderflowCount002()
             return -1;
         }
     }
+    return 0;
+}
+
+int OhAudioRendererGetUnderflowCount002()
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
+    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    if (CreateGameUsageRendererWithCallback(&builder, &audioRenderer, &writeCallbackMock) != 0) {
+        return -1;
+    }
+    if (InstallDelayedWriteCallback(audioRenderer, &writeCallbackMock) != 0) {
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        return -1;
+    }
+    int result = ValidateUnderflowCountResult(audioRenderer);
     OH_AudioRenderer_Stop(audioRenderer);
     OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
-    return 0;
+    return result;
 }
 
 int OhAudioRendererGetUnderflowCount003()
@@ -1084,61 +1108,72 @@ int OhAudioRendererGetUnderflowCount003()
     return 0;
 }
 
+static int TestUnderflowCountWithDelay(std::chrono::milliseconds sleepTime, uint32_t* lastUnderFlowCount)
+{
+    OH_AudioStreamBuilder* builder = nullptr;
+    OH_AudioRenderer* audioRenderer = nullptr;
+    OHAudioRendererWriteCallbackMock writeCallbackMock;
+    if (CreateGameUsageRendererWithCallback(&builder, &audioRenderer, &writeCallbackMock) != 0) {
+        return -1;
+    }
+    std::mutex mutex;
+    std::condition_variable cv;
+    int32_t count = 0;
+    writeCallbackMock.Install([&count, &mutex, &cv, sleepTime](
+                                  OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen) {
+        std::lock_guard<std::mutex> lock(mutex);
+        cv.notify_one();
+        if (count == 1) {
+            std::this_thread::sleep_for(sleepTime);
+        }
+        count++;
+    });
+    OH_AudioStream_Result result = OH_AudioRenderer_Start(audioRenderer);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        return -1;
+    }
+    std::unique_lock<std::mutex> lock(mutex);
+    cv.wait_for(lock, 1s, [&count] { return count > 10; });
+    lock.unlock();
+    uint32_t underFlowCount = 0;
+    result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
+    if (result != AUDIOSTREAM_SUCCESS) {
+        OH_AudioRenderer_Stop(audioRenderer);
+        OH_AudioRenderer_Release(audioRenderer);
+        OH_AudioStreamBuilder_Destroy(builder);
+        return -1;
+    }
+    if (GetCurrentDeviceIsTV()) {
+        if (underFlowCount < *lastUnderFlowCount) {
+            OH_AudioRenderer_Stop(audioRenderer);
+            OH_AudioRenderer_Release(audioRenderer);
+            OH_AudioStreamBuilder_Destroy(builder);
+            return -1;
+        }
+    } else {
+        if (underFlowCount <= *lastUnderFlowCount) {
+            OH_AudioRenderer_Stop(audioRenderer);
+            OH_AudioRenderer_Release(audioRenderer);
+            OH_AudioStreamBuilder_Destroy(builder);
+            return -1;
+        }
+    }
+    *lastUnderFlowCount = underFlowCount;
+    OH_AudioRenderer_Stop(audioRenderer);
+    OH_AudioRenderer_Release(audioRenderer);
+    OH_AudioStreamBuilder_Destroy(builder);
+    return 0;
+}
+
 int OhAudioRendererGetUnderflowCount004()
 {
     uint32_t lastUnderFlowCount = 0;
     for (auto sleepTimes : { 200ms, 400ms, 600ms }) {
-        OH_AudioStreamBuilder* builder = CreateRenderBuilder();
-        OH_AudioStreamBuilder_SetSamplingRate(builder, SAMPLE_RATE_48000);
-        OH_AudioStreamBuilder_SetChannelCount(builder, CHANNEL_2);
-        OH_AudioStream_Usage usage = AUDIOSTREAM_USAGE_GAME;
-        OH_AudioStreamBuilder_SetRendererInfo(builder, usage);
-        OHAudioRendererWriteCallbackMock writeCallbackMock;
-        OH_AudioRenderer_Callbacks callbacks;
-        callbacks.OH_AudioRenderer_OnWriteData = AudioRendererOnWriteDataMock;
-        OH_AudioStreamBuilder_SetRendererCallback(builder, callbacks, &writeCallbackMock);
-        OH_AudioRenderer* audioRenderer;
-        OH_AudioStream_Result result = OH_AudioStreamBuilder_GenerateRenderer(builder, &audioRenderer);
-        if (result != AUDIOSTREAM_SUCCESS) {
+        if (TestUnderflowCountWithDelay(sleepTimes, &lastUnderFlowCount) != 0) {
             return -1;
         }
-        std::mutex mutex;
-        std::condition_variable cv;
-        int32_t count = 0;
-        writeCallbackMock.Install([&count, &mutex, &cv, sleepTimes](
-                                      OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen) {
-            std::lock_guard<std::mutex> lock(mutex);
-            cv.notify_one();
-            if (count == 1) {
-                std::this_thread::sleep_for(sleepTimes);
-            }
-            count++;
-        });
-        result = OH_AudioRenderer_Start(audioRenderer);
-        if (result != AUDIOSTREAM_SUCCESS) {
-            return -1;
-        }
-        std::unique_lock<std::mutex> lock(mutex);
-        cv.wait_for(lock, 1s, [&count] { return count > 10; });
-        lock.unlock();
-        uint32_t underFlowCount = 0;
-        result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
-        if (result != AUDIOSTREAM_SUCCESS) {
-            return -1;
-        }
-        if (GetCurrentDeviceIsTV()) {
-            if (underFlowCount < lastUnderFlowCount) {
-                return -1;
-            }
-        } else {
-            if (underFlowCount <= lastUnderFlowCount) {
-                return -1;
-            }
-        }
-        lastUnderFlowCount = underFlowCount;
-        OH_AudioRenderer_Stop(audioRenderer);
-        OH_AudioRenderer_Release(audioRenderer);
-        OH_AudioStreamBuilder_Destroy(builder);
     }
     return 0;
 }

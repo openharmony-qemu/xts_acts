@@ -146,58 +146,45 @@ static napi_value RendererCreationTest(napi_env env, napi_callback_info info)
     });
 }
 
-// Category 2: Lifecycle Control Test (13 cases)
+static std::function<int()> GetLifecycleTestFunction(int32_t caseNum)
+{
+    switch (caseNum) {
+        case CASE_NUM_0:
+            return Acts::AudioRender::OhAudioRenderStart001;
+        case CASE_NUM_1:
+            return Acts::AudioRender::OhAudioRenderStart002;
+        case CASE_NUM_2:
+            return Acts::AudioRender::OhAudioRenderPause001;
+        case CASE_NUM_3:
+            return Acts::AudioRender::OhAudioRenderPause002;
+        case CASE_NUM_4:
+            return Acts::AudioRender::OhAudioRenderStop001;
+        case CASE_NUM_5:
+            return Acts::AudioRender::OhAudioRenderStop002;
+        case CASE_NUM_6:
+            return Acts::AudioRender::OhAudioRenderFlush001;
+        case CASE_NUM_7:
+            return Acts::AudioRender::OhAudioRenderFlush002;
+        case CASE_NUM_8:
+            return Acts::AudioRender::OhAudioRenderRelease001;
+        case CASE_NUM_9:
+            return Acts::AudioRender::OhAudioRendererGetCurrentState001;
+        case CASE_NUM_10:
+            return Acts::AudioRender::OhAudioRendererGetCurrentState002;
+        case CASE_NUM_11:
+            return Acts::AudioRender::OhAudioRendererGetCurrentState003;
+        case CASE_NUM_12:
+            return Acts::AudioRender::OhAudioRendererGetCurrentState004;
+        default:
+            return []() { return RESULT_ERROR; };
+    }
+}
+
 static napi_value LifecycleControlTest(napi_env env, napi_callback_info info)
 {
     return NapiTry(env, [&]() -> napi_value {
         int32_t caseNum = GetInt32Arg(env, info, ARG_INDEX, DEFAULT_ARG);
-
-        std::function<int()> testFunc;
-        switch (caseNum) {
-            case CASE_NUM_0:
-                testFunc = Acts::AudioRender::OhAudioRenderStart001;
-                break;
-            case CASE_NUM_1:
-                testFunc = Acts::AudioRender::OhAudioRenderStart002;
-                break;
-            case CASE_NUM_2:
-                testFunc = Acts::AudioRender::OhAudioRenderPause001;
-                break;
-            case CASE_NUM_3:
-                testFunc = Acts::AudioRender::OhAudioRenderPause002;
-                break;
-            case CASE_NUM_4:
-                testFunc = Acts::AudioRender::OhAudioRenderStop001;
-                break;
-            case CASE_NUM_5:
-                testFunc = Acts::AudioRender::OhAudioRenderStop002;
-                break;
-            case CASE_NUM_6:
-                testFunc = Acts::AudioRender::OhAudioRenderFlush001;
-                break;
-            case CASE_NUM_7:
-                testFunc = Acts::AudioRender::OhAudioRenderFlush002;
-                break;
-            case CASE_NUM_8:
-                testFunc = Acts::AudioRender::OhAudioRenderRelease001;
-                break;
-            case CASE_NUM_9:
-                testFunc = Acts::AudioRender::OhAudioRendererGetCurrentState001;
-                break;
-            case CASE_NUM_10:
-                testFunc = Acts::AudioRender::OhAudioRendererGetCurrentState002;
-                break;
-            case CASE_NUM_11:
-                testFunc = Acts::AudioRender::OhAudioRendererGetCurrentState003;
-                break;
-            case CASE_NUM_12:
-                testFunc = Acts::AudioRender::OhAudioRendererGetCurrentState004;
-                break;
-            default:
-                testFunc = []() { return RESULT_ERROR; };
-                break;
-        }
-
+        std::function<int()> testFunc = GetLifecycleTestFunction(caseNum);
         return CreateAsyncWork(env, testFunc);
     });
 }
