@@ -989,9 +989,6 @@ export default function UiTest() {
                 text = await scorll.scrollSearch(ON.type('TextInput'))
             }
             let center = await text.getBoundsCenter()
-            await text.clearText();
-            await driver.delayMs(2000);
-            await exitInputMethod();
             await driver.delayMs(2000);
             text = await driver.findComponent(ON.type('TextInput'))
             if (text == null) {
@@ -1008,7 +1005,7 @@ export default function UiTest() {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
                 text1 = await scorll.scrollSearch(ON.type('TextInput'))
             }
-            expect(await text1.getText() == '123').assertTrue()
+            expect(await text1.getText() == 'Hello 123World').assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText over');
         })
@@ -1030,16 +1027,8 @@ export default function UiTest() {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
                 text = await scorll.scrollSearch(ON.type('TextInput'))
             }
-            await text.clearText();
             await driver.delayMs(2000);
-            await exitInputMethod();
-            await driver.delayMs(2000);
-            let text1 = await driver.findComponent(ON.type('TextInput'))
-            if (text1 == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                text1 = await scorll.scrollSearch(ON.type('TextInput'))
-            }
-            let center = await text1.getBoundsCenter();
+            let center = await text.getBoundsCenter();
             await driver.inputText(center, '长贵儿', { paste: false, addition: false });
             await driver.delayMs(2000)
             await exitInputMethod()
@@ -1049,7 +1038,7 @@ export default function UiTest() {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
                 text2 = await scorll.scrollSearch(ON.type('TextInput'))
             }
-            expect(await text2.getText() == '长贵儿').assertTrue()
+            expect(await text2.getText() == 'Hello 长贵儿World').assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText1 over');
         })
@@ -1071,15 +1060,7 @@ export default function UiTest() {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
                 text = await scorll.scrollSearch(ON.type('TextInput'))
             }
-            await text.clearText()
-            await driver.delayMs(2000)
-            await exitInputMethod()
             await driver.delayMs(1000)
-            text = await driver.findComponent(ON.type('TextInput'))
-            if (text == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                text = await scorll.scrollSearch(ON.type('TextInput'))
-            }
             let center = await text.getBoundsCenter()
             await driver.inputText(center, '123', { paste: true, addition: false })
             await driver.delayMs(2000)
@@ -1090,7 +1071,7 @@ export default function UiTest() {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
                 text1 = await scorll.scrollSearch(ON.type('TextInput'))
             }
-            expect(await text1.getText() == '123').assertTrue()
+            expect(await text1.getText() == 'Hello 123World').assertTrue()
             await stopApplication('com.uitestScene.acts')
             console.log(TestTag, 'testDriverInputText2 over');
         })
@@ -1247,15 +1228,7 @@ export default function UiTest() {
                 let scorll = await driver.findComponent(ON.type('Scroll'))
                 text = await scorll.scrollSearch(ON.type('TextInput'))
             }
-            await text.clearText()
             await driver.delayMs(2000)
-            await exitInputMethod()
-            await driver.delayMs(2000)
-            text = await driver.findComponent(ON.type('TextInput'))
-            if (text == null) {
-                let scorll = await driver.findComponent(ON.type('Scroll'))
-                text = await scorll.scrollSearch(ON.type('TextInput'))
-            }
             await text.inputText('123', { paste: true, addition: false })
             await driver.delayMs(2000)
             await exitInputMethod()
@@ -1653,7 +1626,7 @@ export default function UiTest() {
             let center = await scoll.getBoundsCenter()
             await driver.swipeBetween({
                 x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
-                , displayId: disPlay.id
+            , displayId: disPlay.id
             },
                 { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id })
             await driver.delayMs(waitUiReadyMs)
@@ -1682,7 +1655,7 @@ export default function UiTest() {
             let center = await scoll.getBoundsCenter()
             await driver.swipeBetween({
                 x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
-                , displayId: disPlay.id
+            , displayId: disPlay.id
             },
                 { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, null)
             await driver.delayMs(waitUiReadyMs)
@@ -1711,7 +1684,7 @@ export default function UiTest() {
             let center = await scoll.getBoundsCenter()
             await driver.swipeBetween({
                 x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
-                , displayId: disPlay.id
+            , displayId: disPlay.id
             },
                 { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, undefined)
             await driver.delayMs(waitUiReadyMs)
@@ -1740,7 +1713,7 @@ export default function UiTest() {
             let center = await scoll.getBoundsCenter()
             await driver.swipeBetween({
                 x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
-                , displayId: disPlay.id
+            , displayId: disPlay.id
             },
                 { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, 199)
             await driver.delayMs(waitUiReadyMs)
@@ -1769,7 +1742,7 @@ export default function UiTest() {
             let center = await scoll.getBoundsCenter()
             await driver.swipeBetween({
                 x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
-                , displayId: disPlay.id
+            , displayId: disPlay.id
             },
                 { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, 40001)
             await driver.delayMs(waitUiReadyMs)
@@ -1798,7 +1771,7 @@ export default function UiTest() {
             let center = await scoll.getBoundsCenter()
             await driver.swipeBetween({
                 x: center.x, y: Math.floor(center.y + (rect.bottom - rect.top) / 4)
-                , displayId: disPlay.id
+            , displayId: disPlay.id
             },
                 { x: center.x, y: Math.floor(center.y - (rect.bottom - rect.top) / 4), displayId: disPlay.id }, 1000)
             await driver.delayMs(waitUiReadyMs)
