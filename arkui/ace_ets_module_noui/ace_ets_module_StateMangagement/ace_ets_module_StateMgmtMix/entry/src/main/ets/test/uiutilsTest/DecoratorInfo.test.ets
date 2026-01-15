@@ -78,8 +78,8 @@ export default function DecoratorInfoTest() {
         expect(res.decoratorInfo[0].owningComponentId+'').assertEqual('-1');
         console.info("[DecoratorInfoTest_0070]");
 
-        expect(res.decoratorInfo.dependentInfo !== undefined).assertTrue();
-        expect(res.decoratorInfo.dependentInfo.length > 0).assertTrue();
+        expect(res.decoratorInfo[0].dependentInfo !== undefined).assertTrue();
+        expect(res.decoratorInfo[0].dependentInfo.length > 0).assertTrue();
 
         expect(res.decoratorInfo[0].dependentInfo[0].elementId != -1).assertTrue();
         console.info("[DecoratorInfoTest_0080]");
