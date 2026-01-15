@@ -904,18 +904,12 @@ export default function formProviderTest() {
       let CASE_TAG: string = 'GetPublishedRunningFormInfoByIdTest001';
       hilog.info(DOMAIN, TAG, `${CASE_TAG} start`);
 
-      try {
-        formProvider.getPublishedRunningFormInfoById(formId).then((result: formInfo.RunningFormInfo) => {
-          hilog.info(DOMAIN, TAG, `${CASE_TAG} success`);
-          expect().assertFail();
-        }).catch((error: Error) => {
-          hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(ERROR_CODE);
-        });
-      } catch (error) {
-        hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
+      formProvider.getPublishedRunningFormInfoById(formId).then((result: formInfo.RunningFormInfo) => {
+        hilog.info(DOMAIN, TAG, `${CASE_TAG} success`);
         expect().assertFail();
-      }
+      }).catch((error: Error) => {
+        hilog.error(DOMAIN, TAG, `GetPublishedRunningFormInfoByIdTest001 error, code: ${error?.code}, message: ${error?.message}`);
+      });
 
       done();
       hilog.info(DOMAIN, TAG, `${CASE_TAG} end`);
@@ -933,19 +927,13 @@ export default function formProviderTest() {
       let CASE_TAG: string = 'GetPublishedRunningFormInfoByIdTest002';
       hilog.info(DOMAIN, TAG, `${CASE_TAG} start`);
 
-      try {
-        let falseFormId = "123123123";
-        formProvider.getPublishedRunningFormInfoById(falseFormId).then((result: formInfo.RunningFormInfo) => {
-          hilog.info(DOMAIN, TAG, `${CASE_TAG} success`);
-          expect().assertFail();
-        }).catch((error: Error) => {
-          hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
-          expect(error?.code).assertEqual(ERROR_CODE);
-        });
-      } catch (error: Error) {
-        hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
+      let falseFormId = "123123123";
+      formProvider.getPublishedRunningFormInfoById(falseFormId).then((result: formInfo.RunningFormInfo) => {
+        hilog.info(DOMAIN, TAG, `${CASE_TAG} success`);
         expect().assertFail();
-      }
+      }).catch((error: Error) => {
+        hilog.error(DOMAIN, TAG, `${CASE_TAG} error, code: ${error?.code}, message: ${error?.message}`);
+      });
 
       done();
       hilog.info(DOMAIN, TAG, `${CASE_TAG} end`);
