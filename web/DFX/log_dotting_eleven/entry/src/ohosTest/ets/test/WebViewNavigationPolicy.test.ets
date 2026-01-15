@@ -126,7 +126,7 @@ export default function WebViewNavigationPolicyTest() {
      */
     it('testWebViewNavigationPolicy005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewNavigationPolicy005', 101008)
-      Utils.registerEvent('testWebViewNavigationPolicy005', 2, 20260117, done);
+      Utils.registerEvent('testWebViewNavigationPolicy005', 3, 20260117, done);
       await Utils.waitAndClickComponent(driver, "WebViewNavigationPolicyButton","testWebViewNavigationPolicy005");
     })
   })
