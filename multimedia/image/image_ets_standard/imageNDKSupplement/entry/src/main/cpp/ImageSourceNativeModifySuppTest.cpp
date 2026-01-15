@@ -259,12 +259,6 @@ napi_value ImageModifyImagePropertyIntArraySupp(napi_env env, napi_callback_info
     case CASE_INDEX_2:
         errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, valueArray, arrayLength);
         break;
-    case CASE_INDEX_3:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, valueArray, arrayLength);
-        break;
-    case CASE_INDEX_4:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyIntArray(imageSource, &key, valueArray, arrayLength);
-        break;
     default:
         break;
     }
@@ -307,12 +301,6 @@ napi_value ImageModifyImagePropertyDoubleArraySupp(napi_env env, napi_callback_i
         break;
     case CASE_INDEX_2:
         errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(nullptr, &key, valueArray, arrayLength);
-        break;
-    case CASE_INDEX_3:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource, &key, valueArray, arrayLength);
-        break;
-    case CASE_INDEX_4:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyDoubleArray(imageSource, &key, valueArray, arrayLength);
         break;
     default:
         break;
@@ -357,12 +345,6 @@ napi_value OHImageSourceNativeModifyImagePropertyBlobSupp(napi_env env, napi_cal
         break;
     case CASE_INDEX_2:
         errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(nullptr, &key, bufferData, bufferSize);
-        break;
-    case CASE_INDEX_3:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
-        break;
-    case CASE_INDEX_4:
-        errCode = OH_ImageSourceNative_ModifyImagePropertyBlob(imageSource, &key, bufferData, bufferSize);
         break;
     default:
         break;

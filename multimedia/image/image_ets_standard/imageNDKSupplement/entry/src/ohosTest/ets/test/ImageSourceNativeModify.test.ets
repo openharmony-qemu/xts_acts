@@ -136,6 +136,27 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
       expect(result).assertEqual(IMAGE_SUCCESS);
     })
     /**
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_SUPP_005
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_SUPP_005
+     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyDouble-IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_SUPP_005', Level.LEVEL1, async () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_SUPP_005'
+      const fd = await getFd("test.jpg");
+      const key = 'FNumber';
+      if (fd <= 0) {
+        console.error(TAG, 'fd 无效: ' + fd);
+        return;
+      };
+      console.info(TAG,'Start',);
+      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyDoubleSupp(CASE_INDEX_4,fd,key)
+      console.info(TAG,testName,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
+    })
+    /**
      * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_INT_ARRAY_SUPP_001
      * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_INT_ARRAY_SUPP_001
      * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyIntArray-IMAGE_SOURCE_INVALID_PARAMETER
@@ -197,7 +218,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_3,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_2,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_UNSUPPORTED_MIME_TYPE);
     })
@@ -219,7 +240,29 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_4,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_2,fd,key,valueArray)
+      console.info(TAG,testName,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
+    })
+    /**
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_INT_ARRAY_SUPP_005
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_INT_ARRAY_SUPP_005
+     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyIntArray-IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_INT_ARRAY_SUPP_005', Level.LEVEL1, async () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_INT_ARRAY_SUPP_005'
+      const fd = await getFd("test.jpg");
+      const key = 'PhotoMode';
+      const valueArray = [1];
+      if (fd <= 0) {
+        console.error(TAG, 'fd 无效: ' + fd);
+        return;
+      };
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageModifyImagePropertyIntArraySupp(CASE_INDEX_2,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SUCCESS);
     })
@@ -285,14 +328,14 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_3,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_1,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
     })
     /**
      * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_ARRAY_SUPP_004
      * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_ARRAY_SUPP_004
-     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyDoubleArray-IMAGE_SUCCESS   有问题
+     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyDoubleArray-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -307,7 +350,29 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_4,fd,key,valueArray)
+      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_1,fd,key,valueArray)
+      console.info(TAG,testName,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
+    })
+    /**
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_ARRAY_SUPP_005
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_ARRAY_SUPP_005
+     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyDoubleArray-IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_ARRAY_SUPP_005', Level.LEVEL1, async () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_DOUBLE_ARRAY_SUPP_005'
+      const fd = await getFd("test.jpg");
+      const key = 'PhotoMode';
+      const valueArray = [1.0];
+      if (fd <= 0) {
+        console.error(TAG, 'fd 无效: ' + fd);
+        return;
+      };
+      console.info(TAG,'Start',);
+      let result: number = testNapi.ImageModifyImagePropertyDoubleArraySupp(CASE_INDEX_1,fd,key,valueArray)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SUCCESS);
     })
@@ -323,9 +388,8 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
       const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_001'
       const fd = await getFd("test8.bmp");
       const key = 'oecf';
-      const binaryArr = [1, 0, 8, 16]; // 自定义二进制值
+      const binaryArr = [1, 0, 8, 16];
       const valueArrayBuffer = new Uint8Array(binaryArr).buffer;
-      // const valueArrayBuffer = [1,0];
       if (fd <= 0) {
         console.error(TAG, 'fd 无效: ' + fd);
         return;
@@ -347,9 +411,8 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
       const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_002'
       const fd = await getFd("test_exif_v3.heic");
       const key = 'PhotoMode';
-      const binaryArr = [1, 0, 8, 16]; // 自定义二进制值
+      const binaryArr = [1, 0, 8, 16];
       const valueArrayBuffer = new Uint8Array(binaryArr).buffer;
-      // const valueArrayBuffer = [1,0];
       if (fd <= 0) {
         console.error(TAG, 'fd 无效: ' + fd);
         return;
@@ -361,7 +424,7 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
     /**
      * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_003
      * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_003
-     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyBlob-IMAGE_SOURCE_UNSUPPORTED_METADATA   有问题
+     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyBlob-IMAGE_SOURCE_UNSUPPORTED_METADATA
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -370,21 +433,20 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
       const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_003'
       const fd = await getFd("test_exif_v3.heic");
       const key = 'PhotoMode';
-      const binaryArr = [1, 0, 8, 16]; // 自定义二进制值
+      const binaryArr = [1, 0, 8, 16];
       const valueArrayBuffer = new Uint8Array(binaryArr).buffer;
-      // const valueArrayBuffer = [1,0];
       if (fd <= 0) {
         console.error(TAG, 'fd 无效: ' + fd);
         return;
       };
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyBlobSupp(CASE_INDEX_3,fd,key,valueArrayBuffer)
+      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyBlobSupp(CASE_INDEX_1,fd,key,valueArrayBuffer)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
     })
     /**
      * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_004
      * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_004
-     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyBlob-IMAGE_SUCCESS   有问题
+     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyBlob-IMAGE_SUCCESS
      * @tc.size    MediumTest
      * @tc.type    Function
      * @tc.level   Level 1
@@ -393,15 +455,37 @@ export default function imageFrameworkImageSourceNativeModifySuppTest() {
       const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_004'
       const fd = await getFd("test_exif_v3.heic");
       const key = 'oecf';
-      const binaryArr = [1, 0, 8, 16]; // 自定义二进制值
+      const binaryArr = [1, 0, 8, 16];
       const valueArrayBuffer = new Uint8Array(binaryArr).buffer;
-      // const valueArrayBuffer = [1,0];
       if (fd <= 0) {
         console.error(TAG, 'fd 无效: ' + fd);
         return;
       };
       console.info(TAG,'Start',);
-      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyBlobSupp(CASE_INDEX_4,fd,key,valueArrayBuffer)
+      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyBlobSupp(CASE_INDEX_1,fd,key,valueArrayBuffer)
+      console.info(TAG,testName,'Success',JSON.stringify(result));
+      expect(result).assertEqual(IMAGE_SUCCESS);
+    })
+    /**
+     * @tc.number  SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_005
+     * @tc.name    SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_005
+     * @tc.desc    OH_ImageSourceNative_ModifyImagePropertyBlob-IMAGE_SUCCESS
+     * @tc.size    MediumTest
+     * @tc.type    Function
+     * @tc.level   Level 1
+     */
+    it('SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_005', Level.LEVEL1, async () => {
+      const testName ='SUB_IMAGE_SOURCE_NATIVE_MODIFY_IMAGE_PROPERTY_BLOB_SUPP_005'
+      const fd = await getFd("test.jpg");
+      const key = 'makerNote';
+      const binaryArr = [1, 0, 8];
+      const valueArrayBuffer = new Uint8Array(binaryArr).buffer;
+      if (fd <= 0) {
+        console.error(TAG, 'fd 无效: ' + fd);
+        return;
+      };
+      console.info(TAG,'Start',);
+      let result: number = testNapi.OHImageSourceNativeModifyImagePropertyBlobSupp(CASE_INDEX_1,fd,key,valueArrayBuffer)
       console.info(TAG,testName,'Success',JSON.stringify(result));
       expect(result).assertEqual(IMAGE_SUCCESS);
     })
