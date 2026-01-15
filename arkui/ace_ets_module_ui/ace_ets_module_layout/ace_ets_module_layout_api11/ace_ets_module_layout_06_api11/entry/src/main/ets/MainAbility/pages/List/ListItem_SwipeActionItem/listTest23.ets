@@ -26,8 +26,8 @@ struct ListItemExample23 {
   @Builder
   itemEnd() {
     Row() {
-      Button("Delete").margin("4vp").fontSize(12).height('5%')
-      Button("Set").margin("4vp").fontSize(12).height('5%')
+      Button("Delete").margin("4vp").fontSize(12)
+      Button("Set").margin("4vp").fontSize(12)
     }.padding("4vp").justifyContent(FlexAlign.SpaceEvenly)
   }
 
