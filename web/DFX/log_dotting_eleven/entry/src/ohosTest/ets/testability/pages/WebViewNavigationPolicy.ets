@@ -112,7 +112,7 @@ struct Index {
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
                   this.isPageEnd = -1;
-                  this.controller.loadUrl($rawfile("https://www.example.com/"))
+                  this.controller.loadUrl("https://www.example.com/")
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260113)
@@ -144,7 +144,7 @@ struct Index {
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
                   this.isPageEnd = -1;
-                  this.controller.loadUrl($rawfile("https://www.example.com/"))
+                  this.controller.loadUrl("https://www.example.com/")
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260114)
@@ -173,7 +173,7 @@ struct Index {
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
                   this.isPageEnd = -1;
-                  this.controller.loadUrl($rawfile("https://www.example.com/"))
+                  this.controller.loadUrl("https://www.example.com/")
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260115)
@@ -204,7 +204,7 @@ struct Index {
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
                   this.isPageEnd = -1;
-                  this.controller.loadUrl($rawfile("https://www.example.com/"))
+                  this.controller.loadUrl("https://www.example.com/")
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260116)
@@ -235,7 +235,7 @@ struct Index {
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
                   this.isPageEnd = -1;
-                  this.controller.loadUrl($rawfile("https://www.example.com/"))
+                  this.controller.loadUrl("https://www.example.com/")
                   await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260117)
