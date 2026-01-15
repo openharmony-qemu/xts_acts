@@ -28,7 +28,7 @@ ohos_app_assist_suite("ActsGetAllWindowStagesModuleTest") {
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsGetAllWindowStagesModuleTest"
   hap_list = [
-    "ActsGetAllWindowStagesModuleTest-application-application-default-unsigned:applicationModule",
+    "ActsGetAllWindowStagesModuleTest-application-default-unsigned:applicationModule",
     "ActsGetAllWindowStagesModuleTest-entry-default-unsigned:entryModule",
   ]
   subsystem_name = "ability"
