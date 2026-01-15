@@ -105,7 +105,7 @@ export default function WebViewNavigationPolicyTest() {
 
     /**
      * @tc.number     SUB_WEB_NAVIGATIONAL_0400
-     * @tc.name       testWebViewNativeWebInitTrue004
+     * @tc.name       testWebViewNavigationPolicy004
      * @tc.desc       navigationPolicy
      * @tc.size       MEDIUM
      * @tc.type       Function
