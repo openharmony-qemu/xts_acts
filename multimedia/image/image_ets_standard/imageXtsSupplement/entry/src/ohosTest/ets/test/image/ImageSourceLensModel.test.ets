@@ -129,7 +129,8 @@ export default function ImageSourceLensModelSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_003';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensModel = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -139,7 +140,7 @@ export default function ImageSourceLensModelSupp() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensModel);
-        expect(result.exifMetadata?.lensModel).assertContain('abc');
+        expect(result.exifMetadata?.userComment).assertEqual(longStr);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -236,7 +237,8 @@ export default function ImageSourceLensModelSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_007', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_007';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensModel = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -365,7 +367,8 @@ export default function ImageSourceLensModelSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_012', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_012';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensModel = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -520,7 +523,8 @@ export default function ImageSourceLensModelSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_018', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_MODEL_018';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensModel = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -530,7 +534,7 @@ export default function ImageSourceLensModelSupp() {
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await heicImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensModel);
-        expect(result.exifMetadata?.lensModel).assertContain('abc');
+        expect(result.exifMetadata?.userComment).assertEqual(longStr);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();

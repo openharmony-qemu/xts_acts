@@ -131,7 +131,8 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_003', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_003';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.subsecTimeOriginal = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -141,7 +142,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         await jpgImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await jpgImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.subsecTimeOriginal);
-        expect(result.exifMetadata?.subsecTimeOriginal).assertContain('abc');
+        expect(result.exifMetadata?.userComment).assertEqual(longStr);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
@@ -238,7 +239,8 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_007', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_007';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.subsecTimeOriginal = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -367,7 +369,8 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_012', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_012';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.subsecTimeOriginal = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -524,7 +527,8 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_018', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_SUBSEC_TIME_ORIGINAL_018';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.subsecTimeOriginal = 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.userComment = longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -534,7 +538,7 @@ export default function ImageSourceSubsecTimeOriginalSupp() {
         await heicImageSourceApi.writeImageMetadata(imageMetadata);
         let result = await heicImageSourceApi.readImageMetadata()
         console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.subsecTimeOriginal);
-        expect(result.exifMetadata?.subsecTimeOriginal).assertContain('abc');
+        expect(result.exifMetadata?.userComment).assertEqual(longStr);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
         expect().assertFail();
