@@ -174,7 +174,7 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_005
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_005
-     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
@@ -182,17 +182,19 @@ export default function ImageLensSerialNumberSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_005', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_005';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= 'abc';
+      let longStr = '1'.repeat(524);
+      testExifMetadata.lensSerialNumber= longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
       try {
-        console.info(TAG,testName,`start:`);
-        await pngImageSourceApi.writeImageMetadata(imageMetadata);
-        expect().assertFail();
+        await jpgImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await jpgImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
+        expect(result.exifMetadata?.lensSerialNumber).assertEqual(longStr);
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+        expect().assertFail();
       }
       done();
     })
@@ -207,7 +209,7 @@ export default function ImageLensSerialNumberSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_006', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_006';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= undefined;
+      testExifMetadata.lensSerialNumber= 'abc';
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -232,7 +234,7 @@ export default function ImageLensSerialNumberSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_007', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_007';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= '';
+      testExifMetadata.lensSerialNumber= undefined;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -257,7 +259,7 @@ export default function ImageLensSerialNumberSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_008', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_008';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= null as ESObject;
+      testExifMetadata.lensSerialNumber= '';
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -274,13 +276,64 @@ export default function ImageLensSerialNumberSupp() {
     /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_009
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_009
-     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_009', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_009';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSerialNumber= null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      let longStr = '1'.repeat(524);
+      testExifMetadata.lensSerialNumber= longStr;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await pngImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail()
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.lensSerialNumber= 'abc';
       const imageMetadata: image.ImageMetadata = {
@@ -298,56 +351,6 @@ export default function ImageLensSerialNumberSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010
-     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0010';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= undefined;
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        console.info(TAG,testName,`start:`);
-        await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        expect().assertFail();
-      }catch (err) {
-        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
-      }
-      done();
-    })
-    /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011
-     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
-     * @tc.size       MEDIUM
-     * @tc.type       Function
-     * @tc.level      Level 1
-     */
-    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0011';
-      let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= '';
-      const imageMetadata: image.ImageMetadata = {
-        exifMetadata: testExifMetadata
-      };
-      try {
-        console.info(TAG,testName,`start:`);
-        await heicImageSourceApi.writeImageMetadata(imageMetadata);
-        expect().assertFail();
-      }catch (err) {
-        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
-        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
-      }
-      done();
-    })
-    /**
      * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0012
      * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0012
      * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
@@ -358,7 +361,7 @@ export default function ImageLensSerialNumberSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0012', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0012';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= null as ESObject;
+      testExifMetadata.lensSerialNumber= undefined;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
@@ -383,13 +386,13 @@ export default function ImageLensSerialNumberSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0013', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0013';
       let testExifMetadata = image.ExifMetadata.createInstance();
-      testExifMetadata.lensSerialNumber= 'abc';
+      testExifMetadata.lensSerialNumber= '';
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
       try {
         console.info(TAG,testName,`start:`);
-        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
         expect().assertFail();
       }catch (err) {
         console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
@@ -408,6 +411,83 @@ export default function ImageLensSerialNumberSupp() {
     it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0014', Level.LEVEL1, async (done: Function) => {
       const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0014';
       let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSerialNumber= null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015
+     * @tc.desc       ImageReadImageMetadata LensSerialNumber-SUCCESS
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      let longStr = '1'.repeat(524);
+      testExifMetadata.lensSerialNumber= longStr;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        await heicImageSourceApi.writeImageMetadata(imageMetadata);
+        let result = await heicImageSourceApi.readImageMetadata()
+        console.info(TAG,testName,`testWriteImageMetadata result is:`,result.exifMetadata?.lensSerialNumber);
+        expect(result.exifMetadata?.lensSerialNumber).assertEqual(longStr);
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect().assertFail();
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      testExifMetadata.lensSerialNumber= 'abc';
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0017
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0017
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0017', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0017';
+      let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.lensSerialNumber= undefined;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
@@ -423,15 +503,15 @@ export default function ImageLensSerialNumberSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0018
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0018
      * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0015';
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0018', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0018';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.lensSerialNumber= '';
       const imageMetadata: image.ImageMetadata = {
@@ -448,17 +528,43 @@ export default function ImageLensSerialNumberSupp() {
       done();
     })
     /**
-     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016
-     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0019
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0019
      * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
      * @tc.size       MEDIUM
      * @tc.type       Function
      * @tc.level      Level 1
      */
-    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016', Level.LEVEL1, async (done: Function) => {
-      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0016';
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0019', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0019';
       let testExifMetadata = image.ExifMetadata.createInstance();
       testExifMetadata.lensSerialNumber= null as ESObject;
+      const imageMetadata: image.ImageMetadata = {
+        exifMetadata: testExifMetadata
+      };
+      try {
+        console.info(TAG,testName,`start:`);
+        await webpImageSourceApi.writeImageMetadata(imageMetadata);
+        expect().assertFail();
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create object, error code is ${err},${err.code}`);
+        expect(err.code).assertEqual(IMAGE_SOURCE_UNSUPPORTED_METADATA);
+      }
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0020
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0020
+     * @tc.desc       ImageWriteImageMetadata LensSerialNumber-Unsupported metadata
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0020', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_LENS_SERIAL_NUMBER_0020';
+      let testExifMetadata = image.ExifMetadata.createInstance();
+      let longStr = '1'.repeat(524);
+      testExifMetadata.lensSerialNumber= longStr;
       const imageMetadata: image.ImageMetadata = {
         exifMetadata: testExifMetadata
       };
