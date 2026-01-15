@@ -266,6 +266,12 @@ export const metadataOutputStop: () => number;
 
 export const metadataOutputRelease: () => number;
 
+export const MetadataOutputRemoveMetadataObjectTypes: () => number; 
+ 	  
+export const MetadataOutputAddMetadataObjectTypes: () => number; 
+
+export const CreateMetadataOutputWithObjectTypes: () => number; 
+ 	 
 export const sessionBegin: () => number;
 
 export const sessionCommitConfig: () => number;

@@ -183,6 +183,7 @@ public:
     int AdjustHeifIdx(int idx);
     Camera_ErrorCode CreateVideoOutput(char* videoId);
     Camera_ErrorCode CreateMetadataOutput(void);
+    Camera_ErrorCode CreateMetadataOutputWithObjectTypes();
     Camera_ErrorCode IsCameraMuted(void);
     Camera_ErrorCode PreviewOutputStop(void);
     Camera_ErrorCode PreviewOutputRelease(void);
@@ -210,6 +211,8 @@ public:
     Camera_ErrorCode MetadataOutputStart(void);
     Camera_ErrorCode MetadataOutputStop(void);
     Camera_ErrorCode MetadataOutputRelease(void);
+    Camera_ErrorCode MetadataOutputRemoveMetadataObjectTypes();
+ 	Camera_ErrorCode MetadataOutputAddMetadataObjectTypes();
 
     Camera_ErrorCode SessionAddInput(void);
     Camera_ErrorCode SessionRemoveInput(void);

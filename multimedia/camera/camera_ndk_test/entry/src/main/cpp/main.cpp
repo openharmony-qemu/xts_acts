@@ -364,6 +364,15 @@ static napi_value CreateMetadataOutput(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value CreateMetadataOutputWithObjectTypes(napi_env env, napi_callback_info info)
+{
+    size_t argc;
+    napi_value result = nullptr;
+    Camera_ErrorCode ret = ndkCamera_->CreateMetadataOutputWithObjectTypes();
+    napi_create_int32(env, ret, &result);
+    return result;
+}
+
 static napi_value IsCameraMuted(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -574,6 +583,22 @@ static napi_value MetadataOutputRelease(napi_env env, napi_callback_info info)
     return result;
 }
 
+static napi_value MetadataOutputRemoveMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    Camera_ErrorCode code = ndkCamera_->MetadataOutputRemoveMetadataObjectTypes();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+    
+static napi_value MetadataOutputAddMetadataObjectTypes(napi_env env, napi_callback_info info)
+{
+    napi_value result = nullptr;
+    Camera_ErrorCode code = ndkCamera_->MetadataOutputAddMetadataObjectTypes();
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 	 
 static napi_value SessionAddInput(napi_env env, napi_callback_info info)
 {
     napi_value result;
@@ -3108,6 +3133,8 @@ static napi_value Init(napi_env env, napi_value exports)
         { "adjustHeifIdx", nullptr, AdjustHeifIdx, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createVideoOutput", nullptr, CreateVideoOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createMetadataOutput", nullptr, CreateMetadataOutput, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "CreateMetadataOutputWithObjectTypes", nullptr, CreateMetadataOutputWithObjectTypes,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "createSession", nullptr, CreateSession, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "isCameraMuted", nullptr, IsCameraMuted, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "cameraInputOpen", nullptr, CameraInputOpen, nullptr, nullptr, nullptr, napi_default, nullptr },
@@ -3128,6 +3155,10 @@ static napi_value Init(napi_env env, napi_value exports)
         { "metadataOutputStart", nullptr, MetadataOutputStart, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "metadataOutputStop", nullptr, MetadataOutputStop, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "metadataOutputRelease", nullptr, MetadataOutputRelease, nullptr, nullptr, nullptr, napi_default, nullptr },
+        { "MetadataOutputAddMetadataObjectTypes", nullptr, MetadataOutputAddMetadataObjectTypes, nullptr,
+            nullptr, nullptr, napi_default, nullptr },
+ 	    { "MetadataOutputRemoveMetadataObjectTypes", nullptr, MetadataOutputRemoveMetadataObjectTypes,
+            nullptr, nullptr, nullptr, napi_default, nullptr },
         { "previewOutputStop", nullptr, PreviewOutputStop, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionAddInput", nullptr, SessionAddInput, nullptr, nullptr, nullptr, napi_default, nullptr },
         { "sessionRemoveInput", nullptr, SessionRemoveInput, nullptr, nullptr, nullptr, napi_default, nullptr },
