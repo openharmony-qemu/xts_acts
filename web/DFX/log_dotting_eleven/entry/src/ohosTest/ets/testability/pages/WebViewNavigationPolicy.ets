@@ -107,12 +107,11 @@ struct Index {
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
-                  Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  Utils.sleep(500);
+                  Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260113)
@@ -144,7 +143,7 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  Utils.sleep(500);
+                  Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260114)
@@ -173,7 +172,7 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  Utils.sleep(500);
+                  Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260115)
@@ -204,7 +203,7 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  Utils.sleep(500);
+                  Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260116)
@@ -235,7 +234,7 @@ struct Index {
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
                   await driver.click(downX, downY);
-                  Utils.sleep(500);
+                  Utils.sleep(2000);
                   await driver.click(downX, downY);
                   setTimeout(() =>{
                     Utils.emitEvent(this.navigationPolicy, 20260117)
