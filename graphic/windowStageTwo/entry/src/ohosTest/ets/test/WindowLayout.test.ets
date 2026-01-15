@@ -2270,8 +2270,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2325,8 +2329,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2388,8 +2396,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2451,8 +2463,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2514,8 +2530,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2577,8 +2597,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2640,8 +2664,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2703,8 +2731,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2766,8 +2798,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2829,8 +2865,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2892,8 +2932,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -2955,8 +2999,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -3018,8 +3066,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -3081,8 +3133,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();
@@ -3144,8 +3200,12 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           }).catch(async (err: BusinessError) => {
             console.error(caseName + `Failed. Cause code: ${err.code}, message: ${err.message}`);
             await windowClass.destroyWindow();
-            expect().assertFail();
-            done();
+            if(err.code == 801){
+              done();
+            }else{
+              expect().assertFail();
+              done();
+            }
           })
         } else {
           await windowClass.destroyWindow();

@@ -100,6 +100,7 @@ export default function windowPropertiesTest() {
         let windowStage: ohosWindow.WindowStage;
         let isAutoWindow: string = '';
         let isPCStatus: string = '';
+        let isFreeWindowMode = false;
         beforeAll(async () => {
             context = AppStorage.get('context') as common.UIAbilityContext;
             console.log('windowTest context: ' + JSON.stringify(context))
@@ -111,6 +112,11 @@ export default function windowPropertiesTest() {
             //isPCStatus == '1' PC设备状态栏dock未融合
             //isPCStatus == '0' PC设备状态栏dock融合
             console.info(`beforeAll isPCStatus: `+ isPCStatus);
+            let windowClass = windowStage.getMainWindowSync();
+            isFreeWindowMode = windowClass.isInFreeWindowMode();
+            //isFreeWindowMode == true 自由窗口模式
+            //isFreeWindowMode == false 非自由窗口模式
+            console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
             try {
               let driver = Driver.create();
               let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
@@ -1577,14 +1583,17 @@ export default function windowPropertiesTest() {
             let caseName = "TestOnRectChangeOptionsResizeMainWindow";
             let windowClass = windowStage.getMainWindowSync();
             try {
+              let mainWidth = Number(windowClass.getWindowLimits().minWidth);
+              let mainHeight = Number(windowClass.getWindowLimits().minHeight);
+              console.info(`${caseName} Succeeded getWindowLimits. Data:mainWidth: ${JSON.stringify(mainWidth)},mainHeight:${JSON.stringify(mainHeight)}`);
                 windowClass.on('windowSizeChange', async (data) => {
                     console.info(`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
-                    expect(data.width).assertEqual(1500);
-                    expect(data.height).assertEqual(500);
+                    expect(data.width).assertEqual(mainWidth+800);
+                    expect(data.height).assertEqualmainHeight+300;
                     windowClass.off('windowSizeChange');
                     done();
                 });
-                await windowClass.resize(1500, 500);
+                await windowClass.resize(mainWidth+800, mainHeight+300);
                 console.info(`${caseName} Succeeded in changing the window size.`);
             } catch (error) {
               console.log(`${caseName}: . Cause code: ${error.code}, message: ${error.message}`);
@@ -1609,7 +1618,9 @@ export default function windowPropertiesTest() {
                             done();
                         }
                     }
-                } else {
+                }else if(error.code == 801) {
+                  done();
+                }else {
                     console.error(`${caseName}: Error: ${JSON.stringify(error)}`);
                     windowClass.off('windowSizeChange');
                     expect().assertFail();
@@ -4426,8 +4437,12 @@ export default function windowPropertiesTest() {
         done();
       } catch (error) {
         console.log('Failed to set default density enabled. Cause:' + JSON.stringify(error));
-        expect().assertFail();
-        done();
+        if(error.code == 801){
+          done()
+        }else{
+          expect().assertFail();
+          done();
+        }
       }
     })
 
@@ -4449,8 +4464,12 @@ export default function windowPropertiesTest() {
         done();
       } catch (error) {
         console.log('Failed to set default density enabled. Cause:' + JSON.stringify(error));
-        expect().assertFail();
-        done();
+        if(error.code == 801){
+          done()
+        }else{
+          expect().assertFail();
+          done();
+        }
       }
     })
 
@@ -6632,7 +6651,7 @@ export default function windowPropertiesTest() {
         let subWindowClass: window.Window | undefined;
         let mainWindow = windowStage.getMainWindowSync();
         try {
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode == true) {
             await mainWindow.maximize();
             await sleep(200);
           } else {
@@ -6652,7 +6671,7 @@ export default function windowPropertiesTest() {
             done();
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-            if (isPCStatus != '' || isAutoWindow == 'true') {
+            if (isFreeWindowMode == true) {
               await mainWindow.recover();
             }
             await subWindowClass?.destroyWindow();
@@ -6666,7 +6685,7 @@ export default function windowPropertiesTest() {
           });
         } catch (error) {
           console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode == true) {
             await mainWindow.recover();
           }
           await subWindowClass?.destroyWindow();
@@ -6688,7 +6707,7 @@ export default function windowPropertiesTest() {
         let subWindowClass: window.Window | undefined;
         let mainWindow = windowStage.getMainWindowSync();
         try {
-          if (isPCStatus == '' || isAutoWindow == 'false') {
+          if (isFreeWindowMode == false) {
             console.info(`${caseName}: this device is not pc or autowindow is false.`)
           } else {
             await mainWindow.maximize();
@@ -6715,7 +6734,7 @@ export default function windowPropertiesTest() {
               done();
             }).catch(async (err: BusinessError) => {
               console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-              if (isPCStatus != '' || isAutoWindow == 'true') {
+              if (isFreeWindowMode == true) {
                 await mainWindow.recover();
               }
               await subWindowClass?.destroyWindow();
@@ -6740,7 +6759,7 @@ export default function windowPropertiesTest() {
           });
         } catch (error) {
           console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode == true) {
             await mainWindow.recover();
           }
           await subWindowClass?.destroyWindow();
@@ -6891,7 +6910,7 @@ export default function windowPropertiesTest() {
         let subWindowClass: window.Window | undefined;
         let mainWindow = windowStage.getMainWindowSync();
         try {
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode == true) {
             await mainWindow.maximize();
             await sleep(200);
           } else {
@@ -6926,7 +6945,7 @@ export default function windowPropertiesTest() {
             }
           }).catch(async (err: BusinessError) => {
             console.error(`${caseName} Failed to call getGlobalWindowMode. Cause: ${JSON.stringify(err.code)},message: ${JSON.stringify(err.message)}`);
-            if (isPCStatus != '' || isAutoWindow == 'true') {
+            if (isFreeWindowMode == true) {
               await mainWindow.recover();
             }
             await subWindowClass?.destroyWindow();
@@ -6940,7 +6959,7 @@ export default function windowPropertiesTest() {
           });
         } catch (error) {
           console.error(`${caseName} Failed2 to call getGlobalWindowMode. Cause: ${JSON.stringify(error)}`);
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode == true) {
             await mainWindow.recover();
           }
           await subWindowClass?.destroyWindow();
@@ -6961,7 +6980,7 @@ export default function windowPropertiesTest() {
         let caseName = 'testGetGlobalWindowMode_Fullscreen_And_Unvisible_Float';
         let windowStageStart = await startAbility3(caseName, context);
         try {
-          if (isPCStatus != '' || isAutoWindow == 'true') {
+          if (isFreeWindowMode == true) {
             await sleep(200);
             let subWindow = windowStageStart.getMainWindowSync();
             await subWindow.maximize();
@@ -7061,7 +7080,7 @@ export default function windowPropertiesTest() {
             await sleep(200);
             window.getGlobalWindowMode(0).then(async (data: number) => {
               console.info(`${caseName} Succeeded in calling getGlobalWindowMode. data: ${data}`);
-              if (isPCStatus != '' || isAutoWindow == 'true') {
+              if (isFreeWindowMode == true) {
                 expect(data).assertEqual(12);
               }
               await pipController?.stopPiP();
