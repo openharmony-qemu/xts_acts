@@ -265,14 +265,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning005 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync005 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* deleteWithReturning005 end *************");
       done();
@@ -500,14 +500,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning009 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync009 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* deleteWithReturning009 end *************");
       done();
@@ -532,14 +532,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning010 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync010 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* deleteWithReturning010 end *************");
       done();
@@ -564,14 +564,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning011 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync011 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ['a b'];
       try {
@@ -579,14 +579,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning011 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ['a,b'];
       try {
@@ -594,14 +594,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning011 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* deleteWithReturning011 end *************");
       done();
@@ -674,14 +674,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning013 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       try {
         rdbStore1?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync013 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* deleteWithReturning013 end *************");
@@ -715,14 +715,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning014 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       try {
         rdbStore1?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync014 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800014");
+        expect(e.code).assertEqual(14800014);
       }
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
       console.log(TAG + "************* deleteWithReturning014 end *************");
@@ -822,7 +822,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 1 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         let predicates2 = new relationalStore.RdbPredicates("345test");
@@ -830,7 +830,7 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 2 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates3 = new relationalStore.RdbPredicates("te.s.t");
       try {
@@ -838,14 +838,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 3 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates3, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 4 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates5 = new relationalStore.RdbPredicates(".test");
       try {
@@ -853,14 +853,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 5 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates5, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 6 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       let predicates7 = new relationalStore.RdbPredicates("test..");
       try {
@@ -868,14 +868,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 7 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates7, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning017 8 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* deleteWithReturning017 end *************");
       done();
@@ -900,14 +900,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning018 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync018 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0;
       try {
@@ -915,14 +915,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning018 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync018 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0x7fff;
       try {
@@ -930,14 +930,14 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning018 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturningSync018 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* deleteWithReturning018 end *************");
       done();
@@ -1101,28 +1101,28 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning022 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await rdbStore?.deleteWithReturning(undefined, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning023 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.deleteWithReturningSync(null, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning027 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.deleteWithReturningSync(undefined, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning027 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       console.log(TAG + "************* deleteWithReturning022 end *************");
       done();
@@ -1143,28 +1143,28 @@ export default function RdbStoreDeleteWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning024 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await rdbStore?.deleteWithReturning(predicates, undefined);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning024 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, null);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning024 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         rdbStore?.deleteWithReturningSync(predicates, undefined);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `deleteWithReturning024 failed4. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       console.log(TAG + "************* deleteWithReturning024 end *************");
       done();
