@@ -74,7 +74,7 @@
         "startWindowIcon": "$media:icon",
         "startWindowBackground": "$color:start_window_background",
         "removeMissionAfterTerminate": true,
-        "launchType": "multiton",
+        "launchType": "specified",
         "process": ":kkk"
       }
     ],

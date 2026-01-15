@@ -11,7 +11,9 @@
     "kits": [
         {
             "test-file-name": [
-                "ActsGetAllWindowStagesTest.hap"
+                "ActsGetAllWindowStagesTest.hap",
+                "applicationModule.hap",
+                "entryModule.hap"
             ],
             "type": "AppInstallKit",
             "cleanup-apps": true
