@@ -107,6 +107,7 @@ struct Index {
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
+                  Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
@@ -138,6 +139,7 @@ struct Index {
                   console.log('ppbb' + buttonOne)
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
+                  Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
@@ -166,6 +168,7 @@ struct Index {
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+                  Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
@@ -196,6 +199,7 @@ struct Index {
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2072);
+                  Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
@@ -226,6 +230,7 @@ struct Index {
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT);
+                  Utils.sleep(1000);
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
                   let downX = Math.round(globalThis.winLeft + webRect.left  + 15);
                   let downY = Math.round(globalThis.winTop + webRect.top + 15);
