@@ -23,7 +23,7 @@ import formHost from '@ohos.app.form.formHost';
 
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formInfoTest';
 
 export default function formInfoTest() {
     describe("formInfoTest", (): void => {

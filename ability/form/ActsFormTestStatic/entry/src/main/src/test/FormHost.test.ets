@@ -23,7 +23,7 @@ import { EventIdMap, FormHostTestController } from '../../ets/testform/controlle
 import Utils from './Util.test';
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formHostTest';
 const EXPECTED_FALSE = '{"isSuccess":false}';
 const EXPECTED_TRUE = '{"isSuccess":true}';
 const BOOL_TRUE = true;
