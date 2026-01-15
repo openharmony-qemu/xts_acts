@@ -28,6 +28,7 @@
     "MainAbility/pages/deleteBackward/TextAreaDeleteBackwardTest",
     "MainAbility/pages/textTest/TextTest",
     "MainAbility/pages/textTest/TextInputTest",
-    "MainAbility/pages/textTest/TextAreaTest"
+    "MainAbility/pages/textTest/TextAreaTest",
+    "MainAbility/pages/SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest"
   ]
 }

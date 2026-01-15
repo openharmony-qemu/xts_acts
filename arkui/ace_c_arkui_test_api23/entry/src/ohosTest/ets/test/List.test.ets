@@ -51,7 +51,9 @@ import TextAreaDeletBackward from "./deleteBackward/TextAreaDeleteBackwardTest.t
 import TextTest from "./TextTest/TextTest.test";
 import TextInputTest from "./TextTest/TextInputTest.test";
 import TextAreaTest from "./TextTest/TextAreaTest.test";
-
+import SelectedDragPreviewStyleTextTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextTest.test'
+import SelectedDragPreviewStyleTextInputTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextInputTest.test'
+import SelectedDragPreviewStyleTextAreaTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTextAreaTest.test'
 
 export default function testsuite() {
   IsInRenderStateReturnValueTest(); //此条方在最前面，勿动
@@ -93,4 +95,7 @@ export default function testsuite() {
   TextInputTest();
   TextAreaTest();
   TextInputDeletBackward();
+  SelectedDragPreviewStyleTextTest()
+  SelectedDragPreviewStyleTextAreaTest()
+  SelectedDragPreviewStyleTextInputTest()
 }
