@@ -2,6 +2,6 @@
   "src": [
     "testability/pages/Index",
     "testability1/pages/Index",
-    "testability2/pages/Index",
+    "testability2/pages/Index"
   ]
 }

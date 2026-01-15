@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 import hilog from '@ohos.hilog';
-import { beforeAll, describe, expect, it, Level, Size, TestType,  } from '@ohos/hypium';
+import { beforeAll, describe, expect, it, Level, Size, TestType} from '@ohos/hypium';
 import { common , application, UIAbility, AbilityLifecycleCallback, contextConstant, StartOptions } from '@kit.AbilityKit';
 import { window } from '@kit.ArkUI';
 import Utils from '../common/Utils';
