@@ -1589,7 +1589,7 @@ export default function windowPropertiesTest() {
                 windowClass.on('windowSizeChange', async (data) => {
                     console.info(`${caseName} Succeeded window rect changes. Data: ${JSON.stringify(data)}`);
                     expect(data.width).assertEqual(mainWidth+800);
-                    expect(data.height).assertEqualmainHeight+300;
+                    expect(data.height).assertEqual(mainHeight+300);
                     windowClass.off('windowSizeChange');
                     done();
                 });
