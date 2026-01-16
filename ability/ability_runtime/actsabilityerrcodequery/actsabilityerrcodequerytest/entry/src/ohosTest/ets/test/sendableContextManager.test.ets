@@ -216,6 +216,7 @@ export default function sendableContextManagerTest() {
             demo_num: 111
           }
         }
+        let errResult = -1;
 
         commonEventManager.createSubscriber(ACTS_EVENT)
           .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
@@ -234,7 +235,13 @@ export default function sendableContextManagerTest() {
               })
             }
             if (data.event == 'ACTS_TEST_DESTROY') {
-              commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              errResult = data?.parameters?.result;
+            }
+            if (data.event == 'ACTS_TEST_DESTROY_ASSIST') {
+              expect(errResult).assertEqual(16000053);
+              setTimeout(() => {
+                commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
+              }, 500);
             }
           }
           commonEventManager.subscribe(subscriber, subscribeCallBack);
