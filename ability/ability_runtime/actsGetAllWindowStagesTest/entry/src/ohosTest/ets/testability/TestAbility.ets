@@ -18,6 +18,7 @@ import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
 import { Hypium } from '@ohos/hypium';
 import testsuite from '../test/List.test';
+import Utils from '../common/Utils';
 
 export default class TestAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -57,11 +58,12 @@ export default class TestAbility extends UIAbility {
     hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onForeground');
   }
 
-  onBackground() {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onBackground');
+  async onBackground() {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility 0 onBackground');
+    await Utils.sleep(1000);
     try {
       let appcontext = this.context.getApplicationContext();
-      appcontext.getAllWindowStages()
+      await appcontext.getAllWindowStages()
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onBackground] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onBackground] getAllWindowStages successfully. Data: ' + JSON.stringify(data));

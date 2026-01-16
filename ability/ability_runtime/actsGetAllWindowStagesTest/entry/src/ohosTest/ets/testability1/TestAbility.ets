@@ -16,6 +16,7 @@ import { AbilityConstant, common, UIAbility, Want } from '@kit.AbilityKit';
 import { abilityDelegatorRegistry } from '@kit.TestKit';
 import { hilog } from '@kit.PerformanceAnalysisKit';
 import { window } from '@kit.ArkUI';
+import Utils from '../common/Utils';
 
 export default class TestAbility1 extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam) {
@@ -154,7 +155,24 @@ onWindowStageWillDestroy(windowStage: window.WindowStage): void {
     }
   }
 
-  onBackground() {
-    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility onBackground');
+  async onBackground() {
+    hilog.info(0x0000, 'testTag', '%{public}s', 'TestAbility 1 onBackground');
+    await Utils.sleep(1000);
+    try {
+      let appcontext = this.context.getApplicationContext();
+      await appcontext.getAllWindowStages()
+        .then((data: Array<window.WindowStage>) => {
+          hilog.info(0x0000, 'testTag', `[onBackground] getAllWindowStages size ${data.length}`);
+          hilog.info(0x0000, 'testTag', '[onBackground] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
+          AppStorage.setOrCreate<Array<window.WindowStage>>("onBackground_WindowStage", data)
+        })
+        .catch((e: Error) => {
+          let err = e as BusinessError
+          hilog.error(0x0000, 'testTag', `[onBackground] getAllWindowStages error. code: ${err.code}, message: ${err.message}`);
+        });
+    } catch (e) {
+      let err = e as BusinessError;
+      hilog.error(0x0000, 'testTag', `[onBackground] getAllWindowStages failed. code: ${err.code}, message: ${err.message}`);
+    }
   }
 }

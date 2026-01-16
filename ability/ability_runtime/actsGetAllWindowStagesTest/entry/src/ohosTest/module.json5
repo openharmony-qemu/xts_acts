@@ -74,8 +74,19 @@
         "startWindowIcon": "$media:icon",
         "startWindowBackground": "$color:start_window_background",
         "removeMissionAfterTerminate": true,
-        "launchType": "specified",
         "process": ":kkk"
+      },
+      {
+        "name": "TestAbility3",
+        "srcEntry": "./ets/testability3/TestAbility.ets",
+        "description": "$string:TestAbility_desc",
+        "icon": "$media:icon",
+        "label": "$string:TestAbility_label",
+        "exported": true,
+        "startWindowIcon": "$media:icon",
+        "startWindowBackground": "$color:start_window_background",
+        "removeMissionAfterTerminate": true,
+        "launchType": "specified",
       }
     ],
     "extensionAbilities": []
