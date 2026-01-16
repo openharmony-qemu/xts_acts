@@ -64,7 +64,7 @@ struct CallbackSyncContext {
     std::mutex& mutex;
     std::condition_variable& cv;
 
-    CallbackSyncContext(int32_t& c, std::mutex& m, std::condition_variable& cv_ref) : count(c), mutex(m), cv(cv_ref) {}
+    CallbackSyncContext(int32_t& c, std::mutex& m, std::condition_variable& cvRef) : count(c), mutex(m), cv(cvRef) {}
 };
 
 // Helper callback functions
@@ -111,14 +111,14 @@ static int32_t AudioRendererOnWriteDataMock(OH_AudioRenderer* renderer, void* us
     return 0;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCallbackWithValidData(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCallbackWithValidData(
+    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     return AUDIO_DATA_CALLBACK_RESULT_VALID;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCallbackWithInvalidData(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCallbackWithInvalidData(
+    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     return AUDIO_DATA_CALLBACK_RESULT_INVALID;
 }
@@ -134,16 +134,16 @@ static int32_t OnWriteDataCbMock(OH_AudioRenderer* renderer, void* userData, voi
     return 0;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCbWithValidDataMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCbWithValidDataMock(
+    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     UserData* u = static_cast<UserData*>(userData);
     u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
     return AUDIO_DATA_CALLBACK_RESULT_VALID;
 }
 
-static OH_AudioData_Callback_Result
-    OnWriteDataCbWithInvalidDataMock(OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
+static OH_AudioData_Callback_Result OnWriteDataCbWithInvalidDataMock(
+    OH_AudioRenderer* renderer, void* userData, void* buffer, int32_t bufferLen)
 {
     UserData* u = static_cast<UserData*>(userData);
     u->writeDataCallbackType = UserData::WRITE_DATA_CALLBACK_WITH_RESULT;
@@ -1247,8 +1247,8 @@ static int TestUnderflowCountWithDelay(std::chrono::milliseconds sleepTime, uint
     int32_t count = 0;
 
     CallbackSyncContext syncContext(count, mutex, cv);
-    if (InitializeRendererWithDelayCallback(
-            sleepTime, &builder, &audioRenderer, &writeCallbackMock, syncContext) != 0) {
+    if (InitializeRendererWithDelayCallback(sleepTime, &builder, &audioRenderer, &writeCallbackMock, syncContext) !=
+        0) {
         return -1;
     }
 
