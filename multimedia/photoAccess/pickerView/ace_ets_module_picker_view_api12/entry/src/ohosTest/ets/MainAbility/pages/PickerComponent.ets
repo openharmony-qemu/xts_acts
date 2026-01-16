@@ -28,6 +28,7 @@ import photoAccessHelper from '@ohos.file.photoAccessHelper';
 import events_emitter from '@ohos.events.emitter';
 import router from '@ohos.router';
 import { EventType } from '../common/Common';
+import { ClickInfo } from '../common/Common';
 import { PhotoPickerResult } from '../common/PhotoPickerResult';
 
 @Entry
@@ -47,6 +48,7 @@ struct PickerComponent {
   @State isShowAlbum: boolean = false;
   private isBlock: boolean = false;
   private isPickerIndexSet: boolean = false;
+  private isOnItemClickedNotifySet: boolean = false;
   @State isPhotoPickerShow: boolean = true;
   @State fontColor: string = '#182431222';
   @State selectedFontColor: string = '#007DFF';
@@ -80,6 +82,15 @@ struct PickerComponent {
     events_emitter.emit(event, eventData)
   }
 
+  private onItemClickedNotify(itemInfo: ItemInfo, clickType: ClickType): void {
+    if (!itemInfo) {
+      return;
+    }
+  
+    this.sendEvent({ itemInfo, clickType } as ClickInfo, EventType.ITEM_CLICKED_NOTIFY);
+    console.info('onItemClickedNotify' + JSON.stringify(itemInfo));
+  }
+
   getPhotoPickerResult(): PhotoPickerResult {
     let result: PhotoPickerResult = new PhotoPickerResult();
     result.checkBoxColor = this.pickerOptions.checkBoxColor ?? '';
@@ -97,6 +108,9 @@ struct PickerComponent {
     result.isSlidingSupported = this.pickerOptions.isSlidingSupported ?? false;
     result.edgeEffect = this.pickerOptions.edgeEffect ?? EdgeEffect.Spring;
     result.gridPinchMode = this.pickerOptions.gridPinchMode;
+    result.autoPlayScenes = this.pickerOptions.autoPlayScenes ?? [];
+    result.appAlbumFilters = this.pickerOptions.appAlbumFilters ?? [];
+    result.preselectedUris = this.pickerOptions.preselectedUris ?? [];
     return result;
   }
 
@@ -119,6 +133,8 @@ struct PickerComponent {
     result.selectMode = config.selectMode ?? 0;
     result.singleSelectionMode = config.singleSelectionMode ?? 2;
     result.preselectedUris = config.preselectedUris ?? [];
+    result.autoPlayScenes = config.autoPlayScenes ?? [];
+    result.appAlbumFilters = config.appAlbumFilters ?? [];
     return result;
   }
 
@@ -275,6 +291,9 @@ struct PickerComponent {
       this.isPickerIndexSet = !!this.pickerOptions.pickerIndex && this.pickerOptions.pickerIndex !== -1;
       this.selectedUrisWithPickerIndex = this.pickerOptions.preselectedInfos ?? [];
     }
+    if (parameter['isOnItemClickedNotifySet'] != undefined) {
+      this.isOnItemClickedNotifySet = parameter['isOnItemClickedNotifySet'];
+    }
     if (parameter['albumOptions'] != undefined) {
       this.albumOptions = parameter['albumOptions'];
     }
@@ -338,6 +357,18 @@ struct PickerComponent {
         updatedOptions.selectMode = 0;
         updatedOptions.singleSelectionMode = 2;
         updatedOptions.preselectedUris = ['file:img//sample'];
+        updatedOptions.autoPlayScenes = [
+          {
+            sceneType: photoAccessHelper.SceneType.GRID_TO_PHOTO_BROWSER,
+            playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
+          },
+          {
+            sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
+            playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
+          },
+        ];
+        updatedOptions.appAlbumFilters = 
+ 	  	           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2'];        
         this.pickerController.updatePickerOptions(updatedOptions);
 
         let result: PhotoPickerResult = this.getUpdatablePickerResult(updatedOptions);
@@ -364,6 +395,9 @@ struct PickerComponent {
         onDeselect: (uri: string): void => this.onDeselect(uri),
         onItemClicked: (itemInfo: ItemInfo, clickType: ClickType): boolean =>
         this.onItemClicked(itemInfo, clickType),
+        onItemClickedNotify: this.isOnItemClickedNotifySet
+        ? (itemInfo: ItemInfo, clickType: ClickType): void => this.onItemClickedNotify(itemInfo, clickType)
+        : undefined,
         onEnterPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>
         this.onEnterPhotoBrowser(photoBrowserInfo),
         onExitPhotoBrowser: (photoBrowserInfo: PhotoBrowserInfo): boolean =>
