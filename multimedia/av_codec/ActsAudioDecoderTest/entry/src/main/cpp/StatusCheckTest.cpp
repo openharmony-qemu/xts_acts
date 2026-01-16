@@ -1929,5 +1929,122 @@ int STATUS_CHECK_064()
     return AV_ERR_OK;
 }
 
+/**
+ * @tc.name   STATUS_CHECK_065
+ * @tc.number STATUS_CHECK_065
+ * @tc.desc   status check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int STATUS_CHECK_065()
+{
+    OH_AVCodec* codec = nullptr;
+    OH_AVErrCode result0;
+    OH_AVFormat* format = OH_AVFormat_Create();
+    int32_t channel = CHANNEL_COUNT_1;
+    int32_t sampleRate = SAMPLE_RATE_8000; // 8000hz
+    uint32_t index = INDEX_0;
+    ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    result0 = OH_AudioCodec_QueryInputBuffer(codec, &index, TIMEOUT_20000);
+    ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
+    result0 = aDecBufferDemo->Destroy(codec);
+    delete aDecBufferDemo;
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   STATUS_CHECK_066
+ * @tc.number STATUS_CHECK_066
+ * @tc.desc   status check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int STATUS_CHECK_066()
+{
+    OH_AVCodec* codec = nullptr;
+    OH_AVErrCode result0;
+    OH_AVFormat* format = OH_AVFormat_Create();
+    int32_t channel = CHANNEL_COUNT_1;
+    int32_t sampleRate = SAMPLE_RATE_8000; // 8000hz
+    uint32_t index = INDEX_0;
+    ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
+    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+    ASSERT_EQ(result0, AV_ERR_OK);
+    result0 = aDecBufferDemo->Start(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    result0 = OH_AudioCodec_QueryInputBuffer(codec, &index, TIMEOUT_20000);
+    ASSERT_EQ(result0, AV_ERR_OPERATE_NOT_PERMIT);
+    result0 = aDecBufferDemo->Destroy(codec);
+    delete aDecBufferDemo;
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   STATUS_CHECK_067
+ * @tc.number STATUS_CHECK_067
+ * @tc.desc   status check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int STATUS_CHECK_067()
+{
+    OH_AVCodec* codec = nullptr;
+    OH_AVErrCode result0;
+    OH_AVFormat* format = OH_AVFormat_Create();
+    int32_t channel = CHANNEL_COUNT_1;
+    int32_t sampleRate = SAMPLE_RATE_8000; // 8000hz
+    uint32_t index = INDEX_0;
+    ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
+    OH_AVFormat_SetIntValue(format, OH_MD_KEY_ENABLE_SYNC_MODE, 1);
+    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    result0 = OH_AudioCodec_QueryOutputBuffer(codec, &index, TIMEOUT_20000);
+    ASSERT_EQ(result0, AV_ERR_INVALID_STATE);
+    result0 = aDecBufferDemo->Destroy(codec);
+    delete aDecBufferDemo;
+    return AV_ERR_OK;
+}
+
+/**
+ * @tc.name   STATUS_CHECK_068
+ * @tc.number STATUS_CHECK_068
+ * @tc.desc   status check test
+ * @tc.type   FUNCTION
+ * @tc.size   MEDIUMTEST
+ * @tc.level  LEVEL2
+ */
+int STATUS_CHECK_068()
+{
+    OH_AVCodec* codec = nullptr;
+    OH_AVErrCode result0;
+    OH_AVFormat* format = OH_AVFormat_Create();
+    int32_t channel = CHANNEL_COUNT_1;
+    int32_t sampleRate = SAMPLE_RATE_8000; // 8000hz
+    uint32_t index = INDEX_0;
+    ADecBufferDemo* aDecBufferDemo = new ADecBufferDemo();
+    codec = aDecBufferDemo->CreateByMime(OH_AVCODEC_MIMETYPE_AUDIO_G711MU);
+    result0 = aDecBufferDemo->Configure(codec, format, channel, sampleRate);
+    ASSERT_EQ(result0, AV_ERR_OK);
+    result0 = aDecBufferDemo->Start(codec);
+    ASSERT_EQ(result0, AV_ERR_OK);
+
+    result0 = OH_AudioCodec_QueryOutputBuffer(codec, &index, TIMEOUT_20000);
+    ASSERT_EQ(result0, AV_ERR_OPERATE_NOT_PERMIT);
+    result0 = aDecBufferDemo->Destroy(codec);
+    delete aDecBufferDemo;
+    return AV_ERR_OK;
+}
 } // namespace AudioDecoder
 } // namespace Acts
