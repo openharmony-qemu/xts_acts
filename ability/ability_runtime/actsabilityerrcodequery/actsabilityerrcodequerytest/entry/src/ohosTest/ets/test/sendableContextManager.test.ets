@@ -218,7 +218,7 @@ export default function sendableContextManagerTest() {
         }
         let errResult = -1;
 
-        commonEventManager.createSubscriber(ACTS_EVENT)
+        commonEventManager.createSubscriber({events: ['ACTS_TEST_OPENLINK', 'ACTS_TEST_DESTROY', 'ACTS_TEST_DESTROY_ASSIST']})
           .then((commonEventSubscriber: commonEventManager.CommonEventSubscriber) => {
             subscriber = commonEventSubscriber;
             let unSubscribeCallback = () => {
