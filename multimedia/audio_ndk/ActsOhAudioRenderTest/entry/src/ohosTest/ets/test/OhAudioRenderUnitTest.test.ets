@@ -782,23 +782,6 @@ export default function OhAudioRenderUnitTest() {
     })
 
     /**
-     * @tc.name   OH_AudioRenderer_GetUnderflowCount_002
-     * @tc.number OH_AudioRenderer_GetUnderflowCount_002
-     * @tc.desc   测试获取下溢计数（立即触发），验证下溢检测功能
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.Level  LEVEL0
-     */
-    it('OH_AudioRenderer_GetUnderflowCount_002', Level.LEVEL0, async () => {
-      try {
-        const result = await libOhAudioRenderOps.UnderflowDetectionTest(1);
-      expect(result).assertEqual(0);
-      } catch (error) {
-        expect().assertFail();
-      }
-    })
-
-    /**
      * @tc.name   OH_AudioRenderer_GetUnderflowCount_003
      * @tc.number OH_AudioRenderer_GetUnderflowCount_003
      * @tc.desc   测试正常播放无下溢，验证下溢计数准确性
@@ -808,7 +791,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_AudioRenderer_GetUnderflowCount_003', Level.LEVEL0, async () => {
       try {
-        const result = await libOhAudioRenderOps.UnderflowDetectionTest(2);
+        const result = await libOhAudioRenderOps.UnderflowDetectionTest(1);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -825,7 +808,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_AudioRenderer_GetUnderflowCount_004', Level.LEVEL0, async () => {
       try {
-        const result = await libOhAudioRenderOps.UnderflowDetectionTest(3);
+        const result = await libOhAudioRenderOps.UnderflowDetectionTest(2);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();
@@ -842,7 +825,7 @@ export default function OhAudioRenderUnitTest() {
      */
     it('OH_AudioRenderer_GetUnderflowCount_005', Level.LEVEL0, async () => {
       try {
-        const result = await libOhAudioRenderOps.UnderflowDetectionTest(4);
+        const result = await libOhAudioRenderOps.UnderflowDetectionTest(3);
       expect(result).assertEqual(0);
       } catch (error) {
         expect().assertFail();

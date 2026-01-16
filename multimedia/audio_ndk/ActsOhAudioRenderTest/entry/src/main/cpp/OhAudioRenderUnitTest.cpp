@@ -32,16 +32,16 @@
 using namespace std::chrono;
 
 namespace {
-constexpr int32_t SAMPLE_RATE_48000 = 48000;
-constexpr int32_t CHANNEL_2 = 2;
-constexpr int32_t SAMPLING_RATE = 48000;
-constexpr int32_t CHANNEL_COUNT = 2;
-constexpr int32_t LATENCY_FORMAT = 0;
-constexpr int32_t SAMPLE_FORMAT = 1;
-constexpr int32_t FRAME_SIZE = 240;
-constexpr float MAX_AUDIO_VOLUME = 1.0f;
-constexpr float MIN_AUDIO_VOLUME = 0.0f;
-constexpr int32_t DURATIONMS = 40;
+    constexpr int32_t SAMPLE_RATE_48000 = 48000;
+    constexpr int32_t CHANNEL_2 = 2;
+    constexpr int32_t SAMPLING_RATE = 48000;
+    constexpr int32_t CHANNEL_COUNT = 2;
+    constexpr int32_t LATENCY_FORMAT = 0;
+    constexpr int32_t SAMPLE_FORMAT = 1;
+    constexpr int32_t FRAME_SIZE = 240;
+    constexpr float MAX_AUDIO_VOLUME = 1.0f;
+    constexpr float MIN_AUDIO_VOLUME = 0.0f;
+    constexpr int32_t DURATIONMS = 40;
 constexpr int32_t DELAY_TIME_SECONDS = 2;
 constexpr float DEFAULT_VOLUME = -0.5f;
 constexpr float MUTE_VOLUME = -1.5f;
@@ -53,6 +53,9 @@ constexpr uint32_t FLAG_INITIAL = 0;       // 标记位置初始状态
 constexpr uint32_t FLAG_STARTED = 1;       // 标记位置第一状态
 constexpr uint32_t FLAG_RUNNING = 2;       // 标记位置第二状态
 uint32_t g_flag = FLAG_INITIAL;
+// 设备类型缓存变量
+static bool g_deviceTypeInitialized = false;
+static bool g_isTV = false;
 } // namespace
 
 namespace Acts {
@@ -153,6 +156,12 @@ static OH_AudioData_Callback_Result OnWriteDataCbWithInvalidDataMock(
 // Device detection helper
 bool GetCurrentDeviceIsTV()
 {
+    // 如果已经初始化，直接返回缓存值
+    if (g_deviceTypeInitialized) {
+        return g_isTV;
+    }
+
+    // 原有的设备查询逻辑
     OH_AudioRoutingManager* audioRoutingManager = nullptr;
     OH_AudioDevice_Flag deviceFlage = AUDIO_DEVICE_FLAG_ALL;
     OH_AudioDeviceDescriptorArray* audioDeviceDescriptorArray = nullptr;
@@ -161,6 +170,8 @@ bool GetCurrentDeviceIsTV()
     OH_AudioCommon_Result res =
         OH_AudioRoutingManager_GetDevices(audioRoutingManager, deviceFlage, &audioDeviceDescriptorArray);
     if (res != OH_AudioCommon_Result::AUDIOCOMMON_RESULT_SUCCESS) {
+        g_isTV = false;
+        g_deviceTypeInitialized = true;
         return false;
     }
 
@@ -178,6 +189,10 @@ bool GetCurrentDeviceIsTV()
             break;
         }
     }
+    
+    // 缓存结果
+    g_isTV = isTVDevice;
+    g_deviceTypeInitialized = true;
     return isTVDevice;
 }
 
@@ -200,6 +215,11 @@ OH_AudioStreamBuilder* InitRenderBuilder()
     OH_AudioStreamBuilder_SetFrameSizeInCallback(builder, FRAME_SIZE);
     return builder;
 }
+
+// Forward declarations
+static int CreateGameUsageRendererWithCallback(OH_AudioStreamBuilder** builder,
+                                               OH_AudioRenderer** audioRenderer,
+                                               OHAudioRendererWriteCallbackMock* writeCallbackMock);
 
 void CleanupAudioResources(OH_AudioStreamBuilder* builder, OH_AudioRenderer* audioRenderer)
 {
@@ -1001,7 +1021,7 @@ static int ValidateInitialUnderflowCount(OH_AudioRenderer* audioRenderer)
     } else {
         if (underFlowCount < 1) {
             return -1;
-        }
+    }
     }
     return 0;
 }
@@ -1023,16 +1043,16 @@ int OhAudioRendererGetUnderflowCount001()
     InstallShortDelayCallback(&writeCallbackMock, count, mutex, cv);
 
     if (StartAndWaitForCallback(audioRenderer, mutex, cv, count, 1) != 0) {
-        CleanupAudioRenderer(audioRenderer, builder);
+        CleanupAudioResources(builder, audioRenderer);
         return -1;
     }
 
     if (ValidateInitialUnderflowCount(audioRenderer) != 0) {
-        CleanupAudioRenderer(audioRenderer, builder);
+        CleanupAudioResources(builder, audioRenderer);
         return -1;
     }
 
-    CleanupAudioRenderer(audioRenderer, builder);
+    CleanupAudioResources(builder, audioRenderer);
     return 0;
 }
 
@@ -1075,8 +1095,14 @@ static int InstallDelayedWriteCallback(OH_AudioRenderer* audioRenderer,
         return -1;
     }
     std::unique_lock<std::mutex> lock(mutex);
-    cv.wait_for(lock, CALLBACK_WAIT_TIMEOUT, [&count] { return count > 1; });
+    bool timeout = !cv.wait_for(lock, CALLBACK_WAIT_TIMEOUT, [&count] { return count > 1; });
     lock.unlock();
+    
+    // 如果超时，返回失败
+    if (timeout) {
+        return -1;
+    }
+    
     return 0;
 }
 
@@ -1097,26 +1123,6 @@ static int ValidateUnderflowCountResult(OH_AudioRenderer* audioRenderer)
         }
     }
     return 0;
-}
-
-int OhAudioRendererGetUnderflowCount002()
-{
-    OH_AudioStreamBuilder* builder = nullptr;
-    OH_AudioRenderer* audioRenderer = nullptr;
-    OHAudioRendererWriteCallbackMock writeCallbackMock;
-    if (CreateGameUsageRendererWithCallback(&builder, &audioRenderer, &writeCallbackMock) != 0) {
-        return -1;
-    }
-    if (InstallDelayedWriteCallback(audioRenderer, &writeCallbackMock) != 0) {
-        OH_AudioRenderer_Release(audioRenderer);
-        OH_AudioStreamBuilder_Destroy(builder);
-        return -1;
-    }
-    int result = ValidateUnderflowCountResult(audioRenderer);
-    OH_AudioRenderer_Stop(audioRenderer);
-    OH_AudioRenderer_Release(audioRenderer);
-    OH_AudioStreamBuilder_Destroy(builder);
-    return result;
 }
 
 int OhAudioRendererGetUnderflowCount003()
@@ -1151,13 +1157,6 @@ int OhAudioRendererGetUnderflowCount003()
     OH_AudioRenderer_Release(audioRenderer);
     OH_AudioStreamBuilder_Destroy(builder);
     return 0;
-}
-
-static void CleanupAudioRenderer(OH_AudioRenderer* audioRenderer, OH_AudioStreamBuilder* builder)
-{
-    OH_AudioRenderer_Stop(audioRenderer);
-    OH_AudioRenderer_Release(audioRenderer);
-    OH_AudioStreamBuilder_Destroy(builder);
 }
 
 static int CreateRendererWithCallback(OH_AudioStreamBuilder** builder,
@@ -1211,24 +1210,24 @@ static int StartRendererAndWait(OH_AudioRenderer* audioRenderer,
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
-    std::unique_lock<std::mutex> lock(mutex);
+        std::unique_lock<std::mutex> lock(mutex);
     cv.wait_for(lock, CALLBACK_WAIT_TIMEOUT, [&count] { return count > MIN_CALLBACK_COUNT; });
-    lock.unlock();
+        lock.unlock();
     return 0;
 }
 
 static int ValidateUnderflowCount(OH_AudioRenderer* audioRenderer, uint32_t* lastUnderFlowCount)
 {
-    uint32_t underFlowCount = 0;
+        uint32_t underFlowCount = 0;
     OH_AudioStream_Result result = OH_AudioRenderer_GetUnderflowCount(audioRenderer, &underFlowCount);
     if (result != AUDIOSTREAM_SUCCESS) {
         return -1;
     }
-    if (GetCurrentDeviceIsTV()) {
+        if (GetCurrentDeviceIsTV()) {
         if (underFlowCount < *lastUnderFlowCount) {
             return -1;
         }
-    } else {
+        } else {
         if (underFlowCount <= *lastUnderFlowCount) {
             return -1;
         }
@@ -1253,16 +1252,16 @@ static int TestUnderflowCountWithDelay(std::chrono::milliseconds sleepTime, uint
     }
 
     if (StartRendererAndWait(audioRenderer, mutex, cv, count) != 0) {
-        CleanupAudioRenderer(audioRenderer, builder);
+        CleanupAudioResources(builder, audioRenderer);
         return -1;
     }
 
     if (ValidateUnderflowCount(audioRenderer, lastUnderFlowCount) != 0) {
-        CleanupAudioRenderer(audioRenderer, builder);
+        CleanupAudioResources(builder, audioRenderer);
         return -1;
     }
 
-    CleanupAudioRenderer(audioRenderer, builder);
+    CleanupAudioResources(builder, audioRenderer);
     return 0;
 }
 

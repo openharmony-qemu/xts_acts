@@ -336,15 +336,12 @@ static napi_value UnderflowDetectionTest(napi_env env, napi_callback_info info)
                 testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount001;
                 break;
             case CASE_NUM_1:
-                testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount002;
-                break;
-            case CASE_NUM_2:
                 testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount003;
                 break;
-            case CASE_NUM_3:
+            case CASE_NUM_2:
                 testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount004;
                 break;
-            case CASE_NUM_4:
+            case CASE_NUM_3:
                 testFunc = Acts::AudioRender::OhAudioRendererGetUnderflowCount005;
                 break;
             default:

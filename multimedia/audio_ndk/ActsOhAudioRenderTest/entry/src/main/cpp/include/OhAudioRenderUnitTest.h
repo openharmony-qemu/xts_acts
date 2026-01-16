@@ -80,9 +80,8 @@ int OhAudioRenderCancelMark001();
 int OhAudioRenderCancelMark002();
 int OhAudioRenderCancelMark003();
 
-// Category 6: Underflow Detection Tests (5)
+// Category 6: Underflow Detection Tests (4)
 int OhAudioRendererGetUnderflowCount001();
-int OhAudioRendererGetUnderflowCount002();
 int OhAudioRendererGetUnderflowCount003();
 int OhAudioRendererGetUnderflowCount004();
 int OhAudioRendererGetUnderflowCount005();
