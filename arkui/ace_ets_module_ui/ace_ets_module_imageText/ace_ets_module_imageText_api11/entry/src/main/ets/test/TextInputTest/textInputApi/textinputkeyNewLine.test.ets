@@ -59,7 +59,7 @@ export default function textInputApiTest() {
       let obj: ESObject = JSON.parse(strJson);
       console.info("[textInputApiTest] get inspector value is: " + JSON.stringify(obj));
       console.info("[textInput1] get inspector value is: " + JSON.stringify(obj.$attrs.enterKeyType));
-      expect(obj.$attrs.enterKeyType).assertEqual('EnterKeyType.Done')
+      expect(obj.$attrs.enterKeyType).assertEqual('EnterKeyType.NewLine')
       done();
 
     });

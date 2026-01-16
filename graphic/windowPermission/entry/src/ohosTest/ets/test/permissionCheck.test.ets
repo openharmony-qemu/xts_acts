@@ -24,7 +24,6 @@ import { StartOptions } from '@kit.AbilityKit';
 import window from "@ohos.window";
 import { settings } from "@kit.BasicServicesKit";
 import { Driver, ON } from '@ohos.UiTest';
-import deviceInfo from '@ohos.deviceInfo';
 
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
@@ -70,8 +69,6 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let isFreeWindowMode = false;
-    let deviceType:string = deviceInfo.deviceType;
-    console.log('deviceType : ' + deviceType);
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context));
@@ -345,7 +342,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       } catch (err) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
         await terminateAbility(caseName);
-        if (deviceType !='2in1'&&deviceType!='tablet') {
+        if (isPCStatus == '') {
           expect(err.code).assertEqual(801);
         } else {
           expect(err.code).assertEqual(201);
@@ -434,7 +431,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
       } catch (err) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
         if (canIUseRes) {
-          if (deviceType !='2in1'&&deviceType!='tablet') {
+          if (isPCStatus == '') {
             expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(201);
@@ -471,7 +468,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
         if (canIUseRes) {
-          if (deviceType !='2in1'&&deviceType!='tablet') {
+          if (isPCStatus == '') {
             expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(201);
@@ -513,7 +510,7 @@ export default function windowPromiseTest(context: common.UIAbilityContext) {
         console.error(caseName + 'Failed. Cause: ' + JSON.stringify(err));
         await subWindowClass?.destroyWindow()
         if (canIUseRes) {
-          if (deviceType !='2in1'&&deviceType!='tablet') {
+          if (isPCStatus == '') {
             expect(err.code).assertEqual(801);
           } else {
             expect(err.code).assertEqual(201);

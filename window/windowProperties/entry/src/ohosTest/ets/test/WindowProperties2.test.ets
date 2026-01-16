@@ -22,7 +22,6 @@ import settings from '@ohos.settings';
 import { image } from '@kit.ImageKit';
 import { ColorMetrics, screenshot } from '@kit.ArkUI';
 import { StartOptions } from '@kit.AbilityKit';
-import deviceInfo from '@ohos.deviceInfo';
 
 let sleep = (sleepMs: number) => new Promise<string>(resolve => setTimeout(resolve, sleepMs));
 
@@ -133,8 +132,6 @@ export default function windowPropertiesTest2() {
     let isAutoWindow: string = '';
     let isPCStatus: string = '';
     let fileDir: string = '';
-    let deviceType:string = deviceInfo.deviceType;
-    console.log('deviceType: ' + deviceType);
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       fileDir = AppStorage.get('filePath') as string;
@@ -1718,6 +1715,7 @@ export default function windowPropertiesTest2() {
       // 2、被拉起的主窗监听on(windowStageEvent)
       try {
         const callback = async (res: window.WindowStageEventType) => {
+          console.info(msgStr + 'callback:'+res);
           // 4、在on(windowStageEvent)返回值为INACTIVE，HIDDEN状态下分别调用snapshotIgnorePrivacy截图
           // 5、断言截图大小与窗口大小误差不超过1
           // 6、销毁被拉起的主窗
@@ -3096,7 +3094,7 @@ export default function windowPropertiesTest2() {
       try {
         let windowClass = windowStageStart.getMainWindowSync();
         windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
-        if (isSupport && (deviceType == '2in1'||deviceType =='tablet')) {
+        if (isSupport && isPCStatus != '') {
           await terminateAbility3(caseName);
           done();
         } else {
@@ -3107,7 +3105,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (!isSupport || (deviceType != '2in1'&& deviceType !='tablet')) {
+        if (!isSupport || isPCStatus == '') {
           expect(err.code).assertEqual(801)
           done();
         } else {
@@ -3133,7 +3131,7 @@ export default function windowPropertiesTest2() {
       try {
         let windowClass = windowStageStart.getMainWindowSync();
         windowClass.setWindowContainerColor('#00000000', '#FF00ff33');
-        if (isSupport && (deviceType == '2in1'||deviceType =='tablet')) {
+        if (isSupport && isPCStatus != '') {
           await terminateAbility3(caseName);
           done();
         } else {
@@ -3144,7 +3142,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (!isSupport || (deviceType != '2in1'&& deviceType !='tablet')) {
+        if (!isSupport || isPCStatus == '') {
           expect(err.code).assertEqual(801)
           done();
         } else {
@@ -3178,7 +3176,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass?.destroyWindow()
-        if (isSupport && (deviceType == '2in1'||deviceType =='tablet')) {
+        if (isSupport && isPCStatus != '') {
           expect(err.code).assertEqual(1300004)
           done();
         } else {
@@ -3217,7 +3215,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await subWindowClass?.destroyWindow()
-        if (isSupport && (deviceType == '2in1'||deviceType =='tablet')) {
+        if (isSupport && isPCStatus != '') {
           expect(err.code).assertEqual(1300004)
           done();
         } else {
@@ -3249,7 +3247,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (isSupport && (deviceType == '2in1'||deviceType =='tablet')) {
+        if (isSupport && isPCStatus != '') {
           expect(err.code).assertEqual(401)
           done();
         } else {
@@ -3281,7 +3279,7 @@ export default function windowPropertiesTest2() {
       } catch (err) {
         console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
         await terminateAbility3(caseName);
-        if (isSupport && (deviceType == '2in1'||deviceType =='tablet')) {
+        if (isSupport && isPCStatus != '') {
           expect(err.code).assertEqual(401)
           done();
         } else {

@@ -79,6 +79,11 @@ export default function FontPart4() {
           console.info(msg + ' ' + fontMetrics.flags);
           expect(fontMetrics.maxCharWidth != undefined).assertTrue();
           expect(fontMetrics.flags != undefined).assertTrue();
+          expect(fontMetrics.flags & drawing.FontMetricsFlags.UNDERLINE_THICKNESS_VALID).assertEqual(1);
+          expect(fontMetrics.flags & drawing.FontMetricsFlags.UNDERLINE_POSITION_VALID).assertEqual(2);
+          expect(fontMetrics.flags & drawing.FontMetricsFlags.STRIKETHROUGH_THICKNESS_VALID).assertEqual(4);
+          expect(fontMetrics.flags & drawing.FontMetricsFlags.STRIKETHROUGH_POSITION_VALID).assertEqual(8);
+          expect(fontMetrics.flags & drawing.FontMetricsFlags.BOUNDS_INVALID).assertEqual(16);
           done()
         } catch (err) {
           console.log(msg + " Failed in SUB_BASIC_GRAPHICS_SPECIAL_API_TS_DRAWING_FONT_ENUM_0200 "

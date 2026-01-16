@@ -88,23 +88,30 @@ export default class UiExtAbility extends ShareExtensionAbility {
 
   private StartAbilityForResultAsCaller_2100 = async () => {
     console.info('====>[backGroundAbility] onSessionCreate want.parameters.parameter == StartAbilityForResultAsCaller_2100');
-    this.context.startAbilityForResultAsCaller({
-      bundleName: 'com.example.uiextensionforresultascallersyspicker',
-      abilityName: 'EntryAbility',
-      moduleName: 'entry',
-      parameters: {
-        parameter: 'StartAbilityForResultAsCaller_2100'
-      }
-    }).then((data) => {
-      console.info('====>[OtherUIAbility] startAbilityForResultAsCaller 2100 ok: ' + JSON.stringify(data));
-    }).catch((error) => {
-      console.info('====>[OtherUIAbility] startAbilityForResultAsCaller 2100 err: ' + error.code);
-    });
-    await sleep(2000);
-    commonEvent.publish('killui', (err) => {
-      console.info('====>[OtherUIAbility] startAbilityForResultAsCaller 2100 err: ' + JSON.stringify(err));
-    });
+    try {
+      this.context.startAbilityForResultAsCaller({
+        bundleName: 'com.example.uiextensionforresultascallersyspicker',
+        abilityName: 'EntryAbility',
+        moduleName: 'entry',
+        parameters: {
+          parameter: 'StartAbilityForResultAsCaller_2100'
+        }
+      }).then((data) => {
+        console.info('====>[OtherUIAbility] startAbilityForResultAsCaller 2100 ok: ' + JSON.stringify(data));
+      }).catch((error) => {
+        console.info('====>[OtherUIAbility] startAbilityForResultAsCaller 2100 err: ' + error.code);
+      });
+    } catch (error) {
+        console.info('====>[backGroundAbility] startAbilityForResultAsCaller == error :' + JSON.stringify(error));
+    } finally {
+        await sleep(2000);
+        console.info('====>[OtherUIAbility] 2100 commonEvent start publish killui');
+        commonEvent.publish('killui', (err) => {
+          console.info('====>[OtherUIAbility] 2100 killui commonEvent publish err: ' + JSON.stringify(err));
+        });
+    }
   }
+
   onCreate() {
     hilog.info(0x0000, 'testTag', 'UIExtAbility onCreate  want: %{public}s');
     console.info('=======>====> [backGroundAbility] onCreate======>');

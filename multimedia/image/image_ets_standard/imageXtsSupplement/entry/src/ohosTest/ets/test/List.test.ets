@@ -201,6 +201,8 @@ import ImageExifComponentsConfiguration from './image/ImageExifComponentsConfigu
 import ImageExifShutterSpeedValue from './image/ImageExifShutterSpeedValue.test';
 import ImageSourceLensModelSupp from './image/ImageSourceLensModel.test';
 import ImageSourceLensMakeSupp from './image/ImageSourceLensMake.test';
+import ImageLensSerialNumberSupp from './image/ImageExifLensSerialNumber.test';
+import ImageLensSpecificationSupp from './image/ImageExifLensSpecification.test';
 import ImageExifOECFSupp from './image/ImageExifOECF.test';
 import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripOffsets.test';
 import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
@@ -390,6 +392,8 @@ export default function testsuite() {
   ImageDescriptionSupp();
   ImageSourceLensMakeSupp();
   ImageSourceLensModelSupp()
+  ImageLensSpecificationSupp();
+  ImageLensSerialNumberSupp();
   ImageExifOECFSupp();
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
