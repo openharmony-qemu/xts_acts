@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -17,6 +17,7 @@ import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Margin, Color, Axis, Flex,FlexDirection,ItemAlign,FlexAlign, Padding } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
 import { Callback } from '@ohos.base';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -113,8 +114,8 @@ struct CalendarComponentExample {
   //   weekAndDayRowSpace: this.weekAndDayRowSpace
   // } as WeekStyle;
   private stateChangCallBack:  (eventData: events_emitter.EventData) => void  = (eventData:events_emitter.EventData) => {
-    const event: Record<string, undefined | null | Object> =
-      eventData.data as Record<string, undefined | null | Object>
+    const event: Record<String,RecordData> =
+      eventData.data as Record<String,RecordData>
     if (eventData != null && eventData.data !== null) {
       console.info("Calendar page state change called:" + JSON.stringify(eventData));
       if (event['colSpace'] != null) {

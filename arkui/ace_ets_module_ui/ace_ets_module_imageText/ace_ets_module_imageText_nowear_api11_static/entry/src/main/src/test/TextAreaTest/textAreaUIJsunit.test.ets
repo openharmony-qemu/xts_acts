@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -35,6 +35,7 @@ import {
  ResourceColor
 } from '@ohos.arkui.component'
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
 let testAbilityContext:common.UIAbilityContext;
@@ -109,7 +110,7 @@ it('textAreaUIJsunit_static_0200', Level.LEVEL0, async (done: ()=>void) => {
     data: {
       "sizeT":  20 as int,
       "weightT": 300 as int
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -137,7 +138,7 @@ it('textAreaUIJsunit_static_0300', Level.LEVEL0, async (done: ()=>void) => {
     data: {
       "sizeT":  -30 as int,
       "weightT": -300 as int
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -167,7 +168,7 @@ it('textAreaUIJsunit_static_0400', Level.LEVEL0, async (done: ()=>void) => {
     data: {
       "placeholderColor":  '#FFFFFF',
       "caretColor": '#EEFFFF'
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -198,7 +199,7 @@ it('textAreaUIJsunit_static_0500', Level.LEVEL0, async (done: ()=>void) => {
     data: {
       "placeholderColor":  'rgb(238, 130, 238)',
       "caretColor": 'rgb(238, 131, 233)'
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -231,7 +232,7 @@ it('textAreaUIJsunit_static_0600', Level.LEVEL0, async (done: ()=>void) => {
     data: {
       "placeholderColor":  Color.Green,
       "caretColor": Color.Red
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -268,7 +269,7 @@ it('textAreaUIJsunit_static_0700', Level.LEVEL0, async (done: ()=>void) => {
     data: {
       "placeholderColor":  '#AED',
       "caretColor": '#ACD'
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -296,7 +297,7 @@ it('textAreaUIJsunit_static_0800', Level.LEVEL0, async (done: ()=>void) => {
   let eventData: events_emitter.EventData = {
     data: {
       "areaText":  ''
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -431,7 +432,7 @@ it('textAreaUIJsunit_static_1100', Level.LEVEL0, async (done: ()=>void) => {
   let eventData: events_emitter.EventData = {
     data: {
       "caretColor":  'rgba(0, 255, 0, 1)'
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -465,7 +466,7 @@ it('textAreaUIJsunit_static_1200', Level.LEVEL0, async (done: ()=>void) => {
   let eventData: events_emitter.EventData = {
     data: {
       "caretColor":  0xffc0cb
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,
@@ -502,7 +503,7 @@ it('textAreaUIJsunit_static_1300', Level.LEVEL0, async (done: ()=>void) => {
   let eventData: events_emitter.EventData = {
     data: {
       "caretColor":  caretColor
-    } as Record<String,undefined|null|Object>
+    } as Record<String,RecordData>
   }
   let innerEvent: events_emitter.InnerEvent = {
     eventId: 811,

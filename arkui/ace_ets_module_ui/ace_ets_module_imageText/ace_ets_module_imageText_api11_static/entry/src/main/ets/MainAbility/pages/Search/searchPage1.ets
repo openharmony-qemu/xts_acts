@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -20,6 +20,7 @@ import { Entry, Component, AttributeModifier, SearchAttribute, Column, Search, T
 } from '@ohos.arkui.component';
 import { State, AppStorage, Observed } from '@ohos.arkui.stateManagement';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
+import { RecordData } from '@ohos.base';
 
 @Observed
 class SearchModifier implements AttributeModifier<SearchAttribute> {
@@ -105,11 +106,11 @@ struct SearchExample {
   @State submitValue: string = ''
   private stateChangCallBack: (eventData: emitter.EventData) => void  = (eventData:emitter.EventData) => {
     if (eventData != null) {
-      console.info("Search page state change called:" + JSON.stringify((eventData.data as Record<String,undefined|null|Object>)['typeValue']));
-      if ((eventData.data as Record<String,undefined|null|Object>)['typeValue'] != null) {
+      console.info("Search page state change called:" + JSON.stringify((eventData.data as Record<String,RecordData>)['typeValue']));
+      if ((eventData.data as Record<String,RecordData>)['typeValue'] != null) {
         console.log("======================================= this._SearchModifier._testType" + this._SearchModifier._testType);
-        console.log("=======================================  " + Number.parseInt(`${((eventData.data as Record<String,undefined|null|Object>)!['typeValue'])!}`))
-        this._SearchModifier._testType = Number.parseInt(`${((eventData.data as Record<String,undefined|null|Object>)!['typeValue'])!}`);
+        console.log("=======================================  " + Number.parseInt(`${((eventData.data as Record<String,RecordData>)!['typeValue'])!}`))
+        this._SearchModifier._testType = Number.parseInt(`${((eventData.data as Record<String,RecordData>)!['typeValue'])!}`);
         console.log("======================================= this._SearchModifier._testType" + this._SearchModifier._testType);
       }
       else {

@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import {
 } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement';
 import  emitter  from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 
 @Entry
@@ -46,7 +47,7 @@ struct select1 {
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
     console.info("select page state change called:" + JSON.stringify(eventData));
     if (eventData != null) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['value'] != null) {
         console.log('-----this.value = ' + this.value)
         this.value = data['value'] as string;

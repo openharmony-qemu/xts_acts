@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -16,6 +16,7 @@
 import events_emitter from '@ohos.events.emitter';
 import { Entry, Component, Column, Text, Rating, Margin,ResourceColor, Color, ToggleType, ColumnOptions, Flex, FlexAlign, ItemAlign, Toggle, Padding } from '@ohos.arkui.component';
 import { State } from '@ohos.arkui.stateManagement'
+import { RecordData } from '@ohos.base';
 @Entry
 @Component
 struct Toggle3Example {
@@ -36,7 +37,7 @@ struct Toggle3Example {
     console.info("[toggle] page stateChangCallBack");
     if (eventData != null && eventData.data != null) {
       console.info("[toggle] page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<String,undefined|null|Object>                       //需要先获取并声明类型之后  再访问成员属性
+      const data = eventData.data as Record<String,RecordData>                       //需要先获取并声明类型之后  再访问成员属性
       if (data!['selectedColor'] != null) {
         this.selectedColor = data!['selectedColor'] as ResourceColor;
       }

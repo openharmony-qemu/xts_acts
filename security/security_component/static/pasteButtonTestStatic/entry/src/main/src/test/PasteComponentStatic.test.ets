@@ -33,6 +33,7 @@ import {
   BorderStyle,
   Alignment
 } from '@ohos.arkui.component';
+import { RecordData } from '@ohos.base';
 
 export default function pasteComponentStaticTest() {
   describe('pasteComponentStaticTest', () => {
@@ -116,7 +117,7 @@ export default function pasteComponentStaticTest() {
         }
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
-            const data = clickData.data as Record<String,undefined|null|Object>;
+            const data = clickData.data as Record<String,RecordData>;
             console.info('====>[Test_Security_Button_StaticPaste_0100] get clickEvent result is: ' + JSON.stringify(clickEvent));
             console.info('====>[Test_Security_Button_StaticPaste_0100] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.SUCCESS) {
@@ -196,7 +197,7 @@ export default function pasteComponentStaticTest() {
             'top': 4,
             'bottom': 4,
             'middle': 4
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent:events_emitter.InnerEvent = {
           eventId: 1,
@@ -220,7 +221,7 @@ export default function pasteComponentStaticTest() {
         }
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
-            const data = clickData.data as Record<String,undefined|null|Object>;
+            const data = clickData.data as Record<String,RecordData>;
             console.info('====>[Test_Security_Button_StaticPaste_0200] get clickEvent result is: ' + JSON.stringify(clickEvent));
             console.info('====>[Test_Security_Button_StaticPaste_0200] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.SUCCESS) {
@@ -300,7 +301,7 @@ export default function pasteComponentStaticTest() {
             'top': 4,
             'bottom': 4,
             'middle': 4
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent:events_emitter.InnerEvent = {
           eventId: 1,
@@ -327,7 +328,7 @@ export default function pasteComponentStaticTest() {
         }
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
-            const data = clickData.data as Record<String,undefined|null|Object>;
+            const data = clickData.data as Record<String,RecordData>;
             console.info('====>[Test_Security_Button_StaticPaste_0300] get clickEvent result is: ' + JSON.stringify(clickEvent));
             console.info('====>[Test_Security_Button_StaticPaste_0300] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.SUCCESS) {
@@ -406,7 +407,7 @@ export default function pasteComponentStaticTest() {
             'top': 4,
             'bottom': 4,
             'middle': 4
-          } as Record<string, undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent:events_emitter.InnerEvent = {
           eventId: 1,
@@ -433,7 +434,7 @@ export default function pasteComponentStaticTest() {
         }
         let clickCallback = (clickData:events_emitter.EventData) => {
           if(clickData.data !=undefined){
-            const data = clickData.data as Record<String,undefined|null|Object>;
+            const data = clickData.data as Record<String,RecordData>;
             console.info('====>[Test_Security_Button_StaticPaste_0400] get clickEvent result is: ' + JSON.stringify(clickEvent));
             console.info('====>[Test_Security_Button_StaticPaste_0400] get clickData.data.clickResult is: ' + JSON.stringify(data['clickResult']));
             if (data['clickResult'] == PasteButtonOnClickResult.SUCCESS) {

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -27,6 +27,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: string = 'testTag';
@@ -95,7 +96,7 @@ it('testTouchAble_static_002', Level.LEVEL0, async (done: () => void): Promise<v
       let callbackTwo = (eventData: events_emitter.EventData) => {
         console.info("[testTouchAble002] get event state result is: " + JSON.stringify(eventData));
         // let act = eventData.data as Action
-        const data = eventData.data as Record<string, Object | undefined | null>
+        const data = eventData.data as Record<String,RecordData>
         expect(data['ACTION']).assertEqual('Ellipse Clicked')
         console.info('[testTouchAble002] END');
         done()

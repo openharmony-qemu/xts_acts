@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -33,6 +33,7 @@ import {
   GridColColumnOption
 } from '@ohos.arkui.component'
 import { State } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 class MyGridColOffsetModifier1 implements AttributeModifier<GridColAttribute> {
   isNum: number = 0
@@ -113,7 +114,7 @@ struct GridColExample {
   private stateChangCallBack: (eventData: events_emitter.EventData) => void = (eventData: events_emitter.EventData) => {
     if (eventData !== null && eventData.data !== null) {
       console.info("Gridcol page state change called:" + JSON.stringify(eventData));
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       if (data['gridColOffsetNum'] != null) {
         this.modOffsetRed.isNum = data['gridColOffsetNum'] as int;
         if (data['gridColOffsetNum'] === 0) {
