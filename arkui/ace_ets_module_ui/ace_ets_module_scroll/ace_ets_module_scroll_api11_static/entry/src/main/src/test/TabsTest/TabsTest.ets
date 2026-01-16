@@ -88,11 +88,11 @@ export default function tabs() {
 
             "overflowFlag": false,
             "selfIndicatorColor": Color.Red,
-            "selfIndicatorHeight": 10,
-            "selfIndicatorWidth": 30,
-            "selfIndicatorBorderRadius": 5,
-            "selfMarginTop": 10,
-            "selfSubTabBorderRadius": 20,
+            "selfIndicatorHeight": 10.0,
+            "selfIndicatorWidth": 30.0,
+            "selfIndicatorBorderRadius": 5.0,
+            "selfMarginTop": 10.0,
+            "selfSubTabBorderRadius": 20.0,
             "selfSelectedMode": SelectedMode.INDICATOR,
 
             "selfIndicatorColorStr": "#FFFF0000",
@@ -1106,10 +1106,10 @@ it('ArkUI_Tabs_IndicatorColor_0700', Level.LEVEL0, async (done: () => void): Pro
         let eventData: events_emitter.EventData = {
           data: {
             "selfIndicatorColor": Color.Red,
-            "selfIndicatorHeight": 5,
-            "selfIndicatorWidth": 20,
-            "selfIndicatorBorderRadius": 5,
-            "selfMarginTop": 10
+            "selfIndicatorHeight": 5.0,
+            "selfIndicatorWidth": 20.0,
+            "selfIndicatorBorderRadius": 5.0,
+            "selfMarginTop": 10.0
           } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1245,7 +1245,7 @@ it('ArkUI_Tabs_IndicatorHeight_0500', Level.LEVEL0, async (done: () => void): Pr
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": -1
+            "selfIndicatorHeight": -1.0
           } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1452,7 +1452,7 @@ it('ArkUI_Tabs_IndicatorWidth_0500', Level.LEVEL0, async (done: () => void): Pro
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorWidth": -1
+            "selfIndicatorWidth": -1.0
           } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1652,7 +1652,7 @@ it('ArkUI_Tabs_IndicatorBorderRadius_0500', Level.LEVEL0, async (done: () => voi
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorBorderRadius": -1
+            "selfIndicatorBorderRadius": -1.0
           } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -1857,7 +1857,7 @@ it('ArkUI_Tabs_SubTabBorderRadius_0500', Level.LEVEL0, async (done: () => void):
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfSubTabBorderRadius": -1
+            "selfSubTabBorderRadius": -1.0
           } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
@@ -2181,8 +2181,8 @@ it('ArkUI_Tabs_IndicatorMarginTop_static_0500', Level.LEVEL0, async (done: () =>
       try {
         let eventData: events_emitter.EventData = {
           data: {
-            "selfIndicatorHeight": 10,
-            "selfMarginTop": -1
+            "selfIndicatorHeight": 10.0,
+            "selfMarginTop": -1.0
           } as Record<String, undefined | null | Object>
         }
         let innerEvent: events_emitter.InnerEvent = {
