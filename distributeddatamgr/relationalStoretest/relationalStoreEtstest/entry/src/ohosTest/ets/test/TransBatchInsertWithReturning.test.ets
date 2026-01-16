@@ -117,14 +117,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning001 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync001 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning001 end *************");
@@ -191,14 +191,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning003 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test test1", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync003 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning003 end *************");
@@ -223,14 +223,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning004 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync004 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning004 end *************");
@@ -336,14 +336,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning006 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync006 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning006 end *************");
@@ -581,14 +581,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning010 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual('14800001');
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync010 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual('14800001');
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning010 end *************");
@@ -616,14 +616,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync011 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning011 end *************");
@@ -651,14 +651,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning012 failed 1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning012 failed 1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ["a b"];
       try {
@@ -666,14 +666,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning012 failed 2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync012 failed 2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.columns = ["a,b"];
       try {
@@ -681,14 +681,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning012 failed 3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync012 failed 3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning012 end *************");
@@ -1057,14 +1057,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync020 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         await trans?.batchInsertWithReturning("test test1", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning020 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       console.log(TAG + "************* transBatchInsertWithReturning020 end *************");
       done();
@@ -1413,56 +1413,56 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 1 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("123test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 2 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         await trans?.batchInsertWithReturning("te.s.t", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 3 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("te.s.t", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 4 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         await trans?.batchInsertWithReturning(".test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 5 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("..test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 6 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         await trans?.batchInsertWithReturning("test..", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 7 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test.", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning028 8 failed. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning028 end *************");
@@ -1494,14 +1494,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning029 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync029 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0;
       try {
@@ -1509,14 +1509,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning029 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync029 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       config.maxReturningCount = 0x7fff;
       try {
@@ -1524,14 +1524,14 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturning029 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync029 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("14800001");
+        expect(e.code).assertEqual(14800001);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturning029 end *************");
@@ -1737,84 +1737,84 @@ export default function TransBatchInsertWithReturning() {
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed1. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.batchInsertWithReturningSync(undefined, [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed2. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.batchInsertWithReturning(null, [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed3. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.batchInsertWithReturning(undefined, [valueBucket], config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed4. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.batchInsertWithReturningSync("test", null, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed5. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.batchInsertWithReturningSync("test", undefined, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed6. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.batchInsertWithReturning("test", undefined, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed7. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.batchInsertWithReturning("test", null, config);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed8. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], null);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed6. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         trans?.batchInsertWithReturningSync("test", [valueBucket], undefined);
         expect(true).assertFail();
       } catch (e) {;
         console.error(TAG + `transBatchInsertWithReturningSync032 failed6. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.batchInsertWithReturning("test", [valueBucket], null);
         expect(true).assertFail();
       } catch (e) {
         console.error(TAG + `transBatchInsertWithReturningSync032 failed7. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       try {
         await trans?.batchInsertWithReturning("test", [valueBucket], undefined);
         expect(true).assertFail();
       } catch (e) {;
         console.error(TAG + `transBatchInsertWithReturningSync032 failed8. code is ${e.code}, message is ${e.message}`);
-        expect(e.code).assertEqual("401");
+        expect(e.code).assertEqual(401);
       }
       await trans?.rollback();
       console.log(TAG + "************* transBatchInsertWithReturningSync032 end *************");
