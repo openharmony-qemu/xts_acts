@@ -258,7 +258,7 @@ export default function UiTest() {
                 expect(bounds1.right != bounds2.right).assertTrue()
             } catch (error) {
                 console.log('testWindowMinimize_split1 error is ' + error)
-                expect(error.code == WindowsErrorCode).assertTrue()
+                expect(error.code == DeviceErrorCode).assertTrue()
             }
             await stopApplication('com.uitestScene.acts')
             let resumeWindow = await driver.findWindow({ bundleName: 'com.uitest.acts' })
@@ -304,7 +304,7 @@ export default function UiTest() {
                 expect(bounds1.right != bounds2.right).assertTrue()
             } catch (error) {
                 console.log('testWindowMinimize_split1 error is ' + error)
-                expect(error.code == WindowsErrorCode).assertTrue()
+                expect(error.code == DeviceErrorCode).assertTrue()
             }
             await stopApplication('com.uitestScene.acts')
             let resumeWindow = await driver.findWindow({ bundleName: 'com.uitest.acts' })
