@@ -2997,6 +2997,57 @@ static napi_value OHCameraManagerGetCameraConcurrentInfos(napi_env env, napi_cal
     return result;
 }
 
+static napi_value OHCameraManagerGetCameraDevices(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+ 
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+ 
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+ 
+    Camera_ErrorCode code = ndkCamera_->GetCameraDevices(index);
+ 
+    napi_create_int32(env, code, &result);
+    return result;
+}
+
+static napi_value OHCameraManagerDeleteCameraDevices(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->DeleteCameraDevices(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+ 
+static napi_value SetInvalidDeviceQueryInfo(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    bool isDeviceQueryInfoInvalid;
+    napi_get_value_bool(env, args[0], &isDeviceQueryInfoInvalid);
+
+    Camera_ErrorCode code = ndkCamera_->SetInvalidDeviceQueryInfo(isDeviceQueryInfoInvalid);
+    napi_create_int32(env, code, &result);
+
+    return result;
+}
+
 static napi_value SessionIsMacroSupported(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -3501,6 +3552,12 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHCameraManagerGetCameraDevice", nullptr, OHCameraManagerGetCameraDevice, nullptr,
             nullptr, nullptr, napi_default, nullptr},
         {"oHCameraManagerGetCameraConcurrentInfos", nullptr, OHCameraManagerGetCameraConcurrentInfos, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerGetCameraDevices", nullptr, OHCameraManagerGetCameraDevices, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerDeleteCameraDevices", nullptr, OHCameraManagerDeleteCameraDevices, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"setInvalidDeviceQueryInfo", nullptr, SetInvalidDeviceQueryInfo, nullptr,
             nullptr, nullptr, napi_default, nullptr},
     };
     size_t mergedLength = sizeof(desc) / sizeof(desc[0]) +

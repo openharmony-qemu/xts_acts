@@ -558,6 +558,12 @@ export const oHCameraManagerGetCameraDevice: (index:number) => number;
  
 export const oHCameraManagerGetCameraConcurrentInfos: (index:number) => number;
  
+export const oHCameraManagerGetCameraDevices: (index:number) => number;
+
+export const oHCameraManagerDeleteCameraDevices: (index:number) => number;
+
+export const setInvalidDeviceQueryInfo: (isDeviceQueryInfoInvalid:boolean) => number;
+
 export const oHCameraInputOpenConcurrentCameras: (index:number) => number;
 
 export const oHCameraInputIsPhysicalCameraOrientationVariable: () => orientationVariable;

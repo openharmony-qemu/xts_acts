@@ -122,6 +122,10 @@ public:
     Camera_Point focusPoint_;
     Camera_VideoStabilizationMode videoMode_;
     Camera_Device* cameras_;
+    Camera_Device* cameraDevices_;
+    uint32_t cameraSize_;
+    Camera_DeviceQueryInfo* deviceQueryInfo_;
+    bool isDeviceQueryInfoInvalid_;
     Camera_OutputCapability* cameraOutputCapability_;
     bool isAddInput_;
     Camera_Device *camera_;
@@ -234,6 +238,9 @@ public:
     Camera_ErrorCode SessionSetFlashMode(uint32_t mode);
     Camera_ErrorCode GetCameraDevice(int useCaseCode);     // 基于位置和类型获取相机实例。
     Camera_ErrorCode GetCameraConcurrentInfos(int useCaseCode);   // 获取相机并发信息。
+    Camera_ErrorCode GetCameraDevices(int useCaseCode);
+    Camera_ErrorCode DeleteCameraDevices(int useCaseCode);
+    Camera_ErrorCode SetInvalidDeviceQueryInfo(bool isDeviceQueryInfoInvalid);
 
     Camera_ErrorCode SessionIsExposureModeSupported(uint32_t mode);
     Camera_ErrorCode SessionGetExposureMode(void);
