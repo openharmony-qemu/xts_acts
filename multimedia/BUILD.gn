@@ -215,6 +215,7 @@ group("multimedia") {
       "videoProcess/moduletest/image:ActsVpeImageNativModuleTest",
       "videoProcess/moduletest/video:ActsVpeVideoNativModuleTest",
       "av_codec/ActsAudioEncoderTest:ActsAudioEncoderTest",
+      "av_codec/ActsAudioDecoderTest:ActsAudioDecoderHapTest",
     ]
   } else {
     deps += [
