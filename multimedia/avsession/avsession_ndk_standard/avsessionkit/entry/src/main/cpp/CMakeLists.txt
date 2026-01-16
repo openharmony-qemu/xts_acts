@@ -10,5 +10,5 @@ endif()
 
 include_directories(${NATIVERENDER_ROOT_PATH}
                         ${NATIVERENDER_ROOT_PATH}/include)
-add_library(avsession SHARED AVSession/AVSessionTest.cpp AVSession/AVSessionInitTest.cpp AVSession/AVSessionTwoTest.cpp)
+add_library(avsession SHARED AVSession/AVSessionTest.cpp AVSession/AVSessionInitTest.cpp AVSession/AVSessionTwoTest.cpp AVSession/AVSession_MediaDescription_Test.cpp)
 target_link_libraries(avsession PUBLIC libace_napi.z.so libhilog_ndk.z.so libohavsession.so)

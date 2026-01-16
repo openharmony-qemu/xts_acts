@@ -62,6 +62,8 @@ static void InitPush1(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVMetadataBuilderSetSkipIntervalsInvalidParam", AVMetadataBuilderSetSkipIntervalsInvalidParam));
     desc.push_back(XL("AVMetadataBuilderSetDisplayTagsSuccess", AVMetadataBuilderSetDisplayTagsSuccess));
     desc.push_back(XL("AVMetadataBuilderSetDisplayTagsInvalidParam", AVMetadataBuilderSetDisplayTagsInvalidParam));
+    desc.push_back(XL("AVMetadataBuilderSetFilterSuccess", AVMetadataBuilderSetFilterSuccess));
+    desc.push_back(XL("AVMetadataBuilderSetFilterInvalidParam", AVMetadataBuilderSetFilterInvalidParam));
     desc.push_back(XL("AVMetadataBuilderGenerateAVMetadataSuccess", AVMetadataBuilderGenerateAVMetadataSuccess));
     desc.push_back(
         XL("AVMetadataBuilderGenerateAVMetadataInvalidParam", AVMetadataBuilderGenerateAVMetadataInvalidParam));
@@ -70,6 +72,7 @@ static void InitPush1(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVMetadataAVSessionType", AVMetadataAVSessionType));
     desc.push_back(XL("AVMetadataAVSetPlaybackState", AVMetadataAVSetPlaybackState));
     desc.push_back(XL("AVMetadataAVSessionLoopMode", AVMetadataAVSessionLoopMode));
+    desc.push_back(XL("AVMetadataAVSessionRemoteCastEnabled", AVMetadataAVSessionRemoteCastEnabled));
     desc.push_back(XL("AVMetadataAVSessionControlCommand", AVMetadataAVSessionControlCommand));
     desc.push_back(XL("AVSessionCallbackResultFailure", AVSessionCallbackResultFailure));
 }
@@ -96,6 +99,8 @@ static void InitPush2(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionSetFavoriteInvalidParam", AVSessionSetFavoriteInvalidParam));
     desc.push_back(XL("AVSessionSetLoopModeSuccess", AVSessionSetLoopModeSuccess));
     desc.push_back(XL("AVSessionSetLoopModeInvalidParam", AVSessionSetLoopModeInvalidParam));
+    desc.push_back(XL("AVSessionSetRemoteCastEnabledSuccess", AVSessionSetRemoteCastEnabledSuccess));
+    desc.push_back(XL("AVSessionSetRemoteCastEnabledInvalidParam", AVSessionSetRemoteCastEnabledInvalidParam));
     desc.push_back(XL("AVSessionRegisterCommandCallbackSuccess", AVSessionRegisterCommandCallbackSuccess));
     desc.push_back(XL("AVSessionRegisterCommandCallbackInvalidParam", AVSessionRegisterCommandCallbackInvalidParam));
     desc.push_back(XL("AVSessionUnregisterCommandCallbackSuccess", AVSessionUnregisterCommandCallbackSuccess));
@@ -130,6 +135,14 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(
         XL("AVSessionUnregisterCommandCallbackCommandInvalid", AVSessionUnregisterCommandCallbackCommandInvalid));
     desc.push_back(
+        XL("AVSessionRegisterOutputDeviceChangeCallbackSuccess", AVSessionRegisterOutputDeviceChangeCallbackSuccess));
+    desc.push_back(
+        XL("AVSessionRegisterOutputDeviceChangeCallbackInvalidParam", AVSessionRegisterOutputDeviceChangeCallbackInvalidParam));
+    desc.push_back(
+        XL("AVSessionUnRegisterOutputDeviceChangeCallbackSuccess", AVSessionUnRegisterOutputDeviceChangeCallbackSuccess));
+    desc.push_back(
+        XL("AVSessionUnRegisterOutputDeviceChangeCallbackInvalidParam", AVSessionUnRegisterOutputDeviceChangeCallbackInvalidParam));
+    desc.push_back(
         XL("AVSessionRegisterCommandCallbackCommandInvalid", AVSessionRegisterCommandCallbackCommandInvalid));
     desc.push_back(XL("AVSessionRegisterForwardCallbackSuccess", AVSessionRegisterForwardCallbackSuccess));
     desc.push_back(XL("AVSessionRegisterForwardCallbackInvalidParam", AVSessionRegisterForwardCallbackInvalidParam));
@@ -142,14 +155,122 @@ static void InitPush3(std::vector<napi_property_descriptor> &desc)
     desc.push_back(XL("AVSessionCreateSuccess", AVSessionCreateSuccess));
     desc.push_back(XL("AVSessionCreateInvalidParam", AVSessionCreateInvalidParam));
     desc.push_back(XL("AVSessionDestroySuccess", AVSessionDestroySuccess));
+    desc.push_back(XL("AVSessionAcquireSessionSuccess", AVSessionAcquireSessionSuccess));
+    desc.push_back(XL("AVSessionAcquireSessionInvalidParam", AVSessionAcquireSessionInvalidParam));
+    desc.push_back(XL("AVSessionCreateAVCastControllerSuccess", AVSessionCreateAVCastControllerSuccess));
+    desc.push_back(XL("AVSessionCreateAVCastControllerInvalidParam", AVSessionCreateAVCastControllerInvalidParam));
+    desc.push_back(XL("AVSessionStopCastingSuccess", AVSessionStopCastingSuccess));
+    desc.push_back(XL("AVSessionStopCastingInvalidParam", AVSessionStopCastingInvalidParam));
+    desc.push_back(XL("AVSessionAcquireOutputDeviceSuccess", AVSessionAcquireOutputDeviceSuccess));
+    desc.push_back(XL("AVSessionAcquireOutputDeviceInvalidParam", AVSessionAcquireOutputDeviceInvalidParam));
+    desc.push_back(XL("AVSessionReleaseOutputDeviceSuccess", AVSessionReleaseOutputDeviceSuccess));
+    desc.push_back(XL("AVSessionReleaseOutputDeviceInvalidParam", AVSessionReleaseOutputDeviceInvalidParam));
+    desc.push_back(XL("AVSessionGetAVCastCategorySuccess", AVSessionGetAVCastCategorySuccess));
+    desc.push_back(XL("AVSessionGetAVCastCategoryInvalidParam", AVSessionGetAVCastCategoryInvalidParam));
+    desc.push_back(XL("AVSessionGetDeviceIdSuccess", AVSessionGetDeviceIdSuccess));
+    desc.push_back(XL("AVSessionGetDeviceIdInvalidParam", AVSessionGetDeviceIdInvalidParam));
+    desc.push_back(XL("AVSessionGetDeviceNameSuccess", AVSessionGetDeviceNameSuccess));
+    desc.push_back(XL("AVSessionGetDeviceNameInvalidParam", AVSessionGetDeviceNameInvalidParam));
+    desc.push_back(XL("AVSessionGetDeviceTypeSuccess", AVSessionGetDeviceTypeSuccess));
+    desc.push_back(XL("AVSessionGetDeviceTypeInvalidParam", AVSessionGetDeviceTypeInvalidParam));
+    desc.push_back(XL("AVSessionGetSupportedProtocolsSuccess", AVSessionGetSupportedProtocolsSuccess));
+    desc.push_back(XL("AVSessionGetSupportedProtocolsInvalidParam", AVSessionGetSupportedProtocolsInvalidParam));
+
 }
 
+static void InitPush4(std::vector<napi_property_descriptor> &desc)
+{
+    desc.push_back(XL("AVMediaDescriptionBuilderCreateSuccess", AVMediaDescriptionBuilderCreateSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderCreateInvalidParam", AVMediaDescriptionBuilderCreateInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderDestroySuccess", AVMediaDescriptionBuilderDestroySuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderDestroyInvalidParam", AVMediaDescriptionBuilderDestroyInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAssetIdSuccess", AVMediaDescriptionBuilderSetAssetIdSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAssetIdInvalidParam",
+        AVMediaDescriptionBuilderSetAssetIdInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetTitleSuccess", AVMediaDescriptionBuilderSetTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetTitleInvalidParam", AVMediaDescriptionBuilderSetTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetSubTitleSuccess", AVMediaDescriptionBuilderSetSubTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetSubTitleInvalidParam",
+        AVMediaDescriptionBuilderSetSubTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetArtistSuccess", AVMediaDescriptionBuilderSetArtistSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetArtistInvalidParam",
+        AVMediaDescriptionBuilderSetArtistInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumCoverUriSuccess",
+        AVMediaDescriptionBuilderSetAlbumCoverUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam",
+        AVMediaDescriptionBuilderSetAlbumCoverUriInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeSuccess", AVMediaDescriptionBuilderSetMediaTypeSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaTypeInvalidParam",
+        AVMediaDescriptionBuilderSetMediaTypeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetLyricContentSuccess",
+        AVMediaDescriptionBuilderSetLyricContentSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetLyricContentInvalidParam",
+        AVMediaDescriptionBuilderSetLyricContentInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetDurationSuccess", AVMediaDescriptionBuilderSetDurationSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetDurationInvalidParam",
+        AVMediaDescriptionBuilderSetDurationInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaUriSuccess", AVMediaDescriptionBuilderSetMediaUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaUriInvalidParam",
+        AVMediaDescriptionBuilderSetMediaUriInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetStartPositionSuccess",
+        AVMediaDescriptionBuilderSetStartPositionSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetStartPositionInvalidParam",
+        AVMediaDescriptionBuilderSetStartPositionInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaSizeSuccess", AVMediaDescriptionBuilderSetMediaSizeSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetMediaSizeInvalidParam",
+        AVMediaDescriptionBuilderSetMediaSizeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumTitleSuccess", AVMediaDescriptionBuilderSetAlbumTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAlbumTitleInvalidParam",
+        AVMediaDescriptionBuilderSetAlbumTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAppNameSuccess", AVMediaDescriptionBuilderSetAppNameSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderSetAppNameInvalidParam",
+        AVMediaDescriptionBuilderSetAppNameInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionBuilderGenerateAVMediaDescriptionSuccess",
+        AVMediaDescriptionBuilderGenerateAVMediaDescriptionSuccess));
+    desc.push_back(XL("AVMediaDescriptionBuilderGenerateAVMediaDescriptionInvalidParam",
+        AVMediaDescriptionBuilderGenerateAVMediaDescriptionInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetAssetIdSuccess", AVMediaDescriptionGetAssetIdSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAssetIdInvalidParam",
+        AVMediaDescriptionGetAssetIdInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetTitleSuccess", AVMediaDescriptionGetTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetTitleInvalidParam",
+        AVMediaDescriptionGetTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetSubTitleSuccess", AVMediaDescriptionGetSubTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetSubTitleInvalidParam",
+        AVMediaDescriptionGetSubTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetArtistSuccess", AVMediaDescriptionGetArtistSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetArtistInvalidParam", AVMediaDescriptionGetArtistInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumCoverUriSuccess", AVMediaDescriptionGetAlbumCoverUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumCoverUriInvalidParam",
+        AVMediaDescriptionGetAlbumCoverUriInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetMediaTypeSuccess", AVMediaDescriptionGetMediaTypeSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetMediaTypeInvalidParam", AVMediaDescriptionGetMediaTypeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetLyricContentSuccess", AVMediaDescriptionGetLyricContentSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetLyricContentInvalidParam",
+        AVMediaDescriptionGetLyricContentInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetDurationSuccess", AVMediaDescriptionGetDurationSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetDurationInvalidParam", AVMediaDescriptionGetDurationInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetMediaUriSuccess", AVMediaDescriptionGetMediaUriSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetMediaUriInvalidParam", AVMediaDescriptionGetMediaUriInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetStartPositionSuccess", AVMediaDescriptionGetStartPositionSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetStartPositionInvalidParam",
+        AVMediaDescriptionGetStartPositionInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetMediaSizeSuccess", AVMediaDescriptionGetMediaSizeSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetMediaSizeInvalidParam", AVMediaDescriptionGetMediaSizeInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumTitleSuccess", AVMediaDescriptionGetAlbumTitleSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAlbumTitleInvalidParam", AVMediaDescriptionGetAlbumTitleInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionGetAppNameSuccess", AVMediaDescriptionGetAppNameSuccess));
+    desc.push_back(XL("AVMediaDescriptionGetAppNameInvalidParam", AVMediaDescriptionGetAppNameInvalidParam));
+    desc.push_back(XL("AVMediaDescriptionDestroySuccess", AVMediaDescriptionDestroySuccess));
+    desc.push_back(XL("AVMediaDescriptionDestroyInvalidParam", AVMediaDescriptionDestroyInvalidParam));
+}
 static napi_value Init(napi_env env, napi_value exports)
 {
     std::vector<napi_property_descriptor> desc;
     InitPush1(desc);
     InitPush2(desc);
     InitPush3(desc);
+    InitPush4(desc);
     napi_define_properties(env, exports, desc.size(), desc.data());
     return exports;
 }

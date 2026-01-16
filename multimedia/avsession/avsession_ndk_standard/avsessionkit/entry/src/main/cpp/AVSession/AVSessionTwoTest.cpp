@@ -122,6 +122,102 @@ napi_value AVSessionUnregisterToggleFavoriteCallbackInvalidParam(napi_env env, n
     return retValue;
 }
 
+napi_value AVSessionRegisterOutputDeviceChangeCallbackSuccess(napi_env env, napi_callback_info info)
+{
+    const char *sessionTag = "MyTag";
+    const char *bundleName = "MyBundleName";
+    const char *abilityName = "MyAbilityName";
+    OH_AVSession *avsession = nullptr;
+    AVSession_Type sessionType = SESSION_TYPE_AUDIO;
+    int32_t createResult = OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
+    OH_AVSessionCallback_OutputDeviceChange outputDeviceChangeback = [](OH_AVSession *session, AVSession_ConnectionState state,
+        AVSession_OutputDeviceInfo* outputDeviceInfo) -> AVSessionCallback_Result {
+        return AVSESSION_CALLBACK_RESULT_SUCCESS;
+    };
+    int32_t callbackResult = OH_AVSession_RegisterOutputDeviceChangeCallback(avsession, outputDeviceChangeback);
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (callbackResult == AV_SESSION_ERR_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionRegisterOutputDeviceChangeCallbackInvalidParam(napi_env env, napi_callback_info info)
+{
+    const char *sessionTag = nullptr;
+    const char *bundleName = nullptr;
+    const char *abilityName = nullptr;
+    OH_AVSession *avsession = nullptr;
+    OH_AVSession **avsessionptr = nullptr;
+    AVSession_Type sessionType;
+    OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, avsessionptr);
+    OH_AVSessionCallback_OutputDeviceChange outputDeviceChangeback = [](OH_AVSession *session, AVSession_ConnectionState state,
+        AVSession_OutputDeviceInfo* outputDeviceInfo) -> AVSessionCallback_Result {
+        return AVSESSION_CALLBACK_RESULT_SUCCESS;
+    };
+    int32_t callbackResult = OH_AVSession_RegisterOutputDeviceChangeCallback(avsession, outputDeviceChangeback);
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (callbackResult == AV_SESSION_ERR_INVALID_PARAMETER) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionUnRegisterOutputDeviceChangeCallbackSuccess(napi_env env, napi_callback_info info)
+{
+    const char *sessionTag = "MyTag";
+    const char *bundleName = "MyBundleName";
+    const char *abilityName = "MyAbilityName";
+    OH_AVSession *avsession = nullptr;
+    AVSession_Type sessionType = SESSION_TYPE_AUDIO;
+    int32_t createResult = OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, &avsession);
+    OH_AVSessionCallback_OutputDeviceChange outputDeviceChangeback = [](OH_AVSession *session, AVSession_ConnectionState state,
+        AVSession_OutputDeviceInfo* outputDeviceInfo) -> AVSessionCallback_Result {
+        return AVSESSION_CALLBACK_RESULT_SUCCESS;
+    };
+    OH_AVSession_RegisterOutputDeviceChangeCallback(avsession, outputDeviceChangeback);
+    int32_t callbackResult = OH_AVSession_UnRegisterOutputDeviceChangeCallback(avsession, outputDeviceChangeback);
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (callbackResult == AV_SESSION_ERR_SUCCESS) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
+napi_value AVSessionUnRegisterOutputDeviceChangeCallbackInvalidParam(napi_env env, napi_callback_info info)
+{
+    const char *sessionTag = nullptr;
+    const char *bundleName = nullptr;
+    const char *abilityName = nullptr;
+    OH_AVSession *avsession = nullptr;
+    OH_AVSession **avsessionptr = nullptr;
+    AVSession_Type sessionType;
+    OH_AVSession_Create(sessionType, sessionTag, bundleName, abilityName, avsessionptr);
+    OH_AVSessionCallback_OutputDeviceChange outputDeviceChangeback = [](OH_AVSession *session, AVSession_ConnectionState state,
+        AVSession_OutputDeviceInfo* outputDeviceInfo) -> AVSessionCallback_Result {
+        return AVSESSION_CALLBACK_RESULT_SUCCESS;
+    };
+    OH_AVSession_RegisterOutputDeviceChangeCallback(avsession, outputDeviceChangeback);
+    int32_t callbackResult = OH_AVSession_UnRegisterOutputDeviceChangeCallback(avsession, outputDeviceChangeback);
+    OH_AVSession_Destroy(avsession);
+    napi_value retValue;
+    if (callbackResult == AV_SESSION_ERR_INVALID_PARAMETER) {
+        napi_create_int32(env, g_trueValue, &retValue);
+    } else {
+        napi_create_int32(env, g_falseValue, &retValue);
+    }
+    return retValue;
+}
+
 napi_value AVSessionErrInvalidParam(napi_env env, napi_callback_info info)
 {
     const char *sessionTag = nullptr;

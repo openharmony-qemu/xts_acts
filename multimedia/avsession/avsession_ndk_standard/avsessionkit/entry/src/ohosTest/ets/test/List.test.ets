@@ -14,9 +14,11 @@
  */
 import AVSessionTest from "./AVSession/AVSessionTest.test";
 import AVSessionTest2 from "./AVSession/AVSessionTest2.test";
+import AVSessionMediaDescriptionTest from "./AVSession/AVSession_MediaDescription_Test.test";
 
 
 export default function testsuite() {
   AVSessionTest()
   AVSessionTest2()
+  AVSessionMediaDescriptionTest()
 }
