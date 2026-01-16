@@ -102,7 +102,7 @@ export default function ActsAceWebViewSdkSchemeHandler2() {
      */
     it('testWebViewSdkSchemeHandler_getPosition', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       emitKey = "emitWebViewSdkSchemeHandler_getPosition"
-      Utils.emitEvent(emitKey, 10);
+      Utils.emitEvent(emitKey, 142311);
       let isReturn = false;
       Utils.registerEvent("testWebViewSdkSchemeHandler_getPosition", true, 142390, done);
       Utils.waitAndClickComponent('webViewSdkSchemeHandler2',driver)
