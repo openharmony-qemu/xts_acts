@@ -879,6 +879,50 @@ Camera_ErrorCode NDKCamera::SessionAddInput(void)
     return ret;
 }
 
+Camera_ErrorCode NDKCamera::MetadataOutputRemoveMetadataObjectTypes()
+{
+    LOG("ndkXTS MetadataOutputRemoveMetadataObjectTypes begin.");
+    uint32_t size = 1;
+    Camera_MetadataObjectType* types = new Camera_MetadataObjectType[size];
+    types[0] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY;
+    Camera_ErrorCode ret = OH_MetadataOutput_RemoveMetadataObjectTypes(metadataOutput_, types, size);
+    if (ret == CAMERA_OK) {
+        LOG("ndkXTS OH_MetadataOutput_RemoveMetadataObjectTypes success.");
+    } else {
+        LOG("ndkXTS OH_MetadataOutput_RemoveMetadataObjectTypes failed. %d ", ret);
+    }
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::MetadataOutputAddMetadataObjectTypes()
+{
+    LOG("ndkXTS MetadataOutputAddMetadataObjectTypes begin.");
+    uint32_t size = 1;
+    Camera_MetadataObjectType* types = new Camera_MetadataObjectType[size];
+    types[0] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY;
+    Camera_ErrorCode ret = OH_MetadataOutput_AddMetadataObjectTypes(metadataOutput_, types, size);
+    if (ret == CAMERA_OK) {
+        LOG("ndkXTS OH_MetadataOutput_AddMetadataObjectTypes success.");
+    } else {
+        LOG("ndkXTS OH_MetadataOutput_AddMetadataObjectTypes failed. %d ", ret);
+    }
+    return ret;
+}
+
+Camera_ErrorCode NDKCamera::CreateMetadataOutputWithObjectTypes()
+{
+    uint32_t size = 2;
+    Camera_MetadataObjectType* types = new Camera_MetadataObjectType[size];
+    types[0] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_HUMAN_BODY;
+    types[1] = Camera_MetadataObjectType::CAMERA_METADATA_OBJECT_TYPE_FACE_DETECTION;
+    ret_ = OH_CameraManager_CreateMetadataOutputWithObjectTypes(cameraManager_, types, size, &metadataOutput_);
+    if (metadataOutput_ == nullptr || ret_ != CAMERA_OK) {
+        LOG("ndkXTS CreateMetadataOutputWithMetadataObjectTypes failed.");
+        return CAMERA_INVALID_ARGUMENT;
+    }
+    return ret_;
+}
+
 Camera_ErrorCode NDKCamera::SessionRemoveInput(void)
 {
     LOG("ndkXTS CaptureSessionRemoveInput begin.");
