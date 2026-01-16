@@ -31,7 +31,7 @@ export default class TestAbility extends UIAbility {
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
     Hypium.hypiumTest(abilityDelegator, abilityDelegatorArguments, testsuite)
-    AppStorage.setOrCreate<common.UIAbilityContext>("UIAbilityContext", this.context)
+    AppStorage.setOrCreate<common.UIAbilityContext>('UIAbilityContext', this.context)
   }
 
   onDestroy() {
@@ -67,7 +67,7 @@ export default class TestAbility extends UIAbility {
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onBackground] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onBackground] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
-          AppStorage.setOrCreate<Array<window.WindowStage>>("onBackground_WindowStage", data)
+          AppStorage.setOrCreate<Array<window.WindowStage>>('onBackground_WindowStage', data)
         })
         .catch((e: Error) => {
           let err = e as BusinessError

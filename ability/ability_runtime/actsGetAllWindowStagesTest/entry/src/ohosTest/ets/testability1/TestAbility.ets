@@ -28,14 +28,14 @@ export default class TestAbility1 extends UIAbility {
     let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    AppStorage.setOrCreate<common.UIAbilityContext>("TestAbility1_UIAbilityContext", this.context)
+    AppStorage.setOrCreate<common.UIAbilityContext>('TestAbility1_UIAbilityContext', this.context)
     try {
       let appcontext = this.context.getApplicationContext();
       appcontext.getAllWindowStages()
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onCreate] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onCreate] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
-          AppStorage.setOrCreate<Array<window.WindowStage>>("onCreate_WindowStage", data)
+          AppStorage.setOrCreate<Array<window.WindowStage>>('onCreate_WindowStage', data)
         })
         .catch((e: Error) => {
           let err = e as BusinessError
@@ -55,7 +55,7 @@ export default class TestAbility1 extends UIAbility {
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onDestroy] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onDestroy] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
-          AppStorage.setOrCreate<Array<window.WindowStage>>("onDestroy_WindowStage", data)
+          AppStorage.setOrCreate<Array<window.WindowStage>>('onDestroy_WindowStage', data)
         })
         .catch((e: Error) => {
           let err = e as BusinessError
@@ -83,7 +83,7 @@ export default class TestAbility1 extends UIAbility {
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onWindowStageCreate] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onWindowStageCreate] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
-          AppStorage.setOrCreate<Array<window.WindowStage>>("onWindowStageCreate_WindowStage", data)
+          AppStorage.setOrCreate<Array<window.WindowStage>>('onWindowStageCreate_WindowStage', data)
         })
         .catch((e: Error) => {
           let err = e as BusinessError
@@ -123,7 +123,7 @@ onWindowStageWillDestroy(windowStage: window.WindowStage): void {
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onWindowStageDestroy] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onWindowStageDestroy] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
-          AppStorage.setOrCreate<Array<window.WindowStage>>("onWindowStageDestroy_WindowStage", data)
+          AppStorage.setOrCreate<Array<window.WindowStage>>('onWindowStageDestroy_WindowStage', data)
         })
         .catch((e: Error) => {
           let err = e as BusinessError
@@ -143,7 +143,7 @@ onWindowStageWillDestroy(windowStage: window.WindowStage): void {
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onForeground] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onForeground] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
-          AppStorage.setOrCreate<Array<window.WindowStage>>("onForeground_WindowStage", data)
+          AppStorage.setOrCreate<Array<window.WindowStage>>('onForeground_WindowStage', data)
         })
         .catch((e: Error) => {
           let err = e as BusinessError

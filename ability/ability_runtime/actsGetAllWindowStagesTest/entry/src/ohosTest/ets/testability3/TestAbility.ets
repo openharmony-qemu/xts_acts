@@ -27,7 +27,7 @@ export default class TestAbility3 extends UIAbility {
     let abilityDelegatorArguments: abilityDelegatorRegistry.AbilityDelegatorArgs;
     abilityDelegatorArguments = abilityDelegatorRegistry.getArguments();
     hilog.info(0x0000, 'testTag', '%{public}s', 'start run testcase!!!');
-    AppStorage.setOrCreate<common.UIAbilityContext>("TestAbility3_UIAbilityContext", this.context)
+    AppStorage.setOrCreate<common.UIAbilityContext>('TestAbility3_UIAbilityContext', this.context)
   }
 
   onDestroy() {
