@@ -78,6 +78,8 @@ export default function SegBtnSelectBackgrountColorTest() {
       expect(selectedBackgroundColor1).assertEqual(selectedBackgroundColor_1);
       expect(selectedBackgroundColor2).assertEqual(selectedBackgroundColor_2);
       expect(selectedBackgroundColor3).assertEqual(selectedBackgroundColor_2);
+      AppStorage.delete('selectedBackgroundColor_1');
+      AppStorage.delete('selectedBackgroundColor_2');
       await CommonFunc.sleep(2000);
       console.info('[SegBtnSelectBackgrountColorTest_001] END');
       done();
