@@ -13,7 +13,7 @@
 
 import("//test/xts/tools/build/suite.gni")
 
-ohos_app_assist_suite("ActsHuks_ndk_main") {
+ohos_app_assist_suite("ActsHuksNdkMainTest") {
   testonly = true
   certificate_profile = "./signature/openharmony_sx.p7b"
   hap_name = "ActsHuksNdkMainTest"
@@ -28,5 +28,5 @@ ohos_js_app_suite("ActsHuksNdkTest") {
   hap_name = "ActsHuksNdkTest"
   subsystem_name = "security"
   part_name = "huks"
-  deps = [ ":ActsHuks_ndk_main" ]
+  deps = [ ":ActsHuksNdkMainTest" ]
 }

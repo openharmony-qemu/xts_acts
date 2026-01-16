@@ -25,7 +25,7 @@ config("module_private_config") {
   ]
 }
 
-ohos_moduletest_suite("ActsHuksNAPITest") {
+ohos_moduletest_suite("ActsHuksNapiTest") {
   configs = [ ":module_private_config" ]
   cflags_cc = [ "-DHILOG_ENABLE" ]
   defines = [
