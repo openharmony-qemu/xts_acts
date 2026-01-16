@@ -15,6 +15,8 @@
 import { describe, beforeAll, it, expect, TestType, Level, Size } from "@ohos/hypium";
 import { BusinessError } from '@ohos.base';
 import text from "@ohos.graphics.text"
+import drawing from "@ohos.graphics.drawing"
+import image from "@ohos.multimedia.image"
 
 async function loadFontByPromiseInvalidParameter(msg: string | null | undefined,
   fontName: string | null | undefined, path: string | Resource | null | undefined, done:Function)
