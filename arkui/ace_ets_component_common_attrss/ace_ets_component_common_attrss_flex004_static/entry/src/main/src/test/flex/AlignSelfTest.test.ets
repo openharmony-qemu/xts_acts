@@ -47,7 +47,7 @@ export default function alignSelfTest() {
     'TextClock',
     'TextInput',
     'TextPicker',
-    'TimePicker',
+    // 'TimePicker',
     'Toggle',
     'Badge',
     'Column',

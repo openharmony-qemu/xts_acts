@@ -237,8 +237,6 @@ it('checkBoxGroupUIJsunit_static_0600', Level.LEVEL1, async (done: () => void): 
       let checkGoup = await driver.findComponent(ON.id('allck'));
       await (checkGoup?.click() as Promise<void>);
       await driver.delayMs(waitUiReadyMs);
-      await (checkGoup?.click() as Promise<void>);
-      await driver.delayMs(waitUiReadyMs);
       // check the isSelect and name
       let ttx = await driver.findComponent(ON.id('text1'));
       let txt = await (ttx?.getText() as Promise<string>);

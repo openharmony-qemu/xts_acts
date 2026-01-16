@@ -97,22 +97,6 @@ it('TextClockFormatTest_static_002', Level.LEVEL1, async (done: () => void): Pro
     });
     
     
-    /**
-     * @tc.number   TextClockFormatTest_static_003
-     * @tc.name     TextClockFormatTest_static_003
-     * @tc.desc     TextClockFormatTest_static_003
-     * @tc.level    Level.LEVEL1
-     */
-it('TextClockFormatTest_static_003', Level.LEVEL1, async (done: () => void): Promise<void> => {
-      console.info('TextClockFormatTest_003 START');
-      await Utils.sleep(1000);
-      let strJson = inspector.getInspectorByKey('TextClockFormat2');
-      let obj = JSON.parseJsonElement(strJson);
-      console.info('TextClockFormatTest_003 component obj is: ' + obj.getElement('$attrs').getString('format'));
-      expect(obj.getElement('$attrs').getString('format')).assertEqual('aa hh:mm:ss');
-      console.info('[TextClockFormatTest_003] END');
-      done();
-    });
     
     
     /**

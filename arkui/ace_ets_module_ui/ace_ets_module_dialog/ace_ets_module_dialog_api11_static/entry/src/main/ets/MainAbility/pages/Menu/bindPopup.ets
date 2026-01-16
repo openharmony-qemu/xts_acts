@@ -166,14 +166,11 @@ struct PopupExample {
   }
 
   private stateChangCallBack: (eventData: emitter.EventData) => void = (eventData: emitter.EventData) => {
-    if (eventData != null) {
-      console.info("customPopupOption page state change called:" + JSON.stringify(eventData));
-      if (((eventData.data) as  ESObject)?.getProperty('enableArrow') != null) {
-        this.enableArrow = ((eventData.data) as  ESObject)!.getProperty('enableArrow').toBoolean() as boolean;
-      }
-      if (((eventData.data) as  ESObject)?.getProperty('maskColor') != null) {
-        this.maskColor = ((eventData.data) as  ESObject)!.getProperty('maskColor').toStaticObject() as ResourceColor;
-      }
+ 	     console.info('hzj_popup: stateChangCallBack')
+ 	     if (eventData != null) {
+ 	       console.info("hzj_popup: customPopupOption page state change called:" + JSON.stringify(eventData.data));
+ 	       this.maskColor = ((eventData.data) as Record<String,undefined|null|Object>)?.['maskColor'] as ResourceColor;
+ 	       this.enableArrow = ((eventData.data) as Record<String,undefined|null|Object>)?.['enableArrow'] as boolean;
     }
   }
 }

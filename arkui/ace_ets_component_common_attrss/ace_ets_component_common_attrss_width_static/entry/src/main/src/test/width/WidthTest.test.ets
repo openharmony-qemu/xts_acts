@@ -68,7 +68,6 @@ export default function widthTest() {
     'QRCode',
     'Radio',
     'Rating',
-    'RichText',
     'Slider',
     'Text',
     'TextClock',

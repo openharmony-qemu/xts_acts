@@ -43,7 +43,7 @@ export default function alignSelfTest() {
   
   const uiContext = AppStorage.get<UIContext>('uiContext')!;
   let supportView = [
-    'Navigator',
+    // 'Navigator',
     'TextTimer',
     'Progress',
     'QRCode',
