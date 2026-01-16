@@ -92,7 +92,8 @@ struct ListItemExample23 {
           })
           .key('lSwipe23Action' + item)
         }, (item: string) => item)
-      }.listDirection(Axis.Horizontal).height('90%')
+      }.listDirection(Axis.Horizontal)
+      .height('70%')
       .width('90%')
 
     }
