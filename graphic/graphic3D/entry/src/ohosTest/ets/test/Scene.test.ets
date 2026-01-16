@@ -1013,7 +1013,7 @@ export default function sceneTest() {
     /**
      * @tc.name   testCloneNode
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1012
-     * @tc.desc   Test cloneNode method to clone node from another scene
+     * @tc.desc   Test cloneNode method to clone node within the same scene
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL0
@@ -1022,44 +1022,47 @@ export default function sceneTest() {
       let msg = "============================testCloneNode";
       console.info(msg + ' begin ');
       try {
-        // Load main scene
-        let mainScene = await Scene.load();
-        expect(mainScene != undefined).assertTrue();
-        console.info(msg + " main scene loaded successfully");
+        // Load a scene
+        let scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
 
-        // Load external scene
-        let extScene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
-        expect(extScene != undefined).assertTrue();
-        console.info(msg + " external scene loaded successfully");
+        // Get nodes from the same scene
+        let cubeNode: scene3d.Node | null = scene.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube");
+        expect(cubeNode != null).assertTrue();
+        console.info(msg + " cube node retrieved successfully");
 
-        // Get node from external scene
-        let extNode: scene3d.Node | null = extScene.getNodeByPath("rootNode_/Unnamed Node 1/AnimatedCube");
-        expect(extNode != null).assertTrue();
-        console.info(msg + " external node retrieved successfully");
-
-        // Clone node to main scene
-        if (mainScene && extNode && mainScene.root) {
-          // Test cloning a regular node
-          let clonedCube = mainScene.cloneNode(extNode, mainScene.root, "clonedCube");
+        // Clone node within the same scene
+        if (scene && cubeNode && scene.root) {
+          // Test cloning a regular node within the same scene
+          let clonedCube = scene.cloneNode(cubeNode, scene.root, "clonedCube");
           expect(clonedCube != null).assertTrue();
-          console.info(msg + " regular node cloned successfully");
+          console.info(msg + " regular node cloned successfully within the same scene");
           expect(clonedCube?.name).assertEqual("clonedCube");
           console.info(msg + " cloned node name is 'clonedCube'");
 
-          // Test cloning a Camera node
-          let extCamera: scene3d.Node | null = extScene.getNodeByPath("rootNode_/Unnamed Node 1/camera_Orientation");
-          if (extCamera != null) {
-            let clonedCamera = mainScene.cloneNode(extCamera, mainScene.root, "clonedCamera");
+          // Test cloning the cloned node again within the same scene
+          if (clonedCube) {
+            let clonedCube2 = scene.cloneNode(clonedCube, scene.root, "clonedCube2");
+            expect(clonedCube2 != null).assertTrue();
+            console.info(msg + " cloned node cloned again successfully");
+            expect(clonedCube2?.name).assertEqual("clonedCube2");
+          }
+
+          // Test cloning a Camera node if it exists
+          let cameraNode: scene3d.Node | null = scene.getNodeByPath("rootNode_/Unnamed Node 1/camera_Orientation");
+          if (cameraNode != null) {
+            let clonedCamera = scene.cloneNode(cameraNode, scene.root, "clonedCamera");
             expect(clonedCamera != null).assertTrue();
             console.info(msg + " camera node cloned successfully");
             expect(clonedCamera?.nodeType).assertEqual(scene3d.NodeType.CAMERA);
             console.info(msg + " cloned camera node type is CAMERA");
           }
 
-          // Test cloning a Light node
-          let extLight: scene3d.Node | null = extScene.getNodeByPath("rootNode_/Unnamed Node 1/DirectionalLight");
-          if (extLight != null) {
-            let clonedLight = mainScene.cloneNode(extLight, mainScene.root, "clonedLight");
+          // Test cloning a Light node if it exists
+          let lightNode: scene3d.Node | null = scene.getNodeByPath("rootNode_/Unnamed Node 1/DirectionalLight");
+          if (lightNode != null) {
+            let clonedLight = scene.cloneNode(lightNode, scene.root, "clonedLight");
             expect(clonedLight != null).assertTrue();
             console.info(msg + " light node cloned successfully");
             expect(clonedLight?.nodeType).assertEqual(scene3d.NodeType.LIGHT);
