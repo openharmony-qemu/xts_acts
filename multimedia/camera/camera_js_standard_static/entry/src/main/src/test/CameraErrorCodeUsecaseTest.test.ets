@@ -1805,12 +1805,12 @@ export default function cameraErrorCodeUsecaseTest() {
     })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100
-     * @tc.desc      : test getCameraDevices api with error code 7400201
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 0
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100
+     * @tc.desc   test getCameraDevices api with error code 7400201
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GETCAMERADEVICES_0100--------------");

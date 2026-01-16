@@ -3346,12 +3346,12 @@ export default function CameraErrorCodeUsecaseTest() {
     })
     
     /**
-     * @tc.number : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100
-     * @tc.name : SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100
-     * @tc.desc : test getCameraDevices api with invalid parameters (error code 7400201)
-     * @tc.size : MEDIUM
-     * @tc.type : Function
-     * @tc.level : Level 0
+     * @tc.number SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100
+     * @tc.desc   test getCameraDevices api with invalid parameters (error code 7400201)
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 0
      */
     it('SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100', Level.LEVEL0, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_ERROR_CODE_USECASE_GET_CAMERA_DEVICES_0100--------------");

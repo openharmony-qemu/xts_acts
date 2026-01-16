@@ -1027,12 +1027,12 @@ export default function cameraManagerTest() {
     // })
 
     /**
-     * @tc.number    : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100
-     * @tc.name      : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100
-     * @tc.desc      : test getCameraDevices api
-     * @tc.size      : MEDIUM
-     * @tc.type      : Function
-     * @tc.level     : Level 1
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100
+     * @tc.desc   test getCameraDevices api
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_STATIC_0100--------------");

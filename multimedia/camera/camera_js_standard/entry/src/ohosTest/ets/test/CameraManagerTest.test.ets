@@ -1142,12 +1142,12 @@ export default function cameraManagerTest() {
     })
 
     /**
-     * @tc.number : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100
-     * @tc.name : SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100
-     * @tc.desc : test getCameraDevices api with valid parameters
-     * @tc.size : MEDIUM
-     * @tc.type : Function
-     * @tc.level : Level 1
+     * @tc.number SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100
+     * @tc.desc   test getCameraDevices api with valid parameters
+     * @tc.size   MEDIUM
+     * @tc.type   Function
+     * @tc.level  Level 1
      */
     it('SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100', Level.LEVEL1, async (done: Function) => {
       console.info("--------------SUB_MULTIMEDIA_CAMERA_GET_CAMERA_DEVICES_0100--------------");
