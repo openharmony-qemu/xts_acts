@@ -67,6 +67,7 @@ export default function List_Space_Percentage() {
       const routerInstance = AppStorage.get<Router>("router") as Router
       await CommonFunc.sleep(1000);
       routerInstance.back()
+      await CommonFunc.sleep(1000);
       console.info("List_Space_Percentage after each called");
     });
 
