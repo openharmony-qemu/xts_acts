@@ -359,7 +359,7 @@ it('ArkUX_Stage_Progress_updateColor_static_0900', Level.LEVEL0, async (done: ()
       }, 1000)
     });
 
-//
+
 //     /**
 //      * @tc.number   ArkUX_Stage_Progress_updateColor_static_1000
 //      * @tc.name     ArkUX_Stage_Progress_updateColor_static_1000
@@ -390,76 +390,6 @@ it('ArkUX_Stage_Progress_updateColor_static_0900', Level.LEVEL0, async (done: ()
 //       }, 3000)
 //       setTimeout(async () => {
 //         let result = inspector.sendEventByKey('ArkUX_Stage_Progress_updateColor_Button_1000', 10, '')
-//         expect(result).assertEqual(true);
-//       }, 1000)
-//     });
-//
-//
-//     /**
-//      * @tc.number   ArkUX_Stage_Progress_updateColor_static_1100
-//      * @tc.name     ArkUX_Stage_Progress_updateColor_static_1100
-//      * @tc.desc     ArkUX_Stage_Progress_updateColor_static_1100
-//      * @tc.level    Level.LEVEL0
-//      */
-// it('ArkUX_Stage_Progress_updateColor_static_1100', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//       console.info('ArkUX_Stage_Progress_updateColor_1100 START');
-//       setTimeout(async () => {
-//         try {
-//           let strJson_default = inspector.getInspectorByKey('ArkUX_Stage_Progress_updateColor_default');
-//           let obj_default = JSON.parseJsonElement(strJson_default);
-//           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Progress_updateColor');
-//           console.info('ArkUX_Stage_Progress_updateColor_1100 START  :' + JSON.stringify(strJson));
-//           let obj = JSON.parseJsonElement(strJson);
-//           console.info("ArkUX_Stage_Progress_updateColor_1100 component obj is: " + JSON.stringify(obj));
-//           console.info("ArkUX_Stage_Progress_updateColor_1100 component obj.$attrs is: " +
-//           JSON.stringify(obj.getElement('$attrs')));
-//           console.info("ArkUX_Stage_Progress_updateColor_1100 component obj.$attrs.updateColor is: " +
-//           JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
-//           expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
-//           console.info('ArkUX_Stage_Progress_updateColor_1100 END ');
-//         } catch (err) {
-//           expect().assertFail();
-//           console.info('ArkUX_Stage_Progress_updateColor_1100 ERR  ' + JSON.stringify(err));
-//         }
-//         done();
-//       }, 3000)
-//       setTimeout(async () => {
-//         let result = inspector.sendEventByKey('ArkUX_Stage_Progress_updateColor_Button_1100', 10, '')
-//         expect(result).assertEqual(true);
-//       }, 1000)
-//     });
-//
-//
-//     /**
-//      * @tc.number   ArkUX_Stage_Progress_updateColor_static_1200
-//      * @tc.name     ArkUX_Stage_Progress_updateColor_static_1200
-//      * @tc.desc     ArkUX_Stage_Progress_updateColor_static_1200
-//      * @tc.level    Level.LEVEL0
-//      */
-// it('ArkUX_Stage_Progress_updateColor_static_1200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//       console.info('ArkUX_Stage_Progress_updateColor_1200 START');
-//       setTimeout(async () => {
-//         try {
-//           let strJson_default = inspector.getInspectorByKey('ArkUX_Stage_Progress_updateColor_default');
-//           let obj_default = JSON.parseJsonElement(strJson_default);
-//           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Progress_updateColor');
-//           console.info('ArkUX_Stage_Progress_updateColor_1200 START  :' + JSON.stringify(strJson));
-//           let obj = JSON.parseJsonElement(strJson);
-//           console.info("ArkUX_Stage_Progress_updateColor_1200 component obj is: " + JSON.stringify(obj));
-//           console.info("ArkUX_Stage_Progress_updateColor_1200 component obj.$attrs is: " +
-//           JSON.stringify(obj.getElement('$attrs')));
-//           console.info("ArkUX_Stage_Progress_updateColor_1200 component obj.$attrs.updateColor is: " +
-//           JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
-//           expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
-//           console.info('ArkUX_Stage_Progress_updateColor_1200 END ');
-//         } catch (err) {
-//           expect().assertFail();
-//           console.info('ArkUX_Stage_Progress_updateColor_1200 ERR  ' + JSON.stringify(err));
-//         }
-//         done();
-//       }, 3000)
-//       setTimeout(async () => {
-//         let result = inspector.sendEventByKey('ArkUX_Stage_Progress_updateColor_Button_1200', 10, '')
 //         expect(result).assertEqual(true);
 //       }, 1000)
 //     });
@@ -531,41 +461,6 @@ it('ArkUX_Stage_Progress_updateColor_static_1400', Level.LEVEL0, async (done: ()
         expect(result).assertEqual(true);
       }, 1000)
     });
-
-
-//     /**
-//      * @tc.number   ArkUX_Stage_Progress_updateColor_static_1500
-//      * @tc.name     ArkUX_Stage_Progress_updateColor_static_1500
-//      * @tc.desc     ArkUX_Stage_Progress_updateColor_static_1500
-//      * @tc.level    Level.LEVEL0
-//      */
-// it('ArkUX_Stage_Progress_updateColor_static_1500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-//       console.info('ArkUX_Stage_Progress_updateColor_1500 START');
-//       setTimeout(async () => {
-//         try {
-//           let strJson_default = inspector.getInspectorByKey('ArkUX_Stage_Progress_updateColor_default');
-//           let obj_default = JSON.parseJsonElement(strJson_default);
-//           let strJson = inspector.getInspectorByKey('ArkUX_Stage_Progress_updateColor');
-//           console.info('ArkUX_Stage_Progress_updateColor_1500 START  :' + JSON.stringify(strJson));
-//           let obj = JSON.parseJsonElement(strJson);
-//           console.info("ArkUX_Stage_Progress_updateColor_1500 component obj is: " + JSON.stringify(obj));
-//           console.info("ArkUX_Stage_Progress_updateColor_1500 component obj.$attrs is: " +
-//           JSON.stringify(obj.getElement('$attrs')));
-//           console.info("ArkUX_Stage_Progress_updateColor_1500 component obj.$attrs.updateColor is: " +
-//           JSON.stringify(obj.getElement('$attrs').getString('updateColor')));
-//           expect(obj.getElement('$attrs').getString('updateColor')).assertEqual(obj_default.getElement('$attrs').getString('updateColor'));
-//           console.info('ArkUX_Stage_Progress_updateColor_1500 END ');
-//         } catch (err) {
-//           expect().assertFail();
-//           console.info('ArkUX_Stage_Progress_updateColor_1500 ERR  ' + JSON.stringify(err));
-//         }
-//         done();
-//       }, 3000)
-//       setTimeout(async () => {
-//         let result = inspector.sendEventByKey('ArkUX_Stage_Progress_updateColor_Button_1500', 10, '')
-//         expect(result).assertEqual(true);
-//       }, 1000)
-//     });
 
 
 

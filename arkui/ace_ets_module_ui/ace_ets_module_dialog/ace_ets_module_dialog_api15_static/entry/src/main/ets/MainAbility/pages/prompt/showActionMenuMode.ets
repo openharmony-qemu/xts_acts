@@ -144,9 +144,10 @@ struct showActionMenuMode {
         Text('返回首页')
           .superFancyText2()
           .onClick((event: ClickEvent) => {
-            // com.arkui.ace.dialog.api15.static({
-            //   url: 'MainAbility/pages/actionSheet/index'
-            // }, router.RouterMode.Standard)
+            const pageRouter = AppStorage.get<Router>('router') as Router
+            pageRouter.pushUrl({
+              url: 'MainAbility/pages/actionSheet/index'
+            }, router.RouterMode.Standard)
           })
           .id('back')
 

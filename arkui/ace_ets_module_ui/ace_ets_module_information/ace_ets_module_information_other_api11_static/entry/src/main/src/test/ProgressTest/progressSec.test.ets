@@ -63,6 +63,16 @@ export default function progressSecTest() {
       console.info("ActsProgressSecTest beforeEach start");
     });
 
+    afterEach(async (): Promise<void> => {
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      let pages:router.RouterState = routerInstance.getState();
+      console.info("get Search state pages afterEach:" + JSON.stringify(pages));
+      if(pages.name == "ProgressSec"){
+        routerInstance.back();
+        await CommonFunc.sleep(1000);
+      }
+    })
+
     // /**
     //  * @tc.number   ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
     //  * @tc.name     ArkUI_Stage_Progress_Capsule_BackgroundColor_static_0100
@@ -5384,66 +5394,35 @@ export default function progressSecTest() {
     });
 
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400
-    //  * @tc.name     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400
-    //  * @tc.desc     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] start");
-    //   let newJson = inspector.getInspectorByKey('progress_capsule_number');
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
-    //
-    //   let progress_capsule_enableSmoothEffect_boolean = null;
-    //   try {
-    //     AppStorage.setOrCreate<boolean|null>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_capsule_number');
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0400] end");
-    //   done();
-    // });
+    /**
+     * @tc.number   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500
+     * @tc.name     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500
+     * @tc.desc     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] start");
+      let newJson = inspector.getInspectorByKey('progress_capsule_number');
+      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
 
+      let progress_capsule_enableSmoothEffect_boolean = undefined;
+      try {
+        AppStorage.setOrCreate<boolean|undefined>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
+      } catch (err) {
+        console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] change component data error: " +
+        (err as BusinessError).message);
+      }
+      await CommonFunc.sleep(2000);
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500
-    //  * @tc.name     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500
-    //  * @tc.desc     ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] start");
-    //   let newJson = inspector.getInspectorByKey('progress_capsule_number');
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
-    //
-    //   let progress_capsule_enableSmoothEffect_boolean = undefined;
-    //   try {
-    //     AppStorage.setOrCreate<boolean|undefined>('progress_capsule_enableSmoothEffect_boolean',progress_capsule_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_capsule_number');
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] end");
-    //   done();
-    // });
+      let strJson = inspector.getInspectorByKey('progress_capsule_number');
+      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500]: " +
+      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
+      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
+      console.info("[ArkUI_Stage_Progress_Capsule_EnableSmoothEffect_0500] end");
+      done();
+    });
 
 
     /**
@@ -5466,35 +5445,35 @@ export default function progressSecTest() {
     });
 
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200
-    //  * @tc.name     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200
-    //  * @tc.desc     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200] start");
-    //   let newJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200]: " + JSON.stringify(newJson));
-    //
-    //   let progress_scaleRing_enableSmoothEffect_boolean = true;
-    //   try {
-    //     AppStorage.setOrCreate<boolean>('progress_scaleRing_enableSmoothEffect_boolean',progress_scaleRing_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200] end");
-    //   done();
-    // });
+    /**
+     * @tc.number   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200
+     * @tc.name     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200
+     * @tc.desc     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200] start");
+      let newJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200]: " + JSON.stringify(newJson));
+
+      let progress_scaleRing_enableSmoothEffect_boolean = true;
+      try {
+        AppStorage.setOrCreate<boolean>('progress_scaleRing_enableSmoothEffect_boolean',progress_scaleRing_enableSmoothEffect_boolean)
+      } catch (err) {
+        console.log("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200] change component data error: " +
+        (err as BusinessError).message);
+      }
+      await CommonFunc.sleep(2000);
+
+      let strJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200]: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200]: " +
+      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
+      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0200] end");
+      done();
+    });
 
 
     /**
@@ -5528,66 +5507,66 @@ export default function progressSecTest() {
     });
 
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400
-    //  * @tc.name     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400
-    //  * @tc.desc     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400] start");
-    //   let newJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
-    //
-    //   let progress_scaleRing_enableSmoothEffect_boolean = undefined;
-    //   try {
-    //     AppStorage.setOrCreate<boolean|undefined>('progress_scaleRing_enableSmoothEffect_boolean',progress_scaleRing_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400] end");
-    //   done();
-    // });
+    /**
+     * @tc.number   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400
+     * @tc.name     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400
+     * @tc.desc     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400] start");
+      let newJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
+
+      let progress_scaleRing_enableSmoothEffect_boolean = undefined;
+      try {
+        AppStorage.setOrCreate<boolean|undefined>('progress_scaleRing_enableSmoothEffect_boolean',progress_scaleRing_enableSmoothEffect_boolean)
+      } catch (err) {
+        console.log("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400] change component data error: " +
+        (err as BusinessError).message);
+      }
+      await CommonFunc.sleep(2000);
+
+      let strJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400]: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400]: " +
+      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
+      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0400] end");
+      done();
+    });
 
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500
-    //  * @tc.name     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500
-    //  * @tc.desc     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500] start");
-    //   let newJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
-    //
-    //   let progress_scaleRing_enableSmoothEffect_boolean = undefined;
-    //   try {
-    //     AppStorage.setOrCreate<boolean|undefined>('progress_scaleRing_enableSmoothEffect_boolean',progress_scaleRing_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500] end");
-    //   done();
-    // });
+    /**
+     * @tc.number   ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500
+     * @tc.name     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500
+     * @tc.desc     ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500] start");
+      let newJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
+
+      let progress_scaleRing_enableSmoothEffect_boolean = undefined;
+      try {
+        AppStorage.setOrCreate<boolean|undefined>('progress_scaleRing_enableSmoothEffect_boolean',progress_scaleRing_enableSmoothEffect_boolean)
+      } catch (err) {
+        console.log("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500] change component data error: " +
+        (err as BusinessError).message);
+      }
+      await CommonFunc.sleep(2000);
+
+      let strJson = inspector.getInspectorByKey('progress_scaleRing_color_number');
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500]: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500]: " +
+      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
+      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
+      console.info("[ArkUI_Stage_Progress_ScaleRing_EnableSmoothEffect_0500] end");
+      done();
+    });
 
 
     /**
@@ -5610,35 +5589,35 @@ export default function progressSecTest() {
     });
 
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200
-    //  * @tc.name     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200
-    //  * @tc.desc     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200] start");
-    //   let newJson = inspector.getInspectorByKey('progress_eclipse_color_number');
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200]: " + JSON.stringify(newJson));
-    //
-    //   let progress_eclipse_enableSmoothEffect_boolean = true;
-    //   try {
-    //     AppStorage.setOrCreate<boolean>('progress_eclipse_enableSmoothEffect_boolean',progress_eclipse_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_eclipse_color_number');
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200] end");
-    //   done();
-    // });
+    /**
+     * @tc.number   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200
+     * @tc.name     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200
+     * @tc.desc     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0200', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200] start");
+      let newJson = inspector.getInspectorByKey('progress_eclipse_color_number');
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200]: " + JSON.stringify(newJson));
+
+      let progress_eclipse_enableSmoothEffect_boolean = true;
+      try {
+        AppStorage.setOrCreate<boolean>('progress_eclipse_enableSmoothEffect_boolean',progress_eclipse_enableSmoothEffect_boolean)
+      } catch (err) {
+        console.log("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200] change component data error: " +
+        (err as BusinessError).message);
+      }
+      await CommonFunc.sleep(2000);
+
+      let strJson = inspector.getInspectorByKey('progress_eclipse_color_number');
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200]: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200]: " +
+      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
+      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0200] end");
+      done();
+    });
 
 
     /**
@@ -5672,66 +5651,66 @@ export default function progressSecTest() {
     });
 
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400
-    //  * @tc.name     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400
-    //  * @tc.desc     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400] start");
-    //   let newJson = inspector.getInspectorByKey('progress_eclipse_color_number');
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
-    //
-    //   let progress_eclipse_enableSmoothEffect_boolean = undefined;
-    //   try {
-    //     AppStorage.setOrCreate<boolean|undefined>('progress_eclipse_enableSmoothEffect_boolean',progress_eclipse_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_eclipse_color_number');
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400] end");
-    //   done();
-    // });
+    /**
+     * @tc.number   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400
+     * @tc.name     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400
+     * @tc.desc     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0400', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400] start");
+      let newJson = inspector.getInspectorByKey('progress_eclipse_color_number');
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400]: " + JSON.stringify(newJson));
+
+      let progress_eclipse_enableSmoothEffect_boolean = undefined;
+      try {
+        AppStorage.setOrCreate<boolean|undefined>('progress_eclipse_enableSmoothEffect_boolean',progress_eclipse_enableSmoothEffect_boolean)
+      } catch (err) {
+        console.log("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400] change component data error: " +
+        (err as BusinessError).message);
+      }
+      await CommonFunc.sleep(2000);
+
+      let strJson = inspector.getInspectorByKey('progress_eclipse_color_number');
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400]: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400]: " +
+      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
+      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0400] end");
+      done();
+    });
 
 
-    // /**
-    //  * @tc.number   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500
-    //  * @tc.name     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500
-    //  * @tc.desc     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500
-    //  * @tc.level    Level.LEVEL0
-    //  */
-    // it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500] start");
-    //   let newJson = inspector.getInspectorByKey('progress_eclipse_color_number');
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
-    //
-    //   let progress_eclipse_enableSmoothEffect_boolean = undefined;
-    //   try {
-    //     AppStorage.setOrCreate<boolean|undefined>('progress_eclipse_enableSmoothEffect_boolean',progress_eclipse_enableSmoothEffect_boolean)
-    //   } catch (err) {
-    //     console.log("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500] change component data error: " +
-    //     (err as BusinessError).message);
-    //   }
-    //   await CommonFunc.sleep(2000);
-    //
-    //   let strJson = inspector.getInspectorByKey('progress_eclipse_color_number');
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500]: " + JSON.stringify(strJson))
-    //   let obj = JSON.parseJsonElement(strJson);
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500]: " +
-    //   JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
-    //   expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
-    //   console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500] end");
-    //   done();
-    // });
+    /**
+     * @tc.number   ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500
+     * @tc.name     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500
+     * @tc.desc     ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500
+     * @tc.level    Level.LEVEL0
+     */
+    it('ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_static_0500', Level.LEVEL0, async (done: () => void): Promise<void> => {
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500] start");
+      let newJson = inspector.getInspectorByKey('progress_eclipse_color_number');
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500]: " + JSON.stringify(newJson));
+
+      let progress_eclipse_enableSmoothEffect_boolean = undefined;
+      try {
+        AppStorage.setOrCreate<boolean|undefined>('progress_eclipse_enableSmoothEffect_boolean',progress_eclipse_enableSmoothEffect_boolean)
+      } catch (err) {
+        console.log("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500] change component data error: " +
+        (err as BusinessError).message);
+      }
+      await CommonFunc.sleep(2000);
+
+      let strJson = inspector.getInspectorByKey('progress_eclipse_color_number');
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500]: " + JSON.stringify(strJson))
+      let obj = JSON.parseJsonElement(strJson);
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500]: " +
+      JSON.stringify(obj.getElement('$attrs').getString('enableSmoothEffect')));
+      expect(obj.getElement('$attrs').getString('enableSmoothEffect')).assertEqual("true");
+      console.info("[ArkUI_Stage_Progress_Eclipse_EnableSmoothEffect_0500] end");
+      done();
+    });
   })
 }
 function progressFontWeight(sysFontWeight: Resource):string {
