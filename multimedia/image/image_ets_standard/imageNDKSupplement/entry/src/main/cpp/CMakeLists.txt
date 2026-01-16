@@ -60,7 +60,8 @@ add_library(imageEffect SHARED
     OHImageNdkFrameworkTest.cpp
     ImageSourceNativeModifySuppTest.cpp
     PixelmapNativeCropTest.cpp
-    ImagePackerNativeTest.cpp)
+    ImagePackerNativeTest.cpp
+    ImageOHImageSourceInfoCreateTest.cpp)
 
 
 find_library(

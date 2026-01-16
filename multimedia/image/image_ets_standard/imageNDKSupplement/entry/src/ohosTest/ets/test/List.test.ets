@@ -54,6 +54,7 @@ import OHImageNdkFrameworkTest from './OHImageNdkFrameworkTest.test';
 import imageFrameworkImageSourceNativeModifySuppTest from './ImageSourceNativeModify.test';
 import PixelMapNativeCropTest from './PixelmapNativeCropTest.test';
 import ImagePackerNativeTest from './ImagePackerNativeTest.test';
+import ImageOHImageSourceInfoCreate from './ImageOHImageSourceInfoCreate.test';
 
 export default function testsuite() {
   ImageEffectSuppTest();
@@ -97,4 +98,5 @@ export default function testsuite() {
   imageFrameworkImageSourceNativeModifySuppTest();
   PixelMapNativeCropTest();
   ImagePackerNativeTest();
+  ImageOHImageSourceInfoCreate();
 }
