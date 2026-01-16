@@ -1436,6 +1436,23 @@ static napi_value OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode(napi_env env,
+    napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->GetSupportedFullCameraOutputCapabilityWithSceneMode(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
 static napi_value OHCaptureSessionSetSessionMode(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -2098,6 +2115,22 @@ static napi_value OHPhotoNativeGetMainImage(napi_env env, napi_callback_info inf
     napi_create_int32(env, code, &result);
     return result;
 }
+static napi_value OHPhotoNativeGetUncompressedImage(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->GetUncompressedImage(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
 static napi_value OHPhotoNativeRelease(napi_env env, napi_callback_info info)
 {
     size_t argc = 1;
@@ -2126,6 +2159,22 @@ static napi_value OHCameraManagerCreatePhotoOutputWithoutSurface(napi_env env, n
     napi_get_value_int32(env, args[0], &index);
 
     Camera_ErrorCode code = ndkCamera_->CreatePhotoOutputWithoutSurface(index);
+
+    napi_create_int32(env, code, &result);
+    return result;
+}
+static napi_value OHCameraManagerCreateYuvPhotoOutputWithoutSurface(napi_env env, napi_callback_info info)
+{
+    size_t argc = 1;
+    napi_value args[1] = {nullptr};
+    napi_value result;
+
+    napi_get_cb_info(env, info, &argc, args, nullptr, nullptr);
+
+    int32_t index;
+    napi_get_value_int32(env, args[0], &index);
+
+    Camera_ErrorCode code = ndkCamera_->CreateYuvPhotoOutputWithoutSurface(index);
 
     napi_create_int32(env, code, &result);
     return result;
@@ -3289,6 +3338,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"oHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode", nullptr,
             OHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        {"oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode", nullptr,
+            OHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode, nullptr, nullptr, nullptr, napi_default,
+            nullptr},
         {"oHCaptureSessionSetSessionMode", nullptr, OHCaptureSessionSetSessionMode, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"oHCaptureSessionCanAddInput", nullptr, OHCaptureSessionCanAddInput, nullptr, nullptr, nullptr, napi_default,
@@ -3435,10 +3487,14 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"oHPhotoNativeGetMainImage", nullptr, OHPhotoNativeGetMainImage, nullptr, nullptr, nullptr, napi_default,
             nullptr},
+        {"oHPhotoNativeGetUncompressedImage", nullptr, OHPhotoNativeGetUncompressedImage, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
         {"oHPhotoNativeRelease", nullptr, OHPhotoNativeRelease, nullptr, nullptr, nullptr, napi_default,
             nullptr},
         {"oHCameraManagerCreatePhotoOutputWithoutSurface", nullptr, OHCameraManagerCreatePhotoOutputWithoutSurface,
             nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"oHCameraManagerCreateYuvPhotoOutputWithoutSurface", nullptr,
+            OHCameraManagerCreateYuvPhotoOutputWithoutSurface, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"releaseCamera", nullptr, ReleaseCamera, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"readyCreatePhotoOutputWithoutSurface", nullptr, ReadyCreatePhotoOutputWithoutSurface, nullptr, nullptr,
             nullptr, napi_default, nullptr},

@@ -390,6 +390,8 @@ export const oHCameraManagerDeleteSceneModes: (index:number) => number;
 
 export const oHCameraManagerGetSupportedCameraOutputCapabilityWithSceneMode: (index:number) => number;
 
+export const oHCameraManagerGetSupportedFullCameraOutputCapabilityWithSceneMode: (index:number) => number;
+
 export const oHCaptureSessionSetSessionMode: (index:number) => number;
 
 export const oHCaptureSessionCanAddInput: (index:number) => canAddInput;
@@ -456,9 +458,13 @@ export const oHPhotoOutputSetPhotoQualityPrioritization: (a:number, b:number) =>
 
 export const oHPhotoNativeGetMainImage: (index:number) => number;
 
+export const oHPhotoNativeGetUncompressedImage: (index:number) => number;
+
 export const oHPhotoNativeRelease: (index:number) => number;
 
 export const oHCameraManagerCreatePhotoOutputWithoutSurface: (index:number) => number;
+
+export const oHCameraManagerCreateYuvPhotoOutputWithoutSurface: (index:number) => number;
 
 export const releaseCamera: () => number;
 

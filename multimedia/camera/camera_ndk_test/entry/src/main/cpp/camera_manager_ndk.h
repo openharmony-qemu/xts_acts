@@ -137,6 +137,7 @@ public:
     bool isPhotoQualityPrioritizationSupported_;
     OH_PhotoNative *photoNative_;
     OH_ImageNative *mainImage_;
+    OH_PictureNative *pictureNative_;
     bool isTorchSupported_;
     bool isTorchSupportedByTorchMode_;
     Camera_TorchMode torchMode_;
@@ -160,6 +161,7 @@ public:
 
     //callback
     static CameraCallbackCode cameraCallbackCode_;
+    static OH_PhotoNative* g_photoNative;
 
     Camera_ErrorCode CreateCameraInput(void);
     Camera_ErrorCode CreateCameraInputWithPositionAndType(Camera_Position position, Camera_Type type);
@@ -314,6 +316,7 @@ public:
     Camera_ErrorCode GetSupportedSceneModes(int useCaseCode);
     Camera_ErrorCode DeleteSceneModes(int useCaseCode);
     Camera_ErrorCode GetSupportedCameraOutputCapabilityWithSceneMode(int useCaseCode);
+    Camera_ErrorCode GetSupportedFullCameraOutputCapabilityWithSceneMode(int useCaseCode);
     Camera_ErrorCode SetSessionMode(int useCaseCode);
     Camera_ErrorCode CanAddInput(int useCaseCode);
     Camera_ErrorCode CanAddPreviewOutput(int useCaseCode);
@@ -348,8 +351,10 @@ public:
     Camera_ErrorCode IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality);
     Camera_ErrorCode SetPhotoQualityPrioritization(int useCaseCode, int quality);
     Camera_ErrorCode GetMainImage(int useCaseCode);
+    Camera_ErrorCode GetUncompressedImage(int useCaseCode);
     Camera_ErrorCode PhotoNativeRelease(int useCaseCode);
     Camera_ErrorCode CreatePhotoOutputWithoutSurface(int useCaseCode);
+    Camera_ErrorCode CreateYuvPhotoOutputWithoutSurface(int useCaseCode);
 	
     Camera_ErrorCode TorchMode(int useCaseCode);
     Camera_ErrorCode IsTorchSupported(int useCaseCode);
