@@ -440,6 +440,9 @@ napi_value EnumVVCProfile15(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile1(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG2_PROFILE_SIMPLE, 1);
     napi_value retValue;
     if (res) {
@@ -453,6 +456,9 @@ napi_value EnumMPEGProfile1(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile2(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG2_PROFILE_MAIN, 1);
     napi_value retValue;
     if (res) {
@@ -466,6 +472,9 @@ napi_value EnumMPEGProfile2(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile3(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG2_PROFILE_SNR_SCALABLE, 1);
     napi_value retValue;
     if (res) {
@@ -479,6 +488,9 @@ napi_value EnumMPEGProfile3(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile4(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG2_PROFILE_SPATIALLY_SCALABLE, 1);
     napi_value retValue;
     if (res) {
@@ -492,6 +504,9 @@ napi_value EnumMPEGProfile4(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile5(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG2_PROFILE_HIGH, 1);
     napi_value retValue;
     if (res) {
@@ -505,6 +520,9 @@ napi_value EnumMPEGProfile5(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile6(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG2_PROFILE_422, 1);
     napi_value retValue;
     if (res) {
@@ -518,6 +536,9 @@ napi_value EnumMPEGProfile6(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile7(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_SIMPLE, 1);
     napi_value retValue;
     if (res) {
@@ -531,6 +552,9 @@ napi_value EnumMPEGProfile7(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile8(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_SIMPLE_SCALABLE, 1);
     napi_value retValue;
     if (res) {
@@ -544,6 +568,9 @@ napi_value EnumMPEGProfile8(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile9(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_CORE, 1);
     napi_value retValue;
     if (res) {
@@ -557,6 +584,9 @@ napi_value EnumMPEGProfile9(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile10(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_MAIN, 1);
     napi_value retValue;
     if (res) {
@@ -570,6 +600,9 @@ napi_value EnumMPEGProfile10(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile11(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG2, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_N_BIT, 1);
     napi_value retValue;
     if (res) {
@@ -583,6 +616,9 @@ napi_value EnumMPEGProfile11(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile12(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_HYBRID, MPEG4_LEVEL_2);
     napi_value retValue;
     if (res) {
@@ -596,6 +632,9 @@ napi_value EnumMPEGProfile12(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile13(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res =
         OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_BASIC_ANIMATED_TEXTURE, MPEG4_LEVEL_2);
     napi_value retValue;
@@ -610,6 +649,9 @@ napi_value EnumMPEGProfile13(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile14(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_SCALABLE_TEXTURE, MPEG4_LEVEL_1);
     napi_value retValue;
     if (res) {
@@ -623,6 +665,9 @@ napi_value EnumMPEGProfile14(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile15(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_SIMPLE_FA, MPEG4_LEVEL_2);
     napi_value retValue;
     if (res) {
@@ -636,6 +681,9 @@ napi_value EnumMPEGProfile15(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile16(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res =
         OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_ADVANCED_REAL_TIME_SIMPLE, MPEG4_LEVEL_4);
     napi_value retValue;
@@ -650,6 +698,9 @@ napi_value EnumMPEGProfile16(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile17(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_CORE_SCALABLE, MPEG4_LEVEL_3);
     napi_value retValue;
     if (res) {
@@ -663,6 +714,9 @@ napi_value EnumMPEGProfile17(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile18(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_ADVANCED_CODING_EFFICIENCY,
                                                            MPEG4_LEVEL_3);
     napi_value retValue;
@@ -677,6 +731,9 @@ napi_value EnumMPEGProfile18(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile19(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_ADVANCED_CORE, MPEG4_LEVEL_2);
     napi_value retValue;
     if (res) {
@@ -690,6 +747,9 @@ napi_value EnumMPEGProfile19(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile20(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res =
         OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_ADVANCED_SCALABLE_TEXTURE, MPEG4_LEVEL_3);
     napi_value retValue;
@@ -704,6 +764,9 @@ napi_value EnumMPEGProfile20(napi_env env, napi_callback_info info)
 napi_value EnumMPEGProfile21(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_MPEG4, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, MPEG4_PROFILE_ADVANCED_SIMPLE, MPEG4_LEVEL_5);
     napi_value retValue;
     if (res) {
@@ -717,6 +780,9 @@ napi_value EnumMPEGProfile21(napi_env env, napi_callback_info info)
 napi_value EnumOHH263Profile1(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res = OH_AVCapability_AreProfileAndLevelSupported(capability, H263_PROFILE_BASELINE, 1);
     napi_value retValue;
     if (res) {
@@ -730,6 +796,9 @@ napi_value EnumOHH263Profile1(napi_env env, napi_callback_info info)
 napi_value EnumOHH263Profile2(napi_env env, napi_callback_info info)
 {
     OH_AVCapability *capability = OH_AVCodec_GetCapabilityByCategory(OH_AVCODEC_MIMETYPE_VIDEO_H263, false, SOFTWARE);
+    if (capability == nullptr) {
+        return 0;
+    }
     bool res =
         OH_AVCapability_AreProfileAndLevelSupported(capability, H263_PROFILE_VERSION_1_BACKWARD_COMPATIBILITY, 1);
     napi_value retValue;
