@@ -78,7 +78,7 @@ struct CustomLayout1 {
   onPlaceChildren(selfLayoutInfo: GeometryInfo, children: Array<Layoutable>, constraint: ConstraintSizeOptions) {
     let prev: number = 0;
     children.forEach((child, index) => {
-      AppStorage.setOrCreate<number>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_' + index, child.uniqueId!)
+      AppStorage.setOrCreate<Int>('CustomLayoutUniqueid_onPlaceChildren_UniqueId_' + index, child.uniqueId!)
       let pos: number = prev + 10;
       prev = pos + child.measureResult.width
       child.layout({ x: pos, y: 0 })
@@ -88,10 +88,10 @@ struct CustomLayout1 {
   onMeasureSize(selfLayoutInfo: GeometryInfo, children: Array<Measurable>, constraint: ConstraintSizeOptions) {
     let size = 100;
     children.forEach((child, index) => {
-      AppStorage.setOrCreate<number>('CustomLayoutUniqueid_onMeasureSize_UniqueId_' + index, child.uniqueId!)
+      AppStorage.setOrCreate<Int>('CustomLayoutUniqueid_onMeasureSize_UniqueId_' + index, child.uniqueId!)
       const uiContext = this.getUIContext()
       const nodeContainerFrameNode = uiContext.getFrameNodeById('CustomLayoutUniqueid_NodeContainer_' + index)
-      AppStorage.setOrCreate<number>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_' + index, child.uniqueId!)
+      AppStorage.setOrCreate<Int>('CustomLayoutUniqueid_onMeasureSize_FrameNode_UniqueId_' + index, child.uniqueId!)
       if (uiContext) {
         let node: FrameNode | null =
           uiContext.getFrameNodeByUniqueId(child.uniqueId! as Int)
