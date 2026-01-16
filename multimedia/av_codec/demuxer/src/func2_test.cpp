@@ -2101,8 +2101,6 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_FUNCTION_ADD_0030, TestSize.Level2)
     }
 }
 
-
-
 /**
  * @tc.name   DEMUXER_SKIP_SAMPLE_FUNC_0010
  * @tc.number DEMUXER_SKIP_SAMPLE_FUNC_0010
