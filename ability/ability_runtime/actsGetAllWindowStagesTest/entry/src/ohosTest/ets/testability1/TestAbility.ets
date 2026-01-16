@@ -164,7 +164,7 @@ onWindowStageWillDestroy(windowStage: window.WindowStage): void {
         .then((data: Array<window.WindowStage>) => {
           hilog.info(0x0000, 'testTag', `[onBackground] getAllWindowStages size ${data.length}`);
           hilog.info(0x0000, 'testTag', '[onBackground] getAllWindowStages successfully. Data: ' + JSON.stringify(data));
-          AppStorage.setOrCreate<Array<window.WindowStage>>("onBackground_WindowStage", data)
+          AppStorage.setOrCreate<Array<window.WindowStage>>('onBackground_WindowStage', data)
         })
         .catch((e: Error) => {
           let err = e as BusinessError
