@@ -128,8 +128,8 @@ export default function ChipOnClose() {
       await CommonFunc.sleep(5000);
       let strJson4 = getInspectorByKey('progressTotal');
       let obj4: Record<string, ESObject> = JSON.parse(strJson4);
-      let total4 = JSON.stringify(obj3.$attrs.content).replace(/"/g, '').split(':')[1]
-      expect(total4).assertEqual('2147483647');
+      let total4 = JSON.stringify(obj4.$attrs.content).replace(/"/g, '').split(':')[1]
+      expect(total4).assertEqual('2147483648');
       console.info('arcButtonProgress_0200 END');
       done();
     });
