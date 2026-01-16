@@ -3170,13 +3170,13 @@ export default function abilityTest() {
       try {
         let licenseResponseByte:Uint8Array;
         let sign = 1;
-        keySession!.on('keyRequired', (eventInfo) => {
+        keySession!.onKeyRequired((eventInfo) => {
           console.info('bbbbb receive keyRequired ' + eventInfo.info);
           console.info('bbbbb receive keyRequired ' + eventInfo.extraInfo);
           sign = 2;
           expect(sign).assertEqual(2);
           console.info("XX SESSION_ON_OFF_0100 2 is ",sign)
-          keySession!.off('keyRequired');
+          keySession!.offKeyRequired();
           keySession!.destroy();
           mediaKeySystem!.destroy();
           done();
@@ -3255,12 +3255,12 @@ export default function abilityTest() {
       try {
         let licenseResponseByte:Uint8Array;
         let sign = 1;
-        keySession!.on('keyRequired', (eventInfo) => {
+        keySession!.onKeyRequired((eventInfo) => {
           console.info('bbbbb receive keyRequired ' + eventInfo.info);
           console.info('bbbbb receive keyRequired ' + eventInfo.extraInfo);
           sign = 2;
         });
-        keySession!.off('keyRequired');
+        keySession!.offKeyRequired();
         let base64 = new util.Base64Helper();
         let uint8pssh = base64.decodeSync('AAAA73Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAM97InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoieHV4aW5zdyIsImtpZHMiOlsiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDAiLCJhY2EyNTVlNWIyZGRlMmU0YzhiYjdjMTY2Y2VhYzEwMSIsImFjYTI1NWU1YjJkZGUyZTRjOGJiN2MxNjZjZWFjMTAxIiwiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDEiXSwiZW5zY2hlbWEiOiJjYmMxIn0=');
         let optionalData:drm.OptionsData[] = [{
@@ -3340,7 +3340,7 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           }
           let sign = 1;
-          keySession!.on('keyExpired', (eventInfo) => {
+          keySession!.onKeyExpired((eventInfo) => {
             console.info('bbbbb receive keyExpired ' + eventInfo.info);
             console.info('bbbbb receive keyExpired ' + eventInfo.extraInfo);
             sign = 2;
@@ -3366,7 +3366,7 @@ export default function abilityTest() {
                 keySession!.processMediaKeyResponse(responseArray).then((keyId) => {
                   await Utils.msSleep(1000);
                   expect(sign).assertEqual(2);
-                  keySession!.off('keyExpired');
+                  keySession!.offKeyExpired();
                   keySession!.destroy();
                   mediaKeySystem!.destroy();
                   console.log("XX SESSION_ON_OFF_0300 keyExpired success");
@@ -3434,12 +3434,12 @@ export default function abilityTest() {
           }
 
           let sign = 1;
-          keySession!.on('keyExpired', (eventInfo) => {
+          keySession!.onKeyExpired((eventInfo) => {
             console.info('bbbbb receive keyExpired ' + eventInfo.info);
             console.info('bbbbb receive keyExpired ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('keyExpired');
+          keySession!.offkeyExpired();
           let base64 = new util.Base64Helper();
           let uint8pssh =
             base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
@@ -3526,7 +3526,7 @@ export default function abilityTest() {
       try {
         if(isClearPlay){
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
@@ -3553,7 +3553,7 @@ export default function abilityTest() {
                   keySession!.restoreOfflineMediaKeys(keyArray).then(() => {
                     await Utils.msSleep(1000);
                     expect(sign).assertEqual(2);
-                    keySession!.off('expirationUpdate');
+                    keySession!.offExpirationUpdate();
                     keySession!.destroy();
                     mediaKeySystem!.destroy();
                     console.log("XX SESSION_ON_OFF_0500 expirationUpdate success");
@@ -3595,7 +3595,7 @@ export default function abilityTest() {
           });
         } else {
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
@@ -3615,7 +3615,7 @@ export default function abilityTest() {
               console.info("XX SESSION_ON_OFF_0500 expirationUpdate sign is ",sign);
               await Utils.msSleep(1000);
               expect(sign).assertEqual(2);
-              keySession!.off('expirationUpdate');
+              keySession!.offExpirationUpdate();
               keySession!.destroy();
               mediaKeySystem!.destroy();
               console.info("XX SESSION_ON_OFF_0500 expirationUpdate success");
@@ -3674,12 +3674,12 @@ export default function abilityTest() {
       try {
         if(isClearPlay){
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('expirationUpdate');
+          keySession!.offExpirationUpdate();
           let base64 = new util.Base64Helper();
           let uint8pssh =
             base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
@@ -3750,12 +3750,12 @@ export default function abilityTest() {
           });
         } else {
           let sign = 1;
-          keySession!.on('expirationUpdate', (eventInfo) => {
+          keySession!.onExpirationUpdate((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('expirationUpdate');
+          keySession!.offExpirationUpdate();
           let base64 = new util.Base64Helper();
           let uint8pssh = base64.decodeSync('AAAA73Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAM97InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoieHV4aW5zdyIsImtpZHMiOlsiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDAiLCJhY2EyNTVlNWIyZGRlMmU0YzhiYjdjMTY2Y2VhYzEwMSIsImFjYTI1NWU1YjJkZGUyZTRjOGJiN2MxNjZjZWFjMTAxIiwiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDEiXSwiZW5zY2hlbWEiOiJjYmMxIn0=');
           let optionalData:drm.OptionsData[] = [{
@@ -3828,7 +3828,7 @@ export default function abilityTest() {
     
       try {
         let sign = 1;
-        keySession!.on('keysChange', (keyInfo, newKeyAvailable) => {
+        keySession!.onKeysChange((keyInfo, newKeyAvailable) => {
           console.info('bbbbb receive keysChange newKeyAvailable:' + newKeyAvailable);
           for (let index = 0; index < keyInfo.length; index++) {
             console.info('bbbbb receive keysChange index:' + index);
@@ -3870,7 +3870,7 @@ export default function abilityTest() {
               keySession!.processMediaKeyResponse(responseArray2).then((keyId) => {
                 await Utils.msSleep(1000);
                 expect(sign).assertEqual(2);
-                keySession!.off('keysChange');
+                keySession!.offKeysChange();
                 keySession!.destroy();
                 mediaKeySystem!.destroy();
                 console.log("XX SESSION_ON_OFF_0700 keysChange success");
@@ -3934,7 +3934,7 @@ export default function abilityTest() {
     
       try {
         let sign = 1;
-        keySession!.on('keysChange', (keyInfo, newKeyAvailable) => {
+        keySession!.onKeysChange((keyInfo, newKeyAvailable) => {
           console.info('bbbbb receive keysChange newKeyAvailable:' + newKeyAvailable);
           for (let index = 0; index < keyInfo.length; index++) {
             console.info('bbbbb receive keysChange index:' + index);
@@ -3943,7 +3943,7 @@ export default function abilityTest() {
           }
           sign = 2;
         });
-        keySession!.off('keysChange');
+        keySession!.offKeysChange();
         let responseArray:Uint8Array;
         let responseArray2:Uint8Array;
         let base64 = new util.Base64Helper();
@@ -3977,7 +3977,7 @@ export default function abilityTest() {
               keySession!.processMediaKeyResponse(responseArray2).then((keyId) => {
                 await Utils.msSleep(1000);
                 expect(sign).assertEqual(1);
-                keySession!.off('keysChange');
+                keySession!.offKeysChange();
                 keySession!.destroy();
                 mediaKeySystem!.destroy();
                 console.log("XX SESSION_ON_OFF_0700 keysChange success");
@@ -4031,7 +4031,7 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           }
           let sign = 1;
-          mediaKeySystem!.on('keySystemRequired', (eventInfo) => {
+          mediaKeySystem!.onKeySystemRequired((eventInfo) => {
             console.info('bbbbb receive keySystemRequired ' + eventInfo.info);
             console.info('bbbbb receive keySystemRequired ' + eventInfo.extraInfo);
             sign = 2;
@@ -4047,7 +4047,7 @@ export default function abilityTest() {
             mediaKeySystem!.processKeySystemResponse(arry).then(() => {
               await Utils.msSleep(1000);
               expect(sign).assertEqual(2);
-              mediaKeySystem!.off('keySystemRequired');
+              mediaKeySystem!.offKeySystemRequired();
               mediaKeySystem!.destroy();
               console.log("XX SESSION_ON_OFF_0900 keySystemRequired success");
               done();
@@ -4093,12 +4093,12 @@ export default function abilityTest() {
             expect(false).assertEqual(true);
           }
           let sign = 1;
-          mediaKeySystem!.on('keySystemRequired', (eventInfo) => {
+          mediaKeySystem!.onKeySystemRequired((eventInfo) => {
             console.info('bbbbb receive keySystemRequired ' + eventInfo.info);
             console.info('bbbbb receive keySystemRequired ' + eventInfo.extraInfo);
             sign = 2;
           });
-          mediaKeySystem!.off('keySystemRequired');
+          mediaKeySystem!.offKeySystemRequired();
           mediaKeySystem!.generateKeySystemRequest().then((drmRequest) => {
             console.log("XX SESSION_ON_OFF_1000 generateKeySystemRequest end", drmRequest.data, drmRequest.defaultURL);
             console.log("XX SESSION_ON_OFF_1000 processKeySystemResponse start");
@@ -4166,12 +4166,12 @@ export default function abilityTest() {
       try {
         if(isClearPlay){
           let sign = 1;
-          keySession!.on('vendorDefined', (eventInfo) => {
+          keySession!.onVendorDefined((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('vendorDefined');
+          keySession!.offVendorDefined();
           let base64 = new util.Base64Helper();
           let uint8pssh =
             base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
@@ -4242,12 +4242,12 @@ export default function abilityTest() {
           });
         } else {
           let sign = 1;
-          keySession!.on('vendorDefined', (eventInfo) => {
+          keySession!.onVendorDefined((eventInfo) => {
             console.info('bbbbb receive expirationUpdate ' + eventInfo.info);
             console.info('bbbbb receive expirationUpdate ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.off('vendorDefined');
+          keySession!.offVendorDefined();
           let base64 = new util.Base64Helper();
           let uint8pssh = base64.decodeSync('AAAA73Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAM97InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoieHV4aW5zdyIsImtpZHMiOlsiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDAiLCJhY2EyNTVlNWIyZGRlMmU0YzhiYjdjMTY2Y2VhYzEwMSIsImFjYTI1NWU1YjJkZGUyZTRjOGJiN2MxNjZjZWFjMTAxIiwiYWNhMjU1ZTViMmRkZTJlNGM4YmI3YzE2NmNlYWMxMDEiXSwiZW5zY2hlbWEiOiJjYmMxIn0=');
           let optionalData:drm.OptionsData[] = [{
