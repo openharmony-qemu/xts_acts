@@ -13,7 +13,9 @@
  * limitations under the License.
  */
 import preferencesNdkTest from './Ability.test';
+import preferencesNdkEtsTest from './PreferenceNdkEtsTest.test';
 
 export default function testsuite() {
   preferencesNdkTest();
+  preferencesNdkEtsTest();
 }
