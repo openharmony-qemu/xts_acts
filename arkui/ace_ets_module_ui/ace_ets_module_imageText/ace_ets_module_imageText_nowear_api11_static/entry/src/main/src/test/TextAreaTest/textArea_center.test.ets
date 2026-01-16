@@ -47,7 +47,7 @@ export default function textArea_center() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textArea_center state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textArea_center" == pages.name)) {
           console.info("get textArea_center pages.name:" + "");
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

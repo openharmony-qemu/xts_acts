@@ -66,7 +66,7 @@ it('SliderAddEnableHapticFeedbackApi_static_001', Level.LEVEL1, async (done: () 
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_true')) as Component;
-      trueBtn?.click();
+      await (trueBtn?.click() as Promise<void>);
       await Utils.sleep(1000);
       let slider = inspector.getInspectorByKey('slider');
       console.info("[SliderAddEnableHapticFeedbackApi_static_001] attrs is: " +
@@ -90,7 +90,7 @@ it('SliderAddEnableHapticFeedbackApi_static_002', Level.LEVEL1, async (done: () 
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_false')) as Component;
-      trueBtn?.click();
+      await (trueBtn?.click() as Promise<void>);
       await Utils.sleep(1000);
       let slider = inspector.getInspectorByKey('slider');
       console.info("[SliderAddEnableHapticFeedbackApi_static_002] attrs is: " +
@@ -114,7 +114,7 @@ it('SliderAddEnableHapticFeedbackApi_static_003', Level.LEVEL1, async (done: () 
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_undefied')) as Component;
-      trueBtn?.click();
+      await (trueBtn?.click() as Promise<void>);
       await Utils.sleep(1000);
       let slider = inspector.getInspectorByKey('slider');
       console.info("[SliderAddEnableHapticFeedbackApi_static_003] attrs is: " +
@@ -138,7 +138,7 @@ it('SliderAddEnableHapticFeedbackApi_static_004', Level.LEVEL1, async (done: () 
       await Utils.sleep(1000);
       let driver: Driver = Driver.create();
       let trueBtn: Component = await driver.findComponent(ON.id('enableHapticFeedback_null')) as Component;
-      trueBtn?.click();
+      await (trueBtn?.click() as Promise<void>);
       await Utils.sleep(1000);
       let slider = inspector.getInspectorByKey('slider');
       console.info("[SliderAddEnableHapticFeedbackApi_static_004] attrs is: " +

@@ -95,7 +95,7 @@ struct WebComponent {
                           Utils.emitEvent(true, 20241127);
                           console.info('suceess emit')
                         }
-                      }).catch((err: BusinessError): void => {
+                      }).catch((err: Error): void => {
                       console.error('createPDF write data to file failed with error message: ' + err.message +
                         ', error code: ' + err.code);
                     }).finally(() => {
@@ -124,7 +124,7 @@ struct WebComponent {
                       if(writeLen > 0) {
                         Utils.emitEvent(true, 20241128);
                       }
-                        }).catch((err: BusinessError): void => {
+                        }).catch((err: Error): void => {
                       console.error("createPDF write data to file failed with error message: " + err.message +
                         ", error code: " + err.code);
                     }).finally(() => {

@@ -1601,6 +1601,17 @@ static napi_value GetDirectionVertical(napi_env env, napi_callback_info info)
     return value;
 }
 
+static napi_value GetEmuTypeErrorCode(napi_env env, napi_callback_info info)
+{
+    bool flag = ((ResourceManager_ErrorCode::ERROR_CODE_RES_PATH_INVALID == 9001005) &&
+                (ResourceManager_ErrorCode::ERROR_CODE_RES_ID_FORMAT_ERROR == 9001007) &&
+                (ResourceManager_ErrorCode::ERROR_CODE_RES_NAME_FORMAT_ERROR == 9001008) &&
+                (ResourceManager_ErrorCode::ERROR_CODE_OUT_OF_MEMORY == 9001100));
+    napi_value value = nullptr;
+    napi_get_boolean(env, flag, &value);
+    return value;
+}
+
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -1701,6 +1712,8 @@ static napi_value Init(napi_env env, napi_value exports)
             nullptr, nullptr, napi_default, nullptr},
         {"isRawDirTrue", nullptr, IsRawDirTrue, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"getDirectionVertical", nullptr, GetDirectionVertical, nullptr,
+            nullptr, nullptr, napi_default, nullptr},
+        {"getEmuTypeErrorCode", nullptr, GetEmuTypeErrorCode, nullptr,
             nullptr, nullptr, napi_default, nullptr},
     };
 

@@ -20,6 +20,7 @@ import { BusinessError } from '@ohos.base';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
 import common from '@ohos.app.ability.common';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -30,7 +31,16 @@ export default function abilityTest() {
     describe("abilityTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'describe start');
 
-        beforeAll(() => {
+        beforeAll(async() => {
+            let driver = Driver.create();	
+            try {
+                let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+                if (allowed) {
+                    await allowed.click();
+                }
+            } catch (err) {
+                console.error('findComponent failed: ' + JSON.stringify(err));
+            }
             hilog.info(domain, tag, 'beforeAll start');
             let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
             hilog.info(domain, tag, 'beforeAll AbilityDelegator');
@@ -54,7 +64,7 @@ export default function abilityTest() {
             abilityContext.getGroupDir("111").then(data => {
                 console.error("getGroupDir Context_getGroupDir_Static_002 ====> result data" + data);
                 expect(data).assertEqual("");
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
                 console.error("getGroupDir Context_getGroupDir_Static_002 ====> result err" + JSON.stringify(error));
                 expect().assertFail();
             });
@@ -75,7 +85,7 @@ export default function abilityTest() {
             abilityContext.getGroupDir("context_hap1").then(data => {
                 console.error("getGroupDir Context_getGroupDir_Static_003 ====> result data" + data);
                 expect(data).assertEqual("");
-            }).catch((error: BusinessError): void => {
+            }).catch((error: Error): void => {
                 console.error("getGroupDir Context_getGroupDir_Static_003 ====> result err" + JSON.stringify(error));
                 expect().assertFail();
             });

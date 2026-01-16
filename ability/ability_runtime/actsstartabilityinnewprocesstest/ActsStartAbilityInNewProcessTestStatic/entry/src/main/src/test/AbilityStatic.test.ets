@@ -24,6 +24,7 @@ import { BusinessError, RecordData } from '@ohos.base';
 import commonEvent from '@ohos.commonEventManager';
 import common from '@ohos.app.ability.common';
 import UIAbility from '@ohos.app.ability.UIAbility';
+import { Driver, ON } from '@ohos.UiTest';
 interface Flag {
   flag: boolean
 }
@@ -140,12 +141,14 @@ let startAssistAbility = async (tag:string, done: ()=> void):Promise<void> => {
     if (obj.flag) {
       hilog.info(domain, testTag, '%{public}s', `${tag} no need to click button`);
     }
-  } catch (err: BusinessError) {
-    let code = (err as BusinessError).code;
-    let message = (err as BusinessError).message;
-    hilog.info(domain, testTag, '%{public}s', `${tag} startAbility failed, code is ${code}, message is ${message}`);
-    expect().assertFail();
-    done();
+  } catch (err) {
+    if (err instanceof BusinessError) {
+      let code = err.code;
+      let message = err.message;
+      hilog.info(domain, testTag, '%{public}s', `${tag} startAbility failed, code is ${code}, message is ${message}`);
+      expect().assertFail();
+      done();
+    }
   }
 }
 export default function abilitystaticTest() {
@@ -153,6 +156,15 @@ export default function abilitystaticTest() {
     hilog.info(domain, testTag, '%{public}s', 'describe start');
 
     beforeAll(async (): Promise<void> => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, testTag, '%{public}s', 'beforeAll start');
       let abilityDelegator: AbilityDelegatorRegistry.AbilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator()
       abilityDelegator.addAbilityMonitor({
@@ -177,8 +189,10 @@ export default function abilitystaticTest() {
       try {
         functionEnable = 
         systemParameterEnhance.getSync('persist.sys.abilityms.start_options_with_process_option', 'false');
-      } catch (err: BusinessError) {
-        hilog.info(domain, testTag, '%{public}s', `${tag} err is ${JSON.stringify(functionEnable)}`);
+      } catch (err) {
+        if (err instanceof BusinessError) {
+          hilog.info(domain, testTag, '%{public}s', `${tag} err is ${JSON.stringify(functionEnable)}`);
+        }
       }
       hilog.info(domain, testTag, '%{public}s', `${tag} functionEnable is ${functionEnable}`);
       abilityDelegator = AbilityDelegatorRegistry.getAbilityDelegator();

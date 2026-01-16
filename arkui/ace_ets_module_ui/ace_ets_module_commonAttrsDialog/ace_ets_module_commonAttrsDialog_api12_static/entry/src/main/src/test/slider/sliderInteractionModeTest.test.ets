@@ -83,7 +83,7 @@ it('sliderInteractionModeTest_static_0100', Level.LEVEL0, async (done: () => voi
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('slider1'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let slider = inspector.getInspectorByKey('slider1');
       console.info("[sliderInteractionModeTest_0100] sliderInteractionModeTest_0100 JSON.parseJsonElement(slider) is: " +
@@ -112,7 +112,7 @@ it('sliderInteractionModeTest_static_0200', Level.LEVEL0, async (done: () => voi
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('slider2'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let slider = inspector.getInspectorByKey('slider2');
       console.info("[sliderInteractionModeTest_0200] sliderInteractionModeTest_0200 JSON.parseJsonElement(slider) is: " +
@@ -141,7 +141,7 @@ it('sliderInteractionModeTest_static_0300', Level.LEVEL0, async (done: () => voi
       let driver = Driver.create()
       await CommonFunc.sleep(1000);
       let btn1 = await driver.findComponent(ON.id('slider3'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(1000);
       let slider = inspector.getInspectorByKey('slider3');
       console.info("[sliderInteractionModeTest_0300] sliderInteractionModeTest_0300 JSON.parseJsonElement(slider) is: " +

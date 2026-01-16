@@ -27,6 +27,7 @@ export default function extensionWindowPropertiesTest() {
     let windowStage:ohosWindow.WindowStage;
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
+    let driver: Driver;
 
     beforeAll(() => {
       context = AppStorage.get('context') as common.UIAbilityContext;
@@ -35,6 +36,7 @@ export default function extensionWindowPropertiesTest() {
       let mainWindow = windowStage.getMainWindowSync();
       mainWindow.resizeAsync(1500,1000);
       mainWindow.moveWindowToAsync(1200,200);
+      driver = Driver.create();
     })
     beforeEach(() => {
       // Presets an action, which is performed before each unit test case starts.
@@ -64,7 +66,6 @@ export default function extensionWindowPropertiesTest() {
       let windowClass = windowStage.getMainWindowSync();
       await windowClass.setUIContent('testability/pages/WindowTest/EmbeddedComponentPage');
       await sleep(2000);
-      let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('Button'));
       console.log(caseName + ' btn1 : ' + btn);
 
@@ -110,7 +111,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('button'))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
@@ -175,7 +175,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('off_single'))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
@@ -240,7 +239,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('off_all'))
           console.log(caseName + ' btn : ' + btn);
           if (btn == undefined) {
@@ -305,7 +303,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           let btn = await driver.findComponent(ON.id('button401'))
           console.log(caseName + ' btn : ' + btn);
           // 只针对pc设别
@@ -371,7 +368,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // UEC独占事件按钮
           let btn = await driver.findComponent(ON.id('button'))
           console.log(caseName + ' btn : ' + btn);
@@ -466,7 +462,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('button401'))
           console.log(caseName + ' btn : ' + btn);
@@ -530,7 +525,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('getWindowAvoidArea401'))
           console.log(caseName + ' btn : ' + btn);
@@ -593,7 +587,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('onAvoidAreaChange401'))
           console.log(caseName + ' btn : ' + btn);
@@ -656,7 +649,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // 设置独占事件
           let btn = await driver.findComponent(ON.id('onWindowSizeChange401'))
           console.log(caseName + ' btn : ' + btn);
@@ -719,7 +711,6 @@ export default function extensionWindowPropertiesTest() {
           console.log(caseName + 'after createSubWindow')
 
           await sleep(1000)
-          let driver = Driver.create()
           // extensionWindow?.createSubWindowWithOptions('createSubWindowWithOptions401', null)
           let btn = await driver.findComponent(ON.id('createSubWindowWithOptions401'))
           console.log(caseName + ' btn : ' + btn);

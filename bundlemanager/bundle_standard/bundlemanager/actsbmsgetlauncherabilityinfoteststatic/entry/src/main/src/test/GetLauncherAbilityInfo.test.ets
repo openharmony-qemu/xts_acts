@@ -194,7 +194,7 @@ export default function actsGetLauncherAbilityInfoTest() {
           expect(abilityInfos[index].orientationId).assertEqual(PARAM_0);
         }
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_00 catch failed errCode:${err.code} message:${err.message}`);
         if(err.code == 201){
           expect(err.code).assertEqual(201);
@@ -220,7 +220,7 @@ export default function actsGetLauncherAbilityInfoTest() {
       bundleManager.getAbilityInfo(uri, abilityFlags).then((data: Array<bundleManager.AbilityInfo>) => {
         expect().assertFail();
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.error(domain, tag, `Sub_Bms_Framework_getAbilityInfo_static_01 catch failed errCode:${err.code} message:${err.message}`);
         if(err.code == 201){
           expect(err.code).assertEqual(201);

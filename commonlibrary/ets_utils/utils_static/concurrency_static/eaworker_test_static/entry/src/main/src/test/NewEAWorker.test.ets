@@ -48,7 +48,7 @@ export const Sleep = (ms: int) => {
 export default function NewEAWorkerTest() {
   describe('NewEAWorkerTest', (): void => {
     afterEach(() => {
-      await Utils.msSleep(300);
+      await Utils.msSleep(100);
     })
 
     /**
@@ -1388,15 +1388,9 @@ export default function NewEAWorkerTest() {
           }
           worker = new EAWorker(task);
           worker!.start();
-          await new Promise<string>((resolve, reject) => {
-            const timeout = setTimeout(() => {
-              if (!taskExecuted) {
-                reject(new Error('任务执行超时'));
-              } else {
-                resolve('task success');
-              }
-            }, 3000);
-          });
+          while(!taskExecuted){
+            await Utils.msSleep(100);
+          }
           expect(taskExecuted).assertTrue();
           expect(isWorkerAlive).assertFalse();
         } catch (error) {
@@ -1468,15 +1462,9 @@ export default function NewEAWorkerTest() {
             taskExecuted = true;
           }
           worker.postTask(task)
-          await new Promise<string>((resolve, reject) => {
-            const timeout = setTimeout(() => {
-              if (!taskExecuted) {
-                reject(new Error('任务执行超时'));
-              } else {
-                resolve('task success');
-              }
-            }, 3000);
-          });
+          while(!taskExecuted){
+            await Utils.msSleep(100);
+          }
           expect(taskExecuted).assertTrue();
           expect(isWorkerAlive).assertTrue();
         } catch (error) {
@@ -1755,7 +1743,9 @@ export default function NewEAWorkerTest() {
             });
           }
           worker.quit();
-          await Utils.msSleep(1200);
+          while(count<10){
+            await Utils.msSleep(100);
+          }
           console.info(`${TAG} counter：${count}`);
           expect(count).assertEqual(10);
         } catch (error) {
@@ -1794,7 +1784,9 @@ export default function NewEAWorkerTest() {
             }, 100);
           });
           worker.quit();
-          await Utils.msSleep(3000);
+          while(!fired){
+            await Utils.msSleep(100);
+          }
           expect(fired).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -1831,7 +1823,9 @@ export default function NewEAWorkerTest() {
         worker.start();
         try {
           worker.quit();
-          await Utils.msSleep(1100);
+          while(!doneFlag){
+            await Utils.msSleep(100);
+          }
           expect(doneFlag).assertTrue();
         } catch (error) {
           console.error(`${TAG} catch error: code =>  message => ${error.message}`);
@@ -1923,7 +1917,9 @@ export default function NewEAWorkerTest() {
         });
         worker.start();
         try {
-          await Utils.msSleep(1000);
+          while(!doneFlag){
+            await Utils.msSleep(100);
+          }
           console.info(`${TAG} doneFlag：${doneFlag}`);
           expect(doneFlag).assertTrue();
         } catch (error) {
@@ -1961,7 +1957,7 @@ export default function NewEAWorkerTest() {
             quitCalledInside = true;
           });
           worker!.start();
-          await Utils.msSleep(2000);
+          await Utils.msSleep(1000);
         } catch (error) {
           console.error(`${TAG} catch error: ${error.message}`);
           expect(error.message).assertEqual('Unable to launch coroutine: no suitable worker was found')

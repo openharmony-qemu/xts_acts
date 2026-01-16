@@ -440,6 +440,44 @@ Camera_ErrorCode NDKCamera::CameraInputUnRegisterCallback(int useCaseCode)
     }
     return ret_;
 }
+void OcclusionDetectionCallback(const Camera_Input* cameraInput,
+    Camera_OcclusionDetectionResult occlusionDetectionResult)
+{
+    if (occlusionDetectionResult.isCameraOccluded) {
+        LOG("isCameraOccluded true");
+    }
+    if (occlusionDetectionResult.isCameraLensDirty) {
+        LOG("isCameraLensDirty true");
+    }
+}
+Camera_ErrorCode NDKCamera::CameraInputRegisterOcclusionDetectionCallback(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CameraInput_RegisterOcclusionDetectionCallback(cameraInput_, OcclusionDetectionCallback);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CameraInput_RegisterOcclusionDetectionCallback(cameraInput_, nullptr);
+    } else {
+        ret_ = OH_CameraInput_RegisterOcclusionDetectionCallback(nullptr, OcclusionDetectionCallback);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("注册相机镜头脏污遮挡事件回调失败");
+    }
+    return ret_;
+}
+Camera_ErrorCode NDKCamera::CameraInputUnRegisterOcclusionDetectionCallback(int useCaseCode)
+{
+    if (useCaseCode == PARAMETER_OK) {
+        ret_ = OH_CameraInput_UnregisterOcclusionDetectionCallback(cameraInput_, OcclusionDetectionCallback);
+    } else if (useCaseCode == PARAMETER2_ERROR) {
+        ret_ = OH_CameraInput_UnregisterOcclusionDetectionCallback(cameraInput_, nullptr);
+    } else {
+        ret_ = OH_CameraInput_UnregisterOcclusionDetectionCallback(nullptr, OcclusionDetectionCallback);
+    }
+    if (ret_ != CAMERA_OK) {
+        LOG("注销相机镜头脏污遮挡事件回调失败");
+    }
+    return ret_;
+}
 Camera_ErrorCode NDKCamera::SessionBegin(int useCaseCode)
 {
     if (useCaseCode == PARAMETER_OK) {
@@ -1119,6 +1157,11 @@ Camera_ErrorCode NDKCamera::IsMirrorSupported(int useCaseCode)
         ret_ = OH_PhotoOutput_IsMirrorSupported(nullptr, &isMirror_);
     }
     return ret_;
+}
+bool NDKCamera::getMirrorSupported()
+{
+    ret_ = OH_PhotoOutput_IsMirrorSupported(photoOutput_, &isMirror_);
+    return isMirror_;
 }
 Camera_ErrorCode NDKCamera::EnableMirror(int useCaseCode)
 {

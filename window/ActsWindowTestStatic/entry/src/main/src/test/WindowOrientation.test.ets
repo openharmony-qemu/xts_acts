@@ -154,7 +154,7 @@ export default function WindowOrientationTest() {
                     hilog.info(0x0000, '[ANI]',msgStr + 'Succeeded in setting the window orientation.');
                     expect(false).assertTrue();
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+                }).catch((err: Error):PromiseLike<void>|undefined => {
                     hilog.error(0x0000, '[ANI]',msgStr + 'Failed to set the window orientation. Cause: ' + JSON.stringify(err));
                     expect(err!.code).assertEqual(1300002);
                     done();

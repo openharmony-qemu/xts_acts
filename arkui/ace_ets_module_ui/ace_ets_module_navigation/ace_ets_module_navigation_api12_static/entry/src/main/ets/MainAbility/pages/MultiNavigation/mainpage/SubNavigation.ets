@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,ObjectLink
+  PropRef,Provide,ObjectLink
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
@@ -41,7 +41,7 @@ import { NavWidthRangeAttrModifier } from './NavAttributeModifier';
 export struct SubNavigation {
   @Link isPortrait: boolean | undefined = false;
   @State displayMode: number = 0;
-  @ObjectLink multiStack: MultiNavPathStack = new MultiNavPathStack()
+  @ObjectLink multiStack: MultiNavPathStack;
   @BuilderParam navDestination: (name: string, param?: object) => void = this.SubNavDestination;
   primaryStack: MyNavPathStack = new MyNavPathStack();
   @State secondaryStack: MyNavPathStack = new MyNavPathStack();

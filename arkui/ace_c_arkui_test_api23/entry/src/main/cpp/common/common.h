@@ -138,11 +138,20 @@ namespace ArkUICapiTest {
 #define PARAM_270_POINT_0 270.0
 #define PARAM_960000 960000
 #define PARAM_255 255
+#define PARAM_4242 4242
 
 /**
  * Log print domain.
  */
 const unsigned int LOG_PRINT_DOMAIN = 0xFF00;
+
+#define ASSERT_NOTNULL(result)                                                                                         \
+    do {                                                                                                               \
+        if ((result) == nullptr) {                                                                                     \
+            napi_value errorResult = nullptr;                                                                          \
+            return errorResult;                                                                                        \
+        }                                                                                                              \
+    } while (0)
 
 #define ASSERT_EQ(result, expect)                                                                                      \
     do {                                                                                                               \

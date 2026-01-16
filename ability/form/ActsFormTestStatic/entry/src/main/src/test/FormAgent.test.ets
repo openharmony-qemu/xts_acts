@@ -22,7 +22,7 @@ import { BusinessError } from '@ohos.base'
 
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formAgentTest';
 
 const ERROR_CODE202: int = 202;
 

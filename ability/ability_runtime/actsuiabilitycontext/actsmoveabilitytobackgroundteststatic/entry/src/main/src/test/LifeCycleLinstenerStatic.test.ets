@@ -23,6 +23,7 @@ import { BusinessError } from '@ohos.base';
 import Want from '@ohos.app.ability.Want';
 import window from '@ohos.window';
 import InteropAbilityLifecycleCallback from '@ohos.app.ability.InteropAbilityLifecycleCallback';
+import { Driver, ON } from '@ohos.UiTest';
 import systemParameterEnhance from '@ohos.systemParameterEnhance';
 
 const domain: int = 0x0000;
@@ -91,6 +92,15 @@ export default function LifeCycleLinstenerStaticTest() {
     const BUNDLE_NAME: string = 'com.acts.moveabilitytobgtest.static';
 
     beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, 'beforeAll start');
       abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       hilog.info(domain, tag, 'beforeAll AbilityDelegator');

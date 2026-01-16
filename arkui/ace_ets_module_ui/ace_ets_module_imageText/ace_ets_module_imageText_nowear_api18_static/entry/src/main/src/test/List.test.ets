@@ -25,5 +25,5 @@ export default function testsuite() {
   TextMenuItemId();
   RichEditorMaxLengthTest();
   textAreaInputTest();
-  // MovingPhotoView()//fail 2 @ohos.multimedia.movingphotoview'未交付
+  MovingPhotoView();
 }

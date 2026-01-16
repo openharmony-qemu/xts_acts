@@ -19,7 +19,7 @@ import PixelUnitsConversionJsunit from './xts/PixelUnitsConversion.test'
 import UIContextComponentSnapshotJsunit from './xts/UIContextComponentSnapshot.test'
 import UIContextCreateFromBuilderJsunit from './xts/UIContextCreateFromBuilder.test'
 export default function testsuite() {
-  PixelUnitsConversionJsunit(); //pass SDK11.28
-  UIContextComponentSnapshotJsunit();  //pass 2 SDK11.28
-  UIContextCreateFromBuilderJsunit()  // Pass 2 SDK11.28
+  PixelUnitsConversionJsunit();
+  UIContextComponentSnapshotJsunit();
+  UIContextCreateFromBuilderJsunit();
 }

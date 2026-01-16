@@ -102,7 +102,7 @@ export default function Sim3Public() {
         ExpectFail();
         console.info(`${caseName} test end `);
         done();
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         if (err?.code === 8300001) {
           console.info(`${caseName}	Invalid parameter value: err->${JSON.stringify(err)}`);
           ExpectTrue(true);

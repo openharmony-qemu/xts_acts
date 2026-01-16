@@ -308,21 +308,26 @@ export default function audioFramework() {
      */
     it('SUB_MULTIMEDIA_AUDIO_VOLUME_GROUP_MANAGER_GETRINGMODESYNC_STATIC_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
-        let data = audioVolumeGroupManager.getRingerModeSync();
-        if (data != null) {
+        let data: audio.AudioRingMode = audioVolumeGroupManager.getRingerModeSync();
+        if (data == audio.AudioRingMode.RINGER_MODE_SILENT) {
           console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
-          expect(true).assertTrue();
-          done();
+          expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_SILENT);     
+        } else if (data == audio.AudioRingMode.RINGER_MODE_VIBRATE) {
+          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
+          expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_VIBRATE);
+        } else if (data == audio.AudioRingMode.RINGER_MODE_NORMAL) {
+          console.info(`${TagFrmwk}: Media getVolumeSync : PASS :${data}`);
+          expect(data).assertEqual(audio.AudioRingMode.RINGER_MODE_NORMAL);
         } else {
           console.info(`${TagFrmwk}: Media getVolumeSync : FAIL :${data}`);
-          expect(false).assertTrue();
-          done();
+          expect(false).assertTrue();          
         }
+        done();
       } catch (err: BusinessError) {
         console.log('err :' + JSON.stringify(err.message));
-        expect(false).assertTrue();
-        done();
+        expect(false).assertTrue();        
       }
+      done();
     })
 
     /**
@@ -336,15 +341,15 @@ export default function audioFramework() {
     it('SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
 
       let audioStreamInfo: audio.AudioStreamInfo = {
-        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000, // ²ÉÑùÂÊ¡£
-        channels: audio.AudioChannel.CHANNEL_2, // Í¨µÀ¡£
-        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE, // ²ÉÑù¸ñÊ½¡£
-        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW // ±àÂë¸ñÊ½¡£
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
       };
 
       let audioCapturerInfo: audio.AudioCapturerInfo = {
         source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
-        capturerFlags: 0 // ÒôÆµ²É¼¯Æ÷±êÖ¾¡£
+        capturerFlags: 0
       };
 
       let audioCapturerOptions:audio.AudioCapturerOptions = {
@@ -369,7 +374,7 @@ export default function audioFramework() {
             console.info(`AudioFrameworkRecLog: audioParamsGet is : ${audioParamsGet}`);
             console.info('AudioFrameworkRecLog: audioParams getCapturerInfo are incorrect');
           }
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`AudioFrameworkRecLog: CapturerInfo :ERROR: ${err}`);
         })
         let periodReachCallback = (position: long) => {
@@ -400,14 +405,80 @@ export default function audioFramework() {
           console.info('AudioFrameworkRecLog: ---------RELEASE RECORD---------');
           console.info('AudioFrameworkRecLog: Capturer release : SUCCESS');
           console.info(`AudioFrameworkRecLog: AudioCapturer : STATE : ${audioCapturer!.state}`);
-        }).catch(async(err: BusinessError) => {
+        }).catch((err: Error) => {
           console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
           expect(true).assertFalse();
         });
-      }).catch(async(err: BusinessError) => {
+      }).catch((err: Error) => {
         console.error(`AudioCapturer Created : ERROR : ${err}`);
         expect(true).assertFalse();
       });
+      done();
+    })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0200
+     * @tc.desc   on_off_statechange_periodreach
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_MULTIMEDIA_AUDIOCAPTURER_STATECHANGE_PERIODREACH_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+      try {   
+        let audioStreamInfo: audio.AudioStreamInfo = {
+        samplingRate: audio.AudioSamplingRate.SAMPLE_RATE_48000,
+        channels: audio.AudioChannel.CHANNEL_2,
+        sampleFormat: audio.AudioSampleFormat.SAMPLE_FORMAT_S16LE,
+        encodingType: audio.AudioEncodingType.ENCODING_TYPE_RAW
+        };
+  
+        let audioCapturerInfo: audio.AudioCapturerInfo = {
+          source: audio.SourceType.SOURCE_TYPE_CAMCORDER,
+          capturerFlags: 0
+        };
+  
+        let audioCapturerOptions:audio.AudioCapturerOptions = {
+          streamInfo: audioStreamInfo,
+          capturerInfo: audioCapturerInfo
+        };
+  
+        let audioCapturer: audio.AudioCapturer | null;
+  
+        audioCapturer = await audio.createAudioCapturer(audioCapturerOptions);
+          
+        let periodReachCallback = (position: long) => {
+          if (position == 1000) {
+            console.info('ON Triggered successfully');
+          }
+        };
+        audioCapturer?.onPeriodReach(1000, periodReachCallback);
+        audioCapturer?.offPeriodReach();
+
+        let stateChangeCallback = (state: audio.AudioState) => {
+          if (state == 1) {
+            console.info('audio renderer state is: STATE_PREPARED');
+          }
+          if (state == 2) {
+            console.info('audio renderer state is: STATE_RUNNING');
+          }
+        };
+        audioCapturer?.onStateChange(stateChangeCallback);
+        audioCapturer?.offStateChange();
+
+        let readDataCallback = (value: ArrayBuffer) => {
+          console.info(`read valus: ${value}`);
+        };
+        audioCapturer?.onReadData(readDataCallback);
+        console.info('Capturer readData on success.');
+        audioCapturer?.offReadData();
+        console.info('Capturer readData of success.');
+        
+        await audioCapturer!.release();
+      } catch (err: BusinessError) {
+        console.error(`AudioFrameworkRecLog: Capturer stop: ERROR: ${err}`);
+        expect(true).assertFalse();
+      }      
       done();
     })
 

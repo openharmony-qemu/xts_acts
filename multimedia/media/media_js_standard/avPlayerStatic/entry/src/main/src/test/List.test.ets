@@ -35,6 +35,6 @@ export default function testsuite() {
   AVPlayerSelectTrackTest();
   PreDownLoadTest();
   AVTransCoderTest();
-  AVPlayerFlvFuncTest();
   AVPlayerSetPlaybackRateTest();
+  AVPlayerFlvFuncTest();
 }

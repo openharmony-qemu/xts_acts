@@ -20,6 +20,7 @@
 #include "InteractiveFramework/UiInputEventBooleanTest.cpp"
 #include "InteractiveFramework/NativeNodeExtentedBooleanTest.cpp"
 #include "InteractiveFramework/LongPressGestureTest.h"
+#include "InteractiveFramework/EnumTest.cpp"
 #include "grid/GridAttrsTest.h"
 #include "Text/TextMenuItemIdTest.cpp"
 #include "swiper/SwiperParamTest.cpp"
@@ -28,6 +29,7 @@
 #include "Text/EnumTest.cpp"
 #include "BindSelectionMenu/BindSelectionMenuTest.cpp"
 #include "TextEditMenuOptions/TextEditMenuOptionsTest.cpp"
+#include "grid/GridAbilityTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -85,6 +87,8 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, napi_default, nullptr},
         {"Nullptr_OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer", nullptr, Nullptr_OH_ArkUI_ParallelInnerGestureEvent_GetCurrentRecognizer, nullptr, nullptr,
          nullptr, napi_default, nullptr},
+        {"Nullptr_OH_ArkUI_NodeEvent_GetTouchTestInfo", nullptr, Nullptr_OH_ArkUI_NodeEvent_GetTouchTestInfo, nullptr, nullptr,
+         nullptr, napi_default, nullptr},    
         {"False_OH_ArkUI_GestureInterruptInfo_GetSystemFlag", nullptr, False_OH_ArkUI_GestureInterruptInfo_GetSystemFlag, nullptr, nullptr,
          nullptr, napi_default, nullptr},
         {"True_OH_ArkUI_GestureInterruptInfo_GetSystemFlag", nullptr, True_OH_ArkUI_GestureInterruptInfo_GetSystemFlag, nullptr, nullptr,
@@ -145,6 +149,46 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"TestRegisterGetIrregularSizeByIndexCallback001", nullptr, TestRegisterGetIrregularSizeByIndexCallback001,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetAllowableMovement_SUPPORTED", nullptr, LongPressGestureTest::GetAllowableMovement_SUPPORTED, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"Enum_ARKUI_GESTURE_RECOGNIZER_STATE_READY", nullptr, Enum_ARKUI_GESTURE_RECOGNIZER_STATE_READY, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_GESTURE_RECOGNIZER_STATE_DETECTING", nullptr, Enum_ARKUI_GESTURE_RECOGNIZER_STATE_DETECTING, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_GESTURE_RECOGNIZER_STATE_PENDING", nullptr, Enum_ARKUI_GESTURE_RECOGNIZER_STATE_PENDING, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_GESTURE_RECOGNIZER_STATE_BLOCKED", nullptr, Enum_ARKUI_GESTURE_RECOGNIZER_STATE_BLOCKED, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_GESTURE_RECOGNIZER_STATE_FAILED", nullptr, Enum_ARKUI_GESTURE_RECOGNIZER_STATE_FAILED, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_ERROR_CODE_COMPONENT_SNAPSHOT_TIMEOUT", nullptr, Enum_ARKUI_ERROR_CODE_COMPONENT_SNAPSHOT_TIMEOUT, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_ALL", nullptr, Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_ALL, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_FINGER", nullptr, Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_FINGER, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_PEN", nullptr, Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_PEN, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_MOUSE", nullptr, Enum_ARKUI_RESPONSE_REGIN_SUPPORTED_TOOL_MOUSE, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_UI_INPUT_EVENT_SOURCE_TYPE_UNKNOWN", nullptr, Enum_UI_INPUT_EVENT_SOURCE_TYPE_UNKNOWN, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_UI_INPUT_EVENT_SOURCE_TYPE_MOUSE", nullptr, Enum_UI_INPUT_EVENT_SOURCE_TYPE_MOUSE, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_UI_INPUT_EVENT_SOURCE_TYPE_KEY", nullptr, Enum_UI_INPUT_EVENT_SOURCE_TYPE_KEY, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_UI_INPUT_EVENT_SOURCE_TYPE_JOYSTICK", nullptr, Enum_UI_INPUT_EVENT_SOURCE_TYPE_JOYSTICK, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_GESTURE_EVENT_ACTION_ACCEPT", nullptr, Enum_GESTURE_EVENT_ACTION_ACCEPT, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_OH_ArkUI_NodeEvent_GetEventType", nullptr, Enum_OH_ArkUI_NodeEvent_GetEventType, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_OH_ArkUI_KeyEvent_GetType", nullptr, Enum_OH_ArkUI_KeyEvent_GetType, nullptr, nullptr, nullptr,
+        napi_default, nullptr},    
+        {"Enum_OH_ArkUI_KeyEvent_GetKeyIntensionCode", nullptr, Enum_OH_ArkUI_KeyEvent_GetKeyIntensionCode, nullptr, nullptr, nullptr,
+        napi_default, nullptr},
+        {"Enum_OH_ArkUI_DragEvent_StartDataLoading", nullptr, Enum_OH_ArkUI_DragEvent_StartDataLoading, nullptr, nullptr, nullptr,
+        napi_default, nullptr}, 
         {"TextMenuItemId_001", nullptr, TextMenuItemId_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"TextMenuItemId_002", nullptr, TextMenuItemId_002, nullptr, nullptr, nullptr,
@@ -329,6 +373,20 @@ static napi_value Init(napi_env env, napi_value exports)
          nullptr, nullptr, nullptr, napi_default, nullptr},
         {"Test_OH_ArkUI_TextEditMenuOptions07", nullptr, Test_OH_ArkUI_TextEditMenuOptions07,
          nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"testGridEditMode001", nullptr, TestGridEditMode001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridEditMode002", nullptr, TestGridEditMode002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridMultiSel001", nullptr, TestGridMultiSel001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridMultiSel002", nullptr, TestGridMultiSel002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridDragAnimation001", nullptr, TestGridDragAnimation001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridDragAnimation002", nullptr, TestGridDragAnimation002, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
+        {"testGridItemSelectable001", nullptr, TestGridItemSelectable001, nullptr, nullptr, nullptr,
+         napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {
         OH_LOG_Print(LOG_APP, LOG_ERROR, LOG_PRINT_DOMAIN, "Init", "napi_define_properties failed");

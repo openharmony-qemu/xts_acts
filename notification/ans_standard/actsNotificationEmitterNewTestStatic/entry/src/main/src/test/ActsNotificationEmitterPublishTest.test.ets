@@ -195,7 +195,9 @@ export default function ActsNotificationEmitterPublishTest() {
       let callback04: Callback<emitter.EventData> = (eventData: emitter.EventData): void=> {
         hilog.info(0x001, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' callback04 success');
         hilog.info(0x000, `${TAG}`, `${TEST_SUITE_NAME}#${TEST_CASE_NAME}` + ' on1 success is %{public}s '+JSON.stringify(eventData));
-        expect(JSON.stringify(eventData)).assertContain('"id":"event4"');
+        let eventData_0: Record<String, RecordData> = eventData.data as Record<String, RecordData>
+        let testId: String = eventData_0["id"] as String
+        expect(testId).assertEqual("event4");
         num++;
       }
       try{

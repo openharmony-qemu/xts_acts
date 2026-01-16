@@ -37,7 +37,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 @CustomDialog
 struct CustomDialogExample11 {

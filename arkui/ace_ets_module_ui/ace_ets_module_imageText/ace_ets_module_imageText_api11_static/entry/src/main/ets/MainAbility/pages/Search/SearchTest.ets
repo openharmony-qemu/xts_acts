@@ -19,7 +19,7 @@ import AbilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry
 import hilog from '@ohos.hilog';
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { MessageManagerBase, CallbackBase, MessageBase } from '../../common/MessageManager2';
-import { State, AppStorage,StorageProp } from '@ohos.arkui.stateManagement';
+import { State, AppStorage,StoragePropRef } from '@ohos.arkui.stateManagement';
 import {
   Entry,
   Component,

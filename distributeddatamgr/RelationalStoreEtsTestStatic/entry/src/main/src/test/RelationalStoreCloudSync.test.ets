@@ -30,7 +30,6 @@ import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import Utils from './Util.test';
 import { AppStorage } from '@ohos.arkui.stateManagement';
-import { canIUse } from "@internal.full.global";
 import hilog from '@ohos.hilog'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 
@@ -48,7 +47,7 @@ let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegat
 let syncProgressDetail: relationalStore.ProgressDetails;
 
 function Progess(ProgressDetail: relationalStore.ProgressDetails): void {
-  console.log(TAG + ` Progess:` + JSON.stringify(ProgressDetail));
+  console.log(tag + ` Progess:` + JSON.stringify(ProgressDetail));
   syncProgressDetail = ProgressDetail;
 }
 
@@ -170,10 +169,10 @@ export default function relationalStoreCloudSyncTest() {
         try {
           let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
           hilog.info(domain, tag, 'RS0453 PRIKey: ' + JSON.stringify(PRIKey));
-          await rdbStore.getModifyTime('cloud_text', 'num', PRIKey).then((data) => {
-            console.log(tag + `modifyTime:` + JSON.stringify(data));
-            let size = Object.keys(data).length;
-            console.log(tag + 'size=' + size);
+          await rdbStore.getModifyTime('cloud_text', 'num', PRIKey).then((data: relationalStore.ModifyTime) => {
+            console.log(tag + ` modifyTime:` + JSON.stringify(data));
+            let size = data.size;
+            console.log(tag + ' size=' + size);
             expect(size == 2).assertTrue();
             done();
           });

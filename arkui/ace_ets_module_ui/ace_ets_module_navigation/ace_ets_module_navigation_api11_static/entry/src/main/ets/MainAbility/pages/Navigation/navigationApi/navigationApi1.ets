@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume
+  PropRef,Provide,Consume
 } from '@ohos.arkui.stateManagement';
 import {MessageManager,Callback,Message} from '../../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
@@ -39,7 +39,7 @@ struct navigationApi1{
   pageInfos:NavPathStack = new  NavPathStack()
 
   @Builder PageMap(name: string, param: Object|null|undefined) {
-    if (name == 'page1'){
+    if (name == 'pageOne'){
       pageOne()
     }
   }
@@ -67,17 +67,12 @@ struct navigationApi1{
 
   build(){
     Navigation(this.pageInfos){
-      List({ space: 12, initialIndex: 0 }) {
-        ForEach(['1','2'], (item: string, index: int) => {
-          ListItem() {
-            Column(){
-              Text(this.text).width('80%').fontSize(12).key('navigationApi1_text1')
-              Button('pushPath' + item)
-            }.opacity(this.opacity1).onClick((e: ClickEvent) => {
-              let pageName = 'page' + item
-              this.pageInfos.pushPathByName(pageName,null)
-            }).id('navigationApi1_btn' + item)
-          }})}
+      Column(){
+        Text(this.text).width('80%').fontSize(12).key('navigationApi1_text1')
+        Button('pushPath').onClick((e:ClickEvent) => {
+          this.pageInfos.pushPathByName('pageOne',null)
+        }).id('navigationApi1_btn1')
+      }.opacity(this.opacity1)
     }
     .mode(NavigationMode.Split)
     .navBarWidth('30%')

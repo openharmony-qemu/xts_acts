@@ -89,7 +89,7 @@ export default function swiperAnimationJsunit() {
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -129,7 +129,7 @@ it('swiperAnimationJsunit_static_0024', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -193,7 +193,7 @@ it('swiperAnimationJsunit_static_0012', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -260,7 +260,7 @@ it('swiperAnimationJsunit_static_0027', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -332,7 +332,7 @@ it('swiperAnimationJsunit_static_0019', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -411,7 +411,7 @@ it('swiperAnimationJsunit_static_0022', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -476,7 +476,7 @@ it('swiperAnimationJsunit_static_0023', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -546,7 +546,7 @@ it('swiperAnimationJsunit_static_0011', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -617,7 +617,7 @@ it('swiperAnimationJsunit_static_0028', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -698,7 +698,7 @@ it('swiperAnimationJsunit_static_0020', Level.LEVEL0, async (done: () => void): 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -781,7 +781,7 @@ it('swiperAnimationGestureJsunit_static_0016', Level.LEVEL0, async (done: () => 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -849,7 +849,7 @@ it('swiperAnimationGestureJsunit_static_0017', Level.LEVEL0, async (done: () => 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -921,7 +921,7 @@ it('swiperAnimationGestureJsunit_static_0019', Level.LEVEL0, async (done: () => 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);
@@ -1000,7 +1000,7 @@ it('swiperAnimationGestureJsunit_static_0020', Level.LEVEL0, async (done: () => 
         }).then(() => {
           // success
         })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.error(`pushUrl failed, code is ${err.code}, message is ${err.message}`);
           })
         await CommonFunc.sleep(2000);

@@ -124,7 +124,7 @@ import {
   VerticalAlign,
   WaterFlow
 } from '@ohos.arkui.component';
-import { AppStorage, Link, Prop, State, StorageProp, } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, PropRef, State, StoragePropRef, } from '@ohos.arkui.stateManagement';
 import { Router, UIContext } from '@ohos.arkui.UIContext'
 import inspector from '@ohos.arkui.inspector';
 
@@ -147,7 +147,7 @@ class View {
 @Entry
 @Component
 struct MarginPageString {
-  @StorageProp('_margin') _margin: string | Margin = '0';
+  @StoragePropRef('_margin') _margin: string | Margin = '0';
   @State targetView: string = ''
   @State targetGroupView: string = ''
   @State componentKey: string = ''

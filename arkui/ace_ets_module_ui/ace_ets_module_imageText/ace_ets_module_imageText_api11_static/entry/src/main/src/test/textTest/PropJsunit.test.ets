@@ -61,7 +61,7 @@ export default function propJsunit() {
         routerInstance.clear();
         let pages:router.RouterState = routerInstance.getState();
         console.info("get propTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("Prop" == pages.name)) {
           console.info("get propTest pages.name:" + '');
           // await router 有已知问题，先注释,使用 routerInstance.pushUrl(options);
           // let result = await routerInstance.pushUrl(options);
@@ -77,7 +77,7 @@ export default function propJsunit() {
 
     afterEach(async () => {
       await sleep(1)
-      console.info("Prop after each called");
+      console.info("PropRef after each called");
     });
 
     

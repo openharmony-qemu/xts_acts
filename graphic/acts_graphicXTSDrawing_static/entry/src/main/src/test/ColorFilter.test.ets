@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2024 Shenzhen Kaihong Digital Industry Development Co., Ltd.
+ * Copyright (C) 2026 Shenzhen Kaihong Digital Industry Development Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -493,7 +493,7 @@ export default function colorFilterTest() {
      */
     it('testColorFilterCreateMatrixColorFilterNormalStatic' , TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL0 , () => {
       const msg = 'testColorFilterCreateMatrixColorFilterNormalStatic';
-      const matrix_ = [
+      const matrix_: number[] = [
         1, 0, 0, 0, 0, // 红色通道
         0, 1, 0, 0, 0, // 绿色通道
         0, 0, 1, 0, 0, // 蓝色通道

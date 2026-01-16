@@ -75,7 +75,7 @@ export default function bmsZlibChecksumCrc64Test() {
             hilog.info(Domain, TAG, 'Sub_Bms_Zlib_Checksum_Check_static_0500 getCrc64Table success' + JSON.stringify(data));
             expect(data[0]).assertEqual(0);
             done();
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(Domain, TAG, `Sub_Bms_Zlib_Checksum_Check_static_0500 errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
             done();

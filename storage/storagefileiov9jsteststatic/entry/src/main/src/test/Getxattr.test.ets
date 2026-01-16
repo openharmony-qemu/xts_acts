@@ -73,7 +73,7 @@ export default function fileIOGetxattr() {
           hilog.info(domain, tag, '%{public}s', "test_FileIO_Getxattr_ASync_Static_001 value is: " + attrValue);
           expect(attrValue).assertEqual('Test file.');
           done();
-        }).catch((err: ()=>void): Promise<void> => {
+        }).catch((err: Error): Promise<void> => {
           hilog.info(domain, tag, '%{public}s', 'test_FileIO_Getxattr_ASync_Static_001 has error' + JSON.stringify(err));
         });
       } catch (e: BusinessError) {

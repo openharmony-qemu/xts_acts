@@ -102,3 +102,6 @@ export const oHDrawingSetTextStyleAttributeDouble003: () => number;
 export const oHDrawingSetTextStyleAttributeDouble004: () => number;
 export const oHDrawingSetTextStyleAttributeInt001: () => number;
 export const oHDrawingGetFontFullDescriptorsFromPath001: () => number;
+export const oHDrawingSetTextStyleAttributeInt004: () => number;
+export const oHDrawingTypographyDidExceedMaxLines004: () => number;
+export const oHDrawingTypographyStyleGetEffectiveAlignment003: () => number;

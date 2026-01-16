@@ -247,7 +247,7 @@ export default function ImageReceiverNativeTest() {
     /**
      * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_014
      * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_014
-     * @tc.desc      OH_PixelmapNative_SetMemoryName-IMAGE_UNSUPPORTED_MEMORY_FORMAT
+     * @tc.desc      OH_PixelmapNative_SetMemoryName-IMAGE_SUCCESS
      * @tc.size      MediumTest
      * @tc.type      Function
      * @tc.level     Level 0
@@ -256,7 +256,7 @@ export default function ImageReceiverNativeTest() {
       console.info(TAG, 'Start');
       let result: number = testNapi.PixelmapNativeSetMemoryNameTest(CASE_INDEX_1);
       console.info(TAG, 'Succeed', JSON.stringify(result));
-      expect(result).assertEqual(7600205);
+      expect(result).assertEqual(0);
     })
     /**
      * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_015
@@ -271,6 +271,20 @@ export default function ImageReceiverNativeTest() {
       let result: number = testNapi.DecodingOptionsGetDesiredColorSpaceTest(CASE_INDEX_1);
       console.info(TAG, 'Succeed', JSON.stringify(result));
       expect(result).assertEqual(7700204);
+    })
+    /**
+     * @tc.number    SUB_IMAGE_RICEIVER_NATIVE_TEST_016
+     * @tc.name      SUB_IMAGE_RICEIVER_NATIVE_TEST_016
+     * @tc.desc      OH_PixelmapNative_SetMemoryName-IMAGE_UNSUPPORTED_MEMORY_FORMAT
+     * @tc.size      MediumTest
+     * @tc.type      Function
+     * @tc.level     Level 0
+     */
+    it("SUB_IMAGE_RICEIVER_NATIVE_TEST_016", Level.LEVEL0, async () => {
+      console.info(TAG, 'Start');
+      let result: number = testNapi.PixelmapNativeSetMemoryNameTest(CASE_INDEX_2);
+      console.info(TAG, 'Succeed', JSON.stringify(result));
+      expect(result).assertEqual(7600205);
     })
   })
 }

@@ -27,6 +27,7 @@ import common from '@ohos.app.ability.common';
 import Want from '@ohos.app.ability.Want';
 import bundleManager from '@ohos.bundle.bundleManager';
 import StartOptions from '@ohos.app.ability.StartOptions'
+import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
 let tag: string = 'testTag'; //日志标识字符串,作为tag标识当前runner类下的测试行为
 async function startAbility(caseName: string, context: common.UIAbilityContext, options?: StartOptions) : Promise<window.WindowStage> {
@@ -38,13 +39,13 @@ async function startAbility(caseName: string, context: common.UIAbilityContext, 
         if (options) {
             context.startAbility(want, options).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         } else {
             context.startAbility(want).then(() => {
                 hilog.info(domain, tag, `${caseName} Succeeded in starting ability.`);
-            }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+            }).catch((err: Error):PromiseLike<void>|undefined => {
                 hilog.info(domain, tag, `${caseName} Failed in starting ability. Cause code: ${err.code}, message: ${err.message}`);
             });
         }
@@ -61,7 +62,7 @@ async function terminateAbility(caseName: string) {
         }
         pageContext.terminateSelf().then(() => {
             console.log(`${caseName} terminateSelf success`);
-        }).catch((err: BusinessError):PromiseLike<void>|undefined => {
+        }).catch((err: Error):PromiseLike<void>|undefined => {
             console.error(`${caseName} terminateSelf fail, err: ${JSON.stringify(err)}`);
         });
     } catch (e) {
@@ -74,6 +75,8 @@ export default function WindowEnterpriseTest() {
 
     describe("WindowEnterpriseTest", (): void => {
         hilog.info(domain, tag, '%{public}s', 'WindowEnterpriseTest describe start');
+        hilog.info(domain, tag, 'WindowEnterpriseTest start');
+        let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
         let windowStage: window.WindowStage;
         let win: window.Window;
         let context: common.UIAbilityContext;
@@ -81,14 +84,20 @@ export default function WindowEnterpriseTest() {
         //let isAutoWindow: string = '';
         //let isPCStatus: string = '';
         beforeAll(() => {
-            //context = AppStorage.get('context') as common.UIAbilityContext;
-            //hilog.info(0x0000, '[ANI]','windowTest context: ' + JSON.stringify(context))
+            hilog.info(domain, tag, 'beforeAll start');
+            let abilityDelegator: abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
+            hilog.info(domain, tag, 'beforeAll AbilityDelegator');
+            abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.example.actswindowtest.static")
+            await Utils.msSleep(2000);
             try {
                 windowStage = AppStorage.get<window.WindowStage>('windowStage') as window.WindowStage;
+                hilog.info(domain, tag, 'jsUnittest beforeAll windowStage =' + windowStage);
                 win = AppStorage.get<window.Window>('mainWindow') as window.Window;
+                hilog.info(domain, tag, 'jsUnittest beforeAll win =' + win);
                 context = AppStorage.get<common.UIAbilityContext>('context') as common.UIAbilityContext;
+                hilog.info(domain, tag, 'jsUnittest beforeAll context =' + context);
 
-            } catch (e) {
+            } catch (e:BusinessError) {
                 hilog.info(domain, tag, '%{public}s', 'getANI fail = ' + JSON.stringify(e));
             }
 
@@ -156,24 +165,25 @@ export default function WindowEnterpriseTest() {
                     }
                     await terminateAbility(caseName);
                     done();
-                }).catch((err: BusinessError):PromiseLike<void>|undefined => {
-                    hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' + JSON.stringify(err));
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    hilog.error(domain, tag,caseName + 'Failed to call getVisibleWindowInfo. Cause: ' +' code:' +err.code+'msg:'+ err.message);
                     await terminateAbility(caseName);
-                    expect(false).assertTrue();
-                    done();
+                    expect(err.message!=null).assertTrue();
+                    if (err.code === 801) {
+                        hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);
+                        done()
+                    } else {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                    
                 });
             } catch (err) {
                 err = err as BusinessError;
                 await terminateAbility(caseName);
                 hilog.info(domain, tag,`${caseName} : failed, code: ${err.code}, msg: ${err.message}`);
-                expect(err.message!=null).assertTrue();
-                if (err.code === 801) {
-                    hilog.info(domain, tag,`${caseName} deviceType does not supported this Capability`);
-                    done()
-                } else {
-                    expect(false).assertTrue();
-                    done();
-                }
+                expect(false).assertTrue();
+                done();
             }
         });
         

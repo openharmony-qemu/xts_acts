@@ -950,12 +950,12 @@ export default function ActsOsAccountTest() {
     /**
      * @tc.name   OsAccountParamCheck_2000
      * @tc.number OsAccountParamCheck_2000
-     * @tc.desc   check 12300211 Server unreachable
+     * @tc.desc   DomainServerConfigManager api test
      * @tc.type   FUNCTION
      * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL3
+     * @tc.level  LEVEL0
      */
-    it('OsAccountParamCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
+    it('OsAccountParamCheck_2000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let tag = "====>OsAccountParamCheck_2000 ";
       console.info(tag + "start====");
       interface OauthConfig {
@@ -972,6 +972,12 @@ export default function ActsOsAccountTest() {
       interface IDaasConfig {
         authProtocol: string,
         oauthConfig: OauthConfig,
+      }
+      interface AdConfig {
+        adDomain: string
+      }
+      interface ParamJson {
+        adConfig: AdConfig
       }
       let oauthConfig: OauthConfig = {
         userAuthenRequestUri: 'https://www.test.com/login',
@@ -997,10 +1003,83 @@ export default function ActsOsAccountTest() {
         'authServerName': 'CHINA',
         'parameters': map
       };
+      let fakeConfigParams: Record<string, Object> = {
+        'uri': 'test.example.com',
+        'port': 100
+      };
+      let adConfigData: AdConfig = {
+        adDomain: 'www.test.com'
+      }
+      let pJson: ParamJson = {
+        adConfig: adConfigData
+      }
+      let configParams1: Record<string, Object> = {
+        'accountName': '123456',
+        'authServerName': 'CHINA',
+        'parameters': pJson
+      };
       try {
         console.info(tag + "start addServerConfig");
-        await osAccount.DomainServerConfigManager.addServerConfig(configParams);
-        expect().assertFail();
+        let configInfo1 = await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+        console.info(tag + "addServerConfig config1: " + JSON.stringify(configInfo1));
+        let configInfo12 = await osAccount.DomainServerConfigManager.addServerConfig(configParams1);
+        console.info(tag + "addServerConfig config12: " + JSON.stringify(configInfo12));
+        let configInfo2 = await osAccount.DomainServerConfigManager.getServerConfig(configInfo1.id);
+        console.info(tag + "getServerConfig config1: " + JSON.stringify(configInfo2));
+        try {
+          console.info(tag + "start addServerConfig again");
+          await osAccount.DomainServerConfigManager.addServerConfig(configParams);
+          console.info(tag + "addServerConfig success, but should not succeed");
+          expect().assertFail();
+        } catch (err) {
+          console.info(tag + "catch err: " + JSON.stringify(err));
+          expect(err.code).assertEqual(12300213);
+        }
+        try {
+          console.info(tag + "start updateServerConfig fake params");
+          await osAccount.DomainServerConfigManager.updateServerConfig(configInfo1.id, fakeConfigParams);
+          console.info(tag + "updateServerConfig success, but should not succeed");
+          expect().assertFail();
+        } catch (err) {
+          console.info(tag + "catch err: " + JSON.stringify(err));
+          expect(err.code).assertEqual(12300002);
+        }
+        adConfigData.adDomain = 'test.example.com';
+        console.info(tag + "adConfigData1: " + JSON.stringify(adConfigData));
+        try {
+          console.info(tag + "start updateServerConfig unreachable");
+          await osAccount.DomainServerConfigManager.updateServerConfig(configInfo1.id, configParams1);
+          console.info(tag + "updateServerConfig success, but should not succeed");
+          expect().assertFail();
+        } catch (err) {
+          console.info(tag + "catch err: " + JSON.stringify(err));
+          expect(err.code).assertEqual(12300211);
+        }
+        try {
+          console.info(tag + "start updateServerConfig success");
+          await osAccount.DomainServerConfigManager.updateServerConfig(configInfo1.id, configParams);
+          console.info(tag + "updateServerConfig success");
+        } catch (err) {
+          console.info(tag + "catch err: " + JSON.stringify(err));
+          expect().assertFail();
+        }
+        adConfigData.adDomain = 'www.test.com';
+        console.info(tag + "adConfigData2: " + JSON.stringify(adConfigData));
+        try {
+          console.info(tag + "start updateServerConfig twice");
+          await osAccount.DomainServerConfigManager.updateServerConfig(configInfo1.id, configParams1);
+          console.info(tag + "updateServerConfig success, but should not succeed");
+          expect().assertFail();
+        } catch (err) {
+          console.info(tag + "catch err: " + JSON.stringify(err));
+          expect(err.code).assertEqual(12300213);
+        }
+        let configArray = await osAccount.DomainServerConfigManager.getAllServerConfigs();
+        console.info(tag + "getAllServerConfigs configArray: " + JSON.stringify(configArray));
+        for (let i = 0; i < configArray.length; i++) {
+          console.info(tag + "start configArray: " + JSON.stringify(configArray));
+          await osAccount.DomainServerConfigManager.removeServerConfig(configArray[i].id);
+        }
         done();
       } catch (err) {
         console.info(tag + "catch err: " + JSON.stringify(err));

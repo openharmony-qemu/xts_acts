@@ -96,7 +96,7 @@ export default function getBundleInfo() {
           bundle.getBundleInfo("com.example.helloworld5", bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 100).then((data : BundleInfo) => {
             expect().assertFail();
             done();
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             hilog.info(0x0000, tag, 'getBundleInfoTestWithUserIdPromise17700001 err1 ====> ' + JSON.stringify(err));
             expect(err.code).assertEqual(17700001);
             done();
@@ -124,7 +124,7 @@ export default function getBundleInfo() {
           bundle.getBundleInfo(BUNDLE_NAME, bundle.BundleFlag.GET_BUNDLE_INFO_DEFAULT, 1010).then((data : BundleInfo) => {
             expect().assertFail();
             done();
-          }).catch((err: BusinessError): void => {
+          }).catch((err: Error): void => {
             hilog.info(0x0000, tag, 'getBundleInfoTestWithUserIdPromise17700004 err1 ====> ' + JSON.stringify(err));
             expect(err.code).assertEqual(17700004);
             done();

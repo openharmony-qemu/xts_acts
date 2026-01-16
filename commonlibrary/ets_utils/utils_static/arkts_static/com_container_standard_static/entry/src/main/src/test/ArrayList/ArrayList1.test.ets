@@ -12,7 +12,7 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-import ArrayList from '@ohos.util.ArrayList';
+import { ArrayListComparatorFn, ArrayList } from '@kit.ArkTS';
 import {
   describe,
   beforeAll,
@@ -1019,32 +1019,6 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.name   testArray0044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04400
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add(4);
-    //   arrayList.add(3);
-    //   arrayList.add(1);
-    //   arrayList.add(2);
-    //   arrayList.add(14);
-    //   try {
-    //     let res = arrayList.increaseCapacityTo();
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('401');
-    //     expect(err.message).assertEqual(`The type of "newCapacity" must be number. Received value is: undefined`);
-    //   }
-    // });
-
-    /**
      * @tc.name   testArray0045
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04500
      * @tc.desc   Test the function By ArrayList.
@@ -1112,32 +1086,6 @@ export default function ArraylistTest1() {
     });
 
     /**
-     * @tc.name   testArray0049
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_04900
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0049", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add("刘");
-    //   arrayList.add("张三");
-    //   arrayList.add(1);
-    //   arrayList.add(2);
-    //   arrayList.add("李四");
-    //   arrayList.sort((a, b) => a - b);
-    //   let arr: Array<String | Number> = new Array<String | Number>();
-    //   arrayList.forEach((item: String | Number, index) => {
-    //     arr.push(item);
-    //   });
-    //   let a: Array<String | Number> = new Array<String | Number>("刘", "张三", 1, 2, "李四");
-    //   for (let i = 0; i < a.length; i++) {
-    //     expect(String(arr[i])).assertEqual(String(a[i]));
-    //   }
-    // });
-
-    /**
      * @tc.name   testArray0050
      * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05000
      * @tc.desc   Test the function By ArrayList.
@@ -1145,23 +1093,24 @@ export default function ArraylistTest1() {
      * @tc.size   MEDIUMTEST
      * @tc.level  LEVEL1
      */
-    // it("testArray0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String> = new ArrayList<String>();
-    //   arrayList.add("c");
-    //   arrayList.add("a");
-    //   arrayList.add("b");
-    //   arrayList.add("e");
-    //   arrayList.add("d");
-    //   arrayList.sort((a, b) => a - b);
-    //   let arr: Array<String> = new Array<String>();
-    //   arrayList.forEach((item: String, index) => {
-    //     arr.push(item);
-    //   });
-    //   let a: Array<String> = new Array<String>("c", "a", "b", "e", "d");
-    //   for (let i = 0; i < a.length; i++) {
-    //     expect(String(arr[i])).assertEqual(String(a[i]));
-    //   }
-    // });
+    it("testArray0050", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
+      let arrayList: ArrayList<String> = new ArrayList<String>();
+      arrayList.add("c");
+      arrayList.add("a");
+      arrayList.add("b");
+      arrayList.add("e");
+      arrayList.add("d");
+      let arrayListCb1: ArrayListComparatorFn<string> = (a: string, b: string): double => {
+        return a.localeCompare(b);
+      }
+      arrayList.sort(arrayListCb1);
+      let arr: Array<String> = new Array<String>();
+      arrayList.forEach((item: String, index) => {
+        arr.push(item);
+      });
+      expect(JSON.stringify(arr)).assertEqual('["a","b","c","d","e"]');
+
+    });
 
     /**
      * @tc.name   testArray0051
@@ -1220,294 +1169,6 @@ export default function ArraylistTest1() {
           .assertEqual(`The value of "toIndex" is out of range. It must be >= 0 && <= 8. Received value is: 9`);
       }
     });
-
-    /**
-     * @tc.name   testArray0053 
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05300
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0053 ", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.add.bind({}, "a")()
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200011');
-    //     expect(err.message).assertEqual(`The add method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0054
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05400
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0054", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add(1);
-    //   try {
-    //     let res = arrayList.insert("a", "b");
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('401');
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: b`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0055
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05500
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0055", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add("a");
-    //   arrayList.add("b");
-    //   arrayList.add("c");
-    //   arrayList.add("a");
-    //   arrayList.add("b");
-    //   try {
-    //     let res = arrayList.removeByIndex("a");
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('401');
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0056
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05600
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0056", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add(1);
-    //   arrayList.add("a");
-    //   try {
-    //     arrayList.removeByRange("a", 9);
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('401');
-    //     expect(err.message).assertEqual(`The type of "fromIndex" must be number. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0057
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05700
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0057", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add(4);
-    //   arrayList.add(3);
-    //   try {
-    //     arrayList.replaceAllElements(123);
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('401');
-    //     expect(err.message).assertEqual(`The type of "callbackfn" must be callable. Received value is: 123`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0058
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05800
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testArray0058", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   arrayList.add(4);
-    //   arrayList.add(3);
-    //   arrayList.add(1);
-    //   arrayList.add(2);
-    //   arrayList.add(14);
-    //   try {
-    //     arrayList.subArrayList("a", 2);
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('401');
-    //     expect(err.message).assertEqual(`The type of "fromIndex" must be number. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0059
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_05900
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testArray0059', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.has.bind({}, "a")();
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200011');
-    //     expect(err.message).assertEqual(`The has method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0060
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06000
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testArray0060', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.removeByIndex.bind({}, "a")();
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200011');
-    //     expect(err.message).assertEqual(`The removeByIndex method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0061
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06100
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testArray0061', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.remove.bind({}, "a")();
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200011');
-    //     expect(err.message).assertEqual(`The remove method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0062
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06200
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testArray0062', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.forEach.bind({}, "a")();
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200011');
-    //     expect(err.message).assertEqual(`The forEach method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0063
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06300
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testArray0063', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.forEach(11);
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('401');
-    //     expect(err.message).assertEqual(`The type of "callbackfn" must be callable. Received value is: 11`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0064
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06400
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testArray0064', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.clear.bind({}, "a")();
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200011');
-    //     expect(err.message).assertEqual(`The clear method cannot be bound`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testArray0065
-     * @tc.number SUB_COMMONLIBRARY_UTIL_ARRAY_06500
-     * @tc.desc   Test the function By ArrayList.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it('testArray0065', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let arrayList: ArrayList<String | Number> = new ArrayList<String | Number>();
-    //   try {
-    //     arrayList.isEmpty.bind({}, "a")();
-    //     expect('true').assertEqual('false')
-    //   } catch (err) {
-    //     err = err as BusinessError;
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(String(err.code)).assertEqual('10200011');
-    //     expect(err.message).assertEqual(`The isEmpty method cannot be bound`);
-    //   }
-    // });
 
     /**
      * @tc.name   testArray0066

@@ -81,7 +81,6 @@ it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): P
         const data = indexEvent.data as Record<string, Object | undefined | null>
         const event = data['ACTION'] as Record<string, Object | undefined | null>
         expect(event).assertEqual(false);
-        done();
       }
       let indexEvent: events_emitter.InnerEvent = {
         eventId: 49,
@@ -95,6 +94,7 @@ it('aboutToDisappearTest_static_0100', Level.LEVEL0, async (done: () => void): P
       console.info("aboutToDisappearTest_static_0100 click result is: " + JSON.stringify(inspector.sendEventByKey('button1', 10, "")));
       await Utils.sleep(1000);
       console.info('aboutToDisappearTest_static_0100 END');
+      done();
     });
   })
 }

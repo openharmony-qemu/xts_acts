@@ -56,7 +56,7 @@ import {
 } from '@ohos.arkui.component'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
-import { AppStorage, Link, LocalStorage, LocalStorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, Link, LocalStorage, LocalStoragePropRef } from '@ohos.arkui.stateManagement';
 import { Hypium } from '../../../../../hypium/index';
 import { State } from '@ohos.arkui.stateManagement'
 
@@ -76,7 +76,7 @@ interface PostCardActionParams {
 @Entry
 @Component
 struct WidgetCard {
-  // @LocalStorageProp('detail') detail: String = 'init';
+  // @LocalStoragePropRef('detail') detail: String = 'init';
 
   build() {
     Column() {

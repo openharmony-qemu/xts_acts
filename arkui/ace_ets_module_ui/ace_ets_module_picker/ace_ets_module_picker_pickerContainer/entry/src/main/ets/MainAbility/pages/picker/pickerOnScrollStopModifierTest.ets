@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { PickerModifier } from '@ohos.arkui.modifier'
+import { UIPickerComponentModifier } from '@ohos.arkui.modifier'
 
 @Entry
 @Component
@@ -23,7 +23,7 @@ struct onScrollStopModifierTest {
   private fontSize: number | string | Resource = '25vp';
   private monthArray: string[] = [];
   @State color: string = '#ffff00'
-  @State modifier: PickerModifier = new PickerModifier()
+  @State modifier: UIPickerComponentModifier = new UIPickerComponentModifier()
     .onScrollStop((index: number | number[]) => {
       console.info('Picker :onScrollStop, value: ' + ', index: ' + index)
       this.color = '#ff00ff'
@@ -37,7 +37,7 @@ struct onScrollStopModifierTest {
 
   build() {
     Column({ space: 20 }) {
-      Picker({
+      UIPickerComponent({
         selectedIndex: this.selectedIndex,
       }) {
         ForEach(this.monthArray, (item: string) => {

@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List,RatingAttribute, ListItem,Marquee,Ratin
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { RatingModifier } from "@ohos.arkui.modifier";

@@ -2254,7 +2254,7 @@ export default function Date7Test() {
       date141.setUTCMonth(1);
       date141.setUTCDate(28);
       expect(date141.getUTCFullYear()).assertEqual(1900);
-      expect(date141.getUTCMonth()).assertEqual(2);
+      expect(date141.getUTCMonth()).assertEqual(1);
       expect(date141.getUTCDate()).assertEqual(28);
     });
 

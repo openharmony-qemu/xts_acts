@@ -18,7 +18,7 @@ import { Entry,Component,$r,Builder,List, NavigationAttribute,NavBarPosition,Nav
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { NavigationModifier } from "@ohos.arkui.modifier";

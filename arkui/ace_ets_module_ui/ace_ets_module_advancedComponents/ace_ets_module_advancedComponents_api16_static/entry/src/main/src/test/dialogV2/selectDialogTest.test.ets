@@ -76,7 +76,7 @@ it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       await Utils.sleep(1000);
       // 点击打开SelectDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('SelectDialogV2'))
-      openAlertDialog!.click();
+      await (openAlertDialog?.click() as Promise<void>);
       await Utils.sleep(1000);
       // 点击打开SelectDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('文本标题'));
@@ -86,7 +86,7 @@ it('selectDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       expect(content !== null).assertTrue();
       expect(cancelButton !== null).assertTrue();
       // 关闭SelectDialog
-      cancelButton!.click();
+      await (cancelButton?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[selectDialogTest_static_0100] END');
       done();
@@ -107,7 +107,7 @@ it('selectDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       await Utils.sleep(2000);
       // 点击打开SelectDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('SecSelectDialogV2'))
-      openAlertDialog!.click();
+      await (openAlertDialog?.click() as Promise<void>);
       await Utils.sleep(1000);
       // 点击打开SelectDialog是否存在以下入口。
       let primaryTitle = await driver.findComponent(ON.text('文本标题'));
@@ -119,7 +119,7 @@ it('selectDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.L
       expect(selectContent !== null).assertTrue();
       expect(cancelButton !== null).assertTrue();
       // 关闭SelectDialog
-      cancelButton!.click();
+      await (cancelButton?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[selectDialogTest_static_0200] END');
       done();

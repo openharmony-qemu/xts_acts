@@ -2918,7 +2918,7 @@ export default function displayTest() {
         subWindowClass = await windowStage.createSubWindow(caseName);
         subWindowClass.setUIContent('testability/pages/getSurfaceId')
         await subWindowClass.resizeAsync(1000, 1200);
-        await subWindowClass.moveWindowToAsync(100, 100)
+        await subWindowClass.moveWindowToAsync(100, 300)
         subWindowClass.showWindow();
 
         let driver = Driver.create();

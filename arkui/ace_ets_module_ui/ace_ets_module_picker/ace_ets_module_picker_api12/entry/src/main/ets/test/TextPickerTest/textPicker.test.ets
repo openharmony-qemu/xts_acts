@@ -94,7 +94,7 @@ export default function textPickerDefaultPickerItemHeightJsunit() {
 
       expect(obj.$type).assertEqual('TextPicker');
       console.info("[testtextPickerDefaultPickerItemHeight0002] height value :" + JSON.parse(strJson).$attrs.height);
-      if (rotation == 0) {
+      if (rotation == 0 || rotation == 2) {
         // 0 竖屏        
         let numberValue = vp2px(parseFloat(JSON.parse(strJson).$attrs.height)) - parseFloat(JSON.parse(strJson).$attrs.defaultPickerItemHeight) * 5
         expect(Math.abs(numberValue) <= 1).assertTrue();

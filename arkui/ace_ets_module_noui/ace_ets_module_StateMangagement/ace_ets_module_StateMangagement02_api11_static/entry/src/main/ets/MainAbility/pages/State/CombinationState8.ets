@@ -32,7 +32,7 @@ import {
   ObjectLink,
   Observed,
   Consume,
-  StorageProp,
+  StoragePropRef,
   StorageLink,
   LocalStorage,
   LocalStoragePropRef
@@ -66,7 +66,7 @@ struct SubProp8 {
 
   build() {
     Column() {
-      Text('@Prop:'+ this.num1).id("SubProp_text")
+      Text('@PropRef:'+ this.num1).id("SubProp_text")
         .id("SubProp1")
         .onClick((e: ClickEvent) => {
           this.num1 += 1

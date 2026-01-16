@@ -87,7 +87,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile level errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -132,7 +132,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile1 levelerrData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -177,7 +177,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile2 level errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -223,7 +223,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile3 level errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -269,7 +269,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile4 memLevel errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -316,7 +316,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile5 memLevel errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -363,7 +363,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile6 memLevel errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -409,7 +409,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile7 strategy errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -455,7 +455,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile8 strategy errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -501,7 +501,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `GzipDecompressionAbilityTest_static_4090 compressFile9 strategy errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -547,7 +547,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile10 strategy errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -595,7 +595,7 @@ export default function ActsGzipDecompressionTest() {
               expect().assertFail();
               done();
             }
-          }).catch((errData: BusinessError): void => {
+          }).catch((errData: Error): void => {
             hilog.error(domain, tag,
               `compressFile11 options errData is errCode:${errData.code}  message:${errData.message}`);
             expect().assertFail();
@@ -2629,11 +2629,11 @@ export default function ActsGzipDecompressionTest() {
               hilog.info(domain, tag, "gzwrite success : " + data);
               gzip.gzclose().then((data: zlib.ReturnStatus) => {
                 hilog.info(domain, tag, "gzclose success : " + JSON.stringify(data));
-              }).catch((err: BusinessError<void>): void => {
+              }).catch((err: Error): void => {
                 hilog.info(domain, tag,
                   "gzclose failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
               });
-            }).catch((err: BusinessError<void>): void => {
+            }).catch((err: Error): void => {
               hilog.info(domain, tag,
                 "gzwrite failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
               gzip.gzerror().then((data: zlib.GzErrorOutputInfo) => {
@@ -2642,12 +2642,12 @@ export default function ActsGzipDecompressionTest() {
                 hilog.info(domain, tag, "gzerror success statusMsg : " + JSON.stringify(data.statusMsg));
                 expect(data.status).assertEqual(zlib.ReturnStatus.DATA_ERROR);
                 done();
-              }).catch((err: BusinessError<void>): void => {
+              }).catch((err: Error): void => {
                 hilog.info(domain, tag,
                   "gzerror failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
               });
             });
-          }).catch((err: BusinessError<void>): void => {
+          }).catch((err: Error): void => {
             hilog.info(domain, tag,
               "gzopen failed code:" + JSON.stringify(err.code) + "，message ：" + JSON.stringify(err.message));
           });

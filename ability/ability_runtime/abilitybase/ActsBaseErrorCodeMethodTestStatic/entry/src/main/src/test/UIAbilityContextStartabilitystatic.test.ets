@@ -13,7 +13,7 @@
  * limitations under the License.
  */
 
-import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
+import { describe, beforeAll, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
 import hilog from '@ohos.hilog';
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import { AppStorage } from '@ohos.arkui.stateManagement'
@@ -23,6 +23,8 @@ import Want from '@ohos.app.ability.Want';
 import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import contextConstant from '@ohos.app.ability.contextConstant';
+import { CompletionHandlerForAbilityStartCallback, AbilityStartFailureCode } from '@ohos.app.ability.CompletionHandlerForAbilityStartCallback';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -43,7 +45,16 @@ class AbilityStartCallbackExt implements common.AbilityStartCallback {
 export default function UiAbilityContextStartAbilityStatic() {
   describe("ActsStartAbilityErrorTestStatic", (): void => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.actsbaseerrrocodemethodtest.static");
@@ -161,7 +172,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000004);
           done();
@@ -206,7 +217,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000050);
           done();
@@ -242,7 +253,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000004);
           done();
@@ -287,7 +298,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000050);
           done();
@@ -363,7 +374,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           if (err.code !== 0) {
             if(err.code==801) {
               done()
@@ -480,7 +491,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000005);
           done();
@@ -512,7 +523,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(16000005);
           done();
@@ -536,7 +547,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2200`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -552,7 +563,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(201);
           done();
@@ -576,7 +587,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2300`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -596,7 +607,7 @@ export default function UiAbilityContextStartAbilityStatic() {
           hilog.info(domain, tag, `startAbility success`);
           expect().assertFail();
           done();
-        }).catch((err: BusinessError<void>): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, `startAbility error: ${JSON.stringify(err)}.`)
           expect(err.code).assertEqual(201);
           done();
@@ -620,7 +631,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2400`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -666,7 +677,7 @@ export default function UiAbilityContextStartAbilityStatic() {
       tag = `StartAbilityError_static_2500`;
       hilog.info(domain, tag, `it begin`);
       context.moveAbilityToBackground()
-      .catch((err: BusinessError<void>): void => {
+      .catch((err: Error): void => {
         hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
           if(err?.code == 16000061) {
             done();
@@ -750,7 +761,7 @@ export default function UiAbilityContextStartAbilityStatic() {
         };
         context.startAbilityByType("shareerror", wantParam, abilityStartCallback).then(() => {
           hilog.info(0x0000, tag, TAG + "startAbilityByType002 success");
-        }).catch((error: BusinessError): void => {
+        }).catch((error: Error): void => {
           hilog.info(0x0000, tag, TAG + "startAbilityByType002 fail, err:" + JSON.stringify(error));
         })
         await Utils.msSleep(500);

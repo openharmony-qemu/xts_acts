@@ -102,7 +102,7 @@ export default function getBundleInfoForSelf() {
           expect(data.permissionGrantStates.length + '').assertEqual('0');
           hilog.info(domain, tag, 'getBundleInfoForSelfPromiseDefault  ====> end');
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, 'getBundleInfoForSelfCal  ====> err');
           expect(err).assertFail();
           done();
@@ -268,7 +268,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> err');
             expect(err).assertFail();
             done();
@@ -487,7 +487,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfHapModuleInfoPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             hilog.info(domain, tag, 'getBundleInfoForSelfHapModuleInfoPromise  ====> err');
             expect(err).assertFail();
             done();
@@ -641,7 +641,7 @@ export default function getBundleInfoForSelf() {
           expect(data.hapModulesInfo[0].abilitiesInfo[0].windowSize.minWindowHeight).assertEqual(0.0);
           hilog.info(domain, tag, 'getBundleInfoForSelfAbilitiesInfoPromise  ====> end');
           done();
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           hilog.info(domain, tag, 'getBundleInfoForSelfAbilitiesInfoPromise  ====> err');
           expect(err).assertFail();
           done();
@@ -967,7 +967,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.log('getBundleInfoForSelfApplicationPromise01  ====> err', JSON.stringify(err));
             expect(err).assertFail();
             done();
@@ -1011,7 +1011,7 @@ export default function getBundleInfoForSelf() {
               hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise02  ====> end');
               done();
             })
-            .catch((err: BusinessError<void>): void => {
+            .catch((err: Error): void => {
               console.log('getBundleInfoForSelfApplicationPromise02  ====> err', JSON.stringify(err));
               expect(err).assertFail();
               done();
@@ -1057,7 +1057,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.log('getBundleInfoForSelfApplicationPromise03  ====> err', JSON.stringify(err));
             expect(err).assertFail();
             done();
@@ -1096,7 +1096,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.log('getBundleInfoForSelfApplicationPromise04  ====> err', JSON.stringify(err));
             expect(err).assertFail();
             done();
@@ -1152,7 +1152,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.log('getBundleInfoForSelfApplicationPromise05  ====> err', JSON.stringify(err));
             expect(err).assertFail();
             done();
@@ -1206,7 +1206,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.log('getBundleInfoForSelfApplicationPromise06  ====> err', JSON.stringify(err));
             expect(err).assertFail();
             done();
@@ -1270,7 +1270,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfApplicationPromise  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.log('getBundleInfoForSelfApplicationPromise07  ====> err', JSON.stringify(err));
             expect(err).assertFail();
             done();
@@ -1302,7 +1302,7 @@ export default function getBundleInfoForSelf() {
             hilog.info(domain, tag, 'getBundleInfoForSelfPermissionPro  ====> end');
             done();
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.log('getBundleInfoForSelfPermissionPro  ====> err', JSON.stringify(err));
             expect(err).assertFail();
             done();

@@ -24,13 +24,13 @@ import textPickerEnableHapticFeedbackTest from "./textpicker/textPickerEnableHap
 import visibleAreaEventOptions from './visibleAreaEventOptions/visibleAreaEventOptions.test'
 
 export default function testsuite() {
-  gestureInterrupterTest(); // pass 1  1
-  datePickerEnableHapticFeedbackTest(); //pass 3  3
-  datePickerTest();  //pass 3  3
-  ExpectedFrameRateRangeCallback();//pass 1  1
-  swiperDigitIndicatorTest(); //pass 8  8
-  swiperArrowStyleTest();  //pass 6  6
-  swiperIndicatorDistanceTest();  //pass 1  1
-  textPickerEnableHapticFeedbackTest();//pass 3 3
-  visibleAreaEventOptions();//pass 5 5
+  gestureInterrupterTest();
+  datePickerEnableHapticFeedbackTest();
+  datePickerTest();
+  ExpectedFrameRateRangeCallback();
+  swiperDigitIndicatorTest();
+  swiperArrowStyleTest();
+  swiperIndicatorDistanceTest();
+  textPickerEnableHapticFeedbackTest();
+  visibleAreaEventOptions();
 }

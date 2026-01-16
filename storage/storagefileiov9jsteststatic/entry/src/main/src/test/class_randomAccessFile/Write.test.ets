@@ -325,7 +325,7 @@ export default function fileIORandomAccessFileWrite() {
           let length = 4096;
           randomaccessfile?.write(new ArrayBuffer(length)).then((bytesWritten: long) => {
             expect(bytesWritten == length).assertTrue();
-          }).catch((err: BusinessError): Promise<void> => {
+          }).catch((err: Error): Promise<void> => {
             hilog.info(domain, tag, '%{public}s', 'create randomAccessFile failed with error message: ' +  err.message + ", error code: " + err.code);
           }).finally(() => {
             randomaccessfile?.close();

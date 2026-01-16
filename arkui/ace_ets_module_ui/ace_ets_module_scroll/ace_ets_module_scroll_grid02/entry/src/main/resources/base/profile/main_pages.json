@@ -29,6 +29,15 @@
         "MainAbility/pages/Grid/GridContentSize",
         "MainAbility/pages/Grid/gridOffsetRes",
         "MainAbility/pages/Grid/gridContentOffset",
-        "MainAbility/pages/Grid/GridFillPolicyModifier"
+        "MainAbility/pages/Grid/GridFillPolicyModifier",
+        "MainAbility/pages/emptyBranch/gridLazyTrue",
+        "MainAbility/pages/emptyBranch/gridLazyFalse",
+        "MainAbility/pages/emptyBranch/gridLazyUn",
+        "MainAbility/pages/emptyBranch/gridLazyNull",
+        "MainAbility/pages/emptyBranch/gridRepeatTrue",
+        "MainAbility/pages/emptyBranch/gridRepeatFalse",
+        "MainAbility/pages/emptyBranch/gridRepeatUn",
+        "MainAbility/pages/emptyBranch/gridRepeatNull",
+        "MainAbility/pages/Grid/editModeGrid"
     ]
 }

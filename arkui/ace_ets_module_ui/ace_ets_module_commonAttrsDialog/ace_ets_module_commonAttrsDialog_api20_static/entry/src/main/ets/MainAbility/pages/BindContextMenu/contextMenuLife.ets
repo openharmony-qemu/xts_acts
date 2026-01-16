@@ -45,18 +45,18 @@ struct Custom {
     Column() {
       Text('isShow menu')
       .bindContextMenu(this.isShow, this.MyMenu, {
-        // onWillAppear: () => {//sdk中没有
-        //   this.appearText = this.appearText + 'onWillAppear_';
-        // },
-        // onDidAppear: () => {
-        //   this.appearText = this.appearText + 'onDidAppear';
-        // },
-        // onWillDisappear: () => {
-        //   this.disappearText = this.disappearText + 'onWillDisappear_';
-        // },
-        // onDidDisappear: () => {
-        //   this.disappearText = this.disappearText + 'onDidDisappear';
-        // },
+        onWillAppear: () => {
+          this.appearText = this.appearText + 'onWillAppear_';
+        },
+        onDidAppear: () => {
+          this.appearText = this.appearText + 'onDidAppear';
+        },
+        onWillDisappear: () => {
+          this.disappearText = this.disappearText + 'onWillDisappear_';
+        },
+        onDidDisappear: () => {
+          this.disappearText = this.disappearText + 'onDidDisappear';
+        },
       })
       Button('isShow')
         .id('showID')

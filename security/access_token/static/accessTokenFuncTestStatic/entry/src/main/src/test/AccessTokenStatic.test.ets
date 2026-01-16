@@ -419,7 +419,7 @@ export default function AccessTokenStaticTest() {
     it('Test_checkAccessToken_Promise_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: ()=>void): Promise<void> => {
       hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_003 start");
       try {
-        atManager.checkAccessToken(0, permissionNameUser).catch((error: BusinessError): void => {
+        atManager.checkAccessToken(0, permissionNameUser).catch((error: Error): void => {
           hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_003 error" + JSON.stringify(error));
           expect(error.code).assertEqual(ERR_PARAM_INVALID);
           done();
@@ -444,7 +444,7 @@ export default function AccessTokenStaticTest() {
       // empty permission
       let permissionName: Permissions = "" as Permissions;
       try {
-        atManager.checkAccessToken(tokenID, permissionName).catch((error: BusinessError): void => {
+        atManager.checkAccessToken(tokenID, permissionName).catch((error: Error): void => {
           hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_004 error" + JSON.stringify(error));
           expect(error.code).assertEqual(ERR_PARAM_INVALID);
           done();
@@ -469,7 +469,7 @@ export default function AccessTokenStaticTest() {
       // length of permission is 257
       let permissionName = 'a'.repeat(257) as Permissions;
       try {
-        atManager.checkAccessToken(tokenID, permissionName).catch((error: BusinessError): void => {
+        atManager.checkAccessToken(tokenID, permissionName).catch((error: Error): void => {
           hilog.info(domain, 'testTag', "Test_checkAccessToken_Promise_005 error" + JSON.stringify(error));
           expect(error.code).assertEqual(ERR_PARAM_INVALID);
           done();

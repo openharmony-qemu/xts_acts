@@ -103,7 +103,7 @@ it('StateArrayJsunit_static_0100', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateArrayJsunit_static_0100] component obj is: " + JSON.stringify(obj));
       console.info("[StateArrayJsunit_static_0100] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":11},{"value":1}],"isAPI_":false}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：[{"value":11},{"value":1}]');
       console.info('[StateArrayJsunit_static_0100] END');
       done();
     });
@@ -125,7 +125,7 @@ it('StateArrayJsunit_static_0200', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateArrayJsunit_static_0200] component obj is: " + JSON.stringify(obj));
       console.info("[StateArrayJsunit_static_0200] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":8},{"value":1}],"isAPI_":false}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：[{"value":8},{"value":1}]');
       console.info('[StateArrayJsunit_static_0200] END');
       done();
     });
@@ -147,7 +147,7 @@ it('StateArrayJsunit_static_0300', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateArrayJsunit_static_0300] component obj is: " + JSON.stringify(obj));
       console.info("[StateArrayJsunit_static_0300] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":11}],"isAPI_":false}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：[{"value":11}]');
       console.info('[StateArrayJsunit_static_0300] END');
       done();
     });
@@ -169,7 +169,7 @@ it('StateArrayJsunit_static_0400', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateArrayJsunit_static_0400] component obj is: " + JSON.stringify(obj));
       console.info("[StateArrayJsunit_static_0400] title: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：{"buffer":[null,null,null,null],"actualLength":0,"store_":[{"value":11},{"value":1},{"value":12}],"isAPI_":false}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('title：[{"value":11},{"value":1},{"value":12}]');
       console.info('[StateArrayJsunit_static_0400] END');
       done();
     });
@@ -209,7 +209,7 @@ it('StateArrayJsunit_static_0600', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateArrayJsunit_static_0600] component obj is: " + JSON.stringify(obj));
       console.info("[StateArrayJsunit_static_0600] ClassA: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ClassA：{"value":"Hello","data":{"value":6}}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('ClassA：{"value":"World","data":{"value":6}}');
       console.info('[StateArrayJsunit_static_0600] END');
       done();
     });
@@ -231,7 +231,7 @@ it('StateArrayJsunit_static_0700', Level.LEVEL0, async (done: () => void): Promi
       let obj = JSON.parseJsonElement(strJson);
       console.info("[StateArrayJsunit_static_0700] component obj is: " + JSON.stringify(obj));
       console.info("[StateArrayJsunit_static_0700] ClassA: " + JSON.stringify(obj.getElement('$attrs').getString('content')));
-      expect(obj.getElement('$attrs').getString('content')).assertEqual('ClassA：{"value":"Hello","data":{"value":6}}');
+      expect(obj.getElement('$attrs').getString('content')).assertEqual('ClassA：{"value":"Hello","data":{"value":8}}');
       console.info('[StateArrayJsunit_static_0700] END');
       done();
     });

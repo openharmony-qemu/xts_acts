@@ -104,15 +104,6 @@ export default function DequeTest() {
       const TAG = "testInsertFront0003";
       try {
         let deque: Deque<object> = new Deque<object>();
-        // let a: C1 = {
-        //   name: "Dylon", age: "13"
-        // };
-        // let b: C1 = {
-        //   name: "Joe", age: "14"
-        // };
-        // let c: C1 = {
-        //   name: "Lucy", age: "15"
-        // };
         let a: C1 = new C1("Dylon", "13");
         let b: C1 = new C1("Joe", "14");
         let c: C1 = new C1("Lucy", "15");
@@ -140,9 +131,6 @@ export default function DequeTest() {
       const TAG = "testInsertFront0004";
       try {
         let deque: Deque<number | string | object> = new Deque<number | string | object>();
-        // let a: C1 = {
-        //   name: "Dylon", age: "13"
-        // };
         let a: C1 = new C1("Dylon", "13");
         let b = 'a'
         let c = 1
@@ -217,15 +205,6 @@ export default function DequeTest() {
       const TAG = "testInsertEnd0007";
       try {
         let deque: Deque<object> = new Deque<object>();
-        // let a: C1 = {
-        //   name: "Dylon", age: "13"
-        // };
-        // let b: C1 = {
-        //   name: "Joe", age: "14"
-        // };
-        // let c: C1 = {
-        //   name: "Lucy", age: "15"
-        // };
         let a: C1 = new C1("Dylon", "13");
         let b: C1 = new C1("Joe", "14");
         let c: C1 = new C1("Lucy", "15");
@@ -253,9 +232,6 @@ export default function DequeTest() {
       const TAG = "testInsertEnd0008";
       try {
         let deque: Deque<number | string | object> = new Deque<number | string | object>();
-        // let a: C1 = {
-        //   name: "Dylon", age: "13"
-        // };
         let a: C1 = new C1("Dylon", "13");
         let b = 'a'
         let c = 1
@@ -327,9 +303,6 @@ export default function DequeTest() {
       const TAG = "testHas0011";
       try {
         let deque: Deque<object> = new Deque<object>();
-        // let a: C1 = {
-        //   name: "Dylon", age: "13"
-        // };
         let a: C1 = new C1("Dylon", "13");
         deque.insertFront(a)
         let result = deque.has(a);

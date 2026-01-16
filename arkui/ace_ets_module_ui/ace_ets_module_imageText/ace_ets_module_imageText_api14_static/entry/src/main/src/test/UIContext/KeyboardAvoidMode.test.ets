@@ -80,7 +80,7 @@ it('KeyboardAvoidModeTest_static_0100', Level.LEVEL2, async (done: () => void): 
 	    await CommonFunc.sleep(1000);
 	    let button = await driver.findComponent(ON.id('getKeyboardAvoidMode'));
 	    await CommonFunc.sleep(1000);
-      button?.click()
+      await (button?.click() as Promise<void>)
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Text');
       let obj = JSON.parseJsonElement(strJson);
@@ -109,7 +109,7 @@ it('KeyboardAvoidModeTest_static_0200', Level.LEVEL2, async (done: () => void): 
 	    await CommonFunc.sleep(1000);
 	    let button = await driver.findComponent(ON.id('getKeyboardAvoidMode'));
 	    await CommonFunc.sleep(1000);
-	    button?.click()
+	    await (button?.click() as Promise<void>)
       await CommonFunc.sleep(2000);
       let strJson = inspector.getInspectorByKey('Text');
       let obj = JSON.parseJsonElement(strJson);

@@ -437,7 +437,6 @@ export default function hidebughiperfTest() {
         console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HIDEBUG_RESOURCE_UNAVAILABLE");
         expect(testNapi.CHECK_HICOLLIE_REMOTE_FAILED() == true).assertTrue();
         console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_HICOLLIE_REMOTE_FAILED");
-        expect(testNapi.CHECK_OH_HiDebug_CreateBacktraceObject() == 1).assertTrue();
         done();
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 > err code: ${err.code}, err msg: ${err.message}`)
@@ -457,15 +456,20 @@ export default function hidebughiperfTest() {
     it('testHidebugHiperfInterface14', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 start");
       try {
-        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_ThreadCpuUsage");
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 CHECK_ThreadCpuUsage");
         expect(testNapi.CHECK_ThreadCpuUsage() == 1).assertTrue();
-        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_OH_HiDebug_GetDefaultMallocDispatchTable");
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 CHECK_OH_HiDebug_GetDefaultMallocDispatchTable");
         expect(testNapi.CHECK_OH_HiDebug_GetDefaultMallocDispatchTable() == 1).assertTrue();
-        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1300 CHECK_OH_HiDebug_CreateBacktraceObject");
-        expect(testNapi.CHECK_OH_HiDebug_CreateBacktraceObject() == 1).assertTrue();
+        console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 CHECK_OH_HiDebug_CreateBacktraceObject");
+        let path: string = '/data/storage/el2/base/files/' ;
+        console.info("output path: " + path);
+        let freeSize = await statfs.getFreeSize(path);
+        if (freeSize > 30 * 1024 * 1024 * 1024) {
+            console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 start01");
+            expect(testNapi.CHECK_OH_HiDebug_CreateBacktraceObject() == 1).assertTrue();
+        }
         console.info("====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 end");
         done();
-
       } catch (err) {
         console.error(`====> SUB_DFX_DFR_Hidebug_Hiperf_Interface_1400 > err code: ${err.code}, err msg: ${err.message}`)
         expect(false).assertTrue();

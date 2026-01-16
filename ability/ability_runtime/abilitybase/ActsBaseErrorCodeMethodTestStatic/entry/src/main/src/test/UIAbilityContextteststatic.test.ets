@@ -24,6 +24,7 @@ import Utils from './Util.test';
 import StartOptions from '@ohos.app.ability.StartOptions'
 import { Caller } from '@ohos.app.ability.UIAbility';
 import contextConstant from '@ohos.app.ability.contextConstant';
+import { Driver, ON } from '@ohos.UiTest';
 
 let domain: int = 0x0000;
 let tag: string = 'testTag';
@@ -32,7 +33,16 @@ let context:common.UIAbilityContext;
 export default function UIAbilityContextteststatic() {
   describe("AbilityUIAbilityContextTestStatic", (): void => {
 
-    beforeAll(() => {
+    beforeAll(async() => {
+      let driver = Driver.create();
+      try {
+          let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+          if (allowed) {
+            await allowed.click();
+          }
+      } catch (err) {
+          console.error('findComponent failed: ' + JSON.stringify(err));
+      }      
       hilog.info(domain, tag, '%{public}s', 'beforeAll start');
       let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
       await abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.actsbaseerrrocodemethodtest.static");
@@ -271,7 +281,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2100 ${err.code}`);
               expect(err.code).assertEqual(16000004);
               done();
@@ -310,7 +320,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_2200 ${err.code}`);
               expect(err.code).assertEqual(16000019);
               done();
@@ -357,7 +367,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3000 ${err.code}`);
               expect(err.code).assertEqual(16000050);
               done();
@@ -394,7 +404,7 @@ export default function UIAbilityContextteststatic() {
               hilog.info(domain, tag, '%{public}s', `startAbilityByCall succeed`);
               expect().assertFail();
               done();
-            }).catch((err: BusinessError): void => {
+            }).catch((err: Error): void => {
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3100 ${err.code}`);
             expect(err.code).assertEqual(16000001);
             done();
@@ -439,7 +449,7 @@ export default function UIAbilityContextteststatic() {
               hilog.info(domain, tag, '%{public}s', `startAbilityByCall succeed`);
               expect().assertFail();
               done();
-            }).catch((err: BusinessError): void => {
+            }).catch((err: Error): void => {
             hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_static_3300 ${err.code}`);
             expect(err.code).assertEqual(16000050);
             done();
@@ -539,7 +549,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
               expect(err.code).assertEqual(16000005);
               done();
@@ -564,7 +574,7 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
-        .catch((err: BusinessError<void>): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
               done();
@@ -604,7 +614,7 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
-        .catch((err: BusinessError<void>): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
               done();
@@ -641,7 +651,7 @@ export default function UIAbilityContextteststatic() {
       async (done: () => void): Promise<void> => {
         hilog.info(domain, tag, 'Test START');
         context.moveAbilityToBackground()
-        .catch((err: BusinessError<void>): void => {
+        .catch((err: Error): void => {
           hilog.info(domain, tag, `moveAbilityToBackground error: ${JSON.stringify(err)}.`)
             if(err?.code == 16000061) {
               done();
@@ -663,7 +673,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
               expect(err?.code).assertEqual(201);
               done();
@@ -744,7 +754,7 @@ export default function UIAbilityContextteststatic() {
               expect().assertFail();
               done();
             })
-            .catch((err: BusinessError):void => {
+            .catch((err: Error):void => {
               hilog.info(domain, tag, '%{public}s', `SUB_Ability_AbilityBase_UIAbilityContextError_2100 ${err.code}`);
               if (err.code !== 0) {
                 if(err.code==801) {

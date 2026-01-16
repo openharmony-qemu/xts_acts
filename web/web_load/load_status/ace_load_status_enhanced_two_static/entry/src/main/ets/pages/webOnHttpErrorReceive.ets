@@ -23,7 +23,7 @@ import { BusinessError, Callback, RecordData } from '@ohos.base';
 import { UIContext, Router } from '@ohos.arkui.UIContext'
 
 class StringFields {
-  private str: string = '';
+  public str: string = '';
 }
 
 @Entry
@@ -101,7 +101,7 @@ private valueChangeCallBack: Callback<events_emitter.EventData> = (eventData: ev
               case 'testOnHttpErrorReceive004': {
                 try {
                   this.httpErrorReceive = 0;
-                  this.controller.loadUrl('resource://rawfile/index.html');
+                  this.controller.loadUrl('www.example.com');
                   setTimeout(() => {
                   Utils.emitEvent(this.httpErrorReceive, 60604);
                   }, 4000)

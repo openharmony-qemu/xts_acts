@@ -70,7 +70,7 @@ export default function ActsWebRunJavaScriptOnDocumentStartTest() {
       await Utils.msSleep(4000);
       Utils.emitEvent('emitWebRunJavaScriptOnDocumentStart001', 10)
       await Utils.msSleep(2000);
-      Utils.registerEvent('testWebRunJavaScriptOnDocumentStart001', '""', 20250221, done);
+      Utils.registerEvent('testWebRunJavaScriptOnDocumentStart001', '"Red"', 20250221, done);
       await Utils.msSleep(2000);
       inspector.sendEventByKey('WebRunJavaScriptOnDocumentStartTestButton', 10, '');
       await Utils.msSleep(6000);

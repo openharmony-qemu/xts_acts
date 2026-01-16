@@ -84,7 +84,7 @@ it('ArkUI_List_Swipe_static_0100', Level.LEVEL1, async (done: () => void): Promi
       console.info('get getInspectorByKey swipe0100')
       let strJson2: string = inspector.getInspectorByKey('swipe0100')
       console.info('ArkUI_List_Swipe_static_0100 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('end EXPANDED')
       console.info(`${SUITE} ${CASE} END`);
@@ -122,7 +122,7 @@ it('ArkUI_List_Swipe_static_0300', Level.LEVEL1, async (done: () => void): Promi
       console.info('get getInspectorByKey swipe0300')
       let strJson2: string = inspector.getInspectorByKey('swipe0300')
       console.info('ArkUI_List_Swipe_static_0300 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('EXPANDED')
       console.info(`${SUITE} ${CASE} END`);
@@ -148,7 +148,7 @@ it('ArkUI_List_Swipe_static_0400', Level.LEVEL1, async (done: () => void): Promi
       await sleep(8000) // wait for ui update
       let strJson2: string = inspector.getInspectorByKey('swipe0400')
       console.info('ArkUI_List_Swipe_static_0400 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('onFinish')
       console.info(`${SUITE} ${CASE} END`);
@@ -182,7 +182,7 @@ it('ArkUI_List_Swipe_static_0500', Level.LEVEL1, async (done: () => void): Promi
       let strJson2: string = inspector.getInspectorByKey('swipe0500')
 
       console.info('ArkUI_List_Swipe_static_0500 text: ' + JSON.stringifyJsonElement(JSON.parseJsonElement(strJson2)))
-      expect(JSON.parseJsonElement(strJson2).getElement('$type')).assertEqual('Text')
+      expect(JSON.parseJsonElement(strJson2).getString('$type')).assertEqual('Text')
       console.info("obj2.$attrs.content: " + JSON.parseJsonElement(strJson2).getElement('$attrs').getElement('content'))
       expect(JSON.parseJsonElement(strJson2).getElement('$attrs').getString('content')).assertEqual('swipe end')
       console.info(`${SUITE} ${CASE} END`);

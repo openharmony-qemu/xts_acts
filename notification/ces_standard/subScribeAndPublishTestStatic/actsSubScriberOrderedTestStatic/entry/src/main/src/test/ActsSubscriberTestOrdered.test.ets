@@ -651,7 +651,7 @@ export default function ActsSubscriberTestOrder() {
         count++;
         expect(count).assertEqual(1);
         done()
-      }).catch((err:BusinessError):void => {
+      }).catch((err:Error):void => {
         hilog.info(domain,TAG,`SUB_NOTIFICATION_CES_SUBSCRIBER_ORDER_TEST_Static_0600 err `)
         expect(false).assertTrue()
         done()

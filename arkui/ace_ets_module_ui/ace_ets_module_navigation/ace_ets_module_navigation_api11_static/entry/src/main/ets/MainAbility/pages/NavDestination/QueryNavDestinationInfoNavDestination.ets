@@ -63,7 +63,7 @@ import {
   TextAlign,
   AlphabetIndexer
 } from '@ohos.arkui.component';
-import { State, Link, Prop, Provide } from '@ohos.arkui.stateManagement';
+import { State, Link, PropRef, Provide } from '@ohos.arkui.stateManagement';
 import { MessageManager, Callback, Message } from '../../common/MessageManager';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import observer from '@ohos.arkui.observer'

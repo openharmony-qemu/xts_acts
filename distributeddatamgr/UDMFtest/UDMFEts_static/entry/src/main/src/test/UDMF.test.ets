@@ -14,17 +14,51 @@
  */
 
 import { describe, it, expect, TestType, Size, Level, beforeAll } from "../../../hypium/index";
-import hilog from '@ohos.hilog'
+import hilog from '@ohos.hilog';
 import Utils from './Util.test';
-import { BusinessError } from '@ohos.base';
+import { BusinessError, RecordData } from '@ohos.base';
+import { image } from '@kit.ImageKit';
 import UTD from '@ohos.data.uniformTypeDescriptor';
 import unifiedDataChannel from '@ohos.data.unifiedDataChannel';
+import uniformDataStruct from '@ohos.data.uniformDataStruct';
 let domain: int = 0x0000;
 let tag: string = 'testTag';
 let resProgressInfo: unifiedDataChannel.ProgressInfo;
 
+const KEY_TEST_ELEMENT = 'TestKey';
+const VALUE_TEST_ELEMENT = 'TestValue';
+const TAG = '[ttt]'
+
+function func(inputStr: string): unifiedDataChannel.UnifiedData {
+  console.info('pjl execute func');
+  let text = new unifiedDataChannel.Text();
+  text.details = {
+    "Key": inputStr + KEY_TEST_ELEMENT,
+    "Value": inputStr + VALUE_TEST_ELEMENT,
+  };
+  let data = new unifiedDataChannel.UnifiedData(text);
+  data.properties.tag = "FileTag";
+  return data;
+}
+
+interface PersonData {
+  f_name: string;
+  l_name: string;
+  age: number;
+};
+
+interface PersonData1 {
+  f_name: string;
+  l_name: string;
+  f_name1: string;
+  l_name1: string;
+  age: number;
+};
+
 export default function UDMFApiTest() {
   describe("UDMFApiTest", (): void => {
+    hilog.info(domain, tag, '%{public}s', 'UDMFApiTest start');
+    let TAG = '';
     /**
      * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_0100
      * @tc.number UnifiedDataTest01
@@ -2428,6 +2462,1153 @@ export default function UDMFApiTest() {
       hilog.info(domain, tag, '%{public}s', summary.totalSize);
       console.info("SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6400 end");
     })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0400';
+
+        const textType = 'general.text';
+        const htmlType = 'general.html';
+        const plaintextType = 'general.plain-text';
+
+        try {
+          hilog.info(domain, tag, `${TAG} >> start`);
+
+          const text = new unifiedDataChannel.Text();
+          const unifiedData = new unifiedDataChannel.UnifiedData(text);
+
+          hilog.info(domain, tag, `${TAG}[02] hasType(text)=${unifiedData.hasType(textType)}`);
+          expect(unifiedData.hasType(textType)).assertEqual(true);
+
+          const types1 = unifiedData.getTypes();
+          hilog.info(domain, tag, `${TAG}[03] getTypes.len=${types1.length}, [0]=${types1[0]}`);
+          expect(types1.length).assertEqual(1);
+          expect(types1[0]).assertEqual(textType);
+
+          const html = new unifiedDataChannel.HTML();
+          unifiedData.addRecord(html);
+
+          hilog.info(domain, tag, `${TAG}[05] hasType(text)=${unifiedData.hasType(textType)}`);
+          expect(unifiedData.hasType(textType)).assertEqual(true);
+
+          hilog.info(domain, tag, `${TAG}[06] hasType(html)=${unifiedData.hasType(htmlType)}`);
+          expect(unifiedData.hasType(htmlType)).assertEqual(true);
+
+          const plain = new unifiedDataChannel.PlainText();
+          unifiedData.addRecord(plain);
+
+          hilog.info(domain, tag, `${TAG}[07] hasType(text)=${unifiedData.hasType(textType)}`);
+          expect(unifiedData.hasType(textType)).assertEqual(true);
+
+          hilog.info(domain, tag, `${TAG}[08] hasType(html)=${unifiedData.hasType(htmlType)}`);
+          expect(unifiedData.hasType(htmlType)).assertEqual(true);
+
+          hilog.info(domain, tag, `${TAG}[09] hasType(plain)=${unifiedData.hasType(plaintextType)}`);
+          expect(unifiedData.hasType(plaintextType)).assertEqual(true);
+
+          const types3 = unifiedData.getTypes();
+          hilog.info(domain, tag, `${TAG}[10] getTypes.len=${types3.length}`);
+          hilog.info(domain, tag, `${TAG}[11] types[0]=${types3[0]}`);
+          hilog.info(domain, tag, `${TAG}[12] types[1]=${types3[1]}`);
+          hilog.info(domain, tag, `${TAG}[13] types[2]=${types3[2]}`);
+          expect(types3.length).assertEqual(3);
+          expect(types3[0]).assertEqual(textType);
+          expect(types3[1]).assertEqual(htmlType);
+          expect(types3[2]).assertEqual(plaintextType);
+
+          hilog.info(domain, tag, `${TAG} >> All passed!`);
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.error(domain, tag, `${TAG} >> catch: code=${error.code}, msg=${error.message}`);
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1200
+     * @tc.desc   Test UDMF creating a unifieddata with a systemdefinedappitem record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1200';
+        hilog.info(domain, tag, TAG + ' start ');
+        let systemDefinedAppItem: unifiedDataChannel.SystemDefinedAppItem =
+          new unifiedDataChannel.SystemDefinedAppItem();
+        systemDefinedAppItem.appId = 'appId';
+        systemDefinedAppItem.appName = 'appName';
+        systemDefinedAppItem.appIconId = 'appIconId';
+        systemDefinedAppItem.appLabelId = 'appLabelId';
+        systemDefinedAppItem.bundleName = 'bundleName';
+        systemDefinedAppItem.abilityName = 'abilityName';
+
+        let unifiedData = new unifiedDataChannel.UnifiedData(systemDefinedAppItem);
+        let records = unifiedData.getRecords();
+        let record: unifiedDataChannel.SystemDefinedAppItem = (records[0]) as unifiedDataChannel.SystemDefinedAppItem;
+        expect(records.length).assertEqual(1);
+        hilog.info(domain, tag, TAG + ' records.length: ' + JSON.stringify(records.length));
+
+        expect(record.appId).assertEqual('appId');
+        hilog.info(domain, tag, TAG + ' records.appId: ' + `appId=${record.appId}`);
+
+        expect(record.appName).assertEqual('appName');
+        hilog.info(domain, tag, TAG + ' records.appName: ' + `appName=${record.appName}`);
+
+        expect(record.appIconId).assertEqual(systemDefinedAppItem.appIconId);
+        hilog.info(domain, tag, TAG + ' records.appIconId: ' + `appIconId=${record.appIconId}`);
+
+        expect(record.appLabelId).assertEqual(systemDefinedAppItem.appLabelId);
+        hilog.info(domain, tag, TAG + ' records.appLabelId: ' + `appLabelId=${record.appLabelId}`);
+
+        expect(record.bundleName).assertEqual('bundleName');
+        hilog.info(domain, tag, TAG + ' records.bundleName: ' + `bundleName=${record.bundleName}`);
+
+        expect(record.abilityName).assertEqual('abilityName');
+        hilog.info(domain, tag, TAG + ' records.abilityName: ' + `abilityName=${record.abilityName}`);
+
+        hilog.info(domain, tag, TAG + ' end ');
+        done();
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7300
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7300';
+        hilog.info(domain, tag, `${TAG} start`);
+
+        const options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DATA_HUB
+        };
+        const plainText = new unifiedDataChannel.PlainText();
+        plainText.textContent = 'hello world!';
+        const unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+        try {
+          unifiedDataChannel.insertData(options, unifiedData, (err, key) => {
+            hilog.info(domain, tag, `${TAG} insertData success, key=${key}`);
+            expect(typeof key === 'string').assertTrue();
+
+            unifiedDataChannel.updateData(
+              { intention: unifiedDataChannel.Intention.DATA_HUB, key },
+              unifiedData,
+              (e2, ret) => {
+                hilog.info(domain, tag, TAG + ' updateData success');
+                expect(ret === undefined).assertTrue();
+                done();
+              }
+            );
+          });
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error !== null).assertFail();
+          done();
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7400
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7400
+     * @tc.desc   unifiedDataChannel updateData promise interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7400', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7400';
+        hilog.info(domain, tag, `${TAG} start`);
+
+        const options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DATA_HUB
+        };
+        const plainText = new unifiedDataChannel.PlainText();
+        plainText.textContent = 'hello world!';
+        const unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+        try {
+          unifiedDataChannel.insertData(options, unifiedData, (err, key) => {
+            hilog.info(domain, tag, TAG + `insertData success, key=${key}`);
+            unifiedDataChannel.updateData({ intention: options.intention, key }, unifiedData)
+              .then(() => {
+                hilog.info(domain, tag, TAG + `updateData success`);
+                let successStep = 1;
+                expect(successStep).assertEqual(1);
+                done();
+              })
+              .catch((updateErr) => {
+                const error = updateErr as BusinessError;
+                hilog.error(domain, tag, TAG + `updateData fail: ${error}`);
+                hilog.info(domain, tag, TAG + ` updateErr.code: ${error.code} , updateErr.message: ${error.message}`);
+                expect().assertFail();
+                done();
+              });
+          });
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error !== null).assertFail();
+          done();
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6800';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {};
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(contentFormRecord);
+        unifiedDataChannel.insertData(options, unifiedData, (e, data) => {
+          const error = e as BusinessError;
+          hilog.info(domain, tag, TAG + ' insertData: ' + data);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+          done()
+          })
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7600
+     * @tc.desc   unifiedDataChannel updateData promise interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7600', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7600';
+        hilog.info(domain, tag, `${TAG} start`);
+
+        const options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.SYSTEM_SHARE,
+          visibility:unifiedDataChannel.Visibility.ALL
+        };
+        const plainText = new unifiedDataChannel.PlainText();
+        plainText.textContent = 'hello world!';
+        const unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+
+        try {
+          const key = await unifiedDataChannel.insertData(options, unifiedData);
+          hilog.info(domain, tag, `${TAG} insertData success; key=${key}`);
+
+          const ret = await unifiedDataChannel.updateData({ intention: options.intention, key }, unifiedData);
+          hilog.info(domain, tag, `${TAG} updateData success; ret=${ret}`);
+          expect(ret !== null).assertTrue();
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, `${TAG} error.code: ${error.code}, message: ${error.message}`);
+          expect(error.code).assertEqual(401);
+          done();
+        }
+        hilog.info(domain, tag, `${TAG} end`);
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+
+        try {
+          unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.DATA_HUB,
+            unifiedDataChannel.ShareOptions.CROSS_APP);
+          console.info(TAG, `setAppShareOptions is successed`);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700
+     * @tc.desc   removeAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_DragPerssionNormal_0700';
+        hilog.info(domain, tag, TAG + ' start ');
+        try {
+          unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DATA_HUB);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7800
+     * @tc.desc   unifiedDataChannel updateData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7800',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7800';
+        hilog.info(domain, tag, `${TAG} start`);
+        const options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DRAG
+        };
+        const unifiedData = new unifiedDataChannel.UnifiedData();
+        unifiedData.addRecord(
+          new unifiedDataChannel.UnifiedRecord('general.plain-text', "")
+        );
+        unifiedDataChannel.insertData(options, unifiedData, (e1, key) => {
+          hilog.info(domain, tag, `${TAG} insert success, key=${key}`);
+          const updOpt: unifiedDataChannel.Options = {
+            intention: unifiedDataChannel.Intention.DRAG,
+            key
+          };
+          try {
+            unifiedDataChannel.updateData(updOpt, unifiedData, (e2, ret) => {
+              if (e2) {
+                hilog.info(domain, tag, `${TAG} updateData success; data = ${ret},update catch → code=${e2.code}`);
+                expect(e2.code).assertEqual(401);
+              } else {
+                hilog.info(domain, tag, `${TAG} update success`);
+                expect().assertFail();
+              }
+              done();
+            });
+          } catch (err) {
+            const error = err as BusinessError;
+            hilog.info(domain, tag, `${TAG} update throw → code=${error.code}`);
+            expect(error.code).assertEqual(401);
+            done();
+          }
+        });
+
+        hilog.info(domain, tag, `${TAG} end`);
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500
+     * @tc.desc   Verify the properties of the contentForm type
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL2
+     */
+    it('SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UDMFEntryTest_0500';
+        hilog.info(domain, tag, TAG + ' start');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DATA_HUB
+        };
+        const fileUriDetails: Record<string, int | long | double | string | Uint8Array> = {
+          'width': 320,
+          'height': 240,
+          'desc': 'value2'
+        };
+        let fileUri: uniformDataStruct.FileUri = {
+          uniformDataType: 'general.file-uri',
+          oriUri: 'file://data/image/1.png',
+          fileType: 'general.image',
+          details: fileUriDetails,
+        }
+        const formDetails: Record<string, int | long | double | string | Uint8Array> = {
+          'formWidth': 320,
+          'formHeight': 240,
+          'desc': 'this is a form'
+        };
+        let formData: uniformDataStruct.Form = {
+          uniformDataType: 'openharmony.form',
+          formId: 1,
+          formName: 'form',
+          bundleName: 'com.xx.app',
+          abilityName: 'ability',
+          module: 'module',
+          details: formDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let record = new unifiedDataChannel.UnifiedRecord();
+        record.addEntry(UTD.UniformDataType.FILE_URI, fileUri);
+        record.addEntry(UTD.UniformDataType.OPENHARMONY_FORM, formData);
+        try {
+          record.addEntry("", formData);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + " end");
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7100
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7100
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7100';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DRAG,
+          key: 'key'
+        };
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(contentFormRecord);
+          unifiedDataChannel.deleteData(options).then((data) => {
+            hilog.info(domain, tag, TAG + data);
+            expect().assertFail();
+            done()
+          }).catch((err: Error) => {
+            const error = err as BusinessError;
+            hilog.info(domain, tag, TAG + err.code + err.message);
+            expect(error.code).assertEqual(401);
+            done()
+          });
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7200
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7200';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DRAG,
+          key: 'key'
+        };
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(contentFormRecord);
+        try {
+          unifiedDataChannel.deleteData(options, (data, ret) => {
+            hilog.info(domain, tag, TAG + ' error: ' + data);
+            const error = data as BusinessError;
+            expect(error.code).assertEqual(401);
+            done();
+          })
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6900
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6900
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6900', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6900';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DRAG,
+          key: 'key'
+        };
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(contentFormRecord);
+        try {
+          unifiedDataChannel.queryData(options).then((data) => {
+            hilog.info(domain, tag, TAG + data);
+            expect().assertFail();
+          }).catch((err: Error) => {
+            const error = err as BusinessError;
+            hilog.info(domain, tag, TAG + error.code + error.message);
+            expect(error.code).assertEqual(401);
+            done()
+          });
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7000
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_7000';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DRAG,
+          key: 'key'
+        };
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(contentFormRecord);
+        try {
+          unifiedDataChannel.queryData(options, (data, ret) => {
+            hilog.info(domain, tag, TAG + data);
+            const error = data as BusinessError;
+            expect(error.code).assertEqual(401);
+            done();
+          })
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void) => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6700';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: undefined,
+          visibility:undefined
+        };
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let contentFormRecord = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(contentFormRecord);
+        try {
+          unifiedDataChannel.insertData(options, unifiedData).then((data) => {
+            hilog.info(domain, tag, TAG + data);
+            expect().assertFail();
+            done();
+          }).catch((err: Error) => {
+            const error = err as BusinessError;
+            hilog.info(domain, tag, TAG + error.code + error.message);
+            expect(error.code).assertEqual(401);
+            done();
+          });
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(401);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6410
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6410
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6410',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6410';
+        hilog.info(domain, tag, `${TAG} start`);
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        const plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        };
+        const unifiedData = new unifiedDataChannel.UnifiedData();
+        unifiedData.addRecord(new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText));
+
+        try {
+          const key = await unifiedDataChannel.insertData(
+            { intention: unifiedDataChannel.Intention.DATA_HUB, visibility:unifiedDataChannel.Visibility.ALL }, unifiedData);
+          hilog.info(domain, tag, `${TAG} insertData success, key=${key}`);
+
+          const ret = await unifiedDataChannel.queryData(
+            { intention: unifiedDataChannel.Intention.DATA_HUB, key: key });
+          hilog.info(domain, tag, `${TAG} queryData 返回数组长度=${ret.length}`);
+
+          let size = ret.length;
+          hilog.info(domain, tag, `${TAG} data.size = ${size}`);
+          for (let i = 0; i < size; i++) {
+            let records = ret[i].getRecords();
+            let size = records.length;
+            for (let j = 0; j < size; j++) {
+              if (records[j].getType() == (UTD.UniformDataType.PLAIN_TEXT).toString()) {
+                let text: unifiedDataChannel.PlainText = (records[j]) as unifiedDataChannel.PlainText;
+                hilog.info(domain, tag, `${TAG} queryData.result = ${i + 1}.${text.textContent}`);
+              }
+            }
+          }
+          expect(size).assertEqual(1);
+          hilog.info(domain, tag, `${TAG} size = ${size}`);
+
+          const rets = await unifiedDataChannel.deleteData(
+            { intention: unifiedDataChannel.Intention.DATA_HUB, key: key });
+          hilog.info(domain, tag, `${TAG} deleteData 返回数组长度=${rets.length}`);
+          hilog.info(domain, tag, `${TAG} deleteData 成功`);
+        } catch (err) {
+          hilog.error(domain, tag, `${TAG} catch 异常: ${JSON.stringify(err)}`);
+          expect().assertFail();
+        }
+
+        hilog.info(domain, tag, `${TAG} end`);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6420
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6420
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6420', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_6420';
+        hilog.info(domain, tag, `${TAG} start`);
+
+        try {
+          const plainText: unifiedDataChannel.PlainText = {
+            textContent: 'This is plainText textContent example',
+            textAbstract: 'this is abstract',
+          };
+
+          const unifiedData = new unifiedDataChannel.UnifiedData();
+          unifiedData.addRecord(new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText));
+
+          const key = await unifiedDataChannel.insertData(
+            { intention: unifiedDataChannel.Intention.DATA_HUB, visibility:unifiedDataChannel.Visibility.OWN_PROCESS }, unifiedData);
+          hilog.info(domain, tag, `${TAG} insertData success, key=${key}`);
+
+          const ret = await unifiedDataChannel.queryData(
+            { intention: unifiedDataChannel.Intention.DATA_HUB, key: key });
+          hilog.info(domain, tag, `${TAG} queryData 返回数组长度=${ret.length}`);
+          expect(typeof key === 'string' && key.length > 0).assertTrue();
+
+          if (ret && ret.length > 0) {
+            try {
+              const deleteRet = await unifiedDataChannel.deleteData(
+                { intention: unifiedDataChannel.Intention.DATA_HUB, key: key });
+              hilog.info(domain, tag, `${TAG} deleteData 返回数组长度=${deleteRet.length}`);
+              hilog.info(domain, tag, `${TAG} deleteData 成功`);
+            } catch (deleteErr) {
+              const deleteError = deleteErr as BusinessError;
+              hilog.warn(domain, tag, `${TAG} deleteData 异常(可接受): ${JSON.stringify(deleteError)}`);
+            }
+            const afterDel = await unifiedDataChannel.queryData(
+              { intention: unifiedDataChannel.Intention.DATA_HUB, key });
+            hilog.info(domain, tag, `${TAG} 删除后再查，返回数组长度=${afterDel.length}`);
+            expect(afterDel.length === 0).assertTrue();
+          } else {
+            hilog.info(domain, tag, `${TAG} 无数据需要清理`);
+          }
+        } catch (err) {
+          const errorObj = err as BusinessError;
+          hilog.error(domain, tag, `${TAG} catch 异常: ${JSON.stringify(errorObj)}`);
+        }
+
+        hilog.info(domain, tag, `${TAG} end`);
+        done();
+      });
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1600
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1600
+     * @tc.desc   unifiedDataChannel deleteData callback interface test.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataCallbackJsAPITest_1600',
+      TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void) => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_1600';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DATA_HUB
+        };
+        let plainText = new unifiedDataChannel.PlainText();
+        plainText.textContent = "hello world!";
+        let unifiedData = new unifiedDataChannel.UnifiedData(plainText);
+        try {
+          hilog.info(domain, tag, TAG + ' flag:: ' + JSON.stringify(unifiedData));
+          unifiedDataChannel.insertData(options, unifiedData, (err, data) => {
+            hilog.info(domain, tag, TAG + ` insertData0100 success; data = ${data}, options = ${options}`);
+            options.key = data;
+            hilog.info(domain, tag, TAG + ` options = ${JSON.stringify(options)}`);
+            unifiedDataChannel.queryData(options, (error, ret) => {
+              hilog.info(domain, tag, TAG + ` options = ${JSON.stringify(options)}`);
+              hilog.info(domain, tag, TAG + ` queryData size`);
+              unifiedDataChannel.deleteData(options, (e, row) => {
+                hilog.info(domain, tag, TAG + ` options = ${JSON.stringify(options)}`);
+                hilog.info(domain, tag, TAG + ` deleteData` + JSON.stringify(e));
+                if (e) {
+                  let size = row!.length;
+                  hilog.info(domain, tag, TAG + ` deleteData size = ${size}`);
+                  for (let i = 0; i < size; i++) {
+                    let records = row![i].getRecords();
+                    let size = records.length;
+                    for (let j = 0; j < size; j++) {
+                      if (records[j].getType() == (UTD.UniformDataType.PLAIN_TEXT).toString()) {
+                        let text: unifiedDataChannel.PlainText = (records[j]) as unifiedDataChannel.PlainText;
+                        hilog.info(domain, tag, TAG + ` deleteData.result = ${i + 1}.${text.textContent}`);
+                      }
+                    }
+                  }
+                  expect(size).assertEqual(1);
+                  done();
+                } else {
+                  expect().assertFail();
+                  done();
+                }
+              });
+            });
+          });
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error !== null).assertFail();
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9000
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9000
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9000', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9000';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DATA_HUB,
+          visibility:unifiedDataChannel.Visibility.ALL
+        };
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+          'attr2': 'value2',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is textAbstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let record = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(record);
+        try {
+          const data = await unifiedDataChannel.insertData(options, unifiedData)
+          hilog.info(domain, tag, TAG + ` data = ` + data);
+          let options1: unifiedDataChannel.Options = {
+            intention: unifiedDataChannel.Intention.DATA_HUB,
+            key: data
+          };
+          const ret = await unifiedDataChannel.queryData(options1)
+          let size = ret.length;
+          hilog.info(domain, tag, `${TAG} data.size = ${size}`);
+          for (let i = 0; i < size; i++) {
+            let records = ret[i].getRecords();
+            let size = records.length;
+            for (let j = 0; j < size; j++) {
+              if (records[j].getType() == (UTD.UniformDataType.PLAIN_TEXT).toString()) {
+                const text = records[j].getValue() as uniformDataStruct.PlainText;
+                expect(text.uniformDataType).assertEqual(plainText.uniformDataType);
+                expect(text.textContent).assertEqual(plainText.textContent);
+                expect(text.textAbstract).assertEqual(plainText.textAbstract);
+                expect(text.details != null).assertTrue();
+                hilog.info(domain, tag, TAG + ` text.details raw = ` + JSON.stringify(text.details));
+                hilog.info(domain, tag, TAG + ` plainText.details raw = ` + JSON.stringify(plainText.details));
+                hilog.info(domain, tag, `${TAG} queryData.result = ${i + 1}.${text.textContent}`);
+              }
+            }
+          }
+          await unifiedDataChannel.deleteData(options1);
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect().assertFail();
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9200
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9200
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_9200';
+        hilog.info(domain, tag, TAG + ' start ');
+        let options: unifiedDataChannel.Options = {
+          intention: unifiedDataChannel.Intention.DATA_HUB,
+          visibility:unifiedDataChannel.Visibility.OWN_PROCESS
+        };
+        let plainTextDetails: Record<string, string> = {
+          'attr1': 'value1',
+        }
+        let plainText: uniformDataStruct.PlainText = {
+          uniformDataType: 'general.plain-text',
+          textContent: 'This is plainText textContent example',
+          textAbstract: 'this is abstract',
+          details: plainTextDetails,
+        }
+        let unifiedData = new unifiedDataChannel.UnifiedData();
+        let record = new unifiedDataChannel.UnifiedRecord('general.plain-text', plainText);
+        unifiedData.addRecord(record);
+        try {
+          const data = await unifiedDataChannel.insertData(options, unifiedData)
+          hilog.info(domain, tag, TAG + ` data = ` + data);
+          let options1: unifiedDataChannel.Options = {
+            intention: unifiedDataChannel.Intention.DATA_HUB,
+            key: data
+          };
+          const ret = await unifiedDataChannel.queryData(options1)
+          let size = ret.length;
+          hilog.info(domain, tag, `${TAG} data.size = ${size}`);
+          for (let i = 0; i < size; i++) {
+            let records = ret[i].getRecords();
+            let size = records.length;
+            for (let j = 0; j < size; j++) {
+              if (records[j].getType() == (UTD.UniformDataType.PLAIN_TEXT).toString()) {
+                const text = records[j].getValue() as uniformDataStruct.PlainText;
+                expect(text.uniformDataType).assertEqual(plainText.uniformDataType);
+                expect(text.textContent).assertEqual(plainText.textContent);
+                expect(text.textAbstract).assertEqual(plainText.textAbstract);
+                expect(text.details != null).assertTrue();
+                hilog.info(domain, tag, TAG + ` text.details raw = ` + JSON.stringify(text.details));
+                hilog.info(domain, tag, TAG + ` plainText.details raw = ` + JSON.stringify(plainText.details));
+                expect(JSON.stringify(text.details)).assertEqual(JSON.stringify(plainText.details));
+                hilog.info(domain, tag, `${TAG} queryData.result = ${i + 1}.${text.textContent}`);
+              }
+            }
+          }
+          await unifiedDataChannel.deleteData(options1);
+          done();
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect().assertFail();
+          done();
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_8800
+     * @tc.number SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_8800
+     * @tc.desc   Test UDMF creating a unifieddata with a text record.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_8800', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+      const TAG = 'SUB_DistributedData_UDMF_SDK_UnifiedDataJsAPITest_8800';
+      hilog.info(domain, tag, TAG + ' start ');
+      const progressInfo: unifiedDataChannel.ProgressInfo = {
+        progress: 10,
+        status: unifiedDataChannel.ListenerStatus.INVALID_PARAMETERS
+      }
+      let progressListener = (progressInfo: unifiedDataChannel.ProgressInfo, data: unifiedDataChannel.UnifiedData | null) => {
+        resProgressInfo = progressInfo;
+      };
+
+      let dataLoadInfo: unifiedDataChannel.DataLoadInfo = {
+        recordCount: 0
+      }
+      try {
+        hilog.info(domain, tag, TAG + ' GetDataParamsc start ');
+        const getDataParams: unifiedDataChannel.GetDataParams = {
+          progressIndicator: unifiedDataChannel.ProgressIndicator.NONE,
+          dataProgressListener: progressListener,
+          destUri: "/data/files",
+          fileConflictOptions: unifiedDataChannel.FileConflictOptions.SKIP,
+          acceptableInfo:dataLoadInfo
+        }
+        let obj = getDataParams;
+        progressListener(progressInfo, null);
+        expect(obj.progressIndicator).assertEqual(getDataParams.progressIndicator);
+
+        expect(obj.destUri).assertEqual(getDataParams.destUri);
+
+        expect(obj.fileConflictOptions).assertEqual(getDataParams.fileConflictOptions);
+        expect(obj.acceptableInfo).assertEqual(getDataParams.acceptableInfo);
+
+        expect(resProgressInfo.progress).assertEqual(progressInfo.progress);
+        expect(resProgressInfo.status).assertEqual(progressInfo.status);
+        hilog.info(domain, tag, TAG + ' end ');
+        done()
+      } catch (err) {
+        const error = err as BusinessError;
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+        expect(error.code).assertEqual(201);
+        done()
+      }
+    })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL3
+     */
+    it('SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0300';
+        hilog.info(domain, tag, TAG + ' start ');
+        try {
+          unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
+          console.info(TAG, `removeAppShareOptions is successed`);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(201);
+          done()
+        }
+        hilog.info(domain, tag, TAG + ' end ');
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100
+     * @tc.number SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100
+     * @tc.desc   setAppShareOptions
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0,
+      async (done: () => void): Promise<void> => {
+        const TAG = 'SUB_DistributedData_UDMF_SDK_DragWithOutPermission_0100';
+        hilog.info(domain, tag, TAG + ' start ');
+        try {
+          unifiedDataChannel.removeAppShareOptions(unifiedDataChannel.Intention.DRAG);
+          unifiedDataChannel.setAppShareOptions(unifiedDataChannel.Intention.DRAG,
+            unifiedDataChannel.ShareOptions.IN_APP);
+          console.info(TAG, `removeAppShareOptions is successed`);
+          expect().assertFail();
+          done()
+        } catch (err) {
+          const error = err as BusinessError;
+          hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+          hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+          expect(error.code).assertEqual(201);
+          done()
+        }
+      })
+
+    /**
+     * @tc.name   SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300
+     * @tc.number SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300
+     * @tc.desc   unifiedDataChannel properties test
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+      TAG = 'SUB_DistributedData_UDMF_SDK_UDMFSupportClipboardApiTest_0300';
+      hilog.info(domain, tag, TAG + ' start ');
+      let bb5: Record<String, RecordData> = {
+        "bb1": "111",
+      }
+      try {
+        let property: unifiedDataChannel.UnifiedDataProperties = new unifiedDataChannel.UnifiedDataProperties();
+        property.extras = bb5;
+        hilog.info(domain, tag, TAG + " property.extras:" + property.extras);
+        expect(property.extras != null).assertTrue();
+        property.tag = "property tag value";
+        hilog.info(domain, tag, TAG + " property.tag:" + property.tag);
+        expect(property.tag).assertEqual('property tag value');
+        property.shareOptions = unifiedDataChannel.ShareOptions.CROSS_APP;
+        hilog.info(domain, tag, TAG + " property.shareOptions:" + property.shareOptions);
+        expect(property.shareOptions).assertEqual(1);
+        property.getDelayData = func;
+        property.getDelayData!('inputTest');
+        let data: unifiedDataChannel.UnifiedData = new unifiedDataChannel.UnifiedData();
+        data.properties = property;
+        hilog.info(domain, tag, TAG + " data.properties.timestamp:" + data.properties.timestamp);
+        expect(data.properties.timestamp != null).assertTrue();
+        done()
+      } catch (err) {
+        const error = err as BusinessError;
+        hilog.info(domain, tag, TAG + ` error.code: ${error.code} , error.message: ${error.message}`);
+        hilog.info(domain, tag, TAG + ' error: ' + JSON.stringify(error));
+        expect().assertFail();
+        done()
+      }
+      hilog.info(domain, tag, TAG + ' end ');
+    })
+
     hilog.info(domain, tag, '%{public}s', 'UDMFApiTest end');
   });
 }

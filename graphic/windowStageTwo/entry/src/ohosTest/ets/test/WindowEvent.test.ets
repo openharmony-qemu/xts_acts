@@ -62,6 +62,7 @@ export default function windowEventTest() {
     let isPCStatus:string = '';
     let isAutoWindow:string = '';
     let isFreeWindowMode:boolean = false;
+    let driver: Driver;
     beforeAll(async () => {
       context = AppStorage.get('context') as common.UIAbilityContext;
       console.log('windowTest context: ' + JSON.stringify(context))
@@ -81,6 +82,7 @@ export default function windowEventTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`beforeall isFreeWindowMode: ${JSON.stringify(isFreeWindowMode)}`);
+      driver = Driver.create();
     })
     afterAll(async () => {
       
@@ -128,7 +130,6 @@ export default function windowEventTest() {
           done();
         }
         mainWindow.on('touchOutside', callback);
-        let driver: Driver = Driver.create();
         await sleep(200);
         await driver.click(Math.round(windowProperties.windowRect.left as number+10), Math.round(windowProperties.windowRect.top as number+10));
         await sleep(300);
@@ -182,7 +183,6 @@ export default function windowEventTest() {
         await sleep(3000);
         let windowProperties = subWindowClass.getWindowProperties();
         console.log(`${caseName} windowProperties: ${JSON.stringify(windowProperties)}`);
-        let driver: Driver = Driver.create();
         await sleep(200);
         // await driver.click(Math.round((windowLimits.minWidth as number+200)/2), 0);
         await driver.click(Math.round((windowProperties.windowRect.left as number+10)), (windowProperties.windowRect.top as number+10));

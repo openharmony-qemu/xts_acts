@@ -14,7 +14,9 @@
  */
 
 import imagePicture from './imagePicture.test';
+import getHdrComposedPixelmapWithOption from './GetHdrComposedPixelmapWithOption.test';
 
 export default function testsuite() {
+  getHdrComposedPixelmapWithOption();
   imagePicture();
 }

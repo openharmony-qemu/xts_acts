@@ -68,7 +68,7 @@ it('bindPopupTest_static_001', Level.LEVEL0, async (done: () => void): Promise<v
       await CommonFunc.sleep(1000);
       let driver = Driver.create();
       let btn1 = await driver.findComponent(ON.id('bindPopup001'));
-      btn1?.click()
+      await (btn1?.click() as Promise<void>)
       await CommonFunc.sleep(5000);
       expect(btn1 != null).assertTrue();
       done();

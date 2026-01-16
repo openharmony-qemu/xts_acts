@@ -38,7 +38,7 @@ import { edgeWidths, LengthMetrics } from '@ohos.arkui.node';
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 
 @Entry

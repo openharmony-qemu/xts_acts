@@ -42,6 +42,7 @@ import gridAttrsTest from "./grid/GridAttrsTest.test";
 import gridEventTest from './grid/GridEventTest.test';
 import clipShapeTest from "./clipShape/ClipShapeTest.test";
 import CustomMarkDirtyTest from './CustomComponent/CustomMarkDirtyTest';
+import enumTest from "./InteractiveFramework/enum.test";
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test'
 import SwiperParamTest from './swiper/SwiperParamTest.test';
 import SwiperEnumTest from './swiper/SwiperEnumTest.test';
@@ -50,6 +51,8 @@ import TextEnumTest from "./TextTest/enum.test";
 import BindSelectionMenuTest from './BindSelectionMenu/BindSelectionMenuTest.test'
 import LayoutManagerTest from './LayoutManager/LayoutManagerTest.test'
 import TextEditMenuOptionsTest from './TextEditMenuOptions/TextEditMenuOptionsTest.test'
+import gridAbilityTest from "./grid/GridAbilityTest.test";
+import gridDragTest from "./grid/GridDragTest.test";
 
 export default function testsuite() {
   CoastingAxisTest();
@@ -82,6 +85,7 @@ export default function testsuite() {
   gridEventTest();
   clipShapeTest();
   CustomMarkDirtyTest();
+  enumTest();
   TextMenuItemIdTest();
   SwiperParamTest();
   SwiperEnumTest();
@@ -90,4 +94,6 @@ export default function testsuite() {
   BindSelectionMenuTest();
   LayoutManagerTest();
   TextEditMenuOptionsTest();
+  gridAbilityTest();
+  gridDragTest();
 }

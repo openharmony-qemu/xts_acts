@@ -198,10 +198,12 @@ napi_value OHNativeImageAcquireNativeWindowAbnormal(napi_env env, napi_callback_
 napi_value OHNativeImageAttachContext(napi_env env, napi_callback_info info)
 {
     int backInfo = FAIL;
-    InitEGLEnv();
     GLuint textureId;
     glGenTextures(PARAM_1, &textureId);
     OH_NativeImage *image = OH_NativeImage_Create(textureId, GL_TEXTURE_2D);
+    backInfo = OH_NativeImage_AttachContext(image, textureId);
+    NAPI_ASSERT(env, backInfo == NATIVE_ERROR_EGL_STATE_UNKNOWN, "backInfo != NATIVE_ERROR_EGL_STATE_UNKNOWN");
+    InitEGLEnv();
     OHNativeWindow *nativeWindow = OH_NativeImage_AcquireNativeWindow(image);
     int code = SET_BUFFER_GEOMETRY;
     int32_t width = PARAM_800;
@@ -221,7 +223,6 @@ napi_value OHNativeImageAttachContext(napi_env env, napi_callback_info info)
         }
     }
     munmap(mappedAddr, handle->size);
-
     Region region{nullptr, PARAM_0};
     OH_NativeWindow_NativeWindowFlushBuffer(nativeWindow, buffer, fenceFd, region);
     OH_NativeImage_UpdateSurfaceImage(image);

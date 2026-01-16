@@ -841,7 +841,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           await kvStore!.getResultSet(localDeviceId, 'key_test_string_2').then((result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
-          }).catch(async(err:BusinessError) => {
+          }).catch((err: Error) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
             await sleep(1000);
@@ -946,7 +946,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           await kvStore!.getResultSet('key_test_string_2').then((result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
-          }).catch(async(err:BusinessError) => {
+          }).catch((err:Error) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
             await sleep(1000);
@@ -1068,7 +1068,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
           await kvStore!.getResultSet(localDeviceId, query).then((result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
-          }).catch(async(err:BusinessError) => {
+          }).catch((err:Error) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
             await sleep(1000);
@@ -1149,7 +1149,7 @@ export default function deviceKvStorePromiseErrcodeTest(){
             await kvStore!.getResultSet(query).then((result) => {
             console.info(TAG + ' getResultSet success, i=' + i);
             resultSets!.push(result);
-          }).catch(async(err:BusinessError) => {
+          }).catch((err:Error) => {
             console.error(TAG + ' getResultSet fail ' + `, error code is ${err.code}, message is ${err.message}`);
             expect(15100001).assertEqual(err.code);
             await sleep(1000);

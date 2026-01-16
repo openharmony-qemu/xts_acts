@@ -22,6 +22,7 @@ import hilog from '@ohos.hilog';
 import { MyCallback } from '../models/MyCallback';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UIContext } from '@ohos.arkui.UIContext';
+import common from '@ohos.app.ability.common';
 
 class EntryAbility extends UIAbility {
   onCreate(want: Want, launchParam: AbilityConstant.LaunchParam): void {
@@ -31,6 +32,7 @@ class EntryAbility extends UIAbility {
   onWindowStageCreate(windowStage: window.WindowStage): void {
     hilog.info(0x0000, 'testTag sjd EntryAbility', 'EntryAbility onWindowStageCreate');
     try {
+      AppStorage.setOrCreate<common.BaseContext>('abilityContext', this.context);
       windowStage.loadContent('MainAbility/pages/index/index', (err: BusinessError<void> | null): void => {
         hilog.info(0x0000, 'testTag sjd EntryAbility', 'loadContent entering');
         MyCallback.runCasesOfCallback();

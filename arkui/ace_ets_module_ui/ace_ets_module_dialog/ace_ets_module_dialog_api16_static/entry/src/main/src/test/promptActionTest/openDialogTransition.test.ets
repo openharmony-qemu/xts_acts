@@ -176,7 +176,7 @@ it('OpenDialogTransitionTest_static_300', Level.LEVEL2, async (done: () => void)
       console.info('OpenDialogTransitionTest_static_300 start');
       let driver: Driver = Driver.create();
       let dialogTransitionButton = await driver.findComponent(ON.id('EnableDialogTransition'));
-      dialogTransitionButton?.click();
+      await (dialogTransitionButton?.click() as Promise<void>);
       await CommonFunc.sleep(200);
       let defaultTransitionButton = await driver.findComponent(ON.id('EnableTransition'));
       await (defaultTransitionButton?.click() as Promise<void>);

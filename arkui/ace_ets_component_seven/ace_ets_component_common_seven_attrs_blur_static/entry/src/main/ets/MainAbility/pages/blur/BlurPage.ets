@@ -39,7 +39,7 @@ import { Entry, Component, Row, Text, Color, Column, Scroller, CanvasRenderingCo
   TimePickerAttribute, VideoAttribute, WaterFlowAttribute, WebAttribute, WindowSceneAttribute, XComponentAttribute,
   BadgeParamWithNumber, ColumnOptions, ImageFit, NavPathStack, FormLinkOptions, EffectComponentAttribute, FormComponentAttribute,
   ImageSpanAttribute, PatternLockAttribute, PluginComponentAttribute, UIExtensionComponentAttribute, RenderFit, SystemAdaptiveOptions, AlignRuleOption } from '@ohos.arkui.component'
-import { State, StorageProp } from '@ohos.arkui.stateManagement';
+import { State, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { SetValue, RouterParams } from '../../common/Utils';
 
 class AlphabetIndexerModifier implements AttributeModifier<AlphabetIndexerAttribute> {
@@ -1059,7 +1059,7 @@ function commonStyle(this: TabContentAttribute, componentKey: string){
 @Entry
 @Component
 struct blurPage {
-  @StorageProp('_blurButton') blurButton: SetValue = {
+  @StoragePropRef('_blurButton') blurButton: SetValue = {
     blur: 0
   }
   @State _blur: number = 1.0

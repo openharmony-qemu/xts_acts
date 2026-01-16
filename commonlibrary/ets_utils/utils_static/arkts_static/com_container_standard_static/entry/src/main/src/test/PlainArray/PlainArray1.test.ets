@@ -566,26 +566,6 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.name   testPlainArray026
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2600
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testPlainArray026", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let plainArray = new PlainArray<null>();
-    //   try {
-    //     let res = plainArray.add("a", null);
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "key" must be small integer. Received value is: a`);
-    //   }
-    // });
-
-    /**
      * @tc.name   testPlainArray027
      * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_2700
      * @tc.desc   Test the function By PlainArray.
@@ -702,25 +682,6 @@ export default function PlainArrayTest1() {
       expect(String(res)).assertEqual('undefined');
     });
 
-    /**
-     * @tc.name   testPlainArray033
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_3300
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testPlainArray033", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let plainArray = new PlainArray();
-    //   try {
-    //     let res = plainArray.removeAt("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //   }
-    // });
 
     /**
      * @tc.name   testPlainArray034
@@ -851,29 +812,6 @@ export default function PlainArrayTest1() {
     });
 
     /**
-     * @tc.name   testPlainArray040
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4000
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testPlainArray040", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let plainArray = new PlainArray<number>();
-    //   plainArray.add(-2, "b");
-    //   try {
-    //     plainArray.add("a", "c");
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "key" must be small integer. Received value is: a`);
-    //   }
-    //   let res = plainArray.get(-2);
-    //   expect(res).assertEqual("b");
-    // });
-
-    /**
      * @tc.name   testPlainArray041
      * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4100
      * @tc.desc   Test the function By PlainArray.
@@ -922,128 +860,6 @@ export default function PlainArrayTest1() {
       expect(String(flag)).assertEqual('true');
     });
 
-    /**
-     * @tc.name   testPlainArray043
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4300
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testPlainArray043", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let plainArray = new PlainArray<string>();
-    //   plainArray.add(-2, "b");
-    //   try {
-    //     plainArray.add("b", "a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err: BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "key" must be small integer. Received value is: b`);
-    //   }
-    //   let res = plainArray.get(-2);
-    //   expect(res).assertEqual("b");
-    // });
-
-    /**
-     * @tc.name   testPlainArray044
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4400
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testPlainArray044", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let plainArray = new PlainArray<string>();
-    //   plainArray.add(1, "A");
-    //   plainArray.add(2, "B");
-    //   plainArray.add(3, "C");
-    //   plainArray.add(4, "D");
-    //   plainArray.add(5, "E");
-    //   try {
-    //     plainArray.has("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err:BusinessError) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "key" must be small integer. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testPlainArray045
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4500
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    //  it("testPlainArray045", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let plainArray = new PlainArray();
-    //   plainArray.add(1, "A");
-    //   plainArray.add(2, "B");
-    //   plainArray.add(3, "C");
-    //   plainArray.add(4, "D");
-    //   plainArray.add(5, "E");
-    //   try {
-    //     plainArray.get("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "key" must be small integer. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testPlainArray046
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4600
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    // it("testPlainArray046", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //   let plainArray = new PlainArray();
-    //   plainArray.add(1, "A");
-    //   plainArray.add(2, "B");
-    //   plainArray.add(3, "C");
-    //   plainArray.add(4, "D");
-    //   plainArray.add(5, "E");
-    //   try {
-    //     plainArray.getIndexOfKey("a");
-    //     expect(true).assertEqual(false);
-    //   } catch (err) {
-    //     expect(err.name).assertEqual("BusinessError");
-    //     expect(err.code).assertEqual(401);
-    //     expect(err.message).assertEqual(`The type of "key" must be small integer. Received value is: a`);
-    //   }
-    // });
-
-    /**
-     * @tc.name   testPlainArray047
-     * @tc.number SUB_COMMONLIBRARY_UTIL_PLAINARRAY_4700
-     * @tc.desc   Test the function By PlainArray.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    //   it("testPlainArray047", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
-    //     let plainArray = new PlainArray();
-    //     plainArray.add(1, "A");
-    //     plainArray.add(2, "B");
-    //     plainArray.add(3, "C");
-    //     plainArray.add(4, "D");
-    //     plainArray.add(5, "E");
-    //     try {
-    //       plainArray.getKeyAt("a");
-    //       expect(true).assertEqual(false);
-    //     } catch (err) {
-    //       expect(err.name).assertEqual("BusinessError");
-    //       expect(err.code).assertEqual(401);
-    //       expect(err.message).assertEqual(`The type of "index" must be small integer. Received value is: a`);
-    //     }
-    //   });
 
     /**
      * @tc.name   testPlainArray048

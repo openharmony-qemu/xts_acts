@@ -33,7 +33,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import { startAbility, stopApplication, UtilsTest } from '../Util.test';
 
@@ -81,7 +81,6 @@ export default function heightTest() {
     //    'ScrollBar',
     'Rating',
     'Search',
-    'RichText',
     'Slider',
     'Text',
     //    'TextArea',

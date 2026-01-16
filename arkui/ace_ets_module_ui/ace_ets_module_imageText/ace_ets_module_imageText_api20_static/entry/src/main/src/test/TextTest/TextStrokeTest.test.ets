@@ -79,7 +79,7 @@ export default function TextStrokeTest() {
       console.info('TextStrokeTest_static_0001 START');
       let getStroke = await driver.findComponent(ON.id('getStroke'))
       await CommonFunc.sleep(500);
-      getStroke?.click()
+      await (getStroke?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get<string>('TextInputStrokeWidth')).assertEqual('0.00px');
       expect(''+AppStorage.get<string>('TextInputStrokeColor')).assertEqual('#FFFFC0CB');
@@ -109,11 +109,11 @@ export default function TextStrokeTest() {
       console.info('TextStrokeTest_static_0002 START');
       let change = await driver.findComponent(ON.id('changeStroke'))
       await CommonFunc.sleep(500);
-      change?.click()
+      await (change?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       let getStroke = await driver.findComponent(ON.id('getStroke'))
       await CommonFunc.sleep(500);
-      getStroke?.click()
+      await (getStroke?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get<string>('TextInputStrokeWidth')).assertEqual('500.00%');
       expect(''+AppStorage.get<string>('TextInputStrokeColor')).assertEqual('#FFFFC0CB');
@@ -143,13 +143,13 @@ export default function TextStrokeTest() {
       console.info('TextStrokeTest_static_0003 START');
       let change = await driver.findComponent(ON.id('changeStroke'))
       await CommonFunc.sleep(500);
-      change?.click()
+      await (change?.click() as Promise<void>)
       await CommonFunc.sleep(500);
-      change?.click()
+      await (change?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       let getStroke = await driver.findComponent(ON.id('getStroke'))
       await CommonFunc.sleep(500);
-      getStroke?.click()
+      await (getStroke?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       expect(''+AppStorage.get<string>('TextInputStrokeWidth')).assertEqual('-500.00%');
       expect(''+AppStorage.get<string>('TextInputStrokeColor')).assertEqual('#FF00000A');

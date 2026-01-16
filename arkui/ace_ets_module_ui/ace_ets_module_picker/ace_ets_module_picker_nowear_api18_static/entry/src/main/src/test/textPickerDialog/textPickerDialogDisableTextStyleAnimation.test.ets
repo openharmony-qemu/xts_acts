@@ -63,7 +63,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_001', Level.LEVEL0, asy
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('true'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -75,7 +75,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_001', Level.LEVEL0, asy
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_001] obj is: ' + JSON.stringify(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')));
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')).assertEqual('true');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_001] END');
       done();
@@ -93,7 +93,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_002', Level.LEVEL0, asy
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_001 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('false'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -105,7 +105,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_002', Level.LEVEL0, asy
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_002] obj is: ' + JSON.stringify(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')));
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')).assertEqual('false');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_002] END');
       done();
@@ -123,7 +123,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_003', Level.LEVEL0, asy
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_003 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('undefined'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -135,7 +135,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_003', Level.LEVEL0, asy
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_003] obj is: ' + JSON.stringify(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')));
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')).assertEqual('false');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_003] END');
       done();
@@ -153,7 +153,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_004', Level.LEVEL0, asy
       console.info('textPickerDialogDisableTextStyleAnimationTest_static_004 START');
       let driver = Driver.create();
       let btn = await driver.findComponent(ON.id('null'));
-      btn?.click()
+      await (btn?.click() as Promise<void>)
       await Utils.sleep(2000);
 
       let obj = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
@@ -165,7 +165,7 @@ it('textPickerDialogDisableTextStyleAnimationTest_static_004', Level.LEVEL0, asy
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_004] obj is: ' + JSON.stringify(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')));
       expect(JSON.parseJsonElement(textPicker).getElement('$attrs').getString('disableTextStyleAnimation')).assertEqual('false');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       await Utils.sleep(1000);
       console.info('[textPickerDialogDisableTextStyleAnimationTest_static_004] END');
       done();

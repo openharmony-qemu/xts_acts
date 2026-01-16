@@ -17,7 +17,7 @@ import { Entry,Builder,Component,Video,LayoutStyle,BarPosition,Resource,BarMode,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   PropRef
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
@@ -67,22 +67,22 @@ struct ModifierComponent {
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#00CB87')
         }
-        // .tabBar(() => { this.TabBuilder(0, 'green') })
+        .tabBar(() => { this.TabBuilder(0, 'green') })
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#007DFF')
         }
-        // .tabBar(() => { this.TabBuilder(1, 'blue') })
+        .tabBar(() => { this.TabBuilder(1, 'blue') })
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#FFBF00')
         }
-        // .tabBar(() => { this.TabBuilder(2, 'yellow') })
+        .tabBar(() => { this.TabBuilder(2, 'yellow') })
 
         TabContent() {
           Column().width('100%').height('100%').backgroundColor('#E67C92')
         }
-        // .tabBar(() => { this.TabBuilder(3, 'pink') })
+        .tabBar(() => { this.TabBuilder(3, 'pink') })
       }
     .key('tabsTest')
         .attributeModifier(this.customModifier as CustomModifier)

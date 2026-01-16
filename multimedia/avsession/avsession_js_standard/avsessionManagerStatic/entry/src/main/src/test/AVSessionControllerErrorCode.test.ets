@@ -280,7 +280,7 @@ export default function abilityTest() {
                 await controller.getValidCommands().then((data) => {
                     console.info(`TestLog: getValidCommands Successfully.`);
                     expect().assertFail();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.info(`TestLog: getValidCommands error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 });
@@ -486,7 +486,7 @@ export default function abilityTest() {
                 await controller.getExtras().then(() => {
                     console.info('getExtras Successfully');
                     expect().assertFail();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.info(`TestLog: getExtras error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 });
@@ -610,7 +610,7 @@ export default function abilityTest() {
                 await controller.skipToQueueItem(QUEUE_ITEM_ID).then(() => {
                     console.info('skipToQueueItem Successfully');
                     expect().assertFail();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.info(`TestLog: skipToQueueItem error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 });
@@ -711,7 +711,7 @@ export default function abilityTest() {
                 await controller.getAVQueueItems().then(() => {
                     console.info('getAVQueueItems Successfully');
                     expect().assertFail();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.info(`TestLog: getAVQueueItems error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 });
@@ -812,7 +812,7 @@ export default function abilityTest() {
                 await controller.getAVQueueTitle().then(() => {
                     console.info('getAVQueueTitle Successfully');
                     expect().assertFail();
-                }).catch(async(err: BusinessError) => {
+                }).catch((err: Error) => {
                     console.info(`TestLog: getAVQueueTitle error: code: ${err.code}, message: ${err.message}`);
                     expect(err.code).assertEqual(6600102);
                 });

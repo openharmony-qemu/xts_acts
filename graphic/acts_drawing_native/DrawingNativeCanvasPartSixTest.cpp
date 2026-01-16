@@ -89,6 +89,7 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesNormal
     float curX = 100;
     float curY = 100;
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
+    EXPECT_NE(features, nullptr);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
     OH_DRAWING_SUCCESS);
     EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str2, font, curX, curY, features),
@@ -131,6 +132,7 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesAbNorm
     OH_Drawing_CanvasAttachBrush(canvas, brush);
     OH_Drawing_FontSetTextSize(font, textSize);
     OH_Drawing_FontFeatures* feat = OH_Drawing_FontFeaturesCreate();
+    EXPECT_NE(feat, nullptr);
     OH_Drawing_ErrorCode code = OH_Drawing_CanvasDrawSingleCharacterWithFeatures(nullptr, str, font, curX, curY, feat);
     EXPECT_EQ(code, OH_DRAWING_ERROR_INVALID_PARAMETER);
     code = OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, nullptr, font, curX, curY, feat);
@@ -167,9 +169,10 @@ HWTEST_F(DrawingNativeCanvasPart6Test, testCanvasDrawSingleChaWithFeaturesCalls,
     float curY = 100;
     int count = 10;
     OH_Drawing_FontFeatures* features = OH_Drawing_FontFeaturesCreate();
+    EXPECT_NE(features, nullptr);
     for (int i = 0; i < count; i++) {
-    EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
-    OH_DRAWING_SUCCESS);
+        EXPECT_EQ(OH_Drawing_CanvasDrawSingleCharacterWithFeatures(canvas, str1, font, curX, curY, features),
+            OH_DRAWING_SUCCESS);
     }
     OH_Drawing_FontDestroy(font);
     OH_Drawing_FontFeaturesDestroy(features);

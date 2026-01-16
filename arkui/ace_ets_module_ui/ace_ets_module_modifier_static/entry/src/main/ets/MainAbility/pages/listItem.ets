@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List,ListItemAttribute,SwipeEdgeEffect, List
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector'
 import { ListItemModifier } from "@ohos.arkui.modifier";

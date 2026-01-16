@@ -225,7 +225,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_6 Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -251,7 +251,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_7 Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -277,7 +277,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_8 Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -303,7 +303,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_9 Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -329,7 +329,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_10 Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -493,7 +493,7 @@ export default function ActsNotificationSlotTest() {
             expect(NotificationSlot == null).assertTrue()
             done()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot_8 Promise err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -519,7 +519,7 @@ export default function ActsNotificationSlotTest() {
             expect(NotificationSlot == null).assertTrue()
             done()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot_9 Promise err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -545,7 +545,7 @@ export default function ActsNotificationSlotTest() {
             expect(NotificationSlot == null).assertTrue()
             done()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot_10 Promise err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -710,7 +710,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot_6 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -736,7 +736,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot_7 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -762,7 +762,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot_8 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -788,7 +788,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot_9 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -814,7 +814,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot_10 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -839,7 +839,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_11 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_11 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -890,7 +890,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_12 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_12 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -941,7 +941,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_13 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_13 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -992,7 +992,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_14 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_14 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1044,7 +1044,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_15 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_15 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1096,7 +1096,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_16 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_16 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1107,7 +1107,7 @@ export default function ActsNotificationSlotTest() {
             console.info(`${TAG} getSlot UNKNOWN_TYPE success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot UNKNOWN_TYPE err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -1120,7 +1120,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot UNKNOWN_TYPE err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1145,7 +1145,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_17 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_17 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1156,7 +1156,7 @@ export default function ActsNotificationSlotTest() {
             console.info(`${TAG} getSlot SOCIAL_COMMUNICATION success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot SOCIAL_COMMUNICATION err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -1168,7 +1168,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot SOCIAL_COMMUNICATION err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1193,7 +1193,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_18 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_18 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1204,7 +1204,7 @@ export default function ActsNotificationSlotTest() {
             console.info(`${TAG} getSlot SERVICE_INFORMATION success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot SERVICE_INFORMATION err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -1217,7 +1217,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot SERVICE_INFORMATION err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1242,7 +1242,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_19 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_19 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1253,7 +1253,7 @@ export default function ActsNotificationSlotTest() {
             console.info(`${TAG} getSlot CONTENT_INFORMATION success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot CONTENT_INFORMATION err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -1265,7 +1265,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot CONTENT_INFORMATION err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1290,7 +1290,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_20 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_20 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1301,7 +1301,7 @@ export default function ActsNotificationSlotTest() {
             console.info(`${TAG} getSlot OTHER_TYPES success: ${NotificationSlot}`)
             expect(NotificationSlot !== null).assertTrue()
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             console.info(`${TAG} getSlot OTHER_TYPES err: ${err.code}`)
             expect(false).assertTrue()
             done()
@@ -1313,7 +1313,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeSlot OTHER_TYPES err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1338,7 +1338,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_21 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err:BusinessError):void => {
+        }).catch((err:Error):void => {
           console.info(`${TAG} addSlot_21 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1375,7 +1375,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} addSlot_22 success`)
           count++;
           expect(count).assertEqual(1);
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} addSlot_22 err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1443,7 +1443,7 @@ export default function ActsNotificationSlotTest() {
           count++;
           expect(count).assertEqual(1);
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} removeAllSlots Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1499,7 +1499,7 @@ export default function ActsNotificationSlotTest() {
           console.info(`${TAG} getSlots Promise success: ${NotificationSlot}`)
           expect(NotificationSlot !== null).assertTrue()
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} getSlots Promise err: ${err.code}`)
           expect(false).assertTrue()
           done()
@@ -1702,7 +1702,7 @@ export default function ActsNotificationSlotTest() {
             }
           }
           done()
-        }).catch((err: BusinessError): void => {
+        }).catch((err: Error): void => {
           console.info(`${TAG} getSlots Promise err: + ${err.code}`)
           expect(false).assertTrue()
           done()

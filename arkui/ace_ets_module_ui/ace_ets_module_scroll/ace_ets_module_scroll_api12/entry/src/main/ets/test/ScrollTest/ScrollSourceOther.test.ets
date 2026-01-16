@@ -96,7 +96,7 @@ export default function ScrollSourceOther() {
       let height = bottom -top;
       let width = right - left;
       await CommonFunc.sleep(1000);
-      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2));
+      await driver.swipe(Math.round(left + width/2),Math.round(top + height*0.6),Math.round(left + width/2),Math.round(top + height*0.2),2000);
       await CommonFunc.sleep(2000);
 
       let strJson = getInspectorByKey('EDGE_EFFECT');

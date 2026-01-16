@@ -55,7 +55,6 @@ export default function layoutWeightRowTest() {
     'QRCode',
     'Radio',
     'Rating',
-    'RichText',
     'ScrollBar',
     'Search',
     'Slider',

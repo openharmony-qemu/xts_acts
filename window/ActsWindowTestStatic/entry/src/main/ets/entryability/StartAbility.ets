@@ -52,7 +52,9 @@ export default class StartAbility extends UIAbility {
       }
       hilog.info(domain, 'testTag', 'Succeeded in loading the content.');
       AppStorage.setOrCreate<window.WindowStage>('windowStageStart',windowStage);
+      hilog.info(domain, 'testTag', 'Succeeded in AppStorage windowStage.'+windowStage);
       AppStorage.setOrCreate('pageContext', this.context);
+      hilog.info(domain, 'testTag', 'Succeeded in AppStorage this.context.'+this.context);
     });
   }
 

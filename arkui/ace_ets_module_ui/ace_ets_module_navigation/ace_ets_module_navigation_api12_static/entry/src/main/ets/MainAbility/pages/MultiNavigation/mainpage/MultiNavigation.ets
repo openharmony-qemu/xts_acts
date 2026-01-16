@@ -22,7 +22,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Observed
+  PropRef,Provide,Observed
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import hilog from '@ohos.hilog';
@@ -32,7 +32,6 @@ import { SubNavigation } from './SubNavigation';
 import { DeviceListenerManager } from './DeviceListenerManager';
 import { NavWidthRangeAttrModifier } from './NavAttributeModifier';
 import { DeviceHelper } from './DeviceHelper';
-import {MultiNavigation,MultiNavPathStack}  from '@ohos.arkui.advanced.MultiNavigation'
 export enum SplitPolicy {
   HOME_PAGE = 0,
   DETAIL_PAGE = 1,
@@ -61,7 +60,7 @@ export struct MultiNavigation {
     if (name === 'SubNavigation') {
       SubNavigation({
         isPortrait: this.isPortrait,
-        // multiStack: this.multiStack,  // multiStack不存在
+        multiStack: this.multiStack,
         navDestination: this.navDestination,
         primaryStack: (param as SubNavigationStack).primaryStack,
         secondaryStack: (param as SubNavigationStack).secondaryStack,

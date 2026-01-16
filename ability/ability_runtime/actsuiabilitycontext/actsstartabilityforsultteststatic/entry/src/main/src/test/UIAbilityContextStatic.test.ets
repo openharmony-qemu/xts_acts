@@ -25,7 +25,7 @@ import systemParameterEnhance from '@ohos.systemParameterEnhance';
 import deviceInfo from "@ohos.deviceInfo";
 import { image } from '@kit.ImageKit';
 import application from '@ohos.app.ability.application';
-
+import { Driver, ON } from '@ohos.UiTest';
 
 let abilityDelegator = abilityDelegatorRegistry.getAbilityDelegator();
 
@@ -41,14 +41,23 @@ let disable = false;
 export default function UIAbilityContextStatic() {
   describe('ActsUIAbilityContextStatic', () => {
 
-    beforeAll(() => {
+    beforeAll(async () => {
+      let driver = Driver.create();	
+      try {
+        let allowed = await driver.findComponent(ON.id('advanced_dialog_button_0'));
+        if (allowed) {
+          await allowed.click();
+        }
+      } catch (err) {
+        console.error('findComponent failed: ' + JSON.stringify(err));
+      }
       abilityDelegator.executeShellCommand("aa start -a EntryAbility -b com.acts.startabilityforresulttest.static")
       await Utils.msSleep(2000);
       hilog.info(domain, tag, 'start success');
       context = AppStorage.get<common.UIAbilityContext>("UIAbilityContext") as common.UIAbilityContext
       await context.revokeDelegator().then(() => {
         hilog.info(domain, tag, 'revokeDelegator success');
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         if (err.code == 801) {
           disable = true;
         }
@@ -86,7 +95,7 @@ export default function UIAbilityContextStatic() {
       let info: string;
       context.showAbility().then(() => {
         hilog.info(domain, tag,`showAbility success`);
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag,`showAbility fail, err: ${JSON.stringify(err)}`);
         if (err.code === 801) {
           done();
@@ -136,7 +145,7 @@ export default function UIAbilityContextStatic() {
       let info: string;
       context.hideAbility().then(() => {
         hilog.info(domain, tag,`highAbility success`);
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         hilog.info(domain, tag,`highAbility fail, err: ${JSON.stringify(err)}`);
         if (err.code === 801) {
           done();
@@ -216,7 +225,7 @@ export default function UIAbilityContextStatic() {
       hilog.info(domain, tag , "it begin");
       try {
         await context.setAbilityInstanceInfo('instance label', pixelMap)
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             hilog.info(domain, tag , "setAbilityInstanceInfo failed: " + JSON.stringify(err))
             let code = err?.code;
             if (code === 801) {
@@ -251,7 +260,7 @@ export default function UIAbilityContextStatic() {
       }
       context.revokeDelegator().then(() => {
         hilog.info(domain,  tag ,'%{public}s', 'revokeDelegator success');
-      }).catch((err: BusinessError): void => {
+      }).catch((err: Error): void => {
         expect(err.code).assertEqual(16000084);
         hilog.info(domain,  tag , '%{public}s revokeDelegator failed', JSON.stringify(err));
         done();
@@ -270,15 +279,15 @@ export default function UIAbilityContextStatic() {
     it('SUB_Ability_AbilityRuntime_PluginAbility_Static_1200', Level.LEVEL1, async (done: () => void): Promise<void> => {
       try {
         application.createPluginModuleContext(context, '', '')
-          .then((data: string): void => {
+          .then((data: common.Context): void => {
             hilog.info(0x0000, 'testTag', 'createPluginModuleContext success data:' + JSON.stringify(data));
           })
-          .catch((err: BusinessError): void => {
+          .catch((err: Error): void => {
             hilog.info(0x0000, 'testTag', `createPluginModuleContext faiiled code: ${err.code}, message: ${err.message}`);
             expect(err.code).assertEqual(401);
             done();
           });
-      } catch (err: BusinessError) {
+      } catch (err) {
         hilog.info(domain,  tag , 'createPluginModuleContext Failed: ' + JSON.stringify(err));
         expect(err?.code).assertEqual(401);
         done();

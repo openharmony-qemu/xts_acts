@@ -47,31 +47,40 @@ import RichEditorDeleteTest from './RichEditorDeleteTest/RichEditorDelete.test';
 import TextDirectionTest from './TextDirectionTest.test';
 import IncludeFontPaddingTest from './RichEditorDisplayOptimizationTest/IncludeFontPadding.test';
 import FallbackLineSpacingTest from './RichEditorDisplayOptimizationTest/FallbackLineSpacing.test';
+import TextTest from './TextTest/TextTest.test';
+import TextInputTest from './TextTest/TextInputTest.test';
+import TextAreaTest from './TextTest/TextAreaTest.test';
+import SearchTest from './TextTest/SearchTest.test';
+import SearchDeleteTest from './TextDeleteTest/SearchDelete.test';
+import TextAreaDeleteTest from './TextDeleteTest/TextAreaDelete.test';
+import TextInputDelete from './TextDeleteTest/TextInputDelete.test';
+import TextControllerTest from './TextControllerTest/TextControllerTest.test';
+import SelectedDragPreviewStyleTest from './SelectedDragPreviewStyleTest/SelectedDragPreviewStyleTest.test';
 
 export default function testsuite() {
-  InputPresetTest()
-  // FontTest
-  APIgetUIFontConfigJsunit()
-  FontJsunit()
-  StageFontTest()
-  UIFontAliasInfo()
-  UIfontTest()
-  // MeasureTest
-  ContextGetMeasureUtils()
-  GetLayoutTest()
-  MeasureJsunitTest()
-  MeasureOptionsTest()
-  TextCommonTextComputing1()
-  TextCommonTextComputing2()
-  TextCommonTextComputing3()
-  TextCommonTextComputing4()
-  TextCommonTextComputing5()
-  TextCommonTextComputing6()
-  TextCommonTextComputing7()
-  TextCommonTextComputing8()
-  TextCommonTextComputing9()
+  TextControllerTest();
+  InputPresetTest() 
+  // FontTest 
+  APIgetUIFontConfigJsunit() 
+  FontJsunit() 
+  StageFontTest() 
+  UIFontAliasInfo() 
+  UIfontTest() 
+  // MeasureTest 
+  ContextGetMeasureUtils() 
+  GetLayoutTest() 
+  MeasureJsunitTest() 
+  MeasureOptionsTest() 
+  TextCommonTextComputing1() 
+  TextCommonTextComputing2() 
+  TextCommonTextComputing3() 
+  TextCommonTextComputing4() 
+  TextCommonTextComputing5() 
+  TextCommonTextComputing6() 
+  TextCommonTextComputing7() 
+  TextCommonTextComputing8() 
+  TextCommonTextComputing9() 
   TextGetParagraphsTest()
-
   BindSelectionMenuTest()
   KeyboardAvoidModeTest()
   ResourceModifierTest()
@@ -83,4 +92,12 @@ export default function testsuite() {
   TextDirectionTest();
   IncludeFontPaddingTest();
   FallbackLineSpacingTest();
+  TextTest();
+  TextInputTest();
+  TextAreaTest();
+  SearchTest();
+  SearchDeleteTest();
+  TextAreaDeleteTest();
+  TextInputDelete();
+  SelectedDragPreviewStyleTest()
 }

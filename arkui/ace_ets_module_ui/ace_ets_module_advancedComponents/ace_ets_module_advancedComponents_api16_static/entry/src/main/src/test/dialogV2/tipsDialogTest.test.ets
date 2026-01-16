@@ -77,7 +77,7 @@ export default function tipsDialogTest() {
 it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tipsDialogTest_static_0100] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       console.info('1111222333');
 
       // 点击打开TipsDialog
@@ -87,7 +87,7 @@ it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       await (openAlertDialog?.click() as Promise<void>);
       console.info('0025222555');
 
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       // 点击打开TipsDialog是否存在以下入口。
       let content = await driver.findComponent(ON.text('想要卸载这个APP嘛?'));
 
@@ -100,7 +100,7 @@ it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       expect(confirmButton !== null).assertTrue();
       // 关闭TipsDialog
       await (cancelButton?.click() as Promise<void>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       console.info('[tipsDialogTest_static_0100] END');
       done();
     });
@@ -117,11 +117,11 @@ it('tipsDialogTest_static_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
 it('tipsDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
       console.info('[tipsDialogTest_static_0200] START');
       let driver = Driver.create();
-      await driver.delayMs(2000);
+      await CommonFunc.sleep(2000);
       // 点击打开TipsDialog
       let openAlertDialog = await driver.findComponent(ON.type('Button').text('SecTipsDialogV2'))
       await (openAlertDialog?.click() as Promise<void>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       // 点击打开TipsDialog是否存在以下入口。
       let content = await driver.findComponent(ON.text('带边框图片TipsDialog'));
       let cancelButton = await driver.findComponent(ON.type('Button').text('取消'));
@@ -131,7 +131,7 @@ it('tipsDialogTest_static_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEV
       expect(confirmButton !== null).assertTrue();
       // 关闭TipsDialog
       await (cancelButton?.click() as Promise<void>);
-      await driver.delayMs(1000);
+      await CommonFunc.sleep(1000);
       console.info('[tipsDialogTest_static_0200] END');
       done();
     });

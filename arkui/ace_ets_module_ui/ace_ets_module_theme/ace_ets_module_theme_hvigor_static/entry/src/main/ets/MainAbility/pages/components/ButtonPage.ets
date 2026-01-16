@@ -70,7 +70,7 @@ export class ButtonKeys {
 @Entry
 @Component
 struct ButtonPage {
-  @StorageLink(buttonThemeProperty) localTheme: CustomTheme | undefined
+  @StorageLink(buttonThemeProperty) localTheme: CustomTheme | undefined = redCustomTheme;
   count: int = 0;
 
   build() {

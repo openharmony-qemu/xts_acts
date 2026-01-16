@@ -32,7 +32,7 @@ import {
   State,
   Watch,
   Link,
-  StorageLink,Consume,Prop,Provide,StorageProp,Param,Event,PropRef
+  StorageLink,Consume,PropRef,Provide,StoragePropRef,Param,Event,PropRef
 } from '@ohos.arkui.stateManagement'
 
 enum MemberType {
@@ -70,7 +70,7 @@ struct V1ToV2ComponentCorrect_TestV1Parent {
   @Provide provideEnumValue: MemberType = MemberType.first
   @Provide consumeNullValue: null = null
   @StorageLink('a') storageLinkUndefinedValue: undefined = undefined
-  @StorageProp('b') storagePropStringValue: string = 'hello v1'
+  @StoragePropRef('b') storagePropStringValue: string = 'hello v1'
 
   build() {
     Column() {

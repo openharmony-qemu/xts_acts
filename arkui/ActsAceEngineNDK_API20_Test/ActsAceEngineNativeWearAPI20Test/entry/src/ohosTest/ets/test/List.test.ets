@@ -15,8 +15,10 @@
 import DialogXComponent from "./nativexcomponent/DialogXComponent.test"
 import DragAndDrogXComponent from "./nativexcomponent/DragAndDrogXComponent.test"
 import NodeEventTest from './NodeEventTest/NodeEventTest.test'
+import textAreaInputTest from './TextTest/textAreaInputTest.test';
 
 export default function testsuite() {
+  textAreaInputTest();
   DragAndDrogXComponent()
   DialogXComponent()
   NodeEventTest()

@@ -65,7 +65,7 @@ export default function DatePickerDialogBGBlurStyleTest() {
 it('DatePickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ThinID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -78,7 +78,7 @@ it('DatePickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.Thin');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -92,7 +92,7 @@ it('DatePickerDialogBGBlurStyleTest_static_001', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('RegularID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -105,7 +105,7 @@ it('DatePickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.Regular');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -119,7 +119,7 @@ it('DatePickerDialogBGBlurStyleTest_static_002', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('ThickID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -132,7 +132,7 @@ it('DatePickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.Thick');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -146,7 +146,7 @@ it('DatePickerDialogBGBlurStyleTest_static_003', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_THIN_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -159,7 +159,7 @@ it('DatePickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.BACKGROUND_THIN');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -173,7 +173,7 @@ it('DatePickerDialogBGBlurStyleTest_static_004', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_REGULAR_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -186,7 +186,7 @@ it('DatePickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.BACKGROUND_REGULAR');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -200,7 +200,7 @@ it('DatePickerDialogBGBlurStyleTest_static_005', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_THICK_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -213,7 +213,7 @@ it('DatePickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.BACKGROUND_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -227,7 +227,7 @@ it('DatePickerDialogBGBlurStyleTest_static_006', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('BACKGROUND_ULTRA_THICK_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -240,7 +240,7 @@ it('DatePickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.BACKGROUND_ULTRA_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -254,7 +254,7 @@ it('DatePickerDialogBGBlurStyleTest_static_007', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('NONE_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -262,7 +262,7 @@ it('DatePickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: () =
       let backgroundBlurStyle: string = column.getElement('$attrs').getElement('backgroundBlurStyle').getString('value');
       expect(backgroundBlurStyle).assertEqual('BlurStyle.NONE');
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -276,7 +276,7 @@ it('DatePickerDialogBGBlurStyleTest_static_008', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_ULTRA_THIN_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -289,7 +289,7 @@ it('DatePickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: () =
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THIN');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -303,7 +303,7 @@ it('DatePickerDialogBGBlurStyleTest_static_009', Level.LEVEL0, async (done: () =
 it('DatePickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_THIN_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -316,7 +316,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_THIN');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -330,7 +330,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0010', Level.LEVEL0, async (done: () 
 it('DatePickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_REGULAR_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -343,7 +343,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_REGULAR');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -357,7 +357,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0011', Level.LEVEL0, async (done: () 
 it('DatePickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_THICK_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -370,7 +370,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -384,7 +384,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0012', Level.LEVEL0, async (done: () 
 it('DatePickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('COMPONENT_ULTRA_THICK_ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -397,7 +397,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -411,7 +411,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0013', Level.LEVEL0, async (done: () 
 it('DatePickerDialogBGBlurStyleTest_static_0014', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('nullID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -424,7 +424,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0014', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -438,7 +438,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0014', Level.LEVEL0, async (done: () 
 it('DatePickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('undefinedID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -451,7 +451,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -465,7 +465,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0015', Level.LEVEL0, async (done: () 
 it('DatePickerDialogBGBlurStyleTest_static_0016', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('100ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -478,7 +478,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0016', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
     
@@ -492,7 +492,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0016', Level.LEVEL0, async (done: () 
 it('DatePickerDialogBGBlurStyleTest_static_0017', Level.LEVEL0, async (done: () => void): Promise<void> => {
       const driver = Driver.create();
       const button = await driver.findComponent(ON.id('-100ID'));
-      button?.click();
+      await (button?.click() as Promise<void>);
       await CommonFunc.sleep(1000);
       let tree = JSON.parseJsonElement(JSON.stringify(inspector.getInspectorTree()));
       let dialog = tree.getArray('$children')[1];
@@ -505,7 +505,7 @@ it('DatePickerDialogBGBlurStyleTest_static_0017', Level.LEVEL0, async (done: () 
         expect(backgroundBlurStyle).assertEqual('BlurStyle.COMPONENT_ULTRA_THICK');
       }
       let btn1 = await driver.findComponent(ON.text('确定'));
-      btn1?.click();
+      await (btn1?.click() as Promise<void>);
       done();
     })
   })

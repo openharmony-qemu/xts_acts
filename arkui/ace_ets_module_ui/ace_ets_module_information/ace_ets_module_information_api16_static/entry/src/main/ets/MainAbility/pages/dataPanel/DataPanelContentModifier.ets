@@ -18,7 +18,7 @@ import { Builder, DataPanelConfiguration, Column, ForEach, Line, Row, Text, Alig
 } from '@ohos.arkui.component'
 import {
   State,
-  Prop,
+  PropRef,
   AppStorage
 } from '@ohos.arkui.stateManagement'
 
@@ -71,9 +71,9 @@ struct DataPanelBuilderExample {
 
 @Component
 struct ChildItem {
-  @Prop item: number;
-  @Prop index: int;
-  @Prop max: number;
+  @PropRef item: number;
+  @PropRef index: int;
+  @PropRef max: number;
   public color1: string = '#65ff00dd'
   public color2: string = '#6500ff99'
   public color3: string = '#65ffe600'

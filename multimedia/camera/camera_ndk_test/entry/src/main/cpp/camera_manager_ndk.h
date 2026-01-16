@@ -137,6 +137,7 @@ public:
     bool isPhotoQualityPrioritizationSupported_;
     OH_PhotoNative *photoNative_;
     OH_ImageNative *mainImage_;
+    OH_PictureNative *pictureNative_;
     bool isTorchSupported_;
     bool isTorchSupportedByTorchMode_;
     Camera_TorchMode torchMode_;
@@ -160,6 +161,7 @@ public:
 
     //callback
     static CameraCallbackCode cameraCallbackCode_;
+    static OH_PhotoNative* g_photoNative;
 
     Camera_ErrorCode CreateCameraInput(void);
     Camera_ErrorCode CreateCameraInputWithPositionAndType(Camera_Position position, Camera_Type type);
@@ -183,6 +185,7 @@ public:
     int AdjustHeifIdx(int idx);
     Camera_ErrorCode CreateVideoOutput(char* videoId);
     Camera_ErrorCode CreateMetadataOutput(void);
+    Camera_ErrorCode CreateMetadataOutputWithObjectTypes();
     Camera_ErrorCode IsCameraMuted(void);
     Camera_ErrorCode PreviewOutputStop(void);
     Camera_ErrorCode PreviewOutputRelease(void);
@@ -210,6 +213,8 @@ public:
     Camera_ErrorCode MetadataOutputStart(void);
     Camera_ErrorCode MetadataOutputStop(void);
     Camera_ErrorCode MetadataOutputRelease(void);
+    Camera_ErrorCode MetadataOutputRemoveMetadataObjectTypes();
+ 	Camera_ErrorCode MetadataOutputAddMetadataObjectTypes();
 
     Camera_ErrorCode SessionAddInput(void);
     Camera_ErrorCode SessionRemoveInput(void);
@@ -239,8 +244,11 @@ public:
     Camera_ErrorCode SessionSetExposureBias(float exposureBias);
     Camera_ErrorCode SessionGetExposureBias(void);
     Camera_ErrorCode SessionGetPhotoRotation(int rotation);
+    Camera_ErrorCode SessionGetPhotoRotationWithoutDeviceDegree();
     Camera_ErrorCode SessionGetVideoRotation(int rotation);
+    Camera_ErrorCode SessionGetVideoRotationWithoutDeviceDegree();
     Camera_ErrorCode SessionGetPreviewRotation(int rotation);
+    Camera_ErrorCode SessionGetPreviewRotationWithoutDisplayRotation();
     Camera_ErrorCode SessionSetPreviewRotation(int rotation, bool isDisplayLocked);
 
     Camera_ErrorCode SessionIsFocusModeSupported(uint32_t mode);
@@ -268,6 +276,7 @@ public:
     // RegisterCallback
     Camera_ErrorCode CameraManagerRegisterCallback(void);
     Camera_ErrorCode CameraInputRegisterCallback(void);
+    Camera_ErrorCode CameraInputRegisterOcclusionDetectionCallback(void);
     Camera_ErrorCode PreviewOutputRegisterCallback(void);
     Camera_ErrorCode PhotoOutputRegisterCallback(void);
     Camera_ErrorCode VideoOutputRegisterCallback(void);
@@ -278,6 +287,7 @@ public:
     // UnRegisterCallback
     Camera_ErrorCode CameraManagerUnRegisterCallback(void);
     Camera_ErrorCode CameraInputUnRegisterCallback(void);
+    Camera_ErrorCode CameraInputUnRegisterOcclusionDetectionCallback(void);
     Camera_ErrorCode PreviewOutputUnRegisterCallback(void);
     Camera_ErrorCode PhotoOutputUnRegisterCallback(void);
     Camera_ErrorCode VideoOutputUnRegisterCallback(void);
@@ -306,6 +316,7 @@ public:
     Camera_ErrorCode GetSupportedSceneModes(int useCaseCode);
     Camera_ErrorCode DeleteSceneModes(int useCaseCode);
     Camera_ErrorCode GetSupportedCameraOutputCapabilityWithSceneMode(int useCaseCode);
+    Camera_ErrorCode GetSupportedFullCameraOutputCapabilityWithSceneMode(int useCaseCode);
     Camera_ErrorCode SetSessionMode(int useCaseCode);
     Camera_ErrorCode CanAddInput(int useCaseCode);
     Camera_ErrorCode CanAddPreviewOutput(int useCaseCode);
@@ -340,8 +351,10 @@ public:
     Camera_ErrorCode IsPhotoQualityPrioritizationSupported(int useCaseCode, int quality);
     Camera_ErrorCode SetPhotoQualityPrioritization(int useCaseCode, int quality);
     Camera_ErrorCode GetMainImage(int useCaseCode);
+    Camera_ErrorCode GetUncompressedImage(int useCaseCode);
     Camera_ErrorCode PhotoNativeRelease(int useCaseCode);
     Camera_ErrorCode CreatePhotoOutputWithoutSurface(int useCaseCode);
+    Camera_ErrorCode CreateYuvPhotoOutputWithoutSurface(int useCaseCode);
 	
     Camera_ErrorCode TorchMode(int useCaseCode);
     Camera_ErrorCode IsTorchSupported(int useCaseCode);
@@ -393,6 +406,7 @@ public:
     Camera_ErrorCode CreateVideoOutputByIndex(char* videoId, int index);
     Camera_ErrorCode MacroStatusChangeTest(void);
     Camera_ErrorCode IsoInfoChangeTest(void);
+    Camera_ErrorCode CameraOcclusionDetectChangeTest(void);
     // test aid
     Camera_ErrorCode SetSceneMode(int useCaseCode);
     Camera_ErrorCode GetCameraFromCameras(Camera_Device* cameras, Camera_Device** camera,

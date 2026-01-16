@@ -126,7 +126,7 @@ import {
 import {
   State,
   Link,
-  Prop,StoragePropRef
+  PropRef,StoragePropRef
 } from '@ohos.arkui.stateManagement';
 import router from '@ohos.router'
 import { AppStorage } from '@ohos.arkui.stateManagement'

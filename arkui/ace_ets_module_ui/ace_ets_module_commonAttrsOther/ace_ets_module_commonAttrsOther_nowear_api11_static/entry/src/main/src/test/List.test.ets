@@ -18,6 +18,6 @@ import AttributeModifierDemoAPI02Jsunit from './attributeModifierTest/AttributeM
 import noBarrierComponentsTest from './NoBarrierComponentsTest.test';
 
 export default function testsuite() {
-  noBarrierComponentsTest(); // 2 pass 1 web失败
+  noBarrierComponentsTest();
   AttributeModifierDemoAPI02Jsunit();
 }

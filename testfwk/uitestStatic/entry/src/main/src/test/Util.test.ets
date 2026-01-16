@@ -14,6 +14,8 @@
  */
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import  hilog  from '@ohos.hilog'
+import { Component, Driver, ON, On, MatchPattern, MouseButton, WindowMode, UIElementInfo, UiDirection, PointerMatrix, DisplayRotation,
+  ComponentEventType, WindowChangeType, UiWindow, ResizeDirection, Point } from '@kit.TestKit'
 
 const abilityDelegator:abilityDelegatorRegistry.AbilityDelegator = abilityDelegatorRegistry.getAbilityDelegator()
 let domain: int = 0x0000; //日志标识,0x0000作为测试框架的业务标识
@@ -54,8 +56,66 @@ async function stopApplication(bundleName: string): Promise<boolean>{
   }
 }
 
+async function getInputMethodPermission(driver: Driver) {
+  await driver.delayMs(2000);
+  let textInput = await driver.findComponent(ON.type('TextInput'));
+  if (textInput == null) {
+    let scroll = await driver.findComponent(ON.type('Scroll'));
+     if (scroll != null) {
+       textInput = await scroll.scrollSearch(ON.type('TextInput'));
+     }
+  }
+  if (textInput != null) {
+    await textInput.click();
+    await driver.delayMs(1000);
+  }
+  let permissionBtn1 = await driver.findComponent(ON.text('同意'));
+  if (permissionBtn1 == null) {
+    let scroll = await driver.findComponent(ON.type('Scroll'));
+    if (scroll != null) {
+      permissionBtn1 = await scroll.scrollSearch(ON.text('同意'));
+    }
+  }
+  if (permissionBtn1 != null) {
+    await permissionBtn1.click()
+    await driver.delayMs(1000)
+  }
+  let permissionBtn2 = await driver.findComponent(ON.text('下一步'));
+  if (permissionBtn2 != null) {
+    await permissionBtn2.click();
+    await driver.delayMs(1000);
+  }
+  let permissionBtn3 = await driver.findComponent(ON.text('完成'));
+  if (permissionBtn3 != null) {
+    await permissionBtn3.click();
+    await driver.delayMs(1000);
+  }
+}
+
+async function maxUiWindow(driver: Driver, window: UiWindow | null): Promise<boolean> {
+  if (window != null) {
+    try {
+      let windowMode = await window.getWindowMode();
+      if (windowMode == WindowMode.FULLSCREEN) {
+        console.log(`${tag}, maxUiWindow FULLSCREEN`);
+        return true;
+      }
+      await window.maximize();
+      await driver.delayMs(3000);
+      return true;
+    } catch (error) {
+      console.log(`${tag}, maxUiWindow error,${JSON.stringify(error)}`);
+      return false;
+    }
+  } else {
+    console.log(`${tag}, maxUiWindow null`);
+    return false;
+  }
+}
+
 export {
   Utils,
   startAbility,
-  stopApplication
+  stopApplication,
+  getInputMethodPermission
 }

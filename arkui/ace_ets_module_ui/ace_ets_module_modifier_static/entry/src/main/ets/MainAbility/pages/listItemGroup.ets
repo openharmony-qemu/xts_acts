@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,List, ListItem,ListItemGroup,ListItemGroupAt
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
 import { ListItemGroupModifier } from "@ohos.arkui.modifier";

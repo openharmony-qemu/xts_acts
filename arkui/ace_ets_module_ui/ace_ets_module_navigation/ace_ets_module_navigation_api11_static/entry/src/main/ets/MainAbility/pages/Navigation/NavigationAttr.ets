@@ -22,10 +22,11 @@ import {
 import {
   State,
   Link,
-  Prop,Provide
+  PropRef,Provide
 } from '@ohos.arkui.stateManagement';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { CustomTransition, AnimateCallback } from './common/CustomNavigationUtils'
+import {PageTwoTemp} from './common/PageTwo'
 @Entry
 @Component
 struct NavigationApi1 {
@@ -58,7 +59,14 @@ struct NavigationApi1 {
     .translate({x: this.x, y: 0, z: 0})
     .backgroundColor(Color.White)
   }
-
+  @Builder
+  PageMap(name: string) {
+    if (name === 'pageOne') {
+      this.pageOneTmp()
+    } else if (name === 'pageTwo') {
+      PageTwoTemp()
+    }
+  }
   aboutToAppear() {
     CustomTransition.getInstance().registerNavParam('pageOne', (isPush: boolean, isExit: boolean) => {
       this.x = isExit ? 0 : 300;
@@ -82,12 +90,16 @@ struct NavigationApi1 {
       Text('' + this.finishTransitionTest).id('finishTransitionTest_api')
       Text('' + this.customNavContentTransitionTest).id('customNavContentTransitionTest_api')
       Navigation(this.pageInfos) {
-        this.pageOneTmp()
-      }.title('NavIndex')
+      }.title('NavIndex').navDestination(this.PageMap)
       .customNavContentTransition((from: NavContentInfo, to: NavContentInfo, operation: NavigationOperation) => {
+        if (from.mode == NavDestinationMode.DIALOG || to.mode == NavDestinationMode.DIALOG) {
+          return undefined;
+        }
         this.customNavContentTransitionTest = '222'
-        console.log('customNavContentTransition改变1:' + this.customNavContentTransitionTest);
-        console.log('customNavContentTransition改变2:' + this.customNavContentTransitionTest);
+        console.log('customNavContentTransition改变:' + this.customNavContentTransitionTest);
+        if (from.index === -1) {
+          return undefined;
+        }
         let customAnimation: NavigationAnimatedTransition = {
           onTransitionEnd: (isSuccess: boolean) => {
             console.log(`current transition result is ${isSuccess}`);

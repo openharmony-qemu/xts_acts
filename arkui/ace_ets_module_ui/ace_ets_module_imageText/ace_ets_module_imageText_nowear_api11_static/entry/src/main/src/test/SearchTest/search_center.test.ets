@@ -66,7 +66,7 @@ export default function search_center() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get search_center state pages:" + "");
-        if (!("TextClockApi" == pages.name)) {
+        if (!("search_center" == pages.name)) {
           console.info("get search_center pages.name:" + "");
           console.info("push search_center page 1");
           routerInstance.pushUrl(options);

@@ -91,6 +91,5 @@ export default function testsuite() {
   textAreaOnCutJsunit()
   textInputOnEditChangeJsunit()
   videoOnFullscreenChangeJsunit()
-  // webGetTitleJsunit() //  Web组件  9
   xcomponentGetXComponentContextJsunit()
 }

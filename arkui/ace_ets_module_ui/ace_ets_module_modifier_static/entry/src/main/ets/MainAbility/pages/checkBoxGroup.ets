@@ -22,7 +22,7 @@ import { Entry,Component,$r,Column,ColumnOptions, CheckboxGroupAttribute,
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import { CheckboxGroupModifier } from "@ohos.arkui.modifier";
 

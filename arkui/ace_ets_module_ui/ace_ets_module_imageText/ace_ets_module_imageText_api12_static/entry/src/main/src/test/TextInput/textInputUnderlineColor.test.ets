@@ -48,7 +48,7 @@ export default function textInputUnderlineColorTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textInputUnderlineColorTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textInputUnderlineColor" == pages.name)) {
           console.info("get textInputUnderlineColorTest pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

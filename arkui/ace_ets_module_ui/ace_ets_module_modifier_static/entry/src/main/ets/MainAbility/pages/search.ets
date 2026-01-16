@@ -17,7 +17,7 @@ import { Entry,Component,$r,Builder,Search,SearchAttribute,CopyOptions,CancelBut
 import {
   State,
   Link,
-  Prop,
+  PropRef,
 } from '@ohos.arkui.stateManagement';
 import inspector from '@ohos.arkui.inspector';
  import { SearchModifier } from "@ohos.arkui.modifier";

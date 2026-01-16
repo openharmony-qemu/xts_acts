@@ -17,7 +17,8 @@ group("networksecurity") {
   if (is_standard_system) {
     deps = [
 "networksecuritytest:ActsNetWorkMgrNetworkSecurityTest",
-"ActsNetWorkMgrNetworkSecurityTestStatic:ActsNetWorkMgrNetworkSecurityStaticTest"
+"ActsNetWorkMgrNetworkSecurityTestStatic:ActsNetWorkMgrNetworkSecurityStaticTest",
+"ActsNetworkMgrSysNetworkNoPermissionTestStatic:ActsNetworkMgrSysNetworkNoPermissionStaticTest"
 ]
   }
 }

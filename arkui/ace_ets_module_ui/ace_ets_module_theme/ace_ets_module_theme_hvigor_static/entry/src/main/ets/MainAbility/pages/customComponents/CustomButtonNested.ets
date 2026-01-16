@@ -30,14 +30,14 @@ import {
   Text,
   WithTheme
 } from '@ohos.arkui.component'
-import { Prop, State } from '@ohos.arkui.stateManagement'
+import { PropRef, State } from '@ohos.arkui.stateManagement'
 import { Theme } from '@ohos.arkui.theme';
 
 export let customButtonNestedTheme: Theme | undefined;
 
 @Component
 export struct CustomButtonNested {
-  @Prop btnText: string = 'nested';
+  @PropRef btnText: string = 'nested';
 
   onWillApplyTheme(theme: Theme) {
     customButtonNestedTheme = theme;

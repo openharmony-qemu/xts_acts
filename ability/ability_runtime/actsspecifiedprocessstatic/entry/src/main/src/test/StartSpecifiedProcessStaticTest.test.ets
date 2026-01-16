@@ -43,7 +43,7 @@ async function startAbility(context: common.UIAbilityContext, want: Want) {
         console.info(`${TEST_SUITE_NAME}====>ispromote true====>`);
       }
     })
-    .catch((err: BusinessError<void>): void => {
+    .catch((err: Error): void => {
       expect().assertFail();
       console.info(`${TEST_SUITE_NAME}====>ACTS_startAbility err====> ${err}`);
     })

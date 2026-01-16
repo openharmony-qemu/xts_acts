@@ -48,12 +48,10 @@ export default function ImageFlashEnergySupp() {
       console.info('beforeAll case');
     });
     beforeEach(async () => {
-      await sleep(500);
       console.info('beforeEach case');
     });
     afterEach(async () => {
       console.info('afterEach case');
-      await sleep(500)
     });
     afterAll(async () => {
       await jpgImageSourceApi.release();

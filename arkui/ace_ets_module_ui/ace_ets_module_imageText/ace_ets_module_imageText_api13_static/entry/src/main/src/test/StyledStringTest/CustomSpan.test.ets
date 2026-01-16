@@ -81,7 +81,7 @@ it('CustomSpan_static_0001', Level.LEVEL1, async (done: () => void): Promise<voi
       await CommonFunc.sleep(1000);
       let set = await driver.findComponent(ON.id('invalidate'))
       await CommonFunc.sleep(500);
-      set?.click()
+      await (set?.click() as Promise<void>)
       await CommonFunc.sleep(500);
       console.info('StyledString CustomSpan0001 CustomSpanFontSize ' + AppStorage.get<number>('CustomSpanFontSize'));
       expect('' + AppStorage.get<number>('CustomSpanFontSize')).assertEqual('30');

@@ -178,7 +178,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 1
      */
     it('ArrayEveryTest001', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [12, 15, 20, 18];
+      const arr: number[] = [12, 15, 20, 18];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
 
@@ -195,7 +195,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 1
      */
     it('ArrayEveryTest002', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [12, 5, 20, 18];
+      const arr: number[] = [12, 5, 20, 18];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
 
@@ -232,7 +232,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 1
      */
     it('ArrayEveryTest004', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [15];
+      const arr: number[] = [15];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
 
@@ -248,7 +248,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 1
      */
     it('ArrayEveryTest005', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [5];
+      const arr: number[] = [5];
       const callback = (num: number) => num > 10;
       const result = arr.every(callback);
 
@@ -320,7 +320,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 1
      */
     it('ArrayEveryTest009', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL1, async () => {
-      const arr = [1, 2, 3];
+      const arr: number[] = [1, 2, 3];
       const callback = (elem: number) => elem !== null;
       const result = arr.every(callback);
 
@@ -352,7 +352,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 2
      */
     it('ArrayEveryTest011', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      const arr = [5, 12, 15, 18];
+      const arr: number[] = [5, 12, 15, 18];
       let callCount = 0;
       const callback = (num: number) => {
         callCount++;
@@ -373,7 +373,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 2
      */
     it('ArrayEveryTest012', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      const arr = [12, 15, 5, 18];
+      const arr: number[] = [12, 15, 5, 18];
       let callCount = 0;
       const callback = (num: number) => {
         callCount++;
@@ -394,7 +394,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 2
      */
     it('ArrayEveryTest013', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL2, async () => {
-      const arr = [12, 15, 18, 20];
+      const arr: number[] = [12, 15, 18, 20];
       let callCount = 0;
       const callback = (num: number) => {
         callCount++;
@@ -519,7 +519,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 3
      */
     it('ArrayEveryTest021', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [12, 15, 18];
+      const arr: number[] = [12, 15, 18];
       let callCount = 0;
       let errorThrown = false;
 
@@ -550,7 +550,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 3
      */
     it('ArrayEveryTest022', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [12, 15, 18];
+      const arr: number[] = [12, 15, 18];
       let callCount = 0;
 
       const callback = (num: number, idx: Int, arr: number[]) => {
@@ -576,7 +576,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 3
      */
     it('ArrayEveryTest023', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [12, 15, 18];
+      const arr: number[] = [12, 15, 18];
       let callCount = 0;
 
       const callback = (num: number, idx: Int, array: number[]) => {
@@ -651,7 +651,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 3
      */
     // it('ArrayEveryTest027', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-    //   const arr = [1, 2];
+    //   const arr: number[] = [1, 2];
     //   let errorThrown = false;
     //
     //   try {
@@ -684,7 +684,7 @@ export default function ArrayEveryTest() {
      * @tc.level Level 3
      */
     it('ArrayEveryTest029', TestType.FUNCTION | Size.SMALLTEST | Level.LEVEL3, async () => {
-      const arr = [12, 15, 18];
+      const arr: number[] = [12, 15, 18];
       const callback = (num: number) => !Number.isNaN(num);
 
       const result = arr.every(callback);

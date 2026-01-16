@@ -63,18 +63,18 @@ struct Custom {
                     color: '#000000'
                   } as promptAction.Button,
                 ] as [promptAction.Button],
-                // onWillAppear: () => {
-                //   this.actionMenuText = this.actionMenuText + 'onWillAppear_';
-                // },
-                // onDidAppear: () => {
-                //   this.actionMenuText = this.actionMenuText + 'onDidAppear';
-                // },
-                // onWillDisappear: () => {
-                //   this.disappearMenuText = this.disappearMenuText + 'onWillDisappear_';
-                // },
-                // onDidDisappear: () => {
-                //   this.disappearMenuText = this.disappearMenuText + 'onDidDisappear';
-                // },
+                onWillAppear: () => {
+                  this.actionMenuText = this.actionMenuText + 'onWillAppear_';
+                },
+                onDidAppear: () => {
+                  this.actionMenuText = this.actionMenuText + 'onDidAppear';
+                },
+                onWillDisappear: () => {
+                  this.disappearMenuText = this.disappearMenuText + 'onWillDisappear_';
+                },
+                onDidDisappear: () => {
+                  this.disappearMenuText = this.disappearMenuText + 'onDidDisappear';
+                },
               } as promptAction.ActionMenuOptions)
               .then((data: promptAction.ActionMenuSuccessResponse) => {
                 console.info('showActionMenu success, click button: ' + data?.index);

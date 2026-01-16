@@ -28,6 +28,7 @@ import taskpool from '@ohos.taskpool';
 import media from '@ohos.multimedia.media';
 
 let mImageGenerator: media.AVImageGenerator | undefined;
+let isSupportedFetchFrameByTime: boolean = true;
 
 async function taskpoolTest(pixelMap : image.PixelMap) {
   console.info("start taskpoolTest");
@@ -55,6 +56,7 @@ export default function pictureFetchFrame() {
   describe('pictureFetchFrame', () => {
     beforeAll(async () => {
       testContext = AppStorage.get<common.UIAbilityContext>('testContext') as common.UIAbilityContext;
+      await checkIsSupportedFetchFrameByTime();
     })
 
     afterEach(() => {
@@ -69,6 +71,32 @@ export default function pictureFetchFrame() {
       log(msg: string) {
         hilog.info(0x0000, "image10bitPixelMap", 'case: %{public}s msg:%{public}s', this.testNum, msg);
       }
+    }
+
+    const checkIsSupportedFetchFrameByTime  = async() => {
+      let TAG = 'check device:: '
+      console.info(TAG + ' begin.');
+      mImageGenerator = await media.createAVImageGenerator();
+      if (mImageGenerator == undefined) {
+          console.info(TAG + ' failed createAVImageGenerator');
+          expect().assertFail();
+      }
+      const resourceMgr: resourceManager.ResourceManager = testContext.createModuleContext("entry_test").resourceManager
+      mImageGenerator.fdSrc = await resourceMgr.getRawFd('test.mp4');
+      let timeUs: number = 0;
+      let options: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
+      let param: media.PixelMapParams = {
+        width: 1920,
+        height: 1440
+      }
+      mImageGenerator.fetchFrameByTime(timeUs, options, param, async (error: BusinessError) => {
+        if (error) {
+          console.info(TAG + ' Failed to fetch FrameByTime, code: ' + error.code + ', msg: ' + error.message);
+          expect(error.code == 5400106).assertTrue();
+          isSupportedFetchFrameByTime = false;
+        }
+      });
+      await mImageGenerator.release();
     }
 
     const fetchFrameByTimeFromVideo = async(testName: string, fileName: string, timeUs: number,
@@ -100,6 +128,11 @@ export default function pictureFetchFrame() {
      */
     it('SUB_MULTIMEDIA_IMAGE_SCALE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_SCALE_0100";
+      if (!isSupportedFetchFrameByTime) {
+        console.info(tag + " The device does not support");
+        done();
+        return
+      }
       let scaleX: number = 2.0;
       let scaleY: number = 1.0;
       let timeUs: number = 0;
@@ -139,6 +172,11 @@ export default function pictureFetchFrame() {
      */
     it('SUB_MULTIMEDIA_IMAGE_CREATE_SCALE_PIXEL_MAP_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_IMAGE_CREATE_SCALE_PIXEL_MAP_0100";
+      if (!isSupportedFetchFrameByTime) {
+        console.info(tag + " The device does not support");
+        done();
+        return
+      }
       let timeUs: number = 0;
       let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
       let param: media.PixelMapParams = {
@@ -178,6 +216,11 @@ export default function pictureFetchFrame() {
      */
     it('SUB_MULTIMEDIA_CLONE_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_CLONE_SYNC_0100";
+      if (!isSupportedFetchFrameByTime) {
+        console.info(tag + " The device does not support");
+        done();
+        return
+      }
       let timeUs: number = 0;
       let queryOption: media.AVImageQueryOptions = media.AVImageQueryOptions.AV_IMAGE_QUERY_NEXT_SYNC;
       let param: media.PixelMapParams = {
@@ -215,6 +258,11 @@ export default function pictureFetchFrame() {
      */
     it('SUB_MULTIMEDIA_SET_METADATA_0100', Level.LEVEL0, async (done: Function) => {
       const tag: string = "SUB_MULTIMEDIA_SET_METADATA_0100";
+      if (!isSupportedFetchFrameByTime) {
+        console.info(tag + " The device does not support");
+        done();
+        return
+      }
       let staticMetadata: image.HdrStaticMetadata = {
         displayPrimariesX: [1.1, 1.1, 1.1],
         displayPrimariesY: [1.2, 1.2, 1.2],

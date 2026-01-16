@@ -37,6 +37,7 @@
 #include "clipShape/ClipShapeTest.h"
 #include "CustomComponent/CustomMarkDirtyTest.h"
 #include "LayoutManager/LayoutManagerTest.h"
+#include "grid/GridDragTest.h"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
@@ -121,6 +122,8 @@ static napi_value Init(napi_env env, napi_value exports)
         {"LayoutManagerTest007", nullptr, LayoutManagerTest::LayoutManagerTest007, nullptr, nullptr, nullptr,
             napi_default, nullptr},
         {"LayoutManagerTest008", nullptr, LayoutManagerTest::LayoutManagerTest008, nullptr, nullptr, nullptr,
+            napi_default, nullptr},
+        {"gridDragTest", nullptr, GridDragTest::CreateNativeNode, nullptr, nullptr, nullptr,
             napi_default, nullptr},
     };
     if (napi_define_properties(env, exports, sizeof(desc) / sizeof(desc[0]), desc) != napi_ok) {

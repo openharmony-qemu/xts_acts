@@ -15,7 +15,7 @@
  */
 
 import router from '@ohos.router';
-import { AppStorage, StorageProp } from '@ohos.arkui.stateManagement';
+import { AppStorage, StoragePropRef } from '@ohos.arkui.stateManagement';
 import { TouchType, KeyType, MouseButton, MouseAction, AlignRuleOption, focusControl, KeySource, SourceTool, SourceType, Length } from '@ohos.arkui.component';
 import common from '@ohos.app.ability.common';
 import { UIContext, Router } from '@ohos.arkui.UIContext';

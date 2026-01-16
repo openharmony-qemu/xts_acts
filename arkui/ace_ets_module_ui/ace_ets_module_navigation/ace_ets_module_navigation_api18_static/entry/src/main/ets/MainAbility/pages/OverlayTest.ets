@@ -20,7 +20,7 @@ import {
 import {
   State,
   Link,
-  Prop,Provide,Consume,StorageLink
+  PropRef,Provide,Consume,StorageLink
 } from '@ohos.arkui.stateManagement';
 import { ComponentContent } from '@ohos.arkui.node';
 import { AppStorage } from '@ohos.arkui.stateManagement';

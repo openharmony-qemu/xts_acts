@@ -15,8 +15,21 @@
 
 import ObserverJsunit from "./ObserverJsunit.test";
 import ObserverSimJsunit from "./ObserverSimJsunit.test";
+import sim from '@ohos.telephony.sim';
+import EmptyTest from './Empty.test';
 
 export default function testsuite() {
-  ObserverJsunit();
-  ObserverSimJsunit();
+  let simState: sim.SimState = sim.getSimStateSync(0);
+
+  if (sim.getMaxSimCount() != 0 && simState != sim.SimState.SIM_STATE_UNKNOWN) {
+    if (sim.hasSimCardSync(0)) {
+      ObserverJsunit();
+      ObserverSimJsunit();
+    } else {
+      EmptyTest();
+    }
+  } else {
+    EmptyTest();
+  }
+
 }

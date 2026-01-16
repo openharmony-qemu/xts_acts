@@ -90,7 +90,7 @@ export default function RegionListCapiTest(){
       await Utils.sleep(1000);
       let driver = await Driver.create();
       let scrollBar: Component = await driver.findComponent(ON.id('scrollId'));
-      let buttonId: Component = await driver.findComponent(ON.id('buttonId'));
+      let buttonId: Component = await scrollBar.scrollSearch(ON.id('buttonId'));
       await buttonId.click();
       await Utils.sleep(1000);
       let rowId3 = await scrollBar.scrollSearch(ON.id('rowId3'));
@@ -118,7 +118,7 @@ export default function RegionListCapiTest(){
       await Utils.sleep(1000);
       let driver = await Driver.create();
       let scrollBar: Component = await driver.findComponent(ON.id('scrollId'));
-      let buttonId: Component = await driver.findComponent(ON.id('buttonId'));
+      let buttonId: Component = await scrollBar.scrollSearch(ON.id('buttonId'));
       await buttonId.click();
       await Utils.sleep(1000);
       let rowId4 = await scrollBar.scrollSearch(ON.id('rowId4'));

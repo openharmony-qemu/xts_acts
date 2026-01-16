@@ -27,7 +27,7 @@ import {
 import {
   State,
   Link,
-  Prop,
+  PropRef,
   PropRef
 } from '@ohos.arkui.stateManagement'
 import { UIContext, Router } from '@ohos.arkui.UIContext';
@@ -116,7 +116,7 @@ struct ParentComponent1 {
             Button('compare').key('compareBtn')
             Row(){
               Column(){
-                Text("Prop-->undefined").height('5%')
+                Text("PropRef-->undefined").height('5%')
                 Button('button').height('5%')
                   .type(this.type1)
                   .onClick((e: ClickEvent) => {
@@ -125,7 +125,7 @@ struct ParentComponent1 {
                   .key('prop2Btn1')
               }
               Column(){
-                Text("Prop-->null").height('5%')
+                Text("PropRef-->null").height('5%')
                 Button('button').height('5%')
                   .type(this.type2)
                   .onClick((e: ClickEvent) => {

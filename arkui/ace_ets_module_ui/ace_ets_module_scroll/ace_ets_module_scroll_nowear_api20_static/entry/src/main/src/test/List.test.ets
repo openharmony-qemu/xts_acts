@@ -17,7 +17,7 @@ import focusWrapDefault from './GridTest/focusWrapDefault.test';
 import focusWrapWrap from './GridTest/focusWrapWrap.test';
 
 export default function testsuite() {
-  barMarginFlow()   //api20接口未交付 SDK12.9 问题表格73 1
-  focusWrapDefault() // pass SDK12.9 问题表格75 1
-  focusWrapWrap() //api20接口未交付 SDK12.9 问题表格75 1
+  barMarginFlow();
+  focusWrapDefault();
+  focusWrapWrap();
 }

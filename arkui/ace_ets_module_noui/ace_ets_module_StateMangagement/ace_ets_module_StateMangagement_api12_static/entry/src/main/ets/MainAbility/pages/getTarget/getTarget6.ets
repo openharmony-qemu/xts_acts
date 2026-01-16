@@ -31,7 +31,7 @@ import {
 import {
   State,
   Watch,
-  Link,Local,Trace,Track,Prop,UIUtils,
+  Link,Local,Trace,Track,PropRef,UIUtils,
   StorageLink,LocalStorage,UIUtils,Observed,ObservedV2
 } from '@ohos.arkui.stateManagement'
 

@@ -30,13 +30,13 @@ import {
   WithTheme
 } from '@ohos.arkui.component'
 import { Theme } from '@ohos.arkui.theme';
-import { Prop } from '@ohos.arkui.stateManagement'
+import { PropRef } from '@ohos.arkui.stateManagement'
 
 export let customButtonDarkTheme: Theme | undefined;
 
 @Component
 export struct CustomButtonDark {
-  @Prop btnText: string = '';
+  @PropRef btnText: string = '';
 
   onWillApplyTheme(theme: Theme) {
     customButtonDarkTheme = theme;
