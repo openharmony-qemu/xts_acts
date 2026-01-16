@@ -281,5 +281,96 @@ export default function graphicDisplaySyncInterfaceTest() {
         done();
       }
     })
+
+    /**
+     * @tc.name   testSetExpectedFrameRateRange_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDISPLAYSYNC_JS_API_009
+     * @tc.desc   setExpectedFrameRateRange enum
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testSetExpectedFrameRateRange_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+    async (done: Function) => {
+      let msg = "====testSetExpectedFrameRateRange_0100===="
+      console.log(msg + ' begin')
+      try {
+        let backDisplaySync: displaySync.DisplaySync = displaySync.create();
+        try {
+          backDisplaySync?.setExpectedFrameRateRange(null)
+          console.info('www data success testSetExpectedFrameRateRange_0100 111');
+          expect().assertFail();
+        } catch (e) {
+          console.info('www data failed to testSetExpectedFrameRateRange_0100 111', JSON.stringify(e));
+          expect(Number(e.code) == 401).assertTrue();
+        }
+        try {
+          backDisplaySync?.setExpectedFrameRateRange(undefined)
+          console.info('www data success testSetExpectedFrameRateRange_0100 222');
+          expect().assertFail();
+        } catch (e) {
+          console.info('www data failed to testSetExpectedFrameRateRange_0100 222', JSON.stringify(e));
+          expect(Number(e.code) == 401).assertTrue();
+        }
+        done();     
+      } catch (err) {
+        console.error(msg + 'Failed to onoff. Cause:' + err.code);
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testOnFrame_0100
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHICDISPLAYSYNC_JS_API_010
+     * @tc.desc   Subscribe to changes per frame
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testOnFrame_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let msg = "====testOnFrame_0100===="
+      console.log(msg + ' begin')
+      try {
+        let backDisplaySync: displaySync.DisplaySync = displaySync.create();
+        let callback = (frameInfo: displaySync.IntervalInfo) => {
+          console.info("DisplaySync",'TimeStamp:'+frameInfo.timestamp+' TargetTimeStamp: '+frameInfo.targetTimestamp);
+        }
+        try {
+          backDisplaySync?.on(null, callback)
+          console.info(msg + 'Succeeded in on.111');
+          expect().assertFail();
+        } catch (e) {
+          console.info('www data failed to testOnFrame_0100 111 ', JSON.stringify(e));
+        }
+        try {
+          backDisplaySync?.on(undefined, callback)
+          console.info(msg + 'Succeeded in on.222');
+          expect().assertFail();
+        } catch (e) {
+          console.info('www data failed to testOnFrame_0100 222 ', JSON.stringify(e));
+        }
+        try {
+          backDisplaySync?.off(null, callback)
+          console.info(msg + 'Succeeded in on.333');
+          expect().assertFail();
+        } catch (e) {
+          console.info('www data failed to testOnFrame_0100 333 ', JSON.stringify(e));
+        }
+        try {
+          backDisplaySync?.off(undefined, callback)
+          console.info(msg + 'Succeeded in on.444');
+          expect().assertFail();
+        } catch (e) {
+          console.info('www data failed to testOnFrame_0100 444 ', JSON.stringify(e));
+        }
+        done()        
+      } catch (exception) {
+        console.error(msg + 'Failed to on. Cause:' + JSON.stringify(exception));
+        expect().assertFail()
+        done()
+      }
+    })
+    
   })
 }
