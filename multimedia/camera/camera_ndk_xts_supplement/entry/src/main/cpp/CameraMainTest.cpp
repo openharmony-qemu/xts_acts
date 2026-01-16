@@ -16,6 +16,7 @@
 #include "napi/native_api.h"
 #include <js_native_api.h>
 #include "CameraSessionNdkTest.h"
+#include "CameraNdkTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -44,6 +45,25 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("OHCaptureSessionGetSupportedEffectTypesSupp", OHCaptureSessionGetSupportedEffectTypesSupp),
     DESCRIPTOR("captureSessionRegisterIsoChangeCallback", captureSessionRegisterIsoChangeCallback),
     DESCRIPTOR("captureSessionUnregisterIsoChangeCallback", captureSessionUnregisterIsoChangeCallback),
+    DESCRIPTOR("captureDeleteCameraDevices", captureDeleteCameraDevices),
+    DESCRIPTOR("captureIsBandwidthCompressionSupported", captureIsBandwidthCompressionSupported),
+    DESCRIPTOR("captureEnableBandwidthCompression", captureEnableBandwidthCompression),
+    DESCRIPTOR("captureGetSupportedFullCameraOutputCapabilityWithSceneMode",
+               captureGetSupportedFullCameraOutputCapabilityWithSceneMode),
+    DESCRIPTOR("captureRegisterOcclusionDetectionCallback", captureRegisterOcclusionDetectionCallback),
+    DESCRIPTOR("captureUnregisterOcclusionDetectionCallback", captureUnregisterOcclusionDetectionCallback),
+    DESCRIPTOR("captureCameraPreconfigType", captureCameraPreconfigType),
+    DESCRIPTOR("captureGetCameraDevices", captureGetCameraDevices),
+    DESCRIPTOR("captureGetCameraDevicesError", captureGetCameraDevicesError),
+    DESCRIPTOR("captureCameraDeviceQueryInfoCameraType", captureCameraDeviceQueryInfoCameraType),
+    DESCRIPTOR("captureSessionIsBandwidthCompressionSupportedTest", captureSessionIsBandwidthCompressionSupportedTest),
+    DESCRIPTOR("captureCameraDeviceQueryInfoConnectionTypes", captureCameraDeviceQueryInfoConnectionTypes),
+    DESCRIPTOR("captureCameraDeviceQueryInfoConnectionType", captureCameraDeviceQueryInfoConnectionType),
+    DESCRIPTOR("captureCameraDeviceQueryInfoCameraPositions", captureCameraDeviceQueryInfoCameraPositions),
+    DESCRIPTOR("captureCameraDeviceQueryInfoCameraTypeSize", captureCameraDeviceQueryInfoCameraTypeSize),
+    DESCRIPTOR("captureCameraDeviceQueryInfoCameraTypeSizes", captureCameraDeviceQueryInfoCameraTypeSizes),
+    DESCRIPTOR("captureCameraDeviceQueryInfo", captureCameraDeviceQueryInfo),
+    DESCRIPTOR("initWithSurfaces", initWithSurfaces),
 };
 
 EXTERN_C_START 
