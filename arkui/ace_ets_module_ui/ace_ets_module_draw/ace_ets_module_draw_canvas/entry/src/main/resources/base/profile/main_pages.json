@@ -34,7 +34,10 @@
         "MainAbility/pages/Canvas/Matrix2DMultiply",
         "MainAbility/pages/Canvas/StartImageAnalyzerErrorCode1",
         "MainAbility/pages/Canvas/CanvasRoundRectErrorCode",
-        "MainAbility/pages/Canvas/AddColorStopErrorCode"
+        "MainAbility/pages/Canvas/AddColorStopErrorCode",
+        "MainAbility/pages/Canvas/CanvasParamsUnitPage",
+        "MainAbility/pages/Canvas/CanvasParamsImageAnalyzerPage",
+        "MainAbility/pages/Canvas/CanvasParamsVisibilityPage"
         
     ]
 }
