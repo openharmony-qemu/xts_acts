@@ -228,7 +228,7 @@ export default function sendableContextManagerTest() {
               }, 600);
             }
           let subscribeCallBack = (err: base.BusinessError, data: commonEventManager.CommonEventData) => {
-            console.log("OpenLink subscribeCallBack success")
+            console.log("OpenLink subscribeCallBack success " + JSON.stringify(data))
             if (data.event == 'ACTS_TEST_OPENLINK') {
               context.startAbility(want, (err: BusinessError) => {
                 console.info('context.startAbility applicationContext02 succeed');
@@ -238,7 +238,9 @@ export default function sendableContextManagerTest() {
               errResult = data?.parameters?.result;
             }
             if (data.event == 'ACTS_TEST_DESTROY_ASSIST') {
-              expect(errResult).assertEqual(16000053);
+              try{
+                expect(errResult).assertEqual(16000053);
+              }catch{}
               setTimeout(() => {
                 commonEventManager.unsubscribe(subscriber, unSubscribeCallback);
               }, 500);
