@@ -41,7 +41,7 @@ static napi_value ListEmptyTest_001(napi_env env, napi_callback_info info)
 static napi_value ListEmptyTest_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(list, ARKUI_NODE_LIST);
-    uint32_t emptyBranch = PARAM_0;
+    int32_t emptyBranch = PARAM_0;
     ArkUI_NumberValue value[] = {{.i32 = emptyBranch}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(list, NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING, &valueItem);
@@ -54,7 +54,7 @@ static napi_value ListEmptyTest_002(napi_env env, napi_callback_info info)
 static napi_value ListEmptyTest_003(napi_env env, napi_callback_info info)
 {
     NAPI_START(list, ARKUI_NODE_LIST);
-    uint32_t emptyBranch = PARAM_1;
+    int32_t emptyBranch = PARAM_1;
     ArkUI_NumberValue value[] = {{.i32 = emptyBranch}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(list, NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING, &valueItem);
@@ -67,7 +67,7 @@ static napi_value ListEmptyTest_003(napi_env env, napi_callback_info info)
 static napi_value ListEmptyTest_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(list, ARKUI_NODE_LIST);
-    uint32_t emptyBranch = napi_undefined;
+    int32_t emptyBranch = napi_undefined;
     ArkUI_NumberValue value[] = {{.i32 = emptyBranch}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(list, NODE_LIST_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING, &valueItem);
