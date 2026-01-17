@@ -1303,7 +1303,7 @@ it('testSetResizeByDragEnabledTrue_0100', TestType.FUNCTION | Size.MEDIUMTEST | 
           let minWidth = Number(subWindowClass.getWindowLimits().minWidth);
           let minHeight = Number(subWindowClass.getWindowLimits().minHeight);
           console.log('Window WindowLimits:' + minWidth +' '+ minHeight);
-          subWindowClass.resizeAsync(minWidth,minHeight);
+          await subWindowClass.resizeAsync(minWidth,minHeight);
           await sleep(300);
           subWindowClass.on('windowSizeChange', async (data) => {
             console.info('Succeeded in enabling the listener for window size changes. Data: ' + JSON.stringify(data));
