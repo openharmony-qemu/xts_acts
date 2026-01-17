@@ -24,11 +24,11 @@ struct KeyboardAvoidModeNone {
   @Builder
   MyMenu() {
     Menu() {
-      MenuItem({ content: '1MenuItemContent' })
-      MenuItem({ content: '2MenuItemContent' })
-      MenuItem({ content: '3MenuItemContent' })
-      MenuItem({ content: '4MenuItemContent' })
-      MenuItem({ content: '5MenuItemContent' })
+      MenuItem({ content: '1MenuItemNone' })
+      MenuItem({ content: '2MenuItemNone' })
+      MenuItem({ content: '3MenuItemNone' })
+      MenuItem({ content: '4MenuItemNone' })
+      MenuItem({ content: '5MenuItemNone' })
     }.id('myMenu1')
   }
 
