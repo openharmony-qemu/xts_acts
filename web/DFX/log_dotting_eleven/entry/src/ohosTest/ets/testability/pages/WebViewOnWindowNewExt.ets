@@ -107,7 +107,9 @@ struct OnWindowNewExt {
                   console.log('pbbbnetment');
                   Utils.emitEvent(true, 20260118)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   let point = await buttonOne.getBoundsCenter();
                   await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_LEFT, 2047);
@@ -134,7 +136,9 @@ struct OnWindowNewExt {
                   console.log('pbbbnetment2');
                   Utils.emitEvent(false, 20260119)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click();
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
