@@ -17,6 +17,6 @@ import MinKeyboardAvoidDistance from './Menu/MinKeyboardAvoidDistance.test';
 import KeyboardAvoidModeNone from './Menu/KeyboardAvoidModeNone.test';
 
 export default function testsuite() {
-  MinKeyboardAvoidDistance();
   KeyboardAvoidModeNone();
+  MinKeyboardAvoidDistance();
 }
