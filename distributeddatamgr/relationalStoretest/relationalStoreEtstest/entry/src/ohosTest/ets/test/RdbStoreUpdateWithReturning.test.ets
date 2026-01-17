@@ -104,6 +104,7 @@ export default function RdbStoreUpdateWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
+      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, STORE_CONFIG);
     })
     afterAll(async () => {

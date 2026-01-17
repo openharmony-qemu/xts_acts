@@ -113,6 +113,7 @@ export default function TransUpdateWithReturning() {
     })
     afterEach(async () => {
       console.info(TAG + 'afterEach');
+      await rdbStore?.close();
       await relationalStore.deleteRdbStore(context, dbName);
     })
     afterAll(async () => {
