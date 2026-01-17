@@ -38,7 +38,7 @@ add_library(nativerender SHARED
     node/ConvertPositionToWindowTest.cpp
     node/IsInRenderStateTest.cpp
     node/ConvertPositionFromWindowTest.cpp
-    ScrollToVisible/ScrollToVisible.cpp
+    ScrollToVisible/ScrollToVisibleTest.cpp
     deleteBackward/DeleteBackwardTest.cpp
     deleteBackward/TextAreaDeleteBackwardTest.cpp
     textTest/TexeTest.cpp
@@ -54,7 +54,7 @@ add_library(nativefunc SHARED
     containerPicker/ContainerPickerSelectedIndexTest.cpp
     containerPicker/ContainerPickerSelectionIndicatorTest.cpp
     containerPicker/ContainerPickerSubComponentTest.cpp
-    TextMarqueeOptions/TextMarqueeOptions.cpp
+    TextMarqueeOptions/TextMarqueeOptionsTest.cpp
     image/ImageAntialiasedTest.cpp
 )
 
