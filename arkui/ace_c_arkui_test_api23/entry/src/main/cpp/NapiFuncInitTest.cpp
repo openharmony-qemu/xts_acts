@@ -25,7 +25,7 @@
 #include "node/IsInRenderStateReturnValueTest.cpp"
 #include "refresh/RefreshAttrsTest.cpp"
 #include "image/ImageAntialiasedTest.cpp"
-#include "TextMarqueeOptions/TextMarqueeOptions.cpp"
+#include "TextMarqueeOptions/TextMarqueeOptionsTest.cpp"
 
 namespace ArkUICapiTest {
 EXTERN_C_START
