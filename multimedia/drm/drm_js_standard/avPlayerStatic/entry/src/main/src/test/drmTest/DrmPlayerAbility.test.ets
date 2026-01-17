@@ -3439,7 +3439,7 @@ export default function abilityTest() {
             console.info('bbbbb receive keyExpired ' + eventInfo.extraInfo);
             sign = 2;
           });
-          keySession!.offkeyExpired();
+          keySession!.offKeyExpired();
           let base64 = new util.Base64Helper();
           let uint8pssh =
             base64.decodeSync('AAAAi3Bzc2gAAAAAPV5tNZuaQei4Q908bnLELAAAAGt7InZlcnNpb24iOiJWMS4wIiwiY29udGVudElEIjoiZEhNdE1qWTBMVEV3T0RBdFlXVnoiLCJraWRzIjpbIkcrRWsvK1htVWtwQkhRZ1hZV1FRSWc9PSJdLCJlbnNjaGVtYSI6ImNiYzEifQ==');
