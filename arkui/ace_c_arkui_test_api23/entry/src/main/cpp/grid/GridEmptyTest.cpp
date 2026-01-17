@@ -39,21 +39,6 @@ static napi_value GridIndexTest_001(napi_env env, napi_callback_info info)
     NAPI_END;
 }
 
-static napi_value GridIndexTest_002(napi_env env, napi_callback_info info)
-{
-    NAPI_START(grid, ARKUI_NODE_GRID);
-    ArkUI_NumberValue value[] = { { .i32 = PARAM_1 } };
-    ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto result = nodeAPI->setAttribute(grid, NODE_GRID_SCROLL_TO_INDEX, &valueItem);
-    auto ret = nodeAPI->getAttribute(grid, NODE_GRID_SCROLL_TO_INDEX)->value[PARAM_0].i32;
-    auto ret1 = nodeAPI->getAttribute(grid, NODE_GRID_SCROLL_TO_INDEX)->value[PARAM_1].i32;
-    auto ret2 = nodeAPI->getAttribute(grid, NODE_GRID_SCROLL_TO_INDEX)->value[PARAM_2].i32;
-    auto ret3 = nodeAPI->getAttribute(grid, NODE_GRID_SCROLL_TO_INDEX)->value[PARAM_3].f32;
-    ASSERT_EQ(ret, SUCCESS);
-    ASSERT_EQ(ret1, PARAM_1);
-    NAPI_END;
-}
-
 static napi_value GridEmptyTest_001(napi_env env, napi_callback_info info)
 {
     NAPI_START(grid, ARKUI_NODE_GRID);

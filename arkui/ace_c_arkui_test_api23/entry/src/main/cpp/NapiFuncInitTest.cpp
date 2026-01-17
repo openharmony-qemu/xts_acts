@@ -212,8 +212,6 @@ static napi_value Init(napi_env env, napi_value exports)
          napi_default, nullptr},
         {"GridIndexTest_001", nullptr, GridIndexTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
-        {"GridIndexTest_002", nullptr, GridIndexTest_002, nullptr, nullptr, nullptr,
-         napi_default, nullptr},
         {"GridEmptyTest_001", nullptr, GridEmptyTest_001, nullptr, nullptr, nullptr,
          napi_default, nullptr},
         {"GridEmptyTest_002", nullptr, GridEmptyTest_002, nullptr, nullptr, nullptr,

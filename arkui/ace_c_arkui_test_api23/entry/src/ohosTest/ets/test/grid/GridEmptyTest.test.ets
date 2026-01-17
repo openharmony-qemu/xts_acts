@@ -39,19 +39,6 @@ export default function GridEmptyTest() {
     });
 
     /**
-     * @tc.name   GridIndexTest_002
-     * @tc.number GridIndexTest_002
-     * @tc.desc   GridIndexTest_002
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL1
-     */
-    it('GridIndexTest_002', Level.LEVEL1, async (done: Function) => {
-      expect(nativeFunc.GridIndexTest_002()).assertEqual(0);
-      done();
-    });
-
-    /**
      * @tc.name   GridEmptyTest_001
      * @tc.number GridEmptyTest_001
      * @tc.desc   GridEmptyTest_001

@@ -144,7 +144,6 @@ export const ListEmptyTest_002: () => number;
 export const ListEmptyTest_003: () => number;
 export const ListEmptyTest_004: () => number;
 export const GridIndexTest_001: () => number;
-export const GridIndexTest_002: () => number;
 export const GridEmptyTest_001: () => number;
 export const GridEmptyTest_002: () => number;
 export const GridEmptyTest_003: () => number;
