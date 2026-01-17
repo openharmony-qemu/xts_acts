@@ -46,6 +46,8 @@ import IsInRenderStateTest from "./node/IsInRenderStateTest.test";
 import ConvertPositionFromWindowTest from "./node/ConvertPositionFromWindowTest.test";
 import refreshAttrsTest from './refresh/RefreshAttrsTest.test'
 import ImageAntialiasedTest from './imageTest/ImageAntialiasedTest.test'
+import ListEmptyTest from "./list/ListEmptyTest.test";
+import GridEmptyTest from "./grid/GridEmptyTest.test";
 import TextInputDeletBackward from "./deleteBackward/DeleteBackwardTest.test";
 import TextAreaDeletBackward from "./deleteBackward/TextAreaDeleteBackwardTest.test";
 import TextTest from "./TextTest/TextTest.test";
@@ -90,6 +92,8 @@ export default function testsuite() {
   TextSelectionTest();
   refreshAttrsTest();
   ImageAntialiasedTest();
+  ListEmptyTest();
+  GridEmptyTest();
   TextAreaDeletBackward();
   TextTest();
   TextInputTest();
