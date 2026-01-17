@@ -44,7 +44,7 @@ static napi_value GridIndexTest_002(napi_env env, napi_callback_info info)
     NAPI_START(grid, ARKUI_NODE_GRID);
     ArkUI_NumberValue value[] = { { .i32 = PARAM_1 } };
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
-    auto result = nodeAPI->setAttribute(grid, NODE_GRID_SCROLL_TO_INDEX, &item);
+    auto result = nodeAPI->setAttribute(grid, NODE_GRID_SCROLL_TO_INDEX, &valueItem);
     auto ret = nodeAPI->getAttribute(grid, NODE_GRID_SCROLL_TO_INDEX)->value[PARAM_0].i32;
     auto ret1 = nodeAPI->getAttribute(grid, NODE_GRID_SCROLL_TO_INDEX)->value[PARAM_1].i32;
     auto ret2 = nodeAPI->getAttribute(grid, NODE_GRID_SCROLL_TO_INDEX)->value[PARAM_2].i32;
@@ -66,7 +66,7 @@ static napi_value GridEmptyTest_001(napi_env env, napi_callback_info info)
 static napi_value GridEmptyTest_002(napi_env env, napi_callback_info info)
 {
     NAPI_START(grid, ARKUI_NODE_GRID);
-    uint32_t emptyBranch = PARAM_0;
+    int32_t emptyBranch = PARAM_0;
     ArkUI_NumberValue value[] = {{.i32 = emptyBranch}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(grid, NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING, &valueItem);
@@ -79,7 +79,7 @@ static napi_value GridEmptyTest_002(napi_env env, napi_callback_info info)
 static napi_value GridEmptyTest_003(napi_env env, napi_callback_info info)
 {
     NAPI_START(grid, ARKUI_NODE_GRID);
-    uint32_t emptyBranch = PARAM_1;
+    int32_t emptyBranch = PARAM_1;
     ArkUI_NumberValue value[] = {{.i32 = emptyBranch}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(grid, NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING, &valueItem);
@@ -92,7 +92,7 @@ static napi_value GridEmptyTest_003(napi_env env, napi_callback_info info)
 static napi_value GridEmptyTest_004(napi_env env, napi_callback_info info)
 {
     NAPI_START(grid, ARKUI_NODE_GRID);
-    uint32_t emptyBranch = napi_undefined;
+    int32_t emptyBranch = napi_undefined;
     ArkUI_NumberValue value[] = {{.i32 = emptyBranch}};
     ArkUI_AttributeItem valueItem = {value, sizeof(value) / sizeof(ArkUI_NumberValue)};
     auto ret = nodeAPI->setAttribute(grid, NODE_GRID_SUPPORT_EMPTY_BRANCH_IN_LAZY_LOADING, &valueItem);
