@@ -108,7 +108,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(500, 20260123)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
@@ -134,7 +136,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(600, 20260124)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
@@ -159,7 +163,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(10, 20260125)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
@@ -184,7 +190,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(20, 20260126)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新窗口'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
@@ -209,7 +217,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260127)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
@@ -235,7 +245,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260128)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
@@ -261,7 +273,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260129)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
@@ -287,7 +301,9 @@ struct WebViewWindowFeatures {
                   console.log('pbbbnetment');
                   Utils.emitEvent(0, 20260130)
                 } else {
-                  Utils.sleep(1000);
+                  this.isPageEnd = -1;
+                  this.controller.loadUrl($rawfile("window.open.html"))
+                  await Utils.waitForExist(()=>this.isPageEnd, this.str+' isPageEnd', 1, 1000);
                   let buttonOne = await driver.findComponent(ON.text('打开新标签'));
                   await buttonOne.click()
                   let webRect = Utils.getComponentRect('WebViewNavigationPolicyWeb');
