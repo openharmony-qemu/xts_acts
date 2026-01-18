@@ -1,5 +1,5 @@
 /**
- * Copyright (c) 2022 Huawei Device Co., Ltd.
+ * Copyright (c) 2022-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -21,7 +21,7 @@ type MessageData = number | boolean | string
 @Entry
 @Component
 struct GridItemPage {
-  @State numbers: string[] = Array.from(Array(16).keys()).map(item => item.toString())
+  @State numbers: string[] = Array.from(Array(16).keys() as Iterable<number>).map((item: number) => String(item));
   @State rowStart: number = 1
   @State rowEnd: number = 4
   @State columnStart: number = 1

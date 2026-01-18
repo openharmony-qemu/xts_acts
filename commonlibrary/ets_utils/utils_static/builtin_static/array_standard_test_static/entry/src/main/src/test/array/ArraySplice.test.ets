@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -1401,7 +1401,7 @@ export default function ArraySpliceTest() {
     it('testArraySplice0090', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 2, 4, 3];
       arr.splice(1, 2, 99);
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([3, 5, 99]));
     });
 
@@ -1555,7 +1555,7 @@ export default function ArraySpliceTest() {
     it('testArraySplice0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: number[] = [5, 2, 4, 3];
       arr.splice(2, 0, 99);
-      arr.sort((a, b) => a - b);
+      arr.sort((a, b) => (a - b).toInt());
       expect(JSON.stringify(arr)).assertEqual(JSON.stringify([2, 3, 4, 5, 99]));
     });
 
@@ -1675,7 +1675,7 @@ export default function ArraySpliceTest() {
     it('testArraySplice0108', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: I108[] = [{ val: 3 }, { val: 1 }, { val: 2 }];
       arr.splice(1, 1, { val: 99 });
-      arr.sort((a: I108, b: I108): number => a.val - b.val);
+      arr.sort((a: I108, b: I108): int => (a.val - b.val).toInt());
       expect(JSON.stringify(arr.map<number>(x => x.val))).assertEqual(JSON.stringify([2, 3, 99]));
     });
 
@@ -1775,7 +1775,7 @@ export default function ArraySpliceTest() {
      */
     it('testSparseArray0005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, (): void => {
       const arr: (number | undefined)[] = [undefined, 3, 1, undefined, 2];
-      arr.sort((a, b) => (a ?? Infinity) - (b ?? Infinity));
+      arr.sort((a, b): int => ((a ?? Infinity) - (b ?? Infinity)).toInt());
       expect(arr[0]).assertEqual(1);
       expect(arr[arr.length-1]).assertEqual(undefined);
     });

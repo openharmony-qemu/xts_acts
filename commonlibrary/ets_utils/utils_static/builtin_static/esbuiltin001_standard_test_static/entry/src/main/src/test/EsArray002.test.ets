@@ -1,5 +1,5 @@
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -64,7 +64,7 @@ class D_172 {
 }
 interface GeneratedTypeLiteralInterface_1 {
   name: string;
-  rating: number;
+  rating: int;
 }
 export async function sleep(time: int): Promise<int> {
   return new Promise<int>((resolve, reject) => {
@@ -3250,14 +3250,14 @@ export default function EsArrayTest002(){
     it('ESArrayPrototypeTest20130', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, ():void => {
       const caseName = 'ESArrayPrototypeTest20130';
       console.info(`${caseName}, test start`);
-      let myComparefn = (x: number | undefined, y: number | undefined) => {
+      let myComparefn = (x: number | undefined, y: number | undefined): int => {
         if (x === undefined) {
-          return -1 as number;
+          return -1;
         }
         if (y === undefined) {
-          return 1 as number;
+          return 1;
         }
-        return 0 as number;
+        return 0;
       }
 
       let x: Array<undefined | number> = new Array<undefined | number>(undefined, 1);
@@ -3389,7 +3389,7 @@ export default function EsArrayTest002(){
         "A", "B", "C", "D", "E", "F", "G", "H", "I", "J", "K", "L", "M",
         "n", "o", "p", "q", "r", "s", "t", "u", "v", "w", "x", "y", "z"
       );
-      let myComparefn = (x: string, y: string): number => {
+      let myComparefn = (x: string, y: string): int => {
         let xS = String(x);
         let yS = String(y);
         if (xS < yS) {
@@ -3431,7 +3431,7 @@ export default function EsArrayTest002(){
         "р", "с", "т", "у", "ф", "х", "ц", "ч", "ш", "щ", "ъ", "ы", "ь", "э", "ю", "я", "ё"
       );
 
-      let myComparefn = (x: string, y: string): number => {
+      let myComparefn = (x: string, y: string): int => {
         let xS = String(x);
         let yS = String(y);
         if (xS < yS) return 1;
