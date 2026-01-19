@@ -601,17 +601,11 @@ export default function uiUiWindowTest() {
         await driver.delayMs(waitUiReadyMs * 7)
       }
       await driver.delayMs(waitUiReadyMs);
-      console.log('startAbility success!!!!!!')
       await setFloat(driver)
-      console.log('setFloat success!!!!!!')
       let window = await driver.findWindow({ bundleName: 'com.uitestScene.acts' })
-      console.log('getwindow success!!!!!!')
       let windowmode = await window.getWindowMode()
-      console.log('getwindowmode success!!!!!!')
       expect(windowmode == WindowMode.FLOATING)
-      console.log('expect success!!!!!!')
       await setSplit(driver)
-      console.log('setSplit success!!!!!!')
       try {
         let window2 = await driver.findWindow({ bundleName: 'com.uitest.acts' });
         await window2.split();
@@ -1039,19 +1033,5 @@ export default function uiUiWindowTest() {
     })
 
   })
-  describe('uitestUiWindowTest_new', () => {
-    let driver: Driver
-    beforeAll(async (done: Function) => {
-      driver = Driver.create()
-      await driver.delayMs(1000)
-      done()
-    })
-
-    afterEach(async () => {
-      await stopApplication('com.uitestScene.acts')
-    })
-
-
-
-  })
+  
 }
