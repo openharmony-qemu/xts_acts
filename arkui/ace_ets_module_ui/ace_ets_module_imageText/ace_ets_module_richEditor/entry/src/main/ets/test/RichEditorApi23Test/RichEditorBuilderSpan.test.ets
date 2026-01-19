@@ -23,7 +23,7 @@ export default function RichEditorBuildSpanTest() {
     beforeEach(async (done: Function) => {
       console.info("RichEditorBuildSpanTest beforeEach start");
       let options: router.RouterOptions = {
-        url: 'MainAbility/pages/RichEditorApi23/RichEditorBuildSpan',
+        url: 'MainAbility/pages/RichEditorApi23/RichEditorBuilderSpan',
       }
       try {
         router.clear();

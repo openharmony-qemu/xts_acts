@@ -57,7 +57,7 @@ export default function RichEditorSingleLineTest() {
       let obj: ESObject = JSON.parse(JSON.parse(strJson).$attrs.singleLine);
       console.info("[RichEditorSingleLineTest_0010] singleLine is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj).assertEqual('false');
+      expect(obj).assertEqual(false);
       console.info('[RichEditorSingleLineTest_0010] END');
       done();
     });
@@ -82,7 +82,7 @@ export default function RichEditorSingleLineTest() {
       let obj: ESObject = JSON.parse(JSON.parse(strJson).$attrs.singleLine);
       console.info("[RichEditorSingleLineTest_0020] singleLine is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj).assertEqual('true');
+      expect(obj).assertEqual(true);
       console.info('[RichEditorSingleLineTest_0020] END');
       done();
     });
@@ -107,7 +107,7 @@ export default function RichEditorSingleLineTest() {
       let obj: ESObject = JSON.parse(JSON.parse(strJson).$attrs.singleLine);
       console.info("[RichEditorSingleLineTest_0030] singleLine is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj).assertEqual('false');
+      expect(obj).assertEqual(false);
       console.info('[RichEditorSingleLineTest_0030] END');
       done();
     });
@@ -124,7 +124,7 @@ export default function RichEditorSingleLineTest() {
       console.info('[RichEditorSingleLineTest_0040] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let Button = await driver.findComponent(ON.id('RichEditor_enableSingleLine_true'));
+      let Button = await driver.findComponent(ON.id('RichEditor_enableSingleLine_null'));
       await Button.click();
       await CommonFunc.sleep(1000);
       let strJson = getInspectorByKey('RichEditor_singleLine');
@@ -132,7 +132,7 @@ export default function RichEditorSingleLineTest() {
       let obj: ESObject = JSON.parse(JSON.parse(strJson).$attrs.singleLine);
       console.info("[RichEditorSingleLineTest_0040] singleLine is: " + JSON.stringify(obj));
       await CommonFunc.sleep(1000);
-      expect(obj).assertEqual('false');
+      expect(obj).assertEqual(false);
       console.info('[RichEditorSingleLineTest_0040] END');
       done();
     });

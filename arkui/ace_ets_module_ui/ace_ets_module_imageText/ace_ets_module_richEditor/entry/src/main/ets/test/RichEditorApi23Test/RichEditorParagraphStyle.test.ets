@@ -56,7 +56,10 @@ export default function RichEditorParagraphStyleTest() {
       await CommonFunc.sleep(500);
       let richEditor1 = await driver.findComponent(ON.id('RichEditorParagraphStyle_1'));
       await richEditor1.inputText('1');
-      await CommonFunc.sleep(500);
+      await CommonFunc.sleep(1000);
+      let button = await driver.findComponent(ON.id('RichEditorParagraphStyle_get_textDirection'));
+      await button.click();
+      await CommonFunc.sleep(1000);
       expect(AppStorage.get('ParagraphStyle_textDirection')).assertEqual("0");
       AppStorage.delete('ParagraphStyle_textDirection');
       console.info('[RichEditorParagraphStyleTest_0010] END');
@@ -99,7 +102,7 @@ export default function RichEditorParagraphStyleTest() {
       let richEditor1 = await driver.findComponent(ON.id('RichEditorTextStyleResult_1'));
       await richEditor1.inputText('1');
       await CommonFunc.sleep(500);
-      expect(AppStorage.get('RichEditorTextStyleResult_strokeColor')).assertEqual("#FFFF0000");
+      expect(AppStorage.get('RichEditorTextStyleResult_strokeColor')).assertEqual('"#FFFF0000"');
       AppStorage.delete('RichEditorTextStyleResult_strokeColor');
       console.info('[RichEditorParagraphStyleTest_0030] END');
       done();

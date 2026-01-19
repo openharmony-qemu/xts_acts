@@ -97,6 +97,7 @@ struct RichEditorParagraphStyle23 {
             })
 
           Button('get textDirection:' + this.text)
+            .id('RichEditorParagraphStyle_get_textDirection')
             .onClick(() => {
               this.text = '' + AppStorage.get('textDirection')
             })

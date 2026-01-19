@@ -54,7 +54,7 @@ export default function RichEditorTextStyleTest() {
       console.info('[RichEditorTextStyleTest_0010] START');
       let driver = Driver.create();
       await CommonFunc.sleep(500);
-      let richEditor1 = await driver.findComponent(ON.id('RichEditorTextStyle_1'));
+      let richEditor1 = await driver.findComponent(ON.id('getTextStyleValue'));
       await richEditor1.click();
       await CommonFunc.sleep(1000);
       expect(AppStorage.get('RichEditorTextStyle_strokeWidth')).assertEqual("10");
@@ -78,7 +78,7 @@ export default function RichEditorTextStyleTest() {
       let richEditor1 = await driver.findComponent(ON.id('getTextStyleValue'));
       await richEditor1.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('RichEditorTextStyle_strokeColor')).assertEqual('#FFFF0000');
+      expect(AppStorage.get('RichEditorTextStyle_strokeColor')).assertEqual('"#FFFF0000"');
       AppStorage.delete('RichEditorTextStyle_strokeColor');
       console.info('[RichEditorTextStyleTest_0020] END');
       done();
