@@ -140,6 +140,8 @@ export default function verificationTest() {
         let lastRequestWant: ESObject = undefined;
         let launchReason: ESObject = undefined;
         let lastExitReason: ESObject = undefined;
+        let launchUTCTime: ESObject = undefined;
+        let launchUptime: ESObject = undefined;
         let subscriber: commonEventManager.CommonEventSubscriber;
         let subscribeInfo: commonEventManager.CommonEventSubscribeInfo = {
           events: ["Stage_MainAbility3_onCreate", "Stage_MainAbility3_onDestroy"]
@@ -155,6 +157,8 @@ export default function verificationTest() {
               lastRequestWant = data.parameters?.lastRequestWant;
               launchReason = data.parameters?.launchReason;
               lastExitReason = data.parameters?.lastExitReason;
+              launchUTCTime = data.parameters?.launchUTCTime;
+              launchUptime = data.parameters?.launchUptime;
             }
             if (data.event == "Stage_MainAbility3_onDestroy") {
               expect(launchWant.bundleName).assertEqual("ohos.acts.aafwk.test.stagesupplement");
@@ -162,6 +166,8 @@ export default function verificationTest() {
               expect(launchReason != AbilityConstant.LaunchReason.CALL).assertTrue();
               expect(launchReason != AbilityConstant.LaunchReason.CONTINUATION).assertTrue();
               expect(lastExitReason != AbilityConstant.LastExitReason.UNKNOWN).assertTrue();
+              expect(launchUTCTime > 0).assertTrue();
+              expect(launchUptime > 0).assertTrue();
               commonEvent.unsubscribe(subscriber, () => {
                 console.info(TAG + "===UnSubscribeInfoCallback===");
                 done();
