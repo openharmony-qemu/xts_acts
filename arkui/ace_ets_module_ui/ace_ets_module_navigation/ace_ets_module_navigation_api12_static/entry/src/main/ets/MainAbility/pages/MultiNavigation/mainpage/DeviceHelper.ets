@@ -37,7 +37,12 @@ export class DeviceHelper {
    * @returns true if is phone
    */
   static isPhone(): boolean {
-    return (DeviceHelper.DEVICE_TYPE === DeviceHelper.TYPE_PHONE || DeviceHelper.DEVICE_TYPE === DeviceHelper.TYPE_DEFAULT);
+    try{
+      return (DeviceHelper.DEVICE_TYPE === DeviceHelper.TYPE_PHONE || DeviceHelper.DEVICE_TYPE === DeviceHelper.TYPE_DEFAULT)
+    }catch(err){
+      return true
+    }
+
   }
 
   /**
