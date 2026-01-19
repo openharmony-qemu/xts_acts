@@ -57,7 +57,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00001
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00001
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --EFFECT_SUCCESS
+     * @tc.desc        OH_CameraManager_DeleteCameraDevices  --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -72,7 +72,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00002
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00002
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_DeleteCameraDevices  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -87,7 +87,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00003
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00003
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_DeleteCameraDevices  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -102,7 +102,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00004
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00004
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_DeleteCameraDevices  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -117,7 +117,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00005
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE_00005
-     * @tc.desc        OH_CAMERA_MANAGER_DELETE_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_DeleteCameraDevices  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -132,7 +132,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00001
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00001
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --EFFECT_SUCCESS
+     * @tc.desc        OH_PreviewOutput_IsBandwidthCompressionSupported --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -147,7 +147,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00002
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00002
-     * @tc.desc        OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_IsBandwidthCompressionSupported  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -162,7 +162,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00003
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00003
-     * @tc.desc        OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_IsBandwidthCompressionSupported  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -177,7 +177,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00004
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00004
-     * @tc.desc        OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_IsBandwidthCompressionSupported --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -192,7 +192,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00005
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED_00005
-     * @tc.desc        OH_PREVIEW_OUTPUT_IS_BANDWIDTH_COMPRESSION_SUPPORTED --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_IsBandwidthCompressionSupported  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -207,7 +207,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00001
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00001
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --EFFECT_SUCCESS
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -228,7 +228,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00002
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00002
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --EFFECT_SUCCESS
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression  --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -249,7 +249,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00003
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00003
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -270,7 +270,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00004
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00004
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -291,7 +291,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00005
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00005
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --EFFECT_SUCCESS
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression  --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -312,7 +312,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00006
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00006
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -333,7 +333,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00007
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00007
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -354,7 +354,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00008
      * @tc.name        SUB_MULTIMEDIA_OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION_00008
-     * @tc.desc        OH_PREVIEW_OUTPUT_ENABLE_BANDWIDTH_COMPRESSION --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_PreviewOutput_EnableBandwidthCompression  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -375,7 +375,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00004
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00004
-     * @tc.desc        OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -392,7 +392,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00005
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00005
-     * @tc.desc        OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -409,7 +409,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00006
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE_00006
-     * @tc.desc        OH_CAMERA_MANAGER_GET_SUPPORTED_FULL_CAMERA_OUTPUT_CAPABILITY_WITH_SCENE_MODE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_GetSupportedFullCameraOutputCapabilityWithSceneMode  --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -426,7 +426,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00001
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00001
-     * @tc.desc        OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK --EFFECT_SUCCESS
+     * @tc.desc        OH_CameraInput_RegisterOcclusionDetectionCallback --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -441,7 +441,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00002
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00002
-     * @tc.desc        OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraInput_RegisterOcclusionDetectionCallback --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -456,7 +456,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00003
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00003
-     * @tc.desc        OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraInput_RegisterOcclusionDetectionCallback --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -471,7 +471,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00004
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00004
-     * @tc.desc        OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraInput_RegisterOcclusionDetectionCallback --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -486,7 +486,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00005
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK_00005
-     * @tc.desc        OH_CAMERA_INPUT_REGISTER_OCCLUSION_DETECTION_CALLBACK --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraInput_RegisterOcclusionDetectionCallback --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -501,7 +501,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00001
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00001
-     * @tc.desc        OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK --EFFECT_SUCCESS
+     * @tc.desc        OH_CameraInput_UnregisterOcclusionDetectionCallback --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -516,7 +516,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00002
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00002
-     * @tc.desc        OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraInput_UnregisterOcclusionDetectionCallback --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -531,7 +531,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00003
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00003
-     * @tc.desc        OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK --EFFECT_SUCCESS
+     * @tc.desc        OH_CameraInput_UnregisterOcclusionDetectionCallback --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -546,7 +546,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00004
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00004
-     * @tc.desc        OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraInput_UnregisterOcclusionDetectionCallback --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -561,7 +561,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00005
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK_00005
-     * @tc.desc        OH_CAMERA_INPUT_UN_REGISTER_OCCLUSION_DETECTION_CALLBACK --EFFECT_SUCCESS
+     * @tc.desc        OH_CameraInput_UnregisterOcclusionDetectionCallback --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -591,7 +591,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00001
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00001
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -606,7 +606,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00002
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00002
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -621,7 +621,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00003
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00003
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -636,7 +636,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00004
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00004
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -651,7 +651,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00005
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_00005
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -666,7 +666,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00001
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00001
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -681,7 +681,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00002
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00002
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -696,7 +696,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00003
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00003
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -711,7 +711,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00004
      * @tc.name        SUB_MULTIMEDIA_OH_CAMERA_MANAGER_GET_CAMERA_DEVICE_ERROR_00004
-     * @tc.desc        OH_CAMERA_MANAGER_GET_CAMERA_DEVICE --CAMERA_INVALID_ARGUMENT
+     * @tc.desc        OH_CameraManager_GetCameraDevices --CAMERA_INVALID_ARGUMENT
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -726,7 +726,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00001
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00001
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -741,7 +741,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00002
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00002
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -756,7 +756,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00003
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00003
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -771,7 +771,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00004
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00004
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -786,7 +786,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00005
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_00005
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -801,7 +801,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00006
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00006
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -816,7 +816,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00007
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00007
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -831,7 +831,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00008
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00008
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -846,7 +846,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00009
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00009
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -861,7 +861,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00010
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00010
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -876,7 +876,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00001
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00001
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -891,7 +891,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00002
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00002
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -906,7 +906,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00003
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00003
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -921,7 +921,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00004
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00004
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -936,7 +936,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00005
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE_00005
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CONNECTION_TYPE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        connectionType --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -951,7 +951,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00001
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00001
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraPosition --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -966,7 +966,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00002
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00002
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraPosition --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -981,7 +981,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00003
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00003
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraPosition --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -996,7 +996,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00004
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00004
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraPosition --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1011,7 +1011,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00005
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION_00005
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_POSITION --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraPosition --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1026,7 +1026,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00001
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00001
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraTypeSize --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1041,7 +1041,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00002
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00002
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraTypeSize --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1056,7 +1056,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00003
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00003
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraTypeSize --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1071,7 +1071,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00004
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00004
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraTypeSize --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1086,7 +1086,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00005
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00005
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        cameraTypeSize --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1101,7 +1101,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00006
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00006
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
+     * @tc.desc        cameraTypeSize --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1116,7 +1116,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00007
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00007
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
+     * @tc.desc        cameraTypeSize --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1131,7 +1131,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00008
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00008
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
+     * @tc.desc        cameraTypeSize --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1146,7 +1146,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00009
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00009
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
+     * @tc.desc        cameraTypeSize --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1161,7 +1161,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00010
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE_00010
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO_CAMERA_TYPE_SIZE --EFFECT_SUCCESS
+     * @tc.desc        cameraTypeSize --EFFECT_SUCCESS
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1176,7 +1176,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00001
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00001
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        Camera_DeviceQueryInfo --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1191,7 +1191,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00002
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00002
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        Camera_DeviceQueryInfo --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1206,7 +1206,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00003
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00003
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        Camera_DeviceQueryInfo --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1221,7 +1221,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00004
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00004
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        Camera_DeviceQueryInfo --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
@@ -1236,7 +1236,7 @@ export default function CameraNdkTest() {
     /**
      * @tc.number      SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00005
      * @tc.name        SUB_MULTIMEDIA_CAMERA_DEVICE_QUERY_INFO_00005
-     * @tc.desc        CAMERA_DEVICE_QUERY_INFO --CAMERA_SERVICE_FATAL_ERROR
+     * @tc.desc        Camera_DeviceQueryInfo --CAMERA_SERVICE_FATAL_ERROR
      * @tc.size        MediumTest
      * @tc.type        Function
      * @tc.level       Level 0
