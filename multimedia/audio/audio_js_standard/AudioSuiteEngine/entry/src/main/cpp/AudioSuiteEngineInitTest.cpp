@@ -7337,7 +7337,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_001(napi_env env
         IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
                                         (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
@@ -7389,7 +7389,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_002(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7427,7 +7427,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_003(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7455,7 +7455,6 @@ static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_004(napi_env env
     napi_value res;
     OH_AudioSuite_SpaceRenderPositionParams position = {1, 2, 3};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderPositionParams(nullptr, position);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_SetSpaceRenderPositionParams_004 success, result is: %{public}d", result);
@@ -7478,7 +7477,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderPositionParams_005(napi_env env
         IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
                                         (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
@@ -7530,7 +7529,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_001(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7569,7 +7568,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_002(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7607,7 +7606,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_003(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7645,7 +7644,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_004(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7672,7 +7671,6 @@ static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_005(napi_env env
     napi_value res;
     OH_AudioSuite_SpaceRenderPositionParams position = {1, 2, 3};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(nullptr, &position);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_005 success, result is: %{public}d", result);
@@ -7687,7 +7685,6 @@ static napi_value AudioSuiteEngine_GetSpaceRenderPositionParams_006(napi_env env
 {
     napi_value res;
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderPositionParams(nullptr, nullptr);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_GetSpaceRenderPositionParams_006 success, result is: %{public}d", result);
@@ -7710,7 +7707,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_001(napi_env env
         IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
                                         (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
@@ -7762,7 +7759,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_002(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7800,7 +7797,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_003(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7828,7 +7825,6 @@ static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_004(napi_env env
     napi_value res;
     OH_AudioSuite_SpaceRenderRotationParams rotation = {1, 2, 3, 5, SPACE_RENDER_CW};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderRotationParams(nullptr, rotation);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_SetSpaceRenderRotationParams_004 success, result is: %{public}d", result);
@@ -7851,7 +7847,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderRotationParams_005(napi_env env
         IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
                                         (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
@@ -7905,7 +7901,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_001(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7944,7 +7940,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_002(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -7982,7 +7978,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_003(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -8020,7 +8016,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_004(napi_env env
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -8047,7 +8043,6 @@ static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_005(napi_env env
     napi_value res;
     OH_AudioSuite_SpaceRenderRotationParams rotation = {1, 2, 3, 5, SPACE_RENDER_CW};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(nullptr, &rotation);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_005 success, result is: %{public}d", result);
@@ -8062,7 +8057,6 @@ static napi_value AudioSuiteEngine_GetSpaceRenderRotationParams_006(napi_env env
 {
     napi_value res;
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderRotationParams(nullptr, nullptr);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_GetSpaceRenderRotationParams_006 success, result is: %{public}d", result);
@@ -8085,7 +8079,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_001(napi_env en
         IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
                                         (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
@@ -8135,7 +8129,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_002(napi_env en
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -8173,7 +8167,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_003(napi_env en
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -8202,7 +8196,6 @@ static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_004(napi_env en
 
     OH_AudioSuite_SpaceRenderExtensionParams extension = {1, 1};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetSpaceRenderExtensionParams(nullptr, extension);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_SetSpaceRenderExtensionParams_004 success, result is: %{public}d", result);
@@ -8225,7 +8218,7 @@ static napi_value AudioSuiteEngine_SetSpaceRenderExtensionParams_005(napi_env en
         IsNodeTypeSupported(static_cast<OH_AudioNode_Type>(AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, static_cast<OH_AudioNode_Type>
                                         (AudioNodeTypeTest::EFFECT_NODE_TYPE_SPACE_RENDER_TEST));
@@ -8275,7 +8268,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_001(napi_env en
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -8313,12 +8306,12 @@ static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_002(napi_env en
     bool isSupported = IsNodeTypeSupported(type);
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
-    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline, 
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+    OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
-    OH_AudioSuiteEngine_DestroyNode(audioNode);  
+    OH_AudioSuiteEngine_DestroyNode(audioNode);
 
     OH_AudioSuite_SpaceRenderExtensionParams extension;
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(audioNode, &extension);
@@ -8352,7 +8345,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_003(napi_env en
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -8390,7 +8383,7 @@ static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_004(napi_env en
     OH_AudioSuiteEngine_Create(&audioSuiteEngine);
 
     OH_AudioSuiteEngine_CreatePipeline(audioSuiteEngine, &audioSuitePipeline,
-                                        OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
+                                       OH_AudioSuite_PipelineWorkMode::AUDIOSUITE_PIPELINE_EDIT_MODE);
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
@@ -8417,7 +8410,6 @@ static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_005(napi_env en
     napi_value res;
     OH_AudioSuite_SpaceRenderExtensionParams extension = {1, 1};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(nullptr, &extension);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_005 success, result is: %{public}d", result);
@@ -8432,7 +8424,6 @@ static napi_value AudioSuiteEngine_GetSpaceRenderExtensionParams_006(napi_env en
 {
     napi_value res;
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetSpaceRenderExtensionParams(nullptr, nullptr);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         LOG("AudioSuiteEngine_GetSpaceRenderExtensionParams_006 success, result is: %{public}d", result);
