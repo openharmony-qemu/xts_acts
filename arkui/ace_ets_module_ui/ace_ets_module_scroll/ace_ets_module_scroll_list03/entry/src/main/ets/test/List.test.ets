@@ -61,6 +61,7 @@ import listRepeatFalse from './emptyBranch/listRepeatFalse.test';
 import listRepeatUn from './emptyBranch/listRepeatUn.test';
 import listRepeatNull from './emptyBranch/listRepeatNull.test';
 import editModeList from './List/editModeList.test';
+import editBadgeList from './List/editBadgeList.test';
 
 export default function testsuite() {
   headerListJsunit()
@@ -111,4 +112,5 @@ export default function testsuite() {
   listRepeatUn()
   listRepeatNull()
   editModeList()
+  editBadgeList()
 }
