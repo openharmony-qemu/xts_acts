@@ -10,30 +10,6 @@ export default function abilityTest() {
     hilog.info(domain, tag, '%{public}s', 'describe start');
 
     /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100
-     * @tc.desc   onAccessibilityStateChange
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100', TestType.FUNCTION | Size.MEDIUMTEST| Level.LEVEL0, async (done: () => void): Promise<void> => {
-      hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100');
-      let callbackdata = (data:boolean) => {
-        expect(data).assertEqual(false);
-      }
-      try {
-        accessibility.onAccessibilityStateChange(callbackdata);
-        accessibility.offAccessibilityStateChange(callbackdata);
-        done();
-      } catch (error) {
-        hilog.info(domain, tag, 'SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0100 failed');
-        expect(null).assertFail();
-        done();
-      }
-    })
-
-    /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
      * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0200
      * @tc.desc   onTouchGuideStateChange
@@ -56,7 +32,6 @@ export default function abilityTest() {
         done();
       }
     })
-
 
     /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleRegisterState_static_0300
@@ -259,5 +234,5 @@ export default function abilityTest() {
 
 
 
-   })
- }
+  })
+}

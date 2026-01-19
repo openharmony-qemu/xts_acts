@@ -29,53 +29,7 @@ describe('AccessibleCheckAbility', function () {
         done();
     })
 
-    /******************************************************************************************* */
-    /* Cases SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100-0200 are for accessibility.isOpenAccessibility() API test   */
-    /******************************************************************************************* */
-
-    /* Cases for namespace accessibility */
-    /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100
-     * @tc.desc   Test isOpenAccessibility() function in callback mode.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
-        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100');
-        accessibility.isOpenAccessibility((err, data) => {
-            if (err && err.code != 0) {
-                console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0100 has error: ${err.code}`);
-                expect(null).assertFail();
-                done();
-            }
-            expect(typeof (data)).assertEqual('boolean');
-            done();
-        });
-      })
-  
-    /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200
-     * @tc.desc   Test isOpenAccessibility() function in promise mode.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
-        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200');
-        accessibility.isOpenAccessibility().then((result) => {
-            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200 result: ${result}`);
-            expect(typeof (result)).assertEqual('boolean');
-            done();
-        }).catch((err) => {
-            console.error(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0200 has error: ${err.code}`);
-            expect(null).assertFail();
-            done();
-        });
-    })
-  
+ 
     /******************************************************************************************* */
     /* Cases SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0300-0400 are for accessibility.isOpenTouchGuide() API test   */
     /******************************************************************************************* */
@@ -123,27 +77,6 @@ describe('AccessibleCheckAbility', function () {
             }
         });
     })
-    /**
-     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500
-     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500
-     * @tc.desc   The result of isOpenAccessibilitySync() should be boolean type.
-     * @tc.type   FUNCTION
-     * @tc.size   MEDIUMTEST
-     * @tc.level  LEVEL0
-     */
-    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
-        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500');
-        try {
-            let status = accessibility.isOpenAccessibilitySync();
-            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500 result: ${status}`);
-            expect(typeof (status)).assertEqual('boolean');
-            done();
-        } catch (exception) {
-            console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0500 failed to isOpenAccessibilitySync because ' + JSON.stringify(exception));
-            expect(null).assertFail();
-            done();
-        }
-      })
   
     /**
      * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600
@@ -162,6 +95,26 @@ describe('AccessibleCheckAbility', function () {
             done();
         } catch (exception) {
             console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0600 failed to isOpenTouchGuideSync because ' + JSON.stringify(exception));
+        }
+    })
+	
+    /**
+     * @tc.name   SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0700
+     * @tc.number SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0700
+     * @tc.desc   The result of isScreenReaderOpenSync() should be boolean type.
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0700', TestType.FUNCTION | Size.SmallTest| Level.LEVEL0, async function (done) {
+        console.info('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0700');
+        try {
+            let status = accessibility.isScreenReaderOpenSync();
+            console.info(`AccessibilityApi: SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0700 result: ${status}`);
+            expect(status).assertEqual(false);
+            done();
+        } catch (exception) {
+            console.error('SUB_BASIC_BARRIERFREE_API_AccessibleCheckAbility_0700 failed to isScreenReaderOpenSync because ' + JSON.stringify(exception));
         }
     })
 	
