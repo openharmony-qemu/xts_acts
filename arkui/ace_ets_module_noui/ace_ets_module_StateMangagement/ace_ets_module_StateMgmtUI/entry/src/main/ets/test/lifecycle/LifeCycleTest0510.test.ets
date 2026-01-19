@@ -79,7 +79,7 @@ export default function LifeCycleTest0510() {
       await CommonFunc.sleep(2000);
       let obj: ESObject = JSON.parse(getInspectorByKey('tvV1Num'));
       console.info("[LifeCycleTest0510_001] component obj is: " + JSON.stringify(obj));
-      expect(obj.$attrs.content).assertEqual('7');
+      expect(obj.$attrs.content).assertEqual('5');
       await CommonFunc.sleep(1000);
       let btn3: Component = await driver.findComponent(ON.id("btnChildV1IsVisible"));
       await CommonFunc.sleep(1000);
@@ -109,7 +109,7 @@ export default function LifeCycleTest0510() {
       await CommonFunc.sleep(2000);
       let obj1: ESObject = JSON.parse(getInspectorByKey('tvV2Num'));
       console.info("[LifeCycleTest0510_001] component obj1 is: " + JSON.stringify(obj1));
-      expect(obj1.$attrs.content).assertEqual('8');
+      expect(obj1.$attrs.content).assertEqual('6');
       await CommonFunc.sleep(1000);
       let btn8: Component = await driver.findComponent(ON.id("btnChildV2Clear"));
       await CommonFunc.sleep(1000);

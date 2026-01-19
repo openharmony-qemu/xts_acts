@@ -408,7 +408,7 @@ struct SelectMenuTest {
                 style: FontStyle.Normal
               })
               .key('selectTest13')
-              .menuAlign(MenuAlignType.CENTER)
+              .menuAlign(MenuAlignType.START)
               //.menuAlign(fakeMenuAlignType(null))
               .onSelect((index: int, text?: undefined | String) => {
                 console.info("Select:" + index)

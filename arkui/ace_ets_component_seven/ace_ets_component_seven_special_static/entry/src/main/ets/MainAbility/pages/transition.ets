@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (C) 2025 Huawei Device Co., Ltd.
+ * Copyright (C) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -18,6 +18,7 @@ import { Entry, Component, AttributeModifier, ButtonAttribute, TransitionType, F
 import { State } from '@ohos.arkui.stateManagement';
 
 import events_emitter from '@ohos.events.emitter'
+import { RecordData } from '@ohos.base';
 class TransitionModifier1 implements AttributeModifier<ButtonAttribute> {
   applyNormalAttribute(instance: ButtonAttribute): void {
     // instance.transition({ type: TransitionType.Insert, scale: { x: 0, y: 1.0, z: 1.0 }, opacity: 1 });
@@ -49,7 +50,7 @@ struct TransitionTest7Example {
             let backData: events_emitter.EventData = {
               data: {
                 "btn1": this.btn1,
-              } as Record<string,undefined|null|Object>
+              } as Record<String,RecordData>
             }
             let backEvent: events_emitter.InnerEvent = {
               eventId: 233,

@@ -59,6 +59,11 @@ export default function ratingOnChangeModifierTest() {
 
     afterEach(async () => {
       await CommonFunc.sleep(1000);
+      const routerInstance = AppStorage.get<Router>("router") as Router
+      let options: router.RouterOptions = {
+        url:'MainAbility/pages/index/index',
+      }
+      routerInstance.pushUrl(options);
       console.info('ratingOnChangeModifier after each called');
     })
    

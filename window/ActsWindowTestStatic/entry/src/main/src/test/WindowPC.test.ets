@@ -2250,6 +2250,218 @@ export default function WindowPCTest() {
                 done();
             }
         })
+        /**
+         * @tc.name   testShiftAppWindowTouchEvent_1300002_static
+         * @tc.number SUB_BASIC_WMS_SHIFT_APP_WINDOW_TOUCH_EVENT_static_0300
+         * @tc.desc   testShiftAppWindowTouchEvent_1300002_static
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL3
+         */
+        it('testShiftAppWindowTouchEvent_1300002_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: () => void): Promise<void> => {
+            let caseName:string = "testShiftAppWindowTouchEvent_1300002_static";
+            let msgStr:string = 'jsunittest ' + caseName + ' ';
+            console.log(msgStr + 'begin.');
+            let subWindowClass:window.Window = await windowStage.createSubWindow('testShiftAppWindowTouchEvent_1300002_static');
+            await Utils.msSleep(200);
+            await subWindowClass.resize(1000, 1000);
+            await Utils.msSleep(300);
+            await subWindowClass.setUIContent("pages/index2");
+            await Utils.msSleep(200);
+            await subWindowClass.showWindow();
+            await Utils.msSleep(1000);
+            let subWindowId:int = subWindowClass.getWindowProperties().id;
+            console.log(`${caseName} subWindowId: ${JSON.stringify(subWindowId)}`);
+            try {
+                window.shiftAppWindowTouchEvent(subWindowId, 20000, 123).then(() => {
+                    await subWindowClass.destroyWindow();
+                    expect(false).assertTrue();
+                    done();
+                }).catch((err: Error) :PromiseLike<void>|undefined=> {
+                    console.error(msgStr+'shiftAppWindowTouchEvent : ' + err.code + ',message:' + err.message)
+                    await subWindowClass.destroyWindow();
+                    if (err.code == 801) {
+                        done();
+                    } else {
+                        expect(err.code).assertEqual(401);
+                        done();
+                    }
+                })
+            } catch (err: BusinessError) {
+                console.error(`${caseName} failed, error: ${JSON.stringify(err)}`);
+                await subWindowClass.destroyWindow();
+                if (err.code == 801) {
+                    expect(err.message != null).assertTrue();
+                    done()
+                } else {
+                    expect(false).assertTrue();
+                    done()
+                }
+            }
+        })
+        /**
+         * @tc.name   testShiftAppWindowFocus_Function_Promise_static
+         * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_STAGE_JS_API_static_0100
+         * @tc.desc   Test the function value of shiftAppWindowFocus
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('testShiftAppWindowFocus_Function_Promise_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let msgStr: string = 'testShiftAppWindowFocus_Function_Promise_static';
+            console.log(msgStr + 'begin');
+            try {
+                console.log(msgStr + 'try begin')
+                let sourceWindowId = 40;
+                let targetWindowId = 41;
+                let promise = window.shiftAppWindowFocus(sourceWindowId, targetWindowId);
+                promise.then(() => {
+                    console.log(msgStr + 'Succeeded in shifting app window focus');
+                    expect(true).assertTrue();
+                    done();
+                }).catch((error: Error):PromiseLike<void>|undefined => {
+                    console.log(msgStr + 'Failed to shift app window focus1. Cause:' + JSON.stringify(error));
+                    if (error.code == 801 || error.code == 1300002) {
+                        expect(true).assertTrue()
+                        done()
+                    } else {
+                        expect(false).assertTrue();
+                        done();
+                    }
+                })
+            } catch (error: BusinessError) {
+                console.log(msgStr + 'Failed to shift app window focus2. Cause:' + JSON.stringify(error));
+                expect(false).assertTrue();
+                done();
+            }
+        })
+        /**
+         * @tc.name   test_setSupportedWindowModes_threeElement_static
+         * @tc.number SUB_BASIC_WMS_SET_SUPPORTED_WINDOW_MODES_static_0100
+         * @tc.desc   传参三个元素
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it('test_setSupportedWindowModes_threeElement_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            try {
+                const message:string = 'test_setSupportedWindowModes_threeElement_static'
+                let windowStageStart:window.WindowStage = await startAbility(message, context)
+                let promise = windowStageStart.setSupportedWindowModes([bundleManager.SupportWindowMode.FULL_SCREEN,
+                    bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FLOATING]);
+                promise.then(async() => {
+                    console.info('Succeed in setting window support modes');
+                    expect(true).assertTrue();
+                    await terminateAbility(message);
+                    done();
+                }).catch((err: Error):PromiseLike<void>|undefined => {
+                    console.error(`${message} Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+                    await terminateAbility(message);
+                    if (err.code == 801) {
+                        expect(err.message != null).assertTrue();
+                        console.error(`The device not support setSupportedWindowModes`);
+                        expect(true).assertTrue();
+                        done();
+                    } else {
+                        expect(false).assertTrue();
+                        done();
+                    }
+
+                });
+            } catch (err: BusinessError) {
+                console.error(`Failed to set window support modes. Cause code:${err.code}, messege:${err.message}`);
+                expect(false).assertTrue();
+                done();
+            }
+            ;
+        });
+        /**
+         * @tc.name   testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreen_static
+         * @tc.number SUB_BASIC_WMS_SETSUPPORTEDWINDOWMODES_GRAYOUTMAXIMIZEBUTTON_static_0200
+         * @tc.desc   验证setSupportedWindowModes接口传入错误入参抛1300016错误码
+         * @tc.type   FUNCTION
+         * @tc.size   MEDIUMTEST
+         * @tc.level  LEVEL0
+         */
+        it("testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreen_static", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: () => void): Promise<void> => {
+            let caseName:string = "testSetSupportedWindowModeswithGrayOutMaximizeButtonTrueNotSupportFullScreen_static";
+            console.log(caseName + "begin");
+            let options: StartOptions = {
+                supportWindowModes: [
+                    bundleManager.SupportWindowMode.SPLIT,
+                    bundleManager.SupportWindowMode.FULL_SCREEN,
+                    bundleManager.SupportWindowMode.FLOATING
+                ]
+            };
+            try {
+                let windowStage = await startAbility(caseName, context, options);
+                await Utils.msSleep(200);
+                let promise = windowStage.setSupportedWindowModes([bundleManager.SupportWindowMode.FLOATING,
+                    bundleManager.SupportWindowMode.SPLIT, bundleManager.SupportWindowMode.FULL_SCREEN,], true);
+                promise.then(() => {
+                    console.info(caseName + ' Succeeded in setting window support modes');
+                    expect(false).assertTrue();
+                    done();
+                }).catch(async (err: Error):PromiseLike<void>|undefined => {
+                    console.error(caseName + `Failed to set window support modes. Cause code: ${err.code}, message: ${err.message}`);
+                    await terminateAbility(caseName);
+                    if (err.code == 801) {
+                        expect(err.message != null).assertTrue();
+                        done();
+                    } else {
+                        expect(err.code).assertEqual(1300016)
+                        expect(err.message != null).assertTrue();
+                        done();
+                    }
+
+                });
+            } catch (error: BusinessError) {
+                console.error(caseName + ' Failed. Cause:' + JSON.stringify(error));
+                await terminateAbility(caseName);
+                expect(false).assertTrue();
+                done();
+            }
+        })
+        /**
+         * @tc.number     SUB_BASIC_WMS_FUNCTION_FREEWINDOWMODE_static_0300
+         * @tc.name       testOnOffFreeWindowModeChangewithdestoryedSubwindow_static
+         * @tc.desc       验证子窗口销毁后onFreeWindowModeChange和offFreeWindowModeChange监听接口抛1300002错误码
+         * @tc.size       MediumTest
+         * @tc.type       Function
+         * @tc.level      Level 2
+         */
+        it('testOnOffFreeWindowModeChangewithdestoryedSubwindow_static', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: () => void): Promise<void> => {
+            let caseName: string = 'testOnOffFreeWindowModeChangewithdestoryedSubwindow_static ';
+            let subWindowClass: window.Window;
+            let subWindowClass2: window.Window;
+            subWindowClass = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow1');
+            subWindowClass2 = await windowStage.createSubWindow('testOnOffFreeWindowModeChangewithdestoryedSubwindow2');
+            await subWindowClass.destroyWindow();
+            await subWindowClass2.destroyWindow();
+            try {
+                const callback = (res: boolean) => {
+                    console.log(caseName + ' callback result: ' + res);
+                }
+                subWindowClass.onFreeWindowModeChange(callback)
+                expect(true).assertFail()
+                done();
+            } catch (err: BusinessError) {
+                console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300002);
+            }
+            try {
+                const callback = (res: boolean) => {
+                    console.log(caseName + ' callback result: ' + res);
+                }
+                subWindowClass.offFreeWindowModeChange(callback)
+                expect(true).assertFail()
+                done();
+            } catch (err: BusinessError) {
+                console.error(`${caseName}  Failed1. Cause code: ${err.code}, message: ${err.message}`);
+                expect(err.code).assertEqual(1300002)
+                done();
+            }
+        });
 
 
     })

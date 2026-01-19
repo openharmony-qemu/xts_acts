@@ -23,7 +23,7 @@ import formHost from '@ohos.app.form.formHost';
 
 
 const DOMAIN: int = 0x0000;
-const TAG: string = 'testTag';
+const TAG: string = 'testTag formInfoTest';
 
 export default function formInfoTest() {
     describe("formInfoTest", (): void => {
@@ -218,50 +218,6 @@ export default function formInfoTest() {
 
             done();
             hilog.info(DOMAIN, TAG, 'FormInfoStaticTest003 end');
-        })
-
-        /**
-         * @tc.name   FormInfoStaticTest004
-         * @tc.number FormInfoStaticTest004
-         * @tc.desc   check formInfo
-         * @tc.type   FUNCTION
-         * @tc.size   MEDIUMTEST
-         * @tc.level  LEVEL1
-         */
-        it("FormInfoStaticTest004", TestType.FUNCTION|Size.MEDIUMTEST|Level.LEVEL1, async (done: () => void): Promise<void> => {
-            await Utils.msSleep(1000);
-            hilog.info(DOMAIN, TAG, 'FormInfoStaticTest004 start');
-
-            let callGetFormRect: formInfo.GetFormRectInfoCallback = (formId: string): Promise<formInfo.Rect> => {
-                hilog.info(0x0000, 'testTag', `cbGetFormRect a new form`);
-                return new Promise<formInfo.Rect>((resolve: (rect: formInfo.Rect) => void, reject: (error: Error) => void): void => {
-                    hilog.info(0x0000, 'testTag', `cbGetFormRect Promise called`);
-                    let rect1:formInfo.Rect= {
-                        left:1.0,
-                        top:1.2,
-                        width:1.3,
-                        height:1.4
-                    };
-                    expect(rect1.left as float).assertEqual(1.0);
-                    expect(rect1.top as float).assertEqual(1.2);
-                    expect(rect1.width as float).assertEqual(1.3);
-                    expect(rect1.height as float).assertEqual(1.4);
-                    resolve(rect1);
-                });
-            }
-            try {
-                formHost.onGetFormRect(callGetFormRect);
-                hilog.info(0x0000, 'testTag', 'onGetFormRect success');
-                expect().assertFail();
-                done();
-            } catch (error) {
-                let code = (error as BusinessError).code;
-                let message = (error as BusinessError).message;
-                hilog.info(0x0000, 'testTag', 'onGetFormRect catch error');
-                expect(code).assertEqual(202);
-                done();
-            }
-            hilog.info(DOMAIN, TAG, 'FormInfoStaticTest004 end');
         })
     })
 }

@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -38,6 +38,7 @@ import UIAbility from '@ohos.app.ability.UIAbility';
 import common from '@ohos.app.ability.common';
 import { BusinessError } from '@ohos.base';
 import { UtilsTest, startAbility, stopApplication } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -109,7 +110,7 @@ it('circleTest_static_0200', Level.LEVEL0, async (done: () => void): Promise<voi
           data: {
             "width": '500px',
             "height": '500px',
-          } as Record<String, undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         console.info('[circleTest_static_0200] START');
         let innerEvent: emitter.InnerEvent = {
@@ -144,7 +145,7 @@ it('circleTest_static_0300', Level.LEVEL0, async (done: () => void): Promise<voi
           data: {
             "width": '-a',
             "height": '-b',
-          } as Record<String, undefined|null|Object>
+          } as Record<String,RecordData>
         } as emitter.EventData
         console.info('[circleTest_static_0300] START');
         let innerEvent: emitter.InnerEvent = {

@@ -41,6 +41,7 @@ import {
 import { State } from '@ohos.arkui.stateManagement'
 import { BusinessError } from '@ohos.base'
 import events_emitter from '@ohos.events.emitter';
+import { RecordData } from '@ohos.base';
 
 @Entry
 @Component
@@ -84,7 +85,7 @@ struct pasteButton {
   private stateChangeCallBack: (eventData:events_emitter.EventData) => void =
     (eventData:events_emitter.EventData) => {
     if (eventData != null && eventData.data != undefined) {
-      const data = eventData.data as Record<String,undefined|null|Object>
+      const data = eventData.data as Record<String,RecordData>
       console.info('====>page_pasteButton page state change called:' + JSON.stringify(eventData));
 
       if (data['bgType'] != null) {
@@ -230,7 +231,7 @@ struct pasteButton {
                 let clickData:events_emitter.EventData = {
                   data: {
                     'clickResult': result,
-                  } as Record<string, undefined|null|Object>
+                  } as Record<String,RecordData>
                 }
                 let clickEvent:events_emitter.InnerEvent = {
                   eventId: 2,

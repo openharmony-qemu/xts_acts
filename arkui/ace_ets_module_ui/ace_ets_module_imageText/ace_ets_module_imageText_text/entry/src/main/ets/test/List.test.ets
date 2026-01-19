@@ -105,6 +105,7 @@ import TextCompressLeadingPunctuationModifier from './TextTest/TextCompressLeadi
 import TextMenuItemIdTest from './TextTest/TextMenuItemId.test';
 import TextFontWeightTest from './TextTest/TextFontWeightTest.test';
 import TextDirectionTest from './TextTest/TextDirection.test';
+import SelectedDragPreviewStyle from './SelectedDragPreviewStyle/SelectedDragPreviewStyle.test';
 
 export default function testsuite() {
   InputPresetTest()
@@ -200,4 +201,5 @@ export default function testsuite() {
   TextMenuItemIdTest();
   TextFontWeightTest();
   TextDirectionTest();
+  SelectedDragPreviewStyle();
 }

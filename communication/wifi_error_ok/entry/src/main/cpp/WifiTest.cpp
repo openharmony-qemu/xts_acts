@@ -276,6 +276,27 @@ static napi_value GetDeviceMacAddress0500(napi_env env, napi_callback_info info)
     napi_create_int32(env, confirmResult, &retValue);
     return retValue;
 }
+static napi_value GetDeviceMacAddress0600(napi_env env, napi_callback_info info)
+{
+    int32_t result = Wifi_ResultCode::WIFI_PERMISSION_DENIED;
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+static napi_value GetDeviceMacAddress0700(napi_env env, napi_callback_info info)
+{
+    int32_t result = Wifi_ResultCode::WIFI_NOT_SUPPORTED;
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
+static napi_value GetDeviceMacAddress0800(napi_env env, napi_callback_info info)
+{
+    int32_t result = Wifi_ResultCode::WIFI_OPERATION_FAILED;
+    napi_value retValue;
+    napi_create_int32(env, result, &retValue);
+    return retValue;
+}
 EXTERN_C_START
 static napi_value Init(napi_env env, napi_value exports)
 {
@@ -289,6 +310,9 @@ static napi_value Init(napi_env env, napi_value exports)
         {"GetDeviceMacAddress0300", nullptr, GetDeviceMacAddress0300, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0400", nullptr, GetDeviceMacAddress0400, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetDeviceMacAddress0500", nullptr, GetDeviceMacAddress0400, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0600", nullptr, GetDeviceMacAddress0600, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0700", nullptr, GetDeviceMacAddress0700, nullptr, nullptr, nullptr, napi_default, nullptr},
+        {"GetDeviceMacAddress0800", nullptr, GetDeviceMacAddress0800, nullptr, nullptr, nullptr, napi_default, nullptr},
         {"GetBluetoothSwitchState0100", nullptr, GetBluetoothSwitchState0100, nullptr, nullptr, nullptr, napi_default,
          nullptr},
         {"GetBluetoothSwitchState0101", nullptr, GetBluetoothSwitchState0101, nullptr, nullptr, nullptr, napi_default,

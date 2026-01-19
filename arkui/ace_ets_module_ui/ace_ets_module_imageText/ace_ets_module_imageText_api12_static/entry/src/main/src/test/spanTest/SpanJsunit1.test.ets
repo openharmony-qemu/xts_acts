@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -24,6 +24,7 @@ import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from '../Util.test';
 import { UIContext, Router } from '@ohos.arkui.UIContext';
 import common from '@ohos.app.ability.common';
+import { RecordData } from '@ohos.base';
 export default function spanTest() {
   describe('spanTest', (): void => {
     beforeAll(() => {
@@ -75,7 +76,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mFontSize": 68 as double,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -97,7 +98,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mFontSize": $r('app.float.50vp'),
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -139,7 +140,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mFontFamily": 'Arial',
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -180,7 +181,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mLineHeight": '80fp',
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -202,7 +203,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mLineHeight": 50 as double,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -244,7 +245,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mFontStyle": FontStyle.Italic,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -284,7 +285,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mFontWeight": FontWeight.Bold,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -324,7 +325,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mTextCase": TextCase.UpperCase,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -368,7 +369,7 @@ export default function spanTest() {
           data: {
             "mDecorationType": TextDecorationType.Underline,
             "mDecorationColor":Color.Red
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -410,7 +411,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mFontColor": 0xFF00FF,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -452,7 +453,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mLetterSpacing": 5 as double,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,
@@ -497,7 +498,7 @@ export default function spanTest() {
         let eventData: events_emitter.EventData = {
           data: {
             "mFont": { size: $r('app.float.50vp'), weight: FontWeight.Bold, family: $r('app.string.font_family_arial'), style: FontStyle.Italic } as Font,
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: events_emitter.InnerEvent = {
           eventId: 6801,

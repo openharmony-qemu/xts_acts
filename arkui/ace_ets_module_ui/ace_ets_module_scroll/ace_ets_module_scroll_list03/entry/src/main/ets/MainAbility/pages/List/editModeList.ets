@@ -64,7 +64,11 @@ struct editModeOptionsListExample {
         }, (day: string) => day)
       }
       .id('list_editMode')
-      .editModeOptions({ enableGatherSelectedItemsAnimation: this.enable })
+      .editModeOptions({ enableGatherSelectedItemsAnimation: this.enable,
+        onGetPreviewBadge: () => {
+          return true
+        }
+      })
       .width('70%')
       .backgroundColor(0xFAEEE0)
       .height('60%')

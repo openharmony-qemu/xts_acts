@@ -44,6 +44,9 @@ import Matrix2DMultiplyTest from './Canvas/Matrix2DMultiplyTest';
 import StartImageAnalyzerErrorCodeTest1 from './Canvas/StartImageAnalyzerErrorCodeTest1';
 import CanvasRoundRectErrorCodeTest from './Canvas/CanvasRoundRectErrorCodeTest';
 import AddColorStopErrorCodeTest from './Canvas/AddColorStopErrorCodeTest';
+import CanvasParamsUnitTest from './Canvas/CanvasParamsUnitTest.test';
+import CanvasParamsImageAnalyzerTest from './Canvas/CanvasParamsImageAnalyzerTest.test';
+import CanvasParamsVisibilityTest from './Canvas/CanvasParamsVisibilityTest.test';
 
 export default function testsuite() {
 
@@ -79,4 +82,7 @@ export default function testsuite() {
   CanvasRoundRectErrorCodeTest();
   AddColorStopErrorCodeTest();
 
+  CanvasParamsUnitTest();
+  CanvasParamsImageAnalyzerTest();
+  CanvasParamsVisibilityTest();
 }

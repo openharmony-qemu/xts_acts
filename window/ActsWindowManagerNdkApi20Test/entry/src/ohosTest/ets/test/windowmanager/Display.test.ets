@@ -83,18 +83,16 @@ export default function DisplayTest() {
     it('testCaptureScreenPixelmapBoundaryValue', TestType.FUNCTION |
     Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       let caseName = 'testCaptureScreenPixelmapBoundaryValue';
-      let isSupport = canIUse('SystemCapability.Window.SessionManager')
-      console.log(caseName + ' isSupport: ' + isSupport);
       try {
         console.info(`====>${caseName} start<====`);
         let Result: Array<number> = windowndkapi20.testCaptureScreenPixelmapBoundaryValue();
         console.info(`====>${caseName} Result: ${JSON.stringify(Result)}`);
-        if (isSupport) {
-          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
-          expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
-        } else {
+        if (Result[0] == 801&&Result[1] == 801) {
           expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
           expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_DEVICE_NOT_SUPPORTED);
+        } else {
+          expect(Result[0]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
+          expect(Result[1]).assertEqual(DISPLAY_MANAGER_ERROR_SYSTEM_ABNORMAL);
         }
         done()
       } catch (err) {

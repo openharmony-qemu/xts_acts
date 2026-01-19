@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -30,6 +30,7 @@ import { BusinessError } from '@ohos.base';
 import { Router, UIContext } from '@ohos.arkui.UIContext';
 import { AppStorage } from '@ohos.arkui.stateManagement';
 import { UtilsTest } from './Util.test';
+import { RecordData } from '@ohos.base';
 
 
 let emitKey = "emitUserAgent";
@@ -67,7 +68,7 @@ export default function web9Jsunit() {
         let backData: events_emitter.EventData = {
           data: {
             "ACTION": emitKey
-          } as Record<String,undefined|null|Object>
+          } as Record<String,RecordData>
         }
         let backEvent: events_emitter.InnerEvent = {
           eventId: 10,

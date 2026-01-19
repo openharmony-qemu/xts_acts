@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -36,6 +36,7 @@ import {
   TextOverflow
 } from '@ohos.arkui.component';
 import { State, StorageLink } from '@ohos.arkui.stateManagement';
+import { RecordData } from '@ohos.base';
 
 // import plugin from "../common/plugin_component.js"
 class ObjPlugin {
@@ -77,7 +78,7 @@ struct PluginUserExample {
       ForEach(this.plugincount, (item: ObjPlugin) => {
         PluginComponent({
           template: { source: 'plugincomponent1', bundleName: 'com.example.plugin' },
-          data: { 'countDownStartValue': 'new countDownStartValue' } as Record<String,undefined|null|Object>
+          data: { 'countDownStartValue': 'new countDownStartValue' } as Record<String, RecordData>
         }).size({ width: 500, height: 100 })
           .onComplete(() => {
             console.log("onComplete")

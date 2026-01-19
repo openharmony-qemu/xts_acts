@@ -1,6 +1,6 @@
 'use static';
 /**
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -41,6 +41,7 @@ import display from '@ohos.display'
 import abilityDelegatorRegistry from '@ohos.app.ability.abilityDelegatorRegistry';
 import common from '@ohos.app.ability.common';
 import { UtilsTest } from '../Util.test';
+import { RecordData } from '@ohos.base';
 
 let domain: number = 0x0000;
 let tag: String = 'testTag';
@@ -115,7 +116,7 @@ it('testZIndex_static_02', Level.LEVEL0, async () => {
         let eventData: emitter.EventData = {
           data: {
             "zIndex": 4
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 236,
@@ -148,7 +149,7 @@ it('testZIndex_static_03', Level.LEVEL0, async () => {
         let eventData: emitter.EventData = {
           data: {
             "zIndex": -5
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 236,
@@ -182,7 +183,7 @@ it('testZIndex_static_04', Level.LEVEL0, async () => {
         let eventData: emitter.EventData = {
           data: {
             "zIndex": 889900444
-          } as Record<String, undefined | null | Object>
+          } as Record<String,RecordData>
         }
         let innerEvent: emitter.InnerEvent = {
           eventId: 1113,

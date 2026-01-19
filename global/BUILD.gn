@@ -27,6 +27,7 @@ group("xts_global_acts") {
       "i18n_standard/intljsStatic:intljs_static_test",
       "i18n_standard/intljsTestStatic:intljs_static2_test",
       "global_stage_static:global_stage_static_hap",
+      "i18n_util_static:i18n_util_static_hap",
       "resmgr_standard/resmgrjsStatic:resmgrjs_test_static",
       "global_napi_c_test:ActsGlobalNapiCTest",
     ]

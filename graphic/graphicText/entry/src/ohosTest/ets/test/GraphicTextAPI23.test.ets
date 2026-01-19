@@ -691,14 +691,14 @@ export default function GraphicTextAPI23() {
     it('testLoadFontSyncWithCheck_2200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
       let fontCollection: text.FontCollection = text.FontCollection.getGlobalInstance();
       let fontFamily: string = 'family';
-      try {
-        fontCollection.loadFontSyncWithCheck(fontFamily, $rawfile('empty.ttf'), 0);
-        console.info('www data success to do loadFontSyncWithCheck');
-        expect().assertFail();
-      } catch (e) {
-        console.error(`www data Failed to do loadFontSyncWithCheck, error: ${JSON.stringify(e)} message: ${e.message}`);
-        expect(Number(e.code) == 25900007).assertTrue();
-      }
+        await fontCollection.loadFontWithCheck(fontFamily, $rawfile('empty.ttf'), 0)
+        .then((data) => {
+          console.info(`Succeeded in doing loadFontWithCheck ${JSON.stringify(data)} `);
+          expect().assertFail();
+        }).catch((error: BusinessError) => {
+          console.error('www data Failed to do loadFontWithCheck', JSON.stringify(error));
+          expect(Number(error.code) == 25900007).assertTrue();
+        });
       done();
     })
     

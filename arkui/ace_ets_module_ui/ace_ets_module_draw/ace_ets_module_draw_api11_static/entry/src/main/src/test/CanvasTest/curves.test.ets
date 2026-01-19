@@ -1,6 +1,6 @@
 'use static';
 /*
- * Copyright (c) 2025 Huawei Device Co., Ltd.
+ * Copyright (c) 2025-2026 Huawei Device Co., Ltd.
  * Licensed under the Apache License, Version 2.0 (the "License");
  * you may not use this file except in compliance with the License.
  * You may obtain a copy of the License at
@@ -29,6 +29,7 @@ import { Callback, MessageManager } from '../../../ets/MainAbility/common/Messag
 import { startAbility, stopApplication, UtilsTest } from '../Util.test'
 import CommonFunc from '../../../ets/MainAbility/common/Common';
 import Utils from '../../../ets/MainAbility/common/Utils';
+import { RecordData } from '@ohos.base';
 
 let domain: Int = 0x0000;
 let tag: string = 'testTag';
@@ -95,8 +96,8 @@ it('testcurvesSteps_static_0001', Level.LEVEL0, async () => {
         priority: emitter.EventPriority.LOW
       }
       let callback = (eventData: emitter.EventData) => {
-        const data: Record<String, undefined | null | Object> =
-          eventData.data as Record<String, undefined | null | Object>
+        const data: Record<String,RecordData> =
+          eventData.data as Record<String,RecordData>
         try {
           console.info("callback success");
           console.info("curveApi ((eventData.data) as  Record<string, Object>)?.curveApi result is: " +

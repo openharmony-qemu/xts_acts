@@ -61,7 +61,7 @@ import {
 @Component
 struct List_scrollToIndex3 {
   private arr: Array<number> = new Array<number>(1, 2, 3, 4, 5, 6, 7, 8, 9);
-  private arr2: Array<number> = new Array<number>(0);
+  private arr2: Array<number> = [0];
   @State visibe: Visibility = Visibility.None;
   private scroller: Scroller = new Scroller();
 
