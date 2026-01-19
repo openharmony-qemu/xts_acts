@@ -3039,7 +3039,7 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans batchInsertWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
+      await trans.commit();
       let trans1 = await rdbStore.createTransaction(options);
       const valueBucket: data_relationalStore.ValuesBucket = {
         'data1': 'lisi',
@@ -3059,7 +3059,7 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans updateWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans1?.commit();
+      await trans1.commit();
       let trans2 = await rdbStore.createTransaction(options);
       let predicates1 = new data_relationalStore.RdbPredicates("test");
       predicates1.equalTo('data2', 10 as long);
@@ -3074,7 +3074,7 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans deleteWithReturning failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans2?.commit();
+      await trans2.commit();
       done();
       hilog.info(domain, tag, '%{public}s', '************* testTransWithReturning001 end *************');
     })
@@ -3100,7 +3100,7 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans batchInsertWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans?.commit();
+      await trans.commit();
       let trans1 = await rdbStore.createTransaction(options);
       const valueBucket: data_relationalStore.ValuesBucket = {
         'data1': 'lisi',
@@ -3120,7 +3120,7 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans updateWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans1?.commit();
+      await trans1.commit();
       let trans2 = await rdbStore.createTransaction(options);
       let predicates1 = new data_relationalStore.RdbPredicates("test");
       predicates1.equalTo('data2', 10 as long);
@@ -3135,7 +3135,7 @@ export default function RelationStoreRdbStoreTest() {
         console.error(tag + `trans deleteWithReturningSync failed. code is ${e.code}, message is ${e.message}`);
         expect(true).assertFail();
       }
-      await trans2?.commit();
+      await trans2.commit();
       done();
       hilog.info(domain, tag, '%{public}s', '************* testTransWithReturningSync001 end *************');
     })
