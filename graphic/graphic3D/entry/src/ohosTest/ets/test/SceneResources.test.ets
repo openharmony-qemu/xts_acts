@@ -1581,6 +1581,85 @@ export default function sceneResourcesTest() {
       }
     })
     /**
+     * @tc.name   testShaderSetShaderInputs
+     * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1015
+     * @tc.desc   Test setShaderInputs method of Shader to set shader inputs
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testShaderSetShaderInputs', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done:Function)=> {
+      let msg = "============================testShaderSetShaderInputs";
+      console.info(msg + ' begin ');
+      try {
+        scene = await Scene.load($rawfile("gltf/CubeWithFloor/glTF/AnimatedCube.glb"));
+        expect(scene != undefined).assertTrue();
+        console.info(msg + " scene loaded successfully");
+
+        rf = scene.getResourceFactory();
+        shader = await rf.createShader({ name: "CustomShader", uri: $rawfile("shaders/custom_shader/custom_material_sample.shader")});
+        expect(shader != undefined).assertTrue();
+        console.info(msg + " shader created successfully");
+
+        material = await rf.createMaterial({ name: "CustomMaterial" }, MaterialType.SHADER);
+        expect(material != null).assertTrue();
+        console.info(msg + " material created successfully");
+
+        if (material) {
+          console.info(msg + " material colorShader set start");
+          material.colorShader = shader as Shader;
+        }
+
+        expect(material?.colorShader != null).assertTrue();
+        console.info(msg + " colorShader set successfully");
+
+        // Create a dummy image for testing
+        let testImage: scene3d.Image = await rf.createImage({ name: "testImage", uri: $rawfile("gltf/Cube/glTF/Cube_BaseColor.png")});
+        console.info(msg + " createImage successfully");
+
+        // Test setShaderInputs with various input types
+        if (material && material.colorShader) {
+          console.info(msg + " material && material.colorShader == True");
+          material.colorShader.setShaderInputs({
+            "time": 1.5,
+            "vec_1": {x: 1.0, y: 1.0, z: -1.0, w: -1.0},
+            "vec_2": {x: 0.0, y: 0.0, z: 0.0},
+            "vec_3": {x: 0.0, y: 0.5},
+            "BASE_COLOR_Image": testImage
+          });
+          console.info(msg + " setShaderInputs called successfully");
+
+          // Verify inputs were set
+          expect(typeof material.colorShader.inputs["time"]).assertEqual('number');
+          expect(material.colorShader.inputs["time"]).assertEqual(1.5);
+          console.info(msg + " time input verified");
+
+          expect(material.colorShader.inputs["vec_1"] != null).assertTrue();
+          console.info(msg + " vec_1 input verified");
+
+          expect(material.colorShader.inputs["vec_2"] != null).assertTrue();
+          console.info(msg + " vec_2 input verified");
+
+          expect(material.colorShader.inputs["vec_3"] != null).assertTrue();
+          console.info(msg + " vec_3 input verified");
+
+          expect(material.colorShader.inputs["BASE_COLOR_Image"] != null).assertTrue();
+          console.info(msg + " BASE_COLOR_Image input verified");
+        }
+        else {
+          console.info(msg + " material && material.colorShader == False");
+          expect(material && material.colorShader).assertTrue();
+        }
+
+        console.info(msg + " test completed successfully");
+        done();
+      } catch (err) {
+        console.info(msg + " Failed in testShaderSetShaderInputs " + JSON.stringify(err));
+        expect().assertFail();
+        done();
+      }
+    })
+    /**
      * @tc.name   testMaterialTypeOCCLUSION
      * @tc.number SUB_BASIC_WMS_SPCIAL_XTS_GRAPHIC3D_JS_API_1018
      * @tc.desc   Test MaterialType.OCCLUSION enum value and verify OCCLUSION material can be created
