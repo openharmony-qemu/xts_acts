@@ -528,5 +528,1288 @@ export default function ImageSourceCreatePixelMapListSupp() {
       })
     })
 
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_001
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_001
+     * @tc.desc       createPixelMap options: desiredPixelFormat ARGB_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_001', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_001';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',JSON.stringify(pixelMap));
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_002
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_002
+     * @tc.desc       createPixelMap options: desiredPixelFormat BGRA_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_002', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_002';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_003
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_003
+     * @tc.desc       createPixelMap options: desiredPixelFormat BGRA_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_003', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_003';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGB_888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertUndefined();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect().assertFail();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_004
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_004
+     * @tc.desc       createPixelMap options: desiredPixelFormat BGRA_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_004', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_004';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertUndefined();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect().assertFail();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_005
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_005
+     * @tc.desc       createPixelMap options: desiredPixelFormat RGBA_F16
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_005', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_005';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect().assertFail();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_006
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_006
+     * @tc.desc       createPixelMap options: desiredPixelFormat NV21
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_006', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_006';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.NV21,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect().assertFail();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_007
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_007
+     * @tc.desc       createPixelMap options: desiredPixelFormat NV12
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_007', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_007';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.NV12,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_008
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_008
+     * @tc.desc       createPixelMap options: desiredPixelFormat RGBA_1010102
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_008', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_008';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_1010102,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_009
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_009
+     * @tc.desc       createPixelMap options: desiredPixelFormat YCBCR_P010
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_009', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_009';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_010
+     * @tc.desc       createPixelMap options: desiredPixelFormat YCRCB_P010
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_010';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.YCRCB_P010,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_011
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_011
+     * @tc.desc       createPixelMap options: desiredPixelFormat ASTC_4x4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_011', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredPixelFormat_011';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_01
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_01
+     * @tc.desc       createPixelMap options: desiredDynamicRange AUTO
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_01', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_01';
+      let decodeOpts: image.DecodingOptions = {
+        desiredDynamicRange: image.DecodingDynamicRange.AUTO,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_02
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_02
+     * @tc.desc       createPixelMap options: desiredDynamicRange HDR
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_02', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_02';
+      let decodeOpts: image.DecodingOptions = {
+        desiredDynamicRange: image.DecodingDynamicRange.HDR,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_03
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_03
+     * @tc.desc       createPixelMap options: desiredDynamicRange SDR
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_03', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_desiredDynamicRange_03';
+      let decodeOpts: image.DecodingOptions = {
+        desiredDynamicRange: image.DecodingDynamicRange.SDR,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_01
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_01
+     * @tc.desc       createPixelMap options: cropAndScaleStrategy SCALE_FIRST
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_01', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_01';
+      let decodeOpts: image.DecodingOptions = {
+        cropAndScaleStrategy: image.CropAndScaleStrategy.SCALE_FIRST,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertUndefined();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect().assertFail();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_02
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_02
+     * @tc.desc       createPixelMap options: cropAndScaleStrategy CROP_FIRST
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_02', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_cropAndScaleStrategy_02';
+      let decodeOpts: image.DecodingOptions = {
+        cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(decodeOpts,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertUndefined();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect().assertFail();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_01
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_01
+     * @tc.desc       createPixelMap options cover null
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_01', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_01';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(null,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_02
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_02
+     * @tc.desc       createPixelMap options cover undefined
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_02', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_options_02';
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      imageSourceApi.createPixelMap(undefined,(err: BusinessError, pixelMap: image.PixelMap) => {
+        if (err) {
+          console.error(TAG,testName,`Failed to create pixelMap object, error code is ${err},${err.code}`);
+          expect(err.code).assertFalse();
+        } else {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelMap);
+          expect(pixelMap!=undefined).assertTrue();
+        }
+        imageSourceApi.release();
+        done();
+      })
+    })
+
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_01
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_01
+     * @tc.desc       createPixelMapUsingAllocator options editable:false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_01', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_01';
+      let decodeOpts: image.DecodingOptions = {
+        editable: false,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',JSON.stringify(pixelmap));
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_02
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_02
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.UNKNOWN
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_02', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_02';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_03
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_03
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.ARGB_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_03', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_03';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_04
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_04
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.BGRA_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_04', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_04';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_05
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_05
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.ALPHA_8
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_05', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_05';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_06
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_06
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.RGBA_F16
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_06', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_06';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_07
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_07
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.NV21
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_07', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_07';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.NV21,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_08
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_08
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.RGBA_1010102
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_08', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_08';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_1010102,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_09
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_09
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.YCBCR_P010
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_09', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_09';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_010
+     * @tc.desc       createPixelMapUsingAllocator options desiredPixelFormat: image.PixelMapFormat.ASTC_4x4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_010';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011
+     * @tc.desc       createPixelMapUsingAllocator options desiredDynamicRange: image.desiredDynamicRange.HDR
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_011';
+      let decodeOpts: image.DecodingOptions = {
+        desiredDynamicRange: image.DecodingDynamicRange.HDR,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_012
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_012
+     * @tc.desc       createPixelMapUsingAllocator options desiredDynamicRange: image.desiredDynamicRange.SDR
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_012', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_012';
+      let decodeOpts: image.DecodingOptions = {
+        desiredDynamicRange: image.DecodingDynamicRange.SDR,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_013
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_013
+     * @tc.desc       createPixelMapUsingAllocator options desiredDynamicRange: image.desiredDynamicRange.AUTO
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_013', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_USING_ALLOCATOR_013';
+      let decodeOpts: image.DecodingOptions = {
+        desiredDynamicRange: image.DecodingDynamicRange.AUTO,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapUsingAllocator(decodeOpts, image.AllocatorType.AUTO);
+        if (pixelmap != undefined) {
+          console.info(TAG,testName,'Succeeded in creating pixelMap object.',pixelmap);
+          expect(pixelmap!=undefined).assertTrue();
+        } else {
+          console.error(TAG,testName,`Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      }catch (err) {
+        console.error(TAG,testName,`Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+
+
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_01
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_01
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.UNKNOWN
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_01', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_01';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.UNKNOWN,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName,'Succeeded in creating pixelMap object.');
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName,'Failed to create pixelMap.');
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_02
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_02
+     * @tc.desc       createPixelMapSync options desiredPixelFormat:image.PixelMapFormat.ARGB_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_02', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_02';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ARGB_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_03
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_03
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.BGRA_8888
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_03', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_03';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.BGRA_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_04
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_04
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.ALPHA_8
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_04', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_04';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ALPHA_8,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect().assertFail();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `,pixelmap);
+          expect(pixelmap).assertUndefined();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_05
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_05
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.RGBA_F16
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_05', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_05';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_F16,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_06
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_06
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.NV21
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_06', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_06';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.NV21,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_07
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_07
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.RGBA_1010102
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_07', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_07';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_1010102,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_08
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_08
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.YCBCR_P010
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_08', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_08';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.YCBCR_P010,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_09
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_09
+     * @tc.desc       createPixelMapSync options desiredPixelFormat: image.PixelMapFormat.ASTC_4x4
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_09', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_09';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.ASTC_4x4,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_010
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_010
+     * @tc.desc       createPixelMapSync options desiredDynamicRange: SDR
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_010', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_010';
+      let decodeOpts: image.DecodingOptions = {
+        desiredDynamicRange: image.DecodingDynamicRange.SDR,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect(pixelmap != undefined).assertTrue();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_011
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_011
+     * @tc.desc       createPixelMapSync options cropAndScaleStrategy: SCALE_FIRST
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_011', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_011';
+      let decodeOpts: image.DecodingOptions = {
+        cropAndScaleStrategy: image.CropAndScaleStrategy.SCALE_FIRST,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect().assertFail();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `,pixelmap);
+          expect(pixelmap).assertUndefined();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_012
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_012
+     * @tc.desc       createPixelMapSync options cropAndScaleStrategy: CROP_FIRST
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_012', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_012';
+      let decodeOpts: image.DecodingOptions = {
+        cropAndScaleStrategy: image.CropAndScaleStrategy.CROP_FIRST,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelMap object.', pixelmap);
+          expect().assertFail();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect(pixelmap).assertUndefined();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_013
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_013
+     * @tc.desc       createPixelMapSync : pixelmap.isStrideAlignment cover false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_013', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_013';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v2.jpg');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelmap.isStrideAlignment is false.', pixelmap.isStrideAlignment);
+          expect(pixelmap.isStrideAlignment).assertFalse();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+    /**
+     * @tc.number     SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_014
+     * @tc.name       SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_014
+     * @tc.desc       createPixelMapSync : pixelmap.isEditable cover false
+     * @tc.size       MEDIUM
+     * @tc.type       Function
+     * @tc.level      Level 1
+     */
+    it('SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_014', Level.LEVEL1, async (done: Function) => {
+      const testName = 'SUB_MEDIA_IMAGE_SOURCE_CREATE_PIXELMAP_createPixelMapSync_014';
+      let decodeOpts: image.DecodingOptions = {
+        desiredPixelFormat: image.PixelMapFormat.RGBA_8888,
+      };
+      const imageSourceApi = await getImageSource('test_exif_v3.webp');
+      try {
+        let pixelmap = imageSourceApi.createPixelMapSync(decodeOpts);
+        if (pixelmap != undefined) {
+          console.info(TAG, testName, 'Succeeded in creating pixelmap.isEditable is true.', pixelmap.isEditable);
+          expect(pixelmap.isEditable).assertFalse();
+        } else {
+          console.error(TAG, testName, `Failed to create pixelMap object `);
+          expect().assertFail();
+        }
+      } catch (err) {
+        console.error(TAG, testName, `Failed to create pixelMap object, ${err.message},${err.code}`);
+        expect().assertFail();
+      }
+      imageSourceApi.release();
+      done();
+    })
+
+
+
+
+
   });
 }
