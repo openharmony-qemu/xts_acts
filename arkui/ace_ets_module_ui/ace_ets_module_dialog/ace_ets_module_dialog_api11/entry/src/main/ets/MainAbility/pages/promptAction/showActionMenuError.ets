@@ -26,7 +26,7 @@ struct promptExample {
   build() {
     Column() {
       Text(this.errCode).key('errorCode')
-      Button("showActionMenuError").onClick(() => {
+      Button('showActionMenuError').onClick(() => {
         try {
           promptAction.showActionMenu(undefined)
         } catch (error) {
