@@ -2056,7 +2056,7 @@ HWTEST_F(DemuxerFunc2NdkTest, DEMUXER_SKIP_SAMPLE_FUNC_0010, TestSize.Level0)
     std::map<int32_t, std::vector<uint8_t>> skipInfoMap = {
         {0, {0x51, 0x04, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00, 0x00}},
         {3051, {0x00, 0x00, 0x00, 0x00, 0xa3, 0x01, 0x00, 0x00, 0x00, 0x00}},
-    }
+    };
     const char *file = "/data/test/media/audio/MP3_8K_1.mp3";
     int fd = 0;
     int64_t size = 0;
