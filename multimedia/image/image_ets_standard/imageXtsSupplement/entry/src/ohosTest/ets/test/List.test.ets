@@ -207,6 +207,8 @@ import ImageExifOECFSupp from './image/ImageExifOECF.test';
 import ImageBitsPerSampleStripOffsetsSupp from './image/ImageBitsPerSampleStripOffsets.test';
 import ImageSourceMetadataSupp from './image/ImageSourceMetadata.test';
 import ImageGammaSupp from './image/ImageGammaSupp.test';
+import CreatePixelMapSupp from './image/CreatePixelMap.test';
+import GetImageInfoSupp from './image/GetImageInfoTest.test';
 
 export default function testsuite() {
   GetImagePropertyJPGNullTest();
@@ -398,4 +400,6 @@ export default function testsuite() {
   ImageBitsPerSampleStripOffsetsSupp();
   ImageSourceMetadataSupp();
   ImageGammaSupp()
+  CreatePixelMapSupp();
+  GetImageInfoSupp();
 }
