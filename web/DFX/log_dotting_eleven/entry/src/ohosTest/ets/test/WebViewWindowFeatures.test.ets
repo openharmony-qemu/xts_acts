@@ -75,7 +75,7 @@ export default function WebViewWindowFeaturesTest() {
      */
     it('testWebViewWindowFeatures001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewWindowFeatures001', 101016)
-      Utils.registerEvent('testWebViewWindowFeatures001', 500, 20260123, done);
+      Utils.registerEvent('testWebViewWindowFeatures001', 600, 20260123, done);
       await Utils.waitAndClickComponent(driver, "WebViewWindowFeaturesButton","testWebViewWindowFeatures001");
     })
     /**
@@ -88,7 +88,7 @@ export default function WebViewWindowFeaturesTest() {
      */
     it('testWebViewWindowFeatures002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       Utils.emitEvent('emitWebViewWindowFeatures002', 101016)
-      Utils.registerEvent('testWebViewWindowFeatures002', 600, 20260124, done);
+      Utils.registerEvent('testWebViewWindowFeatures002', 500, 20260124, done);
       await Utils.waitAndClickComponent(driver, "WebViewWindowFeaturesButton","testWebViewWindowFeatures002");
     })
 
