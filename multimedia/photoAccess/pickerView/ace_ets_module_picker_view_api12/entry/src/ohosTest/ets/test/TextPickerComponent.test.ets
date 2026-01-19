@@ -2851,6 +2851,10 @@ export default function TextPicker() {
             sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
             playMode: photoAccessHelper.PlayMode.AUTO_PLAY,
           },
+          {
+            sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
+            playMode: photoAccessHelper.PlayMode.DEFAULT,
+          }
         ];
         let expectedAppAlbumFilters: Array<string> = 
           ['com.example.sourceapp.album', 'com.example.sourceapp.album1', 'com.example.sourceapp.album2',];  
@@ -3252,14 +3256,15 @@ export default function TextPicker() {
        };	 
        const boxPath = fileUri.getUriFromPath(context.filesDir + '/test.jpg').toString();	 
        const isImageFullyDisplayed = true;	 
-       photoAccessHelper	 
+       const testResult = photoAccessHelper	 
          .getPhotoAccessHelper(context)	 
          .showAssetsCreationDialogEx([boxPath], [creationSetting])	 
          .catch((error:Error) => {	 
            console.error('testPicker63 showAssetsCreationDialogEx error =', JSON.stringify(error));	 
            expect(false).assertTrue();	 
          });	 
-       await CommonFunc.sleep(2000);	 
+       await CommonFunc.sleep(2000);
+       expect(testResult).not().assertUndefined();	 
        console.info('testPicker63 showAssetsCreationDialogEx success');	 
        photoAccessHelper	 
          .getPhotoAccessHelper(context)	 
@@ -3450,6 +3455,10 @@ export default function TextPicker() {
         {
           sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
           playMode: photoAccessHelper.PlayMode.AUTO_PLAY
+        },
+        {
+          sceneType: photoAccessHelper.SceneType.PHOTO_BROWSER_SWIPE,
+          playMode: photoAccessHelper.PlayMode.DEFAULT
         }
       ];
     
@@ -3764,7 +3773,7 @@ export default function TextPicker() {
         });
         pickerController.replacePhotoPickerPreview(originalUris[0], boxPath, async () => {
           console.log("testPicker71 replacePhotoPickerPreview callback called");
-          await pickerController
+          const photoResult = await pickerController
            .saveTrustedPhotoAssetsEx([boxPath], [CreationSettingDef], SaveMode.SAVE_AS)
            .then((val) => {
              if (!val) {
@@ -3774,6 +3783,8 @@ export default function TextPicker() {
                console.log("testPicker73 saveTrustedPhotoAssets success, save uris:" + val);
              }
            });
+
+           expect(photoResult).not().assertUndefined();
         });
       } catch (error) {
         console.log("testPicker73 error:" + JSON.stringify(error));
