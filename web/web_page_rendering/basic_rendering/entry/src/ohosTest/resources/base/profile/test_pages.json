@@ -15,6 +15,7 @@
     "testability/pages/webViewOnFullScreenEnter",
     "testability/pages/webViewOnFullScreenExit",
     "testability/pages/getSurfaceId",
-    "testability/pages/webViewController"
+    "testability/pages/webViewController",
+    ""
   ]
 }
