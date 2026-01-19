@@ -887,13 +887,13 @@ export default function RdbResultSetTest() {
         let bool1 = resultSet.goToFirstRow();
         hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
         expect(bool1).assertEqual(false);
-        done();
       }catch (err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
-        done();
       }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
       hilog.info(domain, tag, '%{public}s', '************* testGoToFirstRow001 end *************');
     })
     /**
@@ -912,13 +912,13 @@ export default function RdbResultSetTest() {
         let bool1 = resultSet.goToLastRow();
         hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
         expect(bool1).assertEqual(false);
-        done();
       }catch (err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
-        done();
       }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
       hilog.info(domain, tag, '%{public}s', '************* testGoToLastRow001 end *************');
     })
     /**
@@ -937,13 +937,13 @@ export default function RdbResultSetTest() {
         let bool1 = resultSet.goToNextRow();
         hilog.info(domain, tag, '%{public}s', 'bool1:' + bool1);
         expect(bool1).assertEqual(false);
-        done();
       }catch (err) {
         err = err as BusinessError;
         hilog.info(domain, tag, '%{public}s', 'executeSql failed'+ err.code);
         expect().assertFail();
-        done();
       }
+      await rdbStore2.execute(DROP_TABLE_TESTERRCODE);
+      done();
       hilog.info(domain, tag, '%{public}s', '************* testGoToNextRow001 end *************');
     })
     /**
