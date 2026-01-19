@@ -38,6 +38,7 @@
         "MainAbility/pages/emptyBranch/gridRepeatFalse",
         "MainAbility/pages/emptyBranch/gridRepeatUn",
         "MainAbility/pages/emptyBranch/gridRepeatNull",
-        "MainAbility/pages/Grid/editModeGrid"
+        "MainAbility/pages/Grid/editModeGrid",
+        "MainAbility/pages/Grid/editBadgeGrid"
     ]
 }
