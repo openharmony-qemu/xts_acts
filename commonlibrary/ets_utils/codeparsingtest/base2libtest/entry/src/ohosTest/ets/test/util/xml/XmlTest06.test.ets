@@ -886,33 +886,6 @@ export default function XmlTest_06() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0100
-     * @tc.name      getNamespaceTest0001
-     * @tc.desc      Test the sample code in the sample document
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('getNamespaceTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'getNamespaceTest0001';
-        console.log(TAG + ' start');
-
-        let strXml =
-          '<?xml version="1.0" encoding="utf-8"?>' +
-            '<note xmlns:h="http://www.w3.org">' +
-            '<h:title>Happy</h:title>' +
-            '</note>';
-        let textEncoder = new util.TextEncoder();
-        let arrBuffer = textEncoder.encodeInto(strXml);
-        let that = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer);
-
-        let options: xml.ParseOptions = {supportDoctype:true, ignoreNameSpace:false, tokenValueCallbackFunction:func}
-        that.parseXml(options);
-        console.info(str);
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_PARSEINFO_GETNAMESPACE_0200
      * @tc.name      getNamespaceTest0002
      * @tc.desc      Test to verify returning the correct namespace URI

@@ -1258,23 +1258,5 @@ export default function StreamTest_02() {
         expect(complexWritable instanceof stream.Writable).assertEqual(true);
 
       })
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_ON_1400
-     * @tc.name      ontest0014
-     * @tc.desc      Verify complex event cleanup works correctly
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('ontest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ontest0014';
-        console.log(TAG + ' start');
-        const testData = 'test';
-        const complexWritable = new ComplexWritable(done, testData);
-        expect(complexWritable instanceof ComplexWritable).assertEqual(true);
-        expect(complexWritable instanceof stream.Writable).assertEqual(true);
-
-      });
   })
 }

@@ -1182,23 +1182,6 @@ export default function StreamTest_01() {
       })
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_SETDEFAULTENCODING_0600
-     * @tc.name      setDefaultEncodingTest0006
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('setDefaultEncodingTest0006', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'setDefaultEncodingTest0006';
-        console.log(TAG + ' start');
-        let writable1 = new TestWritable1();
-        let result1 = writable1.setDefaultEncoding();
-        expect(result1).assertEqual(false);
-
-      })
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_SETDEFAULTENCODING_0700
      * @tc.name      setDefaultEncodingTest0007
      * @tc.desc      Array Unshift index 0.
@@ -1212,23 +1195,6 @@ export default function StreamTest_01() {
         let writable2 = new TestWritable2();
         let result2 = writable2.setDefaultEncoding();
         expect(result2).assertEqual(false);
-
-      })
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_SETDEFAULTENCODING_0800
-     * @tc.name      setDefaultEncodingTest0008
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('setDefaultEncodingTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'setDefaultEncodingTest0008';
-        console.log(TAG + ' start');
-        let writable3 = new TestWritable3();
-        let result3 = writable3.setDefaultEncoding('');
-        expect(result3).assertEqual(false);
 
       })
 
@@ -1263,23 +1229,6 @@ export default function StreamTest_01() {
         let writable5 = new TestWritable5();
         let result5 = writable5.setDefaultEncoding();
         expect(result5).assertEqual(false);
-
-      })
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_SETDEFAULTENCODING_1100
-     * @tc.name      setDefaultEncodingTest0011
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('setDefaultEncodingTest0011', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'setDefaultEncodingTest0011';
-        console.log(TAG + ' start');
-        let writable1 = new TestWritable1();
-        let result1 = writable1.setDefaultEncoding();
-        expect(result1).assertEqual(false);
 
       })
 

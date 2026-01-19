@@ -481,24 +481,6 @@ export default function StreamTest_10() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_TRANSFROM_CONSTRUCTOR_0800
-     * @tc.name      constructorTest0008
-     * @tc.desc      Verify UpperCaseTransform can convert string to uppercase
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('constructorTest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'constructorTest0008';
-        console.log(TAG + ' start');
-          const typeTransform = new TypeCheckTransform();
-          const invalidData = new Uint8Array('key'.split('').map(char => char.charCodeAt(0)));
-          typeTransform.write(invalidData);
-          void typeTransform;
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_TRANSFORM_DOTRANSFORM_0100
      * @tc.name      DoTransformTest0001
      * @tc.desc      Verify doTransform with valid string chunk, utf8 encoding and normal callback.

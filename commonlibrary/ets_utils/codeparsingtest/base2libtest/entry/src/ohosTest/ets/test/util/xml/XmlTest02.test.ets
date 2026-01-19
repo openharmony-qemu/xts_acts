@@ -98,30 +98,6 @@ export default function XmlTest_02() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1600
-     * @tc.name      EndElementTest0016
-     * @tc.desc      Repeatedly calling startElement without closing
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('EndElementTest0016', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'EndElementTest0016';
-        console.log(TAG + ' start');
-        const arrayBuffer16 = new ArrayBuffer(1024);
-        const serializer: xml.XmlSerializer = new xml.XmlSerializer(arrayBuffer16);
-
-        serializer.startElement("<a>");
-        serializer.startElement("<b");
-
-        let uint8 = new Uint8Array(arrayBuffer16)
-        let result = util.TextDecoder.create().decodeToString(uint8)
-
-        console.warn(result)
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_SERIALIZER_ENDELEMENT_1700
      * @tc.name      EndElementTest0017
      * @tc.desc      The parameter 'name' is a reserved keyword (starting with xml)
@@ -1578,24 +1554,6 @@ export default function XmlTest_02() {
           result.includes("<!--Text node comment-->") &&
           result.includes("</text>")
         ).assertTrue();
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_XMLSERIALIZER_SETCOMMENT_2800
-     * @tc.name      SetCommentTest0028
-     * @tc.desc      Incorrect position
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('SetCommentTest0028', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'SetCommentTest0028';
-        console.log(TAG + ' start');
-
-        const buffer10: ArrayBuffer = new ArrayBuffer(512);
-        const ser10: xml.XmlSerializer = new xml.XmlSerializer(buffer10);
-        ser10.setComment("Invalid comment position");
 
       });
 

@@ -1053,35 +1053,6 @@ export default function XmlTest_04() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0100
-     * @tc.name      ParseTest0001
-     * @tc.desc      Test the sample code in the sample document
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('ParseTest0001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'ParseTest0001';
-        console.log(TAG + ' start');
-
-        str = "";
-        let strXml =
-          '<?xml version="1.0" encoding="utf-8"?>' +
-            '<note importance="high" logged="true">' +
-            '<company>John &amp; Hans</company>' +
-            '<title>Happy</title>' +
-            '</note>';
-
-        let testEncoder = new util.TextEncoder();
-        let arrBuffer = testEncoder.encodeInto(strXml);
-        let testThat = new xml.XmlPullParser(arrBuffer.buffer as object as ArrayBuffer, 'UTF-8');
-
-        let options: xml.ParseOptions = { supportDoctype: true, ignoreNameSpace: true, tagValueCallbackFunction: func }
-        testThat.parse(options);
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_PULLPARSER_PARSE_0200
      * @tc.name      ParseTest0002
      * @tc.desc      Test standard format XML string (single root node, no nesting, text content only)

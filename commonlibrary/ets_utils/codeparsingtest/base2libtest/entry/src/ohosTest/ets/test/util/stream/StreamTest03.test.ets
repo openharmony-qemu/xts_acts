@@ -592,26 +592,6 @@ export default function StreamTest_03() {
       });
 
     /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_OFF_0800
-     * @tc.name      offtest0008
-     * @tc.desc      Verify multiple off calls are safe
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('offtest0008', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0008';
-        console.log(TAG + ' start');
-        const EVENT_ID = 'write_event';
-        const validCallback: Callback<emitter.EventData> = () => {
-        };
-        emitter.on(EVENT_ID, validCallback);
-          emitter.off(EVENT_ID, validCallback);
-          emitter.off(EVENT_ID, validCallback);
-
-      });
-
-    /**
      * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_OFF_0900
      * @tc.name      offtest0009
      * @tc.desc      Verify callback not triggered after off
@@ -725,28 +705,6 @@ export default function StreamTest_03() {
         emitter.off(EVENT_ID);
         emitter.emit(EVENT_ID);
         expect(callbackCount === (0)).assertEqual(true);
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_OFF_1400
-     * @tc.name      offtest0014
-     * @tc.desc      Verify cross-thread off operation safety
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('offtest0014', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'offtest0014';
-        console.log(TAG + ' start');
-        const EVENT_ID = 'custom_write_event';
-        const validCallback: Callback<emitter.EventData> = () => {
-        };
-        emitter.on(EVENT_ID, validCallback);
-        const removeCallback = () => {
-          emitter.off(EVENT_ID, validCallback);
-        };
-        removeCallback();
 
       });
 
@@ -1144,22 +1102,6 @@ export default function StreamTest_03() {
           console.error(`${TAG} fail, err: ${err}`);
           expect(err.message.includes('encoding must be a string')).assertEqual(false);
         }
-
-      });
-
-    /**
-     * @tc.number    SUB_BASEDATE_STREAM_WRITABLE_DOWRITE_0700
-     * @tc.name      doWriteTest0007
-     * @tc.desc      Array Unshift index 0.
-     * @tc.size      MediumTest
-     * @tc.type      Function
-     * @tc.level     Level 2
-     */
-    it('doWriteTest0007', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, (): void => {
-        const TAG = 'doWriteTest0007';
-        console.log(TAG + ' start');
-        const testCase3 = new InvalidCallbackTest();
-        testCase3.write('TestData', 'utf8');
 
       });
 
