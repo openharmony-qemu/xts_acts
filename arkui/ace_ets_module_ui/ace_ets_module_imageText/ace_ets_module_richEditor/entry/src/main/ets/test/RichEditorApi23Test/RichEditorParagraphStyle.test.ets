@@ -60,7 +60,7 @@ export default function RichEditorParagraphStyleTest() {
       let button = await driver.findComponent(ON.id('RichEditorParagraphStyle_get_textDirection'));
       await button.click();
       await CommonFunc.sleep(1000);
-      expect(AppStorage.get('ParagraphStyle_textDirection')).assertEqual("0");
+      expect(AppStorage.get('textDirection')).assertEqual("0");
       AppStorage.delete('ParagraphStyle_textDirection');
       console.info('[RichEditorParagraphStyleTest_0010] END');
       done();
