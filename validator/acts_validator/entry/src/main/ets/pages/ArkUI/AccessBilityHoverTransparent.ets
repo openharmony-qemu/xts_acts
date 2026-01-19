@@ -26,7 +26,7 @@ const TAG = '[onAccessibilityHoverTransparent]';
 @Component
 struct AccessibilityHoverTransparentDemo {
   @State name: string = 'onAccessibilityHoverTransparent';
-  @State stepTips: string = '测试目的: 验证无障碍接口onAccessibilityHoverTransparent\n' + '\n' + 
+  @State stepTips: string = '测试目的: 验证无障碍接口onAccessibilityHoverTransparent\n' + '\n' +
     '操作步骤: 开启屏幕朗读\n' +
     '1、触摸accessibilityLevel_yes文本\n' +
     '2、触摸accessibilityLevel_no文本\n' +
@@ -164,50 +164,60 @@ struct AccessibilityHoverTransparentDemo {
       .justifyContent(FlexAlign.SpaceBetween)
 
       Column() {
-          Row() {
-            Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({top:20})
+        Row() {
+          Text(`是否设备支持屏幕朗读`).fontColor(Color.Green).fontSize('18fp').margin({top:20})
+        }
+        .height('5%')
+        Row() {
+          Column() {
+            Button(`不支持`)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width('30%')
+              .enabled(!this.yesEnable)
+              .opacity(!this.yesEnable ? 1 : 0.4)
+              .onClick(async () => {
+              })
           }
-          .height('5%')
-          Row() {
-            Column() {
-              Button(`支持`)
-                .borderRadius(8)
-                .backgroundColor(0x317aff)
-                .width('30%')
-                .onClick(async () => {
-                  this.yesEnable = true;
-                  this.onAccessibilityHoverTransparentEnable = true;
-                })
-            }
+          Column() {
+            Button(`支持`)
+              .borderRadius(8)
+              .backgroundColor(0x317aff)
+              .width('30%')
+              .onClick(async () => {
+                this.yesEnable = true;
+                this.onAccessibilityHoverTransparentEnable = true;
+              })
           }
-          .height('10%')
-          Text(this.text1).key('hoverTest1').height('5%')
-          Text(this.text2).key('hoverTest2').height('5%')
-          Text(this.text3).key('hoverTest3').height('5%')
-          Text(this.text4).key('hoverTest4').height('5%')
-          Text('accessibilityLevel_yes').height('10%')
+        }
+        .height('10%')
+        Text(this.text1).key('hoverTest1').height('5%')
+        Text(this.text2).key('hoverTest2').height('5%')
+        Text(this.text3).key('hoverTest3').height('5%')
+        Text(this.text4).key('hoverTest4').height('5%')
+        Text('accessibilityLevel_yes').height('10%')
           .enabled(this.onAccessibilityHoverTransparentEnable)
           .opacity(this.onAccessibilityHoverTransparentEnable ? 1 : 0.4)
           .backgroundColor(this.color)
           .borderWidth(1)
           .accessibilityLevel('yes')
-            .onAccessibilityHoverTransparent((event) => {
-            // accessibilityLevel为yes时，hover不会触发回调 
+          .onAccessibilityHoverTransparent((event) => {
+            // accessibilityLevel为yes时，hover不会触发回调
             console.info('testHover_' + JSON.stringify(event))
             this.text2 = 'onAccessibilityHoverTransparent_fail'
           })
-          Text('accessibilityLevel_no').height('10%')
+        Text('accessibilityLevel_no').height('10%')
           .enabled(this.onAccessibilityHoverTransparentEnable)
           .opacity(this.onAccessibilityHoverTransparentEnable ? 1 : 0.4)
           .backgroundColor(this.color)
           .borderWidth(1)
           .accessibilityLevel('no')
           .onAccessibilityHoverTransparent((event) => {
-            // accessibilityLevel为no时，hover会触发回调 
+            // accessibilityLevel为no时，hover会触发回调
             console.info('testHover_' + JSON.stringify(event))
             this.text1 = 'onAccessibilityHoverTransparent_pass'
           })
-          Text('accessibilityLevel_auto').height('10%')
+        Text('accessibilityLevel_auto').height('10%')
           .enabled(this.onAccessibilityHoverTransparentEnable)
           .opacity(this.onAccessibilityHoverTransparentEnable ? 1 : 0.4)
           .backgroundColor(this.color)
@@ -218,7 +228,7 @@ struct AccessibilityHoverTransparentDemo {
             console.info('testHover_' + JSON.stringify(event))
             this.text3 = 'onAccessibilityHoverTransparent_auto'
           })
-          Text('accessibilityLevel_no-hide-descendants').height('10%')
+        Text('accessibilityLevel_no-hide-descendants').height('10%')
           .enabled(this.onAccessibilityHoverTransparentEnable)
           .opacity(this.onAccessibilityHoverTransparentEnable ? 1 : 0.4)
           .backgroundColor(this.color)
@@ -229,7 +239,7 @@ struct AccessibilityHoverTransparentDemo {
             console.info('testHover_' + JSON.stringify(event))
             this.text4 = 'onAccessibilityHoverTransparent_hide'
           })
-        }.height('80%')
+      }.height('80%')
       .width('100%')
       .backgroundColor(Color.White)
 
@@ -264,9 +274,9 @@ struct AccessibilityHoverTransparentDemo {
       .justifyContent(FlexAlign.SpaceEvenly)
       .backgroundColor(Color.Black)
       .margin({ bottom: '20vp' })
-      }.width('100%')
-      .height('100%')
-      .backgroundColor('#F1F3F5')
-    }
+    }.width('100%')
+    .height('100%')
+    .backgroundColor('#F1F3F5')
+  }
 
 }
