@@ -20,6 +20,7 @@
     "MainAbility/pages/segmentButtonV2/TabSegmentButtonV2Example",
     "MainAbility/pages/index/Index",
     "MainAbility/pages/segmentButton/SegmentButtonBorder",
-    "MainAbility/pages/defaultValue/SegBtnSelectBackgrountColor"
+    "MainAbility/pages/defaultValue/SegBtnSelectBackgrountColor",
+    "MainAbility/pages/segmentButton/SegmentBtnMaterial0070"
   ]
 }
