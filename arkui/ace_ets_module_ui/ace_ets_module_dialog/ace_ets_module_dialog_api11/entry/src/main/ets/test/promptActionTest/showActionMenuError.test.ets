@@ -66,7 +66,7 @@ export default function showActionMenuError() {
       let obj: Record<string, ESObject> = JSON.parse(strJson);
       let errorCode = JSON.stringify(obj.$attrs.content)
       expect(errorCode).assertEqual('401');
-      console.info('[showToast_0100] END');
+      console.info('[showActionMenuError_0100] END');
       done();
     });
   })
