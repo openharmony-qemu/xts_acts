@@ -36,12 +36,12 @@ const int32_t NUM_SIX = 6;
 const int32_t NUM_TEN = 10;
 const int32_t NUM_ELEVEN = 11;
 const int32_t REQUEST_FRAME_SIZE = 4096;
-float speedMin = 0.5;
-float speenMax = 10.0;
-float pitchMin = 0.1;
-float pitchMax = 5.0
-float changeOptionMin = 0.3;
-float changeOptionMax = 3.0;
+float g_speedMin = 0.5;
+float g_speedMax = 10.0;
+float g_pitchMin = 0.1;
+float g_pitchMax = 5.0
+float g_changeOptionMin = 0.3;
+float g_changeOptionMax = 3.0;
 const OH_AudioFormat audioFormatInput = {.samplingRate = OH_Audio_SampleRate::SAMPLE_RATE_48000,
                                          .channelLayout = OH_AudioChannelLayout::CH_LAYOUT_STEREO,
                                          .channelCount = NUM_TWO,
@@ -5525,7 +5525,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_001(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMin, pitchMin);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5558,7 +5558,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_002(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMax, pitchMax);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax, g_pitchMax);
 
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5591,7 +5591,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_003(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMin - 0.1, pitchMin);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin - 0.1, g_pitchMin);
 
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5624,7 +5624,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_004(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMin, pitchMin - 0.1);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin - 0.1);
 
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5657,7 +5657,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_005(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMax + 0.1, pitchMax);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax + 0.1, g_pitchMax);
 
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5690,7 +5690,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_006(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMax, pitchMax + 0.1);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax, g_pitchMax + 0.1);
 
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5710,7 +5710,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_006(napi_env env, napi_callb
 static napi_value AudioSuiteEngine_SetTempoAndPitch_007(napi_env env, napi_callback_info info)
 {
     napi_value res;
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(nullptr, speedMax, pitchMax);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(nullptr, g_speedMax, g_pitchMax);
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
@@ -5741,7 +5741,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_008(napi_env env, napi_callb
         OH_AudioSuiteNodeBuilder_SetNodeType(builder, setNodeType);
         OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMax, pitchMax);
+        OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMax, g_pitchMax);
         OH_AudioSuiteNodeBuilder_Destroy(builder);
         OH_AudioSuiteEngine_DestroyNode(audioNode);
         OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
@@ -5774,7 +5774,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_009(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMin, pitchMin);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
 
     OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
     OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
@@ -5806,7 +5806,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_010(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetFormat(builder, audioFormatOutput);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMin, pitchMin);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
 
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5841,7 +5841,7 @@ static napi_value AudioSuiteEngine_SetTempoAndPitch_011(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_SetRequestDataCallback(builder, MyOnWriteData, g_userData);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
 
-    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMin, pitchMin);
+    OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
     
     OH_AudioSuiteNodeBuilder_Destroy(builder);
     OH_AudioSuiteEngine_DestroyNode(audioNode);
@@ -5875,7 +5875,7 @@ static napi_value AudioSuiteEngine_GetTempoAndPitch_001(napi_env env, napi_callb
     OH_AudioSuiteNodeBuilder_Create(&builder);
     OH_AudioSuiteNodeBuilder_SetNodeType(builder, type);
     OH_AudioSuiteEngine_CreateNode(audioSuitePipeline, builder, &audioNode);
-    OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, speedMin, pitchMin);
+    OH_AudioSuiteEngine_SetTempoAndPitch(audioNode, g_speedMin, g_pitchMin);
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetTempoAndPitch(audioNode, &speed, &pitch);
     
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -5965,7 +5965,7 @@ static napi_value AudioSuiteEngine_GetTempoAndPitch_005(napi_env env, napi_callb
         OH_AudioSuiteNodeBuilder_Destroy(builder);
         OH_AudioSuiteEngine_DestroyNode(audioNode);
         OH_AudioSuiteEngine_DestroyPipeline(audioSuitePipeline);
-        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);        
+        OH_AudioSuiteEngine_Destroy(audioSuiteEngine);
         if (isSupported && result != AUDIOSUITE_ERROR_UNSUPPORTED_OPERATION) {
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
             LOG("GetTempoAndPitch_005 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
@@ -6118,7 +6118,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_001(napi_env env, na
             napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_FAIL), &res);
             LOG("SetPureVoiceChange_001 fail, result is: %{public}d, setNodeType is: %{public}d ", result, setNodeType);
             return res;
-        }        
+        }
     }
     napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
     return res;
@@ -6219,7 +6219,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_004(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), changeOptionMin};
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMin};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6256,7 +6256,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_005(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), changeOptionMax};
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMax};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6293,7 +6293,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_006(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), changeOptionMin - 0.1};
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMin - 0.1};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6330,7 +6330,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_007(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), changeOptionMax + 0.1};
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMax + 0.1};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6423,7 +6423,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_010(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};    
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6462,7 +6462,7 @@ static napi_value AudioSuiteEngine_SetPureVoiceChangeOption_011(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};    
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6619,7 +6619,7 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_004(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), changeOptionMin};
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMin};
     OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
  
@@ -6657,7 +6657,7 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_005(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), changeOptionMax};
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST), g_changeOptionMax};
     OH_AudioSuiteEngine_SetPureVoiceChangeOption(audioNode, option);
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
  
@@ -6685,7 +6685,6 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_006(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
             PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(nullptr, &option);
-
     if (result == AUDIOSUITE_ERROR_INVALID_PARAM) {
         napi_create_int32(env, static_cast<int32_t>(TestResult::TEST_PASS), &res);
         return res;
@@ -6798,7 +6797,7 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_010(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};    
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
@@ -6837,7 +6836,7 @@ static napi_value AudioSuiteEngine_GetPureVoiceChangeOption_011(napi_env env, na
         static_cast<OH_AudioSuite_PureVoiceChangeGenderOption>(
             PureVoiceChangeGenderOptionTest::PURE_VOICE_CHANGE_FEMALE_TEST),
         static_cast<OH_AudioSuite_PureVoiceChangeType>(
-            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};    
+            PureVoiceChangeTypeTest::PURE_VOICE_CHANGE_TYPE_CARTOON_TEST)};
     OH_AudioSuite_Result result = OH_AudioSuiteEngine_GetPureVoiceChangeOption(audioNode, &option);
  
     OH_AudioSuiteNodeBuilder_Destroy(builder);
