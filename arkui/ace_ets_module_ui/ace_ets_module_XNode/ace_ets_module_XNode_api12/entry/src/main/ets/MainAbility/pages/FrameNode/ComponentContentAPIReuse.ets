@@ -51,17 +51,20 @@ struct ComponentContentAPIReuse {
   build() {
     Row() {
       Column() {
-        Button("click me").id('ComponentContentAPIReuse_Button')
-          .onClick(() => {
-            let uiContext = this.getUIContext();
-            let promptAction = uiContext.getPromptAction();
-            let contentNode = new ComponentContent(uiContext, wrapBuilder(buildText), new Params(this.message));
-            promptAction.openCustomDialog(contentNode);
-            setTimeout(() => {
-              contentNode.reuse(new Params("new message"));
-            }, 2000); //2秒后自动更新弹窗内容文本
-          })
-        Button('fdhjkfshfjkfhsd').id('ComponentContentAPIReuse_Button02')
+        Row() {
+          Button("click me").id('ComponentContentAPIReuse_Button').width('50%')
+            .onClick(() => {
+              let uiContext = this.getUIContext();
+              let promptAction = uiContext.getPromptAction();
+              let contentNode = new ComponentContent(uiContext, wrapBuilder(buildText), new Params(this.message));
+              promptAction.openCustomDialog(contentNode);
+              setTimeout(() => {
+                contentNode.reuse(new Params("new message"));
+              }, 2000); //2秒后自动更新弹窗内容文本
+            })
+          Button('close').id('ComponentContentAPIReuse_Button02').width('50%')
+        }
+
       }
       .width('100%')
       .height('100%')

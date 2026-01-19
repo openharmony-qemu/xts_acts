@@ -12,18 +12,19 @@
  * See the License for the specific language governing permissions and
  * limitations under the License.
  */
-
+import WebViewNativeVideoUpdateRect from './WebViewNativeMediaUpdateRect.test';
 import WebViewNativeMediaPlayerEnableFalse from './WebViewNativeMediaPlayerEnableFalse.test';
 import WebViewNativeMediaPlayerHandlerEnhanced from './WebViewNativeMediaPlayerHandlerEnhanced.test';
 import WebViewNativeMediaPlayerHandler4 from './WebViewNativeMediaPlayerHandler4.test';
 import WebViewNativeMediaPlayerHandlerEnhanced2 from './WebViewNativeMediaPlayerHandlerEnhanced2.test';
 import WebViewNativeMediaPlayerHandlerEnhancedSetMuted from './WebViewNativeMediaPlayerHandlerEnhancedSetMuted.test';
-import WebViewNativeVideoUpdateRect from './WebViewNativeMediaUpdateRect.test';
+
 export default function testsuite() {
+  WebViewNativeVideoUpdateRect()
   WebViewNativeMediaPlayerEnableFalse()
   WebViewNativeMediaPlayerHandlerEnhanced()
   WebViewNativeMediaPlayerHandlerEnhanced2()
   WebViewNativeMediaPlayerHandlerEnhancedSetMuted()
   WebViewNativeMediaPlayerHandler4()
-  WebViewNativeVideoUpdateRect()
+
 }

@@ -128,7 +128,7 @@ struct getStylesDemo {
             this.mutableStyledString.replaceString(20, 100, '789');
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -140,7 +140,7 @@ struct getStylesDemo {
             this.mutableStyledString.insertString(100, '789');
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -152,7 +152,7 @@ struct getStylesDemo {
             this.mutableStyledString.removeString(100, 100);
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -169,7 +169,7 @@ struct getStylesDemo {
             });
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -186,7 +186,7 @@ struct getStylesDemo {
             })
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -198,7 +198,7 @@ struct getStylesDemo {
             this.mutableStyledString.removeStyle(100, 1, StyledStringKey.DECORATION)
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -210,7 +210,7 @@ struct getStylesDemo {
             this.mutableStyledString.removeStyles(100, 1)
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -227,7 +227,7 @@ struct getStylesDemo {
             }]))
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')
@@ -239,7 +239,7 @@ struct getStylesDemo {
             this.mutableStyledString.insertStyledString(100, new StyledString('A'))
           }
           catch (e:Error) {
-            this.text = e.code + ' ';
+            this.text = e.code + '';
           }
         })
         .height('5%')

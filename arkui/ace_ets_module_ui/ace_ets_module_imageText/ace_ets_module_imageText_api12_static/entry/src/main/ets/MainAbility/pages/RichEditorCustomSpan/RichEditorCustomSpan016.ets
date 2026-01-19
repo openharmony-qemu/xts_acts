@@ -130,7 +130,7 @@ build() {
       }).id('setSelect')
 
 
-      Text('info:' + this.info).id('info')
+      Text('info:' + this.info).id('info').height(50)
 
       RichEditor(this.options)
         .onReady((): void => {

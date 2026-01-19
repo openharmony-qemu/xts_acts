@@ -48,7 +48,7 @@ export default function FontSettingOptions() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get FontSettingOptions state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("FontSettingOptions" == pages.name)) {
           console.info("get FontSettingOptions pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

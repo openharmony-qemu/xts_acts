@@ -28,23 +28,6 @@ constexpr double UNDEFINED_GLYPH_FONT_SIZE = 30.0;
 namespace OHOS {
 namespace Rosen {
 struct NativeUndefinedGlyphDisplayTestContext {
-    static constexpr const char* text =
-        "Hello 测 World \uffff\n!@#$%^&*~(){\uffff\uffff}[]90 - = ,.\n\uffff"
-        "testlp\uffff试\uffff Drawing\uffff";
-    static constexpr const char* noGlyphText = "\uffff";
-    static constexpr float defaultResult[][4] = { { 2.0, 2.0, 206.63979, 29.0 },
-                                                  { 1.0, 5.0, 388.10962, 37.0 },
-                                                  { 0, 8.0, 319.4397, 42.0 } };
-    static constexpr float tofuResult[][4] = { { 2.0, 2.0, 228.63979, 29.0 },
-                                               { 1.0, 5.0, 388.10962, 37.0 },
-                                               { 8.0, 8.0, 341.4397, 42.0 } };
-    static constexpr float notoResult[][4] = { { 2.0, 2.0, 232.20976, 29.0 },
-                                               { 2.0, 5.0, 388.43961, 33.0 },
-                                               { 8.0, 8.0, 347.76962, 42.0 } };
-    static constexpr float noGlyphTofuResult[][4] = { { 8.0, 0, 22.0, 22.0 } };
-    static constexpr float noGlyphDefaultResult[][4] = { { 0, 0, 0, 0 } };
-    static constexpr float noGlyphNotoResult[][4] = { { 0, 0, 0, 0 } };
-
     NativeUndefinedGlyphDisplayTestContext() {}
 
     OH_Drawing_Typography*
@@ -98,6 +81,24 @@ struct NativeUndefinedGlyphDisplayTestContext {
 };
 
 namespace Drawing {
+
+constexpr const char* TEST_TEXT =
+    "Hello 测 World \uffff\n!@#$%^&*~(){\uffff\uffff}[]90 - = ,.\n\uffff"
+    "testlp\uffff试\uffff Drawing\uffff";
+constexpr const char* NO_GLYPH_TEXT = "\uffff";
+constexpr float DEFAULT_RESULT[][4] = { { 2.0, 2.0, 206.63979, 29.0 },
+                                        { 1.0, 5.0, 388.10962, 37.0 },
+                                        { 0, 8.0, 319.4397, 42.0 } };
+constexpr float TOFU_RESULT[][4] = { { 2.0, 2.0, 228.63979, 29.0 },
+                                     { 1.0, 5.0, 388.10962, 37.0 },
+                                     { 8.0, 8.0, 341.4397, 42.0 } };
+constexpr float NO_TO_RESULT[][4] = { { 2.0, 2.0, 232.20976, 29.0 },
+                                      { 2.0, 5.0, 388.43961, 33.0 },
+                                      { 8.0, 8.0, 347.76962, 42.0 } };
+constexpr float NO_GLYPH_TOFU_RESULT[][4] = { { 8.0, 0, 22.0, 22.0 } };
+constexpr float NO_GLYPH_DEFAULT_RESULT[][4] = { { 0, 0, 0, 0 } };
+constexpr float NO_GLYPH_NO_TO_RESULT[][4] = { { 0, 0, 0, 0 } };
+
 int OHDrawingSetTextUndefinedGlyphDisplay001();
 int OHDrawingSetTextUndefinedGlyphDisplay002();
 int OHDrawingSetTextUndefinedGlyphDisplay003();

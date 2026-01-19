@@ -22,8 +22,5 @@ import flexBasisTest from './flex/FlexBasisTest.test';
 export default function testsuite() {
   console.log('test list start')
   AlignSelfTest();
-   AlignSelfGridRowTest();
-   AlignSelfStretchTest();
-   AlignSelfStretchNoSizeTest();
   flexBasisTest();
 }

@@ -67,6 +67,7 @@
     "MainAbility/pages/uiutils/PropObserved",
     "MainAbility/pages/uiutils/ProvideConsum",
     "MainAbility/pages/uiutils/StateObserved",
-    "MainAbility/pages/uiutils/V2Observed"
+    "MainAbility/pages/uiutils/V2Observed",
+    "MainAbility/pages/uiutils/DecoratorInfo"
   ]
 }

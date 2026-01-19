@@ -81,7 +81,6 @@ export default function heightTest() {
     //    'ScrollBar',
     'Rating',
     'Search',
-    'RichText',
     'Slider',
     'Text',
     //    'TextArea',

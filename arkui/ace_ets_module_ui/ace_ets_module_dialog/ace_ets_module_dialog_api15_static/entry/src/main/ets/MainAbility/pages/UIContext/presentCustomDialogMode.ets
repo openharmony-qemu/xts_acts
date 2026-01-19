@@ -99,22 +99,23 @@ export struct MyComponent {
 
 @Builder
 function customDialogDemo() {
-
+  const pageRouter = AppStorage.get<Router>('router') as Router
   Column({ space: 5 } as ColumnOptions) {
     Text('自定义弹窗')
     Button(`router`)
       .height('8%')
       .id('router')
       .onClick((event: ClickEvent) => {
-        // router1.pushUrl({
-        //   url: 'MainAbility/pages/UIContext/index'
-        // }, router.RouterMode.Standard)
+
+        pageRouter.pushUrl({
+          url: 'MainAbility/pages/UIContext/index'
+        }, router.RouterMode.Standard)
       })
     Text('返回')
       .height('8%')
       .superFancyText2()
       .onClick((event: ClickEvent) => {
-        // router1.back(1)
+        pageRouter.back(1)
       })
       .id('back')
   }
@@ -157,8 +158,8 @@ struct presentCustomDialogMode {
   @State levelMode: LevelMode | undefined = undefined
   node: BuilderNode<Object[]> | null = null;
   frameNode: FrameNode | null = null;
-  @State levelUniqueId: int | undefined  = undefined
-  @State immersiveMode: ImmersiveMode | undefined = undefined
+  @State levelUniqueId: int | undefined  = this.getUniqueId().toInt()
+  @State immersiveMode: ImmersiveMode | undefined = ImmersiveMode.EXTEND
   @State isModal: boolean = true
   @State maskRect: Rectangle = {
     x: 0,

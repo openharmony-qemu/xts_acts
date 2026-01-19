@@ -183,5 +183,122 @@ export default function telephony_data_NopTest() {
       }
     })
     
+     /**
+ 	      * @tc.name   testTelephonyCellularDataGetCellularDataFlowTypeAsyncNop0100
+ 	      * @tc.number SUB_Telephony_CellularData_getCellularDataFlowType_Async_NoP_0100
+ 	      * @tc.desc   Using the getCellularDataFlowType(Callback) method without permission
+ 	      * @tc.type   FUNCTION
+ 	      * @tc.size   MEDIUMTEST
+ 	      * @tc.level  LEVEL1
+ 	      */
+     it("testTelephonyCellularDataGetCellularDataFlowTypeAsyncNop0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyCellularDataGetCellularDataFlowTypeAsyncNop0100';
+      console.info(`${caseName} test start `);
+      try{
+        data.getCellularDataFlowType((err, data) => {
+          if (err) {
+            console.info(`${caseName} get err is `+JSON.stringify(err));
+            ExpectTrue(err.code === PERMISSION_DENIED_CODE)
+            done();
+          }else{
+            ExpectFail();
+            console.info(`${caseName} get CellularDataFlowType success `+data);
+            done();
+          }
+        });
+      }catch (err) {
+        ExpectFail();
+        console.info(`${caseName} get err is `+JSON.stringify(err));
+        done();
+      }
+    })
+
+     /**
+   * @tc.name   testTelephonyCellularDataGetCellularDataFlowTypePromiseNoP0100
+   * @tc.number SUB_Telephony_CellularData_getCellularDataFlowType_Promise_NoP_0100
+   * @tc.desc   Using the getCellularDataFlowType(Promise) method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it("testTelephonyCellularDataGetCellularDataFlowTypePromiseNoP0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    let caseName: string = 'testTelephonyCellularDataGetCellularDataFlowTypePromiseNoP0100';
+    console.info(`${caseName} test start `);
+    try {
+      await data.getCellularDataFlowType().then((dataFlowType)=>{
+        console.log(caseName +" getCellularDataFlowType is :"+JSON.stringify(dataFlowType));
+        ExpectFail();
+        done();
+      }).catch((err: BusinessError)=>{
+        console.info(`${caseName} get err is `+JSON.stringify(err));
+        ExpectTrue(err.code === PERMISSION_DENIED_CODE)
+      });
+      console.info(`${caseName}---End`);
+      done();
+    } catch (err) {
+      console.info(`${caseName} catch err is :` +JSON.stringify(err));
+      ExpectFail();
+      console.info(`${caseName}---End`);
+      done();
+    }
+  })
+
+     /**
+   * @tc.name   testTelephonyCellularDataGetCellularDataStateAsyncNoP0100
+   * @tc.number SUB_Telephony_CellularData_getCellularDataState_Async_NoP_0100
+   * @tc.desc   Using the getCellularDataState(Callback) method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+     it("testTelephonyCellularDataGetCellularDataStateAsyncNoP0100", TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let caseName: string = 'testTelephonyCellularDataGetCellularDataStateAsyncNoP0100';
+      console.info(`${caseName} test start `);
+      try{
+        data.getCellularDataState((err, dat:data.DataConnectState) => {
+          if (err) {
+            ExpectTrue(err.code === PERMISSION_DENIED_CODE)
+            console.info(`${caseName} get err is `+JSON.stringify(err));
+          }else{
+            console.info(`${caseName} get success dat is `+JSON.stringify(dat));
+            ExpectFail();
+          }
+          done();
+          console.info(`${caseName}---End`);
+        })
+      }catch (err) {
+        console.info(`${caseName} catch err is :` +JSON.stringify(err));
+        ExpectFail();
+        console.info(`${caseName}---End`);
+        done();
+      }
+    })
+
+       /**
+   * @tc.name   testTelephonyCellularDataGetCellularDataStatePromiseNoP0100
+   * @tc.number SUB_Telephony_CellularData_getCellularDataState_Promise_NoP_0100
+   * @tc.desc   Using the getCellularDataState(Promise) method without permission
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL1
+   */
+  it("testTelephonyCellularDataGetCellularDataStatePromiseNoP0100",TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+    let caseName: string = 'testTelephonyCellularDataGetCellularDataStatePromiseNoP0100';
+    console.info(`${caseName} test start `);
+    try {
+      await data.getCellularDataState().then((contextData: data.DataConnectState)=>{
+        console.log(caseName + "Telephony_CellularData_getCellularDataState_Promise_0100 finish contextData: " + JSON.stringify(contextData));
+        ExpectFail();
+      });
+      console.info(`${caseName}---End`);
+      done();
+    } catch (err) {
+      console.info(`${caseName} catch err is :` +JSON.stringify(err));
+      ExpectTrue(err.code === PERMISSION_DENIED_CODE)
+      console.info(`${caseName}---End`);
+      done();
+    }
+  })
+
   })
 }

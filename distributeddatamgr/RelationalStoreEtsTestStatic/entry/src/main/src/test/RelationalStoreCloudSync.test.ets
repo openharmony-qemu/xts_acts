@@ -169,10 +169,10 @@ export default function relationalStoreCloudSyncTest() {
         try {
           let PRIKey: relationalStore.PRIKeyType[] = ['test_key1', 'test_key2'];
           hilog.info(domain, tag, 'RS0453 PRIKey: ' + JSON.stringify(PRIKey));
-          await rdbStore.getModifyTime('cloud_text', 'num', PRIKey).then((data) => {
-            console.log(tag + `modifyTime:` + JSON.stringify(data));
-            let size = Object.keys(data).length;
-            console.log(tag + 'size=' + size);
+          await rdbStore.getModifyTime('cloud_text', 'num', PRIKey).then((data: relationalStore.ModifyTime) => {
+            console.log(tag + ` modifyTime:` + JSON.stringify(data));
+            let size = data.size;
+            console.log(tag + ' size=' + size);
             expect(size == 2).assertTrue();
             done();
           });

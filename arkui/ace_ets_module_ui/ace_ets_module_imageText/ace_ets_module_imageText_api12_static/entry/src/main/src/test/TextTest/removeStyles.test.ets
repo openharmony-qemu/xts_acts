@@ -48,7 +48,7 @@ export default function removeStyles() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get removeStyles state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("removeStyles" == pages.name)) {
           console.info("get removeStyles pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

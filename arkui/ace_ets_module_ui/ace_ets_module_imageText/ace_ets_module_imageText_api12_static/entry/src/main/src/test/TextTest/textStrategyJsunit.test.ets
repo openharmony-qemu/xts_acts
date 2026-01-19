@@ -48,7 +48,7 @@ export default function textStrategyJsunit() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get textStrategyJsunit state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("textStrategy" == pages.name)) {
           console.info("get textStrategyJsunit pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

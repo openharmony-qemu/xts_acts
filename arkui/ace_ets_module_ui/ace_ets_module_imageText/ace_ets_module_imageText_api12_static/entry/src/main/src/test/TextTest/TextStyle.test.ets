@@ -48,7 +48,7 @@ export default function TextStyle() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextStyle state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("TextStyle" == pages.name)) {
           console.info("get TextStyle pages.name:" + JSON.stringify(pages.name));
           routerInstance.pushUrl(options);
           await CommonFunc.sleep(2000);

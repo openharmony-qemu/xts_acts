@@ -82,6 +82,8 @@ napi_value AudioSessionStateChangeHintStopCode(napi_env env, napi_callback_info 
 napi_value AudioSessionStateChangeHintTimeOutStopCode(napi_env env, napi_callback_info info);
 napi_value AudioSessionStateChangeHintDuckCode(napi_env env, napi_callback_info info);
 napi_value AudioSessionStateChangeHintUnduckCode(napi_env env, napi_callback_info info);
+napi_value AudioSessionStateChangeHintMuteSuggestionCode(napi_env env, napi_callback_info info);
+napi_value AudioSessionStateChangeHintUnmuteSuggestionCode(napi_env env, napi_callback_info info);
 napi_value DeviceChangeRecommendToContinueCode(napi_env env, napi_callback_info info);
 napi_value DeviceChangeRecommendToStopCode(napi_env env, napi_callback_info info);
 napi_value AudioSessionStateChangedEventCode(napi_env env, napi_callback_info info);

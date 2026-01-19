@@ -194,6 +194,12 @@ napi_property_descriptor desc[] = {
      nullptr, nullptr, nullptr, napi_default, nullptr},
     {"oHDrawingGetFontFullDescriptorsFromPath001", nullptr, OHDrawingGetFontFullDescriptorsFromPath001,
      nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHDrawingSetTextStyleAttributeInt004", nullptr, OHDrawingSetTextStyleAttributeInt004,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHDrawingTypographyDidExceedMaxLines004", nullptr, OHDrawingTypographyDidExceedMaxLines004,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
+    {"oHDrawingTypographyStyleGetEffectiveAlignment003", nullptr, OHDrawingTypographyStyleGetEffectiveAlignment003,
+     nullptr, nullptr, nullptr, napi_default, nullptr},
 };
 
 EXTERN_C_START

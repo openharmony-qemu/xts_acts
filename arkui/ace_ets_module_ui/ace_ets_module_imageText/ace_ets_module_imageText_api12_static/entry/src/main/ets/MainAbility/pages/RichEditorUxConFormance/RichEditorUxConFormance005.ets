@@ -75,7 +75,7 @@ build() {
           start: 0,
           end: this.controller!.getCaretOffset()
         })!.forEach(item => {
-          if ( (item as RichEditorImageSpanResult)?.imageStyle) {
+          if (item instanceof RichEditorImageSpanResult) {
             this.content += (item as RichEditorImageSpanResult).valueResourceStr;
             if ( ((item as RichEditorImageSpanResult).imageStyle as RichEditorImageSpanStyleResult)?.layoutStyle) {
               console.log('RichEditorController get imageStyle');

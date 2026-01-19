@@ -81,7 +81,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.info('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -105,7 +105,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -153,7 +153,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -177,7 +177,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -201,7 +201,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -265,7 +265,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -290,7 +290,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -348,7 +348,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         }
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -373,7 +373,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -422,7 +422,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -471,7 +471,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -523,7 +523,7 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
         done();
       }
     })
@@ -547,7 +547,74 @@ export default function colorSpaceManagerTest(context: common.UIAbilityContext, 
         done();
       } catch (err) {
         console.log('test enum value of ColorSpace Manager error ' + JSON.stringify(err));
-        expect.assertFail();
+        expect().assertFail();
+        done();
+      }
+    })
+
+    /**
+     * @tc.name   testCreateColorSpaceManager_0100
+     * @tc.number SUB_GRAPHIC_CREATE_COLORSPACEMANAGER_0100
+     * @tc.desc   test the interface of create
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('testCreateColorSpaceManager_0100', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, 
+    async (done: Function) => {
+      console.info('test testCreateColorSpaceManager_0100 begin');
+      try {
+        let primaries: colorSpaceManager.ColorSpacePrimaries = {
+          redX: 0.64,
+          redY: 0.33,
+          greenX: 0.3,
+          greenY: 0.6,
+          blueX: 0.15,
+          blueY: 0.06,
+          whitePointX: 0.3127,
+          whitePointY: 0.3290
+        };
+        let gamma = 2.875;
+        let colorSpaceMgr = colorSpaceManager.create(primaries, gamma);
+        expect(colorSpaceMgr != null).assertTrue();
+        let colorSpaceName = colorSpaceMgr.getColorSpaceName();
+        expect(colorSpaceName).assertEqual(colorSpaceManager.ColorSpace.CUSTOM);
+        try {
+          let colorSpaceMgr1 = colorSpaceManager.create(null, gamma);
+          console.info('www data createColorSpaceManager success 111 ', colorSpaceMgr1);
+          expect().assertFail();
+        } catch(e){
+          console.info('www data createColorSpaceManager failed to 111 ', e);
+          expect(Number(e.code) == 401).assertTrue();
+        }
+        try {
+          let colorSpaceMgr1 = colorSpaceManager.create(undefined, gamma);
+          console.info('www data createColorSpaceManager success 222 ', colorSpaceMgr1);
+          expect().assertFail();
+        } catch(e){
+          console.info('www data createColorSpaceManager failed to 222 ', e);
+          expect(Number(e.code) == 401).assertTrue();
+        }
+        try {
+          let colorSpaceMgr1 = colorSpaceManager.create(primaries, null);
+          console.info('www data createColorSpaceManager success 333 ', colorSpaceMgr1);
+          expect().assertFail();
+        } catch(e){
+          console.info('www data createColorSpaceManager failed to 333 ', e);
+          expect(Number(e.code) == 401).assertTrue();
+        }
+        try {
+          let colorSpaceMgr1 = colorSpaceManager.create(primaries, undefined);
+          console.info('www data createColorSpaceManager success 444 ', colorSpaceMgr1);
+          expect().assertFail();
+        } catch(e){
+          console.info('www data createColorSpaceManager failed to 444 ', e);
+          expect(Number(e.code) == 401).assertTrue();
+        }
+        done();
+      } catch (err) {
+        console.log('www data test enum value of ColorSpace Manager error ' + JSON.stringify(err));
+        expect().assertFail();
         done();
       }
     })

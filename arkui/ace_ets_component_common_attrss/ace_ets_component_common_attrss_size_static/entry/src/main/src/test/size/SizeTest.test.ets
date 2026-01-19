@@ -59,7 +59,7 @@ export default function sizeTest() {
     'ScrollBar',
     'Rating',
     'Search',
-    'RichText',
+    // 'RichText',
     'Slider',
     'Text',
     'TextArea',

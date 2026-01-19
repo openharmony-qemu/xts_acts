@@ -136,7 +136,7 @@ napi_value BorderTest::CreateNativeNode(napi_env env, napi_callback_info info)
     BorderHashWidthTest(Text1, g_borderWidth, g_borderWidth, g_borderWidth, g_borderWidth);
     BorderHashGapTest(Text1, g_borderGap, g_borderGap, g_borderGap, g_borderGap);
     // 统一设置宽高百分比
-    HeightAndWidth(Text1, PARAM_200, PARAM_200);
+    HeightAndWidthPercent(Text1, PARAM_0_POINT_8, PARAM_0_POINT_5);
     HeightAndWidthPercent(column, PARAM_1, PARAM_1);
     // 设置背景颜色
     BackGroundColorTest(Text1, 0xfff3a757);

@@ -15,7 +15,9 @@
 
 #include "AccessPixelsTest.h"
 #include "ImagePackerCreateTest.h"
+#include "ImagePackerNativeTest.h"
 #include "ImagePixelMapTest.h"
+#include "PixelmapNativeCropTest.h"
 #include "napi/native_api.h"
 #include "ImageReceiverNativeReadTest.h"
 #include "ImageReceiverNativeTest.h"
@@ -55,7 +57,7 @@
 #include "ImageResultIRNdkErrCodeTest.h"
 #include "ImageNdkErrCodeTest.h"
 #include "OHImageNdkFrameworkTest.h"
-
+#include "ImageSourceNativeModifySuppTest.h"
 
 #define DESCRIPTOR(jsmethod, method)                                                                                   \
     { jsmethod, nullptr, method, nullptr, nullptr, nullptr, napi_default, nullptr }
@@ -222,6 +224,14 @@ napi_property_descriptor desc1[] = {
     DESCRIPTOR("PixelmapNativeGetNativeBufferNotExist", PixelmapNativeGetNativeBufferNotExist),
     DESCRIPTOR("ImageSourceCreatSuccessTest", ImageSourceCreatSuccessTest),
     DESCRIPTOR("ImageSourceCreate", ImageSourceCreate),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyDoubleSupp", OHImageSourceNativeModifyImagePropertyDoubleSupp),
+    DESCRIPTOR("ImageModifyImagePropertyIntArraySupp", ImageModifyImagePropertyIntArraySupp),
+    DESCRIPTOR("ImageModifyImagePropertyDoubleArraySupp", ImageModifyImagePropertyDoubleArraySupp),
+    DESCRIPTOR("OHImageSourceNativeModifyImagePropertyBlobSupp", OHImageSourceNativeModifyImagePropertyBlobSupp),
+    DESCRIPTOR("PixelmapNativeCropTest", PixelmapNativeCropTest),
+    DESCRIPTOR("ConvertAlphaFormatTest", ConvertAlphaFormatTest),
+    DESCRIPTOR("DecodingOptionsReleaseTest", DecodingOptionsReleaseTest),
+    DESCRIPTOR("CreatePixelmapFromSurfaceWithTransformationTest", CreatePixelmapFromSurfaceWithTransformationTest),
 };
 EXTERN_C_START static napi_value Init(napi_env env, napi_value exports)
 {

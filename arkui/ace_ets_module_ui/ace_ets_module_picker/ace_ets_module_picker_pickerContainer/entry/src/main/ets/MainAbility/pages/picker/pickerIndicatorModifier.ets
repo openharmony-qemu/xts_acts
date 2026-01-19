@@ -15,14 +15,14 @@
 import { MessageManager, Callback } from '../../common/MessageManager';
 import { LengthMetrics } from '@kit.ArkUI';
 
-class IndicatorPickerModifier implements AttributeModifier<PickerAttribute> {
+class IndicatorPickerModifier implements AttributeModifier<UIPickerComponentAttribute> {
   private style: Optional<PickerIndicatorStyle> = undefined
 
   constructor(style?: Optional<PickerIndicatorStyle>) {
     this.style = style
   }
 
-  applyNormalAttribute(instance: PickerAttribute): void {
+  applyNormalAttribute(instance: UIPickerComponentAttribute): void {
     instance.selectionIndicator(this.style)
   }
 }
@@ -57,7 +57,7 @@ struct PickerIndicatorModifierPage {
     Column() {
 
       Row() {
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -77,7 +77,7 @@ struct PickerIndicatorModifierPage {
           endMargin: LengthMetrics.vp(2)
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -97,7 +97,7 @@ struct PickerIndicatorModifierPage {
           endMargin: LengthMetrics.vp(-1)
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -118,7 +118,7 @@ struct PickerIndicatorModifierPage {
           }
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -136,7 +136,7 @@ struct PickerIndicatorModifierPage {
           borderRadius: LengthMetrics.vp(2)
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -154,7 +154,7 @@ struct PickerIndicatorModifierPage {
           borderRadius: this.startBorderStyle
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -177,7 +177,7 @@ struct PickerIndicatorModifierPage {
       }
 
       Row() {
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -195,7 +195,7 @@ struct PickerIndicatorModifierPage {
           borderRadius: LengthMetrics.vp(-1)
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -210,7 +210,7 @@ struct PickerIndicatorModifierPage {
         .attributeModifier(new IndicatorPickerModifier(
           { type: PickerIndicatorType.BACKGROUND, backgroundColor: Color.Blue, borderRadius: this.startBorderStyle1 }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -224,7 +224,7 @@ struct PickerIndicatorModifierPage {
         .id('picker9')
         .attributeModifier(new IndicatorPickerModifier(undefined))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -238,7 +238,7 @@ struct PickerIndicatorModifierPage {
         .id('picker10')
         .attributeModifier(new IndicatorPickerModifier(null))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -253,7 +253,7 @@ struct PickerIndicatorModifierPage {
       }
 
       Row() {
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -267,7 +267,7 @@ struct PickerIndicatorModifierPage {
         .id('picker12')
         .attributeModifier(new IndicatorPickerModifier({ type: undefined }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -285,7 +285,7 @@ struct PickerIndicatorModifierPage {
           borderRadius: this.startBorderStyle1
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -303,7 +303,7 @@ struct PickerIndicatorModifierPage {
           borderRadius: this.startBorderStyle1
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {
@@ -323,7 +323,7 @@ struct PickerIndicatorModifierPage {
           endMargin: LengthMetrics.vp(-1)
         }))
 
-        Picker({
+        UIPickerComponent({
           selectedIndex: this.selectedIndex,
         }) {
           ForEach(this.monthArray, (item: string) => {

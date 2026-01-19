@@ -233,6 +233,14 @@ let isEmpty24 = (data:cameraObj.PreviewOutput) => {
   }
   return false;
 }
+
+let isEmpty25 = (mainImage: image.Image | image.Picture): boolean => {
+  if (mainImage == null || mainImage == undefined) {
+    return true;
+  }
+  return false;
+}
+
 let isEmpty11 = (data: string | null | undefined): boolean =>
 data === null || data === undefined;
 
@@ -284,6 +292,22 @@ let createOutput = (index: int, mode: cameraObj.SceneMode) => {
     }
   } else {
     photoOutput = cameraManager.createPhotoOutput(cameraOutputCap.photoProfiles[0]);
+    hilog.info(domain, tag, 'Receiver is ok'  + JSON.stringify(photoOutput))
+  }
+}
+
+let createPhotoOutput = (index: int, mode: cameraObj.SceneMode) => {
+  let equalFlag: boolean = false;
+  let cameraOutputCap = cameraManager.getSupportedFullOutputCapability(cameraDevicesArray[index], mode)
+  if (mode == cameraObj.SceneMode.NORMAL_PHOTO) {
+    let targetProfile = cameraOutputCap.photoProfiles[0];
+    for (let i = 0; i < cameraOutputCap.photoProfiles.length; i++) {
+      if (cameraOutputCap.photoProfiles[i].format === cameraObj.CameraFormat.CAMERA_FORMAT_YUV_420_SP) {
+        targetProfile = cameraOutputCap.photoProfiles[i];
+        break;
+      }
+    }
+    photoOutput = cameraManager.createPhotoOutput(targetProfile);
     hilog.info(domain, tag, 'Receiver is ok'  + JSON.stringify(photoOutput))
   }
 }
@@ -2184,6 +2208,45 @@ export default function cameraJSUnitOutput() {
       await Utils.msSleep(1000);
       done();
     })
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200
+     * @tc.desc   photo output callback on capture photoAvailable for CapturePhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200--------------");
+      // 创建相机
+      getCameraDevices()
+
+      //创建输出流
+      createPhotoOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+      console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200 to operate");
+
+      // 打开监听
+      try {
+        photoOutput.onCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
+          console.info(`photo output on photoAvailable callback is called for CapturePhoto`);
+          if (!CapturePhoto || !CapturePhoto.main) {
+            console.error(tag + ' received invalid CapturePhoto or missing main image');
+            expect().assertFail();
+            return;
+          }
+          let mainImage: image.Image | image.Picture = CapturePhoto.main;
+          console.info(tag + ' succeed to listen photoAvailable on for CapturePhoto.');
+          expect(isEmpty25(mainImage)).assertFalse();
+        });
+      } catch (err: BusinessError) {
+        hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_AVAILABLE_STATIC_0200 FAILED! ERRORCODE: " + err.code);
+        expect().assertFail();
+      }
+      console.info(`photo output onPhotoAvailable for CapturePhoto success`);
+      await Utils.msSleep(1000);
+      done();
+    })
     
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_VIDEO_OUTPUT_CALLBACK_ON_FRAME_START_STATIC_0100
@@ -2302,7 +2365,51 @@ export default function cameraJSUnitOutput() {
       await Utils.msSleep(1000);
       done();
     })
-    
+
+    /**
+     * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200
+     * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200
+     * @tc.desc   photo output callback off capature photoAvailable for CapturePhoto
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: () => void): Promise<void> => {
+      console.info("--------------SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200--------------");
+      // 创建相机
+      getCameraDevices()
+
+      //创建输出流
+      createPhotoOutput(0, cameraObj.SceneMode.NORMAL_PHOTO)
+      console.info(tag + "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200 to operate");
+
+      // 打开监听
+      photoOutput.onCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
+        console.info(`photo output on photoAvailable callback is called for CapturePhoto`);
+      })
+
+      // 关闭监听
+      await Utils.msSleep(1000);
+      try{
+        photoOutput.offCapturePhotoAvailable((CapturePhoto: cameraObj.CapturePhoto) => {
+          console.info(`photo output on photoAvailable callback is called for CapturePhoto`);
+          if (!CapturePhoto || !CapturePhoto.main) {
+            console.error(tag + ' received invalid CapturePhoto or missing main image');
+            expect().assertFail();
+            return;
+          }
+          let mainImage: image.Image | image.Picture = CapturePhoto.main;
+          console.info(tag + ' succeed to listen photoAvailable off for CapturePhoto.');
+          expect(isEmpty25(mainImage)).assertFalse();
+        })
+      } catch (err : BusinessError) {
+        hilog.error(domain, tag, "Entering SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_OFF_PHOTO_AVAILABLE_STATIC_0200 FAILED! ERRORCODE: " + err.code);
+      }
+      console.info(`photo output stop listen on photoAvailable for CapturePhoto success`);
+      await Utils.msSleep(1000);
+      done();
+    })
+
     /**
      * @tc.name   SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_ASSET_AVAILABLE_STATIC_0100
      * @tc.number SUB_MULTIMEDIA_CAMERA_PHOTO_OUTPUT_CALLBACK_ON_PHOTO_ASSET_AVAILABLE_STATIC_0100

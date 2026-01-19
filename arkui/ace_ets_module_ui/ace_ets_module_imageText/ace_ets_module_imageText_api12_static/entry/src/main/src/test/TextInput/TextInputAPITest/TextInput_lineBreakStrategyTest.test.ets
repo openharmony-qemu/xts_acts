@@ -47,7 +47,7 @@ export default function TextInput_lineBreakStrategyTest() {
         routerInstance.clear();
         let pages = routerInstance.getState();
         console.info("get TextInput_lineBreakStrategyTest state pages:" + JSON.stringify(pages));
-        if (!("TextClockApi" == pages.name)) {
+        if (!("lineBreakStrategy" == pages.name)) {
           console.info("get TextInput_lineBreakStrategyTest pages.name:" + JSON.stringify(pages.name));
 
           routerInstance.pushUrl(options);

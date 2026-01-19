@@ -24,10 +24,11 @@ struct search {
         value: '测试文本⛏️⛏️⛏️⛏️',
         controller: this.controller
       })
-        .defaultFocus(true)
+        .width('80%')
+        .height('10%')
         .id('miningTimeSearch')
 
-      Button('Delete backward character')
+      Button('1')
         .onClick(() => {
           this.controller.deleteBackward();
         })

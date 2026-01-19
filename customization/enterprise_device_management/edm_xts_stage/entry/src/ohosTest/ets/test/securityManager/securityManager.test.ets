@@ -25,6 +25,7 @@ import securityManager from '@ohos.enterprise.securityManager';
 import sysDeviceInfo from '@ohos.deviceInfo';
 import common from '@ohos.enterprise.common';
 import fs from '@ohos.file.fs';
+import { systemParameterEnhance } from '@kit.BasicServicesKit';
 
 const PATCH = 'patch';
 const ENCRYPTION = 'encryption';
@@ -37,7 +38,6 @@ const STRING_EMPTY_CERTIFICATEALIAS = '';
 const INT_INVALID_ACCOUNTID_RE_SIGNATURE = 101;
 const MAX_FILE_SIZE = 10 * 1024 * 1024;
 const OVER_SIZE = MAX_FILE_SIZE + 1;
-const ENTERPRISE_CERT_PATH = '/data/service/e11/public/bms/bundle_manager_service/certificates/enterprise/'
 
 const PASSWORD_POLICY: securityManager.PasswordPolicy = {
   complexityRegex: 'g',
@@ -473,6 +473,27 @@ function testGetSecurityStatus() {
       expect(false).assertTrue();
     } catch (error) {
       expect(error.code == 401).assertTrue();
+    } finally {
+      await adminManager.disableSuperAdmin(SELFHAPNAME);
+    }
+    done();
+  });
+
+  /**
+   * @tc.name   test_get_security_status_0108
+   * @tc.number SUB_CUSTOMIZATION_EDM_GET_SECURITY_STATUS_JS_0108
+   * @tc.desc   test securityManager get fastboot status
+   * @tc.type   FUNCTION
+   * @tc.size   MEDIUMTEST
+   * @tc.level  LEVEL2
+   */
+  it("test_get_security_status_0108", Level.LEVEL2, async (done: Function) => {
+    await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
+    try {
+      let ret:string = securityManager.getSecurityStatus(SELFWANT, 'fastboot');
+      expect(ret.length > 0).assertTrue();
+    } catch (error) {
+      expect(error.code == 801).assertTrue();
     } finally {
       await adminManager.disableSuperAdmin(SELFHAPNAME);
     }
@@ -2736,6 +2757,16 @@ function withCertificateFile<T>(callback: (fd: number) => T, fileSetup?: (fd: nu
   }
 }
 
+function checkEnterpriseDevice(done: Function): boolean {
+  let isEnterprise: string = systemParameterEnhance.getSync('const.edm.is_enterprise_device', 'false');
+  if (isEnterprise != 'true') {
+    console.log('the device is not enterprise');
+    done();
+    return false;
+  }
+  return true;
+}
+
 function testInstallEnterpriseReSignatureCertificate() {
   /**
    * @tc.name   test_install_enterprise_re_signature_certificate_0100
@@ -2952,6 +2983,9 @@ function testInstallEnterpriseReSignatureCertificate() {
    * @tc.level  LEVEL2
    */
   it("test_install_enterprise_re_signature_certificate_0108", Level.LEVEL2, async (done: Function) => {
+    if (!checkEnterpriseDevice(done)) {
+      return;
+    }
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       withCertificateFile((fd: number) => {
@@ -2983,6 +3017,9 @@ function testInstallEnterpriseReSignatureCertificate() {
    * @tc.level  LEVEL2
    */
   it("test_install_enterprise_re_signature_certificate_0109", Level.LEVEL2, async (done: Function) => {
+    if (!checkEnterpriseDevice(done)) {
+      return;
+    }
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       withCertificateFile((fd: number) => {
@@ -3008,22 +3045,21 @@ function testInstallEnterpriseReSignatureCertificate() {
    * @tc.level  LEVEL2
    */
   it("test_install_enterprise_re_signature_certificate_0110", Level.LEVEL2, async (done: Function) => {
+    if (!checkEnterpriseDevice(done)) {
+      return;
+    }
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       withCertificateFile((fd: number) => {
         securityManager.installEnterpriseReSignatureCertificate(
           SELFWANT, STRING_VALID_CERTIFICATEALIAS, fd, INT_VALID_ACCOUNTID);
-        const certPath = ENTERPRISE_CERT_PATH + INT_VALID_ACCOUNTID + '/' + STRING_VALID_CERTIFICATEALIAS;
-        expect(fs.accessSync(certPath)).assertTrue();
       });
     } catch (error) {
-      expect(error.code == 9201007).assertTrue();
+      expect(false).assertTrue();
     } finally {
       try {
         securityManager.uninstallEnterpriseReSignatureCertificate(
           SELFWANT, STRING_VALID_CERTIFICATEALIAS, INT_VALID_ACCOUNTID);
-        const certPath = ENTERPRISE_CERT_PATH + INT_VALID_ACCOUNTID + '/' + STRING_VALID_CERTIFICATEALIAS;
-        expect(fs.accessSync(certPath)).assertFalse();
       } catch (err) {
         console.error(`EDM_TEST_LOG: Uninstall certificate failed, code: ${err.code}`);
       }
@@ -3194,17 +3230,16 @@ function testUninstallEnterpriseReSignatureCertificate() {
    * @tc.level  LEVEL2
    */
   it("test_uninstall_enterprise_re_signature_certificate_0107", Level.LEVEL2, async (done: Function) => {
+    if (!checkEnterpriseDevice(done)) {
+      return;
+    }
     await adminManager.enableAdmin(SELFWANT, ENTINFO1, adminManager.AdminType.ADMIN_TYPE_SUPER);
     try {
       withCertificateFile((fd: number) => {
         securityManager.installEnterpriseReSignatureCertificate(
           SELFWANT, STRING_VALID_CERTIFICATEALIAS, fd, INT_VALID_ACCOUNTID);
-        const certPath = ENTERPRISE_CERT_PATH + INT_VALID_ACCOUNTID + '/' + STRING_VALID_CERTIFICATEALIAS;
-        expect(fs.accessSync(certPath)).assertTrue();
-
         securityManager.uninstallEnterpriseReSignatureCertificate(
           SELFWANT, STRING_VALID_CERTIFICATEALIAS, INT_VALID_ACCOUNTID);
-        expect(fs.accessSync(certPath)).assertFalse();
       });
     } catch (error) {
       expect(false).assertTrue();

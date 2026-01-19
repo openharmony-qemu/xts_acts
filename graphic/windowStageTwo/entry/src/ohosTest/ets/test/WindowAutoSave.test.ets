@@ -128,6 +128,7 @@ export default function windowAutoSaveTest() {
     let mainWindowClass:ohosWindow.Window;
     let isAutoWindow:string = '';
     let isFreeWindowMode = false;
+    let isPCMode:boolean = false;
     let driver: Driver;
     beforeAll(() => {
       // Presets an action, which is performed only once before all test cases of the test suite start.
@@ -149,6 +150,15 @@ export default function windowAutoSaveTest() {
       //isFreeWindowMode == true 自由窗口模式
       //isFreeWindowMode == false 非自由窗口模式
       console.info(`isFreeWindowMode: ${isFreeWindowMode}`);
+      let promise = mainWindowClass.getWindowStateSnapshot();
+        promise.then((data) => {
+          let jsonObj: object = JSON.parse(data);
+          console.info(`beforeAll: Succeeded. data=${data}, isPcMod=${jsonObj["isPcMode"]}`);
+          isPCMode = jsonObj["isPcMode"];
+        }).catch((err: BusinessError) => {
+          console.error(`beforeAll: getWindowStateSnapshot Failed. Cause code: ${err.code}, cancel message: ${err.message}`);
+        });
+        console.info(`beforeAll: isPCMode=${isPCMode}`);
       driver = Driver.create();
     })
     beforeEach(() => {
@@ -259,6 +269,7 @@ export default function windowAutoSaveTest() {
     it('testSetWindowRectAutoSaveTrue_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestTrue_0200';
       // 拉起Ability
+      if(isPCStatus != '' || isPCMode == true){
       let windowStageStart = await startAbility(message, context)
       // 设置setWindowRectAutoSave = true
       try {
@@ -280,9 +291,9 @@ export default function windowAutoSaveTest() {
           await driver.click(2340, 977);
           await terminateAbility(message)
           await sleep(1000)
-          if(isFreeWindowMode == true){
-            await mainWindowClass.recover();
-          }
+          
+          await mainWindowClass.recover();
+          
           // 重新拉起Ability
           windowStageStart = await startAbility(message, context)
           let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
@@ -314,6 +325,9 @@ export default function windowAutoSaveTest() {
         expect().assertFail();
         done();
       }
+    }else{
+      done();
+    }
 
     })
 
@@ -751,6 +765,7 @@ export default function windowAutoSaveTest() {
     it('testSetWindowRectAutoSaveFalse_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL3, async (done: Function) => {
       const message = 'setWindowRectAutoSaveTestFalse_0200';
       // 拉起Ability
+      if(isPCStatus != ''|| isPCMode == true){
       let windowStageStart = await startAbility(message, context)
       let windowRect1 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
       console.info(`${message} windowRect1 = ${JSON.stringify(windowRect1)}`)
@@ -772,9 +787,9 @@ export default function windowAutoSaveTest() {
           await driver.click(2340, 977);
           await terminateAbility(message)
           await sleep(1000)
-          if(isFreeWindowMode == true){
-            await mainWindowClass.recover();
-          }
+          
+          await mainWindowClass.recover();
+          
           // 重新拉起Ability
           windowStageStart = await startAbility(message, context)
           let windowRect2 = windowStageStart.getMainWindowSync().getWindowProperties().windowRect
@@ -804,6 +819,9 @@ export default function windowAutoSaveTest() {
         expect().assertFail();
         done();
       }
+    }else{
+      done();
+    }
 
     })
 
@@ -1296,6 +1314,7 @@ export default function windowAutoSaveTest() {
     it('test_SetWindowRectAutoSave_0200', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0200 ';
       console.log(caseName + 'begin');
+      if(isPCStatus != ''|| isPCMode == true){
       let windowStageStart = await startAbility2(caseName, context);
       try {
         let mainWindow = windowStageStart.getMainWindowSync();
@@ -1315,9 +1334,9 @@ export default function windowAutoSaveTest() {
           // 关闭Ability&退出分屏
           await driver.click(2340, 977);
           await terminateAbility2(caseName)
-          if(isFreeWindowMode == true){
-            await mainWindowClass.recover();
-          }
+          
+          await mainWindowClass.recover();
+          
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
           let windowRect2 = mainWindow2.getWindowProperties().windowRect
@@ -1349,6 +1368,9 @@ export default function windowAutoSaveTest() {
         expect().assertFail()
         done()
       }
+    }else{
+      done();
+    }
     });
 
     /**
@@ -1579,6 +1601,7 @@ export default function windowAutoSaveTest() {
     it('test_SetWindowRectAutoSave_0700', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL2, async (done: Function) => {
       let caseName: string = 'test_SetWindowRectAutoSave_0700 ';
       console.log(caseName + 'begin');
+      if(isPCStatus != ''|| isPCMode == true){
       let windowStageStart = await startAbility2(caseName, context);
       try {
         let mainWindow = windowStageStart.getMainWindowSync();
@@ -1597,9 +1620,9 @@ export default function windowAutoSaveTest() {
           // 关闭Ability&退出分屏
           await driver.click(2340, 977);
           await terminateAbility2(caseName)
-          if(isFreeWindowMode == true){
-            await mainWindowClass.recover();
-          }
+          
+          await mainWindowClass.recover();
+          
           let windowStageStart2 = await startAbility2(caseName, context);
           let mainWindow2 = windowStageStart2.getMainWindowSync();
           let windowRect2 = mainWindow2.getWindowProperties().windowRect
@@ -1631,6 +1654,9 @@ export default function windowAutoSaveTest() {
         expect().assertFail()
         done()
       }
+    }else{
+      done();
+    }
     });
 
     /**

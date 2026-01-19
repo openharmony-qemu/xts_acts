@@ -78,7 +78,7 @@ struct AttributeModifierDemoAPI01 {
           .width('90%')
           .height(80)
           .focusable(true)
-          .attributeModifier(this.modifier)
+          .attributeModifier(this.modifier) //样式没改变
           .enabled(this.enabledFlag)
 
         Button('enabled：false').margin(20).key('AttributeModifierDemoAPI01EnabledButton')
@@ -91,7 +91,7 @@ struct AttributeModifierDemoAPI01 {
           .onClick((e: ClickEvent) => {
             console.log('test start btn2')
             this.modifier.isDark = !this.modifier.isDark
-            console.log('test start data ' + this.modifier.isDark)
+            console.log('test start data ' + this.modifier.isDark) //true
           })
       }
       .width('100%')

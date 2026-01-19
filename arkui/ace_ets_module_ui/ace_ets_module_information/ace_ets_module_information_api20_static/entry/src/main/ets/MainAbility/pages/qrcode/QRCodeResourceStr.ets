@@ -20,7 +20,7 @@ struct QRCodeResourceStr {
   build() {
     Column({ space: 8 } as ColumnOptions) {
       Row() {
-        // QRCode($r('app.string.module_desc')).width(10).height(10).color(0xF7C00).id('QRCode')
+        QRCode($r('app.string.module_desc')).width(10).height(10).color(0xF7C00).id('QRCode')
         // QRCode(undefined).width(10).height(10).color(0xF7C00).id('QRCode1')
         // QRCode(null).width(10).height(10).color(0xF7C00).id('QRCode2')
         QRCode('resourceStr').width(10).height(10).color(0xF7C00).id('QRCode3')

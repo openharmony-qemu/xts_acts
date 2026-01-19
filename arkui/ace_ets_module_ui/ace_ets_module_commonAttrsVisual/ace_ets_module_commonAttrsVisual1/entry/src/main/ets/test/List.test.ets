@@ -52,6 +52,9 @@ import EdgeOutlineWidthsPage from './EdgeOutlineWidthsPage.test';
 import OpacityTest from './OpacityTest.test';
 import LinearGradientBlurTest from './LinearGradientBlurTest.test'
 import ContrastTest from './ContrastTest.test'
+import RectShapePage from './RectShapePage.test'
+import MaterialFilter from './MaterialFilter.test'
+import TransitionEffectOpacity from './TransitionEffectOpacity.test'
 
 export default function testsuite() {
   rotateAngleOptionsTest()
@@ -90,4 +93,7 @@ export default function testsuite() {
   OpacityTest()
   LinearGradientBlurTest()
   ContrastTest()
+  RectShapePage()
+  MaterialFilter()
+  TransitionEffectOpacity()
 }

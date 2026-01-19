@@ -4822,5 +4822,75 @@ export default function audioNDK() {
       expect(result).assertEqual(TEST_PASS);
       done();
     })
+    /**
+     * @tc.name   AudioSessionManagerMuteSuggestion_001
+     * @tc.number AudioSessionManagerMuteSuggestion_001
+     * @tc.desc   enableMuteSuggestionWhenMixWithOthers-set-true
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AudioSessionManagerMuteSuggestion_001', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerMuteSuggestion_001();
+      console.info(`Tag: AudioSessionManagerMuteSuggestion_001 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   AudioSessionManagerMuteSuggestion_002
+     * @tc.number AudioSessionManagerMuteSuggestion_002
+     * @tc.desc   enableMuteSuggestionWhenMixWithOthers-set-false
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL0
+     */
+    it('AudioSessionManagerMuteSuggestion_002', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL0, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerMuteSuggestion_002();
+      console.info(`Tag: AudioSessionManagerMuteSuggestion_002 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   AudioSessionManagerMuteSuggestion_003
+     * @tc.number AudioSessionManagerMuteSuggestion_003
+     * @tc.desc   enableMuteSuggestionWhenMixWithOthers-nullptr
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioSessionManagerMuteSuggestion_003', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerMuteSuggestion_003();
+      console.info(`Tag: AudioSessionManagerMuteSuggestion_003 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   AudioSessionManagerMuteSuggestion_004
+     * @tc.number AudioSessionManagerMuteSuggestion_004
+     * @tc.desc   enableMuteSuggestionWhenMixWithOthers-without setting scene
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioSessionManagerMuteSuggestion_004', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerMuteSuggestion_004();
+      console.info(`Tag: AudioSessionManagerMuteSuggestion_004 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
+    /**
+     * @tc.name   AudioSessionManagerMuteSuggestion_005
+     * @tc.number AudioSessionManagerMuteSuggestion_005
+     * @tc.desc   enableMuteSuggestionWhenMixWithOthers-after active call
+     * @tc.type   FUNCTION
+     * @tc.size   MEDIUMTEST
+     * @tc.level  LEVEL1
+     */
+    it('AudioSessionManagerMuteSuggestion_005', TestType.FUNCTION | Size.MEDIUMTEST | Level.LEVEL1, async (done: Function) => {
+      let result = myaudioNdk.audioSessionManagerMuteSuggestion_005();
+      console.info(`Tag: AudioSessionManagerMuteSuggestion_005 : ${result}`);
+      expect(result).assertEqual(TEST_PASS);
+      done();
+    })
   })
 }
