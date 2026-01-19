@@ -385,6 +385,6 @@ export default function testsuite() {
   RichEditorBuilderSpanTest()         // Api23
   RichEditorCompressLeadingPunctuationTest()
   RichEditorParagraphStyleTest()
-  RichEditorParagraphStyleTest()
+  RichEditorSingleLineTest()
   RichEditorTextStyleTest()
 }
