@@ -96,7 +96,7 @@ napi_value ImageSourceNativeGetImagePropertyLong(napi_env env, napi_callback_inf
     default:
         break;
     }
-   if (imageSource != nullptr) {
+    if (imageSource != nullptr) {
         OH_ImageSourceNative_Release(imageSource);
     }
     napi_value ret;
@@ -141,7 +141,7 @@ napi_value ImageSourceNativeGetImagePropertyShort(napi_env env, napi_callback_in
     default:
         break;
     }
-   if (imageSource != nullptr) {
+    if (imageSource != nullptr) {
         OH_ImageSourceNative_Release(imageSource);
     }
     napi_value ret;
@@ -186,7 +186,7 @@ napi_value ImageSourceNativeGetImagePropertyDouble(napi_env env, napi_callback_i
     default:
         break;
     }
-   if (imageSource != nullptr) {
+    if (imageSource != nullptr) {
         OH_ImageSourceNative_Release(imageSource);
     }
     napi_value ret;
@@ -231,7 +231,7 @@ napi_value ImageSourceGetImagePropertyArraySize(napi_env env, napi_callback_info
     default:
         break;
     }
-   if (imageSource != nullptr) {
+    if (imageSource != nullptr) {
         OH_ImageSourceNative_Release(imageSource);
     }
     napi_value ret;
