@@ -78,6 +78,7 @@ export default function columnMonopolize() {
       await column1.longClick();
       await CommonFunc.sleep(1000);
       await column2.click();
+      await CommonFunc.sleep(500);
       let strJson1 = getInspectorByKey('columnText');
       console.log("[columnMonopolize_001] component obj is: " , JSON.stringify(JSON.parse(strJson1)));
       expect(JSON.parse(strJson1).$attrs.content).assertEqual('LongPressGesture onAction success;');

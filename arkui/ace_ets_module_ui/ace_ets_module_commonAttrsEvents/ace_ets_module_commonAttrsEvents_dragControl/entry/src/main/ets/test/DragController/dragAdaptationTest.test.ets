@@ -24,13 +24,13 @@ const BUNDLE_NAME = 'com.arkui.ace.commonEvents.api11/EntryAbility';
 export default function dragAdaptationTest() {
   describe('dragAdaptationTest', () => {
     beforeEach(async (done: Function) => {
-config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
-      console.info(`enable success`);
+      config.enableAbility(BUNDLE_NAME, CAPACITY).then(() => {
+        console.info(`enable success`);
       }).catch((err: object) => {
         console.error(`failed to enable, ${err}`);
       })
-done();
-});
+      done();
+    });
     beforeAll(async () => {
       console.info("flex beforeEach start");
       let options: router.RouterOptions = {
@@ -64,8 +64,8 @@ done();
      * @tc.level  LEVEL0
      */
     it('dragAdaptationTest_001', Level.LEVEL0, async () => {
+      let driver = Driver.create();
       if (globalThis.winLeft == 0) {
-        let driver = Driver.create();
         console.info('dragAdaptationTest dragAdaptationTest_001 START');
         await CommonFunc.sleep(1000);
         let textArea1 = await driver.findComponent(ON.id('textArea1'));
@@ -79,6 +79,11 @@ done();
         let button1 = await driver.findComponent(ON.text('下一步'));
         await CommonFunc.sleep(500);
         await button1?.click();
+        await CommonFunc.sleep(500);
+
+        let button2 = await driver.findComponent(ON.text('完成'));
+        await CommonFunc.sleep(500);
+        await button2?.click();
         await CommonFunc.sleep(500);
 
         await textArea1.longClick();
@@ -112,14 +117,28 @@ done();
         console.info('dragAdaptationTest_001 2 复制 success');
         await textArea1.dragTo(textArea2);
         await CommonFunc.sleep(500);
-        let button7 = await driver.findComponent(ON.type('Button'));
-        await CommonFunc.sleep(500);
-        await button7?.click();
+        let Text7 = await driver.findComponent(ON.text('长按内容至浮起，可拖拽到底部小艺'));
+        if(Text7){
+          let button7 = await driver.findComponent(ON.type('Button'));
+          await CommonFunc.sleep(500);
+          await button7?.click();
+        }
         await CommonFunc.sleep(500);
         console.info('dragAdaptationTest_001 2 Button success');
+      }else {
+        //切换HAD 输入法
+        let textArea2 = await driver.findComponent(ON.id('textArea2'));
+        await CommonFunc.sleep(500);
+        await textArea2.inputText('aaa');
+        await CommonFunc.sleep(500);
+        let areaText = await textArea2.getText();
+        await CommonFunc.sleep(500);
+        if(areaText != 'aaa'){
+          await driver.triggerKey(2047)
+        }
       }
-      
-      expect("").assertEqual("");
+      let strJson = getInspectorByKey('textArea2');
+      expect(JSON.parse(strJson).$type).assertEqual('TextArea');
       console.info("[dragAdaptationTest_001] end");
     });
   })
