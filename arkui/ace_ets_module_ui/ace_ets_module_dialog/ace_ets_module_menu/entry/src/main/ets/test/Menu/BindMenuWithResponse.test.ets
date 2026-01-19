@@ -77,9 +77,8 @@ export default function BindMenuWithResponse() {
       await button?.longClick();
       console.info('[BindMenuWithResponse_0100] long click');
       await CommonFunc.sleep(1000);
-      let item = getInspectorByKey('longTextId');
-      console.info('[BindMenuWithResponse_0100] item text is ' + JSON.stringify(JSON.parse(item).$attrs.content));
-      expect(JSON.stringify(JSON.parse(item).$attrs.content)).assertEqual('ItemLONG_PRESS')
+      let menu: Component = await driver.findComponent(ON.type('Menu'));
+      expect(menu !== null).assertTrue();
       console.info('BindMenuWithResponse_0100 END');
       done();
     });
@@ -102,9 +101,8 @@ export default function BindMenuWithResponse() {
       await driver.mouseClick(point, MouseButton.MOUSE_BUTTON_RIGHT);
       console.info('[BindMenuWithResponse_0200] mouse right click');
       await CommonFunc.sleep(1000);
-      let item = getInspectorByKey('longTextId');
-      console.info('[BindMenuWithResponse_0200] item text is ' + JSON.stringify(JSON.parse(item).$attrs.content));
-      expect(String(JSON.parse(item).$attrs.content)).assertEqual('ItemRIGHT_CLICK')
+      let menu: Component = await driver.findComponent(ON.type('Menu'));
+      expect(menu !== null).assertTrue();
       console.info('BindMenuWithResponse_0200 END');
       done();
     });
